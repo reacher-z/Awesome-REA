@@ -6,13 +6,14 @@
 
 [English](firmware.md)
 
-**165 个案例**
+**172 个案例**
 
 - [**6502 Model：重建 65C02 芯片的逐周期行为**](https://github.com/EmulationOnline/model_6502) - 6502 Model 用 Rust 根据实体 65C02 芯片运行程序时采集的外部总线跟踪记录，重建其逐周期行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/6502-model-case/)</sub>
 - [**B3603：研究控制板行为并编写替代固件**](https://github.com/baruch/b3603) - B3603 研究降压模块的控制板，以编写 STM8 替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/b3603-case/)</sub>
 - [**Band 9 表盘生成器：华为手环 9 HWT 表盘格式复现**](https://github.com/daiyuxiang520/band9-watchface-generator) - Band 9 表盘生成器通过观察公开的 HWT 包，归纳华为手环 9 表盘格式，并为 194 × 368 的 HWHD07 屏幕生成可安装的表盘包。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/band9-watchface-generator-case/)</sub>
 - [**BCM5719 Firmware Reimplementation：重建网卡固件**](https://github.com/meklort/bcm5719-fw) - BCM5719 Firmware Reimplementation 根据 Ortega 规格重建 Broadcom BCM5719 网卡固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bcm5719-firmware-reimplementation-case/)</sub>
 - [**CamLink 4K：Elgato 采集卡的替代门级逻辑与固件**](https://github.com/enjoy-digital/camlink_4k) - CamLink 4K 为第一代 Elgato Cam Link 4K 重建视频采集链路：ECP5 FPGA 使用 LiteX 门级逻辑，FX3 控制器使用裸机 C 固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/camlink-4k-case/)</sub>
+- [**canon\_cr3：解析佳能 CR3 相机文件格式**](https://github.com/lclevy/canon_cr3) - canon\_cr3 研究佳能相机图像文件，重点记录 CR3 容器及 CRX 图像结构。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/canon-cr3-format-case/)</sub>
 - [**Capybara：重建运行 Tamagotchi Paradise 固件所需的 Sonix 硬件**](https://github.com/infinition/capybara) - Capybara 重建 Sonix SNC73410 硬件环境，使 Tamagotchi Paradise 的原厂固件可在电脑上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/capybara-tamagotchi-paradise-case/)</sub>
 - [**CatCard：基于 Coldcard 引导程序接口的替代固件**](https://github.com/TibaneLabs/catcard) - CatCard 为 Coldcard mk3、mk4、mk5 和 Q1 实现 Rust 替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/catcard-coldcard-firmware-case/)</sub>
 - [**CEN64：Nintendo 64 寄存器传输级模拟**](https://github.com/n64dev/cen64) - CEN64 模拟 Nintendo 64 硬件，目标是将硬件行为建模到寄存器传输级。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cen64-nintendo-64-emulation-case/)</sub>
@@ -22,11 +23,13 @@
 - [**Echo Show 相机：重建 LineageOS 相机支持**](https://github.com/jxlarrea/lineageos-echo-show-camera) - Echo Show 相机项目为 Echo Show 5 和 8 的 LineageOS 18.1 重建相机支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/echo-show-lineageos-camera-case/)</sub>
 - [**EchoPod：Snowsky Echo Mini 8 GB 替代固件**](https://github.com/BasilSkyWalk/echopod) - Snowsky（FiiO）Echo Mini 8 GB 播放器的替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/echopod-echo-mini-firmware-case/)</sub>
 - [**EP4CE6 Bitstream Reverse Engineering：映射 Cyclone IV 配置位**](https://github.com/14sea/Cyclone_CRAM_Mapper) - EP4CE6 Bitstream Reverse Engineering 研究 Cyclone IV EP4CE6F17C8 FPGA 的 .rbf 配置格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cyclone-cram-mapper-case/)</sub>
+- [**ESP DC1：研究并替换斐讯 DC1 排插固件**](https://github.com/qlwz/esp_dc1) - ESP DC1 在原应用服务无法使用后，为斐讯 DC1 排插提供替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/esp-dc1-power-strip-case/)</sub>
 - [**F3DEX2：任天堂 64 RSP 微码的匹配反汇编**](https://github.com/Mr-Wiseguy/f3dex2) - F3DEX2 是任天堂 64 的 F3DEX2 和 F3DZEX2 RSP 微码家族的匹配反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f3dex2-disasm/)</sub>
 - [**FPGABoy：基于 FPGA 的 Game Boy 硬件实现**](https://github.com/trun/fpgaboy) - FPGABoy 以 FPGA 设计重建 Nintendo Game Boy 硬件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fpgaboy-game-boy-case/)</sub>
 - [**Game Boy DMG-CPU Schematics：重建 DMG-CPU B 芯片电路**](https://github.com/msinger/dmg-schematics) - Game Boy DMG-CPU Schematics 将 Game Boy 的 DMG-CPU B 芯片及 SM83 核心整理为 KiCad 电路图、Electric VLSI 布局和文本网表。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dmg-schematics-case/)</sub>
 - [**GameCube IPL：研究并重建主机 BootROM**](https://github.com/ogamespec/gc-ipl) - GameCube IPL 研究美版零售主机的 BootROM，并开发替代 IPL 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gamecube-ipl-case/)</sub>
 - [**GLaBIOS：从零编写的 8K ROM BIOS**](https://github.com/640-KB/GLaBIOS) - 面向老式 PC、XT 和 8088 机器、从零编写的开源 ROM BIOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/glabios-rom-bios-case/)</sub>
+- [**GoPro Metadata Format Parser：解析 GPMD 遥测数据**](https://github.com/stilldavid/gopro-utils) - GoPro Metadata Format Parser 研究嵌入 GoPro Hero 5 MP4 录像中的 GPMD 遥测流，并提供 Go 语言读取器和转换命令。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gopro-gpmd-format-case/)</sub>
 - [**hantek-dso：还原 Hantek DSO5000P 的 USB 控制**](https://github.com/kooscode/hantek-dso5000p-linux) - hantek-dso 在 Linux Python 客户端中还原 Hantek DSO5000P 示波器的 USB 控制，并提供图形界面、命令行和 API。 <sub>案例 · 混合工具流程 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/hantek-dso5000p-linux-case/)</sub>
 - [**HH41V：重建 GOTU/SUDH 更新流程**](https://github.com/devopnem/hh41v-fota) - HH41V 梳理 TCL/Alcatel 移动热点的 FOTA 更新流程，包括 AP 与调制解调器包结构，以及 GOTU/SUDH 请求。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/hh41v-fota-case/)</sub>
 - [**ILME-FX30：测绘服务命令与固件设置**](https://github.com/t2r05/fx30-senser-map) - ILME-FX30 Service Mode Research 测绘 FX30 固件 6.00 的 USB 服务会话与设置区。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ilme-fx30-service-mode-case/)</sub>
@@ -51,10 +54,12 @@
 - [**Powar：模拟 Pokéwalker**](https://github.com/UnrealPowerz/powar) - Powar 使用用户自备的 ROM 与 EEPROM 镜像模拟 Pokéwalker。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powar-pokewalker-case/)</sub>
 - [**Predator Sense for Linux：重建 PHN16-72 固件控制**](https://github.com/aishend/predator-sense) - Predator Sense for Linux 为 Predator Helios Neo 16 PHN16-72 重建 Acer PredatorSense 控制功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/predator-sense-phn16-72-linux-case/)</sub>
 - [**pw\_firm：Pokéwalker 固件反编译**](https://github.com/UnrealPowerz/pw_firm) - pw\_firm 为 Pokéwalker 的 Renesas H8 微控制器重建 C 固件，涵盖设备驱动、游戏逻辑、界面和红外通信。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pw-firm-pokewalker-decomp-case/)</sub>
+- [**qemu-esp32-wireless：ESP32 无线硬件模拟**](https://codeberg.org/oHn017ss3ad1/qemu-esp32-wireless) - qemu-esp32-wireless 在 QEMU 中重建 ESP32 的 Wi-Fi 和 Bluetooth LE 硬件行为，使原版 ESP-IDF 固件及其无线功能组件能够运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/qemu-esp32-wireless-case/)</sub>
 - [**Quansheng UV-K5 Hardware Reverse Engineering Project：V1.4 对讲机电路板重建**](https://github.com/mentalDetector/Quansheng_UV-K5_PCB_R51-V1.4_PCB_Reversing_Rev._0.9) - Quansheng UV-K5 Hardware Reverse Engineering Project 将对讲机的 V1.4 电路板重建为 KiCad 原理图和板图。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/quansheng-uv-k5-hardware-case/)</sub>
 - [**R64Emu：Nintendo 64 硬件的低层重建**](https://github.com/rasky/r64emu) - R64Emu 基于真实硬件的逆向工作，用 Rust 低层模拟 Nintendo 64 硬件行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/r64emu-n64-case/)</sub>
 - [**Radtel RT-890：重实现对讲机 1.34 版固件**](https://github.com/DualTachyon/radtel-rt-890-oefw) - Radtel RT-890 项目用 C 源码重实现对讲机的 1.34 版固件，以研究设备行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/radtel-rt-890-firmware-case/)</sub>
 - [**redmi-perf：重建 Redmi 笔记本性能模式控制通道**](https://github.com/wanxinhao/redmi-perf) - redmi-perf 通过通向嵌入式控制器的 MIFS WMI 接口，重建小米和 Redmi 笔记本的性能模式控制通道。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/redmi-perf-case/)</sub>
+- [**rpi-open-firmware：Raspberry Pi VPU 启动固件的替代实现**](https://github.com/librerpi/rpi-open-firmware) - rpi-open-firmware 实现 Raspberry Pi 原厂 VPU bootcode.bin 的替代固件，并记录设备的启动阶段。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rpi-open-firmware-case/)</sub>
 - [**ry5088-flasher：重建磁轴键盘的 HID-DFU 刷写流程**](https://github.com/dot-agi/ry5088-flasher) - ry5088-flasher 重建 RongYuan RY5088 磁轴键盘的 USB HID-DFU 更新流程。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ry5088-flasher-case/)</sub>
 - [**SmartClock-OSS：重建 SD Pro 智能天气时钟固件**](https://github.com/michaeldale/smartclock-oss) - SmartClock-OSS 在分析原厂镜像和闪存布局后，为 SD Pro 智能天气时钟重建 ESP8266 固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/smartclock-oss-case/)</sub>
 - [**stf-sharc：重建 Sega Model 2 SHARC 微码**](https://github.com/biggestsonicfan/stf-sharc) - stf-sharc 重建并注释 Sega Model 2 硬件使用的两份 ADSP-21062 微码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/stf-sharc-case/)</sub>
@@ -63,6 +68,8 @@
 - [**TC66 定制固件：RuiDeng USB-C 功率计的替代镜像**](https://github.com/FletcherD/tc66-custom-fw) - RuiDeng TC66 和 TC66C USB-C 功率计的替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tc66-meter-firmware-case/)</sub>
 - [**TJ-56-654 天气时钟：硬件与安全分析后的替代固件**](https://github.com/petrochen/esp8266-weather-clock-opensource) - TJ-56-654 天气时钟项目在调查设备硬件与配置页面后，为原有 ESP-01S 编写替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/esp8266-weather-clock-case/)</sub>
 - [**Torso T-1：重建 .t1 备份文件格式**](https://github.com/pizboese/t1-backup-file-format) - Torso T-1 备份格式项目通过受控设备备份和字节比较，解析音序器的 .t1 模式库数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/t1-backup-file-format-case/)</sub>
+- [**uLaunch：重建 Nintendo Switch HOME 菜单**](https://github.com/XorTroll/uLaunch) - uLaunch 以可定制的替代程序重建 Nintendo Switch HOME 菜单的部分行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ulaunch-switch-home-menu-case/)</sub>
+- [**uOFW：PSP 内核与固件重建**](https://github.com/uofw/uofw) - uOFW 通过逆向分析 PSP 内核与硬件行为，编写技术文档和开源替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/uofw-case/)</sub>
 - [**UV-K5：泉盛固件 v2.1.27 的开源重实现**](https://github.com/DualTachyon/uv-k5-firmware) - 已归档的泉盛 UV-K5 手台固件 v2.1.27 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/uv-k5-firmware-case/)</sub>
 - [**X-40 激光测距模块：电路与固件重建**](https://github.com/iliasam/Laser_tape_reverse_engineering) - X-40 激光测距研究重建了卷尺电路，并编写替代固件用于自行测距。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/x40-laser-rangefinder-case/)</sub>
 - [**Yamaha SMAF Player：MA 系列铃声播放功能重建**](https://github.com/akustikrausch/yamaha-smaf-player) - Yamaha SMAF Player 用 C++ 重建 Yamaha MA 系列音源芯片的铃声播放功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/yamaha-smaf-player-case/)</sub>

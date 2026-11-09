@@ -146939,5 +146939,2237 @@
     "verified_at": "2026-11-07",
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
+  },
+  {
+    "id": "zuma-deluxe-decompilation-case",
+    "name": "Zuma Deluxe: decompiling the Mac and Windows game",
+    "url": "https://github.com/kyle-sylvestre/CircleShootApp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "The project reconstructs Zuma Deluxe's game logic from Mac and Windows executables as buildable C++ source. It combines a patched open-source SexyAppFramework with game-specific code and supports comparison of compiled assembly against the original using the Visual Studio .NET 2002 toolchain.",
+    "description_zh": "该项目依据 Mac 和 Windows 版《Zuma Deluxe》可执行文件，将游戏逻辑重建为可构建的 C++ 源码。它配合修改过的开源 SexyAppFramework，并可使用 Visual Studio .NET 2002 工具链将编译后的汇编与原程序比较。",
+    "evidence_url": "https://github.com/kyle-sylvestre/CircleShootApp/blob/7a6a24789ce5b622214d60019df0996c4c066973/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "An original Zuma Deluxe copy supplies the game data. A 32-bit build needs BASS 1.8 from the original game or BASS 2.4; a 64-bit build needs BASS 2.4.",
+      "CMake 3.18 or later and MinGW or MSVC are documented build options.",
+      "The author describes the result as playable with possible bugs and inaccuracies.",
+      "Modifications are MIT-licensed and the game source is provided as-is; separate licence files cover other components."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "croc-psx-demo-matching-case",
+    "name": "Croc: Legend of the Gobbos — matching decompilation of the PSX demo",
+    "url": "https://codeberg.org/misbk/croc_psx",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "croc_psx reconstructs C source for the Croc: Legend of the Gobbos PlayStation demo SLED-00038 using the original Psy-Q toolchain. Its workflow disassembles functions, recompiles candidate C and compares generated assembly and executables with the target. The author says most functions match, while longer functions still rely on extracted original code.",
+    "description_zh": "croc_psx 使用原版 Psy-Q 工具链，为 Croc: Legend of the Gobbos 的 PlayStation 演示版 SLED-00038 重建 C 源码。工作流程包括逐函数反汇编、编译候选 C 代码，并比对汇编与可执行文件。作者称多数函数已匹配，部分较长函数仍使用从原版提取的代码。",
+    "evidence_url": "https://codeberg.org/misbk/croc_psx/src/commit/cf599e2d944db9771426f1f49691da6408544293/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide the Croc demo CD contents and Psy-Q 4.0 CD contents.",
+      "The documented build environment uses Podman with Python, Wine and emu2.",
+      "Several long functions remain incomplete and use extracted original implementations.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "starquake-bbc-micro-case",
+    "name": "Starquake: BBC Micro disassembly",
+    "url": "https://gitlab.com/reuben.scratton/starquake",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Starquake reconstructs the BBC Micro game's assembly and provides a Beebasm command to generate a bootable disc image from decoder.asm. The README also points to an online BBC Micro environment for loading the resulting disc.",
+    "description_zh": "Starquake 项目重建 BBC Micro 版游戏的汇编代码，提供以 Beebasm 从 decoder.asm 生成可启动磁盘映像的命令，并指出可加载该映像的在线 BBC Micro 环境。",
+    "evidence_url": "https://gitlab.com/reuben.scratton/starquake/-/blob/ad939298fedba181b30f0041b7fecfcf1b0a6549/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Beebasm assembler.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "relive-engine-case",
+    "name": "R.E.L.I.V.E.: replacing the engines for Abe’s Oddysee and Abe’s Exoddus",
+    "url": "https://aliveteam.github.io",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "R.E.L.I.V.E. develops a cross-platform engine intended to replace the original PC executables for Abe’s Oddysee and Abe’s Exoddus. It runs with the player's game files and provides controller support, display options, and a level editor. The project reports that both games are playable, with bugs and crashes still possible.",
+    "description_zh": "R.E.L.I.V.E. 为《Abe’s Oddysee》和《Abe’s Exoddus》开发跨平台引擎，目标是替代原版 PC 可执行程序。它读取玩家自己的游戏文件，提供手柄支持、画面设置和关卡编辑器。项目称两款游戏目前均可游玩，但仍可能出现错误和崩溃。",
+    "evidence_url": "https://aliveteam.github.io",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "An owned copy of the original game files is required.",
+      "The page lists Windows, macOS, and Linux support.",
+      "Both games may still have bugs, crashes, and regressions; the HD Mod is unsupported.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "gopro-gpmd-format-case",
+    "name": "GoPro Metadata Format Parser: mapping GPMD telemetry",
+    "url": "https://github.com/stilldavid/gopro-utils",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "GoPro Metadata Format Parser maps the GPMD telemetry stream embedded in GoPro Hero 5 MP4 recordings and provides Go readers and conversion commands. The notes describe big-endian values, four-byte alignment and labels for GPS, gyroscope, accelerometer and temperature samples.",
+    "description_zh": "GoPro Metadata Format Parser 研究嵌入 GoPro Hero 5 MP4 录像中的 GPMD 遥测流，并提供 Go 语言读取器和转换命令。笔记记录大端数值、四字节对齐，以及 GPS、陀螺仪、加速度计和温度数据的标签。",
+    "evidence_url": "https://github.com/stilldavid/gopro-utils/blob/f0186d2edd3443dbc1ed38deeaa6ac19aa063ff9/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Use an MP4 recording containing GPMD metadata, such as a GoPro Hero 5 recording made with GPS enabled.",
+      "Extract the metadata stream with ffmpeg before using the parsers.",
+      "BSD-2-Clause license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "opencivone-case",
+    "name": "OpenCivOne: rewriting the original Civilization",
+    "url": "https://codeberg.org/rhorvat/OpenCivOne",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "OpenCivOne rewrites the 1991 DOS Civilization game for desktop systems with .NET 8 and Avalonia. A virtual CPU runs assembly code still awaiting replacement, while rewritten portions use C#. The game currently needs the owner's original text, picture, and palette files.",
+    "description_zh": "OpenCivOne 使用 .NET 8 和 Avalonia 为桌面系统重写 1991 年的 DOS 游戏《Civilization》。尚未替换的汇编代码由虚拟 CPU 执行，其余部分逐步改写为 C#；运行时仍需玩家自有原版游戏的文本、图像和调色板文件。",
+    "evidence_url": "https://codeberg.org/rhorvat/OpenCivOne/src/commit/f3c20ccb9dd3f13b04befa0086e24c1c6906d1f8/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      ".NET 8 and Avalonia are used on Windows, Linux, and macOS desktops.",
+      "A legally owned copy of the original game is required, including its .txt, .pic, and .pal files.",
+      "The rewrite is in progress; some assembly code still runs through a virtual CPU.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "a26-mb-case",
+    "name": "Mario Bros.: Atari VCS matching disassembly",
+    "url": "https://gitlab.com/segaloco/a26_mb",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Mario Bros. reconstructs assembly for the Atari VCS release and provides a script to extract required assets from a ROM. The project says the disassembly should produce a one-to-one ROM image and includes C-like comments explaining control flow.",
+    "description_zh": "Mario Bros. 项目重建 Atari VCS 版游戏的汇编代码，并提供从 ROM 提取所需资源的脚本。项目称反汇编代码应能生成与原版 1:1 匹配的 ROM 映像，并包含解释控制流程的类 C 注释。",
+    "evidence_url": "https://gitlab.com/segaloco/a26_mb/-/blob/d5e2073b604d0c081623d7a9f837a66b415defa4/README",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A standard Mario Bros. Atari VCS ROM for asset extraction and the cc65 6502 development suite on a UNIX-like platform.",
+      "Control-flow commentary may contain inaccuracies.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "smt-decomp-case",
+    "name": "smt-decomp: decompiling Shin Megami Tensei for PlayStation",
+    "url": "https://codeberg.org/chickenzes/smt-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "smt-decomp is a work-in-progress decompilation of the PlayStation version of Shin Megami Tensei 1. Its workflow extracts files from a player-supplied game copy and generates assembly for function-matching work. A future PC port of the classic series is the stated goal.",
+    "description_zh": "smt-decomp 正在反编译 PlayStation 版《Shin Megami Tensei 1》。其流程从玩家自备的游戏副本提取文件，再生成汇编代码供函数匹配工作使用。项目的长期目标是将经典系列移植到 PC。",
+    "evidence_url": "https://codeberg.org/chickenzes/smt-decomp/src/commit/3d0f7f8c4d0af061779578c7f370903b8dc763bc/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A WSL environment and original game files are required.",
+      "The setup uses PSXimager or a similar tool to extract game files before running make split.",
+      "The project is at an early stage, and build instructions remain unfinished.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "rerac-case",
+    "name": "ReRAC: porting Ratchet & Clank to PC",
+    "url": "https://re-rac.github.io",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "ReRAC ports the 2002 PlayStation 2 Ratchet & Clank to a native PC application using data read from the player's original disc. Its launcher prepares the game and starts it. The project reports that its early alpha covers four planets, player movement, weapons, saving, travel, and cutscenes.",
+    "description_zh": "ReRAC 将 2002 年 PlayStation 2 版《Ratchet & Clank》移植为原生 PC 程序，从玩家的原版光盘读取游戏数据。启动器负责准备和运行游戏。项目称早期测试版已涵盖四个星球，以及移动、武器、存档、星球旅行和过场动画。",
+    "evidence_url": "https://re-rac.github.io",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The original North American PlayStation 2 disc is required.",
+      "The first test build targets Apple Silicon Macs; a Windows build is available, while Linux is planned.",
+      "The early alpha covers four planets; other planets and further testing remain unfinished.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "sc2k-docs-case",
+    "name": "SC2k-docs: mapping SimCity 2000 files and simulation",
+    "url": "https://github.com/OpenCity2k/SC2k-docs",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "SC2k-docs maps SimCity 2000 file formats and simulation behavior, chiefly for the Windows 95 Special Edition. Its specifications cover .sc2 saves, archives, sprite and text data, and systems such as power, water and traffic.",
+    "description_zh": "SC2k-docs 主要研究 SimCity 2000 Windows 95 Special Edition 的文件格式和模拟机制。文档涵盖 .sc2 存档、归档文件、精灵与文本数据，以及供电、供水和交通系统。",
+    "evidence_url": "https://github.com/OpenCity2k/SC2k-docs/blob/1062334f8cc63b2bd297bb8ebffaefadc6b5b4f8/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The specifications mainly cover SimCity 2000 Windows 95 Special Edition.",
+      "The simulation specification is incomplete, and parts of the .sc2 format need more work.",
+      "Creative Commons Attribution-ShareAlike 4.0 International license."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/OpenCity2k/SC2k-docs/blob/1062334f8cc63b2bd297bb8ebffaefadc6b5b4f8/sc2%20file%20spec.md",
+      "https://github.com/OpenCity2k/SC2k-docs/blob/1062334f8cc63b2bd297bb8ebffaefadc6b5b4f8/simulation%20spec.md"
+    ]
+  },
+  {
+    "id": "metroid-dread-recomp-pc-case",
+    "name": "Metroid Dread: a native PC recompilation from Switch game files",
+    "url": "https://github.com/yozander2009-stack/Metroid-Dread-Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Metroid Dread Recomp builds a native Windows or Linux version of Metroid Dread 2.1.0 from a player's Switch ExeFS and RomFS. SwitchRecomp translates ARM64 game code to C, game-specific anchored patches modify generated code, and a PC runtime supplies graphics, audio, input and system services.",
+    "description_zh": "Metroid Dread Recomp 从玩家提供的《密特罗德 生存恐惧》2.1.0 版 Switch ExeFS 和 RomFS 构建 Windows 或 Linux 原生版本。SwitchRecomp 将 ARM64 游戏代码翻译为 C，游戏专用补丁修改生成代码，PC 运行时提供图形、音频、输入及系统服务。",
+    "evidence_url": "https://github.com/yozander2009-stack/Metroid-Dread-Recomp/blob/d9abaa1fb1740fba87735ceddb63a060c5e8e67f/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supply your own Metroid Dread 2.1.0 ExeFS and RomFS files.",
+      "Current 0.x builds are early previews and may crash or have setup issues.",
+      "The combined released executable is GPL-3.0; individual source components retain their listed licenses."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/yozander2009-stack/Metroid-Dread-Recomp/blob/d9abaa1fb1740fba87735ceddb63a060c5e8e67f/dread/DESIGN.md"
+    ]
+  },
+  {
+    "id": "reach-cache-debug-recomp-case",
+    "name": "Reach Cache Debug: recompiling a Halo debug executable",
+    "url": "https://github.com/twist84/reach_cache_debug_recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reach Cache Debug Recomp uses ReXGlue to recompile halo3_cache_debug.xex from a Reach-era Xbox 360 debug build. It supplies debug-service stubs, memory and socket hooks, and virtual filesystem mappings for the executable.",
+    "description_zh": "Reach Cache Debug Recomp 使用 ReXGlue 重编译 Reach 时期 Xbox 360 调试版本中的 halo3_cache_debug.xex，并为其提供调试服务存根、内存与套接字钩子及虚拟文件系统映射。",
+    "evidence_url": "https://github.com/twist84/reach_cache_debug_recomp/blob/cb9be234cac7a5d72a1993f892777119218ba5e4/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The target halo3_cache_debug.xex and the ReXGlue SDK.",
+      "CMake 3.25+ and a C++23 toolchain.",
+      "BSD-3-Clause license."
+    ],
+    "class": "game",
+    "additional_evidence_urls": [
+      "https://github.com/twist84/reach_cache_debug_recomp/blob/cb9be234cac7a5d72a1993f892777119218ba5e4/source/main.cpp",
+      "https://github.com/twist84/reach_cache_debug_recomp/blob/cb9be234cac7a5d72a1993f892777119218ba5e4/source/reach_cache_debug_app.h"
+    ]
+  },
+  {
+    "id": "ogrebattle64-case",
+    "name": "Ogrebattle64: decompiling the North American game release",
+    "url": "https://codeberg.org/hijsje/ogrebattle64",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Ogrebattle64 decompiles the North American release of the game using a user-provided ROM. Its build process extracts assets from baserom.z64 before running make, and a separate make target generates an m2c context file for function work.",
+    "description_zh": "Ogrebattle64 针对游戏北美版进行反编译，构建时使用用户提供的 ROM，从 baserom.z64 提取资源后运行 make。项目还提供生成 m2c 函数上下文文件的 make 目标。",
+    "evidence_url": "https://codeberg.org/hijsje/ogrebattle64/src/commit/af6eabe49c9d48c3c9566c15b1d7f6884ccab669/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A copy of the North American Ogrebattle64 ROM, named baserom.z64, is required to extract assets.",
+      "The build instructions list binutils-mips-linux-gnu, build-essential, git, pkgconf, Python 3 and the Python packages in requirements.txt.",
+      "The decompilation is a work in progress.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "leaflitter-case",
+    "name": "Leaflitter: decompiling Paper Mario: Sticker Star for 3DS",
+    "url": "https://codeberg.org/Ivylag/leaflitter",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Leaflitter decompiles the European release of Paper Mario: Sticker Star for Nintendo 3DS. It extracts code.bin from the user's game copy, generates assembly with n3dsdisasm, and builds source with armcc; utilities process Ghidra headers and symbol names, while make generates objdiff configuration.",
+    "description_zh": "Leaflitter 针对欧版 3DS 游戏《Paper Mario: Sticker Star》进行反编译。项目从用户自己的游戏副本提取 code.bin，使用 n3dsdisasm 生成汇编，并通过 armcc 编译源码；辅助工具可处理 Ghidra 头文件和符号名，make 还会生成 objdiff 配置。",
+    "evidence_url": "https://codeberg.org/Ivylag/leaflitter/src/commit/16b34cde8268177c370677af6e581fdf66e9f72d/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A European copy of Paper Mario: Sticker Star and either a homebrewed 3DS with godmode9 or ctrtool are required to obtain code.bin.",
+      "Disassembly and compilation require Python 3, make and n3dsdisasm; building calls for armcc 4.1 build 995 and wibo on Linux, or WSL on Windows.",
+      "The build output is not yet matching or in the same format as the code.bin.",
+      "The project uses BSD 2-Clause licensing except for decompiled code in src, which the page places under CC0."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "perception-pnrf-case",
+    "name": "perception-pnrf: PNRF measurement format reconstruction",
+    "url": "https://codeberg.org/Apollo3zehn/perception-pnrf",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "perception-pnrf documents the reverse-engineered PNRF measurement file format used by HBK Perception and provides Python and C# parsers. Its specification covers the NSS container, waveform and event channels, calibration and metadata. A command-line dump tool displays recording structure and sample previews.",
+    "description_zh": "perception-pnrf 记录了 HBK Perception 所用 PNRF 测量文件的逆向格式规范，并提供 Python 和 C# 解析器。规范涵盖 NSS 容器、波形与事件通道、校准信息及元数据；命令行工具可输出录制结构和采样预览。",
+    "evidence_url": "https://codeberg.org/Apollo3zehn/perception-pnrf/src/commit/b187fdc4eba3f439a8e68817ad5b963373374e60/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "PNRF measurement files are required as parser input; implementations are provided for Python and C#.",
+      "The large benchmark fixture is tracked with Git LFS and must be pulled before running benchmarks.",
+      "MIT licence."
+    ],
+    "class": "science",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "ulaunch-switch-home-menu-case",
+    "name": "uLaunch: reconstructing the Nintendo Switch HOME Menu",
+    "url": "https://github.com/XorTroll/uLaunch",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "uLaunch reconstructs selected Nintendo Switch HOME Menu behavior in a customizable replacement. It launches and suspends applications, handles applets and controllers, and implements a subset of system settings; additional settings are being reversed and implemented.",
+    "description_zh": "uLaunch 以可定制的替代程序重建 Nintendo Switch HOME 菜单的部分行为。它可启动和暂停应用、处理 Applet 与控制器，并实现部分系统设置；其他设置仍在逆向分析和实现中。",
+    "evidence_url": "https://github.com/XorTroll/uLaunch/blob/6da94f9164f5fa61380010008270457f95ff4b04/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The documented installation is intended for Atmosphère custom firmware on Nintendo Switch.",
+      "Several system settings and messages remain unimplemented; eShop, parental controls and game updates are outside the current plan.",
+      "GPL-2.0 license."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "metars-cgi-case",
+    "name": "metars_cgi: reconstructing the NCAR Java METAR viewer server",
+    "url": "https://codeberg.org/PurpleJillybeans/metars_cgi",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "metars_cgi reconstructs the data server used by NCAR's Java METAR viewer. Its PHP scripts answer the viewer applet's requests from a MySQL or MariaDB METAR database, while a Python script fetches updates from NOAA. The author uses decompiled applet binaries to guide the reconstruction and notes unresolved handling of cloud-layer chunks.",
+    "description_zh": "metars_cgi 重建 NCAR Java METAR 查看器使用的数据服务器。其 PHP 脚本从 MySQL 或 MariaDB 的 METAR 数据库响应小程序查询，Python 脚本从 NOAA 获取更新。作者借助反编译的小程序代码推断服务器行为，并记录了云层数据块处理尚未解决的问题。",
+    "evidence_url": "https://codeberg.org/PurpleJillybeans/metars_cgi/src/commit/2595939b7d6c83a79f87c950e6748c97af664d7a/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A MySQL or MariaDB database with the documented metars table is required for metars_cgi.php.",
+      "metartest.php uses fixed data and needs no database.",
+      "Ceiling altitudes do not work; the author has not resolved the viewer's handling of cloud-layer chunks.",
+      "No licence stated on the project page."
+    ],
+    "class": "website",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "uofw-case",
+    "name": "uOFW: PSP kernel and firmware reconstruction",
+    "url": "https://github.com/uofw/uofw",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "uOFW reconstructs PSP kernel and hardware behavior to produce technical documentation and open source firmware. Its source tree contains kernel module implementations and headers for PSP subsystems including memory, interrupts, device control and media handling. The project describes its implementation as incomplete.",
+    "description_zh": "uOFW 通过逆向分析 PSP 内核与硬件行为，编写技术文档和开源替代固件。源码包含内存、中断、设备控制及媒体处理等 PSP 子系统的模块实现和头文件。项目说明当前实现尚未完成。",
+    "evidence_url": "https://github.com/uofw/uofw/blob/28306bb5bd4fcdcc0c1d469bf1f3bdb885dde3e9/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The project is far from complete.",
+      "The project uses the MIT license and includes PSPSDK code under the BSD license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/uofw/uofw/blob/28306bb5bd4fcdcc0c1d469bf1f3bdb885dde3e9/Makefile"
+    ]
+  },
+  {
+    "id": "ddr-1st-mix-recomp-case",
+    "name": "DDR 1st Mix: static recompilation and freeze analysis",
+    "url": "https://github.com/bmbelo87/ddr-1st-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "DDR 1st Mix recompiles the PlayStation release SLPM-86222 by translating its MIPS code to C with PSXRecomp and building a native executable. Game-specific hooks address runtime behavior, and the author documents tracing an animation error into a cyclic display list that caused freezes.",
+    "description_zh": "DDR 1st Mix 借助 PSXRecomp 将 PlayStation 版本 SLPM-86222 的 MIPS 代码转换为 C，再编译为原生程序。项目通过游戏专用钩子处理运行问题；作者还记录了从动画错误追查到显示列表循环、进而导致卡死的过程。",
+    "evidence_url": "https://github.com/bmbelo87/ddr-1st-recomp/blob/395aa9ff8b8d3ce0f58995749f01662be3cfa8b6/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supply a disc dump with one .cue and 40 .bin tracks, plus the SLPM_862.22 boot executable.",
+      "Use Python 3, CMake 3.20 or later, Ninja and Clang; on Windows, use a POSIX shell such as MSYS2 or Git Bash.",
+      "The author reports that a runtime hook contains the freeze; the cause of the invalid animation index remains open.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bmbelo87/ddr-1st-recomp/blob/395aa9ff8b8d3ce0f58995749f01662be3cfa8b6/BACKLOG.md"
+    ]
+  },
+  {
+    "id": "sf1disasm-case",
+    "name": "SF1DISASM: a reassemblable Shining Force disassembly",
+    "url": "https://github.com/ShiningForceCentral/SF1DISASM",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "SF1DISASM documents Shining Force as structured, commented 68k assembly and provides scripts to rebuild the US ROM. Its split step extracts data chunks from the user's original ROM before the build step assembles the source and extracted data. The project aims for a rebuilt ROM identical to the original.",
+    "description_zh": "SF1DISASM 将《Shining Force》整理为结构清晰、带注释的 68k 汇编代码，并提供重建美版 ROM 的脚本。拆分脚本先从用户的原版 ROM 提取数据块，再由构建脚本将汇编源码和提取的数据组装为 ROM。项目目标是重建出与原版完全一致的 ROM。",
+    "evidence_url": "https://github.com/ShiningForceCentral/SF1DISASM/blob/1f466bf038a64f6bdf3113e484bace0c3c66c6f7/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "An original US Shining Force ROM is required to extract data chunks.",
+      "Editing the disassembly requires 68k assembly knowledge.",
+      "No licence file in the repository."
+    ],
+    "class": "game"
+  },
+  {
+    "id": "homeworld2classic-case",
+    "name": "Homeworld 2 Classic: an in-progress executable and DLL decompilation",
+    "url": "https://github.com/HaydnTrigg/Homeworld2Classic",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Homeworld2Classic reconstructs Homeworld 2's executable and DLL modules in C++ as an ongoing decompilation. Its source tree contains game and platform code, and the project publishes objdiff matching reports for Homeworld2.exe and individual libraries. The author describes the work as unfinished.",
+    "description_zh": "Homeworld2Classic 持续用 C++ 重建《家园 2》的主程序和 DLL 模块。仓库含游戏及平台代码，并发布 Homeworld2.exe 与各库的 objdiff 匹配报告。作者将其标为尚未完成的反编译工作。",
+    "evidence_url": "https://github.com/HaydnTrigg/Homeworld2Classic/blob/9b3fed4c7cc73f685b1603ee41ce9ca5d0f7f677/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The project is a work-in-progress decompilation.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "canon-cr3-format-case",
+    "name": "canon_cr3: mapping Canon CR3 camera files",
+    "url": "https://github.com/lclevy/canon_cr3",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "canon_cr3 maps Canon camera image files, especially the CR3 container and its CRX image structures. Its format notes describe tracks, custom tags, metadata and compression, while a Python parser inspects CR3 and CR2 files and extracts selected image parts. Separate notes describe Canon HEIF images.",
+    "description_zh": "canon_cr3 研究佳能相机图像文件，重点记录 CR3 容器及 CRX 图像结构。格式笔记说明轨道、自定义标签、元数据和压缩方式；Python 解析器可检查 CR3、CR2 文件并提取部分图像数据，另有文档介绍佳能 HEIF 图像。",
+    "evidence_url": "https://github.com/lclevy/canon_cr3/blob/151c1a965775ef409ace17714c24ed491cfcf9c4/readme.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide Canon CR3 or CR2 image files for the parser.",
+      "The parser is described as experimental.",
+      "GPL-3.0 license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/lclevy/canon_cr3/blob/151c1a965775ef409ace17714c24ed491cfcf9c4/heif.md"
+    ]
+  },
+  {
+    "id": "chiaki-remote-play-case",
+    "name": "Chiaki: PlayStation Remote Play client informed by protocol analysis",
+    "url": "https://git.sr.ht/~thestr4ng3r/chiaki",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Chiaki implements a PlayStation 4 and 5 Remote Play client for desktop, mobile, and Nintendo Switch platforms. The project credits analysis of the registration and wakeup protocols and documents console discovery, account identification, PIN registration, and source builds.",
+    "description_zh": "Chiaki 实现了适用于桌面系统、Android 和 Nintendo Switch 的 PlayStation 4 与 5 Remote Play 客户端。项目提到注册和唤醒协议的分析，并说明主机发现、账户标识获取、PIN 配对及源码构建流程。",
+    "evidence_url": "https://git.sr.ht/~thestr4ng3r/chiaki",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A PlayStation 4 or PlayStation 5 console is needed for Remote Play.",
+      "Registration requires a console PIN; from PS4 version 7.0, it also requires a PSN AccountID instead of an Online-ID.",
+      "Building from source requires CMake, Qt 5 modules, FFMPEG with H264 decoding, libopus, OpenSSL 1.1, SDL 2, protoc, and the protobuf Python library.",
+      "The project is in maintenance mode, with no major updates planned.",
+      "GNU Affero General Public License version 3, with an additional OpenSSL linking permission."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "freelancer-decomp-case",
+    "name": "Freelancer: an in-progress Patch 1.1 decompilation",
+    "url": "https://github.com/HaydnTrigg/Freelancer",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Freelancer reconstructs C++ source for the game's Patch 1.1 executables and DLLs as a work-in-progress decompilation. Its configurations split individual modules, while engine libraries within scope are reimplemented in the separate Liberty project.",
+    "description_zh": "Freelancer 正在重建游戏 1.1 补丁版可执行文件与 DLL 的 C++ 源码。仓库按模块组织拆分配置；纳入范围的引擎库另由 Liberty 重实现。",
+    "evidence_url": "https://github.com/HaydnTrigg/Freelancer/blob/2de8a16fca9d04a7d8df5e15833d6eba621924bc/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Freelancer Patch 1.1, version 052103_release_1149_Ipatch_ver1254, is the supported target.",
+      "Release 1.0 and the listed beta versions are unsupported.",
+      "The decompilation is a work in progress.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "goldeneye-007-gitlab-decomp-case",
+    "name": "Goldeneye 007: a recompilable decompilation of three regional ROMs",
+    "url": "https://gitlab.com/kholdfuzion/goldeneye_src",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Goldeneye 007 is an ongoing, recompilable decompilation of the Nintendo 64 game. The project lists builds for US, Japanese and European ROMs and extracts required assets from a user-supplied copy of the game.",
+    "description_zh": "Goldeneye 007 是仍在进行、可重新编译的 Nintendo 64 游戏反编译项目。项目列出美版、日版和欧版 ROM 的构建目标，所需素材从用户提供的游戏副本中提取。",
+    "evidence_url": "https://gitlab.com/kholdfuzion/goldeneye_src/-/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/readme.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A prior copy of Goldeneye 007 is required to extract assets for compilation.",
+      "The decompilation is a work in progress.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "esp8266-midea-dehumidifier-case",
+    "name": "esp8266-midea-dehumidifier: rebuilding dehumidifier serial control",
+    "url": "https://github.com/Hypfer/esp8266-midea-dehumidifier",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "esp8266-midea-dehumidifier replaces a Midea-made dehumidifier's Wi-Fi dongle with an ESP8266 adapter that speaks to the unit over TTL serial and exposes controls through MQTT. The author says its control logic draws on Android app reverse engineering and UART traffic analysis.",
+    "description_zh": "esp8266-midea-dehumidifier 用 ESP8266 适配器替换美的制造的除湿机 Wi-Fi 模块，通过 TTL 串口与设备通信，并通过 MQTT 提供控制功能。作者称，其控制逻辑参考了 Android 应用逆向分析和 UART 通信分析。",
+    "evidence_url": "https://github.com/Hypfer/esp8266-midea-dehumidifier/blob/317e2295dde70d7b20d649d6f0dda061c608fb11/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A compatible Wi-Fi-enabled Midea-made dehumidifier and ESP8266 ESP-01 adapter hardware are required.",
+      "Building and flashing require Arduino IDE with ESP8266 support and the listed Arduino libraries.",
+      "The Comfee MDDF-20DEN7 lacks the Wi-Fi button and USB port used by the guide.",
+      "Apache-2.0 license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "dlss5-nr-reverse-engineering-case",
+    "name": "DLSS 5 Neural Rendering: reconstructing a runtime model from DLL analysis",
+    "url": "https://huggingface.co/inarikami/dlss5-nr-reverse-engineering",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "DLSS 5 Neural Rendering reconstructs parts of NVIDIA's model from static analysis of nvngx_dlssnr.dll 310.8.0.0 shipped with NBA 2K27. It documents a 153-record weight container, a 71-block Swin/ViT structure and numerical references for selected operators. The author reports byte-for-byte agreement for one FFN operator across 24 comparisons.",
+    "description_zh": "DLSS 5 Neural Rendering 通过静态分析 NBA 2K27 附带的 nvngx_dlssnr.dll 310.8.0.0，重建 NVIDIA 模型的部分结构。项目记录了含 153 条记录的权重容器、71 个模块的 Swin/ViT 架构及部分算子的数值参考实现；作者报告一个 FFN 算子在 24 次比较中逐字节一致。",
+    "evidence_url": "https://huggingface.co/inarikami/dlss5-nr-reverse-engineering/blob/2f3db2562d18f750169c85ed947dc15bffca5a3b/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The readers require the user's own copy of nvngx_dlssnr.dll 310.8.0.0 and its extracted WEIGHTS_HT resource.",
+      "Parsing, references and tests use PyTorch 2.14.0+cpu; native comparison requires a Blackwell GPU.",
+      "A full forward pass and most operator comparisons remain unfinished.",
+      "No licence stated on the project page."
+    ],
+    "class": "software",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "bt2-recomp-case",
+    "name": "BT2 Recomp: a Budokai Tenkaichi 2 PS2 static recompilation",
+    "url": "https://github.com/oric212/BT2-Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "BT2 Recomp translates the North American PlayStation 2 release of Dragon Ball Z: Budokai Tenkaichi 2 to native Windows C++ with PS2Recomp. Its runtime supplies memory, system services and Vulkan GS rendering for the translated game code. The author reports playable versus battles and runs of story mode, Ultimate Battle Z, tournaments and training lessons without input; memory-card saving remains unconfirmed.",
+    "description_zh": "BT2 Recomp 使用 PS2Recomp 将美版 PlayStation 2《龙珠 Z 电光火石 2》转换为 Windows 原生 C++ 程序。运行时为转换后的游戏代码提供内存、系统服务和基于 Vulkan 的 GS 渲染。作者称对战模式可玩，故事模式、Ultimate Battle Z、锦标赛和训练课程可在无输入的情况下运行；记忆卡保存功能仍未确认。",
+    "evidence_url": "https://github.com/oric212/BT2-Recomp/blob/852d94ea65da4a88cb0e5f8019a14eb6ba051c47/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A personal copy of the North American SLUS-21441 game disc image is required.",
+      "Building requires Windows 10 or 11 x64, Visual Studio 2022 C++ tools and CMake.",
+      "Memory-card saving has not yet been tried in the game.",
+      "GPL-3.0 License."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/oric212/BT2-Recomp/blob/852d94ea65da4a88cb0e5f8019a14eb6ba051c47/docs/project/PROGRESS_TRACKING.md"
+    ]
+  },
+  {
+    "id": "pizza-legacy-case",
+    "name": "Pizza Legacy: reimplementing Pizza Tycoon",
+    "url": "https://codeberg.org/cowomaly/pizzalegacy",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Pizza Legacy rebuilds the 1994 DOS game Pizza Tycoon, also released as Pizza Connection, in a C++20 engine that loads the original game's assets. The author reports that the major gameplay systems support a complete playthrough. The remake also adds optional bug fixes, autosaving, and support for modern displays and controls.",
+    "description_zh": "Pizza Legacy 以 C++20 引擎重建 1994 年 DOS 游戏 Pizza Tycoon，也就是德语发行的 Pizza Connection，并读取原版资源。作者称主要玩法系统已实现，可以从头玩到结局；项目还加入自动存档、可选错误修复及现代显示和操作支持。",
+    "evidence_url": "https://codeberg.org/cowomaly/pizzalegacy/src/commit/95da97dbf75ae5b070470850ca08dba1d3aa34fa/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Asset files from the original English-language DOS release are required.",
+      "The author reports that major gameplay systems are complete; playtesting, balancing, and bug fixing continue.",
+      "GNU General Public License v3.0."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "skyboundtotk-case",
+    "name": "SkyboundTOTK: a native static recompilation of Tears of the Kingdom",
+    "url": "https://github.com/NotRexed/SkyboundTotk",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "SkyboundTOTK statically recompiles The Legend of Zelda: Tears of the Kingdom into a native Windows or Linux executable. Its build translates the game's AArch64 code to C, compiles it locally, supplies expected runtime services and translates graphics work and shaders for WebGPU. The author describes graphics and compatibility as incomplete.",
+    "description_zh": "SkyboundTOTK 将《塞尔达传说：王国之泪》静态重编译为 Windows 或 Linux 原生程序。构建流程把游戏的 AArch64 代码转换为 C 并在本地编译，运行时实现游戏所需服务，图形工作和着色器则转换到 WebGPU。作者指出图形和兼容性仍不完整。",
+    "evidence_url": "https://github.com/NotRexed/SkyboundTotk/blob/a4495f95b5e5ab6562d603058dcaa3457d0c8027/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supply your own legally obtained, extracted game files: unmodified base-game 1.0.0 ExeFS and RomFS, or version 1.2.1 ExeFS and RomFS with the update applied.",
+      "Build on Windows x64 or Linux x86_64 with Python 3.10 or newer, lz4, Clang and lld; platform-specific graphics and system dependencies also apply.",
+      "Allow at least 45 GB of free space beyond the game dump.",
+      "Graphics and compatibility are incomplete; most documented testing covers version 1.0.0.",
+      "The repository has an MIT license; included suyu translation and shader code carries GPL-2.0-or-later or GPL-3.0-or-later terms."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/NotRexed/SkyboundTotk/blob/a4495f95b5e5ab6562d603058dcaa3457d0c8027/NOTICE.md"
+    ]
+  },
+  {
+    "id": "node-castv2-case",
+    "name": "castv2: reconstructing the Chromecast CASTV2 protocol",
+    "url": "https://github.com/thibauts/node-castv2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "castv2 documents and implements the Chromecast CASTV2 protocol over TLS. Its Node.js client exchanges length-prefixed Protocol Buffers messages with a dongle, and its protocol notes describe namespaces, virtual connections, heartbeat messages and device authentication.",
+    "description_zh": "castv2 记录并实现 Chromecast 通过 TLS 传输的 CASTV2 协议。其 Node.js 客户端与设备交换带长度前缀的 Protocol Buffers 消息，协议笔记说明命名空间、虚拟连接、心跳消息和设备认证。",
+    "evidence_url": "https://github.com/thibauts/node-castv2/blob/41d589abbf8619ec582e2b2707eb5e3266e7a14a/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Node.js and a Chromecast device for client use.",
+      "The server implementation is limited by device authentication.",
+      "MIT license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ssgdecomp-case",
+    "name": "ssgdecomp: reconstructing Super Solvers: Gizmos & Gadgets!",
+    "url": "https://codeberg.org/shuppy/ssgdecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "ssgdecomp reconstructs Super Solvers: Gizmos & Gadgets! with the aim of producing a bit-identical Windows executable. It uses the original ssgwin32.exe as an incremental starting point, builds with the period Borland toolchain, and compares PE sections and disassembly; its documented helpers inspect compiler output, import tables and OMF objects.",
+    "description_zh": "ssgdecomp 以生成逐位相同的 Windows 可执行文件为目标，重建《Super Solvers: Gizmos & Gadgets!》。项目以原版 ssgwin32.exe 为逐步替换的起点，使用当时的 Borland 工具链，对比 PE 节和反汇编结果，并提供检查编译输出、导入表及 OMF 目标文件的辅助工具。",
+    "evidence_url": "https://codeberg.org/shuppy/ssgdecomp/src/commit/3527b283f427cb67c158984d91782d1577c68b36/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building currently requires the user's original ssgwin32.exe and the original Borland C++ toolchain, described as mostly version 4.52.",
+      "The author reports that several default-binary sections match, while .reloc and some header or resource timestamps still differ.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "twisted-metal-native-engine-case",
+    "name": "Twisted Metal: Rust reimplementation of the 2012 PS3 game",
+    "url": "https://gitlab.com/goblindo/twisted-metal",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Twisted Metal reimplements the 2012 PS3 game's engine in Rust for Linux and macOS. Its tools extract a user's disc image, convert models, textures, collision and handling data, and support scene viewing and an early driving simulation with placeholder physics.",
+    "description_zh": "Twisted Metal 以 Rust 重实现 2012 年 PS3 游戏的引擎，面向 Linux 和 macOS。配套工具从用户的光盘映像提取内容，转换模型、纹理、碰撞及操控数据，并支持场景查看和使用占位物理效果的早期驾驶模拟。",
+    "evidence_url": "https://gitlab.com/goblindo/twisted-metal/-/blob/f14a2646df662a7cb3c5071d2a3b2a1e7154f724/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A personal copy of the Twisted Metal game as a disc image; an encrypted image also requires its key file.",
+      "Rust toolchain on Linux or macOS.",
+      "Driving currently uses placeholder physics.",
+      "GPL-3.0-only."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "mb-mario-bros-case",
+    "name": "Mario Bros.: Z80 arcade disassembly",
+    "url": "https://gitlab.com/segaloco/mb",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Mario Bros. reconstructs assembly for the Z80 arcade game, beginning with the marioja MAME ROM set. It uses GNU Z80 binutils for CPU code and asm48 for sound code; graphics data is outside the project's stated scope.",
+    "description_zh": "Mario Bros. 项目重建 Z80 街机版游戏的汇编代码，从 MAME 的 marioja ROM 集开始。CPU 代码使用 GNU Z80 binutils，音频代码使用 asm48；图形数据不在项目范围内。",
+    "evidence_url": "https://gitlab.com/segaloco/mb/-/blob/f07b505e48a8ef1017eb509f389dd4f7854e9cee/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Z80 version of GNU binutils for CPU code and asm48 for sound code.",
+      "The disassembly starts with the marioja ROM set; graphics data is excluded.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ]
+  },
+  {
+    "id": "disruptor-recomp-recompteam-case",
+    "name": "DisruptorRecomp: statically recompiling Disruptor for PC",
+    "url": "https://github.com/RecompTeam/DisruptorRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "DisruptorRecomp turns the PlayStation game Disruptor into a native Windows and Linux program using PSXRecomp and a patched runtime. Its launcher reads the player's USA disc image; the project adds PC display and control options while retaining an alpha status.",
+    "description_zh": "DisruptorRecomp 借助 PSXRecomp 和补丁运行时，把 PlayStation 游戏《Disruptor》转为 Windows、Linux 原生程序。启动器读取玩家自有的美版光盘镜像，项目加入 PC 显示与控制选项，目前处于 alpha 阶段。",
+    "evidence_url": "https://github.com/RecompTeam/DisruptorRecomp/blob/d98e7214222a00979f2668ac504892f94a707776/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user's Disruptor USA disc image, SLUS-00224.",
+      "Targets Windows x64 and Linux x64.",
+      "The project is in alpha; no level has yet been played on Linux.",
+      "MIT."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/RecompTeam/DisruptorRecomp/blob/d98e7214222a00979f2668ac504892f94a707776/docs/STATUS.md",
+      "https://github.com/RecompTeam/DisruptorRecomp/blob/d98e7214222a00979f2668ac504892f94a707776/input/README.md"
+    ]
+  },
+  {
+    "id": "ordoor-strategy-engine-case",
+    "name": "Ordoor: reimplementing the Strategy Engine for four games",
+    "url": "https://code.ur.gs/lupine/ordoor",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Ordoor rebuilds the Strategy Engine used by Warhammer 40,000: Chaos Gate, Soldiers At War, Squad Leader, and Wages of War. Its format work and viewers cover maps, menus, graphics, sound, and video to varying degrees; gameplay mechanics remain unfinished.",
+    "description_zh": "Ordoor 重建 Warhammer 40,000: Chaos Gate、Soldiers At War、Squad Leader 和 Wages of War 使用的 Strategy Engine。项目解析了部分地图、菜单和图像格式，并提供查看工具；声音与视频也有初步支持，游戏机制尚未实现。",
+    "evidence_url": "https://code.ur.gs/lupine/ordoor",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A copy of each original game's data is required to play it.",
+      "The Rust rewrite builds with cargo; the README lists libsdl3-0 as a runtime package on Debian.",
+      "Game mechanics are not implemented yet.",
+      "MIT License."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "fzgx-nkhoit-decomp-case",
+    "name": "fzgx: a matching F-Zero GX decompilation",
+    "url": "https://github.com/nkhoit/fzgx",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "F-Zero GX reconstructs C source for the GameCube game's main.dol and REL modules, comparing builds with retail files. Its tools extract and unpack main.rel from the user's disc image, while unmatched functions are linked from that copy; the author reports roughly 30% of code matched.",
+    "description_zh": "F-Zero GX 重建 GameCube 版游戏 main.dol 和 REL 模块的 C 源码，并与零售版文件比较。工具从用户自备光盘镜像提取并解包 main.rel，未完成的函数则从该副本链接；作者报告约 30% 的代码已匹配。",
+    "evidence_url": "https://github.com/nkhoit/fzgx/blob/6025590fd9777b610cb8d7916a4ef8d7ef2e2c24/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supply an F-Zero GX disc image; GFZE01 USA rev 0 is the primary supported version.",
+      "Python, Ninja and uv are required; the build uses GameCube Metrowerks compilers.",
+      "The author reports roughly 30% of code matched; PAL and Japanese configurations are scaffolds.",
+      "CC0-1.0."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nkhoit/fzgx/blob/6025590fd9777b610cb8d7916a4ef8d7ef2e2c24/CONTRIBUTING.md"
+    ]
+  },
+  {
+    "id": "commander-genius-case",
+    "name": "Commander Genius: Commander Keen game interpreter",
+    "url": "https://gitlab.com/Dringgstein/Commander-Genius",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Commander Genius reimplements an interpreter for Commander Keen 1–6 and Keen Dreams in C++, using the original games' data files to run their gameplay on modern systems. It also includes partial support for Cosmo's Cosmic Adventure, alongside SDL 2.0, Lua mod support, and multiplayer features.",
+    "description_zh": "Commander Genius 用 C++ 重写游戏解释器，读取原版数据文件，在现代系统上运行 Commander Keen 1–6 和 Keen Dreams。它还部分支持 Cosmo's Cosmic Adventure，并提供 SDL 2.0、Lua 模组和多人游戏功能。",
+    "evidence_url": "https://gitlab.com/Dringgstein/Commander-Genius/-/blob/58a3c4fd0782fa2a087e38a039599b2ecf69ccc9/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Original game data files are required.",
+      "Cosmo's Cosmic Adventure support is incomplete; the source also notes smaller missing Commander Keen features, including PaddleWar.",
+      "The source code is distributed under the GPL, with attribution requested for the original authors and other code contributors."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "xbox-demos-decompilation-case",
+    "name": "Xbox Demos Decompilation: a functional reconstruction of the Xbox demo launcher",
+    "url": "https://codeberg.org/KeybadeBlox/XDemos-Decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Xbox Demos Decompilation reconstructs the Xbox application that launches videos and demos from the North American BLiNX: The Time Sweeper disc. Its nonmatching source aims to reproduce the launcher's behavior and documents Bink video support, an unused animated background and unfinished alternative graphics code.",
+    "description_zh": "Xbox Demos Decompilation 依据北美版《BLiNX: The Time Sweeper》光盘中的 Xbox Demos，重建用于启动视频和试玩内容的 Xbox 应用。其非匹配式反编译源码以复现程序行为为目标，并记录了 Bink 视频支持、未使用的动画背景和未完成的替代图形代码。",
+    "evidence_url": "https://codeberg.org/KeybadeBlox/XDemos-Decomp/src/commit/be15222bf91acb41e20aa8e1bbffed14286df3db/readme.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Compilation requires Visual C++ 6.0 or Visual C++ .NET 2002/2003, a compatible Xbox Development Kit and Xbox Bink libraries.",
+      "Runtime requires media files, textures, an xdemos.xdi data file and the compiled xdemos.xbe.",
+      "The source covers Xbox Demos alone; the Xbox Title Libraries and Bink code it uses are not included.",
+      "No licence stated on the project page."
+    ],
+    "class": "software",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "harvest-moon-gb-disassembly-case",
+    "name": "Harvest Moon GB Disassembly: reconstructing the Japanese Game Boy ROM",
+    "url": "https://github.com/H0smax/HMGB-Disassembly",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Harvest Moon GB Disassembly reconstructs the Japanese Game Boy release as banked assembly. The project tracks named labels and gives an MD5 reference for the compiled game while its disassembly remains in progress.",
+    "description_zh": "Harvest Moon GB Disassembly 以分区汇编源码重建该游戏的日版 Game Boy ROM，记录已命名的标签，并给出编译结果的 MD5 参照值；反汇编工作仍在进行。",
+    "evidence_url": "https://github.com/H0smax/HMGB-Disassembly/blob/620a0e0b54fb0e3beff9188ed40dc3764dcc0529/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "RGBDS tools are required by the Makefile.",
+      "The disassembly is a work in progress; the author reports 106 of 12,637 labels have real names.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/H0smax/HMGB-Disassembly/blob/620a0e0b54fb0e3beff9188ed40dc3764dcc0529/Makefile"
+    ]
+  },
+  {
+    "id": "openpete-case",
+    "name": "OpenPete: a static recompilation of Spyro the Dragon for PC",
+    "url": "https://openpete.com/",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "OpenPete ports the 1998 PlayStation game Spyro the Dragon to PC by translating its executable to C and compiling it ahead of time. A custom runtime handles PlayStation library calls, while a game-aware renderer supports high frame rates, widescreen display and texture replacement. The port reads game content from a user-supplied NTSC-U disc.",
+    "description_zh": "OpenPete 将 1998 年的 PlayStation 游戏 Spyro the Dragon 移植到 PC：先把原版可执行文件翻译为 C，再提前编译。自定义运行时处理主机库调用，读取游戏状态的渲染器支持高帧率、宽屏和纹理替换；游戏内容来自用户提供的 NTSC-U 光盘。",
+    "evidence_url": "https://openpete.com/",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supply an original NTSC-U Spyro the Dragon disc image, SCUS-94228.",
+      "Windows use requires an x86-64 CPU and Vulkan 1.2 capable GPU; the site also lists a Linux x86-64 AppImage.",
+      "Source code is marked as coming soon.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "wycliffe-case",
+    "name": "wycliffe: a clean-room Dante protocol implementation",
+    "url": "https://github.com/jsharkey/wycliffe",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "wycliffe is a clean-room implementation of the Dante protocol for uncompressed, multichannel, low-latency digital audio over Ethernet. Its notes record observed Dante packets, including channel labels and a session handshake.",
+    "description_zh": "wycliffe 是 Dante 协议的净室实现，该协议通过以太网传输无压缩、多声道、低延迟的数字音频。项目笔记记录了观察到的 Dante 报文，包括通道标签和会话握手。",
+    "evidence_url": "https://github.com/jsharkey/wycliffe/blob/6130607a7ed141b8402c65d73641724e7257fe6a/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Documentation is licensed CC BY-NC-SA and code GPLv2; automc.py carries a GPLv3-or-later header."
+    ],
+    "class": "hardware",
+    "additional_evidence_urls": [
+      "https://github.com/jsharkey/wycliffe/blob/6130607a7ed141b8402c65d73641724e7257fe6a/protonotes"
+    ]
+  },
+  {
+    "id": "butterfly-ddr-a-service-case",
+    "name": "butterfly: emulating DDR A online services",
+    "url": "https://github.com/skogaby/butterfly",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "description_en": "butterfly emulates the e-AMUSEMENT service used by DDR A so the game can connect to a local server. Its Java code handles profiles, scores, options and rivals, with support code for the service's packet encryption and compression.",
+    "description_zh": "butterfly 模拟 DDR A 使用的 e-AMUSEMENT 服务，让游戏连接本地服务器。Java 代码处理玩家资料、成绩、选项和对手，并包含服务数据包加密与压缩的相关代码。",
+    "evidence_url": "https://github.com/skogaby/butterfly/blob/469b79a9858f2153ab9e51b8b2754b2d3d8ff94e/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Java 11 or later on Windows, macOS or Linux.",
+      "Set the game's services URL to http://localhost and turn off url_slash.",
+      "Change options in the server's SQLite database; the server has no web UI. Event progress is not tracked.",
+      "Licensed under Apache-2.0."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "tmuf-physics-case",
+    "name": "tmuf_physics: reconstructing TrackMania Forever physics",
+    "url": "https://github.com/Teero888/tmuf_physics",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "tmuf_physics is a C library that reads installed TrackMania Nations and United Forever data to simulate vehicle physics and race rules. It offers reference and optimized backends, reads and writes replays, and includes pack-format findings. The author reports tick-for-tick agreement with the game on 11,758 replays.",
+    "description_zh": "tmuf_physics 是读取 TrackMania Nations 和 United Forever 已安装游戏数据的 C 库，用于模拟车辆物理和比赛规则。项目提供参考与优化后端、回放读写功能及封包格式分析。作者报告，在 11,758 段回放中，模拟结果与游戏逐物理时间步一致。",
+    "evidence_url": "https://github.com/Teero888/tmuf_physics/blob/9227640bc0089ad61c980a8ccf8caf8ee03e40c7/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "TrackMania United Forever Packs directory, C11 compiler and CMake 3.18+.",
+      "Do not use -ffast-math or FMA contraction.",
+      "AGPL-3.0."
+    ],
+    "class": "game",
+    "additional_evidence_urls": [
+      "https://github.com/Teero888/tmuf_physics/blob/9227640bc0089ad61c980a8ccf8caf8ee03e40c7/docs/pack-format.md"
+    ]
+  },
+  {
+    "id": "linux-apfs-rw-case",
+    "name": "linux-apfs-rw: reconstructing APFS support in a Linux kernel module",
+    "url": "https://github.com/linux-apfs/linux-apfs-rw",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "linux-apfs-rw reconstructs support for Apple's APFS filesystem in a Linux kernel module using reverse-engineered format knowledge and an incomplete official specification. It mounts APFS volumes read-only by default and offers experimental writes, snapshot mounting and metadata checksum checking.",
+    "description_zh": "linux-apfs-rw 根据逆向获得的格式知识及尚不完整的官方规范，在 Linux 内核模块中实现 Apple APFS 文件系统支持。模块默认以只读方式挂载卷，并提供实验性写入、快照挂载和元数据校验功能。",
+    "evidence_url": "https://github.com/linux-apfs/linux-apfs-rw/blob/cb9c0a0681923eaa090026b4c9357e139dfb355b/README.rst",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Linux kernel 4.12 or later, matching kernel headers, and an APFS device or filesystem image.",
+      "Write support is experimental and may corrupt data; encryption is not implemented.",
+      "GPL-2.0 license."
+    ],
+    "class": "software",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ninjacop-case",
+    "name": "Ninja Cop: disassembly of two GBA releases",
+    "url": "https://gitlab.com/Fexean/ninjacop",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Ninja Cop reconstructs assembly for the GBA releases Ninja Cop and Ninja Five-O and provides commands to build both ROM versions. The author reports that all code has been disassembled; code and data documentation, graphics extraction, and readable strings remain unfinished.",
+    "description_zh": "Ninja Cop 重建 GBA 游戏 Ninja Cop 与 Ninja Five-O 的汇编代码，并提供两个 ROM 版本的构建命令。作者报告所有代码均已完成反汇编；代码与数据文档、更多图形提取，以及将字符串转换为可读、可编辑格式的工作仍未完成。",
+    "evidence_url": "https://gitlab.com/Fexean/ninjacop/-/blob/97d4a29aa770e302bba18f30cc292573c7126fdf/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "libpng, C++11-capable g++, C11-capable gcc, and devkitarm.",
+      "Code and data documentation and further graphics extraction remain on the project's to-do list.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "webfun-desktop-adventures-case",
+    "name": "WebFun: reimplementing the Desktop Adventures game engine",
+    "url": "https://codeberg.org/cyco/WebFun",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "WebFun recreates the engine behind Indiana Jones and His Desktop Adventures and Yoda Stories as a web application. The project shows game play, mobile controls, save inspection, asset editing, debug overlays, and script coverage views.",
+    "description_zh": "WebFun 以网页应用重建 Indiana Jones and His Desktop Adventures 与 Yoda Stories 的游戏引擎。项目展示了游戏画面、移动设备操作、存档检查、资源编辑、调试叠层和脚本覆盖率界面。",
+    "evidence_url": "https://codeberg.org/cyco/WebFun/src/commit/2a16d749372980138e2823511d62d896cf1cfe49/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Node.js v25 or newer and npm are required for local setup.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "openprivateer-case",
+    "name": "OpenPrivateer: reconstructing Wing Commander: Privateer",
+    "url": "https://openprivateer.org/",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "OpenPrivateer reconstructs Wing Commander: Privateer and its Righteous Fire add-on for modern systems using the player's original game files. Its engine loads original archives and saves, runs mission scripts, and recreates flight and combat using findings from game data and executable disassembly. Basic multiplayer and modding features are available, with further work in progress.",
+    "description_zh": "OpenPrivateer 使用玩家自有的原版文件，为现代系统重建《Wing Commander: Privateer》及资料片 Righteous Fire。引擎读取原版资源和存档、执行任务脚本，并依据游戏数据与可执行文件反汇编结果重现飞行和战斗。基本的多人模式和模组功能已可使用，后续功能仍在开发。",
+    "evidence_url": "https://openprivateer.org/",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A legally owned copy of Wing Commander: Privateer is required; Privateer uses PRIV.TRE and INITCFG.PAK, while Righteous Fire uses RF.TRE and INITRF.PAK.",
+      "The project is in public alpha.",
+      "Multiplayer does not yet network trading, missions, persistence, or chat.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ag-psd-case",
+    "name": "ag-psd: reconstructing PSD document reading and writing",
+    "url": "https://github.com/Agamnentzar/ag-psd",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "ag-psd reconstructs reading and writing of Photoshop PSD documents in JavaScript and TypeScript using format references and trial and error. It handles document structure, layer and composite image data, masks and selected metadata, with examples for Node.js and browsers.",
+    "description_zh": "ag-psd 结合格式资料与反复试验，用 JavaScript 和 TypeScript 实现 Photoshop PSD 文档的读写。它处理文档结构、图层与合成图像数据、蒙版及部分元数据，并提供 Node.js 和浏览器示例。",
+    "evidence_url": "https://github.com/Agamnentzar/ag-psd/blob/a74425db6584cc07b1cc135e370916cb4eccfb32/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Node.js or a browser; Node.js image data and thumbnail handling uses node-canvas.",
+      "Multichannel, Duotone and LAB color modes are unsupported, and text-layer handling is incomplete.",
+      "MIT license."
+    ],
+    "class": "software",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Agamnentzar/ag-psd/blob/a74425db6584cc07b1cc135e370916cb4eccfb32/README_PSD.md",
+      "https://github.com/Agamnentzar/ag-psd/blob/a74425db6584cc07b1cc135e370916cb4eccfb32/LICENSE"
+    ]
+  },
+  {
+    "id": "spectrum-saboteur1-rev-case",
+    "name": "spectrum-saboteur1-rev: matching disassembly of Saboteur",
+    "url": "https://gitlab.com/nzeemin/spectrum-saboteur1-rev",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "spectrum-saboteur1-rev reconstructs assembly for the 1985 ZX Spectrum game Saboteur in a single sabot1core.asm file. The author reports that assembling it with pasmo produces a byte-for-byte match with a memory image.",
+    "description_zh": "spectrum-saboteur1-rev 将 1985 年 ZX Spectrum 游戏 Saboteur 的反汇编代码整理为单个 sabot1core.asm 文件。作者报告使用 pasmo 汇编后，结果与内存映像逐字节一致。",
+    "evidence_url": "https://gitlab.com/nzeemin/spectrum-saboteur1-rev/-/blob/87f4f8f9acef870b2c117c5812e08f3868d24b62/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "pasmo cross-assembler.",
+      "The author describes the disassembly as mostly done.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "qemu-esp32-wireless-case",
+    "name": "qemu-esp32-wireless: ESP32 wireless hardware emulation",
+    "url": "https://codeberg.org/oHn017ss3ad1/qemu-esp32-wireless",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "qemu-esp32-wireless reconstructs ESP32 Wi-Fi and Bluetooth LE hardware behavior in QEMU to run stock ESP-IDF firmware and its wireless blobs. QEMU patches model radio events, 802.11 traffic and BLE connections; the repository also provides example firmware, capture tools and test scenarios. The author reports comparing wireless timing with ESP32 hardware over JTAG.",
+    "description_zh": "qemu-esp32-wireless 在 QEMU 中重建 ESP32 的 Wi-Fi 和 Bluetooth LE 硬件行为，使原版 ESP-IDF 固件及其无线功能组件能够运行。项目提供无线事件、802.11 通信和 BLE 连接的模拟补丁，以及示例固件、抓包工具和测试场景。作者称曾通过 JTAG 对照 ESP32 实机检查无线时序。",
+    "evidence_url": "https://codeberg.org/oHn017ss3ad1/qemu-esp32-wireless/src/commit/a94119a3a52c03c14b7553916965c316449e0623/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Apply the patches to Espressif's QEMU fork and build qemu-system-xtensa; build example firmware with ESP-IDF.",
+      "BLE connection establishment sometimes requires retries, and encrypted characteristic access after discovery times out.",
+      "No licence stated on the project page."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "snappad-pokemon-snap-case",
+    "name": "SnapPad: a Pokémon Snap static recompilation for Apple devices",
+    "url": "https://github.com/chrissotraidis/snappad",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "SnapPad builds a native Apple version of Pokémon Snap from a user-supplied US ROM using the game's decompilation, N64Recomp, RSPRecomp, and RT64. Its integration supplies Metal rendering, touch and controller input, private ROM setup, and persistent saves for iPhone, iPad, and Apple silicon Mac.",
+    "description_zh": "SnapPad 利用《Pokémon Snap》反编译成果、N64Recomp、RSPRecomp 和 RT64，从用户自备的美版 ROM 构建 Apple 原生程序。它为 iPhone、iPad 和 Apple 芯片 Mac 集成 Metal 渲染、触控及手柄输入、本地 ROM 配置和持久存档。",
+    "evidence_url": "https://github.com/chrissotraidis/snappad/blob/ca90060e21b7258005d735044a193df8917a3cb5/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide a legally obtained, unmodified Pokémon Snap (USA) ROM matching the documented fingerprint.",
+      "Build with an Apple silicon Mac and Xcode 26.x.",
+      "Full-progression testing and acceptance on a physical iPhone remain incomplete.",
+      "Rights and licensing terms are set out in RIGHTS_AND_LICENSES.md."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "pokerevo-pal-decomp-case",
+    "name": "pokerevo: PAL Wii game decompilation",
+    "url": "https://github.com/pret/pokerevo",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "pokerevo is a decompilation of the PAL Wii release of Pokémon Battle Revolution that builds a main.dol identified by a published SHA-1 hash. Its build uses a clean PAL 1.0 DOL and the specified compiler package.",
+    "description_zh": "pokerevo 是《Pokémon Battle Revolution》PAL 版 Wii 游戏的反编译项目，构建出的 main.dol 有公布的 SHA-1 哈希。构建需要干净的 PAL 1.0 DOL 和指定的编译器包。",
+    "evidence_url": "https://github.com/pret/pokerevo/blob/ae02670ef33650e44313443dd95180f485150d84/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A clean PAL 1.0 DOL named baserom.dol is required.",
+      "The build instructions specify the GC_COMPILERS.zip compiler package.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pret/pokerevo/blob/ae02670ef33650e44313443dd95180f485150d84/INSTALL.md"
+    ]
+  },
+  {
+    "id": "sm64synth-case",
+    "name": "sm64synth: Rust port of the Super Mario 64 audio engine",
+    "url": "https://gitlab.com/DeKrain/sm64synth",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "sm64synth ports the reconstructed Super Mario 64 audio engine to Rust as a reference implementation. Its music player and WAV renderer use sound assets extracted from a compatible game ROM; the implementation is based on the European version.",
+    "description_zh": "sm64synth 将已重建的 Super Mario 64 音频引擎移植为 Rust 参考实现。音乐播放器和 WAV 渲染器使用从兼容游戏 ROM 提取的音频资源；当前实现以欧版为基础。",
+    "evidence_url": "https://gitlab.com/DeKrain/sm64synth/-/blob/78bb232608b031495e072f98ef0e54881d984303/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A compatible Super Mario 64 ROM and sound assets prepared through the PC Port repository.",
+      "Rust nightly toolchain and the nightly Cargo feature.",
+      "The SH version is not yet fully supported.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ps4-waker-case",
+    "name": "ps4-waker: a client for the PS4 companion app protocol",
+    "url": "https://github.com/dhleong/ps4-waker",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "ps4-waker implements the PlayStation App's local PS4 discovery and control exchanges in a command-line tool and JavaScript API. It responds to app broadcasts and simulates registration to obtain credentials, then authenticates over the app's TCP protocol to wake the console or send control commands.",
+    "description_zh": "ps4-waker 通过命令行工具和 JavaScript API 实现 PlayStation App 在局域网中的 PS4 发现与控制流程。它响应应用的广播并模拟注册握手以取得凭据，再使用该应用的 TCP 协议认证、唤醒主机或发送控制指令。",
+    "evidence_url": "https://github.com/dhleong/ps4-waker/blob/8c6a96f6aab58f436e0e270a3fd27a846cb138b7/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A PS4, the PS4 Second Screen App and a computer on the same LAN.",
+      "Node.js 6 or newer for global installation, or Node.js 7 or newer for npx execution.",
+      "Initial registration must bind to port 987 and requires permission to use that port.",
+      "MIT license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "god-of-war-ii-android-case",
+    "name": "God of War II: an Android arm64 static recompilation build kit",
+    "url": "https://github.com/EvilNathan/gow2-android-build-kit",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "God of War II is the target of an Android arm64 build kit that translates the PS2 game's Emotion Engine executable to C++ with PS2Recomp. The kit adds an Android host layer, an ISO importer and a raw Vulkan Graphics Synthesizer backend. The author reports that the APK builds, while boot, graphics, input and audio work on a physical device remains pending.",
+    "description_zh": "该构建套件使用 PS2Recomp 将 PS2 版 God of War II 的 Emotion Engine 可执行代码静态翻译为 C++，生成 Android arm64 应用。它提供 Android 主机层、ISO 导入功能和 Vulkan Graphics Synthesizer 后端。作者报告 APK 已能构建，真机启动及图形、输入、音频调试仍待完成。",
+    "evidence_url": "https://github.com/EvilNathan/gow2-android-build-kit/blob/058116540d1aa3f6519b29385969d4d06d2e969a/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The user's own God of War II USA ISO, SCUS_974.81 version 1.01, is required.",
+      "An arm64 Android 9 or newer device with adb is required for device work.",
+      "Building requires JDK 17, Android SDK platform 35, NDK 27.3.13750724, CMake, Git and Python 3.10+; Windows uses Visual Studio C++ tools, while Linux uses Ninja or Make.",
+      "Device boot and pixel output remain pending; sensor, touch and audio code is untested.",
+      "GPL-3.0 License."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/EvilNathan/gow2-android-build-kit/blob/058116540d1aa3f6519b29385969d4d06d2e969a/LICENSE"
+    ]
+  },
+  {
+    "id": "skies-of-arcadia-legends-decomp-ogdanimal-case",
+    "name": "SkiesOfArcadiaLegends-Decomp: Skies of Arcadia Legends GameCube decompilation by ogdanimal",
+    "url": "https://github.com/ogdanimal/SkiesOfArcadiaLegends-Decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Skies of Arcadia Legends reconstructs C source for the USA Rev 0 GameCube main.dol and checks rebuilt code with objdiff and compiler probes. It documents game systems including menus, cameras, sound and the frame loop while identifying separately imported SDK and MusyX code. The author reports 82 game functions linked from C in its October 2026 status block.",
+    "description_zh": "Skies of Arcadia Legends 重建美版 Rev 0 GameCube main.dol 的 C 源码，并用 objdiff 与编译器探针检查构建结果。项目记录菜单、摄像机、音频和帧循环，同时区分引入的 SDK 与 MusyX 代码。作者在 2026 年 10 月的状态表中报告 82 个游戏函数已由 C 链接。",
+    "evidence_url": "https://github.com/ogdanimal/SkiesOfArcadiaLegends-Decomp/blob/1d2f66e66d7d72ec2d5fdccb18d51f4735c6a3e2/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide the GEAE8P Rev 0 game disc image or extracted files.",
+      "Building uses Python and ninja with the project's configured GameCube toolchain.",
+      "The author reports 8.30% of code bytes linked from C across game, library and middleware code.",
+      "CC0-1.0 licence."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ogdanimal/SkiesOfArcadiaLegends-Decomp/blob/1d2f66e66d7d72ec2d5fdccb18d51f4735c6a3e2/extern/README.md"
+    ]
+  },
+  {
+    "id": "njuconnect-vpn-protocol-case",
+    "name": "NJUConnect: reconstructing the NJU EasyConnect VPN client",
+    "url": "https://github.com/lyc8503/NJUConnect",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "NJUConnect implements a Go client for Nanjing University's EasyConnect VPN service using a custom TLS ClientHello and separate tunnel receive and transmit handshakes. Its code handles web login, token exchange, IP assignment and a SOCKS5 endpoint backed by gVisor networking.",
+    "description_zh": "NJUConnect 用 Go 实现南京大学 EasyConnect VPN 客户端，通过定制 TLS ClientHello 及独立的收发握手建立隧道。代码处理网页登录、令牌交换、IP 分配，并借助 gVisor 网络栈提供 SOCKS5 入口。",
+    "evidence_url": "https://github.com/lyc8503/NJUConnect/blob/ded56b0a89b9880e8def6af8bd53ec3b57247dd4/core/protocol.go",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires access credentials for Nanjing University's VPN service.",
+      "The client is no longer maintained and does not work with updated EasyConnect servers; it still works with Nanjing University's server.",
+      "The author withdrew the AGPL-3.0 license; the repository has no license file."
+    ],
+    "class": "software",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/lyc8503/NJUConnect/blob/ded56b0a89b9880e8def6af8bd53ec3b57247dd4/README.md",
+      "https://github.com/lyc8503/NJUConnect/blob/ded56b0a89b9880e8def6af8bd53ec3b57247dd4/core/EasyConnectClient.go"
+    ]
+  },
+  {
+    "id": "lgtv-js-case",
+    "name": "LGTV: reconstructing LG webOS TV control exchanges",
+    "url": "https://github.com/msloth/lgtv.js",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "LGTV reconstructs control of a 2014 LG webOS TV in a Node.js client. The author documents SSDP discovery, WebSocket pairing on ports 3000 and 3001, and cleartext JSON requests observed with network tools, then uses them for input, volume and app controls.",
+    "description_zh": "LGTV 以 Node.js 客户端重建 2014 年款 LG webOS 电视的控制方式。作者记录了 SSDP 发现、3000 和 3001 端口上的 WebSocket 配对，以及网络观察所得的明文 JSON 请求，并用这些交互控制输入源、音量和应用。",
+    "evidence_url": "https://github.com/msloth/lgtv.js/blob/0f57ecd60a1ef0bfc08c3fb4a21e6a560ed2afa4/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "An LG smart TV running webOS is required; the documentation targets later 2014 or 2015 models.",
+      "The client and TV must be on the same network, and first use requires approval on the TV.",
+      "The project is no longer maintained; turning on the TV and opening YouTube at a URL are listed as unsupported.",
+      "MIT license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "inferno-dante-protocol-case",
+    "name": "Inferno: implementing Dante audio networking",
+    "url": "https://github.com/teodly/inferno",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Inferno implements Dante audio networking on Linux from reverse-engineered protocol behavior. Its Rust components send and receive audio with Dante devices, while an ALSA virtual soundcard and a raw-audio pipe adapter expose streams to local applications.",
+    "description_zh": "Inferno 根据逆向获得的 Dante 协议行为，在 Linux 上实现音频网络通信。Rust 组件与 Dante 设备收发音频，ALSA 虚拟声卡和原始音频管道适配器让本地程序使用这些音频流。",
+    "evidence_url": "https://github.com/teodly/inferno/blob/9767558e0905c9e9c960f5a60e050fbdc38300b7/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Linux, Rust and a clock synchronization daemon; the quick start calls for a modified Statime build.",
+      "ALSA use requires ALSA development libraries.",
+      "The author describes the implementation as highly experimental and notes that guessed protocol behavior may fail in other setups.",
+      "Component directories include GPL, AGPL and other license files."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/teodly/inferno/blob/9767558e0905c9e9c960f5a60e050fbdc38300b7/Cargo.toml"
+    ]
+  },
+  {
+    "id": "castlevania-curse-of-darkness-pc-case",
+    "name": "Castlevania: Curse of Darkness — a native PC port by static recompilation",
+    "url": "https://github.com/fasipe/Castlevania-COD-QOL",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Castlevania: Curse of Darkness is ported from PlayStation 2 to Windows by translating its MIPS code to C++ and rebuilding PS2 hardware functions as PC code. The project includes a recompiler, a VU1 microprogram compiler, graphics and I/O implementations, and game hooks for widescreen display, a minimap and sprinting. Game-derived code is generated locally from the user's European disc image.",
+    "description_zh": "该项目将 PS2 游戏 Castlevania: Curse of Darkness 的 MIPS 代码静态重编译为 C++，并以 PC 代码替代图形、音频及 I/O 等硬件功能，实现 Windows 原生移植。仓库包含重编译器、VU1 微程序编译器，以及宽屏、小地图和冲刺功能的游戏钩子；游戏派生代码由用户的欧洲版光盘镜像在本地生成。",
+    "evidence_url": "https://github.com/fasipe/Castlevania-COD-QOL/blob/db8643a02db3377978b8c882e0eccdfd69b5ab39/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The user's own European Castlevania: Curse of Darkness disc image, serial SLES-53755, is required.",
+      "Play requires 64-bit Windows 10 or 11. A Direct3D 11 graphics card supporting rasterizer ordered views and double precision shaders enables graphics card rendering; otherwise, the game draws on the processor much more slowly.",
+      "Building requires Visual Studio 2022 or newer with the Desktop development with C++ workload.",
+      "Only the European game release is supported; recompile.bat stops when the version differs.",
+      "MIT License."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/fasipe/Castlevania-COD-QOL/blob/db8643a02db3377978b8c882e0eccdfd69b5ab39/LICENSE"
+    ]
+  },
+  {
+    "id": "rac-secret-agent-clank-decomp-case",
+    "name": "Secret Agent Clank: matching PlayStation 2 decompilation",
+    "url": "https://github.com/OpenRAC/rac-sac-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Secret Agent Clank reconstructs C and C++ source for the US and PAL PlayStation 2 releases, including the boot executable and SNR2 level modules. Its workflow tracks function bodies and placements, compares builds against retail hashes, and records progress by version. The author describes the work as ongoing.",
+    "description_zh": "Secret Agent Clank 为美版与欧版 PS2 游戏重建 C/C++ 源码，范围涵盖启动程序和 SNR2 关卡模块。项目按版本追踪函数体及其位置，以零售版哈希检查构建结果，并记录反编译进度；工作仍在继续。",
+    "evidence_url": "https://github.com/OpenRAC/rac-sac-decomp/blob/009933dcc5d0df2f5810d1e6cd6444ce583337ad/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.10+ and legally obtained US or PAL game disc images for build and comparison.",
+      "Matching decompilation is a work in progress.",
+      "GPL-3.0 for project-authored code."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "thunderclap-case",
+    "name": "Thunderclap: decompiling the Xbox Hulk game for a native port",
+    "url": "https://github.com/matthewfcarlson/thunderclap",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Thunderclap reconstructs the Xbox release of The Incredible Hulk: Ultimate Destruction in C++ for a planned native port. It byte-compares smaller functions with the original compiler and checks larger functions through differential execution against the original. The author reports source for all game functions and a Wine build that reaches the first mission.",
+    "description_zh": "Thunderclap 以 C++ 重建 Xbox 版《The Incredible Hulk: Ultimate Destruction》，目标是制作原生移植版。项目用原编译器逐字节比对较小函数，并通过与原版差分执行检查较大函数。作者报告称已覆盖全部游戏函数，Wine 构建可进入第一个任务。",
+    "evidence_url": "https://github.com/matthewfcarlson/thunderclap/blob/a42c96d860284d3bfe29d8b2928cf46bde52265b/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user's own copy of the Xbox game; the repository does not include its executables or assets.",
+      "The reconstruction uses the original MSVC 7.1 compiler for byte matching and xemu for hybrid execution checks.",
+      "The author reports a playable 32-bit Wine build; native 64-bit builds remain a goal.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/matthewfcarlson/thunderclap/blob/a42c96d860284d3bfe29d8b2928cf46bde52265b/CLAUDE.md"
+    ]
+  },
+  {
+    "id": "decomp-no-me-un5-case",
+    "name": "Decomp-no-Me-UN5Decomp: reconstructing Naruto Shippuden 5 functions",
+    "url": "https://github.com/MiguelQueiroz010/Decomp-no-Me-UN5Decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decomp-no-Me-UN5Decomp reconstructs C functions for the PlayStation 2 game Naruto Shippuden: Ultimate Ninja 5 from its MIPS R5900 executable. Splat prepares assembly and extracted data from a user-supplied executable; a matching command compiles individual C functions and compares their machine code with the original.",
+    "description_zh": "Decomp-no-Me-UN5Decomp 从 PlayStation 2 游戏《Naruto Shippuden: Ultimate Ninja 5》的 MIPS R5900 可执行文件重建 C 函数。Splat 从用户自备的可执行文件生成汇编和提取数据；匹配命令编译单个 C 函数，并将机器码与原版比较。",
+    "evidence_url": "https://github.com/MiguelQueiroz010/Decomp-no-Me-UN5Decomp/blob/3dfe92d453959a8f5a9f9a1986970754a3ff0131/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide the original executable at baserom/SLES_556.05.",
+      "Python 3, GNU Make, Splat, mips-linux-gnu-objcopy, Wibo 1.2.0, objdiff-cli 3.8.0 and Metrowerks MWCCPS2 2.4 are specified for the workflow.",
+      "The reconstruction is a work in progress.",
+      "MIT License."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/MiguelQueiroz010/Decomp-no-Me-UN5Decomp/blob/3dfe92d453959a8f5a9f9a1986970754a3ff0131/Makefile"
+    ]
+  },
+  {
+    "id": "abun64-rage-wars-decomp-case",
+    "name": "Turok: Rage Wars: matching decompilation of five N64 releases",
+    "url": "https://github.com/AbuN64/RageWarsDecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Turok: Rage Wars reconstructs C and assembly source for five Nintendo 64 cartridge releases, including German, European and North American variants. The build splits user-supplied ROMs, compiles the source and checks each rebuilt ROM against its original; the author reports near-complete byte matching.",
+    "description_zh": "Turok: Rage Wars 为德版、欧版和北美版等五个 N64 卡带版本重建 C 与汇编源代码。构建流程拆分用户提供的 ROM、编译源码并逐一核对重建结果；作者报告字节匹配进度已接近完成。",
+    "evidence_url": "https://github.com/AbuN64/RageWarsDecomp/blob/99983c93294c96617c6f6f0d26212cb1a9d948e6/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supply legally acquired big-endian cartridge dumps for the five listed releases.",
+      "Build tools include GNU Make, Python 3, MIPS binutils and splat; the project lists GCC 2.8.1 and abumas as dependencies.",
+      "The author reports incomplete byte matching in the current progress figures.",
+      "CC0 1.0."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/AbuN64/RageWarsDecomp/blob/99983c93294c96617c6f6f0d26212cb1a9d948e6/CONTRIBUTING.md"
+    ]
+  },
+  {
+    "id": "kabus22-linux-case",
+    "name": "Kabus22 Linux: a native reconstruction of the Kabus 22 engine",
+    "url": "https://github.com/sergen213/kabus22-linux",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Kabus22 Linux reimplements the 3D GameStudio A6 and A7 engine behavior used by Kabus 22 in C++20. Its native runtime reads the user's original WDL scripts and assets, with OpenGL and optional Vulkan rendering, and the repository documents executable analysis and asset formats.",
+    "description_zh": "Kabus22 Linux 以 C++20 重建《Kabus 22》所用 3D GameStudio A6 和 A7 的引擎行为。原生运行时读取使用者自备的 WDL 脚本及资源，以 OpenGL 渲染并可选 Vulkan；仓库还记录可执行文件分析与资源格式。",
+    "evidence_url": "https://github.com/sergen213/kabus22-linux/blob/1047948f051ef60e5d51de591bba9f1128697f6d/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide your own Kabus 22 ISO, installer files or installed Windows game folder.",
+      "Run on x86-64 Linux with glibc 2.38 or later and an OpenGL 3.3 capable driver; Vulkan features need additional driver support.",
+      "The project is playable but unfinished.",
+      "The repository's own code is source-available under its LICENSE; redistribution and published modifications require written permission."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sergen213/kabus22-linux/blob/1047948f051ef60e5d51de591bba9f1128697f6d/LICENSE"
+    ]
+  },
+  {
+    "id": "smbjr-case",
+    "name": "Super Monkey Ball Jr.: GBA disassembly",
+    "url": "https://gitlab.com/Fexean/smbjr",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Super Monkey Ball Jr. provides a minimal, buildable disassembly of the GBA game. Its make build uses a user-provided USA ROM named baserom.gba and devkitarm.",
+    "description_zh": "Super Monkey Ball Jr. 项目提供该 GBA 游戏的基础版可构建反汇编。构建时需要用户提供名为 baserom.gba 的美版 ROM，并安装 devkitarm。",
+    "evidence_url": "https://gitlab.com/Fexean/smbjr/-/blob/ab2191af5f40f72e0cea0e2842a01cf9ca929dab/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "devkitarm and a USA Super Monkey Ball Jr. ROM named baserom.gba.",
+      "The disassembly is described as extremely barebones.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "arcanum-ios-port-case",
+    "name": "Arcanum project: porting the game to iOS and macOS",
+    "url": "https://github.com/arcanum-project/game",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "The project ports the game to iOS and macOS with a C++ and Metal renderer that loads tile .art files extracted from the user's original game into an Arcanum Revitalized folder. Its current build renders the crash-sector terrain and a moving player character on physical iOS devices.",
+    "description_zh": "该项目以 C++ 和 Metal 渲染器将游戏移植到 iOS 与 macOS，读取用户从原版游戏提取并放入 Arcanum Revitalized 目录的 .art 地块文件。当前构建可在实体 iOS 设备上渲染坠毁区域地形和可移动的玩家角色。",
+    "evidence_url": "https://github.com/arcanum-project/game/blob/df2a75cc048ed040416274e09b1c7330bd3a0852/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A physical iOS device and Xcode are required for the current build.",
+      "Extract the original game's tile .art files and place them in the documented directory.",
+      "Apache-2.0 licence."
+    ],
+    "class": "game"
+  },
+  {
+    "id": "simple-spk-server-case",
+    "name": "Simple SPK Server: reconstructing a Synology package repository",
+    "url": "https://github.com/jdel/sspks",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Simple SPK Server reconstructs a package repository service for Synology Package Center based on the author's study of Synology and SynoCommunity repositories. Its PHP code serves local SPK files and browser listings, extracting package information and icons from each package.",
+    "description_zh": "Simple SPK Server 依据作者对 Synology 官方及 SynoCommunity 仓库的研究，重建供 Synology Package Center 使用的软件包仓库服务。PHP 程序提供本地 SPK 文件和网页列表，并从软件包提取信息与图标。",
+    "evidence_url": "https://github.com/jdel/sspks/blob/7df51311b0d85b985f9db6c6fa59efb16d74aaec/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "PHP with the Phar extension and allow_url_fopen enabled for the documented installation.",
+      "Place SPK files in the packages directory; bundled dummy packages do not work on Synology devices.",
+      "GPL-3.0 license."
+    ],
+    "class": "website",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jdel/sspks/blob/7df51311b0d85b985f9db6c6fa59efb16d74aaec/INSTALL.md"
+    ]
+  },
+  {
+    "id": "redm2-case",
+    "name": "reDM2: reconstructing Dungeon Master II in C",
+    "url": "https://codeberg.org/CyCl0ne/reDM2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "reDM2 reconstructs the DOS release of Dungeon Master II in C from its shipped SKULL.EXE executable. It separates game code from linked libraries and compares ported functions with the originals using Unicorn emulation, memory-write checks, and captured game-state snapshots. The author reports that some functions remain blocked by missing emulator capabilities.",
+    "description_zh": "reDM2 从发行版 SKULL.EXE 重建 DOS 版《Dungeon Master II》的 C 代码。项目区分游戏代码与链接库，并使用 Unicorn 模拟、内存写入检查和游戏状态快照，将移植函数与原版函数进行比较。作者报告称，部分函数仍受模拟器能力限制。",
+    "evidence_url": "https://codeberg.org/CyCl0ne/reDM2/src/commit/88c163dda7e015259e25830c745af4c3ed018ed6/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The source target is the shipped DOS SKULL.EXE executable.",
+      "The differential tests use Unicorn and native Open Watcom builds.",
+      "Some functions remain blocked by missing emulation support for segment registers, port I/O, or interrupts.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "rpi-open-firmware-case",
+    "name": "rpi-open-firmware: a Raspberry Pi VPU boot firmware replacement",
+    "url": "https://github.com/librerpi/rpi-open-firmware",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "rpi-open-firmware implements a replacement for the Raspberry Pi's stock VPU bootcode.bin and documents the device's boot stages. Its VC4 code initializes the clock, UART, SDRAM and ARM core; an ARM chainloader then reads the FAT boot partition and loads a Linux kernel.",
+    "description_zh": "rpi-open-firmware 实现 Raspberry Pi 原厂 VPU bootcode.bin 的替代固件，并记录设备的启动阶段。VC4 代码初始化时钟、UART、SDRAM 和 ARM 核心，随后由 ARM 链式加载器读取 FAT 启动分区并加载 Linux 内核。",
+    "evidence_url": "https://github.com/librerpi/rpi-open-firmware/blob/2725d9447c4305731f8d78f5effcbd70abff8d58/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Build with the VC4 toolchain and arm-none-eabi toolchain.",
+      "A UART cable is highly recommended.",
+      "Linux boot support is minimal; USB, DMA, Ethernet, video and power management support remain unfinished.",
+      "Project code is GPLv2+; Broadcom headers are BSD 3-Clause, with other included projects under compatible licenses."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/librerpi/rpi-open-firmware/blob/2725d9447c4305731f8d78f5effcbd70abff8d58/docs/boot-flow-and-secure-boot.md"
+    ]
+  },
+  {
+    "id": "banjo-kazooie-rebuild-case",
+    "name": "Banjo-Kazooie: rebuilding the game from base ROMs",
+    "url": "https://gitlab.com/banjo.decomp/banjo-kazooie",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Banjo-Kazooie provides a workflow to extract from a user-supplied base ROM and build the game in full or by module. It lists US, Japanese and PAL ROM variants; the author reports 100.0000% progress.",
+    "description_zh": "Banjo-Kazooie 提供从用户自备的原始 ROM 提取内容并构建游戏的流程，可构建完整游戏或指定模块。项目列出美版、日版和 PAL 版 ROM；作者报告进度为 100.0000%。",
+    "evidence_url": "https://gitlab.com/banjo.decomp/banjo-kazooie/-/blob/7b6a4c44a1a5bf80977adcf48d822ea9d6bdf899/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide a Banjo-Kazooie base ROM named baserom.<version>.z64.",
+      "Build on Ubuntu 18.04 or newer on x86_64, or use Docker on Linux or macOS.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "esp-dc1-power-strip-case",
+    "name": "ESP DC1: investigating and replacing Phicomm DC1 firmware",
+    "url": "https://github.com/qlwz/esp_dc1",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "ESP DC1 provides replacement firmware for the Phicomm DC1 power strip after its original app service became unavailable. The project credits original-firmware extraction, PCB photographs and U7 logic analysis; its firmware provides web setup, MQTT control, electrical measurements and overload protection.",
+    "description_zh": "ESP DC1 在原应用服务无法使用后，为斐讯 DC1 排插提供替代固件。项目致谢中提到原固件提取、电路板照片和 U7 逻辑分析；固件提供网页配网、MQTT 控制、电参数测量和过载保护。",
+    "evidence_url": "https://github.com/qlwz/esp_dc1/blob/eefd75a06523c791d9d881ff31f31ee4a93ac5ec/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A Phicomm DC1 power strip and a TTL flashing connection are needed for installation.",
+      "Visual Studio Code and PlatformIO are the documented build environment.",
+      "Voltage, current and power readings carry no stated accuracy.",
+      "GPL-2.0."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

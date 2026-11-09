@@ -2,19 +2,20 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-09T10:25:07+00:00",
-    "entry_count": 1077,
-    "class_entry_count": 1117,
+    "generated_at": "2026-11-09T11:39:45+00:00",
+    "entry_count": 1085,
+    "class_entry_count": 1126,
     "class_counts": {
-      "image": 1039,
+      "image": 1047,
       "video": 38
     },
-    "missing_count": 40,
+    "missing_count": 41,
     "missing": [
       "aotopsy",
       "appshark",
       "bellpad-animal-crossing-port-case",
       "bumpys-arcade-fantasy-decomp-case",
+      "commander-genius-case",
       "corefw-launchpad-case",
       "de4js",
       "dearmoredcorev-case",
@@ -216,6 +217,15 @@
       "source_url": "https://github.com/alondero/aerogauge-recomp",
       "revision": "9d9cba7c0b7ac3136cb660a4d3096677c30f089a",
       "checked_at": "2026-11-09T06:56:34+00:00"
+    },
+    {
+      "id": "ag-psd-case",
+      "image_url": "https://raw.githubusercontent.com/Agamnentzar/ag-psd/master/files/update-text-layers.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Agamnentzar/ag-psd",
+      "revision": "a74425db6584cc07b1cc135e370916cb4eccfb32",
+      "checked_at": "2026-11-09T11:39:42+00:00"
     },
     {
       "id": "aiowapy-whatsapp-protocol-case",
@@ -1118,6 +1128,15 @@
       "checked_at": "2026-11-09T06:56:34+00:00"
     },
     {
+      "id": "castlevania-curse-of-darkness-pc-case",
+      "image_url": "https://raw.githubusercontent.com/fasipe/Castlevania-COD-QOL/db8643a02db3377978b8c882e0eccdfd69b5ab39/docs/screenshots/comparison.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/fasipe/Castlevania-COD-QOL",
+      "revision": "db8643a02db3377978b8c882e0eccdfd69b5ab39",
+      "checked_at": "2026-11-09T11:39:42+00:00"
+    },
+    {
       "id": "castty-mionix-castor-case",
       "image_url": "https://raw.githubusercontent.com/fawaz7/castty/ac124364ab8deb0293a630cf1c4befc93aa20bad/docs/screenshots/lighting.png",
       "kind": "image",
@@ -1865,6 +1884,15 @@
       "checked_at": "2026-11-09T01:38:46+00:00"
     },
     {
+      "id": "disruptor-recomp-recompteam-case",
+      "image_url": "https://raw.githubusercontent.com/RecompTeam/DisruptorRecomp/eceece5e643bc3a3ba56e8fc31bed5b0767c8daf/docs/images/hero.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/RecompTeam/DisruptorRecomp",
+      "revision": "eceece5e643bc3a3ba56e8fc31bed5b0767c8daf",
+      "checked_at": "2026-11-09T11:39:42+00:00"
+    },
+    {
       "id": "diztinguish",
       "image_url": "https://i.imgur.com/Tb2H484.gif",
       "kind": "image",
@@ -2304,6 +2332,15 @@
       "source_url": "https://github.com/ZakyPew/epoch-equinox",
       "revision": "d8d3cafede0db8b71106dc11ea97dc4186acda7e",
       "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
+      "id": "esp-dc1-power-strip-case",
+      "image_url": "https://github.com/qlwz/esp_dc1/blob/master/file/images/tab1.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/qlwz/esp_dc1",
+      "revision": "eefd75a06523c791d9d881ff31f31ee4a93ac5ec",
+      "checked_at": "2026-11-09T11:39:42+00:00"
     },
     {
       "id": "esp32-bit-pirate",
@@ -4493,6 +4530,15 @@
       "checked_at": "2026-11-09T01:38:42+00:00"
     },
     {
+      "id": "metroid-dread-recomp-pc-case",
+      "image_url": "https://raw.githubusercontent.com/yozander2009-stack/Metroid-Dread-Recomp/main/docs/images/play-screen.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/yozander2009-stack/Metroid-Dread-Recomp",
+      "revision": "main",
+      "checked_at": "2026-11-09T11:39:42+00:00"
+    },
+    {
       "id": "metroid-prime-hunters-recomp-case",
       "image_url": "https://raw.githubusercontent.com/mstan/MetroidPrimeHuntersRecomp/61ac84aac262645e446ea28e3d4db3567e2dba8c/docs/media/prime-hunters-video-preview.jpg",
       "kind": "image",
@@ -5915,6 +5961,14 @@
       "checked_at": "2026-11-09T05:33:38+00:00"
     },
     {
+      "id": "perception-pnrf-case",
+      "image_url": "https://codeberg.org/assets/img/avatar_default.png",
+      "kind": "image",
+      "basis": "page-image",
+      "source_url": "https://codeberg.org/Apollo3zehn/perception-pnrf",
+      "checked_at": "2026-11-09T11:39:42+00:00"
+    },
+    {
       "id": "perfect-dark-xbla-recomp",
       "image_url": "https://raw.githubusercontent.com/CaiusCodes/Perfect-Dark-XBLA-PC-Recomp/ee7961a93bbbf03eb7c9ba4c52c2751dc85f7f03/docs/screenshots/gameplay-rooftop.webp",
       "kind": "image",
@@ -6309,6 +6363,15 @@
       "source_url": "https://github.com/sp00nznet/ps3recomp",
       "revision": "de4f090328ea08bef6b2f15caec0b85e343a7ece",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "ps4-waker-case",
+      "image_url": "https://nodei.co/npm/ps4-waker.png?mini=true",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/dhleong/ps4-waker",
+      "revision": "8c6a96f6aab58f436e0e270a3fd27a846cb138b7",
+      "checked_at": "2026-11-09T11:39:42+00:00"
     },
     {
       "id": "ps5-mario-galaxy",
@@ -8874,6 +8937,15 @@
       "source_url": "https://github.com/UE4SS-RE/RE-UE4SS",
       "revision": "4fb9b615a24c724041ef23e2c4073f2610c4c6d0",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "ulaunch-switch-home-menu-case",
+      "image_url": "https://raw.githubusercontent.com/XorTroll/uLaunch/6da94f9164f5fa61380010008270457f95ff4b04/demos/uLaunch.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/XorTroll/uLaunch",
+      "revision": "6da94f9164f5fa61380010008270457f95ff4b04",
+      "checked_at": "2026-11-09T11:39:42+00:00"
     },
     {
       "id": "ultima-v-redux-case",

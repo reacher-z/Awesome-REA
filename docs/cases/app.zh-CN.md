@@ -6,8 +6,9 @@
 
 [English](app.md)
 
-**228 个案例**
+**232 个案例**
 
+- [**ag-psd：重建 PSD 文档读写功能**](https://github.com/Agamnentzar/ag-psd) - ag-psd 结合格式资料与反复试验，用 JavaScript 和 TypeScript 实现 Photoshop PSD 文档的读写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ag-psd-case/)</sub>
 - [**AionLink Open：研究 GAC AION i60 的 ICCOA CarLink 连接**](https://github.com/codepdbh/aionlink-open) - AionLink Open 通过静态分析 Android APK 并编写独立客户端，研究 GAC AION i60 的 ICCOA CarLink 连接。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aionlink-open-case/)</sub>
 - [**AirTray：重建 Elgin Air 云端控制客户端**](https://github.com/JoseAlexandreMeloPacheco/airtray) - AirTray 根据 Elgin Air 应用的行为重建 Windows 系统托盘客户端，用于控制兼容空调。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/airtray-case/)</sub>
 - [**AvatarEditorRecomp：Kinect 预览版 Avatar Editor 的 PC 移植**](https://github.com/panedivitasei/AvatarEditorRecomp) - AvatarEditorRecomp 借助 ReXGlue，将 2010 年秋季 Kinect 预览版 Xbox 360 Avatar Editor 静态重编译为 PC 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/avatar-editor-recomp-case/)</sub>
@@ -35,6 +36,7 @@
 - [**LSDisJ：反汇编 Little Sound DJ**](https://github.com/rbong/LSDisJ) - LSDisJ 使用用户提供的 Little Sound DJ Game Boy ROM，反汇编 9.2.L 和 8.5.1 两个版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lsdisj-case/)</sub>
 - [**lsdj-decomp：Little Sound Dj 9.4.2 逐字节匹配重建**](https://github.com/tetrisgm/lsdj-decomp) - lsdj-decomp 利用已记录的符号映射表、ROM 分析工具和 C 语言译写代码重建 Little Sound Dj 9.4.2；C 函数会替换本地生成的 RGBDS 汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lsdj-9-4-2-decomp-case/)</sub>
 - [**lumalou：重建 Fisher-Price Lumalou 的 BLE 控制协议**](https://github.com/stramanu/lumalou) - lumalou 在原配套应用停用后重建 Fisher-Price Lumalou 睡眠设备的本地蓝牙 LE 控制。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/lumalou-case/)</sub>
+- [**metars\_cgi：重建 NCAR Java METAR 查看器数据服务器**](https://codeberg.org/PurpleJillybeans/metars_cgi) - metars\_cgi 重建 NCAR Java METAR 查看器使用的数据服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/metars-cgi-case/)</sub>
 - [**Mi Fitness Sync：从 Android 应用重建运动记录获取流程**](https://github.com/kevinkwee/Mi-Fitness-Sync) - Mi Fitness Sync 根据 Mi Fitness Android 应用重建运动记录获取流程，并提供用于导出活动及上传 Strava 的 Python 命令行工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mi-fitness-sync-case/)</sub>
 - [**MiPods：在 macOS 上还原小米耳机控制**](https://github.com/JackWPP/MiPods) - MiPods 利用逆向得到的 BLE GATT 协议，在 macOS 菜单栏应用中实现小米耳机控制。 <sub>案例 · 混合工具流程 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/mipods-case/)</sub>
 - [**Moonglow Toolset：重建 Aurora 模块编辑器**](https://github.com/jadzziaa/moonglow-toolset) - Moonglow Toolset 使用 Rust、egui 和 wgpu 重建《无冬之夜：增强版》的 Aurora 模块编辑器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/moonglow-toolset-case/)</sub>
@@ -49,6 +51,7 @@
 - [**OpenPDF Studio：根据 WPS PDF 研究重建编辑交互**](https://github.com/aotefan/openpdf-studio) - OpenPDF Studio 根据借助 REA 对 WPS Office 12.1.28496 PDF 界面的观察，开发 macOS 本地 PDF 编辑器。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/openpdf-studio-case/)</sub>
 - [**Outlook 拖放：解析 RenPrivateMessages 剪贴板数据**](https://github.com/yasoonOfficial/outlook-dndprotocol) - 这项 Outlook 拖放研究解析 RenPrivateMessages OLE 剪贴板字节流，以取得原始邮件的标识信息。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/outlook-dnd-protocol-case/)</sub>
 - [**PC-BASIC：GW-BASIC 家族解释器**](https://github.com/robhagemans/pcbasic) - 面向 GW-BASIC、BASICA、PCjr Cartridge BASIC 和 Tandy 1000 GWBASIC 的跨平台解释器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pcbasic-interpreter-case/)</sub>
+- [**perception-pnrf：PNRF 测量文件格式重建**](https://codeberg.org/Apollo3zehn/perception-pnrf) - perception-pnrf 记录了 HBK Perception 所用 PNRF 测量文件的逆向格式规范，并提供 Python 和 C# 解析器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/perception-pnrf-case/)</sub>
 - [**PictoChat：DSi 系统应用的匹配反编译**](https://github.com/tangOS-decomps/pictochat-decomp) - 项目将 DSi 独立系统应用 PictoChat 的 ARM 组件重建为可匹配的 C 源码。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/pictochat-dsi-decomp-case/)</sub>
 - [**ReactOS：与 Windows NT 兼容的操作系统**](https://github.com/reactos/reactos) - 构建一个开源操作系统，目标是运行为 Windows NT 家族编写的应用程序和驱动程序。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/reactos-nt-compatible-case/)</sub>
 - [**Reengineering Project for ibisPaint：研究画作与画笔格式**](https://github.com/HatLink/reeng-ibispaint) - Reengineering Project for ibisPaint 研究应用的 IPV 画作、IPCF 配置及 IPBZ 画笔二维码格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reeng-ibispaint-case/)</sub>
@@ -74,6 +77,7 @@
 - [**WazeTripper：通过 BLE 重建 Tripper Pod 导航显示**](https://github.com/jnsdias/wazetripper) - WazeTripper 修改 Waze Android APK，通过重建的 BLE 接口向 Royal Enfield Tripper Pod 发送导航信息。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/wazetripper-case/)</sub>
 - [**Wii Motion Plus Demo Video Player：Wii 程序反编译**](https://github.com/RootCubed/mpls_movie-decomp) - Wii Motion Plus Demo Video Player 重建多款 Wii 游戏中的视频播放程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wii-motion-plus-demo-video-player-case/)</sub>
 - [**wii-news-channel：Wii 新闻频道的匹配反编译**](https://github.com/hotlandsoftware/wii-news-channel) - wii-news-channel 将美国版 v7 Wii 新闻频道重建为 C/C++ 源码，目标是生成字节一致的 main.dol。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wii-news-channel-case/)</sub>
+- [**Xbox Demos Decompilation：Xbox 演示程序启动菜单的功能性重建**](https://codeberg.org/KeybadeBlox/XDemos-Decomp) - Xbox Demos Decompilation 依据北美版《BLiNX: The Time Sweeper》光盘中的 Xbox Demos，重建用于启动视频和试玩内容的 Xbox 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xbox-demos-decompilation-case/)</sub>
 - [**xtractedott：重构 OTT 压缩器的 DSP 核心**](https://github.com/jwfeniello/xtractedott) - xtractedott 以 C 语言重构 Xfer Records 的 OTT VST 多频段压缩器，代码涉及三频段分频滤波、向上与向下压缩、包络跟踪及参数映射。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xtractedott-case/)</sub>
 - [**XY Remote：重建 XinYi 功放的 BLE 控制**](https://github.com/slopmaxxer/xy-remote) - XY Remote 以 iOS 应用和 Swift 库重建 XinYi Sinilink 功放板的 BLE 控制。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/xy-remote-sinilink-ble-case/)</sub>
 - [**Yi M1：还原无线相机控制与实时取景**](https://github.com/bullbin/xiaoyi_m1_re_liveview) - Yi M1 无线协议研究还原相机的 BLE 配对、Wi-Fi 切换、HTTP 遥控命令和 UDP 实时取景帧格式。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/xiaoyi-m1-liveview-case/)</sub>
