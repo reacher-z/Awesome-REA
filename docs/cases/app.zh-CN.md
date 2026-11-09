@@ -6,7 +6,7 @@
 
 [English](app.md)
 
-**212 个案例**
+**214 个案例**
 
 - [**AionLink Open：研究 GAC AION i60 的 ICCOA CarLink 连接**](https://github.com/codepdbh/aionlink-open) - AionLink Open 通过静态分析 Android APK 并编写独立客户端，研究 GAC AION i60 的 ICCOA CarLink 连接。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aionlink-open-case/)</sub>
 - [**AirTray：重建 Elgin Air 云端控制客户端**](https://github.com/JoseAlexandreMeloPacheco/airtray) - AirTray 根据 Elgin Air 应用的行为重建 Windows 系统托盘客户端，用于控制兼容空调。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/airtray-case/)</sub>
@@ -30,6 +30,7 @@
 - [**lumalou：重建 Fisher-Price Lumalou 的 BLE 控制协议**](https://github.com/stramanu/lumalou) - lumalou 在原配套应用停用后重建 Fisher-Price Lumalou 睡眠设备的本地蓝牙 LE 控制。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/lumalou-case/)</sub>
 - [**Mi Fitness Sync：从 Android 应用重建运动记录获取流程**](https://github.com/kevinkwee/Mi-Fitness-Sync) - Mi Fitness Sync 根据 Mi Fitness Android 应用重建运动记录获取流程，并提供用于导出活动及上传 Strava 的 Python 命令行工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mi-fitness-sync-case/)</sub>
 - [**MiPods：在 macOS 上还原小米耳机控制**](https://github.com/JackWPP/MiPods) - MiPods 利用逆向得到的 BLE GATT 协议，在 macOS 菜单栏应用中实现小米耳机控制。 <sub>案例 · 混合工具流程 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/mipods-case/)</sub>
+- [**Moonlight Windows：重建适用于 Windows 的 NVIDIA GameStream 客户端**](https://github.com/moonlight-stream/moonlight-windows) - Moonlight Windows 在逆向研究 NVIDIA Shield 串流软件后，为 Windows 和 Windows Phone 8.1 实现 GameStream 客户端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/moonlight-windows-gamestream-case/)</sub>
 - [**Music Tag Desktop：将 Android 音乐标签应用重建到 Windows**](https://github.com/QingZhu233/music-tag-desktop) - Music Tag Desktop 将 Android 版 Music Tag 1.2.5.2 的功能重建为 Windows 音乐标签编辑器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/music-tag-desktop-case/)</sub>
 - [**mystery-sdl：将 Mystery 屏保移植到 SDL2**](https://github.com/viny182/mystery-sdl) - mystery-sdl 将 Microsoft Plus! 的 Mystery 屏保移植到 Linux 上的 SDL2。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/mystery-sdl-case/)</sub>
 - [**Nona：还原 Redmi Note 10 Pro Max 相机的重马赛克触发条件**](https://github.com/AbhiramJayasankar/redmi-note-10-pro-max-108mp-camera) - Nona 研究 Redmi Note 10 Pro Max 相机的 108 MP 重马赛克行为，并按观测到的 ISO 与 AecLux 条件实现 Camera2 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nona-camera-remosaic-case/)</sub>
@@ -44,6 +45,7 @@
 - [**RideLink：重建 TVS SmartXonnect 踏板车通信**](https://github.com/aiyu-ayaan/RideLink) - RideLink 在 Android 配套应用中重建 TVS SmartXonnect 踏板车通信。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ridelink-tvs-smartxonnect-case/)</sub>
 - [**Samsung Cloud Notes：重建云端笔记访问方式**](https://github.com/Clascheurduturfu/samsung-cloud-notes) - Samsung Cloud Notes 通过 Mac、iOS、Android 和命令行客户端重建对 Samsung 私有笔记同步服务的访问。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/samsung-cloud-notes-case/)</sub>
 - [**samsung-notes-format：解码 Samsung Notes 手写笔迹**](https://github.com/bxff/samsung-notes-format) - samsung-notes-format 还原 Samsung Notes .sdocx 文件中的手写几何数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/samsung-notes-format-case/)</sub>
+- [**sas7bdat：重建 SAS7BDAT 数据库文件格式**](https://github.com/BioStatMatt/sas7bdat) - sas7bdat 通过检查样本数据库文件重建 SAS7BDAT 的二进制布局，以支持与 R 互操作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sas7bdat-format-study-case/)</sub>
 - [**Scarlett MixControl：重建第一代 Scarlett 声卡控制功能**](https://github.com/MarecekW/scarlett-mixcontrol-1stgen) - Scarlett MixControl 在现代 macOS 上替代 Focusrite MixControl 1.10.6，控制第一代 Scarlett 声卡。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/scarlett-mixcontrol-1stgen-case/)</sub>
 - [**Serato Tags：重建 Serato DJ 的 GEOB 元数据格式**](https://github.com/Holzhaus/serato-tags) - Serato Tags 记录 Serato DJ 写入音频文件的 GEOB 元数据结构。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/serato-tags-case/)</sub>
 - [**ShatteredGlass：重建 SwiftUI Liquid Glass 视觉效果**](https://github.com/AlexStrNik/ShatteredGlass) - ShatteredGlass 在 macOS 上通过分层的 Core Animation 视图重建 SwiftUI Liquid Glass 外观。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shatteredglass-case/)</sub>

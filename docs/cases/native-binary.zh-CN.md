@@ -6,7 +6,7 @@
 
 [English](native-binary.md)
 
-**46 个案例**
+**51 个案例**
 
 - [**AGS Aging Cartridge：反汇编 7.0 版**](https://github.com/Normmatt/ags_aging) - 该项目以用户提供的 Game Boy Advance ROM 为输入，将 AGS Aging Cartridge 7.0 重建为汇编与 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ags-aging-cartridge-case/)</sub>
 - [**cod4map：重建 Call of Duty 4 的 BSP 编译器**](https://github.com/prd0nja/cod4map) - cod4map 根据 2007 年随 Call of Duty 4 模组工具发布的可执行文件重建 BSP 编译器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cod4map-reconstruction-case/)</sub>
@@ -25,15 +25,20 @@
 - [**Konami's Game Master：MSX 工具卡带的匹配反汇编**](https://github.com/ricbit/game-master) - 该项目将日版 RC-735 MSX 工具卡带 Konami's Game Master 重建为带注释的汇编源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/konamis-game-master-disassembly-case/)</sub>
 - [**L&amp;H TruVoice：用可移植 C 重建 tv\_enua.dll**](https://github.com/KamiKitsune420/lh-truvoice-decomp) - 把 Lernout &amp; Hauspie TruVoice 6.00 build 10（SAPI 4 美式英语引擎 tv\_enua.dll）重建为 C99。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lh-truvoice-decomp-case/)</sub>
 - [**L1J-Encode-CLI：还原 Lineage 1 的 ServerData 编解码算法**](https://github.com/Lan-0v0/L1J-Encode-CLI) - L1J-Encode-CLI 将 Lineage 1 登录器的 ServerData 编码还原为 Python 编解码器，可处理 IP、端口和功能位。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/l1j-encode-cli-case/)</sub>
+- [**libgpu2：PlayStation 2 图形合成器模型重建**](https://github.com/aap/libgpu2) - libgpu2 将索尼 1998 年 PlayStation 2 图形合成器软件模型的 23 个 ELF32/i386 目标文件重建为可构建的 C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/libgpu2-reconstruction-case/)</sub>
 - [**libmd12：E-mu SP-1200 与 SP-12 音频通路的 C 模型**](https://github.com/Mudb0y/libmd12) - E-mu SP-1200 与 SP-12 采样器音频通路的 C99 库：音高回放、滤波器和动态滤波器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/libmd12-sp1200-case/)</sub>
 - [**Microsoft Anna：TTS20 引擎的逐位一致 C 重建**](https://github.com/KamiKitsune420/ms-anna-decomp) - 把 Microsoft Anna（Windows Vista 与 Windows 7 的 TTS20 语音）重建为读取原始语音数据文件的 C99。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ms-anna-tts-case/)</sub>
 - [**Microsoft Sam：SAPI 5 引擎的可移植 C 重建**](https://github.com/KamiKitsune420/ms-sam-mike-mary-decomp) - 把 Windows XP 的 SAPI 5 引擎 spttseng.dll（Microsoft Sam、Mike 和 Mary）重建为读取原始语音文件的 C99。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ms-sam-mike-mary-case/)</sub>
+- [**MWCC：重建 GameCube CodeWarrior 编译器**](https://github.com/rayanht/mwcc) - MWCC 为六个 GameCube 版本重建 Windows x86 编译器 mwcceppc.exe。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mwcc-decomp-case/)</sub>
 - [**ndec-re：还原一款 MS-DOS 加密程序**](https://github.com/bereal/ndec-re) - ndec-re 借助调试器和汇编分析研究一款旧式 MS-DOS COM 加密程序，并用 Go 实现其加密行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ndec-re-case/)</sub>
+- [**NW Eft：反编译 Wii U NintendoWare Eft 库**](https://github.com/open-ead/NW4F-Eft) - NW Eft 反编译 Wii U 游戏《New Super Mario Bros. U》中的 NintendoWare for Cafe Eft 库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nw4f-eft-decomp-case/)</sub>
 - [**OneCore TTS：David、Zira 与 Mark 的 C 重建**](https://github.com/KamiKitsune420/ms-david-zira-decomp) - 把 Windows OneCore 文本转语音引擎 MSTTSEngine\_OneCore.dll 10.3（David、Zira 和 Mark）重建为读取原始语音文件的 C99。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/onecore-david-zira-mark-case/)</sub>
+- [**open\_rvl：反编译 Wii Sports 使用的 Wii SDK**](https://github.com/kiwi515/open_rvl) - open\_rvl 将 Wii Sports 所用版本的 Wii SDK 重建为 C 源码，供游戏反编译项目复用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-rvl-sdk-case/)</sub>
 - [**openbst：BeSTspeech 的 C 语言重实现**](https://github.com/Mudb0y/openbst) - 把 Berkeley Speech Technologies 的共振峰合成器 BeSTspeech（HumanWare Keynote GOLD 所带的引擎）从零重实现为 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openbst-bestspeech-case/)</sub>
 - [**OpenTV：用可移植 C 重建 Centigram TruVoice**](https://github.com/RetroBunn/tv-decomp) - 把 Centigram 的 TruVoice（1997 年文本转语音引擎）重建为可移植 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentv-truvoice-case/)</sub>
 - [**Prose 2000 Reborn：语音板固件的 C 反编译**](https://github.com/rommix0/prose2000_reborn) - 把 Speech Plus 与 Telesensory Systems 的 Prose 2000 文本转语音固件（8086 主机加 NEC µPD7720 DSP）反编译为 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/prose2000-reborn-case/)</sub>
 - [**re-sysinternals-suite：重建 Sysinternals strings.exe**](https://github.com/cristeigabriela/re-sysinternals-suite) - re-sysinternals-suite 记录了对 Sysinternals strings.exe 可执行程序的教学性重建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/re-sysinternals-strings-case/)</sub>
+- [**re\_nfpii：重建 Wii U 的 amiibo 库**](https://github.com/GaryOderNichts/re_nfpii) - re\_nfpii 为 amiibo 模拟和研究重建 Wii U 的 nn\_nfp.rpl 库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/re-nfpii-wii-u-library-case/)</sub>
 - [**reAL：对照 Windows 与 ALchemy 检查的 dsound.dll**](https://github.com/PlayNeth/reAL) - 可替换的 dsound.dll，重建 Creative ALchemy 与 DirectSound 行为，包括 README 点名的 DirectMusic 部分。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/real-dsound-case/)</sub>
 - [**RFL：反编译 Wii 的 Mii 库**](https://github.com/koopthekoopa/RFL) - RFL 从原版游戏镜像重建 Wii 的 Mii 处理库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rfl-wii-mii-library-case/)</sub>
 - [**SNES Station：重建 PS2 模拟器可执行文件**](https://github.com/ReyFxck/SNESstation-Decomp) - SNES Station Decompilation 通过源码恢复、历史工具链匹配与映像比较，重建 PS2 版 SNES Station v0.23 WIP 可执行文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/snes-station-decomp-case/)</sub>
