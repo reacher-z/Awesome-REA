@@ -65,7 +65,9 @@ class ReadmeContentsTest(unittest.TestCase):
             rendered = render_badges([resource()], [paper()], language)
             self.assertLessEqual(rendered.count('![') , 6)
             self.assertNotIn('huggingface', rendered)
-            self.assertIn('last-commit/reacher-z/Awesome-REA/main?path=data%2Fdiscoveries', rendered)
+            self.assertIn('https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Freacher-z%2F'
+                          'Awesome-REA%2Fstatus%2Fscan-status.json&label=', rendered)
+            self.assertNotIn('last-commit', rendered)
 
     def test_badges_have_no_ci_badge_and_the_footer_keeps_the_build_link(self):
         workflow = 'https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml'
