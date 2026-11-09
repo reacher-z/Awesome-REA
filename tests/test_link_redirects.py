@@ -108,6 +108,18 @@ class RedirectTests(unittest.TestCase):
         self.assertEqual((result['status'], result['http_status']), ('dead', 404))
         self.assertEqual(len(requested), 4)
 
+    def test_crate_pages_are_checked_through_the_crates_io_api(self):
+        self.assertEqual(check_links.request_url('https://crates.io/crates/minusone/0.4.1'),
+                         'https://crates.io/api/v1/crates/minusone/0.4.1')
+        self.assertEqual(check_links.request_url('https://crates.io/crates/boxcars#readme'),
+                         'https://crates.io/api/v1/crates/boxcars')
+        # Other crates.io pages are requested as written.
+        self.assertEqual(check_links.request_url('https://crates.io/users/someone'), 'https://crates.io/users/someone')
+        result, requested = self.check('https://crates.io/crates/minusone/0.4.1', {
+            'https://crates.io/api/v1/crates/minusone/0.4.1': (200, None)})
+        self.assertEqual((result['status'], result['checked_url']), ('ok', 'https://crates.io/api/v1/crates/minusone/0.4.1'))
+        self.assertEqual(requested, ['https://crates.io/api/v1/crates/minusone/0.4.1'])
+
     def test_an_invalid_starting_url_is_never_requested(self):
         result, requested = self.check('http://example.org/', {})
         self.assertEqual((result['status'], requested), ('inconclusive', []))
