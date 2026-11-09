@@ -2,14 +2,14 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-09T15:42:23+00:00",
+    "generated_at": "2026-11-09T19:09:07+00:00",
     "entry_count": 1100,
-    "class_entry_count": 1141,
+    "class_entry_count": 1142,
     "class_counts": {
       "image": 1062,
       "video": 38
     },
-    "missing_count": 41,
+    "missing_count": 42,
     "missing": [
       "aotopsy",
       "appshark",
@@ -46,6 +46,7 @@
       "severed-chains",
       "sightline-goldeneye-port-case",
       "swos-port-case",
+      "tower-toppler-case",
       "uncharted-collection-pc-port-case",
       "urban-reign-pc-port-case",
       "wabt",

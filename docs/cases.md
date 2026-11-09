@@ -4,13 +4,13 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**3963 case studies**, grouped by section.
+**3982 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (76)
-- [Game](#game) (2774)
-- [App](#app) (232)
+- [Game](#game) (2792)
+- [App](#app) (233)
 - [Native Binary](#native-binary) (64)
 - [Firmware and Hardware](#firmware) (172)
 - [Protocol](#protocol) (645)
@@ -21,7 +21,7 @@
 - [Case studies](cases/website.md)
 
 <a id="game"></a>
-## Game (2,774)
+## Game (2,792)
 
 - [Case studies, part 1](cases/game-1.md)
 - [Case studies, part 2](cases/game-2.md)
@@ -30,20 +30,20 @@
 - [Case studies, part 5](cases/game-5.md)
 
 <a id="game-matching-decompilation"></a>
-- [Matching decompilations and disassemblies](cases/game-1.md#game-matching-decompilation) (570)
+- [Matching decompilations and disassemblies](cases/game-1.md#game-matching-decompilation) (574)
 <a id="game-decompilation"></a>
-- [Non-matching decompilations](cases/game-1.md#game-decompilation) (320)
+- [Non-matching decompilations](cases/game-1.md#game-decompilation) (323)
 <a id="game-static-recompilation"></a>
 - [Static recompilations](cases/game-2.md#game-static-recompilation) (761)
 <a id="game-port"></a>
 - [Ports of reconstructed source](cases/game-3.md#game-port) (356)
 <a id="game-engine-reimplementation"></a>
-- [Engine reimplementations](cases/game-4.md#game-engine-reimplementation) (456)
+- [Engine reimplementations](cases/game-4.md#game-engine-reimplementation) (463)
 <a id="game-other"></a>
-- [Other methods and analyses](cases/game-4.md#game-other) (311)
+- [Other methods and analyses](cases/game-4.md#game-other) (315)
 
 <a id="app"></a>
-## App (232)
+## App (233)
 
 - [Case studies](cases/app.md)
 

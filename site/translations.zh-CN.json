@@ -43291,5 +43291,167 @@
       "项目标注为开发中。",
       "仓库中没有许可证文件。"
     ]
+  },
+  "freenukum-case": {
+    "name": "Freenukum：Duke Nukem 1 游戏复刻",
+    "requirements": [
+      "从源码构建需要 Rust 编译器、SDL2 和 SDL2_ttf 开发库。",
+      "需要 Duke Nukem 1 原版图像数据；可以使用 freenukum-data-tool 安装。",
+      "敌人和部分关卡物件尚未完成。",
+      "README 的 SPDX 标头声明采用 AGPL-3.0-or-later 许可证。"
+    ]
+  },
+  "scd-disasm-case": {
+    "name": "SCD Disasm：Sonic CD 反汇编",
+    "requirements": [
+      "需要一份干净的 Sonic CD V0.02 原版，用于提供原始文件并提取二进制片段。",
+      "提取脚本需要 UNIX dd 工具。",
+      "提取脚本仍缺少部分地址，目前无法作为完整流程运行。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "1oom-case": {
+    "name": "1oom：Master of Orion 游戏引擎重建",
+    "requirements": [
+      "需要 Master of Orion 1.3 的 LBX 文件。",
+      "在 Unix 系统上需要 SDL 1.2 或 SDL 2，以及对应版本的 SDL_mixer。",
+      "采用 GPLv2 许可证；见 COPYING。"
+    ]
+  },
+  "openrsc-case": {
+    "name": "OpenRSC：重建 RuneScape Classic 服务器",
+    "requirements": [
+      "列出的运行平台为 Windows XP、macOS 或 Ubuntu 18.04 及更新版本。",
+      "需要 JDK 8 或更新版本；单独运行服务器需 1 GB 内存，同时运行服务器和客户端需 2 GB。",
+      "作者表示仍在持续改进对原游戏的还原。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "locus-poi-db-case": {
+    "name": "locus-poi-db：LoMaps POI 数据库格式",
+    "requirements": [
+      "项目页面未注明许可证。"
+    ]
+  },
+  "carrier-command-re-case": {
+    "name": "Carrier Command Reverse Engineering：重建七个可执行文件版本",
+    "requirements": [
+      "需要 Carrier Command 原版游戏文件。",
+      "所列工具包括 NASM 3.01 及更新版本、Python 3、Ghidra 11.x 及更新版本、unEXEPACK，以及支持 M68K 的 Capstone 5.x。",
+      "DOS Demo 和 Steam v1.3 的源码需从原版二进制文件生成，仓库未提交这些版本的源码。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "pso-gc-case": {
+    "name": "pso-gc：GameCube 版 Phantasy Star Online Episode I & II 反编译工程",
+    "requirements": [
+      "范围为 GameCube 版 Phantasy Star Online Episode I & II。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "openguimo-case": {
+    "name": "OpenGuimo：用 Godot 重现 GUIMO 的玩法",
+    "requirements": [
+      "从源码运行需要 Godot 4.7 标准版。",
+      "需要自行提供 GUIMO 2.2 及其 guimo.jbc 文件。",
+      "分数系统和结局尚未完成。",
+      "OpenGuimo 代码采用 EUPL 1.2 许可证。"
+    ]
+  },
+  "opene2140-cpp-case": {
+    "name": "OpenE2140：用 C++ 重现 Earth 2140 的玩法",
+    "requirements": [
+      "需要将 Earth 2140 原版 MIX.WD、PIRO.WD 和 LEVEL.WD 文件或相应解包目录放入 assets 文件夹。",
+      "构建需要 Meson、支持 C++17 的编译器、SDL 2.0、GLEW 和 glm。",
+      "玩法仍在开发中；移动单位和命令处理尚未完成。",
+      "项目页面未声明许可证。"
+    ]
+  },
+  "mw-tools-mythwar-case": {
+    "name": "mw-tools：重建 MythWar I 服务器",
+    "requirements": [
+      "需要 MythWar I 客户端；开发时使用的版本为 1.0.48.35。",
+      "构建和运行服务器需要 Node 16 与 npm。",
+      "服务器目前不保存数据、不支持多人游戏，且大部分功能尚不能使用。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "tower-toppler-case": {
+    "name": "Tower Toppler：重做 Nebulus",
+    "requirements": [
+      "构建游戏需要 SDL2、SDL2_mixer 和 zlib。",
+      "重建数据文件还需要 libpng、POV-Ray、GIMP、Blender 和 ImageMagick。",
+      "作者表示仍可增加音效，也可能存在程序错误。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "smb-meta-disassembly-case": {
+    "name": "Super Mario Bros. Meta-Disassembly：六种 8 位游戏引擎版本",
+    "requirements": [
+      "构建环境包括类 UNIX 或 Plan 9 系统，以及 cc65 6502 开发工具集。",
+      "提取素材需要 iNES 或 FDS 格式的游戏镜像。",
+      "作者列出仍需清理代码并检查重定位能力。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "gfxfilemanager-case": {
+    "name": "GFXFileManager：Silkroad Online 文件管理器替代实现",
+    "requirements": [
+      "使用 Visual Studio 2010 编译；其他版本可能无法正常工作。",
+      "将编译后的 GFXFileManager.dll 放入 Silkroad Online 文件夹。",
+      "实现尚不完整，测试也很有限。",
+      "项目页面未注明许可证。"
+    ]
+  },
+  "zelda-ii-fds-disassembly-case": {
+    "name": "Zelda II：Famicom Disk System 版本反汇编",
+    "requirements": [
+      "构建需要类 UNIX 平台和 cc65 6502 开发套件。",
+      "素材提取需要初版游戏的带文件头 FDS 映像。",
+      "控制流注释可能有误；重建映像的文件名和时间戳可能与原版不同。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "domino-chain-case": {
+    "name": "Domino-Chain：重现 Pushover",
+    "requirements": [
+      "加载 Pushover 原版关卡需要持有原版游戏。",
+      "作者表示游戏仍有改进空间。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "smb3-famicom-disassembly-case": {
+    "name": "Super Mario Bros. 3：Famicom 版本反汇编",
+    "requirements": [
+      "提取素材需要初版游戏的带文件头 iNES ROM。",
+      "构建需要类 UNIX 平台和 cc65 6502 开发工具集。",
+      "Plan 9 构建支持目前无法使用；当前工作范围为初版 Famicom 游戏。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "dsds-dark-souls-1-map-viewer-case": {
+    "name": "DSDS：黑暗之魂 1 地图查看器与引擎重实现",
+    "requirements": [
+      "需要安装 Steam 版《黑暗之魂 1》Prepare to Die Edition。",
+      "先运行一次 ./run，再调整生成的 user/cfg.json 配置。",
+      "地图物件、MSB 事件与区域，以及地图碰撞功能尚未实现。",
+      "采用 GNU GPL v3 许可证。"
+    ]
+  },
+  "frogger-snes-disassembly-case": {
+    "name": "Frogger：SNES 版反汇编与 ROM 重建",
+    "requirements": [
+      "汇编前需要原版《Frogger》ROM，以提取素材。",
+      "附带的批处理脚本使用 Windows 组件；其他操作系统需要自行编写替代脚本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "doki-doki-super-mario-bros-2-case": {
+    "name": "Doki Doki/Super Mario Bros. 2 Disassembly：Famicom 与 NES 游戏反汇编工程",
+    "requirements": [
+      "需要相应游戏的镜像，以提取所需素材。",
+      "编译最终磁盘镜像需要 bintofdf 和 fdtc；项目内附有这两个工具的版本。",
+      "项目页面未说明许可证。"
+    ]
   }
 }
