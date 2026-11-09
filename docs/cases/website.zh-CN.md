@@ -6,7 +6,7 @@
 
 [English](website.md)
 
-**73 个案例**
+**74 个案例**
 
 - [**canopy-dotmatrix：重建 davidluft.com 的点阵窗景**](https://github.com/isjiajia01/canopy-dotmatrix) - 项目依据 davidluft.com 的公开 JavaScript 文件和场景数据重建首页点阵窗景。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/canopy-dotmatrix-case/)</sub>
 - [**Dih Pinterest：重建 Pinterest 搜索站点的页面与数据流**](https://github.com/Ikyletwar/dih-pinterest-replica) - Dih Pinterest 将 searchpinterest.vercel.app 的搜索界面和数据流重建为静态网页，可选配 Vercel 代理。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dih-pinterest-case/)</sub>
@@ -29,6 +29,7 @@
 - [**tutti-api：重建 tutti.ch 私有 API 客户端**](https://github.com/filippofinke/tutti-api) - tutti-api 用 TypeScript 重建 tutti.ch 私有 API 的客户端访问，涵盖筛选搜索、商品信息、卖家资料、消息和 Auth0 登录。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tutti-api-case/)</sub>
 - [**urja-api：重建 Urja Meter Ops 门户 API**](https://github.com/Sameer-choudhary-git/urja-api) - urja-api 将 Urja Meter Ops 网页门户的访问流程重建为类型化 TypeScript 服务和 REST API。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/urja-api-meter-ops-case/)</sub>
 - [**Weathercloud JS API：梳理私有气象站数据接口**](https://github.com/maxime-mrl/weathercloud-js) - Weathercloud JS API 梳理 Weathercloud 网页应用的私有气象站数据接口，并提供 TypeScript 客户端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/weathercloud-js-case/)</sub>
+- [**zoomer：重建 Zoom 会议智能体通信**](https://github.com/RealKeyboardWarrior/zoomer) - zoomer 以 Go 库重建 Zoom Web SDK 的会议通信，使程序能够作为会议内智能体运行。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/zoomer-case/)</sub>
 - [**Zotion：根据 REA 研究重建 Notion 式工作区**](https://github.com/jocarvalhosantos/Zotion) - Zotion 是在使用 REA 分析 Notion Desktop 的 Electron 程序包及部分网页 JavaScript 包后开发的浏览器工作区。 <sub>案例 · 混合工具流程 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/zotion-case/)</sub>
 - [**agently-mail：重建 Tencent Agently Mail API 访问流程**](https://github.com/Bahtya/agently-mail) - agently-mail 根据对 Agently CLI 的研究，在 Cloudflare Worker 中重建 Tencent Agently Mail 的访问流程。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/agently-mail-case/)</sub>
 - [**ais：重建 Google AI Studio 网页 RPC 访问方式**](https://github.com/lesterppo/hermes-aistudio-cli) - ais 用 Python 命令行工具重建 Google AI Studio 网页客户端的 RPC 访问方式，采用分析得到的 SAPISIDHASH 认证、浏览器请求头和位置式 JSPB 字段。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ais-google-ai-studio-case/)</sub>

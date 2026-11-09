@@ -6177,5 +6177,73 @@
     "additional_evidence_urls": [
       "https://github.com/thiago-cipitelli/tagforce-decomp/blob/85f117ad2540c06e99f6745f99829dcfd8e9c864/docs/architecture.md"
     ]
+  },
+  {
+    "id": "mlb-power-pros-2008-recomp-case",
+    "name": "MLB Power Pros 2008 Recomp: a Wii static recompilation and mixed analysis workflow",
+    "url": "https://github.com/HopeAero/MLBPowerPros2008Recomp",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "MLB Power Pros 2008 Recomp translates the Wii game's main.dol and ovl_main.rel from PowerPC to C++ with Wiicompiled for Windows and Linux builds. It adds title-specific runtime patches and editing tools for rosters, textures and stadiums. Its analysis workflow uses REA through MCP, which supports x86/x64 PE executables.",
+    "description_zh": "MLB Power Pros 2008 Recomp 使用 Wiicompiled 将 Wii 游戏的 main.dol 和 ovl_main.rel 从 PowerPC 转换为 C++，构建 Windows 和 Linux 版本。项目加入游戏专用运行时补丁及阵容、贴图和球场编辑工具。其分析流程通过 MCP 使用 REA；REA 支持 x86/x64 PE 可执行文件。",
+    "evidence_url": "https://github.com/HopeAero/MLBPowerPros2008Recomp/blob/8ba7ac2d90e798dc4c70d9eaa044922bc2446258/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A user-owned USA Wii copy of MLB Power Pros 2008, disc ID RL8E54.",
+      "Windows 10 or 11 x64 with Direct3D 12 or Vulkan for the main setup path; Linux and Steam Deck builds are experimental.",
+      "The author reports full exhibition matches and a local clean setup test; other modes and modest hardware have less coverage.",
+      "GPL-3.0."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HopeAero/MLBPowerPros2008Recomp/blob/8ba7ac2d90e798dc4c70d9eaa044922bc2446258/docs/en/reverse-engineering-tools.md"
+    ]
+  },
+  {
+    "id": "burnout-dominator-reversed-case",
+    "name": "Burnout Dominator Reversed: a PS2 static recompilation",
+    "url": "https://github.com/literalynn/BurnoutDominatorReversed",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Burnout Dominator Reversed builds a native PC port of the European PS2 release by translating its main CPU code with PS2Recomp and its vector-unit programs into C++. It uses paraLLEl-GS for graphics and supplies I/O and audio subsystems; the author reports play through the last World Tour event.",
+    "description_zh": "Burnout Dominator Reversed 使用 PS2Recomp 将欧版 PS2《Burnout Dominator》的主 CPU 代码转换为 C++，并将向量单元程序编译为 C++，构建原生 PC 移植版。项目使用 paraLLEl-GS 渲染，并提供输入输出及音频子系统；作者报告已游玩至 World Tour 最后一场赛事。",
+    "evidence_url": "https://github.com/literalynn/BurnoutDominatorReversed/blob/37581374987e161dd75d031ee8fb0c7ea9290fda/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A personally owned European Burnout Dominator disc image, serial SLES-54627.",
+      "A Vulkan-capable GPU; the documented Windows installation also requires Visual Studio with C++ development tools.",
+      "macOS has not been tested.",
+      "GPL-3.0 licence."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/literalynn/BurnoutDominatorReversed/blob/37581374987e161dd75d031ee8fb0c7ea9290fda/docs/STATUS.md"
+    ]
   }
 ]

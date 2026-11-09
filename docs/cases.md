@@ -4,59 +4,60 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**2578 case studies**, grouped by section.
+**2978 case studies**, grouped by section.
 
 ## Contents
 
-- [Website](#website) (73)
-- [Game](#game) (1495)
-- [App](#app) (212)
-- [Native Binary](#native-binary) (46)
-- [Firmware and Hardware](#firmware) (144)
-- [Protocol](#protocol) (608)
+- [Website](#website) (74)
+- [Game](#game) (1865)
+- [App](#app) (214)
+- [Native Binary](#native-binary) (51)
+- [Firmware and Hardware](#firmware) (150)
+- [Protocol](#protocol) (624)
 
 <a id="website"></a>
-## Website (73)
+## Website (74)
 
 - [Case studies](cases/website.md)
 
 <a id="game"></a>
-## Game (1,495)
+## Game (1,865)
 
 - [Case studies, part 1](cases/game-1.md)
 - [Case studies, part 2](cases/game-2.md)
 - [Case studies, part 3](cases/game-3.md)
+- [Case studies, part 4](cases/game-4.md)
 
 <a id="game-matching-decompilation"></a>
-- [Matching decompilations and disassemblies](cases/game-1.md#game-matching-decompilation) (310)
+- [Matching decompilations and disassemblies](cases/game-1.md#game-matching-decompilation) (388)
 <a id="game-decompilation"></a>
-- [Non-matching decompilations](cases/game-1.md#game-decompilation) (145)
+- [Non-matching decompilations](cases/game-1.md#game-decompilation) (204)
 <a id="game-static-recompilation"></a>
-- [Static recompilations](cases/game-1.md#game-static-recompilation) (380)
+- [Static recompilations](cases/game-1.md#game-static-recompilation) (470)
 <a id="game-port"></a>
-- [Ports of reconstructed source](cases/game-2.md#game-port) (194)
+- [Ports of reconstructed source](cases/game-2.md#game-port) (253)
 <a id="game-engine-reimplementation"></a>
-- [Engine reimplementations](cases/game-2.md#game-engine-reimplementation) (260)
+- [Engine reimplementations](cases/game-3.md#game-engine-reimplementation) (307)
 <a id="game-other"></a>
-- [Other methods and analyses](cases/game-3.md#game-other) (206)
+- [Other methods and analyses](cases/game-3.md#game-other) (243)
 
 <a id="app"></a>
-## App (212)
+## App (214)
 
 - [Case studies](cases/app.md)
 
 <a id="native-binary"></a>
-## Native Binary (46)
+## Native Binary (51)
 
 - [Case studies](cases/native-binary.md)
 
 <a id="firmware"></a>
-## Firmware and Hardware (144)
+## Firmware and Hardware (150)
 
 - [Case studies](cases/firmware.md)
 
 <a id="protocol"></a>
-## Protocol (608)
+## Protocol (624)
 
 - [Case studies](cases/protocol.md)
 <!-- END GENERATED CASES -->

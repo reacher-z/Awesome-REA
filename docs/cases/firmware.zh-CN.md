@@ -6,12 +6,13 @@
 
 [English](firmware.md)
 
-**144 个案例**
+**150 个案例**
 
 - [**6502 Model：重建 65C02 芯片的逐周期行为**](https://github.com/EmulationOnline/model_6502) - 6502 Model 用 Rust 根据实体 65C02 芯片运行程序时采集的外部总线跟踪记录，重建其逐周期行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/6502-model-case/)</sub>
 - [**Band 9 表盘生成器：华为手环 9 HWT 表盘格式复现**](https://github.com/daiyuxiang520/band9-watchface-generator) - Band 9 表盘生成器通过观察公开的 HWT 包，归纳华为手环 9 表盘格式，并为 194 × 368 的 HWHD07 屏幕生成可安装的表盘包。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/band9-watchface-generator-case/)</sub>
 - [**CamLink 4K：Elgato 采集卡的替代门级逻辑与固件**](https://github.com/enjoy-digital/camlink_4k) - CamLink 4K 为第一代 Elgato Cam Link 4K 重建视频采集链路：ECP5 FPGA 使用 LiteX 门级逻辑，FX3 控制器使用裸机 C 固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/camlink-4k-case/)</sub>
 - [**Capybara：重建运行 Tamagotchi Paradise 固件所需的 Sonix 硬件**](https://github.com/infinition/capybara) - Capybara 重建 Sonix SNC73410 硬件环境，使 Tamagotchi Paradise 的原厂固件可在电脑上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/capybara-tamagotchi-paradise-case/)</sub>
+- [**CEN64：Nintendo 64 寄存器传输级模拟**](https://github.com/n64dev/cen64) - CEN64 模拟 Nintendo 64 硬件，目标是将硬件行为建模到寄存器传输级。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cen64-nintendo-64-emulation-case/)</sub>
 - [**CoreFW：重建 Novation Launchpad 固件**](https://github.com/anthonyhfm/launchpad-core-firmware) - CoreFW 以 Rust 重建具有可访问引导加载器的 Novation Launchpad 控制器固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/corefw-launchpad-case/)</sub>
 - [**D750 QEMU Verification Prototype：在 QEMU 中验证尼康 D750 固件的早期执行**](https://github.com/LuoStickmin/D750-QEMU) - D750 QEMU Verification Prototype 用 QEMU 板级模型及主机侧扫描、日志工具研究尼康 D750 固件的早期执行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/d750-qemu-case/)</sub>
 - [**Echo Show 相机：重建 LineageOS 相机支持**](https://github.com/jxlarrea/lineageos-echo-show-camera) - Echo Show 相机项目为 Echo Show 5 和 8 的 LineageOS 18.1 重建相机支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/echo-show-lineageos-camera-case/)</sub>
@@ -33,13 +34,18 @@
 - [**open-cleverpad：重建 MIDIPLUS SmartPAD 硬件资料**](https://github.com/DerFetzer/open-cleverpad) - open-cleverpad 为 MIDIPLUS SmartPAD MIDI 控制器提供 Rust 替代固件，并附有逆向绘制的主板电路图。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-cleverpad-case/)</sub>
 - [**open-desk-lamp-firmware：小米台灯的替代固件**](https://github.com/fvollmer/open-desk-lamp-firmware) - 根据主板接线，为基于 ESP8266 的小米台灯实现替代固件，提供本地开关、调光和色温控制。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xiaomi-desk-lamp-open-firmware-case/)</sub>
 - [**open-smc-pad：重建 M-Vave SMC-PAD 固件功能**](https://github.com/fedepaj/open-smc-pad) - open-smc-pad 为 M-Vave SMC-PAD 控制器编写替代固件，包含 USB 引导程序、运行时和 Arduino 核心。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/open-smc-pad-case/)</sub>
+- [**Orbital：面向虚拟化的 PlayStation 4 硬件重建**](https://github.com/AlexAltea/orbital) - Orbital 以虚拟化方式重建 PlayStation 4 硬件，用于启动解密后的主机内核。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/orbital-ps4-reconstruction-case/)</sub>
+- [**orsala\_hack：重建 IKEA ORSALA 台灯控制逻辑**](https://github.com/j-zero/orsala_hack) - orsala\_hack 为 IKEA ORSALA 台灯编写 STM8 替代固件，并记录原有旋转编码器操作、MCU 与 LED 驱动连接。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/orsala-hack-case/)</sub>
 - [**osdbits：重建 PlayStation 2 OSDSYS 开机动画**](https://github.com/aap/osdbits) - osdbits 从零售版 PS2 启动 ROM 的 OSDSYS 镜像重建开机动画，生成独立的 Emotion Engine 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/osdbits-case/)</sub>
 - [**Predator Sense for Linux：重建 PHN16-72 固件控制**](https://github.com/aishend/predator-sense-phn16-72-linux) - Predator Sense for Linux 为 Predator Helios Neo 16 PHN16-72 重建 Acer PredatorSense 控制功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/predator-sense-phn16-72-linux-case/)</sub>
 - [**pw\_firm：Pokéwalker 固件反编译**](https://github.com/UnrealPowerz/pw_firm) - pw\_firm 为 Pokéwalker 的 Renesas H8 微控制器重建 C 固件，涵盖设备驱动、游戏逻辑、界面和红外通信。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pw-firm-pokewalker-decomp-case/)</sub>
+- [**Quansheng UV-K5 Hardware Reverse Engineering Project：V1.4 对讲机电路板重建**](https://github.com/mentalDetector/Quansheng_UV-K5_PCB_R51-V1.4_PCB_Reversing_Rev._0.9) - Quansheng UV-K5 Hardware Reverse Engineering Project 将对讲机的 V1.4 电路板重建为 KiCad 原理图和板图。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/quansheng-uv-k5-hardware-case/)</sub>
 - [**R64Emu：Nintendo 64 硬件的低层重建**](https://github.com/rasky/r64emu) - R64Emu 基于真实硬件的逆向工作，用 Rust 低层模拟 Nintendo 64 硬件行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/r64emu-n64-case/)</sub>
 - [**redmi-perf：重建 Redmi 笔记本性能模式控制通道**](https://github.com/wanxinhao/redmi-perf) - redmi-perf 通过通向嵌入式控制器的 MIFS WMI 接口，重建小米和 Redmi 笔记本的性能模式控制通道。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/redmi-perf-case/)</sub>
 - [**ry5088-flasher：重建磁轴键盘的 HID-DFU 刷写流程**](https://github.com/dot-agi/ry5088-flasher) - ry5088-flasher 重建 RongYuan RY5088 磁轴键盘的 USB HID-DFU 更新流程。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ry5088-flasher-case/)</sub>
+- [**stf-sharc：重建 Sega Model 2 SHARC 微码**](https://github.com/biggestsonicfan/stf-sharc) - stf-sharc 重建并注释 Sega Model 2 硬件使用的两份 ADSP-21062 微码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/stf-sharc-case/)</sub>
 - [**Strato：在 Android 上模拟 Nintendo Switch 系统**](https://github.com/strato-emu/strato) - Strato 面向 ARMv8 Android 设备模拟 Nintendo Switch 系统行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/strato-switch-emulation-case/)</sub>
+- [**TamaLIB：模拟初代拓麻歌子固件**](https://github.com/jcrona/tamalib) - TamaLIB 模拟采用 Epson E0C6S46 和 E0C6S48 微控制器的初代拓麻歌子，让其程序 ROM 在其他硬件上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tamalib-tamagotchi-case/)</sub>
 - [**TC66 定制固件：RuiDeng USB-C 功率计的替代镜像**](https://github.com/FletcherD/tc66-custom-fw) - RuiDeng TC66 和 TC66C USB-C 功率计的替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tc66-meter-firmware-case/)</sub>
 - [**TJ-56-654 天气时钟：硬件与安全分析后的替代固件**](https://github.com/petrochen/esp8266-weather-clock-opensource) - TJ-56-654 天气时钟项目在调查设备硬件与配置页面后，为原有 ESP-01S 编写替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/esp8266-weather-clock-case/)</sub>
 - [**Torso T-1：重建 .t1 备份文件格式**](https://github.com/pizboese/t1-backup-file-format) - Torso T-1 备份格式项目通过受控设备备份和字节比较，解析音序器的 .t1 模式库数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/t1-backup-file-format-case/)</sub>
