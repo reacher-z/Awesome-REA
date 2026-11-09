@@ -164,6 +164,10 @@ The run summary reports qualified captures, raw retained captures, legacy integr
 
 For a separate private worker that starts from reviewed local evidence, see [private scan worker bootstrap](private-scan-worker.md). This first-import path uses a pinned public scanner, a bounded gzip seed and private artifacts; it does not activate a second schedule or change the public catalog.
 
+### Scan status badge
+
+The README's scan badge is a [shields.io endpoint badge](https://shields.io/badges/endpoint-badge) that reads `scan-status.json` from the `status` branch. `Scan status badge` ([scan_status_badge.py](../scripts/scan_status_badge.py)) rewrites that file every hour and after every README discovery scan: it shows when the last successful scan of `main` finished, a run of the workflow that concluded `success` (a run with nothing to ingest skips its ingest job and still counts), and turns amber once that is more than six hours ago. The branch holds only this file; the first run creates it, and later runs commit only when the badge changes, as the workflow bot.
+
 ## Automated discovery ingest
 
 After a scan saves its checkpoint, the workflow's `ingest` job adds a bounded batch of the new verified captures to the [unreviewed discovery queue](../data/discoveries/README.md) and publishes it without a person, as the repository owner asked. The automation may merge only this kind of change: one new `data/discoveries/run-<run id>-<attempt>.json` file of exact scan records, all still `automated-readme-scan` and `unreviewed`. Curated records, the source index, public supplements, translations, scope decisions and generated files are never touched, and nothing is promoted to `source-reviewed`.
