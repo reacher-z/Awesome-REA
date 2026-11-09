@@ -4,57 +4,58 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**1232 个案例**，按分区列出。
+**1625 个案例**，按分区列出。
 
 ## 目录
 
-- [Website · 网站](#website) (51)
-- [Game · 游戏](#game) (464)
-- [App · 应用](#app) (158)
-- [Native Binary · 原生二进制](#native-binary) (14)
-- [Firmware and Hardware · 固件与硬件](#firmware) (106)
-- [Protocol · 协议](#protocol) (439)
+- [Website · 网站](#website) (69)
+- [Game · 游戏](#game) (624)
+- [App · 应用](#app) (200)
+- [Native Binary · 原生二进制](#native-binary) (23)
+- [Firmware and Hardware · 固件与硬件](#firmware) (126)
+- [Protocol · 协议](#protocol) (583)
 
 <a id="website"></a>
-## Website · 网站 (51)
+## Website · 网站 (69)
 
 - [案例列表](cases/website.zh-CN.md)
 
 <a id="game"></a>
-## Game · 游戏 (464)
+## Game · 游戏 (624)
 
-- [案例列表](cases/game.zh-CN.md)
+- [案例列表（第 1 部分）](cases/game-1.zh-CN.md)
+- [案例列表（第 2 部分）](cases/game-2.zh-CN.md)
 
 <a id="game-matching-decompilation"></a>
-- [匹配反编译与反汇编](cases/game.zh-CN.md#game-matching-decompilation) (109)
+- [匹配反编译与反汇编](cases/game-1.zh-CN.md#game-matching-decompilation) (141)
 <a id="game-decompilation"></a>
-- [非匹配反编译](cases/game.zh-CN.md#game-decompilation) (30)
+- [非匹配反编译](cases/game-1.zh-CN.md#game-decompilation) (40)
 <a id="game-static-recompilation"></a>
-- [静态重编译](cases/game.zh-CN.md#game-static-recompilation) (101)
+- [静态重编译](cases/game-1.zh-CN.md#game-static-recompilation) (123)
 <a id="game-port"></a>
-- [基于重建源码的移植](cases/game.zh-CN.md#game-port) (60)
+- [基于重建源码的移植](cases/game-1.zh-CN.md#game-port) (86)
 <a id="game-engine-reimplementation"></a>
-- [引擎重实现](cases/game.zh-CN.md#game-engine-reimplementation) (86)
+- [引擎重实现](cases/game-1.zh-CN.md#game-engine-reimplementation) (111)
 <a id="game-other"></a>
-- [其他方法与分析](cases/game.zh-CN.md#game-other) (78)
+- [其他方法与分析](cases/game-1.zh-CN.md#game-other) (123)
 
 <a id="app"></a>
-## App · 应用 (158)
+## App · 应用 (200)
 
 - [案例列表](cases/app.zh-CN.md)
 
 <a id="native-binary"></a>
-## Native Binary · 原生二进制 (14)
+## Native Binary · 原生二进制 (23)
 
 - [案例列表](cases/native-binary.zh-CN.md)
 
 <a id="firmware"></a>
-## Firmware and Hardware · 固件与硬件 (106)
+## Firmware and Hardware · 固件与硬件 (126)
 
 - [案例列表](cases/firmware.zh-CN.md)
 
 <a id="protocol"></a>
-## Protocol · 协议 (439)
+## Protocol · 协议 (583)
 
 - [案例列表](cases/protocol.zh-CN.md)
 <!-- END GENERATED CASES -->

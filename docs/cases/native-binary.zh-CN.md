@@ -6,8 +6,17 @@
 
 [English](native-binary.md)
 
-**14 个案例**
+**23 个案例**
 
+- [**dargh：重建 Skyrim 的 Dynamic Animation Replacer**](https://github.com/noxsidereum/dargh) - dargh 根据对 Dynamic Animation Replacer 1.1.2 和 1.1.3 DLL 的分析，以 C++ 重建用于 Skyrim Special Edition 的替代 DLL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dargh-case/)</sub>
+- [**ExCrypt：重建 Xbox 360 XeCrypt 函数**](https://github.com/emoose/ExCrypt) - ExCrypt 以 C 和 C++ 重写 Xbox 360 的 XeCrypt 函数，供既有主机代码和数据使用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/excrypt-case/)</sub>
+- [**IOReport：研究并反编译 Apple 的报告库**](https://github.com/dehydratedpotato/IOReport_decompile) - IOReport decompile 研究 Apple 的 IOReport 动态库及其读取系统报告和计数器的调用方式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ioreport-decompile-case/)</sub>
+- [**L1J-Encode-CLI：还原 Lineage 1 的 ServerData 编解码算法**](https://github.com/Lan-0v0/L1J-Encode-CLI) - L1J-Encode-CLI 将 Lineage 1 登录器的 ServerData 编码还原为 Python 编解码器，可处理 IP、端口和功能位。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/l1j-encode-cli-case/)</sub>
+- [**ndec-re：还原一款 MS-DOS 加密程序**](https://github.com/bereal/ndec-re) - ndec-re 借助调试器和汇编分析研究一款旧式 MS-DOS COM 加密程序，并用 Go 实现其加密行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ndec-re-case/)</sub>
+- [**re-sysinternals-suite：重建 Sysinternals strings.exe**](https://github.com/cristeigabriela/re-sysinternals-suite) - re-sysinternals-suite 记录了对 Sysinternals strings.exe 可执行程序的教学性重建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/re-sysinternals-strings-case/)</sub>
+- [**uniswap-v2-reborn：从已部署字节码重建 Uniswap v2**](https://github.com/devtechedge/uniswap-v2-reborn) - uniswap-v2-reborn 使用 REA 接口分析、存储槽探测和行为规格，从已部署的 EVM 运行时代码重建 Uniswap v2 的 factory、pair 与 Router02。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/uniswap-v2-reborn-case/)</sub>
+- [**Watcom C 6.5：重建受损运行库**](https://github.com/nrnelson/watcom-c-6.5-restoration) - 该项目从幸存的归档模块重建受损的 Watcom C 6.5 运行库 CLIBS.LIB 与 CLIBC.LIB。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/watcom-c-6-5-restoration-case/)</sub>
+- [**Wirenet Reverse Engineering：分析 Linux 木马**](https://github.com/shxdow/wirenet-analysis) - Wirenet Reverse Engineering 通过恢复的源码和意大利语分析报告研究 Wirenet Linux 木马，另有文章聚焦其键盘记录功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wirenet-analysis-case/)</sub>
 - [**bcwc\_pcie：对照 Apple kext 审计 FaceTime HD 摄像头驱动**](https://github.com/unfallenwill/bcwc_pcie) - bcwc\_pcie 针对 Broadcom PCI 14e4:1570 FaceTime HD 摄像头，将社区 Linux 驱动与 AppleCameraInterface.kext 进行对照审计。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bcwc-pcie-camera-audit-case/)</sub>
 - [**FSR 4 INT8：GPU 计算阶段重建与对比测试工具**](https://github.com/int3rrobang/fsr4-int8-reverse-engineering) - 该项目研究 FSR 4.1.1 INT8 升频器，用 HLSL 重建 GPU 计算阶段，并通过 D3D12 工具与 AMD 编译后的内核比较输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fsr4-int8-reconstruction-case/)</sub>
 - [**slopgs：重建 Microsoft GS Wavetable Synth**](https://github.com/sloptainment/slopgs) - slopgs 用可移植的 C 合成器重建 Windows XP SP3 版 Microsoft GS Wavetable Synth 驱动的行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/slopgs-case/)</sub>
