@@ -65878,7 +65878,7 @@
   {
     "id": "predator-sense-phn16-72-linux-case",
     "name": "Predator Sense for Linux: reconstructing PHN16-72 firmware control",
-    "url": "https://github.com/aishend/predator-sense-phn16-72-linux",
+    "url": "https://github.com/aishend/predator-sense",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
@@ -65887,8 +65887,8 @@
     ],
     "description_en": "Predator Sense for Linux reconstructs Acer PredatorSense controls for the Predator Helios Neo 16 PHN16-72. Its documentation traces Windows service behavior and firmware WMI methods, while a Linux kernel module and daemon expose performance modes, fan settings, keyboard lighting and battery controls to a CLI and Qt interface.",
     "description_zh": "Predator Sense for Linux 为 Predator Helios Neo 16 PHN16-72 重建 Acer PredatorSense 控制功能。文档追踪 Windows 服务行为和固件 WMI 方法；Linux 内核模块与后台服务将性能模式、风扇、键盘灯效和电池设置提供给命令行及 Qt 界面。",
-    "evidence_url": "https://github.com/aishend/predator-sense-phn16-72-linux/blob/b81b9831cfdada8e18406b2cd3741c29ac745545/docs/REVERSE_ENGINEERING.md",
-    "verified_at": "2026-11-07",
+    "evidence_url": "https://github.com/aishend/predator-sense/blob/82d84251d73b3cc19f285e00a83923ed8e951a43/docs/REVERSE_ENGINEERING.md",
+    "verified_at": "2026-11-09",
     "added_at": "2026-11-09",
     "verification": "source-reviewed",
     "requirements": [
@@ -65905,7 +65905,7 @@
       "license"
     ],
     "additional_evidence_urls": [
-      "https://github.com/aishend/predator-sense-phn16-72-linux/blob/b81b9831cfdada8e18406b2cd3741c29ac745545/README.md"
+      "https://github.com/aishend/predator-sense/blob/82d84251d73b3cc19f285e00a83923ed8e951a43/README.md"
     ]
   },
   {
@@ -88730,7 +88730,7 @@
   {
     "id": "ms-anna-tts-case",
     "name": "Microsoft Anna: a bit-exact C rebuild of the TTS20 engine",
-    "url": "https://github.com/KamiKitsune420/ms-anna-decomp",
+    "url": "https://github.com/KamiKitsune420/ms-ana-decomp",
     "description_en": "Rebuilds Microsoft Anna, the Windows Vista and Windows 7 TTS20 voice, as C99 that reads the original voice data files. The README reports bit-exact PCM against the real engine on its test lines.",
     "description_zh": "把 Microsoft Anna（Windows Vista 与 Windows 7 的 TTS20 语音）重建为读取原始语音数据文件的 C99。README 报告其测试句与真实引擎的 PCM 逐位一致。",
     "evidence_url": "https://github.com/KamiKitsune420/ms-ana-decomp/blob/a8da0464124fb1ba1a67b0056524bafa4cff4d0d/README.md",
@@ -88752,7 +88752,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
-    "verified_at": "2026-11-04",
+    "verified_at": "2026-11-09",
     "added_at": "2026-11-09",
     "verification": "source-reviewed",
     "targets": [
