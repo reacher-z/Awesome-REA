@@ -4,6 +4,7 @@ from collections import Counter, defaultdict
 from html import unescape as html_unescape
 from html.parser import HTMLParser
 import json
+import os
 from pathlib import Path
 import re
 import sys
@@ -51,7 +52,7 @@ VOID_TAGS = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link',
 
 
 class Page(HTMLParser):
-    def __init__(self, text):
+    def __init__(self, text=None):
         super().__init__()
         self.links, self.canonicals, self.ids, self.schemas, self.alternates = [], [], [], [], []
         self.feeds = []
@@ -74,7 +75,8 @@ class Page(HTMLParser):
         self.paper_groups, self._section_stack = [], []
         self._div_depth = 0
         self._group_summary, self._group_heading = None, None
-        self.feed(text)
+        if text is not None:
+            self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
@@ -495,7 +497,7 @@ def validate_security_headers(output):
     for script in sorted(output.glob('*.js')):
         assert 'noreferrer' not in script.read_text(encoding='utf-8'), f'Script-built links keep the origin-only referrer: /{script.name}'
     for path in sorted(output.rglob('*.html')):
-        page = PageResources(path.read_text(encoding='utf-8'))
+        page = parsed_file(PageResources, path)
         where = '/' + path.relative_to(output).as_posix()
         assert not page.inline_scripts and not page.inline_styles and not page.handlers and not page.embeds, f'Inline code, styles, handlers or embeds need a CSP review: {where}'
         assert not page.referrer_suppressed and all('noopener' in relations for relations in page.new_tab_relations), f'Links keep the origin-only referrer, and new-tab links need noopener: {where}'
@@ -523,7 +525,7 @@ def validate_fingerprinted_assets(output):
     assert not stray, 'Stylesheets or scripts outside /assets/: ' + ', '.join(stray)
     checked = set()
     for path in sorted(output.rglob('*.html')):
-        page = PageResources(path.read_text(encoding='utf-8'))
+        page = parsed_file(PageResources, path)
         where = '/' + path.relative_to(output).as_posix()
         # Preloaded /assets/ files, such as the paper search index, are content-addressed as well.
         preloaded = [preload['href'] for preload in page.preloads if urlsplit(preload['href']).path.startswith('/assets/')]
@@ -582,10 +584,11 @@ class VisibleBreadcrumb(HTMLParser):
     """Read the (text, href) trail of a page's breadcrumb navigation; the current page has no href."""
     LABELS = {'Breadcrumb', '当前位置'}
 
-    def __init__(self, text):
+    def __init__(self, text=None):
         super().__init__()
         self.trails, self._trail, self._item = [], None, None
-        self.feed(text)
+        if text is not None:
+            self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
@@ -610,7 +613,7 @@ class VisibleBreadcrumb(HTMLParser):
 def validate_breadcrumbs(output, pages):
     """A visible breadcrumb needs one BreadcrumbList with the same names and destinations."""
     for route, page in pages.items():
-        trails = VisibleBreadcrumb((Path(output) / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')).trails
+        trails = parsed_file(VisibleBreadcrumb, Path(output) / route.lstrip('/') / 'index.html').trails
         lists = list(schema_entities(page.schemas, 'BreadcrumbList'))
         if not trails:
             assert not lists, f'BreadcrumbList without a visible breadcrumb: {route}'
@@ -889,10 +892,11 @@ def validate_artifact_links(output, pages):
 
 
 class Stylesheets(HTMLParser):
-    def __init__(self, text):
+    def __init__(self, text=None):
         super().__init__()
         self.hrefs = []
-        self.feed(text)
+        if text is not None:
+            self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
@@ -906,7 +910,7 @@ def validate_stylesheet_references(output):
     linked = set()
     for page in output.rglob('*.html'):
         page_url = ORIGIN + '/' + page.relative_to(output).as_posix()
-        for href in Stylesheets(page.read_text(encoding='utf-8')).hrefs:
+        for href in parsed_file(Stylesheets, page).hrefs:
             target = urlsplit(urljoin(page_url, href))
             if target.netloc == urlsplit(ORIGIN).netloc:
                 linked.add(unquote(target.path).lstrip('/'))
@@ -971,10 +975,11 @@ def validate_unique_link_names(output):
 
 
 class DocumentTitle(HTMLParser):
-    def __init__(self, text):
+    def __init__(self, text=None):
         super().__init__()
         self.titles, self._parts = [], None
-        self.feed(text)
+        if text is not None:
+            self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         if tag == 'title':
@@ -994,7 +999,7 @@ def validate_unique_titles(output, routes):
     """Give every sitemap page its own <title>; Chinese resource pages need Chinese context."""
     seen = {}
     for route in routes:
-        titles = DocumentTitle((Path(output) / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')).titles
+        titles = parsed_file(DocumentTitle, Path(output) / route.lstrip('/') / 'index.html').titles
         assert len(titles) == 1 and titles[0], f'Page needs exactly one non-empty <title>: {route}'
         assert titles[0] not in seen, f'Duplicate <title> on {seen.get(titles[0])} and {route}: {titles[0]}'
         problem = title_problem(titles[0])
@@ -1032,11 +1037,12 @@ def validate_suggestion_links(pages, repository_url='https://github.com/reacher-
 class FooterLinks(HTMLParser):
     """Collect the site footer's links, and every link to a site-wide download, as [href, visible text]."""
 
-    def __init__(self, text):
+    def __init__(self, text=None):
         super().__init__(convert_charrefs=True)
         self.lang, self.footer, self.downloads = None, [], []
         self._in_footer, self._link = False, None
-        self.feed(text)
+        if text is not None:
+            self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
@@ -1070,7 +1076,7 @@ def validate_shared_footer(output, repository_url, repository_export):
     not_found = [path for path in (output / '404.html', output / 'zh/404.html') if path.is_file()]
     for path in [*sorted(output.rglob('index.html')), *not_found]:
         where = '/' + path.relative_to(output).as_posix()
-        page = FooterLinks(path.read_text(encoding='utf-8'))
+        page = parsed_file(FooterLinks, path)
         language = 'zh' if page.lang == 'zh-CN' else 'en'
         expected = FooterLinks(site_footer(language, note='', repository_url=repository_url, repository_export=repository_export)).footer
         links = [[href, ' '.join(text.split())] for href, text in page.footer]
@@ -1562,10 +1568,101 @@ def validate_entry_outputs(pages, resources, papers):
         assert set(feedback_urls(kind, record)) <= set(article['links']), f'Detail page lacks its prefilled correction and translation links: {route}'
 
 
-def _read_page(url):
-    """Whether the page keeps an unresolved template, and the parsed page, for one canonical URL."""
-    text = (OUTPUT / urlsplit(url).path.lstrip('/') / 'index.html').read_text(encoding='utf-8')
-    return bool(re.search(r'\{\{[A-Z_]+\}\}', text)), Page(text)
+class _SharedTokens(HTMLParser):
+    """Tokenize a page once and hand every event to several parsers, as if each had been fed the text itself.
+
+    A parser that raises gets no further events, as its own feed() would have stopped there, and keeps that error.
+    """
+
+    def __init__(self, parsers):
+        super().__init__()
+        assert all(parser.convert_charrefs == self.convert_charrefs for parser in parsers), 'Parsers must agree on convert_charrefs'
+        self.parsers, self.errors = parsers, {}
+
+    def _send(self, event, *arguments):
+        for index, parser in enumerate(self.parsers):
+            if index not in self.errors:
+                try:
+                    getattr(parser, event)(*arguments)
+                except Exception as error:
+                    self.errors[index] = error
+
+    def handle_starttag(self, tag, attrs):
+        self._send('handle_starttag', tag, attrs)
+
+    def handle_startendtag(self, tag, attrs):
+        self._send('handle_startendtag', tag, attrs)
+
+    def handle_endtag(self, tag):
+        self._send('handle_endtag', tag)
+
+    def handle_data(self, data):
+        self._send('handle_data', data)
+
+    def handle_entityref(self, name):
+        self._send('handle_entityref', name)
+
+    def handle_charref(self, name):
+        self._send('handle_charref', name)
+
+    def handle_comment(self, data):
+        self._send('handle_comment', data)
+
+    def handle_decl(self, decl):
+        self._send('handle_decl', decl)
+
+    def handle_pi(self, data):
+        self._send('handle_pi', data)
+
+    def unknown_decl(self, data):
+        self._send('unknown_decl', data)
+
+
+def parse_once(text, classes):
+    """{class: (parser, error)}: each class's parser after one shared tokenization of text, and what it raised, if anything."""
+    parsers = [cls() for cls in classes]
+    tokens = _SharedTokens(parsers)
+    try:
+        tokens.feed(text)
+    except Exception as error:
+        for index in range(len(parsers)):
+            tokens.errors.setdefault(index, error)
+    return {cls: (parser, tokens.errors.get(index)) for index, (cls, parser) in enumerate(zip(classes, parsers))}
+
+
+# The parsers that whole-site checks apply to every built HTML file. main() parses each file once for all of them,
+# sitemap pages for Page as well, and keeps the results in _PARSED until it returns. PageResources reads the text
+# without the reviewed theme script, so it tokenizes on its own.
+SHARED_PARSERS = (VisibleBreadcrumb, FooterLinks, Stylesheets, DocumentTitle)
+_PARSED = {}
+_UNRESOLVED = re.compile(r'\{\{[A-Z_]+\}\}')
+
+
+def parsed_file(cls, path):
+    """cls parsed from the built file at path: main()'s parse when it covered the file, raising what that parse raised."""
+    results = _PARSED.get(os.path.abspath(path))
+    if results is None or cls not in results:
+        return cls(Path(path).read_text(encoding='utf-8'))
+    parser, error = results[cls]
+    if error is not None:
+        raise error
+    return parser
+
+
+def _parse_file(job):
+    """Whether a built HTML file keeps an unresolved template, and its parse by each shared parser."""
+    path, sitemap_page = job
+    classes = (Page, *SHARED_PARSERS) if sitemap_page else SHARED_PARSERS
+    try:
+        text = path.read_text(encoding='utf-8')
+    except Exception as error:
+        return False, {cls: (None, error) for cls in (*classes, PageResources)}
+    results = parse_once(text, classes)
+    try:
+        results[PageResources] = PageResources(text), None
+    except Exception as error:
+        results[PageResources] = None, error
+    return bool(_UNRESOLVED.search(text)), results
 
 
 def validate_llms_and_ownership_proof():
@@ -1587,12 +1684,34 @@ def main():
     validate_route_inventory(urls, resources, papers, include_browse=(OUTPUT / 'source-index.json').is_file(),
                              include_discoveries=(OUTPUT / 'discoveries.json').is_file(),
                              discovery_classes=discovery_class_pages(OUTPUT))
+    try:
+        _validate_pages(urls, resources, papers)
+    finally:
+        _PARSED.clear()
+
+
+def parse_built_files(urls):
+    """Parse every built HTML file, and each sitemap page, once into _PARSED; return the files with an unresolved template."""
+    sitemap_files = {OUTPUT / urlsplit(url).path.lstrip('/') / 'index.html' for url in urls}
+    jobs = [(path, path in sitemap_files) for path in sorted({*OUTPUT.rglob('*.html'), *sitemap_files})]
+    unresolved_files = set()
+    for (path, _), (unresolved, results) in zip(jobs, forked_checks.ordered_map(_parse_file, jobs)):
+        _PARSED[os.path.abspath(path)] = results
+        if unresolved:
+            unresolved_files.add(os.path.abspath(path))
+    return unresolved_files
+
+
+def _validate_pages(urls, resources, papers):
+    unresolved_files = parse_built_files(urls)
     pages, fragment_links = {}, []
-    for url, (unresolved, page) in zip(urls, forked_checks.ordered_map(_read_page, urls)):
+    for url in urls:
         parsed = urlsplit(url)
-        assert parsed.netloc == 'awesomerea.org' and parsed.scheme == 'https' and not parsed.query and not parsed.fragment
         path = OUTPUT / parsed.path.lstrip('/') / 'index.html'
-        assert not unresolved, f'Unresolved template in {parsed.path}'
+        # Raises what reading or parsing this page raised, before any check of it, as reading it here would.
+        page = parsed_file(Page, path)
+        assert parsed.netloc == 'awesomerea.org' and parsed.scheme == 'https' and not parsed.query and not parsed.fragment
+        assert os.path.abspath(path) not in unresolved_files, f'Unresolved template in {parsed.path}'
         pages[parsed.path] = page
         assert page.canonicals == [url] and not page.noindex, f'Canonical/indexing mismatch: {parsed.path}'
         assert not [key for key, count in Counter(page.ids).items() if count > 1], f'Duplicate HTML IDs: {parsed.path}'
