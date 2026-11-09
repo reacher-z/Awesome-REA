@@ -6,8 +6,9 @@
 
 [简体中文](native-binary.zh-CN.md)
 
-**57 case studies**
+**58 case studies**
 
+- [**8088 BIOS: disassembling Tandy and IBM PC firmware images**](https://github.com/ricardoquesada/bios-8088) - This repository disassembles BIOS images from 8088 machines: the Tandy 1000, Tandy 1000A, Tandy 1000 HX, IBM PCjr, and IBM PC 5150. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bios-8088/)</sub>
 - [**AGS Aging Cartridge: disassembling version 7.0**](https://github.com/Normmatt/ags_aging) - The project reconstructs AGS Aging Cartridge 7.0 from a user-supplied Game Boy Advance ROM as assembly and C source. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ags-aging-cartridge-case/)</sub>
 - [**Character Pipeline: April 2001 library decompilation**](https://github.com/doldecomp/dolcp-apr2001) - Character Pipeline April 2001 Libraries reconstructs C source for the component's built code libraries. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/character-pipeline-apr2001-decomp-case/)</sub>
 - [**cod4map: reconstructing the Call of Duty 4 BSP compiler**](https://github.com/prd0nja/cod4map) - cod4map reconstructs the BSP compiler shipped with the 2007 Call of Duty 4 mod tools from its executable. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cod4map-reconstruction-case/)</sub>

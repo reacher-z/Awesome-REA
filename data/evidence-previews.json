@@ -2,12 +2,12 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-09T08:30:34+00:00",
-    "entry_count": 985,
-    "class_entry_count": 1022,
+    "generated_at": "2026-11-09T08:49:34+00:00",
+    "entry_count": 1018,
+    "class_entry_count": 1055,
     "class_counts": {
-      "image": 951,
-      "video": 34
+      "image": 983,
+      "video": 35
     },
     "missing_count": 37,
     "missing": [
@@ -665,6 +665,24 @@
       "checked_at": "2026-11-09T04:14:52+00:00"
     },
     {
+      "id": "belthasar",
+      "image_url": "https://raw.githubusercontent.com/TemplarServant/BelthasarProject/e22d08c5245fb7fa4416cd16b66ba3e4fbb1ff68/docs/media/widescreen-zeal.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/TemplarServant/BelthasarProject",
+      "revision": "e22d08c5245fb7fa4416cd16b66ba3e4fbb1ff68",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
+      "id": "betrayal-at-krondor",
+      "image_url": "https://github.com/user-attachments/assets/017732ab-3e84-4ee1-9780-3a3c0f831588",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/canassa/betrayal-at-krondor",
+      "revision": "1fc2a69e306af1623cd22f3390a5569302059f4d",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "between-us-android-remake-case",
       "image_url": "https://raw.githubusercontent.com/rockyanyan/between-us/0f83678250573a75c011febda97f27dfd6cbf4b4/screenshots/setup.png",
       "kind": "image",
@@ -672,6 +690,15 @@
       "source_url": "https://github.com/rockyanyan/between-us",
       "revision": "0f83678250573a75c011febda97f27dfd6cbf4b4",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "bigodao",
+      "image_url": "https://i.ytimg.com/vi/BxGafWfLy7I/hqdefault.jpg",
+      "kind": "video",
+      "basis": "youtube-thumbnail",
+      "source_url": "https://github.com/GABRIELNNK/Bigodao",
+      "revision": "c67ff008b1561dce079781603f9b5da3c1320f5e",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "bikestation-case",
@@ -780,6 +807,15 @@
       "source_url": "https://github.com/sp00nznet/blakestone",
       "revision": "be28ddc57ed15220ebcb6e90e78338140e693bdf",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "blinx2-recomp",
+      "image_url": "https://raw.githubusercontent.com/apexJCL/blinx2-recomp/b8e9857febb308a59c90471013dc137569c9d7b0/docs/images/menu.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/apexJCL/blinx2-recomp",
+      "revision": "b8e9857febb308a59c90471013dc137569c9d7b0",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "blood-wake-recomp-case",
@@ -1232,6 +1268,15 @@
       "checked_at": "2026-11-09T07:55:54+00:00"
     },
     {
+      "id": "conker-lr-native",
+      "image_url": "https://raw.githubusercontent.com/rashevskyv/conker-lr-recomp/db1617edf49ffcc2d2c3c41c9c82489b74efaa18/docs/images/01-title.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/rashevskyv/conker-lr-recomp",
+      "revision": "db1617edf49ffcc2d2c3c41c9c82489b74efaa18",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "cordial-roblox-linux-case",
       "image_url": "https://raw.githubusercontent.com/luohoa97/cordial/main/docs/media/cordial-doors.gif",
       "kind": "image",
@@ -1538,6 +1583,15 @@
       "checked_at": "2026-11-09T06:56:34+00:00"
     },
     {
+      "id": "defjam-ffny",
+      "image_url": "https://raw.githubusercontent.com/comoria08/defjam_recomp/aca317a0a84dd6522dd68f02ef7a5e82fb749989/lanceur/images/banniere_github_1280x640.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/comoria08/defjam_recomp",
+      "revision": "aca317a0a84dd6522dd68f02ef7a5e82fb749989",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "demons-souls-pc-case",
       "image_url": "https://raw.githubusercontent.com/Leonardorobertomotalvao/demons-souls-pc/5aa4151ee52d54c9aed67471550d70424b7ce85e/docs/screenshots/launcher-installation-tab.png",
       "kind": "image",
@@ -1689,6 +1743,15 @@
       "source_url": "https://github.com/Suspence00/digdug-decomp",
       "revision": "c3282c557b0f531213458d2bcad578c0ac783725",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "digimon-world-2-pc",
+      "image_url": "https://raw.githubusercontent.com/Wyrelade/DW2-PC/1dbb32a0332a78d5e9afbe4d26c62d86cc5e3f76/misc/screenshots/title.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Wyrelade/DW2-PC",
+      "revision": "1dbb32a0332a78d5e9afbe4d26c62d86cc5e3f76",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "digimon-world-2003-recompiled-case",
@@ -1925,6 +1988,15 @@
       "checked_at": "2026-11-09T02:41:36+00:00"
     },
     {
+      "id": "droidsaw",
+      "image_url": "https://raw.githubusercontent.com/droidsaw/droidsaw/50eb045b5672431ea787c2696100baed44163918/docs/img/droidkiller.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/droidsaw/droidsaw",
+      "revision": "50eb045b5672431ea787c2696100baed44163918",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "dualrip",
       "image_url": "https://raw.githubusercontent.com/TetraSsky/DualRip/f69e23c63a7d0985a474d0cbaeb2b364174748ac/docs/archive-preview.png",
       "kind": "image",
@@ -2114,6 +2186,15 @@
       "checked_at": "2026-11-09T07:55:54+00:00"
     },
     {
+      "id": "epoch-equinox",
+      "image_url": "https://raw.githubusercontent.com/ZakyPew/epoch-equinox/d8d3cafede0db8b71106dc11ea97dc4186acda7e/docs/achievement-toast.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/ZakyPew/epoch-equinox",
+      "revision": "d8d3cafede0db8b71106dc11ea97dc4186acda7e",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "esp32-bit-pirate",
       "image_url": "https://raw.githubusercontent.com/geo-tp/ESP32-Bit-Pirate/8f42d9f40fc86f97b6b1247d039a3cd899c5d442/images/bit_pirate_uart.gif",
       "kind": "image",
@@ -2148,6 +2229,15 @@
       "source_url": "https://github.com/neuviemeporte/f15se2-re",
       "revision": "8e24fe55101be6ef2b018de1b4288889cf0024d9",
       "checked_at": "2026-11-09T04:14:52+00:00"
+    },
+    {
+      "id": "fabledroid",
+      "image_url": "https://raw.githubusercontent.com/hardsilinder/FableDroid/313fc9f759e804ecd7d8bf2a5574cd65555765b8/docs/screenshots/fabledroid-forest-camp.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/hardsilinder/FableDroid",
+      "revision": "313fc9f759e804ecd7d8bf2a5574cd65555765b8",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "fastview-rea-relay-analysis-rebuild-case",
@@ -2265,6 +2355,15 @@
       "source_url": "https://github.com/d3v1l401/FindCrypt-Ghidra",
       "revision": "71660fddbe7300acb39e013ad6ad96cd001c0d99",
       "checked_at": "2026-11-04T06:53:52+00:00"
+    },
+    {
+      "id": "firered-leafgreen-recomp",
+      "image_url": "https://raw.githubusercontent.com/mstan/FireRedLeafGreenRecomp/03ab83043b0695987c943cdf8f0eccb95b4f9dab/docs/screenshots/firered.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/mstan/FireRedLeafGreenRecomp",
+      "revision": "03ab83043b0695987c943cdf8f0eccb95b4f9dab",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "firerpa-lamda",
@@ -2940,6 +3039,15 @@
       "source_url": "https://github.com/MikeCoder96/HappyLighting-py",
       "revision": "82fdd49742486d27410fad2b526853c849d07207",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "harvest-moon-snes-c",
+      "image_url": "https://raw.githubusercontent.com/RodoLy/HarvestMoonSnesDecomp/a368be0b7e8335c08f078d1262d4e887ae753752/docs/screenshots/wife_help.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/RodoLy/HarvestMoonSnesDecomp",
+      "revision": "a368be0b7e8335c08f078d1262d4e887ae753752",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "haze-recomp-case",
@@ -4337,6 +4445,15 @@
       "checked_at": "2026-11-09T08:30:30+00:00"
     },
     {
+      "id": "moonpearl",
+      "image_url": "https://raw.githubusercontent.com/DoutorRaposo/moonpearl/ed2c8da76494ca10b1a9ac0d8721eec88402d7a1/docs/screenshots/game.webp",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/DoutorRaposo/moonpearl",
+      "revision": "ed2c8da76494ca10b1a9ac0d8721eec88402d7a1",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "mostwanted-android-case",
       "image_url": "https://img.youtube.com/vi/0ILO1_gulrg/maxresdefault.jpg",
       "kind": "image",
@@ -4994,6 +5111,15 @@
       "checked_at": "2026-11-09T07:55:54+00:00"
     },
     {
+      "id": "openhuey",
+      "image_url": "https://github.com/user-attachments/assets/224650eb-86ee-4886-8f7a-74fb6e9bcf45",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/ArnautDaniel/OpenHuey",
+      "revision": "11ed60ccc07a74b5076b86e75226b425302fab68",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "openjkdf2",
       "image_url": "https://raw.githubusercontent.com/shinyquagsire23/OpenJKDF2/ae6ed8a81b316421f08a46719b12a4fa9e2fbed9/docs/images/screenshot.png",
       "kind": "image",
@@ -5426,6 +5552,15 @@
       "checked_at": "2026-11-09T06:56:34+00:00"
     },
     {
+      "id": "parasite-eve-recomp",
+      "image_url": "https://raw.githubusercontent.com/TechnicallyComputers/RetComM-Launcher/main/docs/screenshots/hub-and-game-launcher.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/alexbeavs-ps1-ports/parasite-eve-recomp",
+      "revision": "abfc05bc23a9a264cf9a105b2662226e17ece299",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "payload-dumper-go",
       "image_url": "https://i.imgur.com/IJtwoWU.png",
       "kind": "image",
@@ -5478,6 +5613,15 @@
       "source_url": "https://github.com/storytold/pdfcraft",
       "revision": "25025fa271d3488c474a292f4b1a9352ab16dedf",
       "checked_at": "2026-11-09T05:33:38+00:00"
+    },
+    {
+      "id": "perfect-dark-xbla-recomp",
+      "image_url": "https://raw.githubusercontent.com/CaiusCodes/Perfect-Dark-XBLA-PC-Recomp/ee7961a93bbbf03eb7c9ba4c52c2751dc85f7f03/docs/screenshots/gameplay-rooftop.webp",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/CaiusCodes/Perfect-Dark-XBLA-PC-Recomp",
+      "revision": "ee7961a93bbbf03eb7c9ba4c52c2751dc85f7f03",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "perlica-rs",
@@ -5651,6 +5795,15 @@
       "checked_at": "2026-11-04T06:53:44+00:00"
     },
     {
+      "id": "pop2-windows",
+      "image_url": "https://raw.githubusercontent.com/Supermedo/prince-of-persia-2-windows/e2c407fa8409ad891bf78c8e98c3e052dd00869b/docs/rooftops.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Supermedo/prince-of-persia-2-windows",
+      "revision": "e2c407fa8409ad891bf78c8e98c3e052dd00869b",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "portal-2-apple-silicon-recomp-case",
       "image_url": "https://img.youtube.com/vi/YWX2BeMnlQI/maxresdefault.jpg",
       "kind": "image",
@@ -5820,6 +5973,15 @@
       "source_url": "https://github.com/sp00nznet/ps3recomp",
       "revision": "de4f090328ea08bef6b2f15caec0b85e343a7ece",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "ps5-mario-galaxy",
+      "image_url": "https://raw.githubusercontent.com/griches/PS5_MarioGalaxy/0444596e7baa7f2a5604962dfd01c323aeb2ec33/docs/builder-mac.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/griches/PS5_MarioGalaxy",
+      "revision": "0444596e7baa7f2a5604962dfd01c323aeb2ec33",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "psa-van-can-protocol-bridge-case",
@@ -6578,6 +6740,15 @@
       "checked_at": "2026-11-08T22:27:09+00:00"
     },
     {
+      "id": "renegade-squadron-pc",
+      "image_url": "https://raw.githubusercontent.com/GTTeancum/StarWars-RenegadeSquadron-PC/7c0e0db52d5076f5794284f000277525d11fe563/docs/screenshots/space-kashyyyk.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/GTTeancum/StarWars-RenegadeSquadron-PC",
+      "revision": "7c0e0db52d5076f5794284f000277525d11fe563",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "renfs-case",
       "image_url": "https://raw.githubusercontent.com/ItsDanik/ReNFS/7159bb974ffa1d466174e8edb512e78821cfe70d/docs/screenshots/title_640x480.png",
       "kind": "image",
@@ -6603,6 +6774,15 @@
       "source_url": "https://github.com/JodusNodus/rerbr",
       "revision": "38da8464f391442088ebdcf2add935822c138cd6",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "reshadowtower",
+      "image_url": "https://raw.githubusercontent.com/JFryy/reshadowtower/f641ac7164db832521d8e866fa0ea8a30df7c4b9/docs/images/shadow-tower-cover.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/JFryy/reshadowtower",
+      "revision": "f641ac7164db832521d8e866fa0ea8a30df7c4b9",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "resonance-sound-connect-case",
@@ -6902,6 +7082,15 @@
       "checked_at": "2026-11-01T10:07:45+00:00"
     },
     {
+      "id": "saints-row-360",
+      "image_url": "https://raw.githubusercontent.com/sp00nznet/saintsrow/a60804391afc50081f847160a78d4f727caaf183/docs/screenshots/main-menu.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/sp00nznet/saintsrow",
+      "revision": "a60804391afc50081f847160a78d4f727caaf183",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "san-andreas-unity-engine-case",
       "image_url": "https://cloud.githubusercontent.com/assets/557828/24571348/d964f098-1670-11e7-8759-0160dbf5bcb5.png",
       "kind": "image",
@@ -6945,6 +7134,15 @@
       "source_url": "https://github.com/josiahg2502-glitch/Scooby-Doo-ReMasked",
       "revision": "ab7b671b87605a4ff756f59e4368b7cfefca6cb1",
       "checked_at": "2026-11-09T04:14:52+00:00"
+    },
+    {
+      "id": "scooby-doo-refrightened",
+      "image_url": "https://raw.githubusercontent.com/josiahg2502-glitch/Scooby-Doo-Refrightened/c11816b5dea24769781afa2629a93d74ddaa004c/docs/screenshots/courtyard.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/josiahg2502-glitch/Scooby-Doo-Refrightened",
+      "revision": "c11816b5dea24769781afa2629a93d74ddaa004c",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "scooter-link-case",
@@ -7053,6 +7251,15 @@
       "source_url": "https://github.com/RanggaCasper/ShaolinMonks-Android",
       "revision": "2e346bcad9109b795b126ebcc558f036eeb35344",
       "checked_at": "2026-11-09T04:14:52+00:00"
+    },
+    {
+      "id": "shiloh",
+      "image_url": "https://github.com/Asterber/shiloh/raw/assets/trailer.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Asterber/shiloh",
+      "revision": "e3dfde0d098b25135a5243839d44842ccbc5fe91",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "shin-engine-case",
@@ -7433,6 +7640,15 @@
       "checked_at": "2026-11-09T02:41:36+00:00"
     },
     {
+      "id": "space-cadet-ps2",
+      "image_url": "https://raw.githubusercontent.com/headshot2017/3dpinball-ps2/4ebf89b2fd32fd396071fb23d72bb2be72d8202d/screenshot.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/headshot2017/3dpinball-ps2",
+      "revision": "4ebf89b2fd32fd396071fb23d72bb2be72d8202d",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "spartanport-case",
       "image_url": "https://raw.githubusercontent.com/FelipePrado0/SpartanPort/6a709602fe07fa157bd34f66c914390c8756767a/docs/images/releases/3.0.0/launcher-home.jpg",
       "kind": "image",
@@ -7586,6 +7802,15 @@
       "checked_at": "2026-11-09T02:41:36+00:00"
     },
     {
+      "id": "starfox-snes-recomp",
+      "image_url": "https://raw.githubusercontent.com/mstan/StarFoxSNESRecomp/faac8d491cf144104c0e9904ed9a3493fbc27d9e/docs/images/starfox-enhanced-widescreen-training.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/mstan/StarFoxSNESRecomp",
+      "revision": "faac8d491cf144104c0e9904ed9a3493fbc27d9e",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "starhaven-case",
       "image_url": "https://raw.githubusercontent.com/SecondaryLifer/StarHaven/3fa147a8884cf1095f9073f2fa06a78d3c9626e0/port/3ds/docs/screenshots/field.png",
       "kind": "image",
@@ -7613,6 +7838,15 @@
       "checked_at": "2026-11-09T01:38:42+00:00"
     },
     {
+      "id": "strikers-quest-mr",
+      "image_url": "https://raw.githubusercontent.com/LanceSweatpants/Strikers-Quest-MR/6b72d4926fdd498f86f05c2e780135108739b5b4/media/quest3-strikers.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/LanceSweatpants/Strikers-Quest-MR",
+      "revision": "6b72d4926fdd498f86f05c2e780135108739b5b4",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "studio3svg-case",
       "image_url": "https://raw.githubusercontent.com/zaydmulani09/studio3svg/e8c3a58c3f9ddce0291cc04c2087c658acc748f5/docs/screenshot-light.png",
       "kind": "image",
@@ -7620,6 +7854,15 @@
       "source_url": "https://github.com/zaydmulani09/studio3svg",
       "revision": "e8c3a58c3f9ddce0291cc04c2087c658acc748f5",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "stunts-hd",
+      "image_url": "https://stunts-recomp.pages.dev/stunts/media/readme/montage.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/mr-finster/stunts-hd",
+      "revision": "e6995b5fea21b8fa6c3917f7d68357652ca9147a",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "suikoden-ii-recomp-case",
@@ -7701,6 +7944,15 @@
       "source_url": "https://github.com/nefariousjosiah/WWE-SVR2008-RECOMP",
       "revision": "92e93446954e5cbe15ffeb7f46f11f85dbc92dc2",
       "checked_at": "2026-11-09T06:56:34+00:00"
+    },
+    {
+      "id": "svr2009-recomp",
+      "image_url": "https://raw.githubusercontent.com/nefariousjosiah/WWE-SVR2009-RECOMP/6d0e51c6ad948559829fe9c2ce493b1e185689ad/docs/showcase/ladder.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/nefariousjosiah/WWE-SVR2009-RECOMP",
+      "revision": "6d0e51c6ad948559829fe9c2ce493b1e185689ad",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "svr2010-recomp",
@@ -7964,6 +8216,15 @@
       "checked_at": "2026-11-09T04:14:52+00:00"
     },
     {
+      "id": "tmb-recomp",
+      "image_url": "https://raw.githubusercontent.com/TheBozos/TMB_Recomp/027357a69472a8e8bfe5c115ccc8bf2c2143d6ba/docs/screenshots/match_explosion.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/TheBozos/TMB_Recomp",
+      "revision": "027357a69472a8e8bfe5c115ccc8bf2c2143d6ba",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "tmnt-recomp-case",
       "image_url": "https://raw.githubusercontent.com/naparuba-retro/tmnt-recomp/f9bcc2231718f9ae8eb6a1c678b01fb115ea660a/images/menu_play_whole_pizza.png",
       "kind": "image",
@@ -8178,6 +8439,15 @@
       "source_url": "https://github.com/abedegno/underworld-exhumed",
       "revision": "d8e0581fd2d2d4814b80da11e37b60f8f3daa9f6",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "underworld-revisited",
+      "image_url": "https://raw.githubusercontent.com/PQMarine/UnderworldRevisited/434801058aa9ebfc0517b1d8a72d63de5c731e6f/Screenshots/UR07.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/PQMarine/UnderworldRevisited",
+      "revision": "434801058aa9ebfc0517b1d8a72d63de5c731e6f",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "universal-gba-pokedex",
@@ -8612,6 +8882,15 @@
       "checked_at": "2026-11-09T07:55:54+00:00"
     },
     {
+      "id": "woodyre",
+      "image_url": "https://github.com/user-attachments/assets/7e15997d-394b-4527-b234-ff6f9551859f",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/jjmhalew/WoodyRE",
+      "revision": "6eae3d4f77a9e8506b0113b2cd98a5c4239dc139",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "wordcraft-case",
       "image_url": "https://raw.githubusercontent.com/storytold/wordcraft/7b8c0ba5eb7300922c485426bccf8a4c347d866a/docs/images/design.png",
       "kind": "image",
@@ -8711,6 +8990,15 @@
       "checked_at": "2026-11-08T22:27:09+00:00"
     },
     {
+      "id": "x64dbg-ext",
+      "image_url": "https://raw.githubusercontent.com/expend20/x64dbg_ext/main/pngs/Screenshot1.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/expend20/x64dbg_ext",
+      "revision": "main",
+      "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
       "id": "xapkdetector",
       "image_url": "https://github.com/horsicq/XAPKDetector/blob/master/mascots/version.png",
       "kind": "image",
@@ -8808,6 +9096,15 @@
       "source_url": "https://github.com/sp00nznet/YodaStoriesNG",
       "revision": "619ea5da1e47a3631edf68944c6dd80c1db2c0eb",
       "checked_at": "2026-11-09T02:41:36+00:00"
+    },
+    {
+      "id": "yukatool2",
+      "image_url": "https://user-images.githubusercontent.com/4553050/110998068-8e36b500-837e-11eb-8c39-5f385d8df1ec.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/AtomCrafty/yukatool2",
+      "revision": "fd8f445dfe685f5d0b724cfecbcbc91963a87376",
+      "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
       "id": "yw4-recomp-case",
