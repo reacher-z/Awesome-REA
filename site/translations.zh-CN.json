@@ -512,9 +512,9 @@
     "name": "Burp Suite MCP Server 扩展",
     "requirements": [
       "需要安装 Burp Suite。Burp Suite 是 PortSwigger 的专有软件，适用其自身的最终用户许可协议：Professional 为付费订阅，Community Edition 按单独的社区版条款免费使用。扩展本身的 GPL-3.0 许可证不涵盖 Burp。扩展清单标明两个版本均受支持。",
-      "所审阅版本为 v1.3.0，发布于 2026-05-26，提供预编译的 burp-mcp-all.jar，也已上架 BApp Store。从源码构建需使用 Gradle，并要求 PATH 中有 Java 与 jar 命令；所审阅的构建使用 Java 21 工具链。",
+      "所审阅版本为 1.3.0，依据所审阅提交中的 gradle.properties 与 BApp 清单；清单构建 burp-mcp-all.jar，该扩展也已上架 BApp Store。从源码构建需使用 Gradle，并要求 PATH 中有 Java 与 jar 命令；所审阅的构建使用 Java 21 工具链。",
       "SSE 服务默认监听 127.0.0.1:9876；只支持 stdio 的客户端可使用随附的代理 JAR。发送 HTTP 请求以及读取 HTTP 历史、WebSocket 历史和 Organizer 条目时，默认会弹出审批提示。修改配置的工具需手动启用，导出配置时默认过滤凭据。",
-      "扫描器问题与 Collaborator 工具仅在 Burp Suite Professional 中注册。返回给 MCP 客户端的数据由该客户端所用的模型提供方处理。审阅时默认分支比 v1.3.0 多 7 个提交，注册的工具集合保持不变。"
+      "扫描器问题与 Collaborator 工具仅在 Burp Suite Professional 中注册。返回给 MCP 客户端的数据由该客户端所用的模型提供方处理。审阅时默认分支比 1.3.0 版本多 7 个提交，注册的工具集合保持不变。"
     ]
   },
   "awesome-rea-cases": {
@@ -5988,7 +5988,7 @@
   "drakvuf": {
     "name": "DRAKVUF 虚拟化黑盒二进制分析系统",
     "requirements": [
-      "最新的带标签版本为 1.0，发布于 2022-12-29，附带 Debian 和 Ubuntu 软件包。所审阅的 2026-09-30 main 提交中，meson.build 声明版本为 1.1；独立的 drakvuf-builds 仓库按提交发布面向 Debian bookworm 以及 Ubuntu 22.04 和 24.04 的 drakvuf-bundle 1.1 软件包，并附配套的 Xen 4.20.1 虚拟机监控器软件包，其中包括所审阅提交的构建。",
+      "最新的带标签版本为 1.0，发布于 2022-12-29，附带 Debian 和 Ubuntu 软件包。所审阅的 2026-09-30 main 提交中，meson.build 声明版本为 1.1；独立的 drakvuf-builds 仓库以其最新 main 分支构建的发布版，提供面向 Debian bookworm 以及 Ubuntu 22.04 和 24.04 的 drakvuf-bundle 1.1 软件包，并附配套的 Xen 虚拟机监控器软件包。",
       "需要支持 VT-x 和扩展页表（EPT）的 Intel 处理器；README 称 DRAKVUF 无法在 AMD 处理器或缺少这些扩展的 Intel 处理器上运行。DRAKVUF 运行于 Xen 的 dom0 中。项目网站的安装指南最后更新于 2022-12-29，针对 Xen 4.17，主要在 Ubuntu 22.04 上测试：它从自带的子模块构建 Xen、设置 Xen 启动参数、要求 dom0 内核为 5.11 或更新版本，并把客户机磁盘放在 LVM 上；DRAKVUF 本身用 meson 和 ninja 构建。",
       "README 列出的客户机包括 Windows 7 和 8（32 位与 64 位）、64 位 Windows 10 以及 Linux 2.6.x 至 6.x；较早的网站指南则称 Linux 支持到 5.x。分析者需用自己的操作系统安装介质安装客户机，并为 LibVMI 生成 JSON 内核配置文件：Windows 从内核 PDB 用自带的 Volatility 3 pdbconv 脚本生成，Linux 则用 dwarf2json 从内核调试符号生成；针对单个模块的额外配置文件（如 tcpip.sys 的配置）可启用 socketmon 等插件。",
       "采用自定义许可：仅限 GPL 第 2 版，并附作者的澄清与例外条款，这些条款对衍生作品作宽泛解释，禁止将 DRAKVUF 与普通 GPL 软件结合，并为专有用途提供替代许可；GitHub 无法识别该许可。Xen、LibVMI、Volatility 3 和 dwarf2json 作为 git 子模块引入，各自适用其许可证。README 主要将其定位于恶意软件分析。"
