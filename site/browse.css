@@ -126,7 +126,7 @@ html[lang="zh-CN"] .source-card.browse-repository .source-card-description{max-w
 /* Category guides: a definition under the title, then a comparison table beside the questions, above the cards. */
 .browse-main .browse-intro .browse-definition{max-width:72ch;margin-bottom:10px;font-size:18px;line-height:1.65;color:var(--ink)}
 .browse-guide{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:start;padding:24px 0 8px}
-.guide-table{border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface);overflow:clip}
+.guide-table{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:clip}
 .guide-table table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.5}
 .guide-table caption{caption-side:top;text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--soft);font:500 22px/1.2 var(--font-display);color:var(--ink-strong)}
 .guide-table th,.guide-table td{padding:9px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
