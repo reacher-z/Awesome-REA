@@ -149171,5 +149171,3513 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "dsdcc",
+    "name": "DSDcc",
+    "url": "https://github.com/f4exb/dsdcc",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "DSDcc decodes digital radio traffic in DMR, D-Star, dPMR and Yaesu System Fusion formats through a C++ library and command-line program. It accepts 48 kS/s sample streams and exposes decoded audio, MBE frames and protocol status for analysis or integration.",
+    "description_zh": "DSDcc 通过 C++ 库和命令行程序解码 DMR、D-Star、dPMR 及 Yaesu System Fusion 数字无线电通信。它接收 48 kS/s 采样流，输出解码音频、MBE 帧和协议状态，供分析或集成使用。",
+    "evidence_url": "https://github.com/f4exb/dsdcc/blob/f27b32d2df131ae3a376fe72d3fb880ae1f9ede1/Readme.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Input is S16LE audio sampled at 48 kS/s.",
+      "Audio decoding through mbelib requires an optional mbelib build and installation; MBE frame extraction remains available without it.",
+      "The documentation states that Yaesu System Fusion full-rate voice is unsupported with SerialDV.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "winbox-protocol-python",
+    "name": "winbox",
+    "url": "https://github.com/jabb3rd/winbox",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "winbox implements the Winbox protocol's M2 packet and message structures in Python. It frames short and chunked packets, parses typed message fields, and provides session routines for challenge-response and cleartext login exchanges.",
+    "description_zh": "winbox 以 Python 实现 Winbox 协议的 M2 封包与消息结构。代码处理短包及分块封包、解析带类型的消息字段，并提供挑战应答和明文登录的会话流程。",
+    "evidence_url": "https://github.com/jabb3rd/winbox/blob/fe8e620f47ca635db10ac960aad6d0ed9ac5741a/winbox/packet.py",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3, as used in the project scripts and installation instructions.",
+      "The package metadata declares an MIT license."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jabb3rd/winbox/blob/fe8e620f47ca635db10ac960aad6d0ed9ac5741a/README.md",
+      "https://github.com/jabb3rd/winbox/blob/fe8e620f47ca635db10ac960aad6d0ed9ac5741a/winbox/message.py",
+      "https://github.com/jabb3rd/winbox/blob/fe8e620f47ca635db10ac960aad6d0ed9ac5741a/winbox/session.py"
+    ]
+  },
+  {
+    "id": "homm3-unpacker",
+    "name": "homm3 unpacker",
+    "url": "https://github.com/neunato/homm3-unpacker",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "homm3 unpacker parses Heroes of Might and Magic III LOD archives, DEF animations and PCX images in Node.js or modern browsers. Its functions extract archive entries, animation frames and image data, with options for PNG or bitmap output and selective archive processing.",
+    "description_zh": "homm3 unpacker 可在 Node.js 或现代浏览器中解析《魔法门之英雄无敌 III》的 LOD 归档、DEF 动画及 PCX 图像。它能提取归档条目和动画帧，并支持 PNG、位图输出及选择性处理。",
+    "evidence_url": "https://github.com/neunato/homm3-unpacker/blob/4b51558812729bc515814c97f827ec54ace1f62a/readme.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Node.js or a modern browser; input LOD, DEF or PCX files.",
+      "DEF and LOD repacking is not implemented.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/neunato/homm3-unpacker/blob/4b51558812729bc515814c97f827ec54ace1f62a/license"
+    ]
+  },
+  {
+    "id": "serum-preset-packager",
+    "name": "serum-preset-packager",
+    "url": "https://github.com/KennethWussmann/serum-preset-packager",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "serum-preset-packager reads and writes Serum 2 preset files using a format the author reverse engineered. Its Python CLI decompresses a preset into editable JSON, packs JSON back into a preset, or opens an edit cycle. The documented container has an XferJson metadata header and a Zstandard-compressed CBOR payload.",
+    "description_zh": "serum-preset-packager 根据作者逆向研究的格式读取和写入 Serum 2 预设文件。Python 命令行工具可将预设解压为可编辑的 JSON、重新打包，或直接启动编辑流程；文档记录了 XferJson 元数据头和经 Zstandard 压缩的 CBOR 载荷。",
+    "evidence_url": "https://github.com/KennethWussmann/serum-preset-packager/blob/f4f46f879b194625b5ab9722ec58b6b5adb2f42f/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python with dependencies from requirements.txt.",
+      "Legacy .fxp presets are unsupported, and valid CBOR property names remain unknown.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "lego-dimensions-save-converter",
+    "name": "LEGO Dimensions Save Converter",
+    "url": "https://github.com/NeverCookFirst/DimensionsSaveConverter",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "LEGO Dimensions Save Converter translates game saves among Xbox 360, PS3, PS4 and Wii U formats and into a ReXGlue layout. Its Windows GUI uses a reconstructed save format that accounts for platform headers, file naming, padding and the word order of 64-bit payload fields.",
+    "description_zh": "LEGO Dimensions Save Converter 在 Xbox 360、PS3、PS4、Wii U 存档格式之间转换，也可输出 ReXGlue 布局。其 Windows 图形界面依据逆向解析的存档结构处理各平台文件头、命名、填充及载荷中 64 位字段的字序。",
+    "evidence_url": "https://github.com/NeverCookFirst/DimensionsSaveConverter/blob/888615869ff64e0b11282bfebce8316c7f52f450/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Windows and a complete LEGO Dimensions save folder.",
+      "Create a spare save slot in the target game before replacing its files; platform slot metadata must remain in place.",
+      "The author warns that unseen field shapes may convert incorrectly and advises keeping a backup.",
+      "No licence stated on the project page."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "openjoc",
+    "name": "OpenJOC",
+    "url": "https://github.com/chyinan/OpenJOC",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "OpenJOC decodes and inspects E-AC-3 JOC audio bitstreams in Rust. It extracts EMDF and OAMD data, reconstructs carrier-local object signals, renders speaker or binaural audio, and exports reconstructed ADM BWF within a documented profile.",
+    "description_zh": "OpenJOC 是 Rust 编写的 E-AC-3 JOC 音频位流解码与检查工具。它提取 EMDF 和 OAMD 数据、重建载波内的对象信号，支持扬声器和双耳渲染，并可按限定的配置导出重建的 ADM BWF。",
+    "evidence_url": "https://github.com/chyinan/OpenJOC/blob/e3e330a2000f8d0bced3460756473c8774eb16f0/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported E-AC-3 JOC stream; building the CLI uses the Rust toolchain declared in Cargo.toml.",
+      "The speaker and binaural bridge is experimental and limited to supported profiles; reconstructed objects are carrier-local outputs.",
+      "Core code is licensed under Apache-2.0; integration bundles may carry additional terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "pan-globalprotect-protocol-doc",
+    "name": "PAN GlobalProtect protocol documentation",
+    "url": "https://github.com/dlenski/openconnect",
+    "category": "protocol-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "PAN GlobalProtect protocol documentation records authentication, configuration, tunnel data and logout exchanges between a VPN client and server. It uses anonymized logs based on the official Windows client v3.0.1-10, with some updates from v4.0.5-8, to describe requests, responses and tunnel behavior.",
+    "description_zh": "PAN GlobalProtect 协议文档记录 VPN 客户端与服务器之间的认证、配置、隧道数据传输和登出交互。文档以官方 Windows 客户端 v3.0.1-10 的匿名日志为基础，并加入 v4.0.5-8 的部分更新，说明请求、响应和隧道行为。",
+    "evidence_url": "https://github.com/dlenski/openconnect/blob/163f23bc0b4a629af364eb283b4b16acf0746fa5/PAN_GlobalProtect_protocol_doc.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The documented logs are based on the official Windows client v3.0.1-10, with some updates from v4.0.5-8.",
+      "The GlobalProtect support developed here is included in OpenConnect v8.x.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "scope",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dlenski/openconnect/blob/163f23bc0b4a629af364eb283b4b16acf0746fa5/README.md"
+    ]
+  },
+  {
+    "id": "wow-messages",
+    "name": "wow_messages",
+    "url": "https://github.com/gtker/wow_messages",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "wow_messages maintains World of Warcraft authentication and world-server message definitions in the wowm language. Its parser generates Rust message libraries, a machine-readable representation and Wireshark dissector messages, with examples for game clients from versions 1.12, 2.4.3 and 3.3.5.",
+    "description_zh": "wow_messages 用 wowm 语言维护《World of Warcraft》登录与世界服务器消息定义。解析器生成 Rust 消息库、机器可读表示和 Wireshark 解析消息，并提供面向 1.12、2.4.3、3.3.5 客户端的示例。",
+    "evidence_url": "https://github.com/gtker/wow_messages/blob/e1bde212345ca26751c43b084c31b5ecc7dc3674/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The examples target World of Warcraft clients 1.12, 2.4.3 and 3.3.5.",
+      "Wireshark output requires WOWM_WIRESHARK to point to a valid epan/dissectors folder.",
+      "MIT or Apache-2.0 license, at the user's option."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/gtker/wow_messages/blob/e1bde212345ca26751c43b084c31b5ecc7dc3674/wow_login_messages/README.md",
+      "https://github.com/gtker/wow_messages/blob/e1bde212345ca26751c43b084c31b5ecc7dc3674/wow_world_messages/README.md"
+    ]
+  },
+  {
+    "id": "pureikyubu",
+    "name": "pureikyubu",
+    "url": "https://github.com/emu-russia/pureikyubu",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "pureikyubu emulates Nintendo GameCube hardware to study the console and technologies used by its games. It includes a debugger, headless execution, and a local MCP debug interface, alongside Gekko, DSP, graphics, and I/O models. The repository also integrates Game Boy and Game Boy Advance emulation.",
+    "description_zh": "pureikyubu 模拟 Nintendo GameCube 硬件，用于研究主机及其游戏采用的技术。项目提供调试器、无界面运行方式和本地 MCP 调试接口，并实现 Gekko、DSP、图形与 I/O 模型；仓库还集成 Game Boy 和 Game Boy Advance 模拟功能。",
+    "evidence_url": "https://github.com/emu-russia/pureikyubu/blob/69572aa22ca44646807b9973dc830592c5d266e8/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows builds use Visual Studio 2026; Linux builds require CMake, pthread, OpenGL, GLEW, ImGui, and SDL2.",
+      "Corresponding runs require a game image or boot ROM.",
+      "Some titles still fail to render or hang.",
+      "CC0-1.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "felix-lynx-debugger",
+    "name": "Felix",
+    "url": "https://github.com/laoo/Felix",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Felix is an Atari Lynx emulator with facilities for analysing software running inside it. Its changelog documents disassembly, breakpoints, trace logging, symbol loading from mads .lab files, Lua debugging and memory dumps. The current build instructions target Windows and Visual Studio 2022.",
+    "description_zh": "Felix 是带程序分析功能的 Atari Lynx 模拟器。更新记录列出反汇编、断点、跟踪日志、加载 mads .lab 符号、Lua 调试及内存转储。当前构建说明面向 Windows 和 Visual Studio 2022。",
+    "evidence_url": "https://github.com/laoo/Felix/blob/f5a9cda3d056ac5484fc0a3600dae4d574c62dc9/CHANGELOG.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Builds currently target Windows and require Visual Studio 2022, Git and CMake.",
+      "The changelog reports games that hang and an audio/video synchronization defect.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/laoo/Felix/blob/f5a9cda3d056ac5484fc0a3600dae4d574c62dc9/README.md"
+    ]
+  },
+  {
+    "id": "vifterpreter",
+    "name": "Vifterpreter",
+    "url": "https://github.com/0x5abe/vifterpreter",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Vifterpreter is a Rust crate for inspecting PlayStation 2 DMA packet structures and VIF commands. Its example reads binary input with binrw and traverses DMA tags to access the VIF codes carried by each tag.",
+    "description_zh": "Vifterpreter 是用于检查 PlayStation 2 DMA 数据包结构及 VIF 命令的 Rust 库。示例使用 binrw 读取二进制输入，再遍历 DMA 标签，取得各标签中的 VIF 命令码。",
+    "evidence_url": "https://github.com/0x5abe/vifterpreter/blob/68f33f3625feb9739ca644a6c91aae14133032dd/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide binary DMA packet data to parse.",
+      "The crate uses binrw, bilge, serde and strum dependencies.",
+      "MIT License."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/0x5abe/vifterpreter/blob/68f33f3625feb9739ca644a6c91aae14133032dd/LICENSE"
+    ]
+  },
+  {
+    "id": "meteor-decoder",
+    "name": "meteor_decoder",
+    "url": "https://github.com/artlav/meteor_decoder",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "meteor_decoder processes captured Meteor-M LRPT weather-satellite signals into BMP images or decoded dumps. It accepts 8-bit soft samples and 1-bit hard samples, with options for deinterleaving, differential coding and channel selection by APID.",
+    "description_zh": "meteor_decoder 将接收到的 Meteor-M LRPT 气象卫星信号处理为 BMP 图像或解码转储。它接受 8 位软判决样本和 1 位硬判决样本，可选择去交织、差分编码处理以及按 APID 选取图像通道。",
+    "evidence_url": "https://github.com/artlav/meteor_decoder/blob/8021339b2fe7bd3a52355643907f447ae9f4e401/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Free Pascal is required to compile the decoder.",
+      "Input must be 8-bit signed soft samples, 1-bit hard samples or a decoded dump.",
+      "GPL-3.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "giibiiadvance-debugger",
+    "name": "GiiBiiAdvance",
+    "url": "https://github.com/AntonioND/giibiiadvance",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "GiiBiiAdvance is a GB, GBC and GBA emulator with debugger windows for inspecting game execution. Its analysis features include disassembly with branch annotations, breakpoints, editable CPU registers and memory, and viewers for maps, sprites and palettes.",
+    "description_zh": "GiiBiiAdvance 是带调试窗口的 GB、GBC 和 GBA 模拟器，可检查游戏执行过程。分析功能包括带分支提示的反汇编、断点、可编辑的 CPU 寄存器与内存，以及地图、精灵图和调色板查看器。",
+    "evidence_url": "https://github.com/AntonioND/giibiiadvance/blob/ccb40c3cf7d9efec538858a36d4ab69bb4d0ce5c/CHANGELOG.rst",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "CMake, SDL2 2.0.7 or later, libpng 1.6 or later, and zlib.",
+      "OpenCV 4 is optional for GB Camera webcam support; Lua 5.2 or later is optional for scripting.",
+      "The author lists GBA CPU timing and mosaic rendering among unfinished emulation work.",
+      "GPL-2.0 licence."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/AntonioND/giibiiadvance/blob/ccb40c3cf7d9efec538858a36d4ab69bb4d0ce5c/README.rst"
+    ]
+  },
+  {
+    "id": "space-invaders-emulator",
+    "name": "Space Invaders Emulator",
+    "url": "https://github.com/Justin-Credible/space-invaders-emulator",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Space Invaders Emulator models the arcade game's Intel 8080 CPU, graphics and sound and includes tools for inspecting its ROM code. A command-line disassembler emits annotated assembly, while an interactive debugger provides breakpoints, opcode history, annotations and reverse stepping.",
+    "description_zh": "Space Invaders Emulator 模拟街机版《Space Invaders》的 Intel 8080 CPU、图形和声音，并提供 ROM 代码分析工具。命令行反汇编器输出带注释的汇编；交互式调试器支持断点、指令历史、注释及反向单步。",
+    "evidence_url": "https://github.com/Justin-Credible/space-invaders-emulator/blob/46a871b1dd9e127408b10dac48be161854fc0a7a/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The .NET 10 SDK, SDL2 and SDL2_mixer are required for the desktop build.",
+      "A Space Invaders ROM set is required to run the game or disassemble its code."
+    ]
+  },
+  {
+    "id": "miitube-format",
+    "name": "MiiTube",
+    "url": "https://github.com/RiiConnect24/MiiTube",
+    "category": "game-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "MiiTube documents the structure of Miitopia's SpotPass MiiTube.dat package with a Kaitai specification. The repository also includes a shell script for retrieving the files. The package contains Miis used for in-game character roles and needs decryption before inspection.",
+    "description_zh": "MiiTube 用 Kaitai 规格描述《Miitopia》通过 SpotPass 获取的 MiiTube.dat 文件结构，仓库另有定期获取文件的脚本。该文件包含用于游戏角色的 Mii，检查内容前需先解密。",
+    "evidence_url": "https://github.com/RiiConnect24/MiiTube/blob/499a3e28b789c4dfc8824a45bd675ad98be20ea8/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Decrypt MiiTube.dat before inspection; the documentation points to GodMode9 on a 3DS.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "fseq-file-format",
+    "name": "FSEQ File Format",
+    "url": "https://github.com/Cryptkeeper/fseq-file-format",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "FSEQ File Format documents the version 2 Falcon sequence files used by Falcon Player and xLights for timed lighting-channel states. Derived from those software implementations, it maps the little-endian header, compression blocks, sparse channel ranges, variable records and compressed channel data.",
+    "description_zh": "FSEQ File Format 记录 Falcon Player 和 xLights 用于灯光通道时序状态的第 2 版 Falcon 序列文件。文档依据这两个软件的实现，梳理了小端序文件头、压缩块、稀疏通道范围、变量记录及压缩后的通道数据。",
+    "evidence_url": "https://github.com/Cryptkeeper/fseq-file-format/blob/66f27ec1e44581e54130c9483e5d61a84bcb7d97/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The author describes the documentation as incomplete, potentially incorrect and outdated.",
+      "MIT License."
+    ],
+    "requirement_facets": [
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Cryptkeeper/fseq-file-format/blob/66f27ec1e44581e54130c9483e5d61a84bcb7d97/LICENSE"
+    ]
+  },
+  {
+    "id": "aftereffects-aep-parser",
+    "name": "aftereffects-aep-parser",
+    "url": "https://github.com/boltframe/aftereffects-aep-parser",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "aftereffects-aep-parser is a Go library for inspecting Adobe After Effects AEP project files. The author identifies their big-endian RIFX container, provides a Kaitai structure for chunks and composition fields, and describes varying project contents to locate stored values.",
+    "description_zh": "aftereffects-aep-parser 是检查 Adobe After Effects AEP 工程文件的 Go 库。作者识别出其大端序 RIFX 容器，提供解析块和合成字段的 Kaitai 结构，并说明如何通过改变工程内容定位存储值。",
+    "evidence_url": "https://github.com/boltframe/aftereffects-aep-parser/blob/cdc61856c1dbe035f5a6754c61864a30cd3756b6/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires AEP project files as input and Go for the library.",
+      "The documented structure is partial and may be outdated, according to the author.",
+      "MIT License."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "openqbw",
+    "name": "OpenQBW",
+    "url": "https://github.com/Sigilweaver/OpenQBW",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "OpenQBW reverse engineers the QuickBooks Desktop .qbw company-file format and provides a Rust reader, CLI, Python bindings and a format specification. It parses SA17 pages and system catalogs, extracts transaction headers and line items, and exports selected data to SQLite, CSV or IIF while recording undecoded records and uncertain attribution.",
+    "description_zh": "OpenQBW 逆向研究 QuickBooks Desktop 的 .qbw 公司文件格式，提供 Rust 读取库、命令行工具、Python 绑定和格式规范。它解析 SA17 页面与系统目录，提取交易头和明细行，并将部分数据导出为 SQLite、CSV 或 IIF，同时记录未能解码的记录和归属不确定的数据。",
+    "evidence_url": "https://github.com/Sigilweaver/OpenQBW/blob/68f91eb1b9a5710ca3c5d9510b125063ecf07d7d/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A QuickBooks Desktop .qbw company file; Rust 1.95 or newer for source builds, or Python 3.10 or newer for the bindings.",
+      "The reader is read-only; page-to-table attribution and some amount and date interpretations remain unconfirmed.",
+      "Apache License 2.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Sigilweaver/OpenQBW/blob/68f91eb1b9a5710ca3c5d9510b125063ecf07d7d/docs/docs/format-overview.md",
+      "https://github.com/Sigilweaver/OpenQBW/blob/68f91eb1b9a5710ca3c5d9510b125063ecf07d7d/LICENSE"
+    ]
+  },
+  {
+    "id": "winttd",
+    "name": "WinTTD",
+    "url": "https://github.com/Colton1skees/WinTTD",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "WinTTD exposes recovered WinDBG virtual CPU structures and callback layouts for instruction instrumentation. Its C++ taint code reads x86-64 instructions from virtual CPU memory, decodes them with Capstone and passes them to Triton while maintaining per-thread register state.",
+    "description_zh": "WinTTD 整理了 WinDBG 虚拟 CPU 结构和插桩回调布局。其 C++ 污点分析代码从虚拟 CPU 内存读取 x86-64 指令，用 Capstone 解码后交给 Triton，并保存各线程的寄存器状态。",
+    "evidence_url": "https://github.com/Colton1skees/WinTTD/blob/43e871e0dbad07b30c1752b39fbfd0e3c7222fb1/WinDNA/include/internal_structures.h",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows C++ environment with Triton and Capstone headers.",
+      "Several internal callbacks and cache functions remain undocumented.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Colton1skees/WinTTD/blob/43e871e0dbad07b30c1752b39fbfd0e3c7222fb1/WinDNA/src/triton_tainter.cpp"
+    ]
+  },
+  {
+    "id": "wow-tools-local",
+    "name": "WoW.tools but local",
+    "url": "https://github.com/Marlamin/wow.tools.local",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "WoW.tools but local inspects a local World of Warcraft installation through a browser interface. It browses client files and DB2 tables, compares game builds and DB2 versions, tracks hotfixes and records links among assets such as textures, models and world objects.",
+    "description_zh": "WoW.tools but local 通过浏览器界面检查本地《魔兽世界》安装目录。它浏览客户端文件和 DB2 表，比较游戏构建版本与 DB2 差异，跟踪热修复，并记录纹理、模型及场景对象等资源之间的关联。",
+    "evidence_url": "https://github.com/Marlamin/wow.tools.local/blob/a9586fa54f32cc1ecdc7d5301c1bf18ef315bc19/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A local World of Warcraft installation is required.",
+      "At least about 3–5 GB of free RAM is needed; DB2 global search may require substantially more.",
+      "WoWDBDefs definitions are required to read DB2 tables.",
+      "MIT."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "rf-bridge-ob38s003",
+    "name": "RF-Bridge-OB38S003",
+    "url": "https://github.com/mightymos/RF-Bridge-OB38S003",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "RF-Bridge-OB38S003 provides replacement firmware for 433 MHz radio-to-Wi-Fi bridges that decodes radio packets and sniffs unknown codes. It offers passthrough, RCSwitch and Portisch modes for Sonoff Bridge R2 boards and supported 8051 microcontrollers, forwarding results over UART to the ESP8265.",
+    "description_zh": "RF-Bridge-OB38S003 为 433 MHz 射频转 Wi-Fi 网桥提供替代固件，可解码无线电数据包，并在 Portisch 模式下嗅探未知编码。它为 Sonoff Bridge R2 主板及受支持的 8051 微控制器提供透传、RCSwitch 和 Portisch 模式，通过 UART 向 ESP8265 发送结果。",
+    "evidence_url": "https://github.com/mightymos/RF-Bridge-OB38S003/blob/bfddbd17b53f08ff3a89ef4fd91858896eff380e/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported bridge board or microcontroller and multiple flashing steps.",
+      "Building requires SDCC 4.5.0 or later.",
+      "Portisch may output garbage after many hours in sniffing mode.",
+      "BSD-2-Clause licence."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "iwork-file-format",
+    "name": "iWork '13 File Format",
+    "url": "https://github.com/obriensp/iWorkFileFormat",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "iWork '13 File Format documents the structure of documents produced by Apple's iWork '13 apps. It describes bundles, Index.zip and IWA component storage, and provides a sample file inspector with Protocol Buffers schemas.",
+    "description_zh": "iWork '13 File Format 记录 Apple iWork '13 应用生成的文档结构，包括 bundle、Index.zip 和 IWA 组件存储方式，并提供示例检查器与 Protocol Buffers 模式文件。",
+    "evidence_url": "https://github.com/obriensp/iWorkFileFormat/blob/8575e441beaaaa56f480fdd91721f5bb06d07d43/Docs/index.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The format guide covers physical layout and algorithms, but excludes the represented object graph.",
+      "Licensed under MIT."
+    ],
+    "requirement_facets": [
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/obriensp/iWorkFileFormat/blob/8575e441beaaaa56f480fdd91721f5bb06d07d43/README.md"
+    ]
+  },
+  {
+    "id": "pyhwp",
+    "name": "pyhwp",
+    "url": "https://github.com/mete0r/pyhwp",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "pyhwp parses HWP Document Format v5 files and extracts their internal streams. Its Python source implements document structures and offers experimental conversion to OpenDocument and plain text, based on Hancom's published HWP Binary Specification 1.1.",
+    "description_zh": "pyhwp 解析 HWP Document Format v5 文件并提取内部数据流。其 Python 源码实现了文档结构解析，提供实验性的 OpenDocument 和纯文本转换；开发依据是 Hancom 发布的 HWP Binary Specification 1.1。",
+    "evidence_url": "https://github.com/mete0r/pyhwp/blob/83239f0d3bdf438b2c9f7dcff455a6e841154a39/README",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Python 2.7 or 3.5 through 3.8, plus cryptography, lxml and olefile.",
+      "Conversion to ODT or plain text is experimental.",
+      "Licensed under GNU AGPL-3.0 or later."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "cedimu",
+    "name": "CeDImu",
+    "url": "https://github.com/Stovent/CeDImu",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "CeDImu emulates selected Philips CD-I player hardware so user-provided BIOS images can run and be inspected. Its debugger exposes CPU and VDSC viewers, memory access logs, and exception and system call traces; it also reads CD-I file systems and exports files, audio and raw video.",
+    "description_zh": "CeDImu 模拟部分 Philips CD-I 播放机硬件，用于运行和检查用户提供的 BIOS。调试功能包括 CPU、VDSC 查看器、内存访问日志以及异常和系统调用追踪；它还可读取 CD-I 文件系统，导出文件、音频和原始视频。",
+    "evidence_url": "https://github.com/Stovent/CeDImu/blob/8e49f99d1473341ff76c6afee2f11c935ed17ceb/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A BIOS image and matching hardware configuration must be provided by the user.",
+      "Building requires a C++23 compiler, wxWidgets 3.2 and CMake.",
+      "The project is in early development; no listed board is marked capable of playing discs.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Stovent/CeDImu/blob/8e49f99d1473341ff76c6afee2f11c935ed17ceb/MANUAL.md"
+    ]
+  },
+  {
+    "id": "gamespydocs",
+    "name": "GameSpy Documentations",
+    "url": "https://github.com/GameProgressive/GameSpyDocs",
+    "category": "protocol-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "GameSpy Documentations collects technical research on the GameSpy protocol and games that use it. The repository includes a protocol research paper with TeX source, server and workflow diagrams, and SOAP structure notes for particular games.",
+    "description_zh": "GameSpy Documentations 收录 GameSpy 协议及使用该协议的游戏的技术研究，包含带 TeX 源文件的协议论文、服务器与流程图，以及针对具体游戏的 SOAP 结构笔记。",
+    "evidence_url": "https://github.com/GameProgressive/GameSpyDocs/blob/dc5557331c74e8f039b7f51f0a255b972f6c224a/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "license"
+    ]
+  },
+  {
+    "id": "apfs-fuse",
+    "name": "apfs-fuse",
+    "url": "https://github.com/sgan81/apfs-fuse",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "apfs-fuse examines Apple File System volume structures with apfs-dump and apfs-dump-quick, and mounts APFS volumes through a read-only FUSE driver. The tools expose management structures from drives or images; the driver also handles software-encrypted volumes, Fusion drives, snapshots and DMG files within its stated format limits.",
+    "description_zh": "apfs-fuse 提供 apfs-dump 和 apfs-dump-quick，用于扫描并转储 Apple File System 卷的管理结构；只读 FUSE 驱动可挂载 APFS 卷。项目还处理软件加密卷、Fusion Drive、快照和 DMG 文件，但支持范围受文档所列格式限制。",
+    "evidence_url": "https://github.com/sgan81/apfs-fuse/blob/66b86bd525e8cb90f9012543be89b1f092b75cf3/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Linux with FUSE, zlib, bzip2, CMake and a C++ compiler to build; libattr is needed on some distributions.",
+      "An APFS device or disk image is required; encrypted volumes require a password or recovery key.",
+      "The driver is experimental and lacks writing, firmlink support, transparent LZFSE decompression and hardware-encrypted T2 volumes.",
+      "GPL-2.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "demoinfo-csgo",
+    "name": "DemoInfo",
+    "url": "https://github.com/StatsHelix/demoinfo",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "DemoInfo reads Counter-Strike: Global Offensive demo files through a C# library for replay analysis. It exposes player state at points in time, team scores and events including attacks, grenades, deaths and bomb activity.",
+    "description_zh": "DemoInfo 是读取 Counter-Strike: Global Offensive 回放文件的 C# 分析库，可提取指定时刻的玩家状态、队伍比分，以及攻击、投掷物、死亡和炸弹事件。",
+    "evidence_url": "https://github.com/StatsHelix/demoinfo/blob/052f7a6f932d926037500d11ceb42188540f829f/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "CS:GO demo files are required as input.",
+      "The project is archived and no longer maintained.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "rflink-esp",
+    "name": "RFLink ESP",
+    "url": "https://github.com/cpainchaud/RFLink32",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "RFLink ESP is ESP32 and ESP8266 firmware that receives and decodes 433 MHz OOK device messages. Its debug mode reports unrecognized pulse timings, and its plugin guide uses those captures to investigate a device's radio protocol and add a decoder.",
+    "description_zh": "RFLink ESP 是运行于 ESP32 和 ESP8266 的固件，用于接收并解码设备发出的 433 MHz OOK 消息。调试模式输出未识别信号的脉冲时序，插件指南说明如何据此分析无线协议并添加解码器。",
+    "evidence_url": "https://github.com/cpainchaud/RFLink32/blob/dbf78f81b6a03d8fb84cee4dff6e2a962f4c848c/doc/how_to_write_a_plugin.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "An ESP32 or ESP8266 board and a compatible radio receiver such as RXB6 are needed.",
+      "The documented build workflow uses PlatformIO or Arduino IDE.",
+      "OLED display support is experimental and disabled by default.",
+      "The repository contains RFLink Gateway License v1.0 in License.txt."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cpainchaud/RFLink32/blob/dbf78f81b6a03d8fb84cee4dff6e2a962f4c848c/README.md",
+      "https://github.com/cpainchaud/RFLink32/blob/dbf78f81b6a03d8fb84cee4dff6e2a962f4c848c/License.txt"
+    ]
+  },
+  {
+    "id": "casioemuneo",
+    "name": "CasioEmuNeo",
+    "url": "https://github.com/qiufuyu123/CasioEmuNeo",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "CasioEmuNeo disassembles Casio calculator ROMs for use with its nX-U8/100 emulator and debugger. Its u8-disas program writes a disassembly file that the emulator can display alongside the selected model.",
+    "description_zh": "CasioEmuNeo 为采用 nX-U8/100 核心的卡西欧计算器提供模拟、反汇编和调试功能。u8-disas 可将机型 ROM 转为反汇编文件，供模拟器中的反汇编视图使用。",
+    "evidence_url": "https://github.com/qiufuyu123/CasioEmuNeo/blob/23de3431a5b17f2e0570385455e2698c7463a47c/docs/README_en.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Build with xmake and MinGW64; build the optional disassembler with make.",
+      "Provide the ROM for the selected calculator model and set rom_path in model.lua.",
+      "The disassembly panel is unavailable when _disas.txt is missing.",
+      "GPL-3.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/qiufuyu123/CasioEmuNeo/blob/23de3431a5b17f2e0570385455e2698c7463a47c/README.md",
+      "https://github.com/qiufuyu123/CasioEmuNeo/blob/23de3431a5b17f2e0570385455e2698c7463a47c/LICENSE"
+    ]
+  },
+  {
+    "id": "crate-digger",
+    "name": "Crate Digger",
+    "url": "https://github.com/Deep-Symmetry/crate-digger",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Crate Digger parses rekordbox export databases and track-analysis files with Kaitai Struct definitions and generated Java classes. It also retrieves those files from the nonstandard NFSv2 servers in Pioneer players; its format documentation covers export.pdb, ANLZnnnn.DAT and ANLZnnnn.EXT.",
+    "description_zh": "Crate Digger 使用 Kaitai Struct 格式定义和生成的 Java 类解析 rekordbox 导出数据库及曲目分析文件，还能从 Pioneer 播放器的非标准 NFSv2 服务器获取文件。其格式文档涵盖 export.pdb、ANLZnnnn.DAT 和 ANLZnnnn.EXT。",
+    "evidence_url": "https://github.com/Deep-Symmetry/crate-digger/blob/7c9d5358d8a3ce663f566380f2dc79ab1393201e/README.adoc",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Use Java and Maven to consume the library; Kaitai Struct generates its parser classes.",
+      "Provide rekordbox export or analysis files, or access to a Link-capable Pioneer player.",
+      "Some database tables remain to be worked out, including how to find and use the index tables.",
+      "Licensed under Eclipse Public License 2.0, with Mozilla Public License 2.0 and LGPL 3 as secondary options."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Deep-Symmetry/crate-digger/blob/7c9d5358d8a3ce663f566380f2dc79ab1393201e/CHANGELOG.md"
+    ]
+  },
+  {
+    "id": "mdb-tools",
+    "name": "MDB Tools",
+    "url": "https://github.com/mdbtools/mdbtools",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "MDB Tools reads Microsoft Access MDB files and documents the Jet3 and Jet4 file format. Its libraries, command-line utilities and ODBC driver expose tables, schemas, queries and exported data; HACKING.md records page structures, offsets and other format findings.",
+    "description_zh": "MDB Tools 读取 Microsoft Access MDB 文件，并记录 Jet3 和 Jet4 文件格式。其库、命令行工具及 ODBC 驱动可访问表、结构、查询和导出数据；HACKING.md 记载了页面结构、偏移量等格式研究结果。",
+    "evidence_url": "https://github.com/mdbtools/mdbtools/blob/96d6880ccf7b67fdb468c3546f2b815aabc91510/HACKING.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building from Git requires libtool, automake, autoconf 2.64 or newer and pkg-config; the SQL engine additionally needs bison 3.0 or newer and flex.",
+      "MDB import and libmdb write support are experimental; tables with indexes are not handled correctly.",
+      "Libraries use LGPL terms; utilities use GPL terms. The repository's COPYING file contains GPL version 2."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mdbtools/mdbtools/blob/96d6880ccf7b67fdb468c3546f2b815aabc91510/README.md"
+    ]
+  },
+  {
+    "id": "extract-altium-step-models",
+    "name": "ExtractAltiumSTEPModels",
+    "url": "https://github.com/braincodec/ExtractAltiumSTEPModels",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "ExtractAltiumSTEPModels is a Python proof of concept for recovering STEP component models embedded in Altium .PcbDoc PCB project files. It locates model data in the archive's MODELS folder and converts a binary representation into an ASCII STEP file; the repository includes a sample LED model input and output.",
+    "description_zh": "ExtractAltiumSTEPModels 是一个 Python 概念验证脚本，用于从 Altium 的 .PcbDoc PCB 项目文件中提取 STEP 元件模型。它在归档的 MODELS 目录中定位二进制模型数据，并转换为 ASCII STEP 文件；仓库附有 LED 模型的输入与输出样例。",
+    "evidence_url": "https://github.com/braincodec/ExtractAltiumSTEPModels/blob/dac513e52448151a454f206f8bff9598a13cf37f/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "An Altium .PcbDoc file containing embedded STEP models.",
+      "The project is presented as a proof of concept.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ]
+  },
+  {
+    "id": "max-cube-protocol",
+    "name": "max-cube-protocol",
+    "url": "https://github.com/Bouni/max-cube-protocol",
+    "category": "protocol-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "max-cube-protocol documents the eQ3/ELV MAX! heating cube's TCP protocol, including connection setup, single-letter message types, CRLF framing and device-configuration payloads. The author combines observations from a cube running firmware 1.1.3 with findings from decompiling the original MAX software.",
+    "description_zh": "max-cube-protocol 记录 eQ3/ELV MAX! 供暖控制盒的 TCP 协议，包括连接方式、单字母消息类型、CRLF 分帧和设备配置载荷。作者结合固件 1.1.3 设备的观察结果与原版 MAX 软件的反编译发现编写文档。",
+    "evidence_url": "https://github.com/Bouni/max-cube-protocol/blob/f9d2734822c17348dd66093ef334d151a5f5d36a/protocol.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The author reports that the documented observations apply to cube firmware version 1.1.3.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Bouni/max-cube-protocol/blob/f9d2734822c17348dd66093ef334d151a5f5d36a/README.md",
+      "https://github.com/Bouni/max-cube-protocol/blob/f9d2734822c17348dd66093ef334d151a5f5d36a/C-Message.md",
+      "https://github.com/Bouni/max-cube-protocol/blob/f9d2734822c17348dd66093ef334d151a5f5d36a/LICENSE"
+    ]
+  },
+  {
+    "id": "rustation-playstation-debugger",
+    "name": "Rustation PlayStation debugger",
+    "url": "https://github.com/simias/rustation",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Rustation embeds a GDB remote debugger in a Rust PlayStation emulator core for inspecting running game code. A MIPS-targeted GDB session can read registers and memory, disassemble instructions, set code breakpoints and write watchpoints, and single-step execution.",
+    "description_zh": "Rustation 在 Rust 编写的 PlayStation 模拟器核心中嵌入 GDB 远程调试器，用于检查运行中的游戏代码。面向 MIPS 的 GDB 可读取寄存器和内存、反汇编指令、设置代码断点与写入监视点，并单步执行。",
+    "evidence_url": "https://github.com/simias/rustation/blob/5e650b949d6e5dd5a2a5d40d69638ce4ac63abb3/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Rust, Cargo, SDL2, a PlayStation BIOS and a MIPS-targeted GDB are needed for debugging.",
+      "The debugger is experimental; the emulator boots only a few games and may crash or freeze.",
+      "Development moved to rustation-ng.",
+      "GPL-2.0-or-later license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/simias/rustation/blob/5e650b949d6e5dd5a2a5d40d69638ce4ac63abb3/LICENSE"
+    ]
+  },
+  {
+    "id": "unshield",
+    "name": "Unshield",
+    "url": "https://github.com/twogood/unshield",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Unshield lists and extracts files from InstallShield cabinet files through a C tool and library. Its implementation uses existing extractor source as a reference for the undocumented format and aims to support InstallShield versions 5 and later.",
+    "description_zh": "Unshield 通过 C 工具和库列出并提取 InstallShield cabinet 文件中的内容。实现参考了已有解包工具的源码，以处理这种未公开文档的格式，并以支持 InstallShield 5 及更新版本为目标。",
+    "evidence_url": "https://github.com/twogood/unshield/blob/c602af69d4edee13450ff60965a752fdbfca854a/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "An InstallShield cabinet file is required as input.",
+      "CMake is used to build the C source.",
+      "Malformed or crafted cabinet files can cause crashes or out-of-bounds reads; process untrusted files in a sandbox.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "demoparser-cs2",
+    "name": "Demoparser",
+    "url": "https://github.com/LaihoE/demoparser",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Demoparser analyzes Counter-Strike 2 replay files with a Rust parser exposed through Python, JavaScript and WebAssembly packages. It queries recorded events and ticks and returns player positions, actions and game-state fields.",
+    "description_zh": "Demoparser 用 Rust 解析 Counter-Strike 2 回放文件，并通过 Python、JavaScript 和 WebAssembly 包提供查询接口。它可读取事件、逐帧数据、玩家位置与操作以及比赛状态字段。",
+    "evidence_url": "https://github.com/LaihoE/demoparser/blob/314a253ed51488093b5f28f648694e42b561079f/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Counter-Strike 2 .dem replay files are required as input.",
+      "The Python package requires Python 3.8 or later.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "mesen",
+    "name": "Mesen",
+    "url": "https://github.com/SourMesen/Mesen",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Mesen is an NES/Famicom emulator with tools for inspecting game execution and graphics. Version 0.9.9 documents a debugger, trace logger, event viewer, memory tools, PPU viewer, assembler and Lua API; the repository contains the emulator core and tool source.",
+    "description_zh": "Mesen 是带游戏执行与图形分析工具的 NES/Famicom 模拟器。0.9.9 版文档列出调试器、跟踪日志、事件查看器、内存工具、PPU 查看器、汇编器及 Lua API；仓库包含模拟器核心和工具源码。",
+    "evidence_url": "https://github.com/SourMesen/Mesen/blob/e1180957b31979d4b82d613af9263fcb9442a685/Docs/content/_index.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Version 0.9.9 is archived; development on this version stopped in 2020.",
+      "GPL-3.0 licence."
+    ],
+    "requirement_facets": [
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SourMesen/Mesen/blob/e1180957b31979d4b82d613af9263fcb9442a685/README.md"
+    ]
+  },
+  {
+    "id": "d2s",
+    "name": "D2s",
+    "url": "https://github.com/nokka/d2s",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "D2s is a Go parser for Diablo II .d2s character saves. It exposes character information and documents the binary layout of headers, quests, waypoints and bit-packed attributes, including field offsets and value meanings.",
+    "description_zh": "D2s 是解析《Diablo II》.d2s 角色存档的 Go 库。它读取角色信息，并记录文件头、任务、传送点和按位编码属性的二进制布局，包括字段偏移和值的含义。",
+    "evidence_url": "https://github.com/nokka/d2s/blob/426ae713940b7474a5f7872f16dddb02ced8a241/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Diablo II .d2s character file as input.",
+      "Character progression, waypoints and NPC introductions are marked as unimplemented in the documentation.",
+      "MIT License."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "xbepy",
+    "name": "XBEpy",
+    "url": "https://github.com/LoveMHz/XBEpy",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "XBEpy is a Python library for inspecting Microsoft Xbox executable files. It exposes operations to view, extract, and validate data inside XBE files and was written to support unit testing for the XBENext emulator.",
+    "description_zh": "XBEpy 是检查 Microsoft Xbox 可执行文件的 Python 库，可查看、提取和校验 XBE 文件中的数据，最初用于 XBENext 模拟器的单元测试。",
+    "evidence_url": "https://github.com/LoveMHz/XBEpy/blob/87568a3d2d9c89e80a12f5261331b90e543e5f29/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 2.7 and Python Imaging Library (PIL).",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "w3gjs",
+    "name": "w3gjs",
+    "url": "https://github.com/PBug90/w3gjs",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "w3gjs parses Warcraft III .w3g replay files in TypeScript for game analysis. Its high-level API handles standard melee replays, while a low-level parser emits replay-header metadata and each parsed game data block for custom analysis.",
+    "description_zh": "w3gjs 用 TypeScript 解析 Warcraft III 的 .w3g 回放文件。高级接口处理标准对战回放，底层解析器则输出回放头元数据和逐个解析的游戏数据块，供自定义分析使用。",
+    "evidence_url": "https://github.com/PBug90/w3gjs/blob/8ccf5463098f1dc88b6938f6fd7483d36352b117/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Node.js 20 or newer.",
+      "Replays from game version 1.14 or earlier are not fully supported.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/PBug90/w3gjs/blob/8ccf5463098f1dc88b6938f6fd7483d36352b117/package.json"
+    ]
+  },
+  {
+    "id": "remus-rlf-reader",
+    "name": "remus-rlf-reader",
+    "url": "https://github.com/isaacgerg/remus-rlf-reader",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "remus-rlf-reader parses REMUS-100 autonomous underwater vehicle run logs and companion ADCP, GPS, and mission files using an empirically derived record layout. It provides a binary format specification, Python decoders for sensor and mission records, and a browser explorer that plots parsed RLF data.",
+    "description_zh": "remus-rlf-reader 根据实测推导的记录结构，解析 REMUS-100 自主水下航行器的运行日志，以及配套的 ADCP、GPS 和任务文件。项目提供二进制格式规范、用于传感器和任务记录的 Python 解码器，以及绘制 RLF 数据的网页浏览器。",
+    "evidence_url": "https://github.com/isaacgerg/remus-rlf-reader/blob/036793993a5c5d522f9ff89dd4be803ada0bb103/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Python 3.8+ and NumPy; Matplotlib is needed for --plot.",
+      "Field offsets, scaling factors, and physical interpretations were derived empirically and may be incorrect.",
+      "AGPL-3.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/isaacgerg/remus-rlf-reader/blob/036793993a5c5d522f9ff89dd4be803ada0bb103/webapp/README.md"
+    ]
+  },
+  {
+    "id": "zenkit",
+    "name": "ZenKit",
+    "url": "https://github.com/GothicKit/ZenKit",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "ZenKit is a C++ library for parsing ZenGin file formats used by Gothic and Gothic II. It covers models, animations, textures, archives, VDF files and compiled Daedalus scripts, and includes a type-safe Daedalus VM and format reference documentation.",
+    "description_zh": "ZenKit 是解析 Gothic 与 Gothic II 所用 ZenGin 格式的 C++ 库，涵盖模型、动画、纹理、归档文件、VDF 文件和编译后的 Daedalus 脚本，并提供类型安全的 Daedalus 虚拟机及格式参考文档。",
+    "evidence_url": "https://github.com/GothicKit/ZenKit/blob/e1c1044e4e0708b05db152ede44393f78d935ad5/readme.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building requires a C++20 compiler, CMake 3.10 or newer, and Git.",
+      "The author states that the project is tested on Linux; Windows support may have issues.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/GothicKit/ZenKit/blob/e1c1044e4e0708b05db152ede44393f78d935ad5/docs/index.md"
+    ]
+  },
+  {
+    "id": "poe-dat-schema",
+    "name": "PoE dat schema",
+    "url": "https://github.com/poe-tool-dev/dat-schema",
+    "category": "game-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "PoE dat schema documents Path of Exile dat-file layouts as versioned GraphQL schemas. It defines scalar field types, row references, localized fields and file-path directives, with temporary types for unresolved columns. A build exports the schemas as JSON.",
+    "description_zh": "PoE dat schema 用按版本划分的 GraphQL 模式记录 Path of Exile 的 dat 文件布局。模式定义标量字段、行关联、本地化字段和文件路径指令，并以临时类型标记尚未确定的列；构建流程会导出 JSON。",
+    "evidence_url": "https://github.com/poe-tool-dev/dat-schema/blob/717d788d6ec081821c33473b2a0ec35629144826/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The rid and underscore types mark unresolved table or array element types.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/poe-tool-dev/dat-schema/blob/717d788d6ec081821c33473b2a0ec35629144826/package.json"
+    ]
+  },
+  {
+    "id": "bedrock-protocol",
+    "name": "bedrock-protocol",
+    "url": "https://github.com/PrismarineJS/bedrock-protocol",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "bedrock-protocol parses and serializes Minecraft Bedrock Edition packets as JavaScript objects and provides client, server and proxy connections. Its authentication and encryption handling, protocol documentation and packet-dump tooling support inspection of Bedrock network exchanges.",
+    "description_zh": "bedrock-protocol 将 Minecraft 基岩版报文解析为 JavaScript 对象并支持序列化，提供客户端、服务器及代理连接。其认证、加密处理、协议文档和报文转储工具可用于检查基岩版网络交互。",
+    "evidence_url": "https://github.com/PrismarineJS/bedrock-protocol/blob/8d7d5dfdf9e3170cfbea6e194e810dfd13fc7c25/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Node.js and installation as an npm package.",
+      "Protocol support covers the Bedrock versions listed in the project documentation.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/PrismarineJS/bedrock-protocol/blob/8d7d5dfdf9e3170cfbea6e194e810dfd13fc7c25/package.json"
+    ]
+  },
+  {
+    "id": "rs41-decoding",
+    "name": "RS41 Decoding",
+    "url": "https://github.com/bazjo/RS41_Decoding",
+    "category": "protocol-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "RS41 Decoding documents the Vaisala RS41 radiosonde's radio frame format, from FSK audio and bit ordering to XOR whitening, Reed–Solomon data, frame types and CRC-protected blocks. Separate notes cover RS41 variants and extended XDATA payloads, including the OIF411 ozone interface.",
+    "description_zh": "RS41 Decoding 记录 Vaisala RS41 探空仪的无线电帧格式，涵盖 FSK 音频、位序、XOR 白化、Reed–Solomon 数据、帧类型和带 CRC 的数据块。分型号文档还介绍扩展 XDATA 载荷及 OIF411 臭氧接口。",
+    "evidence_url": "https://github.com/bazjo/RS41_Decoding/blob/702553b114b13370afb4a7d86119b03fb94273b1/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository extends the documentation of Zilog80's RS decoder (rs1729/RS).",
+      "The author lists unresolved STATUS and MEAS bytes, subframes and parts of error correction.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bazjo/RS41_Decoding/blob/702553b114b13370afb4a7d86119b03fb94273b1/RS41-SGP%2BXDATA/README.md"
+    ]
+  },
+  {
+    "id": "wow-chunky",
+    "name": "wow_chunky",
+    "url": "https://github.com/bigglesss/wow_chunky",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Parses World of Warcraft chunked game files in Rust, including WDT and ADT maps and DXT-compressed BLP images. Its API examples load an ADT through a WDT map file; an optional inspect binary is declared in the package manifest.",
+    "description_zh": "wow_chunky 是解析 World of Warcraft 分块游戏文件的 Rust 库，覆盖 WDT、ADT 地图和 DXT 压缩 BLP 图像。示例展示通过 WDT 加载 ADT；包清单还声明了可选的 inspect 命令。",
+    "evidence_url": "https://github.com/bigglesss/wow_chunky/blob/c3ed3721383040eefef2f85e91c4e51fc872ac3c/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "World of Warcraft files from a supported game version; the README lists 1.12 support for WDT, ADT and DXT BLP.",
+      "Palette and ARGB BLP variants are unhandled; BLS is marked unsupported.",
+      "MIT License."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bigglesss/wow_chunky/blob/c3ed3721383040eefef2f85e91c4e51fc872ac3c/Cargo.toml"
+    ]
+  },
+  {
+    "id": "libagdb",
+    "name": "libagdb",
+    "url": "https://github.com/libyal/libagdb",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "libagdb analyzes the Windows SuperFetch database format and provides C library code and tools for accessing it. The repository includes a format document and an information utility; its author describes the library as experimental and unfinished.",
+    "description_zh": "libagdb 分析 Windows SuperFetch 数据库格式，并提供访问该格式的 C 库和工具。仓库包含格式文档及信息读取工具；作者将该库标为实验性且尚未完成。",
+    "evidence_url": "https://github.com/libyal/libagdb/blob/2859755182308c164701f8f8b5688442cb460a8f/README",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows SuperFetch database files as input for format analysis.",
+      "Experimental status; the library remains unfinished.",
+      "LGPL-3.0-or-later."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "stringsx64dbg-next",
+    "name": "StringsX64DbgNext",
+    "url": "https://github.com/Orohal/stringsx64dbg-next",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "StringsX64DbgNext scans the main module of an x64dbg debuggee for printable ANSI and UTF-16LE strings. The C++ plugin supports length and null-termination settings, result filtering, CSV export and navigation to addresses in the debugger.",
+    "description_zh": "StringsX64DbgNext 扫描 x64dbg 被调试程序主模块中的可打印 ANSI 与 UTF-16LE 字符串。这个 C++ 插件支持设置最短长度及空终止条件，并可筛选结果、导出 CSV、跳转到调试器中的地址。",
+    "evidence_url": "https://github.com/Orohal/stringsx64dbg-next/blob/5b3b28d49456f9b1c3696ae46195758ffc291925/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Build on Windows with CMake 3.21 or later, a Visual Studio C++ toolchain and an x64dbg checkout containing pluginsdk and x86/x64 import libraries.",
+      "PolyForm Noncommercial License 1.0.0; commercial use requires separate permission."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Orohal/stringsx64dbg-next/blob/5b3b28d49456f9b1c3696ae46195758ffc291925/LICENSE"
+    ]
+  },
+  {
+    "id": "gho",
+    "name": "gho",
+    "url": "https://github.com/nyarime/gho",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "gho reads, extracts, creates and modifies Norton Ghost GHO disk images through a Go library and CLI. Its format documentation maps file and partition records, span handling and compression blocks; the Fast LZ decompressor is described as reverse-engineered from Ghost 11.5.1.",
+    "description_zh": "gho 通过 Go 库和命令行工具读取、提取、创建及修改 Norton Ghost GHO 磁盘镜像。格式文档列出文件与分区记录、分卷结构和压缩块；Fast LZ 解压算法据作者描述来自对 Ghost 11.5.1 的逆向研究。",
+    "evidence_url": "https://github.com/nyarime/gho/blob/40af0e8eca5ce80aec8788320a98faadb666cb40/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Norton Ghost GHO image for inspection or extraction; supported formats are listed for Ghost 11.x–12.x.",
+      "Writing multi-file .ghs spans is unfinished; full-disk image creation is planned.",
+      "MIT licence."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "xipackets",
+    "name": "XiPackets",
+    "url": "https://github.com/atom0s/XiPackets",
+    "category": "protocol-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "description_en": "XiPackets documents reverse-engineered Final Fantasy XI network behavior across its lobby, world, cache and patch services. Its notes cover packet definitions, server roles, message exchanges, and the compression, encryption and hashing used by those services.",
+    "description_zh": "XiPackets 记录 Final Fantasy XI 的逆向网络研究，涵盖大厅、世界、缓存和补丁服务。文档整理各服务的数据包定义、职责、消息交互，以及压缩、加密和哈希机制。",
+    "evidence_url": "https://github.com/atom0s/XiPackets/blob/ebe2216a991ff88254ad600cc5bae8e3d9e80306/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "AGPL-3.0 license."
+    ],
+    "requirement_facets": [
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/atom0s/XiPackets/blob/ebe2216a991ff88254ad600cc5bae8e3d9e80306/lobby/Protocol.md"
+    ]
+  },
+  {
+    "id": "tps-parse",
+    "name": "tps-parse",
+    "url": "https://github.com/ctrl-alt-dev/tps-parse",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "tps-parse reads Clarion TPS database files using a Java parser built from reverse-engineered file structures. Its library exposes tables, fields, and records, while a command-line converter exports TPS data to CSV and accepts encrypted files with a password.",
+    "description_zh": "tps-parse 根据逆向分析得到的文件结构，以 Java 解析 Clarion TPS 数据库文件。库接口提供表、字段与记录访问，命令行工具可将 TPS 导出为 CSV，并通过密码读取加密文件。",
+    "evidence_url": "https://github.com/ctrl-alt-dev/tps-parse/blob/9ebe03d10c55419de361dad3b76e296c04241a1d/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Clarion TPS source file; encrypted files require a password.",
+      "Parsing may be incomplete or misinterpret data.",
+      "Apache 2.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "openorcadparser",
+    "name": "OpenOrCadParser",
+    "url": "https://github.com/Werni2A/OpenOrCadParser",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "OpenOrCadParser parses Cadence OrCAD Capture binary schematics and symbol libraries with a C++20 library and CLI. It handles DSN and DBK designs and OLB and OBK libraries, can print container trees or extract their streams, and uses OrCAD XML exports to check interpretations of binary fields.",
+    "description_zh": "OpenOrCadParser 以 C++20 库和命令行工具解析 Cadence OrCAD Capture 的二进制原理图与符号库。它处理 DSN、DBK 设计文件和 OLB、OBK 库文件，可打印容器树或提取流，并参照 OrCAD 的 XML 导出核对二进制字段含义。",
+    "evidence_url": "https://github.com/Werni2A/OpenOrCadParser/blob/be0a83ac119390044952cf9bed1e0fb86c448f44/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A C++20 compiler, CMake 3.8 or newer and the documented build dependencies.",
+      "KiCad design import is not yet supported.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Werni2A/OpenOrCadParser/blob/be0a83ac119390044952cf9bed1e0fb86c448f44/doc/container_structure.md"
+    ]
+  },
+  {
+    "id": "nintendo-switch-app-rest-api",
+    "name": "Nintendo Switch app REST API documentation",
+    "url": "https://github.com/ZekeSnider/NintendoSwitchRESTAPI",
+    "category": "protocol-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "app",
+      "website",
+      "protocol"
+    ],
+    "description_en": "Nintendo Switch app REST API documentation maps the iOS companion app's account and game-service requests, including its embedded Splatoon 2 web app. Based on mitmproxy observation, it provides endpoint blueprints and an ordered account-to-game authentication sequence.",
+    "description_zh": "Nintendo Switch 应用 REST API 文档梳理 iOS 伴侣应用的账户和游戏服务请求，包括内嵌的 Splatoon 2 网页应用。作者通过 mitmproxy 观察流量，整理了接口蓝图及从账户登录到游戏服务的认证步骤。",
+    "evidence_url": "https://github.com/ZekeSnider/NintendoSwitchRESTAPI/blob/409b82df5bd6f478bec07fad7362266e11d4c072/readme.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Research used Nintendo Switch app version 1.0.4 on iPhone 7 with iOS 10.3.3 and a US English account.",
+      "The author did not test the Android app and notes possible regional differences.",
+      "The initial login URL generation remained unknown.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ZekeSnider/NintendoSwitchRESTAPI/blob/409b82df5bd6f478bec07fad7362266e11d4c072/NintendoAccountBlueprint.md"
+    ]
+  },
+  {
+    "id": "xvdtool",
+    "name": "xvdtool",
+    "url": "https://github.com/emoose/xvdtool",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "xvdtool is a C# command-line utility for inspecting Xbox One XVD and XVC packages. It reports headers, checks integrity, decrypts with supplied keys and extracts embedded data or filesystems; accompanying notes map XVD headers, hash trees and XVC descriptors. The repository also includes an XBFS extractor for Xbox One NAND.",
+    "description_zh": "xvdtool 是检查 Xbox One XVD 与 XVC 包的 C# 命令行工具。它读取包头、校验完整性、使用自备密钥解密，并提取嵌入数据或文件系统；附带文档说明 XVD 包头、哈希树和 XVC 描述符。仓库还包含 Xbox One NAND 的 XBFS 提取器。",
+    "evidence_url": "https://github.com/emoose/xvdtool/blob/6fc28862cc5fb711843c0e717101ce4034acf805/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Builds with the .NET 7.0 SDK.",
+      "Decryption and signing functions require user-supplied keys; the retail ODK is unknown.",
+      "The author says testing has covered development-encrypted packages and calls the tool experimental.",
+      "GPL-2.0 License."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/emoose/xvdtool/blob/6fc28862cc5fb711843c0e717101ce4034acf805/xvd_info.md"
+    ]
+  },
+  {
+    "id": "martypc",
+    "name": "MartyPC",
+    "url": "https://github.com/dbalsom/martypc",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "MartyPC emulates early IBM PCs and provides disassembly, CPU and memory inspection, breakpoints, and instruction or cycle-based logging for 8088 programs. Its author reports comparing emulated execution against a physical 8088 and investigating peripheral timings with measurement hardware.",
+    "description_zh": "MartyPC 模拟早期 IBM PC，并为 8088 程序提供指令反汇编、CPU 与内存查看、断点及逐指令或逐周期日志。作者报告曾将模拟执行与真实 8088 对照，并使用测量设备研究外设时序。",
+    "evidence_url": "https://github.com/dbalsom/martypc/blob/05c0d088e84ad6bbfac9b3f0d051e7eadefd9f44/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows, Linux or macOS.",
+      "NEC V20 support is preliminary, and several emulated peripherals remain partial.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "twonkie-usb-pd-sniffer",
+    "name": "Twonkie",
+    "url": "https://github.com/dojoe/Twonkie",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Twonkie is a USB-PD sniffer, injector and sink built around a four-layer board derived from the open-source Twinkie design. It supplies board fabrication files, assembly guidance and STM32 firmware sources for inspecting USB Power Delivery traffic.",
+    "description_zh": "Twonkie 是基于开源 Twinkie 设计改造的 USB-PD 嗅探、注入及供电受端设备，采用四层电路板。仓库提供制板文件、组装说明和 STM32 固件源码，可用于观察 USB Power Delivery 通信。",
+    "evidence_url": "https://github.com/dojoe/Twonkie/blob/64a9e85c5df983bccf23925ed278b657612f3767/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building the hardware requires a fabricated board, components and fine-pitch SMT soldering.",
+      "Firmware builds require arm-none-eabi-gcc; flashing requires dfu-util.",
+      "Hardware design: CC BY 4.0; firmware: BSD 3-Clause."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dojoe/Twonkie/blob/64a9e85c5df983bccf23925ed278b657612f3767/fw/README.md"
+    ]
+  },
+  {
+    "id": "unifi-inform-protocol",
+    "name": "unifi-inform-protocol",
+    "url": "https://github.com/jeffreykog/unifi-inform-protocol",
+    "category": "protocol-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "unifi-inform-protocol documents the observed discovery and inform exchanges between Ubiquiti UniFi access points and their controller. It maps UDP discovery TLVs, the adoption sequence and binary HTTP /inform packet fields, including compression and AES encryption flags.",
+    "description_zh": "unifi-inform-protocol 记录 Ubiquiti UniFi 接入点与控制器之间的发现及 inform 交互。文档列出 UDP 发现报文的 TLV 字段、设备采纳步骤，以及二进制 HTTP /inform 报文的字段、压缩标志和 AES 加密标志。",
+    "evidence_url": "https://github.com/jeffreykog/unifi-inform-protocol/blob/63d75a085c816ad5126a77523878e4e4ab3a2a39/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Applies to UniFi access-point discovery and inform traffic.",
+      "The section on configuring an access point is marked as forthcoming.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ptformat",
+    "name": "ptformat",
+    "url": "https://github.com/zamaudio/ptformat",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "ptformat decrypts and parses Pro Tools session files to extract audio sources, regions and tracks, plus MIDI chunks, regions, tracks and notes. Its C++ tools include ptftool for parsing, ptunxor for decrypted-file inspection, and ptgenmissing for generating placeholder audio scripts.",
+    "description_zh": "ptformat 解密并解析 Pro Tools 工程文件，提取音频源、片段、轨道以及 MIDI 块、片段、轨道和音符。C++ 工具包括解析文件的 ptftool、供进一步检查的 ptunxor 和生成占位音频脚本的 ptgenmissing。",
+    "evidence_url": "https://github.com/zamaudio/ptformat/blob/af15ee90825f59b84b9977591862cce96bb1d781/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Pro Tools session file in a supported PT format.",
+      "PT 5–7 MIDI support is unspecified; PT 10–12 group regions are unsupported.",
+      "Licensed LGPL-2.1 or later."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "go-mitmproxy",
+    "name": "go-mitmproxy",
+    "url": "https://github.com/lqqyt2423/go-mitmproxy",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website",
+      "protocol"
+    ],
+    "description_en": "go-mitmproxy is a Go proxy for inspecting and modifying HTTP/HTTPS traffic. Its web interface shows requests, responses, JSON previews and binary response bodies, with filters and request breakpoints; plugin hooks expose HTTP, WebSocket and SSE events. It supports explicit HTTP and HTTPS proxy configuration.",
+    "description_zh": "go-mitmproxy 是用 Go 编写的代理，可检查和修改 HTTP/HTTPS 流量。网页界面可查看请求与响应、预览 JSON 内容和以二进制模式查看响应正文，并提供筛选和请求断点；插件钩子覆盖 HTTP、WebSocket 和 SSE 事件。客户端需显式配置 HTTP 或 HTTPS 代理。",
+    "evidence_url": "https://github.com/lqqyt2423/go-mitmproxy/blob/5865d94121a5382fdd7dee6b09bd4ad76c01c62f/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Go 1.26 or newer is specified for installation from source.",
+      "HTTPS inspection requires a trusted root certificate; the certificate generated at first startup can be installed if one is not already trusted.",
+      "Clients must configure an explicit proxy; transparent proxy mode is unsupported.",
+      "MIT licence."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "libredwg",
+    "name": "LibreDWG",
+    "url": "https://github.com/LibreDWG/libredwg",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "LibreDWG reads and writes AutoCAD DWG documents through a C library and command-line tools. It provides DWG inspection, text search, layer listing and conversion to DXF, JSON, GeoJSON, SVG and PostScript. The project maintains corrections to an ODA DWG specification and records version-specific reader and writer gaps.",
+    "description_zh": "LibreDWG 通过 C 库和命令行工具读取、写入 AutoCAD DWG 文档，提供文件检查、文本搜索、图层列表，以及到 DXF、JSON、GeoJSON、SVG 和 PostScript 的转换。项目维护 ODA DWG 规范修订文档，并说明不同版本的读写限制。",
+    "evidence_url": "https://github.com/LibreDWG/libredwg/blob/c184dd0d3f612de98feb36a5e74eb28c8078e349/README",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building from Git requires a C99 compiler, make, autoconf, automake and libtool.",
+      "Some advanced R2010+ objects are skipped; writing R2007 and R2010–R2018 files has stated limitations.",
+      "GPL-3.0-or-later license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "bresser-weather-sensor-receiver",
+    "name": "BresserWeatherSensorReceiver",
+    "url": "https://github.com/matthias-bs/BresserWeatherSensorReceiver",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "BresserWeatherSensorReceiver is an Arduino library for receiving and decoding 868 MHz transmissions from Bresser weather sensors. It tries 7-in-1, 6-in-1, 5-in-1, lightning and leakage payload decoders and documents how 6-in-1 sensors alternate partial weather messages.",
+    "description_zh": "BresserWeatherSensorReceiver 是接收并解码 Bresser 气象传感器 868 MHz 无线信号的 Arduino 库。它依次尝试 7-in-1、6-in-1、5-in-1、雷电及漏水传感器载荷解码器，并说明 6-in-1 设备交替发送两类不完整气象消息的行为。",
+    "evidence_url": "https://github.com/matthias-bs/BresserWeatherSensorReceiver/blob/88d22fd955e2f02b4639be37e7393ff1232de035/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A supported Arduino board, RadioLib and a CC1101, SX1276/RFM95W, SX1262 or LR1121 radio module.",
+      "Some listed sensors are marked as needing testing, and the 8-in-1 tglobe_c value is preliminary.",
+      "MIT licence."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "rtlamr",
+    "name": "rtlamr",
+    "url": "https://github.com/bemasher/rtlamr",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "rtlamr receives and decodes Itron ERT-compatible smart-meter transmissions in the 900 MHz ISM band through rtl-sdr and rtl_tcp. Its protocol handlers parse SCM, SCM+, IDM, NetIDM and Neptune R900 message variants to expose consumption and interval readings.",
+    "description_zh": "rtlamr 通过 rtl-sdr 和 rtl_tcp 接收 900 MHz ISM 频段中的 Itron ERT 兼容智能表信号，解析 SCM、SCM+、IDM、NetIDM 及 Neptune R900 等报文，提取用量和分时读数。",
+    "evidence_url": "https://github.com/bemasher/rtlamr/blob/92cca2f35fb91a42a4adb0e8ee33ac1ca5c8eb2e/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Go 1.21 or later and rtl-sdr with rtl_tcp.",
+      "The author reports testing only Itron C1SR and Itron 40G meters.",
+      "AGPL-3.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ]
+  },
+  {
+    "id": "dungeon-siege-re",
+    "name": "dungeon-siege-re",
+    "url": "https://github.com/glampert/dungeon-siege-re",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "dungeon-siege-re analyzes asset formats used by Dungeon Siege and Legends of Aranna and supplies C++ extraction and conversion tools. It opens and decompresses Tank archives, converts ASP and SNO static geometry to OBJ, and converts RAW textures to PNG or TGA. Format notes accompany the implementation.",
+    "description_zh": "dungeon-siege-re 分析 Dungeon Siege 与 Legends of Aranna 的资源格式，并提供 C++ 提取和转换工具。它可打开、解压 Tank 归档，将 ASP、SNO 静态几何转换为 OBJ，并将 RAW 纹理转换为 PNG 或 TGA；仓库还附有格式说明。",
+    "evidence_url": "https://github.com/glampert/dungeon-siege-re/blob/04f47563d8ba8ee5666f7f8e301977f99e5745f3/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A C++11 compiler and CMake for building the libraries and tools.",
+      "ASP and SNO import is partial; ASP animation is unavailable.",
+      "MIT license applies to the project's source code."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "orbcomm-receiver",
+    "name": "ORBCOMM receiver",
+    "url": "https://github.com/fbieberly/ORBCOMM-receiver",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "ORBCOMM receiver decodes satellite transmissions into packets and parses known packet types. Its Python scripts process recorded IQ data or live RTL-SDR input, compensate for satellite motion and report message, network and ephemeris fields. The repository includes sample recordings and DSP exercises for timing and phase recovery.",
+    "description_zh": "ORBCOMM receiver 将卫星下行信号解码成数据包，并解析已知包类型。Python 脚本可处理录制的 IQ 数据或实时 RTL-SDR 输入，补偿卫星运动影响，并输出消息、网络及星历字段。仓库还提供样本录音，以及定时和相位恢复的 DSP 练习代码。",
+    "evidence_url": "https://github.com/fbieberly/ORBCOMM-receiver/blob/b1b5e4cbe6249e5944cbc22cc30afc22a78278b9/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 2.x or 3.x and pyrtlsdr, NumPy, SciPy, PyEphem and Matplotlib are listed dependencies.",
+      "Live reception requires an RTL-SDR receiver and the receiver location in CONFIG.py.",
+      "Only known packet types have decoded data fields.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "pacman-z80-rom-disassembler",
+    "name": "PacmanRecomp",
+    "url": "https://github.com/Wilson-Flores/PacmanRecomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "PacmanRecomp currently loads Pac-Man's arcade ROM files, concatenates the program chips and writes a Z80 assembly listing. It also produces hexadecimal dumps for inspection; the committed entry point ends after disassembly.",
+    "description_zh": "PacmanRecomp 目前读取 Pac-Man 街机 ROM 文件，按顺序合并程序芯片并输出 Z80 汇编清单，也会生成十六进制转储供检查。仓库中的主程序在反汇编后结束。",
+    "evidence_url": "https://github.com/Wilson-Flores/PacmanRecomp/blob/910c9ae6e588983c1266df8f2d578c55ac4cb2c4/src/main.cpp",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide the Pac-Man ROM files expected in the roms/ directory.",
+      "Build with CMake 3.20 or later and a C++23 compiler.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Wilson-Flores/PacmanRecomp/blob/910c9ae6e588983c1266df8f2d578c55ac4cb2c4/src/core/Z80Disassembler.cpp"
+    ]
+  },
+  {
+    "id": "unifi-protocol-reverse-engineering",
+    "name": "Reverse Engineered UniFi Protocol",
+    "url": "https://github.com/fxkr/unifi-protocol-reverse-engineering",
+    "category": "protocol-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Reverse Engineered UniFi Protocol documents communication between UniFi access points and their controller from observed traffic. It describes discovery TLVs and inform messages, including the TNBU header, JSON payloads, zlib compression and AES-CBC encryption.",
+    "description_zh": "Reverse Engineered UniFi Protocol 根据观察到的流量记录 UniFi 接入点与控制器的通信，涵盖发现报文的 TLV 字段，以及 inform 消息的 TNBU 报头、JSON 载荷、zlib 压缩和 AES-CBC 加密。",
+    "evidence_url": "https://github.com/fxkr/unifi-protocol-reverse-engineering/blob/0566e8e1ddc25717f51d5fba4ca03dbf53a585ad/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The discovery field catalog and SSH adoption section remain unfinished.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "silent-hill-overlay-decryptor",
+    "name": "SilentHillToolkit",
+    "url": "https://github.com/nikita600/SHDecompilation",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "SilentHillToolkit contains a C# routine that decrypts Silent Hill overlay code files by XORing successive 32-bit words with a generated key stream. The repository also stores Ghidra projects; its console entry point currently leaves the file-decryption calls commented out.",
+    "description_zh": "SilentHillToolkit 提供 C# 例程，以生成的密钥序列逐个 XOR 32 位字，解密 Silent Hill 覆盖代码文件。仓库还保存了 Ghidra 工程；控制台入口目前注释掉了文件解密调用。",
+    "evidence_url": "https://github.com/nikita600/SHDecompilation/blob/62b348dafdd87117bcfc32c55b0160b962ddc7fc/SilentHillToolkit/SilentHillToolkit/Assets/OverlayCodeDecryptor.cs",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supply the game overlay file to the decryption routine.",
+      "The console entry point has its decryption calls commented out.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nikita600/SHDecompilation/blob/62b348dafdd87117bcfc32c55b0160b962ddc7fc/SilentHillToolkit/SilentHillToolkit/Program.cs"
+    ]
+  },
+  {
+    "id": "decompile-bench-eval",
+    "name": "Decompile-Bench-Eval",
+    "url": "https://huggingface.co/datasets/LLM4Binary/decompile-eval",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "research",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Decompile-Bench-Eval is a binary decompilation evaluation dataset pairing C and C++ function source with assembly and IDA Pro and Ghidra pseudocode. Its HumanEval, MBPP and GitHub 2025 splits also record optimization levels and function information.",
+    "description_zh": "Decompile-Bench-Eval 是二进制反编译评测数据集，将 C、C++ 函数源码与汇编代码、IDA Pro 和 Ghidra 的伪代码对应起来。数据分为 HumanEval、MBPP 和 GitHub 2025 三组，并记录优化级别及函数信息。",
+    "evidence_url": "https://huggingface.co/datasets/LLM4Binary/decompile-eval/blob/b9271fae3c556e46948559f4176ffa6f8b4f9491/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The dataset covers C and C++ and has HumanEval, MBPP and GitHub 2025 splits.",
+      "The GitHub split has empty unit-test fields.",
+      "Licensed under CC0 1.0."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "java-decompiler-dataset",
+    "name": "Java Decompiler Dataset",
+    "url": "https://huggingface.co/datasets/BradMcDanel/java-decompiler",
+    "category": "jvm",
+    "relationship": "learning",
+    "kind": "research",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Java Decompiler Dataset provides paired Java source and decompiled Java assembly for training and evaluating decompilation models. Its samples are compilable single-class files selected from public GitHub repositories, with fields for source, assembly, tests and partial class scaffolds.",
+    "description_zh": "Java Decompiler Dataset 提供配对的 Java 源码与反编译后的 Java 汇编，用于训练和评估反编译模型。样本是从公开 GitHub 仓库筛选出的可编译单类文件，包含源码、汇编、单元测试代码和部分类框架字段。",
+    "evidence_url": "https://huggingface.co/datasets/BradMcDanel/java-decompiler/blob/7c53106f547e09679dcab4fbba5b0ba26c7eb26c/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Samples are limited to compilable single-class files importing only java.* libraries.",
+      "Academic research use only; redistribution of individual source files must follow their original repository licences.",
+      "The dataset licence is listed as other; individual samples may retain their original repository licences."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "iridium-sniffer",
+    "name": "iridium-sniffer",
+    "url": "https://github.com/alphafox02/iridium-sniffer",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "iridium-sniffer detects and demodulates Iridium L-band bursts from supported SDR devices or recorded IQ files. Its C pipeline emits iridium-toolkit RAW frames and can decode IDA and ACARS/SBD messages, with GSMTAP output for Wireshark analysis.",
+    "description_zh": "iridium-sniffer 从 SDR 设备或 IQ 录制文件中检测并解调 Iridium L 频段突发信号。其 C 语言处理流水线输出兼容 iridium-toolkit 的 RAW 帧，可解析 IDA 与 ACARS/SBD 消息，并通过 GSMTAP 将帧交给 Wireshark 分析。",
+    "evidence_url": "https://github.com/alphafox02/iridium-sniffer/blob/830e34c957f0a52dedbb11ad726b85d8eef3221a/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "CMake, a C toolchain and FFTW3 are required for the core build; live capture needs a supported SDR and its library.",
+      "libacars-2 is optional for ARINC-622 payload decoding.",
+      "Voice decoding requires the experimental ENABLE_VOICE build option.",
+      "GPL-3.0 licence."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/alphafox02/iridium-sniffer/blob/830e34c957f0a52dedbb11ad726b85d8eef3221a/ARCHITECTURE.md"
+    ]
+  },
+  {
+    "id": "stoicgoose-debugger",
+    "name": "StoicGoose",
+    "url": "https://github.com/xdanieldzd/StoicGoose",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "StoicGoose emulates Bandai WonderSwan and WonderSwan Color games and includes a separate Dear ImGui interface for debugging and disassembly. The debugger source includes breakpoint, disassembler, and memory-editor components alongside the console emulator.",
+    "description_zh": "StoicGoose 模拟万代 WonderSwan 和 WonderSwan Color 游戏，并提供独立的 Dear ImGui 调试与反汇编界面。调试器源码包含断点、反汇编和内存编辑组件。",
+    "evidence_url": "https://github.com/xdanieldzd/StoicGoose/blob/e6a7c93cedbb50f098262cd17824e3f9e577caad/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires .NET 6.0 Desktop Runtime and an OpenGL 4.0-capable GPU.",
+      "The Windows Forms interface runs on Windows; Linux use is limited to the debugger interface and is documented through WSL testing.",
+      "WonderSwan bootstrap ROMs are optional.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "libsai",
+    "name": "libsai",
+    "url": "https://github.com/Wunkolo/libsai",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "libsai documents and implements access to PaintTool SAI .sai artwork files. Its research describes 4,096-byte encrypted blocks, table entries, checksums and the virtual filesystem that stores layers and metadata; C++ sources and sample programs expose document and thumbnail handling.",
+    "description_zh": "libsai 记录并实现对 PaintTool SAI .sai 绘画文档的访问。研究说明 4,096 字节加密块、索引表项、校验和，以及保存图层与元数据的虚拟文件系统；C++ 源码和示例程序处理文档与缩略图。",
+    "evidence_url": "https://github.com/Wunkolo/libsai/blob/f07ee8878e184eeeded79a5a2ef808bc51a3a7f7/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires .sai document files as input; the documented focus is PaintTool SAI version 1.",
+      "Builds with C++20 and CMake.",
+      "The write-up covers related files such as thumbnails only partially.",
+      "MIT License."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "th-d74-kenwood-control-docs",
+    "name": "TH-D74-Kenwood - PC RIG control commands",
+    "url": "https://github.com/LA3QMA/TH-D74-Kenwood",
+    "category": "protocol-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "TH-D74-Kenwood documents reverse-engineered PC control commands for the Kenwood TH-D74 radio. Its firmware 1.10 index links commands for frequency, memory, GPS, Bluetooth and transmit controls, with separate parameter tables.",
+    "description_zh": "TH-D74-Kenwood 记录逆向得到的 Kenwood TH-D74 电台 PC 控制命令。固件 1.10 的索引涵盖频率、存储信道、GPS、蓝牙和发射控制，并配有独立参数表。",
+    "evidence_url": "https://github.com/LA3QMA/TH-D74-Kenwood/blob/8876e345b7c6c42381c4304ecc2696868ca59583/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The command index identifies firmware version 1.10.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LA3QMA/TH-D74-Kenwood/blob/8876e345b7c6c42381c4304ecc2696868ca59583/Menu%20Tables.md"
+    ]
+  },
+  {
+    "id": "regml-gamemaker-inspector",
+    "name": "reGML",
+    "url": "https://github.com/TimGoTheCreator/reGML",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "reGML inspects GameMaker game packages, disassembles their bytecode, and runs supported games from data.win files. Its C++ tools read package layouts v14–v17 and decode instructions for v15–v17, with inspect, audit, disasm, and runtime commands.",
+    "description_zh": "reGML 检查 GameMaker 游戏包、反汇编字节码，并从 data.win 文件运行受支持的游戏。C++ 工具可读取 v14–v17 游戏包布局、解码 v15–v17 指令，并提供 inspect、audit、disasm 和运行命令。",
+    "evidence_url": "https://github.com/TimGoTheCreator/reGML/blob/af1a63214d5561134211b8bb617739dd4108b9fd/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "C++20, CMake 3.22 or newer, libpng, zlib, libvorbisfile, and SDL2 are required for the default build.",
+      "Users provide data.win and any external game files.",
+      "Some GameMaker features remain unimplemented in v17.",
+      "MPL-2.0 License."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/TimGoTheCreator/reGML/blob/af1a63214d5561134211b8bb617739dd4108b9fd/LICENSE"
+    ]
+  },
+  {
+    "id": "tika-jtd-plus",
+    "name": "Tika JTD+",
+    "url": "https://github.com/KHiyowa/Tika-JTD",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Tika JTD+ parses Ichitaro .jtd, .jtt and .jttc documents for Apache Tika, extracting text, metadata and approximate table structure. Its Kotlin implementation reads OLE2 containers and document streams, while accompanying specifications record recovered container, text and embedded-object formats.",
+    "description_zh": "Tika JTD+ 为 Apache Tika 解析一太郎 .jtd、.jtt 和 .jttc 文档，提取文本、元数据及近似的表格结构。Kotlin 实现读取 OLE2 容器和文档流，配套规范记录已解析的容器、文本及嵌入对象格式。",
+    "evidence_url": "https://github.com/KHiyowa/Tika-JTD/blob/045ef005f7e45202650d5601b46ef6f4915d8190/docs/spec/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Java 17 or newer and Apache Tika 4.0.0 or newer.",
+      "Table structuring is partial and intended for search and RAG use.",
+      "Apache-2.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/KHiyowa/Tika-JTD/blob/045ef005f7e45202650d5601b46ef6f4915d8190/README.md"
+    ]
+  },
+  {
+    "id": "d2s-format",
+    "name": "Diablo II Save File Format",
+    "url": "https://github.com/krisives/d2s-format",
+    "category": "game-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Diablo II Save File Format documents the binary layout of Diablo II .d2s character saves. It maps the 765-byte header, version identifiers, checksum calculation, status flags, waypoints and item bit fields, while marking unresolved sections and unknown bytes.",
+    "description_zh": "Diablo II Save File Format 记录《Diablo II》.d2s 角色存档的二进制布局，涵盖 765 字节文件头、版本标识、校验和算法、状态标志、传送点和物品位字段，并标出尚未解析的部分。",
+    "evidence_url": "https://github.com/krisives/d2s-format/blob/ab63360edf9860e3390bd434f4ae35b61a2a4c69/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers Diablo II .d2s character save files.",
+      "Several sections, including progression, quests and stats, remain marked TODO or contain unknown fields.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "fortnite-replay-decompressor",
+    "name": "FortniteReplayDecompressor",
+    "url": "https://github.com/Shiqan/FortniteReplayDecompressor",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "FortniteReplayDecompressor parses Fortnite replay files with a C# library and example reader. Its documented format work covers replay compression, file structure, and Unreal Engine 4 network packets, with source modules for replay events and replicated game fields.",
+    "description_zh": "FortniteReplayDecompressor 通过 C# 库和示例读取器解析 Fortnite 回放文件。项目记录了回放压缩、文件结构及 Unreal Engine 4 网络包的研究，源码包含回放事件和游戏同步字段的解析模块。",
+    "evidence_url": "https://github.com/Shiqan/FortniteReplayDecompressor/blob/76f74c1f640069afdba71b6468e2f819327893c2/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires .NET 10.0 and a Fortnite replay file.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Shiqan/FortniteReplayDecompressor/blob/76f74c1f640069afdba71b6468e2f819327893c2/docs/overview.md"
+    ]
+  },
+  {
+    "id": "remarkable-kaitai",
+    "name": "reMarkable Kaitai Specs",
+    "url": "https://github.com/matomatical/reMarkable-kaitai",
+    "category": "binary-libraries",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "reMarkable Kaitai Specs defines Kaitai Struct parsers for versions 3 and 5 of the reMarkable tablet's binary .rm pen-stroke format. The repository includes a sample version 5 file and credits an earlier format investigation as its basis. The author reports superficial testing on one version 5 document and no testing of version 3.",
+    "description_zh": "reMarkable Kaitai Specs 用 Kaitai Struct 描述 reMarkable 平板 .rm 笔迹二进制格式的第 3 版和第 5 版，并附有第 5 版示例文件。规范基于早期格式研究；作者报告只对一份第 5 版文件做过初步测试，第 3 版尚未测试。",
+    "evidence_url": "https://github.com/matomatical/reMarkable-kaitai/blob/730ba62be37a40ad290b568844150687e9c6c094/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Kaitai Struct for compiling the specifications into parsers.",
+      "Version 5 was tested superficially on one single-layer document; version 3 was not tested.",
+      "MIT licence."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ]
+  },
+  {
+    "id": "booma-proxy",
+    "name": "Booma.Proxy",
+    "url": "https://github.com/HelloKitty/Booma.Proxy",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "description_en": "Booma.Proxy is a set of C# libraries that model Phantasy Star Online Blue Burst's binary packets for client and server emulation. It uses a metadata-based serializer to represent packet structures as C# types and documents game packet opcodes, payloads and transmission directions.",
+    "description_zh": "Booma.Proxy 是一组用于模拟 Phantasy Star Online Blue Burst 客户端和服务端通信的 C# 库。它利用基于元数据的序列化器将二进制封包表示为 C# 类型，并记录游戏封包的操作码、负载及传输方向。",
+    "evidence_url": "https://github.com/HelloKitty/Booma.Proxy/blob/579effb7738b91be82a10f10d28248c858a5ace4/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "C#/.NET environment.",
+      "The implementation builds on earlier community reverse-engineering work.",
+      "AGPL-3.0 License."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HelloKitty/Booma.Proxy/blob/579effb7738b91be82a10f10d28248c858a5ace4/docs/GamePacketDocumentation.md"
+    ]
+  },
+  {
+    "id": "hiew",
+    "name": "Hiew",
+    "url": "https://www.hiew.ru/",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Hiew edits files in text, hex and disassembler modes and supports x86-64 assembly and disassembly. It recognizes NE, LE, LX, PE/PE32+, little-endian ELF/ELF64 and Mach-O, and TE/TE64 executables, supports navigation through call and jump instructions, and searches by instruction pattern. Hiewix offers similar functions through WinAPI.",
+    "description_zh": "Hiew 可在文本、十六进制和反汇编模式下查看及编辑文件，并支持 x86-64 汇编与反汇编。它识别 NE、LE、LX、PE/PE32+、小端 ELF/ELF64 和 Mach-O，以及 TE/TE64 可执行文件，可沿调用和跳转指令导航，并按指令模式搜索。Hiewix 通过 WinAPI 提供类似功能。",
+    "evidence_url": "https://www.hiew.ru/",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Hiewix Demo requires Windows 7 or later.",
+      "The Hiew demo supports only restricted 32-bit PE files and omits editing, assembly, 64-bit and ARM disassembly.",
+      "No licence stated on the project page."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "openskp",
+    "name": "OpenSKP",
+    "url": "https://github.com/iamahsanmehmood/openskp",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "OpenSKP parses, writes, and converts SketchUp SKP files using independently implemented Python, TypeScript, .NET, Dart, and C++ libraries. Its format research covers the VFF container used from 2021 and the older MFC CArchive container, including geometry, materials, components, and layers. It exports models to formats including GLB, OBJ, STL, DXF, IFC4, and JSON.",
+    "description_zh": "OpenSKP 以 Python、TypeScript、.NET、Dart 和 C++ 实现 SketchUp SKP 文件的解析、写入和转换。其格式研究涵盖 2021 年起使用的 VFF 容器及较早的 MFC CArchive 容器，涉及几何体、材质、组件和图层；模型可导出为 GLB、OBJ、STL、DXF、IFC4 和 JSON 等格式。",
+    "evidence_url": "https://github.com/iamahsanmehmood/openskp/blob/52980b7878b00a9b6f27f347fc4dcdc5440c506b/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide a SketchUp SKP file for reading or conversion.",
+      "The author reports that 11 of 15 legacy-format test files parse; four have a known parsing gap.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/iamahsanmehmood/openskp/blob/52980b7878b00a9b6f27f347fc4dcdc5440c506b/research/METHODOLOGY.md"
+    ]
+  },
+  {
+    "id": "gr-elster",
+    "name": "gr-elster",
+    "url": "https://github.com/argilo/gr-elster",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "gr-elster receives and decodes 902–928 MHz packets from Elster smart meters with a GNU Radio block and sample flow graphs. It dumps packets in hexadecimal, writes pcap files and extracts meter readings and hourly electricity usage. Its packet and payload interpretation remains partial.",
+    "description_zh": "gr-elster 通过 GNU Radio 模块和示例流程图接收 Elster 智能电表在 902–928 MHz 频段发送的数据包。它输出十六进制数据、保存 pcap 文件，并解析电表读数和逐小时用电量；包结构与载荷解析仍不完整。",
+    "evidence_url": "https://github.com/argilo/gr-elster/blob/bd33fcda1fe3bedcacbeead9a35491a8183f515d/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "GNU Radio and an SDR receiver are needed; the multi-channel flow graph targets RTL-SDR.",
+      "The author tested with Elster R2S hydro meters in the Ottawa area.",
+      "Packet structure and payload decoding are incomplete.",
+      "GPL-3.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/argilo/gr-elster/blob/bd33fcda1fe3bedcacbeead9a35491a8183f515d/COPYING"
+    ]
+  },
+  {
+    "id": "serflings-settlers-save-format",
+    "name": "Serflings Remake Project: Settlers 1 savegame format",
+    "url": "https://github.com/nicymike/serflings",
+    "category": "game-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Serflings publishes a byte-level reference for Settlers 1 savegames. It maps little-endian common data, player, map, settler, flag, building, and inventory sections, listing their offsets and field sizes. The repository also manages issues for the remake.",
+    "description_zh": "Serflings 发布《工人物语 1》存档的字节级格式说明，列出小端序的公共数据、玩家、地图、居民、旗帜、建筑和库存区段，以及字段大小和偏移。该仓库也用于管理重制版问题。",
+    "evidence_url": "https://github.com/nicymike/serflings/blob/f5c4e4460a3144c50b21d76b3466a2db5eefebd5/savegame-format.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The format document covers Settlers 1 savegames.",
+      "The repository provides a savegame-format document and serves as the remake's issue tracker.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "scope",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nicymike/serflings/blob/f5c4e4460a3144c50b21d76b3466a2db5eefebd5/README.md"
+    ]
+  },
+  {
+    "id": "unme11",
+    "name": "unME11",
+    "url": "https://github.com/ptresearch/unME11",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "unME11 unpacks Intel ME 11.x firmware regions with Python 2.7 scripts. Given a firmware image, it writes a text report and extracts partitions, modules, and metadata into a directory; LZMA decompression uses an external binary.",
+    "description_zh": "unME11 使用 Python 2.7 脚本解包 Intel ME 11.x 固件区域，输出文本报告，并将分区、模块和元数据提取到目录中；LZMA 解压需要外部程序。",
+    "evidence_url": "https://github.com/ptresearch/unME11/blob/fa6b4d73a53be10b199b0b87ec7d45f0e38b1333/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 2.7 and an Intel ME 11.x firmware image.",
+      "An lzma binary on PATH for LZMA decompression.",
+      "The tool provides no progress output during unpacking.",
+      "Custom license in the repository's LICENSE file."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ptresearch/unME11/blob/fa6b4d73a53be10b199b0b87ec7d45f0e38b1333/LICENSE"
+    ]
+  },
+  {
+    "id": "rekordcrate",
+    "name": "rekordcrate",
+    "url": "https://github.com/Holzhaus/rekordcrate",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "rekordcrate is a Rust parser and command-line inspector for Pioneer Rekordbox exports used by CDJ and XDJ players. It reads export.pdb databases, ANLZ .DAT, .EXT and .2EX analysis files, and device and mixer SETTING.DAT files, with debug or JSON output.",
+    "description_zh": "rekordcrate 是用于查看 Pioneer Rekordbox 导出文件的 Rust 解析库及命令行工具，面向 CDJ、XDJ 播放器数据。它读取 export.pdb 数据库、ANLZ 的 .DAT、.EXT、.2EX 分析文件，以及设备和混音器的 SETTING.DAT 文件，可输出调试文本或 JSON。",
+    "evidence_url": "https://github.com/Holzhaus/rekordcrate/blob/68cd702e9c78bde4b9eab477e0a7547a0cb69768/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Rust and Cargo for the documented command-line examples.",
+      "The API is under heavy development and may change incompatibly.",
+      "MPL-2.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "coms-1-meteorological-tools",
+    "name": "COMS-1 Meteorological Satellite Tools",
+    "url": "https://github.com/sam210723/COMS-1",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "COMS-1 Meteorological Satellite Tools parse LRIT and HRIT files carried by the satellite's L-band downlinks. The scripts display xRIT headers, extract Meteorological Imager segments and additional data, create images and overlays, and handle decryption key messages. Sample xRIT files and decoded images accompany the tools.",
+    "description_zh": "COMS-1 Meteorological Satellite Tools 解析气象卫星 L 波段下行链路中的 LRIT 和 HRIT 文件。脚本可查看 xRIT 文件头、提取气象图像分段及附加数据、生成图像与叠加层，并处理解密密钥消息；仓库还附有样本文件和解码图像。",
+    "evidence_url": "https://github.com/sam210723/COMS-1/blob/0d1d712fa276cf043cf85aae7e24bab00710aff7/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python and the dependencies listed for individual tools, including Pillow, pyshp and pyDes, are required for their respective functions.",
+      "The COMS-1 LRIT/HRIT service shut down in July 2019.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sam210723/COMS-1/blob/0d1d712fa276cf043cf85aae7e24bab00710aff7/decrypt/README.md"
+    ]
+  },
+  {
+    "id": "aoc-mgz",
+    "name": "mgz",
+    "url": "https://github.com/happyleavesaoc/aoc-mgz",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "mgz parses Age of Empires II recorded games into Python structures and summaries. Its fast and full parsers cover .mgl, .mgx, .mgz and .aoe2record files from Age of Kings through Definitive Edition, exposing recorded headers, actions and match data.",
+    "description_zh": "mgz 将 Age of Empires II 对局录像解析为 Python 数据结构和摘要。其快速及完整解析器覆盖从 Age of Kings 到 Definitive Edition 的 .mgl、.mgx、.mgz 和 .aoe2record 文件，可读取文件头、操作记录和比赛数据。",
+    "evidence_url": "https://github.com/happyleavesaoc/aoc-mgz/blob/2592a1b0c548ef94abb9ce91be61ed093e5b8994/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Age of Empires II recorded-game files in a supported format are required.",
+      "Some edition and version combinations have only partial parser or model support.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "dislocker",
+    "name": "Dislocker",
+    "url": "https://github.com/Aorimn/dislocker",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Dislocker inspects and decrypts BitLocker encrypted volumes on Linux and macOS. Its dislocker-bek and dislocker-metadata commands expose key-file and volume metadata, while dislocker-fuse presents a decrypted virtual NTFS partition and dislocker-file writes a decrypted flat file. The documentation covers Windows Vista through 10 volumes and BitLocker-To-Go media.",
+    "description_zh": "Dislocker 在 Linux 和 macOS 上检查并解密 BitLocker 加密卷。dislocker-bek 和 dislocker-metadata 分别查看 .bek 密钥文件和卷元数据；dislocker-fuse 提供解密后的虚拟 NTFS 分区，dislocker-file 将其输出为单个文件。文档涵盖 Windows Vista 至 Windows 10 的加密卷及 BitLocker-To-Go 介质。",
+    "evidence_url": "https://github.com/Aorimn/dislocker/blob/21ef6e58deb400502121e80fc0dfc7d9974e364f/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A BitLocker-encrypted partition or BitLocker-To-Go medium and an applicable unlock credential are required for decryption.",
+      "Building requires a C compiler, CMake, make, pkg-config, FUSE 3.14 or later headers and mbedTLS 3 headers; Ruby bindings are optional.",
+      "A dislocker-file output needs disk space equal to the decrypted volume size.",
+      "GPL-2.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Aorimn/dislocker/blob/21ef6e58deb400502121e80fc0dfc7d9974e364f/INSTALL.md"
+    ]
+  },
+  {
+    "id": "libflp",
+    "name": "libflp",
+    "url": "https://github.com/codecat/libflp",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "libflp is a C++ library for parsing FL Studio .flp project files. It supports automated inspection of project contents, with source files for event parsing and a format note; the author identifies FLP event coverage as incomplete.",
+    "description_zh": "libflp 是解析 FL Studio .flp 工程文件的 C++ 库，可用于自动检查工程内容。仓库提供事件解析源码和格式笔记；作者指出尚未覆盖全部 FLP 事件。",
+    "evidence_url": "https://github.com/codecat/libflp/blob/349d06b04d8949145842c95512da9087893689ea/Readme.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "C++ build environment for the repository.",
+      "FLP event support is incomplete, and some event types remain unknown.",
+      "MIT."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "gba-lcd-interface",
+    "name": "Game Boy Advance LCD Interface",
+    "url": "https://github.com/squk/GBA-LCD",
+    "category": "protocol-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Game Boy Advance LCD Interface documents the handheld's 40-pin and 32-pin display connectors and interprets their pixel clock, RGB data, latch and synchronization signals. Pin tables and captured waveforms describe signal edges, the approximate refresh rate and changes during vertical blanking.",
+    "description_zh": "Game Boy Advance LCD Interface 记录掌机的 40 针与 32 针显示连接器，并分析像素时钟、RGB 数据、锁存和同步信号。引脚表与采集波形说明信号边沿、约略刷新率，以及垂直消隐期间的变化。",
+    "evidence_url": "https://github.com/squk/GBA-LCD/blob/6546ccf5970169d5193bc9f92b4f8df0790c02c2/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The pinouts cover 40-pin and 32-pin Game Boy Advance LCD interfaces.",
+      "The LCD model numbers are identified as potential matches because datasheets were unavailable.",
+      "GPL-3.0 license."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "npatch",
+    "name": "NPatch",
+    "url": "https://github.com/7723mod/NPatch",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "NPatch adds an Xposed loader and Vector hooking core to Android APKs so Xposed modules can run without root access. Local mode lets NPatch Manager change modules and scope without repatching the APK; integrated mode embeds modules in the patched APK.",
+    "description_zh": "NPatch 将 Xposed 加载器和 Vector Hook 内核写入 Android APK，让 Xposed 模块无需 root 权限即可运行。本地模式可通过 NPatch Manager 调整模块和作用范围，无需重新修补 APK；集成模式则将模块嵌入修补后的 APK。",
+    "evidence_url": "https://github.com/7723mod/NPatch/blob/efecf30471ecc4bd57fc463b7f6079812d09dfcc/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A target APK; supported Android versions are 9 through 17.",
+      "The project uses the Vector core and identifies Xpatch as a fork source.",
+      "GPL-3.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "license"
+    ]
+  },
+  {
+    "id": "innodb-ruby",
+    "name": "innodb_ruby",
+    "url": "https://github.com/jeremycole/innodb_ruby",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "innodb_ruby parses InnoDB file formats to expose database storage structures for investigation and teaching. Its Ruby library and tools let users inspect pages, record counts and B+ tree organization, including interactive examination through irb. The author describes its APIs and output as unstable.",
+    "description_zh": "innodb_ruby 解析 InnoDB 文件格式，供研究和教学时查看数据库的磁盘结构。Ruby 库与工具可检查数据页、记录数量及 B+ 树组织方式，也可通过 irb 交互式分析。作者说明其 API 和输出格式仍会变化。",
+    "evidence_url": "https://github.com/jeremycole/innodb_ruby/blob/7ad09f95f69e3b1256ffdda8ab3137ba6dd1bd9f/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Ruby is required to use the library and its interactive irb workflow.",
+      "InnoDB files are required for storage-structure inspection.",
+      "The author states that the software is unsuitable for critical production use and that APIs and output may change.",
+      "BSD-3-Clause license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jeremycole/innodb_ruby/blob/7ad09f95f69e3b1256ffdda8ab3137ba6dd1bd9f/LICENSE"
+    ]
+  },
+  {
+    "id": "renard-phy",
+    "name": "renard-phy",
+    "url": "https://github.com/Jeija/renard-phy",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "renard-phy processes Sigfox uplink and downlink radio frames in Python for software-defined radios. It demodulates recorded WAV signals, identifies preambles and frames, delegates content decoding to renard, and generates HackRF One transmission samples.",
+    "description_zh": "renard-phy 用 Python 处理软件定义无线电接收的 Sigfox 上下行帧。它从 WAV 录音解调信号、识别前导码与帧，借助 renard 解码内容，并生成供 HackRF One 发射的采样数据。",
+    "evidence_url": "https://github.com/Jeija/renard-phy/blob/d71ebb2335321ae2d56dede0fc493cfe92b46aba/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "renard as a git submodule, plus NumPy, SciPy, Scapy and matplotlib.",
+      "HackRF One and its drivers for transmission.",
+      "The author reports testing only in regulatory zone RCZ1.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ]
+  },
+  {
+    "id": "sky-reenigne",
+    "name": "sky-reenigne",
+    "url": "https://codeberg.org/zhmu/sky-reenigne",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "sky-reenigne extracts and analyses resource files from the 1994 DOS game Beneath a Steel Sky. Its tools unpack sky.dnr and sky.dsk, decode in-game text and convert speech data to WAVE files; its notes identify resource IDs and RNC1 compression.",
+    "description_zh": "sky-reenigne 用于提取和分析 1994 年 DOS 游戏《Beneath a Steel Sky》的资源文件。工具可解包 sky.dnr 和 sky.dsk、解码游戏文本，并将语音数据转换为 WAVE；项目还记录了资源 ID 和 RNC1 压缩格式。",
+    "evidence_url": "https://codeberg.org/zhmu/sky-reenigne/src/commit/ff4bc1d57ff22a6109548b7bbb83d40d284f58ad/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A copy of Beneath a Steel Sky game data is needed for the extraction tools.",
+      "Rust and Cargo are used for the documented tool commands.",
+      "The technical details section is incomplete.",
+      "The project states a CC BY-SA 4.0 licence."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "dshba",
+    "name": "DSHBA",
+    "url": "https://github.com/DenSinH/DSHBA",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "DSHBA emulates Game Boy Advance games and provides an ImGui debugger for examining memory, registers, and execution. An optional Capstone-dependent decompiler supports code inspection. Its cached interpreter and OpenGL renderer run the games under examination.",
+    "description_zh": "DSHBA 模拟 Game Boy Advance 游戏，并通过 ImGui 调试器查看内存、寄存器和执行状态。可选的 Capstone 反编译功能用于检查代码；缓存解释器和 OpenGL 渲染器负责运行所分析的游戏。",
+    "evidence_url": "https://github.com/DenSinH/DSHBA/blob/bc1bbfc88dbbceac5b293a94a5f98dc902f8ff58/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building requires SDL; running requires an OpenGL 3.3-capable GPU.",
+      "The decompiler requires Capstone with ARM support and capstone.dll.",
+      "The author reports that timing-sensitive AGS tests remain failing.",
+      "GPL-3.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "manta-dota2-replay-parser",
+    "name": "Manta",
+    "url": "https://github.com/dotabuff/manta",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Manta parses Dota 2 replay files from the Source 2 engine in Go. Its low-level interface exposes raw replay data through callbacks, allowing callers to inspect messages and build their own interpretation of a match.",
+    "description_zh": "Manta 用 Go 解析 Source 2 引擎生成的 Dota 2 回放文件。底层接口通过回调提供原始回放数据，供调用者检查消息并自行整理比赛信息。",
+    "evidence_url": "https://github.com/dotabuff/manta/blob/d4e46471014a651801c045c001816168a93e4e5e/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A Dota 2 Source 2 replay file and Go 1.23 or later.",
+      "Callers must define callbacks and structure the raw replay data for their use case.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dotabuff/manta/blob/d4e46471014a651801c045c001816168a93e4e5e/go.mod"
+    ]
+  },
+  {
+    "id": "mobiclip-decoder",
+    "name": "Mobiclip Decoder",
+    "url": "https://github.com/Gericom/MobiclipDecoder",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Mobiclip Decoder decodes Nintendo game video formats using a Mobiclip implementation the author attributes to disassembly. Its C# source covers 3DS Moflex and DS Mods containers, with partial Wii MOC5 handling and separate demultiplexing and conversion components.",
+    "description_zh": "Mobiclip Decoder 解码任天堂游戏使用的 Mobiclip 视频格式，作者称其实现基于反汇编研究。C# 源码涵盖 3DS Moflex 和 DS Mods 容器，部分支持 Wii MOC5，并包含独立的解复用与转换组件。",
+    "evidence_url": "https://github.com/Gericom/MobiclipDecoder/blob/c88b67d3cca93de03d286f67f01ee40da605f5ae/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires video files in supported 3DS Moflex, DS Mods, or Wii MOC5 formats.",
+      "Wii MOC5 support lacks audio and full-speed playback; VX support and encoding remain unfinished.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "pocketwalker-emulator",
+    "name": "pocketwalker",
+    "url": "https://github.com/h4lfheart/pocketwalker",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "pocketwalker emulates the PokéWalker's H8/38606F hardware for running its device software. Its C++ core models the H8/300H instruction set, memory bus, timers, serial interfaces, accelerometer, EEPROM, LCD and buzzer, with IR communication over TCP.",
+    "description_zh": "pocketwalker 为运行 Pokéwalker 设备软件而模拟 H8/38606F 硬件。C++ 核心涵盖 H8/300H 指令、内存总线、定时器、串行接口、加速度计、EEPROM、LCD 和蜂鸣器，并通过 TCP 处理红外通信。",
+    "evidence_url": "https://github.com/h4lfheart/pocketwalker/blob/86026a0d52e36915cd3a2626b6c8041251f93a20/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The documented source build uses MSYS2 MinGW64, GCC, CMake, Ninja and Qt6; static builds also require vcpkg.",
+      "Save states and additional IR connection modes are planned features.",
+      "GPL-3.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "bus-pirate-v3-v4",
+    "name": "Bus Pirate",
+    "url": "https://github.com/ElderlyPirate/Bus_Pirate",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Bus Pirate firmware turns v3 and v4 boards into terminal-controlled tools for investigating electronic buses. It provides SPI and I2C traffic sniffers, a low-speed logic analyzer and scriptable bitbang, 1-Wire, I2C, SPI and UART modes.",
+    "description_zh": "Bus Pirate 固件将 v3 和 v4 设备变为可通过终端控制的电子总线研究工具。它提供 SPI 和 I2C 流量嗅探、低速逻辑分析，以及可脚本化的 bitbang、1-Wire、I2C、SPI 和 UART 模式。",
+    "evidence_url": "https://github.com/ElderlyPirate/Bus_Pirate/blob/44574ce2ea1eec4632ed2efaf06ae99ffe426fe6/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Bus Pirate v3.x or v4.x hardware.",
+      "Logic analyzer capture is specified at 10 Hz to 1 MHz.",
+      "Code from Dangerous Prototypes is released under CC0; some included files have other licenses."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ElderlyPirate/Bus_Pirate/blob/44574ce2ea1eec4632ed2efaf06ae99ffe426fe6/Documentation/bitbang.md"
+    ]
+  },
+  {
+    "id": "hidden-bee-ida-loader",
+    "name": "Hidden Bee IDA loader",
+    "url": "https://www.msreverseengineering.com/blog/2018/9/2/weekend-project-a-custom-ida-loader-module-for-the-hidden-bee-malware-family",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Hidden Bee IDA loader imports the malware family's stripped-down PE-like payload format into IDA for binary analysis. It creates segments, assigns import names and types, and processes relocation information so the database can be rebased. The author also documents examining IDA's pe.dll loader to work out its import and relocation handling.",
+    "description_zh": "Hidden Bee IDA 加载模块将该恶意软件家族使用的精简 PE 类载荷格式导入 IDA，供二进制分析使用。它建立段、设置导入项名称和类型，并处理重定位以支持数据库改基址。作者还记录了分析 IDA 的 pe.dll 加载器以实现这些功能的过程。",
+    "evidence_url": "https://www.msreverseengineering.com/blog/2018/9/2/weekend-project-a-custom-ida-loader-module-for-the-hidden-bee-malware-family",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "IDA with IDAPython and the pefile Python module is required.",
+      "The loader targets the Hidden Bee custom payload format.",
+      "No licence stated on the project page."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ]
+  },
+  {
+    "id": "mesen-s",
+    "name": "Mesen-S",
+    "url": "https://github.com/SourMesen/Mesen-S",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Mesen-S is an SNES emulator with facilities for examining game execution and graphics. Its documentation lists an assembler, debugger, event viewer, memory tools, trace logger, scripting window, and PPU tilemap, tile, sprite, and palette viewers. The repository archives its older 0.4.0 version.",
+    "description_zh": "Mesen-S 是带有游戏执行与图形分析功能的 SNES 模拟器。文档列有汇编器、调试器、事件查看器、内存工具、跟踪日志、脚本窗口，以及 PPU 图块地图、图块、精灵和调色板查看器。该仓库归档的是旧版 0.4.0。",
+    "evidence_url": "https://github.com/SourMesen/Mesen-S/blob/1768b4fc83faa308d5e430e3cf785218f12c424d/Docs/content/_index.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "This repository archives version 0.4.0; development on that version stopped in 2020.",
+      "The author reports stability and accuracy issues with this version.",
+      "GPL-3.0 license."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SourMesen/Mesen-S/blob/1768b4fc83faa308d5e430e3cf785218f12c424d/README.md"
+    ]
+  },
+  {
+    "id": "edacs-fm",
+    "name": "EDACS-FM Florida Man Edition",
+    "url": "https://github.com/lwvmobile/edacs-fm",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "EDACS-FM decodes EDACS 9600 trunked-radio control channels and follows assigned voice channels. It accepts rtl_fm or GNU Radio inputs, including UDP audio from SDR++ or GQRX, and provides single- and two-dongle operating modes.",
+    "description_zh": "EDACS-FM 解码 EDACS 9600 集群无线电控制信道，并按分配的逻辑信道号切换至语音信道。它支持 rtl_fm、GNU Radio，以及来自 SDR++ 或 GQRX 的 UDP 音频输入，提供单接收棒和双接收棒模式。",
+    "evidence_url": "https://github.com/lwvmobile/edacs-fm/blob/d92422ea8d13619150b23da3e3e4690ec349b868/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Linux, Unix, BSD or Cygwin with the listed build and SDR dependencies; RTL-dongle modes require compatible dongle hardware.",
+      "Populate site.csv with site numbers and frequencies; group.csv is optional.",
+      "The author recommends single-dongle mode only for purely digital systems.",
+      "GPL-3.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "wowdbdefs",
+    "name": "WoWDBDefs",
+    "url": "https://github.com/wowdev/WoWDBDefs",
+    "category": "game-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "WoWDBDefs records column names, types, relationships and versioned layouts for World of Warcraft DBC and DB2 client databases. Its DBD format represents build ranges and layout hashes, while accompanying C# and Python code reads definitions and converts them for other tools.",
+    "description_zh": "WoWDBDefs 记录《魔兽世界》客户端 DBC、DB2 数据库的列名、类型、关系及分版本布局。DBD 格式表示构建版本范围和布局哈希，配套 C#、Python 代码可读取定义并转换供其他工具使用。",
+    "evidence_url": "https://github.com/wowdev/WoWDBDefs/blob/9662a03f6e2aee6c7e2c92c60be6287217307f1b/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Definitions vary by game build and layout hash.",
+      "Older DB2 entries in the manifest are still being backfilled.",
+      "Definition data uses CC BY-SA 4.0; code uses BSD-3-Clause."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/wowdev/WoWDBDefs/blob/9662a03f6e2aee6c7e2c92c60be6287217307f1b/LICENSE.md"
+    ]
+  },
+  {
+    "id": "openallegroparser",
+    "name": "OpenAllegroParser",
+    "url": "https://github.com/Werni2A/OpenAllegroParser",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "OpenAllegroParser is a C++17 library and CLI for investigating Cadence Allegro binary design files. It parses and prints .pad padstack files and extracts embedded files; XML export is under development. The repository includes format notes and padstack test cases, while listing other Allegro formats as project targets.",
+    "description_zh": "OpenAllegroParser 是研究 Cadence Allegro 二进制设计文件的 C++17 库和命令行工具。它可解析、打印 .pad 焊盘叠层文件并提取其中的文件；XML 导出仍在开发中。仓库包含格式笔记和焊盘叠层测试样例，其他 Allegro 格式则列为项目目标。",
+    "evidence_url": "https://github.com/Werni2A/OpenAllegroParser/blob/d9d9d68aa2975266b3f3619ee3a941687b18f486/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building requires a C++17 compiler, CMake 3.5 or newer and the dependencies listed in the README.",
+      "The author reports that some .pad files created with Allegro 17.4-2019 S019 mostly worked in tests; some variable-sized structures require a parameter search.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Werni2A/OpenAllegroParser/blob/d9d9d68aa2975266b3f3619ee3a941687b18f486/doc/pad.md"
+    ]
+  },
+  {
+    "id": "logicx-analyzer",
+    "name": "LogicX Analyzer",
+    "url": "https://github.com/geoffmyers/logicx-analyzer",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "LogicX Analyzer inspects Logic Pro .logicx project bundles and studies their undocumented ProjectData binary format. Python scripts map chunk markers, annotate hex dumps, extract plugin and Session Players data, and produce Markdown, JSON, and CSV reports across a folder of projects.",
+    "description_zh": "LogicX Analyzer 检查 Logic Pro 的 .logicx 项目包及未公开的 ProjectData 二进制格式。其 Python 脚本可定位分块标记、生成带注释的十六进制转储、提取插件和 Session Players 数据，并为多个项目输出 Markdown、JSON 与 CSV 报告。",
+    "evidence_url": "https://github.com/geoffmyers/logicx-analyzer/blob/a1c40784d675981ae69ac1295f72cc675b3ef4af/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.9 or newer and Logic Pro .logicx project bundles; no third-party Python packages are required.",
+      "The author reports that about 60% of ProjectData is understood; custom track names remain partly decoded.",
+      "GPL-3.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/geoffmyers/logicx-analyzer/blob/a1c40784d675981ae69ac1295f72cc675b3ef4af/docs/BINARY_FORMAT_FINDINGS.md"
+    ]
+  },
+  {
+    "id": "opencity2k-parsers",
+    "name": "OpenCity2k",
+    "url": "https://github.com/OpenCity2k/OpenCity2k",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "OpenCity2k provides Python parsers and utilities for SimCity 2000 game data. It opens and saves .sc2 city files and parses .mif tilesets, text and sprite data. A simulation server and client are proposed.",
+    "description_zh": "OpenCity2k 提供解析 SimCity 2000 游戏数据的 Python 工具，可读写 .sc2 城市文件，并解析 .mif 图块集、文本和精灵数据。项目还规划了模拟服务器和客户端。",
+    "evidence_url": "https://github.com/OpenCity2k/OpenCity2k/blob/938d7c74af54c3121e23b34d45a982bf8e32960f/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.6 or later and Pillow are required.",
+      "Original game assets must be obtained separately.",
+      "City save parsing is incomplete, and tileset testing is limited.",
+      "AGPL-3.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "faf-scfa-replay-parser",
+    "name": "faf-scfa-replay-parser",
+    "url": "https://github.com/FAForever/faf-scfa-replay-parser",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "faf-scfa-replay-parser reads Supreme Commander: Forged Alliance replay files into headers, command messages and timing data. Its Kaitai specification describes the replay structure, Lua values and operation stream, alongside a Python parser.",
+    "description_zh": "faf-scfa-replay-parser 将《Supreme Commander: Forged Alliance》的回放文件解析为头部、命令消息和时间数据。仓库同时提供 Python 解析器及描述回放结构、Lua 值和操作流的 Kaitai 规范。",
+    "evidence_url": "https://github.com/FAForever/faf-scfa-replay-parser/blob/9d0cb7cb4bb0cf6d8be44e5c1ea4bc357aa9a0c5/replay.ksy",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supreme Commander: Forged Alliance .scfareplay files are the input.",
+      "GPL-3.0 licence."
+    ],
+    "requirement_facets": [
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/FAForever/faf-scfa-replay-parser/blob/9d0cb7cb4bb0cf6d8be44e5c1ea4bc357aa9a0c5/replay_parser/replay.py",
+      "https://github.com/FAForever/faf-scfa-replay-parser/blob/9d0cb7cb4bb0cf6d8be44e5c1ea4bc357aa9a0c5/README.md"
+    ]
+  },
+  {
+    "id": "functionparser-xenonrecomp",
+    "name": "FunctionParser",
+    "url": "https://github.com/VivaPinataRecomp/VivaPinataRecomp",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "FunctionParser identifies function ranges in IDA Pro HTML, reads switch-case error addresses from a XenonRecomp log and writes function entries for a XenonRecomp TOML configuration. Its companion configuration references a default.xex input.",
+    "description_zh": "FunctionParser 从 IDA Pro 导出的 HTML 中识别函数范围，从 XenonRecomp 错误日志中读取出错的 switch 语句地址，并输出供 XenonRecomp 使用的 TOML 函数条目。配套配置文件引用 default.xex 作为输入。",
+    "evidence_url": "https://github.com/VivaPinataRecomp/VivaPinataRecomp/blob/b9c08c16db72efc63f481c00c1bee4c36aebde27/VivaRecompLib/config/FunctionParser.py",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide HTML exported from IDA Pro 9.0SP1 and a XenonRecomp run log.",
+      "The repository uses the GNU General Public License version 3."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/VivaPinataRecomp/VivaPinataRecomp/blob/b9c08c16db72efc63f481c00c1bee4c36aebde27/VivaRecompLib/config/SWA.toml",
+      "https://github.com/VivaPinataRecomp/VivaPinataRecomp/blob/b9c08c16db72efc63f481c00c1bee4c36aebde27/LICENSE"
+    ]
+  },
+  {
+    "id": "rocket-league-replay-parser",
+    "name": "Rocket League Replay Parser",
+    "url": "https://github.com/jjbott/RocketLeagueReplayParser",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rocket League Replay Parser decodes Rocket League replay files into C# objects that can be serialized to JSON. It provides a reusable library and a console converter for individual files or directories, with code for replay frames, network-stream properties and serialization.",
+    "description_zh": "Rocket League Replay Parser 将《Rocket League》回放文件解析为可序列化为 JSON 的 C# 对象。项目提供可复用库和命令行转换器，可处理单个文件或目录，并包含回放帧、网络流属性和序列化代码。",
+    "evidence_url": "https://github.com/jjbott/RocketLeagueReplayParser/blob/4d849a97a6d3b75884350144551007e3eda4ff6c/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Rocket League replay files as input.",
+      "The author states support through Rocket League version 2.76; later replay versions may require updates.",
+      "MIT License."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "gbfr-data-tools",
+    "name": "GBFRDataTools",
+    "url": "https://github.com/Nenkai/GBFRDataTools",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "GBFRDataTools extracts and converts Granblue Fantasy: Relink archives and data files, including data.i, .tbl tables, textures and several structured UI formats. Its research notes describe FlatBuffer-based archive indexing and hashed game paths; the author reports mapping 391,699 of 408,165 paths in version 2.0.0.",
+    "description_zh": "GBFRDataTools 提取和转换《Granblue Fantasy: Relink》的 data.i 档案、.tbl 表、纹理及多种结构化 UI 文件。研究笔记说明基于 FlatBuffers 的档案索引与哈希化游戏路径；作者报告在 2.0.0 版中已映射 408,165 条路径中的 391,699 条。",
+    "evidence_url": "https://github.com/Nenkai/GBFRDataTools/blob/aff3383a61c621fa206af1c49255fd80e1bb60eb/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Granblue Fantasy: Relink data files as input.",
+      "Some .prfb files are unsupported, and the path mapping remains incomplete according to the author.",
+      "MIT License."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Nenkai/GBFRDataTools/blob/aff3383a61c621fa206af1c49255fd80e1bb60eb/GBFRDataTools.Archive/README.md"
+    ]
+  },
+  {
+    "id": "orbcomm-rx",
+    "name": "orbcomm-rx",
+    "url": "https://github.com/sam210723/orbcomm-rx",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "orbcomm-rx demodulates and decodes Orbcomm VHF Subscriber Transmitter downlinks. Its documented signal uses SDPSK at 4.8 kbps on carriers between 137 and 138 MHz, carrying satellite position, orbital elements, channel information and encrypted user messages.",
+    "description_zh": "orbcomm-rx 对 Orbcomm VHF Subscriber Transmitter 下行信号进行解调和解码。文档描述了 137–138 MHz 载波上的 4.8 kbps SDPSK 信号，以及卫星位置、轨道要素、信道信息和加密用户消息等内容。",
+    "evidence_url": "https://github.com/sam210723/orbcomm-rx/blob/0f861523ea45eedf03978ba4a66ace1af6eae5c4/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Orbcomm STX downlink signals are the input.",
+      "No licence file is listed in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "hyperscan-emulator",
+    "name": "hyperscan-emulator",
+    "url": "https://github.com/LiraNuna/hyperscan-emulator",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "hyperscan-emulator loads a HyperScan firmware image into emulated memory and exposes CPU execution through an interactive debugger. The debugger supports stepping, breakpoints and memory views, while its disassembler prints decoded instructions and register operands.",
+    "description_zh": "hyperscan-emulator 将 HyperScan 固件镜像映射进模拟内存，并通过交互式调试器观察 CPU 执行。调试器支持单步、断点和内存查看，反汇编器可输出解码后的指令与寄存器操作数。",
+    "evidence_url": "https://github.com/LiraNuna/hyperscan-emulator/blob/be1bfdd8b9b54361720b04348a00568325bcd50a/source/main.cpp",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A firmware image at roms/hsfirmware.bin.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LiraNuna/hyperscan-emulator/blob/be1bfdd8b9b54361720b04348a00568325bcd50a/source/hyperscan/debugger.cpp",
+      "https://github.com/LiraNuna/hyperscan-emulator/blob/be1bfdd8b9b54361720b04348a00568325bcd50a/source/hyperscan/disasm.cpp"
+    ]
+  },
+  {
+    "id": "minymizer",
+    "name": "MinYMizer",
+    "url": "https://codeberg.org/jbqueru/minymize",
+    "category": "binary-libraries",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "MinYMizer documents a portable representation of maxYMiser MYS song and MYV voiceset files for lightweight PSG playback. It specifies the fixed-layout MXG format and examines LZ and Huffman compression of pattern data. Its format design focuses on YM2149F features that do not rely on timer-driven effects.",
+    "description_zh": "MinYMizer 记录了 maxYMiser 的 MYS 歌曲和 MYV 音色集文件，并定义适合轻量级 PSG 播放的可移植表示。文档给出固定布局的 MXG 格式，分析模式数据的 LZ 与 Huffman 压缩；格式设计聚焦于无需定时器特效的 YM2149F 功能。",
+    "evidence_url": "https://codeberg.org/jbqueru/minymize/src/commit/f55431ea4d50845c9dc33eeac340de0555c08160e0dda710825fe5e804fc7a1b/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "MYS song and MYV voiceset files from maxYMiser are the inputs.",
+      "The format is limited to portable PSG features without timer-driven effects.",
+      "Advanced-format playback on Intellivision is outside the stated scope.",
+      "No licence stated on the project page."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "wii-u-firmware-emulator",
+    "name": "Wii U Firmware Emulator",
+    "url": "https://github.com/kinnay/Wii-U-Firmware-Emulator",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Wii U Firmware Emulator models the console's processors and hardware to run user-dumped boot1, IOSU and Cafe OS through the menu stage. Its debugger supports instruction stepping, breakpoints, watchpoints, memory reads, stack traces, threads, message queues and IPC inspection.",
+    "description_zh": "Wii U Firmware Emulator 模拟主机处理器和硬件，可运行用户自行提取的 boot1、IOSU 与 Cafe OS，直到菜单阶段。内置调试器支持单步执行、断点、监视点、内存读取、堆栈回溯，以及线程、消息队列和 IPC 状态检查。",
+    "evidence_url": "https://github.com/kinnay/Wii-U-Firmware-Emulator/blob/b734393a81c68e24a76a872f77ee363ea8d0825d/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Linux, a C++14-capable g++ compiler and OpenSSL are required.",
+      "User-dumped Wii U boot1, OTP, SEEPROM, MLC, SLC and SLCCMPT files, plus the espresso ancast key, are required.",
+      "The emulator may write to supplied dumps; keep backups.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "demoinfocs-golang",
+    "name": "demoinfocs-golang",
+    "url": "https://github.com/markus-wa/demoinfocs-golang",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "demoinfocs-golang parses Counter-Strike 2 and Counter-Strike: Global Offensive replay files in Go. It exposes kills and other game events, player and team state, entities, server classes, data tables and net messages, with examples for event output and heatmaps.",
+    "description_zh": "demoinfocs-golang 是解析 Counter-Strike 2 和 Counter-Strike: Global Offensive 回放文件的 Go 库，可读取击杀等游戏事件、玩家与队伍状态、实体、服务器类、数据表和网络消息，并附有事件输出与热力图示例。",
+    "evidence_url": "https://github.com/markus-wa/demoinfocs-golang/blob/4c79f7b51239568f18d3c82d56da7e81816e2d0b/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Go 1.27 or later and a Counter-Strike demo file.",
+      "Corrupt demos or unsupported schemas can cause decode errors; earlier events remain available.",
+      "MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/markus-wa/demoinfocs-golang/blob/4c79f7b51239568f18d3c82d56da7e81816e2d0b/go.mod"
+    ]
+  },
+  {
+    "id": "gtpd-code-reference",
+    "name": "GTPD-Code-Reference",
+    "url": "https://github.com/Ed-1T/GTPD-Code-Reference",
+    "category": "game-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "GTPD-Code-Reference documents Ghost Trick: Phantom Detective's Nintendo DS code through C++ type declarations and linker symbol maps. It includes game and framework headers, format structures such as CPAC, and ARM9 function addresses for compiling custom code.",
+    "description_zh": "GTPD-Code-Reference 通过 C++ 类型声明和链接符号表记录 Nintendo DS 游戏 Ghost Trick: Phantom Detective 的代码结构。内容包括游戏及框架头文件、CPAC 等格式结构和 ARM9 函数地址，供编译自定义代码使用。",
+    "evidence_url": "https://github.com/Ed-1T/GTPD-Code-Reference/blob/a40415ad711e74fa15a8fd5f8513732f7e248463/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No licence file in the repository."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Ed-1T/GTPD-Code-Reference/blob/a40415ad711e74fa15a8fd5f8513732f7e248463/symbols9.x"
+    ]
+  },
+  {
+    "id": "applewin-symbolic-debugger",
+    "name": "AppleWin",
+    "url": "https://github.com/AppleWin/AppleWin",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "AppleWin emulates Apple II computers on Windows and includes a symbolic debugger for inspecting running software. Its debugger documentation covers execution control, memory, registers, symbols and breakpoints across supported Apple II models.",
+    "description_zh": "AppleWin 在 Windows 上模拟多种 Apple II 机型，并内置可检查运行中程序的符号调试器。调试器文档涵盖执行控制、内存、寄存器、符号和断点。",
+    "evidence_url": "https://github.com/AppleWin/AppleWin/blob/4a43bcdb8e1cb908662f4c270ca84f309a97802f/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows.",
+      "Apple //c, Apple IIgs and several other listed models are unsupported.",
+      "GPL-2.0 license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ssf2t-decomp",
+    "name": "SSF2T Decomp",
+    "url": "https://github.com/nikodindon/ssf2t-decomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "SSF2T Decomp provides Python tools and documentation for examining the CPS2 ROM layout of Super Street Fighter 2 Turbo. Its modules cover ROM parsing, sprite decoding, audio extraction, palette parsing, and a viewer; the planned game engine and several extraction tasks remain unfinished.",
+    "description_zh": "SSF2T Decomp 提供 Python 工具和文档，用于检查 Super Street Fighter 2 Turbo 的 CPS2 ROM 结构。模块涉及 ROM 解析、精灵解码、音频提取、调色板解析和查看器；游戏引擎及多项提取任务仍在开发中。",
+    "evidence_url": "https://github.com/nikodindon/ssf2t-decomp/blob/042591bdfd4e353be3e2c2e651b5f10985ccb91e/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.10+ and a Super Street Fighter 2 Turbo CPS2 ROM zip are specified.",
+      "The roadmap leaves sprite, palette, audio, and 68000 program extraction unfinished.",
+      "MIT."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nikodindon/ssf2t-decomp/blob/042591bdfd4e353be3e2c2e651b5f10985ccb91e/docs/cps2_technical.md"
+    ]
+  },
+  {
+    "id": "reevengi",
+    "name": "Reevengi",
+    "url": "https://github.com/pmandin/reevengi",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reevengi inspects game data from several PlayStation and PC releases of Resident Evil 1, 2 and 3. It displays backgrounds, models and room geometry and can dump room scripts with bytecodes; the repository includes format readers and related utilities.",
+    "description_zh": "Reevengi 检查《Resident Evil》1、2、3 的多个 PlayStation 与 PC 版本的数据，可查看背景、模型和房间几何，并导出带字节码的房间脚本。仓库包含相应的格式读取器和辅助工具。",
+    "evidence_url": "https://github.com/pmandin/reevengi/blob/8130d5fd029a7548135bdbbff19b0b8e338bd42d/README",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Game files supplied through the basedir option or current directory; SDL and PhysicsFS 2.x are required.",
+      "SDL_image with libjpeg is required for Resident Evil 3 PC; FFmpeg is optional for movie playback.",
+      "Background masks or model rendering are missing for specified Resident Evil 2 and 3 versions.",
+      "GPL-2.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "pyflp",
+    "name": "PyFLP",
+    "url": "https://github.com/demberto/PyFLP",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "PyFLP parses FL Studio project and preset files in Python. It exposes structures such as arrangements, channels and mixer data from the closed FLP format, with documentation on the format and on editing limits.",
+    "description_zh": "PyFLP 用 Python 解析 FL Studio 的工程和预设文件，读取封闭 FLP 格式中的编曲、通道与混音器等结构。项目还提供格式说明和编辑功能限制文档。",
+    "evidence_url": "https://github.com/demberto/PyFLP/blob/f937126b888ce94271bfea631b89166c74056530/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.8 or later.",
+      "Back up files before editing; the FLP format is closed and undocumented.",
+      "High-level objects can be modified but generally cannot be added or removed; raw events are an exception.",
+      "Licensed under GPL-3.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/demberto/PyFLP/blob/f937126b888ce94271bfea631b89166c74056530/docs/limitations.rst",
+      "https://github.com/demberto/PyFLP/blob/f937126b888ce94271bfea631b89166c74056530/pyproject.toml"
+    ]
+  },
+  {
+    "id": "project-icestorm",
+    "name": "Project IceStorm",
+    "url": "https://github.com/YosysHQ/icestorm",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Project IceStorm documents the Lattice iCE40 FPGA configuration bitstream format and supplies tools to analyse and create bitstream files. Its source tree includes bitstream utilities and format documentation for logic, I/O and RAM tiles.",
+    "description_zh": "Project IceStorm 记录 Lattice iCE40 FPGA 配置位流格式，并提供分析与生成位流文件的工具。源码中还包含逻辑、I/O 和 RAM 单元的格式文档。",
+    "evidence_url": "https://github.com/YosysHQ/icestorm/blob/00da9c3e6ceff056248e3451dd6fd3210d6ceec9/README",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "ISC license for most of the project."
+    ],
+    "requirement_facets": [
+      "license"
+    ]
+  },
+  {
+    "id": "metlrpt",
+    "name": "Meteor LRPT Decoder",
+    "url": "https://github.com/opensatelliteproject/metlrpt",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Meteor LRPT Decoder processes Meteor M N2 satellite transmissions into channel packets. Its C++ pipeline synchronizes frames, corrects phase shifts, performs Viterbi and Reed-Solomon decoding, and passes decoded channel data to a Python packet demultiplexer.",
+    "description_zh": "Meteor LRPT Decoder 将 Meteor M N2 卫星传输数据处理为信道数据包。C++ 流水线完成帧同步、相位校正、Viterbi 与 Reed-Solomon 解码，再由 Python 程序拆分数据包。",
+    "evidence_url": "https://github.com/opensatelliteproject/metlrpt/blob/3457acd02a9e6ebe46bead64a06eed0f37389323/Meteor/src/newdecoder.cpp",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The C++ decoder uses SatHelper and receives coded data through a TCP connection on port 5000.",
+      "The Python channel demultiplexer uses Python 2 syntax.",
+      "The project is marked work in progress.",
+      "No licence file in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/opensatelliteproject/metlrpt/blob/3457acd02a9e6ebe46bead64a06eed0f37389323/Meteor/M2C/channeldecode.py"
+    ]
   }
 ]

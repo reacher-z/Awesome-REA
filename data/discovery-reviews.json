@@ -1,4 +1,22 @@
 {
+  "scan-43647441": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "The PHP files serve replacement weather and stock data to iOS Notification Center through hosts-file redirection; the project documents no reverse-engineering findings.",
+    "reason_zh": "该项目用 PHP 和 hosts 重定向向 iOS 通知中心提供天气、股票数据，没有记录逆向分析成果。",
+    "readme_sha256": "e25462d3c0e030e297e37ee71d6fb04506962260b89f801066127e53e06b852d",
+    "evidence_url": "https://github.com/r57zone/Custom-data-notifications-center-iOS/blob/0deeada42ffbb524b86a78954bbcbef6999cb06c/README.md",
+    "reviewed_at": "2026-11-09"
+  },
+  "scan-46175729": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The GodsRush conversion scripts sit beside extracted game sprites and other game-derived media, requiring a decision on redistributed assets.",
+    "reason_zh": "GodsRush 的格式转换脚本与导出的游戏精灵图等媒体文件一同提交，涉及游戏素材再分发，需维护者判断。",
+    "readme_sha256": "9bc36edbbc4273a6d5b1f41fdc2fc3469ea897a88b3d2f15e35f5cbc4be2a731",
+    "evidence_url": "https://github.com/mindc/GodsRush/blob/314ba0e23ea26fc6e52c81ed21ccc00bb38fd29b/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-52802949": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -7,6 +25,15 @@
     "readme_sha256": "6f705cff7385181829cc358de984c1b8cc4ae5981920e0f759b5094b59c62894",
     "evidence_url": "https://github.com/Idorobots/upnod-card0117-tn64/blob/2b2a69053dd9b0e946a768c799275f51530615a0/README.md",
     "reviewed_at": "2026-11-08"
+  },
+  "scan-54486856": {
+    "decision": "exclude",
+    "reason_code": "game-mod-no-re",
+    "reason_en": "BLT4L's main deliverable is a PAYDAY 2 Lua mod loader for Linux; reverse engineering is mentioned for missing APIs but no game analysis is documented as its output.",
+    "reason_zh": "BLT4L 的主要成果是 Linux 版《PAYDAY 2》Lua 模组加载器；虽提及研究缺失 API，项目成果仍是模组运行工具。",
+    "readme_sha256": "fa735879afe0d8fab43a27b28445bdc1412a06b60f97b72080f881d276abf216",
+    "evidence_url": "https://github.com/blt4linux/blt4l/blob/02822d3dd591b6e2d39f738a94f240e8bfce49dd/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-55305558": {
     "decision": "exclude",
@@ -53,6 +80,15 @@
     "evidence_url": "https://github.com/WapaMario63/LoEWCT2/blob/59380ac7c3c462a759248c3dae690ce4cf259bd5/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-65091299": {
+    "decision": "hold",
+    "reason_code": "needs-maintainer-decision",
+    "reason_en": "The R-Net CAN research includes code to control power wheelchairs and describes changing wheelchair speed settings, requiring a maintainer decision.",
+    "reason_zh": "R-Net CAN 研究包含控制电动轮椅的代码，并提及修改轮椅速度设置，需要维护者判断。",
+    "readme_sha256": "0523f4b5b8d91b28766d905996c99e89dedf77370452ea2a623eba6b473aee6c",
+    "evidence_url": "https://github.com/redragonx/can2RNET/blob/b074c60e9b31832029fe428874be59af6c9a0c45/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-78295181": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -98,6 +134,15 @@
     "evidence_url": "https://github.com/harshvardhanmalpani/songsbro/blob/e27c0957b2854c197dcabbcc7128d34717638642/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-88692677": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "ovpn_webview is an Android OpenVPN client with downloadable profile bundles; its README documents app behavior but no analysis or reconstruction of OpenVPN Connect.",
+    "reason_zh": "ovpn_webview 是一款可下载配置包的 Android OpenVPN 客户端；项目说明介绍了应用功能，没有记载对 OpenVPN Connect 的分析或重建过程。",
+    "readme_sha256": "afbadc16652e6bfb956cae9a692a182e25b8cc34701e2708e61cc5b350ea9420",
+    "evidence_url": "https://github.com/cuu/ovpn_webview/blob/79a3624978f78130c85cfe4fdb7db4dedb821ded/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-89768181": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -115,6 +160,15 @@
     "readme_sha256": "1aabc2f3520b626d7c114caed963c522cb1afd5baeca1c9649ba7f84e94dcb59",
     "evidence_url": "https://github.com/balert/Sony-STR-DN840-Remote-Python/blob/60afe9fd6f4597e2cf2bbc07a27dcffee9233b60/sony-str-dn840-controller.py",
     "reviewed_at": "2026-11-07"
+  },
+  "scan-94900544": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Dofus D2I format reader includes an original .d2i game data file in Example, so redistribution of target data needs a maintainer decision.",
+    "reason_zh": "Dofus D2I 格式读取器在 Example 中提交了原版 .d2i 游戏数据文件，目标数据的再分发需要维护者判断。",
+    "readme_sha256": "1cc330a164d38ab90d00340c249b6c51beeccb2846747ecc0bbc6a950d8ea100",
+    "evidence_url": "https://github.com/crimson-med/FastD2IReader/blob/e704ea1129a318ef3b709c5be0cc690f1eaf1794/Example/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-97754583": {
     "decision": "exclude",
@@ -142,6 +196,15 @@
     "readme_sha256": "37333f529bd663a81c16208045b903ce65419491970bab8b78cdc749ad1722da",
     "evidence_url": "https://github.com/diegotf30/meme-bot/blob/a7a1f86c8b21991def9ed7827f42d9e2da888199/README.md",
     "reviewed_at": "2026-11-08"
+  },
+  "scan-103869313": {
+    "decision": "exclude",
+    "reason_code": "game-mod-no-re",
+    "reason_en": "Pirates of the Caribbean Online Rewritten is a custom private server built with 2013 client code, Panda3D and Astron; it documents no analysis of the original game.",
+    "reason_zh": "Pirates of the Caribbean Online Rewritten 是基于 2013 年客户端代码、Panda3D 和 Astron 的私人服务器，未记录对原游戏的逆向分析。",
+    "readme_sha256": "aabbc559de41c6a03c14e0e5ed5283876c4a9ece1ffd5004791b8957c3217b12",
+    "evidence_url": "https://github.com/PiratesOnlineRewritten/Pirates-Online-Rewritten/blob/7f4f6c46cbead9091fd51fdfc0a7263f50f8b257/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-104726592": {
     "decision": "hold",
@@ -233,6 +296,15 @@
     "evidence_url": "https://github.com/adwait1-g/ieee_workshop/blob/68f92c25587d65f7405b83931e3dd4983b3f2a3f/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-123884484": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Super Mario Bros. 2 disassembly tree commits .chr game graphics and assembles a byte-for-byte game ROM, requiring review of redistributed game data.",
+    "reason_zh": "《Super Mario Bros. 2》反汇编仓库提交了 .chr 游戏图像数据，并能逐字节重建 ROM，游戏数据再分发需要审定。",
+    "readme_sha256": "2e869efb37b8271c3cc68fe3bf624f8e0125aa5c3639f7a6f3affce0b629a4e1",
+    "evidence_url": "https://github.com/Xkeeper0/smb2/blob/b73415e1953d7fdffd4957d5fb43fa7a13844c1c/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-126789015": {
     "decision": "exclude",
     "reason_code": "general-security",
@@ -269,6 +341,15 @@
     "evidence_url": "https://github.com/martonmiklos/STM8_servotester/blob/29c8e31f9cd0155e9e84a663ebe7e3ac39f69d58/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-131843111": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "swe1r-re documents original analysis of Star Wars Episode I: Racer, but its files include extensive decompiled C output from the commercial game executable.",
+    "reason_zh": "swe1r-re 记录了对 Star Wars Episode I: Racer 的分析，但仓库收录大量来自商业游戏可执行文件的反编译 C 代码。",
+    "readme_sha256": "078b1a5be044c2a2965332a34185e7eecd98dbfbad12638d087ba826c5472204",
+    "evidence_url": "https://github.com/OpenSWE1R/swe1r-re/blob/57638c19ed092d52c152d8119e0cfe55e9c9f129/swep1rcr.exe/HUD-Engine-Status.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-132149983": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -286,6 +367,15 @@
     "readme_sha256": "9b86cd1862130ccfefc0b500512442881f9f1f142df6204bce8252af1d40a808",
     "evidence_url": "https://github.com/biappi/PacMaschine/blob/212ab8d1d8fe91dc8abfa8c8c14b7c9a449e8317/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-133970131": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "tastyworks_api is an asynchronous trading API library; it calls itself reverse engineered but gives no analysis method, captured behavior or protocol findings.",
+    "reason_zh": "tastyworks_api 是异步交易接口库；虽然自称逆向实现，文档没有说明分析方法、观察到的行为或协议发现。",
+    "readme_sha256": "97dee0909ee09e84ed7787b1b61cd9d98fd09b276cab82bad779580c7135dec5",
+    "evidence_url": "https://github.com/boyan-soubachov/tastyworks_api/blob/a54aa873e804c72374f6654a221904b0428b7fbf/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-134736607": {
     "decision": "exclude",
@@ -404,6 +494,15 @@
     "evidence_url": "https://github.com/dism-exe/bn6f/blob/d57c1968d27452de1042eff78b5dfbf124922666/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "scan-142769875": {
+    "decision": "exclude",
+    "reason_code": "cheat-or-evasion",
+    "reason_en": "The CatGenie 120 emulator was built to suppress cartridge verification so soap cartridges can be refilled, making circumvention its primary purpose.",
+    "reason_zh": "CatGenie 120 模拟器的主要用途是绕过耗材验证，以便重复填充皂液盒。",
+    "readme_sha256": "22a4bd4f1cd8e9ce6755074bd7c648119c7dd20a749d8369bbff4ed9fb4021bf",
+    "evidence_url": "https://github.com/davidhampgonsalves/CR14-emulator-for-CatGenie-120/blob/83ed3ae0432d954821f1392b76cc693adf2f895d/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-142771890": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
@@ -449,6 +548,15 @@
     "evidence_url": "https://github.com/dylanarmstrong/patches/blob/e19dc29af8365814981c68efd21f03a685df556f/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-148937680": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The repository commits jetpac.skool, a disassembly generated from the commercial JETPAC cartridge ROM, so its published game-derived output needs policy review.",
+    "reason_zh": "仓库提交了由商业游戏《JETPAC》卡带 ROM 生成的 jetpac.skool 反汇编成果，需按收录政策审定。",
+    "readme_sha256": "75f6bfa5a3c97a3c1b00fa8d4174188f236ab4ffecde86b3fa1f15cccb667060",
+    "evidence_url": "https://github.com/mrcook/jetpac-disassembly/blob/69dcde1a9f980b3d0948ca62bcb68d6c3a9b1c7d/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-149362716": {
     "decision": "exclude",
     "reason_code": "general-programming-tutorial",
@@ -475,6 +583,15 @@
     "readme_sha256": "a15db3a0f21a2c87a2aa50f839c7d4f71eac423cf4d29b5e58b19f3498d60636",
     "evidence_url": "https://github.com/minchingtonak/DashDance/blob/cf13a4dd493291d17d6cdfcfc1c6ff904219b113/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-152932148": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "PokemonBattleEngine primarily emulates Pokémon battles for clients and a server; game-data ripping is a supporting feature rather than its main subject.",
+    "reason_zh": "PokemonBattleEngine 的主体是供客户端和服务器使用的宝可梦对战模拟库；提取游戏数据只是附带功能。",
+    "readme_sha256": "64ded74efc8283a3ef5c79c94e94b91e552330a68fcc3418dba8d2919b7aacde",
+    "evidence_url": "https://github.com/Kermalis/PokemonBattleEngine/blob/e733883abb0474cabeeb9c2ff3d89cf92811fd62/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-154022726": {
     "decision": "hold",
@@ -872,6 +989,15 @@
     "evidence_url": "https://github.com/lion-chen/AREK/blob/82788e0610745992bde31eddc000fda789d3964c/index.py",
     "reviewed_at": "2026-11-06"
   },
+  "scan-204298543": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "googletranslate is a Python translation wrapper whose usage covers translating strings and files; it documents no investigation of Google Translate.",
+    "reason_zh": "googletranslate 是翻译字符串和文件的 Python 封装；项目文档未记录对 Google Translate 的逆向研究。",
+    "readme_sha256": "a0f2d5c769a18dec49ceb67ba3ba928fb535c8945044d1ad41a4611273632e14",
+    "evidence_url": "https://github.com/ultrafunkamsterdam/googletranslate/blob/1ba75c2d336ea6f6da6b87490d061e0caea9d128/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-205262028": {
     "decision": "exclude",
     "reason_code": "general-programming-tutorial",
@@ -898,6 +1024,16 @@
     "readme_sha256": "9b51ccd38e2bbaff5224765887f091c6a265c09ea73d4b5461f40cb4d2d28930",
     "evidence_url": "https://github.com/au5ton/watchdox/blob/723dccf5d1035398c210c5771e86914740a22f77/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-207260609": {
+    "decision": "exclude",
+    "reason_code": "duplicate-queue",
+    "reason_en": "A separate open pull request already proposes this Super Metroid disassembly for the catalog.",
+    "reason_zh": "已有另一份未合并的拉取请求提议收录该《Super Metroid》反汇编项目。",
+    "readme_sha256": "2cfda4772f824af6f76f2605afea5122d4422ce1729d91a6d46250f49de96c87",
+    "evidence_url": "https://github.com/strager/supermetroid/blob/b7785a19024454ef366500243648cb64e687164b/README.md",
+    "reviewed_at": "2026-11-09",
+    "duplicate_of": "#4321"
   },
   "scan-210338134": {
     "decision": "exclude",
@@ -1033,6 +1169,15 @@
     "readme_sha256": "28f7c311932147cc277453061a031eafa5dc443ff06ee7ed44ebe6d5c103c031",
     "evidence_url": "https://github.com/SourceDiver42/m365_CFW/blob/f667664de0ea8b32af7bd7ecc74396cca4751f6c/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-249599828": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The online port commits image and sound assets from Pikachu Volleyball alongside its copied reverse-engineered offline version, requiring an asset policy decision.",
+    "reason_zh": "该在线移植提交了《Pikachu Volleyball》的图像与声音素材，并复制逆向构建的离线版本，素材收录需要政策判断。",
+    "readme_sha256": "ef92431e140b0777a337038e51b4aed30df191d16ce7cf799316c4864a069205",
+    "evidence_url": "https://github.com/gorisanson/pikachu-volleyball-p2p-online/blob/9f2dd56d6fb31f86ad0a6716d26636a9f504a91c/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-255268190": {
     "decision": "exclude",
@@ -1458,6 +1603,15 @@
     "evidence_url": "https://github.com/hoxily/d2loader/blob/e63392e2a8184ce48ead69e80a5c7fc557f1ee97/readme.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-377973130": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The LEGO Rock Raiders analysis includes archived original engine source, debug symbols and a Ghidra archive of game executables, requiring a policy decision.",
+    "reason_zh": "《LEGO Rock Raiders》分析仓库包含原版引擎源码、调试符号及游戏可执行文件的 Ghidra 归档，需要政策判断。",
+    "readme_sha256": "dded31efafeb0de9c00656c60c006d17547fa9deb774c4a6e83037946663464c",
+    "evidence_url": "https://github.com/trigger-segfault/legorockraiders-analysis/blob/f206b92c470a7fd1a4b21edc1ea05c3d12229a19/data/ddi/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-384633210": {
     "decision": "exclude",
     "reason_code": "personal-profile",
@@ -1484,6 +1638,25 @@
     "readme_sha256": "fdbea4a7a478ff8e2d768dc69a7e743d00b9098c93ff3ea8fbf8998fd07db402",
     "evidence_url": "https://github.com/dend/decksurf-sdk/blob/47a1246e121ec3cd4aa1c430c19c6fae53c77e5a/README.md",
     "reviewed_at": "2026-11-08"
+  },
+  "scan-391486931": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Ultima Underworld research commits game executable disassemblies and IDA databases, including names taken from a shipped symbol table, requiring policy review.",
+    "reason_zh": "《Ultima Underworld》研究提交了游戏可执行文件的反汇编与 IDA 数据库，还含原版符号表提取的名称，需要政策审定。",
+    "readme_sha256": "294d4c83b26621efceef3c48f8f559f17d2ed9314320f0be2776a137b67f5076",
+    "evidence_url": "https://github.com/hankmorgan/UWReverseEngineering/blob/ac72dd9155e4bd3ab76257fa5daca080f23f2bbf/README.md",
+    "reviewed_at": "2026-11-09"
+  },
+  "scan-396975494": {
+    "decision": "exclude",
+    "reason_code": "duplicate-curated",
+    "reason_en": "The project states that its Java work moved to OpenRakis/Cryogenic, already cataloged as cryogenic-dune.",
+    "reason_zh": "项目说明其 Java 版本已迁移至 OpenRakis/Cryogenic；后者已作为 cryogenic-dune 收录。",
+    "readme_sha256": "1227b7c0601dfd53dde678e76193f96746f5b7ac3ee2ebf23e469310d39eb824",
+    "evidence_url": "https://github.com/kevinferrare/cryodunere/blob/32aa96eb1b97f1ad342db337bf80527ce09c6155/README.md",
+    "reviewed_at": "2026-11-09",
+    "duplicate_of": "cryogenic-dune"
   },
   "scan-397761741": {
     "decision": "hold",
@@ -1629,6 +1802,15 @@
     "evidence_url": "https://github.com/monomadic/sonic-rs/blob/b723eb71e46e67c7d62f1ef39390c90aa808cc09/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-437298610": {
+    "decision": "exclude",
+    "reason_code": "cheat-or-evasion",
+    "reason_en": "SKYNET injects a replacement Steam API DLL into games and emulates Steam services to run multiplayer without Steam, placing its core use in platform bypass.",
+    "reason_zh": "SKYNET 向游戏注入替代 Steam API DLL，并模拟 Steam 服务以脱离 Steam 运行多人游戏，核心用途属于平台绕过。",
+    "readme_sha256": "c696b05b720e0111c925265261c01790d5d41cb61d8bf70d416bdd82428cf04b",
+    "evidence_url": "https://github.com/Hackerprod/-SKYNET-Steam-Emulator/blob/158f2c91e8d3949af6588a128cb5126b9f44b82e/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-447634851": {
     "decision": "exclude",
     "reason_code": "no-real-content",
@@ -1665,6 +1847,15 @@
     "evidence_url": "https://github.com/Jutta-Proto/protocol-wifi-cpp/blob/d90f30fbbc4a109f86d07612a328970e47d61299/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-461564321": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The printer investigation commits the vendor iPrint APK alongside BLE captures and analysis, so redistribution of the commercial app needs policy review.",
+    "reason_zh": "该打印机研究将厂商 iPrint APK 与 BLE 抓包及分析一同提交，商业应用的再分发需要政策审定。",
+    "readme_sha256": "ad3b106a8b45827d7d63f9f00335fe8fbccd0cec7e88777c51ee508b1ccafecc",
+    "evidence_url": "https://github.com/lisp3r/bluetooth-thermal-printer/blob/f96df888173bd5bd9941a29427b67d7e92810463/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-462955478": {
     "decision": "hold",
     "reason_code": "needs-maintainer-decision",
@@ -1700,6 +1891,15 @@
     "readme_sha256": "d4bb7395322a3c96c2d3b1b21a4bc7647df6086b4bacd5a45e32a83344b69092",
     "evidence_url": "https://github.com/mediaexplorer74/VVVVV/blob/56f460c6b1b96b52ef92f5b98550e22d3711ade5/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-465254250": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "NSmart-RE documents APK decompilation and API calls, but it commits the original app's APK and extracts an embedded authentication key, requiring a linking decision.",
+    "reason_zh": "NSmart-RE 记录了 APK 反编译及接口调用，但仓库收录原始应用 APK，并提取其中的认证密钥，需要决定是否收录链接。",
+    "readme_sha256": "eb7dd00f7343e68a62511635192e9941516029ac8e37a5131ded4b773f134b95",
+    "evidence_url": "https://github.com/FmasterofU/NSmart-RE/blob/98eb31842988644f818da35acbadb10b570b2a3e/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-466017217": {
     "decision": "exclude",
@@ -1979,6 +2179,15 @@
     "readme_sha256": "16082e9e4051de5dbf7a9ecf89704f78aeed39ec87c53c1389f86a71a4f4d678",
     "evidence_url": "https://github.com/lumenthi/override/blob/5800b76e11cdad2d9b266cb1aea22ca17b9c1d8d/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-529265880": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "Cobalt is a mobile Steam frontend built on kSteam; its documentation describes app features and modules without an investigation or RE tooling.",
+    "reason_zh": "Cobalt 是基于 kSteam 的移动端 Steam 前端；文档介绍的是应用功能和模块，没有逆向分析或分析工具。",
+    "readme_sha256": "5c35111debaca83e61aab434162167d84abaef33bb101d6cb611d2bc5129e686",
+    "evidence_url": "https://github.com/iTaysonLab/jetisteam/blob/342ce210cd346ae6d518fcff360c7e90031f6152/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-529788378": {
     "decision": "exclude",
@@ -2484,6 +2693,15 @@
     "readme_sha256": "7712551cafc66e65d23b58168425a444a01dd7ff31da701ed2bae3840b9e49f8",
     "evidence_url": "https://github.com/AdamSEY/bard-unofficial-api/blob/381db7173bed6c3045bf9bec65fac76f64ff556d/README.md",
     "reviewed_at": "2026-11-07"
+  },
+  "scan-621071061": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "EdgeGPT-Go presents a Go client, CLI and gRPC service for Bing Chat; its documentation gives usage and authentication steps without an API investigation.",
+    "reason_zh": "EdgeGPT-Go 是 Bing Chat 的 Go 客户端、命令行程序和 gRPC 服务；文档主要说明使用与认证，没有展示接口逆向过程。",
+    "readme_sha256": "726eede29e4d294b0ad410518aedd65d3ab23b7bbebc7b6aca801cd58ed1f26f",
+    "evidence_url": "https://github.com/pavel-one/EdgeGPT-Go/blob/bb30b70170ebf14097b370c70e0742b829eddabe/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-621376295": {
     "decision": "hold",
@@ -3834,6 +4052,15 @@
     "readme_sha256": "b55b83036938cdbc2650f340585a4d86e4a47279fe089381322557c0a914997f",
     "evidence_url": "https://github.com/hitchhikr/spyvsspy2/blob/2bb496216c26f8152bdfb1248fb08123e616e0b3/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-842642596": {
+    "decision": "exclude",
+    "reason_code": "cheat-or-evasion",
+    "reason_en": "Arknights-RE includes an account client that automates daily game actions and describes the ability to submit modified battle records.",
+    "reason_zh": "Arknights-RE 提供自动执行日常游戏操作的账号客户端，并提到可提交修改过的战斗记录，因此属于游戏自动化与作弊工具。",
+    "readme_sha256": "4fc28317323df559737341e4e3bb2381e7237b341f9f038eaf5c36d2519b6c11",
+    "evidence_url": "https://github.com/djpadbit/Arknights-RE/blob/d7661a89e32040ad10f0b3f253471226890d2749/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-843843106": {
     "decision": "hold",
@@ -14909,6 +15136,15 @@
     "evidence_url": "https://github.com/palindsay/mmx/blob/486234cb88f2481ba68f19955c7ec9bee11292e4/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "scan-1447514540": {
+    "decision": "exclude",
+    "reason_code": "cheat-or-evasion",
+    "reason_en": "wendyQuestCracker reproduces Wendy Quest coupon requests and includes live dispatch for obtaining server-issued restaurant codes without the game's earned-stone check.",
+    "reason_zh": "wendyQuestCracker 复现 Wendy Quest 优惠券请求，并提供实时调用功能，可绕过游戏中获得石头的检查领取餐饮兑换码。",
+    "readme_sha256": "fa6f6715e0012cf9c83777802ab0c60ecef3fe5746a9d25f93452874f4c60308",
+    "evidence_url": "https://github.com/regulad/wendyQuestCracker/blob/9843a00fac2ba5d15c28f40c88bc459e6a799fa0/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-001cd81d766d97b3a5aa5f7c": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
@@ -15709,6 +15945,14 @@
     "reason_en": "openfortivpn is a Fortinet-compatible VPN client that runs pppd and manages gateway communications; its documentation describes connection and authentication.",
     "reason_zh": "openfortivpn 是兼容 Fortinet 的 VPN 客户端，通过 pppd 建立连接，文档介绍连接和认证方式。",
     "evidence_url": "https://github.com/adrienverge/openfortivpn/blob/bc70314ccaddb531a3bdf0dc75a86cad471b8fca/README.md",
+    "reviewed_at": "2026-11-06"
+  },
+  "lead-0ae712fb2e77ea95e9151ac8": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The EarthBound tree commits binary map, palette and tilemap files from the game, requiring a maintainer decision on redistributed assets.",
+    "reason_zh": "《EarthBound》仓库提交了游戏地图、调色板和图块地图的二进制文件，需维护者判断资产再分发问题。",
+    "evidence_url": "https://github.com/Yoshifanatic1/EarthBound-Disassembly/blob/313657d1f74888b4d8c619c602581673883bd15a/LICENSE",
     "reviewed_at": "2026-11-06"
   },
   "lead-0ae7a5bffc799cbd85901190": {
