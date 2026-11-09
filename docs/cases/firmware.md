@@ -6,7 +6,7 @@
 
 [简体中文](firmware.zh-CN.md)
 
-**150 case studies**
+**151 case studies**
 
 - [**6502 Model: reconstructing 65C02 cycle behavior**](https://github.com/EmulationOnline/model_6502) - 6502 Model reconstructs the 65C02 chip’s cycle behavior in Rust from traces of external buses recorded during execution on a physical chip. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/6502-model-case/)</sub>
 - [**Band 9 表盘生成器: Huawei Band 9 HWT watch-face format reconstruction**](https://github.com/daiyuxiang520/band9-watchface-generator) - Band 9 表盘生成器 reconstructs the Huawei Band 9 HWT watch-face package format from binary observations of public packages and builds installable packages for the 194 × 368 HWHD07 screen. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/band9-watchface-generator-case/)</sub>
@@ -17,6 +17,7 @@
 - [**D750 QEMU Verification Prototype: early Nikon D750 firmware execution in QEMU**](https://github.com/LuoStickmin/D750-QEMU) - D750 QEMU Verification Prototype investigates early execution of Nikon D750 firmware with a QEMU board overlay and host-side scanning and logging tools. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/d750-qemu-case/)</sub>
 - [**Echo Show camera: reconstructing LineageOS camera support**](https://github.com/jxlarrea/lineageos-echo-show-camera) - The Echo Show camera project reconstructs camera support for LineageOS 18.1 on Echo Show 5 and 8 devices. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/echo-show-lineageos-camera-case/)</sub>
 - [**EchoPod: replacement firmware for the Snowsky Echo Mini 8 GB**](https://github.com/BasilSkyWalk/echopod) - Replacement firmware for the Snowsky (FiiO) Echo Mini 8 GB player. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/echopod-echo-mini-firmware-case/)</sub>
+- [**F3DEX2: matching disassemblies of Nintendo 64 RSP microcode**](https://github.com/Mr-Wiseguy/f3dex2) - F3DEX2 is a set of matching disassemblies of the Nintendo 64 F3DEX2 and F3DZEX2 RSP microcode family. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/f3dex2-disasm/)</sub>
 - [**FPGABoy: Game Boy hardware implementation on FPGA**](https://github.com/trun/fpgaboy) - FPGABoy reconstructs Nintendo Game Boy hardware in an FPGA design. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/fpgaboy-game-boy-case/)</sub>
 - [**Game Boy DMG-CPU Schematics: reconstructing the DMG-CPU B chip**](https://github.com/msinger/dmg-schematics) - Game Boy DMG-CPU Schematics reconstructs the Game Boy DMG-CPU B chip and SM83 core as KiCad schematics, Electric VLSI layouts and text netlists. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dmg-schematics-case/)</sub>
 - [**GLaBIOS: a scratch-built 8K ROM BIOS**](https://github.com/640-KB/GLaBIOS) - A scratch-built open ROM BIOS for vintage PC, XT, and 8088-class machines. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/glabios-rom-bios-case/)</sub>

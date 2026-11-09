@@ -4,15 +4,15 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**2978 case studies**, grouped by section.
+**3087 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (74)
-- [Game](#game) (1865)
+- [Game](#game) (1973)
 - [App](#app) (214)
 - [Native Binary](#native-binary) (51)
-- [Firmware and Hardware](#firmware) (150)
+- [Firmware and Hardware](#firmware) (151)
 - [Protocol](#protocol) (624)
 
 <a id="website"></a>
@@ -21,7 +21,7 @@
 - [Case studies](cases/website.md)
 
 <a id="game"></a>
-## Game (1,865)
+## Game (1,973)
 
 - [Case studies, part 1](cases/game-1.md)
 - [Case studies, part 2](cases/game-2.md)
@@ -29,17 +29,17 @@
 - [Case studies, part 4](cases/game-4.md)
 
 <a id="game-matching-decompilation"></a>
-- [Matching decompilations and disassemblies](cases/game-1.md#game-matching-decompilation) (388)
+- [Matching decompilations and disassemblies](cases/game-1.md#game-matching-decompilation) (412)
 <a id="game-decompilation"></a>
-- [Non-matching decompilations](cases/game-1.md#game-decompilation) (204)
+- [Non-matching decompilations](cases/game-1.md#game-decompilation) (218)
 <a id="game-static-recompilation"></a>
-- [Static recompilations](cases/game-1.md#game-static-recompilation) (470)
+- [Static recompilations](cases/game-2.md#game-static-recompilation) (515)
 <a id="game-port"></a>
-- [Ports of reconstructed source](cases/game-2.md#game-port) (253)
+- [Ports of reconstructed source](cases/game-2.md#game-port) (259)
 <a id="game-engine-reimplementation"></a>
-- [Engine reimplementations](cases/game-3.md#game-engine-reimplementation) (307)
+- [Engine reimplementations](cases/game-3.md#game-engine-reimplementation) (325)
 <a id="game-other"></a>
-- [Other methods and analyses](cases/game-3.md#game-other) (243)
+- [Other methods and analyses](cases/game-3.md#game-other) (244)
 
 <a id="app"></a>
 ## App (214)
@@ -52,7 +52,7 @@
 - [Case studies](cases/native-binary.md)
 
 <a id="firmware"></a>
-## Firmware and Hardware (150)
+## Firmware and Hardware (151)
 
 - [Case studies](cases/firmware.md)
 
