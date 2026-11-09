@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-09T19:09:07+00:00",
-    "entry_count": 1100,
-    "class_entry_count": 1142,
+    "generated_at": "2026-11-09T19:34:18+00:00",
+    "entry_count": 1099,
+    "class_entry_count": 1141,
     "class_counts": {
-      "image": 1062,
+      "image": 1061,
       "video": 38
     },
     "missing_count": 42,
@@ -6382,15 +6382,6 @@
       "source_url": "https://github.com/undecuple/project-pyrrhus",
       "revision": "ab312c60307d73baad073f87f0429fde70dd27ef",
       "checked_at": "2026-11-09T04:14:52+00:00"
-    },
-    {
-      "id": "project-tandem-mkdd-case",
-      "image_url": "https://raw.githubusercontent.com/badcompany94-rcmp/project-tandem/43734161cc95d4faa7419bbe1d541a811b5446d7/docs/images/character-selection.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/badcompany94-rcmp/project-tandem",
-      "revision": "43734161cc95d4faa7419bbe1d541a811b5446d7",
-      "checked_at": "2026-11-09T07:55:54+00:00"
     },
     {
       "id": "protobuf-inspector",

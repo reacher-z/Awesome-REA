@@ -31,10 +31,19 @@ def expected_entry_routes(resources, papers):
     return routes
 
 
-def validate_route_inventory(urls, resources, papers, *, include_browse=True, include_discoveries=False):
+def discovery_class_pages(output):
+    """English paths of the per-class discovery pages that the published queue export names."""
+    export = Path(output) / "discoveries.json"
+    if not export.is_file():
+        return []
+    return [urlsplit(entry["page"]).path for entry in json.loads(export.read_text(encoding="utf-8")).get("class_pages", [])]
+
+
+def validate_route_inventory(urls, resources, papers, *, include_browse=True, include_discoveries=False, discovery_classes=()):
     """Require exact sitemap coverage; unknown automatic-repository pages are refused.
 
-    The unreviewed discovery queue adds one list page per language, never a page per scan record.
+    The unreviewed discovery queue adds one list page per language, plus one page per language for each Data class
+    with more records than the list page shows; never a page per scan record.
     """
     routes = expected_entry_routes(resources, papers)
     expected = set(routes)
@@ -45,6 +54,7 @@ def validate_route_inventory(urls, resources, papers, *, include_browse=True, in
             expected.update(f"{prefix}/browse/{category}/" for category in CATEGORIES)
         if include_discoveries:
             expected.add(prefix + "/discoveries/")
+            expected.update(prefix + path for path in discovery_classes)
     assert len(urls) == len(set(urls)), "Duplicate sitemap URLs"
     assert set(urls) == {ORIGIN + route for route in expected}, "Sitemap route inventory differs from reviewed entries and collection pages"
     return routes
@@ -101,7 +111,8 @@ def built_page_dates(output, records, papers):
     lead_batches = json.loads(leads.read_text(encoding="utf-8")).get("batches", []) if leads.is_file() else []
     survey = json.loads((ROOT / "data/survey.json").read_text(encoding="utf-8"))
     return page_dates(resources=records, papers=papers, repository_document=repository,
-                      discovery_batches=batches, lead_batches=lead_batches, survey_date=survey.get("date"))
+                      discovery_batches=batches, lead_batches=lead_batches, survey_date=survey.get("date"),
+                      discovery_class_pages=discovery_class_pages(output))
 
 
 def validate_sitemaps(output, records, papers):
@@ -158,7 +169,8 @@ def main():
     papers = json.loads((OUTPUT / "papers.json").read_text(encoding="utf-8"))
     urls = validate_sitemaps(OUTPUT, records, papers)
     entries = validate_route_inventory(urls, records, papers, include_browse=(OUTPUT / "source-index.json").is_file(),
-                                       include_discoveries=(OUTPUT / "discoveries.json").is_file())
+                                       include_discoveries=(OUTPUT / "discoveries.json").is_file(),
+                                       discovery_classes=discovery_class_pages(OUTPUT))
     documents = {}
     for url in urls:
         parsed = urlsplit(url)
