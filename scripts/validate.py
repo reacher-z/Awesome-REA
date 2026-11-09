@@ -35,7 +35,12 @@ RESOURCE_FIELDS = {
     'id', 'name', 'url', 'category', 'relationship', 'description_en',
     'description_zh', 'evidence_url', 'verified_at', 'verification', 'requirements', 'targets', 'kind',
 }
-OPTIONAL_RESOURCE_FIELDS = {'additional_evidence_urls', 'added_at', 'class', 'reconstruction_method', 'requirement_facets'}
+OPTIONAL_RESOURCE_FIELDS = {'additional_evidence_urls', 'added_at', 'class', 'reconstruction_method', 'requirement_facets',
+                            'source_unavailable'}
+# A curated record whose public source no longer resolves keeps its entry and says so: the HTTP status a plain
+# request for its `url` returned and when. The outcomes match the scan index's upstream-unavailable rechecks.
+SOURCE_UNAVAILABLE_FIELDS = {'checked_at', 'outcome', 'http_status'}
+SOURCE_UNAVAILABLE_OUTCOMES = {'not-found': {404, 410}, 'blocked': {451}}
 BENCHMARK_FIELDS = {
     'id', 'full_name', 'url', 'category', 'stars', 'stars_display',
     'stars_precision', 'observed_at', 'description_zh', 'mechanisms',
@@ -301,6 +306,33 @@ def validate_resources(records, errors, *, now=None):
             problem = inclusion_date_error(record['added_at'], now)
             if problem:
                 errors.append(f'{where}.added_at: {problem}')
+        if 'source_unavailable' in record:
+            errors.extend(f'{where}.source_unavailable: {problem}'
+                          for problem in source_unavailable_errors(record['source_unavailable'], record['verified_at'], now))
+
+
+def source_unavailable_errors(value, verified_at, now):
+    """Problems with a record's unavailable-source check: its fields, outcome, HTTP status and check time."""
+    if not isinstance(value, dict) or set(value) != SOURCE_UNAVAILABLE_FIELDS:
+        return ['use an object with exactly ' + ', '.join(sorted(SOURCE_UNAVAILABLE_FIELDS))]
+    problems = []
+    statuses = SOURCE_UNAVAILABLE_OUTCOMES.get(value['outcome'])
+    if statuses is None:
+        problems.append('outcome must be one of ' + ', '.join(SOURCE_UNAVAILABLE_OUTCOMES))
+    elif type(value['http_status']) is not int or value['http_status'] not in statuses:
+        problems.append(f"http_status must be {' or '.join(map(str, sorted(statuses)))} for outcome {value['outcome']}")
+    try:
+        checked = parse_iso(value['checked_at'], require_time=True)
+    except (ValueError, TypeError):
+        return problems + ['checked_at must be a timezone-aware ISO timestamp']
+    if checked > now + dt.timedelta(days=1):
+        problems.append('checked_at is in the future')
+    try:
+        if checked < parse_iso(verified_at):
+            problems.append('checked_at must not precede verified_at; the source was read at review')
+    except (ValueError, TypeError):
+        pass
+    return problems
 
 
 def validate_benchmarks(records, errors):
