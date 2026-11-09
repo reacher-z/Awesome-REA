@@ -569,12 +569,16 @@ def render_totals(records, papers, index_count, language):
     return line + '\n\n'
 
 
+SCAN_STATUS_URL = 'https://raw.githubusercontent.com/reacher-z/Awesome-REA/status/scan-status.json'
+
+
 def render_badges(records, papers, language):
     """Report catalog populations, not execution verification or additive totals. Five badges, at most six. Count and
     license badges are plain images: the same pages are linked from the navigation row and the Use the data list, and
-    awesome-lint flags a URL repeated in one README. The last badge reads the date of the newest commit under
-    data/discoveries/ live, so the README is not regenerated on every scan. There is no CI badge: awesome lists must
-    not carry one, and the footer already links the validate workflow's runs."""
+    awesome-lint flags a URL repeated in one README. The scan badge reads scan-status.json on the status branch live
+    (scripts/scan_status_badge.py), so the README is not regenerated on every scan and the badge turns amber after six
+    hours without a successful scan. There is no CI badge: awesome lists must not carry one, and the footer already
+    links the validate workflow's runs."""
     zh = language == 'zh'
     style = '?style=flat-square&labelColor=2B2F3A'
 
@@ -583,10 +587,10 @@ def render_badges(records, papers, language):
         return f'![{label}: {value}](https://img.shields.io/badge/{component(label)}-{component(value)}-{color}{style})'
 
     cases = sum(record['kind'] == 'case-study' for record in records)
-    labels = (('精选资源', '案例', '论文', '最近入库', '许可') if zh
-              else ('resources', 'cases', 'papers', 'last discovery ingest', 'license'))
-    commit = ('https://img.shields.io/github/last-commit/reacher-z/Awesome-REA/main?path=data%2Fdiscoveries'
-              f'&label={quote(labels[3])}&color=6B5159&labelColor=2B2F3A&style=flat-square')
+    labels = (('精选资源', '案例', '论文', '最近扫描', '许可') if zh
+              else ('resources', 'cases', 'papers', 'last discovery scan', 'license'))
+    commit = (f'https://img.shields.io/endpoint?url={quote(SCAN_STATUS_URL, safe="")}'
+              f'&label={quote(labels[3])}&style=flat-square')
     return ' '.join([
         badge(labels[0], f'{len(records):,}'),
         badge(labels[1], f'{cases:,}'),

@@ -29,8 +29,10 @@ EXPORT_PATH = '/discoveries.json'
 STATUS_PATH = '/discoveries/status.json'
 BADGE_PATH = '/discoveries/badge.json'
 REVIEWS_PATH = '/discoveries/reviews.json'
-# each Data class shows its newest records up to this many, so every class appears on the page
+# each Data class shows its newest records up to this many, so every class appears on the page; a class with
+# more has its own page listing every record, which the list page links and loads on demand
 CLASS_RECORDS = 60
+CLASS_PAGE_PATH = '/discoveries/{}/'
 FEED_RECORDS = 100
 # The index export lists the newest records; every listed record is also in its batch's own file.
 EXPORT_RECORDS = 1_000
@@ -160,6 +162,8 @@ def export_document(queue: dict, site_url: str, repository_url: str) -> dict:
                    'reviewed': discovery_reviews.counts(queue['decided'])},
         'pagination': ('resources lists the newest listed records; batches[].records_url lists every listed '
                        'record of each batch, so together they cover the whole queue.'),
+        'class_pages': [{'class': name, 'data_points': len(records), 'page': site_url + class_page_path(name)}
+                        for name, _, records in class_pages(queue)],
         'budget': {'records_per_batch': discoveries.MAX_BATCH_RECORDS, 'records': discoveries.MAX_TOTAL_RECORDS,
                    'bytes': discoveries.MAX_TOTAL_BYTES},
         'batches': [{'batch_id': batch['batch_id'], 'ingested_at': timestamp(batch['ingested_at']),
@@ -206,14 +210,54 @@ def card(record: dict, language: str, use_pro: bool) -> str:
     return html
 
 
-def page_groups(queue: dict) -> list[tuple[str, tuple[str, str], list[dict], int]]:
-    """Data points in class order, newest first within each class."""
+def class_records(queue: dict) -> dict[str, list[dict]]:
+    """Every listed data point by class, in class order and newest first within each class."""
     groups = {name: [] for name in DATA_CLASSES}
     for record in queue['listed']:
         if record.get('data_decision') == 'data':
             groups[record['class']].append(record)
+    return groups
+
+
+def page_groups(queue: dict) -> list[tuple[str, tuple[str, str], list[dict], int]]:
+    """Data points in class order, newest first within each class, up to CLASS_RECORDS per class."""
+    groups = class_records(queue)
     return [(name, labels, groups[name][:CLASS_RECORDS], len(groups[name]))
             for name, labels in DATA_CLASSES.items() if groups[name]]
+
+
+def class_page_path(name: str, language: str = 'en') -> str:
+    return ('/zh' if language == 'zh' else '') + CLASS_PAGE_PATH.format(name)
+
+
+def class_pages(queue: dict) -> list[tuple[str, tuple[str, str], list[dict]]]:
+    """The classes with more data points than the list page shows, each with all of its records."""
+    groups = class_records(queue)
+    return [(name, labels, groups[name]) for name, labels in DATA_CLASSES.items() if len(groups[name]) > CLASS_RECORDS]
+
+
+def class_section(name: str, labels: tuple[str, str], records: list[dict], total: int, language: str,
+                  use_pro: bool, *, more: bool) -> str:
+    """One class: its heading, cards and, when the list page holds back records, the link that shows them all."""
+    zh = language == 'zh'
+    label = labels[int(zh)]
+    heading = (f'{label} · 显示 {len(records):,} 条，共 {total:,} 条' if zh else f'{label} · {len(records):,} of {total:,}')
+    full = f'{label} · 共 {total:,} 条' if zh else f'{label} · {total:,} of {total:,}'
+    section_id = f'class-{name}'
+    footer = ''
+    if more and total > len(records):
+        rest = total - len(records)
+        text = f'显示全部 {total:,} 条' if zh else f'Show all {total:,}'
+        shown = (f'已显示 {len(records):,} / {total:,} 条' if zh else f'{len(records):,} of {total:,} shown')
+        shown_all = (f'已显示全部 {total:,} 条' if zh else f'All {total:,} shown')
+        footer = (f'<div class="load-more-row discovery-more"><a class="button button-outline" href="{class_page_path(name, language)}" '
+                  f'data-discovery-more="{escape(name, quote=True)}">{escape(text)}<span class="mono">+{rest:,}</span></a>'
+                  f'<p class="mono" aria-live="polite" data-shown-all="{escape(shown_all, quote=True)}">{escape(shown)}</p></div>')
+    return (f'<section class="discovery-batch" id="{section_id}" aria-labelledby="{section_id}-title">'
+            f'<h2 id="{section_id}-title" data-heading-all="{escape(full, quote=True)}">{escape(heading)}</h2>'
+            '<div class="source-results browse-results">\n'
+            + '\n'.join(card(record, language, use_pro) for record in records)
+            + f'\n</div>{footer}</section>')
 
 
 def page_content(queue: dict, language: str, use_pro: bool, site_url: str, repository_url: str) -> str:
@@ -234,9 +278,9 @@ def page_content(queue: dict, language: str, use_pro: bool, site_url: str, repos
     outside_count = sum(record.get('data_decision') == 'outside' for record in queue['listed'])
     unclassified_count = len(queue['listed']) - data_count - outside_count
     raw_download = f'<a href="{EXPORT_PATH}">{"原始数据下载" if zh else "raw download"}</a>'
-    status += (f' 数据点：共 {data_count:,} 条，本页显示 {len(shown):,} 条；另有 {outside_count:,} 条其他采集记录和 '
+    status += (f' 数据点：共 {data_count:,} 条，本页显示 <span data-discovery-shown>{len(shown):,}</span> 条；另有 {outside_count:,} 条其他采集记录和 '
                f'{unclassified_count:,} 条待分类记录，详见{raw_download}及各批次文件。' if zh else
-               f' Data points: {data_count:,} listed, {len(shown):,} shown here. '
+               f' Data points: {data_count:,} listed, <span data-discovery-shown>{len(shown):,}</span> shown here. '
                f'{outside_count:,} other captures and {unclassified_count:,} not yet classified are in the '
                f'{raw_download} and its per-batch files.')
     prefix = '/zh' if zh else ''
@@ -252,18 +296,20 @@ def page_content(queue: dict, language: str, use_pro: bool, site_url: str, repos
              f'<p>{("简介为上游原文；星标与最近推送时间为采集时快照。" if zh else "Descriptions are upstream text; stars and last-push months are capture-time snapshots.")}</p>'
              f'<p>{links}</p></details>']
     for name, labels, records, total in groups:
-        label = labels[int(zh)]
-        heading = (f'{label} · 显示 {len(records):,} 条，共 {total:,} 条' if zh
-                   else f'{label} · {len(records):,} of {total:,}')
-        section_id = f'class-{name}'
-        parts.append(f'<section class="discovery-batch" id="{section_id}" aria-labelledby="{section_id}-title">'
-                     f'<h2 id="{section_id}-title">{escape(heading)}</h2>'
-                     '<div class="source-results browse-results">\n'
-                     + '\n'.join(card(record, language, use_pro) for record in records)
-                     + '\n</div></section>')
+        parts.append(class_section(name, labels, records, total, language, use_pro, more=True))
     if not shown:
         parts.append(f'<p class="browse-empty">{"暂无数据点。" if zh else "No data points yet."}</p>')
     return '\n'.join(parts)
+
+
+def class_page_content(queue: dict, name: str, labels: tuple[str, str], records: list[dict], language: str,
+                       use_pro: bool) -> str:
+    zh = language == 'zh'
+    back = f'<a href="{PAGE_PATHS[language]}">{"全部类别的数据点" if zh else "Data points in every class"}</a>'
+    status = (f'{labels[1]}类共 {len(records):,} 个数据点，按入库时间从新到旧排列。{back}' if zh
+              else f'{len(records):,} {labels[0]} data points, newest first. {back}')
+    return '\n'.join([f'<div class="browse-topline"><p>{status}</p></div>',
+                      class_section(name, labels, records, len(records), language, use_pro, more=False)])
 
 
 def feed_summary(record: dict, language: str) -> str:
@@ -362,6 +408,27 @@ def write_discoveries(site_dir: Path, catalog: dict, papers: list[dict], publish
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(document, encoding='utf-8')
         (site_dir / FEED_PATHS[language].lstrip('/')).write_text(discovery_feed(queue, language, site_url), encoding='utf-8')
+    paths = list(PAGE_PATHS.values())
+    for name, labels, records in class_pages(queue):
+        for language in PAGE_PATHS:
+            zh = language == 'zh'
+            path = class_page_path(name, language)
+            title = f'{TITLES[int(zh)]}{"：" if zh else ": "}{labels[int(zh)]}'
+            description = (f'浏览自动扫描 README 发现的全部 {len(records):,} 个{labels[1]}类数据点，按入库时间从新到旧排列，'
+                           '每项附仓库链接、固定版本的 README 链接、采集时的星标数和最近推送时间，可继续查看其他数据类别。' if zh
+                           else f'All {len(records):,} {labels[0]} data points found by automated README scans, newest first, '
+                                'each with its repository, pinned README and capture-time stars.')
+            schema = collection_page_schema(site_url + path, title, description, 'zh-CN' if zh else 'en', [
+                {'name': record['full_name'], 'url': record['url'],
+                 'description': record['description_en'] or description_fallback(record, language)} for record in records], site_url)
+            document = _document(site_url=site_url, repository_url=repository_url, path=path, language=language,
+                                 title=title, description=description,
+                                 content=class_page_content(queue, name, labels, records, language, icons.href is not None),
+                                 schema=schema, assets=assets, icon_stylesheet=icons.href, source_export=source_export)
+            destination = site_dir / path.lstrip('/') / 'index.html'
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(document, encoding='utf-8')
+            paths.append(path)
     compact = {'ensure_ascii': False, 'separators': (',', ':')}
     (site_dir / EXPORT_PATH.lstrip('/')).write_text(
         json.dumps(export_document(queue, site_url, repository_url), **compact) + '\n', encoding='utf-8')
@@ -375,7 +442,7 @@ def write_discoveries(site_dir: Path, catalog: dict, papers: list[dict], publish
     generated_at = timestamp(queue['latest']['ingested_at']) if queue['latest'] else None
     (site_dir / REVIEWS_PATH.lstrip('/')).write_text(
         json.dumps(discovery_reviews.export_document(queue['decided'], generated_at, lead_decided), **compact) + '\n', encoding='utf-8')
-    return list(PAGE_PATHS.values()), queue
+    return paths, queue
 
 
 def llms_section(queue: dict | None, site_url: str, limit: int = 10) -> str:

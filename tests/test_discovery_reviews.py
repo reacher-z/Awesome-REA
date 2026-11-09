@@ -153,7 +153,7 @@ class QueueTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             queue = queue_with(directory, {capture(1)['id']: decision(1)})
         text = site.page_content(queue, 'en', False, 'https://awesomerea.org', 'https://github.com/reacher-z/Awesome-REA')
-        self.assertIn('Data points: 0 listed, 0 shown here.', text)
+        self.assertIn('Data points: 0 listed, <span data-discovery-shown>0</span> shown here.', text)
         self.assertIn('/discoveries/reviews.json', text)
 
     def test_status_and_export_count_them(self):

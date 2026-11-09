@@ -1,0 +1,56 @@
+name: Scan status badge
+# Rewrites the README's scan badge (scripts/scan_status_badge.py) on the `status` branch, hourly and after
+# every README discovery scan, so the badge turns amber once the last successful scan is more than six
+# hours old. The branch holds only scan-status.json; the first run creates it, and later runs commit only
+# when the badge changes.
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_run:
+    workflows: [Scheduled README discovery]
+    types: [completed]
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: scan-status-badge
+  cancel-in-progress: false
+jobs:
+  badge:
+    if: ${{ !github.event.repository.fork }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Fetch the status branch
+        run: |
+          git init -q -b status "$RUNNER_TEMP/status"
+          if git -C "$RUNNER_TEMP/status" fetch -q --depth 1 "https://github.com/$GITHUB_REPOSITORY" status; then
+            git -C "$RUNNER_TEMP/status" reset -q --hard FETCH_HEAD
+          fi
+      - name: Work out the badge
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/scan_status_badge.py "$RUNNER_TEMP/status/scan-status.json"
+      - name: Commit the badge when it changed
+        working-directory: ${{ runner.temp }}/status
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add scan-status.json
+          if git rev-parse -q --verify HEAD >/dev/null && git diff --cached --quiet; then
+            echo 'The badge is unchanged.'
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -q -m 'Update the scan status badge'
+          gh auth setup-git
+          git push "https://github.com/$GITHUB_REPOSITORY" HEAD:status

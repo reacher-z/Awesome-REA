@@ -57,13 +57,17 @@ class RecordedMissingTests(unittest.TestCase):
             GONE_REPO, 'The named repository owner/vanished and its owner account return 404 at review.'))
         self.assertTrue(check_links.records_missing(
             GONE_REPO, 'On 2026-10-18 owner/vanished returned HTTP 404 from the GitHub API.'))
+        # An x.com/i/status/<id> link names no handle, so its post ID leads into the phrase instead.
+        self.assertTrue(check_links.records_missing(
+            LIVE_POST, 'On 2026-11-09 the cited post 2 returned HTTP 404.'))
         for url, reason in (
             (GONE_POST, 'The cited post by @gone_author was reviewed.'),
             # Another source in the same entry is the one recorded as missing.
             (GONE_POST, '@gone_author links a repository. GitHub reports as not found the store repository.'),
             ('https://github.com/other/fork', 'The repository owner/vanished returns 404. A fork, other/fork, survives.'),
-            # Handle-less X links and other hosts cannot be matched to a sentence, so they stay strict.
+            # A handle-less X link must be named by its post ID; other hosts cannot be matched to a sentence.
             (LIVE_POST, 'The post returned not found.'),
+            ('https://x.com/i/status/21', 'Post 2 returned not found.'),
             ('https://example.com/post', 'example.com/post returned not found.'),
         ):
             with self.subTest(url=url, reason=reason):
