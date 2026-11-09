@@ -6,7 +6,7 @@
 
 [English](website.md)
 
-**69 个案例**
+**72 个案例**
 
 - [**canopy-dotmatrix：重建 davidluft.com 的点阵窗景**](https://github.com/isjiajia01/canopy-dotmatrix) - 项目依据 davidluft.com 的公开 JavaScript 文件和场景数据重建首页点阵窗景。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/canopy-dotmatrix-case/)</sub>
 - [**Dih Pinterest：重建 Pinterest 搜索站点的页面与数据流**](https://github.com/Ikyletwar/dih-pinterest-replica) - Dih Pinterest 将 searchpinterest.vercel.app 的搜索界面和数据流重建为静态网页，可选配 Vercel 代理。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dih-pinterest-case/)</sub>
@@ -14,12 +14,15 @@
 - [**edgestash：重建 Vercel Blob 与 Upstash Redis API 行为**](https://github.com/devtechedge/edgestash) - edgestash 实现可自行托管的 Vercel Blob 与 Upstash Redis REST API 服务，让已发布的 SDK 改用其他端点。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/edgestash-case/)</sub>
 - [**github-websocket-pipelines-api：探查 GitHub Actions 实时日志消息**](https://github.com/Hacksore/github-websocket-pipeline-api) - github-websocket-pipelines-api 探查 GitHub Actions 未公开的实时日志 WebSocket 接口。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/github-websocket-pipelines-api-case/)</sub>
 - [**Inception Chat：从设计与提示词采集结果重建聊天页面**](https://github.com/creativerezz/inception) - Inception Chat 根据 chat.inceptionlabs.ai 公开落地页的桌面与移动布局、已部署 CSS 变量及采集的推荐提示词重建界面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/inception-chat-extraction-case/)</sub>
+- [**LoreMaps：幻想地图图集的静态重写**](https://github.com/loremaps/loremaps) - 从该项目早先的 ASP.NET MVC 站点重写而来的 Astro 静态地图集。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/loremaps-atlas-case/)</sub>
 - [**MAX Messenger：记录 WebSocket 与 TCP 消息格式**](https://github.com/pr0bel1230/max-api-docs) - MAX Messenger API Documentation 根据浏览器流量和直接请求实验，整理该通讯服务的 WebSocket JSON 与 TCP MessagePack 交互。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/max-messenger-protocol-case/)</sub>
 - [**muse-cli：重建 muse.ai 个人网关协议**](https://github.com/nikships/muse-cli) - muse-cli 根据 muse.ai 网页客户端代码实现个人网关的命令行客户端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/muse-cli-case/)</sub>
 - [**MUSIC DIVER MyPage API：梳理游戏 MyPage 私有网页接口**](https://github.com/ALLMarvelous/musicdiver-mypage-api) - MUSIC DIVER MyPage API 记录游戏 MyPage 服务的私有 HTTP 接口，并实现可自行部署的玩家数据代理。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/music-diver-mypage-api-case/)</sub>
+- [**NewPipe：面向 YouTube 和 PeerTube 的 Android 前端**](https://github.com/TeamNewPipe/NewPipe) - NewPipe 是面向 YouTube、YouTube Music 和 PeerTube 的 Android 前端。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/newpipe-streaming-client-case/)</sub>
 - [**pipepipe-sabr：重建 YouTube SABR 流媒体协议**](https://github.com/o1laabs/pipepipe-sabr) - pipepipe-sabr 根据对 PipePipe 的源码分析重建 YouTube SABR/UMP 流媒体行为，并编写独立 Python 客户端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/pipepipe-sabr-case/)</sub>
 - [**Skylight API：重建 Skylight Calendar 网页接口**](https://github.com/TheEagleByte/skylight-api) - Skylight API 根据浏览器 HAR 抓包整理 Skylight Calendar 的网页接口，并发布 OpenAPI 规范。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/skylight-api-case/)</sub>
 - [**Tesla Dashcam Decryptor：解析加密行车记录仪录像**](https://github.com/XGxF3/tesla-dashcam-decrypt) - Tesla Dashcam Decryptor 重建 dashcam.tesla.com 对 Tesla 2026.20 加密录像的本地解密流程。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/tesla-dashcam-decrypt-case/)</sub>
+- [**The Blind Walleye：营销网站的静态重建**](https://github.com/jpiercedev/blind-walleye) - 把公开的 Blind Walleye 网站重建为 Next.js 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/blind-walleye-static-case/)</sub>
 - [**tiktok-xgnarly-decoded：还原 TikTok 的 X-Gnarly 签名格式**](https://github.com/carcabot/tiktok-xgnarly-decoded) - tiktok-xgnarly-decoded 还原 TikTok 网页客户端使用的 X-Gnarly 请求参数，并以 JavaScript 实现 5.1.3-ZTCA 格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tiktok-xgnarly-decoded-case/)</sub>
 - [**transferit-py：重建 transfer.it 上传与下载交互**](https://github.com/viperadnan-git/transferit-py) - transferit-py 根据 transfer.it 的公开网页客户端还原文件传输交互，并实现 Python 库和命令行客户端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/transferit-py-case/)</sub>
 - [**tutti-api：重建 tutti.ch 私有 API 客户端**](https://github.com/filippofinke/tutti-api) - tutti-api 用 TypeScript 重建 tutti.ch 私有 API 的客户端访问，涵盖筛选搜索、商品信息、卖家资料、消息和 Auth0 登录。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tutti-api-case/)</sub>

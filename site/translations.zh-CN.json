@@ -24665,5 +24665,968 @@
       "部分视频可能无法播放，解题后的动画可能较慢。",
       "采用 MIT 许可证。"
     ]
+  },
+  "decepticon-rea-reverser": {
+    "name": "Decepticon：REA 逆向服务与子智能体工具",
+    "requirements": [
+      "Decepticon 的可选 REA 集成在 HTTP/MCP 容器中使用 Node.js 22、OpenJDK 21、Python 3、Ghidra 12.1.4 和 rea-agents@6.3.0，并使用共享的 /workspace 挂载及 8892 端口。",
+      "设置 DECEPTICON_REA_URL 后，reverser 子智能体加载 rea_status、rea_find_tools 和 rea_call_tool；未设置时使用本地 Radare2 和分诊工具。",
+      "rea_call_tool 将目标二进制复制为只读文件，核验 SHA-256，并导出 evidence-<sha256>.json 与 manifest.json。trace_native_values 会先运行 analyze_function 取得前置 Evidence。",
+      "单元测试模拟 HTTP 响应、FastMCP 会话和工具，以检查过滤、参数、Evidence 串联及回退行为。",
+      "许可证：Apache-2.0。REA、Ghidra 和模型服务保留各自条款。"
+    ]
+  },
+  "dexsql": {
+    "name": "DexSQL",
+    "requirements": [
+      "下载适用于 Linux、macOS 或 Windows 的 x86_64 或 arm64 预构建二进制文件，并提供本地 APK 或 DEX 文件。固定提交时最新版本为 v0.1.5；核心引擎源码未公开。",
+      "专有 DexSQL Binary License 1.0 允许免费使用和原样再分发未修改归档，但禁止对二进制进行逆向工程、修改或商业再分发。安装技能、基准测试脚本与文档适用单独的 MIT 许可 LICENSE-AUXILIARY。",
+      "作者使用含 41 个 DEX 文件的 372 MiB QQ 9.3.55 APK 测试八项代码定位查询；重复查询直接调用方时，DexDec 的预热引用缓存更快。"
+    ]
+  },
+  "psprecomp-vice-city-stories-case": {
+    "name": "PSPRecomp：将 GTA: Vice City Stories 静态重编译为原生 Windows 构建",
+    "requirements": [
+      "Vice City Stories 配置档需要 Windows、Visual Studio 2022、MSVC、Direct3D 12、CMake 3.20 或更新版本以及 C++20 编译器。",
+      "需自备 NTSC-U ULUS-10160 的已解密 EBOOT，符合配置中的 SHA-256，并提供 PSP_GAME/USRDIR 游戏数据。",
+      "配置档为一个 PSP 版本构建 VCSNative.exe；项目未公布游戏兼容性或完成度报告。缺失函数或不支持的指令会使运行停止。",
+      "ctest 覆盖框架回归测试及配置档组件，包括合成图形渲染、启动路径和音频重采样。",
+      "框架代码采用 MIT。配置档包含 FFmpeg（LGPL 2.1+）、SMAA、HDR 着色器素材、采用 MIT 的 Project2DFX 衍生数据及采用 CC BY-NC-SA 3.0 的 CloudWorks 素材。生成代码和原游戏内容各有独立权利。"
+    ]
+  },
+  "halopad-project-reach-case": {
+    "name": "HaloPad：通过反编译移植与 x86 重编译在 Apple 设备上运行 Halo",
+    "requirements": [
+      "预览版 0.3.10 提供 PadMint 配方和校验和，没有公开 IPA。个人构建包含 Halo 游戏代码，不得分享。已测试设备包括 12.9 英寸 iPad Pro（第 6 代）、iPhone 14 和 Apple 芯片 Mac；Xbox 画面仍有差异。",
+      "Xbox 版需要使用者自己的初代 Xbox 版《Halo: Combat Evolved》光盘镜像；仅测试美版地图构建 01.10.12.2276。Custom Edition 需要 HaloCESetup.exe 1.00 和使用者自己的产品密钥；构建工具获取 Bungie 的 1.10 更新。不支持零售版 Halo PC、Anniversary、Master Chief Collection 及后续作品。",
+      "需要 iOS／iPadOS 17.4+，或 Apple 芯片上的 macOS 14.4+。PadMint 构建需要 Apple 芯片 Mac、Xcode 26+，首次 Xbox 构建约需 35 GB 空间；Xbox 版也有 GitHub Actions 工作流。Custom Edition 另需 Wine 和固定版本的 M-HT SR 工具。",
+      "已知局限包括首次使用卡顿、Xbox 纹理较模糊、偶发手柄失联，以及 Chimera 等 DLL 模组无法加载。",
+      "项目没有整体公开许可授权；RIGHTS-STATUS.md 写明未获发布授权。重建的 Bungie／Microsoft 代码和原游戏素材保留其权利。"
+    ]
+  },
+  "ue5-binka-to-wav": {
+    "name": "UE5 BINKA 转 WAV",
+    "requirements": [
+      "需要 Windows 和自行提供、能写入正确 WAV 头的 binkadec.exe；仓库不附带该专有解码器。运行源码要求 Python 3.9+；图形界面使用 tkinter，打包使用 PyInstaller。",
+      "输入为配对的 .ubulk 与 .uasset／.uexp，或完整 .binka 文件。封装程序定位 UEBA 头并与批量数据流重新拼接，然后调用外部解码器。其他烘焙音频编码及仅内嵌于资源文件的音频不在文档支持范围内。",
+      "对配对资源，采样率、声道数不符或时长偏差超过 2% 会生成警告；这些警告不会让 CLI 返回失败退出码，--quiet 还会隐藏警告。直接输入 .binka 时不对比原始资源元数据；头部检查不代表音频内容已经验证一致。",
+      "MIT 仅覆盖仓库代码，不覆盖 binkadec 或游戏素材。README 注明 FModel、BinkadecWithWavHeader 与 ue2wav 的既有工作。"
+    ]
+  },
+  "silent-hill-decomp-case": {
+    "name": "Silent Hill：可执行文件与覆盖模块的 PlayStation 一致性反编译",
+    "requirements": [
+      "目标为北美 1.1 版（SLUS-00707）；配置也涵盖欧版 1.0 和三个日版。产物是 PlayStation 可执行文件和覆盖模块；代码库尚不适合移植。",
+      "需将自备的北美 1.1 版光盘转储作为单个 .BIN 文件放在 rom/image 下，SHA-1 须符合安装指南。仓库包含部分 Sony PsyQ 4.3／4.4 库目标文件，以及预编译的编译器和 ISO 工具。",
+      "Make 构建需要 Linux 或 WSL2、git、build-essential、MIPS binutils 与 cpp、Python 3、bchunk、7z 和递归子模块。项目报告 Windows 原生 Ninja 构建会出现不匹配。",
+      "构建会核对可执行文件和覆盖模块的 SHA-256；项目报告 6,527 个函数全部匹配，数据匹配率为 36.99%。",
+      "项目代码采用 GPLv3；游戏数据和 Sony SDK 目标文件各有权利约束。"
+    ]
+  },
+  "goonfi-v2-rust-recompilation-case": {
+    "name": "GoonFi V2：Solana 程序的逐字节一致 Rust 重编译",
+    "requirements": [
+      "目标为在 slot 448984043 部署的 GoonFi V2；链上程序于 2026-10-06 升级，因此验证使用较早的 ELF。",
+      "重建使用已部署二进制、程序 IDL 与链上交易。核心智能体框架、合并评审器及对话记录未公开。",
+      "build.sh 需要 Linux x86-64，并下载 Solana platform-tools v1.48（rustc 1.84.1-dev、LLVM 19.1.7）。VERIFY.sh 需要 Alchemy 归档密钥或其他归档 RPC，从部署交易写入中恢复原始 ELF 并逐字节比较。",
+      "配套仓库未声明重建源码的许可证；原闭源程序的权利归其所有者。"
+    ]
+  },
+  "jsrf-matching-decomp-case": {
+    "name": "Jet Set Radio Future：早期 Xbox 一致性反编译",
+    "requirements": [
+      "项目报告已反编译 XBE 的 1.50%；链接 Windows 可执行文件并重新打包供 Xbox 使用仍是规划步骤。目前没有重建的可执行文件或可玩版本。Ghidra 入门指南的部分导入说明标为 TODO。",
+      "贡献者需要 Jet Set Radio Future 北美单独发行版光盘中的 default.xbe。仓库提供重建源码与 Ghidra 导入清单，不含游戏可执行文件或素材。",
+      "需要 Microsoft Visual C++ 7.0（Visual C++ .NET 2002）、Git、Java 21 或更新版本、Ghidra 12.0.3 及 XboxDev XBE 和 ghidra-delinker-extension v0.8.0，以及 objdiff 3.8.1；objdiff-cli 须在 PATH 中。在 Windows 以外通过 Wine 运行编译器。Microsoft 编译器单独授权。",
+      "仓库采用 CC0 1.0；Ghidra 的 scripts 目录含 GPL-3.0 文本。游戏与工具链权利另行适用。README 禁止使用大语言模型或生成式 AI 制作的贡献，也不接受来自智能体驱动分叉的合并请求。"
+    ]
+  },
+  "lezac-rea-decompilation-case": {
+    "name": "Larax & Zaco：REA 导出的证据库与部分例程恢复",
+    "requirements": [
+      "需要 Larax & Zaco v1.0 共享软件原版。tools/fetch_original.py 下载固定存档或接受离线 ZIP，并校验文件哈希。仓库不含原可执行文件和资源。",
+      "验证需要 Python 3.12+、C99 编译器、Free Pascal 3.2.2、make、npm 以及 REA 接受的 Node.js 版本。DOS 探针还需 FPC i8086 交叉编译器。重新导出需要 REA 6.3.0、Ghidra 12.1.4 和完整 JDK；运行原游戏需要 DOSBox-X 2024.03.01 与 Xvfb。",
+      "恢复了七个 Pascal 例程、十六种紧凑布局、六个可移植 C 例程和资源解码器。中断处理、大部分玩法、渲染、音频和 DOS 服务仍未恢复。",
+      "README 报告 Pascal 与原 x86 代码对照 174,777 例、C 对照 173,725 例、DOS 探针对照 12 次，另有 94 项载入映像检查。游戏回放采用宿主时间。",
+      "仓库没有许可证文件；RIGHTS.md 未对恢复逻辑或生成的伪代码授予统一开源许可。原游戏及衍生导出保留原有权利。"
+    ]
+  },
+  "darling-lol-league-linux-case": {
+    "name": "darling-lol：通过 Darling 在 Linux 上运行 macOS 版《英雄联盟》客户端",
+    "requirements": [
+      "需要 x86-64 Linux 5.14+、X11 或 Xwayland，以及硬件 Vulkan／OpenGL 驱动。仅测试过 AMD RADV；NVIDIA 支持尚未验证。构建需要 Git LFS、CMake、Clang／LLD 与 LLVM 开发文件、Python 3.12+、Darling 构建依赖和至少 50 GB 磁盘空间。实验性 Nix flake 会在本地构建运行时。",
+      "项目为 Darling 及其 30 个固定版本组件应用补丁。Riot 和 League 客户端可以启动，作者曾手动进行 ARAM 对局；通过 Riot 界面安装可能停滞。README 将其称为开发快照。",
+      "使用者需通过 Riot 安装程序取得 League 客户端并登录。仓库排除游戏文件、Riot 安装程序、账户数据、Apple SDK 二进制和已编译的运行时。TESTING.md 排除调试器、客户端 API 调用、钩子和输入自动化。",
+      "原创工具采用 GPL-3.0；补丁沿用目标文件的许可，包括 GPL、LGPL、APSL、BSD 和 Apache 条款。README 警告在此环境中游玩可能导致暂时或永久封号，目前建议不要使用。"
+    ]
+  },
+  "eidolon-64k-rust-port-case": {
+    "name": "Eidolon in Rust：Eidolon 64k 演示的逐字节一致 Rust 移植",
+    "requirements": [
+      "Rust 移植面向 i686-pc-windows-gnu。文档中的 Linux 构建使用 Rust 1.97、MinGW-w64、Clang、Python、Wine 和无界面 gamescope；体积优化构建还需 NASM。参考捕获和体积优化构建在 Linux 上运行；macOS 无法运行该演示。",
+      "重新捕获参考需要 scene.org 上的原版发布包和 Microsoft DirectX 可再发行组件中的 gm.dls，两者均通过 SHA-256 校验。移植版嵌入原作数据表、曲线、着色器、音乐及 15 个 Roland GM/GS 采样；体积优化版读取系统中的 gm.dls。",
+      "项目报告在受控时钟下匹配 27,000 帧的哈希和完整 PCM。附带的帧哈希适用于其 RTX 3070 Ti、驱动和 Wine 环境；其他 GPU 需要本地捕获参考。大部分故障注入测试需要未公开的 5.8 GB 原始参考数据；其中 57 项可独立运行。原生 Windows 播放和逐帧检查尚未测试。",
+      "体积优化版为 44,139 字节，原作为 60,928 字节；未达到 32 KiB 目标。作者报告由智能体主导开发，人负责设定目标并作出决定。",
+      "Rust 代码、工具和文档采用 MIT 或 Apache-2.0 许可。附带的 kkrunchy 源码为公有领域。原作着色器、音乐、动画数据和 Roland 采样仍归各自权利人，不在这些许可证范围内。"
+    ]
+  },
+  "rec98-touhou-pc98-restoration-case": {
+    "name": "ReC98：东方 Project PC-98 作品源码复原项目",
+    "requirements": [
+      "项目涵盖前五部东方 Project PC-98 游戏。TH01 于 2022 年 8 月完成反编译，其他作品仍在进行中。master 分支经 mzdiff 比对仅允许指令编码差异和末尾零填充；移植使用 debloated 分支，缺陷修复使用 anniversary 或单项修复分支。",
+      "运行构建出的 PC-98 程序，需要把各游戏的原始文件放在产物旁。仓库不含原版素材数据。构建需要 Borland Turbo C++ 4.0J 和 Borland Turbo Assembler 5.0 或更新版本（TASM32.EXE）；两者均未随附。",
+      "Windows 11 x64 与 Windows XP 32 位是一级构建平台；64 位 x86 Unix 上的 Wine 为二级。产物可在 DOSBox-X 或项目的 Neko Project II 调试分支运行。",
+      "根目录没有许可证文件。随附的 MS-DOS Player 与 Tup 构建采用 GPLv2；master.lib、Pi 加载程序、SPRITE16 和 KAJA PMD 文件属于第三方组件。原版游戏的权利仍归其权利人。"
+    ]
+  },
+  "librepods-airpods-protocol-case": {
+    "name": "LibrePods：借助逆向得出的协议在 Android 和 Linux 上使用 AirPods 功能",
+    "requirements": [
+      "固定的 main 提交对应 Android v1.0.4。v2.0.0 Android 重写版处于 alpha 阶段；main 包含 Qt 6 Linux 应用，Rust 重写版位于 linux/rust。“查找”、头部追踪空间音频及高质量双向音频仍为未知、计划中或实验性功能。",
+      "需要自有 AirPods 及受支持的 Android 或 Linux 设备。协议笔记描述在 AirPods Pro 2（USB-C）固件 7A305 上观察到的蓝牙 L2CAP 通信；其他型号和固件可能不同。",
+      "Android 上的蓝牙协议栈绕行方案需要 root 和 Xposed，但 ColorOS/OxygenOS 16、realme UI 7.0 与 Android 16 QPR3 的 Pixel 设备例外。依赖厂商 ID 钩子的功能始终需要 root。Linux 应用需要 CMake 3.16+、Qt 6、OpenSSL 与 libpulse。",
+      "Android CI 构建 FOSS APK；Rust Linux 分支有二进制构建工作流。仓库未发布协议一致性测试套件。",
+      "许可证：GPL-3.0-or-later。部分界面组件采用 Apache-2.0。苹果字体、产品图片和 AirPods 固件保留各自权利；Android 构建包含 SF Pro 和 AirPods 图片，Linux 应用使用 SF Symbols 6。"
+    ]
+  },
+  "fallout2-reference-edition-case": {
+    "name": "Fallout 2 Reference Edition：逆向还原的原版引擎 C 源码",
+    "requirements": [
+      "需要个人拥有的《辐射 2》安装文件，包括 GOG 或 Steam 版本，提供游戏数据。将构建出的 fallout2-re.exe 复制到游戏目录，替换 fallout2.exe。",
+      "CMake 3.13 或更高版本构建 32 位 Windows 可执行文件；CI 使用 Visual Studio 2019 的 Win32 配置。项目使用 Win32 和 DirectX 接口。",
+      "少数非关键函数尚未反编译。CI 编译可执行文件；仓库没有测试或二进制匹配检查。",
+      "Sustainable Use License 1.0 允许内部、个人和非商业使用，以及免费的非商业分发。随附的 zlib 和 fpattern 保留各自许可。"
+    ]
+  },
+  "psyz": {
+    "name": "PsyZ PlayStation 移植库",
+    "requirements": [
+      "需要 CMake 3.21 或更新版本、C11 编译器、SDL3，并递归克隆 SDL、cimgui 和 nugget 子模块；WebAssembly 构建使用 Emscripten。",
+      "游戏移植需要重建的 C 源码和移植指南要求的修改，包括排序表、图元标签类型及 64 位指针修正。PSY-Q 反编译仍在进行中；依赖硬件特性的游戏错误可能表现不同。",
+      "可选的 PlayStation SDK 设置会下载项目托管的专有 PSY-Q 4.0 和 4.7 SDK 压缩包，用于交叉编译和检查反编译库。",
+      "CI 测试 Linux、Windows、macOS 和 PSP 构建；《恶魔城：月下夜想曲》序章的比较是作者的一次测量。",
+      "许可因目录而异：nugget、psyq2elf、samples 和 ztest 为 MIT；psyz/src/platform 和 psyz/src/psyz 为 MPL-2.0；psyz/include 和 psyz/src/psyq 未获许可；decomp/ 有自己的 MIT 许可。"
+    ]
+  },
+  "dmusic-directmusic-reimplementation-case": {
+    "name": "DirectMusic：微软音乐 API 的开源重新实现",
+    "requirements": [
+      "该 C11 库提供自己的 DmLoader、DmSegment 和 DmPerformance API。“结尾加前奏”装饰及部分曲线和消息类型尚未实现。",
+      "使用者需通过解析回调提供自己游戏数据中的 .sgt 段落、.sty 风格和 .dls 音色集；仓库不附带这些文件。",
+      "构建需要 C11 编译器和 CMake 3.10+。支持 Linux、macOS 和 Windows。play-segment 示例需要 <unistd.h> 和 <sys/stat.h>。",
+      "README 报告 Gothic 与 Gothic II 配乐运行“大致”正确。CI 为 Linux、Android、macOS 和 Windows 构建库；未列出测试套件或与 Microsoft 运行时输出的比较。",
+      "LICENSE.md 对项目代码采用 MIT 许可证（现代变体）。TinySoundFont、miniaudio 和 Gothic II 主题曲渲染有各自权利；游戏音乐保留原有权利。"
+    ]
+  },
+  "hack-different-apple-knowledge": {
+    "name": "Apple 数据格式与知识库（Hack Different）",
+    "requirements": [
+      "阅读只需浏览器。构建 Jekyll 站点和运行 Rake 任务需要 Ruby 4.0.5 与 Bundler；BUILD.md 介绍 macOS 和 Debian/Ubuntu 上的 hunspell 与 overcommit 环境。从 Mach-O 二进制文件或内核集合提取数据的任务读取用户 Mac 上的 Apple 软件。",
+      "数据格式指南称格式仍为 v0、可能变动；README 的部分主题只有标题，没有链接。",
+      "keybags 数据包含注明来自 The iPhone Wiki 的引导固件解密密钥和 IV；symbols 文件夹包含 Apple 框架的符号列表。README 还链接越狱工具、漏洞利用文章和第三方 Apple 引导 ROM 副本。",
+      "README 声明代码和数据采用 MIT 许可，文档另以 CC BY-SA 4.0 提供。仓库拒绝基于 AppleInternal 或其他受 DMCA 保护材料的贡献；链接项目与 Apple 软件保留各自条款。"
+    ]
+  },
+  "silent-hill-3-memory-of-alessa-decomp-case": {
+    "name": "memory of alessa：进行中的 Silent Hill 3 PS2 匹配反编译",
+    "requirements": [
+      "目标为 Silent Hill 3 北美 v1.02（SLUS_206.22）及来自 0.10 VW047-U1 原型版的 Silent Hill 2 引擎。未匹配函数用汇编链接；项目分别报告 718/8,002 和 2,530/4,371 个函数匹配。",
+      "需自备 Silent Hill 3 的 SLUS_206.22 可执行文件和 B0.MFA 归档；可选的 Silent Hill 2 构建需要原型版 SLUS_202.28 及其覆盖模块。",
+      "主机为 x86-64 Linux、Apple Silicon macOS 或通过 WSL 的 Windows，需 Python 3、wget 和构建工具。make 下载 Silent Hill 3 所用 CodeWarrior PS2 3.0.3 或 Silent Hill 2 所用 2.4、wibo、PS2 binutils v0.10 和 objdiff，并使用 mwccgap 子模块。",
+      "diff.sh 用 SHA-256 核对重建的可执行文件和覆盖模块；CI 之外不匹配不会使 make 失败。CI 使用私有容器镜像。",
+      "项目代码采用 MIT；游戏和素材另有权利约束。十五个文件带有 Sony 保密声明，vsm 目录包含反汇编的 VU 微码。项目从 2026-09-26 起禁止 LLM 参与贡献。"
+    ]
+  },
+  "azel-panzer-dragoon-saga-reimplementation-case": {
+    "name": "Azel：将 Panzer Dragoon Saga 逆向为原生 C++",
+    "requirements": [
+      "需将自有《Panzer Dragoon Saga》第 1 张光盘的文件放入 data/；游戏会载入原版 .MCB/.CGB 资源包。README 未注明区域或版本。",
+      "Windows 构建使用 Visual Studio 2022、CMake、递归子模块及 vs2022.bat。README 称游戏开头直到 Arachnoth 战斗部分可勉强游玩，但仍有错误。",
+      "项目采用 MIT 许可证；子模块各有许可证。随附 aosdk 包含 BSD、zlib、GPL 和禁止商业使用的旧版 MAME 许可证。原版游戏文件和音乐样本受各自权利人条款约束。"
+    ]
+  },
+  "opents2-sims2-engine-case": {
+    "name": "OpenTS2：在 Unity 中开源重新实现《模拟人生 2》",
+    "requirements": [
+      "OpenTS2 在 Unity 编辑器中运行，使用 Unity 2020.3.32f1；推荐 Visual Studio 2019。README 将基础菜单和社区视图列为当前进度，未列出支持的游玩平台。",
+      "需要《模拟人生 2》终极典藏版。将 config.example.json 复制为 config.json，设置游戏、用户数据、资料片和组件包目录。",
+      "仓库没有发布版或标签，也不提供游戏安装文件。测试包中有看起来取自游戏数据的片段，其中一个特效包预期含有 1,792 个粒子特效。",
+      "CI 运行 Unity Test Runner 测试，检查 DBPF 包及相关字段；README 还描述集成测试场景。",
+      "LICENSE.md 采用 MPL-2.0。随附的第三方组件保留各自条款；《模拟人生 2》及其游戏数据归 Electronic Arts 所有。"
+    ]
+  },
+  "skate3-mobile-android-recomp-case": {
+    "name": "Skate 3 Mobile：Skate3Recomp 的 Android ARM64 分支",
+    "requirements": [
+      "需要 Android 13+、支持 ARMv8.2 FP16 与点积指令的 ARM64 处理器、Vulkan，以及约 8 GiB 空闲应用存储。RG406V 是已验证设备；开发者构建存在画面错误、效果缺失和设备相关问题。",
+      "玩家需提供从自有的受支持美版或欧版 Xbox 360 光盘转储的 ISO。应用以 SHA-256 校验，并安装 Title Update 3；默认从第三方游戏更新网站下载，也可手动选择。从源码构建需提取出的 default.xex、EAWebKit XEX 和 Title Update 3。",
+      "源码构建需要 Android SDK 35、NDK r27c、JDK 17+、CMake、Ninja、Clang 和递归子模块，包括 Android 版 rexglue 运行时分支。可选的 Adreno Turnip 驱动包由用户提供。",
+      "v2.1 发布检查报告八个自动化测试套件通过，并完成 APK 检查及 RG406V 的启动、渲染和恢复测试。60 FPS 设置是客体帧率上限。",
+      "该分支自身代码未声明许可证。rexglue 运行时分支带 BSD-3-Clause 声明，libadrenotools 采用 BSD-2-Clause，Electronic Arts 保留《Skate 3》的权利。"
+    ]
+  },
+  "pymobiledevice3": {
+    "name": "pymobiledevice3 iOS 设备协议库与命令行工具",
+    "requirements": [
+      "v11.38.0 于 2026-10-19 发布到 GitHub 和 PyPI。README 称 PyPI 是唯一官方发布渠道，AUR 等第三方软件包可能已过时。需要 Python 3.9+。",
+      "需要一台使用者自己控制、已连接或位于网络中的 iOS 设备。Windows 需安装 iTunes 以获得 Apple Mobile Device Service，Linux 需要 usbmuxd，macOS 使用系统自带的 usbmuxd。iOS 13 之前的版本需要 OpenSSL，恢复／DFU 模式需要 libusb。隧道指南称，iOS 17.4+ 的开发者命令会在进程内建立无需 root 的隧道；iOS 17.0–17.3.1 在 Linux 或 Windows 上则需要以 root 运行的 tunneld。",
+      "开发者服务需要开启开发者模式并挂载 Apple 的 Developer Disk Image。自动挂载器的 developer_disk_image 依赖会从另一个转存仓库下载 Apple 镜像文件；Apple 文件保留 Apple 的权利。",
+      "采用 GPL-3.0-or-later 许可。仓库还提供通过命令行驱动设备的设备操作代理技能。"
+    ]
+  },
+  "switchwakerhd-switch-port-case": {
+    "name": "SwitchWakerHD：《风之杖 HD》重编译的 Nintendo Switch 移植",
+    "requirements": [
+      "需要使用者自己的 Wii U 美版或欧版游戏转储，版本 0、不含更新。光盘提取需要光盘密钥和 Wii U 通用密钥；运行时检查 code/cking.rpx。由转储构建的 NRO 文件和着色器缓存含游戏内容，不得分享。",
+      "构建需要 Python 3 与 pycryptodome，并在 Docker 或 Podman 中使用 devkitpro/devkita64，或在 Windows 上使用原生 devkitPro。游戏需在装有 Atmosphère 和 Homebrew Menu 的 Switch 上以标题模式启动，确保足够内存。生成的代码在逐文件编译时需要大量内存。",
+      "项目报告在默认频率下可于掌机和底座模式游玩，测得约 26–30 fps，支持声音、存档、即时存档和模组。测试主要覆盖开场岛屿、龙之岛及周边海域；已知问题见 docs/switch-port.md。CI 用占位客体代码测试桌面和 Android 运行时；Switch NRO 在实机上构建和测试。",
+      "这个分叉保留 ZeldaWWHDRecomp 的桌面和 Android 目标，同时加入 Switch 平台层和渲染器。作者报告 Claude Code 在人工指导和实机测试下完成了几乎全部 Switch 工作。",
+      "代码采用 MPL-2.0。随附的 Cemu、uam、{fmt}、Dear ImGui、xxHash 和 metal-cpp 保留各自许可证；游戏内容仍归其权利人。"
+    ]
+  },
+  "pokeheartgold-llm-agent-decomp-case": {
+    "name": "《宝可梦 心金／魂银》：报告借助大语言模型智能体完成反编译的分叉",
+    "requirements": [
+      "该分叉报告《心金》《魂银》构建结果与美版零售 ROM 的 SHA-1 一致。心金进度快照把已映射代码字节的 97.9% 计为 C、1.4% 计为 C++、0.6% 计为原始汇编；INSTALL.md 将其定义为源码语言指标。",
+      "构建需要使用者合法取得的 Metrowerks mwccarm 2.0/sp2p2 编译器及许可证文件，以及 Nitro SDK 归档中的 tools/bin 和链接模板。这两类专有输入均由使用者提供。仓库的 files/ 含 DS 文件系统素材，lib/ 含反编译库。",
+      "Linux 需要 binutils-arm-none-eabi、Wine、Python 3、libpng、pkg-config 和 pugixml。Windows 在 Cygwin 或 MSYS2 下使用 devkitARM；macOS 需要 10.15 或更新版本，Apple 芯片还需 Rosetta 2。构建会校验 ARM 二进制、文件系统及 ROM 哈希；该分叉的 GitHub 构建工作流已停用。",
+      "仓库没有许可证文件。README 报告使用大语言模型智能体，并要求不要把该分叉代码提交到 pret/pokeheartgold；pret 禁止大语言模型生成的贡献。"
+    ]
+  },
+  "validity90-fingerprint-protocol-case": {
+    "name": "Validity90：逆向分析 Validity/Synaptics 指纹读取器协议",
+    "requirements": [
+      "README 报告原型在 138a:0090 上可扫描并输出图像，在 138a:0097 上可扫描，在 06cb:009a 上可初始化并控制 LED，但无法扫描。集成的 libfprint 驱动尚未就绪；配置、TLS 前密钥交换、设备操作和图像格式仍在完善。",
+      "原型需要列出的 USB 读取器及机器 DMI 产品序列号的读取权限，以生成会话密钥。Makefile 的权限目标使用 sudo。Linux 构建依赖 NSS、OpenSSL、libgcrypt、libusb-1.0、libpng 与 GLib。解析器需要 Wireshark Lua 与 lua-lockbox。",
+      "make test 检查实用函数和一个初始化响应的解析。设备结果记录在 README 状态表及原型日志中。",
+      "许可证：项目代码为 LGPL-2.1-or-later；libfprint 副本及子模块保留各自许可声明。公开的规范和原型包含恢复出的密钥及字节序列。"
+    ]
+  },
+  "open-steam-controller-firmware-case": {
+    "name": "Open Steam Controller：逆向工程得来的 Steam Controller 固件",
+    "requirements": [
+      "替代固件面向 Steam Controller 的 Luna_mainboard V000456-00 rev3 主板及其 LPC11U37F 处理器。nRF51822 蓝牙固件仍为原版。",
+      "运行自制固件或提示音流程需要使用该主板的 Steam Controller。重复模拟过程还需另行提供 Valve 的 vcf_wired_controller_d0g_57bf5c10.bin 固件及 LPC11U37 的 16 kB 启动 ROM 转储。",
+      "固件构建使用 LPCXpresso IDE v8.2.2 和随附的 NXP lpc_chip_11uxx_lib；在 fw_cfg.h 中选择 DEV_BOARD_FW 或 SWITCH_WIRED_POWERA_FW。SCJingleConverter 使用 Qt 5.12；SteamControllerConfig.py 使用 PyUSB。",
+      "作者的源文件带有 MIT 声明；随附的 NXP LPCOpen 库仅限与 NXP 微控制器配合使用。仓库没有许可证文件。自制固件内嵌了 Valve 固件的默认提示音数据，以及从 PowerA 手柄复制的 HID 报告描述符。"
+    ]
+  },
+  "wasmdec": {
+    "name": "wasmdec：WebAssembly 到 C 的反编译器",
+    "requirements": [
+      "源码构建需要支持 C++14 的 g++、Make、CMake，以及 Binaryen、cxxopts 和 WebAssembly testsuite 子模块；建议 GCC 7 或更新版本。1.2.1 下载包适用于 Linux x86-64。",
+      "输入是 .wasm 二进制或 .wast 文本模块。asm.js 模式需要 Makefile 未设置的编译标志；解析依赖固定的 2018 年 Binaryen，可能无法载入较新的 WebAssembly 特性。",
+      "输出为伪 C。测试会反编译七个随附样本和规范测试套件样本，并检查退出状态。",
+      "示例包含商业游戏 diep.io 的机器翻译代码；该输出的权利仍归原权利人所有。",
+      "项目采用 MIT；Binaryen、cxxopts 和 testsuite 子模块保留各自许可。"
+    ]
+  },
+  "dumpulator": {
+    "name": "dumpulator 内存转储模拟库",
+    "requirements": [
+      "README 称 dumpulator 为原型。PyPI 版本 0.2.6 与源码 setup.cfg 的 1.0.0 版本号不同；1.0.0 尚无发行版。",
+      "输入为目标进程的完整内存 minidump。在固定提交中，463 个 Zw* 系统调用声明里有 38 个处理程序，其余会抛出 NotImplementedError。",
+      "需要 Python 3.9+、unicorn ~=2.0.0、pefile 和 capstone ~=4.0.2。仓库附带经修补的 minidump 解析器。CI 使用 Python 3.9 在 Windows Server 2019 测试。",
+      "CI 下载项目托管的 x64 与 x86 测试 minidump，并运行入门脚本和异常测试。完整进程转储样本包含已加载的 Windows 系统模块。",
+      "LICENSE 为 BSL-1.0。模拟范围限于一个内存快照和已实现的系统调用。"
+    ]
+  },
+  "ember-mug-ble-protocol-case": {
+    "name": "Ember Mug：逆向分析得出的低功耗蓝牙特征",
+    "requirements": [
+      "文档记录来自 Ember Mug 2 的观察结果；其他 Ember 杯款可能不同。部分特征含义仍属推测，包括一个可能代表电压的电池字节，以及似乎仅在充电时更新的液位。",
+      "应用这些发现需要 Ember 杯，以及能在服务 UUID fc543622236c4c948fa9944a3e5353fa 下读取、写入和订阅特征的 BLE 客户端。将目标温度写为 0000 会关闭加热。",
+      "这些发现来自反编译的 Android APK。仓库包含文档和 Ember 应用代码的简短摘录，没有客户端代码或测试。",
+      "文档采用 MIT 许可；所引用的 Ember 应用代码保留 Ember 的权利。"
+    ]
+  },
+  "bm2-battery-monitor-ble-case": {
+    "name": "BM2 Battery Monitor：重建加密的 BLE 电压协议",
+    "requirements": [
+      "bm2 0.1.0 包要求 Python 3.8+。客户端读取当前电压和历史记录；历史时间戳按两分钟间隔推算，ESPHome 模板只读取当前电压。",
+      "需自备 BM2 监测器及其蓝牙地址。客户端和 ESPHome 模板包含从厂商应用恢复的 AES-128-CBC 密钥。",
+      "Python 客户端使用 Bleak ~0.14.2 和 PyCryptodome；重连路径调用 Linux bluetoothctl。MQTT 示例另需 paho-mqtt ~1.6.1。ESPHome 模板面向采用 Arduino、mbedtls 的 nodemcu-32s ESP32，并需填写 Wi-Fi、MQTT 和 MAC 密钥配置。",
+      "仓库有 mypy 检查，但没有测试或 CI。历史数据修复报告在 Linux Mint 22.3 和 PowerHouse BM2 N2099A 上测试；其他 BM2 型号的覆盖情况未说明。",
+      "代码按 LICENSE.txt 采用 MIT；设备和厂商应用保留各自权利。"
+    ]
+  },
+  "qc-debug-monitor": {
+    "name": "qc_debug_monitor 高通调制解调器调试消息监视器",
+    "requirements": [
+      "以 Python 2 和 pySerial 运行脚本，并访问 /dev/ttyUSB0 等串口设备；README 使用 sudo。仓库没有标签或发布版。",
+      "需要已开放 DIAG 串口的高通方案调制解调器。文档中的 Quectel EC25 示例使用 MDM9607；其他设备可能需要用发现模式查找子系统范围。",
+      "解码精简消息需要外部的高通固件调试消息哈希数据库。README 未给出该数据库的来源或复用条款；缺少数据库时，精简消息仍未解码。",
+      "README 描述了 EC25 连接 srsLTE eNodeB 时采集的示例日志，并将子系统描述标为推测。仓库不含固件镜像，项目没有测试。",
+      "仓库没有许可证文件或许可声明。"
+    ]
+  },
+  "mcsema": {
+    "name": "McSema 二进制到 LLVM bitcode 提升器",
+    "requirements": [
+      "归档仓库为只读。README 支持 LLVM 9–11；v3.0.24 提供面向 Ubuntu 18.04 与 20.04 amd64 的预构建包。",
+      "控制流恢复需要 IDA Pro 7.5+。实验性 DynInst 前端未受支持。构建需要 CMake 3.14+、带 protobuf 和 clang 绑定的 Python 3.8，以及固定提交的 Remill 和 Anvill。macOS 与 Windows 构建为实验性或未经测试。",
+      "输入是分析者提供的编译生成 ELF 或 PE 文件。Limitations.md 排除加壳、加密、混淆、自修改代码及原始固件块，并列出异常与浮点限制。",
+      "仓库包含 Maze 示例、预构建测试控制流图和加密的 Binary Ninja CI 压缩包。",
+      "许可证为 AGPL-3.0；IDA Pro、Binary Ninja 和 LLVM 保留各自条款。"
+    ]
+  },
+  "retoolkit": {
+    "name": "retoolkit 逆向工程工具集安装程序",
+    "requirements": [
+      "2026.04 版于 2026-05-16 发布，为约 2 GB 的 7z 压缩包，内含安装程序。main 分支还补充了版权与署名说明，并调整 Nmap 和 Wireshark 脚本。",
+      "适用于 x86 和 x64 Windows 主机；JDK 组件在安装 Ghidra 时也会一并安装，且只在 64 位安装模式下运行。README 称部分工具并非开源、来源可疑，建议只在虚拟机中安装并自行承担风险，还提到 Windows Defender 可能在安装时报毒。分析对象是使用者自己的样本。",
+      ".iss 脚本从一个不在仓库中的本地源目录复制工具文件，因此仅凭仓库无法重新构建安装程序；CHECKSUMS.txt 列出 35,444 个打包文件的 MD5 哈希。",
+      "COPYING.txt 对安装脚本适用 Apache-2.0；每个打包程序保留各自的许可证。除 Ghidra、x64dbg、ImHex 等开源工具外，CHECKSUMS.txt 还列出 pestudio、HxD、API Monitor（含其内核驱动）、Exeinfo PE 和 Resource Hacker 的可执行文件，以及 jdk-25_windows-x64_bin.exe 和 npcap-1.87.exe 安装程序。README 声明只收录许可证或作者允许再分发的软件。"
+    ]
+  },
+  "snake-apple-macos-security-series": {
+    "name": "Snake & Apple：macOS 内部机制与安全系列文章",
+    "requirements": [
+      "文章发布于 Medium、Patreon 和 AFINE 博客，另有一篇刊于 Phrack。带星号的文章需付费 Patreon 权限；Apple Intelligence 章节尚未完成。",
+      "工具针对 macOS 和 Mach-O 文件。CrimsonUroboros 需要 Python 及固定依赖，包括 LIEF 0.15.1、pyimg4、asn1crypto、treelib、xattr 和 python-magic。各章目录保留早期版本。",
+      "各章的 mac 文件夹存放供参考的 macOS 源码和演讲资料副本。仓库包含第三方 PDF 和 Apple 私有 LaunchServices 函数的反编译清单；其再分发条款未写明。",
+      "仓库声明采用 GPL-3.0。Apple 软件、反编译出的 Apple 代码和第三方演讲资料仍受各自权利约束。一个测试模块覆盖 CrimsonUroboros。"
+    ]
+  },
+  "d810-ng": {
+    "name": "D-810 ng IDA 反混淆插件",
+    "requirements": [
+      "需要 IDA 9 或更新版本及 Python 3.10+。将仓库复制到 IDA 的 plugins 目录，再用 Ctrl-Shift-D 加载。README 提醒，错误的微码修改可能使 IDA 崩溃。",
+      "纯 Python 安装使用 pip install -e .；可选 Cython 加速扩展会克隆公开、MIT 许可的 Hex-Rays IDA SDK，除非 IDA_SDK 指向现有副本。z3-solver 辅助程序安装到隔离的用户目录，可用 D810_SPEEDUPS_DIR 配置。",
+      "提交的 LICENSE 是 AGPL-3.0，而 README 写 LGPL v3。项目致谢 Boris Batteux 的 D-810 和 Rolf Rolles 的 HexRaysDeob。"
+    ]
+  },
+  "anvill": {
+    "name": "Anvill 机器码到 LLVM bitcode 提升器",
+    "requirements": [
+      "最新 GitHub 发行版为 v0.1.39（2021-02-22）；后续标签达到 v0.2.1。固定的 master 提交比该标签多六个提交，最后一次代码改动日期为 2022-12-06。",
+      "Linux 曾在 Ubuntu 20.04 上测试。CMakeLists.txt 要求 CMake 3.19；README 还列出 Clang 12+、Remill、Python 3.9 与 Ghidra。CI 在 Ubuntu 20.04 和 macOS 11 上使用 LLVM 14 与 15 构建。",
+      "anvill-decompile-spec 需要描述函数、全局变量与内存区域的 Protobuf 规格文件。README 建议开源用户使用 binja-final-version 标签；CI 从私有仓库安装 Ghidra 规格生成器。支持的调用约定包括 x86、x86-64、AArch32、AArch64 与 SPARC。",
+      "CI 使用加密的 Binary Ninja 归档及受口令保护的 AMP 挑战二进制进行集成测试。",
+      "许可证：AGPL-3.0。使用 -DANVILL_ENABLE_TESTS=true 启用单元测试。"
+    ]
+  },
+  "xrefer": {
+    "name": "XRefer 二进制导航插件",
+    "requirements": [
+      "需要带 Python 的 IDA Pro。可通过 hcli 安装，或将 plugins/ 复制到 IDA 插件目录、安装 requirements.txt 并重启 IDA。asciinet 依赖需要 PATH 中有 JRE。",
+      "可选增强功能接受 VMRay 和 CAPE 的 API 跟踪、capa 输出及用户定义的间接交叉引用。",
+      "启用可选 LLM 功能后，提取的 API、字符串、库引用和函数关系会发送给 Google Gemini 等外部服务；所有 LLM 功能均可关闭。",
+      "仓库的 test_samples/ 中有两个 AES 加密的第三方样本压缩包，未记录密码或来源。",
+      "许可证：插件使用 Apache-2.0。"
+    ]
+  },
+  "paradiseduo-dsdump": {
+    "name": "dsdump（paradiseduo 封装版）Mach-O 类信息导出工具",
+    "requirements": [
+      "需要 macOS 和 Python 3，在仓库目录运行随附的 x86-64 dsdump 可执行文件。-a 只接受 arm64 或 armv7；-d 需要 Xcode 命令行工具中的 swift-demangle。",
+      "需提供用于分析的 Mach-O 可执行文件。封装程序把 dsdump 输出解析为 Objective-C 头文件和 Swift 声明，部分 Swift 方法名显示为 <stripped>。",
+      "仓库没有测试。README 建议改用作者的 resymbol。",
+      "本仓库及已归档的上游仓库均无封装程序或随附可执行文件的许可证文件。"
+    ]
+  },
+  "outrun-sonic-runners-server-case": {
+    "name": "outrun：Sonic Runners 自定义服务器",
+    "requirements": [
+      "发行版 v1.0.1 提供 Windows、macOS 和 Linux 的 amd64 与 arm64 服务器构建。README 目标是覆盖全部非调试端点；未列出测试。",
+      "使用 Go 构建。go.mod 声明 Go 1.17，README 构建步骤使用 Go 1.15.8，并提醒 Go 1.16+ 会使部分 RPC 程序无法构建。配置使用 config.json 及可选的活动、信息和游戏文件；客户端默认端口为 9001。",
+      "游玩需要使用者自己的 Sonic Runners 客户端。README 针对 v2.0.3 Android APK，需修改后连接服务器。仓库不含客户端或游戏素材。",
+      "README 将客户端通信的 AES 密钥、通信日志和故事模式数据归功于贡献者。",
+      "服务器代码采用 GPL-3.0；游戏、客户端、素材和商标保留各自权利。"
+    ]
+  },
+  "ringverse-oura-ring-protocol-case": {
+    "name": "Smart ring protocol：记录 Oura Ring 蓝牙协议与事件格式",
+    "requirements": [
+      "仓库记录 Oura Ring 的 BLE 帧结构和事件流，目前针对 Oura Ring 4。许多数据包字段仍未知。",
+      "已确认的 BLE 笔记适用于 Oura Ring 4。仓库记录逐设备认证及从 iOS 应用备份中恢复密钥的方法。",
+      "Node.js 事件解析器依据 Oura Android 应用 6.2.0 版的事件解析库得出；更新的应用或固件版本可能不同。",
+      "事件笔记和解析器是作者报告的 AI 生成成果，尚待人工验证。仓库没有测试或 CI。",
+      "仓库没有许可证文件；笔记和解析器的复用权利未说明。"
+    ]
+  },
+  "xiaomi-desk-lamp-open-firmware-case": {
+    "name": "open-desk-lamp-firmware：小米台灯的替代固件",
+    "requirements": [
+      "固件涵盖台灯的本地旋钮控制：开关、亮度及色温；文档针对作者使用的硬件型号。",
+      "安装需拆开台灯，将 U0RX、U0TX、GPIO0 和 GND 接到 USB 串口转换器，并覆盖原厂固件。应先备份原闪存；备份含 Wi-Fi 凭据。其他型号需核对闪存容量。",
+      "构建需要 CMake 2.8+、esp-open-sdk 的 xtensa-lx106-elf 工具链及 Espressif ESP8266 NONOS SDK。CI 仅编译固件，不运行测试。",
+      "项目采用 MIT；Espressif SDK 库使用其自身的修改版 MIT 许可证。原厂固件和小米应用受各自条款约束。"
+    ]
+  },
+  "kuizuo-js-deobfuscator": {
+    "name": "JS Deobfuscator（kuizuo）Babel AST 反混淆工具",
+    "requirements": [
+      "从克隆的仓库运行 pnpm install（工作区固定 pnpm 11.21.0），然后用 pnpm exec deob 处理文件或标准输入，或用 pnpm tmp 处理 tmp/input.js。浏览器演练场位于 js-deobfuscator.vercel.app。",
+      "在 Node 中，解密代码于 isolated-vm 运行，超时 10 秒；调用失败时会退回宿主环境的全局 eval。应在隔离环境中处理不可信脚本。定制样本可能需要分析者提供 setupCode 和解密函数名。",
+      "示例目录包含混淆脚本及还原结果；仓库未给出这些样本的来源或再分发条款。根目录 LICENSE 为 MIT；packages/deob/package.json 未声明许可证。"
+    ]
+  },
+  "sasquatch": {
+    "name": "sasquatch 厂商改版 SquashFS 解包补丁",
+    "requirements": [
+      "README 称该补丁集为 beta。公开问题报告 GCC 10 及更新版本的构建失败；unblob 文档使用独立的 ONEKEY 软件包。",
+      "build.sh 会从 SourceForge 下载 squashfs-tools 4.3 源码包，应用 patches/patch0.txt，编译后以 sudo make install 安装；在使用 apt 的系统上，它会先用 sudo 安装 build-essential 以及 liblzma、liblzo2 和 zlib 的开发包。",
+      "输入为用户自行提供的 SquashFS 镜像或固件文件；仓库没有提交任何固件镜像。仓库只有 README、build.sh 和这个 1.1 MB 的补丁；补丁加入了附带 LGPL/CPL 文本的 LZMA SDK 解码器副本，并在 lzmalt 解码器中加入了一个 289 行的 VxWorks 类型头文件（vxTypesOld.h），标注 Copyright 1984-1997 Wind River Systems，且没有任何许可声明。",
+      "仓库没有许可证文件。squashfs-tools 采用 GPL；附带的 LZMA 解码器代码带 LGPL/CPL 条款，所含 VxWorks 类型头文件有版权声明但没有许可证。"
+    ]
+  },
+  "btlejack": {
+    "name": "BtleJack",
+    "requirements": [
+      "需要 POSIX 系统、Python 3 客户端，以及装有匹配固件的兼容硬件，例如一至三块 BBC Micro:Bit 或文档列出的 nRF51822 嗅探设备。",
+      "BLE 5／5.1 支持限于 1 Mbps 非编码 PHY，不支持信道图更新。"
+    ]
+  },
+  "can-utils": {
+    "name": "can-utils",
+    "requirements": [
+      "需要 Linux SocketCAN 子系统及合适的 CAN 或虚拟 CAN 接口。项目说明了使用 CMake 的 Linux 原生构建及 Android／树莓派交叉编译。",
+      "candump 和 cansniffer 显示帧及变化字节，不负责推断专有信号语义。ISO-TP 和 J1939 命令还依赖相应的内核支持。"
+    ]
+  },
+  "compiler-explorer": {
+    "name": "Compiler Explorer",
+    "requirements": [
+      "可使用托管界面，或使用 Node.js 和已配置的编译器运行本地实例。固定版本 .node-version 为 22.23.4；README 接受该版本或更高版本，并说明基于 make 的设置方式。",
+      "工具编译用户提供的源码供比较，不会从任意二进制恢复源码。托管服务的编译器清单可能与本地实例的配置不同。"
+    ]
+  },
+  "dr-memory": {
+    "name": "Dr. Memory",
+    "requirements": [
+      "工具基于 DynamoRIO，按平台分发安装包。README 列出 Windows、Linux、macOS、Android 及 IA-32、AMD64、ARM；所选发行版的安装包与宿主组合须匹配。",
+      "目标在插桩环境下执行。Windows 另有句柄／GDI／TLS 诊断及 drstrace 系统调用跟踪器；这些 Windows 功能不适用于所有宿主。"
+    ]
+  },
+  "firmadyne": {
+    "name": "FIRMADYNE",
+    "requirements": [
+      "文档中的环境使用 Linux、QEMU、PostgreSQL、提取依赖及递归检出的组件，并需要修改后的 MIPS／ARM 内核。README 明确不支持 x86 固件模拟。",
+      "项目标为研究原型，尚不适合生产使用。其设置包含旧 Python／binwalk 工具链，缺失的 NVRAM 值或失败的网络推断可能需要人工调整。"
+    ]
+  },
+  "flashrom": {
+    "name": "flashrom",
+    "requirements": [
+      "需要受支持的编程器或主板／芯片组合。源码使用 Meson 构建；工具覆盖 SPI、LPC、FWH 和并行闪存等接口。",
+      "README 警告不应在笔记本上使用，以免与嵌入式控制器交互损坏设备，并要求写入前备份。芯片访问依赖具体硬件，不是通用固件提取器。"
+    ]
+  },
+  "google-smali": {
+    "name": "smali/baksmali (Google fork)",
+    "requirements": [
+      "构建和测试需要 OpenJDK 11；README 说明部分构建工具不支持更高版本的 OpenJDK。命令行使用需要构建 fat JAR。",
+      "此分支将命名空间改为 com.android.tools.smali，并通过 Google Maven 发布 3.x 制品。它与停止维护的原 org.jf 2.x 项目不同，提供字节码汇编／反汇编，不负责 Java 源码反编译。"
+    ]
+  },
+  "intel-xed": {
+    "name": "Intel XED",
+    "requirements": [
+      "源码构建需要 Python、原生构建工具链，以及与 xed 并列检出的独立 mbuild。构建生成相应平台的静态库或共享库，也可构建示例。",
+      "工具编码和解码 x86 指令。可单独构建编码器或解码器以减小库的体积。"
+    ]
+  },
+  "internalblue": {
+    "name": "InternalBlue",
+    "requirements": [
+      "需要受支持的芯片、固件配置及操作系统后端。README 列出已 root 的 Android 6–11、越狱的 iOS 12–14、指定 macOS 版本、不含 WSL 的 Linux BlueZ，以及独立的 BTstack 路径。",
+      "监测来自运行 InternalBlue 的设备，不是通用的被动无线嗅探器。固件保护可能在驱动初始化后禁用 RAM 读写命令，需要针对设备调整。"
+    ]
+  },
+  "jd-core": {
+    "name": "JD-Core",
+    "requirements": [
+      "在 Java 应用中提供 JVM 类字节，并实现 Loader 和 Printer 接口；可通过 Gradle wrapper 构建库 JAR。",
+      "固定版本 README 列出的范围为 Java 1.1.8–12.0，包含 lambda、方法引用和默认方法，并声明采用 GPLv3。该范围不确立对更高 Java 类版本的支持。"
+    ]
+  },
+  "keystone": {
+    "name": "Keystone",
+    "requirements": [
+      "使用原生 C／C++ 库或受支持的语言绑定；构建文档覆盖 Windows 和类 Unix 宿主，也可通过 vcpkg 安装。",
+      "项目提供附带 EXCEPTIONS-CLIENT 条款的 GPLv2 许可或商业许可。它是汇编框架；反编译和可执行文件重建需要其他工具。"
+    ]
+  },
+  "libsigrokdecode": {
+    "name": "libsigrokdecode",
+    "requirements": [
+      "源码构建需要 C 编译器、make、pkg-config、GLib 2.34+ 和 Python 3.2+；Git 构建还需要 Autoconf、Automake 和 Libtool。采集到的信号数据由调用端提供。",
+      "库及其组成部分中的解码器采用 GPLv3 或更高版本。Git 快照不保证 API 稳定；README 建议发行版打包使用正式版本的源码包。"
+    ]
+  },
+  "mc-extractor": {
+    "name": "MC Extractor",
+    "requirements": [
+      "需同时提供 MCE.py 及其必需的 MCE.db 数据库、Python 3.7+、colorama 和 pltable。README 列出 Windows、Linux 和 macOS。",
+      "文档中的处理器家族为 Intel、AMD、VIA 和 Freescale。新版本或过时状态判断依赖数据库；工具分析微码头部与校验和。"
+    ]
+  },
+  "microsoft-detours": {
+    "name": "Microsoft Detours",
+    "requirements": [
+      "需要 Windows，以及能集成 Detours 库的原生应用／工具链。README 列出 Windows NT 系列，并将源码标为 4.0.1。",
+      "Windows Store 应用无法使用 Detours，因为所需 API 在该环境中不可用。Detours 采用 MIT 许可证。"
+    ]
+  },
+  "mono-cecil": {
+    "name": "Mono.Cecil",
+    "requirements": [
+      "将库集成进 .NET 应用，并提供 ECMA CIL 程序集；固定版本项目目标为 .NET Standard 2.0 和 .NET Framework 4.0。",
+      "对象模型在编程库中支持元数据和 IL 重写。"
+    ]
+  },
+  "mtkclient": {
+    "name": "MTKClient",
+    "requirements": [
+      "需要兼容的联发科硬件、USB 接口和项目依赖。Linux 文档列出 Python 3.10+；Windows 文档列出 Python 3.9+、MTK 端口驱动及 UsbDk。macOS 有独立的 macFUSE／libusb 配置和 Apple Silicon 说明。",
+      "文档列出的 V6 芯片需要合适的设备加载器及 preloader 模式；其修补后的 boot ROM 不能采用旧 boot-ROM 路径。闪存写入和加载器支持均取决于设备。"
+    ]
+  },
+  "panda": {
+    "name": "PANDA",
+    "requirements": [
+      "需要客户机镜像或兼容录制数据，以及 PANDA／PyPANDA 运行环境。README 中的分发二进制面向 64 位 Ubuntu 22.04；基于 LLVM 的污点功能需要 LLVM 14。",
+      "README 列出的记录／重放目标为 x86、x86-64 和 ARM 客户机；可模拟 MIPS 或 PowerPC 不代表支持重放。录制数据不能在 32 位和 64 位 PANDA 构建间迁移。"
+    ]
+  },
+  "pefile": {
+    "name": "pefile",
+    "requirements": [
+      "使用 Python 3 安装 pefile；该模块无需额外运行依赖，文档列出 Windows、macOS 和 Linux。解释其结构需要理解 PE 布局。",
+      "编辑辅助方法不会重新排列 PE 结构来为新字段腾出空间。签名验证由文档指向的独立项目处理。"
+    ]
+  },
+  "polytracker": {
+    "name": "PolyTracker",
+    "requirements": [
+      "需要能重新构建和插桩的目标，通常为 C／C++，以及专门的 LLVM 环境。文档中的快速入门使用 Python 工具和 Docker。",
+      "它采用构建时插桩，不能直接跟踪任意闭源二进制。文法提取仍是实验功能；将跟踪数据库放在宿主挂载目录可能使虚拟机／容器明显变慢。"
+    ]
+  },
+  "pyelftools": {
+    "name": "pyelftools",
+    "requirements": [
+      "固定版本 README 要求 Python 3.11+，无需外部依赖；可安装 pyelftools 包或从源码检出目录导入。",
+      "输入为 ELF 文件及可用的 DWARF 数据。API 提供格式和调试信息。"
+    ]
+  },
+  "rustc-demangle": {
+    "name": "rustc-demangle",
+    "requirements": [
+      "通过 Cargo 使用 Rust crate，或使用 Cargo 构建独立 C API 包装层。另有基本等价的原生 C 实现，但文档说明其支持程度较低。",
+      "库处理用户提供的符号字符串，不会恢复已剥离的标识符。可选择 MIT 或 Apache-2.0 许可，并且无需内存分配或操作系统支持。"
+    ]
+  },
+  "scylla": {
+    "name": "Scylla",
+    "requirements": [
+      "这是面向旧 Windows 环境的 C／C++ 工具，主要围绕 Windows 7 x64 设计，支持 x86／x64 输入及可选导入重建插件。源码采用 GPLv3。",
+      "README 记录了未解决的 GetProcAddress 情形、Windows XP x64 导出歧义及部分旧插件兼容问题。修复的导入表可能需要人工检查。"
+    ]
+  },
+  "titanengine": {
+    "name": "TitanEngine Community Edition",
+    "requirements": [
+      "使用原生 C／C++ 头文件及 Windows 构建环境。固定版本 CMake 配置要求 CMake 3.15+ 和源码外构建，并包含 diStorm 及源自 Scylla 的组件。",
+      "README 警告 Lua、Python、MASM 和 Delphi 绑定的头文件尚未更新，可能无法正常工作。它是调试引擎，不是完整调试器界面。"
+    ]
+  },
+  "ubertooth": {
+    "name": "Ubertooth",
+    "requirements": [
+      "需要 Ubertooth 硬件、兼容固件、宿主工具及 libbtbb。固定版本 README 列出了配套的 2020-12-R1 固件／软件及 libbtbb 版本。",
+      "文档列出的范围是 BLE 嗅探和部分基本速率的经典蓝牙数据。"
+    ]
+  },
+  "umap2": {
+    "name": "Umap2",
+    "requirements": [
+      "需要 Facedancer、Raspdancer 等受支持的 USB 设备硬件；GadgetFS 仅部分支持。README 从源码安装实验性包，而非通过 PyPI。",
+      "该项目是 alpha 阶段的旧工具。多数组件声称兼容 Python 2／3，但 kitty 模糊测试器需要 Python 2；主机操作系统识别尚未实现，也不直接对 MTP 层进行模糊测试。"
+    ]
+  },
+  "volatility3": {
+    "name": "Volatility 3",
+    "requirements": [
+      "需要受支持的内存镜像、合适的符号表及 Python；固定版本 README 列出 Python 3.8+。默认分支为 develop，stable 为稳定发行分支。",
+      "Windows 符号可能自动下载并缓存；Linux 和 macOS 符号可能需要依据匹配的内核信息手动生成。项目采用自定义 Volatility Software License。"
+    ]
+  },
+  "blind-walleye-static-case": {
+    "name": "The Blind Walleye：营销网站的静态重建",
+    "requirements": [
+      "README 称该项目是 https://www.theblindwalleye.com 的 1:1 复制，用 Next.js 静态渲染。source/ 保存抓取结果。应用预渲染 /、/menu 和 /events，并渲染抓到的 404。source/pages 含有 index.html、menu.html、events.html 和 __404.html。",
+      "README 写明 node scripts/compare-visual.mjs 在 1440、991 和 390 像素宽下截取抓取页和复刻页。脚本的默认 MAX_DIFF_PCT 是 0.5，任一页的差异百分比高于该阈值时以状态 1 退出。",
+      "README 未写明许可证。"
+    ]
+  },
+  "destruction-derby-64-decomp-case": {
+    "name": "Destruction Derby 64：美版 ROM 的匹配反编译",
+    "requirements": [
+      "提交 4820d11b3aeb1788e3de1b281a584a7b236bb734。README 写明构建者提供 Destruction Derby 64（USA）作为 baserom.z64，SHA-1 即上述值，并且 ROM 不在仓库中。它写明匹配构建会打印 build/dd64.z64: OK，并且 1548 个函数中有 1510 个是 C。它还把仓库描述为作者未审阅代码的放手式智能体实验。",
+      "Makefile 的默认目标是 check，它会对 dd64.sha1 运行 sha1sum -c。该文件期望 build/dd64.z64 具有同一个 SHA-1。",
+      "该提交的根目录列表没有 LICENSE 文件，README 也没有写明许可。"
+    ]
+  },
+  "echopod-echo-mini-firmware-case": {
+    "name": "EchoPod：Snowsky Echo Mini 8 GB 替代固件",
+    "requirements": [
+      "8 GB 的 Snowsky Echo Mini 使用 HIFIECnn.IMG 更新镜像；FiiO 3.7.0、3.9.0 和 4.0.0 是已测试的起始版本。EchoPod 拒绝 512 MB 型号的 MINIVnnn.IMG 文件。",
+      "发行预设构建 HIFIEC90.IMG。项目处于早期开发阶段，报告在一台播放器上测试。",
+      "EchoPod 采用 GPL-3.0-or-later。随附的 Inter 和 Noto CJK 字体采用 SIL OFL 1.1；libmad 采用 GPL-2.0-or-later。"
+    ]
+  },
+  "glabios-rom-bios-case": {
+    "name": "GLaBIOS：从零编写的 8K ROM BIOS",
+    "requirements": [
+      "README 将其描述为面向老式 PC、XT 和 8088 机器、可放入 8K ROM 的兼容 BIOS；固定提交为 v0.4.2，也介绍了 Version 0.8b 预览。",
+      "树里有 src/GLABIOS.ASM。src/MAKE.BAT 运行 MASM GLABIOS、LINK GLABIOS，再让 GLA2ROM 处理 GLABIOS.EXE 并写出 GLABIOS.ROM。src/gla2rom/README.md 写明该命令产生 8KiB ROM 镜像，并且必须在 DOS 或 DOS 仿真器中运行。",
+      "LICENSE 是 GNU GPL 第 3 版文本，README 也把项目标为 GPLv3。"
+    ]
+  },
+  "hypercard-122-recomp-case": {
+    "name": "HyperCard 1.2.2：经典 Mac 应用的静态重编译",
+    "requirements": [
+      "需要使用者的 HyperCard 1.2.2 文件。README 报告覆盖 3,166 个调用点中的 2,642 个，21 个 CODE 段的指令覆盖率为 97–100%；语料镜像属于受版权保护的 Mac 媒体，存放于仓库之外。",
+      "工具包采用 MIT 许可，不附带 Apple ROM、System 软件或受版权保护的光盘数据。"
+    ]
+  },
+  "legend-of-mana-decomp-case": {
+    "name": "Legend of Mana：PlayStation 游戏的匹配反编译",
+    "requirements": [
+      "提交 c34db9803ae8cb58d45060a8246e161de690ece3。README 写明北美版和日版都已 100% 匹配。北美光盘编号 SLUS-01013，主程序 SLUS_010.13，SHA-1 为 d11dfdd50d412ac3fa3e2eb80fbde138da118f27。日版是 SLPS-02170，主程序 SLPS_021.70，SHA-1 为 b067188a92e4de9a4db7bb7e5343c757e9884bfa。仓库排除游戏可执行文件。disc/ 被 gitignore。",
+      "make verify-bins 核对北美模块，make verify-bins VERSION=jp 核对日版模块。README 写明主程序和全部 17 个覆盖模块都已完整链接，Psy-Q SDK 库仍从原始汇编链接。",
+      "LICENSE 是 MIT 许可，版权人为 2026 年 Christopher Harris（celophi）。零售游戏不在其中。"
+    ]
+  },
+  "loremaps-atlas-case": {
+    "name": "LoreMaps：幻想地图图集的静态重写",
+    "requirements": [
+      "提交 659dc5b70a24e8bf00475978a594393d372c6578。README 称之为 aspnet-mvc-live 分支的从零重写，做成静态站点，运行时依赖只有 Leaflet 1.9。package.json 要求 Node.js >= 22.12.0，build 脚本是 astro build。README 写明 npm run build 把静态输出写到 dist/。",
+      "src/maps/faerun.ts 提供 4763×3185 的图像，tilesUrl 为 https://loremaps.github.io/LoreMaps-Faerun-Tiles/Tiles，metersPerPixel 为 1287.473。src/maps/got.ts 提供 4642×4642 的图像，tilesUrl 为 https://loremaps.github.io/LoreMaps-GoT-Tiles/Tiles，metersPerPixel 为 2266.681。",
+      "该固定提交的树里没有 LICENSE 文件。README 把 Faerûn 图像归于 Pocket Plane Group，把已知世界地图归于 serMountainGoat，许可为 CC-BY-NC-SA。got.ts 链接 CC BY-NC-SA 3.0 许可文本。瓦片图像放在本仓库之外。"
+    ]
+  },
+  "newpipe-streaming-client-case": {
+    "name": "NewPipe：面向 YouTube 和 PeerTube 的 Android 前端",
+    "requirements": [
+      "Android 应用通过 F-Droid 和 GitHub 发布包分发。README 列出的服务包括 YouTube、YouTube Music 和 PeerTube 实例。",
+      "应用在可用时通过官方 API 获取服务数据，否则解析网站或使用内部 API。",
+      "许可证：GPL-3.0；流媒体服务保留各自条款。"
+    ]
+  },
+  "openbst-bestspeech-case": {
+    "name": "openbst：BeSTspeech 的 C 语言重实现",
+    "requirements": [
+      "提交 a151e78f66009bc74367974d14476061f3552346。README 点名二十个构建：1995 年的 32 位英语引擎、六个 1998 年的 16 位模块（英语、荷兰语、法语、德语、意大利语和西班牙语），以及十三个 2006 年的 32 位构建。把原二进制放在 dll/1995、dll/1998 和 dll/2006。这些文件不在仓库中。由于 src/data 放着提取出的表，make 仍然写出 build/libbst.a、build/libbst.so 和 build/bstspeak。",
+      "README 写明 1995 年构建在 24 句上逐位一致；六个 1998 年模块在 226 个词、20793 帧上一致，并有 144 句逐样本一致；十三个 2006 年构建在 2358 句上一致；tests/lifttest.sh 检查 411894 句。这些运行需要原二进制。make test 是这道门。没有二进制时，make selftest 核对 tests/golden.txt。README 写明该文件有 4906 句的样本数和哈希，由 make golden 从二进制写出。",
+      "LICENSE 把代码、测试和工具放在 MIT 许可下，版权 2026 Stanislaw Przedzinkowski，并写明从 Berkeley Speech Technologies 二进制读出、后来归 HumanWare 的表不在该许可范围内。"
+    ]
+  },
+  "openhaystack-find-my-case": {
+    "name": "OpenHaystack：使用 Apple“查找”网络的追踪标签",
+    "requirements": [
+      "需要 macOS 11 或更高版本、BBC micro:bit 等蓝牙设备，以及用于下载位置报告的 OpenHaystack Mail 插件。安装时需临时关闭 Gatekeeper 以启用插件。",
+      "配件固件广播固定公钥，附近设备因此能够追踪标签。项目仍处于实验阶段，功能尚不完整。",
+      "许可证：AGPL-3.0。"
+    ]
+  },
+  "openrsync-protocol-case": {
+    "name": "openrsync：ISC 许可的 rsync 协议 27 实现",
+    "requirements": [
+      "提交 8235c68f11b4fad5e24849a01d04ea153c29ee28。README 称 openrsync 是采用 BSD（ISC）许可的 rsync 实现，与 rsync 3.1.3 兼容，也与任何支持协议 27 的对端兼容。rsync.5 写明它与参考实现的第 27 版兼容。官方支持的系统是 OpenBSD。",
+      "regress/functional/conf.sh 在变量尚未设置时把 rsync 设为 ./openrsync。test00_simple.test 用 mkdirfile 建立 dir1/one.txt，并在 dir2/dir1 下放同一份文件，然后运行 $rsync -a dir1 dir3，再调用 compare_trees dir2 dir3。compare_trees 比较文件清单、目录清单，再用 diff -ru 比较文件内容。make regress_functional 运行这些测试。",
+      "LICENSE.md 允许为任何目的使用、复制、修改和/或分发本软件，只要保留版权声明。版权行是 2019 年 Kristaps Dzonsons。"
+    ]
+  },
+  "pcbasic-interpreter-case": {
+    "name": "PC-BASIC：GW-BASIC 家族解释器",
+    "requirements": [
+      "README 把 PC-BASIC 称为这四种 BASIC 方言的自由解释器，目标是逐错误兼容，能运行 .BAS 程序，并使用 Microsoft Binary Format 浮点。标签 v2.0.8 指向提交 6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5。该 GitHub 发布页提供桌面安装包。",
+      "在该提交，tests/basic/gwbasic/PRINT_USING_scientific/TEST.BAS 为 362 字节。同目录的 PCBASIC.INI 设置 run=TEST.BAS 和 quit=True。对照文件 model/OUTPUT.TXT 为 82 字节。tests/basic/testbasic.py 用 filecmp.cmp 且 shallow=False 比较每个 model 文件，也就是整文件字节比较。",
+      "README 写明程序以 GPL 第 3 版发布。LICENSE.md 授予 GNU GPL 第 3 版，或由接受方选择的任何更高版本。"
+    ]
+  },
+  "reactos-nt-compatible-case": {
+    "name": "ReactOS：与 Windows NT 兼容的操作系统",
+    "requirements": [
+      "安装要求活动启动分区为 FAT16 或 FAT32。README 将兼容工作重点放在 Windows Server 2003，并链接到 0.4.16 版本。",
+      "项目代码采用 GPL-2.0。Windows 的权利仍归其权利人。"
+    ]
+  },
+  "scummvm-engine-case": {
+    "name": "ScummVM：经典冒险游戏的替代可执行文件",
+    "requirements": [
+      "ScummVM 使用用户自备的原始游戏数据文件运行受支持的冒险游戏和角色扮演游戏。",
+      "受支持的游戏包括《破碎之剑》《神秘岛》和《银翼杀手》；版本与功能支持因游戏而异。",
+      "采用 GPL-3.0，树中有 COPYING。游戏数据仍受其自身权利约束。"
+    ]
+  },
+  "tc66-meter-firmware-case": {
+    "name": "TC66 定制固件：RuiDeng USB-C 功率计的替代镜像",
+    "requirements": [
+      "提交 65accb42ce94526649f7553c927d4edae9389a71。README 写明带 GD32F150G8 MCU 的 TC66C 已经测试，TC66 使用同一块板但尚未测试。其他 RuiDeng 表计不受支持。原厂镜像不在仓库中再分发。uv run tc66flash.py stock 会下载官方 V1.18，并核对 SHA-256 ef796b29557c91e0a469740ba1934ca0a838916c76ab55eb6d1253da32830940。tools/tc66flash.py 把 USB ID 记为 0x28E9:0x018A。",
+      "在 rust/ 中，make release 写出 tc66fw-release.enc.bin。Makefile 称该文件是给原厂 bootloader 的 AES 加密镜像。README 写明 bootloader 本身不会被写入。",
+      "LICENSE 是 MIT 许可，版权 2026 Fletcher。"
+    ]
+  },
+  "thermal-master-p3-protocol-case": {
+    "name": "Thermal Master P3：浏览器里的厂商 USB 协议客户端",
+    "requirements": [
+      "浏览器查看器面向 Thermal Master P3，USB ID 为 3474:45a2，画面为 256 × 192。README 称 P1 尚未测试。",
+      "tests/test_webusb.mjs 检查抓取的 18 字节厂商控制命令及 192 字节状态缓冲。",
+      "许可证：Apache-2.0。"
+    ]
+  },
+  "uv-k5-firmware-case": {
+    "name": "UV-K5：泉盛固件 v2.1.27 的开源重实现",
+    "requirements": [
+      "仓库已归档。它重实现泉盛 UV-K5 固件 v2.1.27，未添加定制功能，推荐使用 arm-none-eabi GCC 10.3.1。",
+      "取回子模块后运行 make。构建目标为 cortex-m0，生成供 k5prog 使用的 firmware.bin 和供官方更新器使用的 firmware.packed.bin。",
+      "LICENSE 是 Apache 许可证 2.0 版。"
+    ]
+  },
+  "viaduct-netnewswire-case": {
+    "name": "viaduct：NetNewsWire 的 Linux 移植",
+    "requirements": [
+      "提交 a0622903b93da2c2752244cf6d415377a41fbe7a。README 写明 Viaduct 移植了 NetNewsWire 的本地账户结构。本地账户以磁盘上的 OPML 为层级的依据；另一个受支持的账户是 Inoreader。.netnewswire 参考树被 gitignore，因此不在公开 Git 历史中。",
+      "cargo build --release 写出 target/release/viaduct。README 把 gtk4 和 WebKitGTK 6.0 列为构建依赖。.github/workflows/ci.yml 运行 cargo clippy --workspace --all-targets，以及 xvfb-run -a cargo test --workspace。",
+      "LICENSE 是 MIT 许可，版权行包括 Brent Simmons 与 Ranchero Software（2002-2026）以及 Brandon LaRocque（2026）。"
+    ]
+  },
+  "zalo-linux-desktop-case": {
+    "name": "zalo-linux：Zalo 桌面应用的 Linux 软件包",
+    "requirements": [
+      "README 称 npm run setup 下载 macOS DMG、解出程序包并构建原生模块，npm run build 生成 dist/Zalo-<version>.deb。解出的 app 目录被 gitignore。项目写明不隶属于 VNG，也未获其认可。",
+      "scripts/_smoke-boot.sh 将无头启动后的 SMOKE_OK 状态视为成功。",
+      "LICENSE 是 MIT 许可，并写明授权只覆盖构建工具。Zalo 应用程序包归 VNG 专有，不在仓库中。"
+    ]
+  },
+  "opentv-truvoice-case": {
+    "name": "OpenTV：用可移植 C 重建 Centigram TruVoice",
+    "requirements": [
+      "需要 x86_64 的 mingw-w64（32 位构建用 -m32 独立模式）、dlltool 和 Python 3。把 CGRM_EN.DLL 放在 TruVoice/。该 DLL 不在仓库中。只有读取 DLL 的工具才需要 pefile。",
+      "README 描述了 C 库、命令行朗读程序和 NVDA 插件，含 32 位与 64 位。它写明 SAPI 4 的 COM 粘合、配置对话框和 waveOut 播放有文档但未移植。",
+      "README 写明 tools/difftest.py 用 59 条语料、335 种配置要求 PCM 相同，覆盖挂钩构建以及独立的 32 位和 64 位移植。--ref 再与已安装引擎的录音比较。",
+      "LICENSE 是 MIT 许可证，版权 2026 RetroBunn。原始 TruVoice DLL 不在仓库中，也不属于该授权。"
+    ]
+  },
+  "lh-truvoice-decomp-case": {
+    "name": "L&H TruVoice：用可移植 C 重建 tv_enua.dll",
+    "requirements": [
+      "需要 C99 编译器和你自己的 tv_enua.dll 6.00 build 10。README 写明引擎不在仓库中，移植在运行时从该 DLL 读取表。",
+      "十个具名语音共用一个共振峰合成器。README 写明 src/gen_back.inc、gen_tag.inc 和 gen_norm.inc 是从反编译译出的引擎逻辑，并与手写 C 区分。",
+      "README 的端到端一行报告所列文本集分别为 330/330、130/130、230/230、400/400 和 140/140 完全一致，并写明 x86 与 x64 构建彼此一致。它点名的一条命令是 python tools/e2e_text.py tests/hard.txt。",
+      "LICENSE 是 MIT 许可证，版权 2026 KamiKitsune420。原始引擎未包含在内。"
+    ]
+  },
+  "ms-anna-tts-case": {
+    "name": "Microsoft Anna：TTS20 引擎的逐位一致 C 重建",
+    "requirements": [
+      "需要 C99 编译器，以及你自己的 Anna 数据（来自 Windows Vista 或 7，或 Windows 7 语音安装包）。README 写明仓库没有微软的代码或数据。它要求不要使用 -ffast-math，并保持 -ffp-contract=off。",
+      "这是 README 内部称为 Mulan 的 SAPI 5 TTS20 引擎。README 给出的提取命令是 tools/anna_extract.py。",
+      "README 的端到端一行写明 579/579 条测试逐位一致，包括它列出的 SAPI XML 标记，并且 MSVC x86/x64、clang 和 GCC 结果相同。WMA Voice 9 一行写明全部 66218 个块加 25000 次随机读取与 Windows 的 32 位 WMSPDMOD.DLL 一致。",
+      "LICENSE 是 MIT 许可证，版权 2026 KamiKitsune420。语音数据仍属微软，且未包含在内。"
+    ]
+  },
+  "onecore-david-zira-mark-case": {
+    "name": "OneCore TTS：David、Zira 与 Mark 的 C 重建",
+    "requirements": [
+      "需要 C99 编译器，以及你自己的 M1033David、M1033Zira 或 M1033Mark 文件，加上 Windows 安装中的 MSTTSLocEnUS.dat。README 写明这些文件不在仓库中。它要求不要使用 -ffast-math，并保持 -ffp-contract=off。",
+      "David 用浮点。Zira 和 Mark 用定点。README 写明未包含微软的代码或数据。",
+      "README 的端到端一行写明 David 375/375、Mark 375/375、Zira 373/375 逐位一致，并写明 Zira 未中的两句是 lang 行。它写明 MSVC x64、MSVC x86 和 gcc 结果相同。",
+      "README 写明仓库中的代码为 MIT，并指向 LICENSE。该文件是 MIT 许可证，版权 2026 KamiKitsune420。语音和原始引擎未包含在内。"
+    ]
+  },
+  "ms-sam-mike-mary-case": {
+    "name": "Microsoft Sam：SAPI 5 引擎的可移植 C 重建",
+    "requirements": [
+      "需要 C99 编译器，以及你自己的 Sam.spd、Mike.spd 或 Mary.spd 及对应的 .sdf，再加上 LTTS1033.LXA 和 r1033tts.LXA。README 写明语音数据未包含。",
+      "Sam、Mike 和 Mary 共用一个引擎。README 还描述了重做为音频效果的 SAPI 4 语音效果，并写明 SAPI 4 语音本身没有移植。它写明 src/sam_abbrev_tab.h、src/sam_pos_rules.h 和 src/sam_words_tab.h 中的小表转录自引擎。",
+      "README 写明约 99.7% 的样本完全一致，其余由浮点舍入造成差异，并报告语料 21/21、数字与日期 104/104、同形异义词 100/100，以及《爱丽丝漫游奇境》180/180 段。tools/compare_corpus.py 把 C 输出与 README 所称未包含的 WAV 比较。",
+      "README 写明代码为 MIT 并指向 LICENSE。该文件是 MIT 许可证，版权 2026 KamiKitsune420。微软语音数据未包含。"
+    ]
+  },
+  "eloquence-61-eci-case": {
+    "name": "Eloquence 6.1：ECI.DLL 的 C 重建",
+    "requirements": [
+      "README 的构建在 Windows 上用 Visual Studio，从 PowerShell 进行。把你自己的 ECI.DLL、ECI.INI 和 ENU.SYN 放进 pkg/。它给出 ENU.SYN 的 MD5 6c39acb7c1f0f62b3cae019f45b224fc。它写明这些文件不在仓库中且不得加入。",
+      "README 描述了手写的共振峰合成器、由 tools/delta_lift.py 提取的 Delta 规则，以及用 tools/x2c.py 按指令重编译的其余函数。可替换 DLL 只有美式英语。",
+      "README 写明 klatt_check 在 19902 个已记录帧上逐位一致，并且 python tools/eci_compare.py 把 tests/eci/ 中的每个 API 脚本同时送入真实 DLL 和移植，比较调用、返回值、回调和样本。",
+      "仓库根目录没有 LICENSE 文件；README 未说明许可证。"
+    ]
+  },
+  "prose2000-reborn-case": {
+    "name": "Prose 2000 Reborn：语音板固件的 C 反编译",
+    "requirements": [
+      "README 的默认构建产出语音库、prose_say、示例和 v3.4.1 测试。-DPROSE_VERSION=1 改为构建 v1.1 测试。它写明 v1.1 的 DSP 程序从未被转储，因此 v1.1 的帧通过 v3.12 DSP 模型播放，该音频是近似。",
+      "树中有两个固件版本：v3.4.1（1988）和 v1.1（1983）。README 写明 src/data 存放从 ROM 提取的数据，src/tests 存放播放器和回放测试。",
+      "README 写明每个阶段都对照原板的模拟器检查过：捕获的调用逐字节一致，端到端则逐帧或逐样本一致。它写明回放测试见 REFERENCE.md 第 14 节。build/pipeline_play 朗读一行。",
+      "审阅的根目录没有 LICENSE 文件。README 写明原始固件属于 Telesensory Systems 和 Speech Plus。README 未列出仓库许可证。"
+    ]
+  },
+  "geos-20-kernal-case": {
+    "name": "GEOS 2.0：可重建 cbmfiles KERNAL 二进制的源码",
+    "requirements": [
+      "README 用 make 构建。reference/ 存放来自 cbmfiles.com 版本的原始二进制。make regress 构建 bsw 和 wheels 变体并与这些参考比较。",
+      "README 写明此树不使用原始加密加载器，内核为明文，与它描述的 cbmfiles.com 版本一致。它写明序列号 0x58B5 已预填以匹配该版本。",
+      "README 点名的比较是 make regress。",
+      "审阅的根目录没有 LICENSE 文件。README 写明逆向工程及随后改进所增加的知识产权属于公有领域，请求署名，并写明应尊重底层 GEOS 作品的许可证。"
+    ]
+  },
+  "geowrite-21-case": {
+    "name": "geoWrite 2.1：可重建原始二进制的源码",
+    "requirements": [
+      "需要 make、cc65 和用于加密受保护代码的 Python。make 构建英文版；LOCALE=de make 构建德文版。orig/ 目录包含原始二进制文件。",
+      "标准编译可逐字节重建 GEOS 附带的英文和德文 geoWrite 2.1 二进制文件；源码注释仍未完成。",
+      "README 将新完成的逆向工程工作置于公有领域，请求署名，并要求遵守底层 GEOS 许可。仓库根目录没有 LICENSE 文件。"
+    ]
+  },
+  "libmd12-sp1200-case": {
+    "name": "libmd12：E-mu SP-1200 与 SP-12 音频通路的 C 模型",
+    "requirements": [
+      "需要 C99 编译器和 make。make 构建库和命令行工具。README 写明表生成器与检查还需要带 NumPy 和 SciPy 的 Python 3、ngspice、arm-none-eabi 工具链和 QEMU。",
+      "README 写明半音表和衰减表是 E-mu 的，读自它点名的 SP-1200 OS 1.2、Rossum 的 SP-1200 OS 1.04 和 SP-12 Turbo 2.6 映像。它指向 Lytrix/EMU-SP1200 中的转储映像，作为所需固件输入的来源。",
+      "README 写明 make check 运行 341 项检查，make m7check 在 QEMU 中为带单精度 FPU 的 Cortex-M7 运行同样的 341 项。它还报告了与 ngspice 以及 John Nolting 的 SP-12 录音的滤波器比较，并写明这些录音需下载。",
+      "LICENSE 是 MIT 许可证，版权 2026 Stanislaw Przedzinkowski。"
+    ]
+  },
+  "real-dsound-case": {
+    "name": "reAL：对照 Windows 与 ALchemy 检查的 dsound.dll",
+    "requirements": [
+      "./build.sh 构建 dsound.dll、跟踪器、测试程序，并运行本机单元测试。README 写明仓库不含 Creative 或微软的代码或二进制，因此与那些 DLL 比较需要 Windows 安装中的 DLL。",
+      "README 描述了对照 Windows 7 检查的 DirectSound 返回，以及它称为微软效果逐位移植的 SetFX 效果。它还描述了可选的 HRTF 路径。内置集合是它署名的 MIT KEMAR 测量。",
+      "README 写明测试程序对两种实现运行并逐行比较输出，离线捕获则逐事件比较。它点名 tests/comcmp.sh 和 tests/fuzzcmp.py。",
+      "LICENSE 是 MIT 许可证，版权 2026 Neth。README 写明 ALchemy 的版权属于 Creative Technology。"
+    ]
+  },
+  "decompile-bench-dataset": {
+    "name": "Decompile-Bench：二进制与源码函数对数据集",
+    "requirements": [
+      "数据集说明将 decompile-bench 许可为 CC0-1.0。",
+      "说明列出 name、code、asm 和 file 字段；两百万个二进制与源码函数对从一亿个收集到的函数对精简而来，二进制来自采用宽松许可证的 GitHub 项目。",
+      "说明另行链接 decompile-bench-raw 和 decompile-bench-bins 数据集。"
+    ]
+  },
+  "openjkdf2": {
+    "name": "OpenJKDF2：Jedi Knight: Dark Forces II 的 C 语言重实现",
+    "requirements": [
+      "运行需要一份有效的 Jedi Knight: Dark Forces II 游戏数据。仓库不包含原版游戏资源。README 写明可从 GOG 和 Steam 取得，并推荐 GOG，因为该版本无 DRM，且附带 Ogg Vorbis 音轨。",
+      "README 列出的受支持配置包括：使用 SDL2、OpenAL 和 OpenGL 3.3 的 64 位 Windows、macOS x86_64 与 AArch64、64 位 Linux；使用 OpenGL ES 3 的 ARM64 Android；使用自定义渲染器的 Nintendo DSi 和 Dreamcast；使用 OpenGL 1.1 的 32 位 Windows；以及使用 WebGL 2 的 Emscripten。在 Linux 上，路径和文件名可能区分大小写。",
+      "GitHub 报告该仓库的许可证为 NOASSERTION。"
+    ]
+  },
+  "crackdown-recompiled-case": {
+    "name": "Crackdown Recompiled：Xbox 360 游戏 Crackdown 的原生 PC 移植",
+    "requirements": [
+      "Windows 10 或 11（64 位），需要支持 DirectX 12 的显卡和 Microsoft Visual C++ 2015–2022 x64 可再发行组件；或者 64 位 x86 Linux，glibc 2.31 或更新版本、Vulkan 驱动，以及 X11 或 Wayland 桌面。Linux 与 Steam Deck 构建被标为实验性。",
+      "需要使用者自备的 Xbox 360 零售版 Crackdown 光盘（2007），且为没有标题更新的原始版本：Title ID 为 4D5307DC，Default.xex 为 14,270,464 字节。启动器接受光盘映像或已提取的文件，并拒绝其他版本。不附带游戏文件。",
+      "从源码构建需要子模块、带 C++ 与 LLVM/Clang 组件的 Visual Studio，并把光盘文件放到 game/assets/Default.xex。tools/codegen.ps1 会下载 ReXGlue SDK 0.10.0。生成该 C++ 之后，再用 tools/package-linux.sh 构建 Linux AppImage。",
+      "项目原创代码为 GPL-2.0-only。ReXGlue 为 BSD 3-Clause，锁定的 TRG Launcher v1.1.0 为 MIT。游戏文件不在项目许可范围内。README 写明 AI 工具协助了分析、开发、调试和文档，并由维护者指导、测试和审阅这些改动。"
+    ]
+  },
+  "ac6-recomp": {
+    "name": "AC6Recomp：皇牌空战 6 的静态重编译",
+    "requirements": [
+      "README 写明仓库只包含源代码，用户需要自行提供合法取得的游戏副本。",
+      "README 写明项目尚未完成：它可以启动并进入游戏，同时应当预期错误、崩溃和缺失的功能。",
+      "README 把许可证指向 LICENSE。GitHub 报告为 BSD-3-Clause。"
+    ]
+  },
+  "foxdec": {
+    "name": "FoxDec（x86-64 形式化反编译）",
+    "requirements": [
+      "输入必须是按 System V AMD64 ABI 从 C 编译出的 x86-64 ELF 二进制。README 排除 C++ 和并发代码。",
+      "发布的快速开始会下载一个 FoxDec 压缩包并用 Docker 运行。不使用 Docker 的构建写在 foxdec/docs/build.md，供开发者使用。把生成的 NASM 重新编译需要 nasm 和 gcc。",
+      "GitHub 报告许可证为 Apache-2.0。"
+    ]
+  },
+  "computerarcheology": {
+    "name": "Computer Archeology：街机游戏反汇编笔记",
+    "requirements": [
+      "用 Python 运行渲染模块 computerarcheology.carender.app 和 computerarcheology.carender.development_server。",
+      "仓库没有许可证文件。"
+    ]
+  },
+  "gcrecomp": {
+    "name": "GCRecomp",
+    "requirements": [
+      "使用者自行提供 GameCube 转储。README 写明仓库不含任天堂代码、SDK 和游戏资源。",
+      "README 的 Rust 徽章写明 Rust 1.70 或更新版本。",
+      "README 以 CC0 1.0 Universal 许可该项目，并另外链接一份最终用户许可协议。"
+    ]
+  },
+  "ac4-port": {
+    "name": "AC4-Port：《装甲核心 4》的原生 Windows 移植",
+    "requirements": [
+      "需要一份《装甲核心 4》美版光盘（BLUS30027）及其 PS3_GAME 文件夹，安装时用 RPCS3 做一次解密，并准备索尼 PS3 系统软件 4.93 的 PS3UPDAT.PUP。README 要求大约 4 GB 可用磁盘空间。",
+      "产物是 64 位 Windows 程序。安装程序会下载大约 250 MB 的编译工具链。",
+      "GitHub 报告许可证为 MIT。"
+    ]
+  },
+  "angry-birds-decomp": {
+    "name": "Angry Birds Decompilation：Lua 脚本恢复",
+    "requirements": [
+      "需要 Python 3、位于 PATH 中的 7-Zip，以及 JDK。手动路径还使用 OpenSSL 和 unluac.jar。",
+      "脚本读取读者自己的《愤怒的小鸟》PC 移植版 Lua 文件。",
+      "GitHub 上该仓库的许可证元数据为空。"
+    ]
+  },
+  "dragodis": {
+    "name": "Dragodis（跨反汇编器脚本框架）",
+    "requirements": [
+      "用 pip install dragodis 安装，再按 docs/install.md 安装一个反汇编器后端。",
+      "示例通过 dragodis.Ghidra 或 dragodis.IDA 打开本地二进制。",
+      "GitHub 报告该仓库许可证为 NOASSERTION。"
+    ]
+  },
+  "rsdkv2-decomp": {
+    "name": "RSDKv2 Decompilation：Retro Engine v2 反编译",
+    "requirements": [
+      "运行需要 Sonic Nexus 2008 演示版资源。要用带子模块的 git clone；README 写明 GitHub 源码 ZIP 不含这些子模块。",
+      "Windows 构建使用带“使用 C++ 的桌面开发”工作负载的 Visual Studio、vcpkg、SDL2、libogg 和 libvorbis。Linux 软件包列表包括 cmake、SDL2、libogg 和 libvorbis。macOS 按 dependencies/mac/dependencies.txt 和 Xcode 工程构建。",
+      "GitHub 报告该仓库许可证为 NOASSERTION。"
+    ]
+  },
+  "thunderball": {
+    "name": "Thunderball：Peggle Deluxe 反编译",
+    "requirements": [
+      "需要 CMake 3.25 或更高版本、Ninja 和 Microsoft Visual C++ 14。README 要求把便携版 MSVC 工具链放到 Thunderball/msvc80，并运行 cmake --workflow --preset release-x86。",
+      "游戏资源来自读者自己的 Peggle Deluxe。目标是 Steam 英文 1.01 可执行文件。",
+      "用 pip install git+https://github.com/isledecomp/reccmp 安装 reccmp。",
+      "GitHub 报告该仓库许可证为 NOASSERTION。README 链接了 LICENSE.md。"
+    ]
+  },
+  "gba-recomp": {
+    "name": "GBA-Recomp（GBA 静态重编译工具）",
+    "requirements": [
+      "用户用自己的 ROM 镜像和 BIOS 构建。README 写明仓库不含重编译后的游戏产物。",
+      "macOS、Linux、Windows 和 Android 的平台依赖列在 BUILDING.md。引擎生成 C11 并在本地编译。",
+      "README 将该项目双重许可为 MIT 或 Apache-2.0。"
+    ]
+  },
+  "mbbsdasm": {
+    "name": "MBBSDASM（16 位 NE 反汇编器）",
+    "requirements": [
+      "反汇编器运行在 .NET Core 上。文本界面使用 Terminal.Gui。README 中的一种命令行形式是 -i input.dll -o output.txt -strings -analysis。",
+      "README 以二条款 BSD 许可证许可 MBBSDASM，并写明 SharpDisasm 为二条款 BSD、Terminal.Gui 为 MIT。"
+    ]
+  },
+  "cor64": {
+    "name": "cor64：C# 编写的 Nintendo 64 模拟器",
+    "requirements": [
+      "需要 .NET Framework 或 Mono、.NET Core 3.x 或更高版本，以及全局 dotnet 工具 Paket 和 nuke.globaltool。Linux 构建需要 GLFW 开发库。",
+      "用 nuke Run 构建并运行。测试使用 nuke Test。",
+      "GitHub 报告许可证为 MIT。"
+    ]
+  },
+  "openshc": {
+    "name": "OpenSHC：《要塞：十字军东征》的重实现",
+    "requirements": [
+      "需要《要塞：十字军东征》1.41（拉丁语版本）。README 把 Steam 版本称为最容易取得的副本，并要求英语或德语这类拉丁语安装。",
+      "开发使用 CMake 3.24 或更高版本、Python 3，以及用 python -m pip install clang-format 安装的 clang-format 22 或更高版本。",
+      "GitHub 报告许可证为 GPL-3.0。"
+    ]
   }
 }

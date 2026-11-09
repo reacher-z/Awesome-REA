@@ -40,7 +40,7 @@ class ReadmeOriginalTitleTest(unittest.TestCase):
             with self.subTest(paper=record['id']):
                 original = plain_text(record['title'])
                 link = f'- [**{plain_text(record["title_zh"])}**]({record["url"]}) - '
-                self.assertEqual(zh.count(original), 1)
+                self.assertEqual(zh.count(f' <sub>原题：*{original}* · '), 1)
                 line = next(line for line in zh.splitlines() if line.startswith(link))
                 self.assertIn(f' <sub>原题：*{original}* · ', line)
 

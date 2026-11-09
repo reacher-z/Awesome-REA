@@ -6002,5 +6002,110 @@
       "https://github.com/rafaelkenedy/genma-recomp/blob/33fee19ef4aec490b8970d4472fadd6c4bc99aa2/docs/onimusha-hd-controls-analysis.md",
       "https://github.com/rafaelkenedy/genma-recomp/blob/33fee19ef4aec490b8970d4472fadd6c4bc99aa2/docs/onimusha-hd-loading-analysis.md"
     ]
+  },
+  {
+    "id": "decepticon-rea-reverser",
+    "name": "Decepticon: REA reversing service and subagent tools",
+    "url": "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/docs/features/rea-reversing.md",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "An optional reversing workload in BitterSecurity’s Decepticon wraps rea-agents and Ghidra inside a dedicated HTTP/MCP container and exposes three tools to its reverser subagent. It pins the inspected binary by SHA-256 and exports REA Evidence files to the shared workspace before returning results.",
+    "description_zh": "BitterSecurity 的 Decepticon 将 rea-agents 与 Ghidra 封装在独立的 HTTP/MCP 容器中，作为可选逆向工作负载向 reverser 子智能体暴露三个工具。该集成按 SHA-256 固定待查二进制，并在返回结果前将 REA Evidence 文件导出到共享工作区。",
+    "evidence_url": "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/docs/features/rea-reversing.md",
+    "verified_at": "2026-10-18",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The optional Decepticon REA integration uses Node.js 22, OpenJDK 21, Python 3, Ghidra 12.1.4 and rea-agents@6.3.0 in an HTTP/MCP container with a shared /workspace mount and port 8892.",
+      "Setting DECEPTICON_REA_URL loads rea_status, rea_find_tools and rea_call_tool for the reverser subagent. Without it, the subagent uses local Radare2 and triage tools.",
+      "rea_call_tool copies the target binary to a read-only file, verifies its SHA-256, and exports evidence-<sha256>.json and manifest.json. trace_native_values first runs analyze_function for source Evidence.",
+      "Unit tests mock HTTP responses, FastMCP sessions and tools to check filtering, arguments, Evidence wiring and fallback behavior.",
+      "License: Apache-2.0. REA, Ghidra and model providers retain their own terms."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/containers/rea.Dockerfile",
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/containers/rea_service.py",
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/packages/decepticon/decepticon/tools/reversing/rea.py",
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/packages/decepticon/decepticon/agents/standard/reverser.py",
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/packages/decepticon/tests/unit/tools/reversing/test_rea_tools.py",
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/packages/decepticon/tests/unit/agents/test_reverser_workload_fallback.py",
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/LICENSE"
+    ]
+  },
+  {
+    "id": "lezac-rea-decompilation-case",
+    "name": "Larax & Zaco: an REA-exported evidence base and partial routine recovery",
+    "url": "https://github.com/Hubert-Rybak/lezac-decompilation",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "The author uses REA 6.3.0 with Ghidra to export dossiers, pseudocode and assembly for all 215 discovered procedures in the DOS shareware LEZAC.EXE, then recovers a small set of routines as Pascal and portable C. Recovered code is tested against the original x86 instructions, and a pinned DOSBox-X baseline records original-game runs..",
+    "description_zh": "作者使用 REA 6.3.0 与 Ghidra，为 DOS 共享软件 LEZAC.EXE 中发现的全部 215 个过程导出档案、伪代码和汇编，再将其中少量例程恢复为 Pascal 和可移植 C。恢复的代码以原 x86 指令为对照进行测试，固定版本的 DOSBox-X 基线记录了原游戏的运行情况。README 说明这既不是可游玩或逐位一致的重建，也不是原作者的源码。。",
+    "evidence_url": "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/README.md",
+    "verified_at": "2026-10-18",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Larax & Zaco v1.0 shareware is the required original input. tools/fetch_original.py downloads a pinned archive or accepts an offline ZIP and verifies file hashes. The original executable and resources are absent from the repository.",
+      "Verification needs Python 3.12+, a C99 compiler, Free Pascal 3.2.2, make, npm and a Node.js version accepted by REA. DOS probes also need the FPC i8086 cross compiler. Re-export needs REA 6.3.0, Ghidra 12.1.4 and a full JDK; original-game runs use DOSBox-X 2024.03.01 and Xvfb.",
+      "Seven Pascal routines, sixteen packed layouts, six portable C routines and resource decoders are recovered. Interrupt handlers, most gameplay, rendering, audio and DOS services remain unrecovered.",
+      "The README reports 174,777 Pascal and 173,725 C comparisons against original x86 code, twelve DOS probe comparisons and 94 loaded-image checks. Gameplay replays use host timing.",
+      "The repository has no license file; RIGHTS.md grants no blanket open-source license for recovered logic or generated pseudocode. The original game and derived exports retain their rights."
+    ],
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/RIGHTS.md",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/docs/analysis.md",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/docs/pascal-recovery.md",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/docs/reproduction.md",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/docs/emulator-baseline.md",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/analysis/provenance.json",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/analysis/coverage.json",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/analysis/emulator.json",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/Makefile",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/.github/workflows/verify.yml"
+    ],
+    "reconstruction_method": "decompilation"
+  },
+  {
+    "id": "eidolon-64k-rust-port-case",
+    "name": "Eidolon in Rust: byte-exact Rust port of the Eidolon 64k intro",
+    "url": "https://github.com/RovshanMuradov/eidolon-64k-rs",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ports Eidolon, Poo-Brain’s winning PC 64k intro from Revision 2017, from its packed 60,928-byte Windows executable to Rust, with chapters on how the original binary works and a separate size-optimized build. The author reports that coordinated OpenCode and Claude Code agents, using Ghidra through the REA MCP server among other tools, captured a controlled-clock reference of the original and matched all 27,000 frame hashes and the full PCM. Exactness rests on the project’s own GPU-specific captures, and the port embeds the original’s data.",
+    "description_zh": "把 Poo-Brain 在 Revision 2017 夺得 PC 64k 组冠军的 Eidolon，从经过压缩的 60,928 字节 Windows 可执行文件移植到 Rust，并附有说明原二进制工作原理的章节和单独的体积优化版本。作者报告由 OpenCode 与 Claude Code 协同的多个智能体完成工作，所用工具包括经 REA MCP 服务调用的 Ghidra：先在受控时钟下为原作建立参考捕获，再使全部 27,000 帧的哈希与完整 PCM 一致。一致性依据项目自己在特定 GPU 上的捕获，移植版嵌入原作数据。",
+    "evidence_url": "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/README.md",
+    "verified_at": "2026-10-19",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The Rust port targets i686-pc-windows-gnu. The documented Linux build uses Rust 1.97, MinGW-w64, Clang, Python, Wine and headless gamescope; the size build also needs NASM. Reference capture and size builds run on Linux, while macOS cannot run the intro.",
+      "A new reference capture needs the original scene.org release archive and gm.dls from a Microsoft DirectX redistributable, both checked by SHA-256. The port embeds original tables, curves, shaders and music plus 15 Roland GM/GS samples; the size build reads system gm.dls.",
+      "Under a controlled clock, the project reports matching 27,000 frame hashes and the full PCM. Shipped frame hashes fit its RTX 3070 Ti, driver and Wine setup; other GPUs need a local reference capture. Most fault-injection tests need 5.8 GB of unpublished raw reference data; 57 tests run without it. Native Windows playback and frame checks remain untested.",
+      "The size build is 44,139 bytes versus the original 60,928 bytes; it did not reach the 32 KiB target. The author reports agent-led work with human goal setting and decisions.",
+      "Rust code, tools and documentation are MIT or Apache-2.0. Bundled kkrunchy source is public domain. Original shaders, music, animation data and Roland samples retain their owners’ rights and are outside those licenses."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/docs/rust/README.md",
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/docs/rust/verification.md",
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/docs/en/README.md",
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/size/README.md",
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/LICENSE-MIT",
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/LICENSE-APACHE",
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/size/packer/LICENSE"
+    ],
+    "class": "software"
   }
 ]

@@ -33,8 +33,8 @@
 - [gorisanson/pikachu-volleyball](https://github.com/gorisanson/pikachu-volleyball) — 通过逆向分析原版游戏，以 JavaScript 重新实现《皮卡丘排球》。 **[1,089 星标]**
 - [focus-creative-games/hybridclr\_unity](https://github.com/focus-creative-games/hybridclr_unity) — 适用于 HybridCLR 的 Unity 软件包。 **[1,019 星标]**
 - [grumpycoders/pcsx-redux](https://github.com/grumpycoders/pcsx-redux) — PCSX-Redux 项目汇集了工具、研究、硬件设计和库，面向 PlayStation 1 开发与逆向工程。其核心产品 PCSX-Redux 本身也是 PlayStation 模拟器 PCSX 的一个分支。 **[1,014 星标]** · 精选：[PCSX-Redux PlayStation 1 调试模拟器](https://awesomerea.org/zh/resources/pcsx-redux/)
-- [shdecompilations/silent-hill-decomp](https://github.com/shdecompilations/silent-hill-decomp) — 正在进行中的 PlayStation 1 游戏《寂静岭》美版 1.1 反编译项目。 **[902 星标]**
-- [nmlgc/ReC98](https://github.com/nmlgc/ReC98) — 东方 PC-98 修复项目。 **[875 星标]**
+- [shdecompilations/silent-hill-decomp](https://github.com/shdecompilations/silent-hill-decomp) — 正在进行中的 PlayStation 1 游戏《寂静岭》美版 1.1 反编译项目。 **[902 星标]** · 精选：[Silent Hill：可执行文件与覆盖模块的 PlayStation 一致性反编译](https://awesomerea.org/zh/resources/silent-hill-decomp-case/)
+- [nmlgc/ReC98](https://github.com/nmlgc/ReC98) — 东方 PC-98 修复项目。 **[875 星标]** · 精选：[ReC98：东方 Project PC-98 作品源码复原项目](https://awesomerea.org/zh/resources/rec98-touhou-pc98-restoration-case/)
 - [AxioDL/metaforce](https://github.com/AxioDL/metaforce) — Metroid Prime 引擎的原生重新实现。 **[808 星标]** · 精选：[Metaforce：在反编译之上重建的《密特罗德 Prime》引擎重实现](https://awesomerea.org/zh/resources/metaforce-metroid-prime-case/)
 - [EstebanPdN/zelda-tmc-3ds](https://github.com/EstebanPdN/zelda-tmc-3ds) — 基于 Project Picori 的 The Legend of Zelda: The Minish Cap 原生 Nintendo 3DS 移植版。 **[757 星标]**
 - [SAT-R/sa2](https://github.com/SAT-R/sa2) — 使用 C 编写的 Game Boy Advance 游戏《索尼克进化 1 与 2》的反编译和移植项目。 **[678 星标]** · 精选：[《索尼克 Advance》1 与 2：一致性 GBA 反编译及宽屏移植](https://awesomerea.org/zh/resources/sonic-advance-1-2-decomp-port-case/)
@@ -50,8 +50,8 @@
 - [sneakyevil/IL2CPP\_Resolver](https://github.com/sneakyevil/IL2CPP_Resolver) — 面向 Unity IL2CPP 的运行时 API 解析器。 **[475 星标]**
 - [TeamGDB/Yakumo](https://github.com/TeamGDB/Yakumo) — 将一款 PSP 游戏静态重编译为原生可执行文件，使用 Vulkan 和 SDL3。需自备游戏副本。 **[447 星标]**
 - [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — 《Oddworld: Abe’s Exoddus》与《Oddworld: Abe’s Oddysee》的重新实现。 **[441 星标]** · 精选：[R.E.L.I.V.E.：Oddworld: Abe’s Oddysee 与 Abe’s Exoddus 引擎的重新实现](https://awesomerea.org/zh/resources/relive-oddworld-abe-engine-case/)
-- [LazyDuchess/OpenTS2](https://github.com/LazyDuchess/OpenTS2) — 使用 Unity 开源重新实现《模拟人生 2》。 **[432 星标]**
-- [alexbatalov/fallout2-re](https://github.com/alexbatalov/fallout2-re) — 通过逆向工程重建的《辐射 2》。 **[411 星标]**
+- [LazyDuchess/OpenTS2](https://github.com/LazyDuchess/OpenTS2) — 使用 Unity 开源重新实现《模拟人生 2》。 **[432 星标]** · 精选：[OpenTS2：在 Unity 中开源重新实现《模拟人生 2》](https://awesomerea.org/zh/resources/opents2-sims2-engine-case/)
+- [alexbatalov/fallout2-re](https://github.com/alexbatalov/fallout2-re) — 通过逆向工程重建的《辐射 2》。 **[411 星标]** · 精选：[Fallout 2 Reference Edition：逆向还原的原版引擎 C 源码](https://awesomerea.org/zh/resources/fallout2-reference-edition-case/)
 - [CTR-tools/ctr-native](https://github.com/CTR-tools/ctr-native) — 《古惑狼赛车》反编译项目。 **[405 星标]**
 - [UE-Explorer/UE-Explorer](https://github.com/UE-Explorer/UE-Explorer) — 面向 Unreal Engine（.upk、.u）文件的反编译器与软件包浏览器。 **[371 星标]** · 精选：[UE Explorer](https://awesomerea.org/zh/resources/ue-explorer/)
 - [ethteck/splat](https://github.com/ethteck/splat) — 用于辅助反编译和模组制作项目的二进制拆分工具。 **[368 星标]** · 精选：[splat 二进制拆分工具](https://awesomerea.org/zh/resources/splat/)
@@ -91,7 +91,7 @@
 - [KobaltBlu/KotOR.js](https://github.com/KobaltBlu/KotOR.js) — 使用 JavaScript 重制 Odyssey 游戏引擎，该引擎曾用于《KotOR I》和《KotOR II》。 **[149 星标]**
 - [repnz/ReversingMinesweeper](https://github.com/repnz/ReversingMinesweeper) — 逆向分析扫雷：重建扫雷源码 **[146 星标]**
 - [xmoezzz/rfvp](https://github.com/xmoezzz/rfvp) — FVP 引擎及 IDE 的非官方 Rust 跨平台实现 **[146 星标]**
-- [centollOS/SwitchWakerHD](https://github.com/centollOS/SwitchWakerHD) — 将 Wind Waker HD（Wii U）静态重编译到 Nintendo Switch，采用 deko3d 渲染器。需自备游戏转储。 **[139 星标]**
+- [centollOS/SwitchWakerHD](https://github.com/centollOS/SwitchWakerHD) — 将 Wind Waker HD（Wii U）静态重编译到 Nintendo Switch，采用 deko3d 渲染器。需自备游戏转储。 **[139 星标]** · 精选：[SwitchWakerHD：《风之杖 HD》重编译的 Nintendo Switch 移植](https://awesomerea.org/zh/resources/switchwakerhd-switch-port-case/)
 - [krystalgamer/spidey-decomp](https://github.com/krystalgamer/spidey-decomp) — Neversoft《蜘蛛侠》游戏 PC 移植版的反编译项目 **[138 星标]**
 - [murkantor/Project-Midas](https://github.com/murkantor/Project-Midas) — 面向 Windows 和 Linux 的 GE PC 移植版，基于 N64 反编译项目构建。支持宽屏、鼠标视角、现代手柄和游戏内设置。合作模式、联网游玩和模组仍在开发中。 **[138 星标]**
 - [Unchiga/YuGiOhForbiddenMemoriesRecomp](https://github.com/Unchiga/YuGiOhForbiddenMemoriesRecomp) — 将 Yu-Gi-Oh! Forbidden Memories（PS1）静态重编译为原生可执行文件，带有实时决斗评级表、融合助手、可调卡片掉落及作弊菜单。需自备光盘。 **[137 星标]**
@@ -100,7 +100,7 @@
 - [kotcrab/ghidra-allegrex](https://github.com/kotcrab/ghidra-allegrex) — 为 Ghidra 添加 Allegrex CPU（PSP）支持的处理器模块 **[132 星标]** · 精选：[ghidra-allegrex PSP Allegrex 处理器模块](https://awesomerea.org/zh/resources/ghidra-allegrex/)
 - [IroniaTheMaster/Descrypt-global-metadata.dat](https://github.com/IroniaTheMaster/Descrypt-global-metadata.dat) — 如何解密 Unity 游戏中的 global-metadata.dat？ **[129 星标]**
 - [Fantaskink/SOTC](https://github.com/Fantaskink/SOTC) — PlayStation 2 游戏《旺达与巨像》预览版的反编译项目，仍在开发中 **[125 星标]**
-- [chrissotraidis/projectreach](https://github.com/chrissotraidis/projectreach) — 在 iPhone、iPad 和 Mac 上运行《光环：战斗进化》。包含支持最多 128 人在线对战及原版战役的 Xbox 版本，以及支持社区服务器的 Halo Custom Edition。需自备游戏并在 Mac 上构建。 **[124 星标]**
+- [chrissotraidis/projectreach](https://github.com/chrissotraidis/projectreach) — 在 iPhone、iPad 和 Mac 上运行《光环：战斗进化》。包含支持最多 128 人在线对战及原版战役的 Xbox 版本，以及支持社区服务器的 Halo Custom Edition。需自备游戏并在 Mac 上构建。 **[124 星标]** · 精选：[HaloPad：通过反编译移植与 x86 重编译在 Apple 设备上运行 Halo](https://awesomerea.org/zh/resources/halopad-project-reach-case/)
 - [spacefarergames/AloneInTheDarkReHaunted](https://github.com/spacefarergames/AloneInTheDarkReHaunted) — Alone in the Dark 1 的大幅增强移植版与动态重编译版本，提供纹理模型、HD–4K 背景替换、易用性改进、手柄支持等众多功能。 **[119 星标]**
 - [djkaty/Il2CppInspectorPlugins](https://github.com/djkaty/Il2CppInspectorPlugins) — Il2CppInspector 插件官方仓库 **[116 星标]**
 - [N0zoM1z0/th08](https://github.com/N0zoM1z0/th08) — 《东方永夜抄 ～ Imperishable Night》1.00d 源码重建项目 **[114 星标]** · 精选：[TH08：精确源码重建与单独验证的移植](https://awesomerea.org/zh/resources/th08-reconstruction-case/)
@@ -158,7 +158,7 @@
 - [djkaty/Il2CppProtoExtractor-FallGuys](https://github.com/djkaty/Il2CppProtoExtractor-FallGuys) — 针对 Fall Guys: Ultimate Knockout 的 IL2CPP protobuf-net 逆向工程教程 **[47 星标]**
 - [mmzret/rmz3](https://github.com/mmzret/rmz3) — 开发中：《Megaman Zero 3》日版反编译项目 **[45 星标]**
 - [PicoShot/UnityInspectorStandalone](https://github.com/PicoShot/UnityInspectorStandalone) — Unity 游戏的 Mono/IL2CPP 运行时检查器 **[44 星标]**
-- [celophi/lom-decomp](https://github.com/celophi/lom-decomp) — Legend of Mana / 聖剣伝説 LEGEND OF MANA（PS1）的匹配反编译，面向 NTSC-U / NTSC-J。 **[43 星标]**
+- [celophi/lom-decomp](https://github.com/celophi/lom-decomp) — Legend of Mana / 聖剣伝説 LEGEND OF MANA（PS1）的匹配反编译，面向 NTSC-U / NTSC-J。 **[43 星标]** · 精选：[Legend of Mana：PlayStation 游戏的匹配反编译](https://awesomerea.org/zh/resources/legend-of-mana-decomp-case/)
 - [Raikaru/Persona4-Decompilation](https://github.com/Raikaru/Persona4-Decompilation) — PlayStation 2 版 Shin Megami Tensei: Persona 4 的匹配反编译。 **[43 星标]**
 - [svespalec/faultline](https://github.com/svespalec/faultline) — 通过监测工作集缺页事件检测用户态线程劫持。 **[43 星标]**
 - [Azukee/Macaron](https://github.com/Azukee/Macaron) — 面向多种游戏归档格式的轻量解包工具。 **[42 星标]**
@@ -418,7 +418,7 @@
 - [TheBestPlan/killingfloor-bot-client](https://github.com/TheBestPlan/killingfloor-bot-client) — 面向 Killing Floor（Unreal Engine 2.5）的 L2Walker 风格无界面客户端。通过 UDP 使用原生 UE2 网络协议，无需启动游戏或注入，以真实客户端身份连接、通过 Steam 认证并进入游戏。 **[1 星标]**
 - [TheGh0stShip/BattleTanx](https://github.com/TheGh0stShip/BattleTanx) — 美版 BattleTanx .z64 的反编译项目，是 BattleTanx Studio 及将 BattleTanx 资源移植到 BattleTanx: Global Assault 移植版所需的反编译基础。 **[1 星标]**
 - [Yorushika-Yorushika/yysls-offline](https://github.com/Yorushika-Yorushika/yysls-offline) — 《燕云十六声》离线化研究：协议文档 + 分析工具（无游戏资源） **[1 星标]**
-- [AbienteSadness/ue5-binka-to-wav](https://github.com/AbienteSadness/ue5-binka-to-wav) — 将 Unreal Engine 5 的 BINKA 音频资源（FModel 导出的 .uasset + .ubulk 文件）转换为可播放的 WAV 文件。提供窗口应用和命令行工具。 **[0 星标]**
+- [AbienteSadness/ue5-binka-to-wav](https://github.com/AbienteSadness/ue5-binka-to-wav) — 将 Unreal Engine 5 的 BINKA 音频资源（FModel 导出的 .uasset + .ubulk 文件）转换为可播放的 WAV 文件。提供窗口应用和命令行工具。 **[0 星标]** · 精选：[UE5 BINKA 转 WAV](https://awesomerea.org/zh/resources/ue5-binka-to-wav/)
 - [akopetsch/swe1r-assets-unity](https://github.com/akopetsch/swe1r-assets-unity) — 一个 Unity 包，可导入、修改并重新导出 Star Wars Episode I: Racer 的游戏资源。 **[0 星标]** · 精选：[swe1r-assets-unity：Racer 模型块编辑器样例](https://awesomerea.org/zh/resources/swe1r-assets-unity/)
 - [ancaria-dev/agent](https://github.com/ancaria-dev/agent) — 🪝 Sacred Gold 的游戏内 Frida 代理：包含钩子、游戏地址以及启动器下载的打包文件。 **[0 星标]**
 - [andreastroelsen/maaneby](https://github.com/andreastroelsen/maaneby) — 将 2010 年丹麦校园游戏 Matematik i Måneby+ 从其 Macromedia Director 文件重建为浏览器可运行版本。可通过下方链接游玩。 **[0 星标]**

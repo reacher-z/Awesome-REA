@@ -2,14 +2,14 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-09T02:41:36+00:00",
-    "entry_count": 602,
-    "class_entry_count": 634,
+    "generated_at": "2026-11-09T03:29:44+00:00",
+    "entry_count": 616,
+    "class_entry_count": 650,
     "class_counts": {
-      "image": 579,
-      "video": 23
+      "image": 592,
+      "video": 24
     },
-    "missing_count": 32,
+    "missing_count": 34,
     "missing": [
       "aotopsy",
       "appshark",
@@ -31,10 +31,12 @@
       "meleepad-melee-port-case",
       "openbarnyard-case",
       "openkeeper-dungeon-keeper-ii-case",
+      "outrun-sonic-runners-server-case",
       "pdbinspector",
       "pince",
       "project-vekta-case",
       "ptcgp-private-server-case",
+      "pymobiledevice3",
       "react-native-decompiler",
       "ruffle-flash-player-case",
       "scapy",
@@ -91,6 +93,15 @@
       "source_url": "https://github.com/TheWWWorm/abyssal",
       "revision": "670de94fe160873897502bb81e6f51dc11899043",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "ac4-port",
+      "image_url": "https://github.com/user-attachments/assets/6a63daac-5396-4723-833d-4b9519c8006d",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/SulphurS16/AC4-Port",
+      "revision": "219c7bf9e085495c355220b4f6b3ef8a983288a7",
+      "checked_at": "2026-11-09T03:29:44+00:00"
     },
     {
       "id": "ac46-firmware-tool",
@@ -795,6 +806,15 @@
       "checked_at": "2026-11-09T01:38:42+00:00"
     },
     {
+      "id": "crackdown-recompiled-case",
+      "image_url": "https://github.com/user-attachments/assets/d14c97f8-2f76-40b6-aafe-295d382e9dd0",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/saulob/crackdown-xbox360-recompiled",
+      "revision": "33ab1b632e38cb5c1c39a3d56c479537b9e0d185",
+      "checked_at": "2026-11-09T03:29:44+00:00"
+    },
+    {
       "id": "crashlens-rea-crash-triage",
       "image_url": "https://raw.githubusercontent.com/mingleiw/crashlens/e2b417ab7b4b22edeac4a1c2e308458dec040688/docs/images/app.png",
       "kind": "image",
@@ -1074,6 +1094,15 @@
       "checked_at": "2026-11-09T02:41:36+00:00"
     },
     {
+      "id": "dr-memory",
+      "image_url": "http://burningcutlery.com/images/dynamorio/drmem-spec2k6-sm.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/DynamoRIO/drmemory",
+      "revision": "3d2b5f9b055dba86c41a75e58c53b59760cc2a6e",
+      "checked_at": "2026-11-09T03:29:44+00:00"
+    },
+    {
       "id": "dragon-ball-gt-final-bout-recomp-case",
       "image_url": "https://github.com/user-attachments/assets/93ea423b-0928-4e91-84dc-80e516663c47",
       "kind": "image",
@@ -1135,6 +1164,15 @@
       "source_url": "https://github.com/TetraSsky/DualRip",
       "revision": "f69e23c63a7d0985a474d0cbaeb2b364174748ac",
       "checked_at": "2026-11-07T03:50:11+00:00"
+    },
+    {
+      "id": "dumpulator",
+      "image_url": "https://i.ytimg.com/vi/4Pfu98Xx9Yo/hqdefault.jpg",
+      "kind": "video",
+      "basis": "youtube-thumbnail",
+      "source_url": "https://github.com/mrexodia/dumpulator",
+      "revision": "18a64d7ab6ccded24c5ffe72ba17ac03fd853f8b",
+      "checked_at": "2026-11-09T03:29:44+00:00"
     },
     {
       "id": "dyld-cache-extract",
@@ -1650,6 +1688,15 @@
       "checked_at": "2026-11-09T02:41:36+00:00"
     },
     {
+      "id": "glabios-rom-bios-case",
+      "image_url": "https://raw.githubusercontent.com/640-KB/GLaBIOS/main/images/ss_0.0.11_ega_1.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/640-KB/GLaBIOS",
+      "revision": "68c65a5fb2c587cf0f3dfb74fb0815ffc809efdb",
+      "checked_at": "2026-11-09T03:29:44+00:00"
+    },
+    {
       "id": "godot-re-tools",
       "image_url": "https://raw.githubusercontent.com/GDRETools/gdsdecomp/e2780fcc73ab14083967d3945e513d1f6af1dbd0/images/screenshot.png",
       "kind": "image",
@@ -1738,6 +1785,15 @@
       "source_url": "https://github.com/ptx2/gymnasticon",
       "revision": "e142f539c518d6d4ced3abdd587a825b918a9367",
       "checked_at": "2026-11-04T06:53:59+00:00"
+    },
+    {
+      "id": "halopad-project-reach-case",
+      "image_url": "https://raw.githubusercontent.com/chrissotraidis/projectreach/d7fd9688d55931dafa3fd511b1051c08e350fcfa/docs/images/halopad-menu.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/chrissotraidis/projectreach",
+      "revision": "d7fd9688d55931dafa3fd511b1051c08e350fcfa",
+      "checked_at": "2026-11-09T03:29:44+00:00"
     },
     {
       "id": "halyard-case",
@@ -2298,6 +2354,15 @@
       "checked_at": "2026-11-08T22:27:09+00:00"
     },
     {
+      "id": "librepods-airpods-protocol-case",
+      "image_url": "https://github.com/davdroman.png?size=48",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/librepods-org/librepods",
+      "revision": "89356c08cea3db0b6b54792d9329d09a87cc85fa",
+      "checked_at": "2026-11-09T03:29:44+00:00"
+    },
+    {
       "id": "lief",
       "image_url": "https://github.com/lief-project/LIEF/blob/main/.github/images/architecture.png",
       "kind": "image",
@@ -2440,6 +2505,15 @@
       "source_url": "https://github.com/trailofbits/manticore",
       "revision": "cdf6c4b49603cc1d70a09cabe74e0f786df1e13f",
       "checked_at": "2026-11-04T06:53:51+00:00"
+    },
+    {
+      "id": "mbbsdasm",
+      "image_url": "https://raw.githubusercontent.com/mbbsemu/MBBSDASM/52dc12ada40f6e7603da3adf4aefc2a598306a78/mbbsdasm_ui.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/mbbsemu/MBBSDASM",
+      "revision": "52dc12ada40f6e7603da3adf4aefc2a598306a78",
+      "checked_at": "2026-11-09T03:29:44+00:00"
     },
     {
       "id": "mcg-recomp-case",
@@ -2719,6 +2793,15 @@
       "source_url": "https://github.com/Asli-s/NeoTS2",
       "revision": "dd0948f486677b55e54ff78c22ac9b4583c05d18",
       "checked_at": "2026-11-08T23:42:11+00:00"
+    },
+    {
+      "id": "newpipe-streaming-client-case",
+      "image_url": "https://raw.githubusercontent.com/TeamNewPipe/NewPipe/8917ff1b29a3146c34057c62a7b3cd49c1ac6d97/fastlane/metadata/android/en-US/images/phoneScreenshots/00.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/TeamNewPipe/NewPipe",
+      "revision": "8917ff1b29a3146c34057c62a7b3cd49c1ac6d97",
+      "checked_at": "2026-11-09T03:29:44+00:00"
     },
     {
       "id": "nfsmw-nx-case",
@@ -3018,6 +3101,24 @@
       "checked_at": "2026-11-08T22:27:09+00:00"
     },
     {
+      "id": "openhaystack-find-my-case",
+      "image_url": "https://raw.githubusercontent.com/seemoo-lab/openhaystack/ea05dadb9e6e71075ef08afb5c2087302fbb7210/Resources/OpenHaystack-Screenshot.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/seemoo-lab/openhaystack",
+      "revision": "ea05dadb9e6e71075ef08afb5c2087302fbb7210",
+      "checked_at": "2026-11-09T03:29:44+00:00"
+    },
+    {
+      "id": "openjkdf2",
+      "image_url": "https://raw.githubusercontent.com/shinyquagsire23/OpenJKDF2/ae6ed8a81b316421f08a46719b12a4fa9e2fbed9/docs/images/screenshot.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/shinyquagsire23/OpenJKDF2",
+      "revision": "ae6ed8a81b316421f08a46719b12a4fa9e2fbed9",
+      "checked_at": "2026-11-09T03:29:44+00:00"
+    },
+    {
       "id": "openjooki-jooki2-case",
       "image_url": "https://raw.githubusercontent.com/Guillain-RDCDE/OpenJooki/ed3c1ef7e59e21e86adf2d08097ac03f2fd9cb4c/docs/img/shots/phone-playlists.png",
       "kind": "image",
@@ -3196,6 +3297,15 @@
       "source_url": "https://github.com/marin-m/pbtk",
       "revision": "7bc64ba789822e706903dd802d9599ddbd508b9a",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "pcbasic-interpreter-case",
+      "image_url": "https://robhagemans.github.io/pcbasic/screenshots/pcbasic-2.0.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/robhagemans/pcbasic",
+      "revision": "6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5",
+      "checked_at": "2026-11-09T03:29:44+00:00"
     },
     {
       "id": "pd-usb-case",
@@ -4033,6 +4143,15 @@
       "source_url": "https://github.com/avast/retdec",
       "revision": "9450585772e6f1c18e5f0b2ad5518a18d6bce71e",
       "checked_at": "2026-11-01T10:08:28+00:00"
+    },
+    {
+      "id": "retoolkit",
+      "image_url": "https://raw.githubusercontent.com/mentebinaria/retoolkit/8a5d1197c07ab0635c2948d42f53bda696680125/assets/retoolkit.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/mentebinaria/retoolkit",
+      "revision": "8a5d1197c07ab0635c2948d42f53bda696680125",
+      "checked_at": "2026-11-09T03:29:44+00:00"
     },
     {
       "id": "reundr-ps5-case",
@@ -5347,6 +5466,15 @@
       "source_url": "https://github.com/alexbeavs-ps1-ports/xena-warrior-princess-recomp",
       "revision": "38ec7b4fc740e9251fdcc0d19740528b34fb35f7",
       "checked_at": "2026-11-09T02:41:36+00:00"
+    },
+    {
+      "id": "xiaomi-desk-lamp-open-firmware-case",
+      "image_url": "https://raw.githubusercontent.com/fvollmer/open-desk-lamp-firmware/043aeb9f95c0454b92200cded4b7e4cc3b23011e/img/lamp.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/fvollmer/open-desk-lamp-firmware",
+      "revision": "043aeb9f95c0454b92200cded4b7e4cc3b23011e",
+      "checked_at": "2026-11-09T03:29:44+00:00"
     },
     {
       "id": "xmen2-pc-case",
