@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2]
+        shard: [0, 1, 2, 3]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -53,10 +53,28 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '26'
+      # fetch_previews.py reuses an image already in .cache/previews, named by the SHA-256 of its URL, and downloads
+      # the rest; an image that failed to download is never stored, so it is retried on the next run. Every run
+      # restores the newest cache for the current preview list, or else the newest earlier one. Runs on main save
+      # under their own key, so an image recovered on a later run reaches the cache; pull requests only read it.
+      - name: Restore downloaded preview images
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .cache/previews
+          key: previews-${{ hashFiles('data/evidence-previews.json') }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            previews-${{ hashFiles('data/evidence-previews.json') }}-
+            previews-
       # The production build: validate.py, node --check, build_site.py, validate_discovery.py,
       # validate_site.py and validate_schema_org.py. Publication runs it with --publish, without the three validators.
       - name: Run the production build
         run: python3 scripts/build_production.py
+      - name: Save downloaded preview images
+        if: ${{ !cancelled() && github.ref == 'refs/heads/main' }}
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .cache/previews
+          key: previews-${{ hashFiles('data/evidence-previews.json') }}-${{ github.run_id }}-${{ github.run_attempt }}
   browser:
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -70,6 +88,9 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '26'
+          # Keeps npm's download cache for the smoke-test driver; npm ci still installs exactly the lockfile.
+          cache: npm
+          cache-dependency-path: tests/browser/package-lock.json
       # The smoke test rebuilds dist/ with the public fallback icons and loads it in the runner's installed
       # Chrome; the pinned puppeteer-core package downloads no browser. CI=true makes a missing Chrome fail.
       - name: Install the browser smoke-test driver
