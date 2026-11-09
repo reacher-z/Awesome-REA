@@ -6,7 +6,7 @@
 
 [简体中文](game-2.zh-CN.md)
 
-**617 case studies**
+**618 case studies**
 
 ## Non-matching decompilations
 
@@ -483,6 +483,7 @@
 - [**GHVanHRecomp: a native Guitar Hero: Van Halen port**](https://github.com/ElGuslml/GHVanHRecomp) - GHVanHRecomp statically recompiles the Xbox 360 release of Guitar Hero: Van Halen into a native Windows port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ghvanhrecomp-case/)</sub>
 - [**GLOVER-R: a native recompilation of Glover**](https://github.com/ThatGuyMcd/Glover-R) - GLOVER-R recompiles Glover for Windows and Linux from a user-supplied Nintendo 64 ROM, using a game-specific patch pipeline that checks hooks against original instructions. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/glover-r-case/)</sub>
 - [**God Hand Recompiled: statically recompiling God Hand for Windows**](https://github.com/LasVola/godhand-recomp) - This recompiles God Hand for the PlayStation 2, USA SLUS-21503, into a Windows program with PS2Recomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/godhand-recomp/)</sub>
+- [**God of War 2005 PC port**](https://github.com/danielalves96/gow-pc-port) - This port statically recompiles the USA PlayStation 2 game God of War, product SCUS-97399, into C++. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/gow-2005-pc/)</sub>
 - [**God of War II: static recompilation for Windows**](https://github.com/cxldsakeb/GoW2-nativo-PS2) - This statically recompiles God of War II for the PlayStation 2, NTSC-U SCUS-97481 v1.01, into a Windows executable with PS2Recomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/gow2-native/)</sub>
 - [**God of War PS2 static recompilation: a native Windows port via PS2Recomp**](https://github.com/KIexster/god-of-war-recomp) - Statically recompiles the MIPS R5900 code of the NTSC-U PlayStation 2 God of War executable (SCUS-97399) to C++ with PS2Recomp and builds it as a native Windows program. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/god-of-war-ps2-recomp-case/)</sub>
 - [**God of War — Native PC: static recompilation of the PS2 game**](https://github.com/Vnnc1/gow-native-pc) - God of War — Native PC is a native Windows port of God of War for the PlayStation 2, NTSC-U SCUS-97399, built by statically recompiling MIPS R5900 code to C++. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/gow-native-pc-case/)</sub>

@@ -6,7 +6,7 @@
 
 [English](game-2.md)
 
-**617 个案例**
+**618 个案例**
 
 ## 非匹配反编译
 
@@ -483,6 +483,7 @@
 - [**GHVanHRecomp：Guitar Hero: Van Halen 原生移植版**](https://github.com/ElGuslml/GHVanHRecomp) - GHVanHRecomp 将 Xbox 360 版 Guitar Hero: Van Halen 静态重编译为 Windows 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ghvanhrecomp-case/)</sub>
 - [**GLOVER-R：Glover 的原生重编译版本**](https://github.com/ThatGuyMcd/Glover-R) - GLOVER-R 从用户提供的 Nintendo 64 ROM 重编译 Glover，生成 Windows 和 Linux 版本；其游戏专用补丁流程会对照原始指令检查钩子位置。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/glover-r-case/)</sub>
 - [**God Hand Recompiled：将《神之手》静态重编译到 Windows**](https://github.com/LasVola/godhand-recomp) - 该项目用 PS2Recomp 把 PlayStation 2 美版《神之手》（SLUS-21503）重编译成 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/godhand-recomp/)</sub>
+- [**战神2005 PC移植**](https://github.com/danielalves96/gow-pc-port) - 该移植把 PlayStation 2 美版《战神》静态重编译成 C++，产品编号 SCUS-97399。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gow-2005-pc/)</sub>
 - [**God of War II：Windows 静态重编译**](https://github.com/cxldsakeb/GoW2-nativo-PS2) - 该项目用 PS2Recomp 把 PlayStation 2 美版《战神 II》NTSC-U SCUS-97481 v1.01 静态重编译成 Windows 可执行文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gow2-native/)</sub>
 - [**《战神》PS2 静态重编译：基于 PS2Recomp 的 Windows 原生移植**](https://github.com/KIexster/god-of-war-recomp) - 使用 PS2Recomp 将 PlayStation 2 版《战神》美版（SCUS-97399）可执行文件中的 MIPS R5900 代码静态重编译为 C++，并构建为 Windows 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/god-of-war-ps2-recomp-case/)</sub>
 - [**God of War — Native PC：PS2 游戏的静态重编译**](https://github.com/Vnnc1/gow-native-pc) - God of War — Native PC 是《God of War》PlayStation 2 美版 NTSC-U SCUS-97399 的 Windows 原生移植，通过把 MIPS R5900 代码静态重编译为 C++ 完成。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gow-native-pc-case/)</sub>
