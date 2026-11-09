@@ -145514,6 +145514,11 @@
     ],
     "evidence_url": "https://github.com/drakolordx7/switch2-recomp/blob/5339bf85b05e84c34a7f18d8a43db1de1f1692b2/README.md",
     "verified_at": "2026-11-07",
+    "source_unavailable": {
+      "checked_at": "2026-11-09T20:59:50+00:00",
+      "outcome": "not-found",
+      "http_status": 404
+    },
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
   },
