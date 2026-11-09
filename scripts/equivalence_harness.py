@@ -127,7 +127,7 @@ def seeds():
     yield 'duplicate-attribute', first, sub_once(r'<main\b', '<main data-seed="1" data-seed="2"', page)
     yield 'inline-style', first, sub_once(r'<p\b', '<p style="color:red"', page)
     yield 'asset-content', stylesheet, stylesheet.read_text(encoding='utf-8') + '/* seeded */\n'
-    yield 'breadcrumb-text', first, sub_once(r'(<nav aria-label="Breadcrumb">.*?<a [^>]*>)([^<]+)', r'\g<1>\g<2> seeded', page, re.S)
+    yield 'breadcrumb-text', first, sub_once(r'(<nav [^>]*aria-label="Breadcrumb"[^>]*><a [^>]*>)([^<]+)', r'\g<1>\g<2> seeded', page, re.S)
     yield 'unlinked-stylesheet', COPY / 'seeded.css', 'p{}\n'
     yield 'duplicate-title', second, sub_once(r'<title>.*?</title>', title.replace('\\', '\\\\'), other, re.S)
     yield 'footer-text', COPY / '404.html', sub_once(r'(<footer class="site-footer".*?<a [^>]*>)([^<]+)', r'\g<1>\g<2> seeded', not_found, re.S)
