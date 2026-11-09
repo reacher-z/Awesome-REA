@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**3689 个案例**，按分区列出。
+**3690 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (75)
-- [Game · 游戏](#game) (2527)
+- [Game · 游戏](#game) (2528)
 - [App · 应用](#app) (228)
 - [Native Binary · 原生二进制](#native-binary) (57)
 - [Firmware and Hardware · 固件与硬件](#firmware) (165)
@@ -21,7 +21,7 @@
 - [案例列表](cases/website.zh-CN.md)
 
 <a id="game"></a>
-## Game · 游戏 (2,527)
+## Game · 游戏 (2,528)
 
 - [案例列表（第 1 部分）](cases/game-1.zh-CN.md)
 - [案例列表（第 2 部分）](cases/game-2.zh-CN.md)
@@ -34,7 +34,7 @@
 <a id="game-decompilation"></a>
 - [非匹配反编译](cases/game-1.zh-CN.md#game-decompilation) (286)
 <a id="game-static-recompilation"></a>
-- [静态重编译](cases/game-2.zh-CN.md#game-static-recompilation) (652)
+- [静态重编译](cases/game-2.zh-CN.md#game-static-recompilation) (653)
 <a id="game-port"></a>
 - [基于重建源码的移植](cases/game-3.zh-CN.md#game-port) (341)
 <a id="game-engine-reimplementation"></a>

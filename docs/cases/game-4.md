@@ -6,10 +6,11 @@
 
 [简体中文](game-4.zh-CN.md)
 
-**629 case studies**
+**630 case studies**
 
 ## Engine reimplementations
 
+- [**CoD4 Rewrite: Rust/Bevy reconstruction**](https://github.com/Nilbong/COD4-Rewrite) - A Rust/Bevy reconstruction of Call of Duty 4 multiplayer systems, using assets from a local game installation. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/cod4-rewrite-reconstruction-case/)</sub>
 - [**Command Series engine: playing Atari strategy games from disk images**](https://github.com/pwiecz/command_series) - Command Series engine recreates play for MicroProse's Crusade in Europe, Decision in the Desert and Conflict in Vietnam using the user's Atari ATR disk image. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/command-series-engine-case/)</sub>
 - [**Coney: reimplementing The Warriors**](https://github.com/Ryubara/coney) - Coney reimplements The Warriors (2005) in C++ for Windows, Linux, and macOS. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/coney/)</sub>
 - [**CorsixTH: an open reimplementation of Theme Hospital**](https://github.com/CorsixTH/CorsixTH) - Reimplements the engine of Bullfrog’s 1997 Theme Hospital, with game logic in Lua and C++ for graphics, sound, movies and pathfinding, on top of the original game’s data files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/corsixth-engine-case/)</sub>
