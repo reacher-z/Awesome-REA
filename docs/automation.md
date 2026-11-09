@@ -88,7 +88,7 @@ python3 scripts/review_age.py --as-of 2027-04-01 --type paper --min-age-days 90
 
 Age is the number of days from a record's `verified_at` date, converted to UTC, to `--as-of` (default: the current UTC date). Records are grouped into age bands and by record type, oldest first; `--bands` sets the day boundaries (default `30,90,180,365`). Each listed record gives its stable ID, catalog file, recorded review date, age and primary evidence link: `evidence_url` for a resource, the first `evidence_urls` entry for a paper. `--type` and `--min-age-days` narrow the list while the band counts still cover every record, and `--json` prints the full report. Records reviewed after the as-of date are counted separately.
 
-The report is a planning queue, not a finding. An older review date does not show that a description is wrong or that a project is unmaintained, and the report never edits or removes a record or changes a paper's publication status. The automated index's README `observed_at` times are summarized on a separate line and are never listed as source reviews. Updating a record after a recheck is a separate reviewed change; follow the [correction steps](#submit-a-correction-or-retirement-proposal).
+The report is a planning queue. It leaves records and paper publication statuses as they are. The automated index's README `observed_at` times are summarized on a separate line and are never listed as source reviews. Updating a record after a recheck is a separate reviewed change; follow the [correction steps](#submit-a-correction-or-retirement-proposal).
 
 ## Merge a pull request by workflow
 
