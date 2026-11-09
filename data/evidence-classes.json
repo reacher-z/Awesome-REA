@@ -2,11 +2,11 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-09T08:48:34+00:00",
-  "entry_count": 4795,
+  "generated_at": "2026-11-09T10:11:16+00:00",
+  "entry_count": 4796,
   "class_counts": {
    "0": 15,
-   "1": 1040,
+   "1": 1041,
    "2": 3584,
    "3": 144
   },
@@ -134663,6 +134663,35 @@
    "checked_at": "2026-11-09T01:42:28+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "xbox360-native-ports",
+   "url": "https://github.com/CrownParkComputing/Xbox360-Native-Ports",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 9559,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 16,
+    "release_asset_count": 32,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-09T10:11:16+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   }
