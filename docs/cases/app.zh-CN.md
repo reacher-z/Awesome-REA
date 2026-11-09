@@ -6,7 +6,7 @@
 
 [English](app.md)
 
-**200 个案例**
+**203 个案例**
 
 - [**AionLink Open：研究 GAC AION i60 的 ICCOA CarLink 连接**](https://github.com/codepdbh/aionlink-open) - AionLink Open 通过静态分析 Android APK 并编写独立客户端，研究 GAC AION i60 的 ICCOA CarLink 连接。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aionlink-open-case/)</sub>
 - [**AirTray：重建 Elgin Air 云端控制客户端**](https://github.com/JoseAlexandreMeloPacheco/airtray) - AirTray 根据 Elgin Air 应用的行为重建 Windows 系统托盘客户端，用于控制兼容空调。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/airtray-case/)</sub>
@@ -17,6 +17,7 @@
 - [**claude-peer：重建 Claude 本地对等通信机制**](https://github.com/nsozturk/claude-peer) - claude-peer 重建 Claude Code 与 Claude Desktop 使用的本地 Unix 套接字对等通信。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/claude-peer-ipc-case/)</sub>
 - [**device-reveng：重建 Choiceway GT6-EAU 车机软件栈**](https://github.com/armeehn/device-reveng) - device-reveng 研究 Choiceway GT6-EAU Android 车机，并重建启动器和操作系统层。 <sub>案例 · 独立重建 · 也适用：固件、协议 · [完整条目](https://awesomerea.org/zh/resources/device-reveng-head-unit-case/)</sub>
 - [**elevenlabs-reader-cli：重建 Reader 应用流式朗读流程**](https://github.com/gastonmorixe/elevenlabs-reader-cli) - elevenlabs-reader-cli 是一个 Python 命令行客户端，可创建 ElevenLabs Reader 文档，并通过 Reader WebSocket 串流播放语音。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/elevenlabs-reader-cli-case/)</sub>
+- [**EOO：Nintendo DS Wii 连接工具反编译**](https://github.com/PikalaxALT/eoo) - EOO 重建《宝可梦 钻石／珍珠》内置的 Nintendo DS Wii 连接工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/eoo-wii-connection-utility-case/)</sub>
 - [**Fluval Plant Pro 4.0：重建 BLE 灯光控制**](https://github.com/cryystyy/fluval-plant-pro-4-homeassistant) - Fluval Plant Pro 4.0 项目通过分析 FluvalConnect Android 应用重建灯具的 CBOR over BLE 控制协议。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/fluval-plant-pro-4-ble-case/)</sub>
 - [**Grok3API：重建 Grok 移动端 gRPC 客户端**](https://github.com/boykopovar/Grok3API) - Grok3API 用 Python 实现 Grok 移动端 gRPC 客户端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/grok3api-mobile-grpc-case/)</sub>
 - [**HikVision QR export decoder：重建 Hik-Connect 设备导出格式**](https://github.com/maxim-smirnov/hik-qr-export) - HikVision QR export decoder 重建 Hik-Connect 设备导出二维码的格式，并提供 Python 解码与更新命令。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hikvision-qr-export-case/)</sub>
@@ -30,7 +31,9 @@
 - [**mystery-sdl：将 Mystery 屏保移植到 SDL2**](https://github.com/viny182/mystery-sdl) - mystery-sdl 将 Microsoft Plus! 的 Mystery 屏保移植到 Linux 上的 SDL2。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/mystery-sdl-case/)</sub>
 - [**Nona：还原 Redmi Note 10 Pro Max 相机的重马赛克触发条件**](https://github.com/AbhiramJayasankar/redmi-note-10-pro-max-108mp-camera) - Nona 研究 Redmi Note 10 Pro Max 相机的 108 MP 重马赛克行为，并按观测到的 ISO 与 AecLux 条件实现 Camera2 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nona-camera-remosaic-case/)</sub>
 - [**NVFC：恢复未公开的 NvAPI GPU 控制接口**](https://github.com/graphitemaster/NVFC) - NVFC 实现 NVIDIA GPU 监测与配置所需的未公开 NvAPI 接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nvfc-case/)</sub>
+- [**OpenApe：重建《使命召唤 4》资源管理器**](https://github.com/Rex109/OpenApe) - OpenApe 用 C++20 重建《使命召唤 4》模组工具中的 asset\_manager.exe 桌面编辑器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openape-case/)</sub>
 - [**OpenPDF Studio：根据 WPS PDF 研究重建编辑交互**](https://github.com/aotefan/openpdf-studio) - OpenPDF Studio 根据借助 REA 对 WPS Office 12.1.28496 PDF 界面的观察，开发 macOS 本地 PDF 编辑器。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/openpdf-studio-case/)</sub>
+- [**PictoChat：DSi 系统应用的匹配反编译**](https://github.com/tangOS-decomps/pictochat-decomp) - 项目将 DSi 独立系统应用 PictoChat 的 ARM 组件重建为可匹配的 C 源码。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/pictochat-dsi-decomp-case/)</sub>
 - [**Reengineering Project for ibisPaint：研究画作与画笔格式**](https://github.com/HatLink/reeng-ibispaint) - Reengineering Project for ibisPaint 研究应用的 IPV 画作、IPCF 配置及 IPBZ 画笔二维码格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reeng-ibispaint-case/)</sub>
 - [**RideLink：重建 TVS SmartXonnect 踏板车通信**](https://github.com/aiyu-ayaan/RideLink) - RideLink 在 Android 配套应用中重建 TVS SmartXonnect 踏板车通信。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ridelink-tvs-smartxonnect-case/)</sub>
 - [**Samsung Cloud Notes：重建云端笔记访问方式**](https://github.com/Clascheurduturfu/samsung-cloud-notes) - Samsung Cloud Notes 通过 Mac、iOS、Android 和命令行客户端重建对 Samsung 私有笔记同步服务的访问。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/samsung-cloud-notes-case/)</sub>
