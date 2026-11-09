@@ -263,12 +263,26 @@ class IndexNowDeltaTests(unittest.TestCase):
 
     def test_current_sitemap_guards_are_not_bypassed(self):
         for urls in [[indexnow.ORIGIN + '/'] * 2, ['https://other.example/'], [indexnow.ORIGIN + '/?q=bad'],
-                     [indexnow.ORIGIN + '/#fragment'], [indexnow.ORIGIN + '/missing/'],
-                     [indexnow.ORIGIN + '/' + str(i) + '/' for i in range(10001)]]:
+                     [indexnow.ORIGIN + '/#fragment'], [indexnow.ORIGIN + '/missing/']]:
             self.write_sitemap(urls); write_build_manifest(self.dist)
             with self.subTest(urls=urls[:2]), patch.object(indexnow, 'urlopen') as network, self.assertRaises(ValueError):
                 self.run_main(['--submit'])
             network.assert_not_called()
+
+    def test_a_selection_over_the_request_limit_goes_out_in_several_requests(self):
+        events, fetch, post = self.live_network()
+        with patch.object(indexnow, 'MAX_URLS_PER_REQUEST', 2), patch.object(indexnow, 'fetch_bytes', side_effect=fetch), \
+                patch.object(indexnow, 'urlopen', side_effect=post) as network:
+            code, output = self.run_main(['--submit'])
+        self.assertEqual(code, 0); self.assertEqual(network.call_count, 2)
+        self.assertEqual([event[1]['urlList'] for event in events if event[0] == 'POST'], [self.urls[:2], self.urls[2:]])
+        self.assertIn('3 URLs submitted in 2 requests', output)
+        events, fetch, post = self.live_network(status=500)
+        with patch.object(indexnow, 'MAX_URLS_PER_REQUEST', 2), patch.object(indexnow, 'fetch_bytes', side_effect=fetch), \
+                patch.object(indexnow, 'urlopen', side_effect=post) as network:
+            code, output = self.run_main(['--submit'])
+        self.assertEqual(code, 1); self.assertEqual(network.call_count, 1)
+        self.assertIn('(request 1 of 2)', output)
 
     def test_accepted_pending_rejected_and_uncertain_responses_never_retry(self):
         args = self.delta_args(self.changed_baseline()) + ['--submit']

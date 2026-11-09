@@ -8,6 +8,7 @@ from urllib.parse import urlsplit, unquote
 from urllib.robotparser import RobotFileParser
 
 from build_browse_pages import CATEGORIES
+import forked_checks
 from crawl_policy import CONTENT_SIGNAL, CRAWLERS, REQUIRED_AI_CRAWLERS, TRAINING_PREFERENCE_TOKEN
 from sitemaps import (SECTION_FILES, SITEMAP_INDEX, english_path, instant, language_alternates, latest,
                       normalized_date, page_dates, read_sitemaps, record_date, section_for)
@@ -31,10 +32,19 @@ def expected_entry_routes(resources, papers):
     return routes
 
 
-def validate_route_inventory(urls, resources, papers, *, include_browse=True, include_discoveries=False):
+def discovery_class_pages(output):
+    """English paths of the per-class discovery pages that the published queue export names."""
+    export = Path(output) / "discoveries.json"
+    if not export.is_file():
+        return []
+    return [urlsplit(entry["page"]).path for entry in json.loads(export.read_text(encoding="utf-8")).get("class_pages", [])]
+
+
+def validate_route_inventory(urls, resources, papers, *, include_browse=True, include_discoveries=False, discovery_classes=()):
     """Require exact sitemap coverage; unknown automatic-repository pages are refused.
 
-    The unreviewed discovery queue adds one list page per language, never a page per scan record.
+    The unreviewed discovery queue adds one list page per language, plus one page per language for each Data class
+    with more records than the list page shows; never a page per scan record.
     """
     routes = expected_entry_routes(resources, papers)
     expected = set(routes)
@@ -45,6 +55,7 @@ def validate_route_inventory(urls, resources, papers, *, include_browse=True, in
             expected.update(f"{prefix}/browse/{category}/" for category in CATEGORIES)
         if include_discoveries:
             expected.add(prefix + "/discoveries/")
+            expected.update(prefix + path for path in discovery_classes)
     assert len(urls) == len(set(urls)), "Duplicate sitemap URLs"
     assert set(urls) == {ORIGIN + route for route in expected}, "Sitemap route inventory differs from reviewed entries and collection pages"
     return routes
@@ -101,7 +112,8 @@ def built_page_dates(output, records, papers):
     lead_batches = json.loads(leads.read_text(encoding="utf-8")).get("batches", []) if leads.is_file() else []
     survey = json.loads((ROOT / "data/survey.json").read_text(encoding="utf-8"))
     return page_dates(resources=records, papers=papers, repository_document=repository,
-                      discovery_batches=batches, lead_batches=lead_batches, survey_date=survey.get("date"))
+                      discovery_batches=batches, lead_batches=lead_batches, survey_date=survey.get("date"),
+                      discovery_class_pages=discovery_class_pages(output))
 
 
 def validate_sitemaps(output, records, papers):
@@ -153,20 +165,25 @@ def validate_robots(output, urls):
     assert robots.site_maps() == [ORIGIN + "/" + SITEMAP_INDEX], "robots.txt must declare exactly the sitemap index"
 
 
+def _read_document(url):
+    """The parsed page of a sitemap URL, read in a worker process, or None when it is no file."""
+    path = OUTPUT / urlsplit(url).path.lstrip("/") / "index.html"
+    return Document(path.read_text(encoding="utf-8")) if path.is_file() else None
+
+
 def main():
     records = json.loads((OUTPUT / "catalog.json").read_text(encoding="utf-8"))["resources"]
     papers = json.loads((OUTPUT / "papers.json").read_text(encoding="utf-8"))
     urls = validate_sitemaps(OUTPUT, records, papers)
     entries = validate_route_inventory(urls, records, papers, include_browse=(OUTPUT / "source-index.json").is_file(),
-                                       include_discoveries=(OUTPUT / "discoveries.json").is_file())
+                                       include_discoveries=(OUTPUT / "discoveries.json").is_file(),
+                                       discovery_classes=discovery_class_pages(OUTPUT))
     documents = {}
-    for url in urls:
+    for url, page in zip(urls, forked_checks.ordered_map(_read_document, urls)):
         parsed = urlsplit(url)
         assert parsed.scheme + "://" + parsed.netloc == ORIGIN, url
         assert not parsed.query and not parsed.fragment, url
-        path = OUTPUT / parsed.path.lstrip("/") / "index.html"
-        assert path.is_file(), f"Sitemap route does not exist: {url}"
-        page = Document(path.read_text(encoding="utf-8"))
+        assert page is not None, f"Sitemap route does not exist: {url}"
         documents[url] = page
         assert page.h1 == 1, f"Expected one H1: {url}"
         assert page.meta.get("description"), f"Missing description: {url}"

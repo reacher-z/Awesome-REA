@@ -19,6 +19,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(ROOT / 'tests'))
+import forked_checks
 import privacy_guard
 from privacy_guard import PARTS, PROTECTED, SALT, Detector, default_paths, scan
 
@@ -292,6 +293,23 @@ class PrivacyGuardTests(unittest.TestCase):
             findings = scan(sorted(root.rglob('*.zip')), root=root, detector=SAMPLE)
         self.assertEqual([str(finding) for finding in findings], [
             'data/source-evidence/run-1-attempt-1-000000000000.zip!checkpoint.json:1: protected identifier (single word)'])
+
+    def test_a_scan_split_across_processes_equals_one_in_a_single_process(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for index in range(12):
+                text = f'line {index}\nMaintained by Orla Venn.\n' if index % 4 == 1 else f'clean {index}\n'
+                (root / f'note-{index:02}.md').write_text(text, encoding='utf-8')
+            (root / 'ovenn42.txt').write_text('clean\n', encoding='utf-8')
+            paths = sorted(root.iterdir())
+            fresh = Detector.from_grams(b'test-only-salt', ['orla venn', 'venn orla', 'ovenn42'])
+            expected = [str(finding) for finding in scan(paths, root=root, detector=fresh)]
+            with mock.patch.multiple(privacy_guard, SALT=fresh.salt, PROTECTED=fresh.protected, PARTS=fresh.parts,
+                                     CHUNK_FILES=3, _WORKER_DETECTOR=None), \
+                    mock.patch.object(forked_checks, 'workers', return_value=4):
+                split = [str(finding) for finding in scan(paths, root=root)]
+        self.assertEqual(len(expected), 4)
+        self.assertEqual(split, expected)
 
     def test_scan_reports_paths_relative_to_the_root(self):
         with tempfile.TemporaryDirectory() as directory:

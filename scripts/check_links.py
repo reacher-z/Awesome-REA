@@ -61,26 +61,31 @@ class PublicRedirect(HTTPRedirectHandler):
 
 
 def request_url(original):
-    """Use the exact GitHub file revision while avoiding HTML blob endpoints."""
+    """Use the exact GitHub file revision while avoiding HTML blob endpoints, and the crates.io API for crate pages."""
     url = urldefrag(original)[0]
     parsed = urlsplit(url)
     parts = parsed.path.strip('/').split('/')
     if parsed.hostname == 'github.com' and len(parts) >= 5 and parts[2] == 'blob':
         path = '/' + '/'.join(parts[:2] + parts[3:])
         return urlunsplit(('https', 'raw.githubusercontent.com', path, '', ''))
+    # crates.io answers every page request from a client that does not ask for HTML with 404, even for live
+    # crates. Its API returns 200 for an existing crate or version and 404 for a missing one.
+    if parsed.hostname == 'crates.io' and parts[0] == 'crates' and len(parts) in {2, 3} and all(parts[1:]):
+        return urlunsplit(('https', 'crates.io', '/api/v1/' + '/'.join(parts), '', ''))
     return url
 
 
 def records_missing(url, reason):
     """True when a ledger reason says this X post or GitHub repository was not found.
 
-    The post's @handle or the repository's owner/name must lead into the "not found"
-    phrase within the same sentence, so a new 404 elsewhere in the entry stays dead.
+    The post's @handle (or, for an x.com/i/status/<id> link, which names no handle, the post ID) or the
+    repository's owner/name must lead into the "not found" phrase within the same sentence, so a new 404
+    elsewhere in the entry stays dead.
     """
     parsed = urlsplit(url)
     host, parts = (parsed.hostname or '').removeprefix('www.'), [part for part in parsed.path.split('/') if part]
-    if host in {'x.com', 'twitter.com'} and len(parts) >= 3 and parts[1] == 'status' and parts[0] != 'i':
-        token = '@' + parts[0]
+    if host in {'x.com', 'twitter.com'} and len(parts) >= 3 and parts[1] == 'status':
+        token = parts[2] if parts[0] == 'i' else '@' + parts[0]
     elif host == 'github.com' and len(parts) >= 2:
         token = parts[0] + '/' + parts[1]
     else:

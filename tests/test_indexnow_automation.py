@@ -22,8 +22,8 @@ NEWER = 'b' * 40
 
 
 class FakeGitHub:
-    def __init__(self, *, checks=(), head=SHA, runs=(), artifacts=None, archives=None):
-        self.checks, self.head, self.runs = list(checks), head, list(runs)
+    def __init__(self, *, head=SHA, runs=(), artifacts=None, archives=None):
+        self.head, self.runs = head, list(runs)
         self.artifacts, self.archives, self.calls = artifacts or {}, archives or {}, []
 
     def get(self, suffix):
@@ -32,15 +32,8 @@ class FakeGitHub:
             return {'default_branch': 'main'}
         if suffix == 'branches/main':
             return {'commit': {'sha': self.head}}
-        if suffix.startswith('commits/'):
-            state = self.checks.pop(0) if len(self.checks) > 1 else (self.checks[0] if self.checks else None)
-            if state is None:
-                return {'check_runs': []}
-            status, conclusion = ('in_progress', None) if state == 'pending' else ('completed', state)
-            return {'check_runs': [{'id': 5, 'app': {'slug': 'cloudflare-workers-and-pages'}, 'status': status, 'conclusion': conclusion},
-                                   {'id': 9, 'app': {'slug': 'other-app'}, 'status': 'completed', 'conclusion': 'failure'}]}
         if suffix.startswith('actions/workflows/indexnow.yml/runs'):
-            return {'workflow_runs': self.runs}
+            return {'workflow_runs': self.runs if suffix.endswith('&page=1') else []}
         match = re.fullmatch(r'actions/runs/(\d+)/artifacts\?per_page=30', suffix)
         if match:
             return {'artifacts': self.artifacts.get(int(match[1]), [])}
@@ -82,43 +75,77 @@ class WaitTests(unittest.TestCase):
         self.manifest = b'{"files": {}}\n'
         (self.dist / 'build-manifest.json').write_bytes(self.manifest)
 
-    def wait(self, github, served, **kwargs):
-        clock = Clock()
-        responses = list(served)
+    def wait(self, github, polls, **kwargs):
+        """polls: one dict per poll, the last repeating; 'commit' is source-commit.txt at the origin, 'origin' and
+        'edge' are build-manifest.json at the origin and through the edge cache. A value may be an exception."""
+        clock, uncached = Clock(), []
 
         def fetch(url, limit):
-            self.assertEqual(url, 'https://awesomerea.org/build-manifest.json')
-            value = responses.pop(0) if len(responses) > 1 else responses[0]
+            state = polls[min(int(clock() // automation.POLL_SECONDS), len(polls) - 1)]
+            name, _, query = url.removeprefix('https://awesomerea.org/').partition('?')
+            if query:
+                self.assertRegex(query, r'^indexnow=[0-9a-f]{16}$')
+                uncached.append(url)
+                value = state['commit'] if name == 'source-commit.txt' else state['origin']
+            else:
+                self.assertEqual(name, 'build-manifest.json', 'only the manifest is read through the edge cache')
+                value = state['edge']
             if isinstance(value, Exception):
                 raise value
             return value
         with redirect_stdout(StringIO()):
-            return automation.wait_for_deployment(SHA, self.dist, github=github, fetch=fetch, clock=clock,
-                                                  sleep=clock.sleep, **kwargs)
+            state = automation.wait_for_deployment(SHA, self.dist, github=github, fetch=fetch, clock=clock,
+                                                   sleep=clock.sleep, **kwargs)
+        self.assertEqual(len(set(uncached)), len(uncached), 'every origin read needs a query no cache has seen')
+        return state
 
-    def test_live_as_soon_as_the_deployment_serves_this_build(self):
-        github = FakeGitHub(checks=['pending'])
-        self.assertEqual(self.wait(github, [self.manifest]), 'live')
+    def served(self, commit=SHA, origin=None, edge=None):
+        return {'commit': commit.encode() + b'\n' if isinstance(commit, str) else commit,
+                'origin': origin, 'edge': edge if edge is not None else b'{"files": {"previous": 1}}\n'}
+
+    def test_live_once_origin_and_edge_serve_this_build(self):
+        github = FakeGitHub()
+        self.assertEqual(self.wait(github, [self.served(origin=self.manifest, edge=self.manifest)]), 'live')
         self.assertEqual(github.calls, [])
         old = b'{"files": {"old": 1}}\n'
-        self.assertEqual(self.wait(FakeGitHub(checks=['pending', 'pending', 'success']),
-                                   [old, OSError('reset'), old, self.manifest]), 'live')
+        self.assertEqual(self.wait(FakeGitHub(), [
+            self.served(OSError('reset')), self.served('c' * 40), self.served(origin=old), self.served(origin=OSError('reset')),
+            self.served(origin=self.manifest), self.served(origin=self.manifest, edge=self.manifest)]), 'live')
 
-    def test_a_newer_commit_supersedes_and_a_failed_deployment_stops(self):
-        old = b'{"files": {"old": 1}}\n'
-        self.assertEqual(self.wait(FakeGitHub(checks=['success'], head=NEWER), [old]), 'superseded')
-        self.assertEqual(self.wait(FakeGitHub(checks=['cancelled'], head=NEWER), [old]), 'superseded')
-        with self.assertRaisesRegex(ValueError, 'failed deployment'):
-            self.wait(FakeGitHub(checks=['failure']), [old])
+    def test_a_purge_that_never_comes_defers(self):
+        self.assertEqual(self.wait(FakeGitHub(), [self.served(origin=self.manifest)], wait_seconds=120), 'pending')
 
-    def test_a_deployment_that_does_not_reproduce_this_build_or_never_lands_fails(self):
+    def test_another_commit_while_main_moved_on_supersedes(self):
+        self.assertEqual(self.wait(FakeGitHub(head=NEWER), [self.served(NEWER)]), 'superseded')
+        self.assertEqual(self.wait(FakeGitHub(head=NEWER), [self.served('c' * 40)]), 'superseded')
+
+    def test_an_unreadable_site_never_supersedes(self):
+        github = FakeGitHub(head=NEWER)
+        self.assertEqual(self.wait(github, [self.served(OSError('reset'))], wait_seconds=120), 'pending')
+        self.assertEqual(github.calls, [])
+
+    def test_an_unpublished_commit_is_deferred_and_other_bytes_fail(self):
+        self.assertEqual(self.wait(FakeGitHub(), [self.served('c' * 40)], wait_seconds=120), 'pending')
         other = b'{"files": {"other": 1}}\n'
         with self.assertRaisesRegex(ValueError, 'reproducible'):
-            self.wait(FakeGitHub(checks=['success']), [other])
-        with self.assertRaisesRegex(ValueError, 'did not go live'):
-            self.wait(FakeGitHub(checks=['pending']), [other], wait_seconds=120)
+            self.wait(FakeGitHub(), [self.served(origin=other)])
+        # A manifest that stays unreadable is not evidence of another build.
+        self.assertEqual(self.wait(FakeGitHub(), [self.served(origin=OSError('reset'))]), 'pending')
+        # Other bytes that turn into this build before the propagation allowance runs out are fine.
+        allowance = automation.PROPAGATION_SECONDS // automation.POLL_SECONDS
+        self.assertEqual(self.wait(FakeGitHub(), [self.served(origin=other)] * allowance
+                                   + [self.served(origin=self.manifest, edge=self.manifest)]), 'live')
         with self.assertRaises(ValueError):
             automation.wait_for_deployment('main', self.dist, github=FakeGitHub())
+
+    def test_a_deferred_wait_warns_and_succeeds(self):
+        output = StringIO()
+        with patch.object(automation, 'wait_for_deployment', return_value='pending'), \
+                patch.object(sys, 'argv', ['indexnow_automation.py', 'wait', SHA, str(self.dist)]), \
+                patch.dict('os.environ', {'GITHUB_OUTPUT': ''}), redirect_stdout(output):
+            self.assertEqual(automation.main(), 0)
+        self.assertIn('state=pending', output.getvalue())
+        self.assertIn('::warning::', output.getvalue())
 
 
 class ReceiptTests(unittest.TestCase):
@@ -159,6 +186,24 @@ class ReceiptTests(unittest.TestCase):
         with TemporaryDirectory() as directory, redirect_stdout(StringIO()):
             self.assertEqual(automation.previous_receipt(Path(directory), github=FakeGitHub(runs=[])), '')
 
+    def test_the_baseline_is_found_past_a_full_page_of_runs_without_receipts(self):
+        manifest = json.dumps({'schema_version': 1, 'algorithm': 'sha256', 'html_normalization': automation.HTML_NORMALIZATION,
+                               'files': {}}).encode()
+        empty = [{'id': 1000 + i, 'head_branch': 'main', 'event': 'workflow_dispatch', 'path': '.github/workflows/indexnow.yml'}
+                 for i in range(100)]
+        receipt_run = {'id': 900, 'head_branch': 'main', 'event': 'schedule', 'path': '.github/workflows/indexnow.yml'}
+
+        class Paged(FakeGitHub):
+            def get(self, suffix):
+                if suffix.startswith('actions/workflows/indexnow.yml/runs'):
+                    self.calls.append(suffix)
+                    return {'workflow_runs': {'1': empty, '2': [receipt_run]}.get(suffix.rsplit('=', 1)[1], [])}
+                return super().get(suffix)
+        github = Paged(artifacts={900: [{'id': 9, 'name': 'indexnow-receipt', 'expired': False, 'size_in_bytes': 10}]},
+                       archives={'actions/artifacts/9/zip': receipt_archive(manifest)})
+        with TemporaryDirectory() as directory, redirect_stdout(StringIO()):
+            self.assertEqual(automation.previous_receipt(Path(directory), github=github), hashlib.sha256(manifest).hexdigest())
+
     def test_a_baseline_in_another_manifest_format_falls_back_to_a_full_notification(self):
         older = json.dumps({'schema_version': 1, 'algorithm': 'sha256', 'html_normalization': 'cloudflare-public-html-v3',
                             'files': {}}).encode()
@@ -185,17 +230,19 @@ class WorkflowTests(unittest.TestCase):
         job = self.text.split('\njobs:\n', 1)[1]
         permissions = re.search(r'\n    permissions:\n((?:      .*\n)+)', job)[1]
         self.assertEqual(re.findall(r'^      ([a-z-]+): ([a-z]+)$', permissions, re.MULTILINE),
-                         [('contents', 'read'), ('checks', 'read'), ('actions', 'read')])
+                         [('contents', 'read'), ('actions', 'read')])
         self.assertIn("github.ref == format('refs/heads/{0}', github.event.repository.default_branch)", self.text)
 
-    def test_builds_like_cloudflare_waits_then_submits_and_keeps_the_receipt(self):
-        build = self.text.index('python3 scripts/build_site.py')
+    def test_builds_like_the_publication_waits_then_submits_and_keeps_the_receipt(self):
+        build = self.text.index('python3 scripts/build_production.py --publish')
         wait = self.text.index('python3 scripts/indexnow_automation.py wait "$SHA" dist')
         previous = self.text.index('python3 scripts/indexnow_automation.py previous')
         submit = self.text.index('python3 scripts/submit_indexnow.py "${args[@]}"')
         upload = self.text.index('name: indexnow-receipt')
         self.assertLess(build, wait); self.assertLess(wait, previous); self.assertLess(previous, submit); self.assertLess(submit, upload)
         self.assertIn('args=(--submit --automatic --receipt .cache/indexnow/receipt/receipt.json)', self.text)
+        for step in self.text[wait:].split('\n      - ')[1:]:
+            self.assertIn("if: ${{ steps.deploy.outputs.state == 'live' }}", step)
         self.assertIn('persist-credentials: false', self.text)
         self.assertIn('git merge-base --is-ancestor HEAD "origin/$DEFAULT_BRANCH"', self.text)
 

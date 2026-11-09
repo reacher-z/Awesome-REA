@@ -28,7 +28,7 @@ from source_scope import apply_scope, read_scope
 from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_source_browser
 from public_source_supplements import (PUBLISHED_FILENAME, compose_published, json_bytes, load_supplements,
                                       owned_file, bounded_bytes, project_additions, read_withdrawals)
-from validate_discovery import expected_entry_routes, validate_route_inventory
+from validate_discovery import discovery_class_pages, expected_entry_routes, validate_route_inventory
 from build_readme import (CASE_FILES, README_SIZE_WARNING, CATEGORIES, METHOD_SECTIONS, PAPER_SECTIONS, REQUIREMENTS_LABEL, case_method,
                           collection_section, method_groups, paper_section)
 from build_discovery_pages import ABOUT_EXCLUDED_SECTIONS, SECTION_TARGETS, file_size_label
@@ -36,6 +36,7 @@ from build_feed import (DISCOVERY_LABELS, DISCOVERY_PATHS, DISCOVERY_TERM, FEED_
                         discovery_summary, entry_time, feed_entries, merged_entries)
 import build_discoveries
 import build_discovery_leads
+import forked_checks
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SITE_ALTERNATE_NAMES, SITE_NAME, SOCIAL_IMAGE_ALT, png_size
 from site_footer import DOWNLOADS, SECTION_LINKS, site_footer
@@ -1361,6 +1362,14 @@ def validate_discovery_outputs(output, pages, queue):
         shown = re.findall(r'<article class="source-card browse-repository" id="(scan-[0-9]+)"', text)
         expected_page = [record['id'] for _, _, records, _ in build_discoveries.page_groups(queue) for record in records]
         assert shown == expected_page, f'Discovery data points differ from the class groups: {route}'
+        # A class the list page shortens links its own page, which lists every record of that class.
+        for name, _, records in build_discoveries.class_pages(queue):
+            path = build_discoveries.class_page_path(name, language)
+            assert path in pages, f'Discovery class page missing from the sitemap: {path}'
+            assert f'href="{path}" data-discovery-more="{name}"' in text, f'Discovery list must link its class page: {path}'
+            listed_here = re.findall(r'<article class="source-card browse-repository" id="(scan-[0-9]+)"',
+                                     (output / path.lstrip('/') / 'index.html').read_text(encoding='utf-8'))
+            assert listed_here == [record['id'] for record in records], f'Discovery class page must list every record of its class: {path}'
         assert html_unescape(build_discoveries.NOTE[int(zh)]) in html_unescape(text), f'Discovery list must say the records are unreviewed: {route}'
         assert '<h1' in text and text.count('<h2') >= 1, route
         feed_path = build_discoveries.FEED_PATHS[language]
@@ -1553,6 +1562,17 @@ def validate_entry_outputs(pages, resources, papers):
         assert set(feedback_urls(kind, record)) <= set(article['links']), f'Detail page lacks its prefilled correction and translation links: {route}'
 
 
+def _read_page(url):
+    """Whether the page keeps an unresolved template, and the parsed page, for one canonical URL."""
+    text = (OUTPUT / urlsplit(url).path.lstrip('/') / 'index.html').read_text(encoding='utf-8')
+    return bool(re.search(r'\{\{[A-Z_]+\}\}', text)), Page(text)
+
+
+def validate_llms_and_ownership_proof():
+    assert (OUTPUT / 'llms.txt').read_text(encoding='utf-8').startswith('# '), 'llms.txt must contain Markdown'
+    assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
+
+
 def main():
     case_pages = [ROOT / path for path in CASE_FILES.values()] + sorted((ROOT / 'docs/cases').glob('*.md'))
     assert case_pages and all(path.is_file() and path.stat().st_size <= README_SIZE_WARNING for path in case_pages), \
@@ -1565,15 +1585,14 @@ def main():
     resources = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['resources']
     papers = json.loads((OUTPUT / 'papers.json').read_text(encoding='utf-8'))
     validate_route_inventory(urls, resources, papers, include_browse=(OUTPUT / 'source-index.json').is_file(),
-                             include_discoveries=(OUTPUT / 'discoveries.json').is_file())
+                             include_discoveries=(OUTPUT / 'discoveries.json').is_file(),
+                             discovery_classes=discovery_class_pages(OUTPUT))
     pages, fragment_links = {}, []
-    for url in urls:
+    for url, (unresolved, page) in zip(urls, forked_checks.ordered_map(_read_page, urls)):
         parsed = urlsplit(url)
         assert parsed.netloc == 'awesomerea.org' and parsed.scheme == 'https' and not parsed.query and not parsed.fragment
         path = OUTPUT / parsed.path.lstrip('/') / 'index.html'
-        text = path.read_text(encoding='utf-8')
-        assert not re.search(r'\{\{[A-Z_]+\}\}', text), f'Unresolved template in {parsed.path}'
-        page = Page(text)
+        assert not unresolved, f'Unresolved template in {parsed.path}'
         pages[parsed.path] = page
         assert page.canonicals == [url] and not page.noindex, f'Canonical/indexing mismatch: {parsed.path}'
         assert not [key for key, count in Counter(page.ids).items() if count > 1], f'Duplicate HTML IDs: {parsed.path}'
@@ -1602,47 +1621,52 @@ def main():
         validate_theme_color(parsed.path, page)
         problem = description_problem(page.meta.get('description') or '')
         assert problem is None, f'{problem}: {parsed.path}: {page.meta.get("description")}'
-    validate_link_fragments(OUTPUT, pages, fragment_links)
-    validate_homepage_destinations(pages)
-    validate_resource_listing(pages, resources)
-    validate_requirements_label()
-    validate_paper_outputs(OUTPUT, pages)
     report_listing_sizes(OUTPUT)
-    validate_entry_outputs(pages, resources, papers)
     queue = build_discoveries.discovery_queue(ROOT, published_repository_document(OUTPUT), papers, resources)
     queue = queue if queue['batches'] else None
-    validate_feeds(OUTPUT, pages, resources, papers, build_discoveries.main_feed_batches(queue))
-    validate_discovery_outputs(OUTPUT, pages, queue)
     lead_queue = build_discovery_leads.lead_queue(ROOT)
-    validate_lead_exports(OUTPUT, lead_queue if lead_queue['batches'] else None)
-    # Markdown and JSON twins, the static API, JSON feeds and the llms files (validate_agent_formats.py).
-    validate_agent_formats(OUTPUT, set(pages), resources, papers, header_rules((OUTPUT / '_headers').read_text(encoding='utf-8')),
-                           repository_document=published_repository_document(OUTPUT), discovery_queue=queue,
-                           lead_queue=lead_queue if lead_queue['batches'] else None)
-    validate_case_outputs(pages, resources)
-    validate_section_target_counts(OUTPUT, resources)
+    lead_queue = lead_queue if lead_queue['batches'] else None
     catalog_meta = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['meta']
-    validate_shared_footer(OUTPUT, catalog_meta['repository_url'],
-                           catalog_meta['source_index'].get('full_export') or 'source-index.json')
-    validate_about_links(OUTPUT)
-    validate_unique_titles(OUTPUT, pages)
-    validate_artifact_links(OUTPUT, pages)
-    validate_suggestion_links(pages)
-    validate_source_browser_output(OUTPUT)
-    validate_breadcrumbs(OUTPUT, pages)
-    validate_stylesheet_references(OUTPUT)
-    validate_unique_link_names(OUTPUT)
-    validate_not_found_pages(OUTPUT, png_size(OUTPUT / 'social-card.png'))
-    validate_security_headers(OUTPUT)
-    validate_listed_badge(OUTPUT)
-    validate_fingerprinted_assets(OUTPUT)
-    validate_catalog_preload(OUTPUT)
-    validate_catalog_index(OUTPUT)
-    validate_website_identity(pages)
-    validate_category_labels(OUTPUT)
-    assert (OUTPUT / 'llms.txt').read_text(encoding='utf-8').startswith('# '), 'llms.txt must contain Markdown'
-    assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
-    read_build_manifest(OUTPUT)
+    # The checks below read the finished site without changing it. They run side by side in forked worker
+    # processes; a failure reports the first failing check in this order, as a run one after another would.
+    forked_checks.run_all([
+        lambda: validate_link_fragments(OUTPUT, pages, fragment_links),
+        lambda: validate_homepage_destinations(pages),
+        lambda: validate_resource_listing(pages, resources),
+        validate_requirements_label,
+        lambda: validate_paper_outputs(OUTPUT, pages),
+        lambda: validate_entry_outputs(pages, resources, papers),
+        lambda: validate_feeds(OUTPUT, pages, resources, papers, build_discoveries.main_feed_batches(queue)),
+        lambda: validate_discovery_outputs(OUTPUT, pages, queue),
+        lambda: validate_lead_exports(OUTPUT, lead_queue),
+        # Markdown and JSON twins, the static API, JSON feeds and the llms files (validate_agent_formats.py).
+        lambda: validate_agent_formats(OUTPUT, set(pages), resources, papers,
+                                       header_rules((OUTPUT / '_headers').read_text(encoding='utf-8')),
+                                       repository_document=published_repository_document(OUTPUT), discovery_queue=queue,
+                                       lead_queue=lead_queue),
+        lambda: validate_case_outputs(pages, resources),
+        lambda: validate_section_target_counts(OUTPUT, resources),
+        lambda: validate_shared_footer(OUTPUT, catalog_meta['repository_url'],
+                                       catalog_meta['source_index'].get('full_export') or 'source-index.json'),
+        lambda: validate_about_links(OUTPUT),
+        lambda: validate_unique_titles(OUTPUT, pages),
+        lambda: validate_artifact_links(OUTPUT, pages),
+        lambda: validate_suggestion_links(pages),
+        lambda: validate_source_browser_output(OUTPUT),
+        lambda: validate_breadcrumbs(OUTPUT, pages),
+        lambda: validate_stylesheet_references(OUTPUT),
+        lambda: validate_unique_link_names(OUTPUT),
+        lambda: validate_not_found_pages(OUTPUT, png_size(OUTPUT / 'social-card.png')),
+        lambda: validate_security_headers(OUTPUT),
+        lambda: validate_listed_badge(OUTPUT),
+        lambda: validate_fingerprinted_assets(OUTPUT),
+        lambda: validate_catalog_preload(OUTPUT),
+        lambda: validate_catalog_index(OUTPUT),
+        lambda: validate_website_identity(pages),
+        lambda: validate_category_labels(OUTPUT),
+        validate_llms_and_ownership_proof,
+        lambda: read_build_manifest(OUTPUT),
+    ])
     print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, content-addressed assets, security headers, Atom and JSON feeds, Markdown and JSON twins, the static API against its schema, llms.txt and llms-full.txt, the homepage catalog index and its preload, and the deployment manifest.')
 
 
