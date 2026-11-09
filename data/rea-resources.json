@@ -6107,5 +6107,75 @@
       "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/size/packer/LICENSE"
     ],
     "class": "software"
+  },
+  {
+    "id": "openng2-case",
+    "name": "openNG2: a static recompilation of Ninja Gaiden II for Windows",
+    "url": "https://github.com/KamiTK2/openNG2",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "openNG2 turns the Xbox 360 Ninja Gaiden II into a native Windows build through ReXGlue static recompilation and game-specific host code. Its launcher builds from a user-owned World release and Title Update #2; the research ledger records evidence from REA, Ghidra and code generation while the port adds PC display and input features.",
+    "description_zh": "openNG2 使用 ReXGlue 静态重编译和专用宿主代码，将 Xbox 360 版《忍者龙剑传 II》移植到 Windows。启动器从用户自有的国际版游戏和标题更新 #2 构建；研究记录汇集 REA、Ghidra 与代码生成证据，移植版还加入 PC 显示和输入功能。",
+    "evidence_url": "https://github.com/KamiTK2/openNG2/blob/3bee8b188d73d2e69d5b63b319cdc6ee322b0caa/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "User-owned Ninja Gaiden II World release, media ID 69F555CB, and Title Update #2.",
+      "64-bit Windows 10 version 1803 or newer or Windows 11, a Direct3D 12 graphics card, about 22 GB of free space, and internet access for the first build.",
+      "The author reports testing only the early chapters and Mission Mode.",
+      "BSD 3-Clause licence for openNG2 source code."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/KamiTK2/openNG2/blob/3bee8b188d73d2e69d5b63b319cdc6ee322b0caa/notes/findings.md",
+      "https://github.com/KamiTK2/openNG2/blob/3bee8b188d73d2e69d5b63b319cdc6ee322b0caa/CLAUDE.md",
+      "https://github.com/KamiTK2/openNG2/blob/3bee8b188d73d2e69d5b63b319cdc6ee322b0caa/LICENSE"
+    ]
+  },
+  {
+    "id": "tagforce-decomp-case",
+    "name": "Yu-Gi-Oh! GX Tag Force: matching PSP decompilation with REA analysis",
+    "url": "https://github.com/thiago-cipitelli/tagforce-decomp",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Yu-Gi-Oh! GX Tag Force reconstructs the North American PSP game's runtime and game modules as C. The build compiles the C with mwccpsp, compares the result with the original and retains unmatched parts as assembly. Architecture notes cite REA evidence from Ghidra analysis of the BOOT module. A playable PC port remains planned.",
+    "description_zh": "《游戏王 GX Tag Force》项目将北美 PSP 版的运行时和游戏模块重建为 C。构建流程用 mwccpsp 编译 C 代码，将结果与原版比较，并将尚未匹配的部分保留为汇编。架构笔记引用了通过 REA 使用 Ghidra 分析 BOOT 模块所得的证据。可玩的 PC 移植版仍处于计划阶段。",
+    "evidence_url": "https://github.com/thiago-cipitelli/tagforce-decomp/blob/85f117ad2540c06e99f6745f99829dcfd8e9c864/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide your own North American ULUS-10136 game dump.",
+      "Linux x86_64 or WSL, Python 3.10+, and curl are required for the documented build.",
+      "The PC platform layer and playable port are unfinished.",
+      "GPL-3.0."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/thiago-cipitelli/tagforce-decomp/blob/85f117ad2540c06e99f6745f99829dcfd8e9c864/docs/architecture.md"
+    ]
   }
 ]
