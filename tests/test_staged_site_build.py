@@ -49,7 +49,6 @@ class StagedSiteBuildTests(unittest.TestCase):
             'description': pair('Methods and evidence.', '方法与证据。'),
             'abstract': pair('A reviewed source [[' + paper['id'] + ']].',
                              '已核查来源 [[' + paper['id'] + ']]。'),
-            'disclosure': pair('Editorial synthesis; no new experiments.', '编辑性综述；无新实验。'),
             'reference_note': pair('Original sources.', '原始来源。'),
             'figure_caption': pair('Observe and compare.', '观察与比较。'),
             'findings': [pair('Evidence bounds claims.', '证据限定结论。')],
