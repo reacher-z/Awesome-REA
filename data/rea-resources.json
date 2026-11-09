@@ -54,7 +54,7 @@
   {
     "id": "rea-installation",
     "name": "Installation and client setup",
-    "url": "https://github.com/morluto/rea/blob/main/docs/installation.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/getting-started/installation.md",
     "category": "core",
     "relationship": "official-documentation",
     "description_en": "Reviewed setup plans, client registration, provider prerequisites and scoped readiness checks.",
@@ -79,7 +79,7 @@
   {
     "id": "rea-cli-evidence",
     "name": "CLI and Evidence",
-    "url": "https://github.com/morluto/rea/blob/main/docs/cli.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/getting-started/cli.md",
     "category": "core",
     "relationship": "official-documentation",
     "description_en": "CLI workflows for saving Evidence and projecting smaller views from completed analysis.",
@@ -104,7 +104,7 @@
   {
     "id": "rea-mcp-contracts",
     "name": "MCP contracts and generated catalog",
-    "url": "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md#generated-catalog",
+    "url": "https://github.com/morluto/rea/blob/main/docs/reference/mcp-contracts.md#generated-catalog",
     "category": "core",
     "relationship": "official-documentation",
     "description_en": "Canonical tool contracts, provider discovery and Evidence semantics for integration authors.",
@@ -129,7 +129,7 @@
   {
     "id": "rea-native-workflow",
     "name": "Native binary investigation",
-    "url": "https://github.com/morluto/rea/blob/main/docs/native-investigation.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/guides/native/native-investigation.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "description_en": "Locate a function, inspect instructions and pseudocode, and follow references with a selected native provider.",
@@ -151,7 +151,7 @@
   {
     "id": "rea-js-workflows",
     "name": "Cross-layer JavaScript application workflows",
-    "url": "https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/guides/javascript/javascript-application-workflows.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "description_en": "Trace features and compare authenticated JavaScript application graphs while preserving static-analysis limits.",
@@ -173,7 +173,7 @@
   {
     "id": "rea-android-guide",
     "name": "Static Android APK analysis",
-    "url": "https://github.com/morluto/rea/blob/main/docs/android-analysis.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/guides/android/android-analysis.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "description_en": "Inspect Android package identity, classes, methods and references through REA's JADX integration.",
@@ -194,7 +194,7 @@
   {
     "id": "rea-managed-guide",
     "name": "Managed-code analysis",
-    "url": "https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/guides/managed/managed-code-analysis.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "description_en": "Read PE/CLI metadata and CIL, compare managed members and inspect declared native boundaries without loading the assembly.",
@@ -215,7 +215,7 @@
   {
     "id": "rea-web-captures",
     "name": "Historical web network captures",
-    "url": "https://github.com/morluto/rea/blob/main/docs/web-network-captures.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/guides/web/web-network-captures.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "description_en": "Inspect saved web captures offline; recorded URLs are not fetched and no proxy is started.",
@@ -238,7 +238,7 @@
   {
     "id": "rea-firmware-guide",
     "name": "Firmware analysis",
-    "url": "https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/guides/firmware/firmware-analysis.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "description_en": "Inspect firmware regions with Binwalk and explicitly extract with Unblob, retaining tool and artifact identity.",
@@ -259,7 +259,7 @@
   {
     "id": "rea-packet-captures",
     "name": "Recorded packet capture inspection",
-    "url": "https://github.com/morluto/rea/blob/main/docs/packet-captures.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/guides/data/packet-captures.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "description_en": "Select TShark fields, display filters and decode-as rules over an existing network, USB or Bluetooth capture, and look up installed field names. It does not capture traffic, open an interface or control a device.",
@@ -283,7 +283,7 @@
   {
     "id": "rea-pcap-summaries",
     "name": "Packet capture summaries",
-    "url": "https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/guides/data/pcap-analysis.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "description_en": "Summarize a saved pcap or pcapng file’s endpoints, DNS questions and addresses, TLS SNI, protocol stacks and HTTP URIs into paged Evidence views. It does not capture traffic or fetch recorded targets.",
@@ -307,7 +307,7 @@
   {
     "id": "rea-signal-recordings",
     "name": "Recorded signal decoding",
-    "url": "https://github.com/morluto/rea/blob/main/docs/signal-recordings.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/guides/signals/signal-recordings.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "description_en": "Run caller-chosen sigrok protocol decoders, such as UART or I2C, over an existing logic-signal recording and keep annotation text with sample ranges. It does not acquire samples or communicate with hardware.",
@@ -2471,7 +2471,7 @@
   {
     "id": "rea-flutter-guide",
     "name": "Flutter build identification",
-    "url": "https://github.com/morluto/rea/blob/main/docs/flutter-analysis.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/guides/android/flutter-analysis.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "kind": "documentation",
@@ -2502,7 +2502,7 @@
   {
     "id": "rea-harmony-guide",
     "name": "Static HarmonyOS package inventory",
-    "url": "https://github.com/morluto/rea/blob/main/docs/harmony-analysis.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/guides/harmony/harmony-analysis.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "kind": "documentation",
@@ -2530,7 +2530,7 @@
   {
     "id": "rea-ghidra-mips-guide",
     "name": "MIPS ELF analysis through Ghidra",
-    "url": "https://github.com/morluto/rea/blob/main/docs/ghidra-mips.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/providers/ghidra-mips.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "kind": "documentation",
@@ -2563,7 +2563,7 @@
   {
     "id": "rea-ghidra-psp-guide",
     "name": "PSP static ELF analysis through Ghidra",
-    "url": "https://github.com/morluto/rea/blob/main/docs/ghidra-psp.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/providers/ghidra-psp.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "kind": "documentation",
@@ -2714,7 +2714,7 @@
   {
     "id": "rea-ghidra-nativeaot-guide",
     "name": "NativeAOT metadata recovery with Ghidra",
-    "url": "https://github.com/morluto/rea/blob/main/docs/ghidra-nativeaot.md",
+    "url": "https://github.com/morluto/rea/blob/main/docs/providers/ghidra-nativeaot.md",
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "kind": "documentation",
