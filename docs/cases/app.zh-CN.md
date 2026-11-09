@@ -6,7 +6,7 @@
 
 [English](app.md)
 
-**232 个案例**
+**233 个案例**
 
 - [**ag-psd：重建 PSD 文档读写功能**](https://github.com/Agamnentzar/ag-psd) - ag-psd 结合格式资料与反复试验，用 JavaScript 和 TypeScript 实现 Photoshop PSD 文档的读写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ag-psd-case/)</sub>
 - [**AionLink Open：研究 GAC AION i60 的 ICCOA CarLink 连接**](https://github.com/codepdbh/aionlink-open) - AionLink Open 通过静态分析 Android APK 并编写独立客户端，研究 GAC AION i60 的 ICCOA CarLink 连接。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aionlink-open-case/)</sub>
@@ -32,6 +32,7 @@
 - [**Keymarks：重建 Powermarks 3.5 的书签格式与工作流程**](https://github.com/novakda/keymarks) - Keymarks 以 Windows Tauri 应用、SQLite 搜索和浏览器扩展重建 Powermarks 3.5 的关键词书签流程。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/keymarks-case/)</sub>
 - [**LibrePods：借助逆向得出的协议在 Android 和 Linux 上使用 AirPods 功能**](https://github.com/librepods-org/librepods) - 实现 AirPods 与苹果设备之间使用的专有协议（作者称由其本人逆向得出），使 Android 和 Linux 应用能够切换降噪模式、读取入耳检测和准确电量，并使用对话感知、头部手势和助听设置。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/librepods-airpods-protocol-case/)</sub>
 - [**Little Sound Dj：Game Boy 匹配反汇编与 C 源码恢复**](https://github.com/gmoben/lsdj-decompiled) - LSDj 项目通过符号表、匹配的 C 函数，以及从用户 ROM 生成的 RGBDS 汇编树，重建 Little Sound Dj 9.4.0。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lsdj-9-4-0-decomp-case/)</sub>
+- [**locus-poi-db：LoMaps POI 数据库格式**](https://gitlab.com/noschinl/locus-poi-db) - locus-poi-db 研究 LocusMaps LoMaps 使用的 POI 数据库格式，并列有格式文档和 SQL 模式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/locus-poi-db-case/)</sub>
 - [**logitech-ipc-protocol：重建 Logi Options+ 智能体消息协议**](https://github.com/saimanish1/logitech-ipc-protocol) - logitech-ipc-protocol 还原 Logi Options+ 智能体用于查询设备和切换主机的本地 IPC 消息。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/logitech-ipc-protocol-case/)</sub>
 - [**LSDisJ：反汇编 Little Sound DJ**](https://github.com/rbong/LSDisJ) - LSDisJ 使用用户提供的 Little Sound DJ Game Boy ROM，反汇编 9.2.L 和 8.5.1 两个版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lsdisj-case/)</sub>
 - [**lsdj-decomp：Little Sound Dj 9.4.2 逐字节匹配重建**](https://github.com/tetrisgm/lsdj-decomp) - lsdj-decomp 利用已记录的符号映射表、ROM 分析工具和 C 语言译写代码重建 Little Sound Dj 9.4.2；C 函数会替换本地生成的 RGBDS 汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lsdj-9-4-2-decomp-case/)</sub>

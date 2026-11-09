@@ -100,6 +100,13 @@ class ScanEvidenceClassTests(unittest.TestCase):
         self.assertEqual(entry["evidence_status"], "observed")
         self.assertEqual(entry["runtime_status"], "not-run")
 
+    def test_badge_title_uses_the_page_language(self):
+        from build_browse_pages import scan_class_badge
+        record = {"id": "scan-1"}
+        self.assertIn('title="Scan evidence class C3: no usable README documentation."',
+                      scan_class_badge(record, {"scan-1": 3}, "en"))
+        self.assertIn('title="扫描证据档位 C3：无可用的 README 文档。"', scan_class_badge(record, {"scan-1": 3}, "zh"))
+
 
 if __name__ == "__main__":
     unittest.main()
