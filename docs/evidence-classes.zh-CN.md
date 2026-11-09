@@ -90,7 +90,8 @@ python3 scripts/classify_evidence_classes.py            # 带本地缓存
 python3 scripts/classify_evidence_classes.py --fresh    # 忽略缓存全部重抓
 python3 scripts/classify_evidence_classes.py --ids <id,...> --merge  # 只复核新增记录
 python3 scripts/classify_scan_evidence.py               # 对扫描快照确定性生成
-python3 scripts/build_evidence_previews.py
+python3 scripts/build_evidence_previews.py                  # 本次未找到媒体时保留已有预览
+python3 scripts/build_evidence_previews.py --drop-missing   # 删除本次未找到的预览
 python3 scripts/fetch_previews.py
 python3 scripts/build_site.py
 python3 scripts/verify_evidence_entry.py <entry-url>

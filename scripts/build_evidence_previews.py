@@ -234,6 +234,18 @@ def page_preview(client: HttpClient, url: str) -> dict | None:
     return None
 
 
+def carried_forward(old: dict | None, drop_missing: bool = False) -> dict | None:
+    """The existing preview for an entry whose refresh found no media.
+
+    A refresh can miss media because a request failed or was rate limited. The
+    existing entry is pinned to a reviewed revision, so it stays until a run
+    with --drop-missing removes it or a later run replaces it.
+    """
+    if drop_missing or not old or not public_media_url(old.get("image_url", "")):
+        return None
+    return old
+
+
 def collect(entry: dict, client: HttpClient, fresh: bool) -> dict | None:
     key = "preview:v1:" + entry["id"] + "|" + entry["url"]
     if not fresh:
@@ -250,6 +262,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--token", help="GitHub token; defaults to the gh CLI token or GITHUB_TOKEN.")
     parser.add_argument("--fresh", action="store_true", help="Ignore the local preview cache and refetch.")
+    parser.add_argument("--drop-missing", action="store_true",
+                        help="Drop an existing preview when this run finds no usable media for its entry.")
     args = parser.parse_args()
 
     document = json.loads(CLASSES_PATH.read_text(encoding="utf-8"))
@@ -287,6 +301,8 @@ def main() -> int:
                 unchanged = old and all(old.get(key) == value for key, value in chosen.items())
                 chosen["checked_at"] = old["checked_at"] if unchanged else utc_now()
                 entries.append(chosen)
+            elif kept := carried_forward(previous.get(entry["id"]), args.drop_missing):
+                entries.append(kept)
             else:
                 missing.append(entry["id"])
             print(f"preview {done}/{len(targets)} {entry['id']}", file=sys.stderr)
