@@ -83,6 +83,8 @@ FULL_ENTRY = ('Full entry', '完整条目')
 # reduction can be planned; the warning never fails a build, so open pull requests keep passing.
 GITHUB_README_LIMIT = 512_000
 README_SIZE_WARNING = 420_000
+# Every generated case page stays below this, apart from the README budget, so changing one leaves the other alone.
+CASE_PAGE_BUDGET = 420_000
 # One name for each entry's requirements disclosure: homepage cards, /resources/, /cases/ and entry pages.
 # README lines link the entry page as "Full entry" instead. site/app.js repeats the label in its UI
 # strings; validate_site.py checks that copy.
@@ -819,9 +821,9 @@ def render_case_pages(records, paper_urls=frozenset()):
             method, record = item
             line_bytes = max(len(resource_line(record, section, lang, translations[lang]).encode('utf-8'))
                              for lang in ('en', 'zh')) + (300 if method is not None else 0)
-            if line_bytes + 3_000 > README_SIZE_WARNING:
-                raise ValueError(f'{section}: one case exceeds the {README_SIZE_WARNING:,}-byte page budget')
-            if current and current_bytes + line_bytes + 3_000 > README_SIZE_WARNING:
+            if line_bytes + 3_000 > CASE_PAGE_BUDGET:
+                raise ValueError(f'{section}: one case exceeds the {CASE_PAGE_BUDGET:,}-byte page budget')
+            if current and current_bytes + line_bytes + 3_000 > CASE_PAGE_BUDGET:
                 parts.append(current)
                 current = []
                 current_bytes = 0
@@ -836,14 +838,14 @@ def render_case_pages(records, paper_urls=frozenset()):
             for language in ('en', 'zh'):
                 name = case_page_name(section, language, number if len(parts) > 1 else None)
                 pages[name] = case_page(section, entries, language, name, translations[language], seen[language], first)
-                if len(pages[name].encode('utf-8')) > README_SIZE_WARNING:
-                    raise ValueError(f'{name} exceeds the {README_SIZE_WARNING:,}-byte page budget')
+                if len(pages[name].encode('utf-8')) > CASE_PAGE_BUDGET:
+                    raise ValueError(f'{name} exceeds the {CASE_PAGE_BUDGET:,}-byte page budget')
                 for method in first:
                     method_paths[language][f'{section}-{method}'] = name
     for language, name in CASE_FILES.items():
         pages[name] = render_case_file(groups, language, section_parts, method_paths[language])
-        if len(pages[name].encode('utf-8')) > README_SIZE_WARNING:
-            raise ValueError(f'{name} exceeds the {README_SIZE_WARNING:,}-byte page budget')
+        if len(pages[name].encode('utf-8')) > CASE_PAGE_BUDGET:
+            raise ValueError(f'{name} exceeds the {CASE_PAGE_BUDGET:,}-byte page budget')
     return pages
 
 
