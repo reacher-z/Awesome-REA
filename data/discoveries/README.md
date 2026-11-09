@@ -2,7 +2,7 @@
 
 [简体中文](#简体中文) · [Ingest workflow](../../docs/automation.md#automated-discovery-ingest) · [Scan method](../../docs/source-scan.md) · [Review worksheet](../../docs/promotion-worksheet.md)
 
-This directory is the **unreviewed discovery queue**. Every file `run-<run id>-<attempt>.json` is one batch that the `Scheduled README discovery` workflow added after a scan, through a pull request that its own checks had to pass. The records are automated README scans, `verification: automated-readme-scan`, and every batch says `review_status: unreviewed`. Nobody has read their sources, translated them, curated them, run them or judged their quality. They are not part of the curated catalog, the reviewed [source index](../source-index.json) or the [public supplements](../source-supplements/README.md), and they are never counted as curated resources.
+This directory is the **unreviewed discovery queue**. Every file `run-<run id>-<attempt>.json` is one batch that the `Scheduled README discovery` workflow added after a scan, through a pull request that its own checks had to pass. The records are automated README scans, `verification: automated-readme-scan`, and every batch says `review_status: unreviewed`. They wait for review, kept apart from the curated catalog, the reviewed [source index](../source-index.json) and the [public supplements](../source-supplements/README.md), and curated resource counts include only curated records.
 
 ## What a batch holds
 
@@ -38,7 +38,7 @@ Each batch is about 0.85 MB of JSON for 300 records and about 130 KB compressed 
 
 ## Followed-source leads
 
-The README scanner only sees GitHub repositories that its searches reach and that carry a strong reverse-engineering topic or match a reconstruction phrase search. Other reverse-engineering lists, registries and bibliographies list many more resources, including websites, books, courses and papers. The `Followed-source lead discovery` workflow ([discovery-leads.yml](../../.github/workflows/discovery-leads.yml)) follows the public sources registered in [discovery-sources.json](../discovery-sources.json) every eight hours and keeps what they list here as **leads**: `verification: automated-source-lead`, `review_status: unreviewed`. A listing by a secondary source is never evidence for curation ([AGENTS.md](../../AGENTS.md)); a lead only says where a resource was listed.
+The README scanner only sees GitHub repositories that its searches reach and that carry a strong reverse-engineering topic or match a reconstruction phrase search. Other reverse-engineering lists, registries and bibliographies list many more resources, including websites, books, courses and papers. The `Followed-source lead discovery` workflow ([discovery-leads.yml](../../.github/workflows/discovery-leads.yml)) follows the public sources registered in [discovery-sources.json](../discovery-sources.json) every eight hours and keeps what they list here as **leads**: `verification: automated-source-lead`, `review_status: unreviewed`. A lead records where a resource was listed; curating it means writing a source-reviewed record under the [promotion worksheet](../../docs/promotion-worksheet.md).
 
 **Sources.** Each registry entry names its type, why it is followed and its scope rules:
 
@@ -95,7 +95,7 @@ A decided record leaves the unreviewed list, feeds and exports, and appears in [
 
 ## 简体中文
 
-本目录是**未审核的发现队列**。每个 `run-<运行 ID>-<尝试次数>.json` 文件是一批由 `Scheduled README discovery` 工作流在扫描后通过拉取请求加入的记录，该请求必须先通过仓库自身的检查。记录均为自动 README 扫描结果（`verification: automated-readme-scan`），每批都标明 `review_status: unreviewed`：没有人阅读过其来源，也没有翻译、精选、运行或评估质量。它们不属于精选目录、已审核的来源索引或公开补充批次，也从不计入精选资源数量。
+本目录是**未审核的发现队列**。每个 `run-<运行 ID>-<尝试次数>.json` 文件是一批由 `Scheduled README discovery` 工作流在扫描后通过拉取请求加入的记录，该请求必须先通过仓库自身的检查。记录均为自动 README 扫描结果（`verification: automated-readme-scan`），每批都标明 `review_status: unreviewed`。它们等待审核，与精选目录、已审核的来源索引和公开补充批次分开存放；精选资源数量只统计精选记录。
 
 入选条件沿用本仓库已有的规则：README 读取成功且 Git blob 哈希明确匹配；通过发布校验器的记录检查；至少带有一个 `strong-reverse-engineering-topics-v1` 筛选中的主题；数字 ID 不在来源索引、任何公开补充批次和更早的发现批次中；不是已精选的仓库，仓库名未被另一个数字 ID 占用，README 哈希未被其他记录发布，且没有凭据或个人路径特征。按采集时间从新到旧选取，每批最多 300 条，采集对象原样复制，不做任何改写或升级。
 
@@ -109,6 +109,6 @@ A decided record leaves the unreviewed list, feeds and exports, and appears in [
 
 ### 外部来源线索
 
-README 扫描只能看到它的搜索能触达、且带有明确逆向工程主题的 GitHub 仓库。其他逆向工程列表、注册表和综述参考文献还列出了更多资源，包括网站、书籍、课程和论文。`Followed-source lead discovery` 工作流每小时读取 [discovery-sources.json](../discovery-sources.json) 中登记的公开来源，把它们列出的条目作为**线索**保存在 `leads/<年-月>/leads-<运行 ID>-<尝试次数>.json`：`verification: automated-source-lead`，`review_status: unreviewed`。被二手来源列出从来不是收录证据；线索只说明资源在哪里被列出。每个来源都登记了类型、跟踪理由和范围规则（纳入与排除的章节、关键词筛选、带 CONTRIBUTING.md 原因代码的条目排除；论文来源只保留逆向工程主题）。按链接政策，SubmitGame 注册表只贡献反编译、反汇编、引擎重制、源码移植和工具，不含静态重编译和可在浏览器中游玩的构建。
+README 扫描只能看到它的搜索能触达、且带有明确逆向工程主题的 GitHub 仓库。其他逆向工程列表、注册表和综述参考文献还列出了更多资源，包括网站、书籍、课程和论文。`Followed-source lead discovery` 工作流每小时读取 [discovery-sources.json](../discovery-sources.json) 中登记的公开来源，把它们列出的条目作为**线索**保存在 `leads/<年-月>/leads-<运行 ID>-<尝试次数>.json`：`verification: automated-source-lead`，`review_status: unreviewed`。线索记录资源在哪里被列出；收录时需按[审核工作表](../../docs/promotion-worksheet.md)另写一条经来源审核的记录。每个来源都登记了类型、跟踪理由和范围规则（纳入与排除的章节、关键词筛选、带 CONTRIBUTING.md 原因代码的条目排除；论文来源只保留逆向工程主题）。按链接政策，SubmitGame 注册表只贡献反编译、反汇编、引擎重制、源码移植和工具，不含静态重编译和可在浏览器中游玩的构建。
 
 候选条目的任一身份已存在于精选资源或论文、来源索引及其失败记录、公开补充批次、README 扫描批次、范围排除、案例覆盖台账或更早的线索批次中时不会入选；GitHub 仓库先解析为数字 ID，改名不算新条目，已不存在或私有的仓库会被跳过；含凭据、个人路径或受保护姓名的条目不收。各来源按登记顺序轮流入选，每次运行最多 **2,000** 条。每条线索记录身份键、别名、规范链接、名称、按章节推测的类型（不是审核结论）、最多 12 个列出它的来源及固定到具体提交的证据链接，以及 GitHub、论文或 Hugging Face 的元数据快照（不含作者列表）。线索队列上限为 **30,000 条**、**48 MiB**；首次收集（2026-11-05）约 5,600 条、分三次入库，批次文件约 8 MB，Git 中压缩后约 1.5 MB。网站在 [/discoveries/leads.json](https://awesomerea.org/discoveries/leads.json) 导出线索中的数据点，按数据类别分组、每类内新批次在前，并按批次导出全部线索（含其他采集记录），均标明未审核。其中 `listed` 是待审核的线索：数据点加尚未分类的线索；`other_captures` 是被判定为数据之外的线索。每个批次条目的 `listed_count` 是该批次文件中的线索数，`awaiting_review` 是其中待审核的线索数。收录某条线索同样需要按审核工作表另写一条精选记录。

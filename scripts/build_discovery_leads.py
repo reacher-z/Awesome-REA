@@ -20,10 +20,9 @@ from data_classes import DATA_CLASSES
 EXPORT_PATH = '/discoveries/leads.json'
 BATCH_EXPORT_DIRECTORY = '/discoveries/leads/'
 EXPORT_RECORDS = 1_000
-NOTE = ('Followed-source leads, not reviewed: links that the registered public lists, registries, topic searches, '
-        'survey bibliographies, arXiv query and Hugging Face searches list inside their in-scope sections. Being listed '
-        'by a secondary source is not evidence: nobody has read these resources, translated, run or judged them, and '
-        'promoting one means writing a new source-reviewed record under the promotion worksheet.')
+NOTE = ('Leads found in followed sources, waiting for review: links that the registered public lists, registries, topic '
+        'searches, survey bibliographies, arXiv query and Hugging Face searches list inside their in-scope sections. '
+        'A lead joins the catalog as a new source-reviewed record written under the promotion worksheet.')
 
 
 def lead_queue(root: Path) -> dict:
@@ -152,7 +151,7 @@ def llms_section(queue: dict | None, site_url: str) -> str:
     return '\n'.join([
         '## Followed-source leads (unreviewed)', '',
         f'Links that registered public reverse-engineering lists, registries, topic searches, survey bibliographies, an '
-        f'arXiv query and Hugging Face searches list; not reviewed, curated, translated or run. {points:,} data points '
+        f'arXiv query and Hugging Face searches list. {points:,} data points '
         f'await review, with {unclassified:,} more not yet classified; last collection {queue["latest"]["collected_at"]}.', '',
         f'- [Lead queue JSON]({site_url}{EXPORT_PATH}): The data points, grouped by Data class, with '
         'review_status=unreviewed, pinned listing evidence and batch provenance; batches[].records_url lists every lead '

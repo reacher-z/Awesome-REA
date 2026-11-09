@@ -18,7 +18,7 @@ SOURCE_INDEX = 'data/source-index.json'
 DEFAULT_BANDS = (30, 90, 180, 365)
 RECORD_TYPES = ('resource', 'paper')
 POLICY = ('Recheck planning queue keyed by stable IDs. Age is days from the last recorded source review (verified_at) to the '
-          'as-of date; it is not evidence that a description is outdated or that a project is abandoned. Nothing is deleted, '
+          'as-of date, used to plan rechecks. Nothing is deleted, '
           'edited or relabeled, and publication status is unchanged. Automated README scan observations (observed_at) are '
           'counted separately and are not source reviews.')
 
@@ -96,7 +96,7 @@ def text_lines(report, record_type=None, min_age=0):
     counts, ahead = report['counts'], report['reviewed_after_as_of']
     totals = {kind: sum(counts[kind].values()) + sum(entry['record_type'] == kind for entry in ahead) for kind in RECORD_TYPES}
     yield f'Source-review age as of {report["as_of"]} UTC for {totals["resource"]} curated resources and {totals["paper"]} papers.'
-    yield 'Age counts days since verified_at. It plans rechecks; it is not a staleness, accuracy or maintenance claim.'
+    yield 'Age counts days since verified_at and plans rechecks.'
     for label in report['bands']:
         yield f'  {label}: {counts["resource"][label]} resources, {counts["paper"][label]} papers'
     if ahead:
