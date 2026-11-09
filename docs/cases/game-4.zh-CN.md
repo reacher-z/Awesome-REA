@@ -10,6 +10,7 @@
 
 ## 基于重建源码的移植
 
+- [**Super Metroid：C# 程序翻译与可玩移植**](https://github.com/MrJackSpade/SuperMetroidDecomp) - 该工程把 Super Metroid 原程序翻译为 C#，实现移动、战斗、房间、菜单、渲染和音频。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-metroid-csharp-port-case/)</sub>
 - [**Super Monkey Ball 2 Sakura Edition Vita：Android 游戏的 Vita 移植**](https://github.com/Rinnegatamante/smb2se-vita) - Super Monkey Ball 2 Sakura Edition Vita 在 PS Vita 上加载 Android 版游戏的 ARMv7 可执行文件，以原生函数解析导入项并施加平台补丁。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-monkey-ball-2-sakura-edition-vita-case/)</sub>
 - [**SwitchWaker：基于反编译代码的《The Wind Waker》原生移植版**](https://github.com/centollOS/SwitchWaker) - SwitchWaker 将 GameCube 游戏《The Wind Waker》的反编译代码编译为 Mac、Linux 和 Switch 原生版本，并通过新平台层和 Aurora 渲染运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/switchwaker-case/)</sub>
 - [**SwitchWakerHD：《风之杖 HD》重编译的 Nintendo Switch 移植**](https://github.com/centollOS/SwitchWakerHD) - 将 ZeldaWWHDRecomp 对《塞尔达传说 风之杖 HD》的静态重编译以自制软件形式移植到 Nintendo Switch，新增 libnx 平台层和以 deko3d 绘制游戏 GX2 图形的渲染器，转换后的着色器在主机上由 uam 编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/switchwakerhd-switch-port-case/)</sub>
@@ -643,5 +644,4 @@
 - [**Major Havoc：街机游戏反汇编**](https://github.com/historicalsource/major-havoc-dasm) - major-havoc-dasm 发布 Major Havoc 的反汇编，按 alpha、gamma 和矢量 ROM 组件分为多份汇编文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/major-havoc-disassembly-case/)</sub>
 - [**MangosZero：重建《魔兽世界》旧版服务器**](https://github.com/mangoszero/server) - MangosZero 重建《魔兽世界》旧版的认证和世界服务器，适配 1.12.1 至 1.12.3 客户端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mangoszero-server-case/)</sub>
 - [**Maniac Mansion：C64 引擎与加载器注释反汇编**](https://github.com/pditincho/mm-explained) - 这份重构并注释的反汇编资料记录了 C64 版《Maniac Mansion》的游戏引擎和专用磁盘加载器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/maniac-mansion-c64-explained-case/)</sub>
-- [**Maniac Mansion：试玩版与零售版脚本的注释反汇编**](https://github.com/segrax/Maniac.Mansion.Disassembly) - 该仓库是疯狂大厦 v0 试玩版和零售版脚本的注释反汇编，并附有房间、物体、变量和声音的表格。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/maniac-mansion-disasm/)</sub>
 <!-- END GENERATED CASES -->

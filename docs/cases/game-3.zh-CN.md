@@ -10,6 +10,7 @@
 
 ## 静态重编译
 
+- [**Need for Speed: Underground 2：面向 Switch 与 Linux 的 Xbox 静态重编译**](https://github.com/antoxa2584x/nfsu2-sw) - nfsu2-sw 将 Xbox 美版《Need for Speed: Underground 2》转换为 Nintendo Switch 和 Linux 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nfsu2-switch-linux-recompilation-case/)</sub>
 - [**New Super Mario Bros. U：Wii U 游戏的原生重编译**](https://github.com/nsmbu-recomp/nsmbu-recomp) - nsmbu-recomp 通过安装程序与运行时，将用户的 Wii U《新超级马力欧兄弟 U》构建为原生程序，支持 Windows、macOS、Linux、Android 和 iOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nsmbu-recomp-case/)</sub>
 - [**NFS CARBON 360 DECOMP：《Need for Speed Carbon》Xbox 360 版 Android 静态重编译**](https://github.com/codepdbh/NFS-CARBON-360-ANDROID-RECOMP) - NFS CARBON 360 DECOMP 将 Xbox 360 版《Need for Speed Carbon》的 PowerPC 代码转译为 C++，生成 Android ARM64 和 Windows x64 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nfs-carbon-360-android-recomp-case/)</sub>
 - [**NFS Carbon NX：Need for Speed: Carbon 的 Switch 静态重编译移植版**](https://github.com/zofo007/NFS-Carbon-NX) - NFS Carbon NX 将 Xbox 360 版 Need for Speed: Carbon 的 PowerPC 可执行文件转换为 C++，再编译为 Nintendo Switch ARM64 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nfs-carbon-nx-case/)</sub>
@@ -625,5 +626,4 @@
 - [**Super Mario Sunshine：采用 Aurora 渲染的 PAL 版 PC 本机移植**](https://github.com/zeranemesis/sms-port) - Super Mario Sunshine PAL PC port 将 GMSP01 反编译源码编译为 Windows 本机程序，并以宿主平台实现替换 GameCube 服务。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-mario-sunshine-pal-aurora-port-case/)</sub>
 - [**Super Mario Sunshine：反编译游戏的 PS5 移植版**](https://github.com/griches/PS5_Sunshine) - PS5\_Sunshine 通过平台代码、SDL 驱动和构建补丁，将基于反编译代码的 Super Mario Sunshine PC 移植版适配到 PlayStation 5。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ps5-sunshine-case/)</sub>
 - [**Super Mario Sunshine：基于反编译源码的 Android 移植**](https://github.com/jbcgames/sms-android) - sms-android 基于《Super Mario Sunshine》的反编译源码构建 ARM64 Android 原生移植版，使用 OpenGL ES 3.0 和 SDL2 输入。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sms-android-port-case/)</sub>
-- [**Super Metroid：C# 程序翻译与可玩移植**](https://github.com/MrJackSpade/SuperMetroidDecomp) - 该工程把 Super Metroid 原程序翻译为 C#，实现移动、战斗、房间、菜单、渲染和音频。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-metroid-csharp-port-case/)</sub>
 <!-- END GENERATED CASES -->
