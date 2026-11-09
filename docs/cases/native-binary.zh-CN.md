@@ -6,7 +6,7 @@
 
 [English](native-binary.md)
 
-**58 个案例**
+**62 个案例**
 
 - [**8088 BIOS：反汇编 Tandy 与 IBM PC 固件映像**](https://github.com/ricardoquesada/bios-8088) - 该仓库反汇编 8088 机器的 BIOS 镜像：Tandy 1000、Tandy 1000A、Tandy 1000 HX、IBM PCjr 和 IBM PC 5150。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bios-8088/)</sub>
 - [**AGS Aging Cartridge：反汇编 7.0 版**](https://github.com/Normmatt/ags_aging) - 该项目以用户提供的 Game Boy Advance ROM 为输入，将 AGS Aging Cartridge 7.0 重建为汇编与 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ags-aging-cartridge-case/)</sub>
@@ -20,6 +20,7 @@
 - [**Eidolon in Rust：Eidolon 64k 演示的逐字节一致 Rust 移植**](https://github.com/RovshanMuradov/eidolon-64k-rs) - 把 Poo-Brain 在 Revision 2017 夺得 PC 64k 组冠军的 Eidolon，从经过压缩的 60,928 字节 Windows 可执行文件移植到 Rust，并附有说明原二进制工作原理的章节和单独的体积优化版本。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/eidolon-64k-rust-port-case/)</sub>
 - [**Eloquence 6.1：ECI.DLL 的 C 重建**](https://github.com/KamiKitsune420/eloquence-decomp) - 把 ETI Eloquence 6.1.0.2（美式英语 ECI.DLL 与 ENU.SYN）重建为 C，并提供可替换的 x86 与 x64 ECI.DLL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/eloquence-61-eci-case/)</sub>
 - [**ExCrypt：重建 Xbox 360 XeCrypt 函数**](https://github.com/emoose/ExCrypt) - ExCrypt 以 C 和 C++ 重写 Xbox 360 的 XeCrypt 函数，供既有主机代码和数据使用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/excrypt-case/)</sub>
+- [**Forecast Channel：反编译 Wii 天气预报应用**](https://github.com/doldecomp/forecast) - 该项目反编译 Wii 天气预报频道，版本 HAFE v7，美版 NTSC。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/forecast-channel/)</sub>
 - [**GA330-libretro：重建 Gemei A330 运行环境**](https://github.com/minexew/GA330-libretro) - GA330-libretro 将 Gemei A330 运行环境重建为 libretro 核心，使用 Unicorn 执行 ARM 应用二进制文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ga330-libretro-case/)</sub>
 - [**GEOS 2.0：可重建 cbmfiles KERNAL 二进制的源码**](https://github.com/mist64/geos) - Commodore 64 与 128 上 GEOS 2.0 的整理后 cc65 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/geos-20-kernal-case/)</sub>
 - [**geoWrite 2.1：可重建原始二进制的源码**](https://github.com/mist64/geowrite) - GEOS 文字处理器 geoWrite 2.1 英语版与德语版的逆向 cc65 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/geowrite-21-case/)</sub>
@@ -33,6 +34,7 @@
 - [**libgpu2：PlayStation 2 图形合成器模型重建**](https://github.com/aap/libgpu2) - libgpu2 将索尼 1998 年 PlayStation 2 图形合成器软件模型的 23 个 ELF32/i386 目标文件重建为可构建的 C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/libgpu2-reconstruction-case/)</sub>
 - [**libmd12：E-mu SP-1200 与 SP-12 音频通路的 C 模型**](https://github.com/Mudb0y/libmd12) - E-mu SP-1200 与 SP-12 采样器音频通路的 C99 库：音高回放、滤波器和动态滤波器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/libmd12-sp1200-case/)</sub>
 - [**linker\_pc：重建《Call of Duty 4》的 fastfile 链接器**](https://github.com/prd0nja/linker_pc) - linker\_pc 根据 2008 年发布的可执行文件，重建《Call of Duty 4》模组工具中的 fastfile 链接器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/call-of-duty-4-linker-pc-case/)</sub>
+- [**lv0pen：PlayStation 3 启动链的匹配源代码**](https://github.com/sagemono/lv0pen) - lv0pen 用原来的编译器重建 PlayStation 3 启动链程序和隔离的 SPU 模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lv0pen/)</sub>
 - [**Microsoft Anna：TTS20 引擎的逐位一致 C 重建**](https://github.com/KamiKitsune420/ms-ana-decomp) - 把 Microsoft Anna（Windows Vista 与 Windows 7 的 TTS20 语音）重建为读取原始语音数据文件的 C99。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ms-anna-tts-case/)</sub>
 - [**Microsoft Sam：SAPI 5 引擎的可移植 C 重建**](https://github.com/KamiKitsune420/ms-sam-mike-mary-decomp) - 把 Windows XP 的 SAPI 5 引擎 spttseng.dll（Microsoft Sam、Mike 和 Mary）重建为读取原始语音文件的 C99。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ms-sam-mike-mary-case/)</sub>
 - [**MWCC：重建 GameCube CodeWarrior 编译器**](https://github.com/rayanht/mwcc) - MWCC 为六个 GameCube 版本重建 Windows x86 编译器 mwcceppc.exe。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mwcc-decomp-case/)</sub>
@@ -43,6 +45,7 @@
 - [**open\_rvl：反编译 Wii Sports 使用的 Wii SDK**](https://github.com/kiwi515/open_rvl) - open\_rvl 将 Wii Sports 所用版本的 Wii SDK 重建为 C 源码，供游戏反编译项目复用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-rvl-sdk-case/)</sub>
 - [**openbst：BeSTspeech 的 C 语言重实现**](https://github.com/Mudb0y/openbst) - 把 Berkeley Speech Technologies 的共振峰合成器 BeSTspeech（HumanWare Keynote GOLD 所带的引擎）从零重实现为 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openbst-bestspeech-case/)</sub>
 - [**OpenTV：用可移植 C 重建 Centigram TruVoice**](https://github.com/RetroBunn/tv-decomp) - 把 Centigram 的 TruVoice（1997 年文本转语音引擎）重建为可移植 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentv-truvoice-case/)</sub>
+- [**PICOLOVE：在 LÖVE 中重实现 PICO-8 API**](https://github.com/picolove/picolove) - PICOLOVE 用 LÖVE 实现 PICO-8 的 API，让 PICO-8 卡带作为 LÖVE 程序运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/picolove/)</sub>
 - [**Prose 2000 Reborn：语音板固件的 C 反编译**](https://github.com/rommix0/prose2000_reborn) - 把 Speech Plus 与 Telesensory Systems 的 Prose 2000 文本转语音固件（8086 主机加 NEC µPD7720 DSP）反编译为 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/prose2000-reborn-case/)</sub>
 - [**re-sysinternals-suite：重建 Sysinternals strings.exe**](https://github.com/cristeigabriela/re-sysinternals-suite) - re-sysinternals-suite 记录了对 Sysinternals strings.exe 可执行程序的教学性重建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/re-sysinternals-strings-case/)</sub>
 - [**re\_nfpii：重建 Wii U 的 amiibo 库**](https://github.com/GaryOderNichts/re_nfpii) - re\_nfpii 为 amiibo 模拟和研究重建 Wii U 的 nn\_nfp.rpl 库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/re-nfpii-wii-u-library-case/)</sub>
@@ -52,6 +55,7 @@
 - [**uniswap-v2-reborn：从已部署字节码重建 Uniswap v2**](https://github.com/devtechedge/uniswap-v2-reborn) - uniswap-v2-reborn 使用 REA 接口分析、存储槽探测和行为规格，从已部署的 EVM 运行时代码重建 Uniswap v2 的 factory、pair 与 Router02。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/uniswap-v2-reborn-case/)</sub>
 - [**Watcom C 6.5：重建受损运行库**](https://github.com/nrnelson/watcom-c-6.5-restoration) - 该项目从幸存的归档模块重建受损的 Watcom C 6.5 运行库 CLIBS.LIB 与 CLIBC.LIB。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/watcom-c-6-5-restoration-case/)</sub>
 - [**Wirenet Reverse Engineering：分析 Linux 木马**](https://github.com/shxdow/wirenet-analysis) - Wirenet Reverse Engineering 通过恢复的源码和意大利语分析报告研究 Wirenet Linux 木马，另有文章聚焦其键盘记录功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wirenet-analysis-case/)</sub>
+- [**Xbox 360 kernel：反编译 17489.0 版本**](https://github.com/AleBello7276/xkrnl-decomp) - 这是 Xbox 360 内核的进行中反编译，文件集 21256.18\_D，内核版本 17489.0。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xkrnl-decomp/)</sub>
 - [**bcwc\_pcie：对照 Apple kext 审计 FaceTime HD 摄像头驱动**](https://github.com/unfallenwill/bcwc_pcie) - bcwc\_pcie 针对 Broadcom PCI 14e4:1570 FaceTime HD 摄像头，将社区 Linux 驱动与 AppleCameraInterface.kext 进行对照审计。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bcwc-pcie-camera-audit-case/)</sub>
 - [**FSR 4 INT8：GPU 计算阶段重建与对比测试工具**](https://github.com/int3rrobang/fsr4-int8-reverse-engineering) - 该项目研究 FSR 4.1.1 INT8 升频器，用 HLSL 重建 GPU 计算阶段，并通过 D3D12 工具与 AMD 编译后的内核比较输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fsr4-int8-reconstruction-case/)</sub>
 - [**slopgs：重建 Microsoft GS Wavetable Synth**](https://github.com/sloptainment/slopgs) - slopgs 用可移植的 C 合成器重建 Windows XP SP3 版 Microsoft GS Wavetable Synth 驱动的行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/slopgs-case/)</sub>
