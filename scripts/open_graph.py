@@ -18,8 +18,8 @@ THEME_COLOR_META = ('<meta name="theme-color" content="#faf3dd" media="(prefers-
                     '<meta name="theme-color" content="#1c1316" media="(prefers-color-scheme: dark)">')
 # og:image:alt describes the shared card itself (https://ogp.me/), never the page title.
 SOCIAL_IMAGE_ALT = {
-    'en': 'AwesomeREA.org card showing the heading “Awesome Reverse Engineering Anything”, the tagline “Tools, projects, and resources” and six target labels: Website, Game, App, Native Binary, Firmware and Protocol.',
-    'zh': 'AwesomeREA.org 分享图：英文标题“Awesome Reverse Engineering Anything”和标语“Tools, projects, and resources”，右侧列出六个目标领域：Website、Game、App、Native Binary、Firmware 和 Protocol。',
+    'en': 'Awesome REA card on cream grid paper: the heading “Awesome Reverse Engineering Anything” and the line “Tools, projects and resources for websites, games, apps, binaries, firmware and protocols.”',
+    'zh': 'Awesome REA 分享图，米色网格纸上写着英文标题“Awesome Reverse Engineering Anything”和一行说明：面向网站、游戏、应用、二进制、固件和协议的工具、项目与资源。',
 }
 
 
