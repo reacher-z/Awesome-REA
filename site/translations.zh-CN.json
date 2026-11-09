@@ -39719,5 +39719,12 @@
       "目前仅构建美版。",
       "许可证：AGPL-3.0。"
     ]
+  },
+  "genmc": {
+    "name": "genmc",
+    "requirements": [
+      "需要 7.3 或更高版本、带 Hex-Rays 反编译器的 IDA。主分支使用 Python 3。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
