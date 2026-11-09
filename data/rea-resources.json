@@ -5940,5 +5940,67 @@
     "additional_evidence_urls": [
       "https://github.com/viny182/mystery-sdl/blob/fec0d3ce57df1dbdfe372d3eb31157fa42fa1ac8/LICENSE"
     ]
+  },
+  {
+    "id": "rockport-native-nfs-mw-case",
+    "name": "Rockport Native: reconstructing Need for Speed: Most Wanted on macOS",
+    "url": "https://github.com/pablonolascoo/nfs-mw-2005-ps2-port",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Rockport Native reconstructs the PlayStation 2 release of Need for Speed: Most Wanted as a macOS game using a Swift and Metal engine and data converted from the player's ISO. The project documents disc formats, game systems and a Ghidra and REA disassembly workflow; the author reports a playable Mac release and remaining gameplay gaps.",
+    "description_zh": "Rockport Native 将 PlayStation 2 版 Need for Speed: Most Wanted 重建为 macOS 游戏，以 Swift 和 Metal 引擎读取玩家 ISO 转换出的数据。项目记录光盘格式、游戏系统以及 Ghidra 和 REA 反汇编流程；作者称 Mac 版本可玩，但部分游戏机制仍待完善。",
+    "evidence_url": "https://github.com/pablonolascoo/nfs-mw-2005-ps2-port/blob/42da031e82830f5da5e809a1f639ff5efb0e0adb/README.en.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A legally obtained PAL SLES-53559 or NTSC-U SLUS-21351 disc image is required.",
+      "The current playable native engine targets Apple Silicon macOS.",
+      "About 140 functions called by disc Lua scripts remain unimplemented, according to the author.",
+      "MIT License."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pablonolascoo/nfs-mw-2005-ps2-port/blob/42da031e82830f5da5e809a1f639ff5efb0e0adb/LICENSE"
+    ]
+  },
+  {
+    "id": "genma-recomp-case",
+    "name": "Genma Recomp: an Xbox port with REA investigations of Warlords HD",
+    "url": "https://github.com/rafaelkenedy/genma-recomp",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Genma Recomp statically translates the original Xbox Genma Onimusha executable to C++ for a native Windows port and experimental Linux build. Separate investigations use REA, Ghidra and Frida to examine controls and loading in the Onimusha: Warlords HD executable, with findings documented alongside the port.",
+    "description_zh": "Genma Recomp 将初代 Xbox《Genma Onimusha》的可执行文件静态翻译为 C++，构建 Windows 原生版本及实验性 Linux 版本。项目还使用 REA、Ghidra 和 Frida 分析《Onimusha: Warlords HD》可执行文件中的控制与加载机制，并保存调查结果。",
+    "evidence_url": "https://github.com/rafaelkenedy/genma-recomp/blob/33fee19ef4aec490b8970d4472fadd6c4bc99aa2/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supply a legally acquired Genma Onimusha game copy; the Windows release targets the documented USA default.xbe.",
+      "Windows requires a Direct3D 12 GPU and x86-64-v2 CPU; Linux support is experimental."
+    ],
+    "class": "game",
+    "additional_evidence_urls": [
+      "https://github.com/rafaelkenedy/genma-recomp/blob/33fee19ef4aec490b8970d4472fadd6c4bc99aa2/docs/onimusha-hd-controls-analysis.md",
+      "https://github.com/rafaelkenedy/genma-recomp/blob/33fee19ef4aec490b8970d4472fadd6c4bc99aa2/docs/onimusha-hd-loading-analysis.md"
+    ]
   }
 ]

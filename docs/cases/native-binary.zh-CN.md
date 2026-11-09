@@ -6,14 +6,18 @@
 
 [English](native-binary.md)
 
-**23 个案例**
+**27 个案例**
 
+- [**AGS Aging Cartridge：反汇编 7.0 版**](https://github.com/Normmatt/ags_aging) - 该项目以用户提供的 Game Boy Advance ROM 为输入，将 AGS Aging Cartridge 7.0 重建为汇编与 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ags-aging-cartridge-case/)</sub>
+- [**cod4map：重建 Call of Duty 4 的 BSP 编译器**](https://github.com/prd0nja/cod4map) - cod4map 根据 2007 年随 Call of Duty 4 模组工具发布的可执行文件重建 BSP 编译器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cod4map-reconstruction-case/)</sub>
 - [**dargh：重建 Skyrim 的 Dynamic Animation Replacer**](https://github.com/noxsidereum/dargh) - dargh 根据对 Dynamic Animation Replacer 1.1.2 和 1.1.3 DLL 的分析，以 C++ 重建用于 Skyrim Special Edition 的替代 DLL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dargh-case/)</sub>
 - [**ExCrypt：重建 Xbox 360 XeCrypt 函数**](https://github.com/emoose/ExCrypt) - ExCrypt 以 C 和 C++ 重写 Xbox 360 的 XeCrypt 函数，供既有主机代码和数据使用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/excrypt-case/)</sub>
 - [**IOReport：研究并反编译 Apple 的报告库**](https://github.com/dehydratedpotato/IOReport_decompile) - IOReport decompile 研究 Apple 的 IOReport 动态库及其读取系统报告和计数器的调用方式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ioreport-decompile-case/)</sub>
 - [**L1J-Encode-CLI：还原 Lineage 1 的 ServerData 编解码算法**](https://github.com/Lan-0v0/L1J-Encode-CLI) - L1J-Encode-CLI 将 Lineage 1 登录器的 ServerData 编码还原为 Python 编解码器，可处理 IP、端口和功能位。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/l1j-encode-cli-case/)</sub>
 - [**ndec-re：还原一款 MS-DOS 加密程序**](https://github.com/bereal/ndec-re) - ndec-re 借助调试器和汇编分析研究一款旧式 MS-DOS COM 加密程序，并用 Go 实现其加密行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ndec-re-case/)</sub>
 - [**re-sysinternals-suite：重建 Sysinternals strings.exe**](https://github.com/cristeigabriela/re-sysinternals-suite) - re-sysinternals-suite 记录了对 Sysinternals strings.exe 可执行程序的教学性重建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/re-sysinternals-strings-case/)</sub>
+- [**RFL：反编译 Wii 的 Mii 库**](https://github.com/koopthekoopa/RFL) - RFL 从原版游戏镜像重建 Wii 的 Mii 处理库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rfl-wii-mii-library-case/)</sub>
+- [**SNES Station：重建 PS2 模拟器可执行文件**](https://github.com/ReyFxck/SNESstation-Decomp) - SNES Station Decompilation 通过源码恢复、历史工具链匹配与映像比较，重建 PS2 版 SNES Station v0.23 WIP 可执行文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/snes-station-decomp-case/)</sub>
 - [**uniswap-v2-reborn：从已部署字节码重建 Uniswap v2**](https://github.com/devtechedge/uniswap-v2-reborn) - uniswap-v2-reborn 使用 REA 接口分析、存储槽探测和行为规格，从已部署的 EVM 运行时代码重建 Uniswap v2 的 factory、pair 与 Router02。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/uniswap-v2-reborn-case/)</sub>
 - [**Watcom C 6.5：重建受损运行库**](https://github.com/nrnelson/watcom-c-6.5-restoration) - 该项目从幸存的归档模块重建受损的 Watcom C 6.5 运行库 CLIBS.LIB 与 CLIBC.LIB。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/watcom-c-6-5-restoration-case/)</sub>
 - [**Wirenet Reverse Engineering：分析 Linux 木马**](https://github.com/shxdow/wirenet-analysis) - Wirenet Reverse Engineering 通过恢复的源码和意大利语分析报告研究 Wirenet Linux 木马，另有文章聚焦其键盘记录功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wirenet-analysis-case/)</sub>
