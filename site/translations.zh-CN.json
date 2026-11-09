@@ -40712,13 +40712,5 @@
       "把 yuka.exe 放进游戏目录并运行 yuka help。",
       "README 未注明许可证。"
     ]
-  },
-  "oogie-recomp": {
-    "name": "Oogie's Revenge Recomp：Xbox 游戏的静态重编译",
-    "requirements": [
-      "需要用户自己的美版光盘镜像。README 写明不含游戏数据。",
-      "在 Windows 10 或 11 x64 上构建需要 Python 3。构建脚本是 tools/build-oogie.ps1，它会把固定版本的工具链下载到 toolchain\\。",
-      "GitHub 报告许可证为 GPL-3.0。"
-    ]
   }
 }
