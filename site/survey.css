@@ -12,7 +12,10 @@
 .survey-language:hover {background:var(--tint);border-color:var(--steel)}
 .survey-language>.icon {width:17px;height:17px;font-size:17px;color:var(--muted)}
 .github-link>.survey-github-fallback {font:700 11px/19px var(--sans);text-align:center}
-.survey-header {padding:54px 0 36px;border-bottom:1px solid var(--strong)}
+.survey-breadcrumbs {display:flex;align-items:baseline;gap:7px 10px;padding-top:26px;font-size:14px;line-height:1.7;color:var(--muted)}
+.survey-breadcrumbs a {flex:none;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.survey-breadcrumbs [aria-current] {min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.survey-header {padding:28px 0 36px;border-bottom:1px solid var(--strong)}
 .survey-kicker {display:flex;align-items:center;gap:12px;margin:0 0 20px;color:var(--link);font-size:12px;font-weight:650;line-height:1.6;letter-spacing:.1em}
 .survey-kicker::before {content:"";width:30px;height:2px;flex:none;background:var(--accent)}
 .survey-title {max-width:29ch;margin:0;color:var(--ink);font-family:var(--survey-serif);font-size:clamp(36px,4.4vw,56px);font-weight:500;line-height:1.15;letter-spacing:-.025em;overflow-wrap:break-word;text-wrap:balance}

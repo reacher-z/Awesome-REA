@@ -383,7 +383,10 @@ class SurveyTests(unittest.TestCase):
         for path in ('survey/index.html', 'zh/survey/index.html'):
             page = Page(files[path])
             graph = page.schemas[0]['@graph']
-            self.assertEqual({item['@type'] for item in graph}, {'WebPage', 'Article'})
+            self.assertEqual({item['@type'] for item in graph}, {'WebPage', 'Article', 'BreadcrumbList'})
+            crumbs = next(item for item in graph if item['@type'] == 'BreadcrumbList')['itemListElement']
+            self.assertEqual([crumb['position'] for crumb in crumbs], [1, 2])
+            self.assertEqual(crumbs[1]['item'], 'https://awesomerea.org/' + path.removesuffix('index.html'))
             article = next(item for item in graph if item['@type'] == 'Article')
             self.assertEqual(article['genre'], 'Editorial survey')
             self.assertEqual(article['author']['@type'], 'Organization')

@@ -248,6 +248,10 @@ def localized_homepage(html, app_source, language):
         if kind == 'WebSite' or (isinstance(kind, list) and 'WebSite' in kind):
             return value
         result = {key: schema_page(item) for key, item in value.items()}
+        if kind == 'BreadcrumbList':
+            # The homepage trail is the page itself, in its own language.
+            result.update({'@id': home + '#breadcrumb', 'itemListElement': [
+                {'@type': 'ListItem', 'position': 1, 'name': '首页' if language == 'zh' else 'Home', 'item': home}]})
         if kind == 'CollectionPage' or (isinstance(kind, list) and 'CollectionPage' in kind):
             result.update({'url': home, 'name': translated('pageTitle'),
                            'description': translated('pageDescription'), 'inLanguage': locale})
