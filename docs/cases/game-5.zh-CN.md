@@ -6,10 +6,11 @@
 
 [English](game-5.md)
 
-**161 个案例**
+**162 个案例**
 
 ## 其他方法与分析
 
+- [**Maniac Mansion：试玩版与零售版脚本的注释反汇编**](https://github.com/segrax/Maniac.Mansion.Disassembly) - 该仓库是疯狂大厦 v0 试玩版和零售版脚本的注释反汇编，并附有房间、物体、变量和声音的表格。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/maniac-mansion-disasm/)</sub>
 - [**MapleStory2：重建服务端数据包结构**](https://github.com/MS2Community/Maple2) - Maple2 用 C# 重建 MapleStory2 服务端，并研究客户端要求的服务端数据包结构。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/maple2-server-packet-case/)</sub>
 - [**Mario Golf：Game Boy Color 反汇编**](https://github.com/DarkRTA/mgolf) - mgolf 提供 Game Boy Color 游戏《Mario Golf》的反汇编源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mgolf-disassembly-case/)</sub>
 - [**mc4.sav：还原 Midnight Club: Los Angeles 存档格式**](https://github.com/onlyzennnn/mcla-save-editor) - mc4.sav 记录 Midnight Club: Los Angeles 重编译 PC 运行时写出的存档格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mcla-save-editor-case/)</sub>
