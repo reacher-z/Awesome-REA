@@ -168,8 +168,8 @@ def main() -> int:
             "class_zero_count": 0,
             "method": ("Coarse documentation-evidence classes from the committed automated README scan. "
                        "The scan records README size, heading count and section signals, but not release "
-                       "assets, demo images or runtime behaviour. This mapping does not change the scan "
-                       "record and is not a curated evidence class."),
+                       "assets, demo images or runtime behaviour. The mapping is kept separately from the "
+                       "scan record and from the curated evidence classes."),
             "rubric": {
                 "0": "Never assigned automatically. Class 0 requires a manual curated review.",
                 "1": "README documents both installation and usage. Demo, release assets and buildability remain unobserved.",

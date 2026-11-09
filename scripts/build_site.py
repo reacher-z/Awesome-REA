@@ -266,7 +266,7 @@ def build_site(output: Path) -> tuple[int, int, int]:
                 for message in link_diagnostics:
                     print('Related entry: ' + message)
                 index_data["meta"]["source_description_policy"] = index_data["meta"].get("description_policy", "")
-                index_data["meta"]["description_policy"] = "English and Simplified Chinese descriptions are AI-assisted localizations of retained upstream repository text. description_original preserves retained text; oversized new descriptions are omitted with length and SHA-256 evidence in description_omission. Translation does not imply verification."
+                index_data["meta"]["description_policy"] = "English and Simplified Chinese descriptions are AI-assisted localizations of retained upstream repository text. description_original preserves retained text; oversized new descriptions are omitted with length and SHA-256 evidence in description_omission."
                 excluded_count = sum(record.get("scope_status") == "excluded" for record in index_data["resources"])
                 index_data["meta"]["scope"] = {"scanned_count": len(successful), "excluded_count": excluded_count, "browse_count": len(successful) - excluded_count}
                 index_data["meta"]["localization"] = {"languages": ["en", "zh-CN"], "translated_records": sum(record["id"] in repository_locales for record in successful), "method": "AI-assisted description translation; available upstream text retained, with explicit fingerprints for oversized descriptions omitted from new captures."}

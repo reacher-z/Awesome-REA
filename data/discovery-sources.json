@@ -2114,7 +2114,7 @@
       "url_field": "url",
       "name_field": "title",
       "every_hours": 24,
-      "why": "Auto-aggregated, typed index of game decompilations, disassemblies, engine remakes and source ports; followed as leads, never as curated evidence.",
+      "why": "Auto-aggregated, typed index of game decompilations, disassemblies, engine remakes and source ports, followed as a lead source.",
       "scope": {
         "kind": "case-study",
         "type_field": "type",
