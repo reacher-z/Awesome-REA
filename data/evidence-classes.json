@@ -2,13 +2,13 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-09T15:42:23+00:00",
+  "generated_at": "2026-11-09T16:08:26+00:00",
   "entry_count": 5129,
   "class_counts": {
    "0": 15,
    "1": 1126,
-   "2": 3814,
-   "3": 162
+   "2": 3816,
+   "3": 160
   },
   "unknown_count": 12,
   "c0_review_count": 15,
@@ -138788,13 +138788,13 @@
   {
    "id": "a26-mb-case",
    "url": "https://gitlab.com/segaloco/a26_mb",
-   "evidence_class": 3,
+   "evidence_class": 2,
    "basis": "gitlab-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
-    "docs": false,
-    "docs_bytes": 0,
+    "docs": true,
+    "docs_bytes": 624,
     "docs_full": false,
     "download": null,
     "release_count": 0,
@@ -138805,10 +138805,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "no usable documentation at the code source",
-   "checked_at": "2026-11-09T11:20:36+00:00",
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-09T15:42:01+00:00",
    "evidence_status": "observed",
-   "scope": "notes",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -139288,13 +139288,13 @@
   {
    "id": "goldeneye-007-gitlab-decomp-case",
    "url": "https://gitlab.com/kholdfuzion/goldeneye_src",
-   "evidence_class": 3,
+   "evidence_class": 2,
    "basis": "gitlab-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
-    "docs": false,
-    "docs_bytes": 0,
+    "docs": true,
+    "docs_bytes": 1250,
     "docs_full": false,
     "download": null,
     "release_count": 0,
@@ -139305,10 +139305,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "no usable documentation at the code source",
-   "checked_at": "2026-11-09T11:20:45+00:00",
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-09T16:08:25+00:00",
    "evidence_status": "observed",
-   "scope": "notes",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
