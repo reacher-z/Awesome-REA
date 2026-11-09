@@ -80,6 +80,15 @@ def validate_twins(output, routes, resources, papers):
             assert linked.get(JSON_TYPE) == json_path, f'Page must link its JSON twin {json_path}: {route}'
         text = (output / markdown.lstrip('/')).read_text(encoding='utf-8')
         assert text.startswith('# ') and f'<{ORIGIN}{route}>' in text, f'Markdown twin must open with a heading and name its page: {markdown}'
+    # Every other indexed page links a twin too (page_twins.py writes the ones no builder does).
+    for route in routes:
+        page = output / route.lstrip('/') / 'index.html'
+        if not route.endswith('/') or not page.is_file():
+            continue
+        markdown = dict(Alternates(page.read_text(encoding='utf-8')).formats).get(MARKDOWN_TYPE)
+        assert markdown == route + MARKDOWN, f'Indexed page must link its Markdown twin {route}{MARKDOWN}: {route}'
+        text = (output / markdown.lstrip('/')).read_text(encoding='utf-8')
+        assert text.startswith('# ') and f'<{ORIGIN}{route}>' in text, f'Markdown twin must open with a heading and name its page: {markdown}'
     resources_by_id, papers_by_id = {row['id']: row for row in resources}, {row['id']: row for row in papers}
     for kind, records, project in (('resource', resources_by_id, resource_record), ('paper', papers_by_id, paper_record)):
         for identifier, record in records.items():
