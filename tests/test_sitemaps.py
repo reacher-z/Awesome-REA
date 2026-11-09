@@ -52,6 +52,9 @@ class PageDateTests(unittest.TestCase):
                                 lead_batches=[{'collected_at': '2026-11-05T23:01:00Z'}])
         self.assertEqual(with_leads['/api/'], '2026-11-05T23:01:00Z')
         self.assertEqual(with_leads['/'], value['/resources/'])
+        with_classes = page_dates(resources=RESOURCES, papers=PAPERS, discovery_batches=BATCHES,
+                                  discovery_class_pages=['/discoveries/game/'])
+        self.assertEqual(with_classes['/discoveries/game/'], with_classes['/discoveries/'])
 
     def test_date_normalization_and_ordering(self):
         self.assertEqual(normalized_date('2026-10-16T11:55:19.172701Z'), '2026-10-16T11:55:19Z')

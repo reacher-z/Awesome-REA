@@ -28,7 +28,7 @@ from source_scope import apply_scope, read_scope
 from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_source_browser
 from public_source_supplements import (PUBLISHED_FILENAME, compose_published, json_bytes, load_supplements,
                                       owned_file, bounded_bytes, project_additions, read_withdrawals)
-from validate_discovery import expected_entry_routes, validate_route_inventory
+from validate_discovery import discovery_class_pages, expected_entry_routes, validate_route_inventory
 from build_readme import (CASE_FILES, README_SIZE_WARNING, CATEGORIES, METHOD_SECTIONS, PAPER_SECTIONS, REQUIREMENTS_LABEL, case_method,
                           collection_section, method_groups, paper_section)
 from build_discovery_pages import ABOUT_EXCLUDED_SECTIONS, SECTION_TARGETS, file_size_label
@@ -1362,6 +1362,14 @@ def validate_discovery_outputs(output, pages, queue):
         shown = re.findall(r'<article class="source-card browse-repository" id="(scan-[0-9]+)"', text)
         expected_page = [record['id'] for _, _, records, _ in build_discoveries.page_groups(queue) for record in records]
         assert shown == expected_page, f'Discovery data points differ from the class groups: {route}'
+        # A class the list page shortens links its own page, which lists every record of that class.
+        for name, _, records in build_discoveries.class_pages(queue):
+            path = build_discoveries.class_page_path(name, language)
+            assert path in pages, f'Discovery class page missing from the sitemap: {path}'
+            assert f'href="{path}" data-discovery-more="{name}"' in text, f'Discovery list must link its class page: {path}'
+            listed_here = re.findall(r'<article class="source-card browse-repository" id="(scan-[0-9]+)"',
+                                     (output / path.lstrip('/') / 'index.html').read_text(encoding='utf-8'))
+            assert listed_here == [record['id'] for record in records], f'Discovery class page must list every record of its class: {path}'
         assert html_unescape(build_discoveries.NOTE[int(zh)]) in html_unescape(text), f'Discovery list must say the records are unreviewed: {route}'
         assert '<h1' in text and text.count('<h2') >= 1, route
         feed_path = build_discoveries.FEED_PATHS[language]
@@ -1577,7 +1585,8 @@ def main():
     resources = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['resources']
     papers = json.loads((OUTPUT / 'papers.json').read_text(encoding='utf-8'))
     validate_route_inventory(urls, resources, papers, include_browse=(OUTPUT / 'source-index.json').is_file(),
-                             include_discoveries=(OUTPUT / 'discoveries.json').is_file())
+                             include_discoveries=(OUTPUT / 'discoveries.json').is_file(),
+                             discovery_classes=discovery_class_pages(OUTPUT))
     pages, fragment_links = {}, []
     for url, (unresolved, page) in zip(urls, forked_checks.ordered_map(_read_page, urls)):
         parsed = urlsplit(url)

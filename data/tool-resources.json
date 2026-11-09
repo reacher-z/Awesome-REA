@@ -3169,6 +3169,11 @@
     "description_zh": "将 NVIDIA DLSS 5 库中的神经渲染网络重新实现为面向 AMD RX 9000（RDNA4）显卡的 Vulkan 计算着色器，并通过兼容 NGX 的核心模块以及 ReShade 或 Vulkan 层等途径提供给游戏。项目不分发权重：安装程序从使用者自己的 nvngx_dlssnr.dll 310.9.16 或 310.8.0 中提取权重并核对哈希。项目将输出与 NVIDIA DLL 在 RTX 5090 上的结果对比，报告画面接近但并非逐位一致。",
     "evidence_url": "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/README.md",
     "verified_at": "2026-10-18",
+    "source_unavailable": {
+      "checked_at": "2026-11-09T17:09:26+00:00",
+      "outcome": "not-found",
+      "http_status": 404
+    },
     "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
@@ -3890,6 +3895,11 @@
     "description_zh": "Metaforce 于 2015 年作为《密特罗德 Prime》引擎的逆向重实现项目启动，现已在 PrimeDecomp 一致性反编译之上重写。其原生应用借助 Aurora GameCube 兼容层，将这些游戏代码以非一致模式编译为桌面和移动端程序，并读取使用者选择的光盘镜像。README 表示重写稳定之前暂不提供构建版本。",
     "evidence_url": "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/README.md",
     "verified_at": "2026-10-18",
+    "source_unavailable": {
+      "checked_at": "2026-11-09T17:09:00+00:00",
+      "outcome": "not-found",
+      "http_status": 404
+    },
     "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
@@ -12109,6 +12119,11 @@
     "description_zh": "为《密特罗德 Prime》GameCube 版的可执行文件及其 NES 模拟器模块重建 C++ 源码，使 CodeWarrior 编译结果与原文件一致，涵盖美版、韩版、PAL 版与日版，另有针对体验版光盘和三个 Wii 版本的早期配置。已匹配的单元由源码编译，再与从使用者光盘中拆分出的对象链接，并按各版本的 SHA-1 哈希校验；仓库不含游戏素材或汇编。另行收录的 Metaforce 与 Metroid Prime Port 都在这份代码之上构建原生移植。",
     "evidence_url": "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/README.md",
     "verified_at": "2026-10-19",
+    "source_unavailable": {
+      "checked_at": "2026-11-09T17:09:07+00:00",
+      "outcome": "not-found",
+      "http_status": 404
+    },
     "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
@@ -36901,6 +36916,11 @@
     "description_zh": "COGBox 收录《战争机器 2》《战争机器 3》和《战争机器：审判》的原生 Windows 移植版，将 Xbox 360 代码预先翻译为 C++。启动器导入用户自备的游戏及必要更新；项目提供 Direct3D 12 渲染器和实验性 Vulkan 选项。",
     "evidence_url": "https://github.com/Shagg88/COGBox/blob/a7ca750044ac4527e777a30b6ae9d074a70f17c8/README.md",
     "verified_at": "2026-11-06",
+    "source_unavailable": {
+      "checked_at": "2026-11-09T17:09:32+00:00",
+      "outcome": "not-found",
+      "http_status": 404
+    },
     "added_at": "2026-11-08",
     "verification": "source-reviewed",
     "requirements": [
@@ -76056,6 +76076,11 @@
     "description_zh": "HWDE-decomp 将 Hyrule Warriors: Definitive Edition 更新版 1.0.1 的函数重建为 C++，目标是匹配 AArch64 main 模块。检查工具按指定 Clang 参数编译源码、解析重定位，并与用户自行提取的原版模块逐字比较函数。",
     "evidence_url": "https://github.com/MusohSlop/HWDE-decomp/blob/1cdc26bc26c9a6552fe0264cc43c27e5fa2069cf/README.md",
     "verified_at": "2026-11-06",
+    "source_unavailable": {
+      "checked_at": "2026-11-09T17:09:38+00:00",
+      "outcome": "not-found",
+      "http_status": 404
+    },
     "added_at": "2026-11-09",
     "verification": "source-reviewed",
     "requirements": [
@@ -85288,6 +85313,11 @@
     "description_zh": "Azura 使用 ReXGlue 将用户自备的 Xbox 360 版《Gears of War 3》PowerPC 可执行文件预先转换为 C++，构建 macOS、Linux 和 Windows 原生版本。运行时提供主机系统服务，并通过 Metal 或 Vulkan 后端处理图形；Tauri 启动器负责准备用户的游戏文件。",
     "evidence_url": "https://github.com/Carolux97/Azura/blob/e4f232db17c691d009e9fc5eea66e6c90c7a6454/README.md",
     "verified_at": "2026-11-06",
+    "source_unavailable": {
+      "checked_at": "2026-11-09T17:09:12+00:00",
+      "outcome": "not-found",
+      "http_status": 404
+    },
     "added_at": "2026-11-09",
     "verification": "source-reviewed",
     "requirements": [
@@ -112691,6 +112721,11 @@
     "description_zh": "Midnight Club: Los Angeles Recomp 将 ReXGlue 对 Xbox 360 版游戏 PowerPC 代码的静态重编译成果用于 Android ARM64。该分支加入 Android 打包、游戏数据导入应用私有目录、C++ 集成和 ReXGlue 补丁。README 报告一次用户测试进入了选车界面；开发和测试主要使用 Galaxy S23。",
     "evidence_url": "https://github.com/gabrielbskk/mcla-recomp-android-g/blob/90d2f8fe53b1d5492f61249cf1c6060f5b57cfca/README.md",
     "verified_at": "2026-11-06",
+    "source_unavailable": {
+      "checked_at": "2026-11-09T17:09:43+00:00",
+      "outcome": "not-found",
+      "http_status": 404
+    },
     "added_at": "2026-11-09",
     "verification": "source-reviewed",
     "requirements": [
@@ -124505,6 +124540,11 @@
     "description_zh": "Project Tandem 从玩家自备的美版 GameCube《Mario Kart: Double Dash!!》光盘镜像静态重编译出 Windows 原生程序。项目基于 gcn-recomp，加入联机多人、宽屏显示、控制器以及鼠标键盘操作。",
     "evidence_url": "https://github.com/badcompany94-rcmp/project-tandem/blob/43734161cc95d4faa7419bbe1d541a811b5446d7/README.md",
     "verified_at": "2026-11-06",
+    "source_unavailable": {
+      "checked_at": "2026-11-09T17:09:53+00:00",
+      "outcome": "not-found",
+      "http_status": 404
+    },
     "added_at": "2026-11-09",
     "verification": "source-reviewed",
     "requirements": [
@@ -140492,6 +140532,11 @@
     "description_zh": "Oogie's Revenge Recomp 使用 xboxrecomp 将 Xbox 美版《Tim Burton's The Nightmare Before Christmas: Oogie's Revenge》的 x86 函数转成 C++，构建 Windows 版本。运行时替代 Xbox 内核及 SDK 服务，Direct3D 11 渲染器将游戏的 Direct3D 8 着色器转成 HLSL。游戏数据取自玩家的光盘镜像。",
     "evidence_url": "https://github.com/josiahg2502-glitch/OogiesRevengeRecompiled/blob/3e74015d75dafe7d0dbb7f0a99b8e0ea08674745/README.md",
     "verified_at": "2026-11-08",
+    "source_unavailable": {
+      "checked_at": "2026-11-09T17:09:48+00:00",
+      "outcome": "not-found",
+      "http_status": 404
+    },
     "added_at": "2026-11-09",
     "verification": "source-reviewed",
     "requirements": [

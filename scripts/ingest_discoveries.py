@@ -35,16 +35,16 @@ BRANCH = discoveries.INGEST_BRANCH
 CACHE = '.cache/discovery-ingest'
 MAX_ATTEMPTS = 3
 CHECK_NAMES = ('validate', 'review')
-CHECK_WAIT_SECONDS = 25 * 60
+CHECK_WAIT_SECONDS = 45 * 60
 # GitHub recomputes a pull request's mergeability asynchronously after its last check completes; a merge
 # requested before that answers 405 although nothing changed. Wait for a mergeable state, bounded.
 MERGEABLE_STATES = frozenset({'clean', 'unstable', 'has_hooks'})
 MERGEABILITY_WAIT_SECONDS = 4 * 60
 MERGE_POLL_SECONDS = 10
 MERGE_REQUESTS = 3
-# The job has 30 minutes; a new attempt (prepare, validate, checks, merge) needs about 12 of them.
-JOB_SECONDS = 28 * 60
-ATTEMPT_SECONDS = 12 * 60
+# The job has 90 minutes; a new attempt (prepare, validate, up to 45 minutes of checks, merge) needs about 55 of them.
+JOB_SECONDS = 88 * 60
+ATTEMPT_SECONDS = 55 * 60
 POLL_SECONDS = 20
 API_TIMEOUT = 30
 MAX_API_BYTES = 12 * 1024 * 1024
