@@ -40712,5 +40712,12 @@
       "把 yuka.exe 放进游戏目录并运行 yuka help。",
       "README 未注明许可证。"
     ]
+  },
+  "py2exe-decompiler": {
+    "name": "Py2ExeDecompiler",
+    "requirements": [
+      "2.7 的二进制需要 Python 2.7，Python 3 的二进制需要 Python 3 到 3.5。.NET Framework 4.5.2 或更高版本。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
