@@ -6,7 +6,7 @@
 
 [English](native-binary.md)
 
-**51 个案例**
+**55 个案例**
 
 - [**AGS Aging Cartridge：反汇编 7.0 版**](https://github.com/Normmatt/ags_aging) - 该项目以用户提供的 Game Boy Advance ROM 为输入，将 AGS Aging Cartridge 7.0 重建为汇编与 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ags-aging-cartridge-case/)</sub>
 - [**cod4map：重建 Call of Duty 4 的 BSP 编译器**](https://github.com/prd0nja/cod4map) - cod4map 根据 2007 年随 Call of Duty 4 模组工具发布的可执行文件重建 BSP 编译器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cod4map-reconstruction-case/)</sub>
@@ -14,9 +14,11 @@
 - [**dolnetbp：重建 GameCube 网络 SDK 库**](https://github.com/Cuyler36/dolnetbp) - dolnetbp 以 C 重建 GameCube Dolphin Network Base Package 的 eth、mdm 和 netcfg 库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dolnetbp-case/)</sub>
 - [**Dolphin SDK 2004 Libraries：反编译 GameCube SDK 归档库**](https://github.com/doldecomp/dolsdk2004) - Dolphin SDK 2004 Libraries 将 2004 年 4 月 20 日版 Dolphin SDK 的已编译归档库重建为 C 与汇编源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dolphin-sdk-2004-libraries-case/)</sub>
 - [**dolsocketlibrary：重建 Dolphin 网络库**](https://github.com/Cuyler36/dolsocketlibrary) - dolsocketlibrary 以 C 重建 Dolphin Network Base Package 的 ip 和 dvdeth 库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dolsocketlibrary-case/)</sub>
+- [**EGG Library：Wii 游戏共用库反编译**](https://github.com/vabold/EGG) - EGG Library 是一项仍在进行的 Wii 程序库反编译工作，目标是让多款游戏和应用共用一套源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/egg-wii-library-decomp-case/)</sub>
 - [**Eidolon in Rust：Eidolon 64k 演示的逐字节一致 Rust 移植**](https://github.com/RovshanMuradov/eidolon-64k-rs) - 把 Poo-Brain 在 Revision 2017 夺得 PC 64k 组冠军的 Eidolon，从经过压缩的 60,928 字节 Windows 可执行文件移植到 Rust，并附有说明原二进制工作原理的章节和单独的体积优化版本。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/eidolon-64k-rust-port-case/)</sub>
 - [**Eloquence 6.1：ECI.DLL 的 C 重建**](https://github.com/KamiKitsune420/eloquence-decomp) - 把 ETI Eloquence 6.1.0.2（美式英语 ECI.DLL 与 ENU.SYN）重建为 C，并提供可替换的 x86 与 x64 ECI.DLL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/eloquence-61-eci-case/)</sub>
 - [**ExCrypt：重建 Xbox 360 XeCrypt 函数**](https://github.com/emoose/ExCrypt) - ExCrypt 以 C 和 C++ 重写 Xbox 360 的 XeCrypt 函数，供既有主机代码和数据使用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/excrypt-case/)</sub>
+- [**GA330-libretro：重建 Gemei A330 运行环境**](https://github.com/minexew/GA330-libretro) - GA330-libretro 将 Gemei A330 运行环境重建为 libretro 核心，使用 Unicorn 执行 ARM 应用二进制文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ga330-libretro-case/)</sub>
 - [**GEOS 2.0：可重建 cbmfiles KERNAL 二进制的源码**](https://github.com/mist64/geos) - Commodore 64 与 128 上 GEOS 2.0 的整理后 cc65 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/geos-20-kernal-case/)</sub>
 - [**geoWrite 2.1：可重建原始二进制的源码**](https://github.com/mist64/geowrite) - GEOS 文字处理器 geoWrite 2.1 英语版与德语版的逆向 cc65 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/geowrite-21-case/)</sub>
 - [**GoonFi V2：Solana 程序的逐字节一致 Rust 重编译**](https://osec.io/blog/goonfi-decompilation/) - OtterSec 研究人员介绍了一套智能体流程：为闭源的 GoonFi V2 Solana 程序重建 Rust 源码，直至用原工具链重新构建即可复现所部署的 ELF。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goonfi-v2-rust-recompilation-case/)</sub>
@@ -27,10 +29,12 @@
 - [**L1J-Encode-CLI：还原 Lineage 1 的 ServerData 编解码算法**](https://github.com/Lan-0v0/L1J-Encode-CLI) - L1J-Encode-CLI 将 Lineage 1 登录器的 ServerData 编码还原为 Python 编解码器，可处理 IP、端口和功能位。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/l1j-encode-cli-case/)</sub>
 - [**libgpu2：PlayStation 2 图形合成器模型重建**](https://github.com/aap/libgpu2) - libgpu2 将索尼 1998 年 PlayStation 2 图形合成器软件模型的 23 个 ELF32/i386 目标文件重建为可构建的 C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/libgpu2-reconstruction-case/)</sub>
 - [**libmd12：E-mu SP-1200 与 SP-12 音频通路的 C 模型**](https://github.com/Mudb0y/libmd12) - E-mu SP-1200 与 SP-12 采样器音频通路的 C99 库：音高回放、滤波器和动态滤波器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/libmd12-sp1200-case/)</sub>
+- [**linker\_pc：重建《Call of Duty 4》的 fastfile 链接器**](https://github.com/prd0nja/linker_pc) - linker\_pc 根据 2008 年发布的可执行文件，重建《Call of Duty 4》模组工具中的 fastfile 链接器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/call-of-duty-4-linker-pc-case/)</sub>
 - [**Microsoft Anna：TTS20 引擎的逐位一致 C 重建**](https://github.com/KamiKitsune420/ms-ana-decomp) - 把 Microsoft Anna（Windows Vista 与 Windows 7 的 TTS20 语音）重建为读取原始语音数据文件的 C99。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ms-anna-tts-case/)</sub>
 - [**Microsoft Sam：SAPI 5 引擎的可移植 C 重建**](https://github.com/KamiKitsune420/ms-sam-mike-mary-decomp) - 把 Windows XP 的 SAPI 5 引擎 spttseng.dll（Microsoft Sam、Mike 和 Mary）重建为读取原始语音文件的 C99。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ms-sam-mike-mary-case/)</sub>
 - [**MWCC：重建 GameCube CodeWarrior 编译器**](https://github.com/rayanht/mwcc) - MWCC 为六个 GameCube 版本重建 Windows x86 编译器 mwcceppc.exe。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mwcc-decomp-case/)</sub>
 - [**ndec-re：还原一款 MS-DOS 加密程序**](https://github.com/bereal/ndec-re) - ndec-re 借助调试器和汇编分析研究一款旧式 MS-DOS COM 加密程序，并用 Go 实现其加密行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ndec-re-case/)</sub>
+- [**NitroSDK：从 Nintendo DS 游戏 ROM 重建库源码**](https://github.com/nitro-decomp/nitro) - NitroSDK Decompilation 从受支持游戏 ROM 中提取代码，重建 Nintendo DS SDK 库源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nitrosdk-decompilation-case/)</sub>
 - [**NW Eft：反编译 Wii U NintendoWare Eft 库**](https://github.com/open-ead/NW4F-Eft) - NW Eft 反编译 Wii U 游戏《New Super Mario Bros. U》中的 NintendoWare for Cafe Eft 库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nw4f-eft-decomp-case/)</sub>
 - [**OneCore TTS：David、Zira 与 Mark 的 C 重建**](https://github.com/KamiKitsune420/ms-david-zira-decomp) - 把 Windows OneCore 文本转语音引擎 MSTTSEngine\_OneCore.dll 10.3（David、Zira 和 Mark）重建为读取原始语音文件的 C99。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/onecore-david-zira-mark-case/)</sub>
 - [**open\_rvl：反编译 Wii Sports 使用的 Wii SDK**](https://github.com/kiwi515/open_rvl) - open\_rvl 将 Wii Sports 所用版本的 Wii SDK 重建为 C 源码，供游戏反编译项目复用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-rvl-sdk-case/)</sub>
