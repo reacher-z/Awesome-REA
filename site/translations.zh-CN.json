@@ -39719,5 +39719,12 @@
       "目前仅构建美版。",
       "许可证：AGPL-3.0。"
     ]
+  },
+  "smw-recomp": {
+    "name": "超级马里奥世界重编译",
+    "requirements": [
+      "需要 sfc 或 smc 格式的美版《超级马里奥世界》ROM。Windows 用压缩包发行版，Linux 用 AppImage。",
+      "许可证：这个项目被覆盖的代码为 PolyForm Noncommercial 1.0.0。third_party 下的附带代码保留各自的许可证。"
+    ]
   }
 }
