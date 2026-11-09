@@ -459,6 +459,7 @@
 - [**《超级马力欧 奥德赛》：Switch 主程序的逐函数一致性反编译**](https://github.com/MonsterDruide1/OdysseyDecomp) - 为《超级马力欧 奥德赛》Switch 1.0 版主程序重建 C++ 源码，并用共享的 nx-decomp-tools 检查器逐个函数与原始 AArch64 机器码比对。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/odyssey-decomp-case/)</sub>
 - [**Super Mario Sunshine（美版）：AI 辅助的一致性反编译分支**](https://github.com/chasem-dev/sms-english) - 将 doldecomp 的 Super Mario Sunshine 反编译工作扩展到北美 GMSE01 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sms-english-gmse01-decomp-case/)</sub>
 - [**Super Mario Sunshine：仍在推进的 GameCube 一致性反编译重建**](https://github.com/doldecomp/sms) - 重建 Super Mario Sunshine 的 C++ 源码，目标是让原版 Metrowerks 编译器为四个 GameCube 发行版本及 Switch 版 3D All-Stars 生成逐字节一致的目标文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sms-matching-decomp-case/)</sub>
+- [**超级密特罗德反汇编**](https://github.com/strager/supermetroid) - 该项目反汇编超级任天堂游戏《超级密特罗德》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/supermetroid-disasm/)</sub>
 - [**Super Monkey Ball：GameCube 版反汇编与反编译**](https://github.com/camthesaxman/smb-decomp) - Super Monkey Ball Decompilation 将《Super Monkey Ball》GameCube 美版的程序代码重建为 C 与汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-monkey-ball-decomp-case/)</sub>
 - [**Super Paper Mario：Wii 游戏的部分匹配反编译**](https://github.com/SeekyCt/spm-decomp) - spm-decomp 使用 decomp-toolkit 和匹配对象标注，重建 Wii 游戏《Super Paper Mario》的部分代码，重点是两个 PAL 修订版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-paper-mario-decomp-case/)</sub>
 - [**Super Smash Bros. 64：任天堂 64 游戏的逐字节匹配反编译**](https://github.com/VetriTheRetri/ssb-decomp-re) - Super Smash Bros. 64 Decompilation 重建任天堂 64 的美版《Super Smash Bros.》ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssb64-decomp-case/)</sub>
@@ -632,5 +633,4 @@
 - [**dynamitedan：《Dynamite Dan》反汇编与注释**](https://github.com/Ritchie333/dynamitedan) - dynamitedan 收录了 1985 年电脑游戏《Dynamite Dan》的带注释反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dynamitedan-case/)</sub>
 - [**Eltale Monsters：基于 ROM 的反编译项目**](https://github.com/Mallos31/EM) - 该项目利用用户提供的《Eltale Monsters》原版 ROM 进行反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/eltale-monsters-decomp-case/)</sub>
 - [**Everyone's A Wally：ZX Spectrum 游戏反汇编**](https://github.com/Ritchie333/wally) - wally 是 ZX Spectrum 游戏《Everyone's A Wally》的反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/everyones-a-wally-disassembly-case/)</sub>
-- [**Extreme-G 2：N64 功能性反编译**](https://github.com/Teraunce/xg-2-decomp) - 使用 IDO 7.1 将 N64 游戏《Extreme-G 2》重建为 C 和汇编代码，目标是功能等效，而非使 C 代码的构建结果逐字节一致。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/extreme-g-2-n64-decomp-case/)</sub>
 <!-- END GENERATED CASES -->

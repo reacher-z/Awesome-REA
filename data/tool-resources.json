@@ -143849,5 +143849,28 @@
     "verified_at": "2026-11-07",
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
+  },
+  {
+    "id": "supermetroid-disasm",
+    "name": "Super Metroid disassembly",
+    "url": "https://github.com/strager/supermetroid",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles Super Metroid for the Super Famicom. make on Linux or macOS, or nmake from the Visual Studio x64 tools prompt on Windows, produces supermetroid-ntsc.sfc. The reviewed SHA-1 of that NTSC Japan and USA ROM is da957f0d63d14cb441d215462904c4fa8519c613. The build needs CMake 2.8.9 or newer and GCC, Clang, or MSVC. nix-shell then make is the Nix path.",
+    "description_zh": "该项目反汇编超级任天堂游戏《超级密特罗德》。Linux 或 macOS 上运行 make，Windows 上在 Visual Studio x64 工具提示里运行 nmake，产出 supermetroid-ntsc.sfc。审阅的日版和美版 NTSC ROM 的 SHA-1 是 da957f0d63d14cb441d215462904c4fa8519c613。构建需要 CMake 2.8.9 或更高版本，以及 GCC、Clang 或 MSVC。Nix 路径是先 nix-shell 再 make。",
+    "requirements": [
+      "CMake 2.8.9 or newer, GNU Make or nmake, and GCC, Clang, or MSVC.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/strager/supermetroid/blob/b7785a19024454ef366500243648cb64e687164b/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
