@@ -10,6 +10,7 @@
 
 ## 非匹配反编译
 
+- [**Extreme-G 2：N64 功能性反编译**](https://github.com/Teraunce/xg-2-decomp) - 使用 IDO 7.1 将 N64 游戏《Extreme-G 2》重建为 C 和汇编代码，目标是功能等效，而非使 C 代码的构建结果逐字节一致。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/extreme-g-2-n64-decomp-case/)</sub>
 - [**Faceball 2000：SNES 美国版反汇编**](https://github.com/Yoshifanatic1/Faceball-2000-Disassembly) - 该项目提供《Faceball 2000》SNES 美国版的汇编源码，借助 SNES ROM 框架和批处理脚本，从用户自备的无文件头 ROM 提取所需资源后进行汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/faceball-2000-disassembly-case/)</sub>
 - [**Fahrenheit：PS2 原型版本的分析性反编译**](https://github.com/fmil95/santamonica) - santamonica 是 PS2 游戏《华氏》（又名 Indigo Prophecy）原型版本的早期 C++ 反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/santamonica-fahrenheit-case/)</sub>
 - [**Fallout 2 Reference Edition：逆向还原的原版引擎 C 源码**](https://github.com/alexbatalov/fallout2-re) - 依据原始二进制文件还原《辐射 2》Windows 引擎的 C 源码，力求连同原有缺陷在内尽量贴近原版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fallout2-reference-edition-case/)</sub>
@@ -629,5 +630,4 @@
 - [**Need for Speed: Most Wanted for Android：Xbox 版静态重编译的 Android 移植**](https://github.com/RanggaCasper/MostWanted-Android) - Need for Speed: Most Wanted for Android 使用 XboxXBE-Recomp 将初代 Xbox Black Edition 的 x86 XBE 代码静态转换为 C++，再构建为 Android arm64 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mostwanted-android-case/)</sub>
 - [**Need for Speed: Most Wanted：面向 Apple Silicon 的静态重编译**](https://github.com/elforeign/nfs-most-wanted-mac) - Need for Speed: Most Wanted Native 将用户的 PC 版 1.3 speed.exe 从 x86 翻译为 C，并编译成 Apple Silicon Mac 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nfs-most-wanted-mac-recomp-case/)</sub>
 - [**Need for Speed: SHIFT：Xbox 360 版 ReXGlue 静态重编译**](https://github.com/Hanz0Hatt0r1/nfs-shift-decompilation) - 项目以 Xbox 360 版《Need for Speed: SHIFT》的 PowerPC 可执行文件为输入，借助 ReXGlue 预先转换为 C++，并构建 Linux 原生运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nfs-shift-xbox360-recomp-case/)</sub>
-- [**Need for Speed: Underground 2：面向 Switch 与 Linux 的 Xbox 静态重编译**](https://github.com/antoxa2584x/nfsu2-sw) - nfsu2-sw 将 Xbox 美版《Need for Speed: Underground 2》转换为 Nintendo Switch 和 Linux 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nfsu2-switch-linux-recompilation-case/)</sub>
 <!-- END GENERATED CASES -->

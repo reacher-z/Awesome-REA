@@ -440,6 +440,7 @@
 - [**SpongeBob SquarePants: Battle for Bikini Bottom：GameCube 反编译**](https://github.com/bfbbdecomp/bfbb) - 这是《海绵宝宝：比奇堡的冒险》进行中的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bfbb-decomp-case/)</sub>
 - [**Spyro 2: Gateway to Glimmer：PlayStation 匹配反编译**](https://github.com/marcovoc/spyro2-decomp) - Spyro 2: Gateway to Glimmer 针对欧洲版 PlayStation 游戏 SCES-021.04 重建匹配的 C 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/spyro-2-gateway-to-glimmer-case/)</sub>
 - [**Spyro 2: Ripto's Rage!：进行中的 PlayStation 反编译**](https://github.com/TheMobyCollective/spyro-2) - Spyro 2: Ripto's Rage! 以 C 源码及汇编重构美版修订版 0 的 PlayStation 主程序和覆盖模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/spyro-2-riptos-rage-decomp-case/)</sub>
+- [**斯派罗反编译**](https://github.com/TheMobyCollective/spyro-1) - 该项目把《斯派罗》反编译成匹配的 PSX.EXE。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/spyro-1-decomp/)</sub>
 - [**SSX 3：进行中的 PS2 匹配反编译**](https://github.com/ssxdecomp/ssx3) - SSX 3 项目重建美版 PS2 游戏源码，目标是与原可执行文件匹配。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssx3-decomp-case/)</sub>
 - [**SSX Tricky：进行中的 PlayStation 2 匹配式反编译**](https://github.com/ssxdecomp/ssxtricky) - SSX Tricky 重构美版 PlayStation 2 游戏的源码，以用户提供的 SLUS\_203.26 可执行文件为对照构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssx-tricky-decomp-case/)</sub>
 - [**SSX：进行中的 PS2 匹配反编译**](https://github.com/ssxdecomp/ssx) - SSX 对 2000 年《SSX》的 NTSC-U 版 PlayStation 2 游戏进行匹配反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssx-2000-decomp-case/)</sub>
@@ -632,5 +633,4 @@
 - [**dynamitedan：《Dynamite Dan》反汇编与注释**](https://github.com/Ritchie333/dynamitedan) - dynamitedan 收录了 1985 年电脑游戏《Dynamite Dan》的带注释反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dynamitedan-case/)</sub>
 - [**Eltale Monsters：基于 ROM 的反编译项目**](https://github.com/Mallos31/EM) - 该项目利用用户提供的《Eltale Monsters》原版 ROM 进行反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/eltale-monsters-decomp-case/)</sub>
 - [**Everyone's A Wally：ZX Spectrum 游戏反汇编**](https://github.com/Ritchie333/wally) - wally 是 ZX Spectrum 游戏《Everyone's A Wally》的反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/everyones-a-wally-disassembly-case/)</sub>
-- [**Extreme-G 2：N64 功能性反编译**](https://github.com/Teraunce/xg-2-decomp) - 使用 IDO 7.1 将 N64 游戏《Extreme-G 2》重建为 C 和汇编代码，目标是功能等效，而非使 C 代码的构建结果逐字节一致。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/extreme-g-2-n64-decomp-case/)</sub>
 <!-- END GENERATED CASES -->
