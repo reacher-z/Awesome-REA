@@ -78,7 +78,7 @@ class QueueTests(unittest.TestCase):
         for value in ('publication_status', 'conference-paper', 'preprint', 'verification', 'stale', 'dead'):
             self.assertNotIn(value, listed)
         self.assertIn('publication status is unchanged', report['policy'])
-        self.assertIn('not evidence that a description is outdated or that a project is abandoned', report['policy'])
+        self.assertIn('used to plan rechecks', report['policy'])
 
     def test_scan_observations_stay_separate_from_source_reviews(self):
         report = review_queue(self.catalogs, self.scans, AS_OF)

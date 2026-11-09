@@ -1179,9 +1179,8 @@ def pull_request_body(count: int, provenance: dict, batch_path: Path, attempt: i
         f'Adds `{batch_path.relative_to(ROOT).as_posix()}` with {count} leads: links that the sources registered in '
         '`data/discovery-sources.json` list inside their in-scope sections, new to the curated catalog, the papers, the '
         'source index, the public supplements, the README-scan discoveries, the scope exclusions, the case-coverage '
-        'ledger and earlier lead batches. Every lead stays `automated-source-lead` and `unreviewed`: a listing by a '
-        'secondary source is not evidence for curation, and no review, translation, runtime test or endorsement is '
-        'implied. No other file changes.',
+        'ledger and earlier lead batches. Every lead is `automated-source-lead` and `unreviewed` until a curated record '
+        'is written for it. No other file changes.',
         '',
         f'Sources followed: {captured} captured' + (f", {len(failed)} unavailable this run ({', '.join(failed[:10])})" if failed else '') + '.',
         f"Registry SHA-256 `{provenance['registry_sha256']}`, collector commit `{provenance['head_sha'][:12]}`.",

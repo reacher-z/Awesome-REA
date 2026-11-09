@@ -9,8 +9,8 @@ including websites, books and papers. The sources and their scope rules are regi
 
 A lead records where it was listed (pinned evidence), a stable identity, a name and a kind hint taken from
 the listing section, and for GitHub repositories, papers and Hugging Face repositories a metadata snapshot.
-It is ``automated-source-lead`` and ``unreviewed``: nobody has read its sources, and being listed by a
-secondary source is never evidence for curation (AGENTS.md). Batches are immutable files
+It is ``automated-source-lead`` and ``unreviewed`` until a curated record is written for it under the
+promotion worksheet. Batches are immutable files
 ``data/discoveries/leads/<YYYY-MM>/leads-<run id>-<attempt>.json``.
 
 Run without options to validate the registry and every lead batch and print the queue size and budget.
