@@ -5420,5 +5420,525 @@
     "additional_evidence_urls": [
       "https://github.com/chanadinh/pokemon-x-decomp/blob/f99e9d6e2459deaa63d04a4efc519b9b159c5a5a/docs/ANALYSIS_WORKSPACE.md"
     ]
+  },
+  {
+    "id": "aklink-case",
+    "name": "AK·LINK: reconstructing AJAZZ AK820 Pro HID control",
+    "url": "https://github.com/AaditPani-RVU/aklink",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "AK·LINK implements Linux control of the AJAZZ AK820 Pro keyboard through its recovered wired HID commands for lighting, per-key RGB and the TFT screen. Its author documents REA-assisted investigation of a separate 2.4 GHz dongle channel, including observed usage pages, checksums and read-only probe responses; native dongle control remains in progress.",
+    "description_zh": "AK·LINK 利用恢复的有线 HID 指令，在 Linux 上控制 AJAZZ AK820 Pro 的灯效、逐键 RGB 和 TFT 屏幕。作者还记录了借助 REA 调查 2.4 GHz 接收器通道的结果，包括用法页、校验和及只读探测响应；原生接收器控制仍在开发中。",
+    "evidence_url": "https://github.com/AaditPani-RVU/aklink/blob/fe33f8f3b74413dd14a57d3ee7d459d5338cce21/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Linux, Python 3.11+, PyGObject with WebKitGTK 4.1, Pillow, and access to an AJAZZ AK820 Pro.",
+      "Lighting, per-key control, screen and clock are supported over USB-C; native control over the 2.4 GHz dongle is in progress.",
+      "MIT license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/AaditPani-RVU/aklink/blob/fe33f8f3b74413dd14a57d3ee7d459d5338cce21/docs/DONGLE.md"
+    ]
+  },
+  {
+    "id": "etrel-load-guard-configurator-case",
+    "name": "Etrel Load Guard Configurator: reconstructing the meter's UDP protocol",
+    "url": "https://github.com/XavierGeerinck/etrel-load-guard-configurator",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Etrel Load Guard Configurator is a Python CLI for discovering, reading and configuring Etrel Load Guard energy meters through a reconstructed UDP protocol. The author reports using REA with Ghidra on LoadGuardConfigurator.exe to recover packet fields and settings, then checking byte order and read-only measurements on a device. The tool includes dry-run writes and a simulator.",
+    "description_zh": "Etrel Load Guard Configurator 是通过重建的 UDP 协议发现、读取和配置 Etrel Load Guard 电表的 Python 命令行工具。作者报告使用 REA 与 Ghidra 分析 LoadGuardConfigurator.exe，恢复报文字段和设置，并在设备上核对字节序与只读测量结果。工具提供写入预览和模拟器。",
+    "evidence_url": "https://github.com/XavierGeerinck/etrel-load-guard-configurator/blob/6e1fc40bf6a697c0a6a9fbae04f0806ba7acd2c0/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.8 or later and network access to an Etrel Load Guard; discovery requires the same network segment.",
+      "The author checked read-only operations on a Load Guard with software version 10 and hardware version 257.",
+      "Write commands pass tests and the simulator but have not been exercised on hardware.",
+      "MIT license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/XavierGeerinck/etrel-load-guard-configurator/blob/6e1fc40bf6a697c0a6a9fbae04f0806ba7acd2c0/docs/PROTOCOL.md"
+    ]
+  },
+  {
+    "id": "zotion-case",
+    "name": "Zotion: rebuilding a Notion-style workspace from REA research",
+    "url": "https://github.com/jocarvalhosantos/Zotion",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "website"
+    ],
+    "description_en": "Zotion is a browser-based workspace built after REA analysis of Notion Desktop's Electron package and sampled web JavaScript bundles. The project documents static clues about preload APIs, IPC and workspace structures, then implements its own block editor, databases, local storage and meeting notes in a Portuguese interface.",
+    "description_zh": "Zotion 是在使用 REA 分析 Notion Desktop 的 Electron 程序包及部分网页 JavaScript 包后开发的浏览器工作区。项目记录 preload API、IPC 和工作区结构的静态线索，并独立实现葡语界面的块编辑器、数据库、本地存储和会议笔记。",
+    "evidence_url": "https://github.com/jocarvalhosantos/Zotion/blob/1c71d74c4c07437a3d61777c6998df5ab417861c/docs/engenharia-reversa.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A modern browser for the web app; local development uses the repository's Node/Vite toolchain.",
+      "Data stays in each browser profile; server persistence, cross-device sync and collaboration remain planned.",
+      "No licence file in the repository."
+    ],
+    "class": "website",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jocarvalhosantos/Zotion/blob/1c71d74c4c07437a3d61777c6998df5ab417861c/README.md"
+    ]
+  },
+  {
+    "id": "openpdf-studio-case",
+    "name": "OpenPDF Studio: rebuilding PDF editing interactions from WPS PDF research",
+    "url": "https://github.com/aotefan/openpdf-studio",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "OpenPDF Studio builds a local macOS PDF editor informed by REA-assisted observation of WPS Office 12.1.28496's PDF interface. Its research records editing interactions and limited Mach-O module inspection, while the implementation uses React, Electron, PyMuPDF and Apple Vision for text and image edits, conversion and OCR.",
+    "description_zh": "OpenPDF Studio 根据借助 REA 对 WPS Office 12.1.28496 PDF 界面的观察，开发 macOS 本地 PDF 编辑器。研究记录了编辑交互和有限的 Mach-O 模块检查；实现使用 React、Electron、PyMuPDF 与 Apple Vision 处理文字、图片、转换和 OCR。",
+    "evidence_url": "https://github.com/aotefan/openpdf-studio/blob/056d7d219e255fac8dacbabaac2911bb1fcd7953/research/wps-pdf-reverse-engineering.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "macOS on Apple Silicon, Xcode Command Line Tools, Python 3.12, uv and a supported patched Node.js runtime.",
+      "The current source preview has no installer; desktop launch and packaging are gated pending a patched Electron release.",
+      "Editing is limited to supported text and image cases; documents above 60 MB or 500 pages are rejected.",
+      "AGPL-3.0-or-later."
+    ],
+    "class": "software",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/aotefan/openpdf-studio/blob/056d7d219e255fac8dacbabaac2911bb1fcd7953/README.md"
+    ]
+  },
+  {
+    "id": "keymarks-case",
+    "name": "Keymarks: reconstructing Powermarks 3.5 bookmarks and workflows",
+    "url": "https://github.com/novakda/keymarks",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Keymarks rebuilds Powermarks 3.5's keyword-based bookmark workflow as a Windows Tauri app with SQLite search and a browser extension. Its author used REA with Ghidra to recover the undocumented pm35.htm record layout from pm.exe and implemented import and export for that format. A separate feature inventory draws on the original manual, changelog, settings and executable strings.",
+    "description_zh": "Keymarks 以 Windows Tauri 应用、SQLite 搜索和浏览器扩展重建 Powermarks 3.5 的关键词书签流程。作者使用 REA 与 Ghidra 从 pm.exe 恢复未公开的 pm35.htm 记录布局，并实现该格式的导入与导出。另有一份功能清单依据原程序的手册、更新记录、设置和可执行文件中的字符串编写。",
+    "evidence_url": "https://github.com/novakda/keymarks/blob/e6bfd912ca67879da5c47754808112fe7fccc305/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows and Powermarks 3.5 files for importing legacy bookmarks.",
+      "The author reports byte-for-byte round trips on a 13,057-entry bookmark database.",
+      "MIT license."
+    ],
+    "class": "software",
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/novakda/keymarks/blob/e6bfd912ca67879da5c47754808112fe7fccc305/docs/pm35-format.md"
+    ]
+  },
+  {
+    "id": "edgestash-case",
+    "name": "edgestash: reconstructing Vercel Blob and Upstash Redis API behavior",
+    "url": "https://github.com/devtechedge/edgestash",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "website"
+    ],
+    "description_en": "edgestash implements a self-hosted server for the Vercel Blob and Upstash Redis REST APIs, allowing their published SDKs to use a different endpoint. The author reports using REA to inspect SDK bundles for headers, error mappings and rate-limit Lua scripts, then documenting behavior in API specs and testing the implementation against Redis and SDK clients.",
+    "description_zh": "edgestash 实现可自行托管的 Vercel Blob 与 Upstash Redis REST API 服务，让已发布的 SDK 改用其他端点。作者报告曾用 REA 检查 SDK 包中的请求头、错误映射和限流 Lua 脚本，并将结果写成 API 规格，再与 Redis 及 SDK 客户端进行对照测试。",
+    "evidence_url": "https://github.com/devtechedge/edgestash/blob/783df97eec329628ac1976ed83f1429920f2866c/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Node.js 20 or later and pnpm are required for the documented source workflow.",
+      "The author reports 2,381 of 2,381 differential Redis cases matching redis-server 8.0.2.",
+      "The embedded engine is single-node and snapshot-based; some Blob and Redis operations are unimplemented.",
+      "MIT license."
+    ],
+    "class": "website",
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/devtechedge/edgestash/blob/783df97eec329628ac1976ed83f1429920f2866c/docs/LIMITATIONS.md"
+    ]
+  },
+  {
+    "id": "uniswap-v2-reborn-case",
+    "name": "uniswap-v2-reborn: reconstructing Uniswap v2 from deployed bytecode",
+    "url": "https://github.com/devtechedge/uniswap-v2-reborn",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "uniswap-v2-reborn reconstructs Uniswap v2 factory, pair and Router02 behavior from deployed EVM runtime bytecode using REA interface inspection, storage probing and written specifications. It provides a TypeScript model, Solidity 0.8 contracts and a differential harness that compares both with the original bytecode; the author reports 4,800 fuzzed operations without mismatches and exact replay of 426 historical swaps.",
+    "description_zh": "uniswap-v2-reborn 使用 REA 接口分析、存储槽探测和行为规格，从已部署的 EVM 运行时代码重建 Uniswap v2 的 factory、pair 与 Router02。仓库提供 TypeScript 模型、Solidity 0.8 合约和同原版字节码对照的差异测试工具；作者报告 4,800 次模糊操作无差异，并精确重放 426 笔历史交易。",
+    "evidence_url": "https://github.com/devtechedge/uniswap-v2-reborn/blob/0cdad3f6d2919e62b33a81afea03ae305ebb6275/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Local builds and tests require Node 22.19 or later, pnpm 9 and Foundry.",
+      "The author reports 4,800 differential operations with zero mismatches and 426 exact historical-swap replays.",
+      "MIT license."
+    ],
+    "class": "software",
+    "additional_evidence_urls": [
+      "https://github.com/devtechedge/uniswap-v2-reborn/blob/0cdad3f6d2919e62b33a81afea03ae305ebb6275/docs/ARCHITECTURE.md"
+    ]
+  },
+  {
+    "id": "rea-doom-term-case",
+    "name": "rea-doom-term: a text-only reconstruction of DOOM",
+    "url": "https://github.com/schererstefan/rea-doom-term",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "rea-doom-term rebuilds DOOM (1993) as a playable Rust terminal game with WAD parsing, fixed-point math, movement, combat, and text raycasting. Its evidence log links reconstructed subsystems to original source functions and tests; the terminal renderer uses a different visibility and texturing approach.",
+    "description_zh": "rea-doom-term 将 DOOM（1993）重建为可玩的 Rust 终端游戏，包含 WAD 解析、定点运算、移动、战斗和文本光线投射。分析日志将各子系统对应到原始源码函数及测试；终端渲染器采用不同的可见性与贴图方案。",
+    "evidence_url": "https://github.com/schererstefan/rea-doom-term/blob/8ffc9ccb9bfd1bc5a94538ceaddb74a66271c53c/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A Rust toolchain supporting edition 2021 and crossterm 0.28.",
+      "Supply your own WAD to load an original map; a built-in map is available without one.",
+      "The author reports testing real-WAD loading with Freedoom Phase 1 v0.13.0; id WADs were unavailable for that test.",
+      "MIT license."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/schererstefan/rea-doom-term/blob/8ffc9ccb9bfd1bc5a94538ceaddb74a66271c53c/docs/ANALYSIS.md"
+    ]
+  },
+  {
+    "id": "mipods-case",
+    "name": "MiPods: reconstructing Xiaomi earbuds control on macOS",
+    "url": "https://github.com/JackWPP/MiPods",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "MiPods reconstructs Xiaomi earbuds control in a macOS menu-bar app using a recovered BLE GATT protocol. Its Swift core handles battery readings, device information and model-dependent noise controls, while research notes document hardware probes, vendor-app analysis and recording-transfer exchanges. A separate report describes REA-assisted analysis of Xiaomi's Mac app.",
+    "description_zh": "MiPods 利用逆向得到的 BLE GATT 协议，在 macOS 菜单栏应用中实现小米耳机控制。Swift 核心读取电量和设备信息，并按机型提供降噪控制；研究记录涵盖真机探针、官方应用分析及录音传输交互。另有报告记载使用 REA 分析小米 Mac 应用。",
+    "evidence_url": "https://github.com/JackWPP/MiPods/blob/eb1376e397fe557b9dcf94a260641d81b65f02d8/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "macOS 14 or later with Bluetooth permission; building from source requires Xcode.",
+      "The author reports full device testing on Xiaomi M2529E1; other models remain untested.",
+      "Recording export remains outside the documented app features.",
+      "AGPL-3.0."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/JackWPP/MiPods/blob/eb1376e397fe557b9dcf94a260641d81b65f02d8/research/rea/findings.md",
+      "https://github.com/JackWPP/MiPods/blob/eb1376e397fe557b9dcf94a260641d81b65f02d8/research/record/capture-analysis.md"
+    ]
+  },
+  {
+    "id": "hantek-dso5000p-linux-case",
+    "name": "hantek-dso: reconstructing Hantek DSO5000P USB control",
+    "url": "https://github.com/kooscode/hantek-dso5000p-linux",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "description_en": "hantek-dso reconstructs USB control of Hantek DSO5000P oscilloscopes in a Linux Python client with GUI, CLI and API. Its protocol reference combines REA and Ghidra analysis of scope firmware, inspection of the original Windows Scope application and live DSO5102P tests. The client reads waveforms and settings, changes controls and retrieves screenshots over the recovered command framing.",
+    "description_zh": "hantek-dso 在 Linux Python 客户端中还原 Hantek DSO5000P 示波器的 USB 控制，并提供图形界面、命令行和 API。协议文档结合 REA 与 Ghidra 对设备固件的分析、对原版 Windows Scope 应用的检查及 DSO5102P 真机测试。客户端按还原的命令帧读取波形与设置、调整控制项并获取截图。",
+    "evidence_url": "https://github.com/kooscode/hantek-dso5000p-linux/blob/b0facf139fb1b3da0a8c3ad0fa77a9eda76e1c46/protocol/PROTOCOL.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Linux, libusb 1.0, Python 3.10 or later and a DSO5000P-series scope connected through its rear USB device port.",
+      "The documented hardware test used a DSO5102P with firmware 3.40.0.",
+      "Some settings writes can crash or freeze the scope; the client restricts writes to tested fields unless force is requested.",
+      "MIT."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/kooscode/hantek-dso5000p-linux/blob/b0facf139fb1b3da0a8c3ad0fa77a9eda76e1c46/README.md"
+    ]
+  },
+  {
+    "id": "swemu-case",
+    "name": "swemu: reconstructing a SoulWorker server from client packet readers",
+    "url": "https://github.com/BocchiV/swemu",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "description_en": "swemu reconstructs a server for the SoulWorker GB/Steam 2.3.34.7 game client in Rust. Its research log reports REA/Ghidra decompilation and Unicorn execution of client routines to recover packet layouts, encryption, and exchanges used for login, characters, world entry, and early combat.",
+    "description_zh": "swemu 用 Rust 重建 SoulWorker GB/Steam 2.3.34.7 游戏客户端所需的服务器。研究日志报告使用 REA/Ghidra 反编译并通过 Unicorn 执行客户端函数，以恢复数据包布局、加密方式，以及登录、角色、进入世界和初步战斗流程。",
+    "evidence_url": "https://github.com/BocchiV/swemu/blob/268a167d8d89a4f669d65a58d42f558731608d54/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provide your own SoulWorker 2.3.34.7 client for generated tables and testing.",
+      "The server uses stable Rust edition 2024; research tools require Python 3.12 and documented Python packages.",
+      "Some game data requires separate server-side tables; fallbacks are used where possible.",
+      "Combat is buggy and quests, parties, friends, guilds, and PvP are missing.",
+      "AGPL-3.0 license."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BocchiV/swemu/blob/268a167d8d89a4f669d65a58d42f558731608d54/docs/re-log.md"
+    ]
+  },
+  {
+    "id": "taskly-trello-shell-case",
+    "name": "Taskly: rebuilding Trello's Electron desktop shell",
+    "url": "https://github.com/mateusrezendeps19/taskly",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Taskly is an offline kanban app whose Electron desktop shell was reconstructed from Trello's app.asar using REA. The analysis covers window inventory, geometry, IPC channels and preloads; the board interface and local document storage are new implementation work. A separate report records the investigated package and recovered shell details.",
+    "description_zh": "Taskly 是一款离线看板应用，其 Electron 桌面外壳依据 REA 对 Trello app.asar 的分析重建。研究涵盖窗口清单、尺寸、IPC 通道和 preload；看板界面与本地文档存储由项目自行实现。独立报告记录了分析对象和恢复出的外壳细节。",
+    "evidence_url": "https://github.com/mateusrezendeps19/taskly/blob/a8a676260ee5495c9cea6d2dd85228d4fca8a03f/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Node and npm dependencies are required for development and builds.",
+      "The reconstructed shell covers evidence found in Trello's packaged desktop app; the board interface is original work.",
+      "MIT license."
+    ],
+    "class": "software",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mateusrezendeps19/taskly/blob/a8a676260ee5495c9cea6d2dd85228d4fca8a03f/docs/REVERSE-ENGINEERING.md"
+    ]
+  },
+  {
+    "id": "sadx-decomp-case",
+    "name": "Sonic Adventure DX: matching reconstruction of the 2014 Steam executable",
+    "url": "https://github.com/LuckyLuke00/sadx-decomp",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs C and C++ source for the 2014 Steam release of Sonic Adventure DX, comparing compiled functions with the retail executable. It uses Visual C++ 2010 SP1 to produce matching machine code and reccmp to check matches. The project aims to rebuild the whole executable byte for byte, one function at a time.",
+    "description_zh": "项目重建 Sonic Adventure DX 2014 年 Steam 版的 C 与 C++ 源码，并将编译后的函数与原版可执行文件比较。项目使用 Visual C++ 2010 SP1 生成匹配的机器码，并通过 reccmp 检查匹配情况。其目标是逐函数完成整个可执行文件的逐字节一致重建。",
+    "evidence_url": "https://github.com/LuckyLuke00/sadx-decomp/blob/5075e511cf10f9bdb12027d943bad580ae3c7dee/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The 2014 Steam release of Sonic Adventure DX is required.",
+      "Windows 10 build 17063 or newer, Python 3.10 or newer, git and Visual C++ 2010 SP1 are specified.",
+      "Source reconstruction is in progress.",
+      "MIT covers tools, build files, tests and guides; src/ and data/ are not licensed by the project."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LuckyLuke00/sadx-decomp/blob/5075e511cf10f9bdb12027d943bad580ae3c7dee/CLAUDE.md"
+    ]
+  },
+  {
+    "id": "subway-runner-3d-case",
+    "name": "Subway Runner 3D: rebuilding Subway Surfers movement rules",
+    "url": "https://github.com/ahmedrazakhann/rea-subway-surfers",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Subway Runner 3D is a procedural Three.js endless runner modeled on Subway Surfers movement and presentation. The author reports using REA and frame-by-frame observation of the original to derive speed, acceleration, jump and gravity values, then implementing lane movement, obstacles and power-ups for browsers and an Android WebView build.",
+    "description_zh": "Subway Runner 3D 是以 Subway Surfers 的运动与画面为参照、用 Three.js 制作的程序化无尽跑酷游戏。作者报告借助 REA 和逐帧观察得到速度、加速度、跳跃与重力参数，再实现车道移动、障碍和道具，并提供浏览器及 Android WebView 版本。",
+    "evidence_url": "https://github.com/ahmedrazakhann/rea-subway-surfers/blob/087576c07734e65d67f8e30c320990323bad195b/README.md",
+    "verified_at": "2026-11-08",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A browser for the web build; Android and Gradle tooling for the Android wrapper.",
+      "The movement values are the author's reported reconstruction from behavioral observation.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ]
+  },
+  {
+    "id": "ugh-port-case",
+    "name": "UGH!: a C++ port of the 1992 DOS game",
+    "url": "https://github.com/janroz/ugh-port",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "port",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "UGH! ports the 1992 DOS game routine by routine from analysis of UGH.EXE into C++23 and SDL 3. It reads graphics, levels and sound from the user's executable, models VGA Mode X behavior and ports the AdLib driver. Project guidance records use of a REA plugin with Ghidra during analysis.",
+    "description_zh": "UGH! 根据对 UGH.EXE 的分析，将这款 1992 年 DOS 游戏逐函数移植到 C++23 和 SDL 3。程序从用户的可执行文件读取图像、关卡与声音，模拟 VGA Mode X 行为并移植 AdLib 驱动；项目说明记载了结合 Ghidra 使用 REA 插件的分析流程。",
+    "evidence_url": "https://github.com/janroz/ugh-port/blob/73221a389385a0883423b74df7d5f3e92cfc305d/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the specified DOS UGH.EXE build with the documented SHA-256 hash.",
+      "Building requires a C++23 compiler, CMake 3.28+, Ninja and SDL 3.2+; first configuration fetches Nuked-OPL3.",
+      "Joysticks are not ported; Windows is untested.",
+      "MIT licence for the port source."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/janroz/ugh-port/blob/73221a389385a0883423b74df7d5f3e92cfc305d/CLAUDE.md"
+    ]
+  },
+  {
+    "id": "mystery-sdl-case",
+    "name": "mystery-sdl: porting the Mystery screen saver to SDL2",
+    "url": "https://github.com/viny182/mystery-sdl",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "mystery-sdl ports the Microsoft Plus! Mystery screen saver to SDL2 on Linux. After REA-assisted analysis of the original binaries, it reimplements sprite, animation and sound services in C, translates the plugin logic, and reads scene data from the user's Mystery.dll.",
+    "description_zh": "mystery-sdl 将 Microsoft Plus! 的 Mystery 屏保移植到 Linux 上的 SDL2。项目借助 REA 分析原始二进制文件，以 C 语言重建精灵、动画和声音服务、移植插件逻辑，并在运行时从用户自备的 Mystery.dll 读取场景数据。",
+    "evidence_url": "https://github.com/viny182/mystery-sdl/blob/fec0d3ce57df1dbdfe372d3eb31157fa42fa1ac8/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The original Mystery.dll from a legitimately obtained Microsoft Plus! for Windows 95 copy is required.",
+      "Building requires a C compiler, make, pkg-config and SDL2 development files version 2.0.5 or newer.",
+      "The author reports testing only on x86-64 Arch Linux and comparing the first frame with the original under Wine; individual animation timing remains unverified.",
+      "MIT license."
+    ],
+    "class": "software",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/viny182/mystery-sdl/blob/fec0d3ce57df1dbdfe372d3eb31157fa42fa1ac8/LICENSE"
+    ]
   }
 ]

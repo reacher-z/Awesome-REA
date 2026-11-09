@@ -287,6 +287,15 @@
     "evidence_url": "https://github.com/biappi/PacMaschine/blob/212ab8d1d8fe91dc8abfa8c8c14b7c9a449e8317/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-134736607": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "py6502 presents itself as a Python 6502 emulator; the README documents no binary analysis, disassembly or reverse-engineering use.",
+    "reason_zh": "py6502 将自身描述为 Python 6502 模拟器，项目说明未记录二进制分析、反汇编或逆向工程用途。",
+    "readme_sha256": "fedb55ce82c85de7e88a1aefb416d3f9f6a11a67cdb831facd5afd9d68c4a632",
+    "evidence_url": "https://github.com/rsc-dev/py6502/blob/ff7e6c8d9d8008348dcca24f0e16111ed8de6e79/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-136004757": {
     "decision": "exclude",
     "reason_code": "unrelated",
@@ -3340,6 +3349,15 @@
     "evidence_url": "https://github.com/o0Mardev/Registro-Elettronico/blob/5a61d4f6fc95dfed27713cdf88e1ea00925f48d3/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-736883628": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Fate EXTELLA Link decompilation is only a work-in-progress announcement; its sole C file contains an empty main function and no recovered game code or findings.",
+    "reason_zh": "Fate EXTELLA Link 反编译仓库只有进行中的简短说明；唯一的 C 文件仅有空的 main 函数，没有恢复出的游戏代码或研究发现。",
+    "readme_sha256": "8702c171105d9e9addcce2e250bbe6674b6527698a04a60420536482d381067d",
+    "evidence_url": "https://github.com/bIue9076r/fate-extella-decompilation/blob/4051b076ff6d448a581850d0d432453243b29176/main.c",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-741672628": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -3519,6 +3537,15 @@
     "readme_sha256": "e12f99e1edd14aabb1e449e299979fe14a4ff0a60c245d4e4b5592a439eafa98",
     "evidence_url": "https://github.com/vheidari/RazerWing/blob/e1dd3fdc7eacbd6d4e7a7c965fcaf56c098a2a59/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-786459238": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "CKRenderEngine documents a standalone Virtools render-engine module and CMake builds, but no reverse-engineering work or analysis capability.",
+    "reason_zh": "CKRenderEngine 介绍的是可独立构建的 Virtools 渲染引擎模块及其 CMake 配置，没有记载逆向分析工作或分析功能。",
+    "readme_sha256": "2807ed73e201e0e8c128d48ec956931a68b043151d8c0384f598c73a7232a574",
+    "evidence_url": "https://github.com/doyaGu/CKRenderEngine/blob/54accdb8c321270d56002abc2994ece28322d9f9/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-790350098": {
     "decision": "hold",
@@ -3870,6 +3897,15 @@
     "readme_sha256": "acf2e9031e3cf5b15c0ce53c697d610bfb52208858ec27536d5165cf9d6d59e4",
     "evidence_url": "https://github.com/Knight1/VanMooof-Module/blob/195379bbaeb8f5872aec37fdff9194539da6f142/README.md",
     "reviewed_at": "2026-11-08"
+  },
+  "scan-879083942": {
+    "decision": "exclude",
+    "reason_code": "development-tool",
+    "reason_en": "LCC.js primarily implements an educational assembler, linker and interpreter; its debugger and disassembler serve that toolchain rather than a documented reverse-engineering workflow.",
+    "reason_zh": "LCC.js 的主体是教学用汇编器、链接器和解释器；调试器与反汇编器服务于该工具链，项目未记录逆向分析流程。",
+    "readme_sha256": "52e1ed365c517d0b498a2c9340b5cec7038ae5b47b6396b12e2e8a3ffc261f1d",
+    "evidence_url": "https://github.com/avidrucker/lccjs/blob/167b063c0c10e4f19ed4117c175504e8d865bb25/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-883626842": {
     "decision": "hold",
@@ -4852,6 +4888,15 @@
     "evidence_url": "https://github.com/bbangjee/cse3030_introduction_to_computer_systems/blob/c4ba7e1b348208add2ffa1b3661fc79d684d1f23/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-1015655799": {
+    "decision": "exclude",
+    "reason_code": "game-mod-no-re",
+    "reason_en": "Pokémon FireRed Enhanced presents gameplay and quality-of-life changes to the existing pret decompilation, with no new reverse-engineering work documented.",
+    "reason_zh": "Pokémon FireRed Enhanced 基于 pret 的现有反编译项目修改玩法与便利功能，没有记载新的逆向工程工作。",
+    "readme_sha256": "d88c9993b4d37570bfe135ba340cd88ff39d29a2aeb63cfb3de902a2f660d750",
+    "evidence_url": "https://github.com/chale1342/pokefirered/blob/eb8fff5600004490c1f0c99327199b4f332c42b8/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1016448307": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -4923,6 +4968,15 @@
     "readme_sha256": "b5b7880670544e2841941116a1d60059247caae3e0cc1855a5d274167ff542ad",
     "evidence_url": "https://github.com/Chilfish/weibo-sdk/blob/6b73c47a240bf0a2606993f847ebd1626155d09c/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1019797389": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "Heartbound-Source-Code presents a decompiled commercial game demo while committing thousands of game images, sounds and GameMaker project files; redistribution needs a maintainer decision.",
+    "reason_zh": "Heartbound-Source-Code 将商业游戏试玩版的反编译工程连同大量图片、声音和 GameMaker 文件提交到仓库，转载问题需要维护者裁定。",
+    "readme_sha256": "9737b0d0ed708908592690870732c98e9e6698138900c75fefbad23531089c5a",
+    "evidence_url": "https://github.com/genizy/Heartbound-Source-Code/blob/851e7bf402f326480014f9ad76a4286fffba824c/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1021888294": {
     "decision": "hold",
@@ -5148,6 +5202,15 @@
     "readme_sha256": "239b9ed470a613e9dcf6eb7466fc11f4ceb0e1fabbae3b6911ec7171b64fa1d4",
     "evidence_url": "https://github.com/CheshirCa/SDR101_Controller/blob/85587840bb72b9f80a2f52e93fdbc9b3a9d2daa3/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1065798936": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "SDreamTeam contains decompiled Sonic Dream Team C# files, but also commits game DLLs and a Unity package whose redistribution needs a maintainer decision.",
+    "reason_zh": "SDreamTeam 收录了《Sonic Dream Team》的反编译 C# 文件，也提交了游戏 DLL 和 Unity 包；这些文件的再分发需由维护者判断。",
+    "readme_sha256": "b562d4126c60355ecfd3c2410232ae24dd1c170ee134eea374cef710935f8c35",
+    "evidence_url": "https://github.com/icecapdx/SDreamTeam-Git/blob/0473cb4f8a9bc91072af714497becb92041b2e8c/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1067263901": {
     "decision": "exclude",
@@ -5482,6 +5545,15 @@
     "evidence_url": "https://github.com/avwohl/mbasic2025/blob/449345a624766fad664eb4c18893b8fc8ef571d5/README.md",
     "reviewed_at": "2026-11-07"
   },
+  "scan-1105739962": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Teen Titans repository describes a matching decompilation goal, but contains no reconstructed code or analysis, only project and contribution documents.",
+    "reason_zh": "Teen Titans 仓库提出匹配反编译目标，但目前只有项目和贡献说明，没有重建代码或分析成果。",
+    "readme_sha256": "d52d0c2ac086cd22d24dfd2c8ab4a5e114968980117987581645328cca9162eb",
+    "evidence_url": "https://github.com/Cwf1997/teentitans/blob/dc63a84e2e56662574ac20b7a60f9181193aebde/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1105744534": {
     "decision": "exclude",
     "reason_code": "no-real-content",
@@ -5499,6 +5571,24 @@
     "readme_sha256": "e0dcde7f9fa37317ba57b44d5703940cfa67bb7f7fc36f8ccf610fd4a3e37ea1",
     "evidence_url": "https://github.com/Cwf1997/theincrediblehulkultimatedestruction/blob/57ee75afd463f492e7a07708a36d20ee5fac8b0b/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1106066626": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Haunting Ground repository describes a PlayStation 2 decompilation, but contains only setup and contribution documents, with no game code or findings.",
+    "reason_zh": "Haunting Ground 仓库称要反编译 PlayStation 2 游戏，但目前只有入门和贡献文档，没有游戏代码或分析成果。",
+    "readme_sha256": "2c4425c58f26b11a79d016156dcc98b367b2b7a976a708a7b79bc452d17fd984",
+    "evidence_url": "https://github.com/Cwf1997/hauntingground/blob/c0e0e49c80f22a5f54c9c14c299f4bee749d9dc8/README.md",
+    "reviewed_at": "2026-11-09"
+  },
+  "scan-1106067786": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Mad Dash Racing repository contains only a short Xbox decompilation statement and an MIT licence, with no source or findings.",
+    "reason_zh": "《Mad Dash Racing》仓库仅有简短的 Xbox 反编译项目说明和 MIT 许可证，没有代码或研究成果。",
+    "readme_sha256": "870cd79e6ae71e6bb08fe776b09145a7d169bd35468bdb3a00ce4d5bd7c46cc2",
+    "evidence_url": "https://github.com/Cwf1997/maddashracing/blob/f9bdd686f8f79cb534ddc893f43d7956e8050641/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1106076560": {
     "decision": "exclude",
@@ -5563,6 +5653,15 @@
     "evidence_url": "https://github.com/Cwf1997/tonyhawksproskater2x/blob/13f4f5ae50570978cbd5a695b08368288a805e7d/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "scan-1106334640": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Shadow the Hedgehog repository claims an Xbox decompilation, but contains only a short README and a license, with no code or analysis.",
+    "reason_zh": "Shadow the Hedgehog 仓库称要反编译 Xbox 游戏，但只有简短说明和许可证，没有代码或分析成果。",
+    "readme_sha256": "3b1f91ab6bd825fdd76f46c400829f3a526eb9944d425b5c188705d798bb50d7",
+    "evidence_url": "https://github.com/Cwf1997/shadowthehedgehog/blob/e113b1c1d92f90c48d12953a68b737c9f1f788d1/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1106335342": {
     "decision": "exclude",
     "reason_code": "no-real-content",
@@ -5571,6 +5670,15 @@
     "readme_sha256": "08f5d2272917808dfe765bc652ff93d875e404567b7a2cd302bb9910f5f1abb2",
     "evidence_url": "https://github.com/Cwf1997/spawnarmageddon/blob/2ecdf5e018b1edb72e9005b064ffde225e6bf052/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1106336622": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Buffy the Vampire Slayer repository has only a one-line Xbox decompilation description and a license; it contains no code or findings.",
+    "reason_zh": "Buffy the Vampire Slayer 仓库只有一句 Xbox 反编译简介和许可证，没有代码或研究结果。",
+    "readme_sha256": "078fa419d2249b07a4c3f80c311dff694cb34b4215b04f36a9e884441c669bf9",
+    "evidence_url": "https://github.com/Cwf1997/buffythevampireslayer/blob/a0c225c3cc9740dbcb7133195727b190e315e62c/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1106803061": {
     "decision": "exclude",
@@ -5716,6 +5824,24 @@
     "evidence_url": "https://github.com/Cwf1997/codenamekidsnextdooroperationvideogame/blob/573cf34b7aa5df3d38bdd46e4236f2d9b017ec77/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "scan-1114628608": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Crash Bandicoot: The Wrath of Cortex repository contains only a one-line decompilation claim and an MIT licence, with no source or findings.",
+    "reason_zh": "《Crash Bandicoot: The Wrath of Cortex》仓库只有一句反编译项目说明和 MIT 许可证，没有代码或研究成果。",
+    "readme_sha256": "a5117b9880c48ad999961f4069a7041c752208d37aa4424461d0ff8907967345",
+    "evidence_url": "https://github.com/Cwf1997/crashbandicootthewrathofcortex/blob/01bc02a3e6419437e059ec25759ac9eb7914ea0d/README.md",
+    "reviewed_at": "2026-11-09"
+  },
+  "scan-1114629177": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Spyro: Enter the Dragonfly repository contains only a one-line decompilation claim and a license, with no code, findings or documentation.",
+    "reason_zh": "Spyro: Enter the Dragonfly 仓库只有一句反编译项目简介和许可证，没有代码、研究结果或文档。",
+    "readme_sha256": "9e424e2c0fc69bf45b5b5698a7b2d313f11c03cf90410b9517420febbaf8ee52",
+    "evidence_url": "https://github.com/Cwf1997/spyroenterthedragonfly/blob/d95b22756e0bcf8ae7bd1051bb6bdfd04ab2f67e/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1114832220": {
     "decision": "exclude",
     "reason_code": "no-real-content",
@@ -5725,6 +5851,15 @@
     "evidence_url": "https://github.com/Cwf1997/ruleofrose/blob/b6e9c3b6e4135ab5b9a3d3bd4aaac69b5dfba27a/disc/readme.md",
     "reviewed_at": "2026-11-08"
   },
+  "scan-1114833030": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Wallace & Gromit Xbox repository contains only a one-line decompilation claim and a license, with no source code or analysis.",
+    "reason_zh": "Wallace & Gromit Xbox 仓库只有一句反编译项目简介和许可证，没有源码或分析成果。",
+    "readme_sha256": "e6c34b4b970dd657aa643f5808793998a8d14b8c907b35b9e6ffabccde54e95a",
+    "evidence_url": "https://github.com/Cwf1997/wallaceandgromitthecurseofthewererabbit/blob/ac2faf47f9c53999e71aa82c0976b427dfc701aa/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1115002336": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -5733,6 +5868,15 @@
     "readme_sha256": "0df6549002b7fdf94aa59ce357d17fb4c828aaffc0f8325c8f4270fe8eb0bfd5",
     "evidence_url": "https://github.com/jericjan/v380-audio-player/blob/7f5298310708e2495e759232b57aca69eaefe848/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1115281732": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Superman: Shadow of Apokolips repository has only a short decompilation claim and an MIT licence, with no source code or analysis.",
+    "reason_zh": "《Superman: Shadow of Apokolips》仓库只有简短的反编译项目说明和 MIT 许可证，没有源码或分析成果。",
+    "readme_sha256": "e0243e85b83f6cbe5eb69ca2cb00ec636291f6af3fabf73a9a48d2eb2b87a00f",
+    "evidence_url": "https://github.com/Cwf1997/supermanshadowofapokolips/blob/ddfb1e241fae1aed1236e1a836e17fa1201f5452/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1115289194": {
     "decision": "exclude",
@@ -5779,6 +5923,15 @@
     "evidence_url": "https://github.com/Cwf1997/loonsthefightforfame/blob/73d703f6362f7491ba92fcef3ea2b98ef2f44114/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "scan-1116329546": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Crash Twinsanity repository contains only a one-line Xbox decompilation claim and an MIT licence, with no code or findings.",
+    "reason_zh": "《Crash Twinsanity》仓库只有一句 Xbox 反编译项目说明和 MIT 许可证，没有代码或研究成果。",
+    "readme_sha256": "5351b8f307fa06ac157d78ef3e2ecd248650d9ce51f729a6c42e0fb10641e159",
+    "evidence_url": "https://github.com/Cwf1997/crashtwinsanity/blob/978f20b5ea7125208d528c8d0b2f547c77af3ce6/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1116330183": {
     "decision": "exclude",
     "reason_code": "no-real-content",
@@ -5814,6 +5967,15 @@
     "readme_sha256": "a29d7a6d1cbe761ffc0985173defdd79dcd1b51fdb388051abc32bc422562649",
     "evidence_url": "https://github.com/EricSpencer00/reverse-xoroshiro128plusplus/blob/24844880acc64ee637b875e800e91a14788184c2/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1117847860": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Tak and the Power of Juju README describes an incremental decompilation method, but the repository has no game source, patches or analysis files.",
+    "reason_zh": "《Tak and the Power of Juju》的 README 描述了逐步反编译方法，但仓库没有游戏源码、补丁或分析文件。",
+    "readme_sha256": "d7b4f77c67dc2ba1161ed14bfc601e279d2fdd6a1b8217baae4934b43063f76e",
+    "evidence_url": "https://github.com/Cwf1997/takandthepowerofjuju/blob/cd91191673f88e1072fb5a412280032d6e14f778/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1118342346": {
     "decision": "hold",
@@ -6058,6 +6220,15 @@
     "evidence_url": "https://github.com/farukalpay/AION/blob/e0c69e0de00fcf1ad5bc934a6af8e6b9d97d0cdb/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-1130045820": {
+    "decision": "exclude",
+    "reason_code": "cheat-or-evasion",
+    "reason_en": "The MCSR Ranked decompilation rebuilds a ranked Minecraft mod and explicitly removes its file-hash check, an anti-cheat integrity mechanism.",
+    "reason_zh": "MCSR Ranked 项目重建 Minecraft 排位模组，并明确移除了用于反作弊完整性检查的文件哈希校验。",
+    "readme_sha256": "5e1bf6e0f9b940cc15179c8be806f72bd785e3c110b46de993a520533409125a",
+    "evidence_url": "https://github.com/enbyte/mcsr-ranked/blob/09d163f1979054887c8b46f1d64acdfd008e4357/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1130674613": {
     "decision": "exclude",
     "reason_code": "no-real-content",
@@ -6129,6 +6300,15 @@
     "readme_sha256": "a2968286fd2f086a2409c06d1ae173c54594cc1943f431c44b7cdaa155be1194",
     "evidence_url": "https://github.com/11philip22/extract-shellcode/blob/30ac11fb913a07ee185f1d5d68412e4b31f09803/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1136558566": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "Apparatus has a documented game decompilation and desktop port, but the repository commits original-looking game images, sounds and level archives.",
+    "reason_zh": "Apparatus 记载了游戏反编译和桌面移植工作，但仓库提交了游戏图像、音频及关卡归档，需审查这些资源的收录方式。",
+    "readme_sha256": "f97c09ae02bdb7859c8c4c22c4970b97289cfacf79b12f4ffcd9518f15c8b26e",
+    "evidence_url": "https://github.com/rollerozxa/apparatus-decomp/blob/03e4a15ac2a9bcb574ef58c0385c94623243d3db/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1136898940": {
     "decision": "hold",
@@ -7264,6 +7444,15 @@
     "evidence_url": "https://github.com/Ch3ckm4t3C1ph3r/Lenovo-Ideapad-320-14ISK-_Coreboot-Adaptation_/blob/4907cebe44a3f98f246c6d69178a9095306d32c5/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-1229659561": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Atari ST decompilation is substantive, but the repository also commits game executables, picture files, music and a copy-protection bypass that require a maintainer decision.",
+    "reason_zh": "该 Atari ST 反编译项目有实质代码，但仓库同时提交游戏可执行文件、图片、音乐和绕过拷贝保护的版本，需由维护者决定是否收录。",
+    "readme_sha256": "28e3555cabf9ecdaf8799adf68a33028afc1c8e6231348dd944abc5aa6e8371c",
+    "evidence_url": "https://github.com/GRHOnline/Decomp_ChampionshipManagerItalia_ST/blob/f5c71753fc0567a4c5d915cf61c2235bd74e1b68/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1230006132": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -7335,6 +7524,15 @@
     "readme_sha256": "3c875f5a1b10c518eae72a2d9cdb64503be6e90a76526a69b4fff26971eda7c3",
     "evidence_url": "https://github.com/trapexit/3do-decomp-pdwt/blob/8797b2307a0da89ecc97643c46532b92bced0e18/README.md",
     "reviewed_at": "2026-11-08"
+  },
+  "scan-1237248860": {
+    "decision": "hold",
+    "reason_code": "needs-maintainer-decision",
+    "reason_en": "The S3/X3 project reconstructs buildable bicycle battery, motor and control firmware and discusses flashing it; safety-relevant firmware replacements need a maintainer decision.",
+    "reason_zh": "该项目重建可构建的 S3/X3 自行车电池、电机和控制固件，并讨论刷写使用；涉及安全的固件替代品需要维护者裁定。",
+    "readme_sha256": "7610c6898d2084eaf0f3b39fb4255e3b07b2b40d55122fba102dc996926233cd",
+    "evidence_url": "https://github.com/Knight1/vanmoof-s3-decomp/blob/02d394ac5596f6b4d02447ac7913fb5c5b4e1d24/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1237912441": {
     "decision": "exclude",
@@ -7452,6 +7650,15 @@
     "readme_sha256": "e946c542a88848505cb41534ee6c5bd6bdf9b050949eb0aa40fd3001d2d08c7e",
     "evidence_url": "https://github.com/nizarfadlan/threads-scraper/blob/cfea434e6c44706d573fecc68f597fe79714dbd5/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1252366497": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "Command Code v0.33.0 analysis includes a full beautified bundle, the original minified production bundle, bundled skills and a decompiled extension from a commercial npm package.",
+    "reason_zh": "Command Code v0.33.0 分析仓库收录完整整理版程序包、原始压缩版生产程序、附带技能和反编译扩展，涉及商业软件派生文件。",
+    "readme_sha256": "781b69727a0baac5d05ba8807914b34111f157237fd32b5da1b21f0bf27e46fa",
+    "evidence_url": "https://github.com/anxkhn/command-code-decompiled/blob/1bfbb4d277aa8912c20639569ecc146e4fc9fc81/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1252498673": {
     "decision": "exclude",
@@ -7605,6 +7812,15 @@
     "readme_sha256": "f58fc84c054a470f04527e246ec504a54a7caaa68185bce677b1e9cefee88a6a",
     "evidence_url": "https://github.com/momowangOUO/delta-force-map-system-reverse-study/blob/33c844fcac6fa35502c0c73b8096e6c6d2875f6c/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1270570666": {
+    "decision": "hold",
+    "reason_code": "needs-maintainer-decision",
+    "reason_en": "The S5/A5 repository reconstructs bicycle control firmware, including power, lock and motor components; releasing buildable replacements for safety-relevant controllers needs a maintainer decision.",
+    "reason_zh": "该仓库重建 S5/A5 自行车的电源、车锁和电机等控制固件；收录可构建的安全相关控制器替代固件需要维护者裁定。",
+    "readme_sha256": "089407b053358a1b6f1b696a666c7837f03c838dd2160291a3ab55735e5505ac",
+    "evidence_url": "https://github.com/Knight1/vanmoof-s5-decomp/blob/13f7db7a644383cc77af658f9ceb5f09274f312e/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1271366718": {
     "decision": "exclude",
@@ -8434,6 +8650,15 @@
     "evidence_url": "https://github.com/prevotai/colmena/blob/66b5cdb560dfc2fa607bd96665c82f7f051cb6fc/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-1311356966": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Yu-Gi-Oh! Forbidden Memories project documents a substantial matching decompilation but explicitly commits disassembly and decompilation of the commercial game executable.",
+    "reason_zh": "Yu-Gi-Oh! Forbidden Memories 项目有大量匹配反编译成果，但明确提交了商业游戏可执行文件的反汇编和反编译输出，需要维护者裁定。",
+    "readme_sha256": "d4b02a633778a671cfec61bdfb559987e8c161b43bae92410bb2d9633b9fcea1",
+    "evidence_url": "https://github.com/MaChInEgUn3/ygofm-decomp/blob/1b620d1cbb6faff5be516e018b46d7001410fd31/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1311496124": {
     "decision": "exclude",
     "reason_code": "protection-tool",
@@ -8849,6 +9074,15 @@
     "evidence_url": "https://github.com/wqzhellohhwy/so-rev-mcp/blob/8b4eff3fac2f4701a12946cd5ad0c2bfd72c4395/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-1335375805": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "AnimalForest64-Recomp has build scaffolding and a runtime stub, but its frame function only increments a counter and contains no recompiled Animal Forest game logic.",
+    "reason_zh": "AnimalForest64-Recomp 提供了构建框架和运行时桩代码，但逐帧函数只增加计数器，没有《动物森友会》游戏逻辑的重编译实现。",
+    "readme_sha256": "0a91539fa41b57ee7afa2176ce45843cb558a91054d5334c4c8d92232e74fb0d",
+    "evidence_url": "https://github.com/luispolis124/AnimalForest64-Recomp/blob/ae503401099e93c8392fdcdafdd6464cbf432749/n64_runtime.c",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1335653452": {
     "decision": "exclude",
     "reason_code": "unrelated",
@@ -8965,6 +9199,15 @@
     "readme_sha256": "39ebdde1ca411c9f1e759fb4eb1c34f60b43c379fd90d56b819f421346a34420",
     "evidence_url": "https://github.com/tirodz/CMF-Ringtone-Tool/blob/6e867e18f7984df694a2a0e75a08c78c5c06603c/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1339784002": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "eco.exe commits the original Knight Online executable and tens of thousands of files containing decompiled output from that commercial binary.",
+    "reason_zh": "eco.exe 仓库提交了《Knight Online》的原始可执行文件，以及数万份由该商业程序反编译得到的代码文件，需由维护者决定。",
+    "readme_sha256": "1e684d4464a0250be4928b76ef6f2e36501b2440624ce88651f9155b6dba3d1e",
+    "evidence_url": "https://github.com/Jutipong/eco.exe/blob/2d5f5cb0e0c9fc3fc271d4966b6072d1dcea3ab1/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1339859045": {
     "decision": "exclude",
@@ -9541,6 +9784,15 @@
     "readme_sha256": "c9d1ddfd00d06b46ef07ed4545b2d97f8161a0c53ba5e1e8ed53075791d6fce2",
     "evidence_url": "https://github.com/ln782586-lab/The-Evil-Within-2-Recompile-Project/blob/67361d6ed2598f0c2f7bca42f6729cff2763ceb7/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1361188616": {
+    "decision": "exclude",
+    "reason_code": "cheat-or-evasion",
+    "reason_en": "Beatstar-Zero-Server pairs backend emulation with game modifications that unlock cosmetics and songs and include free restarts and gameplay bypasses.",
+    "reason_zh": "Beatstar-Zero-Server 除模拟后端外，还提供解锁外观与歌曲、免费重新开始及绕过游戏限制的修改。",
+    "readme_sha256": "dbfc670ca6aec2737c5f913fd860620c274b0e57522b8de8ab091524b089e9b0",
+    "evidence_url": "https://github.com/RandoTeam/Beatstar-Zero-Server/blob/b9ae360d8e0a01f5feed0c91b319f4c8b8fcdf92/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1361566282": {
     "decision": "hold",
@@ -10397,6 +10649,15 @@
     "evidence_url": "https://github.com/lex0m/lexin/blob/853b0dc049c2668108a8a944a436e089c3bf3040/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-1411713533": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "CMR2LRE contains substantial game analysis and a Linux port, but commits images it identifies as rendered from the retail game's models and liveries.",
+    "reason_zh": "CMR2LRE 包含游戏分析和 Linux 移植代码，但也提交了其明确称由零售版游戏模型与涂装生成的图片，需决定这些衍生素材的收录政策。",
+    "readme_sha256": "d24211108b9ccd33f97077f0ef924544d247da1c540c592efaa089d59ef204c5",
+    "evidence_url": "https://github.com/LENAWare-Works/cmr2lab/blob/cda8887a6c241770af22aaf977a2d551db4b013f/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1411910244": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -10414,6 +10675,15 @@
     "readme_sha256": "5251e54d27b44876c63a48386eb89711c6ac078951f84524a2cc22fc8e05b803",
     "evidence_url": "https://github.com/CI404/core-licht-server/blob/371d6cfbb557dd4bea68b290a22755f34990bd50/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1412435591": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Tokimeki Memorial decompilation is substantial, but its repository also retains translated game artwork, requiring a decision on redistribution of derived assets.",
+    "reason_zh": "《Tokimeki Memorial》反编译项目内容充实，但仓库也保存了翻译后的游戏美术素材，衍生资源的再分发需由维护者判断。",
+    "readme_sha256": "efa301de567784313e5f6b53665fb621469fd8547a83e811ed3312d98720f59a",
+    "evidence_url": "https://github.com/CosmicScribe64/tokimemo-ps1-decomp/blob/3c6070503d40160245f71e085951e19f66f537f0/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1412600099": {
     "decision": "exclude",
@@ -10549,6 +10819,15 @@
     "readme_sha256": "be0b9e082e960b6115fd70f1e8526bf1ed5bdfdf1c1e475313ad2f6bd471b5ae",
     "evidence_url": "https://github.com/gzimbric/ps5-hv-bypass-porting/blob/0a7f263d5cc4bb91984d0b00d68daaa0561a4542/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1420015176": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "Dolphin Apollo II Reborn contains a C port of commercial device firmware and converted firmware tables; publishing that derived material needs a maintainer decision.",
+    "reason_zh": "Dolphin Apollo II Reborn 含有商用设备固件的 C 移植代码和转换后的固件数据表，收录这些衍生内容需要维护者决定。",
+    "readme_sha256": "3b076d52c33495155ad7071fdd39c9edb4599436bef6235c58dcdbfcf5cb00e3",
+    "evidence_url": "https://github.com/rommix0/Dolphin-Apollo-II-Reborn/blob/21983615a812bf29a94a2004ed23e5f7fa54d75a/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1420047294": {
     "decision": "exclude",
@@ -10704,6 +10983,15 @@
     "readme_sha256": "e2912c188604c27b09a551ab0eae70efa24470410d9c30e67ae29a8003cde674",
     "evidence_url": "https://github.com/dansugc/reverse-engineer-marketing/blob/5b78198b2578997412853ab0858b10670fa74984/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1426242718": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "OpenVireo documents a substantial behavior-based reconstruction of CLEA/VIREO, but its checkout includes original runtime resources and derived images with mixed rights.",
+    "reason_zh": "OpenVireo 详细记录了基于行为重构 CLEA/VIREO 的工作，但仓库包含原版运行资源及衍生图像，且各项素材的权利条款不同。",
+    "readme_sha256": "7cf99e9d6560fa7f8f8aa053a22984ea22a56344238b1e5ab5034c213370e486",
+    "evidence_url": "https://github.com/guide-ai/OpenVireo/blob/b1457893a3bb267388796904d869e38e868c23a7/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1426382350": {
     "decision": "hold",

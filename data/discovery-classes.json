@@ -5,11 +5,25 @@
  "scan-15086262": {
   "decision": "outside"
  },
+ "scan-18878689": {
+  "decision": "outside"
+ },
  "scan-18891516": {
+  "decision": "outside"
+ },
+ "scan-28818800": {
   "decision": "outside"
  },
  "scan-29050265": {
   "decision": "outside"
+ },
+ "scan-33998405": {
+  "decision": "outside"
+ },
+ "scan-44220631": {
+  "decision": "data",
+  "class": "hardware",
+  "reproduced": "MOS Technology 6502 microprocessor"
  },
  "scan-52802949": {
   "decision": "data",
@@ -54,9 +68,7 @@
   "decision": "outside"
  },
  "scan-60834126": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Vietcong CBF asset format"
+  "decision": "outside"
  },
  "scan-62716467": {
   "decision": "outside"
@@ -99,6 +111,9 @@
  "scan-65883850": {
   "decision": "outside"
  },
+ "scan-66219099": {
+  "decision": "outside"
+ },
  "scan-66367496": {
   "decision": "outside"
  },
@@ -113,6 +128,11 @@
  },
  "scan-67817669": {
   "decision": "outside"
+ },
+ "scan-68055817": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "CHIP-8 virtual machine"
  },
  "scan-68467221": {
   "decision": "outside"
@@ -134,6 +154,9 @@
   "class": "hardware",
   "reproduced": "MagicLight WiFi smart bulbs"
  },
+ "scan-71362808": {
+  "decision": "outside"
+ },
  "scan-72584043": {
   "decision": "outside"
  },
@@ -147,6 +170,9 @@
   "decision": "outside"
  },
  "scan-74217405": {
+  "decision": "outside"
+ },
+ "scan-74699512": {
   "decision": "outside"
  },
  "scan-75231781": {
@@ -200,6 +226,9 @@
   "decision": "outside"
  },
  "scan-79601879": {
+  "decision": "outside"
+ },
+ "scan-79607521": {
   "decision": "outside"
  },
  "scan-79678741": {
@@ -287,6 +316,9 @@
  "scan-83155884": {
   "decision": "outside"
  },
+ "scan-83244622": {
+  "decision": "outside"
+ },
  "scan-83457756": {
   "decision": "outside"
  },
@@ -368,6 +400,11 @@
  "scan-86979618": {
   "decision": "outside"
  },
+ "scan-87204397": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "Wirenet malware"
+ },
  "scan-87528025": {
   "decision": "outside"
  },
@@ -438,6 +475,9 @@
   "decision": "outside"
  },
  "scan-90606890": {
+  "decision": "outside"
+ },
+ "scan-90648942": {
   "decision": "outside"
  },
  "scan-91162276": {
@@ -522,6 +562,9 @@
   "class": "hardware",
   "reproduced": "Topre Realforce RGB keyboard control interface"
  },
+ "scan-97857087": {
+  "decision": "outside"
+ },
  "scan-98086485": {
   "decision": "outside"
  },
@@ -559,6 +602,9 @@
   "decision": "outside"
  },
  "scan-99509448": {
+  "decision": "outside"
+ },
+ "scan-99512494": {
   "decision": "outside"
  },
  "scan-100147493": {
@@ -645,6 +691,9 @@
  "scan-104888860": {
   "decision": "outside"
  },
+ "scan-105418911": {
+  "decision": "outside"
+ },
  "scan-105963902": {
   "decision": "outside"
  },
@@ -652,6 +701,12 @@
   "decision": "outside"
  },
  "scan-106723134": {
+  "decision": "outside"
+ },
+ "scan-107031447": {
+  "decision": "outside"
+ },
+ "scan-107031671": {
   "decision": "outside"
  },
  "scan-107108826": {
@@ -666,6 +721,9 @@
   "decision": "outside"
  },
  "scan-108033287": {
+  "decision": "outside"
+ },
+ "scan-108321286": {
   "decision": "outside"
  },
  "scan-108646186": {
@@ -695,6 +753,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "Chsmartbulb BL08A color-control protocol"
+ },
+ "scan-110472638": {
+  "decision": "outside"
  },
  "scan-110477373": {
   "decision": "outside"
@@ -831,6 +892,9 @@
   "class": "game",
   "reproduced": "Tenchu AFS Volume 2.00 archive format"
  },
+ "scan-120409095": {
+  "decision": "outside"
+ },
  "scan-120742968": {
   "decision": "outside"
  },
@@ -857,6 +921,9 @@
  "scan-122334567": {
   "decision": "outside"
  },
+ "scan-122469301": {
+  "decision": "outside"
+ },
  "scan-122637700": {
   "decision": "data",
   "class": "game",
@@ -875,9 +942,7 @@
   "decision": "outside"
  },
  "scan-123774741": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Darklands game file formats"
+  "decision": "outside"
  },
  "scan-123799999": {
   "decision": "outside"
@@ -924,6 +989,11 @@
  "scan-127939371": {
   "decision": "outside"
  },
+ "scan-127940086": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Cave Story options program"
+ },
  "scan-127946902": {
   "decision": "outside"
  },
@@ -951,6 +1021,9 @@
  "scan-129692675": {
   "decision": "outside"
  },
+ "scan-130014509": {
+  "decision": "outside"
+ },
  "scan-130214081": {
   "decision": "outside"
  },
@@ -969,6 +1042,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "HJ digital servo tester firmware"
+ },
+ "scan-131651374": {
+  "decision": "outside"
  },
  "scan-132110675": {
   "decision": "outside"
@@ -1000,9 +1076,7 @@
   "decision": "outside"
  },
  "scan-133511206": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "libspotify_embedded interface"
+  "decision": "outside"
  },
  "scan-133514035": {
   "decision": "data",
@@ -1012,11 +1086,19 @@
  "scan-133676256": {
   "decision": "outside"
  },
+ "scan-134489685": {
+  "decision": "outside"
+ },
  "scan-134635347": {
   "decision": "outside"
  },
  "scan-134653601": {
   "decision": "outside"
+ },
+ "scan-134736607": {
+  "decision": "data",
+  "class": "hardware",
+  "reproduced": "6502 processor"
  },
  "scan-134998043": {
   "decision": "outside"
@@ -1103,9 +1185,7 @@
   "decision": "outside"
  },
  "scan-139639778": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "Ubiquiti UniFi inform packet format"
+  "decision": "outside"
  },
  "scan-139697655": {
   "decision": "outside"
@@ -1234,6 +1314,9 @@
  "scan-143583749": {
   "decision": "outside"
  },
+ "scan-144472862": {
+  "decision": "outside"
+ },
  "scan-144580870": {
   "decision": "outside"
  },
@@ -1244,14 +1327,15 @@
   "decision": "outside"
  },
  "scan-146001865": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Mortal Kombat GRA format"
+  "decision": "outside"
  },
  "scan-146018206": {
   "decision": "outside"
  },
  "scan-146021353": {
+  "decision": "outside"
+ },
+ "scan-146047456": {
   "decision": "outside"
  },
  "scan-146537935": {
@@ -1269,6 +1353,9 @@
  "scan-148387557": {
   "decision": "outside"
  },
+ "scan-148593849": {
+  "decision": "outside"
+ },
  "scan-148918269": {
   "decision": "outside"
  },
@@ -1281,17 +1368,13 @@
   "decision": "outside"
  },
  "scan-149942883": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Star Wars: Bounty Hunter ZAP resource format"
+  "decision": "outside"
  },
  "scan-150586017": {
   "decision": "outside"
  },
  "scan-150616194": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "Sigfox radio physical layer"
+  "decision": "outside"
  },
  "scan-150630782": {
   "decision": "data",
@@ -1414,7 +1497,13 @@
  "scan-155770316": {
   "decision": "outside"
  },
+ "scan-155890282": {
+  "decision": "outside"
+ },
  "scan-157691705": {
+  "decision": "outside"
+ },
+ "scan-157893228": {
   "decision": "outside"
  },
  "scan-158436780": {
@@ -1442,10 +1531,11 @@
  "scan-160101897": {
   "decision": "outside"
  },
+ "scan-160240745": {
+  "decision": "outside"
+ },
  "scan-160283434": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Yoda Stories file format"
+  "decision": "outside"
  },
  "scan-160308718": {
   "decision": "data",
@@ -1457,6 +1547,9 @@
   "class": "hardware",
   "reproduced": "Cetus3D printer communication"
  },
+ "scan-160466491": {
+  "decision": "outside"
+ },
  "scan-160576428": {
   "decision": "outside"
  },
@@ -1467,9 +1560,7 @@
   "decision": "outside"
  },
  "scan-162046672": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "E-ZPass toll booth reader"
+  "decision": "outside"
  },
  "scan-162185977": {
   "decision": "outside"
@@ -1517,11 +1608,12 @@
   "decision": "outside"
  },
  "scan-165107681": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Resident Evil game engine"
+  "decision": "outside"
  },
  "scan-165430882": {
+  "decision": "outside"
+ },
+ "scan-165925328": {
   "decision": "outside"
  },
  "scan-166093898": {
@@ -1534,9 +1626,7 @@
   "decision": "outside"
  },
  "scan-167297374": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Driver 1 and Driver 2 MUSIC.BIN formats"
+  "decision": "outside"
  },
  "scan-167390528": {
   "decision": "outside"
@@ -1573,9 +1663,7 @@
   "reproduced": "EDF web API"
  },
  "scan-169570317": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Constantine game file formats"
+  "decision": "outside"
  },
  "scan-169667851": {
   "decision": "outside"
@@ -1686,6 +1774,9 @@
  "scan-179885949": {
   "decision": "outside"
  },
+ "scan-180133609": {
+  "decision": "outside"
+ },
  "scan-180836793": {
   "decision": "outside"
  },
@@ -1699,6 +1790,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "Elgato Avea bulb control"
+ },
+ "scan-181854226": {
+  "decision": "outside"
  },
  "scan-182465747": {
   "decision": "data",
@@ -1720,6 +1814,9 @@
   "decision": "outside"
  },
  "scan-183297522": {
+  "decision": "outside"
+ },
+ "scan-183691391": {
   "decision": "outside"
  },
  "scan-184465635": {
@@ -1793,9 +1890,7 @@
   "decision": "outside"
  },
  "scan-192236717": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "World of Warcraft 3.3.5a world protocol"
+  "decision": "outside"
  },
  "scan-192450537": {
   "decision": "outside"
@@ -1826,6 +1921,9 @@
  "scan-193954360": {
   "decision": "outside"
  },
+ "scan-194209010": {
+  "decision": "outside"
+ },
  "scan-194458126": {
   "decision": "data",
   "class": "game",
@@ -1838,9 +1936,7 @@
   "decision": "outside"
  },
  "scan-195674793": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "CHIP-8 interpreter"
+  "decision": "outside"
  },
  "scan-195817587": {
   "decision": "outside"
@@ -1854,9 +1950,7 @@
   "reproduced": "MIDIPLUS SmartPAD MIDI controller firmware"
  },
  "scan-197190168": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "CHIP-8"
+  "decision": "outside"
  },
  "scan-197213789": {
   "decision": "data",
@@ -1907,14 +2001,15 @@
   "decision": "outside"
  },
  "scan-200851991": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "CHIP-8"
+  "decision": "outside"
  },
  "scan-201211479": {
   "decision": "outside"
  },
  "scan-201393361": {
+  "decision": "outside"
+ },
+ "scan-201533767": {
   "decision": "outside"
  },
  "scan-201533836": {
@@ -1976,14 +2071,10 @@
   "reproduced": "Vibease vibrator communication protocol"
  },
  "scan-205795376": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Silent Hill 4 PAC sound archive format"
+  "decision": "outside"
  },
  "scan-205846876": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Silent Hill 4 .bin format"
+  "decision": "outside"
  },
  "scan-206070582": {
   "decision": "outside"
@@ -1998,9 +2089,7 @@
   "decision": "outside"
  },
  "scan-206802503": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Silent Hill 4 texture chunk format"
+  "decision": "outside"
  },
  "scan-207135060": {
   "decision": "outside"
@@ -2033,9 +2122,7 @@
   "decision": "outside"
  },
  "scan-209652976": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Trails in the Sky 3D model formats"
+  "decision": "outside"
  },
  "scan-209681837": {
   "decision": "outside"
@@ -2234,6 +2321,11 @@
  "scan-225189692": {
   "decision": "outside"
  },
+ "scan-225196970": {
+  "decision": "data",
+  "class": "hardware",
+  "reproduced": "LKV373 device firmware"
+ },
  "scan-225631373": {
   "decision": "outside"
  },
@@ -2241,6 +2333,9 @@
   "decision": "outside"
  },
  "scan-225994056": {
+  "decision": "outside"
+ },
+ "scan-226751323": {
   "decision": "outside"
  },
  "scan-227147773": {
@@ -2353,6 +2448,9 @@
  "scan-235939401": {
   "decision": "outside"
  },
+ "scan-236013381": {
+  "decision": "outside"
+ },
  "scan-236491472": {
   "decision": "outside"
  },
@@ -2369,9 +2467,7 @@
   "decision": "outside"
  },
  "scan-237694436": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "WarHawk texture and model formats"
+  "decision": "outside"
  },
  "scan-237714646": {
   "decision": "outside"
@@ -2380,6 +2476,9 @@
   "decision": "outside"
  },
  "scan-238581231": {
+  "decision": "outside"
+ },
+ "scan-239211301": {
   "decision": "outside"
  },
  "scan-239323568": {
@@ -2513,6 +2612,9 @@
  "scan-250486156": {
   "decision": "outside"
  },
+ "scan-250723720": {
+  "decision": "outside"
+ },
  "scan-250941583": {
   "decision": "outside"
  },
@@ -2597,9 +2699,7 @@
   "decision": "outside"
  },
  "scan-256241717": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Steam client appinfo and packageinfo formats"
+  "decision": "outside"
  },
  "scan-256331121": {
   "decision": "outside"
@@ -2723,6 +2823,9 @@
  "scan-261844641": {
   "decision": "outside"
  },
+ "scan-262032537": {
+  "decision": "outside"
+ },
  "scan-262254597": {
   "decision": "outside"
  },
@@ -2774,9 +2877,7 @@
   "decision": "outside"
  },
  "scan-264486331": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Call of Duty 4 DM_1 demo format"
+  "decision": "outside"
  },
  "scan-264520225": {
   "decision": "outside"
@@ -2875,9 +2976,7 @@
   "decision": "outside"
  },
  "scan-270421767": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Windows CE XIP compression format"
+  "decision": "outside"
  },
  "scan-270600355": {
   "decision": "outside"
@@ -2886,9 +2985,7 @@
   "decision": "outside"
  },
  "scan-270763480": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "HuVideo format used by Ginga Ojousama Densetsu Yuna and Gulliver Boy"
+  "decision": "outside"
  },
  "scan-271224830": {
   "decision": "outside"
@@ -2995,6 +3092,9 @@
  "scan-281804297": {
   "decision": "outside"
  },
+ "scan-282365503": {
+  "decision": "outside"
+ },
  "scan-282446636": {
   "decision": "outside"
  },
@@ -3067,9 +3167,7 @@
   "decision": "outside"
  },
  "scan-286966071": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "LEGO Stunt Rally file formats"
+  "decision": "outside"
  },
  "scan-287213572": {
   "decision": "outside"
@@ -3107,9 +3205,7 @@
   "decision": "outside"
  },
  "scan-288876428": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "GameMaker Studio ds_map serialization format"
+  "decision": "outside"
  },
  "scan-289110551": {
   "decision": "outside"
@@ -3131,6 +3227,11 @@
  },
  "scan-291951245": {
   "decision": "outside"
+ },
+ "scan-291977155": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Core War"
  },
  "scan-292031749": {
   "decision": "outside"
@@ -3156,9 +3257,7 @@
   "decision": "outside"
  },
  "scan-293362774": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Sid Meier's Civilization VI save format"
+  "decision": "outside"
  },
  "scan-293715548": {
   "decision": "outside"
@@ -3299,6 +3398,9 @@
  "scan-306613303": {
   "decision": "outside"
  },
+ "scan-306710577": {
+  "decision": "outside"
+ },
  "scan-306884503": {
   "decision": "outside"
  },
@@ -3389,9 +3491,7 @@
   "decision": "outside"
  },
  "scan-317635630": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "spike-dasm"
+  "decision": "outside"
  },
  "scan-318125889": {
   "decision": "outside"
@@ -3495,6 +3595,9 @@
   "decision": "outside"
  },
  "scan-327991624": {
+  "decision": "outside"
+ },
+ "scan-328195930": {
   "decision": "outside"
  },
  "scan-328388910": {
@@ -3707,6 +3810,9 @@
  "scan-344909430": {
   "decision": "outside"
  },
+ "scan-344941214": {
+  "decision": "outside"
+ },
  "scan-345206331": {
   "decision": "outside"
  },
@@ -3734,6 +3840,9 @@
   "reproduced": "McAfee FDE disk format"
  },
  "scan-346764270": {
+  "decision": "outside"
+ },
+ "scan-347014494": {
   "decision": "outside"
  },
  "scan-347317022": {
@@ -3837,9 +3946,7 @@
   "reproduced": "FSGCore game library"
  },
  "scan-356325792": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "RUIDA rd file format"
+  "decision": "outside"
  },
  "scan-356394275": {
   "decision": "data",
@@ -4048,9 +4155,7 @@
   "decision": "outside"
  },
  "scan-374044212": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Kaitai Struct compiler and runtime evaluator"
+  "decision": "outside"
  },
  "scan-374258093": {
   "decision": "outside"
@@ -4064,9 +4169,7 @@
   "decision": "outside"
  },
  "scan-374446640": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "Razer Huntsman Elite keyboard control protocol"
+  "decision": "outside"
  },
  "scan-375915878": {
   "decision": "outside"
@@ -4106,6 +4209,9 @@
   "decision": "outside"
  },
  "scan-380623581": {
+  "decision": "outside"
+ },
+ "scan-380672770": {
   "decision": "outside"
  },
  "scan-380743939": {
@@ -4163,6 +4269,9 @@
  "scan-384763716": {
   "decision": "outside"
  },
+ "scan-385476598": {
+  "decision": "outside"
+ },
  "scan-385552145": {
   "decision": "outside"
  },
@@ -4199,6 +4308,9 @@
   "decision": "outside"
  },
  "scan-387329429": {
+  "decision": "outside"
+ },
+ "scan-388149194": {
   "decision": "outside"
  },
  "scan-388202092": {
@@ -4241,6 +4353,9 @@
  "scan-391331237": {
   "decision": "outside"
  },
+ "scan-391386512": {
+  "decision": "outside"
+ },
  "scan-391678852": {
   "decision": "outside"
  },
@@ -4257,9 +4372,7 @@
   "decision": "outside"
  },
  "scan-393428207": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "BlackMatter Windows configuration format"
+  "decision": "outside"
  },
  "scan-394351737": {
   "decision": "outside"
@@ -4283,9 +4396,7 @@
   "decision": "outside"
  },
  "scan-396198044": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "FMOD 5 sound bank format"
+  "decision": "outside"
  },
  "scan-396327629": {
   "decision": "outside"
@@ -4354,6 +4465,9 @@
   "class": "hardware",
   "reproduced": "Panic Playdate USB interface"
  },
+ "scan-400242938": {
+  "decision": "outside"
+ },
  "scan-400314825": {
   "decision": "outside"
  },
@@ -4405,6 +4519,11 @@
  },
  "scan-406024492": {
   "decision": "outside"
+ },
+ "scan-406031326": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "Wslink malware loader client"
  },
  "scan-406613606": {
   "decision": "outside"
@@ -4471,9 +4590,7 @@
   "decision": "outside"
  },
  "scan-411829472": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "BlackMatter Linux and ESXi configuration format"
+  "decision": "outside"
  },
  "scan-411961772": {
   "decision": "outside"
@@ -4494,9 +4611,7 @@
   "decision": "outside"
  },
  "scan-413055990": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Inazuma Eleven GO Strikers 2013 file formats"
+  "decision": "outside"
  },
  "scan-413247566": {
   "decision": "outside"
@@ -4540,6 +4655,9 @@
  "scan-416664802": {
   "decision": "outside"
  },
+ "scan-417342273": {
+  "decision": "outside"
+ },
  "scan-417652814": {
   "decision": "outside"
  },
@@ -4558,9 +4676,7 @@
   "decision": "outside"
  },
  "scan-418607251": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "Apollo Guidance Computer core rope memory modules"
+  "decision": "outside"
  },
  "scan-418669586": {
   "decision": "data",
@@ -4604,6 +4720,9 @@
   "decision": "outside"
  },
  "scan-422061619": {
+  "decision": "outside"
+ },
+ "scan-422380975": {
   "decision": "outside"
  },
  "scan-422701303": {
@@ -4698,6 +4817,9 @@
  "scan-428751701": {
   "decision": "outside"
  },
+ "scan-428797610": {
+  "decision": "outside"
+ },
  "scan-429173249": {
   "decision": "data",
   "class": "game",
@@ -4719,6 +4841,9 @@
   "decision": "outside"
  },
  "scan-430467568": {
+  "decision": "outside"
+ },
+ "scan-430723027": {
   "decision": "outside"
  },
  "scan-430885253": {
@@ -4744,6 +4869,9 @@
   "decision": "outside"
  },
  "scan-432478105": {
+  "decision": "outside"
+ },
+ "scan-432910113": {
   "decision": "outside"
  },
  "scan-433117880": {
@@ -4887,9 +5015,10 @@
   "decision": "outside"
  },
  "scan-446134914": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "BlackMatter ransomware command-and-control server"
+  "decision": "outside"
+ },
+ "scan-446308563": {
+  "decision": "outside"
  },
  "scan-447012392": {
   "decision": "outside"
@@ -5026,9 +5155,7 @@
   "decision": "outside"
  },
  "scan-458953873": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Ubisoft Connect API data format"
+  "decision": "outside"
  },
  "scan-459041293": {
   "decision": "outside"
@@ -5060,9 +5187,7 @@
   "decision": "outside"
  },
  "scan-462289486": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Celeste save file format"
+  "decision": "outside"
  },
  "scan-462601976": {
   "decision": "outside"
@@ -5108,9 +5233,7 @@
   "reproduced": "Fun With Numbers"
  },
  "scan-466216442": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "SN-Systems DUMPSYM utility"
+  "decision": "outside"
  },
  "scan-466293456": {
   "decision": "outside"
@@ -5136,6 +5259,9 @@
   "reproduced": "Ambient Weather WS-2080 receiver"
  },
  "scan-469072661": {
+  "decision": "outside"
+ },
+ "scan-469232794": {
   "decision": "outside"
  },
  "scan-469948328": {
@@ -5284,6 +5410,9 @@
   "decision": "outside"
  },
  "scan-484770503": {
+  "decision": "outside"
+ },
+ "scan-485308146": {
   "decision": "outside"
  },
  "scan-485366849": {
@@ -5486,6 +5615,9 @@
  "scan-500722715": {
   "decision": "outside"
  },
+ "scan-501220815": {
+  "decision": "outside"
+ },
  "scan-501469726": {
   "decision": "outside"
  },
@@ -5502,9 +5634,7 @@
   "decision": "outside"
  },
  "scan-502437136": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Clip Studio Paint color set format"
+  "decision": "outside"
  },
  "scan-502679192": {
   "decision": "data",
@@ -5546,6 +5676,11 @@
  "scan-506207261": {
   "decision": "outside"
  },
+ "scan-506663494": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Smash Up Derby"
+ },
  "scan-507067276": {
   "decision": "data",
   "class": "hardware",
@@ -5564,9 +5699,7 @@
   "decision": "outside"
  },
  "scan-508299391": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Cartooners file format"
+  "decision": "outside"
  },
  "scan-508665050": {
   "decision": "outside"
@@ -5656,9 +5789,7 @@
   "decision": "outside"
  },
  "scan-517748006": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "KaraFun KFN file format"
+  "decision": "outside"
  },
  "scan-517824515": {
   "decision": "data",
@@ -5696,6 +5827,9 @@
   "decision": "outside"
  },
  "scan-520830448": {
+  "decision": "outside"
+ },
+ "scan-521514339": {
   "decision": "outside"
  },
  "scan-521599624": {
@@ -5826,9 +5960,7 @@
   "decision": "outside"
  },
  "scan-533495495": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Wakfu game maps"
+  "decision": "outside"
  },
  "scan-533924727": {
   "decision": "outside"
@@ -5870,6 +6002,9 @@
   "decision": "data",
   "class": "software",
   "reproduced": "Microsoft Band desktop app"
+ },
+ "scan-536815554": {
+  "decision": "outside"
  },
  "scan-537850667": {
   "decision": "outside"
@@ -5936,9 +6071,7 @@
   "decision": "outside"
  },
  "scan-549116465": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "Mazda RX-8 ECU interface"
+  "decision": "outside"
  },
  "scan-549169507": {
   "decision": "outside"
@@ -5969,6 +6102,9 @@
   "reproduced": "Entergram visual novel engine"
  },
  "scan-553943228": {
+  "decision": "outside"
+ },
+ "scan-553950399": {
   "decision": "outside"
  },
  "scan-554369499": {
@@ -6114,6 +6250,9 @@
  "scan-569183064": {
   "decision": "outside"
  },
+ "scan-569187918": {
+  "decision": "outside"
+ },
  "scan-569554421": {
   "decision": "outside"
  },
@@ -6198,9 +6337,7 @@
   "decision": "outside"
  },
  "scan-577058101": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "IDA Lumina server"
+  "decision": "outside"
  },
  "scan-577468808": {
   "decision": "outside"
@@ -6286,6 +6423,9 @@
   "class": "game",
   "reproduced": "GoldSrc launcher"
  },
+ "scan-583046534": {
+  "decision": "outside"
+ },
  "scan-583056736": {
   "decision": "outside"
  },
@@ -6338,9 +6478,7 @@
   "decision": "outside"
  },
  "scan-589154744": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Twilight Princess audio archive format"
+  "decision": "outside"
  },
  "scan-589343220": {
   "decision": "data",
@@ -6409,22 +6547,16 @@
   "decision": "outside"
  },
  "scan-594990522": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "The Wind Waker music sequence playback system"
+  "decision": "outside"
  },
  "scan-595350174": {
   "decision": "outside"
  },
  "scan-596694418": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Snap Camera LNS lens format"
+  "decision": "outside"
  },
  "scan-596779048": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "World of Warships resource format"
+  "decision": "outside"
  },
  "scan-597174220": {
   "decision": "data",
@@ -6449,6 +6581,9 @@
  "scan-598168934": {
   "decision": "outside"
  },
+ "scan-598235318": {
+  "decision": "outside"
+ },
  "scan-598490217": {
   "decision": "outside"
  },
@@ -6465,6 +6600,9 @@
   "decision": "outside"
  },
  "scan-600609977": {
+  "decision": "outside"
+ },
+ "scan-600674147": {
   "decision": "outside"
  },
  "scan-600845305": {
@@ -6599,6 +6737,9 @@
  "scan-610059505": {
   "decision": "outside"
  },
+ "scan-610061284": {
+  "decision": "outside"
+ },
  "scan-610918182": {
   "decision": "data",
   "class": "game",
@@ -6657,6 +6798,9 @@
   "decision": "outside"
  },
  "scan-616011090": {
+  "decision": "outside"
+ },
+ "scan-616128526": {
   "decision": "outside"
  },
  "scan-618085695": {
@@ -6780,6 +6924,9 @@
  "scan-629153496": {
   "decision": "outside"
  },
+ "scan-629201913": {
+  "decision": "outside"
+ },
  "scan-629206831": {
   "decision": "outside"
  },
@@ -6851,6 +6998,9 @@
  "scan-634607040": {
   "decision": "outside"
  },
+ "scan-634733512": {
+  "decision": "outside"
+ },
  "scan-634793561": {
   "decision": "outside"
  },
@@ -6913,6 +7063,9 @@
  "scan-638527686": {
   "decision": "outside"
  },
+ "scan-638577418": {
+  "decision": "outside"
+ },
  "scan-639119521": {
   "decision": "data",
   "class": "game",
@@ -6950,10 +7103,16 @@
  "scan-641124288": {
   "decision": "outside"
  },
+ "scan-641440047": {
+  "decision": "outside"
+ },
  "scan-642129224": {
   "decision": "data",
   "class": "hardware",
   "reproduced": "Apple TV Siri Remote"
+ },
+ "scan-642703046": {
+  "decision": "outside"
  },
  "scan-642848243": {
   "decision": "outside"
@@ -6979,6 +7138,9 @@
   "reproduced": "World of Warcraft 3.3.5a server"
  },
  "scan-645257700": {
+  "decision": "outside"
+ },
+ "scan-645453061": {
   "decision": "outside"
  },
  "scan-645600161": {
@@ -7209,9 +7371,7 @@
   "decision": "outside"
  },
  "scan-667421650": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "World of Tanks: Blitz model format"
+  "decision": "outside"
  },
  "scan-667594804": {
   "decision": "outside"
@@ -7277,6 +7437,9 @@
  "scan-670597249": {
   "decision": "outside"
  },
+ "scan-671634314": {
+  "decision": "outside"
+ },
  "scan-672241115": {
   "decision": "outside"
  },
@@ -7307,6 +7470,9 @@
   "decision": "outside"
  },
  "scan-674901342": {
+  "decision": "outside"
+ },
+ "scan-674933811": {
   "decision": "outside"
  },
  "scan-675097515": {
@@ -7360,6 +7526,9 @@
   "class": "game",
   "reproduced": "Zool 2 for Amiga CD32"
  },
+ "scan-680098476": {
+  "decision": "outside"
+ },
  "scan-680359603": {
   "decision": "data",
   "class": "game",
@@ -7377,6 +7546,9 @@
   "reproduced": "SimplyWall.St web service client"
  },
  "scan-680847765": {
+  "decision": "outside"
+ },
+ "scan-680858261": {
   "decision": "outside"
  },
  "scan-680919030": {
@@ -7470,9 +7642,7 @@
   "decision": "outside"
  },
  "scan-688188124": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "GNU nm"
+  "decision": "outside"
  },
  "scan-688264652": {
   "decision": "outside"
@@ -7492,9 +7662,7 @@
   "reproduced": "Minecraft: Legacy Console Edition world generation"
  },
  "scan-689181649": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Windows ConDrv IOCTL interface"
+  "decision": "outside"
  },
  "scan-689343506": {
   "decision": "outside"
@@ -7581,6 +7749,9 @@
   "decision": "outside"
  },
  "scan-697138351": {
+  "decision": "outside"
+ },
+ "scan-698307044": {
   "decision": "outside"
  },
  "scan-698957030": {
@@ -7696,9 +7867,7 @@
   "decision": "outside"
  },
  "scan-709692610": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Cheat Engine"
+  "decision": "outside"
  },
  "scan-709900574": {
   "decision": "outside"
@@ -7741,6 +7910,9 @@
   "decision": "outside"
  },
  "scan-714997705": {
+  "decision": "outside"
+ },
+ "scan-715195159": {
   "decision": "outside"
  },
  "scan-715307807": {
@@ -7788,14 +7960,10 @@
   "decision": "outside"
  },
  "scan-718739701": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Umihara Kawase Shun file formats"
+  "decision": "outside"
  },
  "scan-718762885": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Star Wars Episode I: Racer asset formats"
+  "decision": "outside"
  },
  "scan-718797783": {
   "decision": "outside"
@@ -7861,13 +8029,14 @@
  "scan-723701884": {
   "decision": "outside"
  },
+ "scan-724738404": {
+  "decision": "outside"
+ },
  "scan-724996778": {
   "decision": "outside"
  },
  "scan-725498750": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "Playdate PDX, PDI and PDZ file formats"
+  "decision": "outside"
  },
  "scan-725642996": {
   "decision": "data",
@@ -7890,9 +8059,7 @@
   "decision": "outside"
  },
  "scan-726553690": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "MOS 6502 CPU"
+  "decision": "outside"
  },
  "scan-726684336": {
   "decision": "data",
@@ -7906,6 +8073,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Torchlight 2 beta lobby server"
+ },
+ "scan-727149377": {
+  "decision": "outside"
  },
  "scan-727469202": {
   "decision": "outside"
@@ -7988,6 +8158,9 @@
  "scan-734848395": {
   "decision": "outside"
  },
+ "scan-734849266": {
+  "decision": "outside"
+ },
  "scan-735249515": {
   "decision": "outside"
  },
@@ -8016,6 +8189,11 @@
   "class": "hardware",
   "reproduced": "Yi M1 camera wireless protocol"
  },
+ "scan-736883628": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Fate/EXTELLA Link"
+ },
  "scan-736903384": {
   "decision": "outside"
  },
@@ -8023,9 +8201,7 @@
   "decision": "outside"
  },
  "scan-737015625": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Touhou 12.8 replay format"
+  "decision": "outside"
  },
  "scan-737156557": {
   "decision": "data",
@@ -8189,9 +8365,7 @@
   "decision": "outside"
  },
  "scan-753638333": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "IDA Lumina server"
+  "decision": "outside"
  },
  "scan-753958009": {
   "decision": "data",
@@ -8253,6 +8427,9 @@
   "decision": "outside"
  },
  "scan-758881488": {
+  "decision": "outside"
+ },
+ "scan-758901348": {
   "decision": "outside"
  },
  "scan-759369486": {
@@ -8341,9 +8518,7 @@
   "decision": "outside"
  },
  "scan-768661281": {
-  "decision": "data",
-  "class": "apps",
-  "reproduced": "Apple Health iOS database format"
+  "decision": "outside"
  },
  "scan-769184769": {
   "decision": "outside"
@@ -8517,6 +8692,9 @@
  "scan-779668793": {
   "decision": "outside"
  },
+ "scan-779719850": {
+  "decision": "outside"
+ },
  "scan-779760182": {
   "decision": "outside"
  },
@@ -8575,6 +8753,11 @@
  },
  "scan-785495580": {
   "decision": "outside"
+ },
+ "scan-786459238": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Virtools render engine"
  },
  "scan-787029715": {
   "decision": "data",
@@ -8686,6 +8869,9 @@
  "scan-797513798": {
   "decision": "outside"
  },
+ "scan-797563190": {
+  "decision": "outside"
+ },
  "scan-797922305": {
   "decision": "data",
   "class": "game",
@@ -8724,6 +8910,9 @@
   "decision": "data",
   "class": "website",
   "reproduced": "Magic Studio image generation API"
+ },
+ "scan-802215368": {
+  "decision": "outside"
  },
  "scan-802243313": {
   "decision": "outside"
@@ -8846,6 +9035,12 @@
  "scan-813489495": {
   "decision": "outside"
  },
+ "scan-814194322": {
+  "decision": "outside"
+ },
+ "scan-814714958": {
+  "decision": "outside"
+ },
  "scan-814763909": {
   "decision": "outside"
  },
@@ -8858,6 +9053,9 @@
   "decision": "data",
   "class": "website",
   "reproduced": "Apple Music browser authorization workflow"
+ },
+ "scan-815463697": {
+  "decision": "outside"
  },
  "scan-815496433": {
   "decision": "outside"
@@ -9011,6 +9209,9 @@
  "scan-830907173": {
   "decision": "outside"
  },
+ "scan-831298704": {
+  "decision": "outside"
+ },
  "scan-831462773": {
   "decision": "outside"
  },
@@ -9068,6 +9269,9 @@
  "scan-837789294": {
   "decision": "outside"
  },
+ "scan-837909827": {
+  "decision": "outside"
+ },
  "scan-839063293": {
   "decision": "data",
   "class": "hardware",
@@ -9102,9 +9306,7 @@
   "decision": "outside"
  },
  "scan-841614031": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Attack of the Saucerman file formats"
+  "decision": "outside"
  },
  "scan-841754419": {
   "decision": "outside"
@@ -9135,6 +9337,9 @@
   "decision": "outside"
  },
  "scan-845212195": {
+  "decision": "outside"
+ },
+ "scan-845493579": {
   "decision": "outside"
  },
  "scan-846462355": {
@@ -9326,6 +9531,9 @@
  "scan-870919199": {
   "decision": "outside"
  },
+ "scan-870970123": {
+  "decision": "outside"
+ },
  "scan-871190890": {
   "decision": "outside"
  },
@@ -9392,6 +9600,11 @@
  },
  "scan-878670430": {
   "decision": "outside"
+ },
+ "scan-879083942": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "LCC toolchain"
  },
  "scan-879175387": {
   "decision": "outside"
@@ -9468,6 +9681,9 @@
   "decision": "outside"
  },
  "scan-888098901": {
+  "decision": "outside"
+ },
+ "scan-888152639": {
   "decision": "outside"
  },
  "scan-888798518": {
@@ -9790,6 +10006,9 @@
  "scan-924698387": {
   "decision": "outside"
  },
+ "scan-925212984": {
+  "decision": "outside"
+ },
  "scan-925234334": {
   "decision": "data",
   "class": "website",
@@ -10027,6 +10246,9 @@
  "scan-942254622": {
   "decision": "outside"
  },
+ "scan-942578487": {
+  "decision": "outside"
+ },
  "scan-942870383": {
   "decision": "outside"
  },
@@ -10096,6 +10318,9 @@
   "reproduced": "Stormshield SNS backup decryption utility"
  },
  "scan-952589770": {
+  "decision": "outside"
+ },
+ "scan-952797214": {
   "decision": "outside"
  },
  "scan-953032391": {
@@ -10191,6 +10416,9 @@
   "decision": "outside"
  },
  "scan-958738382": {
+  "decision": "outside"
+ },
+ "scan-958966085": {
   "decision": "outside"
  },
  "scan-959362210": {
@@ -10340,12 +10568,18 @@
  "scan-968502883": {
   "decision": "outside"
  },
+ "scan-968822501": {
+  "decision": "outside"
+ },
  "scan-968828237": {
   "decision": "data",
   "class": "hardware",
   "reproduced": "Sony NW-S706F Walkman sync client"
  },
  "scan-968892119": {
+  "decision": "outside"
+ },
+ "scan-969111200": {
   "decision": "outside"
  },
  "scan-969670355": {
@@ -10431,9 +10665,7 @@
   "decision": "outside"
  },
  "scan-976859120": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Bochs x86 emulator"
+  "decision": "outside"
  },
  "scan-976891946": {
   "decision": "outside"
@@ -10570,9 +10802,7 @@
   "reproduced": "VOCALOID5 Editor VPR project format"
  },
  "scan-985424937": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "ReBoot: Countdown to Chaos file format"
+  "decision": "outside"
  },
  "scan-985629565": {
   "decision": "data",
@@ -10663,9 +10893,7 @@
   "decision": "outside"
  },
  "scan-990808043": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Roblox mesh version 4 format"
+  "decision": "outside"
  },
  "scan-990833426": {
   "decision": "outside"
@@ -10772,9 +11000,7 @@
   "reproduced": "Blackmagic Design Speed Editor control"
  },
  "scan-996948618": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "Everprecision/Fisnar dispensing robot .LF format"
+  "decision": "outside"
  },
  "scan-996950985": {
   "decision": "outside"
@@ -10795,9 +11021,7 @@
   "decision": "outside"
  },
  "scan-997947484": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Dead Rising audio formats"
+  "decision": "outside"
  },
  "scan-997972877": {
   "decision": "outside"
@@ -10811,6 +11035,9 @@
   "decision": "outside"
  },
  "scan-998283779": {
+  "decision": "outside"
+ },
+ "scan-998693760": {
   "decision": "outside"
  },
  "scan-998806827": {
@@ -10919,6 +11146,9 @@
  "scan-1005481611": {
   "decision": "outside"
  },
+ "scan-1005961715": {
+  "decision": "outside"
+ },
  "scan-1005999716": {
   "decision": "outside"
  },
@@ -10947,9 +11177,7 @@
   "decision": "outside"
  },
  "scan-1007373071": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Apple typedstream format"
+  "decision": "outside"
  },
  "scan-1007572645": {
   "decision": "outside"
@@ -10981,9 +11209,7 @@
   "reproduced": "Harry Potter and the Chamber of Secrets for Game Boy Color"
  },
  "scan-1010326122": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Monster Jam (2007) PAK archive format"
+  "decision": "outside"
  },
  "scan-1010619333": {
   "decision": "outside"
@@ -11067,6 +11293,11 @@
  },
  "scan-1015314053": {
   "decision": "outside"
+ },
+ "scan-1015655799": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Pokémon FireRed"
  },
  "scan-1015798082": {
   "decision": "outside"
@@ -11161,6 +11392,11 @@
  },
  "scan-1019658400": {
   "decision": "outside"
+ },
+ "scan-1019797389": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Heartbound demo"
  },
  "scan-1020019285": {
   "decision": "outside"
@@ -11280,6 +11516,11 @@
  },
  "scan-1026301524": {
   "decision": "outside"
+ },
+ "scan-1026400419": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "Xfer Records OTT VST plugin"
  },
  "scan-1026434355": {
   "decision": "outside"
@@ -11571,9 +11812,7 @@
   "decision": "outside"
  },
  "scan-1047598077": {
-  "decision": "data",
-  "class": "website",
-  "reproduced": "DataDome Anti Bot payload format"
+  "decision": "outside"
  },
  "scan-1047619492": {
   "decision": "data",
@@ -11584,9 +11823,7 @@
   "decision": "outside"
  },
  "scan-1048409281": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Shiva3D .stk archive format"
+  "decision": "outside"
  },
  "scan-1048418181": {
   "decision": "outside"
@@ -11769,9 +12006,7 @@
   "decision": "outside"
  },
  "scan-1064584381": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "Sekonic C-800 memory backup format"
+  "decision": "outside"
  },
  "scan-1064838254": {
   "decision": "outside"
@@ -11787,6 +12022,11 @@
  },
  "scan-1065740415": {
   "decision": "outside"
+ },
+ "scan-1065798936": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Sonic Dream Team"
  },
  "scan-1066440328": {
   "decision": "outside"
@@ -11941,9 +12181,7 @@
   "decision": "outside"
  },
  "scan-1077350435": {
-  "decision": "data",
-  "class": "website",
-  "reproduced": "PerimeterX web payload codec"
+  "decision": "outside"
  },
  "scan-1077494833": {
   "decision": "outside"
@@ -11964,6 +12202,9 @@
   "decision": "outside"
  },
  "scan-1080666768": {
+  "decision": "outside"
+ },
+ "scan-1080732447": {
   "decision": "outside"
  },
  "scan-1080825582": {
@@ -12146,9 +12387,7 @@
   "decision": "outside"
  },
  "scan-1092847132": {
-  "decision": "data",
-  "class": "website",
-  "reproduced": "Divoom cloud gallery API and artwork formats"
+  "decision": "outside"
  },
  "scan-1092913644": {
   "decision": "outside"
@@ -12179,9 +12418,7 @@
   "reproduced": "CnWeather WP7 app"
  },
  "scan-1094294115": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Tousui Kitan asset formats"
+  "decision": "outside"
  },
  "scan-1094332995": {
   "decision": "outside"
@@ -12193,6 +12430,9 @@
   "decision": "outside"
  },
  "scan-1094930405": {
+  "decision": "outside"
+ },
+ "scan-1095389581": {
   "decision": "outside"
  },
  "scan-1095582142": {
@@ -12304,6 +12544,9 @@
   "class": "software",
   "reproduced": "DataHive Chrome extension"
  },
+ "scan-1101945879": {
+  "decision": "outside"
+ },
  "scan-1102077761": {
   "decision": "outside"
  },
@@ -12393,6 +12636,11 @@
  "scan-1105391782": {
   "decision": "outside"
  },
+ "scan-1105739962": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Teen Titans for Xbox"
+ },
  "scan-1105744534": {
   "decision": "data",
   "class": "game",
@@ -12405,6 +12653,16 @@
  },
  "scan-1105998384": {
   "decision": "outside"
+ },
+ "scan-1106066626": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Haunting Ground"
+ },
+ "scan-1106067786": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Mad Dash Racing"
  },
  "scan-1106076560": {
   "decision": "data",
@@ -12439,10 +12697,20 @@
   "class": "game",
   "reproduced": "Tony Hawk’s Pro Skater 2x for Xbox"
  },
+ "scan-1106334640": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Shadow the Hedgehog for Xbox"
+ },
  "scan-1106335342": {
   "decision": "data",
   "class": "game",
   "reproduced": "Spawn: Armageddon"
+ },
+ "scan-1106336622": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Buffy the Vampire Slayer"
  },
  "scan-1106755010": {
   "decision": "outside"
@@ -12506,6 +12774,11 @@
  "scan-1108079095": {
   "decision": "outside"
  },
+ "scan-1108161831": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Nintendo EAD sead engine and libraries"
+ },
  "scan-1108399895": {
   "decision": "data",
   "class": "software",
@@ -12541,6 +12814,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Поле Чудес"
+ },
+ "scan-1111563601": {
+  "decision": "outside"
  },
  "scan-1111699330": {
   "decision": "outside"
@@ -12584,6 +12860,16 @@
   "class": "game",
   "reproduced": "Codename Kids Next Door: Operation V.I.D.E.O.G.A.M.E."
  },
+ "scan-1114628608": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Crash Bandicoot: The Wrath of Cortex"
+ },
+ "scan-1114629177": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Spyro: Enter the Dragonfly"
+ },
  "scan-1114762160": {
   "decision": "outside"
  },
@@ -12591,6 +12877,11 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Rule of Rose"
+ },
+ "scan-1114833030": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Wallace & Gromit: The Curse of the Were-Rabbit"
  },
  "scan-1115002336": {
   "decision": "data",
@@ -12602,6 +12893,11 @@
  },
  "scan-1115215617": {
   "decision": "outside"
+ },
+ "scan-1115281732": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Superman: Shadow of Apokolips"
  },
  "scan-1115289194": {
   "decision": "data",
@@ -12637,6 +12933,11 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Loons: The Fight for Fame for Xbox"
+ },
+ "scan-1116329546": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Crash Twinsanity"
  },
  "scan-1116330183": {
   "decision": "data",
@@ -12676,15 +12977,18 @@
   "decision": "outside"
  },
  "scan-1117319646": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "KiriKiri AJPM video format"
+  "decision": "outside"
  },
  "scan-1117512041": {
   "decision": "outside"
  },
  "scan-1117684642": {
   "decision": "outside"
+ },
+ "scan-1117847860": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Tak and the Power of Juju"
  },
  "scan-1118342346": {
   "decision": "data",
@@ -12747,6 +13051,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "Xbox One Controller"
+ },
+ "scan-1121473391": {
+  "decision": "outside"
  },
  "scan-1121626124": {
   "decision": "outside"
@@ -12903,6 +13210,9 @@
  "scan-1127020837": {
   "decision": "outside"
  },
+ "scan-1127068498": {
+  "decision": "outside"
+ },
  "scan-1127142949": {
   "decision": "outside"
  },
@@ -12923,6 +13233,9 @@
   "reproduced": "TJ-56-654 weather clock firmware"
  },
  "scan-1127371669": {
+  "decision": "outside"
+ },
+ "scan-1127403051": {
   "decision": "outside"
  },
  "scan-1127404842": {
@@ -12989,6 +13302,11 @@
  },
  "scan-1130009454": {
   "decision": "outside"
+ },
+ "scan-1130045820": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "MCSR Ranked Client 5.6.12"
  },
  "scan-1130358722": {
   "decision": "outside"
@@ -13102,9 +13420,7 @@
   "decision": "outside"
  },
  "scan-1136313063": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "Wellue O2Ring BLE protocol"
+  "decision": "outside"
  },
  "scan-1136428669": {
   "decision": "data",
@@ -13116,6 +13432,11 @@
  },
  "scan-1136539311": {
   "decision": "outside"
+ },
+ "scan-1136558566": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Apparatus"
  },
  "scan-1136589818": {
   "decision": "outside"
@@ -13380,6 +13701,9 @@
  "scan-1151505158": {
   "decision": "outside"
  },
+ "scan-1151737950": {
+  "decision": "outside"
+ },
  "scan-1151875138": {
   "decision": "outside"
  },
@@ -13453,6 +13777,9 @@
   "reproduced": "Dungeon Blitz server"
  },
  "scan-1154815115": {
+  "decision": "outside"
+ },
+ "scan-1155180865": {
   "decision": "outside"
  },
  "scan-1155443553": {
@@ -13722,6 +14049,9 @@
  "scan-1166652377": {
   "decision": "outside"
  },
+ "scan-1166768161": {
+  "decision": "outside"
+ },
  "scan-1166889128": {
   "decision": "outside"
  },
@@ -13922,6 +14252,9 @@
  "scan-1172193799": {
   "decision": "outside"
  },
+ "scan-1172284288": {
+  "decision": "outside"
+ },
  "scan-1172340107": {
   "decision": "outside"
  },
@@ -14048,7 +14381,13 @@
   "class": "hardware",
   "reproduced": "Philips Evnia 49M2C8900 Ambiglow control"
  },
+ "scan-1176285076": {
+  "decision": "outside"
+ },
  "scan-1176328267": {
+  "decision": "outside"
+ },
+ "scan-1176860650": {
   "decision": "outside"
  },
  "scan-1177137385": {
@@ -14071,6 +14410,9 @@
   "decision": "outside"
  },
  "scan-1177516311": {
+  "decision": "outside"
+ },
+ "scan-1177517411": {
   "decision": "outside"
  },
  "scan-1177529467": {
@@ -14217,6 +14559,9 @@
  "scan-1182350065": {
   "decision": "outside"
  },
+ "scan-1182529554": {
+  "decision": "outside"
+ },
  "scan-1182627382": {
   "decision": "outside"
  },
@@ -14345,6 +14690,9 @@
  "scan-1188572937": {
   "decision": "outside"
  },
+ "scan-1188654886": {
+  "decision": "outside"
+ },
  "scan-1188674070": {
   "decision": "outside"
  },
@@ -14375,6 +14723,9 @@
   "reproduced": "ChatGPT.com private API"
  },
  "scan-1189553981": {
+  "decision": "outside"
+ },
+ "scan-1189579830": {
   "decision": "outside"
  },
  "scan-1189598106": {
@@ -14467,9 +14818,7 @@
   "decision": "outside"
  },
  "scan-1192084864": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Heroes of Might and Magic III file formats"
+  "decision": "outside"
  },
  "scan-1192647541": {
   "decision": "data",
@@ -14526,6 +14875,11 @@
  },
  "scan-1194792405": {
   "decision": "outside"
+ },
+ "scan-1194891845": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Virtua Cop"
  },
  "scan-1194937201": {
   "decision": "outside"
@@ -14696,6 +15050,9 @@
  "scan-1200839238": {
   "decision": "outside"
  },
+ "scan-1200892654": {
+  "decision": "outside"
+ },
  "scan-1200950791": {
   "decision": "outside"
  },
@@ -14719,6 +15076,9 @@
   "reproduced": "Geometry Dash web demo"
  },
  "scan-1201713333": {
+  "decision": "outside"
+ },
+ "scan-1201721585": {
   "decision": "outside"
  },
  "scan-1201742233": {
@@ -14814,6 +15174,9 @@
   "decision": "outside"
  },
  "scan-1204577465": {
+  "decision": "outside"
+ },
+ "scan-1204660501": {
   "decision": "outside"
  },
  "scan-1204674362": {
@@ -14996,6 +15359,9 @@
  "scan-1212852657": {
   "decision": "outside"
  },
+ "scan-1213067053": {
+  "decision": "outside"
+ },
  "scan-1213091731": {
   "decision": "outside"
  },
@@ -15106,9 +15472,7 @@
   "decision": "outside"
  },
  "scan-1216537425": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "macOS WeChat chat database format"
+  "decision": "outside"
  },
  "scan-1217183951": {
   "decision": "outside"
@@ -15174,6 +15538,9 @@
   "decision": "outside"
  },
  "scan-1218977974": {
+  "decision": "outside"
+ },
+ "scan-1219059665": {
   "decision": "outside"
  },
  "scan-1219213987": {
@@ -15310,6 +15677,9 @@
   "decision": "outside"
  },
  "scan-1223927374": {
+  "decision": "outside"
+ },
+ "scan-1224044022": {
   "decision": "outside"
  },
  "scan-1224084966": {
@@ -15468,6 +15838,11 @@
  "scan-1229575695": {
   "decision": "outside"
  },
+ "scan-1229659561": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Championship Manager Italia"
+ },
  "scan-1229667553": {
   "decision": "outside"
  },
@@ -15477,9 +15852,7 @@
   "reproduced": "Too Good To Go app client"
  },
  "scan-1230349053": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Norton Ghost GHO disk image format"
+  "decision": "outside"
  },
  "scan-1230502520": {
   "decision": "data",
@@ -15604,6 +15977,9 @@
  "scan-1234034586": {
   "decision": "outside"
  },
+ "scan-1234190678": {
+  "decision": "outside"
+ },
  "scan-1234202643": {
   "decision": "data",
   "class": "hardware",
@@ -15700,6 +16076,11 @@
  },
  "scan-1237034533": {
   "decision": "outside"
+ },
+ "scan-1237248860": {
+  "decision": "data",
+  "class": "hardware",
+  "reproduced": "VanMoof S3 and X3 firmware"
  },
  "scan-1237257746": {
   "decision": "outside"
@@ -15942,9 +16323,7 @@
   "decision": "outside"
  },
  "scan-1246848568": {
-  "decision": "data",
-  "class": "website",
-  "reproduced": "Robinhood private web API"
+  "decision": "outside"
  },
  "scan-1246859771": {
   "decision": "outside"
@@ -16058,9 +16437,7 @@
   "decision": "outside"
  },
  "scan-1249694150": {
-  "decision": "data",
-  "class": "website",
-  "reproduced": "Skport and Gryphline private API"
+  "decision": "outside"
  },
  "scan-1249852920": {
   "decision": "outside"
@@ -16116,6 +16493,11 @@
  },
  "scan-1252127835": {
   "decision": "outside"
+ },
+ "scan-1252366497": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "Command Code CLI and VS Code extension"
  },
  "scan-1252391215": {
   "decision": "outside"
@@ -16194,6 +16576,9 @@
  "scan-1253696261": {
   "decision": "outside"
  },
+ "scan-1253795374": {
+  "decision": "outside"
+ },
  "scan-1253938435": {
   "decision": "data",
   "class": "game",
@@ -16210,6 +16595,9 @@
   "class": "hardware",
   "reproduced": "IFM VSE100 and VSA004 sensor protocol"
  },
+ "scan-1254669455": {
+  "decision": "outside"
+ },
  "scan-1254710689": {
   "decision": "outside"
  },
@@ -16225,14 +16613,10 @@
   "decision": "outside"
  },
  "scan-1255075687": {
-  "decision": "data",
-  "class": "website",
-  "reproduced": "hCaptcha vmdata format"
+  "decision": "outside"
  },
  "scan-1255282102": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "Bambu Lab farm printer protocol"
+  "decision": "outside"
  },
  "scan-1255376396": {
   "decision": "outside"
@@ -16301,9 +16685,7 @@
   "reproduced": "MADLIONS MAD60 keyboard configuration interface"
  },
  "scan-1257429044": {
-  "decision": "data",
-  "class": "science",
-  "reproduced": "SolidWorks SLDPRT format"
+  "decision": "outside"
  },
  "scan-1257530724": {
   "decision": "outside"
@@ -16374,9 +16756,7 @@
   "decision": "outside"
  },
  "scan-1259893746": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "WeChat 4.0 database format"
+  "decision": "outside"
  },
  "scan-1260011639": {
   "decision": "outside"
@@ -16388,6 +16768,9 @@
   "decision": "outside"
  },
  "scan-1260170564": {
+  "decision": "outside"
+ },
+ "scan-1260262691": {
   "decision": "outside"
  },
  "scan-1260310656": {
@@ -16424,9 +16807,7 @@
   "decision": "outside"
  },
  "scan-1261893550": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "Aionios ata05 LinxPort/LinxKey accessory protocol"
+  "decision": "outside"
  },
  "scan-1262121744": {
   "decision": "outside"
@@ -16595,6 +16976,9 @@
   "class": "hardware",
   "reproduced": "FURUI NFC PM-Pro USB interface"
  },
+ "scan-1267969707": {
+  "decision": "outside"
+ },
  "scan-1267995563": {
   "decision": "outside"
  },
@@ -16709,6 +17093,11 @@
  "scan-1270350545": {
   "decision": "outside"
  },
+ "scan-1270570666": {
+  "decision": "data",
+  "class": "hardware",
+  "reproduced": "VanMoof S5/A5 firmware"
+ },
  "scan-1270763277": {
   "decision": "outside"
  },
@@ -16798,13 +17187,38 @@
  "scan-1272669456": {
   "decision": "outside"
  },
+ "scan-1272676305": {
+  "decision": "outside"
+ },
+ "scan-1272676386": {
+  "decision": "outside"
+ },
+ "scan-1272677038": {
+  "decision": "outside"
+ },
+ "scan-1272677183": {
+  "decision": "outside"
+ },
+ "scan-1272677218": {
+  "decision": "outside"
+ },
+ "scan-1272677266": {
+  "decision": "outside"
+ },
+ "scan-1272677311": {
+  "decision": "outside"
+ },
+ "scan-1272677379": {
+  "decision": "outside"
+ },
  "scan-1272850815": {
   "decision": "outside"
  },
+ "scan-1272960080": {
+  "decision": "outside"
+ },
  "scan-1273005636": {
-  "decision": "data",
-  "class": "science",
-  "reproduced": "SketchUp SKP file format"
+  "decision": "outside"
  },
  "scan-1273063838": {
   "decision": "data",
@@ -16923,7 +17337,13 @@
  "scan-1275452767": {
   "decision": "outside"
  },
+ "scan-1275459379": {
+  "decision": "outside"
+ },
  "scan-1275464812": {
+  "decision": "outside"
+ },
+ "scan-1275508584": {
   "decision": "outside"
  },
  "scan-1275512007": {
@@ -16933,9 +17353,7 @@
   "decision": "outside"
  },
  "scan-1275571607": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "CastleMiner Z stats.sav format"
+  "decision": "outside"
  },
  "scan-1275600673": {
   "decision": "outside"
@@ -17240,6 +17658,9 @@
   "class": "hardware",
   "reproduced": "Dataflash strobe control protocol"
  },
+ "scan-1279967468": {
+  "decision": "outside"
+ },
  "scan-1280214185": {
   "decision": "outside"
  },
@@ -17487,6 +17908,9 @@
  "scan-1285158826": {
   "decision": "outside"
  },
+ "scan-1285221154": {
+  "decision": "outside"
+ },
  "scan-1285395771": {
   "decision": "data",
   "class": "game",
@@ -17613,6 +18037,9 @@
   "reproduced": "Yamaha MA-3 and MA-5 FM sound chips"
  },
  "scan-1287704627": {
+  "decision": "outside"
+ },
+ "scan-1287706883": {
   "decision": "outside"
  },
  "scan-1287788569": {
@@ -17746,6 +18173,9 @@
  "scan-1290648406": {
   "decision": "outside"
  },
+ "scan-1290693595": {
+  "decision": "outside"
+ },
  "scan-1290742518": {
   "decision": "data",
   "class": "hardware",
@@ -17793,6 +18223,9 @@
  "scan-1291629835": {
   "decision": "outside"
  },
+ "scan-1291672087": {
+  "decision": "outside"
+ },
  "scan-1291686859": {
   "decision": "outside"
  },
@@ -17803,6 +18236,9 @@
   "decision": "data",
   "class": "website",
   "reproduced": "Tencent Agently Mail private API"
+ },
+ "scan-1292153891": {
+  "decision": "outside"
  },
  "scan-1292169512": {
   "decision": "data",
@@ -18045,6 +18481,9 @@
   "class": "hardware",
   "reproduced": "JBL Quantum 950 Wireless headset controls"
  },
+ "scan-1296458687": {
+  "decision": "outside"
+ },
  "scan-1296568196": {
   "decision": "outside"
  },
@@ -18067,6 +18506,9 @@
  "scan-1297308183": {
   "decision": "outside"
  },
+ "scan-1297311274": {
+  "decision": "outside"
+ },
  "scan-1297361144": {
   "decision": "outside"
  },
@@ -18079,9 +18521,7 @@
   "reproduced": "TP2-Y printer protocol"
  },
  "scan-1297749422": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Black Desert Online client file formats"
+  "decision": "outside"
  },
  "scan-1297758993": {
   "decision": "outside"
@@ -18212,9 +18652,7 @@
   "reproduced": "Armory & Machine"
  },
  "scan-1300911360": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "MP2K and Webfoot GBA sound drivers"
+  "decision": "outside"
  },
  "scan-1301004291": {
   "decision": "outside"
@@ -18361,6 +18799,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "iM.Master robot BLE control protocol"
+ },
+ "scan-1304411756": {
+  "decision": "outside"
  },
  "scan-1304759293": {
   "decision": "outside"
@@ -18593,6 +19034,12 @@
  "scan-1309606587": {
   "decision": "outside"
  },
+ "scan-1309625136": {
+  "decision": "outside"
+ },
+ "scan-1309690621": {
+  "decision": "outside"
+ },
  "scan-1309728853": {
   "decision": "data",
   "class": "hardware",
@@ -18671,6 +19118,9 @@
  "scan-1311258950": {
   "decision": "outside"
  },
+ "scan-1311303757": {
+  "decision": "outside"
+ },
  "scan-1311310063": {
   "decision": "outside"
  },
@@ -18679,6 +19129,11 @@
  },
  "scan-1311320453": {
   "decision": "outside"
+ },
+ "scan-1311356966": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Yu-Gi-Oh! Forbidden Memories"
  },
  "scan-1311378321": {
   "decision": "data",
@@ -18690,6 +19145,11 @@
  },
  "scan-1311496124": {
   "decision": "outside"
+ },
+ "scan-1311533387": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Wizardry 8"
  },
  "scan-1311862862": {
   "decision": "outside"
@@ -18809,9 +19269,7 @@
   "reproduced": "Uniden R8w Bluetooth protocol"
  },
  "scan-1313411806": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "XGecu T48 programmer interface"
+  "decision": "outside"
  },
  "scan-1313782206": {
   "decision": "outside"
@@ -18832,6 +19290,9 @@
   "decision": "outside"
  },
  "scan-1314101925": {
+  "decision": "outside"
+ },
+ "scan-1314247646": {
   "decision": "outside"
  },
  "scan-1314268665": {
@@ -18907,10 +19368,11 @@
   "class": "game",
   "reproduced": "XIGNCODE3 anti-cheat for Black Desert"
  },
+ "scan-1315648875": {
+  "decision": "outside"
+ },
  "scan-1315702529": {
-  "decision": "data",
-  "class": "website",
-  "reproduced": "Unique-KZ graph visualizer"
+  "decision": "outside"
  },
  "scan-1315713083": {
   "decision": "outside"
@@ -19009,6 +19471,9 @@
  "scan-1318746355": {
   "decision": "outside"
  },
+ "scan-1318757025": {
+  "decision": "outside"
+ },
  "scan-1318760294": {
   "decision": "outside"
  },
@@ -19033,9 +19498,7 @@
   "decision": "outside"
  },
  "scan-1319197302": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Mandiant capa"
+  "decision": "outside"
  },
  "scan-1319328356": {
   "decision": "data",
@@ -19102,6 +19565,9 @@
   "decision": "outside"
  },
  "scan-1321581667": {
+  "decision": "outside"
+ },
+ "scan-1322001829": {
   "decision": "outside"
  },
  "scan-1322145824": {
@@ -19216,6 +19682,11 @@
  "scan-1326317476": {
   "decision": "outside"
  },
+ "scan-1326735511": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Chrono Trigger SNES release"
+ },
  "scan-1326752832": {
   "decision": "outside"
  },
@@ -19267,6 +19738,9 @@
   "class": "game",
   "reproduced": "Sin & Punishment"
  },
+ "scan-1329275778": {
+  "decision": "outside"
+ },
  "scan-1329346047": {
   "decision": "data",
   "class": "hardware",
@@ -19304,7 +19778,13 @@
   "class": "game",
   "reproduced": "Mobile Eggbert for Windows Phone"
  },
+ "scan-1330336888": {
+  "decision": "outside"
+ },
  "scan-1330354503": {
+  "decision": "outside"
+ },
+ "scan-1330521997": {
   "decision": "outside"
  },
  "scan-1330558414": {
@@ -19340,6 +19820,9 @@
   "decision": "outside"
  },
  "scan-1331338954": {
+  "decision": "outside"
+ },
+ "scan-1331552280": {
   "decision": "outside"
  },
  "scan-1331553108": {
@@ -19397,6 +19880,9 @@
   "reproduced": "XGecu chip programmer drivers"
  },
  "scan-1333555548": {
+  "decision": "outside"
+ },
+ "scan-1333637619": {
   "decision": "outside"
  },
  "scan-1333896085": {
@@ -19460,6 +19946,9 @@
   "class": "game",
   "reproduced": "Catrap for Game Boy"
  },
+ "scan-1335165381": {
+  "decision": "outside"
+ },
  "scan-1335227115": {
   "decision": "data",
   "class": "hardware",
@@ -19473,6 +19962,11 @@
  },
  "scan-1335366046": {
   "decision": "outside"
+ },
+ "scan-1335375805": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Animal Forest"
  },
  "scan-1335490701": {
   "decision": "data",
@@ -19516,6 +20010,9 @@
   "reproduced": "UniFi camera"
  },
  "scan-1336234587": {
+  "decision": "outside"
+ },
+ "scan-1336421837": {
   "decision": "outside"
  },
  "scan-1336431761": {
@@ -19620,6 +20117,11 @@
   "class": "hardware",
   "reproduced": "Epomaker TH99 Pro display protocol"
  },
+ "scan-1339784002": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Knight Online eco.exe"
+ },
  "scan-1339859045": {
   "decision": "outside"
  },
@@ -19630,6 +20132,9 @@
   "decision": "outside"
  },
  "scan-1339940532": {
+  "decision": "outside"
+ },
+ "scan-1339952110": {
   "decision": "outside"
  },
  "scan-1339961146": {
@@ -19692,9 +20197,7 @@
   "decision": "outside"
  },
  "scan-1340805663": {
-  "decision": "data",
-  "class": "website",
-  "reproduced": "Cyclocity web API"
+  "decision": "outside"
  },
  "scan-1340872200": {
   "decision": "data",
@@ -19730,6 +20233,11 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "Fender Mustang amplifier USB control"
+ },
+ "scan-1342185726": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Midnight Club Los Angeles"
  },
  "scan-1342195970": {
   "decision": "data",
@@ -19777,9 +20285,7 @@
   "decision": "outside"
  },
  "scan-1342951711": {
-  "decision": "data",
-  "class": "science",
-  "reproduced": "Autodesk Fusion 360 design format"
+  "decision": "outside"
  },
  "scan-1343034663": {
   "decision": "outside"
@@ -19927,6 +20433,9 @@
  "scan-1345323331": {
   "decision": "outside"
  },
+ "scan-1345328305": {
+  "decision": "outside"
+ },
  "scan-1345413040": {
   "decision": "outside"
  },
@@ -20013,9 +20522,7 @@
   "decision": "outside"
  },
  "scan-1346394665": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "PlayStation 4 PUP firmware package format"
+  "decision": "outside"
  },
  "scan-1346488694": {
   "decision": "outside"
@@ -20078,6 +20585,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "FINAL FANTASY V PC asset formats"
+ },
+ "scan-1347600299": {
+  "decision": "outside"
  },
  "scan-1347738237": {
   "decision": "outside"
@@ -20272,9 +20782,7 @@
   "decision": "outside"
  },
  "scan-1350887010": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Vidar 3.2 configuration format"
+  "decision": "outside"
  },
  "scan-1350950846": {
   "decision": "data",
@@ -20473,6 +20981,9 @@
  "scan-1354559805": {
   "decision": "outside"
  },
+ "scan-1354634514": {
+  "decision": "outside"
+ },
  "scan-1354673387": {
   "decision": "outside"
  },
@@ -20592,6 +21103,12 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "CIDOO V65 v2 keyboard OTA protocol"
+ },
+ "scan-1357473928": {
+  "decision": "outside"
+ },
+ "scan-1357579063": {
+  "decision": "outside"
  },
  "scan-1357735509": {
   "decision": "outside"
@@ -20805,6 +21322,11 @@
   "class": "game",
   "reproduced": "The Evil Within 2"
  },
+ "scan-1361188616": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Beatstar server"
+ },
  "scan-1361566282": {
   "decision": "outside"
  },
@@ -20855,6 +21377,9 @@
   "reproduced": "Kreo Hive 75 USB HID control protocol"
  },
  "scan-1363016958": {
+  "decision": "outside"
+ },
+ "scan-1363200524": {
   "decision": "outside"
  },
  "scan-1363339935": {
@@ -21077,10 +21602,11 @@
  "scan-1367718507": {
   "decision": "outside"
  },
+ "scan-1367732691": {
+  "decision": "outside"
+ },
  "scan-1367814649": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Cobalt Strike Beacon configuration format"
+  "decision": "outside"
  },
  "scan-1367818680": {
   "decision": "data",
@@ -21112,6 +21638,9 @@
   "decision": "outside"
  },
  "scan-1368401702": {
+  "decision": "outside"
+ },
+ "scan-1368406128": {
   "decision": "outside"
  },
  "scan-1368432430": {
@@ -21396,6 +21925,11 @@
   "class": "hardware",
   "reproduced": "ASPEED AST2400/AST2500 BMC fan control"
  },
+ "scan-1373710367": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Disruptor"
+ },
  "scan-1373717968": {
   "decision": "outside"
  },
@@ -21427,6 +21961,11 @@
  },
  "scan-1375126408": {
   "decision": "outside"
+ },
+ "scan-1375166846": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "GoldenEye 007"
  },
  "scan-1375213128": {
   "decision": "outside"
@@ -21467,6 +22006,9 @@
  "scan-1376847119": {
   "decision": "outside"
  },
+ "scan-1376888460": {
+  "decision": "outside"
+ },
  "scan-1377060594": {
   "decision": "outside"
  },
@@ -21495,6 +22037,9 @@
   "class": "hardware",
   "reproduced": "Tapo C510W camera"
  },
+ "scan-1377763409": {
+  "decision": "outside"
+ },
  "scan-1377987450": {
   "decision": "outside"
  },
@@ -21508,7 +22053,13 @@
   "class": "website",
   "reproduced": "Google Voice client"
  },
+ "scan-1378458750": {
+  "decision": "outside"
+ },
  "scan-1378490648": {
+  "decision": "outside"
+ },
+ "scan-1378685039": {
   "decision": "outside"
  },
  "scan-1378706957": {
@@ -21741,6 +22292,9 @@
   "class": "hardware",
   "reproduced": "Beurer BM59 blood pressure monitor BLE client"
  },
+ "scan-1383966789": {
+  "decision": "outside"
+ },
  "scan-1384012199": {
   "decision": "outside"
  },
@@ -21749,6 +22303,11 @@
  },
  "scan-1384014051": {
   "decision": "outside"
+ },
+ "scan-1384208209": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Chrono Trigger"
  },
  "scan-1384261004": {
   "decision": "outside"
@@ -21816,7 +22375,13 @@
   "class": "apps",
   "reproduced": "Android Discord 9.9.5 server"
  },
+ "scan-1386054250": {
+  "decision": "outside"
+ },
  "scan-1386245097": {
+  "decision": "outside"
+ },
+ "scan-1386276516": {
   "decision": "outside"
  },
  "scan-1386350171": {
@@ -21994,6 +22559,12 @@
  "scan-1389596322": {
   "decision": "outside"
  },
+ "scan-1389631435": {
+  "decision": "outside"
+ },
+ "scan-1389677743": {
+  "decision": "outside"
+ },
  "scan-1389727225": {
   "decision": "outside"
  },
@@ -22025,6 +22596,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Silkroad Online v1.150"
+ },
+ "scan-1390729651": {
+  "decision": "outside"
  },
  "scan-1390735456": {
   "decision": "outside"
@@ -22063,6 +22637,9 @@
   "class": "game",
   "reproduced": "CS:GO Legacy Game Coordinator matchmaking"
  },
+ "scan-1391455766": {
+  "decision": "outside"
+ },
  "scan-1391619169": {
   "decision": "outside"
  },
@@ -22079,6 +22656,15 @@
   "decision": "data",
   "class": "website",
   "reproduced": "MiniMax Agent web service client"
+ },
+ "scan-1392479816": {
+  "decision": "outside"
+ },
+ "scan-1392479987": {
+  "decision": "outside"
+ },
+ "scan-1392480249": {
+  "decision": "outside"
  },
  "scan-1393064976": {
   "decision": "outside"
@@ -22287,6 +22873,9 @@
  "scan-1393293178": {
   "decision": "outside"
  },
+ "scan-1393298976": {
+  "decision": "outside"
+ },
  "scan-1393443909": {
   "decision": "outside"
  },
@@ -22320,6 +22909,11 @@
  "scan-1395427587": {
   "decision": "outside"
  },
+ "scan-1395498524": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "MVP Baseball 2005"
+ },
  "scan-1395568131": {
   "decision": "data",
   "class": "hardware",
@@ -22332,6 +22926,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Galaxy on Fire 2 J2ME"
+ },
+ "scan-1395961283": {
+  "decision": "outside"
  },
  "scan-1396469656": {
   "decision": "outside"
@@ -22377,6 +22974,9 @@
   "class": "game",
   "reproduced": "Microsoft Hover!"
  },
+ "scan-1397862280": {
+  "decision": "outside"
+ },
  "scan-1398575617": {
   "decision": "outside"
  },
@@ -22395,13 +22995,27 @@
   "class": "game",
   "reproduced": "Sonic X-Treme Boss Engine"
  },
+ "scan-1398688203": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Crash Team Racing"
+ },
+ "scan-1398713411": {
+  "decision": "outside"
+ },
  "scan-1398746282": {
+  "decision": "outside"
+ },
+ "scan-1398768197": {
   "decision": "outside"
  },
  "scan-1398795562": {
   "decision": "data",
   "class": "game",
   "reproduced": "Monster Hunter Tri"
+ },
+ "scan-1398810878": {
+  "decision": "outside"
  },
  "scan-1398832692": {
   "decision": "data",
@@ -22414,9 +23028,12 @@
   "reproduced": "Civilization III: Conquests"
  },
  "scan-1398850904": {
+  "decision": "outside"
+ },
+ "scan-1398868173": {
   "decision": "data",
-  "class": "software",
-  "reproduced": "Inno Setup 7 installer format"
+  "class": "game",
+  "reproduced": "The Legend of Zelda: Twilight Princess"
  },
  "scan-1399140267": {
   "decision": "outside"
@@ -22445,6 +23062,12 @@
   "decision": "outside"
  },
  "scan-1400681239": {
+  "decision": "outside"
+ },
+ "scan-1400723549": {
+  "decision": "outside"
+ },
+ "scan-1400723900": {
   "decision": "outside"
  },
  "scan-1400820163": {
@@ -22480,10 +23103,18 @@
  "scan-1402299404": {
   "decision": "outside"
  },
+ "scan-1402305127": {
+  "decision": "outside"
+ },
  "scan-1402313727": {
   "decision": "data",
   "class": "game",
   "reproduced": "Blake Stone: Aliens of Gold and Planet Strike"
+ },
+ "scan-1402342177": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Grand Prix 4"
  },
  "scan-1402501502": {
   "decision": "data",
@@ -22527,6 +23158,9 @@
   "reproduced": "Zilog NMOS Z80 microprocessor"
  },
  "scan-1403168292": {
+  "decision": "outside"
+ },
+ "scan-1403380889": {
   "decision": "outside"
  },
  "scan-1403426226": {
@@ -22602,8 +23236,16 @@
   "class": "hardware",
   "reproduced": "Logitech Harmony remote control protocol"
  },
+ "scan-1404986580": {
+  "decision": "outside"
+ },
  "scan-1404995586": {
   "decision": "outside"
+ },
+ "scan-1405451768": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Crazy Taxi"
  },
  "scan-1405513622": {
   "decision": "outside"
@@ -22628,6 +23270,9 @@
  "scan-1405941542": {
   "decision": "outside"
  },
+ "scan-1405960835": {
+  "decision": "outside"
+ },
  "scan-1406103959": {
   "decision": "outside"
  },
@@ -22650,8 +23295,16 @@
  "scan-1406328093": {
   "decision": "outside"
  },
+ "scan-1406375024": {
+  "decision": "outside"
+ },
  "scan-1406394354": {
   "decision": "outside"
+ },
+ "scan-1406683979": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Monster Hunter 3 Ultimate"
  },
  "scan-1406863457": {
   "decision": "outside"
@@ -22665,6 +23318,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "IQOS ILUMA i ONE USB interface"
+ },
+ "scan-1407553829": {
+  "decision": "outside"
  },
  "scan-1407731593": {
   "decision": "outside"
@@ -22732,6 +23388,9 @@
  "scan-1409415395": {
   "decision": "outside"
  },
+ "scan-1409422012": {
+  "decision": "outside"
+ },
  "scan-1409446713": {
   "decision": "data",
   "class": "apps",
@@ -22778,8 +23437,18 @@
   "class": "game",
   "reproduced": "Need for Speed: Most Wanted (2005)"
  },
+ "scan-1410278094": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "The Hobbit (2003)"
+ },
  "scan-1410386277": {
   "decision": "outside"
+ },
+ "scan-1410952337": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "International Rally Championship"
  },
  "scan-1411040595": {
   "decision": "outside"
@@ -22814,6 +23483,11 @@
  "scan-1411605568": {
   "decision": "outside"
  },
+ "scan-1411713533": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Colin McRae Rally 2.0"
+ },
  "scan-1411910244": {
   "decision": "data",
   "class": "hardware",
@@ -22837,6 +23511,11 @@
   "class": "game",
   "reproduced": "核心：利希特 game server"
  },
+ "scan-1412435591": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Tokimeki Memorial: Forever with You"
+ },
  "scan-1412441597": {
   "decision": "outside"
  },
@@ -22853,6 +23532,11 @@
   "class": "game",
   "reproduced": "The Sims 2"
  },
+ "scan-1412588391": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Tourist Trophy"
+ },
  "scan-1412600099": {
   "decision": "outside"
  },
@@ -22868,6 +23552,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Champions: Return to Arms"
+ },
+ "scan-1412873766": {
+  "decision": "outside"
  },
  "scan-1412894074": {
   "decision": "data",
@@ -22891,6 +23578,9 @@
  "scan-1413272099": {
   "decision": "outside"
  },
+ "scan-1413339430": {
+  "decision": "outside"
+ },
  "scan-1413399290": {
   "decision": "outside"
  },
@@ -22898,6 +23588,9 @@
   "decision": "outside"
  },
  "scan-1413507496": {
+  "decision": "outside"
+ },
+ "scan-1413526907": {
   "decision": "outside"
  },
  "scan-1413529578": {
@@ -22909,6 +23602,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "An Elder Scrolls Legend: Battlespire engine"
+ },
+ "scan-1413657095": {
+  "decision": "outside"
  },
  "scan-1413678972": {
   "decision": "outside"
@@ -22937,6 +23633,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "Sony WH-1000XM4 voice-pack upload protocol"
+ },
+ "scan-1414413103": {
+  "decision": "outside"
  },
  "scan-1414512247": {
   "decision": "outside"
@@ -22979,6 +23678,9 @@
  "scan-1414961954": {
   "decision": "outside"
  },
+ "scan-1415019901": {
+  "decision": "outside"
+ },
  "scan-1415123248": {
   "decision": "data",
   "class": "hardware",
@@ -23007,6 +23709,9 @@
  "scan-1415399042": {
   "decision": "outside"
  },
+ "scan-1415555637": {
+  "decision": "outside"
+ },
  "scan-1415711857": {
   "decision": "data",
   "class": "game",
@@ -23016,6 +23721,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Ragnarok Online 3 server"
+ },
+ "scan-1415816259": {
+  "decision": "outside"
  },
  "scan-1415824764": {
   "decision": "outside"
@@ -23030,6 +23738,9 @@
   "decision": "data",
   "class": "software",
   "reproduced": "Microsoft PowerToys Color Picker"
+ },
+ "scan-1415957540": {
+  "decision": "outside"
  },
  "scan-1416110370": {
   "decision": "data",
@@ -23087,6 +23798,12 @@
  "scan-1417025551": {
   "decision": "outside"
  },
+ "scan-1417266708": {
+  "decision": "outside"
+ },
+ "scan-1417326554": {
+  "decision": "outside"
+ },
  "scan-1417352326": {
   "decision": "data",
   "class": "game",
@@ -23108,6 +23825,11 @@
  },
  "scan-1417789905": {
   "decision": "outside"
+ },
+ "scan-1417938204": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Digimon World 2003"
  },
  "scan-1417970113": {
   "decision": "outside"
@@ -23168,6 +23890,11 @@
  "scan-1418995621": {
   "decision": "outside"
  },
+ "scan-1419009138": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Legaia 2: Duel Saga"
+ },
  "scan-1419127225": {
   "decision": "data",
   "class": "game",
@@ -23221,6 +23948,9 @@
  "scan-1419923106": {
   "decision": "outside"
  },
+ "scan-1419958651": {
+  "decision": "outside"
+ },
  "scan-1419987716": {
   "decision": "data",
   "class": "hardware",
@@ -23232,12 +23962,20 @@
  "scan-1420006746": {
   "decision": "outside"
  },
+ "scan-1420015176": {
+  "decision": "data",
+  "class": "hardware",
+  "reproduced": "Dolphin Apollo II speech synthesizer"
+ },
  "scan-1420047294": {
   "decision": "data",
   "class": "apps",
   "reproduced": "StudentsMarch running app client"
  },
  "scan-1420079486": {
+  "decision": "outside"
+ },
+ "scan-1420138234": {
   "decision": "outside"
  },
  "scan-1420143285": {
@@ -23253,6 +23991,9 @@
   "decision": "outside"
  },
  "scan-1420567516": {
+  "decision": "outside"
+ },
+ "scan-1420582247": {
   "decision": "outside"
  },
  "scan-1420619297": {
@@ -23371,6 +24112,11 @@
  "scan-1422213403": {
   "decision": "outside"
  },
+ "scan-1422246066": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Harvest Moon: Back to Nature"
+ },
  "scan-1422248062": {
   "decision": "data",
   "class": "hardware",
@@ -23393,6 +24139,9 @@
   "reproduced": "Drakengard 3"
  },
  "scan-1422375387": {
+  "decision": "outside"
+ },
+ "scan-1422375789": {
   "decision": "outside"
  },
  "scan-1422398000": {
@@ -23467,6 +24216,12 @@
  "scan-1423267276": {
   "decision": "outside"
  },
+ "scan-1423336681": {
+  "decision": "outside"
+ },
+ "scan-1423385522": {
+  "decision": "outside"
+ },
  "scan-1423433613": {
   "decision": "data",
   "class": "game",
@@ -23499,6 +24254,12 @@
  "scan-1423790220": {
   "decision": "outside"
  },
+ "scan-1423799148": {
+  "decision": "outside"
+ },
+ "scan-1423845367": {
+  "decision": "outside"
+ },
  "scan-1423945004": {
   "decision": "outside"
  },
@@ -23526,6 +24287,9 @@
  "scan-1424048201": {
   "decision": "outside"
  },
+ "scan-1424109863": {
+  "decision": "outside"
+ },
  "scan-1424121419": {
   "decision": "outside"
  },
@@ -23548,6 +24312,9 @@
   "class": "game",
   "reproduced": "ArchLord server"
  },
+ "scan-1424276565": {
+  "decision": "outside"
+ },
  "scan-1424298099": {
   "decision": "outside"
  },
@@ -23567,11 +24334,67 @@
   "decision": "outside"
  },
  "scan-1425733044": {
+  "decision": "outside"
+ },
+ "scan-1426177000": {
+  "decision": "outside"
+ },
+ "scan-1426183552": {
+  "decision": "outside"
+ },
+ "scan-1426194171": {
   "decision": "data",
-  "class": "hardware",
-  "reproduced": "JTAGulator device interface"
+  "class": "game",
+  "reproduced": "Demon's Souls PS5 save format"
+ },
+ "scan-1426225019": {
+  "decision": "outside"
+ },
+ "scan-1426226475": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "UGH!"
+ },
+ "scan-1426227774": {
+  "decision": "outside"
+ },
+ "scan-1426242718": {
+  "decision": "data",
+  "class": "science",
+  "reproduced": "Project CLEA/VIREO"
+ },
+ "scan-1426263529": {
+  "decision": "outside"
+ },
+ "scan-1426265124": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "AirDrop receiver software"
+ },
+ "scan-1426289762": {
+  "decision": "outside"
  },
  "scan-1426302184": {
+  "decision": "outside"
+ },
+ "scan-1426313050": {
+  "decision": "outside"
+ },
+ "scan-1426318758": {
+  "decision": "outside"
+ },
+ "scan-1426326311": {
+  "decision": "outside"
+ },
+ "scan-1426338090": {
+  "decision": "outside"
+ },
+ "scan-1426342540": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "Microsoft Plus! Mystery screen saver"
+ },
+ "scan-1426372691": {
   "decision": "outside"
  },
  "scan-1426382350": {
@@ -23952,9 +24775,7 @@
   "decision": "outside"
  },
  "scan-1427706584": {
-  "decision": "data",
-  "class": "hardware",
-  "reproduced": "Xbox 360 XFAT patch formats"
+  "decision": "outside"
  },
  "scan-1427740603": {
   "decision": "outside"
@@ -25164,9 +25985,7 @@
   "decision": "outside"
  },
  "scan-1432011572": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "VRChat voice protocol"
+  "decision": "outside"
  },
  "scan-1432017201": {
   "decision": "outside"
@@ -27948,9 +28767,7 @@
   "decision": "outside"
  },
  "scan-1440171197": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "LibreOffice Calc formula engine"
+  "decision": "outside"
  },
  "scan-1440176892": {
   "decision": "data",
@@ -28774,9 +29591,7 @@
   "reproduced": "The Walking Dead: Season One engine code"
  },
  "scan-1442504531": {
-  "decision": "data",
-  "class": "science",
-  "reproduced": "SYNTEC CNC ladder .lad format"
+  "decision": "outside"
  },
  "scan-1442518182": {
   "decision": "outside"
@@ -28927,9 +29742,7 @@
   "reproduced": "狐友 campus community app protocol"
  },
  "scan-1443150458": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "WeChat 4.x desktop database format"
+  "decision": "outside"
  },
  "scan-1443154954": {
   "decision": "data",
@@ -29135,9 +29948,7 @@
   "decision": "outside"
  },
  "scan-1443933312": {
-  "decision": "data",
-  "class": "apps",
-  "reproduced": "WhatsApp voice-call signaling protocol"
+  "decision": "outside"
  },
  "scan-1443993515": {
   "decision": "outside"
@@ -29389,9 +30200,7 @@
   "decision": "outside"
  },
  "scan-1445096814": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "QQ NT chat database format"
+  "decision": "outside"
  },
  "scan-1445100987": {
   "decision": "outside"
@@ -29562,8 +30371,8 @@
  },
  "scan-1445980486": {
   "decision": "data",
-  "class": "game",
-  "reproduced": "Philips CD-i console"
+  "class": "hardware",
+  "reproduced": "Philips CD-i 220 F2 and Magnavox CD-i 200 players"
  },
  "scan-1445981906": {
   "decision": "outside"
@@ -29630,9 +30439,7 @@
   "decision": "outside"
  },
  "scan-1446388771": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "WzComparerR2"
+  "decision": "outside"
  },
  "scan-1446432001": {
   "decision": "data",
@@ -29728,9 +30535,7 @@
   "decision": "outside"
  },
  "scan-1447146518": {
-  "decision": "data",
-  "class": "apps",
-  "reproduced": "Procreate file formats"
+  "decision": "outside"
  },
  "scan-1447155987": {
   "decision": "outside"
@@ -29796,5 +30601,8 @@
   "decision": "data",
   "class": "science",
   "reproduced": "Autodesk Meshmixer 3.5.0"
+ },
+ "scan-1447461716": {
+  "decision": "outside"
  }
 }
