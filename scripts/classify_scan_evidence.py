@@ -178,10 +178,10 @@ def main() -> int:
                 "unknown": "The automated scan did not record a readable README.",
             },
             "limits": [
-                "Scan metadata cannot establish that a project builds, runs or matches any target application.",
-                "Section signals come from README headings and keywords; they do not prove the instructions work.",
+                "Classes describe README documentation; builds, runs and target matches were not observed by the scan.",
+                "Section signals come from README headings and keywords.",
                 "Release assets, demo media and reconstruction scope were not collected for the scan.",
-                "A scan class is not comparable to a curated Class 0 review; Class 0 is never assigned here.",
+                "Class 0 comes only from a manual curated review; this mapping assigns C1–C3.",
             ],
         },
         "entries": entries,

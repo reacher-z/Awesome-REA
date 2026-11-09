@@ -140,8 +140,9 @@ class QueueTest(unittest.TestCase):
             else:
                 self.assertNotIn('A &lt;game&gt; engine', html)
                 self.assertNotIn('A desktop app', html)
-            self.assertIn(('数据点：共 2 条，本页显示 2 条；另有 1 条其他采集记录和 1 条待分类记录' if language == 'zh'
-                           else 'Data points: 2 listed, 2 shown here. 1 other captures and 1 not yet classified'), html)
+            self.assertIn(('数据点：共 2 条，本页显示 <span data-discovery-shown>2</span> 条；另有 1 条其他采集记录和 1 条待分类记录'
+                           if language == 'zh' else
+                           'Data points: 2 listed, <span data-discovery-shown>2</span> shown here. 1 other captures and 1 not yet classified'), html)
             self.assertIn(f'<a href="{site.EXPORT_PATH}">{"原始数据下载" if language == "zh" else "raw download"}</a>', html)
             with patch.object(site, 'CLASS_RECORDS', 0):
                 limited = site.page_content(queue, language, False, 'https://awesomerea.org', 'https://github.com/reacher-z/Awesome-REA')
@@ -192,6 +193,23 @@ class QueueTest(unittest.TestCase):
                 for route in routes:
                     page = Page((output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8'))
                     self.assertIsNone(description_problem(page.meta['description']))
+                # Game has two data points and the list page shows one, so Game gets a page with both.
+                self.assertEqual(routes, ['/discoveries/', '/zh/discoveries/', '/discoveries/game/', '/zh/discoveries/game/'])
+                export = json.loads((output / 'discoveries.json').read_text(encoding='utf-8'))
+                self.assertEqual(export['class_pages'], [{'class': 'game', 'data_points': 2,
+                                                          'page': 'https://awesomerea.org/discoveries/game/'}])
+                for language, prefix in (('en', ''), ('zh', '/zh')):
+                    listing = (output / prefix.lstrip('/') / 'discoveries/index.html').read_text(encoding='utf-8')
+                    self.assertEqual(listing.count('data-discovery-more='), 1)
+                    self.assertIn(f'href="{prefix}/discoveries/game/" data-discovery-more="game">', listing)
+                    self.assertIn('Show all 2<span class="mono">+1</span>' if language == 'en'
+                                  else '显示全部 2 条<span class="mono">+1</span>', listing)
+                    page = (output / prefix.lstrip('/') / 'discoveries/game/index.html').read_text(encoding='utf-8')
+                    self.assertEqual(page.count('<article class="source-card browse-repository"'), 2)
+                    self.assertNotIn('data-discovery-more', page)
+                    self.assertIn(f'<a href="{prefix}/discoveries/">', page)
+            with patch.object(site, 'CLASS_RECORDS', 2):
+                self.assertEqual(site.class_pages(queue), [])
 
     def test_feed_is_newest_first_across_classes_and_page_is_newest_within_class(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -20,6 +20,11 @@ class CDNNormalizationTests(unittest.TestCase):
         for key in (0, 108, 255):
             self.assertEqual(normalized_html_bytes(('<p>Contact: ' + protected('contact@example.org', key) + '</p>' + self.decoder + '\n').encode()), b'<p>Contact: contact@example.org</p>\n')
 
+    def test_attribute_names_in_any_case_are_still_reversed(self):
+        anchor = protected('contact@example.org').replace('data-cfemail', 'DATA-CFEMAIL')
+        decoder = self.decoder.replace('data-cfasync', 'Data-CfAsync')
+        self.assertEqual(normalized_html_bytes(('<p>' + anchor + '</p>' + decoder).encode()), b'<p>contact@example.org</p>')
+
     def test_dotted_names_that_cloudflare_obfuscates_are_restored(self):
         # A Homebrew formula name in a requirement: Cloudflare rewrites it, though it is no address.
         self.assertEqual(normalized_html_bytes(('<li>Homebrew ' + protected('openssl@1.1') + ' paths</li>' + self.decoder).encode()),
