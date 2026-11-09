@@ -140636,5 +140636,28 @@
     "additional_evidence_urls": [
       "https://github.com/synamaxmusic/bar-decomp/blob/bd312023654ed73596026fee93128f1939cc3a17/LICENSE"
     ]
+  },
+  {
+    "id": "nsmbw-decomp",
+    "name": "New Super Mario Bros. Wii decompilation",
+    "url": "https://github.com/NSMBW-Community/NSMBW-Decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This decompiles New Super Mario Bros. Wii from the PALv1 binaries. A dumped disc supplies main.dol and four rel.LZ files. tools/uncompress_lz.py decompresses the rel files. main.dol is renamed wiimj2d.dol and placed in original with the rel files. The reviewed MD5 of wiimj2d.dol is ddab9e5dca53d8c18bf4051b927e822e. CodeWarrior for Embedded PowerPC goes in compilers/Wii/1.1. ./configure.py then ninja links a dol and rel files that match the originals. ./progress.py --verify-bin checks them. Linux and macOS use wibo or Wine.",
+    "description_zh": "该项目从 PALv1 二进制反编译《新超级马里奥兄弟 Wii》。转储的光盘提供 main.dol 和四个 rel.LZ 文件。tools/uncompress_lz.py 解压 rel 文件。main.dol 改名为 wiimj2d.dol，和 rel 文件一起放进 original。审阅的 wiimj2d.dol 的 MD5 是 ddab9e5dca53d8c18bf4051b927e822e。面向嵌入式 PowerPC 的 CodeWarrior 放在 compilers/Wii/1.1。./configure.py 然后 ninja，链接出与原版逐字节一致的 dol 和 rel。./progress.py --verify-bin 检查它们。Linux 和 macOS 使用 wibo 或 Wine。",
+    "requirements": [
+      "A PALv1 dump's main.dol and four rel.LZ files. CodeWarrior for Embedded PowerPC, Ninja, and Python. wibo or Wine on Linux and macOS.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/NSMBW-Community/NSMBW-Decomp/blob/58fe6985e3ca55261beb543fe7558f66c3ddd7c4/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

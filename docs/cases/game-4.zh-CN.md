@@ -6,10 +6,11 @@
 
 [English](game-4.md)
 
-**629 个案例**
+**630 个案例**
 
 ## 引擎重实现
 
+- [**CoD4 Rewrite：Rust/Bevy 游戏重建**](https://github.com/Nilbong/COD4-Rewrite) - 以 Rust/Bevy 重建《使命召唤4》的多人游戏系统，使用本地游戏安装中的素材。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/cod4-rewrite-reconstruction-case/)</sub>
 - [**Command Series engine：从 Atari 磁盘镜像运行策略游戏**](https://github.com/pwiecz/command_series) - Command Series engine 使用玩家的 Atari ATR 磁盘镜像，重建 MicroProse 的 Crusade in Europe、Decision in the Desert 和 Conflict in Vietnam 的运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/command-series-engine-case/)</sub>
 - [**Coney：重实现《The Warriors》**](https://github.com/Ryubara/coney) - Coney 用 C++ 重实现 2005 年的《The Warriors》，平台是 Windows、Linux 和 macOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/coney/)</sub>
 - [**CorsixTH：Theme Hospital 的开源重新实现**](https://github.com/CorsixTH/CorsixTH) - 重新实现 Bullfrog 1997 年游戏 Theme Hospital 的引擎：游戏逻辑以 Lua 编写，图形、声音、影片和寻路由 C++ 处理，并建立在原游戏数据文件之上。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/corsixth-engine-case/)</sub>

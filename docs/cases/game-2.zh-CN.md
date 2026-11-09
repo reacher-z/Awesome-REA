@@ -10,6 +10,7 @@
 
 ## 非匹配反编译
 
+- [**Haunted House：带注释的 Atari 2600 反汇编**](https://github.com/brandonrobertz/haunted_house_disassembly) - Haunted House 将 Atari 2600 游戏代码整理为 haunted.asm 中带注释的汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/haunted-house-disassembly-case/)</sub>
 - [**hey\_you\_pikachu：N64 ROM 的部分反编译**](https://github.com/farisawan-2000/hey_you_pikachu) - hey\_you\_pikachu 将 Pikachu Nintendo 64 ROM 的部分代码重建为 C，并保留 MIPS 反汇编代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hey-you-pikachu-decomp-case/)</sub>
 - [**Hollywood Poker：ZX Spectrum 游戏的 SkoolKit 反汇编**](https://github.com/pobtastic/hollywoodpoker) - Hollywood Poker 收录这款 ZX Spectrum 游戏的 SkoolKit 反汇编资料。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hollywood-poker-disassembly-case/)</sub>
 - [**Hot Wheels: Velocity X：GameCube 版的部分反编译**](https://github.com/Duckxz/hwvx-gcn-decomp) - 该项目针对 GameCube 美版 GHWE78《Hot Wheels: Velocity X》进行反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hot-wheels-velocity-x-gcn-case/)</sub>
@@ -626,5 +627,4 @@
 - [**Pokopia Native：从用户转储构建《Pokémon Pokopia》原生版本**](https://github.com/xFractals/pokopia-native) - Pokopia Native 使用用户自己的 Switch 2《Pokémon Pokopia》转储，构建 Mac、iPhone 和 Windows 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokopia-native-case/)</sub>
 - [**Pokémon 第一世代：结合运行轨迹测试的静态重编译**](https://github.com/sp00nznet/pokemon) - 项目使用 gb-recompiled 将《Pokémon Red》《Blue》《Yellow》的 Game Boy SM83 代码转成 C，再构建原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-generation-one-recomp-case/)</sub>
 - [**Portal 2：面向 Apple silicon 的静态重编译**](https://github.com/kanapitsas/portal2-recomp) - 该项目把 Portal 2 的 Linux x86 模块静态重编译为适用于 macOS 和 iPhone 的 ARM64 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/portal-2-apple-silicon-recomp-case/)</sub>
-- [**Power Dozer：静态重编译《Blast Corps》**](https://github.com/djultra64/Power-Dozer) - Power Dozer 使用 N64Recomp 静态重编译《Blast Corps》美版 Rev 1，并通过 N64ModernRuntime 和 RT64 在 Windows、Linux 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/power-dozer-case/)</sub>
 <!-- END GENERATED CASES -->
