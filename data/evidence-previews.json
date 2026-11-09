@@ -630,12 +630,12 @@
     },
     {
       "id": "battle-arena-toshinden-recompiled-case",
-      "image_url": "https://raw.githubusercontent.com/mstan/BattleArenaToshindenRecomp/master/.github/screenshots/ultrawide.png",
+      "image_url": "https://raw.githubusercontent.com/mstan/BattleArenaToshindenRecomp/6810d2053f1e1f6788c78e0f5dcc509b1fa8f34c/.github/screenshots/ultrawide.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/mstan/BattleArenaToshindenRecomp",
-      "revision": "master",
-      "checked_at": "2026-11-09T07:55:40+00:00"
+      "revision": "6810d2053f1e1f6788c78e0f5dcc509b1fa8f34c",
+      "checked_at": "2026-11-09T02:41:36+00:00"
     },
     {
       "id": "battletanx-global-assault-recomp-case",
@@ -2511,12 +2511,12 @@
     },
     {
       "id": "fretwire-case",
-      "image_url": "https://raw.githubusercontent.com/john-baxter-dev/fretwire/master/docs/screenshots/editor.png",
+      "image_url": "https://raw.githubusercontent.com/john-baxter-dev/fretwire/441c03c57aeb643979484098cf33076c7838e99a/docs/screenshots/editor.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/john-baxter-dev/fretwire",
-      "revision": "master",
-      "checked_at": "2026-11-09T07:55:40+00:00"
+      "revision": "441c03c57aeb643979484098cf33076c7838e99a",
+      "checked_at": "2026-11-09T01:38:42+00:00"
     },
     {
       "id": "frida-il2cpp-bridge",
@@ -2889,12 +2889,12 @@
     },
     {
       "id": "goldeneye-pc-port-case",
-      "image_url": "https://raw.githubusercontent.com/jkdansereau/goldeneye-pc-port/main/docs/media/goldeneye-gh-preview.gif",
+      "image_url": "https://raw.githubusercontent.com/jkdansereau/goldeneye-pc-port/fda76b69837e6c5aae436e0d3e798989e49b06d2/docs/media/goldeneye-gh-preview.gif",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/jkdansereau/goldeneye-pc-port",
-      "revision": "main",
-      "checked_at": "2026-11-09T07:55:40+00:00"
+      "revision": "fda76b69837e6c5aae436e0d3e798989e49b06d2",
+      "checked_at": "2026-11-01T10:06:10+00:00"
     },
     {
       "id": "goldenpad-case",
@@ -3609,12 +3609,12 @@
     },
     {
       "id": "kam1n0",
-      "image_url": "https://raw.githubusercontent.com/McGill-DMaS/Kam1n0-Community/master2.x/documentation/others/kam1n0.png",
+      "image_url": "https://raw.githubusercontent.com/McGill-DMaS/Kam1n0-Community/1c3c309acc8f5e50c6617f858aa3b5b84c121b26/documentation/others/kam1n0.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/McGill-DMaS/Kam1n0-Community",
-      "revision": "master2.x",
-      "checked_at": "2026-11-09T07:55:40+00:00"
+      "revision": "1c3c309acc8f5e50c6617f858aa3b5b84c121b26",
+      "checked_at": "2026-11-04T06:54:06+00:00"
     },
     {
       "id": "kbm-tg700-control-case",
@@ -4770,12 +4770,12 @@
     },
     {
       "id": "ntrghidra",
-      "image_url": "https://raw.githubusercontent.com/pedro-javierf/NTRGhidra/master/install1.png",
+      "image_url": "https://raw.githubusercontent.com/pedro-javierf/NTRGhidra/9e0674c0b36ef9b816dbe7833a68b17327edc1b9/install1.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/pedro-javierf/NTRGhidra",
-      "revision": "master",
-      "checked_at": "2026-11-09T07:55:40+00:00"
+      "revision": "9e0674c0b36ef9b816dbe7833a68b17327edc1b9",
+      "checked_at": "2026-11-04T06:54:03+00:00"
     },
     {
       "id": "nuked-md-case",
@@ -6768,12 +6768,12 @@
     },
     {
       "id": "rerbr-case",
-      "image_url": "https://raw.githubusercontent.com/JodusNodus/rerbr/main/docs/clips/condor-sideways-cockpit.webp",
+      "image_url": "https://raw.githubusercontent.com/JodusNodus/rerbr/38da8464f391442088ebdcf2add935822c138cd6/docs/clips/condor-sideways-cockpit.webp",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/JodusNodus/rerbr",
-      "revision": "main",
-      "checked_at": "2026-11-09T07:55:40+00:00"
+      "revision": "38da8464f391442088ebdcf2add935822c138cd6",
+      "checked_at": "2026-11-08T22:27:09+00:00"
     },
     {
       "id": "reshadowtower",
@@ -8595,12 +8595,12 @@
     },
     {
       "id": "vectorcraft-case",
-      "image_url": "https://raw.githubusercontent.com/storytold/vectorcraft/main/docs/images/shot-3-sheet.png",
+      "image_url": "https://raw.githubusercontent.com/storytold/vectorcraft/a5c166fbeaa7b7f20c2193f2f944a19b7e97acfe/docs/images/shot-3-sheet.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/storytold/vectorcraft",
-      "revision": "main",
-      "checked_at": "2026-11-09T07:55:40+00:00"
+      "revision": "a5c166fbeaa7b7f20c2193f2f944a19b7e97acfe",
+      "checked_at": "2026-11-09T01:38:42+00:00"
     },
     {
       "id": "vera20k-case",

@@ -446,7 +446,7 @@ class WorkflowTest(unittest.TestCase):
         writes = {name: re.findall(r'^      ([a-z-]+): write$', job, re.MULTILINE) for name, job in self.jobs.items()}
         self.assertEqual(writes, {'collect': [], 'ingest': ['contents', 'pull-requests', 'actions'], 'report': ['issues']})
         for name, job in self.jobs.items():
-            self.assertLessEqual(int(re.search(r'timeout-minutes: ([0-9]+)', job)[1]), 30, name)
+            self.assertLessEqual(int(re.search(r'timeout-minutes: ([0-9]+)', job)[1]), 45 if name == 'ingest' else 30, name)
             self.assertIn('persist-credentials: false', job)
         self.assertIn("needs.collect.outputs.collection_ready == 'true'", self.jobs['ingest'])
         self.assertIn('run: python3 scripts/collect_discovery_leads.py run', self.jobs['ingest'])
