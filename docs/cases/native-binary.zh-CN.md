@@ -6,11 +6,14 @@
 
 [English](native-binary.md)
 
-**42 个案例**
+**46 个案例**
 
 - [**AGS Aging Cartridge：反汇编 7.0 版**](https://github.com/Normmatt/ags_aging) - 该项目以用户提供的 Game Boy Advance ROM 为输入，将 AGS Aging Cartridge 7.0 重建为汇编与 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ags-aging-cartridge-case/)</sub>
 - [**cod4map：重建 Call of Duty 4 的 BSP 编译器**](https://github.com/prd0nja/cod4map) - cod4map 根据 2007 年随 Call of Duty 4 模组工具发布的可执行文件重建 BSP 编译器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cod4map-reconstruction-case/)</sub>
 - [**dargh：重建 Skyrim 的 Dynamic Animation Replacer**](https://github.com/noxsidereum/dargh) - dargh 根据对 Dynamic Animation Replacer 1.1.2 和 1.1.3 DLL 的分析，以 C++ 重建用于 Skyrim Special Edition 的替代 DLL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dargh-case/)</sub>
+- [**dolnetbp：重建 GameCube 网络 SDK 库**](https://github.com/Cuyler36/dolnetbp) - dolnetbp 以 C 重建 GameCube Dolphin Network Base Package 的 eth、mdm 和 netcfg 库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dolnetbp-case/)</sub>
+- [**Dolphin SDK 2004 Libraries：反编译 GameCube SDK 归档库**](https://github.com/doldecomp/dolsdk2004) - Dolphin SDK 2004 Libraries 将 2004 年 4 月 20 日版 Dolphin SDK 的已编译归档库重建为 C 与汇编源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dolphin-sdk-2004-libraries-case/)</sub>
+- [**dolsocketlibrary：重建 Dolphin 网络库**](https://github.com/Cuyler36/dolsocketlibrary) - dolsocketlibrary 以 C 重建 Dolphin Network Base Package 的 ip 和 dvdeth 库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dolsocketlibrary-case/)</sub>
 - [**Eidolon in Rust：Eidolon 64k 演示的逐字节一致 Rust 移植**](https://github.com/RovshanMuradov/eidolon-64k-rs) - 把 Poo-Brain 在 Revision 2017 夺得 PC 64k 组冠军的 Eidolon，从经过压缩的 60,928 字节 Windows 可执行文件移植到 Rust，并附有说明原二进制工作原理的章节和单独的体积优化版本。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/eidolon-64k-rust-port-case/)</sub>
 - [**Eloquence 6.1：ECI.DLL 的 C 重建**](https://github.com/KamiKitsune420/eloquence-decomp) - 把 ETI Eloquence 6.1.0.2（美式英语 ECI.DLL 与 ENU.SYN）重建为 C，并提供可替换的 x86 与 x64 ECI.DLL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/eloquence-61-eci-case/)</sub>
 - [**ExCrypt：重建 Xbox 360 XeCrypt 函数**](https://github.com/emoose/ExCrypt) - ExCrypt 以 C 和 C++ 重写 Xbox 360 的 XeCrypt 函数，供既有主机代码和数据使用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/excrypt-case/)</sub>
@@ -19,6 +22,7 @@
 - [**GoonFi V2：Solana 程序的逐字节一致 Rust 重编译**](https://osec.io/blog/goonfi-decompilation/) - OtterSec 研究人员介绍了一套智能体流程：为闭源的 GoonFi V2 Solana 程序重建 Rust 源码，直至用原工具链重新构建即可复现所部署的 ELF。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goonfi-v2-rust-recompilation-case/)</sub>
 - [**HyperCard 1.2.2：经典 Mac 应用的静态重编译**](https://github.com/sp00nznet/macrecomp) - 静态重编译经典 Mac 应用 HyperCard 1.2.2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hypercard-122-recomp-case/)</sub>
 - [**IOReport：研究并反编译 Apple 的报告库**](https://github.com/dehydratedpotato/IOReport_decompile) - IOReport decompile 研究 Apple 的 IOReport 动态库及其读取系统报告和计数器的调用方式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ioreport-decompile-case/)</sub>
+- [**Konami's Game Master：MSX 工具卡带的匹配反汇编**](https://github.com/ricbit/game-master) - 该项目将日版 RC-735 MSX 工具卡带 Konami's Game Master 重建为带注释的汇编源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/konamis-game-master-disassembly-case/)</sub>
 - [**L&amp;H TruVoice：用可移植 C 重建 tv\_enua.dll**](https://github.com/KamiKitsune420/lh-truvoice-decomp) - 把 Lernout &amp; Hauspie TruVoice 6.00 build 10（SAPI 4 美式英语引擎 tv\_enua.dll）重建为 C99。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lh-truvoice-decomp-case/)</sub>
 - [**L1J-Encode-CLI：还原 Lineage 1 的 ServerData 编解码算法**](https://github.com/Lan-0v0/L1J-Encode-CLI) - L1J-Encode-CLI 将 Lineage 1 登录器的 ServerData 编码还原为 Python 编解码器，可处理 IP、端口和功能位。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/l1j-encode-cli-case/)</sub>
 - [**libmd12：E-mu SP-1200 与 SP-12 音频通路的 C 模型**](https://github.com/Mudb0y/libmd12) - E-mu SP-1200 与 SP-12 采样器音频通路的 C99 库：音高回放、滤波器和动态滤波器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/libmd12-sp1200-case/)</sub>

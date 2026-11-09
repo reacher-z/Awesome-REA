@@ -6,7 +6,7 @@
 
 [English](website.md)
 
-**72 个案例**
+**73 个案例**
 
 - [**canopy-dotmatrix：重建 davidluft.com 的点阵窗景**](https://github.com/isjiajia01/canopy-dotmatrix) - 项目依据 davidluft.com 的公开 JavaScript 文件和场景数据重建首页点阵窗景。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/canopy-dotmatrix-case/)</sub>
 - [**Dih Pinterest：重建 Pinterest 搜索站点的页面与数据流**](https://github.com/Ikyletwar/dih-pinterest-replica) - Dih Pinterest 将 searchpinterest.vercel.app 的搜索界面和数据流重建为静态网页，可选配 Vercel 代理。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dih-pinterest-case/)</sub>
@@ -19,6 +19,7 @@
 - [**muse-cli：重建 muse.ai 个人网关协议**](https://github.com/nikships/muse-cli) - muse-cli 根据 muse.ai 网页客户端代码实现个人网关的命令行客户端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/muse-cli-case/)</sub>
 - [**MUSIC DIVER MyPage API：梳理游戏 MyPage 私有网页接口**](https://github.com/ALLMarvelous/musicdiver-mypage-api) - MUSIC DIVER MyPage API 记录游戏 MyPage 服务的私有 HTTP 接口，并实现可自行部署的玩家数据代理。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/music-diver-mypage-api-case/)</sub>
 - [**NewPipe：面向 YouTube 和 PeerTube 的 Android 前端**](https://github.com/TeamNewPipe/NewPipe) - NewPipe 是面向 YouTube、YouTube Music 和 PeerTube 的 Android 前端。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/newpipe-streaming-client-case/)</sub>
+- [**Omada API Toolkit：重建 Controller Web API v2**](https://github.com/spectator81-png/omada-api-toolkit) - Omada API Toolkit 根据浏览器 DevTools 观察及控制器实际使用情况，重建 TP-Link Omada Controller Web API v2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/omada-api-toolkit-case/)</sub>
 - [**pipepipe-sabr：重建 YouTube SABR 流媒体协议**](https://github.com/o1laabs/pipepipe-sabr) - pipepipe-sabr 根据对 PipePipe 的源码分析重建 YouTube SABR/UMP 流媒体行为，并编写独立 Python 客户端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/pipepipe-sabr-case/)</sub>
 - [**Skylight API：重建 Skylight Calendar 网页接口**](https://github.com/TheEagleByte/skylight-api) - Skylight API 根据浏览器 HAR 抓包整理 Skylight Calendar 的网页接口，并发布 OpenAPI 规范。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/skylight-api-case/)</sub>
 - [**Tesla Dashcam Decryptor：解析加密行车记录仪录像**](https://github.com/XGxF3/tesla-dashcam-decrypt) - Tesla Dashcam Decryptor 重建 dashcam.tesla.com 对 Tesla 2026.20 加密录像的本地解密流程。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/tesla-dashcam-decrypt-case/)</sub>

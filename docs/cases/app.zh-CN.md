@@ -6,7 +6,7 @@
 
 [English](app.md)
 
-**209 个案例**
+**212 个案例**
 
 - [**AionLink Open：研究 GAC AION i60 的 ICCOA CarLink 连接**](https://github.com/codepdbh/aionlink-open) - AionLink Open 通过静态分析 Android APK 并编写独立客户端，研究 GAC AION i60 的 ICCOA CarLink 连接。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aionlink-open-case/)</sub>
 - [**AirTray：重建 Elgin Air 云端控制客户端**](https://github.com/JoseAlexandreMeloPacheco/airtray) - AirTray 根据 Elgin Air 应用的行为重建 Windows 系统托盘客户端，用于控制兼容空调。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/airtray-case/)</sub>
@@ -19,12 +19,14 @@
 - [**elevenlabs-reader-cli：重建 Reader 应用流式朗读流程**](https://github.com/gastonmorixe/elevenlabs-reader-cli) - elevenlabs-reader-cli 是一个 Python 命令行客户端，可创建 ElevenLabs Reader 文档，并通过 Reader WebSocket 串流播放语音。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/elevenlabs-reader-cli-case/)</sub>
 - [**EOO：Nintendo DS Wii 连接工具反编译**](https://github.com/PikalaxALT/eoo) - EOO 重建《宝可梦 钻石／珍珠》内置的 Nintendo DS Wii 连接工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/eoo-wii-connection-utility-case/)</sub>
 - [**Fluval Plant Pro 4.0：重建 BLE 灯光控制**](https://github.com/cryystyy/fluval-plant-pro-4-homeassistant) - Fluval Plant Pro 4.0 项目通过分析 FluvalConnect Android 应用重建灯具的 CBOR over BLE 控制协议。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/fluval-plant-pro-4-ble-case/)</sub>
+- [**Free-BBN：重建 PlayStation Broadband Navigator 仪表板**](https://github.com/jegesmedve09/Free-BBN) - Free-BBN 使用 ps2sdk 和 gsKit 将 PlayStation Broadband Navigator 仪表板重建为 PS2 自制应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/free-bbn-case/)</sub>
 - [**Grok3API：重建 Grok 移动端 gRPC 客户端**](https://github.com/boykopovar/Grok3API) - Grok3API 用 Python 实现 Grok 移动端 gRPC 客户端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/grok3api-mobile-grpc-case/)</sub>
 - [**HikVision QR export decoder：重建 Hik-Connect 设备导出格式**](https://github.com/maxim-smirnov/hik-qr-export) - HikVision QR export decoder 重建 Hik-Connect 设备导出二维码的格式，并提供 Python 解码与更新命令。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hikvision-qr-export-case/)</sub>
 - [**Humax-CLI：重建 IR4000HD 遥控接口**](https://github.com/D4Vinci/Humax-CLI) - Humax-CLI 根据作者对 Humax Android 应用的逆向分析，实现 IR4000HD 接收机的终端控制。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/humax-cli-case/)</sub>
 - [**Keymarks：重建 Powermarks 3.5 的书签格式与工作流程**](https://github.com/novakda/keymarks) - Keymarks 以 Windows Tauri 应用、SQLite 搜索和浏览器扩展重建 Powermarks 3.5 的关键词书签流程。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/keymarks-case/)</sub>
 - [**LibrePods：借助逆向得出的协议在 Android 和 Linux 上使用 AirPods 功能**](https://github.com/librepods-org/librepods) - 实现 AirPods 与苹果设备之间使用的专有协议（作者称由其本人逆向得出），使 Android 和 Linux 应用能够切换降噪模式、读取入耳检测和准确电量，并使用对话感知、头部手势和助听设置。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/librepods-airpods-protocol-case/)</sub>
 - [**logitech-ipc-protocol：重建 Logi Options+ 智能体消息协议**](https://github.com/saimanish1/logitech-ipc-protocol) - logitech-ipc-protocol 还原 Logi Options+ 智能体用于查询设备和切换主机的本地 IPC 消息。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/logitech-ipc-protocol-case/)</sub>
+- [**lsdj-decomp：Little Sound Dj 9.4.2 逐字节匹配重建**](https://github.com/tetrisgm/lsdj-decomp) - lsdj-decomp 利用已记录的符号映射表、ROM 分析工具和 C 语言译写代码重建 Little Sound Dj 9.4.2；C 函数会替换本地生成的 RGBDS 汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lsdj-9-4-2-decomp-case/)</sub>
 - [**lumalou：重建 Fisher-Price Lumalou 的 BLE 控制协议**](https://github.com/stramanu/lumalou) - lumalou 在原配套应用停用后重建 Fisher-Price Lumalou 睡眠设备的本地蓝牙 LE 控制。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/lumalou-case/)</sub>
 - [**Mi Fitness Sync：从 Android 应用重建运动记录获取流程**](https://github.com/kevinkwee/Mi-Fitness-Sync) - Mi Fitness Sync 根据 Mi Fitness Android 应用重建运动记录获取流程，并提供用于导出活动及上传 Strava 的 Python 命令行工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mi-fitness-sync-case/)</sub>
 - [**MiPods：在 macOS 上还原小米耳机控制**](https://github.com/JackWPP/MiPods) - MiPods 利用逆向得到的 BLE GATT 协议，在 macOS 菜单栏应用中实现小米耳机控制。 <sub>案例 · 混合工具流程 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/mipods-case/)</sub>
@@ -43,6 +45,7 @@
 - [**Samsung Cloud Notes：重建云端笔记访问方式**](https://github.com/Clascheurduturfu/samsung-cloud-notes) - Samsung Cloud Notes 通过 Mac、iOS、Android 和命令行客户端重建对 Samsung 私有笔记同步服务的访问。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/samsung-cloud-notes-case/)</sub>
 - [**samsung-notes-format：解码 Samsung Notes 手写笔迹**](https://github.com/bxff/samsung-notes-format) - samsung-notes-format 还原 Samsung Notes .sdocx 文件中的手写几何数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/samsung-notes-format-case/)</sub>
 - [**Scarlett MixControl：重建第一代 Scarlett 声卡控制功能**](https://github.com/MarecekW/scarlett-mixcontrol-1stgen) - Scarlett MixControl 在现代 macOS 上替代 Focusrite MixControl 1.10.6，控制第一代 Scarlett 声卡。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/scarlett-mixcontrol-1stgen-case/)</sub>
+- [**Serato Tags：重建 Serato DJ 的 GEOB 元数据格式**](https://github.com/Holzhaus/serato-tags) - Serato Tags 记录 Serato DJ 写入音频文件的 GEOB 元数据结构。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/serato-tags-case/)</sub>
 - [**ShatteredGlass：重建 SwiftUI Liquid Glass 视觉效果**](https://github.com/AlexStrNik/ShatteredGlass) - ShatteredGlass 在 macOS 上通过分层的 Core Animation 视图重建 SwiftUI Liquid Glass 外观。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shatteredglass-case/)</sub>
 - [**SingStar Mic：还原麦克风应用通信协议**](https://github.com/kevinvalk/re-singstar-mic) - SingStar Mic 文档还原 Android 和 iOS 应用的本地发现、曲库及游戏服务交互。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/singstar-mic-protocol-case/)</sub>
 - [**SSL Console Control：重建调音台 UDP 控制协议**](https://github.com/koltyj/SSL) - SSL Console Control 通过原生 UDP 协议实现对 SSL Matrix 系列及 Sigma 调音台的 Python 控制。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ssl-console-control-case/)</sub>
