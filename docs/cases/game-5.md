@@ -6,10 +6,11 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**161 case studies**
+**162 case studies**
 
 ## Other methods and analyses
 
+- [**Maniac Mansion: annotated demo and retail script disassembly**](https://github.com/segrax/Maniac.Mansion.Disassembly) - This repository is a commented disassembly of Maniac Mansion scripts for the v0 demo and the retail release, plus spreadsheets of rooms, objects, variables, and sounds. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/maniac-mansion-disasm/)</sub>
 - [**MapleStory2: reconstructing server packet structures**](https://github.com/MS2Community/Maple2) - Maple2 reconstructs a MapleStory2 server in C# and investigates the client's expected server-to-client packet layouts. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/maple2-server-packet-case/)</sub>
 - [**Mario Golf: a Game Boy Color disassembly**](https://github.com/DarkRTA/mgolf) - mgolf provides an assembly disassembly of Mario Golf for Game Boy Color. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mgolf-disassembly-case/)</sub>
 - [**mc4.sav: reconstructing the Midnight Club: Los Angeles save format**](https://github.com/onlyzennnn/mcla-save-editor) - mc4.sav documents the save format written by the Midnight Club: Los Angeles recompiled PC runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mcla-save-editor-case/)</sub>

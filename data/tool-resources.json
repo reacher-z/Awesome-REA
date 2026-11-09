@@ -143849,5 +143849,28 @@
     "verified_at": "2026-11-07",
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
+  },
+  {
+    "id": "skies-of-arcadia-legends-recomp",
+    "name": "Skies of Arcadia Legends: Recompiled",
+    "url": "https://github.com/ogdanimal/SkiesOfArcadiaLegends-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native port of the GameCube game Skies of Arcadia Legends for Windows, Linux, macOS, and Android. It translates the PowerPC code ahead of time and uses Dolphin's graphics, sound, and input code. The reviewed beta is v0.83. Select Disc accepts the original USA, European, or Japanese release, game IDs GEAE8P, GEAP8P, and GEAJ8P, as RVZ, ISO, GCM, GCZ, WIA, or CISO. The Japanese disc is Eternal Arcadia Legends. Windows 10 version 1703 or 11 runs Skies of Arcadia Legends.exe. Linux uses an AppImage or the unpacked binary. macOS 13 or later is Apple silicon. Android is 7.0 or newer on arm64.",
+    "description_zh": "这是 GameCube 游戏《永恒的阿卡迪亚》传说版的原生移植，面向 Windows、Linux、macOS 和 Android。它预先翻译 PowerPC 代码，并使用 Dolphin 的图形、声音和输入代码。审阅的测试版是 v0.83。选择光盘接受原版美版、欧版或日版，游戏编号 GEAE8P、GEAP8P 和 GEAJ8P，格式为 RVZ、ISO、GCM、GCZ、WIA 或 CISO。日版是 Eternal Arcadia Legends。Windows 10 版本 1703 或 Windows 11 运行 Skies of Arcadia Legends.exe。Linux 使用 AppImage 或解压后的二进制。macOS 13 或更高版本面向 Apple 芯片。Android 为 7.0 或更高，架构为 arm64。",
+    "requirements": [
+      "One of the three original GameCube discs named above. The platform limits in the reviewed table.",
+      "License: GPL-3.0, in COPYING. Third-party licences are in release/THIRD-PARTY.md."
+    ],
+    "evidence_url": "https://github.com/ogdanimal/SkiesOfArcadiaLegends-Recomp/blob/88f81eaa11034a36b88683e0ab54b33a00cf2a91/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
