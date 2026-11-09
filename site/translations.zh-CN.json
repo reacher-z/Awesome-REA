@@ -41684,5 +41684,626 @@
       "需要 7.3 或更高版本、带 Hex-Rays 反编译器的 IDA。主分支使用 Python 3。",
       "README 没有写许可证。"
     ]
+  },
+  "zuma-deluxe-decompilation-case": {
+    "name": "Zuma Deluxe：反编译 Mac 与 Windows 版游戏",
+    "requirements": [
+      "需要原版《Zuma Deluxe》提供游戏数据。32 位构建需要原版游戏附带的 BASS 1.8 或 BASS 2.4；64 位构建需要 BASS 2.4。",
+      "文档列出的构建选项包括 CMake 3.18 或更新版本，以及 MinGW 或 MSVC。",
+      "作者称游戏可玩，但可能存在错误和不准确之处。",
+      "修改部分采用 MIT 许可，游戏源码按现状提供；其他组件另有许可证文件。"
+    ]
+  },
+  "croc-psx-demo-matching-case": {
+    "name": "Croc: Legend of the Gobbos：PSX 演示版的匹配式反编译",
+    "requirements": [
+      "需提供 Croc 演示版光盘和 Psy-Q 4.0 光盘的内容。",
+      "文档中的构建环境使用 Podman、Python、Wine 和 emu2。",
+      "若干较长函数尚未完成，仍使用从原版提取的实现。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "starquake-bbc-micro-case": {
+    "name": "Starquake：BBC Micro 版反汇编",
+    "requirements": [
+      "需要 Beebasm 汇编器。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "relive-engine-case": {
+    "name": "R.E.L.I.V.E.：《Abe’s Oddysee》和《Abe’s Exoddus》引擎重建",
+    "requirements": [
+      "需要拥有原版游戏文件。",
+      "项目页面列出 Windows、macOS 和 Linux 支持。",
+      "两款游戏仍可能出现错误、崩溃和功能退化；不支持 HD Mod。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "gopro-gpmd-format-case": {
+    "name": "GoPro Metadata Format Parser：解析 GPMD 遥测数据",
+    "requirements": [
+      "需要含 GPMD 元数据的 MP4 录像，例如启用 GPS 时录制的 GoPro Hero 5 视频。",
+      "使用解析器前，需用 ffmpeg 提取元数据流。",
+      "采用 BSD-2-Clause 许可证。"
+    ]
+  },
+  "opencivone-case": {
+    "name": "OpenCivOne：重写初代《Civilization》",
+    "requirements": [
+      "项目在 Windows、Linux 和 macOS 桌面系统上使用 .NET 8 与 Avalonia。",
+      "需要合法持有原版游戏，且具备其中的 .txt、.pic 和 .pal 文件。",
+      "重写工作仍在进行，部分汇编代码仍由虚拟 CPU 执行。",
+      "项目页面未注明许可证。"
+    ]
+  },
+  "a26-mb-case": {
+    "name": "Mario Bros.：Atari VCS 版匹配反汇编",
+    "requirements": [
+      "需要标准的 Atari VCS 版 Mario Bros. ROM 以提取资源，以及类 UNIX 平台上的 cc65 6502 开发套件。",
+      "控制流注释可能存在错误。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "smt-decomp-case": {
+    "name": "smt-decomp：反编译 PlayStation 版《Shin Megami Tensei》",
+    "requirements": [
+      "需要 WSL 环境和原版游戏文件。",
+      "设置流程使用 PSXimager 或类似工具提取游戏文件，再运行 make split。",
+      "项目仍处于早期阶段，构建说明尚未完成。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "rerac-case": {
+    "name": "ReRAC：《Ratchet & Clank》PC 移植",
+    "requirements": [
+      "需要北美版 PlayStation 2 原版光盘。",
+      "首个测试版面向 Apple Silicon Mac；另有 Windows 构建版，Linux 版尚在计划中。",
+      "早期测试版涵盖四个星球；其他星球和后续测试尚未完成。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "sc2k-docs-case": {
+    "name": "SC2k-docs：解析 SimCity 2000 文件与模拟机制",
+    "requirements": [
+      "规格主要适用于 SimCity 2000 Windows 95 Special Edition。",
+      "模拟机制规格尚不完整，.sc2 格式的部分内容仍待补充。",
+      "采用知识共享署名—相同方式共享 4.0 国际许可证。"
+    ]
+  },
+  "metroid-dread-recomp-pc-case": {
+    "name": "Metroid Dread：从 Switch 游戏文件构建原生 PC 版本",
+    "requirements": [
+      "需提供自己的《密特罗德 生存恐惧》2.1.0 版 ExeFS 和 RomFS 文件。",
+      "当前 0.x 构建为早期预览版，可能崩溃或出现设置问题。",
+      "发布的组合可执行文件采用 GPL-3.0；各源码组件保留其列出的许可证。"
+    ]
+  },
+  "reach-cache-debug-recomp-case": {
+    "name": "Reach Cache Debug：Halo 调试版程序重编译",
+    "requirements": [
+      "需要目标文件 halo3_cache_debug.xex 和 ReXGlue SDK。",
+      "需要 CMake 3.25 以上版本及 C++23 工具链。",
+      "采用 BSD-3-Clause 许可证。"
+    ]
+  },
+  "ogrebattle64-case": {
+    "name": "Ogrebattle64：反编译北美版游戏",
+    "requirements": [
+      "提取资源需要一份北美版 Ogrebattle64 ROM，并将其命名为 baserom.z64。",
+      "构建说明列出 binutils-mips-linux-gnu、build-essential、git、pkgconf、Python 3，以及 requirements.txt 中的 Python 依赖。",
+      "反编译工作仍在进行中。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "leaflitter-case": {
+    "name": "Leaflitter：反编译 3DS 游戏《Paper Mario: Sticker Star》",
+    "requirements": [
+      "获取 code.bin 需要欧版《Paper Mario: Sticker Star》，以及安装 godmode9 的自制系统 3DS 或 ctrtool。",
+      "反汇编和编译需要 Python 3、make 与 n3dsdisasm；构建还需要 armcc 4.1 build 995，并在 Linux 上使用 wibo，Windows 用户使用 WSL。",
+      "目前构建结果尚未与原版匹配，格式也与 code.bin 不同。",
+      "项目采用 BSD 2-Clause 许可证；页面将 src 中的反编译代码列为 CC0。"
+    ]
+  },
+  "perception-pnrf-case": {
+    "name": "perception-pnrf：PNRF 测量文件格式重建",
+    "requirements": [
+      "解析器需要 PNRF 测量文件作为输入；实现提供 Python 和 C# 版本。",
+      "大型基准测试样本由 Git LFS 管理，运行基准测试前需拉取。",
+      "MIT 许可证。"
+    ]
+  },
+  "ulaunch-switch-home-menu-case": {
+    "name": "uLaunch：重建 Nintendo Switch HOME 菜单",
+    "requirements": [
+      "文档中的安装方式面向使用 Atmosphère 自定义固件的 Nintendo Switch。",
+      "部分系统设置和消息尚未实现；当前计划不包含 eShop、家长控制及游戏更新。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "metars-cgi-case": {
+    "name": "metars_cgi：重建 NCAR Java METAR 查看器数据服务器",
+    "requirements": [
+      "metars_cgi.php 需要 MySQL 或 MariaDB 数据库及文档所列的 metars 表。",
+      "metartest.php 使用固定数据，不需要数据库。",
+      "云底高度尚不能正常工作；作者尚未弄清查看器如何处理云层数据块。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "uofw-case": {
+    "name": "uOFW：PSP 内核与固件重建",
+    "requirements": [
+      "项目尚未完成。",
+      "项目采用 MIT 许可证，并包含采用 BSD 许可证的 PSPSDK 代码。"
+    ]
+  },
+  "ddr-1st-mix-recomp-case": {
+    "name": "DDR 1st Mix：静态重编译与卡死问题分析",
+    "requirements": [
+      "自行提供包含一个 .cue 和 40 个 .bin 轨道的光盘转储，以及 SLPM_862.22 启动程序。",
+      "使用 Python 3、CMake 3.20 或更新版本、Ninja 和 Clang；在 Windows 上使用 MSYS2 或 Git Bash 等 POSIX shell。",
+      "作者报告称运行时钩子可抑制卡死，但无效动画索引的成因仍未查明。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "sf1disasm-case": {
+    "name": "SF1DISASM：可重新汇编的《Shining Force》反汇编工程",
+    "requirements": [
+      "需要原版美版《Shining Force》ROM 来提取数据块。",
+      "修改反汇编代码需要 68k 汇编知识。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "homeworld2classic-case": {
+    "name": "Homeworld 2 Classic：进行中的主程序与 DLL 反编译",
+    "requirements": [
+      "项目仍处于反编译开发阶段。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "canon-cr3-format-case": {
+    "name": "canon_cr3：解析佳能 CR3 相机文件格式",
+    "requirements": [
+      "使用解析器需提供佳能 CR3 或 CR2 图像文件。",
+      "解析器属于实验性工具。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "chiaki-remote-play-case": {
+    "name": "Chiaki：基于协议分析的 PlayStation Remote Play 客户端",
+    "requirements": [
+      "使用 Remote Play 需要 PlayStation 4 或 PlayStation 5 主机。",
+      "注册需要主机配对 PIN；从 PS4 7.0 版开始，还需要使用 PSN AccountID 代替 Online-ID。",
+      "源码构建需要 CMake、Qt 5 相关模块、支持 H264 解码的 FFMPEG、libopus、OpenSSL 1.1、SDL 2、protoc 和 Python protobuf 库。",
+      "项目处于维护阶段，暂无重大更新计划。",
+      "采用 GNU Affero General Public License 第 3 版，并附有 OpenSSL 链接许可条款。"
+    ]
+  },
+  "freelancer-decomp-case": {
+    "name": "Freelancer：进行中的 1.1 补丁版反编译",
+    "requirements": [
+      "目标版本为 Freelancer 1.1 补丁版 052103_release_1149_Ipatch_ver1254。",
+      "不支持 1.0 正式版及列出的测试版。",
+      "反编译工作仍在进行中。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "goldeneye-007-gitlab-decomp-case": {
+    "name": "Goldeneye 007：三个地区版本 ROM 的可重编译反编译项目",
+    "requirements": [
+      "编译所需素材须从已有的 Goldeneye 007 游戏副本中提取。",
+      "反编译工作仍在进行。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "esp8266-midea-dehumidifier-case": {
+    "name": "esp8266-midea-dehumidifier：重建除湿机串口控制",
+    "requirements": [
+      "需使用兼容的 Midea 系 Wi-Fi 除湿机和 ESP8266 ESP-01 适配器硬件。",
+      "编译和刷写需安装 Arduino IDE、ESP8266 支持包及列出的 Arduino 库。",
+      "Comfee MDDF-20DEN7 缺少指南所用的 Wi-Fi 按钮和 USB 接口。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "dlss5-nr-reverse-engineering-case": {
+    "name": "DLSS 5 Neural Rendering：通过 DLL 分析重建运行时模型",
+    "requirements": [
+      "读取工具需要用户自己的 nvngx_dlssnr.dll 310.8.0.0 副本及从中提取的 WEIGHTS_HT 资源。",
+      "解析、参考实现和测试使用 PyTorch 2.14.0+cpu；原生算子比较需要 Blackwell GPU。",
+      "完整前向计算及多数算子的比较尚未完成。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "bt2-recomp-case": {
+    "name": "BT2 Recomp：《龙珠 Z 电光火石 2》的 PS2 静态重编译",
+    "requirements": [
+      "需要自行提供美版 SLUS-21441 游戏光盘镜像。",
+      "构建需要 Windows 10 或 11 x64、Visual Studio 2022 C++ 工具和 CMake。",
+      "游戏中的记忆卡保存尚未尝试。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "pizza-legacy-case": {
+    "name": "Pizza Legacy：重建 Pizza Tycoon",
+    "requirements": [
+      "需要英文 DOS 原版游戏的资源文件。",
+      "作者称主要玩法系统已完成；试玩、平衡调整和错误修复仍在继续。",
+      "GNU 通用公共许可证 v3.0。"
+    ]
+  },
+  "skyboundtotk-case": {
+    "name": "SkyboundTOTK：王国之泪的原生静态重编译",
+    "requirements": [
+      "需自备合法取得并已提取的游戏文件：未修改的 1.0.0 基础版 ExeFS 和 RomFS，或 1.2.1 版 ExeFS 及已应用更新的 RomFS。",
+      "在 Windows x64 或 Linux x86_64 上构建，需 Python 3.10 或更新版本、lz4、Clang 和 lld，并满足平台专属的图形及系统依赖。",
+      "除游戏文件外，至少预留 45 GB 可用空间。",
+      "图形和兼容性仍不完整；文档中的大部分测试针对 1.0.0 版本。",
+      "仓库采用 MIT 许可证；所含 suyu 转换及着色器代码适用 GPL-2.0-or-later 或 GPL-3.0-or-later 条款。"
+    ]
+  },
+  "node-castv2-case": {
+    "name": "castv2：重建 Chromecast CASTV2 协议",
+    "requirements": [
+      "使用客户端需要 Node.js 和 Chromecast 设备。",
+      "服务器实现受到设备认证机制限制。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "ssgdecomp-case": {
+    "name": "ssgdecomp：重建《Super Solvers: Gizmos & Gadgets!》",
+    "requirements": [
+      "目前构建需要用户自己的原版 ssgwin32.exe，以及以 Borland C++ 4.52 为主的原版工具链。",
+      "作者报告称默认二进制文件的多个节已经匹配，但 .reloc、部分头字段和资源时间戳仍有差异。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "twisted-metal-native-engine-case": {
+    "name": "Twisted Metal：2012 年 PS3 游戏的 Rust 重实现",
+    "requirements": [
+      "需要自行持有的 Twisted Metal 光盘映像；加密映像还需要密钥文件。",
+      "需要 Linux 或 macOS 上的 Rust 工具链。",
+      "当前驾驶功能使用占位物理效果。",
+      "许可证为 GPL-3.0-only。"
+    ]
+  },
+  "mb-mario-bros-case": {
+    "name": "Mario Bros.：Z80 街机版反汇编",
+    "requirements": [
+      "CPU 代码需要 Z80 版 GNU binutils，音频代码需要 asm48。",
+      "反汇编从 marioja ROM 集开始；项目不包含图形数据。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "disruptor-recomp-recompteam-case": {
+    "name": "DisruptorRecomp：将《Disruptor》静态重编译为 PC 游戏",
+    "requirements": [
+      "需要玩家自有的《Disruptor》美版光盘镜像 SLUS-00224。",
+      "目标平台为 Windows x64 和 Linux x64。",
+      "项目处于 alpha 阶段；Linux 上尚未游玩过任何关卡。",
+      "许可证为 MIT。"
+    ]
+  },
+  "ordoor-strategy-engine-case": {
+    "name": "Ordoor：重建四款游戏使用的 Strategy Engine",
+    "requirements": [
+      "游玩各款游戏需要各自的原版游戏数据。",
+      "Rust 重写版使用 cargo 构建；README 将 libsdl3-0 列为 Debian 上的运行依赖。",
+      "游戏机制尚未实现。",
+      "MIT 许可证。"
+    ]
+  },
+  "fzgx-nkhoit-decomp-case": {
+    "name": "fzgx：《F-Zero GX》匹配反编译",
+    "requirements": [
+      "需自备 F-Zero GX 光盘镜像；主要支持 GFZE01 美版 rev 0。",
+      "需要 Python、Ninja 和 uv；构建使用 GameCube Metrowerks 编译器。",
+      "作者报告约 30% 的代码已匹配；欧版和日版配置尚属框架。",
+      "采用 CC0-1.0。"
+    ]
+  },
+  "commander-genius-case": {
+    "name": "Commander Genius：Commander Keen 游戏解释器",
+    "requirements": [
+      "需要原版游戏数据文件。",
+      "Cosmo's Cosmic Adventure 的支持尚未完成；Commander Keen 仍缺少 PaddleWar 等少量功能。",
+      "源代码按 GPL 发布，并要求注明原作者及其他代码贡献者。"
+    ]
+  },
+  "xbox-demos-decompilation-case": {
+    "name": "Xbox Demos Decompilation：Xbox 演示程序启动菜单的功能性重建",
+    "requirements": [
+      "编译需要 Visual C++ 6.0 或 Visual C++ .NET 2002/2003、兼容的 Xbox Development Kit，以及 Xbox 版 Bink 库。",
+      "运行时需要媒体文件、纹理、xdemos.xdi 数据文件及编译后的 xdemos.xbe。",
+      "源码只包含 Xbox Demos 本身的代码，不含其使用的 Xbox Title Libraries 和 Bink 代码。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "harvest-moon-gb-disassembly-case": {
+    "name": "Harvest Moon GB Disassembly：重建日版 Game Boy ROM",
+    "requirements": [
+      "Makefile 需要 RGBDS 工具。",
+      "反汇编仍在进行；作者报告 12,637 个标签中有 106 个具有实际名称。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "openpete-case": {
+    "name": "OpenPete：Spyro the Dragon 的 PC 静态重编译移植版",
+    "requirements": [
+      "需提供 Spyro the Dragon 的原版 NTSC-U 光盘镜像 SCUS-94228。",
+      "Windows 版本需要 x86-64 CPU 和支持 Vulkan 1.2 的 GPU；页面也列出 Linux x86-64 AppImage。",
+      "页面注明源码即将发布。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "wycliffe-case": {
+    "name": "wycliffe：Dante 协议的净室实现",
+    "requirements": [
+      "文档采用 CC BY-NC-SA 许可，代码采用 GPLv2；automc.py 的文件头标明 GPLv3 或更高版本。"
+    ]
+  },
+  "butterfly-ddr-a-service-case": {
+    "name": "butterfly：模拟 DDR A 在线服务",
+    "requirements": [
+      "在 Windows、macOS 或 Linux 上使用 Java 11 或更新版本。",
+      "将游戏的 services URL 设为 http://localhost，并关闭 url_slash。",
+      "需在服务器的 SQLite 数据库中修改选项；服务器没有网页界面。事件进度未被记录。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "tmuf-physics-case": {
+    "name": "tmuf_physics：重建 TrackMania Forever 物理系统",
+    "requirements": [
+      "需要 TrackMania United Forever 的 Packs 目录、C11 编译器和 CMake 3.18+。",
+      "不可使用 -ffast-math 或 FMA 收缩。",
+      "许可证为 AGPL-3.0。"
+    ]
+  },
+  "linux-apfs-rw-case": {
+    "name": "linux-apfs-rw：在 Linux 内核模块中重建 APFS 支持",
+    "requirements": [
+      "需要 Linux 内核 4.12 或更新版本、匹配的内核头文件，以及 APFS 设备或文件系统镜像。",
+      "写入功能仍属实验性，可能损坏数据；尚未实现加密支持。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "ninjacop-case": {
+    "name": "Ninja Cop：两个 GBA 版本的反汇编",
+    "requirements": [
+      "需要 libpng、支持 C++11 的 g++、支持 C11 的 gcc 和 devkitarm。",
+      "代码与数据注释以及更多图形提取仍在待办列表中。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "webfun-desktop-adventures-case": {
+    "name": "WebFun：重建 Desktop Adventures 游戏引擎",
+    "requirements": [
+      "本地运行需要 Node.js v25 或更新版本以及 npm。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "openprivateer-case": {
+    "name": "OpenPrivateer：重建《Wing Commander: Privateer》",
+    "requirements": [
+      "需要合法持有《Wing Commander: Privateer》；本体使用 PRIV.TRE 和 INITCFG.PAK，Righteous Fire 使用 RF.TRE 和 INITRF.PAK。",
+      "项目处于公开 alpha 阶段。",
+      "多人模式尚未联网支持交易、任务、持久化数据和聊天。",
+      "项目页面未注明许可证。"
+    ]
+  },
+  "ag-psd-case": {
+    "name": "ag-psd：重建 PSD 文档读写功能",
+    "requirements": [
+      "需要 Node.js 或浏览器；在 Node.js 中处理图像数据和缩略图还需 node-canvas。",
+      "不支持 Multichannel、Duotone 和 LAB 色彩模式，文本图层处理尚不完整。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "spectrum-saboteur1-rev-case": {
+    "name": "spectrum-saboteur1-rev：Saboteur 的逐字节匹配反汇编",
+    "requirements": [
+      "需要 pasmo 交叉汇编器。",
+      "作者称反汇编工作已基本完成。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "qemu-esp32-wireless-case": {
+    "name": "qemu-esp32-wireless：ESP32 无线硬件模拟",
+    "requirements": [
+      "需将补丁应用到 Espressif 的 QEMU 分支并构建 qemu-system-xtensa；示例固件需使用 ESP-IDF 构建。",
+      "BLE 建立连接有时需要重试；发现服务后访问加密特征值会超时。",
+      "项目页面未注明许可证。"
+    ]
+  },
+  "snappad-pokemon-snap-case": {
+    "name": "SnapPad：《Pokémon Snap》的 Apple 设备静态重编译移植",
+    "requirements": [
+      "自备合法取得、未经修改且与文档指纹匹配的《Pokémon Snap》美版 ROM。",
+      "使用 Apple 芯片 Mac 和 Xcode 26.x 构建。",
+      "完整游戏流程测试和 iPhone 真机验收仍未完成。",
+      "权利与许可条款见 RIGHTS_AND_LICENSES.md。"
+    ]
+  },
+  "pokerevo-pal-decomp-case": {
+    "name": "pokerevo：PAL 版 Wii 游戏反编译",
+    "requirements": [
+      "需要名为 baserom.dol 的干净 PAL 1.0 DOL 文件。",
+      "构建说明指定使用 GC_COMPILERS.zip 编译器包。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "sm64synth-case": {
+    "name": "sm64synth：Super Mario 64 音频引擎的 Rust 移植",
+    "requirements": [
+      "需要兼容的 Super Mario 64 ROM，并通过 PC Port 仓库准备音频资源。",
+      "需要 Rust nightly 工具链及 Cargo 的 nightly 功能。",
+      "SH 版本尚未得到完整支持。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "ps4-waker-case": {
+    "name": "ps4-waker：PS4 配套应用协议客户端",
+    "requirements": [
+      "需要 PS4、PS4 Second Screen App，以及位于同一局域网的电脑。",
+      "全局安装需要 Node.js 6 或更新版本；通过 npx 运行需要 Node.js 7 或更新版本。",
+      "首次注册必须绑定 987 端口，并取得使用该端口的权限。",
+      "MIT 许可证。"
+    ]
+  },
+  "god-of-war-ii-android-case": {
+    "name": "God of War II：Android arm64 静态重编译构建套件",
+    "requirements": [
+      "需要用户自己的美版 God of War II ISO，版本为 SCUS_974.81 v1.01。",
+      "真机调试需要支持 adb 的 arm64 Android 9 或更新设备。",
+      "构建需要 JDK 17、Android SDK platform 35、NDK 27.3.13750724、CMake、Git 和 Python 3.10+；Windows 使用 Visual Studio C++ 工具，Linux 使用 Ninja 或 Make。",
+      "真机启动和画面输出仍待完成；传感器、触控和音频代码尚未测试。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "skies-of-arcadia-legends-decomp-ogdanimal-case": {
+    "name": "SkiesOfArcadiaLegends-Decomp：ogdanimal 的 Skies of Arcadia Legends GameCube 反编译",
+    "requirements": [
+      "需提供 GEAE8P Rev 0 游戏光盘镜像或提取文件。",
+      "构建需要 Python、ninja 和项目配置的 GameCube 工具链。",
+      "作者报告游戏、库及中间件代码合计有 8.30% 的代码字节由 C 链接。",
+      "采用 CC0-1.0 许可。"
+    ]
+  },
+  "njuconnect-vpn-protocol-case": {
+    "name": "NJUConnect：重建南京大学 EasyConnect VPN 客户端",
+    "requirements": [
+      "需要南京大学 VPN 服务的访问凭据。",
+      "该客户端已停止维护，无法兼容更新后的 EasyConnect 服务端，但仍可用于南京大学的服务端。",
+      "作者已撤回 AGPL-3.0 许可证；仓库中没有许可证文件。"
+    ]
+  },
+  "lgtv-js-case": {
+    "name": "LGTV：重建 LG webOS 电视控制交互",
+    "requirements": [
+      "需使用运行 webOS 的 LG 智能电视；文档面向 2014 年末或 2015 年机型。",
+      "客户端与电视需在同一网络，首次使用须在电视上批准配对。",
+      "项目已停止维护；文档列出的未支持功能包括开机和按指定 URL 打开 YouTube。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "inferno-dante-protocol-case": {
+    "name": "Inferno：重建 Dante 音频网络通信",
+    "requirements": [
+      "需要 Linux、Rust 和时钟同步守护进程；快速入门要求使用修改版 Statime。",
+      "使用 ALSA 时需要 ALSA 开发库。",
+      "作者称实现仍处于高度实验阶段，部分协议行为依靠推测，可能不适用于其他环境。",
+      "组件目录包含 GPL、AGPL 等许可证文件。"
+    ]
+  },
+  "castlevania-curse-of-darkness-pc-case": {
+    "name": "Castlevania: Curse of Darkness：静态重编译的原生 PC 移植版",
+    "requirements": [
+      "需要用户自己的欧洲版 Castlevania: Curse of Darkness 光盘镜像，编号 SLES-53755。",
+      "运行需要 64 位 Windows 10 或 11。支持光栅化顺序视图和着色器双精度运算的 Direct3D 11 显卡可用于显卡绘图；否则游戏会由处理器绘图，速度慢得多。",
+      "构建需要 Visual Studio 2022 或更新版本，并安装“使用 C++ 的桌面开发”工作负载。",
+      "仅支持欧洲版游戏；版本不符时 recompile.bat 会停止。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "rac-secret-agent-clank-decomp-case": {
+    "name": "Secret Agent Clank：PS2 匹配反编译",
+    "requirements": [
+      "构建和比较需要 Python 3.10 或更高版本，以及合法取得的美版或欧版游戏光盘镜像。",
+      "匹配反编译仍在进行中。",
+      "项目原创代码采用 GPL-3.0 许可证。"
+    ]
+  },
+  "thunderclap-case": {
+    "name": "Thunderclap：为原生移植重建 Xbox 版 Hulk 游戏",
+    "requirements": [
+      "需要用户自备 Xbox 版游戏；仓库不包含原版可执行文件或素材。",
+      "逐字节比对使用原版 MSVC 7.1 编译器，混合构建的执行检查使用 xemu。",
+      "作者报告已有可游玩的 32 位 Wine 构建；64 位原生构建仍是目标。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "decomp-no-me-un5-case": {
+    "name": "Decomp-no-Me-UN5Decomp：还原 Naruto Shippuden 5 的函数",
+    "requirements": [
+      "将原版可执行文件放在 baserom/SLES_556.05。",
+      "流程需要 Python 3、GNU Make、Splat、mips-linux-gnu-objcopy、Wibo 1.2.0、objdiff-cli 3.8.0 和 Metrowerks MWCCPS2 2.4。",
+      "还原工作仍在进行中。",
+      "MIT 许可证。"
+    ]
+  },
+  "abun64-rage-wars-decomp-case": {
+    "name": "Turok: Rage Wars：五个 N64 版本的匹配反编译",
+    "requirements": [
+      "需提供五个指定版本的合法取得的大端卡带镜像。",
+      "构建需要 GNU Make、Python 3、MIPS binutils 和 splat；项目还列出 GCC 2.8.1 与 abumas。",
+      "作者公布的当前进度显示字节匹配尚未全部完成。",
+      "许可证为 CC0 1.0。"
+    ]
+  },
+  "kabus22-linux-case": {
+    "name": "Kabus22 Linux：《Kabus 22》引擎的原生重建",
+    "requirements": [
+      "需自行提供《Kabus 22》ISO、安装文件或已安装的 Windows 游戏目录。",
+      "运行需要 x86-64 Linux、glibc 2.38 或更新版本及支持 OpenGL 3.3 的驱动；Vulkan 功能还需相应驱动支持。",
+      "项目可游玩但尚未完成。",
+      "仓库原创代码按其 LICENSE 提供源码阅览；再发布或公开修改版本需取得书面许可。"
+    ]
+  },
+  "smbjr-case": {
+    "name": "Super Monkey Ball Jr.：GBA 版反汇编",
+    "requirements": [
+      "需要 devkitarm，以及命名为 baserom.gba 的美版 Super Monkey Ball Jr. ROM。",
+      "该反汇编仍是非常基础的版本。",
+      "项目页面未说明许可证。"
+    ]
+  },
+  "arcanum-ios-port-case": {
+    "name": "Arcanum project：将游戏移植到 iOS 与 macOS",
+    "requirements": [
+      "当前构建需要实体 iOS 设备和 Xcode。",
+      "需从原版游戏提取地块 .art 文件，并放入指定目录。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "simple-spk-server-case": {
+    "name": "Simple SPK Server：重建 Synology 软件包仓库服务",
+    "requirements": [
+      "按文档安装需要启用 Phar 扩展和 allow_url_fopen 的 PHP。",
+      "需在 packages 目录放入 SPK 文件；仓库附带的示例包无法在 Synology 设备上使用。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "redm2-case": {
+    "name": "reDM2：以 C 语言重建《Dungeon Master II》",
+    "requirements": [
+      "分析目标是发行版 DOS 可执行文件 SKULL.EXE。",
+      "差分测试使用 Unicorn 和原生 Open Watcom 构建。",
+      "部分函数仍受段寄存器、端口 I/O 或中断模拟能力不足的限制。",
+      "项目页面未注明许可证。"
+    ]
+  },
+  "rpi-open-firmware-case": {
+    "name": "rpi-open-firmware：Raspberry Pi VPU 启动固件的替代实现",
+    "requirements": [
+      "构建需要 VC4 工具链和 arm-none-eabi 工具链。",
+      "强烈建议使用 UART 线缆。",
+      "Linux 启动支持仍较基础；USB、DMA、以太网、视频和电源管理支持尚未完成。",
+      "项目代码采用 GPLv2+；Broadcom 头文件采用 BSD 3-Clause，其他所含项目使用兼容许可证。"
+    ]
+  },
+  "banjo-kazooie-rebuild-case": {
+    "name": "Banjo-Kazooie：从原始 ROM 重建游戏",
+    "requirements": [
+      "提供名为 baserom.<version>.z64 的 Banjo-Kazooie 原始 ROM。",
+      "在 x86_64 架构的 Ubuntu 18.04 或更新版本上构建，或在 Linux、macOS 上使用 Docker。",
+      "项目页面未注明许可证。"
+    ]
+  },
+  "esp-dc1-power-strip-case": {
+    "name": "ESP DC1：研究并替换斐讯 DC1 排插固件",
+    "requirements": [
+      "安装需要斐讯 DC1 排插及 TTL 烧录连接。",
+      "文档中的编译环境为 Visual Studio Code 和 PlatformIO。",
+      "电压、电流和功率读数未标明精度。",
+      "许可证为 GPL-2.0。"
+    ]
   }
 }

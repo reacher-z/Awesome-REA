@@ -17,7 +17,13 @@
  "scan-29050265": {
   "decision": "outside"
  },
+ "scan-32970047": {
+  "decision": "outside"
+ },
  "scan-33998405": {
+  "decision": "outside"
+ },
+ "scan-38496318": {
   "decision": "outside"
  },
  "scan-44220631": {
@@ -378,6 +384,9 @@
   "reproduced": "SingStar Mic app protocol"
  },
  "scan-86123219": {
+  "decision": "outside"
+ },
+ "scan-86196490": {
   "decision": "outside"
  },
  "scan-86229797": {
@@ -795,6 +804,9 @@
  "scan-112403425": {
   "decision": "outside"
  },
+ "scan-112515371": {
+  "decision": "outside"
+ },
  "scan-113518993": {
   "decision": "outside"
  },
@@ -938,6 +950,9 @@
  "scan-122744615": {
   "decision": "outside"
  },
+ "scan-123656615": {
+  "decision": "outside"
+ },
  "scan-123673604": {
   "decision": "outside"
  },
@@ -984,6 +999,9 @@
   "decision": "outside"
  },
  "scan-127582440": {
+  "decision": "outside"
+ },
+ "scan-127934280": {
   "decision": "outside"
  },
  "scan-127939371": {
@@ -1084,6 +1102,9 @@
   "reproduced": "pactastic Arduboy game"
  },
  "scan-133676256": {
+  "decision": "outside"
+ },
+ "scan-133858302": {
   "decision": "outside"
  },
  "scan-134489685": {
@@ -1243,6 +1264,9 @@
  "scan-141475110": {
   "decision": "outside"
  },
+ "scan-141613828": {
+  "decision": "outside"
+ },
  "scan-141822328": {
   "decision": "data",
   "class": "website",
@@ -1344,6 +1368,9 @@
  "scan-146623853": {
   "decision": "outside"
  },
+ "scan-146841796": {
+  "decision": "outside"
+ },
  "scan-147540129": {
   "decision": "outside"
  },
@@ -1368,6 +1395,9 @@
   "decision": "outside"
  },
  "scan-149942883": {
+  "decision": "outside"
+ },
+ "scan-150375481": {
   "decision": "outside"
  },
  "scan-150586017": {
@@ -1583,6 +1613,9 @@
  "scan-163582021": {
   "decision": "outside"
  },
+ "scan-163755717": {
+  "decision": "outside"
+ },
  "scan-163843587": {
   "decision": "outside"
  },
@@ -1713,6 +1746,9 @@
  "scan-174090677": {
   "decision": "outside"
  },
+ "scan-174166707": {
+  "decision": "outside"
+ },
  "scan-174205613": {
   "decision": "outside"
  },
@@ -1720,6 +1756,12 @@
   "decision": "outside"
  },
  "scan-174710415": {
+  "decision": "outside"
+ },
+ "scan-174749741": {
+  "decision": "outside"
+ },
+ "scan-174872786": {
   "decision": "outside"
  },
  "scan-174892078": {
@@ -1759,6 +1801,9 @@
  "scan-177312239": {
   "decision": "outside"
  },
+ "scan-177352553": {
+  "decision": "outside"
+ },
  "scan-177401469": {
   "decision": "outside"
  },
@@ -1784,6 +1829,9 @@
   "decision": "outside"
  },
  "scan-181222642": {
+  "decision": "outside"
+ },
+ "scan-181309413": {
   "decision": "outside"
  },
  "scan-181440389": {
@@ -1965,6 +2013,9 @@
   "class": "hardware",
   "reproduced": "IntelliFire Plus RC300 remote"
  },
+ "scan-197779270": {
+  "decision": "outside"
+ },
  "scan-197985168": {
   "decision": "outside"
  },
@@ -2097,6 +2148,9 @@
  "scan-207136271": {
   "decision": "outside"
  },
+ "scan-207306902": {
+  "decision": "outside"
+ },
  "scan-207617751": {
   "decision": "outside"
  },
@@ -2190,6 +2244,9 @@
  "scan-213174658": {
   "decision": "outside"
  },
+ "scan-213284442": {
+  "decision": "outside"
+ },
  "scan-213442107": {
   "decision": "outside"
  },
@@ -2268,6 +2325,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "Exway X1 Pro remote-to-board telemetry protocol"
+ },
+ "scan-219640752": {
+  "decision": "outside"
  },
  "scan-220563378": {
   "decision": "outside"
@@ -2386,6 +2446,9 @@
  "scan-230765683": {
   "decision": "outside"
  },
+ "scan-231454423": {
+  "decision": "outside"
+ },
  "scan-231692786": {
   "decision": "outside"
  },
@@ -2407,6 +2470,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "LG 6710CMAP01A remote commands"
+ },
+ "scan-233466860": {
+  "decision": "outside"
  },
  "scan-233468160": {
   "decision": "outside"
@@ -2437,10 +2503,16 @@
  "scan-234976336": {
   "decision": "outside"
  },
+ "scan-235000508": {
+  "decision": "outside"
+ },
  "scan-235239703": {
   "decision": "data",
   "class": "hardware",
   "reproduced": "Motospeed V40 mouse protocol"
+ },
+ "scan-235300948": {
+  "decision": "outside"
  },
  "scan-235474889": {
   "decision": "outside"
@@ -2662,6 +2734,9 @@
  "scan-254945718": {
   "decision": "outside"
  },
+ "scan-254996301": {
+  "decision": "outside"
+ },
  "scan-254998131": {
   "decision": "outside"
  },
@@ -2711,6 +2786,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "Schellenberg 21009 USB dongle protocol"
+ },
+ "scan-256759682": {
+  "decision": "outside"
  },
  "scan-257043462": {
   "decision": "outside"
@@ -2906,6 +2984,9 @@
  "scan-266072136": {
   "decision": "outside"
  },
+ "scan-266599578": {
+  "decision": "outside"
+ },
  "scan-266886809": {
   "decision": "outside"
  },
@@ -2993,6 +3074,9 @@
  "scan-271429689": {
   "decision": "outside"
  },
+ "scan-271539460": {
+  "decision": "outside"
+ },
  "scan-271607379": {
   "decision": "outside"
  },
@@ -3011,6 +3095,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "DT No.1 F2 smartwatch communication protocol"
+ },
+ "scan-272456238": {
+  "decision": "outside"
  },
  "scan-273549766": {
   "decision": "outside"
@@ -3037,10 +3124,16 @@
  "scan-274872085": {
   "decision": "outside"
  },
+ "scan-274918666": {
+  "decision": "outside"
+ },
  "scan-275063342": {
   "decision": "outside"
  },
  "scan-275309685": {
+  "decision": "outside"
+ },
+ "scan-275929524": {
   "decision": "outside"
  },
  "scan-276253556": {
@@ -3122,6 +3215,9 @@
  "scan-283956277": {
   "decision": "outside"
  },
+ "scan-284044098": {
+  "decision": "outside"
+ },
  "scan-284146517": {
   "decision": "outside"
  },
@@ -3158,6 +3254,9 @@
   "reproduced": "WhatsApp Web API"
  },
  "scan-285820416": {
+  "decision": "outside"
+ },
+ "scan-286087811": {
   "decision": "outside"
  },
  "scan-286230570": {
@@ -3213,6 +3312,9 @@
  "scan-289111620": {
   "decision": "outside"
  },
+ "scan-289508553": {
+  "decision": "outside"
+ },
  "scan-289929714": {
   "decision": "outside"
  },
@@ -3220,6 +3322,9 @@
   "decision": "outside"
  },
  "scan-291034380": {
+  "decision": "outside"
+ },
+ "scan-291761490": {
   "decision": "outside"
  },
  "scan-291849183": {
@@ -3263,6 +3368,9 @@
   "decision": "outside"
  },
  "scan-294240076": {
+  "decision": "outside"
+ },
+ "scan-294240468": {
   "decision": "outside"
  },
  "scan-295022466": {
@@ -3539,6 +3647,9 @@
  "scan-322897541": {
   "decision": "outside"
  },
+ "scan-323809149": {
+  "decision": "outside"
+ },
  "scan-323887072": {
   "decision": "outside"
  },
@@ -3578,6 +3689,9 @@
   "decision": "data",
   "class": "software",
   "reproduced": "Psychedelia and Colourspace light synthesizers"
+ },
+ "scan-327113996": {
+  "decision": "outside"
  },
  "scan-327392691": {
   "decision": "outside"
@@ -3669,6 +3783,9 @@
   "decision": "outside"
  },
  "scan-334144017": {
+  "decision": "outside"
+ },
+ "scan-334188221": {
   "decision": "outside"
  },
  "scan-334244324": {
@@ -3874,6 +3991,9 @@
  "scan-349330762": {
   "decision": "outside"
  },
+ "scan-349490566": {
+  "decision": "outside"
+ },
  "scan-349708697": {
   "decision": "outside"
  },
@@ -3899,6 +4019,9 @@
   "decision": "outside"
  },
  "scan-351459384": {
+  "decision": "outside"
+ },
+ "scan-352014456": {
   "decision": "outside"
  },
  "scan-352017296": {
@@ -3973,6 +4096,9 @@
   "reproduced": "Aidyn Chronicles: the First Mage"
  },
  "scan-358903825": {
+  "decision": "outside"
+ },
+ "scan-359372077": {
   "decision": "outside"
  },
  "scan-359497905": {
@@ -4333,6 +4459,9 @@
  "scan-388589015": {
   "decision": "outside"
  },
+ "scan-388591682": {
+  "decision": "outside"
+ },
  "scan-388936748": {
   "decision": "outside"
  },
@@ -4366,6 +4495,9 @@
   "decision": "outside"
  },
  "scan-393146539": {
+  "decision": "outside"
+ },
+ "scan-393172860": {
   "decision": "outside"
  },
  "scan-393405796": {
@@ -4460,6 +4592,9 @@
   "class": "game",
   "reproduced": "Fortran 77 Hangman game"
  },
+ "scan-399638039": {
+  "decision": "outside"
+ },
  "scan-400126782": {
   "decision": "data",
   "class": "hardware",
@@ -4497,6 +4632,9 @@
   "decision": "outside"
  },
  "scan-402554019": {
+  "decision": "outside"
+ },
+ "scan-403141927": {
   "decision": "outside"
  },
  "scan-404040181": {
@@ -4692,6 +4830,9 @@
  "scan-419453786": {
   "decision": "outside"
  },
+ "scan-419716723": {
+  "decision": "outside"
+ },
  "scan-419716753": {
   "decision": "outside"
  },
@@ -4717,6 +4858,9 @@
   "decision": "outside"
  },
  "scan-421213025": {
+  "decision": "outside"
+ },
+ "scan-421866103": {
   "decision": "outside"
  },
  "scan-422061619": {
@@ -4914,6 +5058,9 @@
   "class": "hardware",
   "reproduced": "Yeelight YLKG07YL/YLKG08YL dimmers"
  },
+ "scan-435561327": {
+  "decision": "outside"
+ },
  "scan-435630439": {
   "decision": "data",
   "class": "hardware",
@@ -5052,6 +5199,9 @@
  "scan-449627027": {
   "decision": "outside"
  },
+ "scan-449768202": {
+  "decision": "outside"
+ },
  "scan-449854599": {
   "decision": "outside"
  },
@@ -5062,6 +5212,9 @@
   "decision": "outside"
  },
  "scan-451251421": {
+  "decision": "outside"
+ },
+ "scan-451455127": {
   "decision": "outside"
  },
  "scan-451628104": {
@@ -5126,6 +5279,9 @@
   "decision": "outside"
  },
  "scan-457024243": {
+  "decision": "outside"
+ },
+ "scan-457055558": {
   "decision": "outside"
  },
  "scan-457584907": {
@@ -5250,6 +5406,9 @@
  "scan-467291267": {
   "decision": "outside"
  },
+ "scan-468028221": {
+  "decision": "outside"
+ },
  "scan-468033231": {
   "decision": "outside"
  },
@@ -5371,6 +5530,9 @@
  "scan-480086378": {
   "decision": "outside"
  },
+ "scan-480641901": {
+  "decision": "outside"
+ },
  "scan-480701001": {
   "decision": "outside"
  },
@@ -5384,6 +5546,9 @@
   "decision": "outside"
  },
  "scan-482140932": {
+  "decision": "outside"
+ },
+ "scan-482233751": {
   "decision": "outside"
  },
  "scan-482343305": {
@@ -5416,6 +5581,9 @@
   "decision": "outside"
  },
  "scan-485366849": {
+  "decision": "outside"
+ },
+ "scan-485454758": {
   "decision": "outside"
  },
  "scan-485472921": {
@@ -5521,6 +5689,9 @@
  "scan-494722553": {
   "decision": "outside"
  },
+ "scan-494944885": {
+  "decision": "outside"
+ },
  "scan-495145283": {
   "decision": "outside"
  },
@@ -5561,6 +5732,9 @@
  "scan-497873837": {
   "decision": "outside"
  },
+ "scan-497882294": {
+  "decision": "outside"
+ },
  "scan-498448029": {
   "decision": "outside"
  },
@@ -5575,6 +5749,9 @@
   "reproduced": "SkyRC D100V2 charger protocol"
  },
  "scan-499014409": {
+  "decision": "outside"
+ },
+ "scan-499373834": {
   "decision": "outside"
  },
  "scan-499445401": {
@@ -5644,6 +5821,9 @@
  "scan-502960478": {
   "decision": "outside"
  },
+ "scan-504088022": {
+  "decision": "outside"
+ },
  "scan-504225071": {
   "decision": "outside"
  },
@@ -5704,6 +5884,9 @@
  "scan-508665050": {
   "decision": "outside"
  },
+ "scan-508784566": {
+  "decision": "outside"
+ },
  "scan-508866924": {
   "decision": "outside"
  },
@@ -5735,6 +5918,9 @@
   "decision": "outside"
  },
  "scan-512046695": {
+  "decision": "outside"
+ },
+ "scan-512323466": {
   "decision": "outside"
  },
  "scan-512562601": {
@@ -5849,6 +6035,9 @@
  "scan-521979107": {
   "decision": "outside"
  },
+ "scan-522295045": {
+  "decision": "outside"
+ },
  "scan-522306156": {
   "decision": "outside"
  },
@@ -5876,6 +6065,9 @@
  "scan-524540302": {
   "decision": "outside"
  },
+ "scan-524871979": {
+  "decision": "outside"
+ },
  "scan-524911672": {
   "decision": "outside"
  },
@@ -5883,6 +6075,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Splitgate backend"
+ },
+ "scan-525986090": {
+  "decision": "outside"
  },
  "scan-526129295": {
   "decision": "outside"
@@ -6171,6 +6366,9 @@
  "scan-560643480": {
   "decision": "outside"
  },
+ "scan-561392328": {
+  "decision": "outside"
+ },
  "scan-561870959": {
   "decision": "outside"
  },
@@ -6209,6 +6407,9 @@
   "decision": "outside"
  },
  "scan-564856401": {
+  "decision": "outside"
+ },
+ "scan-564871666": {
   "decision": "outside"
  },
  "scan-564997091": {
@@ -6316,6 +6517,9 @@
   "class": "game",
   "reproduced": "MapleStory networking"
  },
+ "scan-574663994": {
+  "decision": "outside"
+ },
  "scan-574824622": {
   "decision": "data",
   "class": "game",
@@ -6368,6 +6572,9 @@
  "scan-579730971": {
   "decision": "outside"
  },
+ "scan-580034358": {
+  "decision": "outside"
+ },
  "scan-580170578": {
   "decision": "outside"
  },
@@ -6404,6 +6611,9 @@
   "reproduced": "VoltPolska Bluetooth battery client"
  },
  "scan-582248748": {
+  "decision": "outside"
+ },
+ "scan-582425577": {
   "decision": "outside"
  },
  "scan-582447086": {
@@ -6549,6 +6759,9 @@
  "scan-594990522": {
   "decision": "outside"
  },
+ "scan-595275176": {
+  "decision": "outside"
+ },
  "scan-595350174": {
   "decision": "outside"
  },
@@ -6653,6 +6866,9 @@
   "class": "hardware",
   "reproduced": "Sega Dreamcast VMU BIOS v1.05"
  },
+ "scan-603998761": {
+  "decision": "outside"
+ },
  "scan-604120856": {
   "decision": "outside"
  },
@@ -6673,6 +6889,9 @@
   "decision": "outside"
  },
  "scan-605870791": {
+  "decision": "outside"
+ },
+ "scan-606065251": {
   "decision": "outside"
  },
  "scan-606232264": {
@@ -6714,6 +6933,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Fred for ZX Spectrum"
+ },
+ "scan-609193699": {
+  "decision": "outside"
  },
  "scan-609263836": {
   "decision": "outside"
@@ -6803,6 +7025,12 @@
  "scan-616128526": {
   "decision": "outside"
  },
+ "scan-616845116": {
+  "decision": "outside"
+ },
+ "scan-617418634": {
+  "decision": "outside"
+ },
  "scan-618085695": {
   "decision": "outside"
  },
@@ -6828,6 +7056,9 @@
   "decision": "data",
   "class": "software",
   "reproduced": "ProPresenter 7 presentation format"
+ },
+ "scan-620526476": {
+  "decision": "outside"
  },
  "scan-620886144": {
   "decision": "data",
@@ -6883,6 +7114,9 @@
   "decision": "outside"
  },
  "scan-625464009": {
+  "decision": "outside"
+ },
+ "scan-626567545": {
   "decision": "outside"
  },
  "scan-626582050": {
@@ -6959,6 +7193,9 @@
   "decision": "outside"
  },
  "scan-631700827": {
+  "decision": "outside"
+ },
+ "scan-631729094": {
   "decision": "outside"
  },
  "scan-632518769": {
@@ -7191,6 +7428,9 @@
   "decision": "outside"
  },
  "scan-649333728": {
+  "decision": "outside"
+ },
+ "scan-649417888": {
   "decision": "outside"
  },
  "scan-649453195": {
@@ -7440,6 +7680,9 @@
  "scan-671634314": {
   "decision": "outside"
  },
+ "scan-671881862": {
+  "decision": "outside"
+ },
  "scan-672241115": {
   "decision": "outside"
  },
@@ -7452,10 +7695,18 @@
  "scan-672536429": {
   "decision": "outside"
  },
+ "scan-672898004": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Destiny 2 renderer"
+ },
  "scan-673013497": {
   "decision": "outside"
  },
  "scan-673303249": {
+  "decision": "outside"
+ },
+ "scan-673486412": {
   "decision": "outside"
  },
  "scan-673892983": {
@@ -7670,6 +7921,9 @@
  "scan-689635315": {
   "decision": "outside"
  },
+ "scan-689643297": {
+  "decision": "outside"
+ },
  "scan-689714725": {
   "decision": "data",
   "class": "website",
@@ -7745,6 +7999,9 @@
  "scan-696597188": {
   "decision": "outside"
  },
+ "scan-696819785": {
+  "decision": "outside"
+ },
  "scan-696891642": {
   "decision": "outside"
  },
@@ -7752,6 +8009,9 @@
   "decision": "outside"
  },
  "scan-698307044": {
+  "decision": "outside"
+ },
+ "scan-698855261": {
   "decision": "outside"
  },
  "scan-698957030": {
@@ -7798,6 +8058,9 @@
   "decision": "outside"
  },
  "scan-702004341": {
+  "decision": "outside"
+ },
+ "scan-702223718": {
   "decision": "outside"
  },
  "scan-703509769": {
@@ -7887,6 +8150,9 @@
   "reproduced": "DeLonghi ECAM 23.450 display board firmware"
  },
  "scan-712541241": {
+  "decision": "outside"
+ },
+ "scan-712871379": {
   "decision": "outside"
  },
  "scan-713377532": {
@@ -7987,6 +8253,9 @@
   "reproduced": "Network5540Man malware"
  },
  "scan-720092188": {
+  "decision": "outside"
+ },
+ "scan-720166344": {
   "decision": "outside"
  },
  "scan-720916762": {
@@ -8155,6 +8424,9 @@
  "scan-734425735": {
   "decision": "outside"
  },
+ "scan-734527876": {
+  "decision": "outside"
+ },
  "scan-734848395": {
   "decision": "outside"
  },
@@ -8268,6 +8540,9 @@
  "scan-744055684": {
   "decision": "outside"
  },
+ "scan-744229274": {
+  "decision": "outside"
+ },
  "scan-744332003": {
   "decision": "outside"
  },
@@ -8294,6 +8569,9 @@
  "scan-746778732": {
   "decision": "outside"
  },
+ "scan-746812588": {
+  "decision": "outside"
+ },
  "scan-746853445": {
   "decision": "data",
   "class": "hardware",
@@ -8306,6 +8584,9 @@
   "decision": "outside"
  },
  "scan-747143925": {
+  "decision": "outside"
+ },
+ "scan-747932423": {
   "decision": "outside"
  },
  "scan-747968294": {
@@ -8389,6 +8670,9 @@
   "class": "game",
   "reproduced": "WCW/nWo Thunder"
  },
+ "scan-755215732": {
+  "decision": "outside"
+ },
  "scan-755611158": {
   "decision": "outside"
  },
@@ -8471,6 +8755,14 @@
  "scan-762920969": {
   "decision": "outside"
  },
+ "scan-762932851": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "86-DOS 0.11"
+ },
+ "scan-763225035": {
+  "decision": "outside"
+ },
  "scan-763371552": {
   "decision": "data",
   "class": "game",
@@ -8511,7 +8803,13 @@
  "scan-766994295": {
   "decision": "outside"
  },
+ "scan-767196756": {
+  "decision": "outside"
+ },
  "scan-767746383": {
+  "decision": "outside"
+ },
+ "scan-767810507": {
   "decision": "outside"
  },
  "scan-767881576": {
@@ -8556,6 +8854,9 @@
  "scan-770924106": {
   "decision": "outside"
  },
+ "scan-771331004": {
+  "decision": "outside"
+ },
  "scan-771697829": {
   "decision": "outside"
  },
@@ -8584,10 +8885,16 @@
  "scan-772551877": {
   "decision": "outside"
  },
+ "scan-772755623": {
+  "decision": "outside"
+ },
  "scan-772830957": {
   "decision": "outside"
  },
  "scan-773330497": {
+  "decision": "outside"
+ },
+ "scan-773910969": {
   "decision": "outside"
  },
  "scan-774078687": {
@@ -8620,6 +8927,9 @@
   "class": "apps",
   "reproduced": "Discord mobile client"
  },
+ "scan-774862096": {
+  "decision": "outside"
+ },
  "scan-774868205": {
   "decision": "outside"
  },
@@ -8638,6 +8948,9 @@
   "decision": "outside"
  },
  "scan-775690712": {
+  "decision": "outside"
+ },
+ "scan-776133703": {
   "decision": "outside"
  },
  "scan-776299765": {
@@ -8719,6 +9032,9 @@
  "scan-782447091": {
   "decision": "outside"
  },
+ "scan-782569287": {
+  "decision": "outside"
+ },
  "scan-782599458": {
   "decision": "outside"
  },
@@ -8726,6 +9042,9 @@
   "decision": "outside"
  },
  "scan-783183751": {
+  "decision": "outside"
+ },
+ "scan-783503031": {
   "decision": "outside"
  },
  "scan-783998312": {
@@ -8772,6 +9091,9 @@
  "scan-788822935": {
   "decision": "outside"
  },
+ "scan-789141825": {
+  "decision": "outside"
+ },
  "scan-789190861": {
   "decision": "outside"
  },
@@ -8808,6 +9130,11 @@
  "scan-792266538": {
   "decision": "outside"
  },
+ "scan-792512248": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Microsoft Zone Internet Games server"
+ },
  "scan-792520714": {
   "decision": "outside"
  },
@@ -8828,6 +9155,9 @@
   "class": "website",
   "reproduced": "Musimundo payments website"
  },
+ "scan-793688581": {
+  "decision": "outside"
+ },
  "scan-794761927": {
   "decision": "outside"
  },
@@ -8835,6 +9165,9 @@
   "decision": "outside"
  },
  "scan-795056426": {
+  "decision": "outside"
+ },
+ "scan-795212999": {
   "decision": "outside"
  },
  "scan-795271840": {
@@ -8863,7 +9196,16 @@
  "scan-796229775": {
   "decision": "outside"
  },
+ "scan-796332613": {
+  "decision": "outside"
+ },
+ "scan-796720037": {
+  "decision": "outside"
+ },
  "scan-797342266": {
+  "decision": "outside"
+ },
+ "scan-797361996": {
   "decision": "outside"
  },
  "scan-797513798": {
@@ -8917,6 +9259,9 @@
  "scan-802243313": {
   "decision": "outside"
  },
+ "scan-802734281": {
+  "decision": "outside"
+ },
  "scan-804341085": {
   "decision": "outside"
  },
@@ -8924,6 +9269,9 @@
   "decision": "outside"
  },
  "scan-804440643": {
+  "decision": "outside"
+ },
+ "scan-804504151": {
   "decision": "outside"
  },
  "scan-805072668": {
@@ -8945,6 +9293,9 @@
   "decision": "outside"
  },
  "scan-806532939": {
+  "decision": "outside"
+ },
+ "scan-806652416": {
   "decision": "outside"
  },
  "scan-806974067": {
@@ -8982,6 +9333,9 @@
  "scan-808710623": {
   "decision": "outside"
  },
+ "scan-809365272": {
+  "decision": "outside"
+ },
  "scan-810354384": {
   "decision": "outside"
  },
@@ -9005,6 +9359,9 @@
   "class": "software",
   "reproduced": "Darwin launchd binary"
  },
+ "scan-811819034": {
+  "decision": "outside"
+ },
  "scan-811998649": {
   "decision": "outside"
  },
@@ -9027,6 +9384,12 @@
   "decision": "outside"
  },
  "scan-813068951": {
+  "decision": "outside"
+ },
+ "scan-813074535": {
+  "decision": "outside"
+ },
+ "scan-813080939": {
   "decision": "outside"
  },
  "scan-813411617": {
@@ -9071,6 +9434,11 @@
  },
  "scan-817062397": {
   "decision": "outside"
+ },
+ "scan-817709419": {
+  "decision": "data",
+  "class": "apps",
+  "reproduced": "REWE mobile app API"
  },
  "scan-817926655": {
   "decision": "data",
@@ -9127,6 +9495,9 @@
  "scan-822246664": {
   "decision": "outside"
  },
+ "scan-822257271": {
+  "decision": "outside"
+ },
  "scan-822885260": {
   "decision": "outside"
  },
@@ -9139,12 +9510,18 @@
  "scan-823653126": {
   "decision": "outside"
  },
+ "scan-823706671": {
+  "decision": "outside"
+ },
  "scan-824330406": {
   "decision": "data",
   "class": "game",
   "reproduced": "Minecraft server"
  },
  "scan-824826477": {
+  "decision": "outside"
+ },
+ "scan-824835110": {
   "decision": "outside"
  },
  "scan-825111357": {
@@ -9157,6 +9534,9 @@
   "decision": "outside"
  },
  "scan-826268244": {
+  "decision": "outside"
+ },
+ "scan-826304081": {
   "decision": "outside"
  },
  "scan-826326244": {
@@ -9176,7 +9556,13 @@
   "class": "hardware",
   "reproduced": "Antminer ASIC control interfaces"
  },
+ "scan-827428286": {
+  "decision": "outside"
+ },
  "scan-827493724": {
+  "decision": "outside"
+ },
+ "scan-827708520": {
   "decision": "outside"
  },
  "scan-827822666": {
@@ -9254,6 +9640,9 @@
  "scan-834075250": {
   "decision": "outside"
  },
+ "scan-835222385": {
+  "decision": "outside"
+ },
  "scan-836322832": {
   "decision": "outside"
  },
@@ -9290,6 +9679,9 @@
   "class": "game",
   "reproduced": "Heroes III: Horn of the Abyss battle mechanics"
  },
+ "scan-840461894": {
+  "decision": "outside"
+ },
  "scan-840473260": {
   "decision": "outside"
  },
@@ -9298,6 +9690,16 @@
  },
  "scan-840767197": {
   "decision": "outside"
+ },
+ "scan-840821567": {
+  "decision": "data",
+  "class": "hardware",
+  "reproduced": "NIIMBOT printer protocol"
+ },
+ "scan-840877532": {
+  "decision": "data",
+  "class": "website",
+  "reproduced": "PerimeterX v6.7.9 fingerprint solver"
  },
  "scan-840906294": {
   "decision": "outside"
@@ -9319,10 +9721,16 @@
  "scan-842364064": {
   "decision": "outside"
  },
+ "scan-842682317": {
+  "decision": "outside"
+ },
  "scan-842961995": {
   "decision": "outside"
  },
  "scan-843123630": {
+  "decision": "outside"
+ },
+ "scan-843395468": {
   "decision": "outside"
  },
  "scan-843843106": {
@@ -9340,6 +9748,9 @@
   "decision": "outside"
  },
  "scan-845493579": {
+  "decision": "outside"
+ },
+ "scan-846003419": {
   "decision": "outside"
  },
  "scan-846462355": {
@@ -9375,6 +9786,9 @@
  "scan-853625921": {
   "decision": "outside"
  },
+ "scan-854274234": {
+  "decision": "outside"
+ },
  "scan-854907194": {
   "decision": "outside"
  },
@@ -9382,6 +9796,9 @@
   "decision": "outside"
  },
  "scan-855454435": {
+  "decision": "outside"
+ },
+ "scan-856809053": {
   "decision": "outside"
  },
  "scan-856888408": {
@@ -9399,6 +9816,14 @@
   "reproduced": "Teruhal TC20 camera HTTP API"
  },
  "scan-857170496": {
+  "decision": "outside"
+ },
+ "scan-857677488": {
+  "decision": "data",
+  "class": "website",
+  "reproduced": "Cookidoo private API client"
+ },
+ "scan-857706728": {
   "decision": "outside"
  },
  "scan-857777257": {
@@ -9454,6 +9879,9 @@
   "decision": "outside"
  },
  "scan-862669671": {
+  "decision": "outside"
+ },
+ "scan-862799738": {
   "decision": "outside"
  },
  "scan-863099576": {
@@ -9609,6 +10037,11 @@
  "scan-879175387": {
   "decision": "outside"
  },
+ "scan-879395854": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Test Drive III maps"
+ },
  "scan-879485512": {
   "decision": "outside"
  },
@@ -9655,6 +10088,9 @@
  "scan-884688406": {
   "decision": "outside"
  },
+ "scan-885172316": {
+  "decision": "outside"
+ },
  "scan-885779364": {
   "decision": "data",
   "class": "game",
@@ -9664,6 +10100,9 @@
   "decision": "outside"
  },
  "scan-886272790": {
+  "decision": "outside"
+ },
+ "scan-886562134": {
   "decision": "outside"
  },
  "scan-887627668": {
@@ -9690,6 +10129,9 @@
   "decision": "data",
   "class": "website",
   "reproduced": "Bing Image Creator private API"
+ },
+ "scan-889211582": {
+  "decision": "outside"
  },
  "scan-889317531": {
   "decision": "outside"
@@ -9894,6 +10336,9 @@
  "scan-912218113": {
   "decision": "outside"
  },
+ "scan-912311030": {
+  "decision": "outside"
+ },
  "scan-912533098": {
   "decision": "data",
   "class": "hardware",
@@ -9974,10 +10419,16 @@
  "scan-921043695": {
   "decision": "outside"
  },
+ "scan-921475719": {
+  "decision": "outside"
+ },
  "scan-921936859": {
   "decision": "data",
   "class": "hardware",
   "reproduced": "ATOTOZONE CI-VIALD19 LED matrix protocol"
+ },
+ "scan-922156652": {
+  "decision": "outside"
  },
  "scan-923078276": {
   "decision": "outside"
@@ -9995,6 +10446,9 @@
   "decision": "outside"
  },
  "scan-923996464": {
+  "decision": "outside"
+ },
+ "scan-924198662": {
   "decision": "outside"
  },
  "scan-924370358": {
@@ -10208,6 +10662,9 @@
  "scan-938359808": {
   "decision": "outside"
  },
+ "scan-938461988": {
+  "decision": "outside"
+ },
  "scan-938766016": {
   "decision": "outside"
  },
@@ -10230,6 +10687,9 @@
   "decision": "outside"
  },
  "scan-940031257": {
+  "decision": "outside"
+ },
+ "scan-940491351": {
   "decision": "outside"
  },
  "scan-941041661": {
@@ -10261,6 +10721,9 @@
  "scan-943057127": {
   "decision": "outside"
  },
+ "scan-943621107": {
+  "decision": "outside"
+ },
  "scan-945086014": {
   "decision": "outside"
  },
@@ -10271,6 +10734,12 @@
   "decision": "outside"
  },
  "scan-945543961": {
+  "decision": "outside"
+ },
+ "scan-946406597": {
+  "decision": "outside"
+ },
+ "scan-946790477": {
   "decision": "outside"
  },
  "scan-946834681": {
@@ -10289,6 +10758,9 @@
   "decision": "outside"
  },
  "scan-949050421": {
+  "decision": "outside"
+ },
+ "scan-949053110": {
   "decision": "outside"
  },
  "scan-949365463": {
@@ -10348,6 +10820,9 @@
  "scan-953850145": {
   "decision": "outside"
  },
+ "scan-953882191": {
+  "decision": "outside"
+ },
  "scan-954577686": {
   "decision": "data",
   "class": "game",
@@ -10376,6 +10851,9 @@
  "scan-956579750": {
   "decision": "outside"
  },
+ "scan-956963567": {
+  "decision": "outside"
+ },
  "scan-957018352": {
   "decision": "outside"
  },
@@ -10402,6 +10880,9 @@
   "decision": "outside"
  },
  "scan-957596565": {
+  "decision": "outside"
+ },
+ "scan-957714182": {
   "decision": "outside"
  },
  "scan-958079112": {
@@ -10458,6 +10939,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "LXZK1021 remote control protocol"
+ },
+ "scan-961449273": {
+  "decision": "outside"
  },
  "scan-961530517": {
   "decision": "data",
@@ -10529,6 +11013,9 @@
  "scan-965595715": {
   "decision": "outside"
  },
+ "scan-965831994": {
+  "decision": "outside"
+ },
  "scan-966479872": {
   "decision": "outside"
  },
@@ -10536,6 +11023,9 @@
   "decision": "outside"
  },
  "scan-966498537": {
+  "decision": "outside"
+ },
+ "scan-966896911": {
   "decision": "outside"
  },
  "scan-967071442": {
@@ -10560,6 +11050,9 @@
   "decision": "outside"
  },
  "scan-968113100": {
+  "decision": "outside"
+ },
+ "scan-968156686": {
   "decision": "outside"
  },
  "scan-968243042": {
@@ -10589,6 +11082,11 @@
  },
  "scan-969802178": {
   "decision": "outside"
+ },
+ "scan-970110976": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "SA-MP client for Grand Theft Auto: San Andreas"
  },
  "scan-970608255": {
   "decision": "outside"
@@ -10638,6 +11136,9 @@
   "decision": "outside"
  },
  "scan-973589027": {
+  "decision": "outside"
+ },
+ "scan-973854078": {
   "decision": "outside"
  },
  "scan-974013715": {
@@ -10706,6 +11207,9 @@
  "scan-979205385": {
   "decision": "outside"
  },
+ "scan-979595959": {
+  "decision": "outside"
+ },
  "scan-979981734": {
   "decision": "outside"
  },
@@ -10713,6 +11217,9 @@
   "decision": "outside"
  },
  "scan-980555134": {
+  "decision": "outside"
+ },
+ "scan-980788688": {
   "decision": "outside"
  },
  "scan-980908120": {
@@ -10761,6 +11268,9 @@
  "scan-982091161": {
   "decision": "outside"
  },
+ "scan-982136498": {
+  "decision": "outside"
+ },
  "scan-982219345": {
   "decision": "outside"
  },
@@ -10801,6 +11311,9 @@
   "class": "software",
   "reproduced": "VOCALOID5 Editor VPR project format"
  },
+ "scan-984949404": {
+  "decision": "outside"
+ },
  "scan-985424937": {
   "decision": "outside"
  },
@@ -10821,6 +11334,9 @@
   "decision": "outside"
  },
  "scan-986175065": {
+  "decision": "outside"
+ },
+ "scan-986215115": {
   "decision": "outside"
  },
  "scan-986463794": {
@@ -10859,6 +11375,9 @@
   "decision": "outside"
  },
  "scan-989299566": {
+  "decision": "outside"
+ },
+ "scan-989305189": {
   "decision": "outside"
  },
  "scan-989424817": {
@@ -10915,6 +11434,9 @@
  "scan-991964372": {
   "decision": "outside"
  },
+ "scan-992074843": {
+  "decision": "outside"
+ },
  "scan-992095574": {
   "decision": "outside"
  },
@@ -10931,6 +11453,9 @@
   "decision": "outside"
  },
  "scan-992686774": {
+  "decision": "outside"
+ },
+ "scan-992821041": {
   "decision": "outside"
  },
  "scan-992862134": {
@@ -10963,7 +11488,13 @@
  "scan-994406526": {
   "decision": "outside"
  },
+ "scan-994673413": {
+  "decision": "outside"
+ },
  "scan-994781846": {
+  "decision": "outside"
+ },
+ "scan-995050802": {
   "decision": "outside"
  },
  "scan-995624026": {
@@ -10985,6 +11516,9 @@
   "decision": "data",
   "class": "apps",
   "reproduced": "TikTok mobile app registration client"
+ },
+ "scan-996157662": {
+  "decision": "outside"
  },
  "scan-996284829": {
   "decision": "data",
@@ -11014,6 +11548,12 @@
  "scan-997540163": {
   "decision": "outside"
  },
+ "scan-997722991": {
+  "decision": "outside"
+ },
+ "scan-997855435": {
+  "decision": "outside"
+ },
  "scan-997858122": {
   "decision": "outside"
  },
@@ -11030,6 +11570,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "ProjectTorrim"
+ },
+ "scan-998014792": {
+  "decision": "outside"
  },
  "scan-998163539": {
   "decision": "outside"
@@ -11062,6 +11605,9 @@
   "decision": "data",
   "class": "website",
   "reproduced": "YC Work at a Startup private API"
+ },
+ "scan-999995393": {
+  "decision": "outside"
  },
  "scan-1000169337": {
   "decision": "outside"
@@ -11182,6 +11728,9 @@
  "scan-1007572645": {
   "decision": "outside"
  },
+ "scan-1007711572": {
+  "decision": "outside"
+ },
  "scan-1007915738": {
   "decision": "outside"
  },
@@ -11268,6 +11817,9 @@
   "class": "hardware",
   "reproduced": "Simplesoft RP5-TY-101 CAN interface protocol"
  },
+ "scan-1013333344": {
+  "decision": "outside"
+ },
  "scan-1014055054": {
   "decision": "data",
   "class": "hardware",
@@ -11322,6 +11874,9 @@
   "reproduced": "Xbox Companion Windows Phone app"
  },
  "scan-1017114547": {
+  "decision": "outside"
+ },
+ "scan-1017723353": {
   "decision": "outside"
  },
  "scan-1017768818": {
@@ -11408,6 +11963,9 @@
   "decision": "outside"
  },
  "scan-1020743502": {
+  "decision": "outside"
+ },
+ "scan-1021283081": {
   "decision": "outside"
  },
  "scan-1021817139": {
@@ -11565,6 +12123,9 @@
  "scan-1027986220": {
   "decision": "outside"
  },
+ "scan-1028473572": {
+  "decision": "outside"
+ },
  "scan-1028511551": {
   "decision": "outside"
  },
@@ -11599,6 +12160,11 @@
  },
  "scan-1030501476": {
   "decision": "outside"
+ },
+ "scan-1030537355": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "Cursor IDE API client"
  },
  "scan-1030844275": {
   "decision": "outside"
@@ -11740,6 +12306,9 @@
   "class": "apps",
   "reproduced": "ElevenLabs Reader iOS app workflow and private API"
  },
+ "scan-1042228354": {
+  "decision": "outside"
+ },
  "scan-1042938239": {
   "decision": "outside"
  },
@@ -11786,6 +12355,12 @@
   "decision": "outside"
  },
  "scan-1045293219": {
+  "decision": "outside"
+ },
+ "scan-1045507695": {
+  "decision": "outside"
+ },
+ "scan-1045729060": {
   "decision": "outside"
  },
  "scan-1045820276": {
@@ -11857,6 +12432,9 @@
   "class": "software",
   "reproduced": "Gravit Designer"
  },
+ "scan-1050528138": {
+  "decision": "outside"
+ },
  "scan-1051350949": {
   "decision": "outside"
  },
@@ -11900,6 +12478,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "Loxone Link device protocol"
+ },
+ "scan-1054428401": {
+  "decision": "outside"
  },
  "scan-1054446234": {
   "decision": "outside"
@@ -11965,6 +12546,9 @@
   "decision": "outside"
  },
  "scan-1061308399": {
+  "decision": "outside"
+ },
+ "scan-1061349004": {
   "decision": "outside"
  },
  "scan-1061460295": {
@@ -12039,6 +12623,9 @@
  "scan-1067293023": {
   "decision": "outside"
  },
+ "scan-1067325869": {
+  "decision": "outside"
+ },
  "scan-1067535837": {
   "decision": "outside"
  },
@@ -12058,6 +12645,9 @@
   "decision": "outside"
  },
  "scan-1069460409": {
+  "decision": "outside"
+ },
+ "scan-1069532971": {
   "decision": "outside"
  },
  "scan-1069707765": {
@@ -12082,10 +12672,16 @@
   "class": "software",
   "reproduced": "Ares Galaxy ChatroomIPs.dat format"
  },
+ "scan-1071028726": {
+  "decision": "outside"
+ },
  "scan-1071159148": {
   "decision": "outside"
  },
  "scan-1071752905": {
+  "decision": "outside"
+ },
+ "scan-1071830822": {
   "decision": "outside"
  },
  "scan-1071868594": {
@@ -12125,6 +12721,9 @@
   "decision": "outside"
  },
  "scan-1073979669": {
+  "decision": "outside"
+ },
+ "scan-1074212843": {
   "decision": "outside"
  },
  "scan-1074585639": {
@@ -12174,10 +12773,16 @@
  "scan-1076355310": {
   "decision": "outside"
  },
+ "scan-1076423440": {
+  "decision": "outside"
+ },
  "scan-1077090972": {
   "decision": "outside"
  },
  "scan-1077116357": {
+  "decision": "outside"
+ },
+ "scan-1077191830": {
   "decision": "outside"
  },
  "scan-1077350435": {
@@ -12199,6 +12804,9 @@
   "decision": "outside"
  },
  "scan-1079312760": {
+  "decision": "outside"
+ },
+ "scan-1080603343": {
   "decision": "outside"
  },
  "scan-1080666768": {
@@ -12261,7 +12869,13 @@
  "scan-1083170093": {
   "decision": "outside"
  },
+ "scan-1083245201": {
+  "decision": "outside"
+ },
  "scan-1083593735": {
+  "decision": "outside"
+ },
+ "scan-1083810123": {
   "decision": "outside"
  },
  "scan-1084039026": {
@@ -12406,6 +13020,9 @@
  "scan-1093743462": {
   "decision": "outside"
  },
+ "scan-1093749575": {
+  "decision": "outside"
+ },
  "scan-1093844737": {
   "decision": "outside"
  },
@@ -12427,6 +13044,9 @@
   "decision": "outside"
  },
  "scan-1094803260": {
+  "decision": "outside"
+ },
+ "scan-1094897543": {
   "decision": "outside"
  },
  "scan-1094930405": {
@@ -12463,6 +13083,9 @@
   "class": "apps",
   "reproduced": "7tube Windows Phone app"
  },
+ "scan-1097642603": {
+  "decision": "outside"
+ },
  "scan-1097761616": {
   "decision": "outside"
  },
@@ -12495,6 +13118,9 @@
   "reproduced": "Virtools game engine"
  },
  "scan-1099964921": {
+  "decision": "outside"
+ },
+ "scan-1100510497": {
   "decision": "outside"
  },
  "scan-1100797412": {
@@ -12558,6 +13184,11 @@
  },
  "scan-1102276746": {
   "decision": "outside"
+ },
+ "scan-1102326425": {
+  "decision": "data",
+  "class": "website",
+  "reproduced": "Meta AI web service"
  },
  "scan-1102347282": {
   "decision": "outside"
@@ -12835,6 +13466,9 @@
   "class": "software",
   "reproduced": "Borg disassembler"
  },
+ "scan-1112551281": {
+  "decision": "outside"
+ },
  "scan-1112691159": {
   "decision": "outside"
  },
@@ -12920,6 +13554,9 @@
  "scan-1115847603": {
   "decision": "outside"
  },
+ "scan-1115903185": {
+  "decision": "outside"
+ },
  "scan-1115906694": {
   "decision": "outside"
  },
@@ -12967,6 +13604,9 @@
  "scan-1116944850": {
   "decision": "outside"
  },
+ "scan-1116979477": {
+  "decision": "outside"
+ },
  "scan-1117009898": {
   "decision": "outside"
  },
@@ -12990,6 +13630,11 @@
   "class": "game",
   "reproduced": "Tak and the Power of Juju"
  },
+ "scan-1117985745": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Red Dead Redemption 2 and Grand Theft Auto V game scripts"
+ },
  "scan-1118342346": {
   "decision": "data",
   "class": "game",
@@ -13005,6 +13650,9 @@
   "decision": "outside"
  },
  "scan-1119188335": {
+  "decision": "outside"
+ },
+ "scan-1119938885": {
   "decision": "outside"
  },
  "scan-1120101579": {
@@ -13038,6 +13686,9 @@
   "class": "hardware",
   "reproduced": "Novation Launchpad firmware"
  },
+ "scan-1121321127": {
+  "decision": "outside"
+ },
  "scan-1121323197": {
   "decision": "outside"
  },
@@ -13055,6 +13706,9 @@
  "scan-1121473391": {
   "decision": "outside"
  },
+ "scan-1121594679": {
+  "decision": "outside"
+ },
  "scan-1121626124": {
   "decision": "outside"
  },
@@ -13067,6 +13721,9 @@
   "decision": "outside"
  },
  "scan-1122039430": {
+  "decision": "outside"
+ },
+ "scan-1122186474": {
   "decision": "outside"
  },
  "scan-1122310538": {
@@ -13348,6 +14005,9 @@
   "class": "game",
   "reproduced": "Terraria server"
  },
+ "scan-1131927730": {
+  "decision": "outside"
+ },
  "scan-1132312973": {
   "decision": "outside"
  },
@@ -13382,6 +14042,9 @@
   "class": "hardware",
   "reproduced": "VanMoof S5, A5 and S6 BLE protocols"
  },
+ "scan-1134715193": {
+  "decision": "outside"
+ },
  "scan-1134784173": {
   "decision": "outside"
  },
@@ -13413,6 +14076,11 @@
   "class": "hardware",
   "reproduced": "BOSS GX-10 TSL preset format"
  },
+ "scan-1136045616": {
+  "decision": "data",
+  "class": "website",
+  "reproduced": "Funda private API client"
+ },
  "scan-1136232170": {
   "decision": "outside"
  },
@@ -13420,6 +14088,9 @@
   "decision": "outside"
  },
  "scan-1136313063": {
+  "decision": "outside"
+ },
+ "scan-1136338657": {
   "decision": "outside"
  },
  "scan-1136428669": {
@@ -13469,6 +14140,9 @@
   "decision": "outside"
  },
  "scan-1137601648": {
+  "decision": "outside"
+ },
+ "scan-1137603120": {
   "decision": "outside"
  },
  "scan-1137762808": {
@@ -14214,6 +14888,9 @@
  "scan-1170877333": {
   "decision": "outside"
  },
+ "scan-1170895355": {
+  "decision": "outside"
+ },
  "scan-1171173251": {
   "decision": "outside"
  },
@@ -14323,6 +15000,9 @@
   "decision": "outside"
  },
  "scan-1174795271": {
+  "decision": "outside"
+ },
+ "scan-1174852250": {
   "decision": "outside"
  },
  "scan-1174922075": {
@@ -14456,6 +15136,9 @@
  "scan-1179452587": {
   "decision": "outside"
  },
+ "scan-1179524736": {
+  "decision": "outside"
+ },
  "scan-1179603213": {
   "decision": "outside"
  },
@@ -14485,6 +15168,9 @@
  "scan-1180327893": {
   "decision": "outside"
  },
+ "scan-1180333336": {
+  "decision": "outside"
+ },
  "scan-1180367866": {
   "decision": "outside"
  },
@@ -14492,6 +15178,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Diablo II: Resurrected offline startup flow"
+ },
+ "scan-1180566119": {
+  "decision": "outside"
  },
  "scan-1180721516": {
   "decision": "data",
@@ -14559,6 +15248,9 @@
  "scan-1182350065": {
   "decision": "outside"
  },
+ "scan-1182423118": {
+  "decision": "outside"
+ },
  "scan-1182529554": {
   "decision": "outside"
  },
@@ -14576,6 +15268,9 @@
   "reproduced": "MicroarrayTechnology MAFP fingerprint sensor driver"
  },
  "scan-1183080033": {
+  "decision": "outside"
+ },
+ "scan-1183123101": {
   "decision": "outside"
  },
  "scan-1183172269": {
@@ -14604,6 +15299,9 @@
   "reproduced": "Mercedes MHEV belted starter generator control protocol"
  },
  "scan-1184881256": {
+  "decision": "outside"
+ },
+ "scan-1185160126": {
   "decision": "outside"
  },
  "scan-1185576445": {
@@ -14712,10 +15410,18 @@
  "scan-1188904782": {
   "decision": "outside"
  },
+ "scan-1189036905": {
+  "decision": "data",
+  "class": "website",
+  "reproduced": "Ekşi Sözlük private API"
+ },
  "scan-1189102371": {
   "decision": "data",
   "class": "hardware",
   "reproduced": "Holy Stone H120D drone WiFi protocol"
+ },
+ "scan-1189295737": {
+  "decision": "outside"
  },
  "scan-1189349510": {
   "decision": "data",
@@ -14808,6 +15514,9 @@
   "class": "hardware",
   "reproduced": "BG7TBL WB-SG1-8G signal generator"
  },
+ "scan-1191912739": {
+  "decision": "outside"
+ },
  "scan-1191937259": {
   "decision": "outside"
  },
@@ -14825,10 +15534,16 @@
   "class": "website",
   "reproduced": "BOSS Zhipin private API"
  },
+ "scan-1192787523": {
+  "decision": "outside"
+ },
  "scan-1192865045": {
   "decision": "outside"
  },
  "scan-1192880800": {
+  "decision": "outside"
+ },
+ "scan-1192898537": {
   "decision": "outside"
  },
  "scan-1193012836": {
@@ -14845,8 +15560,16 @@
  "scan-1193155761": {
   "decision": "outside"
  },
+ "scan-1193156927": {
+  "decision": "outside"
+ },
  "scan-1193157977": {
   "decision": "outside"
+ },
+ "scan-1193211369": {
+  "decision": "data",
+  "class": "hardware",
+  "reproduced": "AJAZZ AKS075 keyboard screen protocol"
  },
  "scan-1193340614": {
   "decision": "outside"
@@ -14874,6 +15597,9 @@
   "reproduced": "LEGO SPIKE medium motor communication"
  },
  "scan-1194792405": {
+  "decision": "outside"
+ },
+ "scan-1194839430": {
   "decision": "outside"
  },
  "scan-1194891845": {
@@ -14938,6 +15664,11 @@
  "scan-1197495691": {
   "decision": "outside"
  },
+ "scan-1197579118": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "Claude in Chrome browser extension"
+ },
  "scan-1197586729": {
   "decision": "outside"
  },
@@ -14950,6 +15681,9 @@
   "decision": "outside"
  },
  "scan-1197621630": {
+  "decision": "outside"
+ },
+ "scan-1197631606": {
   "decision": "outside"
  },
  "scan-1197673930": {
@@ -14993,6 +15727,9 @@
   "decision": "outside"
  },
  "scan-1198619822": {
+  "decision": "outside"
+ },
+ "scan-1198755693": {
   "decision": "outside"
  },
  "scan-1198877407": {
@@ -15050,6 +15787,9 @@
  "scan-1200839238": {
   "decision": "outside"
  },
+ "scan-1200881310": {
+  "decision": "outside"
+ },
  "scan-1200892654": {
   "decision": "outside"
  },
@@ -15091,6 +15831,9 @@
   "decision": "outside"
  },
  "scan-1202075593": {
+  "decision": "outside"
+ },
+ "scan-1202162507": {
   "decision": "outside"
  },
  "scan-1202177054": {
@@ -15159,6 +15902,9 @@
  "scan-1203434624": {
   "decision": "outside"
  },
+ "scan-1203733288": {
+  "decision": "outside"
+ },
  "scan-1203930647": {
   "decision": "data",
   "class": "software",
@@ -15192,6 +15938,9 @@
   "class": "game",
   "reproduced": "Freelancer runtime modules"
  },
+ "scan-1205807943": {
+  "decision": "outside"
+ },
  "scan-1206320555": {
   "decision": "outside"
  },
@@ -15208,6 +15957,11 @@
   "decision": "data",
   "class": "website",
   "reproduced": "new.reddit.com React app"
+ },
+ "scan-1206538890": {
+  "decision": "data",
+  "class": "hardware",
+  "reproduced": "Huion Note X10 tablet BLE protocol"
  },
  "scan-1207131066": {
   "decision": "outside"
@@ -15252,6 +16006,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "SP656E and SP638E LED controller control protocol"
+ },
+ "scan-1208059558": {
+  "decision": "outside"
  },
  "scan-1208185600": {
   "decision": "outside"
@@ -15347,6 +16104,12 @@
   "decision": "data",
   "class": "apps",
   "reproduced": "ChotaDhobi mobile app functions"
+ },
+ "scan-1211950356": {
+  "decision": "outside"
+ },
+ "scan-1212187907": {
+  "decision": "outside"
  },
  "scan-1212692035": {
   "decision": "outside"
@@ -15734,6 +16497,9 @@
  "scan-1226173345": {
   "decision": "outside"
  },
+ "scan-1226450425": {
+  "decision": "outside"
+ },
  "scan-1226540875": {
   "decision": "data",
   "class": "hardware",
@@ -16007,6 +16773,9 @@
  "scan-1234989629": {
   "decision": "outside"
  },
+ "scan-1235159277": {
+  "decision": "outside"
+ },
  "scan-1235174405": {
   "decision": "outside"
  },
@@ -16085,6 +16854,9 @@
  "scan-1237257746": {
   "decision": "outside"
  },
+ "scan-1237739542": {
+  "decision": "outside"
+ },
  "scan-1237748485": {
   "decision": "outside"
  },
@@ -16141,6 +16913,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "Gigabyte AORUS GeForce RTX 5090 MASTER ICE LCD control"
+ },
+ "scan-1240077020": {
+  "decision": "outside"
  },
  "scan-1240261619": {
   "decision": "outside"
@@ -16264,6 +17039,9 @@
  "scan-1244327677": {
   "decision": "outside"
  },
+ "scan-1244505078": {
+  "decision": "outside"
+ },
  "scan-1244896696": {
   "decision": "outside"
  },
@@ -16344,6 +17122,9 @@
  "scan-1247512501": {
   "decision": "outside"
  },
+ "scan-1247563855": {
+  "decision": "outside"
+ },
  "scan-1247573537": {
   "decision": "data",
   "class": "software",
@@ -16396,6 +17177,11 @@
  },
  "scan-1248639792": {
   "decision": "outside"
+ },
+ "scan-1248753186": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "Microsoft Windows 1.03"
  },
  "scan-1248814988": {
   "decision": "outside"
@@ -16529,6 +17315,9 @@
   "reproduced": "Technibel SCDF32C5I air conditioner IR protocol"
  },
  "scan-1252639622": {
+  "decision": "outside"
+ },
+ "scan-1252702150": {
   "decision": "outside"
  },
  "scan-1253094274": {
@@ -16776,6 +17565,12 @@
  "scan-1260310656": {
   "decision": "outside"
  },
+ "scan-1260579769": {
+  "decision": "outside"
+ },
+ "scan-1260643310": {
+  "decision": "outside"
+ },
  "scan-1260809829": {
   "decision": "data",
   "class": "game",
@@ -16810,6 +17605,9 @@
   "decision": "outside"
  },
  "scan-1262121744": {
+  "decision": "outside"
+ },
+ "scan-1262256475": {
   "decision": "outside"
  },
  "scan-1262335281": {
@@ -16849,6 +17647,9 @@
   "decision": "outside"
  },
  "scan-1263487108": {
+  "decision": "outside"
+ },
+ "scan-1263511781": {
   "decision": "outside"
  },
  "scan-1263533520": {
@@ -16925,6 +17726,9 @@
   "reproduced": "Zafro A9092R cloud protocol"
  },
  "scan-1266984952": {
+  "decision": "outside"
+ },
+ "scan-1267051691": {
   "decision": "outside"
  },
  "scan-1267171009": {
@@ -17473,6 +18277,9 @@
  "scan-1276892578": {
   "decision": "outside"
  },
+ "scan-1276945228": {
+  "decision": "outside"
+ },
  "scan-1276952106": {
   "decision": "outside"
  },
@@ -17548,6 +18355,9 @@
   "decision": "outside"
  },
  "scan-1277680207": {
+  "decision": "outside"
+ },
+ "scan-1277681600": {
   "decision": "outside"
  },
  "scan-1277815108": {
@@ -17874,6 +18684,9 @@
  "scan-1283977542": {
   "decision": "outside"
  },
+ "scan-1284005195": {
+  "decision": "outside"
+ },
  "scan-1284011000": {
   "decision": "data",
   "class": "hardware",
@@ -17898,6 +18711,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Starblast.io game client"
+ },
+ "scan-1284663275": {
+  "decision": "outside"
  },
  "scan-1284697186": {
   "decision": "outside"
@@ -18165,6 +18981,9 @@
   "decision": "outside"
  },
  "scan-1290400210": {
+  "decision": "outside"
+ },
+ "scan-1290441101": {
   "decision": "outside"
  },
  "scan-1290545563": {
@@ -18543,10 +19362,16 @@
  "scan-1298065149": {
   "decision": "outside"
  },
+ "scan-1298330762": {
+  "decision": "outside"
+ },
  "scan-1298370541": {
   "decision": "outside"
  },
  "scan-1298388222": {
+  "decision": "outside"
+ },
+ "scan-1298418050": {
   "decision": "outside"
  },
  "scan-1298469135": {
@@ -18651,6 +19476,9 @@
   "class": "game",
   "reproduced": "Armory & Machine"
  },
+ "scan-1300822520": {
+  "decision": "outside"
+ },
  "scan-1300911360": {
   "decision": "outside"
  },
@@ -18746,6 +19574,9 @@
   "reproduced": "GE Profile Opal 2.0 ice maker controller"
  },
  "scan-1303027094": {
+  "decision": "outside"
+ },
+ "scan-1303056841": {
   "decision": "outside"
  },
  "scan-1303091518": {
@@ -18861,6 +19692,9 @@
   "class": "hardware",
   "reproduced": "EgisTec EH576 fingerprint sensor interface"
  },
+ "scan-1305929091": {
+  "decision": "outside"
+ },
  "scan-1305956295": {
   "decision": "outside"
  },
@@ -18875,6 +19709,9 @@
  "scan-1306067615": {
   "decision": "outside"
  },
+ "scan-1306096845": {
+  "decision": "outside"
+ },
  "scan-1306101767": {
   "decision": "outside"
  },
@@ -18887,6 +19724,9 @@
   "decision": "outside"
  },
  "scan-1306182102": {
+  "decision": "outside"
+ },
+ "scan-1306279404": {
   "decision": "outside"
  },
  "scan-1306295642": {
@@ -19078,6 +19918,9 @@
  "scan-1310368918": {
   "decision": "outside"
  },
+ "scan-1310398119": {
+  "decision": "outside"
+ },
  "scan-1310698094": {
   "decision": "outside"
  },
@@ -19178,6 +20021,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "Fitdays smart-scale cloud API"
+ },
+ "scan-1312157339": {
+  "decision": "outside"
  },
  "scan-1312162302": {
   "decision": "data",
@@ -19319,6 +20165,12 @@
   "reproduced": "Sony FX30 camera control protocol"
  },
  "scan-1314401429": {
+  "decision": "outside"
+ },
+ "scan-1314408653": {
+  "decision": "outside"
+ },
+ "scan-1314416675": {
   "decision": "outside"
  },
  "scan-1314418478": {
@@ -19513,6 +20365,9 @@
   "class": "game",
   "reproduced": "MechWarrior 2: 31st Century Combat"
  },
+ "scan-1319686595": {
+  "decision": "outside"
+ },
  "scan-1319691992": {
   "decision": "outside"
  },
@@ -19628,6 +20483,9 @@
   "class": "hardware",
   "reproduced": "Line 6 HX Stomp control"
  },
+ "scan-1323925390": {
+  "decision": "outside"
+ },
  "scan-1323966285": {
   "decision": "outside"
  },
@@ -19655,6 +20513,9 @@
   "class": "hardware",
   "reproduced": "Bosch Smart System eBike BLE protocol"
  },
+ "scan-1324830741": {
+  "decision": "outside"
+ },
  "scan-1325032246": {
   "decision": "outside"
  },
@@ -19680,6 +20541,9 @@
   "decision": "outside"
  },
  "scan-1326317476": {
+  "decision": "outside"
+ },
+ "scan-1326661391": {
   "decision": "outside"
  },
  "scan-1326735511": {
@@ -19796,6 +20660,12 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "ZTE ZXSLC SR1010 config.bin format"
+ },
+ "scan-1330694414": {
+  "decision": "outside"
+ },
+ "scan-1330736583": {
+  "decision": "outside"
  },
  "scan-1330739787": {
   "decision": "data",
@@ -19930,6 +20800,9 @@
  "scan-1334610703": {
   "decision": "outside"
  },
+ "scan-1334623597": {
+  "decision": "outside"
+ },
  "scan-1334685598": {
   "decision": "data",
   "class": "hardware",
@@ -20012,6 +20885,9 @@
  "scan-1336234587": {
   "decision": "outside"
  },
+ "scan-1336280770": {
+  "decision": "outside"
+ },
  "scan-1336421837": {
   "decision": "outside"
  },
@@ -20019,6 +20895,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "D-Link DIR-842 R1 router firmware"
+ },
+ "scan-1336484382": {
+  "decision": "outside"
  },
  "scan-1336686337": {
   "decision": "outside"
@@ -20055,6 +20934,9 @@
   "decision": "data",
   "class": "software",
   "reproduced": "Cursor agent backend client"
+ },
+ "scan-1338203650": {
+  "decision": "outside"
  },
  "scan-1338466190": {
   "decision": "outside"
@@ -20212,6 +21094,9 @@
  "scan-1341098525": {
   "decision": "outside"
  },
+ "scan-1341119774": {
+  "decision": "outside"
+ },
  "scan-1341286850": {
   "decision": "outside"
  },
@@ -20219,6 +21104,9 @@
   "decision": "outside"
  },
  "scan-1341625749": {
+  "decision": "outside"
+ },
+ "scan-1341732511": {
   "decision": "outside"
  },
  "scan-1341933250": {
@@ -20382,6 +21270,9 @@
  "scan-1344457115": {
   "decision": "outside"
  },
+ "scan-1344551256": {
+  "decision": "outside"
+ },
  "scan-1344585794": {
   "decision": "outside"
  },
@@ -20456,6 +21347,9 @@
   "decision": "data",
   "class": "hardware",
   "reproduced": "Wolfmix W1 project format and USB protocol"
+ },
+ "scan-1345866024": {
+  "decision": "outside"
  },
  "scan-1345915754": {
   "decision": "outside"
@@ -20883,6 +21777,11 @@
   "class": "hardware",
   "reproduced": "Huawei B311-221 router control"
  },
+ "scan-1351949679": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Marvel vs. Capcom 2"
+ },
  "scan-1351993174": {
   "decision": "outside"
  },
@@ -20970,6 +21869,9 @@
  "scan-1354102718": {
   "decision": "outside"
  },
+ "scan-1354134153": {
+  "decision": "outside"
+ },
  "scan-1354254369": {
   "decision": "data",
   "class": "hardware",
@@ -20984,6 +21886,9 @@
  "scan-1354634514": {
   "decision": "outside"
  },
+ "scan-1354638179": {
+  "decision": "outside"
+ },
  "scan-1354673387": {
   "decision": "outside"
  },
@@ -20996,6 +21901,9 @@
   "decision": "data",
   "class": "website",
   "reproduced": "X.com private GraphQL API"
+ },
+ "scan-1354998176": {
+  "decision": "outside"
  },
  "scan-1355034080": {
   "decision": "outside"
@@ -21166,6 +22074,9 @@
   "decision": "outside"
  },
  "scan-1358822627": {
+  "decision": "outside"
+ },
+ "scan-1358977094": {
   "decision": "outside"
  },
  "scan-1359119264": {
@@ -21364,6 +22275,9 @@
   "decision": "outside"
  },
  "scan-1362334132": {
+  "decision": "outside"
+ },
+ "scan-1362493329": {
   "decision": "outside"
  },
  "scan-1362556931": {
@@ -21944,6 +22858,9 @@
   "class": "hardware",
   "reproduced": "CH57x USB macro keypad protocol"
  },
+ "scan-1374227106": {
+  "decision": "outside"
+ },
  "scan-1374251843": {
   "decision": "outside"
  },
@@ -22321,6 +23238,9 @@
   "reproduced": "Neon Genesis Evangelion for Nintendo 64"
  },
  "scan-1384387575": {
+  "decision": "outside"
+ },
+ "scan-1384696216": {
   "decision": "outside"
  },
  "scan-1384742650": {
@@ -22893,6 +23813,9 @@
   "class": "game",
   "reproduced": "FIFA 96"
  },
+ "scan-1394223370": {
+  "decision": "outside"
+ },
  "scan-1394444983": {
   "decision": "data",
   "class": "apps",
@@ -22928,6 +23851,9 @@
   "reproduced": "Galaxy on Fire 2 J2ME"
  },
  "scan-1395961283": {
+  "decision": "outside"
+ },
+ "scan-1396118585": {
   "decision": "outside"
  },
  "scan-1396469656": {
@@ -23240,6 +24166,12 @@
   "decision": "outside"
  },
  "scan-1404995586": {
+  "decision": "outside"
+ },
+ "scan-1405030044": {
+  "decision": "outside"
+ },
+ "scan-1405292510": {
   "decision": "outside"
  },
  "scan-1405451768": {
@@ -23570,6 +24502,9 @@
   "decision": "outside"
  },
  "scan-1413120877": {
+  "decision": "outside"
+ },
+ "scan-1413171320": {
   "decision": "outside"
  },
  "scan-1413239134": {
@@ -24267,6 +25202,9 @@
   "decision": "outside"
  },
  "scan-1423974228": {
+  "decision": "outside"
+ },
+ "scan-1423978170": {
   "decision": "outside"
  },
  "scan-1423990148": {
@@ -35469,6 +36407,9 @@
  "lead-1cbc3c96bca8bf8c803a34f8": {
   "decision": "outside"
  },
+ "lead-1cbe5a76922b4358a29177a9": {
+  "decision": "outside"
+ },
  "lead-1cc7f3707afe03a9c11731b4": {
   "decision": "data",
   "class": "game",
@@ -39823,6 +40764,11 @@
  },
  "lead-358a77673acbbd9203b5c054": {
   "decision": "outside"
+ },
+ "lead-358cb720c6502e3e6e227c23": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Xenoblade Chronicles: Definitive Edition"
  },
  "lead-3594ae193afe74fd14cc8661": {
   "decision": "data",
@@ -54361,6 +55307,11 @@
  "lead-87a00dbfc850ac3512288c3f": {
   "decision": "outside"
  },
+ "lead-87afe542313e67968c1ef8ab": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Bleach: Soul Resurrección"
+ },
  "lead-87b501f930f454ee5eadc059": {
   "decision": "outside"
  },
@@ -60094,6 +61045,9 @@
   "class": "game",
   "reproduced": "Need for Speed: Carbon"
  },
+ "lead-a7ffb54ccc2171474d06f22b": {
+  "decision": "outside"
+ },
  "lead-a801ac27dd911c998389b563": {
   "decision": "data",
   "class": "hardware",
@@ -63603,6 +64557,11 @@
   "class": "game",
   "reproduced": "Gears of War 3"
  },
+ "lead-bc8a043e658fc6774ed7ab21": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "God of War II"
+ },
  "lead-bc9cdfc42bfa6bb4b90ad66e": {
   "decision": "outside"
  },
@@ -66501,6 +67460,11 @@
  },
  "lead-cdf184625fedc44b8a4ea005": {
   "decision": "outside"
+ },
+ "lead-cdf6521b006c50f3885f3978": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Castlevania: Curse of Darkness"
  },
  "lead-cdf77707b863d5f40ed4a82d": {
   "decision": "outside"
@@ -69545,6 +70509,9 @@
   "class": "game",
   "reproduced": "Final Fantasy Crystal Chronicles"
  },
+ "lead-de838a7be9c9651d17ddce2c": {
+  "decision": "outside"
+ },
  "lead-de94209caa147d45e5e9de05": {
   "decision": "outside"
  },
@@ -69593,6 +70560,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Sonic the Hedgehog"
+ },
+ "lead-deda64a5d52f871bc1b10f11": {
+  "decision": "outside"
  },
  "lead-dedeaf7e6af42af39cca5dc0": {
   "decision": "data",

@@ -2989,6 +2989,15 @@
     "evidence_url": "https://github.com/hitchhikr/driller/blob/b69cff14744b7094a50dc7de9732d70a29b05679/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-672898004": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "Alkahest includes Destiny-named font assets and game data alongside its asset-viewing code, so the committed content needs a linking-policy decision.",
+    "reason_zh": "Alkahest 的资源查看代码旁收录了以 Destiny 命名的字体和游戏数据，仓库所附资源需要维护者判断链接政策。",
+    "readme_sha256": "0ab90bb8a0ca2ffb6542d1232635d2e7cab626f453879ab42c9f9cb7140d228a",
+    "evidence_url": "https://github.com/cohaereo/alkahest/blob/c2f87e574681dddb9ccb30cac49fa678df88869b/CHANGELOG.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-673892983": {
     "decision": "exclude",
     "reason_code": "cheat-or-evasion",
@@ -3403,6 +3412,15 @@
     "evidence_url": "https://github.com/Archips/boot2root/blob/18de986ba80df7ac7308d6749f7565e8e45c8fff/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-762932851": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The 86-DOS 0.11 reconstruction commits recovered assembly plus disk images containing operating-system and build-tool files whose redistribution needs a maintainer decision.",
+    "reason_zh": "86-DOS 0.11 项目提交了还原汇编和含操作系统及构建工具文件的磁盘镜像，是否收录需维护者决定。",
+    "readme_sha256": "db091e2612a5fb64804e7ecd24e1792d3dd27e7deb466db9b3908428e9423033",
+    "evidence_url": "https://github.com/DOS-History/86-DOS-0.11/blob/abfbb39b5fdb19f972dde40611a2015a07d433f1/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-766666424": {
     "decision": "exclude",
     "reason_code": "development-tool",
@@ -3790,6 +3808,15 @@
     "evidence_url": "https://github.com/gdlbo/packageradar/blob/edd8e8db54b589b86b1ae7e782090c10f6d9bf67/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "scan-840877532": {
+    "decision": "exclude",
+    "reason_code": "cheat-or-evasion",
+    "reason_en": "PerimeterX Solver targets the service's protection mechanism and reports generating valid cookies from a reversed fingerprint, making bypass its stated purpose.",
+    "reason_zh": "PerimeterX Solver 以绕过服务防护为目标，作者称通过逆向指纹逻辑生成有效 Cookie。",
+    "readme_sha256": "81b08724595fe12966378095f647fdc3d2a3dd61e3a8ea6e87abf5665b705988",
+    "evidence_url": "https://github.com/Pr0t0ns/PerimeterX-Solver/blob/6693985ee85cdbc5fffbfb14e7a4434da71a9bf8/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-841754419": {
     "decision": "exclude",
     "reason_code": "cheat-or-evasion",
@@ -3905,6 +3932,15 @@
     "reason_zh": "LCC.js 的主体是教学用汇编器、链接器和解释器；调试器与反汇编器服务于该工具链，项目未记录逆向分析流程。",
     "readme_sha256": "52e1ed365c517d0b498a2c9340b5cec7038ae5b47b6396b12e2e8a3ffc261f1d",
     "evidence_url": "https://github.com/avidrucker/lccjs/blob/167b063c0c10e4f19ed4117c175504e8d865bb25/README.md",
+    "reviewed_at": "2026-11-09"
+  },
+  "scan-879395854": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Test Drive III investigation documents map and asset formats and includes extraction tools, but the repository also commits extracted game images and object files.",
+    "reason_zh": "Test Drive III 项目记录地图与资源格式并提供提取工具，但仓库同时提交了从游戏提取的图片和对象文件，需维护者决定链接政策。",
+    "readme_sha256": "4127df403fa936192515d5e3b5be56e5c6dc73f7d4f86c2585fbf8f113f4a4bc",
+    "evidence_url": "https://github.com/s-macke/Test-Drive-3-Maps/blob/a07fa0a6fdaed33b15b757d132f2928352dda569/README.md",
     "reviewed_at": "2026-11-09"
   },
   "scan-883626842": {
@@ -4528,6 +4564,15 @@
     "evidence_url": "https://github.com/tailsmonster/nwsync/blob/2964d3f72413247f084b70f4bcf571bd50db1ee9/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-970110976": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The main branch contains project information and donation links, while the four listed files contain no client source or reverse-engineering findings.",
+    "reason_zh": "主分支只有项目信息和捐赠页面；列出的四个文件没有客户端源码或逆向分析成果。",
+    "readme_sha256": "801d0581fd48dd21600f0caf29f4fb2670072d032eb971db11bc79900637bf0a",
+    "evidence_url": "https://github.com/kuzia15/SAMP-Mobile/blob/b015e554b5fdd99c60ee3d0c5e688a56076f00ff/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-970698408": {
     "decision": "exclude",
     "reason_code": "general-security",
@@ -5059,6 +5104,15 @@
     "evidence_url": "https://github.com/H0smax/HMGB-Disassembly/blob/620a0e0b54fb0e3beff9188ed40dc3764dcc0529/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-1030537355": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Cursor API client contains detailed protocol findings and working client code, but it also describes committed raw extracted and beautified Cursor core bundles.",
+    "reason_zh": "Cursor API 客户端有具体的协议发现和客户端代码，但仓库还描述了已提交的 Cursor 原始提取包及整理后的核心代码，需维护者决定链接政策。",
+    "readme_sha256": "9df0fa01a5848920bec284bd21de56f70a05d4ab18956f8fd703dee3bd519638",
+    "evidence_url": "https://github.com/eisbaw/cursor_api_demo/blob/97f6856c7427607907f7a9eb821cb85a1cc01972/readme.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1033454860": {
     "decision": "exclude",
     "reason_code": "unrelated",
@@ -5490,6 +5544,15 @@
     "readme_sha256": "8a965c3143ddcad0613cb32834e786a4606f6cedf763a4e30480276e23716182",
     "evidence_url": "https://github.com/ManishModak/data_hive/blob/19feb6ad3efb174338cb38d8697ffb0da96dd93e/docs/extension_analysis.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1102326425": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "The current Meta AI SDK primarily drives a browser to chat and generate images; its documented DGW frame replay is ancillary to an ordinary API wrapper.",
+    "reason_zh": "当前的 Meta AI SDK 主要通过浏览器自动化进行聊天和生成图片；文档中的 DGW 帧重放只是普通接口封装的附属功能。",
+    "readme_sha256": "8c63d1fd6043c36eca15b003e3bac193d9826eff07db4747b750431493a328ed",
+    "evidence_url": "https://github.com/mir-ashiq/metaai-api/blob/bc72dc08324b05a256b5a129badfd378688d8e2d/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1102447381": {
     "decision": "exclude",
@@ -5975,6 +6038,15 @@
     "reason_zh": "《Tak and the Power of Juju》的 README 描述了逐步反编译方法，但仓库没有游戏源码、补丁或分析文件。",
     "readme_sha256": "d7b4f77c67dc2ba1161ed14bfc601e279d2fdd6a1b8217baae4934b43063f76e",
     "evidence_url": "https://github.com/Cwf1997/takandthepowerofjuju/blob/cd91191673f88e1072fb5a412280032d6e14f778/README.md",
+    "reviewed_at": "2026-11-09"
+  },
+  "scan-1117985745": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The repository primarily distributes decompiled RDR2 and GTA game scripts, which are derived files from commercial games.",
+    "reason_zh": "仓库主要分发从 RDR2 和 GTA 等商业游戏反编译得到的脚本，需维护者决定链接政策。",
+    "readme_sha256": "edb05a11a36fda379e9ef3164a8ba49283278af7aa274847eb6cb461899bef54",
+    "evidence_url": "https://github.com/brunosollar/decompiled-scripts/blob/58e8bb3c4a8dbe4a90c87a08e6613a2fec6a60a0/README.md",
     "reviewed_at": "2026-11-09"
   },
   "scan-1118342346": {
@@ -7030,6 +7102,15 @@
     "evidence_url": "https://github.com/cramt/m365-copilot-proxy/blob/65905e881d6597040966aff9b087aa9a908b358a/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "scan-1193211369": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The AKS075 investigation includes substantive HID protocol findings and a Linux client, but also commits Ghidra pseudocode from the commercial Windows driver.",
+    "reason_zh": "AKS075 项目有具体的 HID 协议发现和 Linux 客户端，但仓库同时提交了商业 Windows 驱动的 Ghidra 反编译伪代码，需维护者决定链接政策。",
+    "readme_sha256": "7d53eb464098bc24f4d951a91febd4076bf95818a7a80c804a6bdb2eee3bb21f",
+    "evidence_url": "https://github.com/aar-rafi/aks075-linux/blob/79ba5de82cacde97d9471737f527ae56934086c7/reverse-engineering/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1193673354": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -7065,6 +7146,15 @@
     "readme_sha256": "47f0864a30fe41f78417b143d30412461210654484dbbc0aeaca42284b9d0615",
     "evidence_url": "https://github.com/ukgorclawbot-stack/claude-code-2.1.88-source-restored/blob/60435396c297e26d37e77c99f9ac7e333fe1abc1/README.md",
     "reviewed_at": "2026-11-08"
+  },
+  "scan-1197579118": {
+    "decision": "exclude",
+    "reason_code": "cheat-or-evasion",
+    "reason_en": "Open Claude in Chrome makes removal of the official extension’s domain blocklist a central feature, enabling browser automation on sites the extension blocks.",
+    "reason_zh": "Open Claude in Chrome 将移除官方扩展的域名封锁作为核心功能，让浏览器自动化访问原扩展禁止的网站。",
+    "readme_sha256": "2cba6ec820c78e09c92b3f9474b41ec6a90f7cf4b019431844d7fc572908f3fa",
+    "evidence_url": "https://github.com/noemica-io/open-claude-in-chrome/blob/6a37c291f92c038f85807b77afe6ab1205d7752c/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1198131825": {
     "decision": "hold",
@@ -7632,6 +7722,15 @@
     "readme_sha256": "1ba95555a8d0ee7cc07fe2c837682089ca958028f5097d005a4ef8cf6adc0844",
     "evidence_url": "https://github.com/7a6163/chatplayground-relay-worker/blob/63cb5bad91c21d5c24d8055f1d468e64373788e1/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1248753186": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Windows 1.03 reconstruction is substantive, but the repository commits recovered assembly source for a commercial operating system.",
+    "reason_zh": "Windows 1.03 重建项目内容充实，但仓库提交了商业操作系统的还原汇编源码，需维护者决定链接政策。",
+    "readme_sha256": "75426534079cd4d2a2ac7225a20b982ec9bbbd4f1720d69c664bb59287d78eb8",
+    "evidence_url": "https://github.com/Elias010-01/win103-byteexact/blob/a8361a1c12ca744df696cab9060b069ed08efe07/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1249569972": {
     "decision": "exclude",
@@ -9559,6 +9658,16 @@
     "readme_sha256": "508b83d38567d32fece7eb7c82dabba62de4724d3a77763b248c864bcb8df48b",
     "evidence_url": "https://github.com/cageyluck/GhidraDecompilerPNGExporter/blob/285c1482f0d5d1bb7cef2d0b2779e5a828d567ba/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1351949679": {
+    "decision": "exclude",
+    "reason_code": "duplicate-curated",
+    "reason_en": "The catalog already covers this author's Marvel vs. Capcom 2 PS2 matching decompilation and browser port as mvc2-ps2-decomp-case.",
+    "reason_zh": "目录已有 mvc2-ps2-decomp-case，收录了同一作者的《Marvel vs. Capcom 2》PS2 匹配反编译与浏览器移植。",
+    "readme_sha256": "19c41eb0c2dee0b6592a7c288328a766fb5ed95c9e064e364a714afe6cf1184c",
+    "evidence_url": "https://github.com/g-guthrie/mvc2-port-and-decomp/blob/770560625a2e46df4a7ce908febedc18a9a8d18c/README.md",
+    "reviewed_at": "2026-11-09",
+    "duplicate_of": "mvc2-ps2-decomp-case"
   },
   "scan-1351993174": {
     "decision": "hold",
@@ -15618,6 +15727,15 @@
     "evidence_url": "https://github.com/fossteams/teams-api/blob/60cd5c17a45f7defc0ab21733295fb7e7583e8f5/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "lead-0aed5be513065526234c4823": {
+    "decision": "exclude",
+    "reason_code": "duplicate-curated",
+    "reason_en": "cyxx/hode is Gregory Montoir's Heart of Darkness engine rewrite, the same project the catalog lists as hode-case.",
+    "reason_zh": "cyxx/hode 是 Gregory Montoir 重写的《Heart of Darkness》引擎，与目录中的 hode-case 为同一项目。",
+    "evidence_url": "https://github.com/cyxx/hode/blob/30c17903958f096ba1c9fcde8f6e93e82642c404/README.txt",
+    "reviewed_at": "2026-11-06",
+    "duplicate_of": "hode-case"
+  },
   "lead-0af68af7737d35d626598235": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -16533,6 +16651,14 @@
     "evidence_url": "https://github.com/reAAAq/KrKr2-Next/blob/1abd1ed4e8aec7abd5d2524c3a9ad7886880602f/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-1ba093d681df073a11fa3d0e": {
+    "decision": "exclude",
+    "reason_code": "general-security",
+    "reason_en": "RDPY centers on RDP clients, a session-recording man-in-the-middle proxy and a honeypot; its documented recording is for session replay.",
+    "reason_zh": "RDPY 主要提供 RDP 客户端、记录会话的中间人代理和蜜罐；文档将记录功能用于会话重放。",
+    "evidence_url": "https://github.com/citronneur/rdpy/blob/cef16a9f64d836a3221a344ca7d571644280d829/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-1bad23dfe2e0853788cc9c59": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -17112,6 +17238,14 @@
     "evidence_url": "https://github.com/SmithGoll/Greenier-Farm-3-Decomp/blob/33f5347eb016a61ccb137e62a5ad213e6290a161/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-2322161040de06d6d00609b1": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "bscpylgtv primarily controls and calibrates LG webOS TVs; its firmware-decompilation guide supports settings maintenance but is incidental to the library.",
+    "reason_zh": "bscpylgtv 主要用于控制和校准 LG webOS 电视；固件反编译指南用于维护设置资料，并非该库的主要工作。",
+    "evidence_url": "https://github.com/chros73/bscpylgtv/blob/191e8957a164a7a15b0b687071b534394a161aed/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-234b6c6daf0bc3412d02f77f": {
     "decision": "exclude",
     "reason_code": "no-real-content",
@@ -17418,6 +17552,14 @@
     "reason_zh": "仓库直接提交了商业游戏《Fallout 2》Mac OS X PowerPC 版的大规模反汇编代码，需由维护者判断收录链接。",
     "evidence_url": "https://github.com/ChrisNonyminus/fallout2/blob/394829843a763c44f595ca0cde05a0f28686a3f9/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-277f10b110441f78049dce8f": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "ruxguitar is a tablature player that parses Guitar Pro files for display and MIDI playback; it documents no reverse-engineering investigation.",
+    "reason_zh": "ruxguitar 是用于显示 Guitar Pro 吉他谱并播放 MIDI 的应用，没有记载逆向分析工作。",
+    "evidence_url": "https://github.com/agourlay/ruxguitar/blob/9fc71f3b6942acad638d839945f8bd40d73144fa/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-2795b79df3b4a0ad8cd8187a": {
     "decision": "exclude",
@@ -18094,6 +18236,14 @@
     "evidence_url": "https://github.com/tjwei/xnes/blob/741561eab1286cc7d4b3692fc432b7023adf518b/README",
     "reviewed_at": "2026-11-06"
   },
+  "lead-303b123cba35e44ec22084e7": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "The Shelly Gen4 project develops Matter over Thread replacement firmware, but its documentation presents implementation and flashing rather than analysis of existing firmware.",
+    "reason_zh": "Shelly Gen4 项目开发 Matter over Thread 替代固件，文档重点是实现与刷写，没有记载对原固件的逆向分析。",
+    "evidence_url": "https://github.com/automatous-io/shelly-1-gen4-matter-thread/blob/be56ceff522edf2367fc0328e89a4d24ad8bc922/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-3044dc0cafe55298cd280b4c": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -18478,6 +18628,14 @@
     "evidence_url": "https://github.com/antxiko/AthleticLand-disassembly/blob/0317dca363211135d5b2493d4f636aee2b153522/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-356c71d12d2d3637e31fb405": {
+    "decision": "exclude",
+    "reason_code": "cheat-or-evasion",
+    "reason_en": "DKWDRV's replacement PS2 driver includes automatic PS1 license-check and Libcrypt patching for commercial games.",
+    "reason_zh": "DKWDRV 的 PS2 替代驱动包含针对商业 PS1 游戏的许可证检查及 Libcrypt 自动修补功能。",
+    "evidence_url": "https://github.com/DKWDRV/DKWDRV/blob/5c560c613727444f6e112f14f7cad5f8aaaffdf9/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-35891adfd15b4a72fdf44567": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -18485,6 +18643,14 @@
     "reason_zh": "micropolisJS 将开源游戏 Micropolis 移植到 JS/HTML5，但没有记载对原程序的分析或逆向重建。",
     "evidence_url": "https://github.com/graememcc/micropolisJS/blob/f13a1624d111d235e804bd80f48ba7c9f66a8e0f/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-358cb720c6502e3e6e227c23": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The public repository contains only project descriptions, licences and images; the claimed recompilation pipeline and runtime remain in a private repository.",
+    "reason_zh": "公开仓库只有项目说明、许可证和图片；所述重编译流程与运行时仍保存在私有仓库中。",
+    "evidence_url": "https://github.com/Glitxhhh/XenobladeChroniclesRecompiled/blob/c28c32984bf94b67b67681a5c5af9abde6ff5ad3/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-3594ae193afe74fd14cc8661": {
     "decision": "hold",
@@ -18591,6 +18757,14 @@
     "evidence_url": "https://github.com/JDrocks450/KrabbyQuestEmu/blob/828727378f2285b3c86d79fdf8a83a52d87124f3/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-36fcd16533ec9e0f1c7c32da": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "castv2-client supplies a Chromecast media sender and application controllers; protocol internals are documented in a separate project.",
+    "reason_zh": "castv2-client 提供 Chromecast 媒体发送端和应用控制器；协议内部细节由另一个项目记录。",
+    "evidence_url": "https://github.com/thibauts/node-castv2-client/blob/a083b71f747557c1f3d5411abe7142e186ed9732/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-37163e9b83e4dc2f1c7fcce5": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -18695,6 +18869,14 @@
     "evidence_url": "https://github.com/petemoore/cjs_elephant_antics_disassembly/blob/8d36ed78f6b8ecd90a75804b1ed9e0a991d568d2/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-38aa222459b51df4ff2ed269": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "k5prog documents a reversed UV-K5 programming protocol, but the repository also commits a vendor firmware image and an original EEPROM dump.",
+    "reason_zh": "k5prog 记录了逆向得到的 UV-K5 编程协议，但仓库同时收录厂商固件镜像和原始 EEPROM 转储，需维护者决定链接方式。",
+    "evidence_url": "https://github.com/sq5bpf/k5prog/blob/241ab18b61f6d8933fecf60643fe94322fbf4198/README",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-38cd113a2a8be4762ce06f40": {
     "decision": "exclude",
     "reason_code": "game-mod-no-re",
@@ -18751,6 +18933,14 @@
     "reason_zh": "《真·女神转生 1》反编译项目已声明迁往 Codeberg，此 GitHub 仓库不再是项目主页。",
     "evidence_url": "https://github.com/TheCommandoChicken/smt-decomp/blob/0607fe76fa1895242eb5b2b81c7f20c19a77a392/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-3972d0d351203b20ebf822a1": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "AiLight is replacement firmware for RGBW bulbs, with web and MQTT controls; its documentation describes device features without hardware or firmware analysis.",
+    "reason_zh": "AiLight 是 RGBW 灯泡的替换固件，提供网页和 MQTT 控制；文档介绍设备功能，没有硬件或固件分析。",
+    "evidence_url": "https://github.com/stelgenhof/AiLight/blob/250f59ecccda18d9d39200aafb96ba30dafb9103/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-398ecf2608e47ea53228ac2e": {
     "decision": "hold",
@@ -19457,6 +19647,14 @@
     "evidence_url": "https://github.com/DarkRTA/rb3/blob/5e34ff1a592632fcf7f0f067c56f8e91b403ae92/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-412ed54907deef23a9ef386a": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "ThermostatBecaWifi replaces the thermostat Wi-Fi firmware and adds MQTT and Webthings control; its documentation centers on device operation and flashing.",
+    "reason_zh": "ThermostatBecaWifi 替换温控器的 Wi-Fi 固件，增加 MQTT 和 Webthings 控制；文档主要介绍设备功能与刷写。",
+    "evidence_url": "https://github.com/klausahrenberg/WThermostatBeca/blob/425ab6139d67bc52b137cca177412fbc6ba5020b/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-414e01f502ddb2978c4b70ea": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -19994,6 +20192,14 @@
     "evidence_url": "https://github.com/emeric-martineau/openjill/blob/0b13e96fcbf946ed43f1c4f00ab4ee5d436bcd46/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-48f9f2ac8e104df39fd340d7": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "KmanSonoff supplies MQTT firmware for Sonoff switches and Home Assistant examples, with no documented analysis of the original firmware or device protocol.",
+    "reason_zh": "KmanSonoff 提供 Sonoff 开关的 MQTT 固件和 Home Assistant 配置示例，没有记录原固件或设备协议的逆向分析。",
+    "evidence_url": "https://github.com/KmanOz/KmanSonoff/blob/d36cff0dafb84060463766d92d386f8beb118732/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-492ce9c40fb92333652f3b70": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -20227,6 +20433,14 @@
     "evidence_url": "https://github.com/dk8827/ra-port/blob/9495a0865b7290a92d6592ac479dffb89667d14c/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-4c84254de9bc5d2cbaf3ea5e": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "ValvePython/dota2 is a Python module for interacting with Dota 2's Game Coordinator; its documentation does not describe protocol investigation or reconstruction.",
+    "reason_zh": "ValvePython/dota2 是与 Dota 2 Game Coordinator 交互的 Python 模块，文档没有描述协议研究或重建过程。",
+    "evidence_url": "https://github.com/ValvePython/dota2/blob/6ccebc3689e107746ec32ce07fc2f5cacecc0e18/README.rst",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-4c9e2fdbab4148216ed509f5": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -20378,6 +20592,14 @@
     "reason_zh": "Sims2DECOMP 记录了 GameCube 版《模拟人生 2》的匹配反编译工作，但仓库提交了 ProDG 编译器发行文件，需维护者判断链接政策。",
     "evidence_url": "https://github.com/natebag/Sims2DECOMP/blob/72278b244e431de11a88e658fb81df8e5057a3aa/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-4ed881a713ebdd994b638208": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "myevic is replacement firmware for vaping devices, with menus, build instructions and a committed binary, but no documented firmware analysis or reconstruction method.",
+    "reason_zh": "myevic 是电子烟设备的替代固件，包含菜单、构建说明和固件文件，但未记载固件分析或重建方法。",
+    "evidence_url": "https://github.com/ClockSelect/myevic/blob/546394bcf1ac9ab63381fa2fb484a0dfa11d443f/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-4ede35beae530cb249a313a3": {
     "decision": "hold",
@@ -20684,6 +20906,14 @@
     "evidence_url": "https://github.com/josephw/titl/blob/e7060370973d624d5c7b18f82303407b76421501/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "lead-5248eede2bb522540b4d4498": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The NBA Street V3 port documents PS2 static recompilation, but its Mac release carries already recompiled game code and its release materials include an HD texture pack.",
+    "reason_zh": "NBA Street V3 移植项目记录了 PS2 静态重编译，但 Mac 发布包包含预先重编译的游戏代码，发布材料还包含高清材质包，需维护者决定链接方式。",
+    "evidence_url": "https://github.com/recomp-code/street-recomp-v3/blob/a90c95b4eeb79aab8dc464503d892cc188d97fee/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-525ce0074491e385949d4d08": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -20772,6 +21002,14 @@
     "evidence_url": "https://github.com/3dsdecomp/nnsdk/blob/d50a4b89d13c929d2438abf92e5a48f039efffbf/CMakeLists.txt",
     "reviewed_at": "2026-11-06"
   },
+  "lead-5455056a4174155afaa6e824": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "python-roku is a client library for Roku remote commands, app launch and device discovery using the documented control interface.",
+    "reason_zh": "python-roku 是通过 Roku 控制接口发送遥控命令、启动应用和发现设备的客户端库。",
+    "evidence_url": "https://github.com/jcarbaugh/python-roku/blob/ee711acc3d3cc8d20db521573a12d11ddeb9075f/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-548442c791af6acbe0c34ce5": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -20787,6 +21025,14 @@
     "reason_zh": "python-evtx 用于读取和导出 Windows 事件日志，其格式知识来自既有解析器和公开文档。",
     "evidence_url": "https://github.com/williballenthin/python-evtx/blob/c0007441657899c39180de10a2be1a0e43dbeaf9/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-54a9c54cbbbf58c641a493b5": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "This repository customizes DualTachyon's UV-K5 firmware with radio features and build switches; its stated work is firmware modification.",
+    "reason_zh": "该仓库在 DualTachyon 的 UV-K5 固件上加入电台功能和编译开关，项目重点是固件定制。",
+    "evidence_url": "https://github.com/OneOfEleven/uv-k5-firmware-custom/blob/5bdbf3fd4b61647a66542c38fe57abd667627921/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-54e8529fe4ac723d421b2de4": {
     "decision": "exclude",
@@ -20836,6 +21082,14 @@
     "reason_zh": "Bose-headphones-firmware 只存放 Bose 固件镜像及下载索引，除提示使用 binwalk 外没有分析代码或研究结果。",
     "evidence_url": "https://github.com/avicoder/Bose-headphones-firmware/blob/c73006ab5a7a037d84e644fdd131087ef9c78cc2/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-559e1589366fb2d9c33d985f": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "feiq primarily documents a Mac messaging client; it mentions protocol parsing and unresolved transfers but gives no protocol findings or investigation.",
+    "reason_zh": "feiq 主要介绍 Mac 消息客户端；虽提到协议解析和未解决的传输功能，却没有给出协议研究结果或分析过程。",
+    "evidence_url": "https://github.com/compilelife/feiq/blob/efdce0a5e92c612f31cc3a80d93956b3a8c972e0/readme.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-55a0da9949981f2083db01b1": {
     "decision": "exclude",
@@ -21317,6 +21571,14 @@
     "evidence_url": "https://github.com/jeb495/Zombie-Farm-Decompiled/blob/3c83e7efde8877b139d221b7109e09fb29c5e1f5/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-5cde06300f7b0d0311ea80e9": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "purple-discord is a Pidgin plugin for Discord messaging; its README documents client features and build steps without reverse-engineering findings.",
+    "reason_zh": "purple-discord 是用于 Discord 消息通信的 Pidgin 插件，文档介绍客户端功能和编译方法，没有逆向分析成果。",
+    "evidence_url": "https://github.com/EionRobb/purple-discord/blob/ef5993d5677978c08df845601b385f42a23132a9/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-5ce3dfae947eee116f06c046": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -21469,6 +21731,14 @@
     "evidence_url": "https://github.com/11NU0/th12-decomp/blob/ebdf8f26a4cde37442a158f5ca0b8e1781fa1aed/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-5e6b64bf708a5b319c175c3a": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "OpenX32 builds a Linux-based operating system for X32 and M32 mixers; its README documents hardware support and operation without describing reverse engineering.",
+    "reason_zh": "OpenX32 为 X32 和 M32 调音台构建基于 Linux 的操作系统；文档介绍硬件支持与运行方式，没有描述逆向工程过程。",
+    "evidence_url": "https://github.com/OpenMixerProject/OpenX32/blob/fd94919c1b2fbed21c7ff8e51ca316abf37dcf5f/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-5e8b9915f4ee2a60b6ccbbf6": {
     "decision": "exclude",
     "reason_code": "duplicate-queue",
@@ -21526,6 +21796,14 @@
     "reason_zh": "SadieEmulator 介绍了 Habbo 酒店托管服务器及兼容客户端，却没有记录原客户端观察、协议发现或重建方法。",
     "evidence_url": "https://github.com/sadie-group/SadieEmulator/blob/bb815d8a6468209c6d71a4afc239992c537fb1eb/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-5f770a4f26a5a45e62e015fd": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "Gromox is a groupware server implementing mail and Exchange interfaces; its protocol parsers serve normal server operation rather than program analysis.",
+    "reason_zh": "Gromox 是实现邮件及 Exchange 接口的群组协作服务器；协议解析器用于服务器正常运行，并非程序分析。",
+    "evidence_url": "https://github.com/grommunio/gromox/blob/a56a7d5e235f88c6d93b898742cc8eab7dda927d/README.rst",
+    "reviewed_at": "2026-11-09"
   },
   "lead-5f8f5471482e44478fa6bb90": {
     "decision": "exclude",
@@ -22894,6 +23172,14 @@
     "evidence_url": "https://github.com/nw4f/Sys/blob/8d63a1afa9ffa6c18703002994883f13f75be554/src/nw/math/math_Constant.cpp",
     "reviewed_at": "2026-11-06"
   },
+  "lead-7262301a82adc8f8ff1445c7": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "zDC1 supplies replacement firmware and app control for a DC1 power strip, but its described work does not document analysis of the original device.",
+    "reason_zh": "zDC1 提供 DC1 排插的替代固件和应用控制；项目说明没有记录对原设备的分析过程。",
+    "evidence_url": "https://github.com/a2633063/zDC1/blob/3299a9fe24c917623178b122f9025a065685e410/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-7265147d0f6757929d3eedcc": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -23815,6 +24101,14 @@
     "evidence_url": "https://github.com/russo-2025/papyrus-compiler/blob/b9dc9951f4264084c8ded6721b20f0d81c021d58/bin/Original%20Compiler/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "lead-7db00bf15995b63827001569": {
+    "decision": "exclude",
+    "reason_code": "fork-or-mirror",
+    "reason_en": "blues-sdl1 copies cyxx's Blues Brothers engine rewrite, curated as blues-brothers-engine-case, and builds it against SDL1.",
+    "reason_zh": "blues-sdl1 复制了 cyxx 重写的《Blues Brothers》引擎（目录中为 blues-brothers-engine-case），改用 SDL1 构建。",
+    "evidence_url": "https://github.com/twojstaryzdomu/blues-sdl1/blob/d365830e7edbd927f625bfc3b2c558c5bc031a22/README.md",
+    "reviewed_at": "2026-11-06"
+  },
   "lead-7dcb212c8b52d4c580288eea": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -24623,6 +24917,14 @@
     "evidence_url": "https://github.com/xtreme8000/BetterSpades/blob/a695aaa7686561c6a3565499716227d8ae3483aa/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-876b91d6142450a44284f2e7": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The DC1 project documents hardware and I2C analysis for replacement firmware, but it also commits two files identified as original device firmware.",
+    "reason_zh": "DC1 项目记录了硬件与 I2C 分析并制作替换固件，但仓库同时收录了两个标为设备原始固件的文件，需维护者决定链接政策。",
+    "evidence_url": "https://github.com/Samuel-0-0/phicomm_dc1-esphome/blob/37527b60f7e9e82304d9f414d1079e439a056e30/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-87797562670eb4cd38c18e65": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -24638,6 +24940,14 @@
     "reason_zh": "Diamonds 是一款向旧作致敬的可玩打砖块游戏，文档介绍操作和构建，没有记录对原作的分析或重建过程。",
     "evidence_url": "https://github.com/mblaine/Diamonds/blob/0a7f98e8fc434ae6259d295304a06e637c316ee2/README.txt",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-87afe542313e67968c1ef8ab": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The project recompiles Bleach: Soul Resurrección from a player's dump, but its included translations of game text need a maintainer decision under the policy for derived proprietary content.",
+    "reason_zh": "项目使用玩家的游戏备份重新编译 Bleach: Soul Resurrección，但仓库收录了游戏文本译文；这些衍生内容是否符合收录政策，需要维护者裁定。",
+    "evidence_url": "https://github.com/xPXavierx/bleach-soul-resurreccion-recomp/blob/4a81cf065a873c4219999952c3054cac2919d7ca/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-87b8a5db179d46e997bf7990": {
     "decision": "exclude",
@@ -25884,6 +26194,14 @@
     "evidence_url": "https://github.com/librespot-org/librespot/blob/99b6088bf3ea028f90192676ac1a337fa4b2ed12/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-984b2bcb94c846e358b269f6": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "purple-teams is a Pidgin client plugin for Teams; its documentation covers messaging, login and installation without describing reverse engineering.",
+    "reason_zh": "purple-teams 是用于 Teams 的 Pidgin 客户端插件，文档介绍消息、登录和安装，没有描述逆向工程工作。",
+    "evidence_url": "https://github.com/EionRobb/purple-teams/blob/f5566fba948703e17caa277c334375f58b52baf9/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-98693bfae90ed533da903ca3": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -26059,6 +26377,14 @@
     "reason_zh": "《Magic Carpet 2》的逆向重建属于收录范围，但仓库提交了增强版游戏图像及派生文件，需由维护者决定能否收录。",
     "evidence_url": "https://github.com/turican0/remc2/blob/9c871e662a2dd9acd13bbcb6f7bd2d5a22c3c0c8/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-9a4a29893aa77c660ee54429": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "Telegram-Server-Java is an experimental server implementation of the published Telegram API and MTProto, with no documented protocol reverse engineering.",
+    "reason_zh": "Telegram-Server-Java 是基于 Telegram API 和 MTProto 的实验性服务端实现，没有记载协议逆向研究。",
+    "evidence_url": "https://github.com/aykutalparslan/Telegram-Server-Java/blob/8594c0c95f7a56069bf6cff50a2edddf66aafd48/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-9a91cc3a5d652fd7877d224e": {
     "decision": "hold",
@@ -26355,6 +26681,14 @@
     "reason_zh": "《FlatOut 2》反编译仓库在重建源码之外还提交了 Ghidra 工程归档和专有 PDB 文件，需要维护者判断收录政策。",
     "evidence_url": "https://github.com/ZackWilde27/FlatOut-2-decomp/blob/e22b2417f8c17c064fa08552cc7ec622d388f7cb/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-9e236652c5f7e74541b7da19": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "pypsrp is a client library for remote Windows command execution through PSRP and WinRM; its subject is system administration rather than reverse engineering.",
+    "reason_zh": "pypsrp 通过 PSRP 和 WinRM 在远程 Windows 主机上执行命令，主要用于系统管理，而非逆向分析。",
+    "evidence_url": "https://github.com/jborean93/pypsrp/blob/deac7f27b739d0c267888880cd7decf108505c4e/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-9e45be8b561843e3258781d0": {
     "decision": "hold",
@@ -26805,6 +27139,15 @@
     "evidence_url": "https://github.com/vinheim3/megaManX3-disasm/blob/2e2e9ac8c29daed0372d4299fdd43d6aaf468f94/Makefile",
     "reviewed_at": "2026-11-06"
   },
+  "lead-a4a2c6a1c7ec2daf59b2680b": {
+    "decision": "exclude",
+    "reason_code": "duplicate-curated",
+    "reason_en": "Bloodborne for Linux builds on the already cataloged bbport runtime for the same game, adding player-facing features to that port.",
+    "reason_zh": "Bloodborne for Linux 基于已收录的 bbport 游戏运行环境，为同一款游戏增加面向玩家的功能。",
+    "evidence_url": "https://github.com/ayozetr/bloodborne_linux/blob/1d0bbec9785843eca8661f481f3a7f47de126829/README.md",
+    "reviewed_at": "2026-11-09",
+    "duplicate_of": "bbport-bloodborne-case"
+  },
   "lead-a4e2c3fc480d5c845cd34ed9": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -26820,6 +27163,14 @@
     "reason_zh": "Knightmare Amiga 移植在汇编源码之外提交了大量游戏图像、地图、调色板等素材，需要维护者判断是否收录链接。",
     "evidence_url": "https://github.com/djh0ffman/KnightmareAmiga/blob/920dc94a7925594b9891a35bf3fc9fba97d28d29/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-a4fffd036676dfb36da36447": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "The Java library controls Chromecast devices through the V2 protocol, but its documented work is client functionality rather than protocol analysis.",
+    "reason_zh": "该 Java 库通过 V2 协议控制 Chromecast 设备，文档介绍的是客户端功能，没有协议分析内容。",
+    "evidence_url": "https://github.com/vitalidze/chromecast-java-api-v2/blob/c1358030b1b6afa11dc2a83a0049783e7b5bef7e/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-a50b56d9c12be87dea812137": {
     "decision": "hold",
@@ -27036,6 +27387,14 @@
     "reason_zh": "作者明确将重编译和渲染器归于 broken-bond-recomp；本仓库主要增加 PC 选项、控制方式、修复及辅助功能。",
     "evidence_url": "https://github.com/Auremana666/Naruto-The-Broken-Bond-PC-Port/blob/570142f98b7f852fce944776bee2dd3369d1cd10/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-a7b34426d5a93ceee44995d7": {
+    "decision": "exclude",
+    "reason_code": "distribution-site",
+    "reason_en": "zM1 presents M1 firmware use and flashing guides, while its repository contains documents and a flashing archive rather than firmware source or protocol findings.",
+    "reason_zh": "zM1 介绍 M1 固件的使用与烧录，仓库中只有文档和烧录工具压缩包，没有固件源码或协议研究成果。",
+    "evidence_url": "https://github.com/a2633063/zM1/blob/574a08dd657e6d8855ea431d9c6eeade3252ef39/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-a7bf305ce5280e115ff46d56": {
     "decision": "hold",
@@ -27692,6 +28051,14 @@
     "evidence_url": "https://github.com/PocketRelay/Server/blob/71af9676ee1bc2826d2dc9507f80539b8ecd9717/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-b0f0b33800b3a26c5a63b924": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "SNANDer documents general chip identification, reading, erasing, writing and verification through a CH341A programmer, without an analysis workflow.",
+    "reason_zh": "SNANDer 介绍通过 CH341A 编程器识别、读取、擦除、写入及校验芯片，未提供针对设备内容的分析流程。",
+    "evidence_url": "https://github.com/McMCCRU/SNANDer/blob/5fbd17ff0d7ca11d7abd85e0f163136b9f046380/readme.txt",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-b0fe68192e321a0d4ffcda91": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -27803,6 +28170,14 @@
     "reason_zh": "该逐字节匹配的 Super Mario Bros. 3 反汇编仓库提交了数百个源自商业游戏的 CHR 图像文件，需决定是否收录。",
     "evidence_url": "https://github.com/captainsouthbird/smb3/blob/09b1bd81a788de8ceec664a34094e84ddb463117/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-b2f8e99f504a12db0300fcd4": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "RF-Bridge-EFM8BB1 is alternative firmware for a Sonoff RF Bridge chip; its brief documentation does not describe protocol investigation or firmware reconstruction.",
+    "reason_zh": "RF-Bridge-EFM8BB1 是 Sonoff RF Bridge 芯片的替代固件，现有说明没有记载协议研究或固件重建。",
+    "evidence_url": "https://github.com/Portisch/RF-Bridge-EFM8BB1/blob/af1bddb3d81c79d67063184219ec21f8249dffd0/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-b2fb17f5258b3aaaa9f388ee": {
     "decision": "hold",
@@ -27958,6 +28333,14 @@
     "evidence_url": "https://github.com/antxiko/TreasureOfUsas-disassembly/blob/e1f2ac588502f81d37655d8457ea5ebe81254d5d/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-b4bce1ab626a4b513095fa58": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "MPV Shim is a Plex playback client for casting media from mobile and web apps; its documented features concern playback and configuration.",
+    "reason_zh": "MPV Shim 是接收 Plex 手机端和网页端投送内容的播放器，文档介绍的是播放、字幕及配置功能。",
+    "evidence_url": "https://github.com/iwalton3/plex-mpv-shim/blob/22696d876a43ab410ff56ebfb96851dcfc1cbf37/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-b509b774ee7405fedf7a310f": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -28085,6 +28468,14 @@
     "reason_zh": "Alleyway 反汇编仓库提交了关卡二进制文件和游戏图像 PNG，因此虽有 ROM 重建说明，仍需维护者决定链接政策。",
     "evidence_url": "https://github.com/CelestialAmber/alleyway/blob/f01fee622b690f43f77fd4c7f00a2484986f4602/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-b6e1ff46fb1ee02607e121e0": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "SharpCaster is a Chromecast control SDK and console app for discovery, media playback and queues, without a documented reverse-engineering investigation.",
+    "reason_zh": "SharpCaster 提供 Chromecast 设备发现、媒体播放和队列控制的 SDK 与命令行应用，未记载逆向分析过程。",
+    "evidence_url": "https://github.com/Tapanila/SharpCaster/blob/d89e7d87e4a24925612b7d2491ad48d89f34e486/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-b6f16f6d57336d09b7865537": {
     "decision": "hold",
@@ -28422,6 +28813,14 @@
     "evidence_url": "https://github.com/Novum/vkQuake/blob/2ae5628385b59bbc0b9149bbee733048151cf757/readme.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-bb6f61a2fd98b158afe20c7d": {
+    "decision": "exclude",
+    "reason_code": "general-security",
+    "reason_en": "mfoc-hardnested ports and integrates MIFARE Classic authentication-key recovery attacks; its documented purpose is access-key recovery.",
+    "reason_zh": "mfoc-hardnested 移植并整合 MIFARE Classic 认证密钥恢复攻击，文档所述用途是找回卡片访问密钥。",
+    "evidence_url": "https://github.com/nfc-tools/mfoc-hardnested/blob/a6007437405a0f18642a4bbca2eeba67c623d736/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-bb8f0f83e183ce67e97fb936": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -28542,6 +28941,14 @@
     "reason_zh": "《The Sentinel》仓库收录重建的受版权保护游戏汇编代码、参照二进制文件和成品光盘镜像，需由维护者决定。",
     "evidence_url": "https://github.com/markmoxon/the-sentinel-source-code-bbc-micro/blob/cc4eaa11b734ad5b2de969cbf214d68404942641/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-bd6e0219e27437524b2e172d": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "YaH3C is a campus-network authentication client; its documentation gives installation and login steps without describing analysis of H3C authentication.",
+    "reason_zh": "YaH3C 是校园网认证客户端，文档提供安装和登录步骤，没有介绍对 H3C 认证机制的分析。",
+    "evidence_url": "https://github.com/humiaozuzu/YaH3C/blob/c0d873c6ca998aa6d04fa89d3034c4d18981d26b/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-bda373ae11ba0f02aa9e13e1": {
     "decision": "exclude",
@@ -28718,6 +29125,14 @@
     "reason_zh": "Bosman Edition 发布游戏重建项目，但其下载版本包含原版《Championship Manager》游戏文件及第三方数据库，需由维护者决定收录方式。",
     "evidence_url": "https://github.com/maxevans60/cm0102-bosman-edition/blob/0d32841cd4f3a6cef63c6d2242d80e57ab88cab1/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-c0558d451c887758eb8e6b9a": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Sonic 3D Blast repository provides disassembly notes and an IDC database, but also commits a complete game ROM and an IDA database.",
+    "reason_zh": "Sonic 3D Blast 仓库提供反汇编笔记和 IDC 数据库，同时收录完整游戏 ROM 与 IDA 数据库，需维护者决定链接政策。",
+    "evidence_url": "https://github.com/sonicretro/s3ddisasm/blob/6d7815119e662b162875d64be58d991fac582f2d/README",
+    "reviewed_at": "2026-11-09"
   },
   "lead-c06acdbcb40df75e1d4f1cea": {
     "decision": "exclude",
@@ -28999,6 +29414,14 @@
     "reason_zh": "bresser-esphome 将现成的气象传感器解码器接入 ESPHome 和 Home Assistant，文档介绍的是接收与配置，没有协议分析内容。",
     "evidence_url": "https://github.com/charlyschulte/bresser-esphome/blob/67653539da8c0813b5ffd41dfdd2658f0fd66033/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-c42c65518756b16ed6d9aa00": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "Sonoff-HomeAssistant is replacement switch firmware for MQTT and Home Assistant control, with no documented analysis of Sonoff's original firmware.",
+    "reason_zh": "Sonoff-HomeAssistant 是通过 MQTT 和 Home Assistant 控制开关的替代固件，项目没有记录原厂固件分析。",
+    "evidence_url": "https://github.com/KmanOz/Sonoff-HomeAssistant/blob/fab22f9f34c21079a11811ac2c256a1e8c3b353c/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-c42fde6ed5806f98ae14c1f2": {
     "decision": "exclude",
@@ -29400,6 +29823,14 @@
     "reason_zh": "Adam's Ant Farm 描述了实质性的 Body Harvest 移植，但该仓库只有文档和图片，用户被引导至发行包及单独的源码归档。",
     "evidence_url": "https://github.com/LunarLaurus/adams-ant-farm-recomp/blob/e21894159461074d7eb1806f6d6dae2128845ec0/README.md",
     "reviewed_at": "2026-11-08"
+  },
+  "lead-c8bc4bda493e219a87615470": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "Project Stellar describes an Xbox add-on and BIOS reimplementation, but this repository contains only product text, legal files and images, without code or findings.",
+    "reason_zh": "Project Stellar 介绍 Xbox 扩展板和 BIOS 重实现，但仓库只有产品介绍、法律文件及图片，没有代码或研究成果。",
+    "evidence_url": "https://github.com/MakeMHz/project-stellar/blob/dd6d4d483712a176769a94ae63919578883fb0b8/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-c8c41c5328cf8e3c9de4e079": {
     "decision": "exclude",
@@ -32375,6 +32806,15 @@
     "evidence_url": "https://github.com/tvoybro/Balloon-fight-VS-for-NES/blob/ab3d7f9bf933dc9cc3847deb6470494b20be9b1e/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-f2752f95107de2745a8274fd": {
+    "decision": "exclude",
+    "reason_code": "duplicate-curated",
+    "reason_en": "YukaTool covers the same Yuka System archive and script analysis as the existing yukatool catalog entry, with a rewritten implementation in this repository.",
+    "reason_zh": "YukaTool 与已收录的 yukatool 条目同样处理 Yuka System 的归档和脚本；这里是其重写实现。",
+    "evidence_url": "https://github.com/AtomCrafty/yukatool2/blob/fd8f445dfe685f5d0b724cfecbcbc91963a87376/README.md",
+    "reviewed_at": "2026-11-09",
+    "duplicate_of": "yukatool"
+  },
   "lead-f28b5290d2572a0d6113076f": {
     "decision": "exclude",
     "reason_code": "detection-only",
@@ -32719,6 +33159,14 @@
     "reason_zh": "Tempest 提交了包含 ROM 衍生数据的 C 文件，其游戏字节的再分发需要维护者判断。",
     "evidence_url": "https://github.com/tcottrill/Tempest-Full-Disassembly-and-C-Port/blob/da0fa4d6324f8cac22da2f488b1617a839a79fb0/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-f72ec5d102f71921bd2649b9": {
+    "decision": "exclude",
+    "reason_code": "general-application",
+    "reason_en": "NetAudio documents a Dante device controller and protocol library, but its stated work centers on routing, configuration and monitoring rather than investigating Dante behavior.",
+    "reason_zh": "NetAudio 文档介绍 Dante 设备控制器和协议库，主要功能是音频路由、配置与监控，没有记录对 Dante 行为的研究。",
+    "evidence_url": "https://github.com/chris-ritsen/network-audio-controller/blob/923829774e815afca54c8238adfbf012cc77faf8/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-f759f830e3314c84f22d1ae7": {
     "decision": "hold",

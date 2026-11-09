@@ -6,13 +6,14 @@
 
 [English](native-binary.md)
 
-**62 个案例**
+**64 个案例**
 
 - [**8088 BIOS：反汇编 Tandy 与 IBM PC 固件映像**](https://github.com/ricardoquesada/bios-8088) - 该仓库反汇编 8088 机器的 BIOS 镜像：Tandy 1000、Tandy 1000A、Tandy 1000 HX、IBM PCjr 和 IBM PC 5150。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bios-8088/)</sub>
 - [**AGS Aging Cartridge：反汇编 7.0 版**](https://github.com/Normmatt/ags_aging) - 该项目以用户提供的 Game Boy Advance ROM 为输入，将 AGS Aging Cartridge 7.0 重建为汇编与 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ags-aging-cartridge-case/)</sub>
 - [**Character Pipeline：2001 年 4 月版库反编译**](https://github.com/doldecomp/dolcp-apr2001) - Character Pipeline April 2001 Libraries 重建该组件已构建代码库的 C 源码，涵盖角色、动画、控制、几何调色板、光照、着色器和蒙皮库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/character-pipeline-apr2001-decomp-case/)</sub>
 - [**cod4map：重建 Call of Duty 4 的 BSP 编译器**](https://github.com/prd0nja/cod4map) - cod4map 根据 2007 年随 Call of Duty 4 模组工具发布的可执行文件重建 BSP 编译器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cod4map-reconstruction-case/)</sub>
 - [**dargh：重建 Skyrim 的 Dynamic Animation Replacer**](https://github.com/noxsidereum/dargh) - dargh 根据对 Dynamic Animation Replacer 1.1.2 和 1.1.3 DLL 的分析，以 C++ 重建用于 Skyrim Special Edition 的替代 DLL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dargh-case/)</sub>
+- [**DLSS 5 Neural Rendering：通过 DLL 分析重建运行时模型**](https://huggingface.co/inarikami/dlss5-nr-reverse-engineering) - DLSS 5 Neural Rendering 通过静态分析 NBA 2K27 附带的 nvngx\_dlssnr.dll 310.8.0.0，重建 NVIDIA 模型的部分结构。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dlss5-nr-reverse-engineering-case/)</sub>
 - [**dolnetbp：重建 GameCube 网络 SDK 库**](https://github.com/Cuyler36/dolnetbp) - dolnetbp 以 C 重建 GameCube Dolphin Network Base Package 的 eth、mdm 和 netcfg 库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dolnetbp-case/)</sub>
 - [**Dolphin SDK 2004 Libraries：反编译 GameCube SDK 归档库**](https://github.com/doldecomp/dolsdk2004) - Dolphin SDK 2004 Libraries 将 2004 年 4 月 20 日版 Dolphin SDK 的已编译归档库重建为 C 与汇编源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dolphin-sdk-2004-libraries-case/)</sub>
 - [**dolsocketlibrary：重建 Dolphin 网络库**](https://github.com/Cuyler36/dolsocketlibrary) - dolsocketlibrary 以 C 重建 Dolphin Network Base Package 的 ip 和 dvdeth 库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dolsocketlibrary-case/)</sub>
@@ -34,6 +35,7 @@
 - [**libgpu2：PlayStation 2 图形合成器模型重建**](https://github.com/aap/libgpu2) - libgpu2 将索尼 1998 年 PlayStation 2 图形合成器软件模型的 23 个 ELF32/i386 目标文件重建为可构建的 C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/libgpu2-reconstruction-case/)</sub>
 - [**libmd12：E-mu SP-1200 与 SP-12 音频通路的 C 模型**](https://github.com/Mudb0y/libmd12) - E-mu SP-1200 与 SP-12 采样器音频通路的 C99 库：音高回放、滤波器和动态滤波器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/libmd12-sp1200-case/)</sub>
 - [**linker\_pc：重建《Call of Duty 4》的 fastfile 链接器**](https://github.com/prd0nja/linker_pc) - linker\_pc 根据 2008 年发布的可执行文件，重建《Call of Duty 4》模组工具中的 fastfile 链接器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/call-of-duty-4-linker-pc-case/)</sub>
+- [**linux-apfs-rw：在 Linux 内核模块中重建 APFS 支持**](https://github.com/linux-apfs/linux-apfs-rw) - linux-apfs-rw 根据逆向获得的格式知识及尚不完整的官方规范，在 Linux 内核模块中实现 Apple APFS 文件系统支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/linux-apfs-rw-case/)</sub>
 - [**lv0pen：PlayStation 3 启动链的匹配源代码**](https://github.com/sagemono/lv0pen) - lv0pen 用原来的编译器重建 PlayStation 3 启动链程序和隔离的 SPU 模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lv0pen/)</sub>
 - [**Microsoft Anna：TTS20 引擎的逐位一致 C 重建**](https://github.com/KamiKitsune420/ms-ana-decomp) - 把 Microsoft Anna（Windows Vista 与 Windows 7 的 TTS20 语音）重建为读取原始语音数据文件的 C99。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ms-anna-tts-case/)</sub>
 - [**Microsoft Sam：SAPI 5 引擎的可移植 C 重建**](https://github.com/KamiKitsune420/ms-sam-mike-mary-decomp) - 把 Windows XP 的 SAPI 5 引擎 spttseng.dll（Microsoft Sam、Mike 和 Mary）重建为读取原始语音文件的 C99。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ms-sam-mike-mary-case/)</sub>
