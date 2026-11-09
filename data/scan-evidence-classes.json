@@ -2,7 +2,7 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "scan-evidence-class-v1",
-  "generated_at": "2026-11-07T03:49:00+00:00",
+  "generated_at": "2026-11-09T14:46:42+00:00",
   "source": "data/source-index.json",
   "source_completed_at": "2026-10-16T11:55:19.172701Z",
   "entry_count": 3500,
@@ -14,7 +14,7 @@
   },
   "unknown_count": 0,
   "class_zero_count": 0,
-  "method": "Coarse documentation-evidence classes from the committed automated README scan. The scan records README size, heading count and section signals, but not release assets, demo images or runtime behaviour. This mapping does not change the scan record and is not a curated evidence class.",
+  "method": "Coarse documentation-evidence classes from the committed automated README scan. The scan records README size, heading count and section signals, but not release assets, demo images or runtime behaviour. The mapping is kept separately from the scan record and from the curated evidence classes.",
   "rubric": {
    "0": "Never assigned automatically. Class 0 requires a manual curated review.",
    "1": "README documents both installation and usage. Demo, release assets and buildability remain unobserved.",
