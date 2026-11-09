@@ -10,6 +10,7 @@
 
 ## 静态重编译
 
+- [**Power Dozer：静态重编译《Blast Corps》**](https://github.com/djultra64/Power-Dozer) - Power Dozer 使用 N64Recomp 静态重编译《Blast Corps》美版 Rev 1，并通过 N64ModernRuntime 和 RT64 在 Windows、Linux 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/power-dozer-case/)</sub>
 - [**Project 8 Plus：《Tony Hawk's Project 8》原生静态重编译移植**](https://github.com/MaxLeiter/project-8-plus) - Project 8 Plus 从用户自备的 PS3《Tony Hawk's Project 8》构建原生 PC 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-8-plus-case/)</sub>
 - [**Project Arwing (2)：由一致性反汇编重编译的 Star Fox 2**](https://github.com/carlosrmz009/arwing2) - 从以运行覆盖率为种子的 65816 与 SuperFX 反汇编重建 Star Fox 2：反汇编可重新汇编为与原 ROM 一致的文件，再静态翻译为 C，生成原生 Windows、macOS 和 Linux 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-arwing-2-star-fox-2-recomp-case/)</sub>
 - [**Project Arwing：由一致性反汇编重编译的 Star Fox**](https://github.com/carlosrmz009/arwing) - 依据运行覆盖率和递归下降反汇编 Star Fox 的 65816 与 SuperFX 代码，重新汇编出与原 ROM 一致的文件，再静态翻译为 C，运行于从零编写的 SNES 运行时，支持 Windows、macOS 和 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-arwing-star-fox-recomp-case/)</sub>
@@ -627,5 +628,4 @@
 - [**Chuckie Egg：BBC 游戏逻辑重建**](https://github.com/pbrook/Chuckie-Egg) - 该项目用 C 重建 Chuckie Egg 的关卡加载、角色移动、鸭子、升降台、计分及渲染后端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/chuckie-egg-bbc-recreation-case/)</sub>
 - [**ClassiCube：Minecraft Classic 客户端的净室重建**](https://github.com/ClassiCube/ClassiCube) - ClassiCube 以净室逆向工程方法，用 C 语言重建 2009 年的 Minecraft Classic 客户端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/classicube-case/)</sub>
 - [**Clone Dash：重建 Muse Dash 游戏玩法**](https://github.com/marchc1/CloneDash) - Clone Dash 以跨平台 C# 游戏引擎重建《Muse Dash》的节奏玩法，从玩家的 Steam 安装目录读取关卡。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/clone-dash-case/)</sub>
-- [**CoD4 Rewrite：Rust/Bevy 游戏重建**](https://github.com/Nilbong/COD4-Rewrite) - 以 Rust/Bevy 重建《使命召唤4》的多人游戏系统，使用本地游戏安装中的素材。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/cod4-rewrite-reconstruction-case/)</sub>
 <!-- END GENERATED CASES -->
