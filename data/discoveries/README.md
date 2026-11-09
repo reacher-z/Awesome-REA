@@ -31,7 +31,7 @@ Each batch is about 0.85 MB of JSON for 300 records and about 130 KB compressed 
 
 ## Where the records appear
 
-- The website lists the newest records at [/discoveries/](https://awesomerea.org/discoveries/) and [/zh/discoveries/](https://awesomerea.org/zh/discoveries/), labelled unreviewed, with upstream descriptions left untranslated.
+- The website lists the data points at [/discoveries/](https://awesomerea.org/discoveries/) and [/zh/discoveries/](https://awesomerea.org/zh/discoveries/), grouped by Data class, newest first and labelled unreviewed, with upstream descriptions left untranslated. A class with more than 60 data points shows its newest 60 there and links its own page, such as `/discoveries/game/`, which lists all of them; with JavaScript the link loads the rest in place.
 - [/discoveries.json](https://awesomerea.org/discoveries.json) exports the listed records with `review_status: unreviewed`, batch provenance and README hashes; [/discoveries/status.json](https://awesomerea.org/discoveries/status.json) gives `last_successful_ingest_at`, and [/discoveries/badge.json](https://awesomerea.org/discoveries/badge.json) is a shields.io endpoint badge with that time.
 - [/discoveries/feed.xml](https://awesomerea.org/discoveries/feed.xml) and its Chinese counterpart list the newest records; the main [/feed.xml](https://awesomerea.org/feed.xml) adds one summary entry per recent batch, in an `unreviewed-discovery` category. [llms.txt](https://awesomerea.org/llms.txt) links all of them.
 - A record that later enters the reviewed repository index is counted there and no longer listed as a discovery. READMEs and the repository directory pages under docs/repositories/ do not list discoveries.
@@ -101,7 +101,7 @@ A decided record leaves the unreviewed list, feeds and exports, and appears in [
 
 每批 300 条约 0.85 MB，在 Git 中压缩后约 130 KB。队列总量上限为 **25,000 条**、批次文件合计 **64 MiB**，Git 历史因此增长约 10 MB；原始 checkpoint 不会写入仓库。达到上限后入库停止，工作流失败并在追踪 issue 中说明；提高上限或归档旧批次需要单独审核。
 
-网站在 [/zh/discoveries/](https://awesomerea.org/zh/discoveries/) 列出最新记录并标注“未审核”，简介保留上游原文、不翻译；[/discoveries.json](https://awesomerea.org/discoveries.json)、状态文件、Atom 订阅和 llms.txt 同样标明未审核。收录某个发现时，请按[审核工作表](../../docs/promotion-worksheet.zh-CN.md)另写一条精选记录，批次文件保持不变。
+网站在 [/zh/discoveries/](https://awesomerea.org/zh/discoveries/) 按数据类别列出数据点，每类内从新到旧排列并标注“未审核”，简介保留上游原文、不翻译；某一类超过 60 个数据点时，页面显示最新 60 个并链接该类的单独页面（如 `/zh/discoveries/game/`）列出全部，启用 JavaScript 时在原处加载其余条目；[/discoveries.json](https://awesomerea.org/discoveries.json)、状态文件、Atom 订阅和 llms.txt 同样标明未审核。收录某个发现时，请按[审核工作表](../../docs/promotion-worksheet.zh-CN.md)另写一条精选记录，批次文件保持不变。
 
 ### 审核决定
 
