@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import build_readme
 from build_readme import (CASE_FILES, COLLECTION_SECTIONS, METHOD_SECTIONS, READMES, RECENT_CASES,
-                          README_SIZE_WARNING, case_method, case_order, collection_section, method_groups, recent_cases,
+                          CASE_PAGE_BUDGET, README_SIZE_WARNING, case_method, case_order, collection_section, method_groups, recent_cases,
                           render_case_pages)
 from catalog import load_resources
 from validate_papers import read_papers
@@ -99,7 +99,12 @@ class ReadmeCasesTest(unittest.TestCase):
     def test_every_generated_case_file_is_below_budget(self):
         for path in [ROOT / name for name in CASE_FILES.values()] + list((ROOT / 'docs/cases').glob('*.md')):
             with self.subTest(path=path):
-                self.assertLessEqual(path.stat().st_size, README_SIZE_WARNING)
+                self.assertLessEqual(path.stat().st_size, CASE_PAGE_BUDGET)
+
+    def test_readme_budget_leaves_case_pages_unchanged(self):
+        with patch.object(build_readme, 'README_SIZE_WARNING', 50_000):
+            raised = render_case_pages(self.records)
+        self.assertEqual(raised, render_case_pages(self.records))
 
     def test_large_section_splits_in_both_languages(self):
         original = next(record for record in self.records if record['kind'] == 'case-study'
@@ -107,7 +112,7 @@ class ReadmeCasesTest(unittest.TestCase):
         records = [dict(original, id=f'large-case-{number}', url=f'https://example.com/large-{number}',
                         name=f'Large case {number}') for number in range(100)]
         budget = 8_000
-        with patch.object(build_readme, 'README_SIZE_WARNING', budget):
+        with patch.object(build_readme, 'CASE_PAGE_BUDGET', budget):
             pages = render_case_pages(records)
         for language in ('en', 'zh'):
             suffix = '.zh-CN.md' if language == 'zh' else '.md'
