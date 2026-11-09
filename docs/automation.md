@@ -28,6 +28,8 @@ node tests/awesome-lint/lint.mjs docs/papers.md .cache/awesome-lint/papers-findi
 python3 scripts/awesome_lint_report.py .cache/awesome-lint/papers-findings.json
 ```
 
+`PR hygiene` is a separate, non-required check of the maintainer's commit and review rules, run by [check_pr_hygiene.py](../scripts/check_pr_hygiene.py) from the base branch on every pull request event, including body edits. It fails when a commit message credits Claude, with a `Co-Authored-By: Claude` trailer or "Generated with Claude". In a pull request opened by reacher-z or a bot it also fails when a commit's author or committer is anyone other than reacher-z (`reacher-z@users.noreply.github.com` or the account's numbered noreply address) or a bot; GitHub as committer passes when the author does, and the merge commit that "Update branch" creates passes on its reacher-z address. A pull request opened by reacher-z needs a `Codex review` heading in its body with the review summary under it. Findings name a commit by its SHA and the failing field, never by the recorded name. The job reads the pull request through the API with a read-only token and never checks out its head.
+
 The localization path was exercised in [PR #2](https://github.com/reacher-z/Awesome-REA/pull/2): valid data passed, an intentionally missing Chinese description failed both jobs, and restored data passed. Rerunning the reviewer updated the same head-specific bot review.
 
 `Source links` runs weekly and on manual request. It checks the curated catalog, papers, benchmarks and the case ledger's reported and primary evidence links, and distinguishes confirmed missing links from rate limits and inconclusive network responses.
