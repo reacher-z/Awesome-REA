@@ -6,10 +6,17 @@
 
 [English](game-3.md)
 
-**613 个案例**
+**612 个案例**
 
 ## 静态重编译
 
+- [**Marchwind 64：静态重编译《超级机器人大战 64》**](https://github.com/dyzz/srw64-recomp) - Marchwind 64 是 1999 年任天堂 64 游戏《超级机器人大战64》的原生重编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/srw64-recomp/)</sub>
+- [**Mario Kart 64：通过 N64 静态重编译实现原生移植**](https://github.com/arefdsg/MK64Recomp) - Mario Kart 64: Recompiled 使用 N64: Recompiled 将 Mario Kart 64 制作成原生移植版，并由 RT64 提供渲染及图形增强。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-kart-64-recompiled-case/)</sub>
+- [**Mario Kart Wii PC Builder：静态重编译《马力欧卡丁车 Wii》**](https://github.com/MarcPique/mario-kart-wii-pc-builder) - 1.2.0 版从 PAL《马里奥卡丁车 Wii》光盘 RMCP01 构建原生 Windows 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mkwii-pc-builder/)</sub>
+- [**Mario Kart: Double Dash!!：GameCube 静态重编译移植版**](https://github.com/ethannicholas/mariokartdd-recomp) - Mario Kart: Double Dash!! 通过预先将 GameCube PowerPC 代码转换为 C，再连接 gcn-recomp 的图形、音频、光盘和手柄运行时来移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-kart-double-dash-recomp-case/)</sub>
+- [**Mario Paint Recomp：Mario Paint 的静态重编译**](https://github.com/sp00nznet/mariopaint) - Mario Paint Recomp 将 SNES 游戏 Mario Paint 的 65816 例程转成 C，在 PC 上借助 snesrecomp 提供硬件模拟和解释器回退。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-paint-recomp-case/)</sub>
+- [**MarioKart 64: Recompiled：通过 N64Recomp 静态重编译实现的原生移植**](https://github.com/sonicdcer/MarioKart64Recomp) - 使用 N64Recomp 将北美版 Nintendo 64《马力欧卡丁车 64》静态重编译为 Windows、Linux 与 macOS 原生应用，并通过 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mariokart64-recompiled-case/)</sub>
+- [**Marvel Nemesis：初代 Xbox 静态重编译移植**](https://github.com/15Cyber/marvel-nemesis-recomp) - 该项目使用 XboxXBERecomp 在本地重编译用户的初代 Xbox 版 Marvel Nemesis: Rise of the Imperfects XBE，生成 Windows 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/marvel-nemesis-recomp-case/)</sub>
 - [**masseffect-nx：将《Mass Effect》静态重编译到 Nintendo Switch**](https://github.com/nebadasSwifty/masseffect-nx) - masseffect-nx 使用 ReXGlue 将 Xbox 360 版《Mass Effect》的 default.xex 中的 PowerPC 代码转换为 C++，再编译为 Nintendo Switch ARM64 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/masseffect-nx-case/)</sub>
 - [**Max Payne 3 RePrescribed：Xbox 360 到 PS5 的重编译移植**](https://github.com/ChaosTheory1075/mp3-ps5) - Max Payne 3 RePrescribed 将 Xbox 360《Max Payne 3》Title Update 9 的可执行代码重编译为原生 PS5 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/max-payne-3-represcribed-case/)</sub>
 - [**Max Payne Recomp：通过静态重编译移植至 Apple Silicon**](https://github.com/aldotoa/max-payne-recomp) - Max Payne Recomp 将《马克思·佩恩》1.05 的 32 位 x86 可执行文件及 DLL 静态转换为 C，再编译为 Apple Silicon macOS 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/max-payne-recomp-case/)</sub>
@@ -618,12 +625,4 @@
 - [**OpenCMR2 VR：《科林麦克雷拉力赛 2.0》的 Quest 与 PCVR 移植**](https://github.com/DR-89/opencmr2-vr) - OpenCMR2 VR 基于由 CMR2Decomp 反编译代码构建的 OpenCMR2，将《科林麦克雷拉力赛 2.0》移植到 Meta Quest 3 和 Windows PCVR。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencmr2-vr-case/)</sub>
 - [**OpenCrossing Anbernic：将《动物森友会》移植到 Anbernic 掌机**](https://github.com/TechProGabe/OpenCrossing-Anbernic) - OpenCrossing Anbernic 在 Anbernic 掌机上运行 GameCube 的《Animal Crossing》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencrossing-anbernic-case/)</sub>
 - [**OpenCrossing-Xbox：将《Animal Crossing》移植到初代 Xbox**](https://github.com/TechProGabe/OpenCrossing-Xbox) - OpenCrossing-Xbox 将 GameCube 版《Animal Crossing》的反编译代码编译到初代 Xbox，并从用户提供的美版 Rev 0 光盘镜像读取数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencrossing-xbox-case/)</sub>
-- [**OpenCrown PC：运行自有主机镜像的 Dragon's Crown Pro 原生宿主**](https://github.com/Nezara/OpenCrown-PC) - OpenCrown PC 在 Windows 和 Linux 上运行用户自行提供的《Dragon's Crown Pro》PS4 或 PS5 解密镜像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencrown-pc-case/)</sub>
-- [**OpenDW：将 Dragon Wars 移植为 C 语言游戏引擎**](https://github.com/devinsmith/opendw) - OpenDW 尝试将 16 位 DOS 游戏 Dragon Wars 移植为面向现代环境的 C 语言引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendw-dragon-wars-case/)</sub>
-- [**OpenDW：将原版 Mac Deepworld 客户端移植到 Windows**](https://github.com/kuroppoi/opendw) - OpenDW 使用 C++ 和 Axmol 对原版 Mac 平台 Deepworld 客户端进行逆向，并移植到 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendw-case/)</sub>
-- [**OpenMTV：Mad TV 的反编译与现代系统移植**](https://github.com/openmtv/openmtv) - OpenMTV 从 1991 年 DOS 游戏 Mad TV 的可执行文件重建可读 C 源码，并移植到 Windows、macOS 和 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmtv-mad-tv-case/)</sub>
-- [**openmx：将 MX Unleashed 模拟逻辑移植为 Rust**](https://github.com/FIZL0/openmx) - openmx 将 PS2 游戏 MX Unleashed 的骑行模拟逻辑移植为 Rust，并提供桌面及浏览器界面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmx-case/)</sub>
-- [**OpenNox：Nox 引擎的跨平台重建**](https://github.com/noxworld-dev/opennox) - OpenNox 使用 Go 和 C 移植并扩展 Nox 游戏引擎，用于跨平台游玩、保存与模组制作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opennox-engine-reconstruction-case/)</sub>
-- [**OpenOMORI：在浏览器中重建《OMORI》的桌面运行环境**](https://github.com/dazacode/openomori) - OpenOMORI 通过浏览器接口替换《OMORI》依赖的 NW.js 和 Node 桌面 API，使用户自有游戏副本在浏览器运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openomori-case/)</sub>
-- [**OpenPREY：PREY（2006）的替代引擎**](https://github.com/themuffinator/openPREY) - OpenPREY 将基于 Quake4Doom 的引擎适配为 PREY（2006）的替代运行环境，在 Windows、Linux 和 macOS 上读取玩家原版安装文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openprey-prey-2006-case/)</sub>
 <!-- END GENERATED CASES -->
