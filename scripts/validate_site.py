@@ -1572,11 +1572,15 @@ class _SharedTokens(HTMLParser):
     """Tokenize a page once and hand every event to several parsers, as if each had been fed the text itself.
 
     A parser that raises gets no further events, as its own feed() would have stopped there, and keeps that error.
+    The parsers' handlers must not read tokenizer state (getpos, get_starttag_text, rawdata) or switch its modes.
     """
+    SETTINGS = ('convert_charrefs', 'CDATA_CONTENT_ELEMENTS', 'RCDATA_CONTENT_ELEMENTS', 'scripting', '_support_cdata')
 
     def __init__(self, parsers):
         super().__init__()
-        assert all(parser.convert_charrefs == self.convert_charrefs for parser in parsers), 'Parsers must agree on convert_charrefs'
+        settings = [getattr(self, name, None) for name in self.SETTINGS]
+        assert all([getattr(parser, name, None) for name in self.SETTINGS] == settings for parser in parsers), \
+            'Parsers that share a tokenization need the same tokenizer settings'
         self.parsers, self.errors = parsers, {}
 
     def _send(self, event, *arguments):
