@@ -144,7 +144,7 @@ The schema-2 companion is emitted only when a supplement is ready for publicatio
 
 [discovery-reviews.json](discovery-reviews.json) records exclude and hold decisions for [discovery queue](discoveries/README.md#review-decisions) scans and followed-source leads, keyed by their IDs. Scan decisions include `readme_sha256`; lead decisions use pinned commit evidence. Decided records leave the unreviewed exports while their batch files stay unchanged.
 
-[discovery-classes.json](discovery-classes.json) records Data class decisions for discovery IDs. A `data` row has one `class` from the table above and a short `reproduced` description; an `outside` row has only its decision. The discovery page and feeds show data points; the queue JSON and its per-batch files retain outside and unclassified records.
+[discovery-classes.json](discovery-classes.json) records Data class decisions for discovery IDs. A `data` row has one `class` from the table above and a short `reproduced` description; an `outside` row has only its decision. The discovery page, feeds and the followed-source lead export show data points; the scan queue JSON and the per-batch files of both queues retain outside and unclassified records.
 
 The website's `/discoveries/status.json` summarizes the queue. `listed` counts records awaiting Data review: data points plus unclassified records. `data_points` counts records classified as Data, `other_captures` counts records classified outside Data, and `captures_listed` counts all listed capture records across those groups.
 

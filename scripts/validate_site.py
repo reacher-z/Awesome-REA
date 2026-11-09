@@ -1326,7 +1326,9 @@ def validate_lead_exports(output, queue):
     export = json.loads((output / names[0]).read_text(encoding='utf-8'))
     listed = queue['listed']
     assert export['review_status'] == 'unreviewed' and export['verification'] == 'automated-source-lead', 'Lead export stays unreviewed'
-    assert [row['id'] for row in export['resources']] == [row['id'] for row in listed[:build_discovery_leads.EXPORT_RECORDS]], 'Lead export differs from the queue'
+    expected = build_discovery_leads.data_points(listed)[:build_discovery_leads.EXPORT_RECORDS]
+    assert [row['id'] for row in export['resources']] == [row['id'] for row in expected], 'Lead export differs from the data points of the queue'
+    assert export['counts']['listed'] == build_discovery_leads.awaiting_review(listed), 'Lead export counts only leads awaiting review'
     assert all(row['review_status'] == 'unreviewed' and row['verification'] == 'automated-source-lead' for row in export['resources']), 'Every exported lead stays unreviewed'
     files = sorted((output / names[1]).glob('*.json'))
     assert {path.stem for path in files} == {batch['batch_id'] for batch in queue['batches']}, 'One export file per lead batch'

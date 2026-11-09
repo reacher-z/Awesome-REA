@@ -3,15 +3,19 @@
 Records come from the validated batches in data/discoveries/leads/ (scripts/discovery_leads.py). They are
 links that registered public sources list, kept unreviewed: every output says so, and no lead becomes a
 page, a curated entry or a count of curated resources. A lead that the repository has since curated,
-indexed, scanned or excluded is counted, not listed again.
+indexed, scanned or excluded is counted, not listed again. Data class decisions in data/discovery-classes.json
+decide what awaits review: data points and leads not yet classified. The queue export lists the data points,
+grouped by Data class; the per-batch files keep every listed lead, other captures included.
 """
 from __future__ import annotations
 
 import json
 from pathlib import Path
 
+import discovery_classes
 import discovery_leads as leads
 import discovery_reviews
+from data_classes import DATA_CLASSES
 
 EXPORT_PATH = '/discoveries/leads.json'
 BATCH_EXPORT_DIRECTORY = '/discoveries/leads/'
@@ -38,14 +42,32 @@ def lead_queue(root: Path) -> dict:
                for name in ('data/tool-resources.json', 'data/rea-resources.json', 'data/papers.json')
                for record in json.loads((root / name).read_text(encoding='utf-8'))} if batches else {}
     pending, decided = discovery_reviews.split_queue(rows, discovery_reviews.read_reviews(root), curated)
+    classes = discovery_classes.read_classes(root) if batches else {}
     listed, since_held = [], 0
     for lead in pending:
         if leads.match_keys(lead) & held.keys():
             since_held += 1
             continue
+        classification = classes.get(lead['id'])
+        if classification:
+            lead['data_decision'] = classification['decision']
+            if classification['decision'] == 'data':
+                lead['class'] = classification['class']
+                lead['reproduced'] = classification['reproduced']
         listed.append(lead)
     return {'batches': batches, 'listed': listed, 'decided': decided, 'since_held': since_held, 'registry': registry,
             'record_count': sum(len(batch['leads']) for batch in batches), 'latest': batches[-1] if batches else None}
+
+
+def awaiting_review(listed: list[dict]) -> int:
+    """Leads still in the review queue: data points and leads the Data pass has not classified. Other captures leave it."""
+    return sum(record.get('data_decision') != 'outside' for record in listed)
+
+
+def data_points(listed: list[dict]) -> list[dict]:
+    """Data points in class order, newest batch first within each class."""
+    return [record for name in DATA_CLASSES for record in listed
+            if record.get('data_decision') == 'data' and record['class'] == name]
 
 
 def run_url(batch: dict) -> str:
@@ -58,18 +80,25 @@ def batch_export_path(batch_id: str) -> str:
 
 def export_document(queue: dict, site_url: str, repository_url: str) -> dict:
     latest = queue['latest']
-    records = queue['listed'][:EXPORT_RECORDS]
+    points = data_points(queue['listed'])
+    records = points[:EXPORT_RECORDS]
+    outside = sum(record.get('data_decision') == 'outside' for record in queue['listed'])
     return {
         'version': 1, 'kind': 'followed-source-lead-queue',
         'generated_at': latest['collected_at'] if latest else None,
         'last_successful_collection_at': latest['collected_at'] if latest else None,
         'review_status': leads.REVIEW_STATUS, 'verification': leads.VERIFICATION, 'description': NOTE,
         'selection_policy': leads.POLICY,
-        'counts': {'batches': len(queue['batches']), 'leads': queue['record_count'], 'listed': len(queue['listed']),
+        'counts': {'batches': len(queue['batches']), 'leads': queue['record_count'],
+                   'listed': awaiting_review(queue['listed']), 'data_points': len(points), 'other_captures': outside,
+                   'captures_listed': len(queue['listed']),
+                   'data_classes': {name: sum(record['class'] == name for record in points)
+                                    for name in DATA_CLASSES if any(record['class'] == name for record in points)},
                    'exported': len(records), 'since_held_by_other_layers': queue['since_held'],
                    'reviewed': discovery_reviews.counts(queue['decided'])},
-        'pagination': ('resources lists the newest listed leads; batches[].records_url lists every listed lead of '
-                       'each batch, so together they cover the whole queue.'),
+        'pagination': ('resources lists the data points, grouped by Data class and newest batch first within each '
+                       'class; batches[].records_url lists every listed lead of each batch, including other captures '
+                       'and leads not yet classified.'),
         'budget': {'leads_per_batch': leads.MAX_BATCH_RECORDS, 'leads': leads.MAX_TOTAL_RECORDS,
                    'bytes': leads.MAX_TOTAL_BYTES},
         'sources': [{'id': source['id'], 'type': source['type'], 'why': source['why'],
@@ -80,6 +109,7 @@ def export_document(queue: dict, site_url: str, repository_url: str) -> dict:
         'batches': [{'batch_id': batch['batch_id'], 'collected_at': batch['collected_at'],
                      'lead_count': len(batch['leads']),
                      'listed_count': sum(record['batch_id'] == batch['batch_id'] for record in queue['listed']),
+                     'awaiting_review': awaiting_review([record for record in queue['listed'] if record['batch_id'] == batch['batch_id']]),
                      'records_url': site_url + batch_export_path(batch['batch_id']), 'run_url': run_url(batch),
                      'source_file': f"{repository_url}/blob/main/{leads.DIRECTORY}/{batch['collected_at'][:7]}/{batch['batch_id']}.json"}
                     for batch in reversed(queue['batches'])],
@@ -117,11 +147,14 @@ def write_lead_exports(site_dir: Path, catalog: dict, *, root: Path = leads.ROOT
 def llms_section(queue: dict | None, site_url: str) -> str:
     if not queue or not queue['batches']:
         return ''
+    points = len(data_points(queue['listed']))
+    unclassified = sum('data_decision' not in record for record in queue['listed'])
     return '\n'.join([
         '## Followed-source leads (unreviewed)', '',
         f'Links that registered public reverse-engineering lists, registries, topic searches, survey bibliographies, an '
-        f'arXiv query and Hugging Face searches list; not reviewed, curated, translated or run. {len(queue["listed"]):,} '
-        f'are listed; last collection {queue["latest"]["collected_at"]}.', '',
-        f'- [Lead queue JSON]({site_url}{EXPORT_PATH}): The newest {EXPORT_RECORDS:,} leads with review_status=unreviewed, '
-        'pinned listing evidence and batch provenance; batches[].records_url lists every lead of each batch.',
+        f'arXiv query and Hugging Face searches list; not reviewed, curated, translated or run. {points:,} data points '
+        f'await review, with {unclassified:,} more not yet classified; last collection {queue["latest"]["collected_at"]}.', '',
+        f'- [Lead queue JSON]({site_url}{EXPORT_PATH}): The data points, grouped by Data class, with '
+        'review_status=unreviewed, pinned listing evidence and batch provenance; batches[].records_url lists every lead '
+        'of each batch.',
     ]) + '\n'

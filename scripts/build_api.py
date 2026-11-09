@@ -126,15 +126,16 @@ def candidates_document(discovery_queue, lead_queue, site_url, generated_at) -> 
     from build_discoveries import export_record
     discoveries = [{'candidate_type': 'repository-discovery', **export_record(record)}
                    for record in (discovery_queue or {}).get('listed', [])[:CANDIDATE_LIMIT]]
-    leads = [{'candidate_type': 'followed-source-lead', **record}
-             for record in (lead_queue or {}).get('listed', [])[:CANDIDATE_LIMIT]]
+    # Leads still awaiting review: data points and leads not yet classified, not other captures
+    awaiting = [record for record in (lead_queue or {}).get('listed', []) if record.get('data_decision') != 'outside']
+    leads = [{'candidate_type': 'followed-source-lead', **record} for record in awaiting[:CANDIDATE_LIMIT]]
     # Newest batch first across both queues; the sort is stable, so each queue keeps its own order within a batch.
     candidates = sorted(discoveries + leads, key=lambda row: instant(normalized_date(row.get('ingested_at') or row.get('collected_at'))),
                         reverse=True)
     return envelope(
         'awesome-rea-candidates', generated_at, site_url, 'candidatesFile', review_status='unreviewed',
         note=CANDIDATE_NOTE[0], note_zh=CANDIDATE_NOTE[1],
-        counts={'repository_discoveries': len((discovery_queue or {}).get('listed', [])), 'followed_source_leads': len((lead_queue or {}).get('listed', [])),
+        counts={'repository_discoveries': len((discovery_queue or {}).get('listed', [])), 'followed_source_leads': len(awaiting),
                 'exported_repository_discoveries': len(discoveries), 'exported_followed_source_leads': len(leads)},
         pagination=f'candidates lists at most the newest {CANDIDATE_LIMIT:,} of each type; the full queues are '
                    f'{site_url}/discoveries.json and {site_url}/discoveries/leads.json with their batch files.',
