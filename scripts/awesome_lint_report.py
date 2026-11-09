@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Summarize saved awesome-lint findings per rule for the non-required README lint report."""
+"""Summarize saved awesome-lint findings per rule and fail on unrecorded findings of the enforced rules."""
 import argparse
 from collections import Counter
 import json
@@ -10,8 +10,11 @@ ROOT = Path(__file__).resolve().parents[1]
 ALLOWLIST = ROOT / 'tests/awesome-lint/allowlist.json'
 
 
+EVERY_RULE = '*'
+
+
 def read_allowlist(path=ALLOWLIST):
-    """Rules that fail the job, and findings recorded as linter false positives with a reason."""
+    """Rules that fail the job (`*` for every rule), and findings recorded as linter false positives with a reason."""
     config = json.loads(Path(path).read_text(encoding='utf-8'))
     if not isinstance(config, dict) or set(config) != {'enforced_rules', 'false_positives'}:
         raise ValueError('allowlist needs exactly enforced_rules and false_positives')
@@ -31,23 +34,32 @@ def read_allowlist(path=ALLOWLIST):
     return set(rules), keys
 
 
-def summarize(report, enforced, false_positives):
-    """Return the Markdown job summary and the findings that fail an enforced rule."""
+def is_enforced(rule, enforced):
+    return EVERY_RULE in enforced or rule in enforced
+
+
+def summarize(report, enforced, false_positives, report_only=False):
+    """Return the Markdown job summary and the findings that fail an enforced rule.
+
+    With report_only, the summary lists every finding and nothing fails: the generated list pages under docs/
+    are linted for information, and README-level rules such as awesome-contributing do not apply to them."""
+    enforced = set() if report_only else enforced
     findings = report['findings']
     allowed = [(item['rule'], item['reason']) in false_positives for item in findings]
     totals, recorded = Counter(item['rule'] for item in findings), Counter()
     for item, known in zip(findings, allowed):
         recorded[item['rule']] += known
-    failing = [item for item, known in zip(findings, allowed) if item['rule'] in enforced and not known]
+    failing = [item for item, known in zip(findings, allowed) if is_enforced(item['rule'], enforced) and not known]
     lines = ['## awesome-lint report', '',
              f"`{report['linter']}` on `{report['input']}`: {len(findings)} finding(s), "
              f"{sum(allowed)} of them recorded false positives.", '',
-             'This report is not a required check. '
-             + (f"It fails only on unrecorded findings of the enforced rules: {', '.join(f'`{rule}`' for rule in sorted(enforced))}."
-                if enforced else 'No rule is enforced yet, so findings never fail it.'), '']
+             'This check is separate from the required `validate` check. '
+             + ('It fails on every finding that is not a recorded false positive.' if EVERY_RULE in enforced
+                else f"It fails on unrecorded findings of the enforced rules: {', '.join(f'`{rule}`' for rule in sorted(enforced))}."
+                if enforced else 'This file is linted as a report; its findings do not fail the job.'), '']
     if findings:
         lines += ['| Rule | Findings | Recorded false positives |', '| --- | ---: | ---: |']
-        lines += [f'| `{rule}`{" (enforced)" if rule in enforced else ""} | {count} | {recorded[rule]} |'
+        lines += [f'| `{rule}`{" (enforced)" if is_enforced(rule, enforced) else ""} | {count} | {recorded[rule]} |'
                   for rule, count in sorted(totals.items(), key=lambda pair: (-pair[1], pair[0]))]
         lines.append('')
     unused = sorted(false_positives - {(item['rule'], item['reason']) for item in findings})
@@ -64,6 +76,8 @@ def main(argv=None):
     parser.add_argument('findings', type=Path, help='JSON written by tests/awesome-lint/lint.mjs')
     parser.add_argument('--summary', type=Path, help='append the Markdown summary here, such as $GITHUB_STEP_SUMMARY')
     parser.add_argument('--allowlist', type=Path, default=ALLOWLIST)
+    parser.add_argument('--report-only', action='store_true',
+                        help='summarize without failing, for the generated list pages under docs/')
     args = parser.parse_args(argv)
     enforced, false_positives = read_allowlist(args.allowlist)
     try:
@@ -71,7 +85,7 @@ def main(argv=None):
     except (OSError, ValueError):
         text, failing = '## awesome-lint report\n\nNo findings file was produced; check the lint step log. No count or clean result can be inferred.\n', None
     else:
-        text, failing = summarize(report, enforced, false_positives)
+        text, failing = summarize(report, enforced, false_positives, args.report_only)
     print(text)
     if args.summary:
         with args.summary.open('a', encoding='utf-8') as output:
