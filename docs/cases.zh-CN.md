@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**2490 个案例**，按分区列出。
+**2578 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (73)
-- [Game · 游戏](#game) (1407)
+- [Game · 游戏](#game) (1495)
 - [App · 应用](#app) (212)
 - [Native Binary · 原生二进制](#native-binary) (46)
 - [Firmware and Hardware · 固件与硬件](#firmware) (144)
@@ -21,24 +21,24 @@
 - [案例列表](cases/website.zh-CN.md)
 
 <a id="game"></a>
-## Game · 游戏 (1,407)
+## Game · 游戏 (1,495)
 
 - [案例列表（第 1 部分）](cases/game-1.zh-CN.md)
 - [案例列表（第 2 部分）](cases/game-2.zh-CN.md)
 - [案例列表（第 3 部分）](cases/game-3.zh-CN.md)
 
 <a id="game-matching-decompilation"></a>
-- [匹配反编译与反汇编](cases/game-1.zh-CN.md#game-matching-decompilation) (299)
+- [匹配反编译与反汇编](cases/game-1.zh-CN.md#game-matching-decompilation) (310)
 <a id="game-decompilation"></a>
-- [非匹配反编译](cases/game-1.zh-CN.md#game-decompilation) (138)
+- [非匹配反编译](cases/game-1.zh-CN.md#game-decompilation) (145)
 <a id="game-static-recompilation"></a>
-- [静态重编译](cases/game-1.zh-CN.md#game-static-recompilation) (336)
+- [静态重编译](cases/game-1.zh-CN.md#game-static-recompilation) (380)
 <a id="game-port"></a>
-- [基于重建源码的移植](cases/game-2.zh-CN.md#game-port) (187)
+- [基于重建源码的移植](cases/game-2.zh-CN.md#game-port) (194)
 <a id="game-engine-reimplementation"></a>
-- [引擎重实现](cases/game-2.zh-CN.md#game-engine-reimplementation) (244)
+- [引擎重实现](cases/game-2.zh-CN.md#game-engine-reimplementation) (260)
 <a id="game-other"></a>
-- [其他方法与分析](cases/game-2.zh-CN.md#game-other) (203)
+- [其他方法与分析](cases/game-3.zh-CN.md#game-other) (206)
 
 <a id="app"></a>
 ## App · 应用 (212)
