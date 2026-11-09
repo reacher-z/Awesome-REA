@@ -1553,6 +1553,17 @@ def validate_entry_outputs(pages, resources, papers):
         assert set(feedback_urls(kind, record)) <= set(article['links']), f'Detail page lacks its prefilled correction and translation links: {route}'
 
 
+def validate_unique_descriptions(pages):
+    """A count change alone must not distinguish two indexable page descriptions."""
+    seen = {}
+    for route, page in pages.items():
+        description = page.meta.get('description', '')
+        normalized = re.sub(r'\s+', ' ', re.sub(r'[\d,]', '', description)).strip()
+        assert normalized, f'Missing description: {route}'
+        assert normalized not in seen, f'Duplicate page description: {seen.get(normalized)} and {route}'
+        seen[normalized] = route
+
+
 def main():
     case_pages = [ROOT / path for path in CASE_FILES.values()] + sorted((ROOT / 'docs/cases').glob('*.md'))
     assert case_pages and all(path.is_file() and path.stat().st_size <= README_SIZE_WARNING for path in case_pages), \
@@ -1602,6 +1613,7 @@ def main():
         validate_theme_color(parsed.path, page)
         problem = description_problem(page.meta.get('description') or '')
         assert problem is None, f'{problem}: {parsed.path}: {page.meta.get("description")}'
+    validate_unique_descriptions(pages)
     validate_link_fragments(OUTPUT, pages, fragment_links)
     validate_homepage_destinations(pages)
     validate_resource_listing(pages, resources)
