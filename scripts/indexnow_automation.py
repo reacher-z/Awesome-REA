@@ -3,7 +3,9 @@
 
 ``wait SHA DIST`` waits, bounded, until https://awesomerea.org serves the build in DIST: its public
 source-commit.txt must name SHA and its build-manifest.json must equal DIST/build-manifest.json byte for byte.
-Both are read with a query no edge cache has seen, so the GitHub Pages origin answers. It writes ``state=live``,
+Both are read with a query no edge cache has seen, so the GitHub Pages origin answers; then the manifest must
+also come through the edge cache, as submit_indexnow.py reads it, which happens once the zone is purged after the
+deployment. It writes ``state=live``,
 ``state=superseded`` (the site serves another commit and SHA is no longer the head of main, so the newer
 commit's run notifies) or ``state=pending`` (SHA was not published in time; the scheduled run notifies it) to
 $GITHUB_OUTPUT. It exits 1 only when the site serves SHA with bytes this build does not reproduce.
@@ -44,6 +46,7 @@ WAIT_SECONDS = 25 * 60
 # Time for GitHub Pages to serve every file of a deployment once it serves its source-commit.txt.
 PROPAGATION_SECONDS = 10 * 60
 MAX_COMMIT_BYTES = 256
+RECEIPT_PAGES = 5
 MAX_RECEIPT_ARCHIVE = 16 * 1024 * 1024
 MAX_MANIFEST_BYTES = 8_000_000
 
@@ -81,31 +84,43 @@ def wait_for_deployment(sha: str, dist: Path, *, github=None, fetch=fetch_bytes,
         raise ValueError('Expected a full commit SHA')
     expected = (Path(dist) / MANIFEST_NAME).read_bytes()
     github = github or api()
-    deadline, served_since = clock() + wait_seconds, None
-    while True:
+    deadline, differs_since = clock() + wait_seconds, None
+
+    def read(url, limit):
         try:
-            served = fetch(uncached(SOURCE_COMMIT), MAX_COMMIT_BYTES).decode('ascii').strip()
+            return fetch(url, limit)
         except Exception as error:  # A transient fetch failure is retried until the deadline.
-            print(f'Served commit not readable yet: {type(error).__name__}', flush=True)
-            served = None
+            print(f'{url.split("?")[0]} not readable yet: {type(error).__name__}', flush=True)
+            return None
+
+    while True:
+        served = read(uncached(SOURCE_COMMIT), MAX_COMMIT_BYTES)
+        served = served.decode('ascii', 'replace').strip() if served is not None else None
         if served == sha:
-            try:
-                live = fetch(uncached(MANIFEST_NAME), MAX_MANIFEST_BYTES)
-            except Exception as error:
-                print(f'Live manifest not readable yet: {type(error).__name__}', flush=True)
-                live = None
-            if live == expected:
-                return 'live'
-            served_since = served_since if served_since is not None else clock()
-            if clock() - served_since > PROPAGATION_SECONDS:
-                raise ValueError(f'awesomerea.org serves {sha[:12]} with a different build than a fresh build of it; '
-                                 'the site build must be reproducible for IndexNow verification')
-        elif served is not None and default_head(github) != sha:
-            # The publication follows the head of main; that commit's own run notifies everything since the last receipt.
-            return 'superseded'
+            origin = read(uncached(MANIFEST_NAME), MAX_MANIFEST_BYTES)
+            if origin == expected:
+                differs_since = None
+                # submit_indexnow.py verifies through the edge cache, which keeps the previous build until it is purged.
+                if read(ORIGIN + '/' + MANIFEST_NAME, MAX_MANIFEST_BYTES) == expected:
+                    return 'live'
+                status = 'the edge cache still serves the previous build'
+            elif origin is not None:
+                differs_since = differs_since if differs_since is not None else clock()
+                if clock() - differs_since > PROPAGATION_SECONDS:
+                    raise ValueError(f'awesomerea.org serves {sha[:12]} with a different build than a fresh build of it; '
+                                     'the site build must be reproducible for IndexNow verification')
+                status = 'its manifest differs from this build'
+            else:
+                status = 'its manifest is not readable'
+        else:
+            differs_since = None
+            if served is not None and default_head(github) != sha:
+                # The publication follows the head of main; that commit's own run notifies everything since the last receipt.
+                return 'superseded'
+            status = f'it serves {(served or "nothing readable")[:12]}'
         if clock() > deadline:
             return 'pending'
-        print(f'Waiting for awesomerea.org to serve {sha[:12]} (it serves {(served or "nothing readable")[:12]})', flush=True)
+        print(f'Waiting for awesomerea.org to serve {sha[:12]}: {status}', flush=True)
         sleep(POLL_SECONDS)
 
 
@@ -127,7 +142,13 @@ def previous_receipt(directory: Path, *, github=None, current_run: str | None = 
     """Save the newest earlier receipt into ``directory``; return its manifest digest, or '' when none exists."""
     github = github or api()
     branch = github.get('')['default_branch']
-    runs = github.get(f'actions/workflows/{WORKFLOW}/runs?branch={branch}&status=success&per_page=30')['workflow_runs']
+    runs = []
+    # Runs that ended pending or superseded keep no receipt, so look past them: up to 500 successful runs.
+    for page in range(1, RECEIPT_PAGES + 1):
+        batch = github.get(f'actions/workflows/{WORKFLOW}/runs?branch={branch}&status=success&per_page=100&page={page}')['workflow_runs']
+        runs += batch
+        if len(batch) < 100:
+            break
     for run in sorted(runs, key=lambda item: item['id'], reverse=True):
         if str(run['id']) == str(current_run) or run.get('path', f'.github/workflows/{WORKFLOW}') != f'.github/workflows/{WORKFLOW}':
             continue
@@ -176,8 +197,8 @@ def main() -> int:
             state = wait_for_deployment(args.sha, args.dist)
             output('state', state)
             if state == 'pending':
-                print(f'::warning::awesomerea.org did not serve {args.sha[:12]} within {WAIT_SECONDS // 60} minutes; '
-                      'the scheduled run notifies its pages once it is published.')
+                print(f'::warning::awesomerea.org did not serve this build of {args.sha[:12]}, through its edge cache, within '
+                      f'{WAIT_SECONDS // 60} minutes; the scheduled run notifies its pages once it does.')
         else:
             output('previous_sha256', previous_receipt(args.directory, current_run=os.environ.get('GITHUB_RUN_ID')))
     except (ValueError, KeyError, OSError, zipfile.BadZipFile, json.JSONDecodeError) as error:

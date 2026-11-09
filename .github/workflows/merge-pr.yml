@@ -83,7 +83,7 @@ jobs:
               origin ":refs/heads/$ref" || echo "The branch $ref was kept: it moved after the merge or is already gone."
           fi
           echo "Merged #$PR as $(jq -r .merge_commit_sha <<<"$pull")" >> "$GITHUB_STEP_SUMMARY"
-      # Once Cloudflare Pages deploys the merged commit, IndexNow hears about the pages it changed. A failed
+      # Once awesomerea.org serves the merged commit, IndexNow hears about the pages it changed. A failed
       # start never fails the merge: the IndexNow schedule also notifies every deployment it has not sent.
       - name: Start the IndexNow notification for the merged commit
         env:

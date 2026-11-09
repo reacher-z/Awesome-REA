@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    # Accepted and ignored: the Cloudflare Pages build command may still pass it, and the site loads no icon font now.
+    # Accepted and ignored: older build commands may still pass it, and the site loads no icon font now.
     parser.add_argument('--fontawesome-assets-url', help=argparse.SUPPRESS)
     parser.add_argument('--publish', action='store_true',
                         help='Build a commit of main for publication: skip validate_discovery, validate_site and '
