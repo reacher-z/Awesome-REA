@@ -2,11 +2,11 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-09T08:30:30+00:00",
-  "entry_count": 4652,
+  "generated_at": "2026-11-09T09:47:25+00:00",
+  "entry_count": 4653,
   "class_counts": {
    "0": 15,
-   "1": 1007,
+   "1": 1008,
    "2": 3476,
    "3": 142
   },
@@ -130681,6 +130681,35 @@
    "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
+  },
+  {
+   "id": "smw-recomp",
+   "url": "https://github.com/mstan/SuperMarioWorldRecomp",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 20427,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 39,
+    "release_asset_count": 61,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full reconstruction candidate: Class 0 requires manual scope review",
+   "checked_at": "2026-11-09T09:47:24+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": true
   }
  ]
 }
