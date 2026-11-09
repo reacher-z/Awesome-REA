@@ -6,7 +6,7 @@
 
 [English](firmware.md)
 
-**150 个案例**
+**151 个案例**
 
 - [**6502 Model：重建 65C02 芯片的逐周期行为**](https://github.com/EmulationOnline/model_6502) - 6502 Model 用 Rust 根据实体 65C02 芯片运行程序时采集的外部总线跟踪记录，重建其逐周期行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/6502-model-case/)</sub>
 - [**Band 9 表盘生成器：华为手环 9 HWT 表盘格式复现**](https://github.com/daiyuxiang520/band9-watchface-generator) - Band 9 表盘生成器通过观察公开的 HWT 包，归纳华为手环 9 表盘格式，并为 194 × 368 的 HWHD07 屏幕生成可安装的表盘包。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/band9-watchface-generator-case/)</sub>
@@ -17,6 +17,7 @@
 - [**D750 QEMU Verification Prototype：在 QEMU 中验证尼康 D750 固件的早期执行**](https://github.com/LuoStickmin/D750-QEMU) - D750 QEMU Verification Prototype 用 QEMU 板级模型及主机侧扫描、日志工具研究尼康 D750 固件的早期执行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/d750-qemu-case/)</sub>
 - [**Echo Show 相机：重建 LineageOS 相机支持**](https://github.com/jxlarrea/lineageos-echo-show-camera) - Echo Show 相机项目为 Echo Show 5 和 8 的 LineageOS 18.1 重建相机支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/echo-show-lineageos-camera-case/)</sub>
 - [**EchoPod：Snowsky Echo Mini 8 GB 替代固件**](https://github.com/BasilSkyWalk/echopod) - Snowsky（FiiO）Echo Mini 8 GB 播放器的替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/echopod-echo-mini-firmware-case/)</sub>
+- [**F3DEX2：任天堂 64 RSP 微码的匹配反汇编**](https://github.com/Mr-Wiseguy/f3dex2) - F3DEX2 是任天堂 64 的 F3DEX2 和 F3DZEX2 RSP 微码家族的匹配反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f3dex2-disasm/)</sub>
 - [**FPGABoy：基于 FPGA 的 Game Boy 硬件实现**](https://github.com/trun/fpgaboy) - FPGABoy 以 FPGA 设计重建 Nintendo Game Boy 硬件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fpgaboy-game-boy-case/)</sub>
 - [**Game Boy DMG-CPU Schematics：重建 DMG-CPU B 芯片电路**](https://github.com/msinger/dmg-schematics) - Game Boy DMG-CPU Schematics 将 Game Boy 的 DMG-CPU B 芯片及 SM83 核心整理为 KiCad 电路图、Electric VLSI 布局和文本网表。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dmg-schematics-case/)</sub>
 - [**GLaBIOS：从零编写的 8K ROM BIOS**](https://github.com/640-KB/GLaBIOS) - 面向老式 PC、XT 和 8088 机器、从零编写的开源 ROM BIOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/glabios-rom-bios-case/)</sub>

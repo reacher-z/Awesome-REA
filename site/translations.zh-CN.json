@@ -33551,5 +33551,1013 @@
       "当前分支已不再重建原版 ROM；匹配构建保存在 matching 标签。",
       "项目自编内容采用 MIT 许可证。"
     ]
+  },
+  "zoe-recompiled-case": {
+    "name": "ZOE-Recompiled：为 Windows 静态重编译《终极地带》",
+    "requirements": [
+      "首次启动时程序会要求玩家提供美版光盘镜像，并检查它是《终极地带》。",
+      "README 写明从开场到最终区域都可以游玩，包括隐藏的对战模式。测试过的输入是手柄。选项菜单仍使用键盘。",
+      "审阅的 README 没有为这个移植写许可证。"
+    ]
+  },
+  "cryogenic-dune": {
+    "name": "Cryogenic：重实现 1992 年的《沙丘》游戏",
+    "requirements": [
+      "许可证：Apache License 2.0。"
+    ]
+  },
+  "regaiden-recomp-case": {
+    "name": "生化危机 Gaiden 重编译",
+    "requirements": [
+      "玩家提供 ROM 和音乐文件。默认启动使用原生 Game Boy Color 的宽高比和颜色。增强功能可在 F10 菜单里选用。",
+      "许可证：MIT。"
+    ]
+  },
+  "waterbear": {
+    "name": "waterbear",
+    "requirements": [
+      "用 waterbear assemble example.s -o example.vms 汇编。加上 --optimize-jumps 可以在目标处于范围内时折叠跳转和调用。",
+      "文档在 https://wtetzner.github.io/waterbear/。",
+      "README 未列出许可证。"
+    ]
+  },
+  "dqix-decomp-case": {
+    "name": "Dragon Quest IX：任天堂 DS 游戏的匹配反编译",
+    "requirements": [
+      "需要 Python 3.11 或更新版本、GCC 9 或更新版本，以及 Ninja。",
+      "把干净的 ROM 放在 extract 中，命名为 baserom_dqix_usa.nds、baserom_dqix_jpn.nds 或 baserom_dqix_eur.nds。支持美版、日版和欧版 ROM。",
+      "README 未写许可证。"
+    ]
+  },
+  "ipod-clickwheel-recomps": {
+    "name": "iPod Click Wheel Recomps：静态重编译六款 iPod 游戏",
+    "requirements": [
+      "每款游戏都需要玩家自己副本中的已解密文件。支持 macOS、Linux 和 Windows。Mini Golf 还列出了 Switch 和 Android。",
+      "游戏和共享运行时使用 GPL-3.0-or-later。common/tools/ 中的工具使用 MIT。划分写在 LICENSING.md。"
+    ]
+  },
+  "ida-wpp-remover": {
+    "name": "WPP Remover",
+    "requirements": [
+      "用 hcli plugin install wpp-remover 安装，或把 wpp_remover.py 复制到 IDA 插件目录后重启 IDA。",
+      "在反编译视图中用 Toggle WPP Remover 开关。",
+      "README 没有写许可证。"
+    ]
+  },
+  "khcom-decomp-case": {
+    "name": "Kingdom Hearts: Chain of Memories：GBA 一致性反编译",
+    "requirements": [
+      "把转储的 ROM 复制到 roms/，命名为 B8CE.gba、B8CJ.gba 或 B8CP.gba。SHA-1 分别为 10729bd884f8fdca7a310b6d606c52e46657aa48、59ec0a0a4ccd1e6acb3bbd7bfb21d63988958cfa 和 8db73586cdb11b3795907edebf43228dbcd3e6b2。",
+      "依赖是 git、ninja、Python 3、PyYAML、binutils-arm-none-eabi 和 pret/agbcc。用 python3 tools/extract_assets.py 提取，用 python3 configure.py 配置，然后用 ninja 构建。",
+      "许可证：CC0 1.0 Universal。"
+    ]
+  },
+  "las-marionetas": {
+    "name": "Las Marionetas：重实现《模拟人生 2》",
+    "requirements": [
+      "需要 Windows，并且已安装《模拟人生 2：终极版》。",
+      "许可证：GNU GPL 第 2 版。"
+    ]
+  },
+  "segagenesisrecomp": {
+    "name": "Genesis Recomp",
+    "requirements": [
+      "Windows x64 重编译工具 v0.1.2 包含 GenesisRecomp.exe；构建重编译器需要 CMake 和 C 工具链。",
+      "Sega CD 支持位于 feature/segacd-backend 分支；Sonic CD 0.0.1 是首个发布的使用项目。",
+      "项目代码采用 PolyForm Noncommercial 1.0.0；另有许可的组件保留各自条款。"
+    ]
+  },
+  "alien-resurrection-recomp-case": {
+    "name": "Alien Resurrection: Recompiled：PlayStation 游戏的原生移植",
+    "requirements": [
+      "README 在开头部分没有写许可证。"
+    ]
+  },
+  "mkw-decomp-case": {
+    "name": "马里奥赛车 Wii：欧版游戏的逐字节匹配反编译",
+    "requirements": [
+      "需要一份已有的 PAL 版游戏。",
+      "README 未注明许可证。"
+    ]
+  },
+  "u6-decompiled-case": {
+    "name": "u6-decompiled：反编译《创世纪 VI：虚假先知》",
+    "requirements": [
+      "汇编文件需要 TASM 2.0 和 MASM 3.0。先运行 SRC/OSILIB/doit.bat，再按使用 MAKEFILE 的 SRC/doit.bat 进行。",
+      "README 未注明许可证。"
+    ]
+  },
+  "megaman-x5-recomp-case": {
+    "name": "MegaManX5Recomp：将《洛克人 X5》静态重编译至 Windows",
+    "requirements": [
+      "玩家提供自己的游戏光盘。合作模式是实验性的，README 写明完整战役和联机一致性仍在检查。",
+      "v0.2.9-coop-alpha 发布默认把新的内部分辨率设为 4 倍，可选 1 倍到 32 倍。",
+      "README 未列出许可证。"
+    ]
+  },
+  "nitrosharp": {
+    "name": "NitroSharp：重实现 N2System 视觉小说引擎",
+    "requirements": [
+      "README 写明可以到达《混沌头脑 Noah》的部分结局，并且不要指望存档能在引擎升级后继续使用。",
+      "许可证：MIT。"
+    ]
+  },
+  "nfsmw-ios-case": {
+    "name": "NFSMW Recompiled for iOS：《极品飞车：最高通缉》原生移植",
+    "requirements": [
+      "需要 iOS 或 iPadOS 18 或更高版本。玩家提供美版 Xbox 360 游戏的 ISO。",
+      "0.6.0 增加了局域网比赛。发布包在仓库的 Releases 页面。",
+      "README 未列出许可证。"
+    ]
+  },
+  "ds-disassembly-tools": {
+    "name": "ds_disassembly_tools",
+    "requirements": [
+      "Python 脚本需要 Python 3.9 或更新版本。asmdiff.sh 使用 devkitARM，或 PATH 中的 arm-none-eabi-objdump。",
+      "README 未写许可证。"
+    ]
+  },
+  "ds-kart-recompiled-case": {
+    "name": "DS Kart Recompiled：将《马力欧卡丁车 DS》静态重编译到 PC",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11。Linux 和 macOS 构建被标为测试版。玩家提供自己的欧洲版卡带转储。",
+      "README 列出单人、本地多人，以及游戏自带 Nintendo WFC 菜单的测试版可用。早期发布仍有错误。",
+      "README 没有给移植本身写许可证，只写了 Dear ImGui 使用 MIT。"
+    ]
+  },
+  "kirby-epic-yarn-decomp": {
+    "name": "Kirby’s Epic Yarn：反编译美版 Wii 游戏",
+    "requirements": [
+      "用 Dolphin 把游戏提取到 orig/RK5E01。只需要 sys/main.dol。然后运行 python configure.py 和 ninja。",
+      "比对使用 objdiff。README 没有写许可证。"
+    ]
+  },
+  "psretrox": {
+    "name": "PSRetrox",
+    "requirements": [
+      "README 没有写许可证。"
+    ]
+  },
+  "idr-pascal": {
+    "name": "IDR Pascal",
+    "requirements": [
+      "使用 Delphi 7 构建。",
+      "README 没有写许可证。"
+    ]
+  },
+  "rhgold": {
+    "name": "Rhythm Heaven：任天堂 DS 版《节奏天国》的反编译",
+    "requirements": [
+      "构建 ROM 需要已有的游戏副本。安装步骤在 INSTALL.md。",
+      "README 未注明许可证。"
+    ]
+  },
+  "gdx-3ds-case": {
+    "name": "G-Diffuser 3DS：《F-Zero X》的任天堂 3DS 移植",
+    "requirements": [
+      "玩家转储自己的美版第 0 修订卡带。tools/prebake/prebake.py 写出 fzerox.o2r 和 gdiffuser.o2r。音频需要一次性转储 DSP 固件 dspfirm.cdc。",
+      "旧版 3DS 和新版 3DS 的构建是分开的。Expansion Kit 构建还需要玩家自己的 64DD 磁盘镜像。",
+      "README 没有写许可证。"
+    ]
+  },
+  "yaravm": {
+    "name": "YaraVM",
+    "requirements": [
+      "把 yara_loader.py 复制到 IDA 的 loaders 目录，把 yara_proc.py 复制到 procs 目录，把 libyara.til 复制到 til 目录。",
+      "README 未注明许可证。"
+    ]
+  },
+  "byte-tactics": {
+    "name": "TA: Byte Tactics：《横扫千军》的字节匹配源码重建",
+    "requirements": [
+      "匹配目标是 TotalA.exe，MD5 为 8e74a1dffa1f5988624c52048f5b20cd。玩家提供 Total Annihilation。安装脚本会获取编译器。",
+      "tools/ 里的工具是 MIT。README 写明 src/ 里重建的代码不按任何许可证提供。"
+    ]
+  },
+  "reksio-engine": {
+    "name": "ReksioEngine：重实现《Przygody Reksia》游戏引擎",
+    "requirements": [
+      "日期为 2025-03-12 的 README 写明《Reksio i Skarb Piratów》的场景看起来可以运行，仍在测试。《Reksio i Ufo》大约到达 85% 的场景，并在挖掘小游戏之前停下。",
+      "README 未列出许可证。"
+    ]
+  },
+  "wacki-case": {
+    "name": "Wacki：从反编译代码移植 Wacki: Kosmiczna rozgrywka",
+    "requirements": [
+      "游戏文本是波兰语。图解安装步骤在 mszula.github.io/wacki。",
+      "README 链接了 LICENSE 文件，正文没有写出许可证名称。"
+    ]
+  },
+  "dothack-recompilation-case": {
+    "name": ".hack//Recompilation：《.hack//IMOQ》系列原生重编译",
+    "requirements": [
+      "当前构建目标是 build/app CMake 树里的 ps2EntryRunner。开发运行时把 game/infection/SLUS_202.67 传给感染篇运行器。开发主要在 Linux 上进行。",
+      "README 未列出许可证。"
+    ]
+  },
+  "re-wor-case": {
+    "name": "re-wor：静态重编译《吉他英雄：摇滚战士》",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，以及支持 DirectX 12 的显卡。玩家提供自己的 Xbox 360 副本。构建需要 Clang 20 或更新版本、CMake 3.25 或更新版本、Ninja，以及已编译的 RexGlue SDK。",
+      "README 写明当前发布是测试版，并且没有写许可证。"
+    ]
+  },
+  "decomp-pipeline": {
+    "name": "DecompPipeline",
+    "requirements": [
+      "需要 Python 3.12、JDK 21、Ghidra 12，以及带 C++ 的 Visual Studio 2022。Python 依赖从 requirements.txt 安装。仓库不包含游戏数据。",
+      "README 没有写许可证。"
+    ]
+  },
+  "tetris-gb-disassembly": {
+    "name": "Tetris：逐字节匹配的 Game Boy 反汇编",
+    "requirements": [
+      "用 RGBDS 构建：rgbasm -o main.o main.asm，然后 rgblink -o tetris.gb main.o。",
+      "README 没有写许可证。"
+    ]
+  },
+  "opennitemare3d": {
+    "name": "OpenNitemare3D：用 C# 重新实现 Nitemare 3D",
+    "requirements": [
+      "文档中的 C# 构建使用 .NET SDK 和 SFML。把 Windows 版 SND.DAT，以及 UIF.DAT、MAP.1、IMG.1 和 GAME.PAL，放进 bin/Debug/net5.0/data。",
+      "大多数菜单选项会崩溃。新游戏和声音编辑器是会起作用的选项。",
+      "README 没有写许可证。"
+    ]
+  },
+  "hctp-recomp-case": {
+    "name": "WWE SmackDown! Here Comes the Pain：Windows 静态重编译",
+    "requirements": [
+      "玩家提供自己的美版光盘。发布包里的启动器在 PC 上构建游戏。2026 年 10 月的状态写明展示赛和赛季可以运行，并在 Direct3D 11 路径和 RTX 3060 上以每秒 60 帧测试过比赛。",
+      "开发者构建需要 Visual Studio 2022 或更新版本、MSVC x64、CMake、Ninja、Python，以及支持 Direct3D 11 的显卡。",
+      "许可证：GPL-3.0。"
+    ]
+  },
+  "gm81decompiler": {
+    "name": "GameMaker 8.1 反编译器",
+    "requirements": [
+      "把 GameMaker 8.1 或 8.0 的可执行文件拖到反编译器上，或用可执行文件名运行 decompiler。",
+      "README 写明有些错误被故意留下，使部分游戏无法被反编译。",
+      "许可证：MIT。"
+    ]
+  },
+  "ng2recomp-case": {
+    "name": "Ninja Gaiden II Recompiled：《忍者龙剑传 II》Xbox 360 版的原生移植",
+    "requirements": [
+      "玩家提供自己的光盘镜像、Games on Demand 包或已提取的游戏，以及 Title Update 3。任务模式和服装包是可选的。",
+      "Linux 以 AppImage 发布，Windows 为 x64 构建。README 写明在 Steam Deck 上能稳定在每秒 60 帧，渲染倍率最高 8 倍。",
+      "README 未注明许可证。"
+    ]
+  },
+  "ida-bosch-me7x": {
+    "name": "BoschMe7x",
+    "requirements": [
+      "以 c166 处理器加载二进制，RAM 从 0x0e0000 起、大小 0x0400，ROM 从 0x800000 起。设备选择 C167CR_SR。把 .plw 文件放进 IDA 插件目录。",
+      "项目用 Visual Studio 2017 编写。许可证：MIT。"
+    ]
+  },
+  "libdecomp": {
+    "name": "libdecomp",
+    "requirements": [
+      "需要 CMake 3.25 或更新版本。示例需要 Zydis 4.1.1 或更新版本，或 Capstone 5.0.6 或更新版本。库本身除了 C 标准库没有直接依赖。",
+      "许可证：MIT。"
+    ]
+  },
+  "bounce-tales-decomp": {
+    "name": "Bounce Tales：反编译 J2ME 游戏",
+    "requirements": [
+      "玩家提供 Bounce Tales 的 JAR。BounceTools 里的 NetBeans 项目 BounceComposer 负责拆解它。",
+      "手机构建使用 Series 40 第 5 版 SDK，以及带 Mobility 插件的 NetBeans 8.2。Windows 构建用 64 位 JDK 运行 bouncewin32.BounceWin32。",
+      "README 没有写许可证。"
+    ]
+  },
+  "f3dex2-disasm": {
+    "name": "F3DEX2：任天堂 64 RSP 微码的匹配反汇编",
+    "requirements": [
+      "其他版本和标志组合在加入 ucodes_database.mk 之后也应能匹配。",
+      "README 未列出许可证。"
+    ]
+  },
+  "megaman-x2-recomp-case": {
+    "name": "MegaManX2SNESRecomp：静态重编译《洛克人 X2》",
+    "requirements": [
+      "玩家提供自己的 ROM。SHA-256 为 f3246755f608a1e1dc9c848b61da3b824c7853b29b3be40df6fc7f2793a887ed。512 字节的 SMC 头会被自动去掉。",
+      "许可证：PolyForm Noncommercial 1.0.0。"
+    ]
+  },
+  "celosia": {
+    "name": "Celosia：将《旺达与巨像》静态重编译到 Mac 和 Vita",
+    "requirements": [
+      "需要 Apple Silicon 上的 macOS、Xcode 命令行工具、CMake、Ninja、pkg-config、FFmpeg 和 Python。玩家提供美版光盘镜像。README 报告在 M4 Pro 上以 1536×1344 达到每秒 60 帧。",
+      "Vita 构建可以运行。README 报告在 Vita3K 的片头里为每秒 18 到 25 帧。",
+      "许可证：GPL-3.0。"
+    ]
+  },
+  "soulcalibur2hd-recomp-case": {
+    "name": "Soulcalibur II HD：将 PS3 游戏静态重编译至 Mac 与 PC",
+    "requirements": [
+      "玩家提供美版 PSN 发布 NPUB31366，包括游戏包和它的许可证。01.01 更新是可选的。需要 Python 3.10 或更新版本。README 写明它可以在 Apple Silicon Mac 和 Windows 的 Vulkan 上运行。",
+      "仓库代码是 GPL-2.0 或更高版本。预编译程序因为包含 Apache-2.0 部分，整体以 GPL-3.0 或更高版本分发。"
+    ]
+  },
+  "infinite-undiscovery-recomp-case": {
+    "name": "Infinite Undiscovery Recomp：Xbox 360 游戏的原生重编译",
+    "requirements": [
+      "玩家提供自己的副本。支持导入 USA、USA-UNDUB、Europe、Japan 和 Asia。市场 DLC 使用标题 ID 535107DB。",
+      "许可证：BSD-3-Clause。ReXGlue 运行时包含 LGPL 组件，候选发布另附一个 LGPL 合规包。"
+    ]
+  },
+  "decomp-buddy": {
+    "name": "Decomp Buddy",
+    "requirements": [
+      "Windows、Mac 和 Linux 都有下载。README 写明目录里列出的是可以玩的游戏。",
+      "许可证：GPL-3.0。"
+    ]
+  },
+  "sf64-dc-case": {
+    "name": "Star Fox 64：Dreamcast 移植版",
+    "requirements": [
+      "Docker 构建步骤在 docker/Docker.md。make dsiso 需要 mkisofs。VMU 存档占用 3 个块。",
+      "README 未注明许可证。"
+    ]
+  },
+  "pentagram-u8": {
+    "name": "Pentagram：重建《创世纪 8》引擎",
+    "requirements": [
+      "README 列出的构建依赖是 SDL、SDL_ttf、zlib 和 libpng。在 Linux 上运行 ./bootstrap、./configure 和 make。Windows 一节写明那里还没有内容。",
+      "README 没有写许可证。"
+    ]
+  },
+  "mgs2-android-case": {
+    "name": "MGS2 for Android：静态重编译《潜龙谍影2：自由之子 HD》",
+    "requirements": [
+      "需要 Android 8 或更新版本，arm64-v8a。玩家从自己的 SHIELD TV 提供 base.apk 和两个 OBB 文件，版本 21.21.1219.GM。README 要求大约 12 GB 空闲空间。Adreno 和 Mali 各有一个 APK。",
+      "许可证：GPL-3.0。"
+    ]
+  },
+  "rb2-recomp-case": {
+    "name": "RB2：重编译《龙珠：怒气爆发 2》",
+    "requirements": [
+      "设置 REXSDK，把游戏文件提取到 assets，用 CMake 配置，构建 re2_codegen 目标，再构建 re2。启动时把 assets 目录作为第一个参数。",
+      "README 未注明许可证。"
+    ]
+  },
+  "psp-recompilation-toolkit": {
+    "name": "PSP 静态重编译工具包",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11、支持 Vulkan 的显卡、Python 3，以及带 GCC、SDL3、Vulkan loader 和 LLD 的 MSYS2 UCRT64。输入是从 EBOOT.PBP 得到的已解密 ELF。",
+      "许可证：GPL-2.0 或更高版本，因为项目使用了 PPSSPP 的代码。"
+    ]
+  },
+  "pbdviewer": {
+    "name": "PbdViewer",
+    "requirements": [
+      "README 没有写许可证，也没有写构建命令。"
+    ]
+  },
+  "breadflowerdos": {
+    "name": "BreadFlowerDos：重新实现 Refractor 2 游戏引擎",
+    "requirements": [
+      "需要 CMake 4.0 或更新版本，以及 Clang 19 或更新版本，或 MSVC。提交前要通过 clang-tidy 和 clang-format。",
+      "README 未列出许可证。"
+    ]
+  },
+  "ballanced": {
+    "name": "Ballanced：重实现《Ballance》运行时",
+    "requirements": [
+      "玩家提供《平衡球》的副本，并把发布包解压到游戏根目录。Windows 运行 Bin/Player.exe。Linux 和 macOS 运行 Bin/Player。",
+      "开发需要 CMake 3.25 或更新版本，以及 SDL3。Windows 使用 Visual Studio 2022。Linux 使用 GCC 或 Clang 加 Ninja。macOS 使用 Apple Clang 加 Ninja。",
+      "README 未写许可证。"
+    ]
+  },
+  "zgloom": {
+    "name": "ZGloom：重实现 Amiga 游戏《Gloom》",
+    "requirements": [
+      "原开发者在 earok/GloomAmiga 发布了 Gloom。把 ZGloom 的二进制文件放进那个目录。在 Linux 上用 make 编译。",
+      "README 没有给 ZGloom 写许可证。它写明附带的 DeCrunchmania 代码许可证不明。"
+    ]
+  },
+  "automobili-lamborghini-recomp": {
+    "name": "Automobili Lamborghini 重编译",
+    "requirements": [
+      "玩家提供美版卡带转储，命名为 Automobili Lamborghini (USA).z64 或 .n64，放在可执行文件旁边。Windows 启动 lamborghini_modern.exe。Linux 启动 ./lamborghini_modern。两个文件名都存在时使用 .z64。",
+      "许可证：本仓库原创代码为 GPL-3.0。依赖子模块保留各自的许可证。"
+    ]
+  },
+  "copy-as-yara": {
+    "name": "Copy as YARA",
+    "requirements": [
+      "在 Binary Ninja 里选中反汇编，然后使用 Plugins 里的 Copy for YARA。",
+      "许可证：MIT。"
+    ]
+  },
+  "th06-sdl2": {
+    "name": "th06-sdl2：将《东方红魔乡》移植到 SDL2",
+    "requirements": [
+      "需要 CMake 3.20 或更新版本、SDL2、SDL2_mixer 和 SDL2_image。玩家提供 1.02h 可执行文件里的游戏数据。构建 Vulkan 后端需要 LunarG Vulkan SDK。",
+      "README 没有写许可证。"
+    ]
+  },
+  "agl-decomp": {
+    "name": "agl：任天堂游戏图形库的反编译",
+    "requirements": [
+      "README 未提供 agl 的构建命令或许可证；项目目标和构建信息指向 open-ead/sead。"
+    ]
+  },
+  "nfs-carbon-mac-case": {
+    "name": "Need for Speed: Carbon：Apple Silicon 原生重编译",
+    "requirements": [
+      "需要 Apple Silicon Mac、Xcode 命令行工具和 Python 3。玩家提供 1.4 版 PC 游戏，以及未加壳的 NFSC.exe。它的 SHA-256 是 baaaaec33873d4ba7e4dbae6a5212049ffdcf9679a35d865d7625b4189952fd3。",
+      "README 没有写许可证。"
+    ]
+  },
+  "rocket-r-case": {
+    "name": "Rocket-R：《Rocket: Robot on Wheels》原生移植",
+    "requirements": [
+      "玩家提供未修改的美版 ROM，游戏代码 NSUE，12 MiB，SHA-1 为 622D71A44DA0B81EA68092CAC9198C66154A4F4A。桌面启动器接受 .z64、.n64 和 .v64。",
+      "README 指向 LICENSE 里的 GPL 许可证文本，以及 LICENSE.md 里的许可说明。"
+    ]
+  },
+  "pytest-idapro": {
+    "name": "pytest-idapro",
+    "requirements": [
+      "基本用法是 pytest --ida 加上 IDA 可执行文件的路径，也可以用 --ida-file 指定 IDA 数据库或其他 IDA 能打开的文件。",
+      "README 未注明许可证。"
+    ]
+  },
+  "mh1j-decomp": {
+    "name": "Monster Hunter：日版 PS2 游戏的逐字节匹配反编译",
+    "requirements": [
+      "需要 Python 3.9 或更新版本，然后运行 python3 -m pip install -r requirements.txt。把 SLPM_654.95 和 AFS_DATA 放在根目录，再运行 make setup、make split 和 make build。",
+      "汇编器、编译器和链接器是 Windows 可执行文件。Makefile 使用 WSL2 或 WIBO。",
+      "README 未列出许可证。"
+    ]
+  },
+  "glkeeper": {
+    "name": "GLKeeper：重实现《地下城守护者 2》",
+    "requirements": [
+      "README 没有写许可证，也没有写构建命令。"
+    ]
+  },
+  "360tools": {
+    "name": "360tools",
+    "requirements": [
+      "许可证：除非某个文件另有说明，否则是 MIT。extract_stfs.py 包含源自 Rene Ladan、采用二句版 BSD 许可证的代码。ReXGlue 保留自己的许可证。"
+    ]
+  },
+  "fzero-recomp-case": {
+    "name": "F-Zero Recomp：静态重编译《F-Zero》",
+    "requirements": [
+      "玩家提供自己的卡带转储。仓库里没有 ROM。",
+      "许可证：仓库里的原创代码为 PolyForm Noncommercial 1.0.0。"
+    ]
+  },
+  "emerald-recomp-case": {
+    "name": "EmeraldRecomp：静态重编译《宝可梦 绿宝石》",
+    "requirements": [
+      "美版 ROM 的 SHA-1 是 f3ae088181bf583e55daf962a92bb46f4f1d07b7。运行时会拒绝无法识别的 ROM。Windows 包是 EmeraldRecomp-windows-x64。",
+      "许可证：PolyForm Noncommercial 1.0.0。"
+    ]
+  },
+  "syphon-filter-2-recomp-case": {
+    "name": "Syphon Filter 2 Recompiled：PS1 游戏的原生 Windows 版本",
+    "requirements": [
+      "下载包是本地构建游戏的安装工具包。需解压到不含空格的 ASCII 路径，并提供游戏光盘。包内不含 Sony BIOS。",
+      "框架源码是 PolyForm Noncommercial 1.0.0。README 指向项目的 LICENSE。"
+    ]
+  },
+  "xd-decomp": {
+    "name": "Pokémon XD：GameCube 一致性反编译",
+    "requirements": [
+      "把光盘镜像复制到 orig/GXXE01。接受的格式包括 ISO、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC。然后运行 python configure.py 和 ninja。其他版本用 --version 选择。",
+      "README 没有写许可证。"
+    ]
+  },
+  "pokerecomp": {
+    "name": "pokerecomp：重实现 Game Boy 宝可梦游戏",
+    "requirements": [
+      "文档中的引擎是 Godot 4.8.dev7。发布包覆盖 Windows x86_64 和 ARM、macOS、Linux x86_64 和 ARM64、Android、iOS 和 Switch。",
+      "许可证：引擎源码为 MIT。README 写明该许可证不覆盖游戏或提供的转储。"
+    ]
+  },
+  "ffcc-decomp": {
+    "name": "Final Fantasy Crystal Chronicles：GameCube 版反编译",
+    "requirements": [
+      "把 FFCC_PAL.iso、FFCC_USA.gcm 或 FFCC_JP.iso 放到对应版本的 orig 目录。默认构建是 python configure.py --version GCCP01，然后运行 ninja。",
+      "README 未注明许可证。"
+    ]
+  },
+  "rocket-robot-on-wheels-decomp": {
+    "name": "Rocket: Robot on Wheels：任天堂 64 版反编译",
+    "requirements": [
+      "安装 MIPS gcc 和 MIPS binutils。把 ROM 放在项目根目录，先运行一次 make setup，再运行 make。",
+      "README 没有写许可证。"
+    ]
+  },
+  "sacengine": {
+    "name": "sacengine：重实现《Sacrifice》游戏引擎",
+    "requirements": [
+      "带子模块克隆，然后运行 dub build -b release-debug。把游戏的 maps 和 data 目录链接到 sacengine 目录，或把可执行文件放进 Sacrifice 目录。",
+      "在 Windows 上，README 还列出 OpenAL、mpg123、SDL2 和 FreeType 的二进制文件。",
+      "README 未注明许可证。"
+    ]
+  },
+  "san-recomp": {
+    "name": "San Recompiled：静态重编译 Xbox 360 版《侠盗猎车手 V》",
+    "requirements": [
+      "玩家提供自己的 Xbox 360 游戏文件。README 写明项目处于早期开发。",
+      "README 未注明许可证。"
+    ]
+  },
+  "yakuza-dead-souls-recomp": {
+    "name": "Yakuza: Dead Souls Recompiled：将 PS3 游戏静态重编译至 Windows",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，以及支持 Direct3D 12 的显卡。用 Visual Studio 2022 或更新版本、CMake 3.21 或更新版本、Ninja 和 Python 3.10 或更新版本构建。测试过的光盘是北美版 BLUS30826 1.00。",
+      "许可证：MIT。"
+    ]
+  },
+  "retrokit": {
+    "name": "retrokit",
+    "requirements": [
+      "需要 Ghidra 12.x、JDK 21 或更新版本，以及 Python 3.10 或更新版本。retrokit install-loader 为每次 Ghidra 安装注册一次 DOS 加载器。",
+      "许可证：Apache-2.0。"
+    ]
+  },
+  "dc3-decomp": {
+    "name": "Dance Central 3：反编译 Xbox 360 游戏",
+    "requirements": [
+      "把 XEX 复制到 orig/373307D9。然后运行 python configure.py 和 ninja。",
+      "README 未列出许可证。"
+    ]
+  },
+  "zakuro": {
+    "name": "Zakuro",
+    "requirements": [
+      "从源码构建需要 Rust 1.95 或更新版本。玩家提供已解密的 ROM。Linux 构建还需要 pkg-config，以及 ALSA 和 udev 的开发文件。",
+      "许可证：MIT。"
+    ]
+  },
+  "kl2-lv-decomp": {
+    "name": "Klonoa 2: Lunatea’s Veil：PlayStation 2 匹配反编译",
+    "requirements": [
+      "把 SCESDK 设为官方 PlayStation 2 SDK。然后运行 cmake -Bbuild 和 make。ELF 是 kl2_lv_decomp.elf。",
+      "README 没有写许可证。"
+    ]
+  },
+  "openreliant": {
+    "name": "OpenReliant：重新实现《StarLancer》引擎",
+    "requirements": [
+      "玩家提供 StarLancer 的零售副本。构建需要 Zig 0.17。",
+      "源代码是 MPL-2.0。docs/ 下的文档是 CC BY-SA 4.0。"
+    ]
+  },
+  "blastcorps-decomp": {
+    "name": "Blast Corps：任天堂 64 反编译",
+    "requirements": [
+      "克隆时包含 splat 子模块。文档中的第一次构建使用放在仓库根目录的美版 1.0 ROM。美版 SHA-1 是 185a6ef7ba1adb243278062c81a7d4e119bda58c。美版第 1 修订 SHA-1 是 483f7161aea39de8b45c9fbc70a2c3883c4dea8c。",
+      "README 没有写许可证。"
+    ]
+  },
+  "i26-interstate": {
+    "name": "I26：用 Godot 重实现《Interstate ’76》",
+    "requirements": [
+      "玩家提供 GOG 版，包括 Nitro 包，或离线安装程序。在 Linux 上，Impact 和 Arial 需要微软核心字体。",
+      "许可证：GPL-3.0。构建步骤在 DEVELOPMENT.md。"
+    ]
+  },
+  "ocarina-mq-debug-disasm": {
+    "name": "Ocarina of Time Master Quest：调试版匹配反汇编",
+    "requirements": [
+      "需要 Linux，或带 WSL 的 Windows 10。需要 GCC、GNU Make、Python、mips64-elf binutils、仓库发布里的 IDO 5.3 编译器、irixemu，以及 Mono C# 运行时。ROM 命名为 baserom.z64。",
+      "README 未注明许可证。"
+    ]
+  },
+  "source-2-decompiler": {
+    "name": "Source 2 反编译器",
+    "requirements": [
+      "命令是 s2dc，-d 指定输入目录，-o 指定输出根目录。接受通配符。",
+      "README 没有写许可证。"
+    ]
+  },
+  "luxon-server": {
+    "name": "Luxon Server",
+    "requirements": [
+      "文档中的预编译发布覆盖 Linux、Windows、macOS、FreeBSD 和 OpenBSD。也描述了 Debian 软件包仓库。",
+      "README 未注明许可证。"
+    ]
+  },
+  "aerogauge-recomp": {
+    "name": "AeroGauge: Recompiled：任天堂 64 游戏的本地移植版",
+    "requirements": [
+      "玩家提供自己的 ROM。桌面文件名包括 AeroGauge (USA).z64。Android 在应用里导入 ROM。",
+      "审阅的 README 指向 LICENSE 文件，正文没有写出许可证名称。"
+    ]
+  },
+  "balloonfight-disasm": {
+    "name": "Balloon Fight：NES 游戏反汇编",
+    "requirements": [
+      "用 bass 汇编 BalloonFight_iNES.asm 或 BalloonFight_PRG.asm。",
+      "README 未列出许可证。"
+    ]
+  },
+  "cmr2-decomp": {
+    "name": "CMR2Decomp：反编译 Colin McRae Rally 2.0",
+    "requirements": [
+      "本地编译行链接 third_party/dx7sdk-7001 里的 DirectX 7 库。",
+      "README 没有写许可证。"
+    ]
+  },
+  "puzzleleague64": {
+    "name": "Pokémon Puzzle League：任天堂 64 版匹配反编译",
+    "requirements": [
+      "Python 依赖用 uv sync 安装。Rust 用 rustup 安装。",
+      "许可证：MIT，src/ 除外，那里是 CC0。"
+    ]
+  },
+  "parascope": {
+    "name": "parascope",
+    "requirements": [
+      "命令是 parascope，需要 --rules 和一个输入路径。",
+      "README 正文没有写出许可证名称。"
+    ]
+  },
+  "openjpog": {
+    "name": "OpenJPOG：反编译《侏罗纪公园：基因计划》及其 Toshi 引擎",
+    "requirements": [
+      "带子模块克隆，运行 GenerateProjects-VS2019.bat 或 GenerateProjects-VS2022.bat，然后编译生成的解决方案。",
+      "README 没有写许可证。"
+    ]
+  },
+  "mbased": {
+    "name": "MBASED",
+    "requirements": [
+      "需要 Binary Ninja、Z3 和 SymPy。把仓库克隆到 Binary Ninja 的插件目录，然后使用插件菜单里的 MBASED: Simplify all MBA expressions。",
+      "README 没有写许可证。"
+    ]
+  },
+  "dds-decomp": {
+    "name": "Digital Devil Saga：两款 PS2 游戏的一致性反编译",
+    "requirements": [
+      "需要 Python 3.10 或更新版本、ninja、cpp 和 git。运行 python configure.py 和 ninja。ninja dds1 或 ninja dds2 只构建其中一部。",
+      "README 没有写许可证。"
+    ]
+  },
+  "r2garlic": {
+    "name": "r2garlic",
+    "requirements": [
+      "用 r2pm -Uci r2garlic 安装，或在更新子模块后用 make 构建。",
+      "README 没有写许可证。"
+    ]
+  },
+  "earthbound-companion": {
+    "name": "EarthBound Companion：《地球冒险》的原生版本",
+    "requirements": [
+      "玩家提供干净的 3 MiB 美版 ROM，可以带或不带 512 字节的复制器头。其他修订会被拒绝。Linux 需要 glibc 2.38 或更新版本，macOS 需要 12 或更新版本，Android 需要 8.0 或更新版本。",
+      "README 没有写许可证。"
+    ]
+  },
+  "halo-ce-rg35xx": {
+    "name": "Halo CE on RG35XX H：将《光环：战斗进化》移植到 H700 掌机",
+    "requirements": [
+      "玩家提供自己的 Xbox 光盘镜像。发布包不含游戏数据。README 点名测试过的战役关卡是 a30、b30 和 c10。",
+      "许可证：CC0 1.0。"
+    ]
+  },
+  "speedbreaker-carbon": {
+    "name": "SpeedBreaker: Carbon：静态重编译《极品飞车：卡本峡谷》",
+    "requirements": [
+      "玩家提供那张光盘的完整 ISO、裁剪过的 XISO，或已提取的文件夹。不需要标题更新。标准版和其他区域会被拒绝。",
+      "许可证：GPL-3.0 或更高版本。"
+    ]
+  },
+  "pocket-disasm": {
+    "name": "Pocket Disasm",
+    "requirements": [
+      "需要 Windows 10 或 11、Python 3.11 或更新版本，以及另外安装的 IDA Pro 或 IDALib。",
+      "许可证：MIT。"
+    ]
+  },
+  "ghidra-hexagon-sleigh": {
+    "name": "Ghidra Hexagon SLEIGH",
+    "requirements": [
+      "通过文件菜单的安装扩展，安装与 Ghidra 版本匹配的发布压缩包。建议使用 Ghidra 12.0 或更新版本。",
+      "README 没有写许可证。"
+    ]
+  },
+  "maniac-mansion-disasm": {
+    "name": "Maniac Mansion：试玩版与零售版脚本的注释反汇编",
+    "requirements": [
+      "README 未列出许可证。"
+    ]
+  },
+  "ace-combat-3-recomp": {
+    "name": "Ace Combat 3：面向 Windows 的静态重编译",
+    "requirements": [
+      "需要两张日版第 1 修订光盘，SLPS-02020 和 SLPS-02021，存成 2352 字节扇区的 .bin。需要 64 位 Windows、Visual Studio 2022、clang 22.1、CMake 3.20 或更新版本、Ninja、名为 python 的 Python 3、Vulkan SDK 和 SDL3 3.4.8。",
+      "README 未写许可证。"
+    ]
+  },
+  "def-jam-vendetta-recomp": {
+    "name": "Def Jam Vendetta Recompiled：将 PS2 游戏静态重编译到 Windows",
+    "requirements": [
+      "玩家提供光盘。README 要求大约 8 GB 空闲空间。第一次构建在 PC 上进行。",
+      "许可证：GPL-3.0。对 paraLLEl-GS 的改动是 LGPL-3.0 或更高版本。"
+    ]
+  },
+  "srw64-recomp": {
+    "name": "Marchwind 64：静态重编译《超级机器人大战 64》",
+    "requirements": [
+      "玩家提供日版《超级机器人大战64》第 0 修订 ROM。下载包不含游戏数据。",
+      "许可证：项目自己的源码和工具为 GPL-3.0 或更高版本。"
+    ]
+  },
+  "mafia-re": {
+    "name": "Mafia-RE：Mafia: The City of Lost Heaven 的一致性反编译",
+    "requirements": [
+      "需要 Windows、Git、Python 3 和 CMake 3.29 或更新版本。游戏二进制用 Visual C++ 6.0 构建。Steam 2010 年的安装程序使用 Visual C++ 2008 SP1。",
+      "README 没有写许可证。"
+    ]
+  },
+  "mscharged-decomp": {
+    "name": "马里奥足球：竞技场：Wii 版匹配反编译",
+    "requirements": [
+      "美版把光盘镜像放在 orig/R4QE01。接受的格式包括 ISO、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC。然后运行 python3 configure.py 和 ninja。",
+      "许可证：项目为 CC0 1.0。第三方源码保留各自条款。"
+    ]
+  },
+  "burnout2-recomp": {
+    "name": "Burnout 2：初代 Xbox 游戏的静态重编译",
+    "requirements": [
+      "玩家提供美版 Xbox XISO，格式为 .iso 或 .xiso。Windows 安装用 Install.cmd。Linux 用 Install.desktop。macOS 用 Install.command。",
+      "README 未注明项目许可证。依赖项许可证列于 THIRD_PARTY_NOTICES.txt。"
+    ]
+  },
+  "smt-nine-recomp": {
+    "name": "SMT NINE Recomp：《真·女神转生 NINE》的原生移植",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11。画面可以用 Vulkan 1.3、功能级别 11_0 的 D3D11、经 D3D11On12 的 D3D12，或经 WineD3D 的 OpenGL。本地构建建议有 15 GB 空闲磁盘和 16 GB 内存。",
+      "许可证：项目编写的代码和中文翻译输入为 MIT。xboxrecomp 和 WineD3D 包含 LGPL 部分。"
+    ]
+  },
+  "sega2asm": {
+    "name": "sega2asm",
+    "requirements": [
+      "命令是 sega2asm，加上一个配置 YAML。可选参数指定符号文件、字符表、详细输出或演练。",
+      "README 未注明许可证。"
+    ]
+  },
+  "cryptoknight": {
+    "name": "CryptoKnight",
+    "requirements": [
+      "安装 Python 依赖，然后运行 python knight.py --setup。预测一个二进制是 python knight.py --predict。编译示例二进制需要 OpenSSL 头文件。",
+      "README 未注明许可证。"
+    ]
+  },
+  "recv-dc-decomp": {
+    "name": "Resident Evil: Code: Veronica：Dreamcast 版的逐字节匹配反编译",
+    "requirements": [
+      "运行 pip install sh4dis。拆分器还需要 PyYAML 和 Python。构建使用 Katana r11 的头文件、日立工具和库。把 1ST_READ.BIN 放进 rom 目录，然后运行 make setup。",
+      "README 未列出许可证。"
+    ]
+  },
+  "cluadecompiler": {
+    "name": "cLuaDecompiler",
+    "requirements": [
+      "许可证：GNU Affero 通用公共许可证第 3 版。"
+    ]
+  },
+  "opensith": {
+    "name": "OpenSith：重新实现《绝地武士：黑暗力量 II》引擎",
+    "requirements": [
+      "在 Unity 里打开 Scene 场景，把名为 _Game 的对象的 Game Path 设成绝地武士的安装目录。它读取 Steam 的 GOB 包，或 Extracted 子目录里的文件。",
+      "许可证：GPL-3.0。"
+    ]
+  },
+  "sh3-nx": {
+    "name": "Silent Hill 3：原生 Nintendo Switch 移植",
+    "requirements": [
+      "玩家提供 PC 版游戏。移植针对的 sh3.exe 是 3,338,240 字节，SHA-1 为 aa2aca6dba19bf510c9c2e92eefdc15e98266581。",
+      "README 未写许可证。"
+    ]
+  },
+  "miyoo64": {
+    "name": "Miyoo64：将十五款 Nintendo 64 游戏移植到 Miyoo Mini",
+    "requirements": [
+      "下载包里没有 ROM。README 里的 SHA-1 针对大端 .z64 转储。同一 ROM 的 .v64 和 .n64 转储也可以。",
+      "许可证：本项目自己的代码为 MIT。每个游戏目录保留上游许可证。"
+    ]
+  },
+  "mlss-decomp": {
+    "name": "Mario & Luigi: Superstar Saga：逐字节匹配的 GBA 反编译",
+    "requirements": [
+      "README 没有写许可证，也没有写构建命令。"
+    ]
+  },
+  "crackdown2-recomp": {
+    "name": "Crackdown 2：Xbox 360 静态重编译",
+    "requirements": [
+      "需要 CMake、Ninja，以及 Clang 或 LLVM。把光盘和标题更新 5，包括它的 xexp，提取到 assets。default.xex 的 SHA-256 是 8959C449E382661D29B8EA479C685F506CD5BD3ECA40B3D73A51CC10F281069F。标题更新 5 的 SHA-256 是 A5E49FC1FF7F6F65E6F95A7B5C4B9392BB9E38674D1237AC0E2F0149D05929D7。",
+      "README 没有写许可证。"
+    ]
+  },
+  "croc-decomp": {
+    "name": "Croc: Legend of the Gobbos：PlayStation 版反编译",
+    "requirements": [
+      "在 Ubuntu、Debian 或带 WSL 的 Windows 上，安装 tools/requirements-debian.txt 里的包，运行 make update-dependencies，并把光盘复制到对应版本的 disks 目录。make extract 写出汇编。make all 编译二进制。不匹配的函数可以用 CPP_FLAGS=-DNON_MATCHING 编译。",
+      "README 没有写许可证。"
+    ]
+  },
+  "chronostorm": {
+    "name": "ChronoStorm：重实现《红色警戒 2》及《尤里的复仇》引擎",
+    "requirements": [
+      "需要 Python 3.10 或更新版本，以及 Pygame 2.5 或更新版本。玩家提供自己的 MIX 资源文件。",
+      "许可证：MIT。"
+    ]
+  },
+  "freevgui": {
+    "name": "FreeVGUI",
+    "requirements": [
+      "许可证：三句版 BSD。"
+    ]
+  },
+  "sonic-riders-decomp": {
+    "name": "Sonic Riders：GameCube 游戏的逐字节匹配反编译",
+    "requirements": [
+      "需要 devkitPro、Python 3 和 gcc。把干净的美版 DOL 命名为 baserom.dol。README 写明把一个编译器压缩包解压到 tools/mwcc_compiler，然后运行 make。",
+      "README 未注明许可证。"
+    ]
+  },
+  "mmx4-decomp": {
+    "name": "Mega Man X4：《洛克人 X4》PlayStation 版的字节匹配源码重建",
+    "requirements": [
+      "文档中的软件包是 mipsel 的 binutils 和 gcc，以及 ninja。然后运行 pip install -r requirements.txt，更新子模块，再运行 compiler.sh。",
+      "README 未注明许可证。"
+    ]
+  },
+  "ssx3-decomp": {
+    "name": "SSX 3：将 PS2 游戏静态重编译为 Rust",
+    "requirements": [
+      "玩家提供自己的光盘。生成的代码和光盘镜像不进入 git。",
+      "README 没有给这个项目写许可证。它写明 ps2-web-recomp 是 MIT。"
+    ]
+  },
+  "quest64-decomp": {
+    "name": "Quest 64：反编译 Nintendo 64 游戏",
+    "requirements": [
+      "克隆时包含子模块。getctx.py 需要 pyperclip。",
+      "README 没有写许可证。"
+    ]
+  },
+  "alttp-jp-disasm": {
+    "name": "The Legend of Zelda: A Link to the Past：日文 1.0 版匹配反汇编",
+    "requirements": [
+      "用 Makefile 或 binextract.py 从名为 alttp.sfc 的日文 1.0 ROM 提取二进制。",
+      "README 未列出许可证。"
+    ]
+  },
+  "coney": {
+    "name": "Coney：重实现《The Warriors》",
+    "requirements": [
+      "Windows 需要 MSVC 19.38 或更新版本，Linux 需要 GCC 13 或 Clang 19 及以上，macOS 需要 Xcode 16 或更新版本。还需要 CMake 3.28 或更新版本、Ninja、Git，以及用来开窗口的 OpenGL 3.3。文档中的命令是 cmake --preset dev、cmake --build --preset dev 和 ctest --preset dev。",
+      "许可证：代码为 GPL-3.0-or-later。docs/ 里的文档是 CC-BY-SA-4.0。"
+    ]
+  },
+  "svr2010-recomp": {
+    "name": "WWE SmackDown vs. Raw 2010：静态重编译 Xbox 360 游戏",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，以及支持 Direct3D 12 或 Vulkan 的显卡。光盘镜像是美国或欧洲版，标题 ID 为 54510844，媒体 ID 为 518DE415。从 Releases 下载 SVR2010-NATIVE.zip，把 .iso 放在 svr2010.exe 旁边。",
+      "许可证：本项目代码为 GPL-3.0。README 写明发布包包含 LGPL 的 FFmpeg 和 libmspack，渲染器基于 re:Blue 的 BSD-3-Clause 核心。"
+    ]
+  },
+  "noble-archimedes": {
+    "name": "Noble Archimedes：将《恶魔城 暗黑诅咒》重编译至 PC",
+    "requirements": [
+      "需要 Windows x64 和支持 Direct3D 12 的显卡。构建需要 Python 3、Git、CMake 3.25 或更新版本、Ninja、LLVM Clang/LLD，以及 Visual Studio C++ 生成工具。把解压后的美版 Xbox 光盘放到 extracted/，其中要有 default.xbe。文档中的命令是 .\\Build Noble Archimedes.cmd --full-game 和 .\\Launch Noble Archimedes.cmd。",
+      "许可证：项目自身代码为 GPL-2.0-only 或 GPL-3.0-or-later。README 写明 Xbox 来源保持 GPLv2，它的 SDK 补丁保持 MIT，来自 GPLv3 的 PS2 组件保持 GPLv3，assets/noble/ 里的标识使用 CC0。"
+    ]
+  },
+  "crackdown-recomp": {
+    "name": "Crackdown：Xbox 360 静态重编译",
+    "requirements": [
+      "需要 CMake、ReXGlue SDK，以及 2007 年 Xbox 360 版 Crackdown。把光盘内容复制到 assets，然后运行 cmake configure、cmake --build . --target crackdown_codegen 和 cmake --build .。用 crackdown --assets 加上素材目录启动。",
+      "README 没有写许可证。"
+    ]
+  },
+  "gh2-recomp": {
+    "name": "吉他英雄 II：Xbox 360 版概念验证重编译",
+    "requirements": [
+      "设置 REXSDK，把 Guitar Hero II 的 ISO 解压到 assets，运行 cmake configure，构建 gh2test_codegen 目标，再构建 gh2test。启动时第一个参数指向素材目录。",
+      "README 没有写许可证。"
+    ]
+  },
+  "fe7j-decomp": {
+    "name": "Fire Emblem: Rekka no Ken：Game Boy Advance 日版匹配反编译",
+    "requirements": [
+      "把原版 ROM 命名为 FireEmblem7J.base.gba。在 Debian 或 Ubuntu 上安装 build-essential 和 gcc-arm-none-eabi，运行 tools/install-agbcc.sh，然后运行 make compare -j。",
+      "README 未注明许可证。"
+    ]
+  },
+  "evangelion64-decomp": {
+    "name": "Neon Genesis Evangelion 64：任天堂 64 版反编译",
+    "requirements": [
+      "需要 64 位 Linux 或 WSL，并安装 build-essential 和 binutils-mips-linux-gnu。",
+      "README 没有写许可证。"
+    ]
+  },
+  "recvx-gc-decomp": {
+    "name": "Resident Evil: Code: Veronica X：反编译 GameCube 版本",
+    "requirements": [
+      "Windows 使用 Python 和 ninja。macOS 使用 ninja 和 wine-crossover。Linux 使用 ninja。接受的光盘格式包括 ISO、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC。",
+      "README 未注明许可证。"
+    ]
+  },
+  "yukatool": {
+    "name": "yukatool",
+    "requirements": [
+      "命令形式是 yuka.exe 后接标志、任务和参数。文档中的任务包括 unpack、pack、patch、split、decompile、compile、unwrap 和 wrap。",
+      "README 未注明许可证，也没有写构建命令。"
+    ]
+  },
+  "helpdeco": {
+    "name": "HELPDECO",
+    "requirements": [
+      "用帮助文件名运行 HELPDECO。文件写在当前目录。选项 -y 会直接覆盖已有文件。",
+      "许可证：GPL-2.0-or-later。"
+    ]
+  },
+  "openrakis": {
+    "name": "OpenRakis：逆向分析 Cryo 的《Dune》",
+    "requirements": [
+      "README 没有写许可证，也没有写构建命令。它指向 IDA Freeware、Ghidra、UNLZEXE、DOSBox Debugger、Spice86 和 Cryogenic。"
+    ]
+  },
+  "pso-gc-decomp": {
+    "name": "Phantasy Star Online Episode I & II Plus：GameCube 版匹配反编译",
+    "requirements": [
+      "需要 Python 3.10 或更新版本，以及 Ninja。把光盘镜像放到 orig/GPOE8P/，然后运行 python configure.py 和 ninja。第一次构建会下载 CodeWarrior 编译器。",
+      "许可证：MIT。从其他项目改编的代码保留原来的声明。"
+    ]
+  },
+  "starcraft64-recomp": {
+    "name": "StarCraft 64：通过静态重编译实现的原生移植",
+    "requirements": [
+      "需要 CMake、Ninja 和 Python 3.10 或更新版本。文档中的启动器构建是 make doctor、make bootstrap、make build-recompiler 和 make package。接受 z64、v64 和 n64 转储。",
+      "许可证：原创源码和文档为 MIT。README 写明启动器安装包静态链接 GPL-3.0 的 N64ModernRuntime，tools/bolt_extract.py 和 tools/research/bolt_audit.py 为 GPL-3.0-or-later。"
+    ]
+  },
+  "nwiirecomp": {
+    "name": "NWiiRecomp",
+    "requirements": [
+      "需要 CMake 3.20 或更新版本，以及 C++20 编译器。文档中的命令是 cmake -B build 和 cmake --build build，然后运行 ./build/nWiiRecomp/nwiirecomp config.toml。",
+      "README 没有写出本项目的许可证。它写明 totaldb.dsy 取自 Dolphin，并继续使用 Dolphin 的许可证。"
+    ]
+  },
+  "conker-live-recompiled": {
+    "name": "Live & Recompiled：将《Conker: Live & Reloaded》重编译至 PC",
+    "requirements": [
+      "下载 Windows 或 Linux 发布包，运行 setup-windows.exe 或 ./setup-linux，并指向光盘、解压目录或 DefaultPackage。它在 Windows 上写出 Game.exe，在 Linux 上写出 Game。",
+      "许可证：仅 GPL-3.0。README 写明来自 Xbox XBE Recomp 的部分保持该项目的 MIT 许可证。"
+    ]
+  },
+  "ty-decomp": {
+    "name": "Ty the Tasmanian Tiger：美版反编译",
+    "requirements": [
+      "Windows 使用 Python 和 ninja。macOS 使用 ninja 和 wine-crossover。Linux 使用 ninja。",
+      "README 没有写许可证。"
+    ]
+  },
+  "castlevania-chronicles-recomp": {
+    "name": "恶魔城年代记：跨平台重编译",
+    "requirements": [
+      "需要 Git、Bash、Python 3、global.json 中写明的 .NET SDK，以及固定在 d81dec8c9622fdcd0865d73588a3baa8d3c3a605 的 RecompOne。把 CUE 放在 disc/chronicles.cue，然后运行 git submodule update --init --recursive 和 ./scripts/recompile.sh。",
+      "README 没有给这个项目写出许可证。它指向随附的依赖许可证。"
+    ]
+  },
+  "issd-native": {
+    "name": "ISSD Native：重编译《国际超级明星足球豪华版》",
+    "requirements": [
+      "用 python tools/verify_rom.py 校验 ROM。在 Windows 上运行 ISSDNative.exe，或用 --rom 运行 build/ISSDNative.exe 里的源码构建。把 aot_boot_deny.txt 放在可执行文件旁边。Android 构建目标是 arm64-v8a 和 x86_64。",
+      "许可证：本项目自身代码为 GPL-3.0。README 写明 SNESRecomp 是 PolyForm Noncommercial 1.0.0，ISSD 反汇编参考是 GPL-3.0，ISSD 网页编辑器参考是 MIT。"
+    ]
+  },
+  "reo-outbreak": {
+    "name": "reo：《生化危机：爆发》的 Windows 重编译",
+    "requirements": [
+      "需要 x64 的 Windows 10 或 11、带 C++ 桌面工作负载的 Visual Studio 2022、CMake 3.20 或更新版本、Python 3 和 Git。运行 Setup.cmd，然后运行 run-reo.cmd。光盘目录里必须有 SLUS_207.65。",
+      "许可证：GPL-3.0。README 写明 reo 链接 PS2Recomp 的 GPL-3.0 运行时。"
+    ]
+  },
+  "svr2008-recomp": {
+    "name": "WWE SmackDown vs. Raw 2008：静态重编译 Xbox 360 游戏",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，以及支持 Direct3D 12 或 Vulkan 的显卡。光盘镜像是美国或欧洲版，标题 ID 为 5451080B，媒体 ID 为 5E35F037。从 Releases 下载 SVR2008-NATIVE.zip，把 .iso 放在 svr2008.exe 旁边。",
+      "许可证：本项目代码为 GPL-3.0。README 写明发布包包含 LGPL 的 FFmpeg 和 libmspack，渲染器基于 re:Blue 的 BSD-3-Clause 核心。"
+    ]
+  },
+  "nehebn2": {
+    "name": "Nehebn2",
+    "requirements": [
+      "需要 Python 3、Binary Ninja API，以及 Binary Ninja 的无界面许可证。",
+      "审阅的 README 没有给这个项目写出许可证。"
+    ]
   }
 }

@@ -118121,5 +118121,3232 @@
     "additional_evidence_urls": [
       "https://github.com/7ucina/acww-decomp/blob/4e54d6abbd696a43213b0c600e7f466cf7b22f32/docs/host.md"
     ]
+  },
+  {
+    "id": "zoe-recompiled-case",
+    "name": "ZOE-Recompiled: statically recompiling Zone of the Enders for Windows",
+    "url": "https://github.com/Yaz-Myst/ZOE-Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "ZOE-Recompiled is a native Windows port of Zone of the Enders for the PlayStation 2, USA SLUS-201.48. PS2Recomp statically recompiles the MIPS code to C++. The runtime uses an OpenGL renderer, compiled vector-unit programs, and IOP and sound emulation.",
+    "description_zh": "ZOE-Recompiled 是《终极地带》PlayStation 2 美版 SLUS-201.48 的 Windows 原生移植。PS2Recomp 把 MIPS 代码静态重编译为 C++。运行时使用 OpenGL 渲染器、编译后的矢量单元程序，以及 IOP 和声音模拟。",
+    "requirements": [
+      "On first start the program asks for the player's USA disc image and checks that it is Zone of the Enders.",
+      "The README says the game is playable from the intro through the final area, including the hidden Versus mode. A controller is the tested input. The options menu still uses the keyboard.",
+      "The README names no license for this port."
+    ],
+    "evidence_url": "https://github.com/Yaz-Myst/ZOE-Recompiled/blob/fe89dd65c82a4b669b5034279263cd0636746d91/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "cryogenic-dune",
+    "name": "Cryogenic: reimplementing the 1992 Dune game",
+    "url": "https://github.com/OpenRakis/Cryogenic",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Cryogenic is a C# reimplementation of Cryo's Dune, the 1992 CD version, running on Spice86. Builds target Linux, macOS, and Windows on .NET 10.",
+    "description_zh": "Cryogenic 是 Cryo 1992 年 CD 版《沙丘》的 C# 重实现，运行在 Spice86 上。构建面向 Linux、macOS 和 Windows，使用 .NET 10。",
+    "requirements": [
+      "License: Apache License 2.0."
+    ],
+    "evidence_url": "https://github.com/OpenRakis/Cryogenic/blob/113bd4922aa7d38ec1bcdc6bd7c0c47473dc63f2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "regaiden-recomp-case",
+    "name": "Resident Evil Gaiden: Recompiled",
+    "url": "https://github.com/sergiomanzur/regaiden-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Resident Evil Gaiden: Recompiled is a native static recompilation of Resident Evil Gaiden for the Game Boy Color. Release 0.4.1 targets Windows and Android ARM64, with Linux marked as work in progress. Rendering uses SDL2, OpenGL ES 3, and Dear ImGui.",
+    "description_zh": "Resident Evil Gaiden: Recompiled 是 Game Boy Color《生化危机 Gaiden》的原生静态重编译。0.4.1 面向 Windows 和 Android ARM64，Linux 标为进行中。渲染使用 SDL2、OpenGL ES 3 和 Dear ImGui。",
+    "requirements": [
+      "The player supplies the ROM and any music files. The default boot uses native Game Boy Color aspect and colors. Enhancements are optional from the F10 menu.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/sergiomanzur/regaiden-recomp/blob/2b1bd51e09c8599d5436ba56f5ad17bd22550d2e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "waterbear",
+    "name": "waterbear",
+    "url": "https://github.com/wtetzner/waterbear",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "waterbear is an assembler and disassembler for Dreamcast VMU programs, available as a Rust library and command-line program. Version 0.18.0 can optimize jump and call encodings.",
+    "description_zh": "waterbear 是 Dreamcast VMU 程序的汇编器和反汇编器，可用作 Rust 库或命令行程序。0.18.0 版可优化跳转和调用编码。",
+    "requirements": [
+      "Assemble with waterbear assemble example.s -o example.vms. Add --optimize-jumps to fold jumps and calls when the target is in range.",
+      "Documentation is at https://wtetzner.github.io/waterbear/.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/wtetzner/waterbear/blob/9d7a2536ed7234965417adf2fe619e6301c352a2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "dqix-decomp-case",
+    "name": "Dragon Quest IX: matching Nintendo DS decompilation",
+    "url": "https://github.com/DQIX/dqix-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This project is a 1:1 disassembly and decompilation of Dragon Quest IX: Sentinels of the Starry Skies for the Nintendo DS. The primary focus is the USA and Japanese versions. European builds are produced from the USA sources.",
+    "description_zh": "该项目是任天堂 DS《勇者斗恶龙 IX：星空的守护者》的 1:1 反汇编和反编译。主要关注美版和日版。欧版构建由美版源码生成。",
+    "requirements": [
+      "Python 3.11 or newer, GCC 9 or newer, and Ninja.",
+      "Place a clean ROM in extract as baserom_dqix_usa.nds, baserom_dqix_jpn.nds, or baserom_dqix_eur.nds. USA, Japanese, and European ROMs are supported.",
+      "The README names no a license."
+    ],
+    "evidence_url": "https://github.com/DQIX/dqix-decomp/blob/6fb9b8b0918f0a03d579dd0facad814139d1f317/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ipod-clickwheel-recomps",
+    "name": "iPod Click Wheel Recomps: statically recompiling six iPod games",
+    "url": "https://github.com/DogParty/iPodClickWheelRecomps",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "iPod Click Wheel Recomps translates six iPod click-wheel games from their ARM code into C++ that builds on current hardware. Mini Golf, Cubis 2, Hold 'Em, and the other listed games share a runtime. Mini Golf also targets Nintendo Switch and Android.",
+    "description_zh": "iPod Click Wheel Recomps 把六款 iPod 点击轮游戏的 ARM 代码翻译成可以在当前硬件上构建的 C++。Mini Golf、Cubis 2、Hold 'Em 以及列出的其他游戏共用一个运行时。Mini Golf 还面向任天堂 Switch 和 Android。",
+    "requirements": [
+      "Each game needs its own decrypted files from the player's copy. macOS, Linux, and Windows are supported. Mini Golf also lists Switch and Android.",
+      "The games and the shared runtime are GPL-3.0-or-later. Tools in common/tools/ are MIT. The split is in LICENSING.md."
+    ],
+    "evidence_url": "https://github.com/DogParty/iPodClickWheelRecomps/blob/8a7afced6b30ff9dd3ef71aeebf620f34ced5317/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ida-wpp-remover",
+    "name": "WPP Remover",
+    "url": "https://github.com/L4ys/IDA-WPP-Remover",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "WPP Remover is an IDA Pro plugin that removes Windows software-trace calls from Hex-Rays pseudocode. It activates for Windows PE files and replaces calls to WPP_SF functions with NOPs in a microcode pass.",
+    "description_zh": "WPP Remover 是一个 IDA Pro 插件，用来从 Hex-Rays 伪代码中去掉 Windows 软件跟踪调用。它针对 Windows PE 文件启用，并在微码阶段把对 WPP_SF 函数的调用替换成 NOP。",
+    "requirements": [
+      "Install with hcli plugin install wpp-remover, or copy wpp_remover.py into the IDA plugins directory and restart IDA.",
+      "Toggle it from the decompiled view with Toggle WPP Remover.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/L4ys/IDA-WPP-Remover/blob/386fb4574249cdd96d8b9ad63e65405ad77b2498/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "khcom-decomp-case",
+    "name": "Kingdom Hearts: Chain of Memories — matching GBA decompilation",
+    "url": "https://github.com/Pheenoh/khcom",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Kingdom Hearts: Chain of Memories for the Game Boy Advance. It targets the US, Japanese, and European versions.",
+    "description_zh": "这是 Game Boy Advance《王国之心：记忆之链》的匹配反编译。目标包括美版、日版和欧版。",
+    "requirements": [
+      "Copy the dumped ROM to roms/ as B8CE.gba, B8CJ.gba, or B8CP.gba. The SHA-1 values are 10729bd884f8fdca7a310b6d606c52e46657aa48, 59ec0a0a4ccd1e6acb3bbd7bfb21d63988958cfa, and 8db73586cdb11b3795907edebf43228dbcd3e6b2.",
+      "Dependencies are git, ninja, Python 3, PyYAML, binutils-arm-none-eabi, and pret/agbcc. Extract with python3 tools/extract_assets.py, configure with python3 configure.py, then build with ninja.",
+      "License: CC0 1.0 Universal."
+    ],
+    "evidence_url": "https://github.com/Pheenoh/khcom/blob/5dc49b75068bfe24e07bdaf365570d64682680c3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "las-marionetas",
+    "name": "Las Marionetas: reimplementing The Sims 2",
+    "url": "https://github.com/OmniBlade/LasMarionetas",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Las Marionetas is an open-source reimplementation of The Sims 2. Unimplemented functions still come from the original binary. The README says it currently runs on Windows and needs The Sims 2: Ultimate Edition installed.",
+    "description_zh": "Las Marionetas 是《模拟人生 2》的开源重实现。尚未实现的函数仍来自原始二进制。README 写明它目前只能在 Windows 上运行，并且需要已安装的《模拟人生 2：终极版》。",
+    "requirements": [
+      "Windows, with The Sims 2: Ultimate Edition installed.",
+      "License: GNU GPL version 2."
+    ],
+    "evidence_url": "https://github.com/OmniBlade/LasMarionetas/blob/b1f378c92dca777b31cc8dfe0cebe3f8f6c345c7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "segagenesisrecomp",
+    "name": "Genesis Recomp",
+    "url": "https://github.com/mstan/segagenesisrecomp",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Genesis Recomp is a beta static-recompilation framework for the Sega Genesis, Mega Drive, Sega CD, and Mega-CD. The cartridge pipeline translates 68000 code into C and supplies a shared VDP, audio, bus, scheduler, and Z80 runtime.",
+    "description_zh": "Genesis Recomp 是面向世嘉 Genesis、Mega Drive、Sega CD 和 Mega-CD 的 beta 静态重编译框架。卡带流程把 68000 代码翻译成 C，并提供共享的 VDP、音频、总线、调度器和 Z80 运行时。",
+    "requirements": [
+      "Windows x64 recompiler tool v0.1.2 includes GenesisRecomp.exe; the recompiler builds with CMake and a C toolchain.",
+      "Sega CD support is on feature/segacd-backend; Sonic CD 0.0.1 is its first released consumer.",
+      "Project code is PolyForm Noncommercial 1.0.0; components under other terms retain those licenses."
+    ],
+    "evidence_url": "https://github.com/mstan/segagenesisrecomp/blob/9c0a0cee6c1123c4e35c4ef2f18631797f17f52f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "alien-resurrection-recomp-case",
+    "name": "Alien Resurrection: Recompiled — native PlayStation game port",
+    "url": "https://github.com/DiegoDeDios/AlienReRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Alien Resurrection: Recompiled is a native macOS, Windows, and Linux port of Alien Resurrection for the PlayStation, USA SLUS-00633. The MIPS code is statically recompiled, and a runtime stands in for the PlayStation BIOS and hardware.",
+    "description_zh": "Alien Resurrection: Recompiled 是 PlayStation 美版《异形：复活》SLUS-00633 的 macOS、Windows 和 Linux 原生移植。MIPS 代码经过静态重编译，运行时代替 PlayStation 的 BIOS 和硬件。",
+    "requirements": [
+      "The README names no license in the opening sections."
+    ],
+    "evidence_url": "https://github.com/DiegoDeDios/AlienReRecomp/blob/75cb03139436b78938e17f30561d47ec9b2ab3c2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "mkw-decomp-case",
+    "name": "Mario Kart Wii: matching decompilation of the PAL game",
+    "url": "https://github.com/doldecomp/mkw",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Mario Kart Wii. The supported version named in the README is the PAL release RMCP01.",
+    "description_zh": "这是《马里奥赛车 Wii》的进行中反编译。README 写出的受支持版本是 PAL 版 RMCP01。",
+    "requirements": [
+      "An existing copy of the PAL game is required.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/doldecomp/mkw/blob/8b9b5ee653da28663e498039e52f5d19f929a011/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "u6-decompiled-case",
+    "name": "u6-decompiled: decompiling Ultima VI: The False Prophet",
+    "url": "https://github.com/ergonomy-joe/u6-decompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles the PC and MS-DOS version of Ultima VI: The False Prophet, version 4.5. It builds GAME.EXE and compares the result with the original. The C portions were built with Borland Turbo C 2.0.",
+    "description_zh": "该仓库反编译 PC 和 MS-DOS 版《创世纪 VI：伪先知》4.5。它构建 GAME.EXE，并把结果与原版比较。C 语言部分原来用 Borland Turbo C 2.0 构建。",
+    "requirements": [
+      "Assembly files need TASM 2.0 and MASM 3.0. Run SRC/OSILIB/doit.bat, then follow SRC/doit.bat, which uses MAKEFILE.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/ergonomy-joe/u6-decompiled/blob/1ff7a6dffb8e83404019e350861161f3d246b9d7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "megaman-x5-recomp-case",
+    "name": "MegaManX5Recomp: statically recompiling Mega Man X5 for Windows",
+    "url": "https://github.com/mstan/MegaManX5Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "MegaManX5Recomp is a native Windows build of Mega Man X5, USA SLUS-01334, statically recompiled with PSXRecomp. It includes an experimental simultaneous X and Zero co-op mode that uses OpenGL.",
+    "description_zh": "MegaManX5Recomp 是《洛克人 X5》美版 SLUS-01334 的 Windows 原生构建，用 PSXRecomp 静态重编译。它包含实验性的 X 与 Zero 同时合作模式，该模式使用 OpenGL。",
+    "requirements": [
+      "The player supplies their own game disc. Co-op is experimental, and the README says full campaign and netplay parity are still being checked.",
+      "Release v0.2.9-coop-alpha enables a fresh internal resolution of 4x, with choices from 1x to 32x.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/mstan/MegaManX5Recomp/blob/8d8205ea1bcada23ca7797394f77bdf1c761be5d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "nitrosharp",
+    "name": "NitroSharp: reimplementing the N2System visual novel engine",
+    "url": "https://github.com/CommitteeOfZero/nitrosharp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "NitroSharp is an open-source reimplementation of N2System, the visual-novel engine used by Nitroplus. The current target is Chaos;Head Noah on Windows x64, with Direct3D 11 and Vulkan, and on Linux x64 with Vulkan. The Linux build has no sound.",
+    "description_zh": "NitroSharp 是 Nitroplus 视觉小说引擎 N2System 的开源重实现。当前目标是在 Windows x64 上运行《混沌头脑 Noah》，使用 Direct3D 11 和 Vulkan，以及在 Linux x64 上使用 Vulkan。Linux 构建没有声音。",
+    "requirements": [
+      "The README says some endings of Chaos;Head Noah can be reached, and that saves should not be expected to survive an engine upgrade.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/CommitteeOfZero/nitrosharp/blob/e3869842bb5bdd5ed95344027297620cd54454a6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "nfsmw-ios-case",
+    "name": "NFSMW Recompiled for iOS: native Need for Speed: Most Wanted port",
+    "url": "https://github.com/bep1s69/nfsmw-ios",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "NFSMW Recompiled for iOS runs Need for Speed: Most Wanted from 2005, the Xbox 360 version, natively on iPhone and iPad. ReXGlue recompiles the PowerPC code ahead of time for Apple arm64, and a Metal renderer draws the shaders.",
+    "description_zh": "NFSMW Recompiled for iOS 在 iPhone 和 iPad 上原生运行 2005 年 Xbox 360 版《极品飞车：最高通缉》。ReXGlue 把 PowerPC 代码提前重编译到 Apple arm64，Metal 渲染器绘制着色器。",
+    "requirements": [
+      "iOS or iPadOS 18 or later. The player supplies an ISO of the USA Xbox 360 game.",
+      "Version 0.6.0 adds LAN racing. Releases are on the repository Releases page.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/bep1s69/nfsmw-ios/blob/e403ff907c4c9f99c413cd72214acdad0500ce50/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ds-disassembly-tools",
+    "name": "ds_disassembly_tools",
+    "url": "https://github.com/pret/ds_disassembly_tools",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "ds_disassembly_tools is a set of scripts for the initial setup of a Nintendo DS disassembly. asmdiff.sh compares a rebuilt ARM9, ARM7, or overlay with a reference ROM. dump_fs.py extracts the Nitro file system.",
+    "description_zh": "ds_disassembly_tools 是一组用于任天堂 DS 反汇编初始设置的脚本。asmdiff.sh 把重建的 ARM9、ARM7 或覆盖段与参考 ROM 比较。dump_fs.py 提取 Nitro 文件系统。",
+    "requirements": [
+      "Python scripts need Python 3.9 or newer. asmdiff.sh uses devkitARM, or arm-none-eabi-objdump on PATH.",
+      "The README names no a license."
+    ],
+    "evidence_url": "https://github.com/pret/ds_disassembly_tools/blob/8cd986cc742ec84dfcc0de53706419ec923d39ca/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ds-kart-recompiled-case",
+    "name": "DS Kart Recompiled: statically recompiling Mario Kart DS for PC",
+    "url": "https://github.com/AlonsoTlol/DS-Kart-Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "DS Kart Recompiled is a native PC port of the European Mario Kart DS, game code AMCP, made by static recompilation of the ARM9 and ARM7 code. A runtime supplies memory, interrupts, timers, the 2D and 3D engines, sound, saving, and controls.",
+    "description_zh": "DS Kart Recompiled 是欧洲版《马里奥赛车 DS》（游戏代码 AMCP）的原生 PC 移植，把 ARM9 和 ARM7 代码静态重编译。运行时提供内存、中断、计时器、2D 和 3D 引擎、声音、存档和操作。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit. Linux and macOS builds are marked beta. The player supplies a dump of their own European cartridge.",
+      "Single player, local multiplayer, and a beta of the game's Nintendo WFC menu are listed as working. Early releases still have bugs.",
+      "The README does not name a license for the port. It names the MIT license only for Dear ImGui."
+    ],
+    "evidence_url": "https://github.com/AlonsoTlol/DS-Kart-Recompiled/blob/a4a9dc6908ab8b8cfd012a7ef56786b80c883ed6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "kirby-epic-yarn-decomp",
+    "name": "Kirby's Epic Yarn: decompiling the USA Wii release",
+    "url": "https://github.com/Swiftshine/key",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository is a work-in-progress decompilation of Kirby's Epic Yarn. The supported version is RK5E01, the USA revision 0. The tree contains no game assets or assembly.",
+    "description_zh": "该仓库是《毛线卡比》的进行中反编译。支持的版本是美版第 0 修订 RK5E01。仓库里没有游戏资源和汇编。",
+    "requirements": [
+      "Extract the game with Dolphin into orig/RK5E01. Only sys/main.dol is required. Then run python configure.py and ninja.",
+      "Diffing uses objdiff. The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Swiftshine/key/blob/7f2a9ab9ad66d8e2f6eac52acc2c01dff0bd03a2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "psretrox",
+    "name": "PSRetrox",
+    "url": "https://github.com/cualquiercosa327/psretrox",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "PSRetrox is a C++ application for reverse engineering PlayStation 2 games from extracted ISO files. It disassembles binaries with Capstone, recompiles assembly to C, and decodes audio, 3D models, and formats such as MB, MH, BD, BH, and PSS. Retrox Engine ports the resulting C files toward a PC build.",
+    "description_zh": "PSRetrox 是一个用 C++ 编写的 PlayStation 2 游戏逆向工具，处理已提取的 ISO。它用 Capstone 反汇编二进制，把汇编重编译成 C，并解码音频、三维模型和 MB、MH、BD、BH、PSS 等格式。Retrox Engine 把得到的 C 文件推向 PC 构建。",
+    "requirements": [
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/cualquiercosa327/psretrox/blob/a7bd9384cf528bd2ee7da6f854e4f59f8829f086/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "idr-pascal",
+    "name": "IDR Pascal",
+    "url": "https://github.com/tmcdos/IDR",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDR Pascal is a Pascal translation of the Interactive Delphi Reconstructor. The original C++ project is crypto2011/IDR. IDP2TXT converts an IDR project file to text.",
+    "description_zh": "IDR Pascal 是 Interactive Delphi Reconstructor 的 Pascal 翻译。原来的 C++ 项目是 crypto2011/IDR。IDP2TXT 把 IDR 工程文件转成文本。",
+    "requirements": [
+      "Build with Delphi 7.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/tmcdos/IDR/blob/805f6011d44d1b4ab404768dea9b69c5b6b2b94b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "rhgold",
+    "name": "Rhythm Heaven: in-progress Nintendo DS decompilation",
+    "url": "https://github.com/patataofcourse/rhgold",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a work-in-progress decompilation of Rhythm Heaven for the Nintendo DS. The supported version is YLZE01, USA revision 0. The tree contains no game assets or assembly.",
+    "description_zh": "该仓库是任天堂 DS 版《节奏天国》的进行中反编译。支持的版本是美版第 0 修订 YLZE01。仓库里没有游戏资源和汇编。",
+    "requirements": [
+      "Building the ROM needs an existing copy of the game. Install steps are in INSTALL.md.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/patataofcourse/rhgold/blob/bb9d0fe86926fdce3752262155b6efe51d903f72/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "gdx-3ds-case",
+    "name": "G-Diffuser 3DS: F-Zero X port for Nintendo 3DS",
+    "url": "https://github.com/cruxxxxxx/gdx-3ds",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "G-Diffuser 3DS is a native port of the F-Zero X decompilation to Old and New Nintendo 3DS, built on the G-Diffuser PC port. It has stereoscopic 3D and full audio. Optional Expansion Kit builds stream 64DD content from the SD card.",
+    "description_zh": "G-Diffuser 3DS 把《F-Zero X》反编译原生移植到旧版和新版任天堂 3DS，基于 G-Diffuser 的 PC 移植。它有立体 3D 和完整音频。可选的 Expansion Kit 构建从 SD 卡流式读取 64DD 内容。",
+    "requirements": [
+      "The player dumps their own USA revision 0 cartridge. tools/prebake/prebake.py writes fzerox.o2r and gdiffuser.o2r. Audio needs a one-time DSP firmware dump, dspfirm.cdc.",
+      "O3DS and N3DS builds are separate. Expansion Kit builds also need the player's own 64DD disk image.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/cruxxxxxx/gdx-3ds/blob/d8a37d560a96b27fd65c74390bd995ee5029fba8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "yaravm",
+    "name": "YaraVM",
+    "url": "https://github.com/milankovo/YaraVM",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "YaraVM is an IDA Pro loader and processor module for compiled YARA rules. It loads the rule bytecode and the regex bytecode so they can be disassembled in IDA.",
+    "description_zh": "YaraVM 是用于已编译 YARA 规则的 IDA Pro 加载器和处理器模块。它载入规则字节码和正则字节码，以便在 IDA 里反汇编。",
+    "requirements": [
+      "Copy yara_loader.py into the IDA loaders directory, yara_proc.py into the procs directory, and libyara.til into the til directory.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/milankovo/YaraVM/blob/3b4e357faf65097b0f7b444cc0199398c81e5253/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "byte-tactics",
+    "name": "TA: Byte Tactics — byte-matching Total Annihilation source reconstruction",
+    "url": "https://github.com/HectorBailey/byte-tactics",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "TA: Byte Tactics is a matching decompilation of Total Annihilation (Cavedog, 1997). The C++ in src/ is written to compile with Visual C++ 5.0 into the same bytes as TotalA.exe. The README says all 3,267 game functions match.",
+    "description_zh": "TA: Byte Tactics 是 Total Annihilation（Cavedog，1997）的匹配反编译。src/ 里的 C++ 用 Visual C++ 5.0 编译后与 TotalA.exe 的字节一致。README 写明全部 3,267 个游戏函数都已匹配。",
+    "requirements": [
+      "The matching target is TotalA.exe, MD5 8e74a1dffa1f5988624c52048f5b20cd. The player supplies Total Annihilation. The setup script fetches the compiler.",
+      "Tooling in tools/ is MIT. The README says the reconstructed code in src/ is not offered under a license."
+    ],
+    "evidence_url": "https://github.com/HectorBailey/byte-tactics/blob/3ef535b5f7834a7f64f1d57ee1cbc61e872b240b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "reksio-engine",
+    "name": "ReksioEngine: reimplementing the Przygody Reksia game engines",
+    "url": "https://github.com/ReksioEngine/ReksioEngine",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "ReksioEngine reimplements the BlooMoo and Piklib engines used by the Przygody Reksia games. It runs the original assets and scripts in a web browser.",
+    "description_zh": "ReksioEngine 重实现《Przygody Reksia》系列使用的 BlooMoo 和 Piklib 引擎。它在网页浏览器里运行原来的资源和脚本。",
+    "requirements": [
+      "The README dated 2025-03-12 says Reksio i Skarb Piratów scenes appear to work and are still being tested. Reksio i Ufo reaches about 85 percent of scenes and stops before the digging minigame.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/ReksioEngine/ReksioEngine/blob/57871e8368b70a8229b835221b5ae57abadafc05/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "wacki-case",
+    "name": "Wacki: porting Wacki: Kosmiczna rozgrywka from decompiled code",
+    "url": "https://github.com/mszula/wacki",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Wacki is a cross-platform port of Wacki: Kosmiczna rozgrywka (1998), reconstructed from the decompiled WACKI.EXE. The English portion of the README says it runs on macOS, Linux, Windows, Android, Miyoo and other PortMaster handhelds, and PlayStation 2.",
+    "description_zh": "Wacki 是《Wacki: Kosmiczna rozgrywka》（1998）的跨平台移植，从反编译的 WACKI.EXE 重建。README 的英文部分写明它可以在 macOS、Linux、Windows、Android、Miyoo 和其他 PortMaster 掌机，以及 PlayStation 2 上运行。",
+    "requirements": [
+      "The game text is in Polish. Illustrated setup steps are at mszula.github.io/wacki.",
+      "The README links a LICENSE file and does not name the license in the text."
+    ],
+    "evidence_url": "https://github.com/mszula/wacki/blob/5e94236ed8a615d390b422e2f9231ff09904509b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "dothack-recompilation-case",
+    "name": ".hack//Recompilation: native recompilation of the .hack//IMOQ games",
+    "url": "https://github.com/dothacktranslate/dothack-recompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": ".hack//Recompilation is a native recompilation of the PlayStation 2 .hack//IMOQ games, using PS2Recomp. Current work is .hack//INFECTION, US product SLUS-20267. The README says that game boots through the logo and OPENING movie. MUTATION, OUTBREAK, and QUARANTINE are listed as not started.",
+    "description_zh": ".hack//Recompilation 用 PS2Recomp 对 PlayStation 2 的 .hack//IMOQ 四部曲做原生重编译。当前工作是美版 SLUS-20267 的《.hack//感染》。README 写明该作可以启动到标志和 OPENING 影片。变异、爆发和隔离被列为尚未开始。",
+    "requirements": [
+      "The current build target is ps2EntryRunner in the build/app CMake tree. A development run passes game/infection/SLUS_202.67 to the infection runner. Development is primarily on Linux.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/dothacktranslate/dothack-recompilation/blob/9d326ad1efb326429228fc8ffb10e0b514526f2b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "re-wor-case",
+    "name": "re-wor: statically recompiling Guitar Hero: Warriors of Rock",
+    "url": "https://github.com/ronniecloud/re-wor",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "re-wor is a static recompilation of Guitar Hero: Warriors of Rock for Xbox 360, built for Windows with the RexGlue SDK. It is based on re-gh2. The repository does not include game assets.",
+    "description_zh": "re-wor 是 Xbox 360 版《吉他英雄：摇滚之神》的静态重编译，用 RexGlue SDK 构建到 Windows。它基于 re-gh2。仓库不包含游戏资源。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, and a DirectX 12 GPU. The player supplies their own Xbox 360 copy. Building needs Clang 20 or newer, CMake 3.25 or newer, Ninja, and a compiled RexGlue SDK.",
+      "The README says the current release is a test version. It does not name a license."
+    ],
+    "evidence_url": "https://github.com/ronniecloud/re-wor/blob/7da08766fa5f2f1209e2657deed6886380efe557/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "decomp-pipeline",
+    "name": "DecompPipeline",
+    "url": "https://github.com/GeneralAtrox/DecompPipeline",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "DecompPipeline turns a game's machine code into C one function at a time and builds that C into a native port. A per-CPU translator writes the C. A judge runs the original function in an emulator and the C on the same inputs, then returns PASS or FAIL. Listed targets are Dreamcast SH-4, Saturn SH-2, GameCube PowerPC, and Xbox 360 PowerPC.",
+    "description_zh": "DecompPipeline 把游戏机器码逐个函数转成 C，再把这些 C 构建成原生移植。每种 CPU 有自己的翻译器来写 C。判定器在模拟器里运行原函数，并用相同输入运行 C，然后给出通过或失败。列出的目标是 Dreamcast SH-4、Saturn SH-2、GameCube PowerPC 和 Xbox 360 PowerPC。",
+    "requirements": [
+      "Python 3.12, JDK 21, Ghidra 12, and Visual Studio 2022 with C++. Install Python dependencies from requirements.txt. The repository does not contain game data.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/GeneralAtrox/DecompPipeline/blob/76238534e5086d623d4b504c671024afa1c835ba/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "tetris-gb-disassembly",
+    "name": "Tetris: byte-matching Game Boy disassembly",
+    "url": "https://github.com/alexsteb/tetris_disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of Tetris for the Game Boy. It compiles 1:1 to the official Tetris (World) ROM. Code annotation and data annotation are still listed as unfinished.",
+    "description_zh": "这是 Game Boy 版《俄罗斯方块》的反汇编。它与官方 Tetris (World) ROM 逐字节对应。代码注释和数据注释仍被列为未完成。",
+    "requirements": [
+      "Build with RGBDS: rgbasm -o main.o main.asm, then rgblink -o tetris.gb main.o.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/alexsteb/tetris_disassembly/blob/b4bbceb3cc086121ab4fe9bf4dad6752fe956ec0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "opennitemare3d",
+    "name": "OpenNitemare3D: reimplementing Nitemare 3D in C#",
+    "url": "https://github.com/BBQGiraffe/OpenNitemare3D",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenNitemare3D is a C# reimplementation of the 1994 first-person game Nitemare 3D. It loads original bitmaps and maps, plays MIDI, and plays sound effects from the Windows version. The README says the active development branch is C-Rewrite.",
+    "description_zh": "OpenNitemare3D 是 1994 年第一人称游戏 Nitemare 3D 的 C# 重实现。它载入原来的位图和地图，播放 MIDI，并播放 Windows 版的音效。README 写明当前开发分支是 C-Rewrite。",
+    "requirements": [
+      "The documented C# build uses the .NET SDK and SFML. Place the Windows SND.DAT, plus UIF.DAT, MAP.1, IMG.1, and GAME.PAL, in bin/Debug/net5.0/data.",
+      "Most menu options crash. New game and the sound editor are the options that do something.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/BBQGiraffe/OpenNitemare3D/blob/178dcf4b1075462b01de9321870a3c2665b855f3/README.MD",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "hctp-recomp-case",
+    "name": "WWE SmackDown! Here Comes the Pain: static recompilation for Windows",
+    "url": "https://github.com/BigDaddyJRich/hctp-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "HCTP Recompiled is a static recompilation of WWE SmackDown! Here Comes the Pain for PlayStation 2, NTSC-U SLUS-20787, into a native Windows program. PS2Recomp translates the MIPS code to C++. A Direct3D 11 renderer draws the graphics, and the IOP runs the game's IRX modules.",
+    "description_zh": "HCTP Recompiled 把 PlayStation 2 美版 SLUS-20787 的 WWE SmackDown! Here Comes the Pain 静态重编译成 Windows 原生程序。PS2Recomp 把 MIPS 代码翻译成 C++。Direct3D 11 渲染器绘制画面，IOP 运行游戏自己的 IRX 模块。",
+    "requirements": [
+      "The player supplies their own USA disc. The release launcher builds the game on the PC. The October 2026 status says exhibition and season run, and matches were tested at 60 frames per second on a Direct3D 11 path with an RTX 3060.",
+      "A developer build needs Visual Studio 2022 or newer, MSVC x64, CMake, Ninja, Python, and a Direct3D 11 GPU.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/BigDaddyJRich/hctp-recomp/blob/7b243fc85f0e1de7c8a18e9ac5516eb3e2188966/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "gm81decompiler",
+    "name": "GameMaker 8.1 Decompiler",
+    "url": "https://github.com/WastedMeerkat/gm81decompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "GameMaker 8.1 Decompiler is the 2011 source of a decompiler for GameMaker 8.1 and 8.0 executables. It grew from the GameMaker 8.0 decompiler and uses the Gmk library for GMK serialization.",
+    "description_zh": "GameMaker 8.1 Decompiler 是 2011 年的 GameMaker 8.1 和 8.0 可执行文件反编译器源码。它从 GameMaker 8.0 反编译器扩展而来，并用 Gmk 库做 GMK 序列化。",
+    "requirements": [
+      "Drag a GameMaker 8.1 or 8.0 executable onto the decompiler, or run decompiler with the executable name.",
+      "The README says some bugs were left in so that some games cannot be decompiled.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/WastedMeerkat/gm81decompiler/blob/80040ac74f95af03b4b6649b0f5be11a7d13700b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ng2recomp-case",
+    "name": "Ninja Gaiden II Recompiled: a native Xbox 360 game port",
+    "url": "https://github.com/gamboozino/ng2recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Ninja Gaiden II Recompiled is a native Linux and Windows build of Ninja Gaiden II for Xbox 360 (2008). ReXGlue statically recompiles the PowerPC code, and a Vulkan renderer takes the game's Direct3D calls. The target is the World release, title ID 544307D5, with Title Update 3.",
+    "description_zh": "Ninja Gaiden II Recompiled 是 Xbox 360 版《忍者龙剑传 II》（2008）的 Linux 和 Windows 原生构建。ReXGlue 静态重编译 PowerPC 代码，Vulkan 渲染器接管游戏的 Direct3D 调用。目标是世界版，标题 ID 544307D5，并带 Title Update 3。",
+    "requirements": [
+      "The player supplies their own disc image, Games on Demand package, or extracted game, plus Title Update 3. Mission Mode and costume packs are optional.",
+      "Linux ships as an AppImage and Windows as an x64 build. The README says it holds 60 frames per second on a Steam Deck, with render scale up to 8x.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/gamboozino/ng2recomp/blob/f034e29d17369aa624666b0a6cc4bd55549005f6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ida-bosch-me7x",
+    "name": "BoschMe7x",
+    "url": "https://github.com/AndyWhittaker/IDAProBoschMe7x",
+    "category": "firmware",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "BoschMe7x is an IDA Pro plugin that reads a Bosch ME7.x binary and tries to disassemble it. The documented processor is the Siemens C166 family.",
+    "description_zh": "BoschMe7x 是一个 IDA Pro 插件，读入 Bosch ME7.x 二进制并尝试反汇编。文档中的处理器是 Siemens C166 系列。",
+    "requirements": [
+      "Load the binary as processor c166, with RAM at 0x0e0000 sized 0x0400 and ROM at 0x800000. Select device C167CR_SR. Put the .plw file in the IDA plugins directory.",
+      "The project was written in Visual Studio 2017. License: MIT."
+    ],
+    "evidence_url": "https://github.com/AndyWhittaker/IDAProBoschMe7x/blob/ff5f7fa35b9fb2f8997d04ca1b1c28f87aa15ce3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "libdecomp",
+    "name": "libdecomp",
+    "url": "https://github.com/dmaivel/libdecomp",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "libdecomp decompiles multi-architecture machine code into source. It supports x86, x86-64, and ARM64, with Zydis or Capstone as the disassembler backend, and can format output as C, Zig, or Python.",
+    "description_zh": "libdecomp 把多种架构的机器码反编译成源码。它支持 x86、x86-64 和 ARM64，反汇编后端可以用 Zydis 或 Capstone，输出可以格式化成 C、Zig 或 Python。",
+    "requirements": [
+      "CMake 3.25 or newer. Examples need Zydis 4.1.1 or newer, or Capstone 5.0.6 or newer. The library itself has no direct dependency beyond the C standard library.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/dmaivel/libdecomp/blob/c71150869f63e0441531abadf17b12fb5711f235/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "bounce-tales-decomp",
+    "name": "Bounce Tales: decompiling the J2ME game",
+    "url": "https://github.com/HelloOO7/BounceTales",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a decompilation of Rovio's Bounce Tales (2008), a J2ME game that shipped on Nokia Series 40 phones. It aims to reproduce the original behavior. A Jademula layer can run it as a Windows application.",
+    "description_zh": "该仓库是 Rovio 的 Bounce Tales（2008）的反编译。这是一款随诺基亚 Series 40 手机提供的 J2ME 游戏。它的目标是重现原来的行为。Jademula 层可以把它作为 Windows 程序运行。",
+    "requirements": [
+      "The player supplies a Bounce Tales JAR. BounceComposer in the BounceTools NetBeans project decomposes it.",
+      "The phone build uses the Series 40 5th Edition SDK and NetBeans 8.2 with the Mobility plug-in. The Windows build runs bouncewin32.BounceWin32 with a 64-bit JDK.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/HelloOO7/BounceTales/blob/572ce4144071036e109ad362b384febc66d13b8f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "f3dex2-disasm",
+    "name": "F3DEX2: matching disassemblies of Nintendo 64 RSP microcode",
+    "url": "https://github.com/Mr-Wiseguy/f3dex2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "F3DEX2 is a set of matching disassemblies of the Nintendo 64 F3DEX2 and F3DZEX2 RSP microcode family. Matched examples include F3DEX2 2.04 through 2.08H and F3DZEX2 2.06H, 2.08I, and 2.08J, in fifo, xbus, and No Nearclipping variants.",
+    "description_zh": "F3DEX2 是任天堂 64 的 F3DEX2 和 F3DZEX2 RSP 微码家族的匹配反汇编。已匹配的例子包括 F3DEX2 2.04 到 2.08H，以及 F3DZEX2 2.06H、2.08I 和 2.08J，含 fifo、xbus 和无近裁剪变体。",
+    "requirements": [
+      "Further version and flag combinations are expected to match after they are added to ucodes_database.mk.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/Mr-Wiseguy/f3dex2/blob/bd31393fd02b89e024b043c8c50c9a5a10143fb6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "megaman-x2-recomp-case",
+    "name": "MegaManX2SNESRecomp: statically recompiling Mega Man X2",
+    "url": "https://github.com/mstan/MegaManX2Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "MegaManX2SNESRecomp is a static recompilation of Mega Man X2 (USA) built on snesrecomp. Version 0.1.5 is a playable Windows release. The ROM file is mmx2.sfc, headerless, CRC32 0x947B0355.",
+    "description_zh": "MegaManX2SNESRecomp 是美版《洛克人X2》的静态重编译，基于 snesrecomp。0.1.5 是可玩的 Windows 发布。ROM 文件是 mmx2.sfc，无头，CRC32 为 0x947B0355。",
+    "requirements": [
+      "The player supplies their own ROM. SHA-256 f3246755f608a1e1dc9c848b61da3b824c7853b29b3be40df6fc7f2793a887ed. A 512-byte SMC header is stripped automatically.",
+      "License: PolyForm Noncommercial 1.0.0."
+    ],
+    "evidence_url": "https://github.com/mstan/MegaManX2Recomp/blob/622aa882881a07c8238ce17a14381c7d75a979d7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "celosia",
+    "name": "Celosia: statically recompiling Shadow of the Colossus for Mac and Vita",
+    "url": "https://github.com/HenryKun55/celosia",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Celosia is a native port of Shadow of the Colossus for PlayStation 2, USA SCUS-97472, to macOS on Apple Silicon and to the PlayStation Vita. PS2Recomp translates the MIPS code to C++. The Mac renderer is Metal and the Vita renderer is OpenGL ES.",
+    "description_zh": "Celosia 把 PlayStation 2 美版 SCUS-97472 的《旺达与巨像》原生移植到 Apple Silicon 上的 macOS 和 PlayStation Vita。PS2Recomp 把 MIPS 代码翻译成 C++。Mac 渲染器是 Metal，Vita 渲染器是 OpenGL ES。",
+    "requirements": [
+      "macOS on Apple Silicon, Xcode Command Line Tools, CMake, Ninja, pkg-config, FFmpeg, and Python. The player supplies a USA disc image. The README reports 60 frames per second on an M4 Pro at 1536 by 1344.",
+      "The Vita build runs. The README reports 18 to 25 frames per second in the Vita3K intro.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/HenryKun55/celosia/blob/d8c5eeca181d082280ac9c8bf69c679a530f9dce/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "soulcalibur2hd-recomp-case",
+    "name": "Soulcalibur II HD: statically recompiling the PS3 game for Mac and PC",
+    "url": "https://github.com/n0madic/Soulcalibur2HD-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This project runs the PlayStation 3 game Soulcalibur II HD Online natively on a Mac or PC. ps3recomp translates the PowerPC and Cell SPU code ahead of time. Graphics use Metal on macOS and Vulkan on Linux and Windows.",
+    "description_zh": "该项目在 Mac 或 PC 上原生运行 PlayStation 3 游戏 Soulcalibur II HD Online。ps3recomp 提前翻译 PowerPC 和 Cell SPU 代码。macOS 上画面走 Metal，Linux 和 Windows 上走 Vulkan。",
+    "requirements": [
+      "The player supplies the USA PSN release NPUB31366, including the package and its license. Update 01.01 is optional. Python 3.10 or newer is required. The README says it works on Apple Silicon Macs and on Windows Vulkan.",
+      "Repository code is GPL-2.0-or-later. The prebuilt program is distributed under GPL-3.0-or-later because it contains Apache-2.0 parts."
+    ],
+    "evidence_url": "https://github.com/n0madic/Soulcalibur2HD-recomp/blob/3e96e66aebdf33671e9f6a44fd0c77f0d7b95f07/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "infinite-undiscovery-recomp-case",
+    "name": "Infinite Undiscovery Recomp: native Xbox 360 game recompilation",
+    "url": "https://github.com/doc-haz/infinite-undiscovery-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Infinite Undiscovery Recomp is a native Windows x64 recompilation of Infinite Undiscovery for Xbox 360 (2008), built with ReXGlue and XenonRecomp. The public release candidate is v1.0.0-rc1. The README says development is frozen.",
+    "description_zh": "Infinite Undiscovery Recomp 是 Xbox 360 版 Infinite Undiscovery（2008）的 Windows x64 原生重编译，用 ReXGlue 和 XenonRecomp 构建。公开的候选发布是 v1.0.0-rc1。README 写明开发已冻结。",
+    "requirements": [
+      "The player supplies their own copy. Supported imports include USA, USA-UNDUB, Europe, Japan, and Asia. Marketplace DLC uses title ID 535107DB.",
+      "License: BSD-3-Clause. The ReXGlue runtime includes LGPL components, and the RC release publishes a separate LGPL compliance package."
+    ],
+    "evidence_url": "https://github.com/doc-haz/infinite-undiscovery-recomp/blob/a91df0707e087aaa2588e6c0f0fb39a63a2500f6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "decomp-buddy",
+    "name": "Decomp Buddy",
+    "url": "https://github.com/TanookiStudios/decomp-buddy",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decomp Buddy is a Mac, Windows, and Linux application that sets up decompilations, recompilations, and native PC ports from the player's own game files. It checks the ROM or disc by checksum, region, and version.",
+    "description_zh": "Decomp Buddy 是一个运行在 Mac、Windows 和 Linux 上的程序，用玩家自己的游戏文件安装反编译、重编译和原生 PC 移植。它按校验和、区域和版本检查 ROM 或光盘。",
+    "requirements": [
+      "Downloads are published for Windows, Mac, and Linux. The README says the catalog lists games that can be played.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/TanookiStudios/decomp-buddy/blob/a7cbd2b5d5402a3dedc82f5cbbe7dde37b3e55ab/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "sf64-dc-case",
+    "name": "Star Fox 64: Dreamcast port",
+    "url": "https://github.com/jnmartin84/sf64-dc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This is a Sega Dreamcast port of Star Fox 64, based on sonicdcer/sf64. The player builds a CDI from their own Nintendo 64 ROM. The README says it is intended for real Dreamcast hardware, with VMU saving when a VMU is present.",
+    "description_zh": "这是《星际火狐64》的世嘉 Dreamcast 移植，基于 sonicdcer/sf64。玩家用自己的任天堂 64 ROM 构建 CDI。README 写明它面向真正的 Dreamcast 硬件，有 VMU 时会把存档写到 VMU。",
+    "requirements": [
+      "Docker build steps are in docker/Docker.md. make dsiso needs mkisofs. A VMU save uses 3 blocks.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/jnmartin84/sf64-dc/blob/4ed5c8d553f056d088e9c7b26148323f2f50af03/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "pentagram-u8",
+    "name": "Pentagram: reimplementing the Ultima 8 engine",
+    "url": "https://github.com/pentagram-u8/pentagram",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Pentagram reimplements the Ultima 8 engine. The documentation dated 9 November 2011 says the supported games are the English versions of Ultima 8, both before and after the patch. German, French, and Spanish versions are listed as less tested.",
+    "description_zh": "Pentagram 重实现 Ultima 8 的引擎。日期为 2011 年 11 月 9 日的文档写明支持补丁前后的英文版 Ultima 8。德文、法文和西班牙文版本被列为测试较少。",
+    "requirements": [
+      "Build dependencies named in the README are SDL, SDL_ttf, zlib, and libpng. On Linux, run ./bootstrap, ./configure, and make. The Windows section says nothing is written there yet.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/pentagram-u8/pentagram/blob/c87a67c42a9febc016a96e769dea0cf73d0202b1/README",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "mgs2-android-case",
+    "name": "MGS2 for Android: statically recompiling Sons of Liberty HD",
+    "url": "https://github.com/luisxl15/METAL-GEAR-SOLID-2-Sons-of-Liberty-for-Android",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This project statically recompiles Metal Gear Solid 2: Sons of Liberty HD from the NVIDIA SHIELD TV, a 32-bit ARM game, into ARM64 for Android phones. It translates the ARM32 functions to C and supplies a runtime for memory, libc, OpenGL, audio, and JNI. The README says about 22,000 game functions and about 3,000 C++ library functions are recompiled.",
+    "description_zh": "该项目把 NVIDIA SHIELD TV 上的 32 位 ARM 游戏《潜龙谍影2：自由之子 HD》静态重编译成 Android 手机上的 ARM64。它把 ARM32 函数翻译成 C，并提供内存、libc、OpenGL、音频和 JNI 的运行时。README 写明大约 22,000 个游戏函数和大约 3,000 个 C++ 库函数被重编译。",
+    "requirements": [
+      "Android 8 or newer, arm64-v8a. The player supplies base.apk and the two OBB files from their own SHIELD TV, version 21.21.1219.GM. The README asks for about 12 GB free. Separate APKs target Adreno and Mali.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/luisxl15/METAL-GEAR-SOLID-2-Sons-of-Liberty-for-Android/blob/de02d726e42883860e2229910bfde822e1123798/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "rb2-recomp-case",
+    "name": "RB2: recompiling Dragon Ball: Raging Blast 2",
+    "url": "https://github.com/WistfulHopes/RB2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "RB2 is a recompilation of Dragon Ball: Raging Blast 2 made with the ReXGlue SDK.",
+    "description_zh": "RB2 是用 ReXGlue SDK 做的 Dragon Ball: Raging Blast 2 重编译。",
+    "requirements": [
+      "Set REXSDK, extract the game files to assets, configure with CMake, build the re2_codegen target, then build re2. Launch with the assets folder as the first argument.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/WistfulHopes/RB2/blob/81b0922e2f6f11d43ddac36d51f99ffbd31fa5d0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "psp-recompilation-toolkit",
+    "name": "PSP Static Recompiler Toolkit",
+    "url": "https://github.com/sal063/PSP-recompilation-project",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "This toolkit translates a PSP relocatable executable into C, links it with a native runtime, and builds a Windows executable. The runtime includes a scheduler, HLE kernel, audio and video decoding, and an SDL3 plus Vulkan renderer written for this project.",
+    "description_zh": "这个工具包把 PSP 的可重定位可执行文件翻译成 C，再链接一个原生运行时，构建 Windows 可执行文件。运行时包括调度器、HLE 内核、音视频解码，以及为本项目编写的 SDL3 加 Vulkan 渲染器。",
+    "requirements": [
+      "Windows 10 or 11, x64, a Vulkan GPU, Python 3, and MSYS2 UCRT64 with GCC, SDL3, the Vulkan loader, and LLD. The input is a decrypted ELF from EBOOT.PBP.",
+      "License: GPL-2.0-or-later, because the project uses PPSSPP code."
+    ],
+    "evidence_url": "https://github.com/sal063/PSP-recompilation-project/blob/da17b0e1db209206a407d097d132201e516e3855/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "pbdviewer",
+    "name": "PbdViewer",
+    "url": "https://github.com/Hucxy/PbdViewer",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "PbdViewer is a PowerBuilder decompiler. The README points to a Kanxue thread, bbs.kanxue.com/thread-247372.htm.",
+    "description_zh": "PbdViewer 是一个 PowerBuilder 反编译器。README 指向看雪论坛帖子 bbs.kanxue.com/thread-247372.htm。",
+    "requirements": [
+      "The README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/Hucxy/PbdViewer/blob/b46fd3e42b8f26ed18a547b9e4bec47f96530a86/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "breadflowerdos",
+    "name": "BreadFlowerDos: reimplementing the Refractor 2 game engine",
+    "url": "https://github.com/kiwidoggie/breadflowerdos",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "BreadFlowerDos is a modern C++ recreation of the Refractor 2 engine, focused on Battlefield 2 and Battlefield 2142. The README says it reimplements functionality rather than matching the original binaries.",
+    "description_zh": "BreadFlowerDos 用现代 C++ 重做 Refractor 2 引擎，重点是《战地2》和《战地2142》。README 写明它重实现功能，而不是匹配原来的二进制。",
+    "requirements": [
+      "CMake 4.0 or newer, and Clang 19 or newer or MSVC. Commits are expected to pass clang-tidy and clang-format.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/kiwidoggie/breadflowerdos/blob/6b4d4e1f10dee9b1c8932db95f91b92e3eceb7db/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ballanced",
+    "name": "Ballanced: reimplementing the Ballance runtime",
+    "url": "https://github.com/doyaGu/Ballanced",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Ballanced is a source-level reimplementation of the Ballance runtime. It rebuilds the player, engine libraries, building blocks, and plugins into a Ballance-compatible directory layout. The documented runtime is the cross-platform SDL3 build on the sdl branch.",
+    "description_zh": "Ballanced 从源码重实现《平衡球》的运行时。它把播放器、引擎库、积木和插件重建成与《平衡球》兼容的目录布局。文档中的运行时是 sdl 分支上的跨平台 SDL3 构建。",
+    "requirements": [
+      "The player supplies a copy of Ballance and extracts the release into the game root. Windows runs Bin/Player.exe. Linux and macOS run Bin/Player.",
+      "Developers need CMake 3.25 or newer and SDL3. Windows uses Visual Studio 2022. Linux uses GCC or Clang with Ninja. macOS uses Apple Clang with Ninja.",
+      "The README names no a license."
+    ],
+    "evidence_url": "https://github.com/doyaGu/Ballanced/blob/d26c0c0fe86063b727ad9c9810014f1950852364/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "zgloom",
+    "name": "ZGloom: reimplementing the Amiga game Gloom",
+    "url": "https://github.com/Swizpig/ZGloom",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "ZGloom reimplements the Amiga first-person game Gloom, including Zombie Massacre. Windows builds need the Visual Studio 2013 runtime. Linux builds use SDL2, SDL2_mixer, and libXMP.",
+    "description_zh": "ZGloom 重实现 Amiga 第一人称游戏 Gloom，包括 Zombie Massacre。Windows 构建需要 Visual Studio 2013 运行库。Linux 构建使用 SDL2、SDL2_mixer 和 libXMP。",
+    "requirements": [
+      "The original developers released Gloom at earok/GloomAmiga. Place the ZGloom binary in that directory. On Linux, compile with make.",
+      "The README does not name a license for ZGloom. It says the licence of the included DeCrunchmania code is unknown."
+    ],
+    "evidence_url": "https://github.com/Swizpig/ZGloom/blob/84326745e54d36c6531bfacdaf524f638e9d8349/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "automobili-lamborghini-recomp",
+    "name": "Automobili Lamborghini: Recompiled",
+    "url": "https://github.com/alondero/automobililamborghini-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Automobili Lamborghini: Recompiled is a native port of the North American Nintendo 64 game Automobili Lamborghini. Release packages are provided for Windows x64 and Linux x64. An Android ARM64 path exists and is described as experimental.",
+    "description_zh": "Automobili Lamborghini: Recompiled 是任天堂 64 北美版 Automobili Lamborghini 的原生移植。发布包提供 Windows x64 和 Linux x64。还有一条 Android ARM64 路径，被写成实验性的。",
+    "requirements": [
+      "The player supplies a USA cartridge dump, named Automobili Lamborghini (USA).z64 or .n64, beside the executable. Windows starts lamborghini_modern.exe. Linux starts ./lamborghini_modern. When both names exist, the .z64 file is used.",
+      "License: GPL-3.0 for code original to this repository. Dependency submodules keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/alondero/automobililamborghini-recomp/blob/b5ae30c0015d9f27deca05cb8a42a764aca9972f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "copy-as-yara",
+    "name": "Copy as YARA",
+    "url": "https://github.com/ald3ns/copy-as-yara",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Copy as YARA is a Binary Ninja plugin that copies selected disassembly as text usable in a YARA rule. It can copy the bytes as shown, wildcard address tokens on x86 and ARM, or emit a complete rule.",
+    "description_zh": "Copy as YARA 是一个 Binary Ninja 插件，把选中的反汇编复制成可以放进 YARA 规则的文本。它可以按原样复制字节，在 x86 和 ARM 上把地址记号换成通配符，或生成一条完整规则。",
+    "requirements": [
+      "In Binary Ninja, select disassembly and use Plugins, Copy for YARA.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/ald3ns/copy-as-yara/blob/539b28a9ab1b687e70eaa62c7280c8a1c3a59c66/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "th06-sdl2",
+    "name": "th06-sdl2: porting Touhou Koumakyou to SDL2",
+    "url": "https://github.com/CNTianQi233/th06-sdl2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "th06-sdl2 is a cross-platform port of Touhou Koumakyou, the Embodiment of Scarlet Devil, version 1.02h, built on the happyhavoc/th06 reconstruction. Direct3D 8 and the Win32 window and audio stack are replaced with SDL2. Renderers are desktop OpenGL, OpenGL ES 2.0, and an optional Vulkan backend. The README says the project is archived.",
+    "description_zh": "th06-sdl2 是《东方红魔乡》1.02h 的跨平台移植，基于 happyhavoc/th06 的重建。Direct3D 8 以及 Win32 的窗口和音频栈被换成 SDL2。渲染器有桌面 OpenGL、OpenGL ES 2.0，以及可选的 Vulkan 后端。README 写明项目已归档。",
+    "requirements": [
+      "CMake 3.20 or newer, SDL2, SDL2_mixer, and SDL2_image. The player supplies the game data files from the version 1.02h executable. The Vulkan backend needs the LunarG Vulkan SDK at build time.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/CNTianQi233/th06-sdl2/blob/01642ba2690a6ab559e29268f5e1c1ed322e9e82/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "agl-decomp",
+    "name": "agl: decompilation of a Nintendo graphics library",
+    "url": "https://github.com/open-ead/agl",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "software",
+    "description_en": "agl is a decompilation of agl, a C++ library used by first-party Nintendo games for graphics, lighting, and parameter utilities called AAMP. The README points to open-ead/sead for the project goal, contribution guidelines, and build information.",
+    "description_zh": "agl 是 agl 的反编译。agl 是第一方任天堂游戏使用的 C++ 库，负责图形、光照和名为 AAMP 的参数工具。README 指向 open-ead/sead 以了解项目目标、贡献约定和构建信息。",
+    "requirements": [
+      "The README provides no build command or license for agl; it points to open-ead/sead for project goals and build information."
+    ],
+    "evidence_url": "https://github.com/open-ead/agl/blob/07eeda769154528bfbc0a266b22a84ebbeef9539/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "reconstruction_method": "decompilation",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "nfs-carbon-mac-case",
+    "name": "Need for Speed: Carbon — native Apple Silicon recompilation",
+    "url": "https://github.com/vasist15-source/nfs-carbon-mac",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This repository is a native Apple Silicon build of Need for Speed: Carbon, the 2006 PC game. The x86 code is translated to C ahead of time and compiled with a Metal renderer, native audio, and controller support. The README says career, races, the garage, and the menus run at 60 frames per second with sound.",
+    "description_zh": "该仓库是 2006 年 PC 版《极品飞车：卡本》的 Apple Silicon 原生构建。x86 代码被提前翻译成 C，并用 Metal 渲染器、原生音频和手柄支持编译。README 写明生涯、比赛、车库和菜单可以带声音以每秒 60 帧运行。",
+    "requirements": [
+      "An Apple Silicon Mac, the Xcode Command Line Tools, and Python 3. The player supplies the PC game, version 1.4, with an unwrapped NFSC.exe. Its SHA-256 is baaaaec33873d4ba7e4dbae6a5212049ffdcf9679a35d865d7625b4189952fd3.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/vasist15-source/nfs-carbon-mac/blob/3e6c60c2fb0c2c6e95ad8e90781458cb3afd7fe0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "rocket-r-case",
+    "name": "Rocket-R: a native Rocket: Robot on Wheels port",
+    "url": "https://github.com/ThatGuyMcd/Rocket-R",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Rocket-R brings Rocket: Robot on Wheels to Windows, Linux, and Android. Release 1.0.2 uses RocketRet's matching decompilation, N64Recomp, RSPRecomp, N64ModernRuntime, RT64, and SDL2. Packages cover Windows x64, Steam Deck, Linux x64, Linux ARM64, and Android ARM64.",
+    "description_zh": "Rocket-R 把 Rocket: Robot on Wheels 带到 Windows、Linux 和 Android。1.0.2 发布使用 RocketRet 的匹配反编译、N64Recomp、RSPRecomp、N64ModernRuntime、RT64 和 SDL2。发布包覆盖 Windows x64、Steam Deck、Linux x64、Linux ARM64 和 Android ARM64。",
+    "requirements": [
+      "The player supplies an unmodified US ROM, game code NSUE, 12 MiB, SHA-1 622D71A44DA0B81EA68092CAC9198C66154A4F4A. The desktop launcher accepts .z64, .n64, and .v64.",
+      "The README points to a GPL licence text in LICENSE and a licence notice in LICENSE.md."
+    ],
+    "evidence_url": "https://github.com/ThatGuyMcd/Rocket-R/blob/d94fa58229e37156090ac9a6263cea2361279043/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "pytest-idapro",
+    "name": "pytest-idapro",
+    "url": "https://github.com/nirizr/pytest-idapro",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "pytest-idapro is a pytest plugin for IDA and IDAPython. It can run a pytest session inside IDA, or mock IDAPython outside IDA. Since version 0.3.5 it also records and replays IDAPython calls.",
+    "description_zh": "pytest-idapro 是用于 IDA 和 IDAPython 的 pytest 插件。它可以在 IDA 里运行 pytest，或在 IDA 外模拟 IDAPython。从 0.3.5 起，它还可以录制并回放 IDAPython 调用。",
+    "requirements": [
+      "A basic run is pytest --ida with the path to the IDA executable, and optionally --ida-file with an IDA database or another file IDA can open.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/nirizr/pytest-idapro/blob/12f9aab9380e8c7eb452b303f5a03343431a498e/README.rst",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "mh1j-decomp",
+    "name": "Monster Hunter: matching decompilation of the Japanese PS2 release",
+    "url": "https://github.com/2Tie/mh1j",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles the first Japanese PlayStation 2 release of Monster Hunter. The disc files are SLPM_654.95 and AFS_DATA. A successful build compares the ELF and overlays byte for byte. The README says the main ELF still has a few mismatches and overlay matching is currently turned off.",
+    "description_zh": "该仓库反编译 PlayStation 2 上《怪物猎人》的首个日文版。光盘文件是 SLPM_654.95 和 AFS_DATA。成功构建后会把 ELF 和覆盖段逐字节比较。README 写明主 ELF 仍有少量不匹配，覆盖段的匹配目前被关掉。",
+    "requirements": [
+      "Python 3.9 or newer, then python3 -m pip install -r requirements.txt. Place SLPM_654.95 and AFS_DATA in the root and run make setup, make split, and make build.",
+      "The assembler, compiler, and linker are Windows executables. The Makefile uses WSL2 or WIBO.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/2Tie/mh1j/blob/1a385bdf3c0bee51f024f6dac9635e9f71db2f56/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "glkeeper",
+    "name": "GLKeeper: reimplementing Dungeon Keeper 2",
+    "url": "https://github.com/codenamecpp/GLKeeper",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "GLKeeper, also titled Grim Lands Keeper, is an open-source reimplementation of Dungeon Keeper 2. The README says it is not playable yet.",
+    "description_zh": "GLKeeper，也称 Grim Lands Keeper，是《地下城守护者2》的开源重实现。README 写明它还不能玩。",
+    "requirements": [
+      "The README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/codenamecpp/GLKeeper/blob/0fb689cc3e7850d1b19c425e7a7e193717c8c7a9/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "360tools",
+    "name": "360tools",
+    "url": "https://github.com/sp00nznet/360tools",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "360tools is a toolkit and playbook for statically recompiling Xbox 360 games to native x86-64 executables with the ReXGlue SDK. It is written for ReXGlue 0.8.0, which extracts XEX and STFS packages and generates C++. The older XenonRecomp pipeline is kept under legacy/.",
+    "description_zh": "360tools 是一套用 ReXGlue SDK 把 Xbox 360 游戏静态重编译成原生 x86-64 可执行文件的工具和步骤说明。它针对 ReXGlue 0.8.0，该版本可以提取 XEX 和 STFS 包并生成 C++。较旧的 XenonRecomp 流程留在 legacy/。",
+    "requirements": [
+      "License: MIT unless a file says otherwise. extract_stfs.py includes code derived from Rene Ladan under the 2-clause BSD license. ReXGlue keeps its own license."
+    ],
+    "evidence_url": "https://github.com/sp00nznet/360tools/blob/1b53928767fa134c1ea2ea42007bc39852eea1fc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "fzero-recomp-case",
+    "name": "F-Zero Recomp: statically recompiling F-Zero",
+    "url": "https://github.com/craigshaw/FZeroRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "F-Zero Recomp is a native widescreen static recompilation of F-Zero (USA). It runs on Linux x86_64, macOS on Apple Silicon, and Windows x64. Display modes include the original 8:7, 16:9, and 32:9.",
+    "description_zh": "F-Zero Recomp 是美版 F-Zero 的原生宽屏静态重编译。它可以在 Linux x86_64、Apple Silicon 上的 macOS 和 Windows x64 上运行。显示模式包括原来的 8:7、16:9 和 32:9。",
+    "requirements": [
+      "The player supplies their own cartridge dump. No ROM is in the repository.",
+      "License: PolyForm Noncommercial 1.0.0 for original code in the repository."
+    ],
+    "evidence_url": "https://github.com/craigshaw/FZeroRecomp/blob/5f37c22c7a2acef8b341545e9f2a4c5a4463990b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "emerald-recomp-case",
+    "name": "EmeraldRecomp: statically recompiling Pokémon Emerald",
+    "url": "https://github.com/mstan/EmeraldRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "EmeraldRecomp is a static recompilation of Pokémon Emerald for the Game Boy Advance, built on gbarecomp. Version 0.0.1 boots through the BIOS intro to the title screen and into gameplay. Paths the static recompiler has not covered run in an interpreter the first time, then are JIT-compiled and remembered.",
+    "description_zh": "EmeraldRecomp 是 Game Boy Advance 版《宝可梦 绿宝石》的静态重编译，基于 gbarecomp。0.0.1 可以从 BIOS 片头启动到标题画面并进入游戏。静态重编译器还没覆盖的路径第一次用解释器运行，然后被即时编译并记住。",
+    "requirements": [
+      "The USA ROM SHA-1 is f3ae088181bf583e55daf962a92bb46f4f1d07b7. The runtime refuses an unrecognized ROM. A Windows package is EmeraldRecomp-windows-x64.",
+      "License: PolyForm Noncommercial 1.0.0."
+    ],
+    "evidence_url": "https://github.com/mstan/EmeraldRecomp/blob/4c0562d911b05d84789b53eeab7208676fedb839/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "syphon-filter-2-recomp-case",
+    "name": "Syphon Filter 2 Recompiled: a native Windows build of the PS1 game",
+    "url": "https://github.com/alexbeavs-ps1-ports/syphon-filter-2-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Syphon Filter 2 Recompiled is an experimental Windows static recompilation of the two-disc USA release, bootstrapped from SCUS-94451 and built with PSXRecomp. Release v0.1.3-alpha runs the retail game logic as a native x64 program. The launcher can add 16:9, PGXP-assisted geometry, and mouse camera control.",
+    "description_zh": "Syphon Filter 2 Recompiled 是美版双碟 Syphon Filter 2 的实验性 Windows 静态重编译，从 SCUS-94451 起步，用 PSXRecomp 构建。v0.1.3-alpha 把零售版游戏逻辑作为原生 x64 程序运行。启动器可以加上 16:9、PGXP 辅助几何和鼠标镜头。",
+    "requirements": [
+      "The download is a setup kit that builds the game locally. Extract it to an ASCII path without spaces and supply the game discs. A Sony BIOS is not included.",
+      "The framework source is PolyForm Noncommercial 1.0.0. The README points to LICENSE for the project."
+    ],
+    "evidence_url": "https://github.com/alexbeavs-ps1-ports/syphon-filter-2-recomp/blob/5066d264b50039ee3dd01e38b0fde51d0b91c3eb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "xd-decomp",
+    "name": "Pokémon XD: matching GameCube decompilation",
+    "url": "https://github.com/TeamOrre/xd-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository is a decompilation of Pokémon XD: Gale of Darkness for GameCube. The goal is a matching retail binary. Supported versions are GXXE01, USA revision 0, and NXXJ01, the Japanese demo disc revision 0.",
+    "description_zh": "该仓库是 GameCube 游戏 Pokémon XD: Gale of Darkness 的反编译。目标是匹配零售版二进制。支持的版本是美版第 0 修订 GXXE01，以及日文试玩盘第 0 修订 NXXJ01。",
+    "requirements": [
+      "Copy the disc image to orig/GXXE01. Accepted formats include ISO, RVZ, WIA, WBFS, CISO, NFS, GCZ, and TGC. Then run python configure.py and ninja. Another version is selected with --version.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/TeamOrre/xd-decomp/blob/be1a9c54bdd24f3d2b37681f7c9ef0a76aa4a374/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "pokerecomp",
+    "name": "pokerecomp: reimplementing the Game Boy Pokémon games",
+    "url": "https://github.com/Decryptu/pokerecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "pokerecomp is a Godot 4 reimplementation, written in GDScript, of the Game Boy Pokémon games. Gold, Silver, Crystal, Red, Blue, and Yellow are playable from the bedroom through the Hall of Fame and their credits. A cartridge dump is checked by SHA-1, decoded once into a cache, and then released.",
+    "description_zh": "pokerecomp 用 GDScript 在 Godot 4 里重实现 Game Boy 的宝可梦游戏。金、银、水晶、红、蓝、黄可以从卧室玩到名人堂和各自的制作人员名单。卡带转储会用 SHA-1 检查，解码进缓存一次，然后释放。",
+    "requirements": [
+      "The documented engine is Godot 4.8.dev7. Releases cover Windows x86_64 and ARM, macOS, Linux x86_64 and ARM64, Android, iOS, and Switch.",
+      "License: MIT for the engine source. The README says that license does not cover the games or supplied dumps."
+    ],
+    "evidence_url": "https://github.com/Decryptu/pokerecomp/blob/452c2fb13f7f1b04a475540bb59e691b8b9c9f3e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ffcc-decomp",
+    "name": "Final Fantasy Crystal Chronicles: GameCube decompilation",
+    "url": "https://github.com/zcanann/FFCC-Decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles Final Fantasy Crystal Chronicles for GameCube. The English build supplied a debug symbol file and the PAL build a release symbol file, which recovered function names, parameters, and class hierarchies. Tracked versions are PAL GCCP01, USA GCCE01, and Japan GCCJGC.",
+    "description_zh": "该仓库反编译 GameCube 游戏《最终幻想 水晶编年史》。英文版带有调试符号文件，PAL 版带有发行符号文件，因此恢复了函数名、参数和类层次。被跟踪的版本是 PAL 的 GCCP01、美版 GCCE01 和日版 GCCJGC。",
+    "requirements": [
+      "Place FFCC_PAL.iso, FFCC_USA.gcm, or FFCC_JP.iso under orig for the matching version. The default build is python configure.py --version GCCP01, then ninja.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/zcanann/FFCC-Decomp/blob/db7c1c60ca3b9d5bf92db17ed1bd1326131224cd/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "rocket-robot-on-wheels-decomp",
+    "name": "Rocket: Robot on Wheels — Nintendo 64 decompilation",
+    "url": "https://github.com/RocketRet/Rocket-Robot-On-Wheels",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a decompilation of the Nintendo 64 game Rocket: Robot on Wheels. The US ROM is named baserom.us.z64.",
+    "description_zh": "该仓库是任天堂 64 游戏 Rocket: Robot on Wheels 的反编译。美版 ROM 命名为 baserom.us.z64。",
+    "requirements": [
+      "Install a MIPS gcc and MIPS binutils. Place the ROM in the project root, run make setup once, then make.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/RocketRet/Rocket-Robot-On-Wheels/blob/cd1fc6d3f575841a240373d7b8a2baf532da2f9f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "sacengine",
+    "name": "sacengine: reimplementing the Sacrifice game engine",
+    "url": "https://github.com/tg-2/sacengine",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "sacengine reimplements the engine of Sacrifice, the game by Shiny Entertainment. It is written in D. LDC 1.41.0 is a known working compiler.",
+    "description_zh": "sacengine 重实现 Shiny Entertainment 的游戏 Sacrifice 的引擎。它用 D 语言编写。已知可用的编译器是 LDC 1.41.0。",
+    "requirements": [
+      "Clone with submodules and run dub build -b release-debug. Link the game's maps and data folders into the sacengine directory, or place the executable in the Sacrifice directory.",
+      "On Windows the README also names OpenAL, mpg123, SDL2, and FreeType binaries.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/tg-2/sacengine/blob/b10b885b7e2c66f9350db547735625f43ceba39f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "san-recomp",
+    "name": "San Recompiled: statically recompiling Grand Theft Auto V for Xbox 360",
+    "url": "https://github.com/OZORDI/SanRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "San Recompiled is a static recompilation of the Xbox 360 version of Grand Theft Auto V, using XenonRecomp to translate PowerPC code to C++. The build system covers Windows, Linux, and macOS, and the installer accepts an ISO, a folder, or XContent. Shader conversion, the GPU pipeline, audio, and save data are still open.",
+    "description_zh": "San Recompiled 用 XenonRecomp 把 Xbox 360 版《侠盗猎车手V》的 PowerPC 代码静态重编译成 C++。构建系统覆盖 Windows、Linux 和 macOS，安装器接受 ISO、文件夹或 XContent。着色器转换、GPU 管线、音频和存档仍然未完成。",
+    "requirements": [
+      "The player supplies their own Xbox 360 game files. The README says the project is in early development.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/OZORDI/SanRecomp/blob/1685f88a733f9d0ebf69e40412901c873d44eb95/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "yakuza-dead-souls-recomp",
+    "name": "Yakuza: Dead Souls Recompiled — statically recompiling the PS3 game for Windows",
+    "url": "https://github.com/canersaka/Yakuza-Dead-Souls-Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Yakuza: Dead Souls Recompiled translates the PlayStation 3 game's PowerPC PPU code and Cell SPU programs into a native Windows executable. It boots without PS3 firmware, plays the intro movies, reaches the title screen, and enters gameplay. Indoor scenes such as the gun tutorial were reported at the game's 30 frame cap. The crowded outdoor opening was reported at about 20 frames per second.",
+    "description_zh": "Yakuza: Dead Souls Recompiled 把这款 PlayStation 3 游戏的 PowerPC PPU 代码和 Cell SPU 程序翻译成 Windows 原生可执行文件。它不需要 PS3 固件就能启动，可以播放片头影片、到达标题画面并进入游戏。室内场景，例如枪械教程，被报告达到游戏的每秒 30 帧上限。拥挤的室外开场被报告大约每秒 20 帧。",
+    "requirements": [
+      "Windows 10 or 11, x64, and a Direct3D 12 GPU. Build with Visual Studio 2022 or newer, CMake 3.21 or newer, Ninja, and Python 3.10 or newer. The tested disc is the North American BLUS30826 version 1.00.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/canersaka/Yakuza-Dead-Souls-Recompiled/blob/95135736b2e20ecf19e67457bbabc2926c3b355f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "retrokit",
+    "name": "retrokit",
+    "url": "https://github.com/nautilusbits/retrokit",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "retrokit decompiles 32-bit games from about 1993 to 2010 with headless Ghidra. It loads DOS LE and LX executables, including Watcom calling conventions, and types Win32 PE imports such as DirectX COM methods and Miles, Smacker, Bink, FMOD, and BASS. The export is one large C file plus indexes of functions, calls, strings, and imports.",
+    "description_zh": "retrokit 用无界面的 Ghidra 反编译大约 1993 年到 2010 年的 32 位游戏。它加载 DOS 的 LE 和 LX 可执行文件，包括 Watcom 调用约定，并为 Win32 PE 的导入标注类型，例如 DirectX 的 COM 方法，以及 Miles、Smacker、Bink、FMOD 和 BASS。导出结果是一个大的 C 文件，加上函数、调用、字符串和导入的索引。",
+    "requirements": [
+      "Ghidra 12.x, JDK 21 or newer, and Python 3.10 or newer. retrokit install-loader registers the DOS loader once per Ghidra install.",
+      "License: Apache-2.0."
+    ],
+    "evidence_url": "https://github.com/nautilusbits/retrokit/blob/7625c6b6a1f29d4793bc528c31621cd9ef784b1d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "dc3-decomp",
+    "name": "Dance Central 3: decompiling the Xbox 360 game",
+    "url": "https://github.com/rjkiv/dc3-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles Dance Central 3 for Xbox 360, the build dated 16 September 2012. The tree contains no game assets or assembly.",
+    "description_zh": "该仓库反编译 Xbox 360 游戏 Dance Central 3，构建日期是 2012 年 9 月 16 日。仓库里没有游戏资源和汇编。",
+    "requirements": [
+      "Copy the XEX to orig/373307D9. Then run python configure.py and ninja.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/rjkiv/dc3-decomp/blob/af230f098db9944c8cb6e26eff1761815003e2ca/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "zakuro",
+    "name": "Zakuro",
+    "url": "https://github.com/fearkov/zakuro",
+    "category": "reconstruction-cases",
+    "kind": "project",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "hardware",
+    "description_en": "Zakuro is a high-level Nintendo 3DS emulator written in Rust. Instead of a JIT, it runs code recompiled ahead of time by 3dsrecomp. The README says tested games run at full speed that way, and below full speed on the interpreter alone. Releases exist for Windows, Linux, and macOS.",
+    "description_zh": "Zakuro 是用 Rust 写的任天堂 3DS 高层模拟器。它不用即时编译，而是运行由 3dsrecomp 提前重编译的代码。README 写明测试过的游戏这样可以全速运行，只用解释器时则低于全速。Windows、Linux 和 macOS 都有发布包。",
+    "requirements": [
+      "A source build needs Rust 1.95 or newer. The player supplies a decrypted ROM. Linux builds also need pkg-config and the ALSA and udev development files.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/fearkov/zakuro/blob/c856685cc867bc6d4ac0f765844ca037ae735941/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "kl2-lv-decomp",
+    "name": "Klonoa 2: Lunatea's Veil — matching PlayStation 2 decompilation",
+    "url": "https://github.com/entriphy/kl2_lv_decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Klonoa 2: Lunatea's Veil for PlayStation 2, NTSC SLUS_201.51. Debug symbols came from the executable on Demo Disc 2.3. The README says ee-gcc 2.9-991111-01 produces matching code most of the time, and that the project is early and may fail to build.",
+    "description_zh": "这是 PlayStation 2 游戏 Klonoa 2: Lunatea's Veil 的匹配反编译，NTSC 编号 SLUS_201.51。调试符号来自 Demo Disc 2.3 上的可执行文件。README 写明 ee-gcc 2.9-991111-01 大多数时候能产生匹配的代码，并且项目还很早，构建可能失败。",
+    "requirements": [
+      "Set SCESDK to the official PlayStation 2 SDK. Then run cmake -Bbuild and make. The ELF is kl2_lv_decomp.elf.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/entriphy/kl2_lv_decomp/blob/2c4735ca064be44dddb47fc5262e5ddaa3dfd117/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "openreliant",
+    "name": "OpenReliant: reimplementing the StarLancer engine",
+    "url": "https://github.com/OpenReliant/openreliant",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenReliant reimplements the engine of StarLancer, the 2000 space-combat game by Warthog and Digital Anvil. It is written in Zig on SDL3 and draws with Vulkan, or Metal on macOS. The README says the beta can play the whole campaign, and that saves from the original game carry over.",
+    "description_zh": "OpenReliant 重实现 2000 年 Warthog 和 Digital Anvil 的太空战斗游戏 StarLancer 的引擎。它用 Zig 写在 SDL3 上，用 Vulkan 绘制，在 macOS 上用 Metal。README 写明测试版可以玩完整场战役，原来的存档可以继续使用。",
+    "requirements": [
+      "The player supplies a retail copy of StarLancer. Building needs Zig 0.17.",
+      "Source code is MPL-2.0. Documentation under docs/ is CC BY-SA 4.0."
+    ],
+    "evidence_url": "https://github.com/OpenReliant/openreliant/blob/b22fc9ad5f3db4838e9224b9962411aefedbcb72/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "blastcorps-decomp",
+    "name": "Blast Corps: Nintendo 64 decompilation",
+    "url": "https://github.com/retroplastic/blastcorps",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a decompilation of Blast Corps for the Nintendo 64. Named ROMs are the USA version, USA revision 1, the Japanese Blastdozer, and the European English and German version. Naming of the source and data is still in progress.",
+    "description_zh": "该仓库是任天堂 64 游戏 Blast Corps 的反编译。列出的 ROM 有美版、美版第 1 修订、日版 Blastdozer，以及欧洲英德版。源码和数据的命名仍在进行。",
+    "requirements": [
+      "Clone with the splat submodule. The documented first build uses a US revision 1.0 ROM at the repository root. USA SHA-1 185a6ef7ba1adb243278062c81a7d4e119bda58c. USA revision 1 SHA-1 483f7161aea39de8b45c9fbc70a2c3883c4dea8c.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/retroplastic/blastcorps/blob/baa807e502c0b8d608aea4e26fe58752d2797f01/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "i26-interstate",
+    "name": "I26: reimplementing Interstate ’76 in Godot",
+    "url": "https://github.com/vahokif/I26",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "I26 reimplements Interstate '76 in Godot. It includes the single-player campaign, scenarios, auto melee, multiplayer, online co-op, a 3D map editor, and a garage. F12 switches to the original 1997 graphics.",
+    "description_zh": "I26 用 Godot 重实现 Interstate '76。它包括单人战役、情景、自动混战、多人、在线合作、三维地图编辑器和车库。F12 切换到 1997 年的原来画面。",
+    "requirements": [
+      "The player supplies the GOG version, including the Nitro pack, or the offline setup installers. On Linux, Microsoft core fonts are needed for Impact and Arial.",
+      "License: GPL-3.0. Build steps are in DEVELOPMENT.md."
+    ],
+    "evidence_url": "https://github.com/vahokif/I26/blob/8edea2a781932ac101afdb9572b13578fb90f6b3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ocarina-mq-debug-disasm",
+    "name": "Ocarina of Time Master Quest: matching debug disassembly",
+    "url": "https://github.com/camthesaxman/zelda_ocarina_mq_debug",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of The Legend of Zelda: Ocarina of Time Master Quest, debug version. It builds zelda_ocarina_mq_dbg.z64, MD5 717179476af84133b14ff73af87db57a.",
+    "description_zh": "这是《塞尔达传说：时之笛》大师任务调试版的反汇编。它构建 zelda_ocarina_mq_dbg.z64，MD5 为 717179476af84133b14ff73af87db57a。",
+    "requirements": [
+      "Linux, or Windows 10 with WSL. Needs GCC, GNU Make, Python, mips64-elf binutils, the IDO 5.3 compiler from the repository releases, irixemu, and the Mono C# runtime. The ROM is named baserom.z64.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/camthesaxman/zelda_ocarina_mq_debug/blob/4aaea687d83c2dc131f4b2c77e838cf4c429949c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "source-2-decompiler",
+    "name": "Source 2 Decompiler",
+    "url": "https://github.com/Dingf/Source-2-Decompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Source 2 Decompiler, s2dc, decompiles Source 2 resource files. It currently reads .vtex_c, .vmat_c, and .vpcf_c. Dota 2 Reborn files that no longer carry structure metadata need the ntro metadata placed beside the executable.",
+    "description_zh": "Source 2 Decompiler，即 s2dc，反编译 Source 2 的资源文件。它目前读取 .vtex_c、.vmat_c 和 .vpcf_c。Dota 2 Reborn 里不再带结构元数据的文件，需要把 ntro 元数据放在可执行文件旁边。",
+    "requirements": [
+      "The command is s2dc, with -d for an input directory and -o for an output root. Wildcards are accepted.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/Dingf/Source-2-Decompiler/blob/0526b7aac49cc56d085c7a6c66d7b8f357ccd1b2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "luxon-server",
+    "name": "Luxon Server",
+    "url": "https://github.com/niansa/LuxonServer",
+    "category": "reconstruction-cases",
+    "kind": "project",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "protocol"
+    ],
+    "class": "software",
+    "description_en": "Luxon Server is a clean-room implementation of the Photon Realtime server. It sits on the Luxon project, which reimplements the ENet protocol and Photon's binary serialization. The aim is a drop-in server for multiplayer games that use Photon without complex server-side plugins.",
+    "description_zh": "Luxon Server 是 Photon Realtime 服务器的净室实现。它基于 Luxon 项目，后者重实现了 ENet 协议和 Photon 的二进制序列化。目标是给使用 Photon、且不依赖复杂服务器插件的多人游戏提供可替换的服务器。",
+    "requirements": [
+      "Prebuilt releases are documented for Linux, Windows, macOS, FreeBSD, and OpenBSD. A Debian package repository is also described.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/niansa/LuxonServer/blob/e70722a62d6d4eb01b0d7717e322e8533044e858/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "aerogauge-recomp",
+    "name": "AeroGauge: Recompiled — a native Nintendo 64 game build",
+    "url": "https://github.com/alondero/aerogauge-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "AeroGauge: Recompiled is a native build of the Nintendo 64 game AeroGauge. Supported targets are Windows 10 or later with Direct3D 12, Linux x64 or ARM64 with Vulkan, and Android 9 or later on ARM64 with Vulkan. macOS is not a supported target. Accepted ROMs are USA and Japanese revision A.",
+    "description_zh": "AeroGauge: Recompiled 是任天堂 64 游戏 AeroGauge 的原生构建。支持的目标是带 Direct3D 12 的 Windows 10 或更新版本、带 Vulkan 的 Linux x64 或 ARM64，以及带 Vulkan 的 Android 9 或更新版本的 ARM64。macOS 不是支持的目标。接受的 ROM 是美版和日版修订 A。",
+    "requirements": [
+      "The player supplies their own ROM. Desktop names include AeroGauge (USA).z64. Android imports the ROM in the app.",
+      "The README points to a LICENSE file without naming the license."
+    ],
+    "evidence_url": "https://github.com/alondero/aerogauge-recomp/blob/9d9cba7c0b7ac3136cb660a4d3096677c30f089a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "balloonfight-disasm",
+    "name": "Balloon Fight: disassembly of the NES game",
+    "url": "https://github.com/LuigiBlood/balloonfight_dis",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of Balloon Fight for the NES, USA. Assembly uses ARM9's bass fork. An iNES build needs the CHR file named BalloonFight.chr.",
+    "description_zh": "这是 NES 美版 Balloon Fight 的反汇编。汇编使用 ARM9 的 bass 分支。构建 iNES 需要名为 BalloonFight.chr 的 CHR 文件。",
+    "requirements": [
+      "Assemble BalloonFight_iNES.asm or BalloonFight_PRG.asm with bass.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/LuigiBlood/balloonfight_dis/blob/3290ad3abe639071be1d019112dbfcd541981461/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "cmr2-decomp",
+    "name": "CMR2Decomp: decompiling Colin McRae Rally 2.0",
+    "url": "https://github.com/CMR2Decomp/CMR2Decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "CMR2Decomp is a decompilation of the PC game Colin McRae Rally 2.0. It uses reccmp to check functions and globals. The solution is for Visual Studio 2022, and the code is written so it can still be compiled with MSVC 6.0. CI uses a portable MSVC 6.0.",
+    "description_zh": "CMR2Decomp 是 PC 游戏 Colin McRae Rally 2.0 的反编译。它用 reccmp 核对函数和全局量。解决方案面向 Visual Studio 2022，代码仍然按 MSVC 6.0 可编译的方式书写。持续集成使用便携版 MSVC 6.0。",
+    "requirements": [
+      "The local compile line links DirectX 7 libraries from third_party/dx7sdk-7001.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/CMR2Decomp/CMR2Decomp/blob/0e18a20853a80f4177e6c7da30b94b60f65ae2ba/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "puzzleleague64",
+    "name": "Pokémon Puzzle League: matching Nintendo 64 decompilation",
+    "url": "https://github.com/AngheloAlf/puzzleleague64",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Pokémon Puzzle League for the Nintendo 64. The default build is the USA version. A big-endian ROM is named baserom.usa.z64 under config/usa. The build uses splat and reports a matching ROM.",
+    "description_zh": "这是任天堂 64 游戏 Pokémon Puzzle League 的匹配反编译。默认构建是美版。大端 ROM 放在 config/usa，命名为 baserom.usa.z64。构建使用 splat，并报告匹配的 ROM。",
+    "requirements": [
+      "Python dependencies are installed with uv sync. Rust is installed with rustup.",
+      "License: MIT, except src/, which is CC0."
+    ],
+    "evidence_url": "https://github.com/AngheloAlf/puzzleleague64/blob/cd3d7311e097341eb61f27b7c5f076b2c31d5f09/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "parascope",
+    "name": "parascope",
+    "url": "https://github.com/xorpse/parascope",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "parascope scans source code and binaries with weggli rulesets. Building it needs IDA Pro 9.2 and the current SDK. It is installed from crates.io with cargo.",
+    "description_zh": "parascope 用 weggli 规则集扫描源代码和二进制文件。构建它需要 IDA Pro 9.2 和当前 SDK。它通过 cargo 从 crates.io 安装。",
+    "requirements": [
+      "The command is parascope, with --rules and an input path.",
+      "The README names no a license in the text."
+    ],
+    "evidence_url": "https://github.com/xorpse/parascope/blob/42e23e31e70fdf64896d6942d7e5fcc00a4e706f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "openjpog",
+    "name": "OpenJPOG: decompiling Jurassic Park: Operation Genesis and its Toshi engine",
+    "url": "https://github.com/AdventureT/OpenJPOG",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "OpenJPOG decompiles Toshi engine 1.0 and Jurassic Park: Operation Genesis. The Windows build uses Visual Studio 2019 or 2022. The README says the progress images do not yet mark every finished function.",
+    "description_zh": "OpenJPOG 反编译 Toshi 引擎 1.0 和 Jurassic Park: Operation Genesis。Windows 构建使用 Visual Studio 2019 或 2022。README 写明进度图还没有标出每一个已完成的函数。",
+    "requirements": [
+      "Clone with submodules, run GenerateProjects-VS2019.bat or GenerateProjects-VS2022.bat, and compile the generated solution.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/AdventureT/OpenJPOG/blob/84b503e76d7a6250f4bbd7df807a50ec591660bb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "mbased",
+    "name": "MBASED",
+    "url": "https://github.com/bliutech/mbased",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "MBASED is a Binary Ninja plugin that simplifies mixed Boolean-arithmetic expressions. It parses an MLIL instruction into a tree and simplifies it with SymPy and Z3, then prints the result in the Binary Ninja log.",
+    "description_zh": "MBASED 是一个 Binary Ninja 插件，用来化简混合布尔算术表达式。它把一条 MLIL 指令解析成树，用 SymPy 和 Z3 化简，然后把结果打印到 Binary Ninja 的日志。",
+    "requirements": [
+      "Binary Ninja, Z3, and SymPy. Clone the repository into the Binary Ninja plugins directory, then use Plugins, MBASED: Simplify all MBA expressions.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/bliutech/mbased/blob/fb8315f2b23e73b127ec7ccc78c58bf34b6e923c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "dds-decomp",
+    "name": "Digital Devil Saga: matching decompilation of two PS2 games",
+    "url": "https://github.com/Megami-Decomps/dds-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Shin Megami Tensei: Digital Devil Saga and Digital Devil Saga 2 for PlayStation 2. The USA targets are SLUS_209.74, SHA-1 6d18898e2724bf1d145392766e8ba1e678487419, and SLUS_211.52, SHA-1 9be91ee1b4a535a4cb6ec89237b5a6ba41be2add. ninja checks each built executable against its retail SHA-1.",
+    "description_zh": "这是 PlayStation 2 游戏《真·女神转生 数字恶魔传说》和《数字恶魔传说2》的匹配反编译。美版目标是 SLUS_209.74，SHA-1 为 6d18898e2724bf1d145392766e8ba1e678487419，以及 SLUS_211.52，SHA-1 为 9be91ee1b4a535a4cb6ec89237b5a6ba41be2add。ninja 会把每个构建出的可执行文件与零售版 SHA-1 核对。",
+    "requirements": [
+      "Python 3.10 or newer, ninja, cpp, and git. Run python configure.py and ninja. ninja dds1 or ninja dds2 builds one game.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/Megami-Decomps/dds-decomp/blob/648e39e3cdda433ec839232f5b4d65f7d8b8022a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "r2garlic",
+    "name": "r2garlic",
+    "url": "https://github.com/radareorg/r2garlic",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "r2garlic is a radare2 plugin for the Garlic DEX and Dalvik decompiler. pd:G decompiles the method at the current seek, pd:Gc the current class, and pd:Gs writes smali for the current class.",
+    "description_zh": "r2garlic 是 Garlic DEX 和 Dalvik 反编译器的 radare2 插件。pd:G 反编译当前地址的方法，pd:Gc 反编译当前类，pd:Gs 输出当前类的 smali。",
+    "requirements": [
+      "Install with r2pm -Uci r2garlic, or build with make after updating submodules.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/radareorg/r2garlic/blob/125c5fd51627aa47f2077594a4bcaaf004e1ac6a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "earthbound-companion",
+    "name": "EarthBound Companion: native EarthBound build",
+    "url": "https://github.com/rages4calm/earthbound-companion",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "EarthBound Companion is a native EarthBound build. Windows x64 release 1.0.18 is the supported package. Linux, macOS, and Android builds are community previews. It includes a pinned MaternalBound Redux adaptation, widescreen scenery, 1080p to 4K output, MSU music, and Story Shuffle. The game code is compiled C with SDL2.",
+    "description_zh": "EarthBound Companion 是 EarthBound 的原生构建。Windows x64 的 1.0.18 是受支持的发布包。Linux、macOS 和 Android 构建是社区预览。它包含固定版本的 MaternalBound Redux 改编、宽屏画面、1080p 到 4K 输出、MSU 音乐和 Story Shuffle。游戏代码是用 SDL2 编译的 C。",
+    "requirements": [
+      "The player supplies a clean 3 MiB USA ROM, with or without a 512-byte copier header. Other revisions are rejected. Linux needs glibc 2.38 or newer, macOS 12 or newer, and Android 8.0 or newer.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/rages4calm/earthbound-companion/blob/eb08e3bb999ec14376d57eea64f6d2f590f52af2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "halo-ce-rg35xx",
+    "name": "Halo CE on RG35XX H: porting Halo: Combat Evolved to H700 handhelds",
+    "url": "https://github.com/kirklandsig/halo-ce-anbernic-rg35xx",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This is a native ARM64 port of the Halo: Combat Evolved decompilation OpenCE to the Anbernic RG35XX H and other Allwinner H700 handhelds with a Mali-G31 GPU. The game build is Xbox 01.01.14.2342. The README reports 60 frames per second in menus and about 40 to 55 in campaign at the default scale, under Knulli.",
+    "description_zh": "这是《光环：战斗进化》反编译 OpenCE 到 Anbernic RG35XX H 和其他带 Mali-G31 的全志 H700 掌机的原生 ARM64 移植。游戏构建是 Xbox 01.01.14.2342。README 报告在 Knulli 下，菜单每秒 60 帧，战役在默认缩放下大约每秒 40 到 55 帧。",
+    "requirements": [
+      "The player supplies their own Xbox disc image. Releases contain no game data. Tested campaign levels named in the README are a30, b30, and c10.",
+      "License: CC0 1.0."
+    ],
+    "evidence_url": "https://github.com/kirklandsig/halo-ce-anbernic-rg35xx/blob/dc99571d4ae37ad97acaa1b7661c5b882ba10d1a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "speedbreaker-carbon",
+    "name": "SpeedBreaker: Carbon — statically recompiling Need for Speed: Carbon",
+    "url": "https://github.com/SpeedBreakerProject/speedbreaker-carbon",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "SpeedBreaker: Carbon is a static recompilation of the Xbox 360 version of Need for Speed: Carbon (2006). The only supported disc is the USA Collector's Edition. Packages cover SteamOS, Linux, Mac, and a Windows beta. An experimental iPhone and iPad build is also described.",
+    "description_zh": "SpeedBreaker: Carbon 是 Xbox 360 版《极品飞车：卡本》（2006）的静态重编译。唯一支持的光盘是美版收藏版。发布包覆盖 SteamOS、Linux、Mac，以及 Windows 测试版。还描述了一个实验性的 iPhone 和 iPad 构建。",
+    "requirements": [
+      "The player supplies a full ISO, a trimmed XISO, or an extracted folder of that disc. No title update is required. The standard edition and other regions are rejected.",
+      "License: GPL-3.0-or-later."
+    ],
+    "evidence_url": "https://github.com/SpeedBreakerProject/speedbreaker-carbon/blob/f3b6b65f365405024f623b58b5ce50def68d4583/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "pocket-disasm",
+    "name": "Pocket Disasm",
+    "url": "https://github.com/whoisqwerz/pocket_disasm",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Pocket Disasm is an MCP router that gives each binary its own headless IDALib worker. Agents can create, select, inspect, save, and close analysis sessions. It uses a pinned revision of mrexodia/ida-pro-mcp.",
+    "description_zh": "Pocket Disasm 是一个 MCP 路由，让每个二进制文件使用自己的无界面 IDALib 工作进程。代理可以创建、选择、检查、保存和关闭分析会话。它使用固定修订的 mrexodia/ida-pro-mcp。",
+    "requirements": [
+      "Windows 10 or 11, Python 3.11 or newer, and a separate IDA Pro or IDALib installation.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/whoisqwerz/pocket_disasm/blob/fdcdde8c994187b0b6eff36715d46b091de2ff8d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ghidra-hexagon-sleigh",
+    "name": "Ghidra Hexagon SLEIGH",
+    "url": "https://github.com/CUB3D/ghidra-hexagon-sleigh",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Ghidra Hexagon SLEIGH is a Ghidra processor module for Qualcomm Hexagon QDSP6. It disassembles v66, v67, v68, v73, v75, v79, v81, v83, and v85, including HVX v85, HMX v81, and an initial HLX v85. It also implements hardware loops and p-code for most operations.",
+    "description_zh": "Ghidra Hexagon SLEIGH 是高通 Hexagon QDSP6 的 Ghidra 处理器模块。它反汇编 v66、v67、v68、v73、v75、v79、v81、v83 和 v85，包括 HVX v85、HMX v81，以及初步的 HLX v85。它还实现了硬件循环和大多数操作的 p-code。",
+    "requirements": [
+      "Install the release zip that matches the Ghidra version through File, Install Extensions. Ghidra 12.0 or newer is recommended.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/CUB3D/ghidra-hexagon-sleigh/blob/7ec35fc50305578480d1957be0bc4f3753b97452/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "maniac-mansion-disasm",
+    "name": "Maniac Mansion: annotated demo and retail script disassembly",
+    "url": "https://github.com/segrax/Maniac.Mansion.Disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "class": "game",
+    "description_en": "This repository is a commented disassembly of Maniac Mansion scripts for the v0 demo and the retail release, plus spreadsheets of rooms, objects, variables, and sounds. The README says the files are not meant to be recompiled. The .c extension is only for highlighting.",
+    "description_zh": "该仓库是疯狂大厦 v0 试玩版和零售版脚本的注释反汇编，并附有房间、物体、变量和声音的表格。README 写明这些文件不打算重新编译。.c 扩展名只是为了语法高亮。",
+    "requirements": [
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/segrax/Maniac.Mansion.Disassembly/blob/0e4a04768e2a11eb869e1ba3c6a5b6429ef2c6c9/Readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ace-combat-3-recomp",
+    "name": "Ace Combat 3: static recompilation for Windows",
+    "url": "https://github.com/sal063/Ace-Combat-3-static-recompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native Windows port of Ace Combat 3: Electrosphere. The MIPS code is translated to C ahead of time and linked against rewritten Psy-Q libraries. ac3.exe draws in software. ac3_enhanced.exe adds a Vulkan renderer with higher resolution, 16:9, and a longer draw distance.",
+    "description_zh": "这是《皇牌空战3：电子领域》的 Windows 原生移植。MIPS 代码被提前翻译成 C，并链接重写过的 Psy-Q 库。ac3.exe 用软件绘制。ac3_enhanced.exe 加上 Vulkan 渲染器，有更高分辨率、16:9 和更远的绘制距离。",
+    "requirements": [
+      "Both Japanese revision 1 discs, SLPS-02020 and SLPS-02021, as 2352-byte .bin files. Windows x64, Visual Studio 2022, clang 22.1, CMake 3.20 or newer, Ninja, Python 3 as python, the Vulkan SDK, and SDL3 3.4.8.",
+      "The README names no a license."
+    ],
+    "evidence_url": "https://github.com/sal063/Ace-Combat-3-static-recompilation/blob/0dfb14971b6a5f0f001f02dcc810e6ec6c0065a5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "def-jam-vendetta-recomp",
+    "name": "Def Jam Vendetta Recompiled: statically recompiling the PS2 game for Windows",
+    "url": "https://github.com/jcsix694/def-jam-vendetta-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Def Jam Vendetta Recompiled turns the PlayStation 2 game into a native Windows program with PS2Recomp. paraLLEl-GS redraws the graphics chip on Vulkan. The target is the USA disc, SLUS-20639, as an ISO or CHD.",
+    "description_zh": "Def Jam Vendetta Recompiled 用 PS2Recomp 把这款 PlayStation 2 游戏变成 Windows 原生程序。paraLLEl-GS 在 Vulkan 上重绘图形芯片。目标是美版光盘 SLUS-20639，格式为 ISO 或 CHD。",
+    "requirements": [
+      "The player supplies the disc. The README asks for about 8 GB free. The first build runs on the PC.",
+      "License: GPL-3.0. Changes to paraLLEl-GS are LGPL-3.0-or-later."
+    ],
+    "evidence_url": "https://github.com/jcsix694/def-jam-vendetta-recomp/blob/f5a7574d2831f9033292e533f7a0243cb0ed9276/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "srw64-recomp",
+    "name": "Marchwind 64: statically recompiling Super Robot Wars 64",
+    "url": "https://github.com/dyzz/srw64-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Marchwind 64 is a native recompilation of Super Robot Wars 64, the 1999 Nintendo 64 game. It runs on Windows, macOS, Linux, Steam Deck, Android, and Nintendo Switch, with English, Simplified Chinese, Traditional Chinese, and Korean text, plus widescreen and an optional HD art pack.",
+    "description_zh": "Marchwind 64 是 1999 年任天堂 64 游戏《超级机器人大战64》的原生重编译。它可以在 Windows、macOS、Linux、Steam Deck、Android 和任天堂 Switch 上运行，带有英文、简体中文、繁体中文和韩文，以及宽屏和可选的高清画面包。",
+    "requirements": [
+      "The player supplies a Japanese Super Robot Taisen 64 revision 0 ROM. Downloads contain no game data.",
+      "License: GPL-3.0-or-later for the project's own source and tools."
+    ],
+    "evidence_url": "https://github.com/dyzz/srw64-recomp/blob/909c1c8452fffa09614056a454834207f0aa92b0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "mafia-re",
+    "name": "Mafia-RE: matching decompilation of Mafia: The City of Lost Heaven",
+    "url": "https://github.com/Marvisak/mafia-re",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "Mafia-RE decompiles Mafia: The City of Lost Heaven (Illusion Softworks, 2002) for versions 1.0, 1.1, 1.2, and Steam's 2010 setup rebuild. Version 1.2 is the main target. The README says rw_data.dll, IJoy.dll, and setup.exe already build byte-for-byte with the original toolchains, while Game.exe has been started.",
+    "description_zh": "Mafia-RE 反编译《黑手党：失落天堂》（Illusion Softworks，2002）的 1.0、1.1、1.2，以及 Steam 2010 年的安装程序重建。1.2 是主要目标。README 写明 rw_data.dll、IJoy.dll 和 setup.exe 已经能用原来的工具链逐字节构建，Game.exe 则刚刚开始。",
+    "requirements": [
+      "Windows, Git, Python 3, and CMake 3.29 or newer. The game binaries are built with Visual C++ 6.0. Steam's 2010 setup uses Visual C++ 2008 SP1.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/Marvisak/mafia-re/blob/113b5b60b2b09b7a84a6221abeab3c7d0f0bc7fd/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "mscharged-decomp",
+    "name": "Mario Strikers Charged: a matching Wii decompilation",
+    "url": "https://github.com/yannicksuter/mscharged-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Mario Strikers Charged for the Wii. The USA revision 1, R4QE01, is reported complete: 100 percent of the code matches and links. Its main.dol SHA-1 is e96d2298067b70652752145b4e63644e6e1b1560. Europe, Japan, and Korea are also configured.",
+    "description_zh": "这是 Wii 游戏 Mario Strikers Charged 的匹配反编译。美版第 1 修订 R4QE01 被报告为完成：代码 100% 匹配并链接。它的 main.dol SHA-1 是 e96d2298067b70652752145b4e63644e6e1b1560。欧洲、日本和韩国版本也有配置。",
+    "requirements": [
+      "Place the disc image in orig/R4QE01 for USA. Accepted formats include ISO, RVZ, WIA, WBFS, CISO, NFS, GCZ, and TGC. Then run python3 configure.py and ninja.",
+      "License: CC0 1.0 for the project. Third-party source keeps its own terms."
+    ],
+    "evidence_url": "https://github.com/yannicksuter/mscharged-decomp/blob/b843f01b0ba78077329eaa228c9201b8c8055d9b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "burnout2-recomp",
+    "name": "Burnout 2: static recompilation of the original Xbox game",
+    "url": "https://github.com/timftw21/burnout2-recompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a static recompilation of the original Xbox game Burnout 2: Point of Impact. The Windows build is the main target. Linux, Steam Deck, and macOS builds are described as experimental and still needing gameplay, sound, and performance checks. Release 1.14 adds a camera field-of-view slider, texture-pack installation, and initial scripting.",
+    "description_zh": "这是原版 Xbox 游戏 Burnout 2: Point of Impact 的静态重编译。Windows 构建是主要目标。Linux、Steam Deck 和 macOS 构建被写成实验性的，游戏过程、声音和性能仍需检查。1.14 发布增加了镜头视野滑块、贴图包安装和初步的脚本支持。",
+    "requirements": [
+      "The player supplies a US Xbox XISO, as .iso or .xiso. Windows setup is Install.cmd. Linux uses Install.desktop. macOS uses Install.command.",
+      "The README names no project license. Dependency licenses are listed in THIRD_PARTY_NOTICES.txt."
+    ],
+    "evidence_url": "https://github.com/timftw21/burnout2-recompilation/blob/a12075b88311ec7027b745a69941634cc4a381b7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "smt-nine-recomp",
+    "name": "SMT NINE Recomp: native port of Shin Megami Tensei NINE",
+    "url": "https://github.com/gymzatan/smt-nine-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "SMT NINE Recomp is a native Windows port of Shin Megami Tensei NINE for the original Xbox, built with xboxrecomp. The default build is Japanese, translated from the player's Japanese retail disc. A Chinese translation is optional. Config can import an ISO patched with an English translation.",
+    "description_zh": "SMT NINE Recomp 是原版 Xbox 游戏《真·女神转生 NINE》的 Windows 原生移植，用 xboxrecomp 构建。默认构建是日文，从玩家的日版零售光盘翻译而来。中文翻译是可选的。配置可以导入打过英文翻译补丁的 ISO。",
+    "requirements": [
+      "Windows 10 or 11, x64. Graphics can use Vulkan 1.3, D3D11 feature level 11_0, D3D12 through D3D11On12, or OpenGL through WineD3D. A local build is recommended to have 15 GB free disk and 16 GB RAM.",
+      "License: MIT for project-authored code and the Chinese translation inputs. xboxrecomp and WineD3D include LGPL portions."
+    ],
+    "evidence_url": "https://github.com/gymzatan/smt-nine-recomp/blob/c5f8a13a7473b5cc7e6091b757adc6cabc317543/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "sega2asm",
+    "name": "sega2asm",
+    "url": "https://github.com/hansbonini/sega2asm",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "sega2asm splits a Sega Genesis or Mega Drive ROM by segment. It disassembles Motorola 68000 and Z80 code, writes 4bpp graphics as PNG, and converts raw PCM to WAV. Code output is aimed at clownassembler.",
+    "description_zh": "sega2asm 按段拆分世嘉 Genesis 或 Mega Drive 的 ROM。它反汇编 Motorola 68000 和 Z80 代码，把 4bpp 图形写成 PNG，并把原始 PCM 转成 WAV。代码输出面向 clownassembler。",
+    "requirements": [
+      "The command is sega2asm with a config YAML. Optional flags select a symbols file, a charmap, verbose output, or a dry run.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/hansbonini/sega2asm/blob/78f37b0d71d27b43b960e24c01c5437bbef55404/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "cryptoknight",
+    "name": "CryptoKnight",
+    "url": "https://github.com/AbertayMachineLearningGroup/CryptoKnight",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "CryptoKnight classifies compiled cryptographic primitives. It uses Intel Pin for dynamic instrumentation and PyTorch for the model. The README points to the 2018 paper in Information, DOI 10.3390/info9090231.",
+    "description_zh": "CryptoKnight 对编译后的密码学原语分类。它用 Intel Pin 做动态插桩，用 PyTorch 做模型。README 指向 2018 年发表在 Information 上的论文，DOI 为 10.3390/info9090231。",
+    "requirements": [
+      "Install Python requirements, then run python knight.py --setup. Predicting a binary is python knight.py --predict. OpenSSL headers are needed to compile the sample binaries.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/AbertayMachineLearningGroup/CryptoKnight/blob/bdcd10805adacdeee16fb0776103c1f946d5f472/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "recv-dc-decomp",
+    "name": "Resident Evil: Code: Veronica — matching Dreamcast decompilation",
+    "url": "https://github.com/fmil95/recv-dc-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Resident Evil: Code: Veronica for the Dreamcast, US version. The current target is the main executable, 1ST_READ.bin. It uses the Sonic Adventure 2 Dreamcast decompilation as a template.",
+    "description_zh": "这是 Dreamcast 美版《生化危机 代号：维罗妮卡》的匹配反编译。当前目标是主可执行文件 1ST_READ.bin。它以索尼克大冒险2的 Dreamcast 反编译为模板。",
+    "requirements": [
+      "pip install sh4dis. The splitter also needs PyYAML and Python. The build uses Katana r11 include files, Hitachi tools, and libraries. Place 1ST_READ.BIN in the rom folder and run make setup.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/fmil95/recv-dc-decomp/blob/7ee766b4f3a8eacb2f09577a88a565ae73f4adb9/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "cluadecompiler",
+    "name": "cLuaDecompiler",
+    "url": "https://github.com/Coldzer0/LuaDecompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "cLuaDecompiler is a Free Pascal and Lazarus disassembler and decompiler for Lua bytecode. It covers Lua 5.1 through 5.5, can load a custom opcode table, and can compare decompiled output with the original program when source is available.",
+    "description_zh": "cLuaDecompiler 是用 Free Pascal 和 Lazarus 写的 Lua 字节码反汇编器和反编译器。它覆盖 Lua 5.1 到 5.5，可以加载自定义操作码表，并在有源码时把反编译结果与原程序比较。",
+    "requirements": [
+      "License: GNU Affero General Public License version 3."
+    ],
+    "evidence_url": "https://github.com/Coldzer0/LuaDecompiler/blob/e75c48a73008187e88cc5a50a2dd06b884247923/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "opensith",
+    "name": "OpenSith: reimplementing the Jedi Knight: Dark Forces II engine",
+    "url": "https://github.com/r1sc/OpenSith",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenSith reimplements the engine of Star Wars: Jedi Knight — Dark Forces II in Unity. It renders JKL levels and animates 3DO models. There is no COG parser or COG virtual machine, so the game is not playable, though a level can be walked around.",
+    "description_zh": "OpenSith 用 Unity 重实现《星球大战：绝地武士》的引擎。它可以渲染 JKL 关卡并播放 3DO 模型动画。没有 COG 解析器或 COG 虚拟机，所以游戏还不能玩，但可以在关卡里走动。",
+    "requirements": [
+      "Open the Scene scene in Unity and set the _Game object's Game Path to a Jedi Knight install. It reads Steam GOB archives, or files in an Extracted subdirectory.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/r1sc/OpenSith/blob/f600a9157f2c48aa37f3a25ae446014d746b6ab3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "sh3-nx",
+    "name": "Silent Hill 3: a native Nintendo Switch port",
+    "url": "https://github.com/cutarev/sh3-nx",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "sh3-nx is a native Nintendo Switch port of the PC version of Silent Hill 3, release v0.06. The x86 executable is statically recompiled to C and compiled for ARM64. Direct3D 8, DirectSound, DirectInput, and kernel32 are reimplemented on SDL2 and OpenGL.",
+    "description_zh": "sh3-nx 是 PC 版《寂静岭3》的任天堂 Switch 原生移植，发布版本是 v0.06。x86 可执行文件被静态重编译成 C，再编译到 ARM64。Direct3D 8、DirectSound、DirectInput 和 kernel32 在 SDL2 和 OpenGL 上重实现。",
+    "requirements": [
+      "The player supplies the PC game. The port is built for sh3.exe of 3,338,240 bytes, SHA-1 aa2aca6dba19bf510c9c2e92eefdc15e98266581.",
+      "The README names no a license."
+    ],
+    "evidence_url": "https://github.com/cutarev/sh3-nx/blob/ff483a6f95b94a4f7924f6fbe4cb47169f2adb98/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "miyoo64",
+    "name": "Miyoo64: porting fifteen Nintendo 64 games to Miyoo Mini",
+    "url": "https://github.com/mr-finster/miyoo64",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "Miyoo64 runs fifteen Nintendo 64 games natively on the Miyoo Mini, Mini Plus, and Mini Flip, built from their decompilation projects. Each game reads a ROM the player owns and builds what it needs on the device. The listed USA ROMs include Perfect Dark revision 1, Mario Kart 64, Ocarina of Time 1.0, and Super Mario 64.",
+    "description_zh": "Miyoo64 在 Miyoo Mini、Mini Plus 和 Mini Flip 上原生运行十五款任天堂 64 游戏，基于它们的反编译项目。每款游戏读取玩家拥有的 ROM，并在设备上构建所需内容。列出的美版 ROM 包括完美黑暗第 1 修订、马里奥赛车 64、时之笛 1.0 和超级马里奥 64。",
+    "requirements": [
+      "No ROMs are in the downloads. The SHA-1 values in the README are for big-endian .z64 dumps. .v64 and .n64 dumps of the same ROM are also accepted.",
+      "License: MIT for this project's own code. Each game folder keeps its upstream license."
+    ],
+    "evidence_url": "https://github.com/mr-finster/miyoo64/blob/e5de5733dfd45c140e47f94b2664a7c28503550b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "mlss-decomp",
+    "name": "Mario & Luigi: Superstar Saga — byte-matching GBA decompilation",
+    "url": "https://github.com/jellees/mlss",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a decompilation of Mario & Luigi: Superstar Saga for the Game Boy Advance, US version. It builds mlss.gba, SHA-1 7c303cdde5061ee329296948060b875cb50ba410.",
+    "description_zh": "这是 Game Boy Advance 美版《马里奥与路易吉：超级明星传奇》的反编译。它构建 mlss.gba，SHA-1 为 7c303cdde5061ee329296948060b875cb50ba410。",
+    "requirements": [
+      "The README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/jellees/mlss/blob/8db5ad5683841cd536f47020aff626ceec826df8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "crackdown2-recomp",
+    "name": "Crackdown 2: Xbox 360 static recompilation",
+    "url": "https://github.com/matty45/Crackdown2-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a static recompilation of Crackdown 2 using ReXGlue SDK 0.5.0. The Windows debug preset is win-amd64-debug. The README says the result is in-game but not playable yet.",
+    "description_zh": "这是用 ReXGlue SDK 0.5.0 对 Crackdown 2 做的静态重编译。Windows 调试预设是 win-amd64-debug。README 写明结果能进入游戏，但还不能玩。",
+    "requirements": [
+      "CMake, Ninja, and Clang or LLVM. Extract the disc and Title Update 5, including its xexp, into assets. default.xex SHA-256 8959C449E382661D29B8EA479C685F506CD5BD3ECA40B3D73A51CC10F281069F. Title Update 5 SHA-256 A5E49FC1FF7F6F65E6F95A7B5C4B9392BB9E38674D1237AC0E2F0149D05929D7.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/matty45/Crackdown2-Recomp/blob/589d8ce85b8a06ea87157d8ec07a7642bbeb4997/README.MD",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "croc-decomp",
+    "name": "Croc: Legend of the Gobbos — a PlayStation decompilation",
+    "url": "https://github.com/Xeeynamo/croc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles Croc: Legend of the Gobbos for PlayStation, aiming at the same binary as the commercial game. The current base is the European demo SLED-00038, chosen because it contains symbols. The planned retail target is SLUS-00530.",
+    "description_zh": "该仓库反编译 PlayStation 游戏 Croc: Legend of the Gobbos，目标是与商业版相同的二进制。当前基础是欧洲试玩版 SLED-00038，因为它带有符号。计划中的零售目标是 SLUS-00530。",
+    "requirements": [
+      "On Ubuntu, Debian, or Windows with WSL, install the packages in tools/requirements-debian.txt, run make update-dependencies, and copy the disc into disks for that version. make extract writes assembly. make all compiles the binaries. Non-matching functions can be compiled with CPP_FLAGS=-DNON_MATCHING.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Xeeynamo/croc/blob/f30ff1ee6721a172e270adcecab72b5b8a5e9bb1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "chronostorm",
+    "name": "ChronoStorm: reimplementing the Red Alert 2 and Yuri’s Revenge engines",
+    "url": "https://github.com/cookgreen/ChronoStorm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "ChronoStorm reimplements the engines of Command & Conquer: Red Alert 2 and Yuri's Revenge in Python and Pygame. It extracts MIX archives and renders SHP sprites and VXL voxels. Map parsing and the isometric grid are still open.",
+    "description_zh": "ChronoStorm 用 Python 和 Pygame 重实现《命令与征服：红色警戒2》和《尤里的复仇》的引擎。它可以提取 MIX 包，并渲染 SHP 精灵和 VXL 体素。地图解析和等距网格仍未完成。",
+    "requirements": [
+      "Python 3.10 or newer and Pygame 2.5 or newer. The player supplies their own MIX asset files.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/cookgreen/ChronoStorm/blob/60293d628c7632eafca97359bd220ead17effba1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "freevgui",
+    "name": "FreeVGUI",
+    "url": "https://github.com/FWGS/freevgui",
+    "category": "reconstruction-cases",
+    "kind": "project",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "software",
+    "description_en": "FreeVGUI reimplements the Half-Life 1 VGUI library. It is written to match the original public API and, optionally, the private API. The current build path is as a subproject of Xash3D FWGS. The README says it shares no code with the original library.",
+    "description_zh": "FreeVGUI 重实现《半衰期》的 VGUI 库。它按原来的公开接口编写，也可以选择匹配私有接口。当前的构建方式是作为 Xash3D FWGS 的子项目。README 写明它与原来的库没有共用代码。",
+    "requirements": [
+      "License: 3-clause BSD."
+    ],
+    "evidence_url": "https://github.com/FWGS/freevgui/blob/410c35cd7ed4271ebc0b49ddb5351a248447c319/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "sonic-riders-decomp",
+    "name": "Sonic Riders: matching decompilation of the GameCube game",
+    "url": "https://github.com/doldecomp/sonicriders",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Sonic Riders for the GameCube, USA. It builds sonicriders.dol, SHA-1 e90a13504974b917a675d59f07014e0e817c5e5d.",
+    "description_zh": "这是 GameCube 美版索尼克骑手的进行中反编译。它构建 sonicriders.dol，SHA-1 为 e90a13504974b917a675d59f07014e0e817c5e5d。",
+    "requirements": [
+      "devkitPro, Python 3, and gcc. Name a clean USA DOL baserom.dol. The README says to extract a compiler archive into tools/mwcc_compiler, then run make.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/doldecomp/sonicriders/blob/4f42e59cb5b6089a2aba413d344f804e5362f06f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "mmx4-decomp",
+    "name": "Mega Man X4: byte-matching PlayStation source reconstruction",
+    "url": "https://github.com/sozud/mmx4",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Mega Man X4 for PlayStation. The same C source builds byte-matching executables for the US release SLUS_005.61, the Japanese SLPS_009.02, and the European SLES_011.76, plus a native Linux port for the US and Japanese versions. The Sega Saturn build is non-matching.",
+    "description_zh": "这是 PlayStation 游戏《洛克人X4》的匹配反编译。同一份 C 源码可以构建逐字节匹配的美版 SLUS_005.61、日版 SLPS_009.02 和欧版 SLES_011.76 可执行文件，以及美版和日版的 Linux 原生移植。世嘉土星构建不匹配。",
+    "requirements": [
+      "The documented package install is binutils and gcc for mipsel, plus ninja. Then pip install -r requirements.txt, update submodules, and run compiler.sh.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/sozud/mmx4/blob/4e16dfc7c06597fd5719dd112654d8cf85d343c2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ssx3-decomp",
+    "name": "SSX 3: statically recompiling the PS2 game to Rust",
+    "url": "https://github.com/andersfischernielsen/ssx3-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native Rust port of SSX 3 for PlayStation 2, USA SLUS_207.72. The game code was statically recompiled to Rust and is being replaced function by function. Rendering, movies, sound, files, controllers, and the memory card are native. The README says every race, freestyle event, and Conquer the Mountain are playable, on macOS, Windows, and Linux, with an experimental browser build.",
+    "description_zh": "这是 PlayStation 2 美版 SSX 3（SLUS_207.72）的 Rust 原生移植。游戏代码被静态重编译成 Rust，并正在逐个函数替换。渲染、影片、声音、文件、手柄和记忆卡都是原生的。README 写明每一场比赛、自由式项目和征服雪山都可以玩，平台是 macOS、Windows 和 Linux，另有一个实验性的浏览器构建。",
+    "requirements": [
+      "The player supplies their own disc. Generated code and the disc image stay outside git.",
+      "The README names no license for this project. It names MIT for ps2-web-recomp."
+    ],
+    "evidence_url": "https://github.com/andersfischernielsen/ssx3-decomp/blob/94a28385fc9c86a7a895e35fb1e7bd9a0ffd065f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "quest64-decomp",
+    "name": "Quest 64: decompiling the Nintendo 64 game",
+    "url": "https://github.com/Mallos31/Quest",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles Quest 64. The US ROM is named baserom.us.z64. The build is ./configure and ninja.",
+    "description_zh": "该仓库反编译 Quest 64。美版 ROM 命名为 baserom.us.z64。构建命令是 ./configure 和 ninja。",
+    "requirements": [
+      "Clone with submodules. getctx.py needs pyperclip.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Mallos31/Quest/blob/401fe0edbad858057d6bf7d05335f88c8a3faf41/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "alttp-jp-disasm",
+    "name": "The Legend of Zelda: A Link to the Past: matching Japanese 1.0 disassembly",
+    "url": "https://github.com/spannerisms/jpdasm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of the Japanese 1.0 version of The Legend of Zelda: A Link to the Past. It assembles with the included alttp.futaba file and the Futaba assembler. An accurate build has CRC32 3322EFFC and SHA-1 E7E852F0159CE612E3911164878A9B08B3CB9060.",
+    "description_zh": "这是《塞尔达传说：众神的三角力量》日文 1.0 版的反汇编。它用附带的 alttp.futaba 和 Futaba 汇编器汇编。准确的构建 CRC32 为 3322EFFC，SHA-1 为 E7E852F0159CE612E3911164878A9B08B3CB9060。",
+    "requirements": [
+      "Extract binaries from a Japanese 1.0 ROM named alttp.sfc with the Makefile or binextract.py.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/spannerisms/jpdasm/blob/4535f694752d1469ede65083e986ce2101945264/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "coney",
+    "name": "Coney: reimplementing The Warriors",
+    "url": "https://github.com/Ryubara/coney",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Coney reimplements The Warriors (2005) in C++ for Windows, Linux, and macOS. The PlayStation 2 version is the reference for how the game plays, and the Xbox port is a second source for rendering and assets. With a disc it plays the startup movies and the front end, and runs levels as far as the missions page records.",
+    "description_zh": "Coney 用 C++ 重实现 2005 年的《The Warriors》，平台是 Windows、Linux 和 macOS。PlayStation 2 版是玩法参照，Xbox 移植是渲染和素材的第二来源。有光盘时，它可以播放开场影片和主界面，并按任务页记录的进度运行关卡。",
+    "requirements": [
+      "Windows needs MSVC 19.38 or newer, Linux needs GCC 13 or Clang 19 or newer, and macOS needs Xcode 16 or newer. Also CMake 3.28 or newer, Ninja, Git, and OpenGL 3.3 to open a window. The documented commands are cmake --preset dev, cmake --build --preset dev, and ctest --preset dev.",
+      "License: GPL-3.0-or-later for the code. Documentation in docs/ is CC-BY-SA-4.0."
+    ],
+    "evidence_url": "https://github.com/Ryubara/coney/blob/eb07fc0f9d69e62c7aeee6307be5c2ef162f4ee6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "svr2010-recomp",
+    "name": "WWE SmackDown vs. Raw 2010: statically recompiling the Xbox 360 game",
+    "url": "https://github.com/nefariousjosiah/WWE-SVR2010-RECOMP",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles the Xbox 360 version of WWE SmackDown vs. Raw 2010. The game code is recompiled and drawn by a native renderer: Direct3D 12 on Windows, and Vulkan on Linux and the Steam Deck. The README says it runs at 60 fps, with resolution choices from 480p to 8K. Windows runs the release directly. The Linux and Steam Deck steps run that Windows release through Proton.",
+    "description_zh": "该项目重编译 Xbox 360 版《WWE SmackDown vs. Raw 2010》。游戏代码被重编译，并由原生渲染器绘制：Windows 上是 Direct3D 12，Linux 和 Steam Deck 上是 Vulkan。README 写明它以 60 帧运行，分辨率可选 480p 到 8K。Windows 直接运行发布包。Linux 和 Steam Deck 的步骤通过 Proton 运行同一份 Windows 发布包。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, and a Direct3D 12 or Vulkan graphics card. The disc image is the USA or Europe release, title ID 54510844 and media ID 518DE415. Download SVR2010-NATIVE.zip from Releases and place the .iso next to svr2010.exe.",
+      "License: GPL-3.0 for this project's code. The README says releases include FFmpeg and libmspack under the LGPL, and that the renderer builds on re:Blue's BSD-3-Clause core."
+    ],
+    "evidence_url": "https://github.com/nefariousjosiah/WWE-SVR2010-RECOMP/blob/356b8364ea6023f20c3179cdaa2b39cfba2c8c9a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "noble-archimedes",
+    "name": "Noble Archimedes: recompiling Castlevania: Curse of Darkness for PC",
+    "url": "https://github.com/sergiomanzur/noble-archimedes",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Noble Archimedes recompiles Castlevania: Curse of Darkness. The primary path turns the original Xbox release into native x64 code with Direct3D 12 and XAudio2. An experimental PlayStation 2 path covers the USA release SLUS-21168. The Windows beta compiles the game locally from the player's USA Xbox files on first run.",
+    "description_zh": "Noble Archimedes 重编译《Castlevania: Curse of Darkness》。主路径把初代 Xbox 版本编译成原生 x64 代码，使用 Direct3D 12 和 XAudio2。实验性的 PlayStation 2 路径覆盖美版 SLUS-21168。Windows 测试版在第一次运行时用玩家自己的美版 Xbox 文件在本地编译游戏。",
+    "requirements": [
+      "Windows x64 and a Direct3D 12 GPU. Building needs Python 3, Git, CMake 3.25 or newer, Ninja, LLVM Clang/LLD, and the Visual Studio C++ Build Tools. Put an extracted USA Xbox disc, including default.xbe, under extracted/. The documented commands are .\\Build Noble Archimedes.cmd --full-game and .\\Launch Noble Archimedes.cmd.",
+      "License: GPL-2.0-only OR GPL-3.0-or-later for the project's own code. The README says the Xbox donor stays GPLv2, its SDK patch stays MIT, PS2 GPLv3-derived components stay GPLv3, and branding in assets/noble/ is CC0."
+    ],
+    "evidence_url": "https://github.com/sergiomanzur/noble-archimedes/blob/81934b840b5738468d9d043c8dd990386d5e59db/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "crackdown-recomp",
+    "name": "Crackdown: Xbox 360 static recompilation",
+    "url": "https://github.com/SkiddyToast/Crackdown",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Crackdown title update 0 for the Xbox 360 with ReXGlue SDK 0.2.2. The README says the project is unfinished.",
+    "description_zh": "该项目用 ReXGlue SDK 0.2.2 重编译 Xbox 360 版《Crackdown》的标题更新 0。README 写明项目尚未完成。",
+    "requirements": [
+      "CMake, the ReXGlue SDK, and a 2007 Xbox 360 copy of Crackdown. Copy the disc into assets, then run cmake configure, cmake --build . --target crackdown_codegen, and cmake --build .. Launch with crackdown --assets and the assets folder.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/SkiddyToast/Crackdown/blob/1b89e0f0ece75178a97bbf9fef210764bfe1d4f2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "gh2-recomp",
+    "name": "Guitar Hero II: a proof-of-concept Xbox 360 recompilation",
+    "url": "https://github.com/YoshiCrystal9/re-gh2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a proof-of-concept recompilation of Guitar Hero II for the Xbox 360, using the ReXGlue SDK. The README says performance is poor and the build is prone to crashes.",
+    "description_zh": "这是用 ReXGlue SDK 重编译的 Xbox 360 版《Guitar Hero II》概念验证。README 写明性能不佳，构建容易崩溃。",
+    "requirements": [
+      "Set REXSDK, extract a Guitar Hero II ISO into assets, run cmake configure, build the gh2test_codegen target, then build gh2test. Launch with the assets folder as the first argument.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/YoshiCrystal9/re-gh2/blob/ef521f4c7ab57cbd201de6f9acf37f218f48fa49/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "fe7j-decomp",
+    "name": "Fire Emblem: Rekka no Ken — matching Japanese Game Boy Advance decompilation",
+    "url": "https://github.com/MokhaLeee/FireEmblem7J",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This decompiles Fire Emblem: Rekka no Ken for the Game Boy Advance, Japanese release. It builds FireEmblem7J.gba, SHA-1 037702b1febd5c9535262165bf030551d153de81.",
+    "description_zh": "该项目反编译 Game Boy Advance 日版《火焰纹章 烈火之剑》。它构建 FireEmblem7J.gba，SHA-1 为 037702b1febd5c9535262165bf030551d153de81。",
+    "requirements": [
+      "Name the original ROM FireEmblem7J.base.gba. On Debian or Ubuntu, install build-essential and gcc-arm-none-eabi, run tools/install-agbcc.sh, then make compare -j.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/MokhaLeee/FireEmblem7J/blob/4f86d4c42bd9c9b80bdd81ff6857b9b454db0b94/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "evangelion64-decomp",
+    "name": "Neon Genesis Evangelion 64: Nintendo 64 decompilation",
+    "url": "https://github.com/farisawan-2000/evangelion",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Neon Genesis Evangelion 64. The ROM is named evangelion.z64. The documented steps are make setup, then make.",
+    "description_zh": "这是《新世纪福音战士》N64 版的进行中反编译。ROM 命名为 evangelion.z64。文档中的步骤是先运行 make setup，再运行 make。",
+    "requirements": [
+      "64-bit Linux or WSL, with build-essential and binutils-mips-linux-gnu.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/farisawan-2000/evangelion/blob/66fb87879fa314ca9b5caba24d9aadea27e984ba/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "recvx-gc-decomp",
+    "name": "Resident Evil: Code: Veronica X — decompiling the GameCube release",
+    "url": "https://github.com/fmil95/recvx-gc-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Resident Evil: Code: Veronica X for the GameCube. The supported version is GCDE08, the USA release. The player copies a disc image into orig/GCDE08, then runs python configure.py and ninja.",
+    "description_zh": "这是 GameCube 版《生化危机 代号：维罗妮卡 X》的进行中反编译。受支持的版本是美版 GCDE08。玩家把光盘镜像放到 orig/GCDE08，然后运行 python configure.py 和 ninja。",
+    "requirements": [
+      "Windows uses Python and ninja. macOS uses ninja and wine-crossover. Linux uses ninja. Accepted disc formats include ISO, RVZ, WIA, WBFS, CISO, NFS, GCZ, and TGC.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/fmil95/recvx-gc-decomp/blob/556f897e05945f4ad636be41f0de3d02106ea192/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "yukatool",
+    "name": "yukatool",
+    "url": "https://github.com/AtomCrafty/yukatool",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "yukatool works with the Yuka System visual novel engine used by Hooksoft, Smee, PeasSoft, and feng. It unpacks and packs .ykc archives, splits and decompiles .yks scripts to .ykd, compiles them back, and converts .ykg graphics to and from PNG.",
+    "description_zh": "yukatool 处理 Hooksoft、Smee、PeasSoft 和 feng 使用的 Yuka System 视觉小说引擎。它可以解包和打包 .ykc 档案，拆分并把 .yks 脚本反编译成 .ykd，再编译回去，以及在 .ykg 图形和 PNG 之间转换。",
+    "requirements": [
+      "The command form is yuka.exe followed by flags, a task, and arguments. Documented tasks include unpack, pack, patch, split, decompile, compile, unwrap, and wrap.",
+      "The README names no license or a build command."
+    ],
+    "evidence_url": "https://github.com/AtomCrafty/yukatool/blob/db06e24fa29045c897676199de6dfb217b1c65cc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "helpdeco",
+    "name": "HELPDECO",
+    "url": "https://github.com/pmachapman/helpdeco",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "HELPDECO dissects Windows Help files from Windows 3.0, 3.1, 3.11, and 95, and many MVB multimedia viewer titles, into the files needed to rebuild them with HC30, HC31, HCP, HCW, HCRTF, WMVC, MMVC, or MVC. The output includes the HPJ or MVP project, RTF, phrases, icons, pictures, and baggage files.",
+    "description_zh": "HELPDECO 拆解 Windows 3.0、3.1、3.11 和 95 的帮助文件，以及许多 MVB 多媒体查看器标题，拆成用 HC30、HC31、HCP、HCW、HCRTF、WMVC、MMVC 或 MVC 重建所需的文件。输出包括 HPJ 或 MVP 工程、RTF、短语、图标、图片和行李文件。",
+    "requirements": [
+      "Run HELPDECO with a help filename. Files are written in the current directory. Option -y overwrites existing files without asking.",
+      "License: GPL-2.0-or-later."
+    ],
+    "evidence_url": "https://github.com/pmachapman/helpdeco/blob/785273788af17fde4fba7df7162d547f8645d7d8/README",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "openrakis",
+    "name": "OpenRakis: reverse engineering Cryo’s Dune",
+    "url": "https://github.com/OpenRakis/OpenRakis",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "OpenRakis is a work-in-progress reverse-engineering project for Cryo's Dune. The README describes the PC DOS floppy and CD layouts, an asm directory for the original x86 DOS assembly, and an 8086 16-bit real-mode IDA setup for DNCDPRG.EXE with entry CS 1ED.",
+    "description_zh": "OpenRakis 是 Cryo 的《Dune》的进行中逆向工程。README 描述了 PC DOS 软盘版和光盘版的文件布局、存放原始 x86 DOS 汇编的 asm 目录，以及针对 DNCDPRG.EXE 的 8086 16 位实模式 IDA 设置，入口 CS 为 1ED。",
+    "requirements": [
+      "The README does not name a license or a build command. It points to IDA Freeware, Ghidra, UNLZEXE, DOSBox Debugger, Spice86, and Cryogenic."
+    ],
+    "evidence_url": "https://github.com/OpenRakis/OpenRakis/blob/2567749779a975b6d25286a4f212f392a59dda5b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "pso-gc-decomp",
+    "name": "Phantasy Star Online Episode I & II Plus: matching GameCube decompilation",
+    "url": "https://github.com/zeroz41/pso-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Phantasy Star Online Episode I & II Plus for the GameCube, USA version 1.02, product code GPOE8P. The disc SHA-1 is 0ff155311f4cc57951c03baeb1a8cc15de5fe1cd. The executable files/PsoV3.dol has SHA-1 0d85744b51d7379efb025a943d0cd5aaae2191a3.",
+    "description_zh": "这是 GameCube 美版 1.02《梦幻之星 Online 第一章＆第二章 Plus》的匹配反编译，产品代码为 GPOE8P。光盘 SHA-1 为 0ff155311f4cc57951c03baeb1a8cc15de5fe1cd。可执行文件 files/PsoV3.dol 的 SHA-1 为 0d85744b51d7379efb025a943d0cd5aaae2191a3。",
+    "requirements": [
+      "Python 3.10 or newer and Ninja. Put the disc image in orig/GPOE8P/, then run python configure.py and ninja. The first build downloads the CodeWarrior compilers.",
+      "License: MIT. Code adapted from other projects keeps its original notices."
+    ],
+    "evidence_url": "https://github.com/zeroz41/pso-decomp/blob/ae797d392bb93d5bf7164341870f78f864da23b0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "starcraft64-recomp",
+    "name": "StarCraft 64: a native port by static recompilation",
+    "url": "https://github.com/n0madic/StarCraft64-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native port of StarCraft 64, NTSC-U. N64Recomp translates the MIPS code to C, and a software renderer draws the game's display lists. The ROM must match SHA-1 a36d91b5aac7bb95df0d7de5f9814f5270e25c2b after byte-order normalization. The README says the single-player campaign, menus, Encyclopedia, saves, and sound work. macOS on Apple Silicon and Android arm64 from Android 9 are the accepted platforms. Windows x86_64 and Linux x86_64 packages are cross-built.",
+    "description_zh": "这是 NTSC-U 版《星际争霸 64》的原生移植。N64Recomp 把 MIPS 代码翻译成 C，软件渲染器绘制游戏的显示列表。ROM 在字节序规范化后必须匹配 SHA-1 a36d91b5aac7bb95df0d7de5f9814f5270e25c2b。README 写明单人战役、菜单、百科、存档和声音可用。Apple Silicon 上的 macOS，以及 Android 9 起的 arm64，是已接受的平台。Windows x86_64 和 Linux x86_64 安装包是交叉构建的。",
+    "requirements": [
+      "CMake, Ninja, and Python 3.10 or newer. The documented launcher build is make doctor, make bootstrap, make build-recompiler, and make package. z64, v64, and n64 dumps are accepted.",
+      "License: MIT for the original source and documentation. The README says launcher packages statically link N64ModernRuntime under GPL-3.0, and tools/bolt_extract.py plus tools/research/bolt_audit.py are GPL-3.0-or-later."
+    ],
+    "evidence_url": "https://github.com/n0madic/StarCraft64-recomp/blob/fd190148ed6f2d3c688890ed4ce9144769bfc344/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "nwiirecomp",
+    "name": "NWiiRecomp",
+    "url": "https://github.com/BlackLineInteractive/NWiiRecomp",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "NWiiRecomp translates GameCube and Wii DOL and ELF executables into C++. nWiiAnalyzer finds function boundaries, nWiiRecomp emits the C++, and nWiiRuntime supplies the high-level runtime. The generated export directory builds on its own. The README says Mario Party 7 reaches its 3D intro and Need for Speed: Hot Pursuit 2 shows boot progress.",
+    "description_zh": "NWiiRecomp 把 GameCube 和 Wii 的 DOL 与 ELF 可执行文件翻译成 C++。nWiiAnalyzer 找出函数边界，nWiiRecomp 生成 C++，nWiiRuntime 提供高层运行时。生成的 export 目录可以单独构建。README 写明《马里奥派对 7》能进入 3D 开场，《极品飞车：热力追踪 2》有启动进展。",
+    "requirements": [
+      "CMake 3.20 or newer and a C++20 compiler. The documented commands are cmake -B build and cmake --build build, then ./build/nWiiRecomp/nwiirecomp config.toml.",
+      "The README does not name this project's license. It says totaldb.dsy is taken from Dolphin and stays under Dolphin's license."
+    ],
+    "evidence_url": "https://github.com/BlackLineInteractive/NWiiRecomp/blob/595f176f1d24cc54ff2e8389feed12d7fb553cc2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "conker-live-recompiled",
+    "name": "Live & Recompiled: recompiling Conker: Live & Reloaded for PC",
+    "url": "https://github.com/giacomozama/live-and-recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Live & Recompiled is a native Windows and Linux port of the original Xbox game Conker: Live & Reloaded, built on Xbox XBE Recomp. It renders with Vulkan and supports single-player and multiplayer. The supported USA disc default.xbe has SHA-1 2232a1b3874d67b4bb4cf53a940420d2dab59535. The Microsoft Store backwards-compatible release is also accepted.",
+    "description_zh": "Live & Recompiled 是初代 Xbox 游戏《Conker: Live & Reloaded》的 Windows 和 Linux 原生移植，基于 Xbox XBE Recomp。它用 Vulkan 渲染，支持单人和多人。受支持的美版光盘 default.xbe 的 SHA-1 为 2232a1b3874d67b4bb4cf53a940420d2dab59535。Microsoft Store 的向下兼容版本也被接受。",
+    "requirements": [
+      "Download the Windows or Linux release, run setup-windows.exe or ./setup-linux, and point it at the disc, extracted folder, or DefaultPackage. It writes Game.exe on Windows and Game on Linux.",
+      "License: GPL-3.0 only. The README says the Xbox XBE Recomp parts keep that project's MIT license."
+    ],
+    "evidence_url": "https://github.com/giacomozama/live-and-recompiled/blob/0f1d9368ef39f30aca2d449509f7682e959a0199/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "ty-decomp",
+    "name": "Ty the Tasmanian Tiger: decompiling the USA release",
+    "url": "https://github.com/1superchip/ty-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Ty the Tasmanian Tiger. The supported version is GTYE69, the USA release. The player extracts sys/main.dol to orig/GTYE69, then runs python configure.py and ninja.",
+    "description_zh": "这是《Ty the Tasmanian Tiger》的进行中反编译。受支持的版本是美版 GTYE69。玩家把 sys/main.dol 解压到 orig/GTYE69，然后运行 python configure.py 和 ninja。",
+    "requirements": [
+      "Windows uses Python and ninja. macOS uses ninja and wine-crossover. Linux uses ninja.",
+      "The README names no license."
+    ],
+    "evidence_url": "https://github.com/1superchip/ty-decomp/blob/22d5483e9b59ad40fcab924f6c7d913f3b3e09da/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "castlevania-chronicles-recomp",
+    "name": "Castlevania Chronicles: a cross-platform recompilation",
+    "url": "https://github.com/Spicywonda/castlevania-chronicles-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Castlevania Chronicles for Windows, macOS, and Linux with RecompOne. Release 0.3.10 has packages for Windows x64, macOS on Apple Silicon, and Linux x64, and each package includes the .NET runtime. The player selects a USA SLUS-01384 disc image, CUE/BIN or CHD. The first launch prepares the game code.",
+    "description_zh": "该项目用 RecompOne 把《恶魔城年代记》重编译到 Windows、macOS 和 Linux。0.3.10 发布包覆盖 Windows x64、Apple 芯片的 macOS 和 Linux x64，每个包都带有 .NET 运行时。玩家选择美版 SLUS-01384 光盘镜像，格式为 CUE/BIN 或 CHD。第一次启动会先准备游戏代码。",
+    "requirements": [
+      "Git, Bash, Python 3, the .NET SDK named in global.json, and RecompOne pinned at d81dec8c9622fdcd0865d73588a3baa8d3c3a605. Put the CUE at disc/chronicles.cue, then run git submodule update --init --recursive and ./scripts/recompile.sh.",
+      "The README does not name a license for this project. It points at the bundled dependency licenses."
+    ],
+    "evidence_url": "https://github.com/Spicywonda/castlevania-chronicles-recomp/blob/99ac8ae85e679ad60eadb7cc86be4f59bd4580ce/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "issd-native",
+    "name": "ISSD Native: recompiling International Superstar Soccer Deluxe",
+    "url": "https://github.com/sergiomanzur/issd-native",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "ISSD Native recompiles International Superstar Soccer Deluxe for the Super Nintendo, USA release, into C. The supported dump is a headerless SFC of 2,097,152 bytes, internal title SUPERSTAR SOCCER 2, SHA-256 d2fe66c1ce66c65ce14e478c94be2e616f9e2cad374b5783a6a64d3c1a99cfa9. Release v0.6.0-beta.1 covers Windows, Linux, Steam Deck, and Android 8.0 or newer. Gameplay advances at 60 Hz.",
+    "description_zh": "ISSD Native 把超级任天堂美版《International Superstar Soccer Deluxe》重编译成 C。受支持的转储是 2,097,152 字节的无头 SFC，内部标题为 SUPERSTAR SOCCER 2，SHA-256 为 d2fe66c1ce66c65ce14e478c94be2e616f9e2cad374b5783a6a64d3c1a99cfa9。发布版 v0.6.0-beta.1 覆盖 Windows、Linux、Steam Deck 和 Android 8.0 及以上。游戏以 60 赫兹推进。",
+    "requirements": [
+      "Verify the ROM with python tools/verify_rom.py. On Windows, run ISSDNative.exe or the source build at build/ISSDNative.exe with --rom. Keep aot_boot_deny.txt beside the executable. Android build targets are arm64-v8a and x86_64.",
+      "License: GPL-3.0 for this project's own code. The README says SNESRecomp is PolyForm Noncommercial 1.0.0, the ISSD disassembly reference is GPL-3.0, and the ISSD web editor reference is MIT."
+    ],
+    "evidence_url": "https://github.com/sergiomanzur/issd-native/blob/2c20d46dc1e0167db072dd4d8abbfde0cf01cd8e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "reo-outbreak",
+    "name": "reo: recompiling Resident Evil Outbreak for Windows",
+    "url": "https://github.com/sp00nznet/reo",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "reo recompiles Resident Evil Outbreak for the PlayStation 2, NTSC-U SLUS-20765, to native Windows x86-64 with PS2Recomp. The README says a scripted boot reaches the first scenario in J's Bar, drawn by the game's own code, at about 35 times slower than real time. Sound output is not implemented, and play past that point has not been tried.",
+    "description_zh": "reo 用 PS2Recomp 把 PlayStation 2 美版《生化危机：爆发》（SLUS-20765）重编译成 Windows x86-64 原生程序。README 写明一段脚本启动能进入第一个场景 J's Bar，画面由游戏自己的代码绘制，速度大约比实时慢 35 倍。声音输出还没有实现，这一点之后的游玩也还没有试过。",
+    "requirements": [
+      "Windows 10 or 11, x64, Visual Studio 2022 with the C++ desktop workload, CMake 3.20 or newer, Python 3, and Git. Run Setup.cmd, then run-reo.cmd. The disc folder must contain SLUS_207.65.",
+      "License: GPL-3.0. The README says reo links PS2Recomp's GPL-3.0 runtime."
+    ],
+    "evidence_url": "https://github.com/sp00nznet/reo/blob/de19db7db52331d2c364cfd989c6fa4cec393632/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "svr2008-recomp",
+    "name": "WWE SmackDown vs. Raw 2008: statically recompiling the Xbox 360 game",
+    "url": "https://github.com/nefariousjosiah/WWE-SVR2008-RECOMP",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles the Xbox 360 version of WWE SmackDown vs. Raw 2008. The game code is recompiled and drawn by a native renderer: Direct3D 12 on Windows, and Vulkan on Linux and the Steam Deck. The README says it runs at 60 fps, with resolution choices from 480p to 8K. Windows runs the release directly. The Linux and Steam Deck steps run that Windows release through Proton.",
+    "description_zh": "该项目重编译 Xbox 360 版《WWE SmackDown vs. Raw 2008》。游戏代码被重编译，并由原生渲染器绘制：Windows 上是 Direct3D 12，Linux 和 Steam Deck 上是 Vulkan。README 写明它以 60 帧运行，分辨率可选 480p 到 8K。Windows 直接运行发布包。Linux 和 Steam Deck 的步骤通过 Proton 运行同一份 Windows 发布包。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, and a Direct3D 12 or Vulkan graphics card. The disc image is the USA or Europe release, title ID 5451080B and media ID 5E35F037. Download SVR2008-NATIVE.zip from Releases and place the .iso next to svr2008.exe.",
+      "License: GPL-3.0 for this project's code. The README says releases include FFmpeg and libmspack under the LGPL, and that the renderer builds on re:Blue's BSD-3-Clause core."
+    ],
+    "evidence_url": "https://github.com/nefariousjosiah/WWE-SVR2008-RECOMP/blob/92e93446954e5cbe15ffeb7f46f11f85dbc92dc2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
+  },
+  {
+    "id": "nehebn2",
+    "name": "Nehebn2",
+    "url": "https://github.com/ElykDeer/nehebn2",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Nehebn2 is a Python 3 command-line interface for Binary Ninja. The reviewed README lists a linear disassembly view, cross-references, a function list, a hex view, and customizable key bindings.",
+    "description_zh": "Nehebn2 是 Binary Ninja 的 Python 3 命令行界面。审阅的 README 列出线性反汇编视图、交叉引用、函数列表、十六进制视图和可自定义的按键绑定。",
+    "requirements": [
+      "Python 3, the Binary Ninja API, and a Binary Ninja headless license.",
+      "The README names no license for this project."
+    ],
+    "evidence_url": "https://github.com/ElykDeer/nehebn2/blob/a92096d634e9a06456c862bc7f786e16188ee702/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-09"
   }
 ]
