@@ -446,7 +446,7 @@ class WorkflowTest(unittest.TestCase):
         writes = {name: re.findall(r'^      ([a-z-]+): write$', job, re.MULTILINE) for name, job in self.jobs.items()}
         self.assertEqual(writes, {'collect': [], 'ingest': ['contents', 'pull-requests', 'actions'], 'report': ['issues']})
         for name, job in self.jobs.items():
-            self.assertLessEqual(int(re.search(r'timeout-minutes: ([0-9]+)', job)[1]), 30, name)
+            self.assertLessEqual(int(re.search(r'timeout-minutes: ([0-9]+)', job)[1]), 45 if name == 'ingest' else 30, name)
             self.assertIn('persist-credentials: false', job)
         self.assertIn("needs.collect.outputs.collection_ready == 'true'", self.jobs['ingest'])
         self.assertIn('run: python3 scripts/collect_discovery_leads.py run', self.jobs['ingest'])
@@ -763,6 +763,8 @@ class LayersAndExportTest(unittest.TestCase):
                 'decision': 'hold', 'reason_code': 'insufficient-docs', 'reason_en': 'Documentation is incomplete.',
                 'reason_zh': '文档尚不完整。', 'evidence_url': f'https://github.com/example/repo/blob/{COMMIT}/README.md',
                 'reviewed_at': '2026-11-06'}}), encoding='utf-8')
+            (root / 'data/discovery-classes.json').write_text(json.dumps({pending['id']: {
+                'decision': 'data', 'class': 'game', 'reproduced': 'A named game'}}), encoding='utf-8')
             site = root / 'site'
             metadata = {'meta': {'site_url': 'https://awesomerea.org',
                                  'repository_url': 'https://github.com/reacher-z/Awesome-REA'}}
@@ -779,6 +781,39 @@ class LayersAndExportTest(unittest.TestCase):
             self.assertEqual([row['id'] for row in reviews_export['decisions']], sorted([decided['id'], curated['id']]))
             self.assertEqual(next(row for row in reviews_export['decisions'] if row['id'] == decided['id'])['full_name'],
                              decided['github']['full_name'])
+
+    def test_export_lists_data_points_by_class_and_counts_only_them_as_awaiting(self):
+        hardware, game, outside, unclassified = github_lead(201), github_lead(202), github_lead(203), github_lead(204)
+        with tempfile.TemporaryDirectory() as directory:
+            root = lead_root(directory)
+            shutil.copy(ROOT / 'data/discovery-sources.json', root / 'data/discovery-sources.json')
+            batch = make_batch([hardware, game, outside, unclassified])
+            folder = root / leads.DIRECTORY / '2026-11'
+            folder.mkdir(parents=True)
+            (folder / f"{batch['batch_id']}.json").write_bytes(leads.batch_bytes(batch))
+            (root / 'data/discovery-classes.json').write_text(json.dumps({
+                hardware['id']: {'decision': 'data', 'class': 'hardware', 'reproduced': 'A named device'},
+                game['id']: {'decision': 'data', 'class': 'game', 'reproduced': 'A named game'},
+                outside['id']: {'decision': 'outside'}}), encoding='utf-8')
+            site = root / 'site'
+            catalog = {'meta': {'site_url': 'https://awesomerea.org', 'repository_url': 'https://github.com/reacher-z/Awesome-REA'}}
+            queue = build_discovery_leads.write_lead_exports(site, catalog, root=root)
+            export = json.loads((site / 'discoveries/leads.json').read_text(encoding='utf-8'))
+            self.assertEqual([(row['id'], row['class']) for row in export['resources']],
+                             [(game['id'], 'game'), (hardware['id'], 'hardware')])
+            counts = export['counts']
+            self.assertEqual((counts['listed'], counts['data_points'], counts['other_captures'], counts['captures_listed']), (3, 2, 1, 4))
+            self.assertEqual(counts['data_classes'], {'game': 1, 'hardware': 1})
+            self.assertEqual((export['batches'][0]['listed_count'], export['batches'][0]['awaiting_review']), (4, 3))
+            batch_export = json.loads((site / build_discovery_leads.batch_export_path(batch['batch_id']).lstrip('/')).read_text(encoding='utf-8'))
+            self.assertEqual({row['id'] for row in batch_export['resources']}, {hardware['id'], game['id'], outside['id'], unclassified['id']})
+            self.assertEqual(next(row for row in batch_export['resources'] if row['id'] == outside['id'])['data_decision'], 'outside')
+            self.assertIn('2 data points await review, with 1 more not yet classified',
+                          build_discovery_leads.llms_section(queue, 'https://awesomerea.org'))
+            from build_api import candidates_document
+            api = candidates_document(None, queue, 'https://awesomerea.org', NOW)
+            self.assertEqual(api['counts']['followed_source_leads'], 3)
+            self.assertNotIn(outside['id'], {row['id'] for row in api['candidates']})
 
     def test_existing_layers_and_prepare_and_site_export(self):
         curated = json.loads((ROOT / 'data/tool-resources.json').read_text(encoding='utf-8'))
@@ -803,6 +838,8 @@ class LayersAndExportTest(unittest.TestCase):
             self.assertEqual(path.relative_to(root).as_posix(), 'data/discoveries/leads/2026-11/leads-42100000001-1.json')
             self.assertEqual(collect.prepare(collection, PROVENANCE, root=root)[1], 'already-ingested')
             site = Path(directory) / 'site'
+            (root / 'data/discovery-classes.json').write_text(json.dumps({candidates[0]['id']: {
+                'decision': 'data', 'class': 'software', 'reproduced': 'A named program'}}), encoding='utf-8')
             catalog = {'meta': {'site_url': 'https://awesomerea.org', 'repository_url': 'https://github.com/reacher-z/Awesome-REA'}}
             queue = build_discovery_leads.write_lead_exports(site, catalog, root=root)
             export = json.loads((site / 'discoveries/leads.json').read_text(encoding='utf-8'))
