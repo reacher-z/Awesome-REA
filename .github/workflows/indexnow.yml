@@ -4,6 +4,7 @@ name: Notify IndexNow
 # commit; the schedule catches deployments made any other way. A run builds that commit as Cloudflare Pages
 # does, waits until awesomerea.org serves exactly that build, and diffs it against the build its previous
 # receipt recorded, so only added or changed pages are sent. See docs/search-discovery.md.
+# A deployment still pending after the wait skips the later steps, and the next run's diff covers its pages.
 on:
   workflow_dispatch:
     inputs:
