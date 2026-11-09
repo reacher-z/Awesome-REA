@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 
-from build_evidence_previews import github_preview, usable_image  # noqa: E402
+from build_evidence_previews import carried_forward, github_preview, usable_image  # noqa: E402
 from media_privacy import public_media_url  # noqa: E402
 
 
@@ -80,6 +80,14 @@ class EvidencePreviewTests(unittest.TestCase):
         self.assertIsNone(usable_image('https://user-images.githubusercontent.com/1/a.png?jwt=secret', base))
         self.assertEqual(usable_image('https://user-images.githubusercontent.com/1/a.png', base),
                          'https://user-images.githubusercontent.com/1/a.png')
+
+    def test_refresh_without_media_keeps_the_existing_preview(self):
+        old = {'id': 'x', 'image_url': 'https://raw.githubusercontent.com/o/r/' + '0' * 40 + '/demo.png',
+               'kind': 'image', 'basis': 'readme-image', 'source_url': 'https://github.com/o/r'}
+        self.assertIs(carried_forward(old), old)
+        self.assertIsNone(carried_forward(old, drop_missing=True))
+        self.assertIsNone(carried_forward(None))
+        self.assertIsNone(carried_forward({**old, 'image_url': 'https://user-images.githubusercontent.com/1/a.png?jwt=x'}))
 
     def test_validator_accepts_current_data(self):
         from validate import validate_evidence_media

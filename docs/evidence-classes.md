@@ -90,7 +90,8 @@ python3 scripts/classify_evidence_classes.py            # use the local evidence
 python3 scripts/classify_evidence_classes.py --fresh    # refetch everything
 python3 scripts/classify_evidence_classes.py --ids <id,...> --merge  # classify new catalog records only
 python3 scripts/classify_scan_evidence.py               # deterministic over the scan snapshot
-python3 scripts/build_evidence_previews.py
+python3 scripts/build_evidence_previews.py                  # keeps an existing preview when a run finds no media
+python3 scripts/build_evidence_previews.py --drop-missing   # drops previews this run did not find
 python3 scripts/fetch_previews.py
 python3 scripts/build_site.py
 python3 scripts/verify_evidence_entry.py <entry-url>
