@@ -6,8 +6,9 @@
 
 [English](native-binary.md)
 
-**57 个案例**
+**58 个案例**
 
+- [**8088 BIOS：反汇编 Tandy 与 IBM PC 固件映像**](https://github.com/ricardoquesada/bios-8088) - 该仓库反汇编 8088 机器的 BIOS 镜像：Tandy 1000、Tandy 1000A、Tandy 1000 HX、IBM PCjr 和 IBM PC 5150。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bios-8088/)</sub>
 - [**AGS Aging Cartridge：反汇编 7.0 版**](https://github.com/Normmatt/ags_aging) - 该项目以用户提供的 Game Boy Advance ROM 为输入，将 AGS Aging Cartridge 7.0 重建为汇编与 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ags-aging-cartridge-case/)</sub>
 - [**Character Pipeline：2001 年 4 月版库反编译**](https://github.com/doldecomp/dolcp-apr2001) - Character Pipeline April 2001 Libraries 重建该组件已构建代码库的 C 源码，涵盖角色、动画、控制、几何调色板、光照、着色器和蒙皮库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/character-pipeline-apr2001-decomp-case/)</sub>
 - [**cod4map：重建 Call of Duty 4 的 BSP 编译器**](https://github.com/prd0nja/cod4map) - cod4map 根据 2007 年随 Call of Duty 4 模组工具发布的可执行文件重建 BSP 编译器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cod4map-reconstruction-case/)</sub>

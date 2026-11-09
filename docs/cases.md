@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**3689 case studies**, grouped by section.
+**3801 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (75)
-- [Game](#game) (2527)
+- [Game](#game) (2638)
 - [App](#app) (228)
-- [Native Binary](#native-binary) (57)
+- [Native Binary](#native-binary) (58)
 - [Firmware and Hardware](#firmware) (165)
 - [Protocol](#protocol) (637)
 
@@ -21,7 +21,7 @@
 - [Case studies](cases/website.md)
 
 <a id="game"></a>
-## Game (2,527)
+## Game (2,638)
 
 - [Case studies, part 1](cases/game-1.md)
 - [Case studies, part 2](cases/game-2.md)
@@ -30,17 +30,17 @@
 - [Case studies, part 5](cases/game-5.md)
 
 <a id="game-matching-decompilation"></a>
-- [Matching decompilations and disassemblies](cases/game-1.md#game-matching-decompilation) (524)
+- [Matching decompilations and disassemblies](cases/game-1.md#game-matching-decompilation) (550)
 <a id="game-decompilation"></a>
-- [Non-matching decompilations](cases/game-1.md#game-decompilation) (286)
+- [Non-matching decompilations](cases/game-1.md#game-decompilation) (304)
 <a id="game-static-recompilation"></a>
-- [Static recompilations](cases/game-2.md#game-static-recompilation) (652)
+- [Static recompilations](cases/game-2.md#game-static-recompilation) (701)
 <a id="game-port"></a>
-- [Ports of reconstructed source](cases/game-3.md#game-port) (341)
+- [Ports of reconstructed source](cases/game-3.md#game-port) (346)
 <a id="game-engine-reimplementation"></a>
-- [Engine reimplementations](cases/game-3.md#game-engine-reimplementation) (423)
+- [Engine reimplementations](cases/game-4.md#game-engine-reimplementation) (432)
 <a id="game-other"></a>
-- [Other methods and analyses](cases/game-4.md#game-other) (301)
+- [Other methods and analyses](cases/game-4.md#game-other) (305)
 
 <a id="app"></a>
 ## App (228)
@@ -48,7 +48,7 @@
 - [Case studies](cases/app.md)
 
 <a id="native-binary"></a>
-## Native Binary (57)
+## Native Binary (58)
 
 - [Case studies](cases/native-binary.md)
 
