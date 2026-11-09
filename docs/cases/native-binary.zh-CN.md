@@ -6,9 +6,10 @@
 
 [English](native-binary.md)
 
-**55 个案例**
+**57 个案例**
 
 - [**AGS Aging Cartridge：反汇编 7.0 版**](https://github.com/Normmatt/ags_aging) - 该项目以用户提供的 Game Boy Advance ROM 为输入，将 AGS Aging Cartridge 7.0 重建为汇编与 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ags-aging-cartridge-case/)</sub>
+- [**Character Pipeline：2001 年 4 月版库反编译**](https://github.com/doldecomp/dolcp-apr2001) - Character Pipeline April 2001 Libraries 重建该组件已构建代码库的 C 源码，涵盖角色、动画、控制、几何调色板、光照、着色器和蒙皮库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/character-pipeline-apr2001-decomp-case/)</sub>
 - [**cod4map：重建 Call of Duty 4 的 BSP 编译器**](https://github.com/prd0nja/cod4map) - cod4map 根据 2007 年随 Call of Duty 4 模组工具发布的可执行文件重建 BSP 编译器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cod4map-reconstruction-case/)</sub>
 - [**dargh：重建 Skyrim 的 Dynamic Animation Replacer**](https://github.com/noxsidereum/dargh) - dargh 根据对 Dynamic Animation Replacer 1.1.2 和 1.1.3 DLL 的分析，以 C++ 重建用于 Skyrim Special Edition 的替代 DLL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dargh-case/)</sub>
 - [**dolnetbp：重建 GameCube 网络 SDK 库**](https://github.com/Cuyler36/dolnetbp) - dolnetbp 以 C 重建 GameCube Dolphin Network Base Package 的 eth、mdm 和 netcfg 库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dolnetbp-case/)</sub>
@@ -22,6 +23,7 @@
 - [**GEOS 2.0：可重建 cbmfiles KERNAL 二进制的源码**](https://github.com/mist64/geos) - Commodore 64 与 128 上 GEOS 2.0 的整理后 cc65 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/geos-20-kernal-case/)</sub>
 - [**geoWrite 2.1：可重建原始二进制的源码**](https://github.com/mist64/geowrite) - GEOS 文字处理器 geoWrite 2.1 英语版与德语版的逆向 cc65 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/geowrite-21-case/)</sub>
 - [**GoonFi V2：Solana 程序的逐字节一致 Rust 重编译**](https://osec.io/blog/goonfi-decompilation/) - OtterSec 研究人员介绍了一套智能体流程：为闭源的 GoonFi V2 Solana 程序重建 Rust 源码，直至用原工具链重新构建即可复现所部署的 ELF。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goonfi-v2-rust-recompilation-case/)</sub>
+- [**Hagi：反编译《Super Mario 3D All-Stars》的模拟器**](https://github.com/GRAnimated/Hagi) - Hagi 反编译《Super Mario 3D All-Stars》1.0.0 版《Super Mario Sunshine》附带的 GameCube 和 Wii 模拟器程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hagi-emulator-decomp-case/)</sub>
 - [**HyperCard 1.2.2：经典 Mac 应用的静态重编译**](https://github.com/sp00nznet/macrecomp) - 静态重编译经典 Mac 应用 HyperCard 1.2.2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hypercard-122-recomp-case/)</sub>
 - [**IOReport：研究并反编译 Apple 的报告库**](https://github.com/dehydratedpotato/IOReport_decompile) - IOReport decompile 研究 Apple 的 IOReport 动态库及其读取系统报告和计数器的调用方式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ioreport-decompile-case/)</sub>
 - [**Konami's Game Master：MSX 工具卡带的匹配反汇编**](https://github.com/ricbit/game-master) - 该项目将日版 RC-735 MSX 工具卡带 Konami's Game Master 重建为带注释的汇编源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/konamis-game-master-disassembly-case/)</sub>

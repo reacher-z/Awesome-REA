@@ -6,7 +6,7 @@
 
 [English](protocol.md)
 
-**634 个案例**
+**637 个案例**
 
 - [**433home：重建 REV 插座遥控信号**](https://github.com/jadeaffenjaeger/433home) - 433home 还原了 REV 无线插座的 433 MHz 控制信号。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/433home-case/)</sub>
 - [**A-OK：重建 433.92 MHz 遥控协议**](https://github.com/akirjavainen/A-OK) - A-OK 实现 AC114-01B 卷帘及投影幕遥控器使用的 433.92 MHz 协议。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/a-ok-rf-protocol-case/)</sub>
@@ -73,6 +73,7 @@
 - [**GalaxyBuds-rs：实现 Galaxy Buds 蓝牙协议**](https://github.com/JojiiOfficial/GalaxyBuds-rs) - GalaxyBuds-rs 用 Rust 库实现 Galaxy Buds 蓝牙消息。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/galaxybuds-rs-case/)</sub>
 - [**GlanceClock：重建 BLE 命令协议**](https://github.com/Hypfer/glance-clock) - GlanceClock 文档整理壁钟的 BLE 命令协议，供本地桥接程序使用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/glance-clock-ble-case/)</sub>
 - [**GMK87 Configurator：重建 Zuoya 键盘 USB HID 控制协议**](https://github.com/codedgar/gmk87-node) - GMK87 Configurator 根据官方应用的 USB 抓包重建 Zuoya GMK87 键盘的 HID 控制流程。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gmk87-configurator-case/)</sub>
+- [**Google Wifi API：路由器 HTTP 接口调查**](https://github.com/olssonm/google-wifi-api) - Google Wifi API 整理了 Google Wifi Router 和 OnHub 上发现的 HTTP 接口，记录状态查询、连接设备、配置及初始化路径，并给出 Host 请求头、POST 载荷和 JSON 响应示例。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/google-wifi-api-case/)</sub>
 - [**Govee H6159：还原蓝牙灯带直连控制**](https://github.com/jurassic-marc/govee-h6159-light-strip-reverse-engineer) - Govee H6159 light-strip reverse engineer 提供 Linux shell 脚本，直接向 H6159 灯带发送蓝牙 GATT 命令。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/govee-h6159-light-strip-case/)</sub>
 - [**ha-c14：重建 C14 新风机总线协议**](https://github.com/Pioszym/ha-c14) - ha-c14 记录 COMPIT AERO 3B 新风机与 Nano Color CTP 室内面板之间的 C14 RS-485 总线，并为 ESP32 实现 ESPHome 桥接。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ha-c14-case/)</sub>
 - [**Ha-Kake：解析 Nissan Leaf CAN 信号并构建遥测仪表盘**](https://github.com/davidkarnowski/Ha-Kake) - Ha-Kake 记录了 Nissan Leaf CAN 与 OBD-II 信号的识别和解码过程，并将结果用于本地车辆仪表盘。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ha-kake-leaf-can-case/)</sub>
@@ -126,6 +127,7 @@
 - [**Open Remote Start：重建 Fortin 天线数据链路**](https://github.com/jmaxxz/OpenRemoteStart) - Open Remote Start 研究 Fortin 远程启动器和防盗系统的天线数据链路协议。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-remote-start-case/)</sub>
 - [**OpenChirp：重建 Chirp 音频通信协议**](https://github.com/cawfree/OpenChirp) - OpenChirp 以 Android 收发示例重建 Chirp 音频数据协议。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openchirp-audio-protocol-case/)</sub>
 - [**OpenDS：重建 FRC Driver Station 客户端**](https://github.com/Boomaa23/open-ds) - OpenDS 为 Windows、Linux 和 macOS 重建 FRC Driver Station 客户端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opends-frc-case/)</sub>
+- [**openfsd：重建 VATSIM FSD 服务器协议**](https://github.com/renorris/openfsd) - openfsd 依照逆向整理的 VATSIM FSD 协议实现多人飞行模拟服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openfsd-case/)</sub>
 - [**OpenHX：重建 Line 6 HX 的 USB 预设控制**](https://github.com/allansomensi/openhx) - OpenHX 通过 Rust 命令行工具实现部分 Line 6 HX 和 Helix 预设控制功能，并提供尚处早期阶段的图形界面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openhx-case/)</sub>
 - [**openmili：实现 Mi-Light 2.4 GHz 灯控协议**](https://github.com/henryk/openmili) - openmili 使用 nRF24 无线模块作为 PL1167 后端，实现 Mi-Light 2.4 GHz LED 灯控通信。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmili-case/)</sub>
 - [**OpenRad：Radmin VPN 客户端与线格式重建**](https://github.com/gringoestrangeiro/openrad) - OpenRad 以 Rust 重建 Radmin VPN，提供桌面客户端、命令行客户端及虚拟以太网接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openrad-case/)</sub>
@@ -188,6 +190,7 @@
 - [**truemove3-re：解析游戏鼠标传感器的 SPI 接口**](https://github.com/you-wouldnt-reverse-engineer-a-rat/truemove3-re) - truemove3-re 记录了对游戏鼠标 TrueMove3 传感器 SPI 接口的调查，列出引脚、总线设置、寄存器地址，以及从 Rival-310 获取的启动通信流程；其与 PMW3360 的差异仍待确认。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/truemove3-re-case/)</sub>
 - [**ts3j：TeamSpeak 3 客户端协议的 Java 实现**](https://github.com/Manevolent/ts3j) - ts3j 将已逆向的 TeamSpeak 3 完整客户端协议实现为 Java 库，并改编自较早的 C# 客户端源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ts3j-protocol-case/)</sub>
 - [**TSP143IIIU：为 USB 转 Wi-Fi 桥接重建 StarIO 打印机交互**](https://github.com/gnaunited/tsp143-bridge) - TSP143IIIU Wi-Fi Print Bridge 重建 StarIO 通信，使 Raspberry Pi 能将仅支持 USB 的小票打印机呈现为 Shopify POS 可发现的 Star 局域网打印机。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tsp143-stario-protocol-case/)</sub>
+- [**UniFi Protect API：解析 updates WebSocket 协议**](https://github.com/hjdhjd/unifi-protect) - UniFi Protect API 是解析控制器未公开 updates WebSocket 协议的 TypeScript 客户端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/unifi-protect-updates-protocol-case/)</sub>
 - [**UniSpy Server：用 Python 重建 GameSpy 服务**](https://github.com/GameProgressive/UniSpyServer) - UniSpy Server 参考公开的 GameSpy 协议研究及早期服务器库，以 Python 重建 GameSpy 在线服务。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/unispy-server-case/)</sub>
 - [**Valeton GP-50 Editor：通过重建的 SysEx 协议实时编辑预设**](https://github.com/drewmerc302/valeton-gp50) - Valeton GP-50 Editor 通过重建的 MIDI SysEx 协议控制 GP-50 和 GP-5 吉他效果器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/valeton-gp50-editor-case/)</sub>
 - [**Validity90：逆向分析 Validity/Synaptics 指纹读取器协议**](https://github.com/nmikhailov/Validity90) - 逆向分析 Validity/Synaptics 笔记本指纹读取器 138a:0090、138a:0094、138a:0097、06cb:0081 和 06cb:009a 的 USB 协议，目标是写出协议规范和自由的 libfprint 驱动。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/validity90-fingerprint-protocol-case/)</sub>
