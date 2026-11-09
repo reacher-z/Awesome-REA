@@ -264,12 +264,21 @@ def carried_forward(old: dict | None, drop_missing: bool = False) -> dict | None
     return old
 
 
+def with_raw_image(preview: dict) -> dict:
+    """A cached preview from before GitHub /blob/ links were resolved gets the same raw, revision-pinned URL."""
+    source, revision = preview.get("source_url") or "", preview.get("revision") or ""
+    if not preview.get("image_url") or not source.startswith("https://github.com/"):
+        return preview
+    base = source.replace("https://github.com/", "https://raw.githubusercontent.com/", 1).rstrip("/") + "/" + revision + "/"
+    return {**preview, "image_url": raw_github_file(preview["image_url"], base)}
+
+
 def collect(entry: dict, client: HttpClient, fresh: bool) -> dict | None:
     key = "preview:v1:" + entry["id"] + "|" + entry["url"]
     if not fresh:
         hit = cached(key)
         if hit is not None:
-            return hit or None
+            return with_raw_image(hit) or None
     slug = github_repo_slug(entry["url"])
     preview = github_preview(client, slug) if slug else page_preview(client, entry["url"])
     store_cache(key, preview or {})
