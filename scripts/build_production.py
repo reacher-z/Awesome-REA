@@ -16,7 +16,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     # Accepted and ignored: the Cloudflare Pages build command may still pass it, and the site loads no icon font now.
     parser.add_argument('--fontawesome-assets-url', help=argparse.SUPPRESS)
-    parser.parse_args()
+    parser.add_argument('--publish', action='store_true',
+                        help='Build a commit of main for publication: skip validate_discovery, validate_site and '
+                             'validate_schema_org, which the required validate check already ran on it')
+    args = parser.parse_args()
     commands = [
         # The scan mapping is deterministic over the committed scan snapshot.
         [sys.executable, 'scripts/classify_scan_evidence.py'],
@@ -28,9 +31,10 @@ def main():
     ]
     commands.append(['node', '--check', 'site/site.js'])
     commands.append([sys.executable, 'scripts/build_site.py'])
-    commands.append([sys.executable, 'scripts/validate_discovery.py'])
-    commands.append([sys.executable, 'scripts/validate_site.py'])
-    commands.append([sys.executable, 'scripts/validate_schema_org.py'])
+    if not args.publish:
+        commands.append([sys.executable, 'scripts/validate_discovery.py'])
+        commands.append([sys.executable, 'scripts/validate_site.py'])
+        commands.append([sys.executable, 'scripts/validate_schema_org.py'])
     # Tracked files and the finished dist/ must not name or link the people the maintainer asked to keep out.
     commands.append([sys.executable, 'scripts/privacy_guard.py'])
     with tempfile.TemporaryDirectory() as directory:
@@ -42,7 +46,8 @@ def main():
             if result.returncode:
                 print('Production build stopped because a required check failed.', file=sys.stderr)
                 return result.returncode
-    print('Production checks passed; deployable files are in dist/.')
+    print('Production checks passed; deployable files are in dist/.' if not args.publish
+          else 'Publication build passed; deployable files are in dist/.')
     return 0
 
 

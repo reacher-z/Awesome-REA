@@ -22,8 +22,8 @@ NEWER = 'b' * 40
 
 
 class FakeGitHub:
-    def __init__(self, *, checks=(), head=SHA, runs=(), artifacts=None, archives=None):
-        self.checks, self.head, self.runs = list(checks), head, list(runs)
+    def __init__(self, *, head=SHA, runs=(), artifacts=None, archives=None):
+        self.head, self.runs = head, list(runs)
         self.artifacts, self.archives, self.calls = artifacts or {}, archives or {}, []
 
     def get(self, suffix):
@@ -32,13 +32,6 @@ class FakeGitHub:
             return {'default_branch': 'main'}
         if suffix == 'branches/main':
             return {'commit': {'sha': self.head}}
-        if suffix.startswith('commits/'):
-            state = self.checks.pop(0) if len(self.checks) > 1 else (self.checks[0] if self.checks else None)
-            if state is None:
-                return {'check_runs': []}
-            status, conclusion = ('in_progress', None) if state == 'pending' else ('completed', state)
-            return {'check_runs': [{'id': 5, 'app': {'slug': 'cloudflare-workers-and-pages'}, 'status': status, 'conclusion': conclusion},
-                                   {'id': 9, 'app': {'slug': 'other-app'}, 'status': 'completed', 'conclusion': 'failure'}]}
         if suffix.startswith('actions/workflows/indexnow.yml/runs'):
             return {'workflow_runs': self.runs}
         match = re.fullmatch(r'actions/runs/(\d+)/artifacts\?per_page=30', suffix)
@@ -83,40 +76,49 @@ class WaitTests(unittest.TestCase):
         (self.dist / 'build-manifest.json').write_bytes(self.manifest)
 
     def wait(self, github, served, **kwargs):
-        clock = Clock()
-        responses = list(served)
+        """served: (source-commit.txt, build-manifest.json) responses, one pair per poll; the last pair repeats."""
+        clock, polls, urls = Clock(), list(served), []
 
         def fetch(url, limit):
-            self.assertEqual(url, 'https://awesomerea.org/build-manifest.json')
-            value = responses.pop(0) if len(responses) > 1 else responses[0]
+            urls.append(url)
+            name, _, query = url.removeprefix('https://awesomerea.org/').partition('?')
+            self.assertRegex(query, r'^indexnow=[0-9a-f]{16}$')
+            pair = polls[0]
+            if name == 'source-commit.txt':
+                value = pair[0]
+            else:
+                self.assertEqual(name, 'build-manifest.json')
+                value = pair[1]
+            if name == 'build-manifest.json' or pair[0] != SHA.encode() + b'\n':
+                if len(polls) > 1:
+                    polls.pop(0)
             if isinstance(value, Exception):
                 raise value
             return value
         with redirect_stdout(StringIO()):
-            return automation.wait_for_deployment(SHA, self.dist, github=github, fetch=fetch, clock=clock,
-                                                  sleep=clock.sleep, **kwargs)
+            state = automation.wait_for_deployment(SHA, self.dist, github=github, fetch=fetch, clock=clock,
+                                                   sleep=clock.sleep, **kwargs)
+        self.assertEqual(len(set(urls)), len(urls), 'every read must bypass the edge cache')
+        return state
 
-    def test_live_as_soon_as_the_deployment_serves_this_build(self):
-        github = FakeGitHub(checks=['pending'])
-        self.assertEqual(self.wait(github, [self.manifest]), 'live')
+    def test_live_as_soon_as_the_site_serves_this_commit_and_build(self):
+        github = FakeGitHub()
+        self.assertEqual(self.wait(github, [(SHA.encode() + b'\n', self.manifest)]), 'live')
         self.assertEqual(github.calls, [])
         old = b'{"files": {"old": 1}}\n'
-        self.assertEqual(self.wait(FakeGitHub(checks=['pending', 'pending', 'success']),
-                                   [old, OSError('reset'), old, self.manifest]), 'live')
+        self.assertEqual(self.wait(FakeGitHub(), [(OSError('reset'), None), (b'c' * 40 + b'\n', None),
+                                                   (SHA.encode() + b'\n', old), (SHA.encode() + b'\n', self.manifest)]), 'live')
 
-    def test_a_newer_commit_supersedes_and_a_failed_deployment_stops(self):
-        old = b'{"files": {"old": 1}}\n'
-        self.assertEqual(self.wait(FakeGitHub(checks=['success'], head=NEWER), [old]), 'superseded')
-        self.assertEqual(self.wait(FakeGitHub(checks=['cancelled'], head=NEWER), [old]), 'superseded')
-        with self.assertRaisesRegex(ValueError, 'failed deployment'):
-            self.wait(FakeGitHub(checks=['failure']), [old])
+    def test_another_commit_while_main_moved_on_supersedes(self):
+        self.assertEqual(self.wait(FakeGitHub(head=NEWER), [(NEWER.encode() + b'\n', None)]), 'superseded')
+        self.assertEqual(self.wait(FakeGitHub(head=NEWER), [(b'c' * 40 + b'\n', None)]), 'superseded')
 
-    def test_a_deployment_that_does_not_reproduce_this_build_or_never_lands_fails(self):
+    def test_an_unpublished_commit_is_deferred_and_other_bytes_fail(self):
+        self.assertEqual(self.wait(FakeGitHub(), [(b'c' * 40 + b'\n', None)], wait_seconds=120), 'pending')
+        self.assertEqual(self.wait(FakeGitHub(), [(OSError('reset'), None)], wait_seconds=120), 'pending')
         other = b'{"files": {"other": 1}}\n'
         with self.assertRaisesRegex(ValueError, 'reproducible'):
-            self.wait(FakeGitHub(checks=['success']), [other])
-        with self.assertRaisesRegex(ValueError, 'did not go live'):
-            self.wait(FakeGitHub(checks=['pending']), [other], wait_seconds=120)
+            self.wait(FakeGitHub(), [(SHA.encode() + b'\n', other)])
         with self.assertRaises(ValueError):
             automation.wait_for_deployment('main', self.dist, github=FakeGitHub())
 
@@ -185,11 +187,11 @@ class WorkflowTests(unittest.TestCase):
         job = self.text.split('\njobs:\n', 1)[1]
         permissions = re.search(r'\n    permissions:\n((?:      .*\n)+)', job)[1]
         self.assertEqual(re.findall(r'^      ([a-z-]+): ([a-z]+)$', permissions, re.MULTILINE),
-                         [('contents', 'read'), ('checks', 'read'), ('actions', 'read')])
+                         [('contents', 'read'), ('actions', 'read')])
         self.assertIn("github.ref == format('refs/heads/{0}', github.event.repository.default_branch)", self.text)
 
-    def test_builds_like_cloudflare_waits_then_submits_and_keeps_the_receipt(self):
-        build = self.text.index('python3 scripts/build_site.py')
+    def test_builds_like_the_publication_waits_then_submits_and_keeps_the_receipt(self):
+        build = self.text.index('python3 scripts/build_production.py --publish')
         wait = self.text.index('python3 scripts/indexnow_automation.py wait "$SHA" dist')
         previous = self.text.index('python3 scripts/indexnow_automation.py previous')
         submit = self.text.index('python3 scripts/submit_indexnow.py "${args[@]}"')
