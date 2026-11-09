@@ -891,4 +891,35 @@
     shelfInput.addEventListener('input', run);
     $('[data-shelf-search]').addEventListener('submit', (e) => e.preventDefault());
   }
+
+  /* ---------- /discoveries/: load the rest of a class from its own page, in place ---------- */
+  $$('[data-discovery-more]').forEach((link) => {
+    link.addEventListener('click', async (e) => {
+      if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      if (link.getAttribute('aria-busy') === 'true') return;
+      const section = link.closest('section');
+      const list = $('.source-results', section);
+      link.setAttribute('aria-busy', 'true');
+      try {
+        const response = await fetch(link.href);
+        if (!response.ok) throw new Error(String(response.status));
+        const page = new DOMParser().parseFromString(await response.text(), 'text/html');
+        const have = new Set($$('article[id]', list).map((card) => card.id));
+        const added = $$(`#${CSS.escape(section.id)} .source-results > article[id]`, page).filter((card) => !have.has(card.id));
+        list.append(...added.map((card) => document.importNode(card, true)));
+        const heading = $('h2[data-heading-all]', section);
+        if (heading) heading.textContent = heading.dataset.headingAll;
+        const shown = $('[data-discovery-shown]');
+        if (shown) shown.textContent = fmt($$('.discovery-batch .source-results > article').length);
+        const note = $('[data-shown-all]', link.closest('.load-more-row'));
+        if (note) note.textContent = note.dataset.shownAll;
+        const first = added.length && $('a', list.querySelector(`#${CSS.escape(added[0].id)}`));
+        link.remove();
+        if (first) first.focus();
+      } catch (error) {
+        location.assign(link.href);
+      }
+    });
+  });
 })();

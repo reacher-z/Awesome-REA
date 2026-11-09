@@ -88,6 +88,20 @@ class EntryDiscoveryValidationTests(unittest.TestCase):
             with self.assertRaises(AssertionError):
                 validate_route_inventory(invalid, self.resources, self.papers)
 
+    def test_discovery_class_pages_join_the_inventory_only_when_the_export_names_them(self):
+        base = [ORIGIN + prefix + path for prefix in ('', '/zh')
+                for path in ('/', '/resources/', '/cases/', '/papers/', '/survey/', '/about/', '/contribute/', '/api/',
+                             '/discoveries/')]
+        urls = base + self.detail_urls
+        classes = [ORIGIN + prefix + '/discoveries/game/' for prefix in ('', '/zh')]
+        validate_route_inventory(urls, self.resources, self.papers, include_browse=False, include_discoveries=True)
+        validate_route_inventory(urls + classes, self.resources, self.papers, include_browse=False,
+                                 include_discoveries=True, discovery_classes=['/discoveries/game/'])
+        for invalid, named in ((urls + classes, []), (urls, ['/discoveries/game/']), (urls + classes[:1], ['/discoveries/game/'])):
+            with self.assertRaises(AssertionError):
+                validate_route_inventory(invalid, self.resources, self.papers, include_browse=False,
+                                         include_discoveries=True, discovery_classes=named)
+
     def test_unsafe_or_duplicate_detail_ids_are_rejected(self):
         for identifier in ('../other', 'name/part', 'scan?query', ''):
             with self.assertRaises(AssertionError):

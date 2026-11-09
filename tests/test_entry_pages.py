@@ -172,6 +172,18 @@ class EntryPageTests(unittest.TestCase):
                         self.assertNotIn('identifier', entity)  # Published USENIX paper has no invented DOI/arXiv.
             self.assertEqual((r, p), before)
 
+    def test_unavailable_source_is_a_plain_fact_after_the_review_date(self):
+        r = resource(verified_at='2026-10-17T01:02:03Z',
+                     source_unavailable={'checked_at': '2026-11-09T17:09:00+00:00', 'outcome': 'not-found', 'http_status': 404})
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            build_entry_pages(root, [r], [paper()])
+            for language, fact in [('en', '<dt>Source status</dt><dd>Unavailable · HTTP 404 on 2026-11-09</dd>'),
+                                   ('zh', '<dt>来源状态</dt><dd>无法访问 · 2026-11-09 返回 HTTP 404</dd>')]:
+                text = (root / entry_path('resource', r['id'], language).lstrip('/') / 'index.html').read_text()
+                self.assertIn(fact, text)
+                self.assertEqual(text.count('<time '), 1)
+
     def test_resource_facts_and_review_date_precede_requirements_once(self):
         r = resource(targets=['protocol', 'binary'], category='protocol-analysis', relationship='foundation',
                      verified_at='2026-10-17T01:02:03Z', requirements=['First.', 'Second.', 'Third.'],
