@@ -6,7 +6,7 @@
 
 [简体中文](game-2.zh-CN.md)
 
-**617 case studies**
+**618 case studies**
 
 ## Non-matching decompilations
 
@@ -58,6 +58,7 @@
 - [**Kuru Kuru Kururin: functional GBA decompilation and PC port**](https://github.com/an1n-dya/kururin) - kururin reconstructs the European Game Boy Advance Kuru Kuru Kururin in C for functional rather than byte-identical behavior, and builds an SDL2 PC port for Linux and Windows. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/kururin-case/)</sub>
 - [**LADX-Decompile: a C reconstruction of Link's Awakening DX**](https://github.com/Hysm25/LADX-Decompile) - LADX-Decompile translates Game Boy Color Link's Awakening DX routines into C, organized by cartridge bank and subsystem. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ladx-decompile-case/)</sub>
 - [**Larax &amp; Zaco: an REA-exported evidence base and partial routine recovery**](https://github.com/Hubert-Rybak/lezac-decompilation) - The author uses REA 6.3.0 with Ghidra to export dossiers, pseudocode and assembly for all 215 discovered procedures in the DOS shareware LEZAC.EXE, then recovers a small set of routines as Pascal and portable C. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/lezac-rea-decompilation-case/)</sub>
+- [**Legacy of Kain: Soul Reaver decompile**](https://github.com/Gh0stBlade/KAIN2) - This decompiles Legacy of Kain: Soul Reaver by translating its MIPS R3000 code to C, then builds a modern port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/kain2/)</sub>
 - [**Lego Battles: a hand-decompiled Nintendo DS reconstruction**](https://github.com/LiruJ/Lego-Battles-Decomp) - Lego Battles reconstructs Nintendo DS game source through manual decompilation, chiefly targeting the European version. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lego-battles-decomp-case/)</sub>
 - [**Lego Island 2: GBA decompilation**](https://github.com/minirop/lego-island-gba) - Lego Island 2 reconstructs the GBA game's code in C and assembly using bagd. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lego-island-2-gba-case/)</sub>
 - [**LEGO Racers: an N64 source reconstruction in progress**](https://github.com/marijnvdwerf/lego-racers) - LEGO Racers is an N64 source reconstruction that splits a user-supplied, hash-matched ROM with splat and builds C and C++ source alongside assembly-backed functions. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lego-racers-case/)</sub>
