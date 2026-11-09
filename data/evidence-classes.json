@@ -6,11 +6,11 @@
   "entry_count": 3906,
   "class_counts": {
    "0": 15,
-   "1": 836,
-   "2": 2925,
+   "1": 837,
+   "2": 2927,
    "3": 112
   },
-  "unknown_count": 18,
+  "unknown_count": 15,
   "c0_review_count": 15,
   "c0_review_file": "data/evidence-class-zero-reviews.json",
   "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. The automatic rubric caps at Class 1. Class 0 requires a manual review of scope, version and primary evidence in data/evidence-class-zero-reviews.json. Unavailable or unreadable sources are marked unknown, not as notes. Each entry keeps its own checked_at; Class 0 reviews may pin a later README commit than the signal observation.",
@@ -37741,26 +37741,28 @@
   {
    "id": "websitebench",
    "url": "https://github.com/TIGER-AI-Lab/WebsiteBench",
-   "evidence_class": null,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
-    "docs": false,
-    "docs_bytes": 0,
+    "docs": true,
+    "docs_bytes": 3584,
     "docs_full": false,
-    "download": null,
+    "download": "package",
     "release_count": 0,
     "release_asset_count": 0,
     "demo": [],
     "media_count": 0,
-    "download_links": [],
+    "download_links": [
+     "pip install websitebench"
+    ],
     "archived": false,
-    "unavailable": true
+    "unavailable": false
    },
-   "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-08T19:23:36+00:00",
-   "evidence_status": "unknown",
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-09T05:24:25+00:00",
+   "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
@@ -69188,13 +69190,13 @@
   {
    "id": "nsmbu-sead-case",
    "url": "https://github.com/nsmbu/sead",
-   "evidence_class": null,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
-    "docs": false,
-    "docs_bytes": 0,
+    "docs": true,
+    "docs_bytes": 913,
     "docs_full": false,
     "download": null,
     "release_count": 0,
@@ -69203,11 +69205,11 @@
     "media_count": 0,
     "download_links": [],
     "archived": false,
-    "unavailable": true
+    "unavailable": false
    },
-   "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-09T01:38:41+00:00",
-   "evidence_status": "unknown",
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-09T05:26:27+00:00",
+   "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
@@ -76672,27 +76674,29 @@
   {
    "id": "recompia-case",
    "url": "https://github.com/featureJosh/Recompia",
-   "evidence_class": null,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
-    "docs": false,
-    "docs_bytes": 0,
-    "docs_full": false,
-    "download": null,
-    "release_count": 0,
-    "release_asset_count": 0,
-    "demo": [],
-    "media_count": 0,
+    "docs": true,
+    "docs_bytes": 24011,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 18,
+    "release_asset_count": 44,
+    "demo": [
+     "image"
+    ],
+    "media_count": 4,
     "download_links": [],
     "archived": false,
-    "unavailable": true
+    "unavailable": false
    },
-   "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-09T02:41:35+00:00",
-   "evidence_status": "unknown",
-   "scope": "unknown",
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-09T05:24:35+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },

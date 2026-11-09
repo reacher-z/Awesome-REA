@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-09T05:33:58+00:00",
-    "entry_count": 787,
-    "class_entry_count": 851,
+    "generated_at": "2026-11-09T06:09:42+00:00",
+    "entry_count": 788,
+    "class_entry_count": 852,
     "class_counts": {
-      "image": 758,
+      "image": 759,
       "video": 29
     },
     "missing_count": 64,
@@ -5127,6 +5127,15 @@
       "source_url": "https://github.com/ReClassNET/ReClass.NET",
       "revision": "a02fcb9bd669c8f81facd3ee9ad57cdcbf2cc0e1",
       "checked_at": "2026-11-07T03:50:07+00:00"
+    },
+    {
+      "id": "recompia-case",
+      "image_url": "https://static0.polygonimages.com/wordpress/wp-content/uploads/2026/03/jlee_260302_1001_pokopia_beach_mountain.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/featureJosh/Recompia",
+      "revision": "56fca2b30cc900971b8871eaa1b9b7343c91e16a",
+      "checked_at": "2026-11-09T06:09:42+00:00"
     },
     {
       "id": "recompiled-steel-case",
