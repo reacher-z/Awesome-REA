@@ -125,7 +125,7 @@ def seeds():
     title = re.search(r'<title>.*?</title>', page, re.S)[0]
     yield 'unresolved-template', first, sub_once(r'</main>', '{{SEEDED}}</main>', page)
     yield 'duplicate-attribute', first, sub_once(r'<main\b', '<main data-seed="1" data-seed="2"', page)
-    yield 'inline-style', first, sub_once(r'<p>', '<p style="color:red">', page)
+    yield 'inline-style', first, sub_once(r'<p\b', '<p style="color:red"', page)
     yield 'asset-content', stylesheet, stylesheet.read_text(encoding='utf-8') + '/* seeded */\n'
     yield 'breadcrumb-text', first, sub_once(r'(<nav aria-label="Breadcrumb">.*?<a [^>]*>)([^<]+)', r'\g<1>\g<2> seeded', page, re.S)
     yield 'unlinked-stylesheet', COPY / 'seeded.css', 'p{}\n'
@@ -138,10 +138,10 @@ def seeds():
 def main():
     for side in ('old', 'new'):
         (OUT / side).mkdir(parents=True, exist_ok=True)
-    parser_states()
     shutil.rmtree(COPY, ignore_errors=True)
     os.system(f'cp -al "{DIST}" "{COPY}"')
     scenarios = [('clean', None, None)] + list(seeds())
+    parser_states()
     for name, path, text in scenarios:
         existed = path is not None and path.exists()
         if path is not None:
