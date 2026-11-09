@@ -20,7 +20,7 @@ RESOURCE_FIELDS = frozenset({
     'requirements', 'requirements_zh', 'targets', 'category', 'group',
     'relationship', 'kind', 'class', 'evidence_url', 'additional_evidence_urls',
     'verified_at', 'verification', 'evidence_class', 'evidence_status',
-    'scope', 'runtime_status', 'evidence_review',
+    'scope', 'runtime_status', 'evidence_review', 'source_unavailable',
 })
 PAPER_FIELDS = frozenset({
     'id', 'title', 'title_zh', 'authors', 'authors_omitted', 'year', 'publication_date',

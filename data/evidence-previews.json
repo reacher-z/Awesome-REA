@@ -2128,7 +2128,7 @@
     },
     {
       "id": "dshba",
-      "image_url": "https://github.com/DenSinH/DSHBA/blob/master/files/DSHBA_unlocked.png",
+      "image_url": "https://raw.githubusercontent.com/DenSinH/DSHBA/bc1bbfc88dbbceac5b293a94a5f98dc902f8ff58/files/DSHBA_unlocked.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/DenSinH/DSHBA",

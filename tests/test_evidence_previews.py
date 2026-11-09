@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 
-from build_evidence_previews import carried_forward, github_preview, usable_image  # noqa: E402
+from build_evidence_previews import carried_forward, github_preview, usable_image, with_raw_image  # noqa: E402
 from media_privacy import public_media_url  # noqa: E402
 
 
@@ -21,6 +21,12 @@ class EvidencePreviewTests(unittest.TestCase):
         self.targets = {entry_id for entry_id, level in self.classes.items() if level in (0, 1)}
 
 
+
+    def test_cached_blob_preview_becomes_a_pinned_raw_file(self):
+        cached = {'image_url': 'https://github.com/DenSinH/DSHBA/blob/master/files/DSHBA_unlocked.png', 'kind': 'image',
+                  'basis': 'readme-image', 'source_url': 'https://github.com/DenSinH/DSHBA', 'revision': 'c' * 40}
+        self.assertEqual(with_raw_image(cached)['image_url'],
+                         'https://raw.githubusercontent.com/DenSinH/DSHBA/' + 'c' * 40 + '/files/DSHBA_unlocked.png')
     def test_github_blob_image_becomes_a_pinned_raw_file(self):
         base = 'https://raw.githubusercontent.com/DenSinH/DSHBA/' + 'b' * 40 + '/'
         self.assertEqual(usable_image('https://github.com/DenSinH/DSHBA/blob/master/files/DSHBA_unlocked.png', base),

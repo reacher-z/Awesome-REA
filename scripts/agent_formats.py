@@ -29,7 +29,7 @@ JSON_TYPE = 'application/json'
 RESOURCE_FIELDS = ('id', 'name', 'name_zh', 'url', 'kind', 'class', 'category', 'group', 'relationship', 'targets',
                    'description_en', 'description_zh', 'requirements', 'requirements_zh', 'requirement_facets',
                    'reconstruction_method', 'evidence_url', 'additional_evidence_urls', 'added_at', 'verified_at',
-                   'verification')
+                   'verification', 'source_unavailable')
 PAPER_FIELDS = ('id', 'title', 'title_zh', 'authors', 'authors_omitted', 'year', 'publication_date', 'date_precision',
                 'date_basis', 'date_basis_zh', 'venue', 'publication_status', 'arxiv_id', 'arxiv_version_reviewed',
                 'first_arxiv_date', 'doi', 'url', 'pdf_url', 'code_url', 'project_url', 'targets', 'kind', 'class',
@@ -44,6 +44,15 @@ REVIEW_NOTES = {
 }
 LICENSE_NOTE = ('Original editorial content: MIT. Linked projects, papers and assets retain their own rights and licenses.',
                 '原创说明采用 MIT 许可；外部项目、论文与素材保留各自的权利和许可。')
+
+
+def source_status(record: dict, language: str) -> str | None:
+    """The source-status fact for a record whose source no longer resolves, or None."""
+    check = record.get('source_unavailable')
+    if not check:
+        return None
+    day, status = check['checked_at'][:10], check['http_status']
+    return f'无法访问 · {day} 返回 HTTP {status}' if language == 'zh' else f'Unavailable · HTTP {status} on {day}'
 
 
 def page_prefix(language: str) -> str:
@@ -149,6 +158,7 @@ def resource_markdown(record: dict, language: str, *, site_url: str, siblings: d
         (choose('Category', '类别'), CATEGORIES[record['category']][zh]),
         (choose('Relationship', '关联'), RELATIONSHIPS[record['relationship']][zh]),
         (choose('Sources reviewed', '来源复核于'), record['verified_at'][:10]),
+        (choose('Source status', '来源状态'), source_status(record, language)),
         (choose('Added to the catalog', '收录于'), record.get('added_at')),
         (choose('Original resource', '原始资源'), f'<{record["url"]}>'),
     ]

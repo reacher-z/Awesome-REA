@@ -169,6 +169,34 @@ class GitLabThrottleTests(unittest.TestCase):
         self.assertEqual(stored, [])
 
 
+class GitLabDisabledFeatureTests(unittest.TestCase):
+    def test_disabled_releases_still_record_the_project(self):
+        readme = 'Reverse engineering notes. ' * 30
+
+        class Client:
+            def get(self, url, timeout=30, page=False):
+                path = url.split('/api/v4', 1)[1]
+                if path == '/projects/group%2Fgame':
+                    return 200, json.dumps({'default_branch': 'main',
+                                            'readme_url': 'https://gitlab.com/group/game/-/blob/main/README.md'}).encode(), {}
+                if path == '/projects/group%2Fgame/releases':
+                    return 403, b'', {}
+                if path == '/projects/group%2Fgame/repository/files/README.md/raw?ref=main':
+                    return 200, readme.encode(), {}
+                return 404, b'', {}
+
+        original = classify_evidence_classes.cached, classify_evidence_classes.store_cache
+        classify_evidence_classes.cached = lambda key: None
+        classify_evidence_classes.store_cache = lambda key, payload: None
+        try:
+            meta = gitlab_api_fetch(Client(), 'group/game')
+        finally:
+            classify_evidence_classes.cached, classify_evidence_classes.store_cache = original
+        self.assertFalse(meta['unavailable'])
+        self.assertEqual(meta['release_count'], 0)
+        self.assertEqual(meta['readme_bytes'], len(readme.encode()))
+
+
 class _FakeClient:
     """Just enough of the shared HttpClient to answer one repository request."""
 

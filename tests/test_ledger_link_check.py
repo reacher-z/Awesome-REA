@@ -90,6 +90,25 @@ class RecordedMissingTests(unittest.TestCase):
         reachable = {'url': GONE_POST, 'status': 'ok', 'references': ['ledger:song:a:primary_evidence_urls']}
         self.assertEqual(classify(reachable, known)['status'], 'ok')
 
+    def test_curated_records_that_record_an_unavailable_source_keep_its_404s_out_of_dead(self):
+        classify = check_links.classify_ledger_loss
+        recorded = {'gone-case'}
+        self.assertEqual(check_links.unavailable_resources([
+            {'id': 'gone-case', 'source_unavailable': {'checked_at': '2026-11-09T17:00:00Z', 'outcome': 'not-found',
+                                                       'http_status': 404}},
+            {'id': 'live-case'}]), recorded)
+        for references in (['resource:gone-case:url', 'resource:gone-case:evidence_url'],
+                           ['resource:gone-case:url', 'ledger:song:a:primary_evidence_urls']):
+            with self.subTest(references=references):
+                result = classify(dead(GONE_REPO, references), {GONE_REPO}, recorded)
+                self.assertEqual(result['status'], 'recorded-missing')
+        for references, known in ((['resource:gone-case:url', 'resource:live-case:url'], set()),
+                                  (['resource:gone-case:url', 'paper:paper-x:evidence_urls'], set()),
+                                  (['resource:gone-case:url', 'ledger:song:a:primary_evidence_urls'], set()),
+                                  (['resource:live-case:url'], set())):
+            with self.subTest(references=references):
+                self.assertEqual(classify(dead(GONE_REPO, references), known, recorded)['status'], 'dead')
+
     def test_collection_reported_links_are_separated_unless_used_as_evidence(self):
         classify = check_links.classify_ledger_loss
         reported = classify(dead(LIVE_POST, ['ledger:song:a:reported_source_urls',
@@ -121,7 +140,7 @@ class LinkCheckExitTests(unittest.TestCase):
         code, output = self.run_main({GONE_POST: 'dead'})
         self.assertEqual(code, 0)
         self.assertIn('RECORDED-MISSING [404] ' + GONE_POST, output)
-        self.assertIn('0 confirmed dead, 1 already recorded missing in the case ledger', output)
+        self.assertIn('0 confirmed dead, 1 already recorded missing in the case ledger or a curated record', output)
 
     def test_missing_collection_reported_links_are_listed_without_failing(self):
         code, output = self.run_main({LIVE_POST: 'dead'})

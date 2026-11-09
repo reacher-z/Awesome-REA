@@ -1,6 +1,6 @@
 # Resource catalog format
 
-`rea-resources.json` and `tool-resources.json` contain the records rendered into both READMEs. They are arrays of objects with these fields. Every field is required except `additional_evidence_urls`, `added_at`, `class`, `requirement_facets` and `reconstruction_method`, which is recommended for case studies listed under Game and not allowed on any other record.
+`rea-resources.json` and `tool-resources.json` contain the records rendered into both READMEs. They are arrays of objects with these fields. Every field is required except `additional_evidence_urls`, `added_at`, `class`, `requirement_facets`, `source_unavailable` and `reconstruction_method`, which is recommended for case studies listed under Game and not allowed on any other record.
 
 | Field | Meaning |
 | --- | --- |
@@ -21,6 +21,7 @@
 | `verification` | `source-reviewed`; not a runtime compatibility claim |
 | `requirements` | Nonempty list of platform, engine, release, license, or input prerequisites, one nonempty string per item; the Chinese list in `site/translations.zh-CN.json` translates the same items |
 | `requirement_facets` | Optional: one facet ID per `requirements` item, in the same order |
+| `source_unavailable` | Optional: the record's `url` no longer resolves. An object with exactly `checked_at` (timezone-aware ISO timestamp, no earlier than `verified_at`), `outcome` (`not-found` for HTTP 404 or 410, `blocked` for 451) and `http_status`. Entry pages show it as the source status; the link checker reports the record's links as `recorded-missing` |
 
 `requirements` items describe the project: prerequisites first, then project-specific limits such as author-reported results, unpublished artifacts, platform gaps or missing licenses. State project facts only: no sentences about this catalog's own review, such as "this collection did not run it" or "not run or reproduced for this catalog", in either language. `relationship` records the REA connection. `python3 scripts/review_disclaimers.py` lists requirement sentences that refer to the catalog's review so a reviewer can remove them.
 
