@@ -35,6 +35,15 @@
     "evidence_url": "https://github.com/blt4linux/blt4l/blob/02822d3dd591b6e2d39f738a94f240e8bfce49dd/README.md",
     "reviewed_at": "2026-11-09"
   },
+  "scan-54736965": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The repository commits thousands of internal headers generated from the commercial Facebook iOS binary, so linking this derived output needs a maintainer decision.",
+    "reason_zh": "仓库收录了大量从商业应用 Facebook iOS 二进制文件逆向生成的内部头文件，是否收录其链接需由维护者决定。",
+    "readme_sha256": "5430b92831d670a9f2a20581b07fbe742af9514e0812df073c66cd43d828f737",
+    "evidence_url": "https://github.com/quellish/Facebook-iOS-Internal-Headers/blob/581a9785f700ab5a22ba455a18a9ab7d9442db00/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-55305558": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -313,6 +322,15 @@
     "readme_sha256": "7c509a0d326bae432242a055ff113eeb515737122bad74287a2b9bcaeabd45dd",
     "evidence_url": "https://github.com/joker-returns/ctf_writeups/blob/a6c076c3aebe817567b4e548dfaff27ccf9b246f/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-127620342": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The repository commits Ikachan decompiled C, disassembly and an IDA database that can be opened without the original executable; publishing these game-derived files needs a maintainer decision.",
+    "reason_zh": "仓库收录 Ikachan 的反编译 C 代码、反汇编结果和无需原始可执行文件即可打开的 IDA 数据库；这些源自游戏的文件需要维护者判断能否收录。",
+    "readme_sha256": "7dc5bc970d8e76154455bfcf3129a51cfe15b1ff4e1da3a2267851e252f2b45e",
+    "evidence_url": "https://github.com/GabrielRavier/Ikachan-Decompilation/blob/083c100a57c500a5e6ac822800d4152d5243bbaf/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-128731094": {
     "decision": "exclude",
@@ -1476,6 +1494,15 @@
     "readme_sha256": "6ee848701b2db61e98b461150fe26b09d904ce2c4264c204d9c8918fdeac3639",
     "evidence_url": "https://github.com/mwenge/attackofthemutantcamels/blob/8265d3cf0058a65d0cc8421622985344af3324c3/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-355077595": {
+    "decision": "exclude",
+    "reason_code": "distribution-site",
+    "reason_en": "Zombie Farm Decompiled offers only a brief claim and one ZIP archive, with no accessible source tree, analysis or build instructions.",
+    "reason_zh": "Zombie Farm Decompiled 只有一句反编译说明和一个 ZIP 压缩包，没有可直接查看的源码树、分析资料或构建步骤。",
+    "readme_sha256": "5d408b036a490e5ecb848841d58badc25db0fd09a038ebcdbd3945d3b8af029a",
+    "evidence_url": "https://github.com/jeb495/Zombie-Farm-Decompiled/blob/3c83e7efde8877b139d221b7109e09fb29c5e1f5/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-356394275": {
     "decision": "exclude",
@@ -2721,6 +2748,15 @@
     "evidence_url": "https://github.com/nociza/Bimg/blob/fda6189be6c5878f1ff326f0227672a8e9030a53/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "scan-622077663": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The repository publishes what it calls a full decompilation of Nintendo Master Data Utility, so linking the reconstructed commercial program needs a maintainer decision.",
+    "reason_zh": "仓库发布了自称完整反编译的 Nintendo Master Data Utility 商业程序代码，是否收录其链接需由维护者决定。",
+    "readme_sha256": "a13ada247348a57c7ca1cbd26f99a64fc89ba0515e80a6c8ab2700519743652a",
+    "evidence_url": "https://github.com/LLONSIT/nrdc/blob/e08b32a7d4e2fc3ff33984014504058a1f9ceac9/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-622171847": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -3432,6 +3468,15 @@
     "evidence_url": "https://github.com/mediaexplorer74/MobileBandSync/blob/dcc77adbd612c97b444c5ae32c5d76b31cdc1b92/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-698623486": {
+    "decision": "exclude",
+    "reason_code": "distribution-site",
+    "reason_en": "Pursuit Force Decomp chiefly retains a playable extracted PSP game tree, while its conversion and script-rewrite tasks remain unchecked.",
+    "reason_zh": "Pursuit Force Decomp 主要保存可供下载游玩的 PSP 游戏文件树，模型、音频、纹理转换和脚本重写仍列为未完成。",
+    "readme_sha256": "155094b7cd0ce64f4cc47947ba8b9b25fa952fc7a57bd4965042ce057d9351d9",
+    "evidence_url": "https://github.com/itasimo/Pursuit-Force-Decomp/blob/17a8c944f6ef23b3862dc1cba31c7416ac828c18/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-699157207": {
     "decision": "exclude",
     "reason_code": "no-real-content",
@@ -3594,6 +3639,15 @@
     "evidence_url": "https://github.com/UmbertoDellaMonica/Linksys-WRT54GL-Exploitation/blob/73a0266d95e32102ac1af03ae1b2939bf7cd27c2/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-745615258": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The repository publishes Blitz3D code produced by decompiling the Steam executables of SCP: Containment Breach Multiplayer, requiring a redistribution decision.",
+    "reason_zh": "项目公开了从 Steam 版《SCP: Containment Breach Multiplayer》可执行文件反编译得到的 Blitz3D 代码，需先判断其再发布问题。",
+    "readme_sha256": "7ee54de934af5c9d24a9de3bde31c5661aedbc4480194d0135eb3a59b5034d05",
+    "evidence_url": "https://github.com/juanjp600/SCPCB-Multiplayer-decompiled/blob/4597b02a53a3b96c36ad02d9069abb8c0a54c3b8/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-746853445": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -3611,6 +3665,15 @@
     "readme_sha256": "a1dc464259c0bd368520f5655f3ae1d4c398ac9906d6342bc17478243b1f4e25",
     "evidence_url": "https://github.com/kovs705/Xcode15-RuntimeHeaders/blob/17782eee3eaba8c1d3575264d23aae50f7b0f92b/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-759181246": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Knights' Kingdom investigation includes extracted game images and sample model data alongside its format research and conversion tools, requiring a decision on redistributed assets.",
+    "reason_zh": "Knights' Kingdom 项目有格式研究和转换工具，但也收录了从原版游戏提取的图像及模型样本，需要先决定这些资源的收录方式。",
+    "readme_sha256": "1178a42404197782ab92654dd739752e862cf43d54f66de362709b4797bf7655",
+    "evidence_url": "https://github.com/DavidGrice/knightskingdom/blob/e6cf39544866299e6a39f886b9d523dd76cb8e7f/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-761567655": {
     "decision": "exclude",
@@ -3781,6 +3844,15 @@
     "reason_zh": "CKRenderEngine 介绍的是可独立构建的 Virtools 渲染引擎模块及其 CMake 配置，没有记载逆向分析工作或分析功能。",
     "readme_sha256": "2807ed73e201e0e8c128d48ec956931a68b043151d8c0384f598c73a7232a574",
     "evidence_url": "https://github.com/doyaGu/CKRenderEngine/blob/54accdb8c321270d56002abc2994ece28322d9f9/README.md",
+    "reviewed_at": "2026-11-09"
+  },
+  "scan-789771896": {
+    "decision": "exclude",
+    "reason_code": "malware-samples",
+    "reason_en": "Flame consists of decompiled C++ files for malware components, with no analysis notes or reusable analysis tooling beyond a brief README.",
+    "reason_zh": "Flame 仓库主要分发恶意软件组件的反编译 C++ 文件，除简短 README 外，没有分析报告或可复用的分析工具。",
+    "readme_sha256": "8d9847cd36d4898cebc22c9cf81575d527c1fee246ce78c107f1b04b05f6ec1a",
+    "evidence_url": "https://github.com/andarielsec/flame/blob/6c7a90e6b9e8e9f7dda04c3d5820fad01e0a3346/README.md",
     "reviewed_at": "2026-11-09"
   },
   "scan-790350098": {
@@ -4782,6 +4854,15 @@
     "evidence_url": "https://github.com/nivedhcarr/sample/blob/331667166d5a56545a085b5afeaa9a8eae39a419/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-967650175": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "Diamond-Rush-Decomp contains decompiled source for the commercial J2ME game and bundled resource files, so its inclusion needs a maintainer linking decision.",
+    "reason_zh": "Diamond-Rush-Decomp 收录了商业 J2ME 游戏的反编译源码和资源文件；是否收录需要维护者决定。",
+    "readme_sha256": "16d4a09b79bc6e9b2fbbc39dc2ef7a5c0b1e1b701076765218393bcdf5288a71",
+    "evidence_url": "https://github.com/palaceswitcher/Diamond-Rush-Decomp/blob/5e05c42aa1aae3377790600eb6d27497101b79e7/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-968828237": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -5520,6 +5601,15 @@
     "evidence_url": "https://github.com/lexicon06/ChatroomIPs.dat-Generator/blob/d8edbdcefc9ef60645e42656e2ce6512bb9ec7f7/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-1071029830": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "Greenier Farm 3 commits a game JAR and resources, while its contribution guide refers to leaked GLLib source and naming derived from leaked code.",
+    "reason_zh": "Greenier Farm 3 收录了游戏 JAR 和资源文件，贡献指南还提到泄露的 GLLib 源码及由其得来的命名，需由维护者判断。",
+    "readme_sha256": "5b44df8ea37b406558b334240fcf01f9c1f7fdb0dec6531dfefa4aa8d768b83d",
+    "evidence_url": "https://github.com/IceburgLettuce17/Greenier-Farm-3-NEW/blob/644ff791f4ab780695e280b32122e292952de5f5/CONTRIBUTING.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1073448113": {
     "decision": "hold",
     "reason_code": "needs-maintainer-decision",
@@ -6096,6 +6186,15 @@
     "evidence_url": "https://github.com/iba2000/Disassembler-Borg2/blob/0be798cc4e55f3f227d3bb8f086c7e3c7b722f71/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-1112693424": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Grabbed by the Ghoulies repository has a decompilation claim and run prerequisites, but only README.md and LICENSE are present.",
+    "reason_zh": "《Grabbed by the Ghoulies》仓库说明了反编译目标和运行条件，但实际只有 README.md 与 LICENSE，没有项目代码或成果。",
+    "readme_sha256": "aded0785f8d11e7dfaf79a325666825cd934ca92aef890b440d8c4ff87854372",
+    "evidence_url": "https://github.com/Cwf1997/grabbedbytheghoulies/blob/bc108fc2e29703417712ebe89125a058887f048f/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1113440090": {
     "decision": "exclude",
     "reason_code": "no-real-content",
@@ -6185,6 +6284,15 @@
     "readme_sha256": "1ca03b218cf33b50fd5836e987bb195b558620274d472df218947c16b71a12e0",
     "evidence_url": "https://github.com/Cwf1997/sonicheroes/blob/ee356b927174dd45ffa14a1c59949c48d990464c/README.md",
     "reviewed_at": "2026-11-08"
+  },
+  "scan-1115830438": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "The Ben 10 PS2 decompilation has only a brief statement of intent and a license; there is no source code, analysis or build material.",
+    "reason_zh": "这个《Ben 10》PS2 反编译仓库只有一句项目简介和许可证，没有源码、分析成果或构建资料。",
+    "readme_sha256": "b6d86e896c609012ef341808aea1a444fc41b83f636958519e4b390dcca7f171",
+    "evidence_url": "https://github.com/Cwf1997/ben10protectorofearth/blob/59559403597165b581c7a17cddab5cd4366383ba/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1115832106": {
     "decision": "exclude",
@@ -7023,6 +7131,15 @@
     "evidence_url": "https://github.com/IROTECHLAB/arattai-simplebot/blob/8931afb5261dd29edcd4a9ee8ef3f689a032cde2/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-1161963195": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "Subway Surfers Resurferd has a substantial Unity tree, but its one-line README gives no account of the project's analysis, reconstruction method or asset provenance.",
+    "reason_zh": "Subway Surfers Resurferd 有大量 Unity 文件，但 README 只有项目名称，缺少分析方法、重建范围及资源来源说明。",
+    "readme_sha256": "3d16554101f6c93ccef0d04499152f4589f4df9f72c1082db1e3bf9afe9c3627",
+    "evidence_url": "https://github.com/CyberillcButSmarter/Subway-Surfers-Resurferd/blob/de3938ea897d3ea5ca2e0c52f6763ce9f4d077e7/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1163005354": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
@@ -7814,6 +7931,15 @@
     "readme_sha256": "a0d37010b9115396934f94f0b14496ae9973b11603f1c8ef0f85852968197726",
     "evidence_url": "https://github.com/boykopovar/aiodeepseek/blob/263d754fc48229792dbdd1eace9a517bcbeccb4f/README.md",
     "reviewed_at": "2026-11-08"
+  },
+  "scan-1231809001": {
+    "decision": "exclude",
+    "reason_code": "fork-or-mirror",
+    "reason_en": "The README identifies th06-ps2 as a cross-platform fork built on GensokyoClub/th06 and a portable branch, while documenting no distinct PS2 reconstruction work.",
+    "reason_zh": "README 将 th06-ps2 说明为基于 GensokyoClub/th06 和便携分支的跨平台分支，没有记录独立的 PS2 逆向或重建成果。",
+    "readme_sha256": "0661a3141a784340fc124b634288b5e6f71e017a4d720b591f2eb1338c00af2a",
+    "evidence_url": "https://github.com/makmal0962/th06-ps2/blob/55c2e17a8eab7de8e7d744ddd585daeeb0d2a46b/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1233073950": {
     "decision": "exclude",
@@ -9209,6 +9335,15 @@
     "readme_sha256": "9d28619227b1b838417b890198eb46a58bf8fa7e031afc11e7475304f2789201",
     "evidence_url": "https://github.com/SHAJON-404/iOS-TikTok-SSL-Pinning-Bypass/blob/a5352c1afb9f88d2ef2caccab01ff55f6cb93f6c/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1320816765": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The repository includes the game's PS2 executable and generated decompiled source, so including this reverse-engineering case needs a maintainer linking decision.",
+    "reason_zh": "仓库收录了游戏的 PS2 可执行文件和生成的反编译源码；是否收录这一逆向工程案例需要维护者决定。",
+    "readme_sha256": "2d1e3ebc748be180d9da772dd21ffd1c3d0a43016764a7744909af584f0feed8",
+    "evidence_url": "https://github.com/YacaloX-Studios/cnk-decomp/blob/4f0f64a8a408603d63459a1a606bb7f671332bca/docs/03_ELF_ANALYSIS.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1322231543": {
     "decision": "exclude",
@@ -10643,6 +10778,15 @@
     "evidence_url": "https://github.com/ship-it-sign/yunyundong/blob/e992b4fb7bad9a05050d4a4bdebd6e279d6222e7/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "scan-1392078299": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The repository publishes C code described as a decompilation of the commercial DECtalk DTC-01 firmware, so linking the reconstructed code needs a maintainer decision.",
+    "reason_zh": "仓库发布了自称由商业设备 DECtalk DTC-01 固件反编译而来的 C 代码，是否收录其链接需由维护者决定。",
+    "readme_sha256": "cc1d40ff9c6088ebac3d8025539b1e8a193b8b224b7ab1e9ba58201f1cbb617d",
+    "evidence_url": "https://github.com/rommix0/DECtalk-DTC-01-Reborn/blob/31b43f76b2f9f5d614bed12eaab8e4f888d68b94/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1392389318": {
     "decision": "exclude",
     "reason_code": "cheat-or-evasion",
@@ -10904,6 +11048,15 @@
     "evidence_url": "https://github.com/Chronosishere/makd/blob/a0fdda7142fa44e51fe2884cd796f7fd22a73e4b/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "scan-1406726203": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The WdFilter.sys reconstruction includes original driver resources alongside recovered C source, so redistribution of those proprietary files needs a maintainer decision.",
+    "reason_zh": "WdFilter.sys 重建项目在恢复的 C 源码之外收录了原版驱动资源，需由维护者判断这些专有文件的再发布问题。",
+    "readme_sha256": "366c76d4c5836107cdf6863fc1d1d91b9877bb14728c25b2641e6a1050d3350a",
+    "evidence_url": "https://github.com/Avagodo/wdfilter-research/blob/4e9928159e4990b60a577645cd614653ca00e855/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "scan-1406934336": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -11056,6 +11209,15 @@
     "readme_sha256": "8cf30ffa1154309c3dc04a45a98f7ba8ff9de2d888b986efcc3c5f1f7adffd85",
     "evidence_url": "https://github.com/BruBread/ProjectorRoot/blob/59d3e41287da1db045f78bc9c84deb9f87e497ca/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1413503077": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The NFS III analysis tracks a modified commercial game executable and menu file with its Ghidra project, requiring a maintainer decision on redistribution.",
+    "reason_zh": "NFS III 项目在 Ghidra 分析工程之外，还收录了修改过的商业游戏可执行文件和菜单文件，需由维护者决定能否收录。",
+    "readme_sha256": "35c0bb349eab8e5d5ae9f9ad59b7ca3c1e80d4366602a6d57b716f972e71ca71",
+    "evidence_url": "https://github.com/melroy89/nfs3-re/blob/248361ba9e0404b0f89123767dd03ef9e53ee2db/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1413700852": {
     "decision": "exclude",
@@ -11319,6 +11481,15 @@
     "readme_sha256": "e2912c188604c27b09a551ab0eae70efa24470410d9c30e67ae29a8003cde674",
     "evidence_url": "https://github.com/dansugc/reverse-engineer-marketing/blob/5b78198b2578997412853ab0858b10670fa74984/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "scan-1426156691": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Java reconstruction includes extracted Nibby Nibble graphics and music plus an unmodified original game data file, so redistribution needs a maintainer decision.",
+    "reason_zh": "这份 Java 重建项目收录了从 Nibby Nibble 提取的图像、音乐和未经修改的原版游戏数据文件，需由维护者决定能否收录。",
+    "readme_sha256": "7004be1b659ccf0465afa11a33fee0890e701d9b83e8f929f79c5ee37f28b069",
+    "evidence_url": "https://github.com/guillaumemonet/nibbynibble-java/blob/4ea5cbd7fcd5f9c84b5127f0234da14f44c9aa06/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "scan-1426242718": {
     "decision": "hold",

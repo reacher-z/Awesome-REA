@@ -152679,5 +152679,579 @@
     "additional_evidence_urls": [
       "https://github.com/opensatelliteproject/metlrpt/blob/3457acd02a9e6ebe46bead64a06eed0f37389323/Meteor/M2C/channeldecode.py"
     ]
+  },
+  {
+    "id": "freenukum-case",
+    "name": "Freenukum: a Duke Nukem 1 clone",
+    "url": "https://gitlab.com/silwol/freenukum",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Freenukum recreates the 1991 DOS game Duke Nukem 1 using Rust and the original game's graphics data. It provides a data installation tool and is still missing opponents and some level items.",
+    "description_zh": "Freenukum 使用 Rust 复刻 1991 年的 DOS 游戏 Duke Nukem 1，运行时需要原版图像数据，并提供数据安装工具。目前敌人和部分关卡物件尚未实现。",
+    "evidence_url": "https://gitlab.com/silwol/freenukum/-/blob/60c2d6159fea73c7e2c5c6b3f6846bf66766a8a3/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building from source requires a Rust compiler and SDL2 and SDL2_ttf development libraries.",
+      "Original Duke Nukem 1 graphics data is required; freenukum-data-tool can install it.",
+      "Opponents and some level items are unfinished.",
+      "The README declares AGPL-3.0-or-later in its SPDX header."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "scd-disasm-case",
+    "name": "SCD Disasm: Sonic CD disassembly",
+    "url": "https://gitlab.com/segaloco/scd-disasm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "SCD Disasm reconstructs Sonic CD's Sega Mega CD program files from disassembly, initially using the V0.02 prototype. It organizes reused engine functions into shared source files with linker scripts for the disc files; the author reports that the resulting binary objects can be assembled into an ISO that runs in an emulator.",
+    "description_zh": "SCD Disasm 以 Sonic CD 的 Sega Mega CD V0.02 原型版为起点，对游戏程序文件进行反汇编重建。项目将重复使用的引擎函数整理为共享源码，并为光盘文件配备链接脚本；作者称生成的二进制对象可组装为能在模拟器中运行的 ISO。",
+    "evidence_url": "https://gitlab.com/segaloco/scd-disasm/-/blob/cef391a648fba6272588112f0a2e56515b55b10f/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A clean copy of the Sonic CD V0.02 build is needed to provide the original files and extract binary pieces.",
+      "The extraction script requires the UNIX dd utility.",
+      "The extraction script has missing addresses and does not currently run as a complete workflow.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "1oom-case",
+    "name": "1oom: Master of Orion engine recreation",
+    "url": "https://gitlab.com/KilgoreTroutMaskReplicant/1oom",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "1oom recreates the Master of Orion (1993) game engine using LBX files from version 1.3 of the original game. It includes a classic interface, a command-line interface, LBX viewing and editing utilities, and converters for graphics and saved games.",
+    "description_zh": "1oom 使用原版 Master of Orion 1.3 的 LBX 文件重建 1993 年游戏的引擎。项目提供经典界面、命令行界面、LBX 查看与编辑工具，以及图形和存档转换工具。",
+    "evidence_url": "https://gitlab.com/KilgoreTroutMaskReplicant/1oom/-/blob/dedf0bbd57fe004e5d49c2b63c98a219cc1b906e/README",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A copy of the Master of Orion v1.3 LBX files.",
+      "On Unix, SDL 1.2 or SDL 2 and the corresponding SDL_mixer library.",
+      "GPLv2; see COPYING."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "openrsc-case",
+    "name": "OpenRSC: reconstructing RuneScape Classic servers",
+    "url": "https://gitlab.com/openrsc/openrsc",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "OpenRSC rebuilds a RuneScape Classic server framework using black-box reverse engineering and study of RSC+ gameplay replays. Its configurable server supports reconstructed game behavior and optional features such as quests, clans and an auction house.",
+    "description_zh": "OpenRSC 利用黑盒逆向工程和 RSC+ 游戏录像研究重建 RuneScape Classic 服务器框架。服务器通过配置提供重建的游戏行为，并可启用任务、公会和拍卖行等功能。",
+    "evidence_url": "https://gitlab.com/openrsc/openrsc/-/blob/273e630b6ab0e875878038ea4cf60d5c7c89a839/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows XP, macOS or Ubuntu 18.04 or newer is listed.",
+      "JDK 8 or newer is required; the source lists 1 GB RAM for the server alone or 2 GB for server and client.",
+      "The author states that work on authenticity is ongoing.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "locus-poi-db-case",
+    "name": "locus-poi-db: LoMaps POI database format",
+    "url": "https://gitlab.com/noschinl/locus-poi-db",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "locus-poi-db investigates the POI database format used with LocusMaps LoMaps. Its project page lists a format document and SQL schema.",
+    "description_zh": "locus-poi-db 研究 LocusMaps LoMaps 使用的 POI 数据库格式，并列有格式文档和 SQL 模式。",
+    "evidence_url": "https://gitlab.com/noschinl/locus-poi-db/-/tree/6a5e517632c5bcefbc84893c94440853849b3bb8",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No licence stated on the project page."
+    ],
+    "class": "apps",
+    "requirement_facets": [
+      "license"
+    ]
+  },
+  {
+    "id": "carrier-command-re-case",
+    "name": "Carrier Command Reverse Engineering: seven executable reconstructions",
+    "url": "https://gitlab.com/nguillaumin/carrier-command-reverse-engineering",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Carrier Command Reverse Engineering maintains annotated, reassemblable sources for seven DOS, Amiga, Atari ST and Mac releases of Carrier Command. Its tools unpack originals, identify functions and compare assembled executables byte for byte with user-supplied files. DOS version overlays and M68K offset maps share annotations across releases.",
+    "description_zh": "Carrier Command Reverse Engineering 为 Carrier Command 的七个 DOS、Amiga、Atari ST 和 Mac 版本维护可重新汇编的注释源码。工具解包原版文件、识别函数，并将汇编出的可执行文件与用户提供的原版逐字节比较；DOS 覆盖文件和 M68K 偏移映射用于跨版本共用注释。",
+    "evidence_url": "https://gitlab.com/nguillaumin/carrier-command-reverse-engineering/-/blob/093df177f33be9eb32c740284227a261e238e2cb/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Original Carrier Command game files are required.",
+      "NASM 3.01+, Python 3, Ghidra 11.x+, unEXEPACK and Capstone 5.x with M68K support are listed.",
+      "DOS Demo and Steam v1.3 sources are generated from original binaries rather than committed.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "scope",
+      "license"
+    ]
+  },
+  {
+    "id": "pso-gc-case",
+    "name": "pso-gc: Phantasy Star Online Episode I & II GameCube decompilation",
+    "url": "https://gitlab.com/mrb0nk500/pso-gc",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "pso-gc decompiles Phantasy Star Online Episode I & II for GameCube. The project contains assembly, source code, headers, tools and Makefile-based build files for the game.",
+    "description_zh": "pso-gc 是 GameCube 版 Phantasy Star Online Episode I & II 的反编译工程，包含汇编、源码、头文件、工具及 Makefile 构建文件。",
+    "evidence_url": "https://gitlab.com/mrb0nk500/pso-gc/-/tree/c904f9d4f1055330f437845ee5a323a9646e8686",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers Phantasy Star Online Episode I & II for GameCube.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "scope",
+      "license"
+    ]
+  },
+  {
+    "id": "openguimo-case",
+    "name": "OpenGuimo: GUIMO gameplay reimplemented in Godot",
+    "url": "https://gitlab.com/greyxor/openguimo",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "OpenGuimo recreates the 1997 DOS platformer GUIMO in Godot 4.7, translating rules recovered from guimo.exe 2.2 into GDScript. It reads levels, pictures, sound and music from the user's guimo.jbc archive and documents several bugs found while examining the original executable.",
+    "description_zh": "OpenGuimo 用 Godot 4.7 复刻 1997 年的 DOS 平台游戏 GUIMO，将从 guimo.exe 2.2 还原的移动、物理、敌人和战斗规则写成 GDScript。游戏从玩家提供的 guimo.jbc 读取关卡及视听数据；项目还记录了分析原程序时发现的多处错误。",
+    "evidence_url": "https://gitlab.com/greyxor/openguimo/-/blob/9ddb8ff2b068fa64c442a295999680e1024c581f6ea786a8758464588c06d614/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Godot 4.7 standard edition is required to run from source.",
+      "A personal copy of GUIMO 2.2 and its guimo.jbc file is required.",
+      "The score and ending are unfinished.",
+      "OpenGuimo code is licensed under EUPL 1.2."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "opene2140-cpp-case",
+    "name": "OpenE2140: Earth 2140 gameplay reimplemented in C++",
+    "url": "https://gitlab.com/opene2140/opene2140",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "OpenE2140 is a C++ reimplementation of Earth 2140 gameplay that loads the original game's WD archives for sprites, effects and levels. It includes map drawing, basic entities and unit statistics; orders, weapons, audio, AI and multiplayer remain on its roadmap.",
+    "description_zh": "OpenE2140 用 C++ 重现 Earth 2140 的玩法，从原版 WD 资源包读取精灵图、特效和关卡。项目已实现地图绘制、基础实体和单位数值；命令处理、武器、音频、AI 与多人游戏仍在开发计划中。",
+    "evidence_url": "https://gitlab.com/opene2140/opene2140/-/blob/620470263dcc9b81e36d042f86081a607df42788/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Original Earth 2140 MIX.WD, PIRO.WD and LEVEL.WD files, or their extracted directories, are required in the assets folder.",
+      "Building requires Meson, a C++17 compiler, SDL 2.0, GLEW and glm.",
+      "Gameplay is under heavy development; mobile units and order processing remain unfinished.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "mw-tools-mythwar-case",
+    "name": "mw-tools: reconstructing a MythWar I server",
+    "url": "https://gitlab.com/wander-gr/mw-tools",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "mw-tools develops a MythWar I server from scratch using the game client. The project seeks old gameplay videos or recordings to help replicate original features. Its TypeScript code targets Node 16 and includes a script that creates the client's door.dat server-list file for local play. The server currently lacks data storage, multiplayer and most game features.",
+    "description_zh": "mw-tools 以 MythWar I 客户端为参考，从零开发游戏服务器。项目征集旧游戏视频或录像，以帮助复现原版功能。TypeScript 代码面向 Node 16，并提供生成客户端本地服务器列表文件 door.dat 的脚本。目前服务器尚不保存数据，也不支持多人游戏，大部分游戏功能仍无法使用。",
+    "evidence_url": "https://gitlab.com/wander-gr/mw-tools/-/blob/9deae228b0572895af9d6aadde51cdc34d5625b6/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A copy of the MythWar I client is required; development uses version 1.0.48.35.",
+      "Node 16 and npm are listed for building and running the server.",
+      "The server currently has no stored data or multiplayer, and most features do not work.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "tower-toppler-case",
+    "name": "Tower Toppler: reimplementing Nebulus",
+    "url": "https://gitlab.com/roever/toppler",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Tower Toppler reimplements the rotating-tower puzzle platformer Nebulus with newly drawn graphics. The author reports behavior close to the original after comparison, and the current game uses SDL for graphics and sound. A level editor supports new towers and missions.",
+    "description_zh": "Tower Toppler 重做了以旋转高塔为特色的平台解谜游戏 Nebulus，并重新绘制画面。作者报告称，对照原作后，游戏行为已较为接近；当前版本使用 SDL 输出图形与声音，还提供高塔和任务的关卡编辑器。",
+    "evidence_url": "https://gitlab.com/roever/toppler/-/blob/c8bf02b0f8bf8875a454758227bf2bfc029487c3/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "SDL2, SDL2_mixer and zlib are listed for building the game.",
+      "Rebuilding the data file additionally requires libpng, POV-Ray, GIMP, Blender and ImageMagick.",
+      "The author notes that some sounds could be added and bugs may remain.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "smb-meta-disassembly-case",
+    "name": "Super Mario Bros. Meta-Disassembly: six 8-bit engine variants",
+    "url": "https://gitlab.com/segaloco/smb",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Super Mario Bros. Meta-Disassembly organizes six 8-bit Super Mario Bros. engine releases in one assembly codebase. Preprocessor definitions select release-specific code, while extraction scripts obtain assets from iNES or FDS game images. The assembly includes control-flow commentary.",
+    "description_zh": "Super Mario Bros. Meta-Disassembly 把六种 8 位 Super Mario Bros. 引擎版本整理到同一套汇编源码中。预处理定义切换各版本代码，提取脚本从 iNES 或 FDS 游戏镜像取得素材；汇编中还包含控制流程注释。",
+    "evidence_url": "https://gitlab.com/segaloco/smb/-/blob/3a50368059def1162b2e47110dbf00a8e2a00aa5/README",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The source lists UNIX-like or Plan 9 systems and the cc65 6502 development suite for building.",
+      "Game images in iNES or FDS format are required to extract assets.",
+      "The author lists remaining cleanup and relocation checks.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "gfxfilemanager-case",
+    "name": "GFXFileManager: Silkroad Online file manager replacement",
+    "url": "https://gitlab.com/florian0/GFXFileManager",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "GFXFileManager implements a reverse-engineered replacement for Silkroad Online's Joymax File Manager interface. Its DLL loads game files directly from disk instead of the pk2 container and logs function calls. The implementation remains incomplete: file creation, deletion, directory handling and archive browsing are unavailable.",
+    "description_zh": "GFXFileManager 根据逆向分析的接口替代 Silkroad Online 的 Joymax File Manager。其 DLL 从磁盘直接读取游戏文件，而不使用 pk2 容器，并记录函数调用。实现尚不支持创建或删除文件、处理目录及浏览归档。",
+    "evidence_url": "https://gitlab.com/florian0/GFXFileManager/-/blob/0761ca4d0f5fedf6f42cdddc90424766a6d14a85/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Visual Studio 2010 for compilation; other versions may not work properly.",
+      "Place the compiled GFXFileManager.dll in the Silkroad Online folder.",
+      "The implementation is incomplete and has received very limited testing.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "zelda-ii-fds-disassembly-case",
+    "name": "Zelda II: Famicom Disk System disassembly",
+    "url": "https://gitlab.com/segaloco/zel2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "The Zelda II disassembly reconstructs the initial Famicom Disk System release of The Adventure of Link from a disk image. It includes utilities for building an FDS image, an asset extraction script, and C-like control-flow annotations. The files inside the rebuilt image are meant to match the originals, while the image itself carries local filenames and timestamps.",
+    "description_zh": "Zelda II 反汇编项目以《The Adventure of Link》Famicom Disk System 初版的磁盘映像为输入，重建游戏文件。项目提供 FDS 映像构建工具、素材提取脚本和类 C 控制流注释。重建映像中的文件以与原版一致为目标，映像本身则带有本地文件名和时间戳。",
+    "evidence_url": "https://gitlab.com/segaloco/zel2/-/blob/8d54e3d77a455b0bf91d19ea87fc2da4cbd271bb/README",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Builds on UNIX-like platforms using the cc65 6502 development suite.",
+      "Asset extraction expects a headered FDS image of the initial release.",
+      "Control-flow annotations may contain inaccuracies; rebuilt image filenames and timestamps may differ from the original.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "domino-chain-case",
+    "name": "Domino-Chain: recreating Pushover",
+    "url": "https://gitlab.com/domino-chain/domino-chain.gitlab.io",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Domino-Chain recreates the 1992 puzzle game Pushover, in which players arrange dominoes to trigger a chain reaction. It adds levels, domino types, graphics and music, and can load original Pushover levels from a player's copy.",
+    "description_zh": "Domino-Chain 重现 1992 年的解谜游戏 Pushover，玩家需要摆放多种骨牌并触发连锁反应。它新增关卡、骨牌类型、画面和音乐，也可从玩家持有的原版游戏中加载关卡。",
+    "evidence_url": "https://gitlab.com/domino-chain/domino-chain.gitlab.io/-/blob/16826d3ec2b2df78ad46b76b2b6e6a0d2175c417/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A copy of Pushover is needed to load its original levels.",
+      "The author states that the game still has room for improvement.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "smb3-famicom-disassembly-case",
+    "name": "Super Mario Bros. 3: Famicom disassembly",
+    "url": "https://gitlab.com/segaloco/smb3",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "smb3 disassembles the initial Family Computer release of Super Mario Bros. 3 and adds C-like annotations for branches and loops. An extraction script obtains assets from a headered iNES ROM before building with the cc65 6502 toolchain.",
+    "description_zh": "smb3 反汇编《Super Mario Bros. 3》的初版 Famicom 游戏，并用类似 C 语言的注释说明分支与循环。构建前，提取脚本从带文件头的 iNES ROM 取得素材，源码使用 cc65 6502 工具集构建。",
+    "evidence_url": "https://gitlab.com/segaloco/smb3/-/blob/784ea6fa4fd5724cfb0428d03674177e2314ed8f/README",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A headered iNES ROM of the initial release is required to extract assets.",
+      "A UNIX-like build platform and the cc65 6502 development suite are listed.",
+      "Plan 9 build support is broken; the current pass covers the initial Famicom release.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "dsds-dark-souls-1-map-viewer-case",
+    "name": "DSDS: Dark Souls 1 map viewer and engine reimplementation",
+    "url": "https://gitlab.com/somobu/dantelion",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "DSDS reimplements parts of the Dark Souls 1 engine to display game maps from a Steam installation of Prepare to Die Edition. Its notes list open questions about MSB map parts and how material definitions lead to compiled shaders; map objects, MSB events and regions, and collision are unimplemented.",
+    "description_zh": "DSDS 重实现《黑暗之魂 1》的部分引擎功能，读取 Steam 版 Prepare to Die Edition 的数据并显示地图。项目笔记列出了 MSB 地图部件以及材质定义如何对应到编译后着色器等待解问题；地图物件、MSB 事件与区域以及碰撞功能尚未实现。",
+    "evidence_url": "https://gitlab.com/somobu/dantelion/-/blob/29fd8754bb0f8a6ed8b3ff387e536fb1d7c82674/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A Steam installation of DS1 Prepare to Die Edition.",
+      "Run ./run once, then adjust the generated user/cfg.json configuration.",
+      "Map objects, MSB events and regions, and map collision are unimplemented.",
+      "GNU GPL v3."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "frogger-snes-disassembly-case",
+    "name": "Frogger: SNES disassembly and ROM reconstruction",
+    "url": "https://github.com/Yoshifanatic1/Frogger-SNES-Disassembly",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Frogger's SNES port is reconstructed as assembly with ROM and RAM maps, SPC700 audio-engine code, and scripts for extracting assets from an original ROM. The author reports that the disassembly assembles completely; the included Asar-based framework provides the assembly workflow.",
+    "description_zh": "该项目以汇编代码重建《Frogger》SNES 版，包含 ROM 与 RAM 映射、SPC700 音频引擎代码，以及从原版 ROM 提取素材的脚本。作者称反汇编代码已能完整汇编；附带的 Asar 框架提供汇编流程。",
+    "evidence_url": "https://github.com/Yoshifanatic1/Frogger-SNES-Disassembly/blob/fb8c432f6c7a3910f20b29c6e05c159567e32608/FROGGER/Note.txt",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "An original Frogger ROM is needed to extract assets before assembly.",
+      "The supplied batch scripts use Windows components; other operating systems require replacement scripts.",
+      "GPL-3.0 license."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Yoshifanatic1/Frogger-SNES-Disassembly/blob/fb8c432f6c7a3910f20b29c6e05c159567e32608/Framework%20Readme.txt"
+    ]
+  },
+  {
+    "id": "doki-doki-super-mario-bros-2-case",
+    "name": "Doki Doki/Super Mario Bros. 2 Disassembly — Famicom and NES game disassembly",
+    "url": "https://gitlab.com/segaloco/doki",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Doki Doki/Super Mario Bros. 2 Disassembly covers Yume Kojo: Doki Doki Panic for the Famicom Disk System and Super Mario Bros. 2 and Super Mario USA for NES/Famicom. It provides a modifiable disassembly, includes bintofdf and fdtc for building a disk image, and extracts required assets from a game image.",
+    "description_zh": "Doki Doki/Super Mario Bros. 2 Disassembly 涵盖 Famicom Disk System 版《Yume Kojo: Doki Doki Panic》，以及 NES/Famicom 版《Super Mario Bros. 2》和《Super Mario USA》。工程提供可修改的反汇编代码，使用随附的 bintofdf 和 fdtc 构建磁盘镜像，并从游戏镜像提取所需素材。",
+    "evidence_url": "https://gitlab.com/segaloco/doki/-/blob/5b9e4410471c13ede0ba2e74e93a7de080256e44/README",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-09",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A suitable image of the desired game is needed to extract the required assets.",
+      "bintofdf and fdtc are required to compile the final disk image; versions are included with the project.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ]
   }
 ]
