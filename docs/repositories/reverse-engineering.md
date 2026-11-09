@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**654 repositories** · 2026-10-20 UTC
+**652 repositories** · 2026-10-20 UTC
 
 These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -14,13 +14,12 @@ These projects were discovered automatically and are unreviewed. Categories deri
 - [The-Art-of-Hacking/h4cker](https://github.com/The-Art-of-Hacking/h4cker) — This repository is maintained by Omar Santos (<span>@</span>santosomar) and includes thousands of resources related to ethical hacking, bug bounties, digital forensics and incident response (DFIR), AI security, vulnerability research, exploit development, reverse engineering, and more. 🔥 Also check: https<span>:</span>//hackertraining.org **[29,768 stars]**
 - [vitalysim/Awesome-Hacking-Resources](https://github.com/vitalysim/Awesome-Hacking-Resources) — A collection of hacking / penetration testing resources to make you better! **[17,522 stars]**
 - [Tyrrrz/YoutubeDownloader](https://github.com/Tyrrrz/YoutubeDownloader) — Downloads videos and playlists from YouTube **[16,441 stars]**
-- [seemoo-lab/openhaystack](https://github.com/seemoo-lab/openhaystack) — Build your own 'AirTags' 🏷 today! Framework for tracking personal Bluetooth devices via Apple's massive Find My network. **[13,844 stars]**
+- [seemoo-lab/openhaystack](https://github.com/seemoo-lab/openhaystack) — Build your own 'AirTags' 🏷 today! Framework for tracking personal Bluetooth devices via Apple's massive Find My network. **[13,844 stars]** · Curated: [OpenHaystack: tracking tags that use Apple Find My](https://awesomerea.org/resources/openhaystack-find-my-case/)
 - [majd/ipatool](https://github.com/majd/ipatool) — Command-line tool that allows you to search for iOS, iPadOS, tvOS, watchOS, visionOS, and macOS apps on the App Store, and download .ipa or macOS .pkg app packages. **[11,709 stars]**
 - [wtsxDev/reverse-engineering](https://github.com/wtsxDev/reverse-engineering) — List of awesome reverse engineering resources **[10,580 stars]** · Curated: [Reverse Engineering resources (wtsxDev)](https://awesomerea.org/resources/wtsxdev-reverse-engineering-list/)
 - [Col-E/Recaf](https://github.com/Col-E/Recaf) — The modern Java bytecode editor **[7,437 stars]** · Curated: [Recaf](https://awesomerea.org/resources/recaf/)
 - [rmusser01/Infosec\_Reference](https://github.com/rmusser01/Infosec_Reference) — An Information Security Reference That Doesn't Suck; https<span>:</span>//rmusser.net/git/admin-2/Infosec\_Reference for non-MS Git hosted version. **[6,007 stars]**
 - [ReagentX/imessage-exporter](https://github.com/ReagentX/imessage-exporter) — Export iMessage data + run iMessage Diagnostics **[5,675 stars]**
-- [mentebinaria/retoolkit](https://github.com/mentebinaria/retoolkit) — Reverse Engineer's Toolkit **[5,315 stars]**
 - [Naituw/IPAPatch](https://github.com/Naituw/IPAPatch) — Patch iOS Apps, The Easy Way, Without Jailbreak. **[5,294 stars]**
 - [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) — Reverse Engineering Resources About All Platforms(Windows/Linux/macOS/Android/iOS/IoT) And Every Aspect! (More than 3500 open source tools and 2300 posts&amp;videos) **[5,127 stars]** · Curated: [awesome-reverse-engineering (alphaSeclab)](https://awesomerea.org/resources/alphaseclab-awesome-reverse-engineering/)
 - [aloshdenny/reverse-SynthID](https://github.com/aloshdenny/reverse-SynthID) — reverse engineering Gemini's SynthID detection **[4,991 stars]**
@@ -55,7 +54,7 @@ These projects were discovered automatically and are unreviewed. Categories deri
 - [dgiese/dustcloud](https://github.com/dgiese/dustcloud) — Xiaomi Smart Home Device Reverse Engineering and Hacking **[2,282 stars]**
 - [zeldaret/botw](https://github.com/zeldaret/botw) — Decompilation of The Legend of Zelda: Breath of the Wild (Switch 1.5.0) **[2,236 stars]** · Curated: [Breath of the Wild: per-function matching decompilation of the Switch executable](https://awesomerea.org/resources/botw-decomp-case/)
 - [michalmalik/linux-re-101](https://github.com/michalmalik/linux-re-101) — A collection of resources for linux reverse engineering **[2,083 stars]** · Curated: [linux-re-101](https://awesomerea.org/resources/linux-re-101/)
-- [nmikhailov/Validity90](https://github.com/nmikhailov/Validity90) — Reverse engineering of Validity/Synaptics 138a:0090, 138a:0094, 138a:0097, 06cb:0081, 06cb:009a fingerprint readers protocol **[1,879 stars]**
+- [nmikhailov/Validity90](https://github.com/nmikhailov/Validity90) — Reverse engineering of Validity/Synaptics 138a:0090, 138a:0094, 138a:0097, 06cb:0081, 06cb:009a fingerprint readers protocol **[1,879 stars]** · Curated: [Validity90: reverse engineering a Validity/Synaptics fingerprint-reader protocol](https://awesomerea.org/resources/validity90-fingerprint-protocol-case/)
 - [rootkit-io/awesome-malware-development](https://github.com/rootkit-io/awesome-malware-development) — Curated resources for malware dev, reverse engineering, and defensive security research. **[1,855 stars]**
 - [KEV0143/Direct-memory-access-CS2-DMA](https://github.com/KEV0143/Direct-memory-access-CS2-DMA) — Low-level Direct Memory Access (DMA) framework for CS2, designed for memory acquisition, entity-state parsing, synchronization, and PCIe/reverse-engineering research. **[1,851 stars]**
 - [core-lib/xjar](https://github.com/core-lib/xjar) — A tool for securely encrypting and running Spring Boot JARs, with support for native JARs. **[1,811 stars]**
@@ -69,7 +68,7 @@ These projects were discovered automatically and are unreviewed. Categories deri
 - [JonathanSalwan/VMProtect-devirtualization](https://github.com/JonathanSalwan/VMProtect-devirtualization) — Playing with the VMProtect software protection. Automatic deobfuscation of pure functions using symbolic execution and LLVM. **[1,536 stars]**
 - [HACKE-RC/awesome-reversing](https://github.com/HACKE-RC/awesome-reversing) — A collection of resources to learn Reverse Engineering from start! **[1,530 stars]**
 - [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — A curated list of awesome Ghidra materials **[1,442 stars]** · Curated: [Awesome Ghidra](https://awesomerea.org/resources/awesome-ghidra/)
-- [hack-different/apple-knowledge](https://github.com/hack-different/apple-knowledge) — A collection of reverse engineered Apple things, as well as a machine-readable database of Apple hardware **[1,415 stars]**
+- [hack-different/apple-knowledge](https://github.com/hack-different/apple-knowledge) — A collection of reverse engineered Apple things, as well as a machine-readable database of Apple hardware **[1,415 stars]** · Curated: [Apple Data Formats and Knowledge](https://awesomerea.org/resources/hack-different-apple-knowledge/)
 - [Cur10s1tyByt3/GenP](https://github.com/Cur10s1tyByt3/GenP) — This repository preserves source materials and related documentation about GenP. For archival and research purposes only. **[1,340 stars]**
 - [rng70/TryHackMe-Roadmap](https://github.com/rng70/TryHackMe-Roadmap) — a list of 350+ Free TryHackMe rooms to start learning cybersecurity with THM **[1,323 stars]**
 - [Bixilon/Minosoft](https://github.com/Bixilon/Minosoft) — An open source Minecraft reimplementation written from scratch. Mirror of https<span>:</span>//gitlab.bixilon.de/bixilon/minosoft **[1,309 stars]**
@@ -134,7 +133,6 @@ These projects were discovered automatically and are unreviewed. Categories deri
 - [ergrelet/themida-unmutate](https://github.com/ergrelet/themida-unmutate) — Static deobfuscator for Themida, WinLicense and Code Virtualizer 3.x's mutation-based obfuscation. **[403 stars]**
 - [Arenukvern/mcp\_flutter](https://github.com/Arenukvern/mcp_flutter) — MCP Toolkit for Flutter AI Agent Driven Development (MCP/CLI + custom client side tools) - via closed feedback loop (visual &amp; semantic snapshot) and high client side customization adaptable for any Flutter app. Nowadays it is often called as agentic harness. **[389 stars]**
 - [ResistanceTo/MiniWatts](https://github.com/ResistanceTo/MiniWatts) — An iPhone battery, charging and thermal instrument built on private iOS APIs — real charger watts, what actually reaches the cell, all 30 temperature sensors, and the USB-PD handshake. **[386 stars]**
-- [lifting-bits/anvill](https://github.com/lifting-bits/anvill) — anvill forges beautiful LLVM bitcode out of raw machine code **[384 stars]**
 - [projectPiki/pikmin2](https://github.com/projectPiki/pikmin2) — A decompilation of Pikmin 2 (USA) brought to you by fans of the series. **[380 stars]** · Curated: [Pikmin 2: a fully matched GameCube decompilation across five releases](https://awesomerea.org/resources/pikmin-2-matching-decomp-case/)
 - [richinfante/iphonebackuptools](https://github.com/richinfante/iphonebackuptools) — iOS Backup Data Extraction **[361 stars]**
 - [GenericException/SkidSuite](https://github.com/GenericException/SkidSuite) — A collection of java reverse engineering tools and informational links **[355 stars]**
@@ -203,7 +201,7 @@ These projects were discovered automatically and are unreviewed. Categories deri
 - [naivenom/reversing-list](https://github.com/naivenom/reversing-list) — Reversing list **[148 stars]**
 - [pret/pokepinballrs](https://github.com/pret/pokepinballrs) — Decompilation of Pokémon Pinball: Ruby &amp; Sapphire **[148 stars]**
 - [dashr9230/SA-MP](https://github.com/dashr9230/SA-MP) — A work-in-progress matching decompilation of the 0.3.7 version of San Andreas Multiplayer **[147 stars]**
-- [dreamingmoths/memory-of-alessa](https://github.com/dreamingmoths/memory-of-alessa) — In-progress matching decompilation of Silent Hill 3 **[145 stars]**
+- [dreamingmoths/memory-of-alessa](https://github.com/dreamingmoths/memory-of-alessa) — In-progress matching decompilation of Silent Hill 3 **[145 stars]** · Curated: [memory of alessa: an in-progress Silent Hill 3 PS2 matching decompilation](https://awesomerea.org/resources/silent-hill-3-memory-of-alessa-decomp-case/)
 - [AsenOsen/frida-stealth](https://github.com/AsenOsen/frida-stealth) — Stealth patch for Frida, stealth knowledge collection **[144 stars]**
 - [xbret/xenoblade](https://github.com/xbret/xenoblade) — Decompilation of Xenoblade (JP) **[142 stars]**
 - [camden-smallwood/pdb-decompiler](https://github.com/camden-smallwood/pdb-decompiler) — A tool to decompile MSVC PDB files to C++ source code. **[139 stars]**

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**837 个仓库** · 2026-10-20 UTC
+**838 个仓库** · 2026-10-20 UTC
 
 这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -23,6 +23,7 @@
 - [0xZ0F/Z0FCourse\_ReverseEngineering](https://github.com/0xZ0F/Z0FCourse_ReverseEngineering) — 专注于 x64 Windows 的逆向工程。 **[5,962 星标]** · 精选：[Z0FCourse 逆向工程课程](https://awesomerea.org/zh/resources/z0f-reverse-engineering-course/)
 - [bethington/ghidra-mcp](https://github.com/bethington/ghidra-mcp) — Ghidra MCP Server：提供 200 多个 MCP 工具，支持 AI 逆向工程。包含 GUI 插件与无界面服务器、工具延迟加载、约定约束、批量操作、Ghidra Server 集成和 Docker 部署。 **[5,659 星标]** · 精选：[Ghidra MCP Server（bethington）](https://awesomerea.org/zh/resources/ghidra-mcp-bethington/)
 - [lief-project/LIEF](https://github.com/lief-project/LIEF) — LIEF：用于可执行文件格式插桩的库，支持 C++、Python 和 Rust。 **[5,595 星标]** · 精选：[LIEF](https://awesomerea.org/zh/resources/lief/)
+- [mentebinaria/retoolkit](https://github.com/mentebinaria/retoolkit) — 逆向工程师工具包。 **[5,315 星标]** · 精选：[retoolkit 逆向工程工具集安装程序](https://awesomerea.org/zh/resources/retoolkit/)
 - [pret/pokered](https://github.com/pret/pokered) — 《宝可梦 红/蓝》的反汇编代码。 **[4,993 星标]** · 精选：[pokered：一致构建的《精灵宝可梦 红／蓝》反汇编](https://awesomerea.org/zh/resources/pokered-disassembly-case/)
 - [kaitai-io/kaitai\_struct](https://github.com/kaitai-io/kaitai_struct) — Kaitai Struct：用于生成二进制数据解析器的声明式语言，支持 C++ / C# / Go / Java / JavaScript / Lua / Nim / Perl / PHP / Python / Ruby / Rust。 **[4,712 星标]** · 精选：[Kaitai Struct 二进制格式描述与解析工具](https://awesomerea.org/zh/resources/kaitai-struct/)
 - [zrax/pycdc](https://github.com/zrax/pycdc) — 以 C++ 编写的 Python 字节码反汇编器与反编译器。 **[4,651 星标]** · 精选：[Decompyle++（pycdc）Python 字节码反编译器](https://awesomerea.org/zh/resources/pycdc/)
@@ -92,7 +93,6 @@
 - [NaC-L/Mergen](https://github.com/NaC-L/Mergen) — 使用 LLVM IR 并解析汇编，通过优化实现去混淆。 **[912 星标]** · 精选：[Mergen 反混淆 LLVM IR 提升器](https://awesomerea.org/zh/resources/mergen/)
 - [HackOvert/GhidraSnippets](https://github.com/HackOvert/GhidraSnippets) — 适用于 Ghidra Program 和 Decompiler API 的 Python 代码片段。 **[893 星标]** · 精选：[Ghidra Snippets Ghidra 脚本示例集](https://awesomerea.org/zh/resources/ghidra-snippets/)
 - [vulhunt-re/vulhunt](https://github.com/vulhunt-re/vulhunt) — Binarly 研究团队开发的漏洞检测框架。 **[893 星标]** · 精选：[VulHunt 社区版漏洞挖掘框架](https://awesomerea.org/zh/resources/vulhunt/)
-- [mrexodia/dumpulator](https://github.com/mrexodia/dumpulator) — 用于模拟内存转储的易用库。适用于恶意软件分析（配置提取、脱壳）和一般动态分析（沙箱）。 **[887 星标]**
 - [n0mi1k/apk2url](https://github.com/n0mi1k/apk2url) — 通过反汇编与反编译，快速从 APK 中提取 IP 和 URL 端点的 OSINT 工具。 **[880 星标]**
 - [symgraph/IDAssist](https://github.com/symgraph/IDAssist) — 面向 IDA Pro 的 AI 驱动逆向工程插件。 **[880 星标]** · 精选：[IDAssist IDA Pro 大模型辅助分析插件](https://awesomerea.org/zh/resources/idassist/)
 - [GrammaTech/ddisasm](https://github.com/GrammaTech/ddisasm) — 快速且准确的反汇编器。 **[876 星标]** · 精选：[Ddisasm Datalog 可重汇编反汇编器](https://awesomerea.org/zh/resources/ddisasm/)
@@ -179,6 +179,7 @@
 - [secrary/idenLib](https://github.com/secrary/idenLib) — idenLib：库函数识别工具［本项目已停止维护］。 **[395 星标]**
 - [nevillegrech/gigahorse-toolchain](https://github.com/nevillegrech/gigahorse-toolchain) — 面向 Ethereum 智能合约的二进制提升工具与分析框架。 **[388 星标]** · 论文：[Elipmoc：以太坊智能合约的高级反编译](https://awesomerea.org/zh/papers/paper-elipmoc/)
 - [DMaroo/GhidRust](https://github.com/DMaroo/GhidRust) — GhidRust：Ghidra 的 Rust 反编译插件。 **[385 星标]**
+- [lifting-bits/anvill](https://github.com/lifting-bits/anvill) — anvill 将原始机器码转换为优雅的 LLVM bitcode。 **[384 星标]** · 精选：[Anvill 机器码到 LLVM bitcode 提升器](https://awesomerea.org/zh/resources/anvill/)
 - [GrammaTech/gtirb](https://github.com/GrammaTech/gtirb) — 用于二进制分析与转换的中间表示。 **[382 星标]** · 精选：[GTIRB 二进制中间表示](https://awesomerea.org/zh/resources/gtirb/)
 - [bl4ckr0ss3/knife](https://github.com/bl4ckr0ss3/knife) — 以终端为核心、使用 Rust 编写的逆向工程工具包，通过 CLI、TUI 和 MCP 分析 PE/ELF/Mach-O 文件，安装后的命令名为 knife。 **[380 星标]** · 精选：[knife 静态逆向工程工具包](https://awesomerea.org/zh/resources/knife/)
 - [Colton1skees/Dna](https://github.com/Colton1skees/Dna) — 基于 LLVM 的静态二进制分析框架。 **[380 星标]**
@@ -200,8 +201,8 @@
 - [therealdreg/DbgChild](https://github.com/therealdreg/DbgChild) — 子进程调试工具，支持自动附加。 **[328 星标]**
 - [reetamdan/hypervisor-crack-audit](https://github.com/reetamdan/hypervisor-crack-audit) — 对用于绕过 Denuvo 的 hypervisor DRM 方法进行安全分析，使用 Ghidra 逆向分析驱动加载器与启动组件。 **[327 星标]**
 - [radareorg/radare2-mcp](https://github.com/radareorg/radare2-mcp) — 适用于 radare2 的 MCP 标准输入输出服务器。 **[325 星标]** · 精选：[Radare2 MCP Server](https://awesomerea.org/zh/resources/radare2-mcp/)
-- [w00tzenheimer/d810-ng](https://github.com/w00tzenheimer/d810-ng) — D810-ng（Next Generation）是经过更新、测试、重构和优化的 IDA Pro 插件，通过修改 IDA Pro 微代码，在反编译时对代码去混淆。 **[325 星标]**
-- [mandiant/xrefer](https://github.com/mandiant/xrefer) — FLARE 团队的二进制导航工具。 **[323 星标]**
+- [w00tzenheimer/d810-ng](https://github.com/w00tzenheimer/d810-ng) — D810-ng（Next Generation）是经过更新、测试、重构和优化的 IDA Pro 插件，通过修改 IDA Pro 微代码，在反编译时对代码去混淆。 **[325 星标]** · 精选：[D-810 ng IDA 反混淆插件](https://awesomerea.org/zh/resources/d810-ng/)
+- [mandiant/xrefer](https://github.com/mandiant/xrefer) — FLARE 团队的二进制导航工具。 **[323 星标]** · 精选：[XRefer 二进制导航插件](https://awesomerea.org/zh/resources/xrefer/)
 - [Cuyler36/Ghidra-GameCube-Loader](https://github.com/Cuyler36/Ghidra-GameCube-Loader) — Ghidra 的 Nintendo GameCube 二进制加载器。 **[322 星标]**
 - [mwemuorg/mwemu](https://github.com/mwemuorg/mwemu) — x86 恶意软件模拟器 **[316 星标]**
 - [reb311ion/replica](https://github.com/reb311ion/replica) — Ghidra 分析增强工具 🐉 **[315 星标]**
@@ -210,7 +211,7 @@
 - [Nalen98/GhidraEmu](https://github.com/Nalen98/GhidraEmu) — 原生 Pcode 模拟器 **[308 星标]**
 - [0xdea/ghidra-scripts](https://github.com/0xdea/ghidra-scripts) — 我编写的 Ghidra 脚本合集，用于辅助逆向工程与漏洞研究。 **[303 星标]**
 - [TorgoTorgo/ghidra-findcrypt](https://github.com/TorgoTorgo/ghidra-findcrypt) — 用于定位密码学常量的 Ghidra 分析插件 **[302 星标]**
-- [Karmaz95/Snake\_Apple](https://github.com/Karmaz95/Snake_Apple) — 与 Apple 环境（主要为 macOS）研究相关的文章和工具。 **[300 星标]**
+- [Karmaz95/Snake\_Apple](https://github.com/Karmaz95/Snake_Apple) — 与 Apple 环境（主要为 macOS）研究相关的文章和工具。 **[300 星标]** · 精选：[Snake &amp; Apple：macOS 内部机制与安全系列文章](https://awesomerea.org/zh/resources/snake-apple-macos-security-series/)
 - [tintinweb/ida-batch\_decompile](https://github.com/tintinweb/ida-batch_decompile) — “反编译一切”：适用于 Hex-Rays IDA Pro 的 IDA 批量反编译插件及脚本，可批量反编译多个文件及其导入项，并在伪代码 .c 文件中添加交叉引用、栈变量大小等注释。 **[300 星标]**
 - [ubfx/BinDiffHelper](https://github.com/ubfx/BinDiffHelper) — 集成 BinDiff 以进行函数匹配的 Ghidra 扩展 **[297 星标]**
 - [thetacom/hexabyte](https://github.com/thetacom/hexabyte) — 现代、模块化且稳健的终端界面十六进制编辑器。 **[294 星标]**
@@ -243,7 +244,7 @@
 - [Cisco-Talos/Ghidraaas](https://github.com/Cisco-Talos/Ghidraaas) — 上游仓库未提供项目简介。 **[229 星标]**
 - [romainthomas/the-poor-mans-obfuscator](https://github.com/romainthomas/the-poor-mans-obfuscator) — “The Poor Man's Obfuscator”演讲相关的二进制文件与脚本 **[229 星标]**
 - [Sidenai/hyperion-disassembler](https://github.com/Sidenai/hyperion-disassembler) — 原生多架构反汇编器与反编译器，支持 PE/ELF/Mach-O、x86/x64/ARM64、Lua 脚本及 RTTI 恢复 **[228 星标]**
-- [Buku313/Skate3-Mobile](https://github.com/Buku313/Skate3-Mobile) — 在 Android 上原生游玩 Skate 3。下载一个 APK，选择自有 ISO 即可开始滑板运动。采用 ARM64 重编译和 Vulkan 渲染。 **[227 星标]**
+- [Buku313/Skate3-Mobile](https://github.com/Buku313/Skate3-Mobile) — 在 Android 上原生游玩 Skate 3。下载一个 APK，选择自有 ISO 即可开始滑板运动。采用 ARM64 重编译和 Vulkan 渲染。 **[227 星标]** · 精选：[Skate 3 Mobile：Skate3Recomp 的 Android ARM64 分支](https://awesomerea.org/zh/resources/skate3-mobile-android-recomp-case/)
 - [quarkslab/quokka](https://github.com/quarkslab/quokka) — Quokka：快速准确的二进制导出工具 **[227 星标]** · 精选：[Quokka 二进制导出工具](https://awesomerea.org/zh/resources/quokka-binary-exporter/)
 - [cesena/ghidra2dwarf](https://github.com/cesena/ghidra2dwarf) — 🐉 将 Ghidra 反编译代码导出至 ELF 二进制文件中的 DWARF 节 **[226 星标]**
 - [mahmoudimus/ida-sigmaker](https://github.com/mahmoudimus/ida-sigmaker) — sigmaker 是零依赖、跨平台的 IDA Pro 9.0+ 特征码生成插件，支持可选的 SIMD（如 AVX2、NEON、SSE2）加速，可在 macOS、Linux 和 Windows 上运行。可配置操作数通配模式与半字节，只需右键点击即可生成特征码。 **[226 星标]**
@@ -286,7 +287,7 @@
 - [eset/DelphiHelper](https://github.com/eset/DelphiHelper) — DelphiHelper 是 Python 编写的 IDA Pro 插件，用于辅助分析 Delphi 编写的 x86/x86\_64 二进制文件。 **[174 星标]**
 - [jovibor/libpe](https://github.com/jovibor/libpe) — 用于解析 PE32/PE32+ 二进制文件内部结构的库。 **[174 星标]**
 - [zackelia/ghidra-dark-theme](https://github.com/zackelia/ghidra-dark-theme) — 基于原版 ghidra-dark 的现代深色主题 **[174 星标]**
-- [yaz0r/Azel](https://github.com/yaz0r/Azel) — Panzer Dragoon Saga 逆向工程项目 **[173 星标]**
+- [yaz0r/Azel](https://github.com/yaz0r/Azel) — Panzer Dragoon Saga 逆向工程项目 **[173 星标]** · 精选：[Azel：将 Panzer Dragoon Saga 逆向为原生 C++](https://awesomerea.org/zh/resources/azel-panzer-dragoon-saga-reimplementation-case/)
 - [AlexanderBagel/ProcessMemoryMap](https://github.com/AlexanderBagel/ProcessMemoryMap) — 深入分析 Windows 进程内存，帮助节省数小时调试时间的工具 **[172 星标]**
 - [Lancern/asm2vec](https://github.com/Lancern/asm2vec) — 以独立 Python 包提供的非官方 asm2vec 实现 **[172 星标]**
 - [Fausto-404/ai-mobile-reverse-skills](https://github.com/Fausto-404/ai-mobile-reverse-skills) — 面向移动安全分析的六阶段总控技能，统一调度 APK 静态侦察、流量与代码对齐、SO/JNI 深度分析、加密与漏洞综合分析、验证设计及报告交付，支持 JADX MCP、Burp/Yakit MCP、IDA/Ghidra MCP。 **[171 星标]**
@@ -316,7 +317,7 @@
 - [openbin-ai/binny](https://github.com/openbin-ai/binny) — BINNY：用于逆向工程的开源智能体运行框架。可接入任意模型，也可使用本地模型。 **[148 星标]** · 精选：[BINNY 逆向分析智能体框架](https://awesomerea.org/zh/resources/binny-agent-harness/)
 - [cmu-sei/kaiju](https://github.com/cmu-sei/kaiju) — CERT Kaiju 是 Ghidra 软件逆向工程套件的二进制分析框架扩展。本仓库为镜像，请到 <span>@</span>CERTCC 的上游仓库提交工单、错误报告或拉取请求：https<span>:</span>//github.com/certcc/kaiju **[147 星标]**
 - [liuzhengyang/hsdis](https://github.com/liuzhengyang/hsdis) — HotSpot 反汇编器 hsdis **[147 星标]**
-- [paradiseduo/dsdump](https://github.com/paradiseduo/dsdump) — 增强版 nm 与 Objective-C、Swift 类转储工具 **[146 星标]**
+- [paradiseduo/dsdump](https://github.com/paradiseduo/dsdump) — 增强版 nm 与 Objective-C、Swift 类转储工具 **[146 星标]** · 精选：[dsdump（paradiseduo 封装版）Mach-O 类信息导出工具](https://awesomerea.org/zh/resources/paradiseduo-dsdump/)
 - [radareorg/radare2-pm](https://github.com/radareorg/radare2-pm) — Radare2 包管理器 **[146 星标]**
 - [0x00ctrl/CyberSec-Books](https://github.com/0x00ctrl/CyberSec-Books) — 网络安全、Linux 等领域的一些实用书籍。 **[145 星标]**
 - [mcdulltii/obfDetect](https://github.com/mcdulltii/obfDetect) — 精确定位混淆代码的 IDA 插件 **[145 星标]**

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/reverse-engineering/) · [English](reverse-engineering.md)
 
-**654 个仓库** · 2026-10-20 UTC
+**652 个仓库** · 2026-10-20 UTC
 
 这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -14,13 +14,12 @@
 - [The-Art-of-Hacking/h4cker](https://github.com/The-Art-of-Hacking/h4cker) — 本仓库由 Omar Santos（<span>@</span>santosomar）维护，收录数千项有关道德黑客、漏洞赏金、数字取证与事件响应（DFIR）、AI 安全、漏洞研究、漏洞利用开发、逆向工程等方面的资源。🔥 另见：https<span>:</span>//hackertraining.org **[29,768 星标]**
 - [vitalysim/Awesome-Hacking-Resources](https://github.com/vitalysim/Awesome-Hacking-Resources) — 帮助你提升能力的黑客技术与渗透测试资源合集！ **[17,522 星标]**
 - [Tyrrrz/YoutubeDownloader](https://github.com/Tyrrrz/YoutubeDownloader) — 从 YouTube 下载视频和播放列表。 **[16,441 星标]**
-- [seemoo-lab/openhaystack](https://github.com/seemoo-lab/openhaystack) — 今天就打造你自己的“AirTags”🏷！借助 Apple 庞大的“查找”网络追踪个人蓝牙设备的框架。 **[13,844 星标]**
+- [seemoo-lab/openhaystack](https://github.com/seemoo-lab/openhaystack) — 今天就打造你自己的“AirTags”🏷！借助 Apple 庞大的“查找”网络追踪个人蓝牙设备的框架。 **[13,844 星标]** · 精选：[OpenHaystack：使用 Apple“查找”网络的追踪标签](https://awesomerea.org/zh/resources/openhaystack-find-my-case/)
 - [majd/ipatool](https://github.com/majd/ipatool) — 命令行工具，可在 App Store 搜索 iOS、iPadOS、tvOS、watchOS、visionOS 和 macOS 应用，并下载 .ipa 或 macOS .pkg 应用安装包。 **[11,709 星标]**
 - [wtsxDev/reverse-engineering](https://github.com/wtsxDev/reverse-engineering) — 优质逆向工程资源列表。 **[10,580 星标]** · 精选：[Reverse Engineering resources 逆向工程资源清单（wtsxDev）](https://awesomerea.org/zh/resources/wtsxdev-reverse-engineering-list/)
 - [Col-E/Recaf](https://github.com/Col-E/Recaf) — 现代化 Java 字节码编辑器。 **[7,437 星标]** · 精选：[Recaf 字节码分析与编辑工具](https://awesomerea.org/zh/resources/recaf/)
 - [rmusser01/Infosec\_Reference](https://github.com/rmusser01/Infosec_Reference) — 一份靠谱的信息安全参考资料；非微软 Git 托管版本见 https<span>:</span>//rmusser.net/git/admin-2/Infosec\_Reference。 **[6,007 星标]**
 - [ReagentX/imessage-exporter](https://github.com/ReagentX/imessage-exporter) — 导出 iMessage 数据并运行 iMessage 诊断。 **[5,675 星标]**
-- [mentebinaria/retoolkit](https://github.com/mentebinaria/retoolkit) — 逆向工程师工具包。 **[5,315 星标]**
 - [Naituw/IPAPatch](https://github.com/Naituw/IPAPatch) — 无需越狱，轻松为 iOS 应用打补丁。 **[5,294 星标]**
 - [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) — 覆盖所有平台（Windows/Linux/macOS/Android/iOS/IoT）及各个方面的逆向工程资源！包含 3500 多个开源工具与 2300 多篇文章和视频。 **[5,127 星标]** · 精选：[awesome-reverse-engineering 全平台逆向资源清单（alphaSeclab）](https://awesomerea.org/zh/resources/alphaseclab-awesome-reverse-engineering/)
 - [aloshdenny/reverse-SynthID](https://github.com/aloshdenny/reverse-SynthID) — 逆向分析 Gemini 的 SynthID 检测机制。 **[4,991 星标]**
@@ -55,7 +54,7 @@
 - [dgiese/dustcloud](https://github.com/dgiese/dustcloud) — 小米智能家居设备逆向工程与破解研究。 **[2,282 星标]**
 - [zeldaret/botw](https://github.com/zeldaret/botw) — 《塞尔达传说：旷野之息》（Switch 1.5.0）的反编译代码。 **[2,236 星标]** · 精选：[《旷野之息》：Switch 主程序的逐函数一致性反编译](https://awesomerea.org/zh/resources/botw-decomp-case/)
 - [michalmalik/linux-re-101](https://github.com/michalmalik/linux-re-101) — Linux 逆向工程资源合集。 **[2,083 星标]** · 精选：[linux-re-101 Linux 逆向工程阅读清单](https://awesomerea.org/zh/resources/linux-re-101/)
-- [nmikhailov/Validity90](https://github.com/nmikhailov/Validity90) — 逆向分析 Validity/Synaptics 指纹读取器协议，涵盖 138a:0090、138a:0094、138a:0097、06cb:0081 和 06cb:009a。 **[1,879 星标]**
+- [nmikhailov/Validity90](https://github.com/nmikhailov/Validity90) — 逆向分析 Validity/Synaptics 指纹读取器协议，涵盖 138a:0090、138a:0094、138a:0097、06cb:0081 和 06cb:009a。 **[1,879 星标]** · 精选：[Validity90：逆向分析 Validity/Synaptics 指纹读取器协议](https://awesomerea.org/zh/resources/validity90-fingerprint-protocol-case/)
 - [rootkit-io/awesome-malware-development](https://github.com/rootkit-io/awesome-malware-development) — 精选恶意软件开发、逆向工程与防御性安全研究资源。 **[1,855 星标]**
 - [KEV0143/Direct-memory-access-CS2-DMA](https://github.com/KEV0143/Direct-memory-access-CS2-DMA) — 面向 CS2 的底层直接内存访问（DMA）框架，用于内存采集、实体状态解析、同步以及 PCIe/逆向工程研究。 **[1,851 星标]**
 - [core-lib/xjar](https://github.com/core-lib/xjar) — Spring Boot JAR 安全加密运行工具，支持原生 JAR。 **[1,811 星标]**
@@ -69,7 +68,7 @@
 - [JonathanSalwan/VMProtect-devirtualization](https://github.com/JonathanSalwan/VMProtect-devirtualization) — 探索 VMProtect 软件保护，利用符号执行与 LLVM 自动对纯函数去混淆。 **[1,536 星标]**
 - [HACKE-RC/awesome-reversing](https://github.com/HACKE-RC/awesome-reversing) — 从零开始学习逆向工程的资源合集！ **[1,530 星标]**
 - [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — 精选 Ghidra 优质资料列表。 **[1,442 星标]** · 精选：[Awesome Ghidra Ghidra 资源清单](https://awesomerea.org/zh/resources/awesome-ghidra/)
-- [hack-different/apple-knowledge](https://github.com/hack-different/apple-knowledge) — Apple 相关逆向工程成果合集，以及机器可读的 Apple 硬件数据库 **[1,415 星标]**
+- [hack-different/apple-knowledge](https://github.com/hack-different/apple-knowledge) — Apple 相关逆向工程成果合集，以及机器可读的 Apple 硬件数据库 **[1,415 星标]** · 精选：[Apple 数据格式与知识库（Hack Different）](https://awesomerea.org/zh/resources/hack-different-apple-knowledge/)
 - [Cur10s1tyByt3/GenP](https://github.com/Cur10s1tyByt3/GenP) — 本仓库保存 GenP 的源材料与相关文档，仅供归档和研究使用。 **[1,340 星标]**
 - [rng70/TryHackMe-Roadmap](https://github.com/rng70/TryHackMe-Roadmap) — 350+ 个免费的 TryHackMe 房间列表，帮助使用 THM 开始学习网络安全。 **[1,323 星标]**
 - [Bixilon/Minosoft](https://github.com/Bixilon/Minosoft) — 从零编写的 Minecraft 开源重新实现。https<span>:</span>//gitlab.bixilon.de/bixilon/minosoft 的镜像。 **[1,309 星标]**
@@ -134,7 +133,6 @@
 - [ergrelet/themida-unmutate](https://github.com/ergrelet/themida-unmutate) — 针对 Themida、WinLicense 和 Code Virtualizer 3.x 基于变异的混淆机制的静态去混淆工具。 **[403 星标]**
 - [Arenukvern/mcp\_flutter](https://github.com/Arenukvern/mcp_flutter) — 面向 Flutter AI 智能体驱动开发的 MCP 工具集（MCP／CLI 加自定义客户端工具），通过闭环反馈（视觉与语义快照）和高度可定制的客户端能力适配任意 Flutter 应用。如今这类系统常被称为智能体执行框架。 **[389 星标]**
 - [ResistanceTo/MiniWatts](https://github.com/ResistanceTo/MiniWatts) — 基于 iOS 私有 API 构建的 iPhone 电池、充电与温度检测工具，可展示充电器实际功率、真正到达电芯的功率、全部 30 个温度传感器读数，以及 USB-PD 握手过程。 **[386 星标]**
-- [lifting-bits/anvill](https://github.com/lifting-bits/anvill) — anvill 将原始机器码转换为优雅的 LLVM bitcode。 **[384 星标]**
 - [projectPiki/pikmin2](https://github.com/projectPiki/pikmin2) — 由系列爱好者制作的《皮克敏 2》（美版）反编译项目。 **[380 星标]** · 精选：[《皮克敏2》：覆盖五个版本、已完全匹配的 GameCube 反编译](https://awesomerea.org/zh/resources/pikmin-2-matching-decomp-case/)
 - [richinfante/iphonebackuptools](https://github.com/richinfante/iphonebackuptools) — iOS 备份数据提取 **[361 星标]**
 - [GenericException/SkidSuite](https://github.com/GenericException/SkidSuite) — Java 逆向工程工具与资料链接合集。 **[355 星标]**
@@ -203,7 +201,7 @@
 - [naivenom/reversing-list](https://github.com/naivenom/reversing-list) — 逆向工程资源列表 **[148 星标]**
 - [pret/pokepinballrs](https://github.com/pret/pokepinballrs) — 《宝可梦弹珠台：红宝石与蓝宝石》反编译项目 **[148 星标]**
 - [dashr9230/SA-MP](https://github.com/dashr9230/SA-MP) — San Andreas Multiplayer 0.3.7 版本的匹配反编译项目，仍在开发中 **[147 星标]**
-- [dreamingmoths/memory-of-alessa](https://github.com/dreamingmoths/memory-of-alessa) — 《寂静岭 3》的匹配反编译项目，仍在开发中 **[145 星标]**
+- [dreamingmoths/memory-of-alessa](https://github.com/dreamingmoths/memory-of-alessa) — 《寂静岭 3》的匹配反编译项目，仍在开发中 **[145 星标]** · 精选：[memory of alessa：进行中的 Silent Hill 3 PS2 匹配反编译](https://awesomerea.org/zh/resources/silent-hill-3-memory-of-alessa-decomp-case/)
 - [AsenOsen/frida-stealth](https://github.com/AsenOsen/frida-stealth) — Frida 隐身补丁及隐身技术知识集合。 **[144 星标]**
 - [xbret/xenoblade](https://github.com/xbret/xenoblade) — 《异度之刃》日版反编译项目 **[142 星标]**
 - [camden-smallwood/pdb-decompiler](https://github.com/camden-smallwood/pdb-decompiler) — 将 MSVC PDB 文件反编译为 C++ 源码的工具。 **[139 星标]**

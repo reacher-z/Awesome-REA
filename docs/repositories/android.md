@@ -7,7 +7,7 @@
 These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [skylot/jadx](https://github.com/skylot/jadx) — Dex to Java decompiler **[50,988 stars]** · Curated: [JADX](https://awesomerea.org/resources/jadx/)
-- [librepods-org/librepods](https://github.com/librepods-org/librepods) — AirPods liberated from Apple's ecosystem. **[30,324 stars]**
+- [librepods-org/librepods](https://github.com/librepods-org/librepods) — AirPods liberated from Apple's ecosystem. **[30,324 stars]** · Curated: [LibrePods: AirPods features on Android and Linux through a reverse-engineered protocol](https://awesomerea.org/resources/librepods-airpods-protocol-case/)
 - [iBotPeaches/Apktool](https://github.com/iBotPeaches/Apktool) — A tool for reverse engineering Android apk files **[25,935 stars]** · Curated: [Apktool](https://awesomerea.org/resources/apktool/)
 - [MobSF/Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) — Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis. **[21,966 stars]** · Curated: [Mobile Security Framework (MobSF)](https://awesomerea.org/resources/mobsf/)
 - [Konloch/bytecode-viewer](https://github.com/Konloch/bytecode-viewer) — A Java 8+ Jar &amp; Android APK Reverse Engineering Suite (Decompiler, Editor, Debugger &amp; More) **[15,677 stars]** · Curated: [Bytecode Viewer](https://awesomerea.org/resources/bytecode-viewer/)
@@ -144,7 +144,7 @@ These projects were discovered automatically and are unreviewed. Categories deri
 - [ZSA233/frida-analykit](https://github.com/ZSA233/frida-analykit) — A Frida toolkit focused on Android reverse engineering. Manages Frida environment versions and wraps commonly used low-level utilities for the Agent side, with MCP support. The code is currently developed and maintained mainly by AI. **[156 stars]**
 - [in1nit1t/uniref](https://github.com/in1nit1t/uniref) — A Python coding framework for analyzing Unity applications. **[154 stars]**
 - [ivan-sincek/malware-apk](https://github.com/ivan-sincek/malware-apk) — As a bug hunter, are your bug bounty reports getting rejected because you don't use a "malicious" Proof of Concept (PoC) app to exploit the vulnerabilities? I've got you covered! **[154 stars]**
-- [LSPosed/dexsql-release](https://github.com/LSPosed/dexsql-release) — SQL for Android apk and dex files **[154 stars]**
+- [LSPosed/dexsql-release](https://github.com/LSPosed/dexsql-release) — SQL for Android apk and dex files **[154 stars]** · Curated: [DexSQL](https://awesomerea.org/resources/dexsql/)
 - [omeraydindev/Dexter](https://github.com/omeraydindev/Dexter) — An advanced DEX editor for Android. **[153 stars]**
 - [Hamz-a/jeb2frida](https://github.com/Hamz-a/jeb2frida) — Automated Frida hook generation with JEB **[152 stars]**
 - [TangGolang/TangGo](https://github.com/TangGolang/TangGo) — TangGo is a comprehensive testing platform developed in China by Wutang Information Technology Co., Ltd. using years of penetration-testing experience. It provides software testers and cybersecurity professionals with powerful, easy-to-use tools and a collaborative workspace, primarily for website functional testing, security testing, and security assessment. **[148 stars]**
@@ -170,7 +170,7 @@ These projects were discovered automatically and are unreviewed. Categories deri
 - [vw2x/Mira](https://github.com/vw2x/Mira) — Mobile runtime detection workbench for AI (iOS and Android) **[106 stars]**
 - [actuator/DEFCON-33](https://github.com/actuator/DEFCON-33) — Hacking Hotspots: Pre-Auth Remote Code Execution, Arbitrary SMS &amp; Adjacent Attacks on 5G &amp; 4G/LTE Routers **[105 stars]**
 - [adityatelange/MobSleuth](https://github.com/adityatelange/MobSleuth) — Scripts to set up your own Android 📱 app hacking lab **[102 stars]**
-- [fluofoxxo/outrun](https://github.com/fluofoxxo/outrun) — A Sonic Runners custom server. **[101 stars]**
+- [fluofoxxo/outrun](https://github.com/fluofoxxo/outrun) — A Sonic Runners custom server. **[101 stars]** · Curated: [outrun: a Sonic Runners custom server](https://awesomerea.org/resources/outrun-sonic-runners-server-case/)
 - [SyscallX-18113/Apkx-Hunter](https://github.com/SyscallX-18113/Apkx-Hunter) — Apkx-Hunter is an Android Static Analysis Framework in Debian Package written entirely in C with OWASP MASVS scanning with 15 categories and 166 detection patterns for Android security assessments, reverse engineering, malware analysis, and penetration testing. It features ML-based secret scoring, and advanced static security analysis. **[101 stars]**
 - [themalwarenews/frida\_rootandsslbypass](https://github.com/themalwarenews/frida_rootandsslbypass) — With this script you can bypass both root detection and ssl pinning for your android app. **[100 stars]**
 - [darvincisec/DetectTamper](https://github.com/darvincisec/DetectTamper) — Tamper detection in Android **[95 stars]**

@@ -7,7 +7,7 @@
 这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
 - [skylot/jadx](https://github.com/skylot/jadx) — 将 Dex 反编译为 Java 的工具。 **[50,988 星标]** · 精选：[JADX](https://awesomerea.org/zh/resources/jadx/)
-- [librepods-org/librepods](https://github.com/librepods-org/librepods) — 让 AirPods 摆脱 Apple 生态系统的限制。 **[30,324 星标]**
+- [librepods-org/librepods](https://github.com/librepods-org/librepods) — 让 AirPods 摆脱 Apple 生态系统的限制。 **[30,324 星标]** · 精选：[LibrePods：借助逆向得出的协议在 Android 和 Linux 上使用 AirPods 功能](https://awesomerea.org/zh/resources/librepods-airpods-protocol-case/)
 - [iBotPeaches/Apktool](https://github.com/iBotPeaches/Apktool) — 用于逆向工程 Android APK 文件的工具。 **[25,935 星标]** · 精选：[Apktool](https://awesomerea.org/zh/resources/apktool/)
 - [MobSF/Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) — Mobile Security Framework（MobSF）是自动化的一体化移动应用（Android/iOS/Windows）渗透测试、恶意软件分析与安全评估框架，支持静态和动态分析。 **[21,966 星标]** · 精选：[Mobile Security Framework（MobSF）](https://awesomerea.org/zh/resources/mobsf/)
 - [Konloch/bytecode-viewer](https://github.com/Konloch/bytecode-viewer) — 面向 Java 8+ JAR 与 Android APK 的逆向工程套件，包含反编译器、编辑器、调试器等。 **[15,677 星标]** · 精选：[Bytecode Viewer Java/Android 逆向工程套件](https://awesomerea.org/zh/resources/bytecode-viewer/)
@@ -144,7 +144,7 @@
 - [ZSA233/frida-analykit](https://github.com/ZSA233/frida-analykit) — Frida 工具包 - 主要面向安卓端逆向，解决frida环境版本管理和对Agent端常用底层工具方法封装，支持MCP。（目前主要由AI开发维护代码） **[156 星标]**
 - [in1nit1t/uniref](https://github.com/in1nit1t/uniref) — 用于分析 Unity 应用的 Python 编程框架。 **[154 星标]**
 - [ivan-sincek/malware-apk](https://github.com/ivan-sincek/malware-apk) — 作为漏洞猎人，你的漏洞赏金报告是否因未使用“恶意”概念验证（PoC）应用来利用漏洞而遭到拒绝？本项目可以帮上忙！ **[154 星标]**
-- [LSPosed/dexsql-release](https://github.com/LSPosed/dexsql-release) — 对 Android APK 和 DEX 文件使用 SQL **[154 星标]**
+- [LSPosed/dexsql-release](https://github.com/LSPosed/dexsql-release) — 对 Android APK 和 DEX 文件使用 SQL **[154 星标]** · 精选：[DexSQL](https://awesomerea.org/zh/resources/dexsql/)
 - [omeraydindev/Dexter](https://github.com/omeraydindev/Dexter) — 功能先进的 Android DEX 编辑器。 **[153 星标]**
 - [Hamz-a/jeb2frida](https://github.com/Hamz-a/jeb2frida) — 使用 JEB 自动生成 Frida hook。 **[152 星标]**
 - [TangGolang/TangGo](https://github.com/TangGolang/TangGo) — TangGo 测试平台由无糖信息技术有限公司基于多年渗透测试实战经验设计开发，是国产综合测试平台，为软件测试和网络安全从业者提供强大易用的测试工具及多人协作环境，主要用于 Web 站点功能测试、安全测试和安全评估。 **[148 星标]**
@@ -170,7 +170,7 @@
 - [vw2x/Mira](https://github.com/vw2x/Mira) — 面向 AI 的移动端运行时检测工作台（iOS 和 Android）。 **[106 星标]**
 - [actuator/DEFCON-33](https://github.com/actuator/DEFCON-33) — 攻破热点：针对 5G 和 4G/LTE 路由器的认证前远程代码执行、任意短信及邻近攻击 **[105 星标]**
 - [adityatelange/MobSleuth](https://github.com/adityatelange/MobSleuth) — 搭建个人 Android 📱 应用安全研究实验室的脚本 **[102 星标]**
-- [fluofoxxo/outrun](https://github.com/fluofoxxo/outrun) — Sonic Runners 的自定义服务器。 **[101 星标]**
+- [fluofoxxo/outrun](https://github.com/fluofoxxo/outrun) — Sonic Runners 的自定义服务器。 **[101 星标]** · 精选：[outrun：Sonic Runners 自定义服务器](https://awesomerea.org/zh/resources/outrun-sonic-runners-server-case/)
 - [SyscallX-18113/Apkx-Hunter](https://github.com/SyscallX-18113/Apkx-Hunter) — Apkx-Hunter 是完全使用 C 编写、以 Debian 软件包提供的 Android 静态分析框架。提供涵盖 15 个类别和 166 种检测模式的 OWASP MASVS 扫描，用于 Android 安全评估、逆向工程、恶意软件分析与渗透测试，并具备基于机器学习的密钥评分和高级静态安全分析功能。 **[101 星标]**
 - [themalwarenews/frida\_rootandsslbypass](https://github.com/themalwarenews/frida_rootandsslbypass) — 该脚本可为你的 Android 应用绕过 Root 检测及 SSL 证书固定。 **[100 星标]**
 - [darvincisec/DetectTamper](https://github.com/darvincisec/DetectTamper) — Android 篡改检测。 **[95 星标]**
