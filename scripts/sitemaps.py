@@ -80,7 +80,7 @@ def record_date(record: dict) -> str | None:
 
 def page_dates(*, resources: list[dict], papers: list[dict], repository_document: dict | None = None,
                discovery_batches: list[dict] | None = None, lead_batches: list[dict] | None = None,
-               survey_date: str | None = None) -> dict[str, str]:
+               survey_date: str | None = None, discovery_class_pages: list[str] = ()) -> dict[str, str]:
     """Map every dated English page path to its lastmod; the /zh/ page of a pair shares its date."""
     dates: dict[str, str] = {}
     for record in resources:
@@ -106,6 +106,8 @@ def page_dates(*, resources: list[dict], papers: list[dict], repository_document
     discoveries = latest(batch.get('ingested_at') for batch in discovery_batches or [])
     if discoveries:
         dates['/discoveries/'] = discoveries
+        # A class page lists records of the same batches as the list page.
+        dates.update(dict.fromkeys(discovery_class_pages, discoveries))
     if normalized_date(survey_date):
         dates['/survey/'] = normalized_date(survey_date)
     catalog = latest((curated, research, repositories))

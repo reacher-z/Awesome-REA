@@ -439,7 +439,8 @@ def build_site(output: Path) -> tuple[int, int, int]:
     # lastmod comes from the records each page shows, never the build time (sitemaps.page_dates).
     dates = page_dates(resources=resources, papers=papers, repository_document=browse_document,
                        discovery_batches=(discovery_queue or {}).get("batches"), lead_batches=(lead_queue or {}).get("batches"),
-                       survey_date=survey_document.get("date"))
+                       survey_date=survey_document.get("date"),
+                       discovery_class_pages=[path for path in queue_paths if path.startswith('/discoveries/') and path != '/discoveries/'])
     write_sitemaps(output, SITE_URL, [url.removeprefix(SITE_URL) for url in sitemap_urls], dates)
     build_data_downloads(output, catalog, papers,
                          (output / 'papers/references.bib').read_text(encoding='utf-8'))
