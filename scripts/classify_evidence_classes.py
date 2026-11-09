@@ -711,7 +711,7 @@ def classify(record: dict, signals: dict) -> tuple[int, str]:
     if partial_description:
         return 1, "download and demo exist, but the described scope is a partial feature or patch"
     if signals["docs_full"]:
-        return 1, "complete evidence, but this is not a software reconstruction"
+        return 1, "complete evidence for a tool, integration, guide or analysis entry"
     return 1, "download and demo exist, but docs do not cover the full feature set"
 
 
@@ -837,7 +837,7 @@ def main() -> None:
                 # The automatic rubric never assigns Class 0; only the manual review below may.
                 evidence_class = 1
                 entry["reason"] = ("full reconstruction candidate: Class 0 requires manual review"
-                                   if candidate else "not a full software reconstruction: analysis entry")
+                                   if candidate else "analysis entry with complete evidence")
             review = c0_reviews.get(record["id"])
             if review and review.get("scope") == "full" and has_complete_evidence(record, signals):
                 evidence_class = 0
