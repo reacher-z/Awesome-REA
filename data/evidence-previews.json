@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-09T11:39:45+00:00",
-    "entry_count": 1085,
-    "class_entry_count": 1126,
+    "generated_at": "2026-11-09T15:42:23+00:00",
+    "entry_count": 1100,
+    "class_entry_count": 1141,
     "class_counts": {
-      "image": 1047,
+      "image": 1062,
       "video": 38
     },
     "missing_count": 41,
@@ -1434,6 +1434,15 @@
       "checked_at": "2026-11-04T06:51:12+00:00"
     },
     {
+      "id": "crate-digger",
+      "image_url": "https://raw.githubusercontent.com/Deep-Symmetry/crate-digger/7c9d5358d8a3ce663f566380f2dc79ab1393201e/doc/assets/crate-padded-left.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Deep-Symmetry/crate-digger",
+      "revision": "7c9d5358d8a3ce663f566380f2dc79ab1393201e",
+      "checked_at": "2026-11-09T15:42:23+00:00"
+    },
+    {
       "id": "cristalis-crystal-defenders-case",
       "image_url": "https://raw.githubusercontent.com/Claudio5702/Cristalis/48b91cbfca58e222dda743c7d56cd433b3d5fa42/docs/screenshots/launcher-en.png",
       "kind": "image",
@@ -2116,6 +2125,15 @@
       "source_url": "https://github.com/droidsaw/droidsaw",
       "revision": "50eb045b5672431ea787c2696100baed44163918",
       "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
+      "id": "dshba",
+      "image_url": "https://github.com/DenSinH/DSHBA/blob/master/files/DSHBA_unlocked.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/DenSinH/DSHBA",
+      "revision": "bc1bbfc88dbbceac5b293a94a5f98dc902f8ff58",
+      "checked_at": "2026-11-09T15:42:23+00:00"
     },
     {
       "id": "dualrip",
@@ -3025,6 +3043,15 @@
       "source_url": "https://github.com/afwbkbc/glsmac",
       "revision": "d7051ec226c2cf321e2734c7658a11352ed8a2f9",
       "checked_at": "2026-11-09T10:24:25+00:00"
+    },
+    {
+      "id": "go-mitmproxy",
+      "image_url": "https://raw.githubusercontent.com/lqqyt2423/go-mitmproxy/5865d94121a5382fdd7dee6b09bd4ad76c01c62f/assets/web-1.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/lqqyt2423/go-mitmproxy",
+      "revision": "5865d94121a5382fdd7dee6b09bd4ad76c01c62f",
+      "checked_at": "2026-11-09T15:42:23+00:00"
     },
     {
       "id": "godot-re-tools",
@@ -4314,6 +4341,15 @@
       "checked_at": "2026-11-09T04:31:25+00:00"
     },
     {
+      "id": "martypc",
+      "image_url": "https://raw.githubusercontent.com/dbalsom/martypc/05c0d088e84ad6bbfac9b3f0d051e7eadefd9f44/doc/img/8088mph_gallery_01.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/dbalsom/martypc",
+      "revision": "05c0d088e84ad6bbfac9b3f0d051e7eadefd9f44",
+      "checked_at": "2026-11-09T15:42:23+00:00"
+    },
+    {
       "id": "marvel-nemesis-recomp-case",
       "image_url": "https://raw.githubusercontent.com/15Cyber/marvel-nemesis-recomp/db4ecbadc9ef5db48e41305c2f86e6e007c3f2cd/docs/screenshots/graphics-before.png",
       "kind": "image",
@@ -5457,6 +5493,15 @@
       "checked_at": "2026-11-09T03:29:44+00:00"
     },
     {
+      "id": "openjoc",
+      "image_url": "https://raw.githubusercontent.com/chyinan/OpenJOC/624b6cb958320182f05f114d21420e232170cd24/docs/site/assets/openjoc-header.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/chyinan/OpenJOC",
+      "revision": "624b6cb958320182f05f114d21420e232170cd24",
+      "checked_at": "2026-11-09T15:42:23+00:00"
+    },
+    {
       "id": "openjones3d-case",
       "image_url": "https://raw.githubusercontent.com/smlu/OpenJones3D/a675b395a5d5cff238332d091368483b849e8b5b/Resources/images/rmbanr.png",
       "kind": "image",
@@ -5644,6 +5689,15 @@
       "source_url": "https://github.com/lowlevelmetal/OpenSE4",
       "revision": "ade8a5d43aebf59f2955054c918272dda4b3737e",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "openskp",
+      "image_url": "https://raw.githubusercontent.com/iamahsanmehmood/openskp/c98561147ea502c6d4d53a257fa4581d0c6cde1d/docs/assets/ai-modeling/chair-table-armchair.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/iamahsanmehmood/openskp",
+      "revision": "c98561147ea502c6d4d53a257fa4581d0c6cde1d",
+      "checked_at": "2026-11-09T15:42:23+00:00"
     },
     {
       "id": "openspidey-spider-man-port-case",
@@ -6095,6 +6149,15 @@
       "checked_at": "2026-11-09T02:41:36+00:00"
     },
     {
+      "id": "pocketwalker-emulator",
+      "image_url": "https://raw.githubusercontent.com/h4lfheart/pocketwalker/86026a0d52e36915cd3a2626b6c8041251f93a20/.github/images/cover.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/h4lfheart/pocketwalker",
+      "revision": "86026a0d52e36915cd3a2626b6c8041251f93a20",
+      "checked_at": "2026-11-09T15:42:23+00:00"
+    },
+    {
       "id": "podflick-case",
       "image_url": "https://raw.githubusercontent.com/rockerlabs/podflick/a168920267c0afd6b6ddd04588ec68cb55e62f58/docs/demo.gif",
       "kind": "image",
@@ -6426,6 +6489,15 @@
       "source_url": "https://github.com/Layen-lang/PTCGP-Private-Server",
       "revision": "3f5c268916a34cd954b48e2a0b8349f6e500f2d1",
       "checked_at": "2026-11-09T04:14:47+00:00"
+    },
+    {
+      "id": "pureikyubu",
+      "image_url": "https://raw.githubusercontent.com/emu-russia/pureikyubu/69572aa22ca44646807b9973dc830592c5d266e8/wiki/imgstore/progress_ikaruga.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/emu-russia/pureikyubu",
+      "revision": "69572aa22ca44646807b9973dc830592c5d266e8",
+      "checked_at": "2026-11-09T15:42:23+00:00"
     },
     {
       "id": "pvz-console-edition-case",
@@ -7130,6 +7202,15 @@
       "checked_at": "2026-11-09T05:33:55+00:00"
     },
     {
+      "id": "regml-gamemaker-inspector",
+      "image_url": "https://raw.githubusercontent.com/TimGoTheCreator/timgothecreator.github.io/master/images/regml.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/TimGoTheCreator/reGML",
+      "revision": "7626c4394e69c77321c0764952fa5d078fbb77e7",
+      "checked_at": "2026-11-09T15:42:23+00:00"
+    },
+    {
       "id": "regoth",
       "image_url": "https://i.ytimg.com/vi/DX92f8CrjrE/hqdefault.jpg",
       "kind": "video",
@@ -7191,6 +7272,15 @@
       "source_url": "https://github.com/jbalcomb/ReMoM",
       "revision": "de5652c47696b454df5e94005417d1509853fa73",
       "checked_at": "2026-11-09T07:55:54+00:00"
+    },
+    {
+      "id": "renard-phy",
+      "image_url": "https://raw.githubusercontent.com/Jeija/renard-phy/d71ebb2335321ae2d56dede0fc493cfe92b46aba/uplink_plot_screenshot.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Jeija/renard-phy",
+      "revision": "d71ebb2335321ae2d56dede0fc493cfe92b46aba",
+      "checked_at": "2026-11-09T15:42:23+00:00"
     },
     {
       "id": "renderdoc",
@@ -7353,6 +7443,15 @@
       "source_url": "https://github.com/LostInNovo/rf-power-meter-v5-companion",
       "revision": "e5e681a4ae62023669db91028236b17900eb8b95",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "rflink-esp",
+      "image_url": "https://raw.githubusercontent.com/cpainchaud/RFLink32/dbf78f81b6a03d8fb84cee4dff6e2a962f4c848c/pictures/webui-firmware.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/cpainchaud/RFLink32",
+      "revision": "dbf78f81b6a03d8fb84cee4dff6e2a962f4c848c",
+      "checked_at": "2026-11-09T15:42:23+00:00"
     },
     {
       "id": "ridelink-tvs-smartxonnect-case",
@@ -7533,6 +7632,15 @@
       "source_url": "https://github.com/merbanan/rtl_433",
       "revision": "0c85f7ad3566ff6aefd8aedad569d05023c0c70c",
       "checked_at": "2026-11-08T23:42:11+00:00"
+    },
+    {
+      "id": "rtlamr",
+      "image_url": "https://raw.githubusercontent.com/bemasher/rtlamr/a33b1e6c1ff5285037aec1e7681db5c2ae5319f9/assets/run_rtlamr.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/bemasher/rtlamr",
+      "revision": "a33b1e6c1ff5285037aec1e7681db5c2ae5319f9",
+      "checked_at": "2026-11-09T15:42:23+00:00"
     },
     {
       "id": "ruby-sapphire-recomp",
@@ -8363,6 +8471,15 @@
       "checked_at": "2026-11-09T04:14:52+00:00"
     },
     {
+      "id": "stoicgoose-debugger",
+      "image_url": "https://raw.githubusercontent.com/xdanieldzd/StoicGoose/main/Screenshots/WS-Bootstrap-Menu.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/xdanieldzd/StoicGoose",
+      "revision": "e6a7c93cedbb50f098262cd17824e3f9e577caad",
+      "checked_at": "2026-11-09T15:42:23+00:00"
+    },
+    {
       "id": "strace",
       "image_url": "https://github.com/mandiant/STrace/assets/6619205/a68796de-7392-481a-b19a-74fcd8d18de9",
       "kind": "image",
@@ -8723,6 +8840,15 @@
       "checked_at": "2026-11-08T23:42:11+00:00"
     },
     {
+      "id": "tika-jtd-plus",
+      "image_url": "https://raw.githubusercontent.com/KHiyowa/Tika-JTD/045ef005f7e45202650d5601b46ef6f4915d8190/docs/tika-jtd.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/KHiyowa/Tika-JTD",
+      "revision": "045ef005f7e45202650d5601b46ef6f4915d8190",
+      "checked_at": "2026-11-09T15:42:23+00:00"
+    },
+    {
       "id": "timesplitters-future-perfect-pc-rebuild-case",
       "image_url": "https://raw.githubusercontent.com/NeilSeligmann/timesplitters-future-perfect-ng/f4a29c3261d727875b382de2dd8cf42bfa6668c1/docs/assets/launcher-play.png",
       "kind": "image",
@@ -8919,6 +9045,15 @@
       "source_url": "https://github.com/Gumpolas/TooTawersRecomp",
       "revision": "f0953b1256995cc4dc1bc3564951081aec83c51e",
       "checked_at": "2026-11-08T23:42:11+00:00"
+    },
+    {
+      "id": "twonkie-usb-pd-sniffer",
+      "image_url": "https://raw.githubusercontent.com/dojoe/Twonkie/64a9e85c5df983bccf23925ed278b657612f3767/pic/twonkie-v1.0-front.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/dojoe/Twonkie",
+      "revision": "64a9e85c5df983bccf23925ed278b657612f3767",
+      "checked_at": "2026-11-09T15:42:23+00:00"
     },
     {
       "id": "ue-explorer",
