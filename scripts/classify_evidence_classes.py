@@ -388,7 +388,10 @@ def gitlab_api_fetch(client: HttpClient, path: str) -> dict:
     branch = project.get("default_branch") or "master"
     release_status, release_body, _ = client.get(api + "/releases")
     releases = json.loads(release_body.decode("utf-8", "replace")) if release_status == 200 else []
-    complete = release_status in (200, 404)
+    # Throttling (429), network failures (0) and server errors are retried on a rerun; 403 and 404 are answers
+    # (a project with releases or the repository disabled, or no such file).
+    transient = lambda status: status in (0, 429) or status >= 500
+    complete = not transient(release_status)
     readme_text = ""
     # The project's readme_url names the file GitLab renders (any case or extension); README.md is the fallback.
     marker = f"/-/blob/{branch}/"
@@ -398,9 +401,9 @@ def gitlab_api_fetch(client: HttpClient, path: str) -> dict:
     if readme_status == 200:
         readme_text = readme_body.decode("utf-8", "replace")
     else:
-        complete = complete and readme_status == 404
+        complete = complete and not transient(readme_status)
         tree_status, tree_body, _ = client.get(api + f"/repository/tree?per_page=100&ref={urllib.parse.quote(branch, safe='')}")
-        complete = complete and tree_status in (200, 404)
+        complete = complete and not transient(tree_status)
         for entry in json.loads(tree_body.decode("utf-8", "replace")) if tree_status == 200 else []:
             name = entry.get("name", "").upper()
             if entry.get("type", "blob") == "blob" and (name == "README" or name.startswith("README.")):
@@ -409,7 +412,7 @@ def gitlab_api_fetch(client: HttpClient, path: str) -> dict:
                     + "/raw?ref=" + urllib.parse.quote(branch, safe=""))
                 if raw_status == 200:
                     readme_text = raw_body.decode("utf-8", "replace")
-                complete = complete and raw_status in (200, 404)
+                complete = complete and not transient(raw_status)
                 break
     if not complete:
         # A throttled subrequest must not record half a project as real data (see github_api_fetch).

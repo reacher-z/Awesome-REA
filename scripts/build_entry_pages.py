@@ -12,7 +12,7 @@ from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, jsonld_script,
 from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, formatted_date, scholarly_article
 from build_readme import (CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section,
                           section_order)
-from agent_formats import (MARKDOWN, RECORD_JSON, alternate_links, json_text, paper_markdown, paper_record,
+from agent_formats import (MARKDOWN, source_status, RECORD_JSON, alternate_links, json_text, paper_markdown, paper_record,
                            record_json_route, resource_markdown, resource_record)
 from evidence_links import evidence_link
 from open_graph import THEME_COLOR_META, open_graph_meta
@@ -233,6 +233,10 @@ def _resource_content(record: dict, language: str, discussion: str = '', feedbac
              (label('Category', '类别'), escape(CATEGORIES[record['category']][int(zh)])),
              (label('Relationship', '关联'), escape(RELATIONSHIPS[record['relationship']][int(zh)])),
              (label('Sources reviewed', '来源复核于'), reviewed)]
+    if source_status(record, language):
+        checked = record['source_unavailable']['checked_at']
+        facts.append((label('Source status', '来源状态'),
+                      f'<time datetime="{escape(checked, quote=True)}">{escape(source_status(record, language))}</time>'))
     requirements = ''.join(item_html(facet, item, language) for facet, item in ordered_items(record, _requirements(record, language)))
     links = [_link(record['url'], label('Visit original resource', '访问原始资源'), primary=True)]
     if record['evidence_url'] != record['url']:

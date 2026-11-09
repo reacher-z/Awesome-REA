@@ -127,15 +127,30 @@ def source_urls(coverage=None):
     return references
 
 
-def classify_ledger_loss(result, known_missing):
-    """Separate confirmed 404s that only the case ledger cites, so they are reported without failing the run.
+def unavailable_resources(records=None):
+    """IDs of curated records whose source_unavailable field records that their source no longer resolves."""
+    return {record['id'] for record in (load_resources() if records is None else records) if record.get('source_unavailable')}
 
-    A loss every citing entry already records is `recorded-missing`. A link cited only as a
-    collection's `reported_source_urls`, which the ledger lists without adopting as evidence,
-    is `reported-source-missing`. Catalog links and ledger primary evidence stay `dead`.
+
+def classify_ledger_loss(result, known_missing, recorded_resources=frozenset()):
+    """Separate confirmed 404s that the catalog already records, so they are reported without failing the run.
+
+    A loss every citing ledger entry or curated record already records is `recorded-missing`: a ledger entry by
+    its reason, a curated record by its source_unavailable field. A link cited only as a collection's
+    `reported_source_urls`, which the ledger lists without adopting as evidence, is `reported-source-missing`.
+    Other catalog links and ledger primary evidence stay `dead`.
     """
     references = result['references']
-    if result['status'] != 'dead' or not references or not all(reference.startswith('ledger:') for reference in references):
+    if result['status'] != 'dead' or not references:
+        return result
+    resources = [reference for reference in references if reference.startswith('resource:')]
+    if resources and all(reference.split(':')[1] in recorded_resources for reference in resources):
+        rest = [reference for reference in references if not reference.startswith('resource:')]
+        if all(reference.startswith('ledger:') for reference in rest) and (not rest or result['url'] in known_missing):
+            result['status'] = 'recorded-missing'
+            result['reason'] = 'HTTP 404/410 confirmed; every citing record already records this source as unavailable'
+            return result
+    if not all(reference.startswith('ledger:') for reference in references):
         return result
     if result['url'] in known_missing:
         result['status'] = 'recorded-missing'
@@ -202,6 +217,7 @@ def main():
         coverage = read_case_coverage(ROOT)
         references = source_urls(coverage)
         _, known_missing = ledger_sources(coverage)
+        recorded_resources = unavailable_resources()
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(f'Cannot load source links: {error}', file=sys.stderr)
         return 1
@@ -211,7 +227,7 @@ def main():
         results = list(pool.map(lambda url: check_url(url, args.timeout), urls))
     for result in results:
         result['references'] = references[result['url']]
-        classify_ledger_loss(result, known_missing)
+        classify_ledger_loss(result, known_missing, recorded_resources)
     counts = Counter(result['status'] for result in results)
     report = {
         'started_at': started_at,
@@ -230,7 +246,7 @@ def main():
             code = result.get('http_status') or 'network'
             print(f"{result['status'].upper()} [{code}] {result['url']}")
     print(f"Checked {len(results)} links: {counts['ok']} responded, {counts['dead']} confirmed dead, "
-          f"{counts['recorded-missing']} already recorded missing in the case ledger, "
+          f"{counts['recorded-missing']} already recorded missing in the case ledger or a curated record, "
           f"{counts['reported-source-missing']} missing collection-reported ledger links, {counts['inconclusive']} inconclusive.")
     if counts['inconclusive']:
         print('Inconclusive links require review; this result is not an all-links-passed claim.')
