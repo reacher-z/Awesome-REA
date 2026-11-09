@@ -143849,5 +143849,28 @@
     "verified_at": "2026-11-07",
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
+  },
+  {
+    "id": "gow-2005-pc",
+    "name": "God of War 2005 PC port",
+    "url": "https://github.com/danielalves96/gow-pc-port",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This port statically recompiles the USA PlayStation 2 game God of War, product SCUS-97399, into C++. A Rust recompiler translates the MIPS code. The Windows launcher or portable zip runs a setup wizard that reads the ISO or a CHD, extracts the disc, and builds gow-2005. Linux install.sh, a deb, and an AppImage are experimental. The renderer is OpenGL 4.6, from 1x to 8x internal resolution. The game logic stays at 60 Hz, with 120 and experimental 240 frame-rate limits. Saves use a PCSX2-compatible Mcd001.ps2 card.",
+    "description_zh": "该移植把 PlayStation 2 美版《战神》静态重编译成 C++，产品编号 SCUS-97399。一个 Rust 重编译器翻译 MIPS 代码。Windows 启动器或便携压缩包运行安装向导，读取 ISO 或 CHD，提取光盘并构建 gow-2005。Linux 的 install.sh、deb 和 AppImage 仍是实验性的。渲染器是 OpenGL 4.6，内部分辨率从 1 倍到 8 倍。游戏逻辑保持 60 Hz，帧率上限有 120 和实验性的 240。存档使用与 PCSX2 兼容的 Mcd001.ps2 记忆卡。",
+    "requirements": [
+      "A USA ISO or CHD of SCUS-97399, about 8 GB. About 20 GB free while installing. A 64-bit CPU with SSE4.1, 8 GB of RAM, and an OpenGL 4.6 GPU. Windows 10 or 11, or a recent Linux distribution.",
+      "License: GPL-3.0. The vendored rabbitizer disassembler is MIT."
+    ],
+    "evidence_url": "https://github.com/danielalves96/gow-pc-port/blob/8b104e9e9bc2ba53e67ba28c87591f5e2686b4d1/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
