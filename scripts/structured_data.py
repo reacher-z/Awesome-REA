@@ -6,6 +6,7 @@ a host's detected license is an unreviewed signal (docs/artifact-evidence.md).
 """
 from __future__ import annotations
 
+import re
 from urllib.parse import urlsplit
 
 ORGANIZATION_NAME = 'Awesome REA'
@@ -85,11 +86,35 @@ def _is_github_repository(url: str) -> bool:
     return parts.netloc.lower() == 'github.com' and len([part for part in parts.path.split('/') if part]) == 2
 
 
+# The reviewed English description names what a record is in its first sentence: "A benchmark ...",
+# "X is a decompilation evaluation dataset ...", "This repository holds ... datasets". The record name is
+# removed first, so a name such as "Foo Benchmark" alone never decides the type.
+_FUNCTION_WORDS = {'to', 'for', 'of', 'and', 'or', 'with', 'running', 'run', 'runs', 'using', 'that', 'which', 'in', 'on'}
+_DATASET_HEAD = re.compile(r'^(?:(?:this|the) (?:repository|project) (?:holds|provides|publishes) |(?P<subject>[\w.+-]+ ){0,4}(?:is|are) )?'
+                           r'(?:an? |the )?(?P<modifiers>(?:[\w-]+ ){0,4}?)(?:benchmark|dataset)s?'
+                           r'(?= (?:of|for|that|which|pairing|combining|comparing|generated|built|covering|with)\b|[,.:;]|$)', re.I)
+DATASET_KINDS = {'project', 'research', 'tool', 'learning-resource', 'documentation', 'collection'}
+
+
+def is_benchmark_or_dataset(record: dict) -> bool:
+    """Whether a resource's reviewed description presents it as a benchmark or dataset."""
+    if record.get('kind') not in DATASET_KINDS:
+        return False
+    first = re.split(r'(?<=[.!?])\s', record.get('description_en', '').strip(), maxsplit=1)[0]
+    name = record.get('name', '')
+    match = _DATASET_HEAD.search(first.replace(name, 'X').strip() if name else first)
+    # Modifiers are adjectives or nouns ("binary decompilation evaluation dataset"); a verb or preposition
+    # ("a tool to benchmark", "a harness for running benchmarks") means the record is something else.
+    return bool(match) and not _FUNCTION_WORDS & set(match['modifiers'].lower().split())
+
+
 def resource_entity(record: dict, entity_id: str, name: str, description: str) -> dict:
     """The typed main entity of a curated resource page, built only from fields of the record."""
     kind = record['kind']
     entity = {'@id': entity_id, 'url': record['url'], 'name': name, 'description': description}
-    if kind in GITHUB_REPOSITORY_KINDS and _is_github_repository(record['url']):
+    if is_benchmark_or_dataset(record):
+        entity['@type'] = 'Dataset'
+    elif kind in GITHUB_REPOSITORY_KINDS and _is_github_repository(record['url']):
         entity.update({'@type': 'SoftwareSourceCode', 'codeRepository': record['url']})
     elif kind == 'case-study':
         entity.update({'@type': 'TechArticle', 'headline': name})

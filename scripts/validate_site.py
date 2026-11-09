@@ -611,6 +611,11 @@ def validate_breadcrumbs(output, pages):
     for route, page in pages.items():
         trails = VisibleBreadcrumb((Path(output) / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')).trails
         lists = list(schema_entities(page.schemas, 'BreadcrumbList'))
+        if route in ('/', '/zh/') and not trails:
+            # A homepage's trail is the page itself: one item, its own address, without a visible breadcrumb.
+            items = [item for entity in lists for item in entity.get('itemListElement', [])]
+            assert len(lists) == 1 and len(items) == 1 and items[0].get('item') == ORIGIN + route, f'Homepage BreadcrumbList must name only the homepage: {route}'
+            continue
         if not trails:
             assert not lists, f'BreadcrumbList without a visible breadcrumb: {route}'
             continue
