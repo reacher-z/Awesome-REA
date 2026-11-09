@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-09T08:30:30+00:00",
-  "entry_count": 4652,
+  "generated_at": "2026-11-09T09:42:57+00:00",
+  "entry_count": 4653,
   "class_counts": {
    "0": 15,
    "1": 1007,
-   "2": 3476,
+   "2": 3477,
    "3": 142
   },
   "unknown_count": 12,
@@ -130677,6 +130677,35 @@
    },
    "reason": "code and docs only: no download method and no demo",
    "checked_at": "2026-11-09T08:16:23+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "ouroboros-decompiler",
+   "url": "https://github.com/Hexorg/Ouroboros",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3067,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-09T09:42:57+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
