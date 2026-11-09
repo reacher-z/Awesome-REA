@@ -81,7 +81,7 @@ SELF_HOSTED_FONTS = frozenset('site/fonts/' + name + '.woff2' for name in (
     'eb-garamond-500-core', 'eb-garamond-500-ext', 'eb-garamond-italic-display',
     'ibm-plex-mono', 'ibm-plex-mono-medium', 'ibm-plex-sans-core', 'ibm-plex-sans-ext'))
 PUBLIC_NAMES = {'.env.example'}
-MAX_FILE_BYTES = 8 * 1024 * 1024
+MAX_FILE_BYTES = 32 * 1024 * 1024
 MAX_OMITTED_FILES = 20
 MAX_REVIEW_PAGES = 10
 
