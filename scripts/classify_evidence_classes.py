@@ -53,6 +53,8 @@ README_MIN_BYTES = 400
 SIGNAL_TEXT_LIMIT = 80_000
 MAX_WORKERS = 8
 
+PAGE_USER_AGENT = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                   "(KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36")
 CODE_HOSTS = {"github.com", "gitlab.com", "bitbucket.org", "codeberg.org", "gitee.com", "sourceforge.net"}
 GITHUB_HOSTS = {"github.com", "www.github.com"}
 # Badge-style images and package-registry icons say nothing about a demo.
@@ -155,10 +157,10 @@ class HttpClient:
         self.token = token
         self.api_origins = {origin.lower() for origin in api_origins}
         self.headers = {"User-Agent": user_agent, "Accept": "application/vnd.github+json"}
-        # Plain API calls stay identified; rendered pages need a browser-like
-        # User-Agent because several hosts answer scripts with 403/406.
-        self.page_headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-                             "(KHTML, like Gecko) Chrome/126.0 Safari/537.36", "Accept": "text/html,*/*;q=0.8"}
+        # Plain API calls stay identified; rendered pages need a current browser-like
+        # User-Agent because several hosts answer scripts with 403/406, and Codeberg
+        # refuses Chrome versions it considers old.
+        self.page_headers = {"User-Agent": PAGE_USER_AGENT, "Accept": "text/html,*/*;q=0.8"}
         self.opener = urllib.request.build_opener(_AuthStrippingRedirect())
 
     def headers_for(self, url: str, page: bool = False) -> dict[str, str]:
