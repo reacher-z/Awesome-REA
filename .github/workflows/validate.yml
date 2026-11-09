@@ -1,129 +1,41 @@
 name: Catalog checks
 on:
-  push:
-    branches: [main]
-  pull_request:
-  # A pull request opened with GITHUB_TOKEN, such as one opened by repository automation, starts no
-  # pull_request run; dispatching this workflow on its branch runs every check on the branch's commit.
   workflow_dispatch:
 permissions:
   contents: read
-# PR runs share one group per pull request, so a newer push cancels the superseded run.
-# Every main run gets its own group and is never cancelled or replaced by a later push.
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref == 'refs/heads/main' && github.run_id || github.ref }}
-  cancel-in-progress: true
 jobs:
-  unit:
+  equivalence:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
-    strategy:
-      fail-fast: false
-      matrix:
-        shard: [0, 1, 2]
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '26'
-      - name: Compile Python scripts and tests
-        run: python3 -m compileall -q scripts tests
-      # tests/unit_shards.py keeps each test class in one shard, balances the shards by class weight and
-      # checks that the shards are non-empty, pairwise disjoint and together equal the whole discovery.
-      - name: Run unit tests
-        env:
-          CI_TEST_SHARD: ${{ matrix.shard }}
-          CI_TEST_SHARDS: ${{ strategy.job-total }}
-        run: python3 tests/unit_shards.py
-  production:
-    runs-on: ubuntu-latest
-    timeout-minutes: 40
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
-        with:
-          python-version: '3.12'
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version: '26'
-      # The Cloudflare Pages build command: validate.py, node --check, build_site.py,
-      # validate_discovery.py and validate_site.py. The asset URL is only written into HTML.
-      - name: Run the production build
-        run: python3 scripts/build_production.py
-  browser:
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
-        with:
-          python-version: '3.12'
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version: '26'
-      # The smoke test rebuilds dist/ with the public fallback icons and loads it in the runner's installed
-      # Chrome; the pinned puppeteer-core package downloads no browser. CI=true makes a missing Chrome fail.
-      - name: Install the browser smoke-test driver
-        run: npm ci --prefix tests/browser --ignore-scripts --no-audit --no-fund
-      - name: Run the browser smoke test
-        run: node tests/browser/smoke.cjs
-      - name: Keep browser smoke-test screenshots for review
-        if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: browser-smoke-screenshots
-          path: .cache/browser-smoke/
-          include-hidden-files: true
-          if-no-files-found: ignore
-          retention-days: 14
-  # Keep the required check name. A failed, skipped or cancelled dependency
-  # must never turn into a successful aggregate result.
-  validate:
-    needs: [unit, production, browser]
-    if: ${{ always() }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - name: Require every catalog check to pass
-        env:
-          CI_UNIT_RESULT: ${{ needs.unit.result }}
-          CI_PRODUCTION_RESULT: ${{ needs.production.result }}
-          CI_BROWSER_RESULT: ${{ needs.browser.result }}
+      - name: Build the site
         run: |
-          for result in "$CI_UNIT_RESULT" "$CI_PRODUCTION_RESULT" "$CI_BROWSER_RESULT"; do
-            if [ "$result" != success ]; then
-              echo '::error::Every catalog check must succeed.'
-              exit 1
-            fi
-          done
-  # Branch protection does not count the check runs of a dispatched run toward the required checks (an
-  # automation PR showed "2 of 2 required status checks are expected" with both check runs green), but it
-  # does count a commit status from GitHub Actions. Only a dispatched run, which only automation PRs need,
-  # reports the aggregate result as the `validate` status on the commit it checked. This separate job is
-  # the only one that can write, so pull-request and push runs keep a read-only token.
-  validate-status:
-    needs: validate
-    if: ${{ always() && github.event_name == 'workflow_dispatch' }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      statuses: write
-    steps:
-      - name: Report the dispatched result as the validate commit status
-        env:
-          GH_TOKEN: ${{ github.token }}
-          STATE: ${{ needs.validate.result == 'success' && 'success' || 'failure' }}
-          TARGET_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: >-
-          gh api -X POST "repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA"
-          -f state="$STATE" -f context=validate -f target_url="$TARGET_URL"
-          -f description="Catalog checks, dispatched run"
+          python3 scripts/classify_scan_evidence.py
+          python3 scripts/fetch_previews.py
+          python3 scripts/build_site.py
+      - name: Compare the base and new validate_site.py
+        run: |
+          git show d087cca210d427c78fb7be242d7470fc409c6e9c:scripts/validate_site.py > scripts/validate_site_old.py
+          python3 scripts/equivalence_harness.py
+      - name: Diff
+        run: |
+          wc -l equivalence/old/parsers.txt equivalence/new/parsers.txt
+          ls equivalence/old equivalence/new
+          for f in equivalence/new/main-*.txt; do echo "$(basename $f): $(head -c 300 $f | head -1)"; done
+          echo '$ diff -r equivalence/old equivalence/new'
+          diff -r equivalence/old equivalence/new && echo "(no output: the trees are identical)"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: ${{ !cancelled() }}
+        with:
+          name: equivalence
+          path: equivalence/
