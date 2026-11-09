@@ -140636,5 +140636,26 @@
     "additional_evidence_urls": [
       "https://github.com/synamaxmusic/bar-decomp/blob/bd312023654ed73596026fee93128f1939cc3a17/LICENSE"
     ]
+  },
+  {
+    "id": "hrast",
+    "name": "HRAST",
+    "url": "https://github.com/sibears/HRAST",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "HRAST is an IDAPython proof of concept for matching and rewriting the Hex-Rays ctree. Load HRAST.py, put pattern tuples in read_patterns.py, and call reLOAD() so the decompiler window picks them up. unLOAD() turns the changes off. The included patterns rename globals and structure fields and replace an inlined strlen on a global. ast_helper.py builds ctree items. The reviewed page points the ctree verifier at IDA 7.1 or newer.",
+    "description_zh": "HRAST 是一个 IDAPython 概念验证，用来匹配并改写 Hex-Rays 的 ctree。加载 HRAST.py，在 read_patterns.py 里写模式元组，再调用 reLOAD()，反编译窗口就会采用它们。unLOAD() 关闭这些改动。附带的模式会重命名全局量和结构字段，并替换作用在全局量上的内联 strlen。ast_helper.py 用来构造 ctree 项。审阅页面把 ctree 校验指向 IDA 7.1 或更高版本。",
+    "requirements": [
+      "IDA with Hex-Rays and IDAPython. The verifier note names IDA 7.1 or newer.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/sibears/HRAST/blob/5c6485340a2dc6d2f5256fceb10a29e7e879351c/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
