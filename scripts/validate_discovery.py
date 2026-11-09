@@ -8,6 +8,7 @@ from urllib.parse import urlsplit, unquote
 from urllib.robotparser import RobotFileParser
 
 from build_browse_pages import CATEGORIES
+import forked_checks
 from crawl_policy import CONTENT_SIGNAL, CRAWLERS, REQUIRED_AI_CRAWLERS, TRAINING_PREFERENCE_TOKEN
 from sitemaps import (SECTION_FILES, SITEMAP_INDEX, english_path, instant, language_alternates, latest,
                       normalized_date, page_dates, read_sitemaps, record_date, section_for)
@@ -153,6 +154,12 @@ def validate_robots(output, urls):
     assert robots.site_maps() == [ORIGIN + "/" + SITEMAP_INDEX], "robots.txt must declare exactly the sitemap index"
 
 
+def _read_document(url):
+    """The parsed page of a sitemap URL, read in a worker process, or None when it is no file."""
+    path = OUTPUT / urlsplit(url).path.lstrip("/") / "index.html"
+    return Document(path.read_text(encoding="utf-8")) if path.is_file() else None
+
+
 def main():
     records = json.loads((OUTPUT / "catalog.json").read_text(encoding="utf-8"))["resources"]
     papers = json.loads((OUTPUT / "papers.json").read_text(encoding="utf-8"))
@@ -160,13 +167,11 @@ def main():
     entries = validate_route_inventory(urls, records, papers, include_browse=(OUTPUT / "source-index.json").is_file(),
                                        include_discoveries=(OUTPUT / "discoveries.json").is_file())
     documents = {}
-    for url in urls:
+    for url, page in zip(urls, forked_checks.ordered_map(_read_document, urls)):
         parsed = urlsplit(url)
         assert parsed.scheme + "://" + parsed.netloc == ORIGIN, url
         assert not parsed.query and not parsed.fragment, url
-        path = OUTPUT / parsed.path.lstrip("/") / "index.html"
-        assert path.is_file(), f"Sitemap route does not exist: {url}"
-        page = Document(path.read_text(encoding="utf-8"))
+        assert page is not None, f"Sitemap route does not exist: {url}"
         documents[url] = page
         assert page.h1 == 1, f"Expected one H1: {url}"
         assert page.meta.get("description"), f"Missing description: {url}"
