@@ -93,7 +93,7 @@ def scan_class_badge(record: dict, scan_classes: dict[str, object], language: st
     value = scan_classes.get(record['id'])
     if value not in SCAN_CLASS_DETAIL:
         return ''
-    detail = SCAN_CLASS_DETAIL[value][1 if language == 'zh' else 0]
+    detail = SCAN_CLASS_DETAIL[value][0 if language == 'zh' else 1]
     title = (f'扫描证据档位 C{value}：{detail}。'
              if language == 'zh' else
              f'Scan evidence class C{value}: {detail}.')
