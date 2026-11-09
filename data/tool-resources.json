@@ -143849,5 +143849,28 @@
     "verified_at": "2026-11-07",
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
+  },
+  {
+    "id": "initial-d-arcade-stage-3",
+    "name": "Initial D Arcade Stage 3 recompilation",
+    "url": "https://github.com/distilledorion-sketch/Initial-D-Arcade-Stage-3-Native-SH-4-Recompilation-WIP-",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is an experimental static recompilation of Initial D Arcade Stage 3 for NAOMI 2, disc GDS-0033, aimed at 64-bit Windows. The reviewed public demo is v2489. Its zip SHA-256 is 6AF00678196E9E54AC1C625866D08D2CD9855D0F43866B5DE1EDCBD7DCE0EF93. The launcher takes gds-0033.chd and 317-0384-com.pic, checks them, and extracts what the recompilation needs. The executable is BIOS-free and renders submitted ELAN/PVR work with Vulkan. The default mode is 60 Hz. First-run extraction needs about 1.3 GB of temporary space.",
+    "description_zh": "这是 NAOMI 2 游戏《头文字 D 街机舞台 3》的实验性静态重编译，光盘编号 GDS-0033，面向 64 位 Windows。审阅的公开演示是 v2489。压缩包 SHA-256 为 6AF00678196E9E54AC1C625866D08D2CD9855D0F43866B5DE1EDCBD7DCE0EF93。启动器接受 gds-0033.chd 和 317-0384-com.pic，校验后提取重编译所需的文件。可执行文件不使用 BIOS，并用 Vulkan 渲染提交的 ELAN/PVR 工作。默认模式是 60 Hz。首次提取大约需要 1.3 GB 临时空间。",
+    "requirements": [
+      "Windows x64. The matching CHD and PIC files named above. About 1.3 GB free for the first extraction.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/distilledorion-sketch/Initial-D-Arcade-Stage-3-Native-SH-4-Recompilation-WIP-/blob/7f182756ea4a0c522733366406eb7c4c873e5130/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -40712,5 +40712,12 @@
       "把 yuka.exe 放进游戏目录并运行 yuka help。",
       "README 未注明许可证。"
     ]
+  },
+  "initial-d-arcade-stage-3": {
+    "name": "头文字D街机舞台3重编译",
+    "requirements": [
+      "需要 64 位 Windows。需要上面写明的匹配 CHD 和 PIC 文件。首次提取大约需要 1.3 GB 空闲空间。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
