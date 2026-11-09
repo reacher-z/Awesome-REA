@@ -340,6 +340,7 @@
 - [**OpenTESArena：重建 The Elder Scrolls: Arena 的新引擎**](https://github.com/afritz1/OpenTESArena) - OpenTESArena 用新的 C++ 引擎重建 1994 年 DOS 游戏 The Elder Scrolls: Arena，游戏资源由用户另行获取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentesarena-case/)</sub>
 - [**OpenTIE：重实现《星球大战：钛战机》**](https://github.com/elyosh/OpenTIE) - OpenTIE 在 Windows、macOS 和 Linux 上重实现《星球大战：钛战机》，读取用户安装的 1995 年 Collector's CD-ROM 版或 1998 年 Windows 版数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentie-case/)</sub>
 - [**OpenTomb：《古墓丽影》引擎重实现**](https://github.com/opentomb/OpenTomb) - OpenTomb 是经典《古墓丽影》引擎的开源重新实现项目，可运行《古墓丽影》1–5 及自制 TRLE 关卡。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentomb/)</sub>
+- [**OpenTPW**](https://github.com/OpenTPW/OpenTPW) - OpenTPW 重实现 Bullfrog 1999 年的《主题公园世界》，也以《模拟主题公园》发行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentpw/)</sub>
 - [**OpenTS2：在 Unity 中开源重新实现《模拟人生 2》**](https://github.com/LazyDuchess/OpenTS2) - 在 Unity 引擎中重新实现《模拟人生 2》，以自行编写的 C# 代码读取使用者终极典藏版安装中的 DBPF 包和各类素材格式，项目也希望把这些代码提供为模块化的库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opents2-sims2-engine-case/)</sub>
 - [**OpenTS：重建 Tiberian Sun 引擎**](https://github.com/OpenTS-Developers/OpenTS) - OpenTS 将《Command &amp; Conquer: Tiberian Sun》2.03 Firestorm 引擎重建为独立程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opents-case/)</sub>
 - [**OpenTTD：重建《运输大亨豪华版》**](https://github.com/OpenTTD/OpenTTD) - OpenTTD 以《运输大亨豪华版》为基础重建运输模拟游戏，力求复现原版玩法并增加功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openttd-case/)</sub>
@@ -643,5 +644,4 @@
 - [**Major Havoc：街机游戏反汇编**](https://github.com/historicalsource/major-havoc-dasm) - major-havoc-dasm 发布 Major Havoc 的反汇编，按 alpha、gamma 和矢量 ROM 组件分为多份汇编文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/major-havoc-disassembly-case/)</sub>
 - [**MangosZero：重建《魔兽世界》旧版服务器**](https://github.com/mangoszero/server) - MangosZero 重建《魔兽世界》旧版的认证和世界服务器，适配 1.12.1 至 1.12.3 客户端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mangoszero-server-case/)</sub>
 - [**Maniac Mansion：C64 引擎与加载器注释反汇编**](https://github.com/pditincho/mm-explained) - 这份重构并注释的反汇编资料记录了 C64 版《Maniac Mansion》的游戏引擎和专用磁盘加载器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/maniac-mansion-c64-explained-case/)</sub>
-- [**Maniac Mansion：试玩版与零售版脚本的注释反汇编**](https://github.com/segrax/Maniac.Mansion.Disassembly) - 该仓库是疯狂大厦 v0 试玩版和零售版脚本的注释反汇编，并附有房间、物体、变量和声音的表格。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/maniac-mansion-disasm/)</sub>
 <!-- END GENERATED CASES -->
