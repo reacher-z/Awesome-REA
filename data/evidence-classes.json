@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-09T08:48:34+00:00",
-  "entry_count": 4795,
+  "generated_at": "2026-11-09T10:16:23+00:00",
+  "entry_count": 4796,
   "class_counts": {
    "0": 15,
    "1": 1040,
-   "2": 3584,
+   "2": 3585,
    "3": 144
   },
   "unknown_count": 12,
@@ -134663,6 +134663,35 @@
    "checked_at": "2026-11-09T01:42:28+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "spyro-1-decomp",
+   "url": "https://github.com/TheMobyCollective/spyro-1",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3905,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-09T10:16:23+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   }

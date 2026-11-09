@@ -40712,5 +40712,12 @@
       "把 yuka.exe 放进游戏目录并运行 yuka help。",
       "README 未注明许可证。"
     ]
+  },
+  "spyro-1-decomp": {
+    "name": "斯派罗反编译",
+    "requirements": [
+      "提供的工具链镜像需要 Docker，或自备 mipsel gcc 2.7.2 工具链。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
