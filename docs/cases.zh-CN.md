@@ -4,16 +4,16 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**3485 个案例**，按分区列出。
+**3689 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (75)
-- [Game · 游戏](#game) (2337)
-- [App · 应用](#app) (223)
-- [Native Binary · 原生二进制](#native-binary) (55)
-- [Firmware and Hardware · 固件与硬件](#firmware) (161)
-- [Protocol · 协议](#protocol) (634)
+- [Game · 游戏](#game) (2527)
+- [App · 应用](#app) (228)
+- [Native Binary · 原生二进制](#native-binary) (57)
+- [Firmware and Hardware · 固件与硬件](#firmware) (165)
+- [Protocol · 协议](#protocol) (637)
 
 <a id="website"></a>
 ## Website · 网站 (75)
@@ -21,43 +21,44 @@
 - [案例列表](cases/website.zh-CN.md)
 
 <a id="game"></a>
-## Game · 游戏 (2,337)
+## Game · 游戏 (2,527)
 
 - [案例列表（第 1 部分）](cases/game-1.zh-CN.md)
 - [案例列表（第 2 部分）](cases/game-2.zh-CN.md)
 - [案例列表（第 3 部分）](cases/game-3.zh-CN.md)
 - [案例列表（第 4 部分）](cases/game-4.zh-CN.md)
+- [案例列表（第 5 部分）](cases/game-5.zh-CN.md)
 
 <a id="game-matching-decompilation"></a>
-- [匹配反编译与反汇编](cases/game-1.zh-CN.md#game-matching-decompilation) (482)
+- [匹配反编译与反汇编](cases/game-1.zh-CN.md#game-matching-decompilation) (524)
 <a id="game-decompilation"></a>
-- [非匹配反编译](cases/game-1.zh-CN.md#game-decompilation) (263)
+- [非匹配反编译](cases/game-1.zh-CN.md#game-decompilation) (286)
 <a id="game-static-recompilation"></a>
-- [静态重编译](cases/game-2.zh-CN.md#game-static-recompilation) (613)
+- [静态重编译](cases/game-2.zh-CN.md#game-static-recompilation) (652)
 <a id="game-port"></a>
-- [基于重建源码的移植](cases/game-3.zh-CN.md#game-port) (312)
+- [基于重建源码的移植](cases/game-3.zh-CN.md#game-port) (341)
 <a id="game-engine-reimplementation"></a>
-- [引擎重实现](cases/game-3.zh-CN.md#game-engine-reimplementation) (389)
+- [引擎重实现](cases/game-3.zh-CN.md#game-engine-reimplementation) (423)
 <a id="game-other"></a>
-- [其他方法与分析](cases/game-4.zh-CN.md#game-other) (278)
+- [其他方法与分析](cases/game-4.zh-CN.md#game-other) (301)
 
 <a id="app"></a>
-## App · 应用 (223)
+## App · 应用 (228)
 
 - [案例列表](cases/app.zh-CN.md)
 
 <a id="native-binary"></a>
-## Native Binary · 原生二进制 (55)
+## Native Binary · 原生二进制 (57)
 
 - [案例列表](cases/native-binary.zh-CN.md)
 
 <a id="firmware"></a>
-## Firmware and Hardware · 固件与硬件 (161)
+## Firmware and Hardware · 固件与硬件 (165)
 
 - [案例列表](cases/firmware.zh-CN.md)
 
 <a id="protocol"></a>
-## Protocol · 协议 (634)
+## Protocol · 协议 (637)
 
 - [案例列表](cases/protocol.zh-CN.md)
 <!-- END GENERATED CASES -->
