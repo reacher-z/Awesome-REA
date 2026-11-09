@@ -6,13 +6,14 @@
 
 [English](website.md)
 
-**74 个案例**
+**75 个案例**
 
 - [**canopy-dotmatrix：重建 davidluft.com 的点阵窗景**](https://github.com/isjiajia01/canopy-dotmatrix) - 项目依据 davidluft.com 的公开 JavaScript 文件和场景数据重建首页点阵窗景。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/canopy-dotmatrix-case/)</sub>
 - [**Dih Pinterest：重建 Pinterest 搜索站点的页面与数据流**](https://github.com/Ikyletwar/dih-pinterest-replica) - Dih Pinterest 将 searchpinterest.vercel.app 的搜索界面和数据流重建为静态网页，可选配 Vercel 代理。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dih-pinterest-case/)</sub>
 - [**Drama Live：分析 Android 与网页客户端并重建 API 客户端**](https://github.com/barhomus10/dramalive-analysis) - Drama Live analysis 记录这款 IPTV 播放器的 Android APK 与网页 PWA，包括组件栈、接口路径和内容来源流程。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/dramalive-analysis-case/)</sub>
 - [**edgestash：重建 Vercel Blob 与 Upstash Redis API 行为**](https://github.com/devtechedge/edgestash) - edgestash 实现可自行托管的 Vercel Blob 与 Upstash Redis REST API 服务，让已发布的 SDK 改用其他端点。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/edgestash-case/)</sub>
 - [**github-websocket-pipelines-api：探查 GitHub Actions 实时日志消息**](https://github.com/Hacksore/github-websocket-pipeline-api) - github-websocket-pipelines-api 探查 GitHub Actions 未公开的实时日志 WebSocket 接口。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/github-websocket-pipelines-api-case/)</sub>
+- [**Google Earth：重建三维卫星影像资源格式与访问方式**](https://github.com/retroplasma/earth-reverse-engineering) - earth-reverse-engineering 研究 Google Earth 的三维卫星影像模式，重建资源 URL 结构、八叉树元数据、Protobuf 资源格式以及网格和纹理解码步骤。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/earth-reverse-engineering-case/)</sub>
 - [**Inception Chat：从设计与提示词采集结果重建聊天页面**](https://github.com/creativerezz/inception) - Inception Chat 根据 chat.inceptionlabs.ai 公开落地页的桌面与移动布局、已部署 CSS 变量及采集的推荐提示词重建界面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/inception-chat-extraction-case/)</sub>
 - [**LoreMaps：幻想地图图集的静态重写**](https://github.com/loremaps/loremaps) - 从该项目早先的 ASP.NET MVC 站点重写而来的 Astro 静态地图集。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/loremaps-atlas-case/)</sub>
 - [**MAX Messenger：记录 WebSocket 与 TCP 消息格式**](https://github.com/pr0bel1230/max-api-docs) - MAX Messenger API Documentation 根据浏览器流量和直接请求实验，整理该通讯服务的 WebSocket JSON 与 TCP MessagePack 交互。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/max-messenger-protocol-case/)</sub>
