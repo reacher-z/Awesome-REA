@@ -18,6 +18,7 @@ from build_readme import CATEGORIES, collection_section
 from build_repository_index import CATEGORIES as REPOSITORY_CATEGORIES
 from build_survey import build_survey, discussion_sections
 from build_entry_pages import build_entry_pages
+from page_twins import write_page_twins
 from build_home import build_home
 from build_feed import build_feeds
 from build_api import build_api, write_api_pages
@@ -437,6 +438,8 @@ def build_site(output: Path) -> tuple[int, int, int]:
     (output / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
     (output / "robots.txt").write_text(robots_txt(SITE_URL, f"{SITE_URL}/{SITEMAP_INDEX}"), encoding="utf-8")
     sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls]
+    # Indexed pages without a builder-made Markdown twin get one converted from their <main>.
+    write_page_twins(output, [url.removeprefix(SITE_URL) for url in sitemap_urls], SITE_URL)
     # lastmod comes from the records each page shows, never the build time (sitemaps.page_dates).
     dates = page_dates(resources=resources, papers=papers, repository_document=browse_document,
                        discovery_batches=(discovery_queue or {}).get("batches"), lead_batches=(lead_queue or {}).get("batches"),
