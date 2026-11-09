@@ -143849,5 +143849,28 @@
     "verified_at": "2026-11-07",
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
+  },
+  {
+    "id": "kain2",
+    "name": "Legacy of Kain: Soul Reaver decompile",
+    "url": "https://github.com/Gh0stBlade/KAIN2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This decompiles Legacy of Kain: Soul Reaver by translating its MIPS R3000 code to C, then builds a modern port. The reviewed completion badge for SLUS_007.08 reads 78 percent. It uses the Valkyrie emulator layer and SDL2. The listed platforms are Windows 7 through 11, Linux, 64-bit Mac, UWP, Xbox One and Series through UWP, the web through Emscripten, and Android. A WebGL demo is linked from the page. Build steps are in CONTRIBUTING.MD.",
+    "description_zh": "该项目把《凯恩的遗产：灵魂掠夺者》的 MIPS R3000 代码译成 C，再构建现代移植。审阅的 SLUS_007.08 完成度徽章是 78%。它使用 Valkyrie 模拟层和 SDL2。列出的平台是 Windows 7 到 11、Linux、64 位 Mac、UWP、通过 UWP 的 Xbox One 和 Series、通过 Emscripten 的网页，以及 Android。页面链接了一个 WebGL 演示。构建步骤在 CONTRIBUTING.MD。",
+    "requirements": [
+      "The build steps in CONTRIBUTING.MD at the reviewed commit.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Gh0stBlade/KAIN2/blob/e9fa662a02ab597af1e2b2b8e4d1a6af02c180ef/README.MD",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

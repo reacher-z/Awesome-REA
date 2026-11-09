@@ -40712,5 +40712,12 @@
       "把 yuka.exe 放进游戏目录并运行 yuka help。",
       "README 未注明许可证。"
     ]
+  },
+  "kain2": {
+    "name": "凯恩的遗产灵魂掠夺者反编译",
+    "requirements": [
+      "构建步骤见审阅提交里的 CONTRIBUTING.MD。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

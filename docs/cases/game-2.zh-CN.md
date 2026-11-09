@@ -6,7 +6,7 @@
 
 [English](game-2.md)
 
-**617 个案例**
+**618 个案例**
 
 ## 非匹配反编译
 
@@ -58,6 +58,7 @@
 - [**Kuru Kuru Kururin：GBA 功能性反编译与 PC 移植**](https://github.com/an1n-dya/kururin) - kururin 以 C 重建欧洲版 GBA《Kuru Kuru Kururin》，目标是功能一致而非逐字节一致，并构建 Linux 与 Windows 的 SDL2 PC 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kururin-case/)</sub>
 - [**LADX-Decompile：Link's Awakening DX 的 C 语言重建**](https://github.com/Hysm25/LADX-Decompile) - LADX-Decompile 将 Game Boy Color 版 Link's Awakening DX 的例程翻译为 C，并按卡带分库和子系统组织。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ladx-decompile-case/)</sub>
 - [**Larax &amp; Zaco：REA 导出的证据库与部分例程恢复**](https://github.com/Hubert-Rybak/lezac-decompilation) - 作者使用 REA 6.3.0 与 Ghidra，为 DOS 共享软件 LEZAC.EXE 中发现的全部 215 个过程导出档案、伪代码和汇编，再将其中少量例程恢复为 Pascal 和可移植 C。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/lezac-rea-decompilation-case/)</sub>
+- [**凯恩的遗产灵魂掠夺者反编译**](https://github.com/Gh0stBlade/KAIN2) - 该项目把《凯恩的遗产：灵魂掠夺者》的 MIPS R3000 代码译成 C，再构建现代移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kain2/)</sub>
 - [**Lego Battles：手工反编译的 Nintendo DS 游戏重建**](https://github.com/LiruJ/Lego-Battles-Decomp) - Lego Battles 通过手工反编译重建 Nintendo DS 游戏源码，主要针对欧版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lego-battles-decomp-case/)</sub>
 - [**Lego Island 2：GBA 版反编译**](https://github.com/minirop/lego-island-gba) - Lego Island 2 使用 bagd，以 C 和汇编重建 GBA 游戏代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lego-island-2-gba-case/)</sub>
 - [**LEGO Racers：进行中的 N64 源码重建**](https://github.com/marijnvdwerf/lego-racers) - LEGO Racers 是进行中的 N64 游戏源码重建项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lego-racers-case/)</sub>
