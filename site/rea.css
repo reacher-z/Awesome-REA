@@ -167,6 +167,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .card-preview { grid-area: prev; position: relative; margin-top: 6px; max-width: 420px; aspect-ratio: 16 / 9;
   border: 1px solid var(--line-strong); border-radius: 2px; background: var(--surface-2); overflow: hidden; }
 .card-preview img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.card-preview-link { display: block; width: 100%; height: 100%; }
 .card-preview-play { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 26px; height: 26px;
   border-radius: 50%; background: var(--btn-bg); color: var(--btn-ink); font-size: .6875rem; }
 .card-preview > .card-preview-play { position: absolute; left: 10px; bottom: 8px; z-index: 1; }
