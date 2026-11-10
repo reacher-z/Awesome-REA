@@ -1,5 +1,7 @@
 {
-  "enforced_rules": [],
+  "enforced_rules": [
+    "*"
+  ],
   "false_positives": [
     {
       "rule": "awesome-spell-check",
@@ -45,6 +47,11 @@
       "rule": "awesome-spell-check",
       "reason": "Text \"OS X\" should be written as \"macOS\"",
       "why": "Quoted name of the historical operating system release in a project description."
+    },
+    {
+      "rule": "awesome-spell-check",
+      "reason": "Text \"Postgres\" should be written as \"PostgreSQL\"",
+      "why": "Postgres is the PostgreSQL project's own accepted short name for the database."
     }
   ]
 }
