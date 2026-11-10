@@ -601,6 +601,7 @@
 - [**Alleyway：带注释的 Game Boy 反汇编与反编译**](https://github.com/islander0/alleyway-decomp) - Alleyway 项目记录 Game Boy 游戏 World 版 ROM 的反汇编及实验性 C 反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/alleyway-game-boy-decomp-case/)</sub>
 - [**Amplitude：进行中的 PS2 游戏反编译**](https://github.com/ieee802dot11ac/amp) - Amplitude（2003）是针对 NTSC-U/C 零售版的反编译项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/amplitude-2003-case/)</sub>
 - [**Angry Birds Decompilation：Lua 脚本恢复**](https://github.com/jooapa/Angry_Birds_Decompilation) - Angry Birds Decompilation 记录如何从《愤怒的小鸟》PC 移植版中恢复 Lua 脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/angry-birds-decomp/)</sub>
+- [**asteroids-disassembly：《小行星》街机固件反汇编**](https://github.com/nmikstas/asteroids-disassembly) - asteroids-disassembly 是街机游戏《小行星》固件的反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/asteroids-disassembly/)</sub>
 - [**AutoDestruct-xport：Auto Destruct 原生移植**](https://github.com/psxports/AutoDestruct-xport) - AutoDestruct-xport 将 PlayStation 游戏《Auto Destruct》的反编译代码移植到 C 语言运行时，提供 Windows 和网页入口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/autodestruct-xport-case/)</sub>
 - [**AutoZone Hot Pursuit：重建 Need for Speed: Hot Pursuit**](https://github.com/americusmaximus/AZHP) - AutoZone Hot Pursuit 基于原始二进制分析，以 C++ 重建 1998 年的 Need for Speed: Hot Pursuit 及 Modern Patch。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/autozone-hot-pursuit-case/)</sub>
 - [**AZHS：重建《Need for Speed: High Stakes》4.50**](https://github.com/americusmaximus/AZHS) - AZHS 根据《Need for Speed: High Stakes》4.50 的原版二进制文件重建源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/azhs-case/)</sub>
@@ -631,5 +632,4 @@
 - [**CMR2Decomp：反编译 Colin McRae Rally 2.0**](https://github.com/CMR2Decomp/CMR2Decomp) - CMR2Decomp 是 PC 游戏 Colin McRae Rally 2.0 的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cmr2-decomp/)</sub>
 - [**Computer Archeology：街机游戏反汇编笔记**](https://github.com/topherCantrell/computerarcheology) - Computer Archeology 存放由工具链渲染到 computerarcheology.com 的 Markdown 反汇编和注释。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/computerarcheology/)</sub>
 - [**Costume Quest：Windows x86 功能匹配反编译**](https://github.com/Costume-Quest-Modding/CostumeQuest-Decomp) - Costume Quest 项目以 C++ 重建 Windows x86 Steam Build 81338 的游戏函数，目标是保持功能一致。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/costume-quest-decomp-case/)</sub>
-- [**Crash Bandicoot: The Wrath of Cortex：早期 PS2 反编译**](https://github.com/calmsacibis995/crash-ps2) - crash-ps2 开始以 C 反编译 PS2 NTSC-U v1.00 版 Crash Bandicoot: The Wrath of Cortex。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash-ps2-case/)</sub>
 <!-- END GENERATED CASES -->

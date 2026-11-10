@@ -2,13 +2,13 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-09T21:32:33+00:00",
-  "entry_count": 5148,
+  "generated_at": "2026-11-10T01:23:31+00:00",
+  "entry_count": 5149,
   "class_counts": {
    "0": 15,
    "1": 1126,
    "2": 3831,
-   "3": 163
+   "3": 164
   },
   "unknown_count": 13,
   "c0_review_count": 15,
@@ -144554,6 +144554,33 @@
    "checked_at": "2026-11-09T15:08:39+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "asteroids-disassembly",
+   "url": "https://github.com/nmikstas/asteroids-disassembly",
+   "evidence_class": 3,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": false,
+    "docs_bytes": 74,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "no usable documentation at the code source",
+   "checked_at": "2026-11-09T10:24:33+00:00",
+   "evidence_status": "observed",
+   "scope": "notes",
    "runtime_status": "not-run",
    "c0_candidate": false
   }
