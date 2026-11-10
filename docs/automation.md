@@ -166,7 +166,7 @@ For a separate private worker that starts from reviewed local evidence, see [pri
 
 ### Scan status badge
 
-The README's scan badge is a [shields.io endpoint badge](https://shields.io/badges/endpoint-badge) that reads `scan-status.json` from the `status` branch. `Scan status badge` ([scan_status_badge.py](../scripts/scan_status_badge.py)) rewrites that file every hour and after every README discovery scan: it shows when the last successful scan of `main` finished, a run of the workflow that concluded `success` (a run with nothing to ingest skips its ingest job and still counts), and turns amber once that is more than six hours ago. The branch holds only this file; the first run creates it, and later runs commit only when the badge changes, as the workflow bot.
+The README's scan badge is a [shields.io endpoint badge](https://shields.io/badges/endpoint-badge) that reads `scan-status.json` from the `status` branch. `Scan status badge` ([scan_status_badge.py](../scripts/scan_status_badge.py)) rewrites that file every hour and after every README discovery scan: it shows when the last successful scan of `main` finished, a run of the workflow that concluded `success` (a run with nothing to ingest skips its ingest job and still counts), and turns amber once that is more than nine hours ago, one eight-hour scan interval plus an hour. The branch holds only this file; the first run creates it, and later runs commit only when the badge changes, as the workflow bot. Each commit message starts with `[CF-Pages-Skip]`, so the Cloudflare Pages Git integration skips a preview deployment for the branch.
 
 ## Automated discovery ingest
 
