@@ -2,11 +2,11 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-09T21:32:33+00:00",
-  "entry_count": 5148,
+  "generated_at": "2026-11-10T01:25:42+00:00",
+  "entry_count": 5149,
   "class_counts": {
    "0": 15,
-   "1": 1126,
+   "1": 1127,
    "2": 3831,
    "3": 163
   },
@@ -144554,6 +144554,35 @@
    "checked_at": "2026-11-09T15:08:39+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "sq8l-64-rebuild-case",
+   "url": "https://github.com/sq8l-revival/SQ8L",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 15359,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 4,
+    "release_asset_count": 14,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-09T11:42:35+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   }

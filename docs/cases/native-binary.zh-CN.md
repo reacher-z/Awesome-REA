@@ -6,7 +6,7 @@
 
 [English](native-binary.md)
 
-**64 个案例**
+**65 个案例**
 
 - [**8088 BIOS：反汇编 Tandy 与 IBM PC 固件映像**](https://github.com/ricardoquesada/bios-8088) - 该仓库反汇编 8088 机器的 BIOS 镜像：Tandy 1000、Tandy 1000A、Tandy 1000 HX、IBM PCjr 和 IBM PC 5150。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bios-8088/)</sub>
 - [**AGS Aging Cartridge：反汇编 7.0 版**](https://github.com/Normmatt/ags_aging) - 该项目以用户提供的 Game Boy Advance ROM 为输入，将 AGS Aging Cartridge 7.0 重建为汇编与 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ags-aging-cartridge-case/)</sub>
@@ -67,6 +67,7 @@
 - [**CPQ IO Scheduler：还原小米的块设备调度器**](https://github.com/Rasenkai/CPQ_IOSched) - CPQ IO Scheduler 从已剥离符号的 ARM64 cpq.ko 内核模块还原小米的 Linux 块设备调度器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cpq-iosched-case/)</sub>
 - [**m0rph：追踪混淆 ELF 程序的字符串校验逻辑**](https://github.com/UmbertoDellaMonica/m0rph-CTF-CyberChallenge.IT) - m0rph 调查使用 readelf、strings、Cutter 和 Radare2 分析一款经过混淆的 x86-64 ELF CTF 字符串校验程序。 <sub>案例 · [完整条目](https://awesomerea.org/zh/resources/m0rph-ctf-analysis-case/)</sub>
 - [**Malware Analysis：njRAT 与 Casdet 行为研究**](https://github.com/phour44/Malware-Analysis) - 该恶意软件研究用 PEStudio 静态检查和 ANY.RUN 沙箱遥测分析 njRAT 与经 UPX 打包的 Casdet 可执行文件，同时检查恶意 PDF 和良性对照文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/malware-analysis-njrat-casdet-case/)</sub>
+- [**SQ8L：Siegfried Kullmann 0.91b 插件的 64 位重建**](https://github.com/sq8l-revival/SQ8L) - 把 Siegfried Kullmann 的 32 位 Windows VST SQ8L 0.91b（Ensoniq SQ-80）从原始二进制重建为 64 位插件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sq8l-64-rebuild-case/)</sub>
 - [**Woxi：用 Rust 实现的 Wolfram Language 解释器**](https://github.com/ad-si/Woxi) - 作者将 Woxi 描述为用 Rust 实现的 Wolfram Language 子集解释器，面向 CLI 脚本与 Jupyter Notebook。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/woxi-case/)</sub>
 - [**OpenBSD netcat：REA 与 Ghidra 静态调查**](https://github.com/NullLabTests/OpenBSD_netcat_REA) - REA/Ghidra 报告研究 Ubuntu netcat-openbsd 1.234-1 ELF 二进制，公开证据封套、反编译函数及函数清单；产物是静态调查，而非重建后的 netcat 应用。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/netcat-openbsd-rea-static-case/)</sub>
 - [**Windows 加载器：借助 REA 与 Codex 的静态恶意软件分析**](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/) - Fedele Mantuano 报告在离线 Docker 实验环境中让 Codex 借助 REA，对一个公开的 Windows 恶意软件样本做静态分析，全程不执行样本。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/windows-loader-static-analysis-case/)</sub>
