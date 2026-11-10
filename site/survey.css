@@ -224,7 +224,6 @@ html[lang="zh-CN"] .survey-kicker {letter-spacing:.05em}
   .survey-article a,.survey-meta a {color:#111;text-decoration:underline}
 }
 
-.survey-header > .survey-note { max-width: 72ch; font-size: 14px; line-height: 1.75; color: var(--muted); }
 
 /* Short task-oriented navigation keeps the article close on small screens. */
 .survey-toc-mobile{display:none}

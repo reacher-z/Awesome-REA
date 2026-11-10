@@ -41,7 +41,7 @@ def contribution_content(repository_url, language):
         ('自动扫描和精选收录是什么关系？' if zh else 'How does an automated scan relate to curated inclusion?',
          'README 自动扫描用于发现候选仓库；精选收录在单独核查一手来源之后进行。' if zh else 'An automated README scan finds candidate repositories. A curated entry follows a separate primary-source review.'),
         ('提交何时发布？' if zh else 'When is a submission published?',
-         '维护者审核相关性与事实声明并合并 PR 后，网站从 main 分支重新发布。描述提交时写明它的实际状态：已创建 PR、已合并或已部署。' if zh else 'A maintainer reviews relevance and factual claims and merges the PR; the site then republishes from main. Describe a submission by its actual state: PR opened, merged or deployed.'),
+         '维护者审核相关性与事实声明并合并 PR 后，网站从 main 分支重新发布。检查通过和 AI 审查意见是这次审核的输入。描述提交时写明它的实际状态：已创建 PR、已合并或已部署。' if zh else 'A maintainer reviews relevance and factual claims and merges the PR; the site then republishes from main. Passing checks and AI review comments feed that review. Describe a submission by its actual state: PR opened, merged or deployed.'),
     ]
     answers = ''.join('<section class="source-card browse-repository"><h2>' + escape(q) + '</h2><p class="card-description">' + escape(a) + '</p></section>' for q, a in questions)
     docs = [('/blob/main/' + rules, '贡献规则' if zh else 'Contribution rules'),
