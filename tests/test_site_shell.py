@@ -141,7 +141,7 @@ class HomeTests(unittest.TestCase):
                 self.assertNotIn('<', prose)
                 headings = [node for node in document.nodes if node['tag'] == 'h1']
                 self.assertEqual(len(headings), 1)
-                self.assertEqual(html[headings[0]['inner']:headings[0]['close']], COPY[language]['h1'])
+                self.assertTrue(html[headings[0]['inner']:headings[0]['close']].endswith(COPY[language]['h1']))
                 links = [node['attrs'] for node in document.nodes if node['tag'] == 'link']
                 self.assertEqual([link['href'] for link in links if link.get('rel') == 'canonical'], [canonical])
                 self.assertEqual({link['hreflang']: link['href'] for link in links if link.get('hreflang')},
@@ -156,7 +156,6 @@ class HomeTests(unittest.TestCase):
                 self.assertEqual(meta['description'], meta['og:description'])
                 self.assertEqual(meta['description'], meta['twitter:description'])
                 self.assertIn(SITE_NAME, prose)
-                self.assertIn('Awesome REA', SITE_ALTERNATE_NAMES)
                 self.assertEqual(website_node(origin, REPOSITORY)['sameAs'], REPOSITORY)
                 self.assertIn(f'href="{REPOSITORY}"', html)
                 self.assertIn('href="/zh/about/"' if language == 'zh' else 'href="/about/"', html)

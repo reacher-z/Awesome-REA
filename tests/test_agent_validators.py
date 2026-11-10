@@ -56,6 +56,7 @@ class TwinValidatorTests(unittest.TestCase):
             route = prefix + '/resources/ghidra/'
             (self.output / route.lstrip('/') / 'index.md').write_text(
                 '# &lt;pid&gt; &amp; \\*x\\*\n\n> ' + description + '\n\n<' + ORIGIN + route + '>\n', encoding='utf-8')
+        add_front_matter(self.output, ORIGIN, {}, '2026-11-10')
         validate_twins(self.output, self.routes, [record], [])
         path = self.output / 'zh/resources/ghidra/index.md'
         path.write_text(path.read_text().replace('&lt;region&gt;', ''), encoding='utf-8')

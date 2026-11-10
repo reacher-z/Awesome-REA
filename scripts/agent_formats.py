@@ -246,18 +246,11 @@ def paper_markdown(paper: dict, language: str, *, site_url: str, related: list[t
             (choose('Record JSON', '记录 JSON'), f'<{site_url}{record_json_route("paper", identifier)}>'),
             (choose('Chinese version', '英文版'), link('简体中文' if not zh else 'English', site_url + entry_route('paper', identifier, 'en' if zh else 'zh') + MARKDOWN)),
         ]
-<<<<<<< HEAD
-    lines = [f'# {text(title)}', '', f'> {text(paper[f"description_{language}"])}', '', *bullet_facts(facts, language), '',
-             f'## {choose("Scope and limitations", "研究范围与局限")}', '', text(paper[f'scope_limitations_{language}']), '',
-             f'## {choose("Why it fits this collection", "与本合集的关联")}', '', text(paper[f'why_fits_{language}']), '',
-             f'## {choose("Publication and review notes", "发表与复核说明")}', '', text(paper['metadata_notes_zh' if zh else 'metadata_notes']), '',
-             f'## BibTeX', '', '```bibtex', bibtex_text(paper).rstrip(), '```', '',
-=======
     lines = [f'# {markdown_text(title)}', '', f'> {markdown_text(paper[f"description_{language}"])}', '', *bullet_facts(facts, language), '',
              f'## {choose("Scope and limitations", "研究范围与局限")}', '', markdown_text(paper[f'scope_limitations_{language}']), '',
              f'## {choose("Why it fits this collection", "与本合集的关联")}', '', markdown_text(paper[f'why_fits_{language}']), '',
              f'## {choose("Publication and review notes", "发表与复核说明")}', '', markdown_text(paper['metadata_notes_zh' if zh else 'metadata_notes']), '',
->>>>>>> e98535e8 (Clarify bilingual project identity and preserve literal Markdown prose)
+             f'## BibTeX', '', '```bibtex', bibtex_text(paper).rstrip(), '```', '',
              f'## {choose("Primary sources", "一手来源")}', '', *_sources(paper['evidence_urls']), '']
     if related:
         lines += [f'## {choose("Related entries", "相关条目")}', '']
@@ -271,17 +264,20 @@ def paper_markdown(paper: dict, language: str, *, site_url: str, related: list[t
 
 
 def collection_markdown(*, title: str, description: str, language: str, canonical: str, items: list[dict],
-                        notes: list[str] = (), groups: list[tuple[str, list[dict]]] | None = None,
+                        notes: list[str] = (), markup: list[str] = (),
+                        groups: list[tuple[str, list[dict]]] | None = None,
                         json_url: str | None = None, counterpart: str | None = None) -> str:
     """The Markdown twin of a listing: its summary, then each listed item as a link with a short description.
 
     ``items`` (or ``groups`` of items under subheadings) hold ``name``, ``url`` and optional ``description``
-    and ``meta`` strings. ``url`` should be the item's own Markdown twin where one exists.
+    and ``meta`` strings. ``url`` should be the item's own Markdown twin where one exists. ``notes`` are
+    literal prose and get escaped; ``markup`` holds generator-written Markdown that is emitted as is.
     """
     zh = language == 'zh'
     lines = [f'# {markdown_text(title)}', '', f'> {markdown_text(description)}', '']
     lines += [markdown_text(note) for note in notes if note]
-    if notes:
+    lines += [note for note in markup if note]
+    if notes or markup:
         lines.append('')
     facts = [('HTML', f'<{canonical}>')]
     if json_url:
