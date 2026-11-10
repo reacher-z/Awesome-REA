@@ -10,6 +10,7 @@
 
 ## 静态重编译
 
+- [**Marble Knights Recompiled：《Marble Knights》iOS 版的静态重编译移植**](https://github.com/YuutaTsubasa/MarbleKnightsRecompiled) - Marble Knights Recompiled 将《Marble Knights》iOS 版 UnityFramework 中的 ARM64 函数预先转成 C，再编译为供 Unity 2019.4.17f1 Windows 播放器加载的 GameAssembly.dll。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/marble-knights-recompiled-case/)</sub>
 - [**Marchwind 64：静态重编译《超级机器人大战 64》**](https://github.com/dyzz/srw64-recomp) - Marchwind 64 是 1999 年任天堂 64 游戏《超级机器人大战64》的原生重编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/srw64-recomp/)</sub>
 - [**Mario Kart 64：通过 N64 静态重编译实现原生移植**](https://github.com/arefdsg/MK64Recomp) - Mario Kart 64: Recompiled 使用 N64: Recompiled 将 Mario Kart 64 制作成原生移植版，并由 RT64 提供渲染及图形增强。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-kart-64-recompiled-case/)</sub>
 - [**Mario Kart Wii PC Builder：静态重编译《马力欧卡丁车 Wii》**](https://github.com/MarcPique/mario-kart-wii-pc-builder) - 1.2.0 版从 PAL《马里奥卡丁车 Wii》光盘 RMCP01 构建原生 Windows 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mkwii-pc-builder/)</sub>
@@ -624,5 +625,4 @@
 - [**OpenCivOne：重写初代《Civilization》**](https://codeberg.org/rhorvat/OpenCivOne) - OpenCivOne 使用 .NET 8 和 Avalonia 为桌面系统重写 1991 年的 DOS 游戏《Civilization》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencivone-case/)</sub>
 - [**OpenCMR2 VR：《科林麦克雷拉力赛 2.0》的 Quest 与 PCVR 移植**](https://github.com/DR-89/opencmr2-vr) - OpenCMR2 VR 基于由 CMR2Decomp 反编译代码构建的 OpenCMR2，将《科林麦克雷拉力赛 2.0》移植到 Meta Quest 3 和 Windows PCVR。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencmr2-vr-case/)</sub>
 - [**OpenCrossing Anbernic：将《动物森友会》移植到 Anbernic 掌机**](https://github.com/TechProGabe/OpenCrossing-Anbernic) - OpenCrossing Anbernic 在 Anbernic 掌机上运行 GameCube 的《Animal Crossing》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencrossing-anbernic-case/)</sub>
-- [**OpenCrossing-Xbox：将《Animal Crossing》移植到初代 Xbox**](https://github.com/TechProGabe/OpenCrossing-Xbox) - OpenCrossing-Xbox 将 GameCube 版《Animal Crossing》的反编译代码编译到初代 Xbox，并从用户提供的美版 Rev 0 光盘镜像读取数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencrossing-xbox-case/)</sub>
 <!-- END GENERATED CASES -->

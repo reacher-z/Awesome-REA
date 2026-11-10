@@ -43453,5 +43453,13 @@
       "编译最终磁盘镜像需要 bintofdf 和 fdtc；项目内附有这两个工具的版本。",
       "项目页面未说明许可证。"
     ]
+  },
+  "sf2disasm": {
+    "name": "SF2DISASM：《光明力量 II》的匹配反汇编",
+    "requirements": [
+      "拆分和重新构建需要原始美版 ROM。README 写明在 master 分支上，汇编出的 ROM 与原版一致。",
+      "附带的编辑工具是 Java 程序，需要 Java SE 17 或更高版本。",
+      "README 以 CC BY-NC 4.0 许可该作品，包含非商业条款，并注明捆绑的 SF2 Java Tool Suite 工具使用同一许可证。"
+    ]
   }
 }
