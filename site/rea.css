@@ -1050,6 +1050,8 @@ html:has(.page-resources) { scroll-behavior: auto; }
 .no-js .list-search, .no-js .results-bar .select, .no-js .filters-btn, .no-js .pager:not(.pager-static) { display: none; }
 @container (min-width: 561px) {
   .listing .card-face { grid-template-columns: 100px minmax(0, 1fr) minmax(0, max-content); grid-template-areas: "call name stamp" "call desc targets"; column-gap: 14px; row-gap: 0; padding: 7px 12px; }
+  /* A demo preview sits below the description; without its own area it widened the last column and squeezed the text. */
+  .listing .card-face:has(.card-preview) { grid-template-areas: "call name stamp" "call desc targets" "call prev prev"; }
   .listing .card-face::before { left: 119px; }
   .listing .callno { padding-top: 2px; font-size: .75rem; }
   .listing .card-name { font-size: 1rem; line-height: 1.35; }
