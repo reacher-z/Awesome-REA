@@ -1,0 +1,1060 @@
+# Mirrors the website's public exports to the Hugging Face dataset (TIGER-Lab/AwesomeCUA or TIGER-Lab/AwesomeREA,
+# chosen from the repository this runs in). The job is skipped while the HF_TOKEN repository secret is absent.
+# The embedded builder is tools/hf_sync.py, builder_version 2; privacy guards run over every file before upload.
+name: Hugging Face dataset mirror
+
+on:
+  schedule:
+    - cron: '50 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hf-dataset-mirror
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONUTF8: '1'
+      HF_HUB_DISABLE_PROGRESS_BARS: '1'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+    steps:
+      - name: Check for the HF_TOKEN secret
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [ -n "$HF_TOKEN" ]; then echo "HF_SYNC_ENABLED=true" >> "$GITHUB_ENV"; else echo "::notice::HF_TOKEN is not set; the mirror sync is skipped"; fi
+
+      - name: Select the dataset for this repository
+        if: env.HF_SYNC_ENABLED == 'true'
+        run: |
+          echo "W=$RUNNER_TEMP/hf-sync" >> "$GITHUB_ENV"
+          case "$GITHUB_REPOSITORY" in
+            reacher-z/Awesome-CUA) printf 'TARGET=cua\nREPO_ID=TIGER-Lab/AwesomeCUA\nGUARD=Awesome-CUA\n' >> "$GITHUB_ENV" ;;
+            reacher-z/Awesome-REA) printf 'TARGET=rea\nREPO_ID=TIGER-Lab/AwesomeREA\nGUARD=Awesome-REA\n' >> "$GITHUB_ENV" ;;
+            *) echo "::error::no Hugging Face mirror is defined for $GITHUB_REPOSITORY"; exit 1 ;;
+          esac
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        if: env.HF_SYNC_ENABLED == 'true'
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        if: env.HF_SYNC_ENABLED == 'true'
+        run: python -m pip install --disable-pip-version-check --quiet 'pyarrow>=21' 'huggingface_hub>=1.0'
+
+      - name: Write the builder (tools/hf_sync.py)
+        if: env.HF_SYNC_ENABLED == 'true'
+        run: |
+          mkdir -p "$RUNNER_TEMP/hf-tools"
+          cat > "$RUNNER_TEMP/hf-tools/hf_sync.py" <<'HF_SYNC_PY'
+          #!/usr/bin/env python3
+          """Build the Hugging Face dataset mirrors of the Awesome CUA and Awesome REA public exports.
+
+          GitHub (reacher-z/Awesome-CUA, reacher-z/Awesome-REA) is the single source of truth. Each website is
+          built from its repository, and each dataset is a read-only mirror of the files that website publishes:
+          rows are copied from the live exports, never edited. hf-sync.sh drives this module; it runs the privacy
+          guards and uploads.
+
+            hf_sync.py fetch TARGET DIR           download the live exports and their source commit into DIR
+            hf_sync.py guards DIR                 download both repositories' privacy guards at their main HEAD
+            hf_sync.py build TARGET DIR OUT       write README.md, data/*.parquet, jsonl/*.jsonl, provenance.json
+            hf_sync.py dump OUT DIR               decode every Parquet file under OUT to JSON Lines in DIR
+            hf_sync.py remote-hash REPO_ID        print content_sha256 of the published provenance.json, or nothing
+            hf_sync.py summary OUT                print the commit message and description for OUT
+            hf_sync.py upload REPO_ID OUT         publish OUT to the dataset as exactly one commit
+
+          TARGET is cua or rea. Downloaded files are untrusted data: run this module with `python -I`, keep DIR
+          separate from this file, and pass a new, empty DIR.
+          """
+          from __future__ import annotations
+
+          import argparse
+          from dataclasses import dataclass, field
+          import datetime as dt
+          import hashlib
+          import json
+          from pathlib import Path, PurePosixPath
+          import re
+          import shutil
+          import subprocess
+          import sys
+          import time
+          from typing import Callable
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+
+          # Bump when the conversion or the card changes, so the next sync republishes even without new data.
+          BUILDER_VERSION = 2
+          USER_AGENT = 'awesome-catalog-hf-mirror/1 (read-only dataset mirror; +https://huggingface.co/datasets)'
+          SHA_RE = re.compile(r'[0-9a-f]{40}')
+          GUARD_REPOSITORIES = ('reacher-z/Awesome-CUA', 'reacher-z/Awesome-REA')
+          # Columns shown first in Parquet (and the viewer) when present; the rest keep their first-seen order.
+          LEAD_COLUMNS = ('id', 'record_type', 'name', 'name_zh', 'title', 'title_zh', 'full_name', 'url', 'kind')
+
+
+          class SyncError(RuntimeError):
+              pass
+
+
+          # --------------------------------------------------------------------------------------------- targets
+
+          @dataclass
+          class Config:
+              name: str
+              source: str                      # site path of the export the rows come from
+              review: str                      # review state shown in the card
+              summary: str                     # one-line description for the card
+              rows: Callable                   # (download_dir) -> list of (raw_line_or_None, record)
+              curated: bool = False
+              default: bool = False
+
+
+          @dataclass
+          class Target:
+              key: str
+              repo_id: str
+              pretty_name: str
+              entity: str
+              bib_key: str
+              bib_title: str
+              site: str
+              github: str
+              dictionary: str
+              dictionary_extra: list
+              tags: list
+              files: list                       # site paths always fetched
+              configs: list = field(default_factory=list)
+
+              @property
+              def github_url(self):
+                  return f'https://github.com/{self.github}'
+
+
+          def jsonl_rows(directory: Path, path: str, keep=lambda record: True):
+              """Rows of a JSONL export, each with its exact source line."""
+              rows = []
+              with open(directory / path.lstrip('/'), 'rb') as handle:
+                  for number, line in enumerate(handle, 1):
+                      line = line.rstrip(b'\r\n')
+                      if not line.strip():
+                          continue
+                      record = json.loads(line)
+                      if not isinstance(record, dict):
+                          raise SyncError(f'{path}:{number}: not a JSON object')
+                      if keep(record):
+                          rows.append((line, record))
+              return rows
+
+
+          def json_rows(directory: Path, path: str, key: str):
+              """Rows of the list `key` inside a JSON export object."""
+              data = json.loads((directory / path.lstrip('/')).read_bytes())
+              items = data.get(key) if isinstance(data, dict) else None
+              if not isinstance(items, list) or not all(isinstance(item, dict) for item in items):
+                  raise SyncError(f'{path}: expected an object with a list of objects under "{key}"')
+              return [(None, item) for item in items]
+
+
+          def batch_rows(directory: Path, index_path: str):
+              """Every record of every batch that a queue index lists, in index order."""
+              index = json.loads((directory / index_path.lstrip('/')).read_bytes())
+              rows = []
+              for batch in index['batches']:
+                  local = directory / urllib.parse.urlsplit(batch['records_url']).path.lstrip('/')
+                  rows.extend((None, record) for record in json.loads(local.read_bytes())['resources'])
+              return rows
+
+
+          def full_export_rows(directory: Path):
+              """The complete published repository selection that source-browser.json points to."""
+              meta = json.loads((directory / 'source-browser.json').read_bytes())['meta']
+              return json_rows(directory, meta['full_export'], 'resources')
+
+
+          CUA = Target(
+              key='cua',
+              repo_id='TIGER-Lab/AwesomeCUA',
+              pretty_name='Awesome Computer-Use Agents',
+              entity='Awesome CUA',
+              bib_key='awesome_cua',
+              bib_title='Awesome Computer-Use Agents: a source-backed catalog of computer-use, GUI, browser, and mobile agents',
+              site='https://awesomecua.com',
+              github='reacher-z/Awesome-CUA',
+              dictionary='https://github.com/reacher-z/Awesome-CUA/blob/main/docs/data-dictionary.md',
+              dictionary_extra=[
+                  ('Resource JSON Schema', 'https://awesomecua.com/schemas/resource.schema.json'),
+                  ('GitHub candidate schema', 'https://awesomecua.com/schemas/github-candidate-observation.schema.json'),
+                  ('Scope-decision schema', 'https://awesomecua.com/schemas/scope-decision.schema.json'),
+                  ('Publication-observation schema', 'https://awesomecua.com/schemas/publication-observation.schema.json'),
+                  ('Dataset and benchmark specifications', 'https://github.com/reacher-z/Awesome-CUA/blob/main/docs/specifications.md'),
+                  ('Download manifest', 'https://awesomecua.com/downloads/manifest.json'),
+              ],
+              tags=['awesome-list', 'computer-use-agents', 'gui-agents', 'web-agents', 'mobile-agents', 'browser-agents',
+                    'agents', 'benchmarks', 'bibliography', 'catalog', 'rag'],
+              files=['/data/build-info.json', '/downloads/manifest.json', '/downloads/catalog.jsonl',
+                     '/downloads/github-candidates.jsonl', '/downloads/benchmarks-profiles.json',
+                     '/downloads/datasets-profiles.json', '/downloads/relationships.json', '/downloads/topics.json',
+                     '/downloads/publications.jsonl', '/downloads/exclusions.json'],
+          )
+          CUA.configs = [
+              Config('resources', '/downloads/catalog.jsonl', 'Curated (review_status = curated)',
+                     'Curated catalog: papers, surveys, models, datasets, benchmarks, frameworks, agents, tools, products, '
+                     'infrastructure, companies and learning resources, each with retained primary-source evidence.',
+                     lambda d: jsonl_rows(d, '/downloads/catalog.jsonl', lambda r: r.get('review_status') == 'curated'),
+                     curated=True, default=True),
+              Config('metadata_only', '/downloads/catalog.jsonl', 'Not curated: relevance pending',
+                     'Bibliography records whose arXiv metadata was checked but whose relevance and taxonomy still await '
+                     'editorial review (review_status = metadata_verified, scope = relevance_pending). Presence is not an '
+                     'endorsement.',
+                     lambda d: jsonl_rows(d, '/downloads/catalog.jsonl', lambda r: r.get('review_status') != 'curated')),
+              Config('github_candidates', '/downloads/github-candidates.jsonl', 'Not curated: candidate',
+                     'Public GitHub repository observations from the discovery scans. Every row is a candidate awaiting '
+                     'review, not a catalog entry; a topic tag or repository name does not establish relevance.',
+                     lambda d: jsonl_rows(d, '/downloads/github-candidates.jsonl')),
+              Config('benchmark_profiles', '/downloads/benchmarks-profiles.json', 'Reviewed',
+                     'Source-reviewed benchmark protocols: interfaces, formats, counting units and scope of curated '
+                     'benchmarks. Missing fields stay unknown.',
+                     lambda d: json_rows(d, '/downloads/benchmarks-profiles.json', 'records'), curated=True),
+              Config('dataset_profiles', '/downloads/datasets-profiles.json', 'Reviewed',
+                     'Source-reviewed dataset profiles: supervision, modalities, formats, splits and counts of curated '
+                     'datasets. Missing fields stay unknown.',
+                     lambda d: json_rows(d, '/downloads/datasets-profiles.json', 'records'), curated=True),
+              Config('relationships', '/downloads/relationships.json', 'Reviewed',
+                     'Explicit, source-backed relationships between catalog records (introduced by, component of, variant '
+                     'of, ...). Documentation does not establish a training or evaluation dependency.',
+                     lambda d: json_rows(d, '/downloads/relationships.json', 'relations'), curated=True),
+              Config('topics', '/downloads/topics.json', 'Reviewed',
+                     'Topic collections with the exact IDs of their curated member records. Memberships overlap; do not '
+                     'sum topic counts.',
+                     lambda d: json_rows(d, '/downloads/topics.json', 'topics'), curated=True),
+              Config('publications', '/downloads/publications.jsonl', 'Recorded',
+                     'Publication-edition observations attached to catalog papers (title, authors, venue, date '
+                     'precision). They describe editions of existing records and are not additional papers.',
+                     lambda d: jsonl_rows(d, '/downloads/publications.jsonl')),
+              Config('scope_decisions', '/downloads/exclusions.json', 'Editorial decision',
+                     'Records excluded from the catalog scope, with the reason, basis and evidence of each decision. '
+                     'An exclusion is a scope judgment, not a judgment of research quality.',
+                     lambda d: json_rows(d, '/downloads/exclusions.json', 'decisions')),
+          ]
+
+          REA = Target(
+              key='rea',
+              repo_id='TIGER-Lab/AwesomeREA',
+              pretty_name='Awesome Reverse Engineering Anything',
+              entity='Awesome REA',
+              bib_key='awesome_rea',
+              bib_title='Awesome Reverse Engineering Anything',
+              site='https://awesomerea.org',
+              github='reacher-z/Awesome-REA',
+              dictionary='https://github.com/reacher-z/Awesome-REA/blob/main/data/README.md',
+              dictionary_extra=[
+                  ('Discovery queue and followed-source leads',
+                   'https://github.com/reacher-z/Awesome-REA/blob/main/data/discoveries/README.md'),
+                  ('Repository scan method', 'https://github.com/reacher-z/Awesome-REA/blob/main/docs/source-scan.md'),
+                  ('Promotion worksheet', 'https://github.com/reacher-z/Awesome-REA/blob/main/docs/promotion-worksheet.md'),
+                  ('Data manifest', 'https://awesomerea.org/data-manifest.json'),
+              ],
+              tags=['awesome-list', 'reverse-engineering', 'decompilation', 'binary-analysis', 'firmware-analysis',
+                    'protocol-analysis', 'game-reverse-engineering', 'security', 'agents', 'mcp', 'bibliography', 'catalog',
+                    'rag'],
+              files=['/data-manifest.json', '/downloads/records.jsonl', '/discoveries.json', '/discoveries/leads.json',
+                     '/source-browser.json'],
+          )
+          REA.configs = [
+              Config('resources', '/downloads/records.jsonl', 'Curated (source-reviewed)',
+                     'Curated resources: tools, projects, integrations, case studies, collections, documentation and '
+                     'learning resources, with bilingual descriptions, requirements and pinned evidence.',
+                     lambda d: jsonl_rows(d, '/downloads/records.jsonl', lambda r: r.get('record_type') == 'resource'),
+                     curated=True, default=True),
+              Config('papers', '/downloads/records.jsonl', 'Curated (source-reviewed)',
+                     'The separate research bibliography: publication identity, bilingual summaries, scope limits and '
+                     'primary sources. Some papers describe projects that are also curated resources.',
+                     lambda d: jsonl_rows(d, '/downloads/records.jsonl', lambda r: r.get('record_type') == 'paper'),
+                     curated=True),
+              Config('cases', '/downloads/records.jsonl', 'Curated (source-reviewed)',
+                     'Documented reconstruction and analysis case studies (kind = case-study). A subset of resources, so do '
+                     'not add the two counts.',
+                     lambda d: jsonl_rows(d, '/downloads/records.jsonl',
+                                          lambda r: r.get('record_type') == 'resource' and r.get('kind') == 'case-study'),
+                     curated=True),
+              Config('repositories', '/source-published.json', 'Not curated: automated README scan',
+                     'The published repository selection: automated README scans of public repositories with hashes, '
+                     'automatic labels and AI-assisted translations. Rows with scope_status = excluded stay in the '
+                     'selection with their reasons and are left out of browsing.',
+                     full_export_rows),
+              Config('discoveries', '/discoveries.json', 'Not curated: unreviewed',
+                     'The unreviewed discovery queue: README scans that passed capture checks and a reverse-engineering '
+                     'topic screen. Nobody has read, translated, run or judged them.',
+                     lambda d: batch_rows(d, '/discoveries.json')),
+              Config('leads', '/discoveries/leads.json', 'Not curated: unreviewed',
+                     'Followed-source leads: links that registered public lists, registries, topic searches, survey '
+                     'bibliographies and searches list in their in-scope sections. A listing is not evidence.',
+                     lambda d: batch_rows(d, '/discoveries/leads.json')),
+          ]
+
+          TARGETS = {'cua': CUA, 'rea': REA}
+
+
+          # ------------------------------------------------------------------------------------------------ fetch
+
+          def http_get(url: str, *, attempts: int = 3, timeout: int = 120, optional: bool = False):
+              """The response body; None for a missing optional file. Redirects must stay on the same host."""
+              host = urllib.parse.urlsplit(url).netloc
+              last = None
+              for attempt in range(attempts):
+                  request = urllib.request.Request(url, headers={'User-Agent': USER_AGENT, 'Accept': '*/*'})
+                  try:
+                      with urllib.request.urlopen(request, timeout=timeout) as response:
+                          if urllib.parse.urlsplit(response.geturl()).netloc != host:
+                              raise SyncError(f'{url}: redirected off {host}')
+                          return response.read()
+                  except urllib.error.HTTPError as error:
+                      if error.code in (401, 403, 404, 410):
+                          if optional and error.code in (404, 410):
+                              return None
+                          raise SyncError(f'{url}: HTTP {error.code}') from None
+                      last = f'HTTP {error.code}'
+                  except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as error:
+                      last = str(error)
+                  if attempt + 1 < attempts:
+                      time.sleep(15 * (attempt + 1))
+              if optional:
+                  return None
+              raise SyncError(f'{url}: {last}')
+
+
+          def github_api(path: str):
+              """GitHub REST API through the authenticated gh CLI, or anonymously when gh is unavailable."""
+              try:
+                  result = subprocess.run(['gh', 'api', '-H', 'Accept: application/vnd.github+json', path],
+                                          capture_output=True, check=True, timeout=90)
+                  return json.loads(result.stdout)
+              except (OSError, subprocess.SubprocessError, ValueError):
+                  return json.loads(http_get('https://api.github.com/' + path, attempts=2))
+
+
+          def live_commit(target: Target):
+              """(commit SHA the live site was built from, how it was established)."""
+              for path in ('/data/build-info.json', '/build-info.json'):
+                  raw = http_get(target.site + path, attempts=2, optional=True)
+                  if raw:
+                      try:
+                          sha = json.loads(raw).get('source_commit')
+                      except (ValueError, AttributeError):
+                          sha = None
+                      if isinstance(sha, str) and SHA_RE.fullmatch(sha):
+                          return sha, f'source_commit in {target.site}{path}'
+              if target.key == 'cua':
+                  raise SyncError('the CUA site does not publish /data/build-info.json with a source_commit')
+              # Cloudflare Pages builds the REA site from main and reports each deployment as a check run.
+              for commit in github_api(f'repos/{target.github}/commits?sha=main&per_page=40'):
+                  runs = github_api(f'repos/{target.github}/commits/{commit["sha"]}/check-runs'
+                                    '?check_name=Cloudflare%20Pages&per_page=20').get('check_runs', [])
+                  if any(run.get('app', {}).get('slug') == 'cloudflare-workers-and-pages' and run.get('status') == 'completed'
+                         and run.get('conclusion') == 'success' for run in runs):
+                      return commit['sha'], 'newest main commit with a successful Cloudflare Pages deployment check'
+              raise SyncError(f'no deployed commit among the newest 40 commits of {target.github}')
+
+
+          def site_path(target: Target, url: str, prefix: str) -> str:
+              """The site path of an export URL found inside downloaded data, refusing anything off the site."""
+              parts = urllib.parse.urlsplit(url)
+              site = urllib.parse.urlsplit(target.site)
+              path = PurePosixPath(parts.path)
+              if (parts.scheme, parts.netloc) != (site.scheme, site.netloc) or parts.query or parts.fragment \
+                      or not parts.path.startswith(prefix) or '..' in path.parts or path.suffix != '.json':
+                  raise SyncError(f'unexpected export URL in downloaded data: {url!r}')
+              return parts.path
+
+
+          def sha256(data: bytes) -> str:
+              return hashlib.sha256(data).hexdigest()
+
+
+          def fetch_once(target: Target, directory: Path):
+              """Download every export once; return the file ledger. Raises SyncError when the files disagree."""
+              ledger = {}
+
+              def save(path: str, data: bytes):
+                  local = directory / path.lstrip('/')
+                  local.parent.mkdir(parents=True, exist_ok=True)
+                  local.write_bytes(data)
+                  ledger[path] = {'url': target.site + path, 'sha256': sha256(data), 'bytes': len(data)}
+                  return data
+
+              for path in target.files:
+                  save(path, http_get(target.site + path))
+              if target.key == 'cua':
+                  manifest = json.loads((directory / 'downloads/manifest.json').read_bytes())
+                  published = {item['path']: item for item in manifest['artifacts']}
+                  for path, entry in ledger.items():
+                      expected = published.get(path)
+                      if expected and (expected.get('sha256'), expected.get('bytes')) != (entry['sha256'], entry['bytes']):
+                          raise SyncError(f'{path} does not match the download manifest (site mid-deploy?)')
+                  catalog = published['/downloads/catalog.jsonl']
+                  if manifest.get('catalog_sha256') != ledger['/downloads/catalog.jsonl']['sha256'] \
+                          or catalog.get('count', {}).get('value') != len(jsonl_rows(directory, '/downloads/catalog.jsonl')):
+                      raise SyncError('catalog.jsonl does not match the download manifest')
+              else:
+                  manifest = json.loads((directory / 'data-manifest.json').read_bytes())
+                  expected = manifest['files']['records.jsonl']
+                  if (expected['sha256'], expected['bytes']) != (ledger['/downloads/records.jsonl']['sha256'],
+                                                                ledger['/downloads/records.jsonl']['bytes']):
+                      raise SyncError('records.jsonl does not match data-manifest.json (site mid-deploy?)')
+                  types = [record.get('record_type') for _, record in jsonl_rows(directory, '/downloads/records.jsonl')]
+                  if {'resources': types.count('resource'), 'papers': types.count('paper')} != manifest['counts']:
+                      raise SyncError('records.jsonl record counts do not match data-manifest.json')
+                  meta = json.loads((directory / 'source-browser.json').read_bytes())['meta']
+                  full = '/' + str(meta['full_export']).lstrip('/')
+                  if not re.fullmatch(r'/source-[a-z]+\.json', full):
+                      raise SyncError(f'unexpected full_export {full!r}')
+                  if sha256(save(full, http_get(target.site + full))) != meta['full_export_sha256']:
+                      raise SyncError(f'{full} does not match source-browser.json meta.full_export_sha256')
+                  for index_path, prefix, count_key in (('/discoveries.json', '/discoveries/batches/', 'listed_count'),
+                                                       ('/discoveries/leads.json', '/discoveries/leads/', 'listed_count')):
+                      index = json.loads((directory / index_path.lstrip('/')).read_bytes())
+                      for batch in index['batches']:
+                          path = site_path(target, batch['records_url'], prefix)
+                          records = json.loads(save(path, http_get(target.site + path)))['resources']
+                          if len(records) != batch[count_key]:
+                              raise SyncError(f'{path}: {len(records)} records, the index lists {batch[count_key]}')
+              return ledger
+
+
+          def cmd_fetch(args):
+              target = TARGETS[args.target]
+              directory = Path(args.dir)
+              directory.mkdir(parents=True, exist_ok=True)
+              if any(directory.iterdir()):
+                  raise SyncError(f'{directory} is not empty')
+              last_error = None
+              for attempt in range(3):
+                  try:
+                      before, basis = live_commit(target)
+                      ledger = fetch_once(target, directory)
+                      after, _ = live_commit(target)
+                      if before != after:
+                          raise SyncError(f'the site was redeployed during the download ({before[:8]} -> {after[:8]})')
+                      break
+                  except (SyncError, KeyError, ValueError) as error:
+                      last_error = error
+                      print(f'fetch attempt {attempt + 1} failed: {type(error).__name__}: {error}', file=sys.stderr)
+                      for item in directory.iterdir():
+                          shutil.rmtree(item) if item.is_dir() else item.unlink()
+                      if attempt < 2:
+                          time.sleep(90)
+              else:
+                  raise SyncError(f'fetch failed after 3 attempts: {last_error}')
+              record = {'target': target.key, 'site': target.site, 'source_repository': target.github_url,
+                        'source_commit': before, 'source_commit_basis': basis,
+                        'fetched_at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+                        'files': [dict(path=path, **entry) for path, entry in sorted(ledger.items())]}
+              (directory / 'fetch.json').write_text(json.dumps(record, indent=2) + '\n', encoding='utf-8')
+              print(f'{target.key}: fetched {len(ledger)} files from {target.site} built from {before}')
+
+
+          def cmd_guards(args):
+              directory = Path(args.dir)
+              guards = []
+              for repository in GUARD_REPOSITORIES:
+                  commit = github_api(f'repos/{repository}/commits/main')['sha']
+                  if not SHA_RE.fullmatch(commit):
+                      raise SyncError(f'{repository}: bad commit {commit!r}')
+                  url = f'https://raw.githubusercontent.com/{repository}/{commit}/scripts/privacy_guard.py'
+                  script = http_get(url)
+                  local = directory / repository.split('/')[1] / 'scripts' / 'privacy_guard.py'
+                  local.parent.mkdir(parents=True, exist_ok=True)
+                  local.write_bytes(script)
+                  guards.append({'repository': repository, 'commit': commit, 'script': url, 'script_sha256': sha256(script),
+                                 'path': str(local)})
+              (directory / 'guards.json').write_text(json.dumps(guards, indent=2) + '\n', encoding='utf-8')
+              for guard in guards:
+                  print(guard['path'])
+
+
+          # ---------------------------------------------------------------------------------------------- convert
+
+          def column_type(values):
+              """(Arrow type, encoder or None, JSON-encoded?) for one column; None values are missing or null."""
+              import pyarrow as pa
+              present = [value for value in values if value is not None]
+              if not present or all(type(value) is str for value in present):
+                  return pa.string(), None, False
+              if all(type(value) is bool for value in present):
+                  return pa.bool_(), None, False
+              if all(type(value) is int for value in present) and all(-2**63 <= value < 2**63 for value in present):
+                  return pa.int64(), None, False
+              if all(type(value) in (int, float) for value in present) and all(abs(value) < 2**53 for value in present):
+                  return pa.float64(), float, False
+              if all(type(value) is list and all(type(item) is str for item in value) for value in present):
+                  return pa.list_(pa.string()), None, False
+              if all(type(value) is dict for value in present):
+                  keys = list(dict.fromkeys(key for value in present for key in value))
+                  if 0 < len(keys) <= 64:
+                      children = [(key, column_type([value.get(key) for value in present])) for key in keys]
+                      if all(not encoded and not pa.types.is_struct(kind) for _, (kind, _, encoded) in children):
+                          fields = pa.struct([pa.field(key, kind) for key, (kind, _, _) in children])
+                          encoders = {key: encoder for key, (_, encoder, _) in children if encoder}
+
+                          def encode(value, encoders=encoders, keys=keys):
+                              return {key: (encoders[key](value[key]) if key in encoders and value.get(key) is not None
+                                            else value.get(key)) for key in keys}
+                          return fields, encode, False
+              return pa.string(), lambda value: json.dumps(value, ensure_ascii=False, separators=(',', ':')), True
+
+
+          def type_label(kind, encoded=False) -> str:
+              import pyarrow as pa
+              if encoded:
+                  return 'string (JSON text)'
+              if pa.types.is_struct(kind):
+                  return 'struct{' + ', '.join(f'{child.name}: {type_label(child.type)}' for child in kind) + '}'
+              if pa.types.is_list(kind):
+                  return f'list<{type_label(kind.value_type)}>'
+              return {'bool': 'bool', 'int64': 'int64', 'double': 'float64', 'string': 'string'}.get(str(kind), str(kind))
+
+
+          def group_types(records):
+              """Column types inferred over every record of one source export, so that configs drawn from the same
+              file (for example curated and metadata-only catalog rows) share one schema."""
+              columns = list(dict.fromkeys(key for record in records for key in record))
+              return {column: column_type([record.get(column) for record in records]) for column in columns}
+
+
+          def write_parquet(records, path: Path, types: dict):
+              """Write records with an explicit schema; return [(column, type label, JSON-encoded?)]."""
+              import pyarrow as pa
+              import pyarrow.parquet as pq
+              seen = list(dict.fromkeys(key for record in records for key in record))
+              columns = [key for key in LEAD_COLUMNS if key in seen] + [key for key in seen if key not in LEAD_COLUMNS]
+              arrays, schema, layout = [], [], []
+              for column in columns:
+                  values = [record.get(column) for record in records]
+                  kind, encoder, encoded = types[column]
+                  if encoder:
+                      values = [None if value is None else encoder(value) for value in values]
+                  arrays.append(pa.array(values, type=kind))
+                  schema.append(pa.field(column, kind))
+                  layout.append((column, type_label(kind, encoded), encoded))
+              json_columns = ','.join(column for column, _, encoded in layout if encoded)
+              table = pa.Table.from_arrays(arrays, schema=pa.schema(schema, metadata={'json_encoded_columns': json_columns}))
+              # zstd: uncompressed Parquet stores a column's values back to back, so the last value of one row sits next to
+              # the first value of the next (for example two papers' authors) with only length bytes between them, which a
+              # plain-text guard reads as adjacent words. The guards check the uploaded files and a decoded copy of every row.
+              pq.write_table(table, path, compression='zstd')
+              return layout
+
+
+          # -------------------------------------------------------------------------------------------------- card
+
+          def size_category(total: int) -> str:
+              for limit, label in ((1_000, 'n<1K'), (10_000, '1K<n<10K'), (100_000, '10K<n<100K'), (1_000_000, '100K<n<1M')):
+                  if total < limit:
+                      return label
+              return '1M<n<10M'
+
+
+          def card(target: Target, built: list) -> str:
+              total = sum(item['rows'] for item in built)
+              hf = f'https://huggingface.co/datasets/{target.repo_id}'
+              curated = [item['name'] for item in built if item['curated']]
+              unreviewed = [item['name'] for item in built if item['review'].startswith('Not curated')]
+              editorial = [item['name'] for item in built if item['name'] not in curated + unreviewed]
+              lines = ['---',
+                       f'pretty_name: "{target.pretty_name}"',
+                       'license: mit',
+                       'language:', '- en', '- zh',
+                       'multilinguality:', '- multilingual',
+                       'size_categories:', f'- {size_category(total)}',
+                       'task_categories:', '- text-retrieval', '- text-classification', '- question-answering',
+                       'task_ids:', '- document-retrieval',
+                       'tags:', *[f'- {tag}' for tag in target.tags],
+                       'configs:']
+              for item in built:
+                  lines.append(f'- config_name: {item["name"]}')
+                  if item['default']:
+                      lines.append('  default: true')
+                  lines += ['  data_files:', '  - split: train', f'    path: {item["parquet"]["path"]}']
+              lines += ['---', '']
+              code = lambda name: f'`{name}`'
+              names = lambda items: ', '.join(code(name) for name in items)
+              site_host = urllib.parse.urlsplit(target.site).netloc
+              lines += [
+                  f'# {target.pretty_name} — dataset mirror',
+                  '',
+                  f'A read-only Hugging Face mirror of the public data that [{site_host}]({target.site}/) publishes. '
+                  f'The GitHub repository [{target.github}]({target.github_url}) is the single source of truth: the '
+                  'website is built from it, and every row here is copied unchanged from the website\'s live exports. '
+                  'Corrections and new entries go to the GitHub repository, not to this dataset.',
+                  '',
+                  f'> **Unreviewed records are not curated.** {names(unreviewed)} hold automated scan and discovery records '
+                  'that have not been source-reviewed: nobody has verified their claims, run them or judged their quality, '
+                  'and their presence is not an endorsement. Only '
+                  f'{names(curated)} come from reviewed records'
+                  + (f'; {names(editorial)} are editorial records about catalog entries, not entries themselves' if editorial
+                     else '')
+                  + '. Keep the review state when you use, count or cite rows, and never add counts from different configs '
+                  'together as unique projects.',
+                  '',
+                  '## Configs',
+                  '',
+                  'Each config is one record type with a single `train` split that holds all of its rows (the split name is '
+                  'a Hugging Face convention; there is no train/test partition).',
+                  '',
+                  '| Config | Rows | Review state | Source export | Contents |',
+                  '| --- | ---: | --- | --- | --- |',
+              ]
+              for item in built:
+                  lines.append(f'| {code(item["name"])}{" (default)" if item["default"] else ""} | {item["rows"]:,} | '
+                               f'{item["review"]} | [{item["source"]}]({target.site}{item["source"]}) | {item["summary"]} |')
+              first = built[0]['name']
+              queue = next((name for name in ('discoveries', 'github_candidates') if name in unreviewed), unreviewed[0])
+              lines += [
+                  '',
+                  '## Quick start',
+                  '',
+                  '```python',
+                  'from datasets import load_dataset',
+                  '',
+                  f'{first} = load_dataset("{target.repo_id}", "{first}", split="train")',
+                  f'{queue} = load_dataset("{target.repo_id}", "{queue}", split="train")  # not curated',
+                  '```',
+                  '',
+                  'Every config is also a plain Parquet file and a JSON Lines file:',
+                  '',
+                  '```python',
+                  'import pandas as pd',
+                  f'df = pd.read_parquet("hf://datasets/{target.repo_id}/data/{first}.parquet")',
+                  '```',
+                  '',
+                  '```sql',
+                  f"-- DuckDB",
+                  f"SELECT * FROM 'hf://datasets/{target.repo_id}/data/{first}.parquet' LIMIT 10;",
+                  '```',
+                  '',
+                  f'JSON Lines: `{hf}/resolve/main/jsonl/<config>.jsonl`.',
+                  '',
+                  '## Files and formats',
+                  '',
+                  '- `data/<config>.parquet`: what `load_dataset` and the dataset viewer read. Columns keep the source field '
+                  'names. Fields whose values are nested objects or lists of objects are stored as JSON text in a string '
+                  'column (decode with `json.loads`); flat objects become structs. Each file lists its JSON-text columns in '
+                  'the Parquet schema metadata key `json_encoded_columns`. The files are zstd-compressed.',
+                  '- `jsonl/<config>.jsonl`: the same rows as JSON objects, one per line. Where the site publishes JSON '
+                  'Lines, each line is byte-for-byte a line of the source file.',
+                  '- `provenance.json`: the source commit, how it was established, the fetch time, the URL, size and '
+                  'SHA-256 of every downloaded export, per-config row counts and file checksums, and the privacy guard '
+                  'that passed before upload.',
+                  '',
+                  '## Fields',
+                  '',
+                  'Field meanings, vocabularies and review rules are defined by the source repository, not here: start '
+                  f'with its [data dictionary]({target.dictionary}). Related definitions: '
+                  + ', '.join(f'[{label}]({url})' for label, url in target.dictionary_extra)
+                  + '. The column lists below are generated from the current files.',
+                  '',
+              ]
+              for item in built:
+                  lines += [f'<details><summary><code>{item["name"]}</code>: {len(item["columns"])} columns</summary>', '',
+                            '| Column | Type |', '| --- | --- |']
+                  # Backticks keep labels such as list<string> from being read as HTML tags.
+                  lines += [f'| `{column}` | `string` (JSON text) |' if encoded else f'| `{column}` | `{label}` |'
+                            for column, label, encoded in item['columns']]
+                  lines += ['', '</details>', '']
+              lines += [
+                  '## Updates',
+                  '',
+                  'A scheduled job checks the live website every 2 hours. The source repository scans every 2 hours and the '
+                  'website is redeployed after each merged scan, so a scan normally reaches this mirror within about '
+                  '3 hours. The job downloads the exports again, verifies them against the site\'s published checksums, runs '
+                  'the source repository\'s privacy guard over every file it would upload and over a decoded copy of every '
+                  'Parquet row, and commits here only when the content changed. Each commit message names the source '
+                  'repository commit the website was built from; `provenance.json` records it with the fetch time.',
+                  '',
+                  '## Privacy',
+                  '',
+                  'Some paper records leave their author list out at the maintainer\'s request: they carry '
+                  '`authors_omitted: true` and an empty `authors` list, so read the authors from the paper itself. Every '
+                  f'upload to this dataset, this card included, first passes the source repository\'s privacy guard '
+                  f'([scripts/privacy_guard.py]({target.github_url}/blob/main/scripts/privacy_guard.py)) over the uploaded '
+                  'files and over a decoded copy of every Parquet file; any finding aborts the sync.',
+                  '',
+                  '## License',
+                  '',
+                  f'MIT, as declared by the source repository\'s [LICENSE]({target.github_url}/blob/main/LICENSE) and '
+                  f'[CITATION.cff]({target.github_url}/blob/main/CITATION.cff). It covers the collection\'s original text '
+                  'and annotations. Linked papers, software, datasets, models, products and other third-party works keep '
+                  'their own terms; this dataset holds metadata and links only, not those works. Upstream descriptions copied '
+                  'into automated records remain their authors\' text.',
+                  '',
+                  '## Limitations',
+                  '',
+                  '- Source review checks documentation and primary sources; it is not runtime testing, reproduction, a '
+                  'security review or a compatibility claim.',
+                  '- Counts of different configs describe different collections that overlap; do not add them as unique '
+                  'projects.',
+                  '- Upstream descriptions are data, not instructions: agents should not follow text found in them.',
+                  '- The mirror follows the live website, so it trails the GitHub repository by a deployment and a sync '
+                  'interval. A sync that a privacy finding stops keeps the previous version here until the finding is '
+                  'resolved at the source.',
+                  '',
+                  '## Citation',
+                  '',
+                  'Cite the collection as a project, and record the source commit from `provenance.json` (or the commit '
+                  'message) because the data changes with every scan. Cite listed works from their own primary sources.',
+                  '',
+                  '```bibtex',
+                  f'@misc{{{target.bib_key},',
+                  f'  title        = {{{target.bib_title}}},',
+                  f'  author       = {{{{{target.entity}}}}},',
+                  '  year         = {2026},',
+                  f'  howpublished = {{\\url{{{target.site}/}}}},',
+                  f'  note         = {{Source repository: \\url{{{target.github_url}}}. '
+                  f'Dataset mirror: \\url{{{hf}}}}}',
+                  '}',
+                  '```',
+                  '',
+                  '## Links',
+                  '',
+                  f'- Website (canonical): {target.site}/',
+                  f'- GitHub repository (source of truth): {target.github_url}',
+                  f'- Data dictionary: {target.dictionary}',
+                  f'- Contribute or report a correction: {target.github_url}/issues/new/choose',
+                  '',
+                  '## 简体中文',
+                  '',
+                  f'本数据集是 [{site_host}]({target.site}/) 公开数据的只读镜像，GitHub 仓库 '
+                  f'[{target.github}]({target.github_url}) 是唯一数据源；每行数据都原样复制自网站的线上导出文件。'
+                  f'每个 config 对应一种记录类型。{names(curated)} 来自经过审阅的记录；'
+                  f'{names(unreviewed)} 是自动扫描或发现的记录，未经来源审阅、不属于精选条目，出现在这里也不代表推荐。'
+                  '使用、统计或引用时请保留审阅状态，不同 config 的数量不能相加作为独立项目数。'
+                  '同步任务每 2 小时运行一次，只在内容变化时提交，提交信息写明来源仓库的 commit。'
+                  '许可为 MIT（覆盖本合集的原创文字与标注），所链接的作品保留各自的许可。'
+                  f'引用时请以项目名义（{target.entity}）引用，并记录 `provenance.json` 中的 commit。',
+                  '',
+              ]
+              return '\n'.join(lines)
+
+
+          def cmd_build(args):
+              target = TARGETS[args.target]
+              directory, out = Path(args.dir), Path(args.out)
+              fetched = json.loads((directory / 'fetch.json').read_bytes())
+              if fetched['target'] != target.key:
+                  raise SyncError('fetch.json belongs to another target')
+              for sub in ('data', 'jsonl'):
+                  (out / sub).mkdir(parents=True, exist_ok=True)
+              built, rows_by_config, groups = [], {}, {}
+              for config in target.configs:
+                  rows_by_config[config.name] = config.rows(directory)
+                  groups.setdefault(config.source, []).extend(record for _, record in rows_by_config[config.name])
+              # Configs drawn from one export share one schema (repeated rows, as in cases, do not change it).
+              types = {source: group_types(records) for source, records in groups.items()}
+              for config in target.configs:
+                  rows = rows_by_config[config.name]
+                  if not rows:
+                      raise SyncError(f'{config.name}: no rows')
+                  ids = [record.get('id') for _, record in rows]
+                  duplicates = len(ids) - len(set(ids)) if all(isinstance(item, (str, int)) for item in ids) else 0
+                  if duplicates:
+                      # Mirrored as published; the count is recorded in provenance.json.
+                      print(f'warning: {config.name}: {duplicates} repeated id value(s) in the source export', file=sys.stderr)
+                  jsonl = out / 'jsonl' / f'{config.name}.jsonl'
+                  with open(jsonl, 'wb') as handle:
+                      for raw, record in rows:
+                          handle.write((raw if raw is not None else
+                                        json.dumps(record, ensure_ascii=False, separators=(',', ':')).encode('utf-8')) + b'\n')
+                  parquet = out / 'data' / f'{config.name}.parquet'
+                  columns = write_parquet([record for _, record in rows], parquet, types[config.source])
+                  built.append({'name': config.name, 'rows': len(rows), 'source': config.source, 'review': config.review,
+                                'summary': config.summary, 'curated': config.curated, 'default': config.default,
+                                'columns': columns, 'repeated_ids': duplicates,
+                                'parquet': {'path': f'data/{config.name}.parquet', 'sha256': sha256(parquet.read_bytes()),
+                                            'bytes': parquet.stat().st_size},
+                                'jsonl': {'path': f'jsonl/{config.name}.jsonl', 'sha256': sha256(jsonl.read_bytes()),
+                                          'bytes': jsonl.stat().st_size}})
+              (out / 'README.md').write_text(card(target, built), encoding='utf-8')
+              content = sorted((path.relative_to(out).as_posix(), sha256(path.read_bytes()))
+                               for path in out.rglob('*') if path.is_file() and path.name != 'provenance.json')
+              content_sha256 = sha256(json.dumps({'builder_version': BUILDER_VERSION, 'files': content}).encode())
+              guards = json.loads(Path(args.guards).read_bytes()) if args.guards else []
+              provenance = {
+                  'dataset': target.repo_id,
+                  'kind': 'read-only mirror of the live website exports',
+                  'builder_version': BUILDER_VERSION,
+                  'site': target.site,
+                  'source_repository': target.github_url,
+                  'source_commit': fetched['source_commit'],
+                  'source_commit_basis': fetched['source_commit_basis'],
+                  'fetched_at': fetched['fetched_at'],
+                  'sources': [{key: item[key] for key in ('url', 'bytes', 'sha256')} for item in fetched['files']],
+                  'configs': {item['name']: {'rows': item['rows'], 'review_state': item['review'],
+                                             'source': target.site + item['source'], 'repeated_ids': item['repeated_ids'],
+                                             'parquet': item['parquet'], 'jsonl': item['jsonl']} for item in built},
+                  'content_sha256': content_sha256,
+                  'privacy_guard': next(({key: guard[key] for key in ('repository', 'commit', 'script', 'script_sha256')}
+                                         for guard in guards if guard['repository'] == target.github), None),
+                  'privacy_check': 'Every uploaded file, and a decoded copy of each Parquet file, passed the source repository\'s '
+                                   'privacy guard before upload; any finding aborts the sync.',
+              }
+              (out / 'provenance.json').write_text(json.dumps(provenance, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+              print(f'{target.key}: built ' + ', '.join(f'{item["name"]}={item["rows"]}' for item in built)
+                    + f' content={content_sha256[:12]}')
+
+
+          def cmd_dump(args):
+              """Decode each Parquet file back to JSON Lines, so the guards also read what the Parquet stores."""
+              import pyarrow.parquet as pq
+              out, dump = Path(args.out), Path(args.dir)
+              dump.mkdir(parents=True, exist_ok=True)
+              for path in sorted(out.rglob('*.parquet')):
+                  table = pq.read_table(path)
+                  with open(dump / (path.stem + '.decoded.jsonl'), 'w', encoding='utf-8') as handle:
+                      for row in table.to_pylist():
+                          handle.write(json.dumps(row, ensure_ascii=False, default=str) + '\n')
+                  metadata = {key.decode('utf-8', 'replace'): value.decode('utf-8', 'replace')
+                              for key, value in (table.schema.metadata or {}).items()}
+                  (dump / (path.stem + '.metadata.json')).write_text(json.dumps(metadata, ensure_ascii=False), encoding='utf-8')
+              print(f'decoded {len(list(out.rglob("*.parquet")))} Parquet files into {dump}')
+
+
+          def cmd_remote_hash(args):
+              """content_sha256 of provenance.json at the dataset's current main commit; nothing if absent."""
+              try:
+                  info = json.loads(http_get(f'https://huggingface.co/api/datasets/{args.repo_id}/revision/main', attempts=2))
+              except SyncError as error:
+                  if 'HTTP 404' in str(error) or 'HTTP 401' in str(error):
+                      return
+                  raise
+              commit = info.get('sha')
+              if not (isinstance(commit, str) and SHA_RE.fullmatch(commit)):
+                  return
+              raw = http_get(f'https://huggingface.co/datasets/{args.repo_id}/resolve/{commit}/provenance.json', attempts=2,
+                             optional=True)
+              if raw:
+                  print(json.loads(raw).get('content_sha256', ''))
+
+
+          def commit_text(provenance: dict):
+              """(title, description) of a sync commit; the title names the source commit."""
+              repository = provenance['source_repository'].removeprefix('https://github.com/')
+              rows = ', '.join(f'{name} {config["rows"]:,}' for name, config in provenance['configs'].items())
+              guard = provenance.get('privacy_guard') or {}
+              title = f'Sync from {repository}@{provenance["source_commit"]}'
+              body = (f'Live exports of {provenance["site"]}, fetched {provenance["fetched_at"]}. The site was built from '
+                      f'{repository}@{provenance["source_commit"]} ({provenance["source_commit_basis"]}).\n\n'
+                      f'Rows: {rows}.\nContent SHA-256: {provenance["content_sha256"]}.\n'
+                      f'Privacy guard passed before upload: {guard.get("repository")} scripts/privacy_guard.py at '
+                      f'{str(guard.get("commit"))[:12]}.')
+              return title, body
+
+
+          def cmd_summary(args):
+              title, body = commit_text(json.loads((Path(args.out) / 'provenance.json').read_bytes()))
+              print(title + '\n\n' + body)
+
+
+          def cmd_upload(args):
+              """Publish OUT as exactly one commit on top of the current head: every built file is added, and managed
+              files that the build no longer contains are deleted in the same commit."""
+              from huggingface_hub import CommitOperationAdd, CommitOperationDelete, HfApi
+              out = Path(args.out)
+              provenance = json.loads((out / 'provenance.json').read_bytes())
+              if provenance['dataset'] != args.repo_id:
+                  raise SyncError(f'{out} was built for {provenance["dataset"]}, not {args.repo_id}')
+              api = HfApi()
+              api.create_repo(args.repo_id, repo_type='dataset', private=False, exist_ok=True)
+              head = api.repo_info(args.repo_id, repo_type='dataset').sha
+              remote = api.list_repo_files(args.repo_id, repo_type='dataset', revision=head)
+              local = sorted(path.relative_to(out).as_posix() for path in out.rglob('*') if path.is_file())
+              managed = lambda path: path.startswith(('data/', 'jsonl/')) or path in ('README.md', 'provenance.json')
+              operations = [CommitOperationDelete(path_in_repo=path) for path in remote if managed(path) and path not in local]
+              operations += [CommitOperationAdd(path_in_repo=path, path_or_fileobj=str(out / path)) for path in local]
+              title, body = commit_text(provenance)
+              info = api.create_commit(args.repo_id, repo_type='dataset', operations=operations, commit_message=title,
+                                       commit_description=body, parent_commit=head)
+              print(f'{info.oid} {info.commit_url}')
+
+
+          WORKFLOW = r'''# Hugging Face dataset mirror sync, for GitHub Actions (GOAL §11 A8, [HUMAN] H4).
+          #
+          # Ready to use but NOT installed. Installing it is the owner's decision (H4):
+          #   1. Create a fine-grained Hugging Face token with write access to TIGER-Lab/AwesomeCUA and
+          #      TIGER-Lab/AwesomeREA only, and store it as the repository secret HF_TOKEN.
+          #   2. Copy this file to .github/workflows/hf-sync.yml in reacher-z/Awesome-CUA and/or reacher-z/Awesome-REA.
+          #      It detects which dataset to sync from the repository it runs in. Awesome-CUA's tests currently reject
+          #      workflows that read secrets (GOAL H8), so that repository needs a reviewed exception first.
+          #   3. Remove the local cron line for tools/hf-sync.sh once the workflow has synced successfully. Running both is
+          #      harmless (unchanged content is never re-uploaded) but redundant.
+          #
+          # The job does what tools/hf-sync.sh does locally: download the live website exports and verify them against the
+          # site's checksums, build JSONL + Parquet + dataset card + provenance.json, run the source repository's
+          # scripts/privacy_guard.py (from its current main) over every file to upload and a decoded copy of each Parquet
+          # file, aborting on any finding, and upload exactly one commit, naming the source commit, only when the content
+          # changed. The embedded builder below is tools/hf_sync.py, builder_version __BUILDER_VERSION__; regenerate this
+          # file with `tools/.venv/bin/python -I tools/hf_sync.py workflow > automation/hf-sync.workflow.yml` after
+          # changing the builder.
+          name: Hugging Face dataset mirror
+
+          on:
+            schedule:
+              - cron: '50 */2 * * *'
+            workflow_dispatch:
+
+          permissions:
+            contents: read
+
+          concurrency:
+            group: hf-dataset-mirror
+            cancel-in-progress: false
+
+          jobs:
+            sync:
+              runs-on: ubuntu-latest
+              timeout-minutes: 30
+              env:
+                PYTHONUTF8: '1'
+                HF_HUB_DISABLE_PROGRESS_BARS: '1'
+                HF_HUB_DISABLE_TELEMETRY: '1'
+              steps:
+                - name: Select the dataset for this repository
+                  run: |
+                    echo "W=$RUNNER_TEMP/hf-sync" >> "$GITHUB_ENV"
+                    case "$GITHUB_REPOSITORY" in
+                      reacher-z/Awesome-CUA) printf 'TARGET=cua\nREPO_ID=TIGER-Lab/AwesomeCUA\nGUARD=Awesome-CUA\n' >> "$GITHUB_ENV" ;;
+                      reacher-z/Awesome-REA) printf 'TARGET=rea\nREPO_ID=TIGER-Lab/AwesomeREA\nGUARD=Awesome-REA\n' >> "$GITHUB_ENV" ;;
+                      *) echo "::error::no Hugging Face mirror is defined for $GITHUB_REPOSITORY"; exit 1 ;;
+                    esac
+
+                - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+                  with:
+                    python-version: '3.12'
+
+                - name: Install dependencies
+                  run: python -m pip install --disable-pip-version-check --quiet 'pyarrow>=21' 'huggingface_hub>=1.0'
+
+                - name: Write the builder (tools/hf_sync.py)
+                  run: |
+                    mkdir -p "$RUNNER_TEMP/hf-tools"
+                    cat > "$RUNNER_TEMP/hf-tools/hf_sync.py" <<'HF_SYNC_PY'
+          __SOURCE__
+                    HF_SYNC_PY
+
+                - name: Download the live exports and build the dataset
+                  env:
+                    GH_TOKEN: @@{{ github.token }}
+                  run: |
+                    python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" guards "$W/guards"
+                    python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" fetch "$TARGET" "$W/download"
+                    python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" build "$TARGET" "$W/download" "$W/out" --guards "$W/guards/guards.json"
+                    python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" dump "$W/out" "$W/decoded"
+
+                - name: Privacy guard (any finding aborts)
+                  run: python -I "$W/guards/$GUARD/scripts/privacy_guard.py" "$W/out" "$W/decoded"
+
+                - name: Upload one commit when the content changed
+                  env:
+                    HF_TOKEN: @@{{ secrets.HF_TOKEN }}
+                  run: |
+                    if [ -z "$HF_TOKEN" ]; then echo "::error::the HF_TOKEN secret is not set"; exit 1; fi
+                    local_hash=$(python -I -c 'import json, sys; print(json.load(open(sys.argv[1]))["content_sha256"])' "$W/out/provenance.json")
+                    remote_hash=$(python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" remote-hash "$REPO_ID")
+                    python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" summary "$W/out" | head -n 1
+                    if [ "$local_hash" = "$remote_hash" ]; then
+                      echo "Unchanged: content ${local_hash:0:12} is already published."
+                      exit 0
+                    fi
+                    python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" upload "$REPO_ID" "$W/out"
+                    test "$(python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" remote-hash "$REPO_ID")" = "$local_hash"
+          '''
+
+
+          def cmd_workflow(args):
+              """Print the GitHub Actions workflow with this file embedded, so CI runs the same builder."""
+              source = Path(__file__).read_text(encoding='utf-8')
+              # GitHub evaluates Actions expressions even inside a heredoc, so the template spells their opening as @@{{
+              # and this source never contains the real opening sequence.
+              if '\nHF_SYNC_PY' in source or '$' + '{{' in source:
+                  raise SyncError('the builder cannot be embedded: it contains the heredoc delimiter or an Actions expression')
+              indented = '\n'.join(('          ' + line) if line.strip() else '' for line in source.rstrip('\n').split('\n'))
+              template = WORKFLOW.replace('__BUILDER_VERSION__', str(BUILDER_VERSION)).replace('@@{{', '$' + '{{')
+              sys.stdout.write(template.replace('__SOURCE__', indented))
+
+
+          def main(argv=None):
+              parser = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
+              commands = parser.add_subparsers(dest='command', required=True)
+              fetch = commands.add_parser('fetch')
+              fetch.add_argument('target', choices=TARGETS)
+              fetch.add_argument('dir')
+              guards = commands.add_parser('guards')
+              guards.add_argument('dir')
+              build = commands.add_parser('build')
+              build.add_argument('target', choices=TARGETS)
+              build.add_argument('dir')
+              build.add_argument('out')
+              build.add_argument('--guards', help='guards.json written by the guards command')
+              dump = commands.add_parser('dump')
+              dump.add_argument('out')
+              dump.add_argument('dir')
+              remote = commands.add_parser('remote-hash')
+              remote.add_argument('repo_id')
+              summary = commands.add_parser('summary')
+              summary.add_argument('out')
+              upload = commands.add_parser('upload')
+              upload.add_argument('repo_id')
+              upload.add_argument('out')
+              commands.add_parser('workflow')
+              args = parser.parse_args(argv)
+              handler = {'fetch': cmd_fetch, 'guards': cmd_guards, 'build': cmd_build, 'dump': cmd_dump,
+                         'remote-hash': cmd_remote_hash, 'summary': cmd_summary, 'upload': cmd_upload,
+                         'workflow': cmd_workflow}[args.command]
+              try:
+                  handler(args)
+              except Exception as error:  # one line for the sync log; the shell decides what to do
+                  print(f'error: {type(error).__name__}: {error}', file=sys.stderr)
+                  return 1
+              return 0
+
+
+          if __name__ == '__main__':
+              raise SystemExit(main())
+          HF_SYNC_PY
+
+      - name: Download the live exports and build the dataset
+        if: env.HF_SYNC_ENABLED == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" guards "$W/guards"
+          python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" fetch "$TARGET" "$W/download"
+          python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" build "$TARGET" "$W/download" "$W/out" --guards "$W/guards/guards.json"
+          python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" dump "$W/out" "$W/decoded"
+
+      - name: Privacy guard (any finding aborts)
+        if: env.HF_SYNC_ENABLED == 'true'
+        run: python -I "$W/guards/$GUARD/scripts/privacy_guard.py" "$W/out" "$W/decoded"
+
+      - name: Upload one commit when the content changed
+        if: env.HF_SYNC_ENABLED == 'true'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [ -z "$HF_TOKEN" ]; then echo "::error::the HF_TOKEN secret is not set"; exit 1; fi
+          local_hash=$(python -I -c 'import json, sys; print(json.load(open(sys.argv[1]))["content_sha256"])' "$W/out/provenance.json")
+          remote_hash=$(python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" remote-hash "$REPO_ID")
+          python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" summary "$W/out" | head -n 1
+          if [ "$local_hash" = "$remote_hash" ]; then
+            echo "Unchanged: content ${local_hash:0:12} is already published."
+            exit 0
+          fi
+          python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" upload "$REPO_ID" "$W/out"
+          test "$(python -I "$RUNNER_TEMP/hf-tools/hf_sync.py" remote-hash "$REPO_ID")" = "$local_hash"
