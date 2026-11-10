@@ -10,6 +10,12 @@
   const nf = new Intl.NumberFormat(zh ? 'zh-CN' : 'en-US');
   const fmt = (n) => nf.format(n);
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  // Writes markup only when it differs from what this call wrote last, so a re-render with the same result keeps the
+  // nodes (and any focus or pending click on them) in place.
+  const put = (el, html) => {
+    if (el.__html === html && el.__first === el.firstChild) return;
+    el.innerHTML = html; el.__html = html; el.__first = el.firstChild;
+  };
   const ico = (n) => `<svg class="i" aria-hidden="true" focusable="false"><use href="#i-${n}"/></svg>`;
   const store = {
     get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
@@ -512,9 +518,9 @@
     body: dlg && $('[data-pal-body]', dlg), count: dlg && $('[data-pal-count]', dlg), items: [], active: -1, opener: null };
   // The listbox only ever holds groups of options; recent searches, empty states and "see all" live beside it.
   const palShow = (listHTML, extraHTML) => {
-    pal.list.innerHTML = listHTML;
+    put(pal.list, listHTML);
     pal.list.hidden = !listHTML;
-    pal.extra.innerHTML = extraHTML;
+    put(pal.extra, extraHTML);
     pal.input.setAttribute('aria-expanded', String(!!listHTML));
   };
   const recent = () => { try { const v = JSON.parse(store.get('rea-recent') || '[]'); return Array.isArray(v) ? v.filter((x) => typeof x === 'string').slice(0, 6) : []; } catch (e) { return []; } };
@@ -714,8 +720,8 @@
       showAll.href = `${P}/resources/${ex.toString() ? `?${ex}` : ''}`;
       if (pristine()) {
         const rec = document.activeElement === input ? recent() : [];
-        list.innerHTML = (rec.length ? `<li class="drawer-recent"><span class="pal-gh">${T.recent}</span> <span class="pal-recent">${rec.map((q) => `<button class="chip" type="button" data-recent="${esc(q)}">${esc(q)}</button>`).join(' ')}</span></li>` : '') + init.list;
-        meta.innerHTML = init.meta; showAll.innerHTML = init.all; count.textContent = '';
+        put(list, (rec.length ? `<li class="drawer-recent"><span class="pal-gh">${T.recent}</span> <span class="pal-recent">${rec.map((q) => `<button class="chip" type="button" data-recent="${esc(q)}">${esc(q)}</button>`).join(' ')}</span></li>` : '') + init.list);
+        put(meta, init.meta); showAll.innerHTML = init.all; count.textContent = '';
         tabs.forEach((t, i) => { $('.count', t).textContent = init.tabs[i]; });
         chips.forEach((c, i) => { $('.count', c).textContent = init.chips[i]; c.disabled = false; });
         more.hidden = true; papersBox.hidden = true; foot.hidden = false;
@@ -754,10 +760,10 @@
       });
       const hits = inTarget.filter((h) => kindOK(h) && classOK(h));
       const shown = topHits(hits, st.sort, st.q, st.shown);
-      list.innerHTML = hits.length ? shown.map((h) => cardHTML(h.r, toks)).join('') : emptyHTML(st.q, X.res, 'li', true);
+      put(list, hits.length ? shown.map((h) => cardHTML(h.r, toks)).join('') : emptyHTML(st.q, X.res, 'li', true));
       select(st.q && hits.length ? 0 : -1);
       foot.hidden = !hits.length;
-      meta.innerHTML = hits.length ? T.showing(shown.length, hits.length) : '';
+      put(meta, hits.length ? T.showing(shown.length, hits.length) : '');
       showAll.innerHTML = `${T.all(hits.length)}${ico('arrow')}`;
       count.textContent = st.q ? T.results(hits.length) : '';
       const left = hits.length - shown.length;
@@ -766,8 +772,8 @@
       if (st.q) {
         const ph = search(X.pap, st.q);
         papersBox.hidden = !ph.length;
-        papersBox.innerHTML = ph.length ? `<h3 class="side-h">${T.papers} <span class="count">${fmt(ph.length)}</span></h3><ol class="papers">${topHits(ph, 'featured', st.q, 3).map(({ r }) =>
-          `<li class="paper"><span class="pp-date">${r.year}</span><div class="pp-body"><h4 class="pp-title"><a href="${href(r)}">${hl(r.name, toks)}</a></h4><p class="pp-meta"><span class="pp-venue">${esc(r.venue)}</span></p></div></li>`).join('')}</ol>` : '';
+        put(papersBox, ph.length ? `<h3 class="side-h">${T.papers} <span class="count">${fmt(ph.length)}</span></h3><ol class="papers">${topHits(ph, 'featured', st.q, 3).map(({ r }) =>
+          `<li class="paper"><span class="pp-date">${r.year}</span><div class="pp-body"><h4 class="pp-title"><a href="${href(r)}">${hl(r.name, toks)}</a></h4><p class="pp-meta"><span class="pp-venue">${esc(r.venue)}</span></p></div></li>`).join('')}</ol>` : '');
       } else papersBox.hidden = true;
       performance.measure('rea-search', 'rea-search-start');
     };
