@@ -43453,5 +43453,13 @@
       "编译最终磁盘镜像需要 bintofdf 和 fdtc；项目内附有这两个工具的版本。",
       "项目页面未说明许可证。"
     ]
+  },
+  "haunting-ground-recomp": {
+    "name": "Haunting Ground Recomp：PS2 游戏的原生移植",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，或 glibc 2.34 及以后的 64 位 Linux，以及 python3 和 SDL2。建议使用支持 Vulkan 的显卡。ISO 必须是北美版 SLUS-21075 光盘的普通镜像。README 要求大约 6 GB 可用磁盘空间。",
+      "下载包含编译器，Windows 版还包含 Python。欧版和日版光盘不受支持。README 写明 0.1 版在一台装有 Windows 11 和 CachyOS、AMD Ryzen CPU 和 NVIDIA RTX GPU 的电脑上测试过，并且下载包含放大后的高清贴图。",
+      "GitHub 报告许可证为 GPL-3.0。"
+    ]
   }
 }
