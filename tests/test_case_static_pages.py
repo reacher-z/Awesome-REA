@@ -14,6 +14,8 @@ from test_case_pages import resource
 from validate_site import Page, schema_entities, validate_case_outputs, validate_section_target_counts, with_listing_pages
 
 ORIGIN = 'https://awesomerea.org'
+# The fixture's case count: CASE_PER_PAGE + 30 game cases and 40 protocol cases.
+TOTAL = CASE_PER_PAGE + 70
 
 
 class CaseStaticPagesTests(unittest.TestCase):
@@ -60,7 +62,7 @@ class CaseStaticPagesTests(unittest.TestCase):
         html = self.html('/cases/page/2/')
         self.assertIn('<a href="/cases/">Reverse-engineering case studies</a><span aria-hidden="true">/</span><span aria-current="page">Page 2</span>', html)
         self.assertIn('<h1>Reverse-engineering case studies<span', html)
-        self.assertIn('Page 2 of 2, cases 201–270.', html)
+        self.assertIn(f'Page 2 of 2, cases {CASE_PER_PAGE + 1}–{TOTAL}.', html)
         items = next(schema_entities(second.schemas, 'CollectionPage'))['mainEntity']
         self.assertEqual(items['numberOfItems'], len(second.case_rows))
         self.assertIn('· Page 2', self.html('/cases/page/2/').split('</title>')[0])
@@ -77,15 +79,15 @@ class CaseStaticPagesTests(unittest.TestCase):
         self.assertIn('id="cases-game"', second)
         self.assertEqual(first.count('data-section-target="game"'), 1)
         self.assertNotIn('data-section-target="game"', second)
-        self.assertIn('data-section-count="230"', second)
+        self.assertIn(f'data-section-count="{CASE_PER_PAGE + 30}"', second)
 
     def test_pager_and_range(self):
         first = self.html('/cases/')
         pager = re.search(r'<nav class="case-pager".*?</nav>', first).group(0)
         self.assertIn('href="/cases/page/2/" rel="next"', pager)
         self.assertIn('aria-current="page">1</a>', pager)
-        self.assertIn(f'Cases 1–{CASE_PER_PAGE} of 270', first)
-        self.assertIn('第 201–270 个案例，共 270 个', self.html('/zh/cases/page/2/'))
+        self.assertIn(f'Cases 1–{CASE_PER_PAGE} of {TOTAL}', first)
+        self.assertIn(f'第 {CASE_PER_PAGE + 1}–{TOTAL} 个案例，共 {TOTAL} 个', self.html('/zh/cases/page/2/'))
 
     def test_page_map_names_every_case(self):
         mapping = json.loads((self.output / 'cases/pages.json').read_text(encoding='utf-8'))

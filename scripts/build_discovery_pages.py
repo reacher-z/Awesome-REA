@@ -377,7 +377,7 @@ def _section_index_link(index: str, zh: bool) -> str:
     return f'<a class="section-index-link" href="#{index}">{label}<span aria-hidden="true"> ↑</span></a>'
 
 
-CASE_PER_PAGE = 200
+CASE_PER_PAGE = 100
 CASE_PAGE_TEXT = {'en': ('Page {n}', 'Pages', 'Previous', 'Next', 'Cases {a}–{b} of {n}'),
                   'zh': ('第 {n} 页', '分页', '上一页', '下一页', '第 {a}–{b} 个案例，共 {n} 个')}
 
