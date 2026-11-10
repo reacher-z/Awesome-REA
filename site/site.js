@@ -854,6 +854,13 @@
   const listing = $('[data-listing]');
   if (listing) {
     const per = +listing.dataset.perPage || 60;
+    // Before the static pages, /resources/?page=N paged 60 rows at a time in place; open the static page holding that row.
+    const legacy = new URL(location.href).searchParams;
+    if ([...legacy.keys()].join() === 'page') {
+      const row = (Math.max(1, Math.floor(+legacy.get('page')) || 1) - 1) * 60;
+      const page = Math.min(Math.floor(row / per) + 1, +listing.dataset.pages || 1);
+      location.replace(`${P}/resources/${page > 1 ? `page/${page}/` : ''}${location.hash}`);
+    }
     const list = $('[data-cards]', listing);
     const meta = $('[data-results-meta]', listing);
     const pagerEl = $('[data-pager]', listing);
@@ -1085,11 +1092,13 @@
     };
     // An older link to a row or section on another static page goes to that page.
     const findPage = async () => {
-      const key = decodeURIComponent(location.hash.slice(1));
-      const target = hashTarget();
-      // A section's old fragment sits on its sidebar link until scripts open the page where the section starts.
-      if (!key || (target && !target.matches('[data-section-link]')) || !/^[a-z0-9-]+$/.test(key)) return;
+      // Filtered results are not static pages; a fragment there stays where it is.
+      if (location.search) return;
       try {
+        const key = decodeURIComponent(location.hash.slice(1));
+        const target = hashTarget();
+        // A section's old fragment sits on its sidebar link until scripts open the page where the section starts.
+        if (!key || (target && !target.matches('[data-section-link]')) || !/^[a-z0-9-]+$/.test(key)) return;
         const pages = await (await fetch('/resources/pages.json')).json();
         const page = pages[key];
         if (page && String(page) !== listing.dataset.staticPage) location.replace(`${P}/resources/${page > 1 ? `page/${page}/` : ''}#${key}`);

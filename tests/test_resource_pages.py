@@ -61,7 +61,7 @@ class ResourcePagesTests(unittest.TestCase):
         self.assertIn('Page 2 of 3, entries 101–200.', self.html('/resources/page/2/'))
         items = next(schema_entities(second.schemas, 'CollectionPage'))['mainEntity']
         self.assertEqual(items['numberOfItems'], len(second.record_ids))
-        self.assertIn('page 2', self.html('/resources/page/2/').split('</title>')[0])
+        self.assertIn('· Page 2', self.html('/resources/page/2/').split('</title>')[0])
         self.assertIn('第 2 页', self.html('/zh/resources/page/2/').split('</title>')[0])
 
     def test_pager_links_static_pages_without_a_script(self):

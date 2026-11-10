@@ -456,7 +456,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
     github_icon = ('<span class="icon fa-symbol fa-github" aria-hidden="true"></span>' if icon_stylesheet
                    else '<span class="icon browse-github-fallback" aria-hidden="true">GH</span>')
     # A 404 page answers any missing path, so its language link opens the other homepage.
-    counterpart = ('/' if zh else '/zh/') if noindex and path.endswith('/404.html') else counterpart
+    counterpart = ('/' if zh else '/zh/') if noindex else counterpart
     language_link = f'<a class="browse-language" href="{counterpart}" lang="{("en" if zh else "zh-CN")}" hreflang="{("en" if zh else "zh-CN")}">{globe_icon}<span>{("English" if zh else "简体中文")}</span></a>'
     prefix = '/zh' if zh else ''
     # The 404 templates have no canonical address or language counterpart.
@@ -570,7 +570,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         for page in range(1, pages + 1):
             page_route = page_path(page, language)
             page_records = in_listing_order(groups, SECTIONS, page)
-            page_title_text = title if page == 1 else f"{title} · {RESOURCE_TEXT[language]['page_title'].format(n=page)}"
+            page_title_text = title if page == 1 else f"{title} · {RESOURCE_TEXT[language]['page_title'].format(n=page).capitalize()}"
             first, last = (page - 1) * PER_PAGE + 1, (page - 1) * PER_PAGE + len(page_records)
             page_description = description if page == 1 else (f'第 {page}/{pages} 页，第 {first:,}–{last:,} 项。{description}' if zh
                                                                else f'Page {page} of {pages}, entries {first:,}–{last:,}. {description}')

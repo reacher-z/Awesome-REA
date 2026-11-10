@@ -158,7 +158,7 @@ def resource_listing(resources: list[dict], groups: dict[str, list[dict]], secti
     evidence_options = ''.join(f'<option value="{key}">{text["unknown"] if key == "unknown" else "C" + key} ({_count(evidence_counts[key])})</option>'
                                for key in ('0', '1', '2', '3', 'unknown') if evidence_counts[key])
     sort_options = ''.join(f'<option value="{value}">{text[value]}</option>' for value in ('featured', 'reviewed', 'added', 'name'))
-    return (f'<div class="wrap"><div class="drawer listing" data-listing data-per-page="{PER_PAGE}" data-static-page="{page}" data-base="{page_path(page, language)}">'
+    return (f'<div class="wrap"><div class="drawer listing" data-listing data-per-page="{PER_PAGE}" data-pages="{pages}" data-static-page="{page}" data-base="{page_path(page, language)}">'
             f'<div class="listing-side"><nav class="list-sections" aria-labelledby="sections-title"><h2 id="sections-title">{text["sections"]}</h2><p class="list-note">{text["sections_note"]}</p><ul>{navigation}</ul></nav>'
             f'<dialog class="facets" id="facets" aria-labelledby="facets-title" data-facets><div class="facets-head"><h2 id="facets-title">{text["filters"]}</h2>'
             f'<button class="link-btn" type="button" data-clear hidden>{text["clear"]}</button><button class="sheet-close" type="button" data-facets-close aria-label="{text["close"]}">{icon("close")}</button></div>'
