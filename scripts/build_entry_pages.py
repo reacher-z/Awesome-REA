@@ -10,7 +10,7 @@ from urllib.parse import quote, urlencode, urlsplit
 from artifact_links import github_repository
 from build_home import COPY as HOME_COPY, EVIDENCE_DETAIL, PINNED
 from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, case_page_path, case_pages, jsonld_script, publication_keys
-from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, formatted_date, scholarly_article
+from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, bibtex_text, formatted_date, scholarly_article
 from resource_listing import listing_pages, record_href, section_href
 from build_readme import (CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section,
                           section_order)
@@ -469,12 +469,17 @@ def _paper_content(paper: dict, language: str, discussion: str = '', feedback: s
                    f'{escape(label(*AUTHORS_OMITTED))} <span aria-hidden="true">↗</span></a></p>')
     else:
         authors = f'<p class="entry-authors" lang="en">{escape("; ".join(paper["authors"]))}</p>'
+    terminal = (f'<p class="entry-terminal">{label("Read in a terminal", "终端阅读")}: <code>hf papers read {escape(paper["arxiv_id"])}</code></p>'
+                if paper.get('arxiv_id') else '')
+    bibtex = escape(bibtex_text(paper)).replace('{{', '&#123;{')
+    cite = (f'<section class="entry-section entry-cite" id="cite" aria-labelledby="entry-cite"><h2 id="entry-cite">{label("Cite", "引用")}</h2>'
+            f'<pre class="entry-cite-code" id="cite-bibtex"><code>{bibtex}</code></pre>{terminal}</section>')
     content = f'''<header class="entry-heading"><p class="entry-eyebrow">{paper['year']} · {escape(status)}</p><h1>{escape(title)}</h1>{original}
 {authors}<p class="entry-description">{escape(description)}</p></header>
 <nav class="entry-actions" aria-label="{label('Paper and citation links', '论文与引文链接')}">{''.join(links)}</nav>
 <section class="entry-section entry-scope" aria-labelledby="entry-scope"><h2 id="entry-scope">{label('Scope and limitations', '研究范围与局限')}</h2><p>{escape(paper[f'scope_limitations_{language}'])}</p></section>
 <section class="entry-section" aria-labelledby="entry-relevance"><h2 id="entry-relevance">{label('Why it fits this collection', '与本合集的关联')}</h2><p>{escape(paper[f'why_fits_{language}'])}</p></section>
-<section class="entry-section" aria-labelledby="entry-citation"><h2 id="entry-citation">{label('Publication and review details', '发表与复核详情')}</h2>{_definitions(facts)}
+{cite}<section class="entry-section" aria-labelledby="entry-citation"><h2 id="entry-citation">{label('Publication and review details', '发表与复核详情')}</h2>{_definitions(facts)}
 <p>{escape(paper['metadata_notes_zh' if zh else 'metadata_notes'])}</p>
 <p class="entry-reviewed">{label('Sources reviewed', '来源复核于')} <time datetime="{escape(paper['verified_at'], quote=True)}">{escape(paper['verified_at'][:10])}</time></p>
 <p class="entry-review-note">{label('Reviewed against the paper and its primary sources. Cite the original authors using the linked paper or BibTeX.', '已依据论文及一手来源复核。请通过原始论文或 BibTeX 引用原作者。')}</p>{feedback}</section>

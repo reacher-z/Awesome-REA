@@ -29,6 +29,9 @@ EXPECTED_HEADERS = {
     '/api/*': {'access-control-allow-origin': '*', 'cache-control': 'no-cache, must-revalidate'},
     '/api/v1/*.csv': {'content-type': 'text/csv; charset=utf-8'},
     '/*/index.md': {'link': '<https://awesomerea.org/:splat/>; rel="canonical"'},
+    '/AGENTS.md': {'content-type': 'text/markdown; charset=utf-8'},
+    '/agents.md': {'content-type': 'text/markdown; charset=utf-8'},
+    '/agents.txt': {'content-type': 'text/plain; charset=utf-8'},
     '/llms-full.txt': {'content-type': 'text/plain; charset=utf-8'},
     '/zh/llms-full.txt': {'content-type': 'text/plain; charset=utf-8'},
     '/feed.json': {'content-type': 'application/feed+json; charset=utf-8'},
@@ -79,7 +82,7 @@ def validate_twins(output, routes, resources, papers):
         if json_path:
             assert linked.get(JSON_TYPE) == json_path, f'Page must link its JSON twin {json_path}: {route}'
         text = (output / markdown.lstrip('/')).read_text(encoding='utf-8')
-        assert text.startswith('# ') and f'<{ORIGIN}{route}>' in text, f'Markdown twin must open with a heading and name its page: {markdown}'
+        assert text.split('\n---\n\n', 1)[-1].startswith('# ') and f'<{ORIGIN}{route}>' in text, f'Markdown twin must open with a heading and name its page: {markdown}'
     # Every other indexed page links a twin too (page_twins.py writes the ones no builder does).
     for route in routes:
         page = output / route.lstrip('/') / 'index.html'
@@ -88,7 +91,7 @@ def validate_twins(output, routes, resources, papers):
         markdown = dict(Alternates(page.read_text(encoding='utf-8')).formats).get(MARKDOWN_TYPE)
         assert markdown == route + MARKDOWN, f'Indexed page must link its Markdown twin {route}{MARKDOWN}: {route}'
         text = (output / markdown.lstrip('/')).read_text(encoding='utf-8')
-        assert text.startswith('# ') and f'<{ORIGIN}{route}>' in text, f'Markdown twin must open with a heading and name its page: {markdown}'
+        assert text.split('\n---\n\n', 1)[-1].startswith('# ') and f'<{ORIGIN}{route}>' in text, f'Markdown twin must open with a heading and name its page: {markdown}'
     resources_by_id, papers_by_id = {row['id']: row for row in resources}, {row['id']: row for row in papers}
     for kind, records, project in (('resource', resources_by_id, resource_record), ('paper', papers_by_id, paper_record)):
         for identifier, record in records.items():
@@ -96,6 +99,8 @@ def validate_twins(output, routes, resources, papers):
             assert path.read_text(encoding='utf-8') == json_text(project(record, ORIGIN)), f'record.json differs from its record: {identifier}'
             for prefix, zh in (('', False), ('/zh', True)):
                 text = (output / f'{prefix.lstrip("/")}/{kind}s/{identifier}/{MARKDOWN}'.lstrip('/')).read_text(encoding='utf-8')
+                assert text.startswith('---\n') and '\n---\n\n# ' in text, f'Markdown twin needs YAML front matter: {prefix}/{kind}s/{identifier}/'
+                text = text.split('\n---\n\n', 1)[1]
                 name = (record.get('name_zh') or record['name']) if kind == 'resource' and zh else record.get('name') if kind == 'resource' else record['title_zh' if zh else 'title']
                 assert text.startswith(f'# {" ".join(name.split())}\n'), f'Markdown twin heading differs from the entry: {prefix}/{kind}s/{identifier}/'
                 assert ' '.join(record[f'description_{"zh" if zh else "en"}'].split()) in text, f'Markdown twin lost the description: {identifier}'
@@ -107,6 +112,9 @@ def validate_twins(output, routes, resources, papers):
         if path.parent == output / 'downloads':
             continue
         assert route in routes, f'Markdown twin without an indexed page: /{path.relative_to(output).as_posix()}'
+        if path.parent != output / 'downloads':
+            head = path.read_text(encoding='utf-8').split('\n---\n', 1)[0]
+            assert re.fullmatch(r'---\ntitle: ".+"\nurl: https://awesomerea\.org/\S*\nupdated: \d{4}-\d{2}-\d{2}\ntype: [a-z]+', head), f'Markdown twin needs title, url, updated and type front matter: /{path.relative_to(output).as_posix()}'
     for route in routes:
         match = re.fullmatch(r'/browse/([a-z0-9-]+)/', route)
         if match:
@@ -191,6 +199,19 @@ def validate_llms(output, resources, papers):
             assert not missing, f'{name} lacks entries: ' + ', '.join(missing[:5])
 
 
+def validate_agent_files(output, resources, papers):
+    """/AGENTS.md, /agents.md and /agents.txt are one file for agents that read the catalog."""
+    output = Path(output)
+    texts = {name: (output / name).read_text(encoding='utf-8') for name in ('AGENTS.md', 'agents.md', 'agents.txt')}
+    assert len(set(texts.values())) == 1, 'AGENTS.md, agents.md and agents.txt must be identical'
+    text = texts['AGENTS.md']
+    for needed in (f'{len(resources):,} source-reviewed', f'{len(papers):,} research papers', 'curl -sL https://awesomerea.org/resources/ghidra/index.md',
+                   'hf papers read', '/api/v1/resources.json', '/resources/?q=', '/llms-full.txt', '/sitemap.xml', '/downloads/records.jsonl',
+                   '@misc{', 'issues/new/choose'):
+        assert needed in text, f'AGENTS.md lacks: {needed}'
+    assert 'https://awesomerea.org/AGENTS.md' in (output / 'llms.txt').read_text(encoding='utf-8'), 'llms.txt must link /AGENTS.md'
+
+
 def validate_agent_headers(rules):
     for pattern, headers in EXPECTED_HEADERS.items():
         for name, value in headers.items():
@@ -202,4 +223,5 @@ def validate_agent_formats(output, routes, resources, papers, rules, **queues):
     validate_api(output, resources, papers, **queues)
     validate_json_feeds(output)
     validate_llms(output, resources, papers)
+    validate_agent_files(output, resources, papers)
     validate_agent_headers(rules)

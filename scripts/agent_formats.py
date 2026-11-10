@@ -16,7 +16,7 @@ import json
 from html import escape
 import re
 
-from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, formatted_date
+from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, bibtex_text, formatted_date
 from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS
 from requirement_facets import FACETS, ordered_items
 
@@ -217,6 +217,7 @@ def paper_markdown(paper: dict, language: str, *, site_url: str, related: list[t
         (choose('Date source', '日期依据'), text(paper['date_basis_zh' if zh else 'date_basis'])),
         (choose('First arXiv submission', 'arXiv 首次提交'), formatted_date(paper['first_arxiv_date'], language) if paper.get('first_arxiv_date') else None),
         ('arXiv', paper.get('arxiv_id')),
+        (choose('Read in a terminal', '终端阅读'), f'`hf papers read {paper["arxiv_id"]}`' if paper.get('arxiv_id') else None),
         (choose('Reviewed arXiv version', '已复核的 arXiv 版本'), paper.get('arxiv_version_reviewed')),
         ('DOI', paper.get('doi')),
         (choose('Sources reviewed', '来源复核于'), paper['verified_at'][:10]),
@@ -237,6 +238,7 @@ def paper_markdown(paper: dict, language: str, *, site_url: str, related: list[t
              f'## {choose("Scope and limitations", "研究范围与局限")}', '', text(paper[f'scope_limitations_{language}']), '',
              f'## {choose("Why it fits this collection", "与本合集的关联")}', '', text(paper[f'why_fits_{language}']), '',
              f'## {choose("Publication and review notes", "发表与复核说明")}', '', text(paper['metadata_notes_zh' if zh else 'metadata_notes']), '',
+             f'## BibTeX', '', '```bibtex', bibtex_text(paper).rstrip(), '```', '',
              f'## {choose("Primary sources", "一手来源")}', '', *_sources(paper['evidence_urls']), '']
     if related:
         lines += [f'## {choose("Related entries", "相关条目")}', '']

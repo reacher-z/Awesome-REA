@@ -161,6 +161,8 @@ class SecurityHeaderTests(unittest.TestCase):
             # Agent formats: JSON Feeds, the full-catalog Markdown, Markdown twins and the static API.
             **{route: {'content-type': 'application/feed+json; charset=utf-8'} for route in ('/feed.json', '/zh/feed.json')},
             **{route: {'content-type': 'text/plain; charset=utf-8'} for route in ('/llms-full.txt', '/zh/llms-full.txt')},
+            **{route: {'content-type': 'text/markdown; charset=utf-8'} for route in ('/AGENTS.md', '/agents.md')},
+            '/agents.txt': {'content-type': 'text/plain; charset=utf-8'},
             '/*/index.md': {'link': '<https://awesomerea.org/:splat/>; rel="canonical"'},
             '/api/*': {**no_cache, 'access-control-allow-origin': '*'},
             '/api/v1/*.csv': {'content-type': 'text/csv; charset=utf-8'},

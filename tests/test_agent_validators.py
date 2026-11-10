@@ -7,6 +7,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(ROOT / 'tests'))
+from agent_files import add_front_matter
 from agent_formats import alternate_links, json_text, paper_markdown, paper_record, resource_markdown, resource_record
 from test_agent_formats import PAPER, RESOURCE
 from validate_agent_formats import TWIN_LISTINGS, validate_agent_headers, validate_llms, validate_twins
@@ -39,6 +40,7 @@ class TwinValidatorTests(unittest.TestCase):
                 page(self.output / route.lstrip('/') / 'index.html', route + 'index.md')
                 (self.output / route.lstrip('/') / 'index.md').write_text(f'# Listing\n\n- HTML: <{ORIGIN}{route}>\n', encoding='utf-8')
                 self.routes.add(route)
+        add_front_matter(self.output, ORIGIN, {}, '2026-11-10')
         (self.output / 'resources/ghidra/record.json').write_text(json_text(resource_record(RESOURCE, ORIGIN)), encoding='utf-8')
         (self.output / 'papers/paper-x/record.json').write_text(json_text(paper_record(PAPER, ORIGIN)), encoding='utf-8')
 

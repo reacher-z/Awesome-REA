@@ -812,9 +812,9 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
 {category_lines}
 
 ''' if browsable else ''
-    llms = f'''# Awesome Reverse Engineering Anything
+    llms = f'''# Awesome REA (Awesome Reverse Engineering Anything)
 
-> AwesomeREA.org is a bilingual collection of reverse-engineering tools, projects, integrations, case studies, and references for websites, games, apps, native binaries, firmware, and communication protocols.
+> Awesome REA (AwesomeREA.org) is a bilingual (English, Simplified Chinese) catalog of {len(resources):,} source-reviewed reverse-engineering tools, projects, integrations and case studies, plus {len(papers):,} research papers, for websites, games, apps, native binaries, firmware and communication protocols. Fetch any entry as Markdown with `curl -sL {site_url}/<resources|papers>/<id>/index.md`.
 
 The collection contains {len(resources)} source-reviewed curated resources and {browse_count} browsable repositories from {len(scanned)} successful README scans. The full scan retains {excluded} scope-excluded records and their reasons.{paper_summary}
 
@@ -826,11 +826,12 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 
 - [Curated resources]({site_url}/resources/{MARKDOWN}): All curated entries by section, each linking its own Markdown page with requirements, evidence links and review dates.
 - [Case studies]({site_url}/cases/{MARKDOWN}): {case_count} documented cases, a subset of the curated resources, with full descriptions and source evidence.
+- [API guide]({site_url}/api/{MARKDOWN}): Endpoints, fields, update frequency and versioning of the static JSON and CSV API.
 - [Research papers]({site_url}/papers/{MARKDOWN}): A separate research bibliography, each paper linking its own Markdown page.
 - [Repository directory]({site_url}/browse/{MARKDOWN}): Static categories of automatically discovered public repositories (unreviewed).
-- [Editorial survey]({site_url}/survey/): A bilingual, separately versioned synthesis of the collection’s evidence, methods and limits.
-- [About and provenance]({site_url}/about/): Scope, source methods, counts, translations, and licenses.
-- [Contribute to Awesome REA]({site_url}/contribute/): Submission forms, primary-evidence requirements and the PR workflow for humans and agents.
+- [Editorial survey]({site_url}/survey/{MARKDOWN}): A bilingual, separately versioned synthesis of the collection’s evidence, methods and limits.
+- [About and provenance]({site_url}/about/{MARKDOWN}): Scope, source methods, counts, translations, and licenses.
+- [Contribute to Awesome REA]({site_url}/contribute/{MARKDOWN}): Submission forms, primary-evidence requirements and the PR workflow for humans and agents.
 
 {categories}## 简体中文
 
@@ -838,14 +839,32 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 - [案例合集]({site_url}/zh/cases/{MARKDOWN}): {case_count} 个案例，是精选资源的子集，保留完整说明与来源证据。
 - [研究论文]({site_url}/zh/papers/{MARKDOWN}): 单独维护的研究文献目录。
 - [仓库目录]({site_url}/zh/browse/{MARKDOWN}): 自动发现的公开仓库分类（未审核）。
-- [专题综述]({site_url}/zh/survey/): 综合比较证据、方法与边界的双语编辑性综述，单独版本化。
-- [关于与来源]({site_url}/zh/about/): 收录范围、来源方法、数量、翻译与许可。
-- [投稿与参与贡献]({site_url}/zh/contribute/): 人工与 Agent 的提交表单、一手证据要求和 PR 流程。
+- [专题综述]({site_url}/zh/survey/{MARKDOWN}): 综合比较证据、方法与边界的双语编辑性综述，单独版本化。
+- [关于与来源]({site_url}/zh/about/{MARKDOWN}): 收录范围、来源方法、数量、翻译与许可。
+- [投稿与参与贡献]({site_url}/zh/contribute/{MARKDOWN}): 人工与 Agent 的提交表单、一手证据要求和 PR 流程。
 - [静态 API 说明]({site_url}/zh/api/{MARKDOWN}): 端点、字段与更新频率。
 
-## API and feeds
+## Read with a command
 
-- [API guide]({site_url}/api/{MARKDOWN}): Endpoints, fields, update frequency and versioning of the static JSON and CSV API.
+- [Agent guide]({site_url}/AGENTS.md): Copy-paste commands for the pages, JSON API, search, full-text file, sitemap, dataset and BibTeX. The same file is at {site_url}/agents.md and {site_url}/agents.txt.
+- Read any entry by ID: `curl -sL {site_url}/resources/<id>/index.md` or `curl -sL {site_url}/papers/<id>/index.md`; Chinese under `/zh/`. Each file starts with YAML front matter (title, url, updated, type).
+- Read a paper from a terminal with its arXiv ID: `hf papers read <arxiv-id>`.
+
+## Contribute with an agent
+
+- [Repository agent instructions]({repository_url}/blob/main/AGENTS.md): Start here before editing the repository.
+- [Agent contribution guide]({repository_url}/blob/main/docs/agent-contributing.md): Deduplicate, review primary sources, edit the right data, run checks and submit an authenticated GitHub PR.
+- [Agent 投稿指南]({repository_url}/blob/main/docs/agent-contributing.zh-CN.md): 中文提交、证据和校验说明。
+- [Catalog schema]({repository_url}/blob/main/data/README.md): Authoritative resource and paper fields and classification vocabulary.
+
+## Optional
+
+- [Full catalog in Markdown]({site_url}/llms-full.txt): Every curated resource and paper in one file, with requirements, limits and sources.
+- [完整目录（Markdown）]({site_url}/zh/llms-full.txt): 全部精选资源与论文的中文版。
+- [Sitemap index]({site_url}/sitemap.xml): Every canonical page, with its languages and data-derived modification dates.
+
+### API and feeds
+
 - [Resources JSON]({site_url}/api/v1/resources.json): Every curated resource with stable IDs, bilingual text, requirements, evidence, evidence class (C0–C3), demo preview and review dates; CSV at {site_url}/api/v1/resources.csv.
 - [Papers JSON]({site_url}/api/v1/papers.json): The bibliography with identifiers, dates and limits; CSV at {site_url}/api/v1/papers.csv.
 - [Categories JSON]({site_url}/api/v1/categories.json): Curated categories, sections, kinds and targets with counts, plus the repository categories.
@@ -854,15 +873,7 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 - [JSON Schema]({site_url}/api/v1/schema.json): The schema every API file declares.
 - [Atom feed]({site_url}/feed.xml) and [JSON Feed]({site_url}/feed.json): Newly added entries; Chinese at {site_url}/zh/feed.xml and {site_url}/zh/feed.json.
 
-## Contribute with an agent
-
-- [Repository agent instructions]({repository_url}/blob/main/AGENTS.md): Start here before editing the repository.
-- [Agent contribution guide]({repository_url}/blob/main/docs/agent-contributing.md): Deduplicate, review primary sources, edit the right data, run checks and submit an authenticated GitHub PR.
-- [Agent 投稿指南]({repository_url}/blob/main/docs/agent-contributing.zh-CN.md): 中文提交、证据和校验说明。
-- [Catalog schema]({repository_url}/blob/main/data/README.md): Authoritative resource and paper fields and classification vocabulary.
-- [Choose an issue form]({repository_url}/issues/new/choose): Suggest a resource, case, paper or correction.
-
-## Public data and sources
+### Public data and sources
 
 - [Data manifest]({site_url}/data-manifest.json): Curated resources and papers only, with separate counts, file URLs, sizes and SHA-256 checksums; repository-discovery exports are listed separately below.
 - [Clone the public catalog]({repository_url}): Run `git clone {repository_url}.git`, then read `data/README.md` for the curated JSON source files and Chinese translations. No installation or build is required to read the data.
@@ -873,13 +884,8 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 - [Paper metadata JSON]({site_url}/papers.json): The separate research bibliography.
 - [Hugging Face dataset mirror](https://huggingface.co/datasets/TIGER-Lab/AwesomeREA): Parquet and JSONL exports for resources, papers, cases, repositories, discoveries and leads, refreshed every 2 hours.
 - [Public source repository]({repository_url}): Bilingual READMEs, contribution rules, code, and data definitions.
+- [Choose an issue form]({repository_url}/issues/new/choose): Suggest a resource, case, paper or correction.
 - [Scan methodology]({repository_url}/blob/main/docs/source-scan.md): Collection and scope-review methods.
-
-## Optional
-
-- [Full catalog in Markdown]({site_url}/llms-full.txt): Every curated resource and paper in one file, with requirements, limits and sources.
-- [完整目录（Markdown）]({site_url}/zh/llms-full.txt): 全部精选资源与论文的中文版。
-- [Sitemap index]({site_url}/sitemap.xml): Every canonical page, with its languages and data-derived modification dates.
 
 This file is a navigation aid. Crawl policy is published in [robots.txt]({site_url}/robots.txt).
 '''

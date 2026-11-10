@@ -10,8 +10,8 @@ SOCIAL_CARD = Path(__file__).resolve().parents[1] / 'site' / 'social-card.png'
 # One site name for og:site_name and the homepage WebSite node, which every other page
 # references by @id; alternates follow in order of preference
 # (https://developers.google.com/search/docs/appearance/site-names).
-SITE_NAME = 'Awesome Reverse Engineering Anything'
-SITE_ALTERNATE_NAMES = ['AwesomeREA.org', 'Awesome REA']
+SITE_NAME = 'Awesome REA'
+SITE_ALTERNATE_NAMES = ['Awesome Reverse Engineering Anything', 'AwesomeREA']
 OG_LOCALES = {'en': 'en_US', 'zh': 'zh_CN'}
 # Browser chrome follows the page canvas in each color scheme (--bg in site/shell.css, --paper in site/styles.css).
 THEME_COLOR_META = ('<meta name="theme-color" content="#faf3dd" media="(prefers-color-scheme: light)">'

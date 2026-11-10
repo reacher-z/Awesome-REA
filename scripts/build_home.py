@@ -18,6 +18,7 @@ from asset_paths import fingerprinted_href
 from build_readme import CATEGORIES, KIND_LABELS, TARGETS, collection_section, lead_sentence, paper_section, papers_newest_first
 from home_art import exploded_view
 from site_footer import site_footer
+from repository_stats import REPOSITORY, compact_count, repository_stars
 from site_shell import announcement_bar, header, head_early, icon, mobile_bar, palette, plain_language_link, shell_assets, sprite, star_button, star_count
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -57,7 +58,7 @@ EVIDENCE_DETAIL = {
 COPY = {
     'en': {
         'h1': 'Reverse engineer <em>anything</em>',
-        'lede': 'Tools, case studies and papers for taking apart binaries, games, apps, firmware, protocols and websites, each checked against its source.',
+        'lede': 'Awesome REA (Awesome Reverse Engineering Anything) is a bilingual catalog of {res} source-reviewed tools, projects and case studies and {pap} research papers for taking apart binaries, games, apps, firmware, protocols and websites{stars}. Every entry links the primary source it was checked against.',
         'search_label': 'Search the catalogue', 'placeholder': 'Try Ghidra, IL2CPP or BLE', 'clear': 'Clear search', 'focus': 'Press / to focus',
         'stats': '<span class="s-lg"><strong>{res}</strong> curated resources and <strong>{pap}</strong> papers, each reviewed against its source. Plus <a href="/discoveries/"><strong>{idx}</strong> unreviewed discoveries</a> from the scans.</span><span class="s-sm"><strong>{res}</strong> resources, <strong>{pap}</strong> papers, <a href="/discoveries/"><strong>{idx}</strong> unreviewed</a></span>',
         'updated': 'Last scan', 'all': 'All', 'domains': 'Target domains', 'catalogue': 'Catalogue',
@@ -76,7 +77,7 @@ COPY = {
     },
     'zh': {
         'h1': '逆向<em>一切</em>',
-        'lede': '拆解二进制、游戏、应用、固件、协议与网站所需的工具、案例与论文，每一条都对照原始来源核查。',
+        'lede': 'Awesome REA（Awesome Reverse Engineering Anything）是中英双语目录，收录 {res} 项经来源复核的工具、项目与案例，以及 {pap} 篇研究论文，涵盖二进制、游戏、应用、固件、协议与网站的逆向{stars}。每个条目都链接其核查所依据的一手来源。',
         'search_label': '搜索目录', 'placeholder': '试试 Ghidra、IL2CPP 或 BLE', 'clear': '清除搜索', 'focus': '按 / 键聚焦',
         'stats': '<span class="s-lg"><strong>{res}</strong> 项精选资源与 <strong>{pap}</strong> 篇论文，均已对照来源复核。另有 <a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核发现</a>来自自动扫描。</span><span class="s-sm"><strong>{res}</strong> 项资源、<strong>{pap}</strong> 篇论文、<a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核</a></span>',
         'updated': '最近扫描', 'all': '全部', 'domains': '目标领域', 'catalogue': '目录',
@@ -232,13 +233,32 @@ def _folder_tabs(resources: list[dict], language: str, prefix: str) -> str:
     return f'<nav class="folders" aria-label="{text["domains"]}">{"".join(tabs)}</nav>'
 
 
+def _stars_clause(language: str) -> str:
+    """The repository's GitHub stars, rounded like the buttons; empty when the build has no count."""
+    stars = repository_stars()
+    if stars is None:
+        return ''
+    count = compact_count(stars)
+    return f'，GitHub 星标 {count}' if language == 'zh' else f', with {count} GitHub stars'
+
+
+OLD_TITLES = {'en': ('Awesome Reverse Engineering Anything · Tools, Cases &amp; Papers', 'Awesome Reverse Engineering Anything · Tools, Cases & Papers'),
+              'zh': ('逆向工程资源合集 · Awesome Reverse Engineering Anything',)}
+
+
+def home_title(resources: list[dict], papers: list[dict], language: str) -> str:
+    """The homepage title: the brand, then the real counts (at most 60 characters)."""
+    res, pap = _count(len(resources)), _count(len(papers))
+    return f'Awesome REA：逆向一切，{res} 项资源与 {pap} 篇论文' if language == 'zh' else f'Awesome REA: Reverse Engineering Anything, {res} Resources'
+
+
 def _masthead(resources, papers, discovery_count, last_scan, language, prefix, repository_url) -> str:
     text = COPY[language]
     stats = text['stats'].format(res=_count(len(resources)), pap=_count(len(papers)), idx=_count(discovery_count))
     updated = (f'<p class="updated">{text["updated"]} <time datetime="{_e(last_scan)}" data-rel>{_e(last_scan[:10])}</time></p>' if last_scan else '')
     return (f'<section class="masthead" aria-labelledby="hero-title"><div class="wrap">'
             f'{icon("reg", "reg reg-tl")}{icon("reg", "reg reg-tr")}<div class="xv">{exploded_view(language)}</div>'
-            f'<div class="hero-top"><h1 class="hero-title" id="hero-title">{text["h1"]}</h1><p class="lede">{text["lede"]}</p></div>'
+            f'<div class="hero-top"><h1 class="hero-title" id="hero-title"><span class="hero-brand">Awesome REA</span> {text["h1"]}</h1><p class="lede">{text["lede"].format(res=_count(len(resources)), pap=_count(len(papers)), stars=_stars_clause(language))}</p></div>'
             f'<form class="hero-search" role="search" action="{prefix}/resources/" method="get" data-home-search>'
             f'<label class="hs-label" for="q">{text["search_label"]}</label>{icon("search")}'
             f'<input id="q" name="q" type="search" placeholder="{text["placeholder"]}" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-describedby="hs-count" data-search-input>'
@@ -326,6 +346,39 @@ def _featured_projects(language: str) -> str:
             f'</div><div class="promo-grid">{"".join(cards)}</div></section>')
 
 
+FAQ_TEXT = {'en': ('Questions', 'Questions about Awesome REA'), 'zh': ('常见问题', 'Awesome REA 常见问题')}
+
+
+def faq_items(resources: list[dict], papers: list[dict], discovery_count: int, last_scan: str | None, language: str) -> list[tuple[str, str]]:
+    """Visible questions and answers, built from the same counts as the page; each answer is plain text."""
+    res, pap = _count(len(resources)), _count(len(papers))
+    cases = _count(sum(record['kind'] == 'case-study' for record in resources))
+    idx = _count(discovery_count)
+    day = last_scan[:10] if last_scan else ''
+    if language == 'zh':
+        return [
+            ('Awesome REA 是什么？', f'Awesome Reverse Engineering Anything 是中英双语的逆向工程目录，收录 {res} 项经来源复核的工具、项目、集成与案例（其中案例 {cases} 个）和 {pap} 篇研究论文，覆盖网站、游戏、应用、二进制、固件与通信协议。'),
+            ('每个条目的依据是什么？', '每个条目链接一手来源，并记录来源复核日期；描述对照项目文档或论文撰写。'),
+            ('怎样用命令读取单个条目？', '执行 curl -sL https://awesomerea.org/resources/<id>/index.md（论文用 /papers/<id>/index.md），返回带 YAML 头信息的 Markdown。完整目录在 /llms-full.txt，JSON 接口在 /api/v1/。'),
+            ('有没有数据集或 API？', '有。/api/v1/resources.json 与 /api/v1/papers.json 提供全部条目，/downloads/records.jsonl 每行一条记录，Hugging Face 上有 TIGER-Lab/AwesomeREA 镜像，也可以克隆 GitHub 仓库。'),
+            ('怎样提交新资源、案例或论文？', '在 GitHub 的 Awesome-REA 仓库使用对应的 issue 表单，或提交 pull request；投稿页 /zh/contribute/ 说明所需的一手证据。'),
+            ('数据多久更新一次？', f'精选条目通过审核后的 pull request 更新。自动扫描持续加入未审核的发现，目前 {idx} 条，最近一次扫描在 {day}。' if day else '精选条目通过审核后的 pull request 更新。自动扫描持续加入未审核的发现。'),
+        ]
+    return [
+        ('What is Awesome REA?', f'Awesome Reverse Engineering Anything is a bilingual catalog of {res} source-reviewed tools, projects, integrations and case studies ({cases} of them cases) and {pap} research papers on reverse engineering websites, games, apps, native binaries, firmware and communication protocols.'),
+        ('What is each entry based on?', 'Every entry links its primary source and records the date the source was reviewed. Descriptions are written against the project documentation or the paper.'),
+        ('How do I read one entry from a command line?', 'Run curl -sL https://awesomerea.org/resources/<id>/index.md, or /papers/<id>/index.md for a paper. The reply is Markdown with a YAML header. The full catalog is at /llms-full.txt and the JSON API under /api/v1/.'),
+        ('Is there a dataset or an API?', 'Yes. /api/v1/resources.json and /api/v1/papers.json list every entry, /downloads/records.jsonl holds one record per line, the Hugging Face mirror is TIGER-Lab/AwesomeREA, and the GitHub repository can be cloned.'),
+        ('How do I suggest a resource, case or paper?', 'Use the matching issue form in the Awesome-REA GitHub repository or open a pull request. The contribute page, /contribute/, lists the primary evidence each type needs.'),
+        ('How often is the catalog updated?', f'Curated entries change through reviewed pull requests. Automated scans keep adding unreviewed discoveries, {idx} so far, and the last scan ran on {day}.' if day else 'Curated entries change through reviewed pull requests. Automated scans keep adding unreviewed discoveries.'),
+    ]
+
+
+def faq_markdown(items: list[tuple[str, str]], language: str) -> str:
+    """The questions as a Markdown section for the agent-facing files; the homepage itself shows no FAQ."""
+    return f'## {FAQ_TEXT[language][1]}\n\n' + '\n\n'.join(f'### {q}\n\n{a}' for q, a in items) + '\n'
+
+
 def _homepage_head(explorer_html: str) -> str:
     """Keep the title, description, canonical, alternates, social and JSON-LD the homepage already carries."""
     head = re.search(r'<head>(.*?)</head>', explorer_html, re.S).group(1)
@@ -343,6 +396,9 @@ def render_homepage(*, site_dir: Path, explorer_html: str, resources: list[dict]
     locale = 'zh-CN' if zh else 'en'
     rea_css = fingerprinted_href(site_dir, 'rea.css')
     head = _homepage_head(explorer_html)
+    title = home_title(resources, papers, language)
+    for old in OLD_TITLES[language]:
+        head = head.replace(old, escape(title, quote=False))
     head = re.sub(r'(<meta name="viewport"[^>]*>)', lambda match: match.group(1) + head_early(), head, count=1)
     text = COPY[language]
     body = (f'<a class="skip" href="#main">{"跳到正文" if zh else "Skip to content"}</a>'
@@ -429,6 +485,19 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
     }
 
 
+def scan_facts(discovery_queue: dict | None) -> tuple[str | None, int]:
+    """The last scan time and the number of listed discoveries the homepage states."""
+    batches = (discovery_queue or {}).get('batches') or []
+    last_scan = max((str(batch['ingested_at']) for batch in batches), default=None)
+    if last_scan and not last_scan.endswith('Z'):
+        last_scan = re.sub(r'\+00:00$', 'Z', last_scan)
+    return last_scan, sum(record.get('data_decision') != 'outside' for record in (discovery_queue or {}).get('listed', ()))
+
+
+def home_faq_markdown(resources: list[dict], papers: list[dict], discovery_queue: dict | None, language: str) -> str:
+    last_scan, discovery_count = scan_facts(discovery_queue)
+    return faq_markdown(faq_items(resources, papers, discovery_count, last_scan, language), language)
+
 def search_row_id(row: list) -> str:
     """The record id of a search_index() row, as site.js reads it."""
     base = row[5].split('/')[-1]
@@ -464,11 +533,7 @@ def build_home(site_dir: Path, *, explorer_pages: dict[str, str], resources: lis
     """Write /, /zh/ and their search indexes. ``explorer_pages`` holds the localized head source of each language."""
     site_dir = Path(site_dir)
     order = stored_targets()
-    batches = (discovery_queue or {}).get('batches') or []
-    last_scan = max((str(batch['ingested_at']) for batch in batches), default=None)
-    if last_scan and not last_scan.endswith('Z'):
-        last_scan = re.sub(r'\+00:00$', 'Z', last_scan)
-    discovery_count = sum(record.get('data_decision') != 'outside' for record in (discovery_queue or {}).get('listed', ()))
+    last_scan, discovery_count = scan_facts(discovery_queue)
     for language, route in (('en', 'index.html'), ('zh', 'zh/index.html')):
         page = site_dir / route
         page.parent.mkdir(parents=True, exist_ok=True)
