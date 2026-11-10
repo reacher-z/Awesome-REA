@@ -321,7 +321,9 @@ def build_site(output: Path) -> tuple[int, int, int]:
     catalog = {"meta": metadata, "resources": resources, "topic_labels": topic_labels, "category_labels": category_labels}
     # The repository view's Category filter labels the same categories as the /browse/ pages.
     catalog["source_category_labels"] = {category: list(labels) for category, labels in REPOSITORY_CATEGORIES.items()}
-    (output / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # The thumbnail path is a page-rendering detail of /resources/ (search-index.json carries it); catalog.json keeps the record fields.
+    public_catalog = {**catalog, "resources": [{key: value for key, value in record.items() if key != "preview_thumb"} for record in resources]}
+    (output / "catalog.json").write_text(json.dumps(public_catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     # Requirement lists and additional evidence stay out of the first-render index; app.js fetches catalog.json afterwards.
     (output / "catalog-index.json").write_text(json.dumps(catalog_index(catalog), ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     (output / "papers.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

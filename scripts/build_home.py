@@ -71,6 +71,7 @@ COPY = {
         'unknown_title': 'Source unavailable or unreadable at review time',
         'preview_image_alt': "Demo screenshot from the project's public documentation",
         'preview_video_alt': "Demo video thumbnail from the project's public documentation",
+        'preview_full_label': 'Full-size demo screenshot: {name}',
         'demo_note': 'Demo available · no screenshot',
     },
     'zh': {
@@ -89,6 +90,7 @@ COPY = {
         'unknown_title': '复核时来源不可达或不可读',
         'preview_image_alt': '项目公开文档中的演示截图',
         'preview_video_alt': '项目公开文档中演示视频的封面',
+        'preview_full_label': '完整演示截图：{name}',
         'demo_note': '有 demo · 暂无截图',
     },
 }
@@ -177,11 +179,13 @@ def preview_figure(record: dict, language: str, *, thumb: bool = False) -> str:
         kind = record.get('preview_kind')
         alt = text['preview_video_alt'] if kind == 'video' else text['preview_image_alt']
         play = '<span class="card-preview-play" aria-hidden="true">▶</span>' if kind == 'video' else ''
-        # The row shows the small thumbnail when there is one and links the original image or video still.
+        # A /resources/ row shows the small thumbnail when there is one; a screenshot thumbnail links the full image.
         small = record.get('preview_thumb') if thumb else None
         image = f'<img src="{_e(small or record["preview"])}" alt="{_e(alt)}" loading="lazy" decoding="async">'
-        if small:
-            image = f'<a class="card-preview-link" href="{_e(record["preview"])}">{image}</a>'
+        if small and kind != 'video':
+            name = (record.get('name_zh') or record['name']) if language == 'zh' else record['name']
+            label = text['preview_full_label'].format(name=name)
+            image = f'<a class="card-preview-link" href="{_e(record["preview"])}" aria-label="{_e(label)}">{image}</a>'
         return f'<figure class="card-preview">{play}{image}</figure>'
     if record.get('preview_kind') == 'demo':
         return (f'<figure class="card-preview card-preview-demo"><span class="card-preview-play" aria-hidden="true">▶</span>'
