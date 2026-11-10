@@ -23,6 +23,8 @@ ENDPOINT = 'https://api.indexnow.org/indexnow'
 MAX_HTML_BYTES = 16 * 1024 * 1024
 LIVE_WORKERS = 4
 MAX_PREVIOUS_MANIFEST_BYTES = 8_000_000
+# IndexNow accepts at most 10,000 URLs in one request; a larger selection goes out in several.
+MAX_URLS_PER_REQUEST = 10_000
 
 
 def fetch_bytes(url, limit):
@@ -230,7 +232,7 @@ def main():
     manifest_id = manifest_sha256[:16]
     sitemap = b''.join((output / name).read_bytes() for name in sitemap_files(output, ORIGIN))
     urls = sitemap_urls(output, ORIGIN)
-    if not urls or len(urls) > 10000 or len(urls) != len(set(urls)):
+    if not urls or len(urls) != len(set(urls)):
         raise ValueError('Sitemap URL count or uniqueness is invalid')
     for url in urls:
         relative = canonical_html_file(url)
@@ -264,23 +266,31 @@ def main():
     elif not args.submit:
         print(f'Dry run: {len(urls)} canonical URLs; manifest {manifest_id}. Use --submit after deployment.')
         return 0
-    payload = {'host': 'awesomerea.org', 'key': key, 'keyLocation': ORIGIN + '/indexnow.txt', 'urlList': selected}
     # Delta mode narrows only the notification, never the deployed-build preflight.
     verify_live_build(output, urls, manifest, key)
-    request = Request(ENDPOINT, data=json.dumps(payload).encode(), method='POST', headers={'Content-Type': 'application/json; charset=utf-8', 'User-Agent': 'AwesomeREA-IndexNow/1.0'})
-    try:
-        with urlopen(request, timeout=30) as response:
-            status = response.status
-    except HTTPError as error:
-        print(f'IndexNow returned HTTP {error.code}; submission was not accepted.')
-        return 1
-    except (URLError, TimeoutError, OSError):
-        print('IndexNow receipt is unconfirmed; response unavailable. No automatic retry was attempted.')
-        return 1
-    if status not in (200, 202):
-        print(f'IndexNow returned HTTP {status}; submission was not confirmed.')
-        return 1
-    print(f'IndexNow HTTP {status}: {len(selected)} URLs submitted for manifest {manifest_id}. ' + ('Key validation pending. ' if status == 202 else '') + 'Receipt does not confirm indexing.')
+    batches = [selected[start:start + MAX_URLS_PER_REQUEST] for start in range(0, len(selected), MAX_URLS_PER_REQUEST)]
+    statuses = []
+    for number, batch in enumerate(batches, 1):
+        payload = {'host': 'awesomerea.org', 'key': key, 'keyLocation': ORIGIN + '/indexnow.txt', 'urlList': batch}
+        request = Request(ENDPOINT, data=json.dumps(payload).encode(), method='POST', headers={'Content-Type': 'application/json; charset=utf-8', 'User-Agent': 'AwesomeREA-IndexNow/1.0'})
+        part = f' (request {number} of {len(batches)})' if len(batches) > 1 else ''
+        # A failed request stops the run without a receipt: the next run diffs from the same baseline and sends every batch again.
+        try:
+            with urlopen(request, timeout=30) as response:
+                status = response.status
+        except HTTPError as error:
+            print(f'IndexNow returned HTTP {error.code}{part}; submission was not accepted.')
+            return 1
+        except (URLError, TimeoutError, OSError):
+            print(f'IndexNow receipt is unconfirmed{part}; response unavailable. No automatic retry was attempted.')
+            return 1
+        if status not in (200, 202):
+            print(f'IndexNow returned HTTP {status}{part}; submission was not confirmed.')
+            return 1
+        statuses.append(status)
+    status = 202 if 202 in statuses else 200
+    requests = f' in {len(batches)} requests' if len(batches) > 1 else ''
+    print(f'IndexNow HTTP {status}: {len(selected)} URLs submitted{requests} for manifest {manifest_id}. ' + ('Key validation pending. ' if status == 202 else '') + 'Receipt does not confirm indexing.')
     write_receipt(args.receipt, manifest_sha256=manifest_sha256, sitemap_sha256=hashlib.sha256(sitemap).hexdigest(),
                   mode='delta' if args.previous_manifest is not None else 'full', selected=selected, status=status)
     return 0

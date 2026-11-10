@@ -2,6 +2,7 @@
 import contextlib
 import io
 from pathlib import Path
+import shutil
 import sys
 import tempfile
 import unittest
@@ -9,9 +10,9 @@ from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-import build_site
 import validate_site
 from validate_site import Page, validate_link_fragments
+from shared_build import built_site
 
 
 class LinkFragmentTest(unittest.TestCase):
@@ -39,7 +40,8 @@ class LinkFragmentTest(unittest.TestCase):
     def test_built_site_passes_and_a_renamed_section_anchor_fails(self):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / 'dist'
-            build_site.build_site(output)
+            # A copy of the shared build, since this test renames an anchor in it.
+            shutil.copytree(built_site(), output)
             with mock.patch.object(validate_site, 'OUTPUT', output), contextlib.redirect_stdout(io.StringIO()):
                 # The current build resolves every internal fragment without an allowlist.
                 validate_site.main()

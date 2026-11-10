@@ -15,6 +15,7 @@ from open_graph import THEME_COLOR_META, open_graph_meta
 from page_metadata import page_title
 from site_footer import download_link, site_footer
 from build_repository_index import CATEGORIES
+import browse_guides
 from source_descriptions import description_fallback
 from source_scope import exclusion_counts, unavailable_clause
 
@@ -235,7 +236,11 @@ def build_browse_pages(
             for slug, category_labels in CATEGORIES.items():
                 active = ' aria-current="page"' if category == slug else ''
                 category_links.append(f'<a href="{browse_path(language, slug)}"{active}>{escape(category_labels[language_index])}<span>{len(groups[slug]):,}</span></a>')
+            guide_html, guide_schema, guide_items = '', None, []
             if category:
+                guide_html, guide_schema, guide_items = browse_guides.guide(
+                    category, label, groups[category], scan_classes or {}, zh=zh, snapshot=scan_date,
+                    json_href=browse_path('en', category) + COLLECTION_JSON, canonical=canonical)
                 content = '<div class="source-results browse-results">\n' + '\n'.join(repository_card(record, language, use_pro, scan_classes) for record in groups[category]) + '\n</div>'
                 schema_items = [
                     {'name': record.get('full_name') or record['name'], 'url': record['url'],
@@ -278,7 +283,7 @@ def build_browse_pages(
   <link rel="stylesheet" href="{escape(browse_styles_href, quote=True)}">
   {icon_css}
   {structured_data}
-  {breadcrumb_data}
+  {breadcrumb_data}{jsonld_script(guide_schema) if guide_schema else ''}
 </head>
 <body>
 <a class="skip-link" href="#browse-content">{('跳到仓库目录' if zh else 'Skip to the directory')}</a>
@@ -294,12 +299,14 @@ def build_browse_pages(
   <section class="collection-intro browse-intro" aria-labelledby="browse-title">
     <p class="eyebrow">{('逆向工程仓库目录' if zh else 'THE REPOSITORY DIRECTORY')}</p>
     <h1 id="browse-title">{escape(label)}<span class="title-dot" aria-hidden="true">.</span></h1>
+    {('<p class="browse-definition">' + escape(browse_guides.definition(category, zh)) + '</p>') if category else ''}
     <p>{escape(description)}</p>
     <p class="evidence-beta">{('扫描证据档位 C1–C3 来自 README 的安装与用法章节；C0 来自人工复核的精选条目。' if zh else 'Scan evidence classes C1–C3 come from README installation and usage sections; C0 comes from manually reviewed curated entries.')}</p>
   </section>
   <div class="browse-actions"><a class="button button-primary" href="{search_link}{('&amp;source-category=' + category) if category else ''}">{icon('search', use_pro)}{('搜索仓库' if zh else 'Search repositories')}</a><a class="button button-outline" href="{curated_link}">{('精选资源' if zh else 'Curated resources')} <span class="browse-count">{curated_count:,}</span></a>{download_link('/' + repository_export, language, css_class='browse-download', query=f'?v={data_revision}')}</div>
   <details class="browse-provenance"><summary>{('关于这个索引' if zh else 'About this index')}</summary><p>{escape(scope_note)}</p><p>{escape(provenance)}</p><p><a href="{escape(repository_url, quote=True)}/blob/main/docs/source-scan.md">{('扫描方法（英文）↗' if zh else 'Scan methodology ↗')}</a> · <a href="{escape(repository_url, quote=True)}/blob/main/data/source-scope.json">{('范围排除记录 ↗' if zh else 'Scope exclusions ↗')}</a></p></details>
   {('<nav class="browse-category-nav" aria-label="' + ('仓库分类' if zh else 'Repository categories') + '">' + ''.join(category_links) + '</nav>' if category else '')}
+  {guide_html}
   <div class="browse-topline"><p>{count_text}</p><p>{date_text}</p></div>
   {content}
 </main>
@@ -333,7 +340,8 @@ def build_browse_pages(
                            for slug, labels in CATEGORIES.items()]
             rendered[path.lstrip('/') + MARKDOWN] = collection_markdown(
                 title=label, description=description, language=language, canonical=canonical, items=entries,
-                notes=[INDEX_NOTE[language_index], date_text],
+                notes=[*([browse_guides.definition(category, zh)] if category else []), INDEX_NOTE[language_index], date_text,
+                       *browse_guides.markdown_notes(guide_items, zh)],
                 json_url=site_url + ((browse_path('en', category) + COLLECTION_JSON) if category else '/api/v1/categories.json'),
                 counterpart=site_url + counterpart + MARKDOWN)
             canonical_urls.append(canonical)
