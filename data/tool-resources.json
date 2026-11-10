@@ -153322,7 +153322,7 @@
     "requirements": [
       "The project heading is Pokémon Yellow. Checksum lines reviewed at this commit: roms.sha1: cc7d03262ebfaf2f06772c1a480c7d9d5f4a38e1 *pokeyellow.gbc; roms.sha1: d44e96eddfbdad633cbe4e6e64915e9e198974b0 *pokeyellow_debug.gbc.",
       "The check compares a build with the checksum above. Where the README tells the reader to supply a retail ROM, that ROM is not in the public tree. This record does not add install paths from a home directory.",
-      "The reviewed Makefile contains `@$(SHA1) -c roms.sha1`. This collection did not run the build or the checksum command.",
+      "The reviewed Makefile contains `@$(SHA1) -c roms.sha1`.",
       "This commit's root has no LICENSE, COPYING, or LICENSE.md file, and GitHub reports no detected license. The original game remains with its rights holders. The reviewed files do not establish REA use."
     ],
     "requirement_facets": [
