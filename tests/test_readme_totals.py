@@ -8,7 +8,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import (FINDER_BEGIN, FINDER_END, replace_finder, browsable_index_count, render_contents, render_finder,
+from build_readme import (FINDER_BEGIN, FINDER_END, replace_finder, browsable_index_count, render_contents,
                           render_totals, replace_contents)
 from catalog import load_resources
 from validate_papers import read_papers
@@ -60,7 +60,7 @@ class ReadmeTotalsTest(unittest.TestCase):
                 newer[0]['verified_at'] = '2999-01-01'
                 stale = render_totals(newer, papers, index_count, language)
                 self.assertNotEqual(stale, line)
-                regenerated = replace_finder(text, stale + render_finder(records, papers, index_count, language))
+                regenerated = replace_finder(text, stale)
                 self.assertNotEqual(regenerated, text)
                 self.assertNotEqual(render_totals(records, papers, index_count + 1, language), line)
 
