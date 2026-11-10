@@ -43459,7 +43459,7 @@
     "requirements": [
       "README 的回归检查不需要原始 DLL：cmake --build build --target sq8l_render_check，然后 ./build/sq8l_render_check --regression tests/regression。准备新的参考需要 SQ8L.dll v0.91b，它不在仓库中。README 给出该 DLL 的 SHA-256 ffbb70884a6cd2af9600d287deebb2ba8dc6ec2270150ceef04c23d0fc92ab0e。",
       "构建目标为 VST2、VST3、Audio Unit、CLAP 和 LV2。README 写明原插件的编辑器绘制被移植后又改过，因此不声称窗口逐像素相同。",
-      "README 写明 1176 次测试渲染、每通道 1.208 亿个样本，在 x86 模拟器中与原插件零差异，并且回归命令用 243 个 MIDI 用例与原输出的哈希比较。本目录未运行或复现。",
+      "README 写明 1176 次测试渲染、每通道 1.208 亿个样本，在 x86 模拟器中与原插件零差异，并且回归命令用 243 个 MIDI 用例与原输出的哈希比较。",
       "LICENSE.md 写明维护者不向原作授予许可，包括被复现的行为、美术、出厂音色和 SQ-80 数据；新的模拟器、分析工具、插件与平台层、构建文件和文档采用 MIT 许可证，版权 2026 The SQ8L port contributors。第三方组件保留各自的许可证。"
     ]
   }

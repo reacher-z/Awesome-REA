@@ -153315,7 +153315,7 @@
     "requirements": [
       "The README's regression check does not need the original DLL: cmake --build build --target sq8l_render_check, then ./build/sq8l_render_check --regression tests/regression. Preparing new references needs SQ8L.dll v0.91b, which is not in the repository. The README prints SHA-256 ffbb70884a6cd2af9600d287deebb2ba8dc6ec2270150ceef04c23d0fc92ab0e for that DLL.",
       "Builds are VST2, VST3, Audio Unit, CLAP, and LV2. The README says the original plugin's editor drawing was ported and then changed, so the window is not claimed to be pixel-identical.",
-      "The README says 1176 test renders, 120.8 million samples per channel, had zero differences against the original plugin in an x86 emulator, and that the regression command compares 243 MIDI cases with hashes of the original output. Not run or reproduced for this catalog.",
+      "The README says 1176 test renders, 120.8 million samples per channel, had zero differences against the original plugin in an x86 emulator, and that the regression command compares 243 MIDI cases with hashes of the original output.",
       "LICENSE.md says the maintainers grant no licence for the original work, including the reproduced behavior, artwork, factory sounds, and SQ-80 data, and that the new emulator, analysis tools, plug-in and platform layers, build files, and docs are under the MIT License, copyright 2026 The SQ8L port contributors. Third-party components keep their own licences."
     ],
     "requirement_facets": [
