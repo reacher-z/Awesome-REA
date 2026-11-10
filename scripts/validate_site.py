@@ -35,7 +35,7 @@ from public_source_supplements import (PUBLISHED_FILENAME, compose_published, js
 from validate_discovery import discovery_class_pages, expected_entry_routes, validate_route_inventory
 from build_readme import (CASE_FILES, README_SIZE_WARNING, CATEGORIES, METHOD_SECTIONS, PAPER_SECTIONS, REQUIREMENTS_LABEL, case_method,
                           collection_section, method_groups, paper_section)
-from build_discovery_pages import ABOUT_EXCLUDED_SECTIONS, SECTION_TARGETS, file_size_label
+from build_discovery_pages import ABOUT_EXCLUDED_SECTIONS, CASE_PER_PAGE, SECTION_TARGETS, case_page_path, file_size_label
 from build_feed import (DISCOVERY_LABELS, DISCOVERY_PATHS, DISCOVERY_TERM, FEED_PAGES, FEED_PATHS, FEED_SIZE,
                         discovery_summary, entry_time, feed_entries, merged_entries)
 import build_discoveries
@@ -1186,37 +1186,41 @@ def validate_case_outputs(pages, resources):
     cases = {record['id']: record for record in resources if record['kind'] == 'case-study'}
     normalize = lambda value: ' '.join(value.split())
     for language, prefix in (('en', ''), ('zh', '/zh')):
+        assert prefix + '/cases/' in pages, f'Missing case directory: {prefix}/cases/'
+        ids = []
+        for route in listing_page_routes(pages, prefix, 'cases'):
+            page = pages[route]
+            assert len(page.case_rows) <= CASE_PER_PAGE, f'A case page holds at most {CASE_PER_PAGE} rows: {route}'
+            ids += [row['id'] for row in page.case_rows]
+            collections = list(schema_entities(page.schemas, 'CollectionPage'))
+            assert len(collections) == 1, f'Case directory needs one CollectionPage: {route}'
+            collection = collections[0]
+            assert collection.get('url') == ORIGIN + route and collection.get('inLanguage') == ('zh-CN' if language == 'zh' else 'en'), f'Case schema identity mismatch: {route}'
+            items = collection.get('mainEntity', {})
+            assert items.get('@type') == 'ItemList' and items.get('numberOfItems') == len(page.case_rows), f'Case schema count mismatch: {route}'
+            expected_items = []
+            for position, row in enumerate(page.case_rows, 1):
+                assert row['id'] in cases, f'Case page lists a record that is not a curated case study: {row["id"]}'
+                record = cases[row['id']]
+                name = (record.get('name_zh') or record['name']) if language == 'zh' else record['name']
+                detail = f"{prefix}/resources/{row['id']}/"
+                expected_items.append({'@type': 'ListItem', 'position': position, 'name': name,
+                                       'url': ORIGIN + detail, 'description': record[f'description_{language}']})
+                assert row['anchor'] == row['id'] and row['section'] == collection_section(record), f'Case placement mismatch: {row["id"]}'
+                assert row['parent_section'] == row['section'] and row['parent_anchor'] == 'cases-' + row['section'], f'Case belongs to the wrong subject section: {row["id"]}'
+                method = case_method(record) if row['section'] in METHOD_SECTIONS else None
+                assert row['method'] == method and row['method_anchor'] == (method and f'cases-{row["section"]}-{method}'), f'Case belongs to the wrong method group: {row["id"]}'
+                assert len(row['headings']) == 1 and normalize(name) in normalize(''.join(row['headings'][0])), f'Case heading lost localized name: {row["id"]}'
+                # Requirements and additional sources are on the entry page (validate_entry_outputs); the row links to them.
+                text = normalize(' '.join(row['text']))
+                assert all(normalize(phrase) in text for phrase in [name, record[f'description_{language}']]), f'Case directory lost full localized content: {row["id"]}'
+                links = {detail, detail + '#entry-requirements', record['url'], record['evidence_url']}
+                assert links <= set(row['links']), f'Case directory lost entry/source links: {row["id"]}'
+                assert len(row['times']) == 1 and row['times'][0]['datetime'] == record['verified_at'], f'Case review timestamp mismatch: {row["id"]}'
+                assert record['verified_at'][:10] in normalize(''.join(row['times'][0]['text'])), f'Case review date is missing: {row["id"]}'
+            assert items.get('itemListElement') == expected_items, f'Case structured list differs from rendered entries: {route}'
         route = prefix + '/cases/'
-        assert route in pages, f'Missing case directory: {route}'
-        page = pages[route]
-        ids = [row['id'] for row in page.case_rows]
-        assert len(ids) == len(cases) and set(ids) == set(cases), f'Case subset differs from curated case records: {route}'
-        collections = list(schema_entities(page.schemas, 'CollectionPage'))
-        assert len(collections) == 1, f'Case directory needs one CollectionPage: {route}'
-        collection = collections[0]
-        assert collection.get('url') == ORIGIN + route and collection.get('inLanguage') == ('zh-CN' if language == 'zh' else 'en'), f'Case schema identity mismatch: {route}'
-        items = collection.get('mainEntity', {})
-        assert items.get('@type') == 'ItemList' and items.get('numberOfItems') == len(cases), f'Case schema count mismatch: {route}'
-        expected_items = []
-        for position, row in enumerate(page.case_rows, 1):
-            record = cases[row['id']]
-            name = (record.get('name_zh') or record['name']) if language == 'zh' else record['name']
-            detail = f"{prefix}/resources/{row['id']}/"
-            expected_items.append({'@type': 'ListItem', 'position': position, 'name': name,
-                                   'url': ORIGIN + detail, 'description': record[f'description_{language}']})
-            assert row['anchor'] == row['id'] and row['section'] == collection_section(record), f'Case placement mismatch: {row["id"]}'
-            assert row['parent_section'] == row['section'] and row['parent_anchor'] == 'cases-' + row['section'], f'Case belongs to the wrong subject section: {row["id"]}'
-            method = case_method(record) if row['section'] in METHOD_SECTIONS else None
-            assert row['method'] == method and row['method_anchor'] == (method and f'cases-{row["section"]}-{method}'), f'Case belongs to the wrong method group: {row["id"]}'
-            assert len(row['headings']) == 1 and normalize(name) in normalize(''.join(row['headings'][0])), f'Case heading lost localized name: {row["id"]}'
-            # Requirements and additional sources are on the entry page (validate_entry_outputs); the row links to them.
-            text = normalize(' '.join(row['text']))
-            assert all(normalize(phrase) in text for phrase in [name, record[f'description_{language}']]), f'Case directory lost full localized content: {row["id"]}'
-            links = {detail, detail + '#entry-requirements', record['url'], record['evidence_url']}
-            assert links <= set(row['links']), f'Case directory lost entry/source links: {row["id"]}'
-            assert len(row['times']) == 1 and row['times'][0]['datetime'] == record['verified_at'], f'Case review timestamp mismatch: {row["id"]}'
-            assert record['verified_at'][:10] in normalize(''.join(row['times'][0]['text'])), f'Case review date is missing: {row["id"]}'
-        assert items.get('itemListElement') == expected_items, f'Case structured list differs from rendered entries: {route}'
+        assert len(ids) == len(cases) and set(ids) == set(cases), f'Case pages differ from curated case records: {route}'
         for section in METHOD_SECTIONS:
             # Method groups follow METHOD_HEADINGS (cases without a method last), each in case_order, as in the READMEs.
             listed = [cases[identifier] for identifier in ids if collection_section(cases[identifier]) == section]
@@ -1237,7 +1241,7 @@ class SectionTargetCounts(HTMLParser):
             labels = (values.get('aria-labelledby') or '').split()
             # Sub-group regions are labelled by two IDs; their cards count toward the enclosing section.
             key = values.get('data-case-section') or (labels[0].removeprefix('heading-') if len(labels) == 1 and labels[0].startswith('heading-') else None)
-            section = {'key': key, 'cards': 0, 'line': None} if key else None
+            section = {'key': key, 'cards': 0, 'line': None, 'count': values.get('data-section-count')} if key else None
             if section:
                 self.sections.append(section)
             self._stack.append(section)
@@ -1259,9 +1263,21 @@ def validate_section_target_counts(output, resources):
     subsets = {'cases': [record for record in resources if record['kind'] == 'case-study']}
     for route, records in subsets.items():
         for prefix in ('', 'zh/'):
-            sections = SectionTargetCounts((output / f'{prefix}{route}' / 'index.html').read_text(encoding='utf-8')).sections
+            # A section can run over several static pages: its cards add up across them, and its line is on its first page.
+            files = [output / f'{prefix}{route}' / 'index.html'] + sorted((output / f'{prefix}{route}' / 'page').glob('*/index.html'), key=lambda path: int(path.parent.name))
+            merged = {}
+            for file in files:
+                for part in SectionTargetCounts(file.read_text(encoding='utf-8')).sections:
+                    section = merged.setdefault(part['key'], {'key': part['key'], 'cards': 0, 'line': None, 'stated': part.get('count')})
+                    section['cards'] += part['cards']
+                    if part['line'] is not None:
+                        assert section['line'] is None, f'Section has two target count lines: /{prefix}{route}/ {part["key"]}'
+                        section['line'] = part['line']
+                    assert section['stated'] == part.get('count'), f'Section count differs between pages: /{prefix}{route}/ {part["key"]}'
+            sections = list(merged.values())
             assert sections, f'No sections found on /{prefix}{route}/'
             for section in sections:
+                assert section['stated'] is None or int(section['stated']) == section['cards'], f'Section count {section["stated"]} differs from its {section["cards"]} cards: /{prefix}{route}/ {section["key"]}'
                 key, line, target = section['key'], section['line'], SECTION_TARGETS.get(section['key'])
                 label = f'/{prefix}{route}/ {key}'
                 if target is None:
@@ -1439,24 +1455,32 @@ def validate_discovery_outputs(output, pages, queue):
     assert badge == build_discoveries.badge_document(queue), 'Discovery badge differs from the latest ingest'
 
 
-RESOURCE_PAGE_ROUTE = re.compile(r'(/zh)?/resources/(?:page/([1-9][0-9]*)/)?')
+LISTING_PAGE_ROUTE = re.compile(r'(/zh)?/(resources|cases)/(?:page/([1-9][0-9]*)/)?')
 
 
-def resource_page_routes(pages, prefix):
-    """/resources/ and its later static pages that pages holds, in page order."""
-    numbered = sorted((int(match[2] or 1), route) for route in pages
-                      if (match := RESOURCE_PAGE_ROUTE.fullmatch(route)) and (match[1] or '') == prefix)
-    assert [number for number, _ in numbered] == list(range(1, len(numbered) + 1)), f'Resource listing pages must run 1, 2, 3 …: {prefix}/resources/'
+def listing_page_routes(pages, prefix, directory='resources'):
+    """/<directory>/ and its later static pages that pages holds, in page order."""
+    numbered = sorted((int(match[3] or 1), route) for route in pages
+                      if (match := LISTING_PAGE_ROUTE.fullmatch(route)) and (match[1] or '') == prefix and match[2] == directory)
+    assert [number for number, _ in numbered] == list(range(1, len(numbered) + 1)), f'Listing pages must run 1, 2, 3 …: {prefix}/{directory}/'
     return [route for _, route in numbered]
 
 
-def with_resource_pages(pages, output=OUTPUT):
-    """pages plus the unlisted /resources/page/<n>/ pages, parsed from the build."""
+def resource_page_routes(pages, prefix):
+    return listing_page_routes(pages, prefix, 'resources')
+
+
+def with_listing_pages(pages, output=OUTPUT):
+    """pages plus the unlisted /resources/page/<n>/ and /cases/page/<n>/ pages, parsed from the build."""
     found = dict(pages)
     for prefix in ('', '/zh'):
-        for path in Path(output).glob(f'{prefix.lstrip("/")}{"/" if prefix else ""}resources/page/*/index.html'):
-            found[f'{prefix}/resources/page/{path.parent.name}/'] = parsed_file(Page, path)
+        for directory in ('resources', 'cases'):
+            for path in Path(output).glob(f'{prefix.lstrip("/")}{"/" if prefix else ""}{directory}/page/*/index.html'):
+                found[f'{prefix}/{directory}/page/{path.parent.name}/'] = parsed_file(Page, path)
     return found
+
+
+with_resource_pages = with_listing_pages
 
 
 def validate_resource_listing(pages, resources, output=None):
@@ -1544,7 +1568,7 @@ def validate_entry_outputs(pages, resources, papers):
             expected = [entry_path('resource', sibling['id'], language) for sibling in neighbours['siblings']]
             expected.append(section_href(neighbours['section'], neighbours['section_page'], language))
             if record['kind'] == 'case-study':
-                expected.append(f"{prefix}/cases/#cases-{neighbours['section']}")
+                expected.append(f"{case_page_path(neighbours['case_section_page'], language)}#cases-{neighbours['section']}")
             assert 1 <= len(neighbours['siblings']) <= 6 and identifier not in {sibling['id'] for sibling in neighbours['siblings']}, f'Detail page needs one to six other section entries: {route}'
             assert page.section_links == expected, f'Section siblings differ from README order: {route}'
         else:
@@ -1573,6 +1597,7 @@ def validate_entry_outputs(pages, resources, papers):
         assert destinations == [ORIGIN + prefix + '/', ORIGIN + prefix + '/' + directory + '/', canonical], f'Detail breadcrumb destinations mismatch: {route}'
         # The visible breadcrumb and "View in the directory" use the same listing as the BreadcrumbList.
         row = (record_href(identifier, siblings[identifier]['page'], language) if directory == 'resources'
+               else f"{case_page_path(siblings[identifier]['case_page'], language)}#{identifier}" if directory == 'cases'
                else f'{prefix}/{directory}/#{identifier}')
         assert {f'{prefix}/{directory}/', row} <= set(page.links), f'Detail return links mismatch: {route}'
         assert len(page.entry_contents) == 1, f'Detail page needs one marked article: {route}'
@@ -1833,7 +1858,7 @@ def _validate_pages(urls, resources, papers):
                                        header_rules((OUTPUT / '_headers').read_text(encoding='utf-8')),
                                        repository_document=published_repository_document(OUTPUT), discovery_queue=queue,
                                        lead_queue=lead_queue),
-        lambda: validate_case_outputs(pages, resources),
+        lambda: validate_case_outputs(with_listing_pages(pages), resources),
         lambda: validate_section_target_counts(OUTPUT, resources),
         lambda: validate_shared_footer(OUTPUT, catalog_meta['repository_url'],
                                        catalog_meta['source_index'].get('full_export') or 'source-index.json'),

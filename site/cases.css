@@ -51,3 +51,14 @@ html[lang="zh-CN"] .cases-note>p,html[lang="zh-CN"] .case-method-note,html[lang=
   .case-evidence{margin-left:0}
   .case-footer{gap:0 16px}
 }
+/* Static pages: the range above the first section and plain links between pages. */
+.case-range{margin:14px 0 0;color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.case-pager{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:28px 0 8px}
+.case-pager ol{display:flex;flex-wrap:wrap;gap:4px;margin:0;padding:0;list-style:none}
+.case-pager a,.case-pager .gap,.case-pager-step{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 10px;border-radius:8px;font-variant-numeric:tabular-nums}
+.case-pager a{border:1px solid var(--line);color:var(--link)}
+.case-pager a:hover{background:var(--soft)}
+.case-pager a[aria-current="page"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.case-pager .gap{min-width:20px;padding:0;color:var(--muted)}
+.case-pager span.case-pager-step{color:var(--muted)}
+@media print{.case-pager{display:none}}
