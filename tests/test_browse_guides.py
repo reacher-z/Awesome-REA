@@ -88,5 +88,20 @@ class BrowseGuideTests(unittest.TestCase):
         self.assertNotIn('Which of these repositories have a curated entry?', english)
 
 
+    def test_questions_are_full_sentences_and_examples_use_short_names(self):
+        records = [record(index, **({'related_entries': [dict(CURATED[0], title_en='LibrePods: AirPods features on Android and Linux')]} if index == 0 else {})) for index in range(4)]
+        classes = {'scan-0': 1, 'scan-1': 2, 'scan-2': 3}
+        english = dict(browse_guides.faqs('android', 'Android app', records, classes, False, '2026-10-20'))
+        chinese = dict(browse_guides.faqs('android', 'Android 应用', records, classes, True, '2026-10-20'))
+        self.assertEqual(english['How many of these repositories document installation and usage in their README?'],
+                         '1 of 4 documents both installation and usage in their README (scan class C1). '
+                         '1 is missing one of the two (C2) and 1 has no usable README documentation (C3). 1 has no README scan class.')
+        self.assertIn('这些仓库中有多少在 README 中写明了安装和用法？', chinese)
+        self.assertIn('哪些 Android 应用类仓库的星标最多？', chinese)
+        curated = english['Which of these repositories have a curated entry?']
+        self.assertIn('>LibrePods</a>', curated)
+        self.assertNotIn('AirPods', curated)
+
+
 if __name__ == '__main__':
     unittest.main()
