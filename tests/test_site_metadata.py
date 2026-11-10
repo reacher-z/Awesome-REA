@@ -142,7 +142,8 @@ class SecurityHeaderTests(unittest.TestCase):
         bibtex = {'content-type': 'application/x-bibtex; charset=utf-8'}
         self.assertEqual(rules, {
             '/fonts/*': {'access-control-allow-origin': '*', 'cache-control': 'public, max-age=2592000'},
-            **{route: no_cache for route in ('/', '/index.html', '/catalog.json', '/catalog-index.json', '/search-index.json', '/search-index.zh.json', '/source-index.json',
+            **{route: no_cache for route in ('/', '/index.html', '/catalog.json', '/catalog-index.json', '/search-index.json', '/search-index.zh.json', '/search-text.json', '/search-text.zh.json',
+                                             '/source-index.json',
                                              '/source-browser.json', '/source-published.json', '/papers.json', '/build-manifest.json',
                                              '/data-manifest.json', '/downloads/*')},
             **{route: {'content-type': 'application/atom+xml; charset=utf-8'} for route in ('/feed.xml', '/zh/feed.xml',

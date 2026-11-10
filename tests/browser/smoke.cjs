@@ -248,6 +248,25 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   assert.match(new URL(page.url()).pathname, /\/resources\/[a-z0-9-]+\/$/, `${label}: Enter opens the selected result`);
 }
 
+// tests/e2e/search_queries.json: real searches whose expected record must rank in the homepage top 3, in both languages.
+const SEARCH_QUERIES = JSON.parse(fs.readFileSync(path.join(root, 'tests/e2e/search_queries.json'), 'utf8'));
+async function searchQuality(page, language, data) {
+  const english = new Map(data.catalog.resources.map(record => [record.id, record]));
+  const tops = await page.evaluate(async ({queries, top}) => {
+    const search = window.REA_SEARCH;
+    const index = await search.loadIndex();
+    await search.loadText();
+    return queries.map(({q}) => search.sortHits(search.search(index.res, q), 'featured', q).slice(0, top).map(hit => hit.r.id));
+  }, SEARCH_QUERIES);
+  const expected = (id, {ids, name, target}) => {
+    if (ids) return ids.includes(id);
+    const record = english.get(id);
+    return Boolean(record) && new RegExp(name, 'i').test(record.name) && (!target || record.targets.includes(target));
+  };
+  const misses = SEARCH_QUERIES.queries.map(({q, expect}, i) => (tops[i].some(id => expected(id, expect)) ? '' : `${q}: ${tops[i].join(', ')}`)).filter(Boolean);
+  assert.deepEqual(misses, [], `${language}: every query in tests/e2e/search_queries.json finds its record in the top ${SEARCH_QUERIES.top}`);
+}
+
 // The evidence-class select narrows the drawer in place, and the info button explains the classes.
 async function homepageClassFilter(page, language, viewport) {
   const label = `${language} homepage evidence-class filter ${viewport.name}`;
@@ -687,6 +706,8 @@ async function staticPage(page, route, viewport) {
       for (const language of ['en', 'zh']) {
         await check(`${language} new homepage at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} new homepage ${viewport.name}`, (page, requested) => newHomepage(page, language, viewport, data, requested)));
+        if (viewport.name === 'desktop') await check(`${language} search quality`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+          `${language} search quality`, page => searchQuality(page, language, data)));
         await check(`${language} homepage evidence-class filter at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} homepage evidence-class filter ${viewport.name}`, page => homepageClassFilter(page, language, viewport)));
         await check(`${language} scrolled homepage search at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
