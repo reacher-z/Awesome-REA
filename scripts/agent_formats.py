@@ -29,7 +29,7 @@ JSON_TYPE = 'application/json'
 RESOURCE_FIELDS = ('id', 'name', 'name_zh', 'url', 'kind', 'class', 'category', 'group', 'relationship', 'targets',
                    'description_en', 'description_zh', 'requirements', 'requirements_zh', 'requirement_facets',
                    'reconstruction_method', 'evidence_url', 'additional_evidence_urls', 'added_at', 'verified_at',
-                   'verification', 'source_unavailable')
+                   'verification', 'source_unavailable', 'evidence_class', 'evidence_status', 'scope', 'preview_kind')
 PAPER_FIELDS = ('id', 'title', 'title_zh', 'authors', 'authors_omitted', 'year', 'publication_date', 'date_precision',
                 'date_basis', 'date_basis_zh', 'venue', 'publication_status', 'arxiv_id', 'arxiv_version_reviewed',
                 'first_arxiv_date', 'doi', 'url', 'pdf_url', 'code_url', 'project_url', 'targets', 'kind', 'class',
@@ -105,6 +105,9 @@ def resource_record(record: dict, site_url: str) -> dict:
     """The bilingual JSON twin of a resource page: recorded fields plus the entry's own URLs."""
     value = {key: record[key] for key in RESOURCE_FIELDS if key in record}
     identifier = record['id']
+    if record.get('preview'):
+        # The documented demo screenshot or video thumbnail, served from this site.
+        value['preview_url'] = site_url + record['preview']
     value.update(record_type='resource', entry_url=site_url + entry_route('resource', identifier),
                  entry_url_zh=site_url + entry_route('resource', identifier, 'zh'),
                  markdown_url=site_url + entry_route('resource', identifier) + MARKDOWN,
