@@ -97,4 +97,4 @@ python3 scripts/build_site.py
 python3 scripts/verify_evidence_entry.py <entry-url>
 ```
 
-`build_site.py` merges `evidence_class`, `evidence_status`, `scope`, `runtime_status`, `evidence_review` and preview fields into `catalog.json` / `catalog-index.json`, writes the compact `scan-classes.json` for the repository view, and fails when a curated entry is missing its class. `/api/v1/resources.json`, its CSV twin and each entry's `record.json` carry `evidence_class`, `evidence_status`, `scope`, `preview_kind` and an absolute `preview_url`.
+`build_site.py` merges `evidence_class`, `evidence_status`, `scope`, `runtime_status`, `evidence_review` and preview fields into `catalog.json` / `catalog-index.json`, writes the compact `scan-classes.json` for the repository view, and fails when a curated entry is missing its class. `/api/v1/resources.json`, its CSV twin and each entry's `record.json` carry `evidence_class`, `evidence_status`, `scope`, `preview_kind` and an absolute `preview_url`; API version 1.1.0 added them, as the last five CSV columns. The `/downloads/` bundle carries the same fields.

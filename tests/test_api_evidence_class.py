@@ -40,27 +40,30 @@ class ApiEvidenceClassUnitTest(unittest.TestCase):
         self.assertEqual(errors(document, schema['$defs']['resourcesFile'], schema), [])
         self.assertEqual([row['evidence_class'] for row in document['resources']], [2, None])
         self.assertEqual([row['evidence_class'] for row in rows], ['2', ''])
-        document['resources'][0]['evidence_class'] = 4
-        self.assertTrue(errors(document, schema['$defs']['resourcesFile'], schema))
+        for wrong in (4, True, '2'):
+            document['resources'][0]['evidence_class'] = wrong
+            self.assertTrue(errors(document, schema['$defs']['resourcesFile'], schema), wrong)
 
 
 class ApiMatchesCatalogTest(unittest.TestCase):
-    def test_api_and_record_json_agree_with_catalog_on_class_and_preview(self):
+    FIELDS = ('evidence_class', 'evidence_status', 'scope', 'preview_kind')
+
+    def test_api_and_record_json_agree_with_catalog_for_every_id(self):
         from shared_build import built_site
         site = built_site()
         catalog = {row['id']: row for row in json.loads((site / 'catalog.json').read_text(encoding='utf-8'))['resources']}
         api = {row['id']: row for row in json.loads((site / 'api/v1/resources.json').read_text(encoding='utf-8'))['resources']}
         self.assertEqual(api.keys(), catalog.keys())
         for identifier, row in catalog.items():
-            self.assertEqual(api[identifier].get('evidence_class'), row.get('evidence_class'), identifier)
-            self.assertEqual(api[identifier].get('evidence_status'), row.get('evidence_status'), identifier)
-            preview = f'{ORIGIN}{row["preview"]}' if row.get('preview') else None
-            self.assertEqual(api[identifier].get('preview_url'), preview, identifier)
+            expected = {field: row.get(field) for field in self.FIELDS}
+            expected['preview_url'] = f'{ORIGIN}{row["preview"]}' if row.get('preview') else None
+            record = json.loads((site / f'resources/{identifier}/record.json').read_text(encoding='utf-8'))
+            for name, value in (('resources.json', api[identifier]), ('record.json', record)):
+                self.assertEqual({field: value.get(field) for field in expected}, expected, f'{name}: {identifier}')
         self.assertTrue(any(row.get('evidence_class') is not None for row in api.values()))
-        sample = next(identifier for identifier, row in catalog.items() if row.get('evidence_class') is not None)
-        record = json.loads((site / f'resources/{sample}/record.json').read_text(encoding='utf-8'))
-        record = record.get('record', record)
-        self.assertEqual(record.get('evidence_class'), catalog[sample]['evidence_class'])
+        # With downloaded previews the build gives Class 0/1 records a preview, and the API carries its URL.
+        if any((ROOT / '.cache/previews').glob('*')):
+            self.assertTrue(any(row.get('preview_url') for row in api.values()))
 
 
 if __name__ == '__main__':

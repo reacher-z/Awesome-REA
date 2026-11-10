@@ -20,7 +20,7 @@ RESOURCE_FIELDS = frozenset({
     'requirements', 'requirements_zh', 'targets', 'category', 'group',
     'relationship', 'kind', 'class', 'evidence_url', 'additional_evidence_urls',
     'verified_at', 'verification', 'evidence_class', 'evidence_status',
-    'scope', 'runtime_status', 'evidence_review', 'source_unavailable',
+    'scope', 'runtime_status', 'evidence_review', 'source_unavailable', 'preview_kind',
 })
 PAPER_FIELDS = frozenset({
     'id', 'title', 'title_zh', 'authors', 'authors_omitted', 'year', 'publication_date',
@@ -53,6 +53,8 @@ def projected_records(records, fields, directory):
         record = {key: source[key] for key in sorted(fields) if key in source}
         if 'citation' in record:
             record['citation'] = {key: value for key, value in record['citation'].items() if key in CITATION_FIELDS}
+        if source.get('preview'):
+            record['preview_url'] = ORIGIN + source['preview']
         record['entry_url'] = f'{ORIGIN}/{directory}/{identifier}/'
         record['entry_url_zh'] = f'{ORIGIN}/zh/{directory}/{identifier}/'
         if private_json_locations(record):

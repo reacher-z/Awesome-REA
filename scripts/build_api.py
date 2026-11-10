@@ -34,7 +34,12 @@ from sitemaps import instant, latest, normalized_date
 from site_footer import HUGGING_FACE_URL
 from structured_data import dataset_id, publisher_reference
 
-API_VERSION = '1.0.0'
+API_VERSION = '1.1.0'
+# The values data/evidence-classes.json and the build give a curated resource; the schema enumerates them.
+EVIDENCE_CLASSES = (0, 1, 2, 3)
+EVIDENCE_STATUSES = ('observed', 'unknown')
+EVIDENCE_SCOPES = ('full', 'partial', 'analysis', 'unknown', 'notes')
+PREVIEW_KINDS = ('image', 'video', 'demo')
 API_PATH = '/api/v1/'
 DOCS_PATH = '/api/'
 CHANGE_DAYS = 30
@@ -50,8 +55,9 @@ CANDIDATE_NOTE = ('Unreviewed candidates: automated README scans and links that 
 CSV_COLUMNS = {
     'resources': ('id', 'name', 'name_zh', 'kind', 'category', 'relationship', 'targets', 'url', 'evidence_url',
                   'description_en', 'description_zh', 'requirements', 'requirements_zh', 'added_at', 'verified_at',
-                  'verification', 'evidence_class', 'evidence_status', 'scope', 'preview_url', 'preview_kind',
-                  'entry_url', 'entry_url_zh', 'json_url'),
+                  'verification', 'entry_url', 'entry_url_zh', 'json_url',
+                  # Added in 1.1.0 after the 1.0.0 columns, so positional readers keep working.
+                  'evidence_class', 'evidence_status', 'scope', 'preview_url', 'preview_kind'),
     'papers': ('id', 'title', 'title_zh', 'authors', 'authors_omitted', 'year', 'publication_date', 'venue',
                'publication_status', 'doi', 'arxiv_id', 'url', 'pdf_url', 'code_url', 'project_url', 'targets',
                'description_en', 'description_zh', 'added_at', 'verified_at', 'verification', 'entry_url',
@@ -256,9 +262,9 @@ def schema_document(site_url: str) -> dict:
                                    'required': ['checked_at', 'outcome', 'http_status'],
                                    'properties': {'checked_at': string, 'outcome': {'enum': ['not-found', 'blocked']},
                                                   'http_status': {'enum': [404, 410, 451]}}},
-            'evidence_class': nullable({'enum': [0, 1, 2, 3]}), 'evidence_status': {'enum': ['observed', 'unknown']},
-            'scope': nullable({'enum': ['full', 'partial', 'analysis', 'unknown', 'notes']}),
-            'preview_url': url, 'preview_kind': {'enum': ['image', 'video', 'demo']},
+            'evidence_class': nullable({'type': 'integer', 'enum': list(EVIDENCE_CLASSES)}),
+            'evidence_status': {'enum': list(EVIDENCE_STATUSES)}, 'scope': nullable({'enum': list(EVIDENCE_SCOPES)}),
+            'preview_url': url, 'preview_kind': {'enum': list(PREVIEW_KINDS)},
             **entry_urls},
     }
     paper = {
