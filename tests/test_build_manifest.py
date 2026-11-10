@@ -3,6 +3,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from build_manifest import collect_manifest, html_digest, normalized_html_bytes, without_star_counts
@@ -52,6 +53,25 @@ class CDNNormalizationTests(unittest.TestCase):
         for before in ('<!-- x -->', '<script>const a = 1;</script>', '<style>a{}</style>', '<title>x</title>'):
             page = f'{before}<a>{span.format(44)}</a>'.encode()
             self.assertEqual(without_star_counts(page), f'{before}<a>{span.format("")}</a>'.encode(), before)
+
+    def test_a_metadata_refresh_changes_a_resource_page_hash_only_through_its_lasting_facts(self):
+        import build_entry_pages
+
+        def row(page_language, **facts):
+            facts = {'stars': 44, 'committed_at': '2026-11-01T00:00:00Z', 'language': 'C', 'license': 'MIT',
+                     'observed_at': '2026-11-08T04:40:00Z', **facts}
+            with mock.patch.object(build_entry_pages, 'repository_facts', return_value=facts):
+                return f'<main><h1>x</h1>{build_entry_pages._repository_row({}, page_language)}<p>y</p></main>'.encode()
+
+        for language in ('en', 'zh'):
+            with self.subTest(language=language):
+                base = html_digest(row(language))
+                self.assertEqual(html_digest(row(language, stars=1032, observed_at='2026-11-09T04:41:00Z')), base)
+                self.assertEqual(html_digest(row(language, stars=12)), base)
+                for lasting in ({'committed_at': '2026-11-09T00:00:00Z'}, {'language': 'Rust'}, {'license': 'GPL-3.0'},
+                                {'archived': True}):
+                    self.assertNotEqual(html_digest(row(language, **lasting)), base, lasting)
+                self.assertIn(b'2026-11-08', row(language))
 
     def test_builds_differing_only_in_star_counts_have_one_manifest(self):
         manifests = []

@@ -33,6 +33,11 @@ class QueryTests(unittest.TestCase):
 
     def test_any_other_error_or_an_empty_answer_stops_the_refresh(self):
         for document in ({'data': {'r0': NODE, 'r1': None}, 'errors': [{'type': 'RATE_LIMITED'}]},
+                         # NOT_FOUND counts as a missing repository only on a top-level alias whose node is null.
+                         {'data': {'r0': NODE, 'r1': None}, 'errors': [{'type': 'NOT_FOUND', 'path': ['r1', 'licenseInfo']}]},
+                         {'data': {'r0': NODE, 'r1': NODE}, 'errors': [{'type': 'NOT_FOUND', 'path': ['r1']}]},
+                         {'data': {'r0': NODE, 'r1': None}, 'errors': [{'type': 'NOT_FOUND'}]},
+                         {'data': {'r0': NODE, 'r1': None}, 'errors': ['NOT_FOUND']},
                          {'errors': [{'message': 'Something went wrong'}]}, {}):
             with self.subTest(document=document), self.assertRaisesRegex(SystemExit, 'snapshot is unchanged'):
                 self.query(document)
@@ -71,6 +76,57 @@ class FetchTests(unittest.TestCase):
             self.assertTrue(metadata.changed({'observed_at': '2026-11-02T00:00:00Z', 'repositories': {'a/b': {'stars': 2}}}, path))
 
 
+class PublishTests(unittest.TestCase):
+    ENVIRONMENT = {'GITHUB_REPOSITORY': 'o/r', 'GH_TOKEN': 'token', 'DEFAULT_BRANCH': 'main',
+                   'GITHUB_REF': 'refs/heads/main', 'GITHUB_RUN_ID': '1'}
+
+    def setUp(self):
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        self.path = Path(directory.name) / 'repository-metadata.json'
+        self.old = json.dumps({'observed_at': '2026-11-01T00:00:00Z', 'repositories': {'a/b': {'stars': 1}}}).encode()
+        self.path.write_bytes(self.old)
+        for patch in (mock.patch.dict(metadata.os.environ, self.ENVIRONMENT), mock.patch.object(metadata, 'SNAPSHOT', self.path),
+                      mock.patch.object(metadata, 'catalog_keys', return_value=['a/b']),
+                      mock.patch.object(ingest_discoveries, 'GitHub'), mock.patch.object(ingest_discoveries, 'output'),
+                      mock.patch.object(ingest_discoveries, 'step_summary')):
+            patch.start()
+            self.addCleanup(patch.stop)
+
+    def test_an_unchanged_read_opens_no_pull_request(self):
+        read = {'observed_at': '2026-11-09T00:00:00Z', 'source': 'GitHub GraphQL API', 'repositories': {'a/b': {'stars': 1}}}
+        with mock.patch.object(metadata, 'fetch', return_value=read), mock.patch.object(ingest_discoveries, 'refresh_tree') as tree:
+            self.assertEqual(metadata.publish(), 0)
+        ingest_discoveries.output.assert_called_once_with('status', 'unchanged')
+        ingest_discoveries.GitHub.assert_not_called()
+        tree.assert_not_called()
+        self.assertEqual(self.path.read_bytes(), self.old)
+
+    def test_a_snapshot_that_changed_on_main_during_the_run_is_not_replaced(self):
+        read = {'observed_at': '2026-11-09T00:00:00Z', 'source': 'GitHub GraphQL API', 'repositories': {'a/b': {'stars': 2}}}
+        newer = self.old.replace(b'"stars": 1', b'"stars": 3')
+        with mock.patch.object(metadata, 'fetch', return_value=read), \
+                mock.patch.object(ingest_discoveries, 'refresh_tree', side_effect=lambda branch: self.path.write_bytes(newer) and 'base'), \
+                mock.patch.object(ingest_discoveries, 'run_validators') as validators, \
+                self.assertRaisesRegex(RuntimeError, 'changed during this run'):
+            metadata.publish()
+        validators.assert_not_called()
+        ingest_discoveries.GitHub.return_value.call.assert_not_called()
+        self.assertEqual(self.path.read_bytes(), newer)
+
+
+class TrackerTests(unittest.TestCase):
+    def test_the_failure_issue_dates_the_snapshot_and_links_its_docs(self):
+        state = {'first_failure_at': 'a', 'first_run_url': 'u', 'last_failure_at': 'b', 'count': 1, 'failed_jobs': ['refresh']}
+        body = ingest_discoveries.tracker_body('repository-metadata', state, {'refresh': 'failure'}, 'u', '2026-11-08T04:40:00Z', 'o/r')
+        self.assertIn('| Snapshot on main observed at | 2026-11-08T04:40:00Z |', body)
+        self.assertIn('docs/automation.md#repository-metadata-refresh', body)
+        self.assertNotIn('discovery ingest', body)
+        other = ingest_discoveries.tracker_body('discovery-leads', state, {'collect': 'failure'}, 'u', None, 'o/r')
+        self.assertIn('| Last successful discovery ingest | none recorded |', other)
+        self.assertIn('docs/automation.md#automated-discovery-ingest', other)
+
+
 class WorkflowTests(unittest.TestCase):
     def test_the_workflow_runs_daily_on_the_default_branch_within_the_ingest_budget(self):
         text = (ROOT / '.github/workflows/repository-metadata.yml').read_text(encoding='utf-8')
@@ -81,6 +137,8 @@ class WorkflowTests(unittest.TestCase):
         minutes = int(re.search(r'(?m)^    timeout-minutes: (\d+)$', text)[1])
         self.assertGreaterEqual(minutes * 60, ingest_discoveries.JOB_SECONDS)
         self.assertNotIn('persist-credentials: true', text)
+        self.assertIn('--tracker repository-metadata --result "refresh=$REFRESH_RESULT"', text)
+        self.assertIn('repository-metadata', ingest_discoveries.TRACKERS)
 
 
 if __name__ == '__main__':
