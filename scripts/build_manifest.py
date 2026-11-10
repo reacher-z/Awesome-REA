@@ -93,6 +93,10 @@ def normalized_html_bytes(content: bytes) -> bytes:
     byte-sensitive. Unexpected attributes or inline code are never discarded.
     """
     text = content.decode('utf-8')
+    # Every transformation below needs a data-cfemail, data-cfasync or data-cf-beacon attribute, whose name the
+    # parser reads case-insensitively; a page without one has nothing to reverse but its star counts.
+    if 'data-cf' not in text.lower():
+        return without_star_counts(content)
 
     def restore_email(match):
         parser = _TagAttributes('a')

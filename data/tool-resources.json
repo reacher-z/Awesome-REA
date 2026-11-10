@@ -1218,7 +1218,6 @@
       "https://github.com/PortSwigger/mcp-server/blob/5f76126409780ecba2b766c7f7388f465c5b5f94/BappManifest.bmf",
       "https://github.com/PortSwigger/mcp-server/blob/5f76126409780ecba2b766c7f7388f465c5b5f94/gradle.properties",
       "https://github.com/PortSwigger/mcp-server/blob/5f76126409780ecba2b766c7f7388f465c5b5f94/LICENSE",
-      "https://github.com/PortSwigger/mcp-server/releases/tag/v1.3.0",
       "https://portswigger.net/bappstore/9952290f04ed4f628e624d0aa9dccebc",
       "https://portswigger.net/burp/eula"
     ],
@@ -1227,9 +1226,9 @@
     "verification": "source-reviewed",
     "requirements": [
       "Requires Burp Suite, proprietary PortSwigger software under its own EULA: Professional is a paid subscription, while Community Edition is free under separate Community terms. The extension's GPL-3.0 license does not cover Burp. The extension manifest lists both editions as supported.",
-      "Reviewed release: v1.3.0, published 2026-05-26 with a prebuilt burp-mcp-all.jar and also listed in the BApp Store. Source builds use Gradle and need Java and the jar command on PATH; the reviewed build targets a Java 21 toolchain.",
+      "Reviewed version: 1.3.0, as gradle.properties and the BApp manifest state at the reviewed commit; the manifest builds burp-mcp-all.jar, and the extension is listed in the BApp Store. Source builds use Gradle and need Java and the jar command on PATH; the reviewed build targets a Java 21 toolchain.",
       "The SSE server listens on 127.0.0.1:9876 by default; stdio-only clients use the packaged proxy JAR. Approval prompts for sending HTTP requests and for reading HTTP history, WebSocket history and Organizer items are on by default. Config-editing tools are opt-in, and exported options filter credentials by default.",
-      "Scanner-issue and Collaborator tools are registered only in Burp Suite Professional. Data returned to the MCP client is handled by that client's model provider. The default branch was seven commits ahead of v1.3.0 at review, with the same registered tool set."
+      "Scanner-issue and Collaborator tools are registered only in Burp Suite Professional. Data returned to the MCP client is handled by that client's model provider. The default branch was seven commits ahead of the 1.3.0 release at review, with the same registered tool set."
     ]
   },
   {
@@ -14963,8 +14962,7 @@
       "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/target.sha256",
       "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/third_party/README.md",
       "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/.github/workflows/ci.yml",
-      "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/LICENSE",
-      "https://github.com/Yharnam-Hunters/bbport/blob/accdce33b89d45fa3c7f5066e69362a5ec215c1a/README.md"
+      "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/LICENSE"
     ]
   },
   {
@@ -19009,7 +19007,7 @@
     "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "requirements": [
-      "Latest tagged release: 1.0, published 2022-12-29 with Debian and Ubuntu packages. meson.build at the reviewed main commit of 2026-09-30 declares version 1.1, and the separate drakvuf-builds repository publishes per-commit drakvuf-bundle 1.1 packages for Debian bookworm and Ubuntu 22.04 and 24.04 with matching Xen 4.20.1 hypervisor packages, including a build of the reviewed commit.",
+      "Latest tagged release: 1.0, published 2022-12-29 with Debian and Ubuntu packages. meson.build at the reviewed main commit of 2026-09-30 declares version 1.1, and the separate drakvuf-builds repository publishes drakvuf-bundle 1.1 packages for Debian bookworm and Ubuntu 22.04 and 24.04, with matching Xen hypervisor packages, as a release for its latest main-branch build.",
       "Needs an Intel CPU with VT-x and Extended Page Tables; the README says DRAKVUF will not work on AMD or on Intel CPUs without them. DRAKVUF runs in Xen's dom0. The project website's installation guide, last updated 2022-12-29 for Xen 4.17 and mainly tested on Ubuntu 22.04, builds Xen from the bundled submodule, sets Xen boot options, asks for a dom0 kernel of 5.11 or newer and stores guest disks on LVM; DRAKVUF itself builds with meson and ninja.",
       "The README lists Windows 7 and 8 (32- and 64-bit), Windows 10 64-bit and Linux 2.6.x to 6.x guests; the older website guide says Linux up to 5.x. The analyst installs the guest from their own operating-system media and generates a JSON kernel profile for LibVMI, from the Windows kernel's PDB with the bundled Volatility 3 pdbconv script or from Linux kernel debug symbols with dwarf2json; extra per-module profiles, such as one for tcpip.sys, enable plugins like socketmon.",
       "Custom license: GPL version 2 only with the author's clarifications and exceptions, which read derivative works broadly, bar combining DRAKVUF with plain-GPL software and offer alternative licenses for proprietary use; GitHub does not classify it. Xen, LibVMI, Volatility 3 and dwarf2json are git submodules under their own licenses. The README presents it mainly for malware analysis."
@@ -19022,7 +19020,7 @@
       "https://github.com/tklengyel/drakvuf/blob/b2f64d8d73d456840e5fc276c13f0df0b2b79231/.github/workflows/ci.yml",
       "https://drakvuf.com/",
       "https://github.com/tklengyel/drakvuf/releases/tag/1.0",
-      "https://github.com/tklengyel/drakvuf-builds/releases/tag/build-b2f64d8d73d456840e5fc276c13f0df0b2b79231"
+      "https://github.com/tklengyel/drakvuf-builds/releases"
     ]
   },
   {
@@ -145516,6 +145514,11 @@
     ],
     "evidence_url": "https://github.com/drakolordx7/switch2-recomp/blob/5339bf85b05e84c34a7f18d8a43db1de1f1692b2/README.md",
     "verified_at": "2026-11-07",
+    "source_unavailable": {
+      "checked_at": "2026-11-09T20:59:50+00:00",
+      "outcome": "not-found",
+      "http_status": 404
+    },
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
   },

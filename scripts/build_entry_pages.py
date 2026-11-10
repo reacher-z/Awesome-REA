@@ -132,12 +132,14 @@ def matching_entries(resources: list[dict], papers: list[dict]) -> dict[tuple[st
     merely cite a paper never match.
     """
     matches = defaultdict(list)
+    # Each resource's repository and publication keys, worked out once rather than once per paper.
+    candidates = [(resource, github_repository(resource.get('url')), publication_keys(resource))
+                  for resource in sorted(resources, key=lambda row: row['id'])]
     for paper in sorted(papers, key=lambda row: row['id']):
         repositories = {github_repository(paper.get(field), artifact=True) for field in ('code_url', 'project_url')} - {None}
         keys = publication_keys(paper)
-        for resource in sorted(resources, key=lambda row: row['id']):
-            repository = github_repository(resource.get('url'))
-            if (repository and repository in repositories) or keys & publication_keys(resource):
+        for resource, repository, resource_keys in candidates:
+            if (repository and repository in repositories) or keys & resource_keys:
                 matches[('resource', resource['id'])].append(('paper', paper))
                 matches[('paper', paper['id'])].append(('resource', resource))
     return dict(matches)

@@ -42,7 +42,7 @@ node --check site/app.js
 python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 ```
 
-The test command runs every Python test and the Node tests of the browser scripts offline; CI runs the same discovered tests split across its three `unit` shards. The [browser smoke test](#browser-smoke-test) is a separate step.
+The test command runs every Python test and the Node tests of the browser scripts offline; CI runs the same discovered tests split across its four `unit` shards. The [browser smoke test](#browser-smoke-test) is a separate step.
 
 Open `http://127.0.0.1:8000`. Use HTTP rather than opening `index.html` directly, because the directory fetches `catalog-index.json`, `catalog.json` and `source-browser.json`. Stop the preview server with Ctrl+C.
 
@@ -75,7 +75,7 @@ The site self-hosts its fonts in [site/fonts](../site/fonts): subsets of EB Gara
 
 ## Hosting
 
-GitHub Pages publishes the website. The `publish.yml` workflows in `Awesome-REA/awesomerea.org` and `Awesome-REA/awesome-rea.com` check out this repository's `main`, run `scripts/build_production.py`, write the commit to `/source-commit.txt` and deploy `dist/` without `_headers` and `_redirects`. Both domains are proxied through Cloudflare. Keep this collection's source public; `Awesome-REA/awesome-rea.github.io` is reserved for **private artifact backups**, independently of the hosting service. Confirm its visibility when maintaining that backup. GitHub Free for organizations supports Pages from public repositories; private-repository Pages requires a qualifying paid plan. [GitHub Pages availability](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
+GitHub Pages publishes the website. The `publish.yml` workflows in `Awesome-REA/awesomerea.org` and `Awesome-REA/awesome-rea.com` check out this repository's `main`, run `scripts/build_production.py --publish`, write the commit to `/source-commit.txt` and deploy `dist/` without `_headers` and `_redirects`. Both domains are proxied through Cloudflare. Keep this collection's source public; `Awesome-REA/awesome-rea.github.io` is reserved for **private artifact backups**, independently of the hosting service. Confirm its visibility when maintaining that backup. GitHub Free for organizations supports Pages from public repositories; private-repository Pages requires a qualifying paid plan. [GitHub Pages availability](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
 
 Each workflow runs twice an hour (at :27 and :57 for awesomerea.org, :12 and :42 for awesome-rea.com) and on manual dispatch, and publishes when its domain serves a commit other than the head of `main`. The Cloudflare Cache Rule **Cache static site HTML at the edge for 30 minutes** keeps every response at the edge for 30 minutes, so a new build reaches visitors once the zone's cache is purged after the deployment. `curl https://awesomerea.org/source-commit.txt` shows the commit a domain serves.
 

@@ -21,6 +21,7 @@ import sys
 from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import forked_checks  # noqa: E402
 from schema_org_vocabulary import load  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -175,11 +176,16 @@ def block_errors(vocabulary: Vocabulary, blocks: list[dict], where: str, known_i
     return errors
 
 
+def _page_blocks(path: Path) -> list:
+    return _Blocks(path.read_text(encoding='utf-8')).blocks
+
+
 def validate_site(output: Path, routes: list[str]) -> tuple[int, list[str]]:
     """Validate each route's JSON-LD; a reference may name a node that any page of the site defines."""
     vocabulary = Vocabulary(load())
     output = Path(output)
-    pages = {route: _Blocks((output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')).blocks for route in routes}
+    paths = [output / route.lstrip('/') / 'index.html' for route in routes]
+    pages = dict(zip(routes, forked_checks.ordered_map(_page_blocks, paths)))
     known_ids = set().union(*(defined_ids(blocks) for blocks in pages.values()))
     known_pages = frozenset(routes)
     errors, count = [], 0
