@@ -19,6 +19,8 @@ from open_graph import THEME_COLOR_META, open_graph_meta
 from page_metadata import page_title, paper_description, resource_description
 from structured_data import evidence_urls, publisher_reference, resource_entity
 from requirement_facets import item_html, ordered_items
+from repository_metadata import repository_facts
+from repository_stats import REPOSITORY, compact_count, star_count
 from site_footer import site_footer
 
 MARKER = '<!-- Generated curated entry page. -->'
@@ -222,7 +224,96 @@ def _output_path(root: Path, relative: str) -> Path:
     return current
 
 
-def _resource_content(record: dict, language: str, discussion: str = '', feedback: str = '') -> tuple[str, str, str]:
+def _bibtex_literal(value: str) -> str:
+    replacements = {'\\': r'\textbackslash{}', '{': r'\{', '}': r'\}', '&': r'\&', '%': r'\%', '$': r'\$', '#': r'\#',
+                    '_': r'\_', '~': r'\textasciitilde{}', '^': r'\textasciicircum{}'}
+    return ''.join(replacements.get(character, character) for character in value)
+
+
+def resource_citation(record: dict, entry_url: str, language: str = 'en') -> tuple[str, str]:
+    """BibTeX and a plain-text reference for a resource, from its name, URL, review date and entry address only."""
+    reviewed = record['verified_at'][:10]
+    bibtex = (f"@misc{{{record['id']},\n"
+              f"  title = {{{{{_bibtex_literal(record['name'])}}}}},\n"
+              f"  howpublished = {{\\url{{{record['url']}}}}},\n"
+              f"  url = {{{record['url']}}},\n"
+              f"  urldate = {{{reviewed}}},\n"
+              f"  note = {{Awesome REA entry: \\url{{{entry_url}}}}}\n"
+              '}')
+    if language == 'zh':
+        plain = f"{record['name']}。{record['url']}（访问于 {reviewed}）。Awesome REA 条目：{entry_url}"
+    else:
+        plain = f"{record['name']}. {record['url']} (accessed {reviewed}). Awesome REA entry: {entry_url}"
+    return bibtex, plain
+
+
+def _cite(record: dict, language: str, entry_url: str) -> str:
+    zh = language == 'zh'
+    bibtex, plain = resource_citation(record, entry_url, language)
+    copy = '复制' if zh else 'Copy'
+    def block(suffix, label, body):
+        target = f'cite-{suffix}'
+        return (f'<div class="entry-cite-block"><div class="entry-cite-head"><h3 id="{target}-label">{label}</h3>'
+                f'<button type="button" class="entry-copy" data-copy="#{target}" aria-describedby="{target}-label">{copy}</button></div>'
+                f'{body.replace("{target}", target, 1)}</div>')
+    # A title such as {{DAILA}} would read as an unresolved template marker; &#123; keeps the copied text the same.
+    code = escape(bibtex).replace('{{', '&#123;{')
+    bib = block('bibtex', 'BibTeX', '<pre class="entry-cite-code" id="{target}"><code>' + code + '</code></pre>')
+    text = block('text', '纯文本' if zh else 'Plain text', '<p class="entry-cite-text" id="{target}">' + escape(plain) + '</p>')
+    return (f'<section class="entry-section entry-cite" id="cite" aria-labelledby="entry-cite"><h2 id="entry-cite">{"引用" if zh else "Cite"}</h2>'
+            f'{bib}{text}</section>')
+
+
+def _star_line(language: str, repository_url: str) -> str:
+    """G6: one quiet line per page, after the citation's copy buttons."""
+    zh = language == 'zh'
+    count = star_count(REPOSITORY, 'entry-star-count')
+    text = '有帮助？在 GitHub 上为 Awesome REA 加星' if zh else 'Useful? Star Awesome REA on GitHub'
+    return (f'<p class="entry-star"><a href="{_public_url(repository_url)}" rel="noopener">'
+            f'<svg class="entry-star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" '
+            f'd="M12 3.2l2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 17.1 6.6 20l1.1-6.1-4.5-4.3 6.1-.8z"/></svg>'
+            f'<span>{text}</span>{count}</a></p>')
+
+
+def _repository_row(record: dict, language: str) -> str:
+    """Stars, last commit, primary language and GitHub's detected license, dated by the snapshot."""
+    facts = repository_facts(record)
+    if not facts:
+        return ''
+    zh = language == 'zh'
+    items = []
+    if 'stars' in facts:
+        items.append(('星标' if zh else 'Stars', f'<data value="{facts["stars"]}">{compact_count(facts["stars"])}</data>'))
+    if 'committed_at' in facts:
+        day = facts['committed_at'][:10]
+        items.append(('最近提交' if zh else 'Last commit', day))
+    if 'language' in facts:
+        items.append(('主要语言' if zh else 'Language', escape(facts['language'])))
+    if 'license' in facts:
+        items.append(('许可（GitHub 识别）' if zh else 'License (GitHub)', escape(facts['license'])))
+    if facts.get('archived'):
+        items.append(('状态' if zh else 'Status', '已归档' if zh else 'Archived'))
+    observed = facts['observed_at'][:10]
+    # Plain dates: the source review date stays the page's only <time> (validate_site.py).
+    caption = f'GitHub 数据，截至 {observed}' if zh else f'GitHub data as of {observed}'
+    cells = ''.join(f'<div><dt>{escape(label)}</dt><dd>{value}</dd></div>' for label, value in items)
+    return (f'<div class="entry-repo" role="group" aria-label="{"代码仓库" if zh else "Repository"}">'
+            f'<dl class="entry-repo-facts">{cells}</dl><p class="entry-repo-date">{caption}</p></div>')
+
+
+def _tools(record: dict, language: str) -> str:
+    """Copy the page's Markdown twin, open its record.json, jump to the citation. Each works as a plain link."""
+    zh = language == 'zh'
+    copied = '已复制 Markdown' if zh else 'Markdown copied'
+    return (f'<div class="entry-tools">'
+            f'<a class="entry-tool" href="{MARKDOWN}" type="text/markdown" data-copy-url data-copy-label="{copied}">'
+            f'{"复制为 Markdown" if zh else "Copy as Markdown"}</a>'
+            f'<a class="entry-tool" href="{record_json_route("resource", record["id"])}" type="application/json">{"查看 JSON" if zh else "View JSON"}</a>'
+            f'<a class="entry-tool" href="#cite">{"引用" if zh else "Cite"}</a></div>')
+
+
+def _resource_content(record: dict, language: str, discussion: str = '', feedback: str = '', *,
+                      entry_url: str = '', repository_url: str = REPOSITORY_URL) -> tuple[str, str, str]:
     zh = language == 'zh'
     label = lambda en, cn: cn if zh else en
     title = _text(record, 'name_zh' if zh else 'name')
@@ -243,9 +334,10 @@ def _resource_content(record: dict, language: str, discussion: str = '', feedbac
     if record['evidence_url'] != record['url']:
         links.append(_link(record['evidence_url'], label(*PRIMARY_SOURCE_LABEL)))
     content = f'''<header class="entry-heading"><p class="entry-eyebrow">{escape(kind)}</p><h1>{escape(title)}</h1>
-  <p class="entry-description">{escape(description)}</p>{_summary(facts)}</header>
-<nav class="entry-actions" aria-label="{label('Resource links', '资源链接')}">{''.join(links)}</nav>
+  <p class="entry-description">{escape(description)}</p>{_summary(facts)}{_repository_row(record, language)}</header>
+<nav class="entry-actions" aria-label="{label('Resource links', '资源链接')}">{''.join(links)}</nav>{_tools(record, language)}
 <section class="entry-section" aria-labelledby="entry-requirements"><h2 id="entry-requirements">{escape(REQUIREMENTS_LABEL[zh])}</h2><ul class="entry-requirements">{requirements}</ul></section>
+{_cite(record, language, entry_url) if entry_url else ''}{_star_line(language, repository_url)}
 <section class="entry-section" aria-labelledby="entry-review"><h2 id="entry-review">{label('About this entry', '关于此条目')}</h2>
 <p class="entry-review-note">{label('The description was reviewed against primary sources.', '说明已依据一手来源复核。')}</p>{feedback}</section>
 {discussion}{_sources([record['evidence_url'], *record.get('additional_evidence_urls', [])], language)}'''
@@ -311,7 +403,11 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
     discussion = (_related_entries(related_entries.get((kind, record['id']), []), language)
                   + _survey_discussion(survey_discussions.get(record['id'], []), language))
     feedback = _feedback(kind, record, language, repository_url)
-    title, description, content = (_resource_content if kind == 'resource' else _paper_content)(record, language, discussion, feedback)
+    if kind == 'resource':
+        title, description, content = _resource_content(record, language, discussion, feedback,
+                                                         entry_url=site_url + path, repository_url=repository_url)
+    else:
+        title, description, content = _paper_content(record, language, discussion, feedback)
     # Resource names such as rr or GDB are often identical in both languages; the localized
     # category gives each <title> topic and language context. H1, og:title and JSON-LD keep the name.
     # A Chinese page whose resource keeps its English name relies on the category for Chinese text.
