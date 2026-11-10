@@ -2,7 +2,7 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-10T01:39:49+00:00",
+  "generated_at": "2026-11-10T02:57:20+00:00",
   "entry_count": 5190,
   "class_counts": {
    "0": 15,
@@ -144578,7 +144578,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-11-10T00:02:23+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -144605,7 +144605,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-11-10T00:02:23+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -144632,7 +144632,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:22+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -144659,7 +144659,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:22+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -144686,7 +144686,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:22+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -144713,7 +144713,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:22+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -144740,7 +144740,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:22+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -144767,7 +144767,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-11-10T00:02:24+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -144794,7 +144794,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:25+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -144821,7 +144821,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:23+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -144848,7 +144848,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:23+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -144875,7 +144875,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:23+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -144902,7 +144902,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:23+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -144929,7 +144929,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:24+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -144956,7 +144956,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:24+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -144983,7 +144983,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:24+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -145010,7 +145010,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:24+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -145037,7 +145037,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:24+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -145064,7 +145064,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:24+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -145091,7 +145091,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:24+00:00",
+   "checked_at": "2026-11-10T02:57:17+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -145118,7 +145118,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:24+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -145145,7 +145145,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-11-10T00:02:25+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145172,7 +145172,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-11-10T00:02:25+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145199,7 +145199,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-11-10T00:02:25+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145226,7 +145226,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-11-10T00:02:25+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145253,7 +145253,7 @@
     "unavailable": true
    },
    "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-10T00:02:24+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "unknown",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145282,7 +145282,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-11-10T00:02:24+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145309,7 +145309,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-11-10T01:39:49+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145336,7 +145336,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-11-10T00:02:25+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145365,7 +145365,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-11-10T00:02:26+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145394,7 +145394,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-11-10T00:02:26+00:00",
+   "checked_at": "2026-11-10T02:57:19+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145421,7 +145421,7 @@
     "unavailable": true
    },
    "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-10T00:02:25+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "unknown",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145448,7 +145448,7 @@
     "unavailable": true
    },
    "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-10T00:02:25+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "unknown",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145475,7 +145475,7 @@
     "unavailable": true
    },
    "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-10T00:02:25+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "unknown",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145502,7 +145502,7 @@
     "unavailable": true
    },
    "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-10T00:02:25+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "unknown",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145529,7 +145529,7 @@
     "unavailable": true
    },
    "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-10T00:02:25+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "unknown",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145556,7 +145556,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:26+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -145583,7 +145583,7 @@
     "unavailable": true
    },
    "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-10T00:02:25+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "unknown",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -145610,7 +145610,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:26+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -145637,7 +145637,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:35+00:00",
+   "checked_at": "2026-11-10T02:57:20+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -145664,7 +145664,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-11-10T00:02:26+00:00",
+   "checked_at": "2026-11-10T02:57:18+00:00",
    "evidence_status": "observed",
    "scope": "notes",
    "runtime_status": "not-run",
@@ -145691,7 +145691,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-11-10T01:39:49+00:00",
+   "checked_at": "2026-11-10T02:57:19+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
