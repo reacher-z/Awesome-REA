@@ -37,3 +37,24 @@ class AgentFilesTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class SplitCatalogTest(unittest.TestCase):
+    def test_parts_stay_under_the_limit_and_cut_at_headings(self):
+        from agent_files import split_blocks, write_full_catalog
+        text = '# T\n\n> s\n\n' + ''.join(f'#### Entry {n}\n\n' + 'x' * 100 + '\n' for n in range(50))
+        parts = split_blocks(text, 1000)
+        self.assertGreater(len(parts), 3)
+        self.assertTrue(all(len(part.encode()) <= 1000 for part in parts))
+        self.assertTrue(all(part.lstrip().startswith(('# T', '####')) for part in parts))
+        with tempfile.TemporaryDirectory() as folder:
+            urls = write_full_catalog(Path(folder), 'en', text, title='T', summary='s', faq='## FAQ\n', site_url='https://x.org')
+            self.assertGreaterEqual(len(urls), 1)
+            self.assertIn('/llms-full/part-1.txt', (Path(folder) / 'llms-full.txt').read_text())
+
+    def test_paper_sections_are_not_cut_points(self):
+        from agent_files import split_blocks
+        papers = ''.join(f'### Paper {n}\n\n#### Scope\n\n' + 'x' * 100 + '\n\n#### BibTeX\n\n' + 'y' * 100 + '\n' for n in range(20))
+        text = '# T\n\n## Curated resources (1)\n\n#### R\n\n' + 'z' * 50 + '\n## Research papers (20)\n\n' + papers
+        for part in split_blocks(text, 700):
+            self.assertFalse(part.lstrip().startswith('####'))

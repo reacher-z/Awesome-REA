@@ -77,7 +77,10 @@ class LlmsValidatorTests(unittest.TestCase):
                       f'## Optional\n\n- [Full]({ORIGIN}/llms-full.txt): Everything.\n')
         (self.output / 'llms.txt').write_text(self.index, encoding='utf-8')
         for name, prefix in (('llms-full.txt', ''), ('zh/llms-full.txt', '/zh')):
-            (self.output / name).write_text(f'# Full\n\n- <{ORIGIN}{prefix}/resources/ghidra/>\n- <{ORIGIN}{prefix}/papers/paper-x/>\n', encoding='utf-8')
+            (self.output / (prefix.lstrip('/') or '.') / 'llms-full').mkdir(parents=True)
+            (self.output / (prefix.lstrip('/') or '.') / 'llms-full/part-1.txt').write_text(
+                f'# Full: part 1 of 1\n\n- <{ORIGIN}{prefix}/resources/ghidra/>\n- <{ORIGIN}{prefix}/papers/paper-x/>\n', encoding='utf-8')
+            (self.output / name).write_text(f'# Full\n\n- [part 1]({ORIGIN}{prefix}/llms-full/part-1.txt): x\n', encoding='utf-8')
 
     def test_valid_files_pass_and_each_rule_fails(self):
         validate_llms(self.output, [RESOURCE], [PAPER])
@@ -89,7 +92,7 @@ class LlmsValidatorTests(unittest.TestCase):
             with self.assertRaisesRegex(AssertionError, message):
                 validate_llms(self.output, [RESOURCE], [PAPER])
         (self.output / 'llms.txt').write_text(self.index, encoding='utf-8')
-        (self.output / 'zh/llms-full.txt').write_text('# Full\n', encoding='utf-8')
+        (self.output / 'zh/llms-full/part-1.txt').write_text('# Full\n', encoding='utf-8')
         with self.assertRaisesRegex(AssertionError, 'lacks entries'):
             validate_llms(self.output, [RESOURCE], [PAPER])
 

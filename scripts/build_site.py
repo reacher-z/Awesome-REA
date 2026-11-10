@@ -21,7 +21,7 @@ from build_survey import TITLES as SURVEY_TITLES, build_survey, discussion_secti
 from social_cards import write_social_cards
 from build_entry_pages import build_entry_pages
 from page_twins import write_page_twins
-from agent_files import add_front_matter, write_agent_files
+from agent_files import add_front_matter, write_agent_files, write_full_catalog
 from build_home import build_home, home_faq_markdown
 from build_feed import build_feeds
 from build_api import build_api, write_api_pages
@@ -413,12 +413,24 @@ def build_site(output: Path) -> tuple[int, int, int]:
     repository_export = PUBLISHED_FILENAME if metadata["source_index"].get("full_export") == PUBLISHED_FILENAME else "source-index.json"
     discovery_paths = [*discovery_paths, *write_api_pages(output, api_index, site_url=SITE_URL, repository_url=REPOSITORY_URL,
                                                           source_export=repository_export)]
-    # llms-full.txt: the whole curated catalog in Markdown, one file per language.
-    for language, header in (("en", f"# Awesome REA (Awesome Reverse Engineering Anything): the full curated catalog\n\n> Every source-reviewed resource ({len(resources):,}) and research paper ({len(papers):,}) of AwesomeREA.org, with requirements, limits and sources. The navigation index is https://awesomerea.org/llms.txt; each entry also has its own Markdown page and record.json.\n"),
-                             ("zh", f"# Awesome REA (Awesome Reverse Engineering Anything)：完整精选目录\n\n> AwesomeREA.org 全部经来源复核的资源（{len(resources):,} 项）与研究论文（{len(papers):,} 篇），含使用条件、局限与来源。导航索引见 https://awesomerea.org/llms.txt；每个条目另有独立的 Markdown 页面与 record.json。\n")):
-        target = output / ("zh/llms-full.txt" if language == "zh" else "llms-full.txt")
-        target.write_text(full_catalog_markdown(resources, papers, language, site_url=SITE_URL, sections=COLLECTION_SECTIONS,
-                                                section_of=collection_section, header=header + "\n" + home_faq_markdown(resources, papers, discovery_queue, language)), encoding="utf-8")
+    # llms-full.txt indexes the parts that hold the whole curated catalog in Markdown, one set per language.
+    brand = "Awesome REA (Awesome Reverse Engineering Anything)"
+    summaries = {
+        "en": f"Every source-reviewed resource ({len(resources):,}) and research paper ({len(papers):,}) of AwesomeREA.org, with requirements, limits and sources. The navigation index is {SITE_URL}/llms.txt; each entry also has its own Markdown page and record.json.",
+        "zh": f"AwesomeREA.org 全部经来源复核的资源（{len(resources):,} 项）与研究论文（{len(papers):,} 篇），含使用条件、局限与来源。导航索引见 {SITE_URL}/llms.txt；每个条目另有独立的 Markdown 页面与 record.json。",
+    }
+    llms_text = (output / "llms.txt").read_text(encoding="utf-8")
+    for language in ("en", "zh"):
+        text = full_catalog_markdown(resources, papers, language, site_url=SITE_URL, sections=COLLECTION_SECTIONS,
+                                     section_of=collection_section, header=f"# {brand}\n\n> {summaries[language]}\n")
+        part_urls = write_full_catalog(output, language, text, title=brand, summary=summaries[language], site_url=SITE_URL,
+                                       faq=home_faq_markdown(resources, papers, discovery_queue, language))
+        bullet = f"- [{'完整目录（Markdown）' if language == 'zh' else 'Full catalog in Markdown'}]({SITE_URL}{'/zh' if language == 'zh' else ''}/llms-full.txt):"
+        line_end = llms_text.index("\n", llms_text.index(bullet)) + 1
+        parts = "".join(f"- [{'完整目录第 %d 卷' % n if language == 'zh' else 'Full catalog, part %d' % n}]({url}): {'分卷' if language == 'zh' else 'Part %d of %d' % (n, len(part_urls))}.\n"
+                        for n, url in enumerate(part_urls, 1))
+        llms_text = llms_text[:line_end] + parts + llms_text[line_end:]
+    (output / "llms.txt").write_text(llms_text, encoding="utf-8")
     paper_urls = build_paper_pages(
         output, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
         styles_href=asset_hrefs["styles.css"], papers_styles_href=fingerprinted_href(output, "papers.css"),

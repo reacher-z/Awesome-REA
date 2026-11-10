@@ -816,7 +816,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
 
 > Awesome REA (AwesomeREA.org) is a bilingual (English, Simplified Chinese) catalog of {len(resources):,} source-reviewed reverse-engineering tools, projects, integrations and case studies, plus {len(papers):,} research papers, for websites, games, apps, native binaries, firmware and communication protocols. Fetch any entry as Markdown with `curl -sL {site_url}/<resources|papers>/<id>/index.md`.
 
-The collection contains {len(resources)} source-reviewed curated resources and {browse_count} browsable repositories from {len(scanned)} successful README scans. The full scan retains {excluded} scope-excluded records and their reasons.{paper_summary}
+The collection contains {len(resources):,} source-reviewed curated resources and {len(papers):,} research papers. Repository records from automated README scans are listed by category below.
 
 Source review checks descriptions against primary documentation. Repository descriptions have AI-assisted English and Simplified Chinese translations; description_original retains available upstream text. New oversized descriptions are omitted with length and SHA-256 evidence in description_omission. Upstream content keeps its own license.
 
@@ -859,8 +859,8 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 
 ## Optional
 
-- [Full catalog in Markdown]({site_url}/llms-full.txt): Every curated resource and paper in one file, with requirements, limits and sources.
-- [完整目录（Markdown）]({site_url}/zh/llms-full.txt): 全部精选资源与论文的中文版。
+- [Full catalog in Markdown]({site_url}/llms-full.txt): Index of the parts that together hold every curated resource and paper, with requirements, limits and sources.
+- [完整目录（Markdown）]({site_url}/zh/llms-full.txt): 全部精选资源与论文的中文版，按分卷列出。
 - [Sitemap index]({site_url}/sitemap.xml): Every canonical page, with its languages and data-derived modification dates.
 
 ### API and feeds
@@ -890,9 +890,6 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 This file is a navigation aid. Crawl policy is published in [robots.txt]({site_url}/robots.txt).
 '''
     if published:
-        old_summary = f'The collection contains {len(resources)} source-reviewed curated resources and {browse_count} browsable repositories from {len(scanned)} successful README scans. The full scan retains {excluded} scope-excluded records and their reasons.'
-        new_summary = f'The collection contains {len(resources)} source-reviewed curated resources and a published selection of {len(scanned)} captured repository records, of which {browse_count} are browsable. The {out_of_scope} scope-excluded records{unavailable_clause(unavailable, False)} remain in the published selection.'
-        llms = llms.replace(old_summary, new_summary)
         llms = llms.replace(f'- [Full repository index JSON]({site_url}/source-index.json): All scan records, original descriptions, translations, hashes, and exclusions; omit scope_status=excluded when reconstructing the browse list.',
             f'- [Published repository selection JSON]({site_url}/source-published.json): Published records, original descriptions, translations, hashes, exclusions and per-source capture totals; omit scope_status=excluded when reconstructing the browse list.\n- [Canonical capture baseline JSON]({site_url}/source-index.json): The preserved original complete canonical scan export.')
     (site_dir / 'llms.txt').write_text(llms, encoding='utf-8')
