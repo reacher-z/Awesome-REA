@@ -8,7 +8,7 @@ from urllib.parse import urlsplit, unquote
 from urllib.robotparser import RobotFileParser
 
 from build_browse_pages import CATEGORIES
-from build_discovery_pages import CASE_PER_PAGE, case_page_path
+from build_discovery_pages import CASE_PER_PAGE, case_order, case_page_path
 from resource_listing import page_count, page_path
 import forked_checks
 from crawl_policy import CONTENT_SIGNAL, CRAWLERS, REQUIRED_AI_CRAWLERS, TRAINING_PREFERENCE_TOKEN
@@ -60,7 +60,7 @@ def validate_route_inventory(urls, resources, papers, *, include_browse=True, in
         expected.update(prefix + path for path in ("/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/", "/api/"))
         # The later static pages of /resources/ and /cases/, each indexed with its own address.
         expected.update(page_path(page, "zh" if prefix else "en") for page in range(2, page_count(len(resources)) + 1))
-        cases = sum(record["kind"] == "case-study" for record in resources)
+        cases = len(case_order(resources))
         expected.update(case_page_path(page, "zh" if prefix else "en") for page in range(2, -(-cases // CASE_PER_PAGE) + 1))
         if include_browse:
             expected.add(prefix + "/browse/")

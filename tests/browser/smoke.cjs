@@ -665,6 +665,19 @@ async function sectionTargetCounts(page, label) {
   }
 }
 
+// An older /cases/#<anchor> link to a section or case on a later static page opens that page at the anchor;
+// a malformed fragment leaves the page as it is, without an error.
+async function oldCaseLink(page, expected, key) {
+  if (expected) {
+    await page.waitForFunction(path => location.pathname === path, {timeout: 20000}, expected)
+      .catch(() => assert.fail(`${key} should open ${expected}, not ${page.url()}`));
+    await page.waitForFunction(id => document.getElementById(id)?.matches('section, .case-row, [data-case-row]'), {timeout: 20000}, key)
+      .catch(() => assert.fail(`${expected} should hold the ${key} content`));
+  } else {
+    assert.ok(await count(page, '.case-row, [data-case-row]') > 0, 'the first page still lists its cases');
+  }
+}
+
 async function staticPage(page, route, viewport) {
   const label = `${route} ${viewport.name}`;
   assert((await page.$eval('h1', heading => heading.textContent.trim())).length > 0, `${label}: visible heading`);
@@ -733,6 +746,17 @@ async function staticPage(page, route, viewport) {
       for (const route of ['/cases/', '/zh/cases/']) {
         await check(`${route} without JavaScript at ${viewport.width}px`, () => visit(context, origin, route, viewport,
           `${route} ${viewport.name} without JavaScript`, page => staticPage(page, route, viewport), {javascript: false}));
+      }
+      const casePages = read('cases/pages.json');
+      const laterCase = Object.keys(casePages).find(key => /^cases-[a-z]+-[a-z-]+$/.test(key) && casePages[key] > 1);
+      for (const prefix of ['', '/zh']) {
+        if (laterCase) {
+          const expected = `${prefix}/cases/page/${casePages[laterCase]}/`;
+          await check(`${prefix}/cases/#${laterCase} at ${viewport.width}px`, () => visit(context, origin, `${prefix}/cases/#${laterCase}`, viewport,
+            `${prefix || '/en'} old case link ${viewport.name}`, page => oldCaseLink(page, expected, laterCase)));
+        }
+        await check(`${prefix}/cases/ with a malformed fragment at ${viewport.width}px`, () => visit(context, origin, `${prefix}/cases/#%E0%A4%A`, viewport,
+          `${prefix || '/en'} malformed case fragment ${viewport.name}`, page => oldCaseLink(page, null)));
       }
       for (const route of routes) {
         await check(`${route} at ${viewport.width}px`, () => visit(context, origin, route, viewport, `${route} ${viewport.name}`, page => staticPage(page, route, viewport)));

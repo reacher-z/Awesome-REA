@@ -1181,10 +1181,14 @@ def validate_not_found_pages(output, card_size):
             assert not re.search(r'\s(?:action|method)=', form), f'Only the 404 search forms may submit; script-handled forms have no action or method: {path.relative_to(output).as_posix()}'
 
 
-def validate_case_outputs(pages, resources):
-    """Bind the script-free case subset, its links to each entry page's requirements and sources, and its navigation."""
+def validate_case_outputs(pages, resources, output=None):
+    """Bind the script-free case subset, its links to each entry page's requirements and sources, and its navigation.
+
+    With ``output``, cases/pages.json must name, for each case and each section or method anchor, the page that
+    holds its row or where it starts, as rendered."""
     cases = {record['id']: record for record in resources if record['kind'] == 'case-study'}
     normalize = lambda value: ' '.join(value.split())
+    expected_map = {}
     for language, prefix in (('en', ''), ('zh', '/zh')):
         assert prefix + '/cases/' in pages, f'Missing case directory: {prefix}/cases/'
         ids = []
@@ -1219,6 +1223,13 @@ def validate_case_outputs(pages, resources):
                 assert len(row['times']) == 1 and row['times'][0]['datetime'] == record['verified_at'], f'Case review timestamp mismatch: {row["id"]}'
                 assert record['verified_at'][:10] in normalize(''.join(row['times'][0]['text'])), f'Case review date is missing: {row["id"]}'
             assert items.get('itemListElement') == expected_items, f'Case structured list differs from rendered entries: {route}'
+            if language == 'en':
+                number = int(route.rstrip('/').rsplit('/', 1)[1]) if '/page/' in route else 1
+                for row in page.case_rows:
+                    expected_map[row['id']] = number
+                    for anchor in (row['parent_anchor'], row['method_anchor']):
+                        if anchor:
+                            expected_map.setdefault(anchor, number)
         route = prefix + '/cases/'
         assert len(ids) == len(cases) and set(ids) == set(cases), f'Case pages differ from curated case records: {route}'
         for section in METHOD_SECTIONS:
@@ -1226,6 +1237,9 @@ def validate_case_outputs(pages, resources):
             listed = [cases[identifier] for identifier in ids if collection_section(cases[identifier]) == section]
             expected = [record['id'] for _, records in method_groups(listed) for record in records]
             assert [record['id'] for record in listed] == expected, f'Case method groups are out of order: {route}#cases-{section}'
+    if output is not None:
+        mapping = json.loads((Path(output) / 'cases/pages.json').read_text(encoding='utf-8'))
+        assert mapping == expected_map, 'cases/pages.json differs from the pages that hold each case and section'
 
 
 class SectionTargetCounts(HTMLParser):
@@ -1277,7 +1291,8 @@ def validate_section_target_counts(output, resources):
             sections = list(merged.values())
             assert sections, f'No sections found on /{prefix}{route}/'
             for section in sections:
-                assert section['stated'] is None or int(section['stated']) == section['cards'], f'Section count {section["stated"]} differs from its {section["cards"]} cards: /{prefix}{route}/ {section["key"]}'
+                assert section['stated'] is not None, f'Case section lacks data-section-count: /{prefix}{route}/ {section["key"]}'
+                assert int(section['stated']) == section['cards'], f'Section count {section["stated"]} differs from its {section["cards"]} cards: /{prefix}{route}/ {section["key"]}'
                 key, line, target = section['key'], section['line'], SECTION_TARGETS.get(section['key'])
                 label = f'/{prefix}{route}/ {key}'
                 if target is None:
@@ -1858,7 +1873,7 @@ def _validate_pages(urls, resources, papers):
                                        header_rules((OUTPUT / '_headers').read_text(encoding='utf-8')),
                                        repository_document=published_repository_document(OUTPUT), discovery_queue=queue,
                                        lead_queue=lead_queue),
-        lambda: validate_case_outputs(with_listing_pages(pages), resources),
+        lambda: validate_case_outputs(with_listing_pages(pages), resources, OUTPUT),
         lambda: validate_section_target_counts(OUTPUT, resources),
         lambda: validate_shared_footer(OUTPUT, catalog_meta['repository_url'],
                                        catalog_meta['source_index'].get('full_export') or 'source-index.json'),
