@@ -70,6 +70,19 @@ class ReviewDisclaimerTests(unittest.TestCase):
                           ('lead', 'reason_en'),
                           ('scan-1', 'reason_zh')])
 
+    def test_past_tense_denials_and_unestablished_claims_are_found(self):
+        ledger = [{'id': 'a', 'reason_en': 'The demo did not establish recovery.', 'reason_zh': '保留线索。'},
+                  {'id': 'b', 'reason_en': 'The tests don’t prove equivalence.', 'reason_zh': '保留线索。'},
+                  {'id': 'c', 'reason_en': 'REA’s contribution is unestablished.', 'reason_zh': '保留线索。'},
+                  {'id': 'd', 'reason_en': 'Retain the lead.', 'reason_zh': '通过测试不等于等价，作用未确立。'},
+                  {'id': 'e', 'reason_en': 'The post links no code, so REA’s part remains unconfirmed.',
+                   'reason_zh': '帖子未链接代码，REA 的作用尚待确认。'}]
+        self.assertEqual([(identifier, field) for identifier, field, _ in defensive_sentences([], {}, [], ledger)],
+                         [('a', 'reason_en'), ('b', 'reason_en'), ('c', 'reason_en'), ('d', 'reason_zh')])
+
+    def test_reviews_that_are_not_a_mapping_are_left_to_the_schema_checks(self):
+        self.assertEqual(defensive_sentences([], {}, [], [], ['scan-1']), [])
+
     def test_plain_statements_of_scope_pass_the_defensive_check(self):
         records = [{'id': 'tool', 'description_en': 'The output is a GBA ROM, and the README says it is not a PC port.',
                     'requirements': ['MIT. Original game data keeps its owners’ rights.', 'Other versions are untested.']}]

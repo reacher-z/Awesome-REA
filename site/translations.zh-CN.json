@@ -1092,7 +1092,7 @@
   "zelda64recomp-case": {
     "name": "Zelda 64: Recompiled：无需完整源码反编译的《姆吉拉的假面》原生移植",
     "requirements": [
-      "所审阅版本接受用户自备的美版 Nintendo 64《姆吉拉的假面》ROM，不附带游戏素材。《时之笛》支持仍在计划中；它不是可运行任意 ROM 的模拟器。",
+      "所审阅版本接受用户自备的美版 Nintendo 64《姆吉拉的假面》ROM，不附带游戏素材。《时之笛》支持仍在计划中；该版本不支持运行任意 ROM。",
       "运行时显卡需支持带 Shader Model 6 的 Direct3D 12.0、Vulkan 1.2 或 Metal Argument Buffers Tier 2；x86-64 需要 SSE4.1。README 列出的 Mac 条件为 macOS 13.0+，配备 Apple Silicon 或第 7 代 Intel CPU。",
       "源码构建还需要子模块、CMake 3.20+、C++20 工具链、N64Recomp/RSPRecomp 以及指定的解压后 ROM。构建指南列出 SDL2 和平台依赖；正常游玩使用标准 ROM。",
       "项目记录高帧率、宽屏、镜头和存档增强功能，同时列出叠加层与过场动画问题。这些是项目方描述。",
@@ -2109,7 +2109,7 @@
   "lost-odyssey-recomp-case": {
     "name": "Lost Odyssey Recomp：将 Xbox 360 角色扮演游戏静态重编译为原生移植",
     "requirements": [
-      "所审 main 快照晚于 v1.0.4（2026-10-18），安装包覆盖支持 AVX 的 Windows x64、Linux x64 AppImage／Flatpak、Apple Silicon 上的 macOS 15+，以及支持 Vulkan 的 64 位 Android 8.0+。STATUS.md 和 ROADMAP.md 将每个版本记录为已发布但未经维护者验收。这是对已发行可执行文件的静态重编译。",
+      "所审 main 快照晚于 v1.0.4（2026-10-18），安装包覆盖支持 AVX 的 Windows x64、Linux x64 AppImage／Flatpak、Apple Silicon 上的 macOS 15+，以及支持 Vulkan 的 64 位 Android 8.0+。STATUS.md 和 ROADMAP.md 中，每个版本都记为已发布但未经维护者验收。它是对这一款游戏已发行可执行文件的静态重编译，由重编译代码构成，不含原作者源码，也不提供通用 Xbox 360 模拟。",
       "玩家需从一套受支持的四碟版本导入数据：亚洲多语言版或美欧版（Title ID 4D5307FA）；必须有第 1 碟，DLC 可选，其他地区版本、标题更新和修改过的 XEX 均不受支持。源码构建使用亚洲多语言版第 1 碟的 default.xex、LO.fpi 及资源归档，且 BUILDING.md 仍称四碟集成尚未完成。游戏数据和生成代码均不纳入仓库。",
       "构建需 XenonRecomp、XenosRecomp、plume、SDL 3 等子模块并应用项目补丁，另需 Python 3.11+、CMake 3.28+、Ninja 和 Clang：Windows 10 1803+ 上使用 Visual Studio 2022 Build Tools 的 clang-cl，Linux 上使用 Clang／LLD 及 Vulkan 驱动。tools/ppc_codegen.py 会在构建运行时之前于本地重新生成客体代码源文件。",
       "STATUS.md 将实现、验证、验收和发布分开记录；例如 v1.0.4 的存档修复通过了逻辑审查、一项 CPU 测试夹具和 Release 链接，但未在游戏中运行。超分辨率与渲染检查只针对列明的有限测试夹具和 GPU。工作流指南将发布状态与从头到尾通关分别记录。",
@@ -7854,7 +7854,7 @@
     "requirements": [
       "这是一个很新、更新很快的项目：仓库创建于 2026-09-07，审阅时最新版本为 v0.4.0，发布于 2026-10-22，提供 Linux x86_64 与 arm64、macOS arm64 压缩包，以及 amd64 与 arm64 的 Debian 软件包；所审提交即该版本的合并提交。",
       "从源码构建需要 CMake 3.20+ 和支持 C++20 的编译器，不链接任何第三方库；仓库附带 flake.nix、package.nix 和 Debian 打包文件。输入是固件文件，或已由 moria 或其他解包工具提取的目录；--boot 检查还可读取原始的 AMI 或 EDK2 BIOS 镜像，报告 UEFI 安全启动状态。",
-      "扫描过程不发起网络请求。CVE 检查需要位于用户主目录下 .local/share/mithril（或 $MITHRIL_DB 指定位置）的本地镜像：可用 --fetch-db 从项目每周重建的 db-latest 发布下载一次，并按公布的 SHA-256 校验（需要 curl），也可用 --update-db 从 OSV.dev、NVD、CISA KEV、EPSS 及可选的 kernel.org 数据源自行重建。README 指出内核检查清单经过筛选，范围限于列出的检查；机密信息的发现报告格式正确的匹配项，凭据有效性尚待验证。",
+      "扫描过程不发起网络请求。CVE 检查需要位于用户主目录下 .local/share/mithril（或 $MITHRIL_DB 指定位置）的本地镜像：可用 --fetch-db 从项目每周重建的 db-latest 发布下载一次，并按公布的 SHA-256 校验（需要 curl），也可用 --update-db 从 OSV.dev、NVD、CISA KEV、EPSS 及可选的 kernel.org 数据源自行重建。README 指出内核检查清单经过筛选而非穷尽，内核结果为空只说明所列检查未发现问题；机密信息的发现只是格式正确的模式匹配，工具从不检查凭据是否仍然有效。",
       "编译进程序的密钥语料库由 data/ 下附带的公钥和证书生成：rapid7 ssh-badkeys 的公钥部分、Vagrant 不安全公钥、eMudhra 中间 CA 证书、AOSP 测试密钥的公钥部分，以及 PKfail AMI 测试平台密钥（Platform Key）证书。THIRD_PARTY.md 声明仓库不存放任何私钥材料，密钥相关测试在运行时用 openssl 生成所需密钥。",
       "MIT 许可；附带的密钥数据沿用上游的 MIT 或 Apache-2.0 条款，镜像的漏洞数据归各数据源所有。"
     ]
@@ -13176,7 +13176,7 @@
     "name": "Spirit Halloween Remote：解析 Multi-Prop 无线遥控指令",
     "requirements": [
       "需要可访问 SPI 和 GPIO 的 Linux 树莓派、nRF24L01+ 无线模块，以及匹配且已供电的接收器。",
-      "作者报告测试了一套遥控器和接收器；其他设备或硬件版本的兼容性尚未确定。",
+      "作者报告测试了一套遥控器和接收器；与其他设备或硬件版本的兼容性仍未确认。",
       "数据字段含义、校验方式及无线芯片型号仍未解明。",
       "采用 MIT 许可证。"
     ]

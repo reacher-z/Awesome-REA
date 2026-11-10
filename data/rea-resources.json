@@ -1538,7 +1538,7 @@
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
-      "The reviewed build accepts the US Nintendo 64 Majora’s Mask ROM supplied by the user; game assets are not included. Ocarina of Time remains planned; the reviewed build is limited to the user-supplied US Nintendo 64 Majora’s Mask ROM.",
+      "The reviewed build accepts the US Nintendo 64 Majora’s Mask ROM supplied by the user; game assets are not included. Ocarina of Time remains planned, and arbitrary ROMs are unsupported.",
       "Runtime graphics require Direct3D 12.0 with Shader Model 6, Vulkan 1.2, or Metal Argument Buffers Tier 2. x86-64 needs SSE4.1; the README lists macOS 13.0+ with Apple Silicon or a 7th-generation Intel CPU.",
       "Source builds additionally require submodules, CMake 3.20+, C++20 tooling, N64Recomp/RSPRecomp and the specified decompressed ROM. The build guide lists SDL2 and platform dependencies; ordinary play uses the standard ROM.",
       "The project documents high-frame-rate, widescreen, camera and save enhancements, plus overlay and cutscene issues. These are project claims.",
