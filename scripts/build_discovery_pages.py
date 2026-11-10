@@ -17,7 +17,7 @@ from build_readme import (KIND_LABELS, METHOD_HEADINGS, METHOD_SECTIONS, RELATIO
 from agent_formats import MARKDOWN, alternate_links, collection_markdown
 from contribution_pages import TITLES as CONTRIBUTION_TITLES, contribution_content
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
-from resource_listing import TEXT as RESOURCE_TEXT, in_listing_order, listing_pages, page_count, page_path, resource_listing, resource_page_head
+from resource_listing import PER_PAGE, TEXT as RESOURCE_TEXT, in_listing_order, listing_pages, page_count, page_path, resource_listing, resource_page_head
 from page_metadata import meta_description, page_title
 from sitemaps import latest, record_date
 from structured_data import dataset_node, publisher_reference
@@ -505,7 +505,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
 
 def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | None, *,
                           withdrawals: dict | None = None) -> list[str]:
-    """Write discovery assets and return eight root-relative HTML sitemap paths.
+    """Write discovery assets and return their root-relative HTML sitemap paths, every static listing page included.
 
     ``catalog`` is the built catalog object with localized names and requirements.
     ``source_index`` is the full localized/scoped scan, including excluded records.
@@ -563,17 +563,31 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         note = ('“来源已复核”表示说明已依据一手文档核对。完整的使用条件与来源列在各条目页面，本页显示其数量和复核日期。'
                 if zh else 'Source-reviewed means descriptions were checked against primary documentation. Each entry page lists the full requirements and sources; this page shows their counts and the review date.')
         # Items identify the site's own entry pages, in the order the rows appear.
-        # /resources/ is the first static page; later pages are unlisted and noindex, and every entry has its own sitemap URL.
-        for page in range(1, page_count(len(resources)) + 1):
+        # Each static page is indexed with its own canonical address, language pair and Markdown twin. The twin of
+        # /resources/ lists the whole collection; a later page's twin lists that page's rows.
+        pages = page_count(len(resources))
+        for page in range(1, pages + 1):
             page_route = page_path(page, language)
+            page_records = in_listing_order(groups, SECTIONS, page)
             page_title_text = title if page == 1 else f"{title} · {RESOURCE_TEXT[language]['page_title'].format(n=page)}"
+            first, last = (page - 1) * PER_PAGE + 1, (page - 1) * PER_PAGE + len(page_records)
+            page_description = description if page == 1 else (f'第 {page}/{pages} 页，第 {first:,}–{last:,} 项。{description}' if zh
+                                                               else f'Page {page} of {pages}, entries {first:,}–{last:,}. {description}')
             items = [{'name': (record.get('name_zh') or record['name']) if zh else record['name'], 'url': f"{site_url}{prefix}/resources/{record['id']}/"}
-                     for record in in_listing_order(groups, SECTIONS, page)]
+                     for record in page_records]
             content = resource_listing(resources, groups, SECTIONS, language, repository_url, page)
-            rendered[page_route] = _document(site_url=site_url, repository_url=repository_url, path=page_route, language=language, title=page_title_text, description=description, content=content,
-                                             schema=collection_page_schema(site_url + page_route, page_title_text, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href,
-                                             source_export=source_export, noindex=page > 1, main_class='page-resources', page_head=resource_page_head(resources, language), extra_styles=(assets['rea'],),
-                                             alternates=alternate_links(markdown=path + MARKDOWN, json_href='/api/v1/resources.json'))
+            rendered[page_route] = _document(site_url=site_url, repository_url=repository_url, path=page_route, language=language, title=page_title_text, description=page_description, content=content,
+                                             schema=collection_page_schema(site_url + page_route, page_title_text, page_description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href,
+                                             source_export=source_export, main_class='page-resources', page_head=resource_page_head(resources, language), extra_styles=(assets['rea'],),
+                                             alternates=alternate_links(markdown=page_route + MARKDOWN, json_href='/api/v1/resources.json'))
+            if page > 1:
+                section_of = {record['id']: key for key, records in groups.items() for record in records}
+                page_groups = defaultdict(list)
+                for record in page_records:
+                    page_groups[section_of[record['id']]].append(record)
+                twins[page_route] = _collection_twin(site_url, page_route, language, page_title_text, page_description, page_groups, note,
+                                                     json_url=site_url + '/api/v1/resources.json')
+                paths.append(page_route)
         twins[path] = _collection_twin(site_url, path, language, title, description, groups, note, json_url=site_url + '/api/v1/resources.json')
         paths.append(path)
 

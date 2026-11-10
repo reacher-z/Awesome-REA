@@ -8,9 +8,10 @@ from urllib.parse import urlsplit, unquote
 from urllib.robotparser import RobotFileParser
 
 from build_browse_pages import CATEGORIES
+from resource_listing import page_count, page_path
 import forked_checks
 from crawl_policy import CONTENT_SIGNAL, CRAWLERS, REQUIRED_AI_CRAWLERS, TRAINING_PREFERENCE_TOKEN
-from sitemaps import (SECTION_FILES, SITEMAP_INDEX, english_path, instant, language_alternates, latest,
+from sitemaps import (SECTION_FILES, SITEMAP_INDEX, dated_path, english_path, instant, language_alternates, latest,
                       normalized_date, page_dates, read_sitemaps, record_date, section_for)
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,6 +57,8 @@ def validate_route_inventory(urls, resources, papers, *, include_browse=True, in
     expected = set(routes)
     for prefix in ("", "/zh"):
         expected.update(prefix + path for path in ("/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/", "/api/"))
+        # The later static pages of /resources/, each indexed with its own address.
+        expected.update(page_path(page, "zh" if prefix else "en") for page in range(2, page_count(len(resources)) + 1))
         if include_browse:
             expected.add(prefix + "/browse/")
             expected.update(f"{prefix}/browse/{category}/" for category in CATEGORIES)
@@ -139,12 +142,12 @@ def validate_sitemaps(output, records, papers):
         assert len(sitemap["urls"]) <= 50000, f"Sitemap exceeds 50,000 URLs: {url}"
         paths = [urlsplit(page).path for page in sitemap["urls"]]
         assert all(section_for(path) == section for path in paths), f"A page is listed in the wrong section sitemap: {url}"
-        expected_lastmod = latest(dates.get(english_path(path)) for path in paths)
+        expected_lastmod = latest(dates.get(dated_path(path)) for path in paths)
         assert sitemap["lastmod"] == expected_lastmod, f"Sitemap index lastmod must be the newest page date: {url}"
     for url, entry in pages.items():
         path = urlsplit(url).path
         assert entry["alternates"] == language_alternates(ORIGIN, path), f"Sitemap language alternates mismatch: {url}"
-        lastmod, expected = entry["lastmod"], dates.get(english_path(path))
+        lastmod, expected = entry["lastmod"], dates.get(dated_path(path))
         assert lastmod == expected, f"lastmod must come from the page's recorded data dates, not the build: {url} has {lastmod}, expected {expected}"
         if lastmod is not None:
             assert normalized_date(lastmod) == lastmod and instant(lastmod) <= instant(newest), f"Invalid or future lastmod: {url}"
@@ -224,10 +227,10 @@ def main():
             assert any(item.get("rel") == "alternate" and item.get("href") == url for item in other.links), url
     expected = {r["id"] for r in records}
     for path in ("/resources/", "/zh/resources/"):
-        # Page 1 is in the sitemap; the later static pages are noindex and reached from its pager.
+        # The static pages together list every record once.
         listed = list(documents[ORIGIN + path].resources)
         for later in resource_pages(path):
-            listed += Document(later.read_text(encoding="utf-8")).resources
+            listed += documents[ORIGIN + "/" + later.parent.relative_to(OUTPUT).as_posix() + "/"].resources
         assert len(listed) == len(expected) and set(listed) == expected, path
     expected_cases = {record["id"] for record in records if record["kind"] == "case-study"}
     for path in ("/cases/", "/zh/cases/"):
@@ -237,7 +240,6 @@ def main():
     assert (OUTPUT / "llms.txt").is_file(), "Missing optional catalog index"
     # The transitional explorer pages are noindex, so they stay out of the sitemap.
     explorer = {OUTPUT / "explore/index.html", OUTPUT / "zh/explore/index.html"}
-    explorer.update(page for path in ("/resources/", "/zh/resources/") for page in resource_pages(path))
     assert len(urls) == len([page for page in OUTPUT.rglob("index.html") if page not in explorer]), "A generated page is absent from the sitemap"
     print(f"Discovery checks passed: {len(urls)} canonical pages in the sitemap index with data-dated lastmod and hreflang alternates, {len(entries)} localized detail pages, reciprocal languages, {len(records)} static curated entries per language, JSON-LD, and permissions for {len(CRAWLERS)} named crawlers.")
 
