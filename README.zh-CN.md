@@ -162,7 +162,7 @@ REA 标签指向单独维护的上游 CLI 与 MCP 项目，详见“关于”。
 - [**wasmdec：WebAssembly 到 C 的反编译器**](https://github.com/wwwg/wasmdec) - 命令行反编译器，借助 Binaryen 解析 WebAssembly 二进制或文本格式模块，输出伪 C 代码：包括全局变量、导入与已定义的函数及其局部变量和控制流，并附带实现 WebAssembly 运算的 C 辅助函数前导部分。 <sub>工具 · WebAssembly · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/wasmdec/)</sub>
 - [**JS Deobfuscator（kuizuo）Babel AST 反混淆工具**](https://github.com/kuizuo/js-deobfuscator) - 基于 Babel AST 的 JavaScript 反混淆工具，提供命令行、工作区软件包 deob 中的 TypeScript API，以及用 Nuxt 3 和 Monaco 构建的浏览器在线演练场。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/kuizuo-js-deobfuscator/)</sub>
 - [**go-mitmproxy HTTP 流量分析代理**](https://github.com/lqqyt2423/go-mitmproxy) - go-mitmproxy 是用 Go 编写的代理，可检查和修改 HTTP/HTTPS 流量。 <sub>工具 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/go-mitmproxy/)</sub>
-- [**DESIGN:OS Studio**](https://github.com/jangtrinh/design-os-studio) - 在本地桌面设计工作室中打开并保存 Figma 的 .fig 文件，并通过附带的 stdio MCP 服务器（审阅时 README 工具表列出 39 个工具）将编程智能体连接到当前打开的文件，以便查看设计、编辑、检查，以及从选定图层生成 CSS、Tailwind、React、SwiftUI、UIKit、Compose、Android XML 或 HTML 代码。 <sub>工具 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/design-os-studio/)</sub>
+- [**DESIGN:OS Studio**](https://github.com/jangtrinh/design-os-studio) - 独立重实现的 Figma 风格桌面编辑器，可读写 Figma 的 .fig 容器（fig-kiwi，写出 version 106）。 <sub>工具 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/design-os-studio/)</sub>
 
 <a id="game"></a>
 ### Game · 游戏

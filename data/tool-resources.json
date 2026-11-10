@@ -154752,8 +154752,8 @@
       "website",
       "app"
     ],
-    "description_en": "Open and save Figma .fig files in a local desktop studio, and connect a coding agent to the open file through the bundled stdio MCP server (39 tools in the reviewed README tool table) so the agent can inspect the design, edit it, lint it and generate CSS, Tailwind, React, SwiftUI, UIKit, Compose, Android XML or HTML from a selected layer.",
-    "description_zh": "在本地桌面设计工作室中打开并保存 Figma 的 .fig 文件，并通过附带的 stdio MCP 服务器（审阅时 README 工具表列出 39 个工具）将编程智能体连接到当前打开的文件，以便查看设计、编辑、检查，以及从选定图层生成 CSS、Tailwind、React、SwiftUI、UIKit、Compose、Android XML 或 HTML 代码。",
+    "description_en": "Independent reimplementation of a Figma-style desktop editor that reads and writes Figma .fig containers (fig-kiwi, writes version 106). A bundled stdio MCP server (39 tools in the reviewed README tool table) lets a coding agent inspect, edit and lint the open file and generate CSS, Tailwind, React, SwiftUI, UIKit, Compose, Android XML or HTML from a selected layer. Source-available under PolyForm Shield 1.0.0.",
+    "description_zh": "独立重实现的 Figma 风格桌面编辑器，可读写 Figma 的 .fig 容器（fig-kiwi，写出 version 106）。附带的 stdio MCP 服务器（审阅时 README 工具表列出 39 个工具）可将编程智能体连接到当前打开的文件，以便查看、编辑、检查，以及从选定图层生成 CSS、Tailwind、React、SwiftUI、UIKit、Compose、Android XML 或 HTML 代码。源码可用，采用 PolyForm Shield 1.0.0 许可证。",
     "evidence_url": "https://github.com/jangtrinh/design-os-studio/blob/df14c593e86edcc039adc2c67067bf8db64e9e84/README.md",
     "additional_evidence_urls": [
       "https://github.com/jangtrinh/design-os-studio/blob/df14c593e86edcc039adc2c67067bf8db64e9e84/LICENSE",
