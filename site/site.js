@@ -1099,7 +1099,8 @@
     window.addEventListener('hashchange', () => { findPage(); revealHash(); });
     if (document.readyState === 'complete') revealHash();
     else window.addEventListener('load', revealHash, { once: true });
-    idle(warm);
+    // The static page needs no index; it loads on the first touch, pointer or focus, before a filter can be chosen.
+    ['pointerover', 'touchstart', 'focusin', 'keydown'].forEach((type) => document.addEventListener(type, warm, { once: true, passive: true }));
   }
 
   /* ---------- /cases/: filter the shelf in place ---------- */
