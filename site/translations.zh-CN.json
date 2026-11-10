@@ -43811,5 +43811,13 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "design-os-studio": {
+    "name": "DESIGN:OS Studio",
+    "requirements": [
+      "从 GitHub Release 安装 v0.7.11：macOS 为通用 .dmg（已在 Apple Silicon 上验证）、Windows x64 为带每用户 install.ps1 的 .zip、Linux x64 为 .deb 或 .tar.gz；也可使用 `cargo run --release -p designos-app --bin designos-studio` 从源码构建。README 写明 Windows 与 Linux 包由同一发布流程构建，但发布前未经验证。",
+      "采用 PolyForm Shield 1.0.0 许可证（源码可用）。工作室本身无需账号或 API 密钥；Agents 面板会启动用户自己的 Claude Code、Codex、Grok、Antigravity 或 Gemini CLI，并使用该 CLI 的登录状态。",
+      "designos-mcp 通过 stdio 提供工具。审阅提交中 README 生成的工具表列出 39 个工具。README 记载的已知问题仍未关闭：保存 .fig 文件会丢失编号列表格式，并把实例上继承或绑定变量的填色写成固定值。"
+    ]
   }
 }
