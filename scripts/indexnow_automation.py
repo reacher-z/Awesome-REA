@@ -11,6 +11,9 @@ deployment. It writes ``state=live``,
 commit's run notifies) or ``state=pending`` (SHA was not published in time; the scheduled run notifies it) to
 $GITHUB_OUTPUT. It exits 1 only when the site serves SHA with bytes this build does not reproduce.
 
+``serving SHA`` waits, bounded, until awesomerea.org names SHA in its source-commit.txt, so the build that follows
+can take its preview images from the deployment.
+
 ``previous OUT`` downloads the receipt of the newest earlier successful run of the workflow on the default
 branch into OUT and writes that build's manifest digest as ``previous_sha256``. It writes an empty value when
 there is none or when that manifest uses another format (such as an older HTML normalization), and the run
@@ -50,7 +53,7 @@ MAX_COMMIT_BYTES = 256
 RECEIPT_PAGES = 5
 MAX_RECEIPT_ARCHIVE = 16 * 1024 * 1024
 MAX_MANIFEST_BYTES = 8_000_000
-# Preview images are downloaded from their upstream hosts during each build, and some hosts send different
+# Preview images are downloaded from their upstream hosts during a publication build, and some hosts send different
 # bytes to different runners. No sitemap page is a preview, so these entries never select a URL.
 PREVIEWS = 'previews/'
 MAX_PREVIEW_BYTES = 8 * 1024 * 1024
@@ -114,6 +117,24 @@ def served_previews(served: bytes, built: bytes, read) -> dict[str, bytes] | Non
             return None
         previews[name] = body
     return previews
+
+
+def wait_until_served(sha: str, *, fetch=fetch_bytes, clock=time.monotonic, sleep=time.sleep,
+                      wait_seconds=WAIT_SECONDS) -> bool:
+    """Whether awesomerea.org names SHA in its source-commit.txt before the deadline.
+
+    The IndexNow build reads the preview images the site serves, so it starts once the commit is deployed."""
+    deadline = clock() + wait_seconds
+    while True:
+        try:
+            body = fetch(uncached(SOURCE_COMMIT), MAX_COMMIT_BYTES)
+            if body.decode('ascii', 'replace').strip() == sha:
+                return True
+        except Exception as error:  # A transient fetch failure is retried until the deadline.
+            print(f'{SOURCE_COMMIT} not readable yet: {type(error).__name__}', flush=True)
+        if clock() > deadline:
+            return False
+        sleep(POLL_SECONDS)
 
 
 def wait_for_deployment(sha: str, dist: Path, *, github=None, fetch=fetch_bytes, clock=time.monotonic,
@@ -239,6 +260,8 @@ def main() -> int:
     wait = commands.add_parser('wait', help='Wait until awesomerea.org serves this build')
     wait.add_argument('sha')
     wait.add_argument('dist', type=Path)
+    serving = commands.add_parser('serving', help='Wait until awesomerea.org serves this commit')
+    serving.add_argument('sha')
     previous = commands.add_parser('previous', help='Fetch the previous run receipt')
     previous.add_argument('directory', type=Path)
     args = parser.parse_args()
@@ -249,6 +272,9 @@ def main() -> int:
             if state == 'pending':
                 print(f'::warning::awesomerea.org did not serve this build of {args.sha[:12]}, through its edge cache, within '
                       f'{WAIT_SECONDS // 60} minutes; the scheduled run notifies its pages once it does.')
+        elif args.command == 'serving':
+            if not wait_until_served(args.sha):
+                print(f'::warning::awesomerea.org did not serve {args.sha[:12]} within {WAIT_SECONDS // 60} minutes.')
         else:
             output('previous_sha256', previous_receipt(args.directory, current_run=os.environ.get('GITHUB_RUN_ID')))
     except (ValueError, KeyError, OSError, zipfile.BadZipFile, json.JSONDecodeError) as error:

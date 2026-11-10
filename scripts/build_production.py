@@ -19,7 +19,11 @@ def main():
     parser.add_argument('--publish', action='store_true',
                         help='Build a commit of main for publication: skip validate_discovery, validate_site and '
                              'validate_schema_org, which the required validate check already ran on it')
+    parser.add_argument('--previews-from-site', action='store_true',
+                        help='Take preview images only from the copies awesomerea.org serves, so the build holds '
+                             'the previews of the deployment (the IndexNow rebuild)')
     args = parser.parse_args()
+    fetch = [sys.executable, 'scripts/fetch_previews.py'] + (['--site-only'] if args.previews_from_site else [])
     commands = [
         # The scan mapping is deterministic over the committed scan snapshot.
         [sys.executable, 'scripts/classify_scan_evidence.py'],
@@ -27,7 +31,7 @@ def main():
         ['node', '--check', 'site/app.js'],
         # Preview images are downloaded into .cache/previews; build_site then
         # copies them into dist so the page never hotlinks an external image.
-        [sys.executable, 'scripts/fetch_previews.py'],
+        fetch,
     ]
     commands.append(['node', '--check', 'site/site.js'])
     commands.append([sys.executable, 'scripts/build_site.py'])

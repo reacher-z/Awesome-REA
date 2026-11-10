@@ -58,13 +58,19 @@ jobs:
           node-version: '26'
       # The build of the publication workflows (Awesome-REA/awesomerea.org and Awesome-REA/awesome-rea.com), previews
       # included; star counts are left out of the page hashes. A preview that downloads in one build and not in the
-      # other changes the page, and the wait step then reports a build it cannot reproduce.
+      # other changes the page, which is why this build reads the served previews instead of downloading them.
       # The publication workflows install the same pinned Pillow for the preview thumbnails.
       - name: Install the publication build's Pillow
         run: |
           python3 -m pip install --disable-pip-version-check --no-deps --only-binary=:all: --require-hashes -r scripts/publish-requirements.txt
+      # The build takes its preview images from the copies awesomerea.org serves (previews/sources.json), never from
+      # the upstream hosts, so it holds the previews of the deployment whichever host was slow when it was built.
+      - name: Wait until awesomerea.org serves the commit
+        run: python3 scripts/indexnow_automation.py serving "$SHA"
+        env:
+          SHA: ${{ steps.commit.outputs.sha }}
       - name: Build the commit as the publication workflows do
-        run: python3 scripts/build_production.py --publish
+        run: python3 scripts/build_production.py --publish --previews-from-site
       - name: Wait until awesomerea.org serves this build
         id: deploy
         env:

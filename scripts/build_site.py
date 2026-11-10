@@ -176,6 +176,7 @@ def build_site(output: Path) -> tuple[int, int, int]:
         previews = {entry["id"]: entry for entry
                     in json.loads(PREVIEWS_PATH.read_text(encoding="utf-8"))["entries"]}
     preview_files = []
+    preview_sources = {}
     resources = []
     for filename in ("rea-resources.json", "tool-resources.json"):
         for original in json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")):
@@ -206,6 +207,7 @@ def build_site(output: Path) -> tuple[int, int, int]:
                     record["preview"] = "/" + relative
                     record["preview_kind"] = preview["kind"]
                     preview_files.append((cached, relative))
+                    preview_sources[record["id"]] = {"key": cached.stem, "file": Path(relative).name}
                     # Rows and cards show a small WebP and link the original; without one they show the original.
                     thumb = thumbnail(cached, PREVIEW_CACHE / "thumbs")
                     if thumb:
@@ -242,6 +244,9 @@ def build_site(output: Path) -> tuple[int, int, int]:
         (output / "previews" / "thumbs").mkdir(parents=True)
         for cached, relative in preview_files:
             shutil.copy2(cached, output / relative)
+        # Which URL each preview came from, so the next build can take the served copy instead of the host.
+        (output / "previews" / "sources.json").write_text(
+            json.dumps(preview_sources, sort_keys=True, indent=1) + "\n", encoding="utf-8")
     html = (output / "index.html").read_text(encoding="utf-8")
     for key, value in {"RESOURCE_COUNT": len(resources), "INTEGRATION_COUNT": metadata["independent_integration_count"], "REVIEWED_AT": latest_review}.items():
         html = html.replace("{{" + key + "}}", str(value))
