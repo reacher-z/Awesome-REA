@@ -17,7 +17,7 @@ from artifact_links import github_repository
 from build_readme import (CATEGORIES, METHOD_HEADINGS, METHOD_SECTIONS, RECONSTRUCTION_METHODS, RELATIONSHIPS, TARGETS,
                           UNASSIGNED_METHOD, collection_section, readme_size_warnings)
 from catalog import ROOT, RESOURCE_FILES
-from review_disclaimers import banned_sentences
+from review_disclaimers import banned_sentences, defensive_sentences
 from localization import read_fingerprints, read_localizations, validate_fingerprints, validate_localizations
 from requirement_facets import facet_errors
 from curated_translations import CURATED_TRANSLATIONS, read_curated_translations, validate_curated_translations
@@ -1508,8 +1508,16 @@ def main():
     errors.extend(registry_problems)
     lead_batches, lead_problems = discovery_leads.load_batches(ROOT)
     errors.extend(lead_problems)
-    discovery_reviews.validate_reviews(discovery_batches, discovery_reviews.read_reviews(ROOT), errors,
-                                       lead_batches=lead_batches)
+    reviews = discovery_reviews.read_reviews(ROOT)
+    discovery_reviews.validate_reviews(discovery_batches, reviews, errors, lead_batches=lead_batches)
+    try:
+        ledger_entries = read_case_coverage(ROOT).get('entries', [])
+    except (OSError, ValueError, AttributeError):
+        ledger_entries = []
+    translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8'))
+    for identifier, field, _ in defensive_sentences(records, translations, papers, ledger_entries, reviews):
+        errors.append(f'{identifier}: {field} frames a fact as a denial or disclaimer; state what the thing is '
+                      '(see data/README.md).')
     import discovery_classes
     discovery_classes.validate_classes(discovery_batches, discovery_classes.read_classes(ROOT), errors, lead_batches)
     followed = sum(len(batch['leads']) for batch in lead_batches)
