@@ -97,7 +97,7 @@ class SiteCopies:
         try:
             sources = json.loads(read_site(SOURCES_NAME + token, 4 * 1024 * 1024, site))
             files = json.loads(read_site("build-manifest.json" + token, 8_000_000, site))["files"]
-        except (OSError, ValueError, KeyError):
+        except (OSError, ValueError, KeyError, TypeError):
             return None
         return cls(sources, files, site) if isinstance(sources, dict) and isinstance(files, dict) else None
 
@@ -182,8 +182,10 @@ def main() -> int:
                 path.unlink()
     site = None if args.no_site else SiteCopies.load()
     if site is None and not args.no_site:
+        if args.site_only:
+            print("The live site's preview list is not readable, and --site-only never reads the upstream hosts.", file=sys.stderr)
+            return 1
         print("The live site's preview list is not readable; images come from their upstream hosts.", file=sys.stderr)
-        args.site_only = False
     counts: dict[str, int] = {}
 
     def task(entry: dict) -> tuple[dict, str]:
