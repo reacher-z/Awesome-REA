@@ -44,6 +44,10 @@ def n(value: int) -> str:
     return f'{value:,}'
 
 
+def verb(count: int, plural: str, singular: str) -> str:
+    return singular if count == 1 else plural
+
+
 def series(items: list[str], zh: bool) -> str:
     if len(items) < 2:
         return ''.join(items)
@@ -75,8 +79,14 @@ def pushed(record: dict) -> datetime | None:
     return None
 
 
+def short_title(title: str) -> str:
+    """The name part of a curated title such as "LibrePods: AirPods features on Android" or "REA — Reverse Engineer Anything"."""
+    return re.split(r': | — ', title, maxsplit=1)[0]
+
+
 def curated_entries(record: dict, zh: bool) -> list[tuple[str, str]]:
-    return [(entry[f'title_{"zh" if zh else "en"}'], entry[f'href_{"zh" if zh else "en"}'])
+    """(name, page) for each curated entry; the English title's name part reads the same in both languages."""
+    return [(short_title(entry['title_en']), entry[f'href_{"zh" if zh else "en"}'])
             for entry in record.get('related_entries', []) if entry.get('kind') == 'curated']
 
 
@@ -122,18 +132,30 @@ def faqs(category: str, label: str, records: list[dict], scan_classes: dict, zh:
             text = f'最常见的许可证标识是{series([f"{escape(name)}（{n(count)} 个）" for name, count in top], zh)}。' + (f'{n(total)} 个仓库中有 {n(missing)} 个未识别许可证。' if missing else '')
             items.append(('这些仓库使用哪些许可证？', text))
         else:
-            text = f'The most common license identifiers are {series([f"{escape(name)} ({n(count)})" for name, count in top], zh)}.' + (f' {n(missing)} of {n(total)} have no identified license.' if missing else '')
+            text = f'The most common license identifiers are {series([f"{escape(name)} ({n(count)})" for name, count in top], zh)}.' + (f' {n(missing)} of {n(total)} {verb(missing, "have", "has")} no identified license.' if missing else '')
             items.append(('Which licenses do these repositories use?', text))
     curated = [r for r in records if curated_entries(r, zh)]
     if curated:
         examples = series([f'<a href="{escape(href, quote=True)}">{escape(title)}</a>' for r in curated[:3] for title, href in curated_entries(r, zh)[:1]], zh)
         items.append(('其中哪些仓库有精选条目？', f'{n(total)} 个仓库中有 {n(len(curated))} 个链接到精选条目，条目附有审阅过的说明、使用条件和证据，例如{examples}。') if zh else
-                     ('Which of these repositories have a curated entry?', f'{n(len(curated))} of {n(total)} link a curated entry with a reviewed description, requirements and evidence, for example {examples}.'))
+                     ('Which of these repositories have a curated entry?', f'{n(len(curated))} of {n(total)} {verb(len(curated), "link", "links")} a curated entry with a reviewed description, requirements and evidence, for example {examples}.'))
     classes = Counter(scan_classes.get(r['id']) for r in records)
     if any(classes[c] for c in SCAN_CLASS_TEXT):
-        parts = [(f'C{c} {SCAN_CLASS_TEXT[c][1]}：{n(classes[c])} 个' if zh else f'{n(classes[c])} C{c} ({SCAN_CLASS_TEXT[c][0]})') for c in SCAN_CLASS_TEXT if classes[c]]
-        items.append(('有多少仓库在 README 中写明了安装和用法？', '按 README 扫描证据档位：' + '；'.join(parts) + '。') if zh else
-                     ('How many document installation and usage in their README?', 'By README scan evidence class: ' + series(parts, zh) + '.'))
+        c1, c2, c3 = (classes[c] for c in SCAN_CLASS_TEXT)
+        rest = total - c1 - c2 - c3
+        if zh:
+            text = f'{n(total)} 个仓库中有 {n(c1)} 个在 README 中同时写明了安装和用法（README 扫描档位 C1）'
+            text += ''.join(f'，{n(count)} 个{detail}（C{c}）' for c, count, detail in ((2, c2, '缺少其中一项'), (3, c3, '没有可用的 README 文档')) if count) + '。'
+            text += f'另有 {n(rest)} 个没有 README 扫描档位。' if rest else ''
+            items.append(('这些仓库中有多少在 README 中写明了安装和用法？', text))
+        else:
+            tail = [f'{n(count)} {verb(count, "are", "is")} missing one of the two (C2)' if c == 2 else
+                    f'{n(count)} {verb(count, "have", "has")} no usable README documentation (C3)'
+                    for c, count in ((2, c2), (3, c3)) if count]
+            text = f'{n(c1)} of {n(total)} {verb(c1, "document", "documents")} both installation and usage in their README (scan class C1).'
+            text += f' {series(tail, zh)}.' if tail else ''
+            text += f' {n(rest)} {verb(rest, "have", "has")} no README scan class.' if rest else ''
+            items.append(('How many of these repositories document installation and usage in their README?', text))
     times = [pushed(r) for r in records]
     captured = datetime.fromisoformat(snapshot + 'T23:59:59+00:00') if re.fullmatch(r'\d{4}-\d{2}-\d{2}', snapshot or '') else None
     if captured and any(times):
@@ -141,7 +163,7 @@ def faqs(category: str, label: str, records: list[dict], scan_classes: dict, zh:
         month = sum(1 for t in times if t and t >= captured - timedelta(days=30))
         items.append(('这些仓库最近更新过吗？', f'截至 {escape(snapshot)}，{n(total)} 个仓库中有 {n(year)} 个在过去 12 个月内有推送，其中 {n(month)} 个在过去 30 天内有推送。') if zh else
                      ('How recently were these repositories updated?', f'As of {escape(snapshot)}, {n(year)} of {n(total)} had a push in the previous 12 months, and {n(month)} in the previous 30 days.'))
-    return [(q, spaced(a)) for q, a in items[:5]] if zh else items[:5]
+    return [(spaced(q), spaced(a)) for q, a in items[:5]] if zh else items[:5]
 
 
 def faq_html(items: list[tuple[str, str]], zh: bool) -> str:
