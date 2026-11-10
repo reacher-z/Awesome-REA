@@ -535,7 +535,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
               assets: dict, icon_stylesheet: str | None, noindex: bool = False,
               main_class: str = '', extra_styles: tuple[str, ...] = (),
               source_export: str = 'source-index.json', alternates: str = '', page_head: str = '',
-              trail: list[tuple[str, str]] | None = None) -> str:
+              trail: list[tuple[str, str]] | None = None, heading: str | None = None) -> str:
     if source_export not in ('source-index.json', 'source-published.json'):
         raise ValueError('Unsupported repository export route')
     zh = language == 'zh'
@@ -566,9 +566,13 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
               else 'Original editorial content and code: MIT. Upstream descriptions and linked projects retain their own licenses.')
     extra_css = ''.join(f'\n  <link rel="stylesheet" href="{escape(href, quote=True)}">' for href in extra_styles)
     page_class = ' ' + escape(main_class, quote=True) if main_class else ''
+    # The visible trail matches the BreadcrumbList: earlier steps link, the last names this page.
+    steps = trail or [(title, canonical)]
+    crumbs = ''.join(f'<span aria-hidden="true">/</span><a href="{escape(url.removeprefix(site_url), quote=True)}">{escape(name)}</a>' for name, url in steps[:-1])
+    crumbs += f'<span aria-hidden="true">/</span><span aria-current="page">{escape(steps[-1][0])}</span>'
     main_open = (f'<main id="discovery-content" class="{page_class.strip()}">{page_head}' if page_head else f'''<main id="discovery-content" class="shell browse-main{page_class}">
-  <nav class="browse-breadcrumbs" aria-label="{('当前位置' if zh else 'Breadcrumb')}"><a href="{root}">{('首页' if zh else 'Home')}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(title)}</span></nav>
-  <section class="collection-intro browse-intro"><p class="eyebrow">{('逆向工程资源集合' if zh else 'THE REVERSE ENGINEERING COLLECTION')}</p><h1>{escape(title)}<span class="title-dot" aria-hidden="true">.</span></h1><p>{escape(description)}</p></section>''')
+  <nav class="browse-breadcrumbs" aria-label="{('当前位置' if zh else 'Breadcrumb')}"><a href="{root}">{('首页' if zh else 'Home')}</a>{crumbs}</nav>
+  <section class="collection-intro browse-intro"><p class="eyebrow">{('逆向工程资源集合' if zh else 'THE REVERSE ENGINEERING COLLECTION')}</p><h1>{escape(heading or title)}<span class="title-dot" aria-hidden="true">.</span></h1><p>{escape(description)}</p></section>''')
     return f'''<!doctype html>
 <html lang="{locale}"{(' data-icon-set="fontawesome"' if icon_stylesheet else '')}>
 <head>
@@ -695,15 +699,28 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         case_total = sum(record['kind'] == 'case-study' for record in resources)
         description = (f'从 {len(resources):,} 项精选资源中筛选出的 {case_total:,} 个案例，保留重建方法、成果边界与原始证据，并按网站、游戏、应用等目标分组，可逐条打开条目查看来源与复核日期。'
                        if zh else f'{case_total:,} case studies from {len(resources):,} curated resources, with documented reconstruction methods, scope, and original evidence.')
-        # /cases/ is the first static page; later pages are unlisted and noindex, like /resources/page/<n>/.
-        for page in range(1, max(1, -(-case_total // CASE_PER_PAGE)) + 1):
+        # Each static page is indexed like the /resources/ pages; /cases/index.md lists every case, a later page's twin its rows.
+        case_page_total = max(1, -(-case_total // CASE_PER_PAGE))
+        case_rows = case_order(resources)
+        for page in range(1, case_page_total + 1):
             page_route = case_page_path(page, language)
-            page_title_text = title if page == 1 else f'{title} · {CASE_PAGE_TEXT[language][0].format(n=page)}'
+            page_label = CASE_PAGE_TEXT[language][0].format(n=page)
+            page_title_text = title if page == 1 else f'{title} · {page_label}'
+            first, last = (page - 1) * CASE_PER_PAGE + 1, min(page * CASE_PER_PAGE, case_total)
+            page_description = description if page == 1 else (f'第 {page}/{case_page_total} 页，第 {first:,}–{last:,} 个案例。{description}' if zh
+                                                               else f'Page {page} of {case_page_total}, cases {first:,}–{last:,}. {description}')
             content, items = _case_collection(resources, language, site_url, repository_url, page)
-            rendered[page_route] = _document(site_url=site_url, repository_url=repository_url, path=page_route, language=language, title=page_title_text, description=description, content=content,
-                                             schema=collection_page_schema(site_url + page_route, page_title_text, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href,
-                                             source_export=source_export, noindex=page > 1, main_class='cases-main', extra_styles=(_asset(site_dir, 'cases.css'),),
-                                             alternates=alternate_links(markdown=path + MARKDOWN))
+            rendered[page_route] = _document(site_url=site_url, repository_url=repository_url, path=page_route, language=language, title=page_title_text, description=page_description, content=content,
+                                             schema=collection_page_schema(site_url + page_route, page_title_text, page_description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href,
+                                             source_export=source_export, main_class='cases-main', extra_styles=(_asset(site_dir, 'cases.css'),),
+                                             alternates=alternate_links(markdown=page_route + MARKDOWN), heading=title,
+                                             trail=None if page == 1 else [(title, site_url + path), (page_label.capitalize(), site_url + page_route)])
+            if page > 1:
+                page_groups = defaultdict(list)
+                for key, _, record in case_rows[first - 1:last]:
+                    page_groups[key].append(record)
+                twins[page_route] = _collection_twin(site_url, page_route, language, page_title_text, page_description, page_groups, None)
+                paths.append(page_route)
         cases = {key: [record for record in records if record['kind'] == 'case-study'] for key, records in groups.items()}
         twins[path] = _collection_twin(site_url, path, language, title, description, cases, None)
         paths.append(path)
