@@ -153318,6 +153318,7 @@
     "description_zh": "asteroids-disassembly 是街机游戏《小行星》固件的反汇编。README 只说明了这个对象，没有写出工具链、平台或许可证。",
     "evidence_url": "https://github.com/nmikstas/asteroids-disassembly/blob/1122a8ec831fcb9fdc6fd8b5525d782553060d51/README.md",
     "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
     "requirements": [
       "The README identifies the subject as the Asteroids arcade game firmware.",
       "GitHub's license metadata for this repository is empty."
