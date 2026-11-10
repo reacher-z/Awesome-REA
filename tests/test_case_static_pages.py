@@ -49,10 +49,18 @@ class CaseStaticPagesTests(unittest.TestCase):
         validate_case_outputs(self.pages, self.resources)
         validate_section_target_counts(self.output, self.resources)
 
-    def test_later_pages_are_noindex_with_their_own_items(self):
+    def test_later_pages_are_indexed_with_their_own_address_items_and_twin(self):
         second = self.pages['/cases/page/2/']
-        self.assertTrue(second.noindex)
-        self.assertFalse(self.pages['/cases/'].noindex)
+        self.assertFalse(second.noindex or self.pages['/cases/'].noindex)
+        self.assertEqual(second.canonicals, [ORIGIN + '/cases/page/2/'])
+        self.assertEqual(dict(second.alternates)['zh-CN'], ORIGIN + '/zh/cases/page/2/')
+        twin = (self.output / 'cases/page/2/index.md').read_text(encoding='utf-8')
+        self.assertIn(f'<{ORIGIN}/cases/page/2/>', twin)
+        self.assertEqual(twin.count('/index.md)'), len(second.case_rows))
+        html = self.html('/cases/page/2/')
+        self.assertIn('<a href="/cases/">Reverse-engineering case studies</a><span aria-hidden="true">/</span><span aria-current="page">Page 2</span>', html)
+        self.assertIn('<h1>Reverse-engineering case studies<span', html)
+        self.assertIn('Page 2 of 2, cases 201–270.', html)
         items = next(schema_entities(second.schemas, 'CollectionPage'))['mainEntity']
         self.assertEqual(items['numberOfItems'], len(second.case_rows))
         self.assertIn('page 2', self.html('/cases/page/2/').split('</title>')[0])
