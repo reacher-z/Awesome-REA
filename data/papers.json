@@ -14192,5 +14192,52 @@
     "title_zh": "恶意软件混淆技术的多维分面分类",
     "date_basis_zh": "日期取自 Crossref 登记的出版日期",
     "metadata_notes_zh": "Crossref 题名按原始的全大写形式保存。"
+  },
+  {
+    "id": "paper-gan-malware-survey",
+    "title": "A survey on generative adversarial networks for malware analysis",
+    "authors": [
+      "Lam Bui Thu",
+      "Hoang Thanh Nam",
+      "Pham Duy Trung",
+      "Nguyen Le Minh"
+    ],
+    "year": 2025,
+    "publication_date": "2025-06-06",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "Journal of Computer Science and Cybernetics",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.15625/1813-9663/22522",
+    "url": "https://doi.org/10.15625/1813-9663/22522",
+    "pdf_url": "https://vjs.ac.vn/jcc/article/download/22522/2543256080",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This review surveys generative adversarial networks as they are used in malware analysis, after earlier use on images and other synthetic data. The fetched article treats those models as a topic inside the malware-analysis literature.",
+    "description_zh": "这篇评述综述生成对抗网络在恶意软件分析中的用法。这类模型早先用于图像和其他合成数据，本文把它们作为恶意软件分析文献中的一个主题。",
+    "scope_limitations_en": "The summary follows the opening of the fetched journal PDF and the Crossref date 2025-06-06. Generated samples were not reproduced.",
+    "scope_limitations_zh": "摘要依据已获取期刊 PDF 的开头和 Crossref 日期 2025-06-06。生成的样本没有复现。",
+    "why_fits_en": "The paper surveys a family of learning methods applied to malware analysis, which overlaps binary inspection even when the models also generate data.",
+    "why_fits_zh": "本文综述用于恶意软件分析的一类学习方法。即便模型也会生成数据，这项工作仍与二进制检查有重叠。",
+    "evidence_urls": [
+      "https://vjs.ac.vn/jcc/article/download/22522/2543256080",
+      "https://api.crossref.org/works/10.15625/1813-9663/22522",
+      "https://doi.org/10.15625/1813-9663/22522"
+    ],
+    "metadata_notes": "Author order follows Crossref and matches the byline on the fetched PDF.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "面向恶意软件分析的生成对抗网络综述",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "作者顺序沿用 Crossref，并与已获取 PDF 的署名一致。"
   }
 ]
