@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**3982 case studies**, grouped by section.
+**3983 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (76)
 - [Game](#game) (2792)
 - [App](#app) (233)
-- [Native Binary](#native-binary) (64)
+- [Native Binary](#native-binary) (65)
 - [Firmware and Hardware](#firmware) (172)
 - [Protocol](#protocol) (645)
 
@@ -48,7 +48,7 @@
 - [Case studies](cases/app.md)
 
 <a id="native-binary"></a>
-## Native Binary (64)
+## Native Binary (65)
 
 - [Case studies](cases/native-binary.md)
 
