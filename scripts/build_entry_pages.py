@@ -9,7 +9,7 @@ from urllib.parse import quote, urlencode, urlsplit
 
 from artifact_links import github_repository
 from build_home import COPY as HOME_COPY, EVIDENCE_DETAIL, PINNED
-from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, jsonld_script, publication_keys
+from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, case_page_path, case_pages, jsonld_script, publication_keys
 from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, formatted_date, scholarly_article
 from resource_listing import listing_pages, record_href, section_href
 from build_readme import (CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section,
@@ -269,6 +269,8 @@ def section_siblings(resources: list[dict], limit: int = SIBLING_LIMIT) -> dict[
         groups[collection_section(record)].append(record)
     # The /resources/ page that lists each entry and the page where each section starts.
     record_pages, section_pages = listing_pages(groups, SECTIONS)
+    # The /cases/ page of each case study and of each subject section's first case.
+    case_anchor_pages = case_pages(resources)
     related = {}
     for section, records in groups.items():
         ordered = section_order(section, records)
@@ -277,7 +279,9 @@ def section_siblings(resources: list[dict], limit: int = SIBLING_LIMIT) -> dict[
             following = ordered[index + 1:] + ordered[:index]
             related[record['id']] = {'section': section, 'siblings': following[:limit],
                                      'count': len(ordered), 'cases': cases,
-                                     'page': record_pages.get(record['id'], 1), 'section_page': section_pages.get(section, 1)}
+                                     'page': record_pages.get(record['id'], 1), 'section_page': section_pages.get(section, 1),
+                                     'case_page': case_anchor_pages.get(record['id'], 1),
+                                     'case_section_page': case_anchor_pages.get(f'cases-{section}', 1)}
     return related
 
 
@@ -299,7 +303,7 @@ def _section_links(record: dict, language: str, related: dict) -> str:
     links = [f'<a href="{section_href(section, related.get("section_page", 1), language)}">'
              + (f'{name}分区全部 {count} 项资源' if zh else f'All {count} entries in {name}') + '</a>']
     if record['kind'] == 'case-study':
-        links.append(f'<a href="{prefix}/cases/#cases-{section}">'
+        links.append(f'<a href="{case_page_path(related.get("case_section_page", 1), language)}#cases-{section}">'
                      + (f'{name}案例（{related["cases"]}）' if zh else f'{name} case studies ({related["cases"]})') + '</a>')
     heading = f'同分区更多条目：{name}' if zh else f'More in {name}'
     # Distinct from the "Related entries" section, which pairs the same work across directories.
@@ -497,7 +501,9 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
         listing, list_name = f'{prefix}/cases/', label('Case studies', '案例合集')
     # Resources link to the static /resources/ page that lists them; case studies to their /cases/ row.
     directory_link = (record_href(record['id'], (siblings or {}).get('page', 1), language)
-                      if kind == 'resource' and record['kind'] != 'case-study' else f"{listing}#{record['id']}")
+                      if kind == 'resource' and record['kind'] != 'case-study'
+                      else f"{case_page_path((siblings or {}).get('case_page', 1), language)}#{record['id']}" if kind == 'resource'
+                      else f"{listing}#{record['id']}")
     discussion = (_related_entries(related_entries.get((kind, record['id']), []), language)
                   + _survey_discussion(survey_discussions.get(record['id'], []), language))
     feedback = _feedback(kind, record, language, repository_url)

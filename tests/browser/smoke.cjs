@@ -652,7 +652,8 @@ async function midWidthPaperRows(page, label, viewport) {
 async function sectionTargetCounts(page, label) {
   const lines = await page.$$eval('.section-target-count', nodes => nodes.map(line => ({
     target: line.dataset.sectionTarget,
-    cards: line.closest('section').querySelectorAll('[data-resource-id]').length,
+    // A /cases/ section can run over several static pages; data-section-count holds all of its cases.
+    cards: Number(line.closest('section').dataset.sectionCount || line.closest('section').querySelectorAll('[data-resource-id]').length),
     stated: ['targetTagged', 'targetElsewhere', 'targetUntaggedHere'].map(key => Number(line.dataset[key])),
     right: line.getBoundingClientRect().right,
   })));

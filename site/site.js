@@ -1118,6 +1118,24 @@
     ['pointerover', 'touchstart', 'focusin', 'keydown'].forEach((type) => document.addEventListener(type, warm, { once: true, passive: true }));
   }
 
+  /* ---------- /cases/: an older link to a case or section on another static page goes to that page ---------- */
+  const casePages = $('.cases-collection[data-case-page]');
+  if (casePages) {
+    const findCasePage = async () => {
+      const key = decodeURIComponent(location.hash.slice(1));
+      if (!/^[a-z0-9-]+$/.test(key)) return;
+      const target = document.getElementById(key);
+      // A section on another page keeps its old fragment on its navigation link.
+      if (target && !target.matches('.cases-nav a, .case-method-nav a')) return;
+      try {
+        const page = (await (await fetch('/cases/pages.json')).json())[key];
+        if (page && String(page) !== casePages.dataset.casePage) location.replace(`${P}/cases/${page > 1 ? `page/${page}/` : ''}#${key}`);
+      } catch { /* the hash stays where it is */ }
+    };
+    findCasePage();
+    window.addEventListener('hashchange', findCasePage);
+  }
+
   /* ---------- /cases/: filter the shelf in place ---------- */
   const shelfInput = $('[data-shelf-input]');
   if (shelfInput) {

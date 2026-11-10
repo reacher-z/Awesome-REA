@@ -377,44 +377,139 @@ def _section_index_link(index: str, zh: bool) -> str:
     return f'<a class="section-index-link" href="#{index}">{label}<span aria-hidden="true"> ↑</span></a>'
 
 
+CASE_PER_PAGE = 200
+CASE_PAGE_TEXT = {'en': ('page {n}', 'Pages', 'Previous', 'Next', 'Cases {a}–{b} of {n}'),
+                  'zh': ('第 {n} 页', '分页', '上一页', '下一页', '第 {a}–{b} 个案例，共 {n} 个')}
+
+
+def case_order(resources: list[dict]) -> list[tuple[str, str | None, dict]]:
+    """Every case study in page order: by subject section, and by reconstruction method where a section has methods."""
+    groups = defaultdict(list)
+    for record in resources:
+        if record['kind'] == 'case-study':
+            groups[collection_section(record)].append(record)
+    ordered = []
+    for key in SECTIONS:
+        if key in METHOD_SECTIONS:
+            ordered += [(key, method, record) for method, records in method_groups(groups[key]) for record in records]
+        else:
+            ordered += [(key, None, record) for record in groups[key]]
+    return ordered
+
+
+def case_page_path(page: int, language: str = 'en') -> str:
+    """/cases/ is page 1; later pages live at /cases/page/<n>/."""
+    prefix = '/zh' if language == 'zh' else ''
+    return f'{prefix}/cases/' if page == 1 else f'{prefix}/cases/page/{page}/'
+
+
+def case_pages(resources: list[dict]) -> dict[str, int]:
+    """The static page of each case, and of the first row of each section and method group, keyed by fragment."""
+    pages = {}
+    for position, (key, method, record) in enumerate(case_order(resources)):
+        page = position // CASE_PER_PAGE + 1
+        pages[record['id']] = page
+        pages.setdefault(f'cases-{key}', page)
+        if method:
+            pages.setdefault(f'cases-{key}-{method}', page)
+    return pages
+
+
+def case_href(fragment: str, pages: dict[str, int], language: str, current: int | None = None) -> str:
+    page = pages.get(fragment, 1)
+    return f'#{fragment}' if page == current else f'{case_page_path(page, language)}#{fragment}'
+
+
+def _case_pager(page: int, pages: int, language: str) -> str:
+    if pages == 1:
+        return ''
+    _, label, previous, following, _ = CASE_PAGE_TEXT[language]
+    shown = sorted({1, 2, page - 1, page, page + 1, pages - 1, pages} & set(range(1, pages + 1)))
+    items, last = '', 0
+    for number in shown:
+        if number - last > 1:
+            items += '<li class="gap" aria-hidden="true">…</li>'
+        current = ' aria-current="page"' if number == page else ''
+        items += f'<li><a href="{case_page_path(number, language)}"{current}>{number}</a></li>'
+        last = number
+    step = lambda number, text, rel: (f'<a class="case-pager-step" href="{case_page_path(number, language)}" rel="{rel}">{text}</a>'
+                                      if 1 <= number <= pages else f'<span class="case-pager-step" aria-disabled="true">{text}</span>')
+    return (f'<nav class="case-pager" aria-label="{label}">{step(page - 1, previous, "prev")}<ol>{items}</ol>'
+            f'{step(page + 1, following, "next")}</nav>')
+
+
 def _case_collection(resources: list[dict], language: str, site_url: str,
-                     repository_url: str = 'https://github.com/reacher-z/Awesome-REA') -> tuple[str, list[dict]]:
+                     repository_url: str = 'https://github.com/reacher-z/Awesome-REA', page: int = 1) -> tuple[str, list[dict]]:
+    """One static page of at most CASE_PER_PAGE case rows, with the subject and method navigation for every page.
+
+    A section or method group keeps its anchor on each page it appears on; the target count line sits on the page
+    where its section starts. Sections absent from a page keep their old fragment on their navigation link.
+    """
     zh = language == 'zh'
     prefix = '/zh' if zh else ''
-    groups = defaultdict(list)
     cases = [record for record in resources if record['kind'] == 'case-study']
-    for record in cases:
-        groups[collection_section(record)].append(record)
+    ordered = case_order(resources)
+    anchors = case_pages(resources)
+    total_pages = max(1, -(-len(ordered) // CASE_PER_PAGE))
+    if not 1 <= page <= total_pages:
+        raise ValueError(f'No case page {page}')
+    start, end = (page - 1) * CASE_PER_PAGE, page * CASE_PER_PAGE
+    rows = ordered[start:end]
+    on_page = {key for key, _, _ in rows}
+    methods_on_page = {(key, method) for key, method, _ in rows if method}
+    totals = defaultdict(int)
+    method_totals = defaultdict(int)
+    for key, method, _ in ordered:
+        totals[key] += 1
+        if method:
+            method_totals[(key, method)] += 1
     count = lambda number: f'{number} ' + ('个案例' if zh else ('case' if number == 1 else 'cases'))
-    sections, navigation, items = [], [], []
+    navigation, sections, items = [], [], []
     for key, labels in SECTIONS.items():
-        if not groups[key]:
+        if not totals[key]:
             continue
         label = labels[int(zh)]
-        navigation.append(f'<a href="#cases-{key}">{escape(label)}<span>{len(groups[key])}</span></a>')
+        fragment = f'cases-{key}'
+        # A section listed on another page keeps its old fragment here, on the link that leads to it.
+        held = '' if key in on_page else f' id="{fragment}"'
+        navigation.append(f'<a href="{case_href(fragment, anchors, language, page)}"{held}>{escape(label)}<span>{totals[key]}</span></a>')
+    for key in SECTIONS:
+        section_rows = [(method, record) for row_key, method, record in rows if row_key == key]
+        if not section_rows:
+            continue
+        label = SECTIONS[key][int(zh)]
+        starts_here = anchors[f'cases-{key}'] == page
         if key not in METHOD_SECTIONS:
-            body = '<div class="case-list">' + '\n'.join(_case_row(record, language, key) for record in groups[key]) + '</div>'
+            body = '<div class="case-list">' + '\n'.join(_case_row(record, language, key) for _, record in section_rows) + '</div>'
         else:
             # Same groups and order as this section's README case studies; each group is one level below the section.
-            methods = method_groups(groups[key])
-            groups[key] = [record for _, records in methods for record in records]
-            method_nav = ''.join(f'<a href="#cases-{key}-{method}">{escape(METHOD_HEADINGS[method][int(zh)])}<span>{len(records)}</span></a>'
-                                 for method, records in methods)
-            body = (f'<nav class="browse-category-nav case-method-nav" aria-label="{("重建方法" if zh else "Reconstruction methods")}">{method_nav}</nav>'
-                    + ''.join(f'<section class="case-method" id="cases-{key}-{method}" data-case-method="{method}" aria-labelledby="case-method-heading-{key}-{method}">'
-                              f'<div class="case-method-topline"><h3 id="case-method-heading-{key}-{method}">{escape(METHOD_HEADINGS[method][int(zh)])}</h3><p>{count(len(records))}</p></div>'
-                              f'<p class="case-method-note">{escape(METHOD_NOTES[method][int(zh)])}</p><div class="case-list">'
-                              + '\n'.join(_case_row(record, language, key, 'h4') for record in records) + '</div></section>'
-                              for method, records in methods))
-        sections.append(f'<section class="case-section" id="cases-{key}" data-case-section="{key}" aria-labelledby="case-heading-{key}"><div class="browse-topline"><h2 id="case-heading-{key}">{escape(label)}</h2><p>{count(len(groups[key]))}</p>{_section_index_link('case-subjects', zh)}</div>{_target_coverage(key, cases, language, cases=True)}{body}</section>')
-        for record in groups[key]:
+            method_order = list(dict.fromkeys(method for row_key, method, _ in ordered if row_key == key))
+            method_nav = ''.join(
+                f'<a href="{case_href(f"cases-{key}-{method}", anchors, language, page)}"'
+                f'{"" if (key, method) in methods_on_page else f' id="cases-{key}-{method}"'}>'
+                f'{escape(METHOD_HEADINGS[method][int(zh)])}<span>{method_totals[(key, method)]}</span></a>'
+                for method in method_order) if starts_here else ''
+            nav_html = (f'<nav class="browse-category-nav case-method-nav" aria-label="{("重建方法" if zh else "Reconstruction methods")}">{method_nav}</nav>'
+                        if method_nav else '')
+            body = nav_html + ''.join(
+                f'<section class="case-method" id="cases-{key}-{method}" data-case-method="{method}" aria-labelledby="case-method-heading-{key}-{method}">'
+                f'<div class="case-method-topline"><h3 id="case-method-heading-{key}-{method}">{escape(METHOD_HEADINGS[method][int(zh)])}</h3><p>{count(method_totals[(key, method)])}</p></div>'
+                + (f'<p class="case-method-note">{escape(METHOD_NOTES[method][int(zh)])}</p>' if anchors[f'cases-{key}-{method}'] == page else '')
+                + '<div class="case-list">' + '\n'.join(_case_row(record, language, key, 'h4') for row_method, record in section_rows if row_method == method)
+                + '</div></section>'
+                for method in method_order if (key, method) in methods_on_page)
+        coverage = _target_coverage(key, cases, language, cases=True) if starts_here else ''
+        sections.append(f'<section class="case-section" id="cases-{key}" data-case-section="{key}" data-section-count="{totals[key]}" aria-labelledby="case-heading-{key}">'
+                        f'<div class="browse-topline"><h2 id="case-heading-{key}">{escape(label)}</h2><p>{count(totals[key])}</p>{_section_index_link("case-subjects", zh)}</div>'
+                        f'{coverage}{body}</section>')
+        for _, record in section_rows:
             name = (record.get('name_zh') or record['name']) if zh else record['name']
             items.append({'name': name, 'url': f"{site_url}{prefix}/resources/{record['id']}/", 'description': record[f'description_{language}']})
     search = '/zh/?view=curated&amp;kind=case-study#catalog' if zh else '/?view=curated&amp;kind=case-study&amp;lang=en#catalog'
     note = ('每个案例按主要用途出现一次，并保留所有目标标签。'
             if zh else 'Each case appears once under its primary subject, with all its target labels.')
     nav = f'<nav class="browse-category-nav cases-nav" id="case-subjects" aria-label="{("案例主题" if zh else "Case subjects")}">{"".join(navigation)}</nav>' if navigation else ''
-    empty = '' if items else f'<p class="cases-empty">{("当前目录还没有案例条目。" if zh else "No case studies are currently listed.")}</p>'
+    empty = '' if ordered else f'<p class="cases-empty">{("当前目录还没有案例条目。" if zh else "No case studies are currently listed.")}</p>'
     review_title = '软件重建产物评审' if zh else 'Software reconstruction artifact reviews'
     review_intro = ('核查 REA 工作流与独立重建的实际产物，每项保留原始来源和已知局限。'
                     if zh else 'Review artifacts from REA workflows and independent reconstructions. Each entry retains its original sources and known limits.')
@@ -425,10 +520,12 @@ def _case_collection(resources: list[dict], language: str, site_url: str,
                                      ('Available artifacts', 'Original code, releases or demos.'),
                                      ('Evidence and attribution', 'Pinned sources, review dates and documented REA roles.')])
     review = f'<section class="case-review-method" id="review-method" aria-labelledby="review-method-title"><h2 id="review-method-title">{review_title}</h2><p>{review_intro}</p><dl>' + ''.join(f'<div><dt>{escape(label)}</dt><dd>{escape(value)}</dd></div>' for label, value in review_dimensions) + '</dl></section>'
-    content = f'''<div class="cases-collection" data-case-count="{len(items)}" data-curated-count="{len(resources)}">
+    shown = f'<p class="case-range">{CASE_PAGE_TEXT[language][4].format(a=f"{start + 1:,}", b=f"{start + len(rows):,}", n=f"{len(ordered):,}")}</p>' if total_pages > 1 else ''
+    pager = _case_pager(page, total_pages, language)
+    content = f'''<div class="cases-collection" data-case-count="{len(ordered)}" data-curated-count="{len(resources)}" data-case-page="{page}">
 {review}
 <div class="browse-actions"><a class="button button-primary" href="{search}">{('搜索案例' if zh else 'Search cases')}</a><a class="button button-outline" href="{prefix}/resources/">{('全部精选资源' if zh else 'All resources')}</a>{_suggest_link(repository_url, 'case-study.yml', '推荐重建案例' if zh else 'Suggest a case study')}</div>
-<details class="cases-note"><summary>{('关于这些案例' if zh else 'About these cases')}</summary><p>{escape(note)}</p></details>{nav}{''.join(sections)}{empty}
+<details class="cases-note"><summary>{('关于这些案例' if zh else 'About these cases')}</summary><p>{escape(note)}</p></details>{nav}{shown}{''.join(sections)}{empty}{pager}
 </div>'''
     return content, items
 
@@ -595,11 +692,18 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
 
         path = prefix + '/cases/'
         title = '逆向工程案例合集' if zh else 'Reverse-engineering case studies'
-        content, items = _case_collection(resources, language, site_url, repository_url)
-        description = (f'从 {len(resources):,} 项精选资源中筛选出的 {len(items):,} 个案例，保留重建方法、成果边界与原始证据，并按网站、游戏、应用等目标分组，可逐条打开条目查看来源与复核日期。'
-                       if zh else f'{len(items):,} case studies from {len(resources):,} curated resources, with documented reconstruction methods, scope, and original evidence.')
-        rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=collection_page_schema(site_url + path, title, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href, source_export=source_export, main_class='cases-main', extra_styles=(_asset(site_dir, 'cases.css'),),
-                                   alternates=alternate_links(markdown=path + MARKDOWN))
+        case_total = sum(record['kind'] == 'case-study' for record in resources)
+        description = (f'从 {len(resources):,} 项精选资源中筛选出的 {case_total:,} 个案例，保留重建方法、成果边界与原始证据，并按网站、游戏、应用等目标分组，可逐条打开条目查看来源与复核日期。'
+                       if zh else f'{case_total:,} case studies from {len(resources):,} curated resources, with documented reconstruction methods, scope, and original evidence.')
+        # /cases/ is the first static page; later pages are unlisted and noindex, like /resources/page/<n>/.
+        for page in range(1, max(1, -(-case_total // CASE_PER_PAGE)) + 1):
+            page_route = case_page_path(page, language)
+            page_title_text = title if page == 1 else f'{title} · {CASE_PAGE_TEXT[language][0].format(n=page)}'
+            content, items = _case_collection(resources, language, site_url, repository_url, page)
+            rendered[page_route] = _document(site_url=site_url, repository_url=repository_url, path=page_route, language=language, title=page_title_text, description=description, content=content,
+                                             schema=collection_page_schema(site_url + page_route, page_title_text, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href,
+                                             source_export=source_export, noindex=page > 1, main_class='cases-main', extra_styles=(_asset(site_dir, 'cases.css'),),
+                                             alternates=alternate_links(markdown=path + MARKDOWN))
         cases = {key: [record for record in records if record['kind'] == 'case-study'] for key, records in groups.items()}
         twins[path] = _collection_twin(site_url, path, language, title, description, cases, None)
         paths.append(path)
@@ -668,6 +772,8 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
     record_pages, section_pages = listing_pages(groups, SECTIONS)
     page_index = {**record_pages, **{f'heading-{key}': page for key, page in section_pages.items()}, **section_pages}
     (site_dir / 'resources').mkdir(parents=True, exist_ok=True)
+    (site_dir / 'cases').mkdir(parents=True, exist_ok=True)
+    (site_dir / 'cases' / 'pages.json').write_text(json.dumps(case_pages(resources), separators=(',', ':'), sort_keys=True) + '\n', encoding='utf-8')
     (site_dir / 'resources' / 'pages.json').write_text(json.dumps(page_index, separators=(',', ':'), sort_keys=True) + '\n', encoding='utf-8')
     for path, document in rendered.items():
         destination = site_dir / path.lstrip('/') / 'index.html'

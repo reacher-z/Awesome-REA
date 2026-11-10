@@ -42,7 +42,7 @@ def discovery_class_pages(output):
 
 
 def resource_pages(path):
-    """The built /resources/page/<n>/ files after page 1, in page order."""
+    """The built <listing>/page/<n>/ files after page 1 of /resources/ or /cases/, in page order."""
     pages = (OUTPUT / path.strip("/") / "page").glob("*/index.html")
     return sorted(pages, key=lambda page: int(page.parent.name))
 
@@ -234,8 +234,10 @@ def main():
         assert len(listed) == len(expected) and set(listed) == expected, path
     expected_cases = {record["id"] for record in records if record["kind"] == "case-study"}
     for path in ("/cases/", "/zh/cases/"):
-        page = documents[ORIGIN + path]
-        assert len(page.resources) == len(expected_cases) and set(page.resources) == expected_cases, path
+        listed = list(documents[ORIGIN + path].resources)
+        for later in resource_pages(path):
+            listed += Document(later.read_text(encoding="utf-8")).resources
+        assert len(listed) == len(expected_cases) and set(listed) == expected_cases, path
     validate_robots(OUTPUT, urls)
     assert (OUTPUT / "llms.txt").is_file(), "Missing optional catalog index"
     # The transitional explorer pages are noindex, so they stay out of the sitemap.
