@@ -6,10 +6,11 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**309 case studies**
+**310 case studies**
 
 ## Other methods and analyses
 
+- [**Aion 2: reconstruction of the client-to-server network protocol**](https://github.com/lunixxx37/aion2-protocol-research) - Aion 2 Network Protocol Research reconstructs parts of the game's client-to-server network protocol from captures and client inspection. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/aion2-protocol-research-case/)</sub>
 - [**alive-serv: reconstructing the SIF2 MIRACLE LIVE! server**](https://github.com/miraclealive/alive-serv) - alive-serv reconstructs part of the SIF2 MIRACLE LIVE! <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/alive-serv-case/)</sub>
 - [**Alley Cat: an annotated DOS executable disassembly**](https://github.com/gmegidish/alleycat-disassembly) - Alley Cat Disassembly is an in-progress effort to turn the DOS game's Ghidra disassembly into annotated NASM x86 assembly. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/alley-cat-disassembly-case/)</sub>
 - [**Alleyway: a checksum-matched Game Boy disassembly**](https://github.com/Wit-MKW/alleyway-gb) - Alleyway reconstructs the 1989 Game Boy game as assembly source organized by audio, display, input, physics, and stage code. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/alleyway-gb-case/)</sub>
