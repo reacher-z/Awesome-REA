@@ -61,7 +61,8 @@ jobs:
       # other changes the page, and the wait step then reports a build it cannot reproduce.
       # The publication workflows install the same pinned Pillow for the preview thumbnails.
       - name: Install the publication build's Pillow
-        run: python3 -m pip install --disable-pip-version-check --no-deps --only-binary=:all: --require-hashes -r scripts/publish-requirements.txt
+        run: |
+          python3 -m pip install --disable-pip-version-check --no-deps --only-binary=:all: --require-hashes -r scripts/publish-requirements.txt
       - name: Build the commit as the publication workflows do
         run: python3 scripts/build_production.py --publish
       - name: Wait until awesomerea.org serves this build
