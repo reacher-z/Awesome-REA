@@ -10,6 +10,7 @@
 
 ## 基于重建源码的移植
 
+- [**OpenCrossing-Xbox：将《Animal Crossing》移植到初代 Xbox**](https://github.com/TechProGabe/OpenCrossing-Xbox) - OpenCrossing-Xbox 将 GameCube 版《Animal Crossing》的反编译代码编译到初代 Xbox，并从用户提供的美版 Rev 0 光盘镜像读取数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencrossing-xbox-case/)</sub>
 - [**OpenCrown PC：运行自有主机镜像的 Dragon's Crown Pro 原生宿主**](https://github.com/Nezara/OpenCrown-PC) - OpenCrown PC 在 Windows 和 Linux 上运行用户自行提供的《Dragon's Crown Pro》PS4 或 PS5 解密镜像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencrown-pc-case/)</sub>
 - [**OpenDW：将 Dragon Wars 移植为 C 语言游戏引擎**](https://github.com/devinsmith/opendw) - OpenDW 尝试将 16 位 DOS 游戏 Dragon Wars 移植为面向现代环境的 C 语言引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendw-dragon-wars-case/)</sub>
 - [**OpenDW：将原版 Mac Deepworld 客户端移植到 Windows**](https://github.com/kuroppoi/opendw) - OpenDW 使用 C++ 和 Axmol 对原版 Mac 平台 Deepworld 客户端进行逆向，并移植到 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendw-case/)</sub>
@@ -646,5 +647,4 @@
 - [**AFS Volume 2.00 specification：重建《Tenchu》归档格式**](https://github.com/stedestro/AFS200Tools) - AFS200Tools 记录 PlayStation《Tenchu》游戏中的 AFS Volume 2.00 归档格式，说明大端序文件头、36 字节文件条目、文件表位置及暂定的文件名规则。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/afs200tools-case/)</sub>
 - [**Afterhours 2015：Need for Speed 在线服务重建**](https://github.com/afterhours-crew/afterhours-2015) - Afterhours 2015 用 Rust 服务器和本地启动器重建 Need for Speed (2015) 在线服务。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/afterhours-2015-case/)</sub>
 - [**agario-client：重构早期 agar.io 客户端协议**](https://github.com/pulviscriptor/agario-client) - agario-client 用 Node.js 实现早期 agar.io 客户端协议，通过 WebSocket 连接服务器并解析游戏数据包。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/agario-client-case/)</sub>
-- [**Aion 2：客户端到服务端网络协议复现**](https://github.com/lunixxx37/aion2-protocol-research) - Aion 2 Network Protocol Research 根据抓包和客户端分析复现游戏的部分客户端到服务端协议。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aion2-protocol-research-case/)</sub>
 <!-- END GENERATED CASES -->
