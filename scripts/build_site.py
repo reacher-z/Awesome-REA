@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import hashlib
 import json
 import re
@@ -16,8 +17,10 @@ from build_discovery_pages import build_discovery_pages
 from build_paper_pages import build_paper_pages
 from build_readme import CATEGORIES, collection_section
 from build_repository_index import CATEGORIES as REPOSITORY_CATEGORIES
-from build_survey import build_survey, discussion_sections
+from build_survey import TITLES as SURVEY_TITLES, build_survey, discussion_sections
+from social_cards import write_social_cards
 from build_entry_pages import build_entry_pages
+from page_twins import write_page_twins
 from build_home import build_home
 from build_feed import build_feeds
 from build_api import build_api, write_api_pages
@@ -431,12 +434,20 @@ def build_site(output: Path) -> tuple[int, int, int]:
     build_home(output, explorer_pages={"en": (output / "index.html").read_text(encoding="utf-8"), "zh": (output / "zh/index.html").read_text(encoding="utf-8")}, resources=resources, papers=papers, discovery_queue=discovery_queue,
                repository_url=REPOSITORY_URL, repository_export=repository_export)
     apply_site_shell(output, repository_url=REPOSITORY_URL, skip=frozenset({"index.html", "zh/index.html"}))
+    # Homepages, listings, categories and entries get their own social cards under /og/.
+    browse_records = [r for r in (browse_document or {}).get("resources", [])
+                      if r.get("scan_status") == "readme-scanned" and r.get("scope_status") != "excluded"]
+    write_social_cards(output, resources=resources, papers=papers, sections=COLLECTION_SECTIONS, section_of=collection_section,
+                       browse_categories=REPOSITORY_CATEGORIES, browse_counts=Counter(r["category"] for r in browse_records),
+                       survey_title=SURVEY_TITLES[0], survey_papers=survey_document["snapshot"]["papers"], site_url=SITE_URL)
     # Every stylesheet and script now has a content-addressed copy under /assets/; drop the root copies.
     remove_unhashed_copies(output, [path.name for path in SOURCE.iterdir()])
     (output / ".nojekyll").write_text("", encoding="utf-8")
     (output / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
     (output / "robots.txt").write_text(robots_txt(SITE_URL, f"{SITE_URL}/{SITEMAP_INDEX}"), encoding="utf-8")
     sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls]
+    # Indexed pages without a builder-made Markdown twin get one converted from their <main>.
+    write_page_twins(output, [url.removeprefix(SITE_URL) for url in sitemap_urls], SITE_URL)
     # lastmod comes from the records each page shows, never the build time (sitemaps.page_dates).
     dates = page_dates(resources=resources, papers=papers, repository_document=browse_document,
                        discovery_batches=(discovery_queue or {}).get("batches"), lead_batches=(lead_queue or {}).get("batches"),

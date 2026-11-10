@@ -147,10 +147,11 @@ def heading_before(text: str, position: int) -> str:
     return max(found)[1] if found else ""
 
 
-# A logo, a badge wall, a chat-group QR code or a funding button is not a demo.
+# Branding and contact images: logos, badge walls, chat-group QR codes, funding buttons and forge default avatars.
 PREVIEW_NEGATIVE = re.compile(
     r"logo|badge|icon|banner|sponsor|powered\s*by|qr\s*code|二维码|群号|加群|交流群|\bqq\b|qq\s*群|"
-    r"微信|wechat|weixin|weibo|discord|telegram|t\.me|donate|patreon|ko-?fi|star[- ]history|badges?",
+    r"微信|wechat|weixin|weibo|discord|telegram|t\.me|donate|patreon|ko-?fi|star[- ]history|badges?|"
+    r"avatar_default|default[-_]avatar",
     re.IGNORECASE)
 PREVIEW_ALT = re.compile(
     r"screenshot|screen\s?shot|demo|preview|gameplay|interface|\bui\b|截图|演示|界面|效果|运行", re.IGNORECASE)

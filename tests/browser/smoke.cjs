@@ -627,7 +627,7 @@ async function staticPage(page, route, viewport) {
       dimensions: [...section.querySelectorAll('dt')].map(node => node.textContent),
       visible: section.getClientRects().length > 0 && !section.closest('details'),
     }));
-    assert(review.visible && review.title.includes('Beta'), `${label}: review method is visible before opening disclosures`);
+    assert(review.visible && /artifact reviews|产物评审/i.test(review.title) && !review.title.includes('Beta'), `${label}: review method is visible before opening disclosures`);
     assert.equal(review.dimensions.length, 3, `${label}: separate scope, artifacts and evidence`);
   }
 }

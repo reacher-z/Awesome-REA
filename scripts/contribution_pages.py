@@ -38,10 +38,10 @@ def contribution_content(repository_url, language):
     questions = [
         ('Agent 可以提交吗？' if zh else 'Can an agent contribute?',
          '可以，人工和 AI 辅助贡献适用相同的证据、去重和审核规则。公开提交应符合用户授权，并说明资源与 REA 的关系及贡献者与资源的关系。' if zh else 'Yes. Human and agent-assisted contributions follow the same evidence, deduplication and review rules. Public submissions must respect user authorization and distinguish the resource’s REA relationship from the contributor’s own connection.'),
-        ('自动扫描等于精选收录吗？' if zh else 'Does an automated scan mean curated inclusion?',
-         '不等于。README 自动扫描是发现证据；精选收录需要单独核查一手来源。' if zh else 'No. An automated README scan is discovery evidence. Curation requires a separate primary-source review.'),
-        ('校验通过就会发布吗？' if zh else 'Do passing checks publish the submission?',
-         '不会。维护者审核相关性与事实声明。不要把检查通过、AI 审查意见或创建 PR 说成已接收、合并或部署。' if zh else 'No. Maintainers review relevance and factual claims. Passing checks, an AI review or opening a PR must not be described as acceptance, merge or deployment.'),
+        ('自动扫描和精选收录是什么关系？' if zh else 'How does an automated scan relate to curated inclusion?',
+         'README 自动扫描用于发现候选仓库；精选收录在单独核查一手来源之后进行。' if zh else 'An automated README scan finds candidate repositories. A curated entry follows a separate primary-source review.'),
+        ('提交何时发布？' if zh else 'When is a submission published?',
+         '维护者审核相关性与事实声明并合并 PR 后，网站从 main 分支重新发布。检查通过和 AI 审查意见是这次审核的输入。描述提交时写明它的实际状态：已创建 PR、已合并或已部署。' if zh else 'A maintainer reviews relevance and factual claims and merges the PR; the site then republishes from main. Passing checks and AI review comments feed that review. Describe a submission by its actual state: PR opened, merged or deployed.'),
     ]
     answers = ''.join('<section class="source-card browse-repository"><h2>' + escape(q) + '</h2><p class="card-description">' + escape(a) + '</p></section>' for q, a in questions)
     docs = [('/blob/main/' + rules, '贡献规则' if zh else 'Contribution rules'),

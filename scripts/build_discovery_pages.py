@@ -415,7 +415,7 @@ def _case_collection(resources: list[dict], language: str, site_url: str,
             if zh else 'Each case appears once under its primary subject, with all its target labels.')
     nav = f'<nav class="browse-category-nav cases-nav" id="case-subjects" aria-label="{("案例主题" if zh else "Case subjects")}">{"".join(navigation)}</nav>' if navigation else ''
     empty = '' if items else f'<p class="cases-empty">{("当前目录还没有案例条目。" if zh else "No case studies are currently listed.")}</p>'
-    review_title = '软件重建产物评审 · Beta' if zh else 'Software reconstruction artifact reviews · Beta'
+    review_title = '软件重建产物评审' if zh else 'Software reconstruction artifact reviews'
     review_intro = ('核查 REA 工作流与独立重建的实际产物，每项保留原始来源和已知局限。'
                     if zh else 'Review artifacts from REA workflows and independent reconstructions. Each entry retains its original sources and known limits.')
     review_dimensions = ([('复现范围', '已实现功能、已知缺口及必需的原始素材。'),

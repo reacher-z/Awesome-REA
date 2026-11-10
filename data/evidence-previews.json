@@ -2,20 +2,19 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-10T02:57:21+00:00",
-    "entry_count": 1103,
+    "generated_at": "2026-11-10T03:26:21+00:00",
+    "entry_count": 1112,
     "class_entry_count": 1141,
     "class_counts": {
-      "image": 1065,
+      "image": 1074,
       "video": 38
     },
-    "missing_count": 38,
+    "missing_count": 29,
     "missing": [
       "aotopsy",
       "appshark",
       "bellpad-animal-crossing-port-case",
       "bumpys-arcade-fantasy-decomp-case",
-      "commander-genius-case",
       "corefw-launchpad-case",
       "de4js",
       "dkb-recomp-case",
@@ -23,26 +22,18 @@
       "golden-sun-recompiled-case",
       "grpc-tools",
       "irisu-ml-case",
-      "jsettlers-case",
       "labelwriter-dymo-case",
       "lego-island-decomp-case",
-      "lego-island-portable-case",
       "mega-man-64-mobile-port-case",
-      "meleepad-melee-port-case",
       "nyxstone",
       "openbarnyard-case",
       "openkeeper-dungeon-keeper-ii-case",
       "outrun-sonic-runners-server-case",
       "pdbinspector",
-      "project-vekta-case",
-      "pymobiledevice3",
+      "perception-pnrf-case",
       "react-native-decompiler",
-      "ruffle-flash-player-case",
-      "scapy",
       "sdlpal",
-      "severed-chains",
       "swos-port-case",
-      "tower-toppler-case",
       "uncharted-collection-pc-port-case",
       "urban-reign-pc-port-case",
       "wabt",
@@ -1339,6 +1330,15 @@
       "source_url": "https://github.com/alexbeavs-ps1-ports/colony-wars-red-sun-recomp",
       "revision": "8e48605680d41f0e6de5721421c5d8caf65bd329",
       "checked_at": "2026-11-09T07:55:54+00:00"
+    },
+    {
+      "id": "commander-genius-case",
+      "image_url": "https://clonekeenplus.sourceforge.io/img/galaxyMultiplayer.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://gitlab.com/Dringgstein/Commander-Genius",
+      "revision": "58a3c4fd0782fa2a087e38a039599b2ecf69ccc9",
+      "checked_at": "2026-11-10T05:57:58+00:00"
     },
     {
       "id": "conker-lr-native",
@@ -3843,6 +3843,15 @@
       "checked_at": "2026-11-01T10:07:43+00:00"
     },
     {
+      "id": "jsettlers-case",
+      "image_url": "https://raw.githubusercontent.com/paulwedeck/settlers-remake/6ad8c4230a4aa4cd21840f8cb59a38344e41c3e0/docs/wiki/manual/JSettlers_Game.png",
+      "kind": "image",
+      "basis": "page-image",
+      "source_url": "https://github.com/paulwedeck/settlers-remake/blob/6ad8c4230a4aa4cd21840f8cb59a38344e41c3e0/docs/wiki/manual/JSettlers_Game.png",
+      "revision": "6ad8c4230a4aa4cd21840f8cb59a38344e41c3e0",
+      "checked_at": "2026-11-10T05:20:10+00:00"
+    },
+    {
       "id": "jsxer",
       "image_url": "https://i.ytimg.com/vi/939Bo5iTxo0/hqdefault.jpg",
       "kind": "video",
@@ -4111,6 +4120,15 @@
       "source_url": "https://github.com/retroreplay82/Legendary-Wings-NES-to-PC",
       "revision": "0c570136b72a39ac7593c29b6f9e0a1075a55b29",
       "checked_at": "2026-11-09T04:14:52+00:00"
+    },
+    {
+      "id": "lego-island-portable-case",
+      "image_url": "https://github.com/user-attachments/assets/13278850-27f8-49c0-af73-05c6e41b6301",
+      "kind": "image",
+      "basis": "page-image",
+      "source_url": "https://github.com/isledecomp/isle-portable/wiki/Texture-Pack-Support/b3d96cf1080ccd9712b53d03b76bdc9e3b1285c5",
+      "revision": "b3d96cf1080ccd9712b53d03b76bdc9e3b1285c5",
+      "checked_at": "2026-11-10T05:20:10+00:00"
     },
     {
       "id": "lemmings-ts-case",
@@ -4552,6 +4570,15 @@
       "source_url": "https://github.com/Hero88go/melee-unlocked",
       "revision": "6d5e2e4bb78a89c01d74b86e0b20057f2d28f7ca",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "meleepad-melee-port-case",
+      "image_url": "https://raw.githubusercontent.com/chrissotraidis/meleepad/ad47ab000be1cabd8daedda4ec03aa855bbb7f78/docs/artifacts/screenshots/2026-08-30/g8-macos-fps-setting-after-relaunch.png",
+      "kind": "image",
+      "basis": "page-image",
+      "source_url": "https://github.com/chrissotraidis/meleepad/blob/ad47ab000be1cabd8daedda4ec03aa855bbb7f78/docs/artifacts/screenshots/2026-08-30/g8-macos-fps-setting-after-relaunch.png",
+      "revision": "ad47ab000be1cabd8daedda4ec03aa855bbb7f78",
+      "checked_at": "2026-11-10T05:20:10+00:00"
     },
     {
       "id": "melitta-barista-nivona-ha-case",
@@ -6030,14 +6057,6 @@
       "checked_at": "2026-11-10T02:57:21+00:00"
     },
     {
-      "id": "perception-pnrf-case",
-      "image_url": "https://codeberg.org/assets/img/avatar_default.png",
-      "kind": "image",
-      "basis": "page-image",
-      "source_url": "https://codeberg.org/Apollo3zehn/perception-pnrf",
-      "checked_at": "2026-11-09T11:39:42+00:00"
-    },
-    {
       "id": "perfect-dark-xbla-recomp",
       "image_url": "https://raw.githubusercontent.com/CaiusCodes/Perfect-Dark-XBLA-PC-Recomp/ee7961a93bbbf03eb7c9ba4c52c2751dc85f7f03/docs/screenshots/gameplay-rooftop.webp",
       "kind": "image",
@@ -6407,6 +6426,15 @@
       "checked_at": "2026-11-09T04:14:52+00:00"
     },
     {
+      "id": "project-vekta-case",
+      "image_url": "https://raw.githubusercontent.com/gustavomorinaga/project-vekta/55bd3b4e99fb86a6b3cfd94c546ac97f7887eb98/docs/screenshots/20261030_level1-helghast-advance.png",
+      "kind": "image",
+      "basis": "page-image",
+      "source_url": "https://github.com/gustavomorinaga/project-vekta/blob/55bd3b4e99fb86a6b3cfd94c546ac97f7887eb98/docs/SCREENSHOTS.md",
+      "revision": "55bd3b4e99fb86a6b3cfd94c546ac97f7887eb98",
+      "checked_at": "2026-11-10T05:20:10+00:00"
+    },
+    {
       "id": "protobuf-inspector",
       "image_url": "https://i.imgur.com/Vw403MI.png",
       "kind": "image",
@@ -6576,6 +6604,15 @@
       "source_url": "https://github.com/syssec-utd/pylingual",
       "revision": "11a1516d84a6c2aa71ec23fbd11e4b99dc8c4a86",
       "checked_at": "2026-11-02T16:11:48+00:00"
+    },
+    {
+      "id": "pymobiledevice3",
+      "image_url": "https://raw.githubusercontent.com/doronz88/pymobiledevice3/eed1fde2b01834d289657f4130969c7130536ac0/docs/assets/screenshots/serve-web.webp",
+      "kind": "image",
+      "basis": "page-image",
+      "source_url": "https://github.com/doronz88/pymobiledevice3/blob/eed1fde2b01834d289657f4130969c7130536ac0/docs/guides/screen-mirroring.md",
+      "revision": "eed1fde2b01834d289657f4130969c7130536ac0",
+      "checked_at": "2026-11-10T05:20:10+00:00"
     },
     {
       "id": "pyrrha",
@@ -7667,6 +7704,15 @@
       "checked_at": "2026-11-09T10:24:16+00:00"
     },
     {
+      "id": "ruffle-flash-player-case",
+      "image_url": "https://raw.githubusercontent.com/ruffle-rs/ruffle/c8a03ccd335e30031fa51f698d55c5402d450578/desktop/packages/linux/screenshots/dark-launcher.png",
+      "kind": "image",
+      "basis": "page-image",
+      "source_url": "https://github.com/ruffle-rs/ruffle/blob/c8a03ccd335e30031fa51f698d55c5402d450578/desktop/packages/linux/rs.ruffle.Ruffle.metainfo.xml",
+      "revision": "c8a03ccd335e30031fa51f698d55c5402d450578",
+      "checked_at": "2026-11-10T05:20:10+00:00"
+    },
+    {
       "id": "rush2-recompiled-case",
       "image_url": "https://i.ytimg.com/vi/Dd5F3HraMxA/hqdefault.jpg",
       "kind": "video",
@@ -7737,6 +7783,15 @@
       "source_url": "https://github.com/matvey68568/sberboom-remote",
       "revision": "d18027bb86b2a975b17cc91a8f378184675faca0",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "scapy",
+      "image_url": "https://raw.githubusercontent.com/secdev/scapy/d2a43b525e145969fae36e42adfb4de8341fbcb8/doc/scapy/graphics/scapy-win-screenshot1.png",
+      "kind": "image",
+      "basis": "page-image",
+      "source_url": "https://github.com/secdev/scapy/blob/d2a43b525e145969fae36e42adfb4de8341fbcb8/doc/scapy/installation.rst",
+      "revision": "d2a43b525e145969fae36e42adfb4de8341fbcb8",
+      "checked_at": "2026-11-10T05:20:10+00:00"
     },
     {
       "id": "scarlett-mixcontrol-1stgen-case",
@@ -7836,6 +7891,14 @@
       "source_url": "https://github.com/xmoezzz/sena-rs",
       "revision": "5f5b743b2210916a46d785729ebd9ad1db469dad",
       "checked_at": "2026-11-09T07:55:54+00:00"
+    },
+    {
+      "id": "severed-chains",
+      "image_url": "https://legendofdragoon.org/wp-content/uploads/Main-Screen-1024x761.webp",
+      "kind": "image",
+      "basis": "page-image",
+      "source_url": "https://legendofdragoon.org/projects/severed-chains/",
+      "checked_at": "2026-11-10T05:20:10+00:00"
     },
     {
       "id": "sf33rdsxbrecompo-case",
@@ -8997,6 +9060,15 @@
       "source_url": "https://github.com/john-overton/T.O.R.E-Fighters",
       "revision": "2a5b3c99959876dd5c0d533cd5b40b8a3a10fddb",
       "checked_at": "2026-11-09T02:41:36+00:00"
+    },
+    {
+      "id": "tower-toppler-case",
+      "image_url": "https://gitlab.com/roever/toppler/-/raw/c8bf02b0f8bf8875a454758227bf2bfc029487c3/doc/TowerGraphicsCompare12.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://gitlab.com/roever/toppler",
+      "revision": "c8bf02b0f8bf8875a454758227bf2bfc029487c3",
+      "checked_at": "2026-11-10T05:20:10+00:00"
     },
     {
       "id": "triaevum",

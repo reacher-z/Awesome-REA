@@ -37,8 +37,9 @@ CONTENT_TYPES = {
     "image/gif": ".gif",
     "image/webp": ".webp",
 }
-USER_AGENT = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-              "(KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36")
+# A crawler-style agent that names the site. clonekeenplus.sourceforge.io answers 403 to a
+# desktop-browser agent string and serves its images to this one.
+USER_AGENT = "Mozilla/5.0 (compatible; AwesomeREA-preview/1.0; +https://awesomerea.org)"
 
 
 def cache_key(url: str) -> str:

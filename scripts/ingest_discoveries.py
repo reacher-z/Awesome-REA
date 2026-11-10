@@ -427,8 +427,20 @@ TRACKERS = {
     'readme-discovery': 'Scheduled README discovery and discovery ingest are failing',
     'artifact-leads': 'Public artifact lead discovery is failing',
     'discovery-leads': 'Followed-source lead discovery and lead ingest are failing',
+    'repository-metadata': 'The repository metadata refresh is failing',
 }
 FAILED_RESULTS = {'failure', 'cancelled'}
+# The last-success row, recovery note and docs anchor for each tracker; None covers the discovery ingests.
+TRACKER_NOTES = {
+    None: ('Last successful discovery ingest',
+           'Open the latest run for the failing step. Scan failures keep the previous checkpoint; an ingest failure '
+           'leaves its pull request open for inspection, and the next successful run supersedes it.',
+           'automated-discovery-ingest'),
+    'repository-metadata': ('Snapshot on main observed at',
+                            'Open the latest run for the failing step. A failed refresh commits nothing to main, so the '
+                            'pages keep the previous snapshot and its date; a refresh pull request left open is updated '
+                            'by the next run.', 'repository-metadata-refresh'),
+}
 
 
 def tracker_marker(key: str) -> str:
@@ -447,6 +459,7 @@ def tracker_state(body: str) -> dict:
 def tracker_body(key: str, state: dict, results: dict, run_url: str, last_ingest: str | None,
                  repository: str = discoveries.REPOSITORY) -> str:
     rows = '\n'.join(f'| {name} job | {result} |' for name, result in results.items())
+    label, note, anchor = TRACKER_NOTES.get(key, TRACKER_NOTES[None])
     return '\n'.join([
         tracker_marker(key),
         f'<!-- tracker-state: {json.dumps(state, sort_keys=True)} -->',
@@ -461,11 +474,9 @@ def tracker_body(key: str, state: dict, results: dict, run_url: str, last_ingest
         f"| Consecutive failed runs | {state['count']} |",
         f"| Jobs that must succeed again | {', '.join(state['failed_jobs'])} |",
         rows,
-        f"| Last successful discovery ingest | {last_ingest or 'none recorded'} |",
+        f"| {label} | {last_ingest or 'none recorded'} |",
         '',
-        'Open the latest run for the failing step. Scan failures keep the previous checkpoint; an ingest failure '
-        'leaves its pull request open for inspection, and the next successful run supersedes it. See '
-        f'[repository automation](https://github.com/{repository}/blob/main/docs/automation.md#automated-discovery-ingest).',
+        f'{note} See [repository automation](https://github.com/{repository}/blob/main/docs/automation.md#{anchor}).',
     ])
 
 
@@ -483,6 +494,9 @@ def report(key: str, results: dict) -> int:
         if key == 'discovery-leads':
             import discovery_leads
             last_ingest = discovery_leads.summary(ROOT)['last_successful_collection_at']
+        elif key == 'repository-metadata':
+            import repository_metadata
+            last_ingest = repository_metadata.observed_at()
         else:
             last_ingest = discoveries.summary(ROOT)['last_successful_ingest_at']
     except (OSError, ValueError):
