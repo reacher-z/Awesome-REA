@@ -1444,7 +1444,7 @@ def with_resource_pages(pages, output=OUTPUT):
     return found
 
 
-def validate_resource_listing(pages, resources):
+def validate_resource_listing(pages, resources, output=None):
     """Each static /resources/ page lists at most PER_PAGE rows; together they list every record once, and each
     page's ItemList names its visible cards' detail pages in card order."""
     records = {record['id']: record for record in resources}
@@ -1466,6 +1466,17 @@ def validate_resource_listing(pages, resources):
             assert items.get('@type') == 'ItemList' and items.get('numberOfItems') == len(expected), f'Resource schema count mismatch: {route}'
             assert items.get('itemListElement') == expected, f'Resource structured list differs from visible cards or detail pages: {route}'
         assert len(listed) == len(records) and set(listed) == set(records), f'Resource pages differ from curated records: {prefix}/resources/'
+        routes = resource_page_routes(pages, prefix)
+        assert all(len(pages[route].record_ids) == RESOURCE_PER_PAGE for route in routes[:-1]), f'Only the last resource page holds fewer than {RESOURCE_PER_PAGE} rows: {prefix}/resources/'
+        if output is not None:
+            # pages.json sends old #id and #section links to the page that holds them, so it must name the rendered pages.
+            expected = {}
+            for number, route in enumerate(routes, 1):
+                expected.update({identifier: number for identifier in pages[route].record_ids})
+                expected.update({anchor: number for anchor in pages[route].ids if anchor.startswith('heading-')})
+                expected.update({anchor.removeprefix('heading-'): number for anchor in pages[route].ids if anchor.startswith('heading-')})
+            mapping = json.loads((Path(output) / 'resources/pages.json').read_text(encoding='utf-8'))
+            assert mapping == expected, f'resources/pages.json differs from the rendered pages: {prefix}/resources/'
 
 
 def validate_entry_outputs(pages, resources, papers):
@@ -1795,7 +1806,7 @@ def _validate_pages(urls, resources, papers):
     forked_checks.run_all([
         lambda: validate_link_fragments(OUTPUT, pages, fragment_links),
         lambda: validate_homepage_destinations(pages),
-        lambda: validate_resource_listing(with_resource_pages(pages), resources),
+        lambda: validate_resource_listing(with_resource_pages(pages), resources, OUTPUT),
         validate_requirements_label,
         lambda: validate_paper_outputs(OUTPUT, pages),
         lambda: validate_entry_outputs(with_resource_pages(pages), resources, papers),
