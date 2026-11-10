@@ -231,9 +231,10 @@
         .then(async (j) => {
           if (j.n !== IDX.res.length || j.b !== IDX.raw.b) throw new Error('search text does not match the index');
           let i = 0;
-          await chunked(j.t, ([lead, owner, rest, prev, prevKind]) => {
+          await chunked(j.t, ([lead, owner, rest, prev, prevKind, thumb]) => {
             const r = IDX.res[i++];
             r.lead = lead; r.prev = prev === 1 ? `/previews/${r.id}.png` : prev; r.prevKind = prevKind;
+            r.thumb = thumb === 1 ? `/previews/thumbs/${r.id}.webp` : thumb || '';
             r.nDesc = norm(lead); r.dw = words(r.nDesc);
             setEvidence(r, owner, rest);
           });
@@ -435,8 +436,10 @@
   function previewHTML(r) {
     if (r.prev) {
       const video = r.prevKind === 'video';
+      // A thumbnail links its original image; without one the row shows the original.
+      const img = `<img src="${esc(r.thumb || r.prev)}" alt="${esc(video ? T.previewVideoAlt : T.previewAlt)}" loading="lazy" decoding="async">`;
       return `<figure class="card-preview">${video ? '<span class="card-preview-play" aria-hidden="true">▶</span>' : ''}`
-        + `<img src="${esc(r.prev)}" alt="${esc(video ? T.previewVideoAlt : T.previewAlt)}" loading="lazy" decoding="async"></figure>`;
+        + `${r.thumb ? `<a class="card-preview-link" href="${esc(r.prev)}">${img}</a>` : img}</figure>`;
     }
     if (r.prevKind === 'demo') {
       return `<figure class="card-preview card-preview-demo"><span class="card-preview-play" aria-hidden="true">▶</span><span>${esc(T.demoNote)}</span></figure>`;
