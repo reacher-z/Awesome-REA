@@ -2,11 +2,11 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-10T03:26:21+00:00",
-  "entry_count": 5191,
+  "generated_at": "2026-11-10T20:27:29+00:00",
+  "entry_count": 5192,
   "class_counts": {
    "0": 15,
-   "1": 1126,
+   "1": 1127,
    "2": 3844,
    "3": 186
   },
@@ -145721,6 +145721,39 @@
    "checked_at": "2026-11-10T03:14:52+00:00",
    "evidence_status": "observed",
    "scope": "notes",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "agent-qa",
+   "url": "https://github.com/vostride/agent-qa",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5407,
+    "docs_full": true,
+    "download": "package",
+    "release_count": 11,
+    "release_asset_count": 0,
+    "demo": [
+     "image",
+     "demo-link"
+    ],
+    "media_count": 3,
+    "download_links": [
+     "npm install -D agent-qa",
+     "npx agent-qa"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
+   "checked_at": "2026-11-10T20:27:29+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   }
