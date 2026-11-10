@@ -52,12 +52,17 @@ class EntryEvidenceClassTest(unittest.TestCase):
                   'primary_evidence': 'https://github.com/storytold/photocraft/blob/37a01ca8746c121170644a07968d11263ef64407/README.md'}
         record = resource(evidence_class=0, evidence_status='observed', scope='full', evidence_review=review,
                           preview='/previews/example-resource.jpg', preview_kind='image')
+        notes = {record['id']: {'reason': 'manual review', 'checked_at': '2026-11-04T08:19:15+00:00'}}
         with TemporaryDirectory() as tmp:
             root = Path(tmp)
-            build_entry_pages(root, [record], [])
+            build_entry_pages(root, [record], [], evidence_notes=notes)
             text = page(root, record, 'en')
+        self.assertIn('<dt>Checked</dt><dd>2026-11-04</dd>', text)
+        self.assertNotIn('<dt>Observed</dt>', text)
+        self.assertEqual(text.count('<time'), 1)
         self.assertIn('evidence-class-0">C0</span> full software reconstruction', text)
-        self.assertIn('<figure class="entry-preview"><img src="/previews/example-resource.jpg"', text)
+        self.assertIn('<figure class="entry-preview"><img src="/previews/example-resource.jpg" alt=""', text)
+        self.assertIn("<figcaption>Demo screenshot from the project's public documentation</figcaption>", text.replace('&#x27;', "'"))
         self.assertIn('<dt>Manual review</dt><dd>2026-11-04 · <a href="https://github.com/storytold/photocraft/blob/37a01ca', text)
         self.assertIn('<dt>Scope</dt><dd>Full reconstruction</dd>', text)
 
@@ -72,6 +77,20 @@ class EntryEvidenceClassTest(unittest.TestCase):
         self.assertIn('<span class="entry-featured">Featured</span>', english)
         self.assertIn('<span class="entry-featured">精选</span>', chinese)
 
+    def test_demo_without_screenshot_and_no_featured_label_elsewhere(self):
+        record = resource(evidence_class=1, evidence_status='observed', scope='analysis', preview_kind='demo',
+                          evidence_review={'version': 'x', 'reviewed_at': '2026-11-04', 'primary_evidence': 'https://example.org/'})
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            build_entry_pages(root, [record], [])
+            text = page(root, record, 'en')
+        self.assertIn('<p class="entry-preview-demo">Demo available · no screenshot</p>', text)
+        self.assertNotIn('entry-featured', text)
+        # A manual review only appears for Class 0.
+        self.assertNotIn('Manual review', text)
+        # The review date stays the page's only <time>.
+        self.assertEqual(text.count('<time'), 1)
+
     def test_resources_listing_offers_every_class_with_its_count(self):
         records = [resource(id=f'r-{index}', evidence_class=value, evidence_status='observed')
                    for index, value in enumerate((0, 1, 1, 2, 2, 2, 3))]
@@ -85,6 +104,7 @@ class EntryEvidenceClassTest(unittest.TestCase):
                 self.assertIn(f'<option value="{key}">C{key} ({count})</option>', html)
             self.assertIn(f'<option value="unknown">{unknown} (1)</option>', html)
             self.assertIn('class="evidence-legend"', html)
+            self.assertIn('card-class-unknown">?</span>', html)
             self.assertIn('docs/evidence-classes', html)
 
 

@@ -253,9 +253,9 @@ def _requirements_link(record: dict, language: str, name: str, css: str) -> str:
 
 CLASS_DETAIL = {
     0: ('完整软件复现', 'full software reconstruction'),
-    1: ('部分范围或非复现条目', 'partial scope or analysis entry'),
+    1: ('部分范围或分析条目', 'partial scope or analysis entry'),
     2: ('有代码和文档，缺演示或下载', 'code & docs, no demo or download'),
-    3: ('仅笔记或进度记录', 'notes only'),
+    3: ('仅笔记', 'notes only'),
 }
 
 
