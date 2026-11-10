@@ -154704,5 +154704,41 @@
       "https://gitlab.com/dk64_decomp/dk64/-/blob/1d39844b5a5dcddaa7ad3b2a4115b2e33352a09a/progress/progress_total.svg",
       "https://gitlab.com/dk64_decomp/dk64/-/blob/1d39844b5a5dcddaa7ad3b2a4115b2e33352a09a/LICENSE.md"
     ]
+  },
+  {
+    "id": "turokex-case",
+    "name": "TurokEX: rebuilding PC Turok on the Kex engine",
+    "url": "https://github.com/svkaiser/TurokEX",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "TurokEX reimplements the PC version of Turok on the Kex engine, with the game's actors, enemy AI, weapons, pickups, areas and HUD written as AngelScript classes. Its KPFGen converter reads the original CARTFILE.DAT and Turok.exe and packs their textures, fonts, sounds, models, levels and particle effects into a game.kpf archive. The engine side covers OpenGL rendering, collision and physics, OpenAL sound, a console, ENet networking and an SDL2 platform layer.",
+    "description_zh": "TurokEX 在 Kex 引擎上重新实现 PC 版 Turok，游戏中的角色、敌人 AI、武器、拾取物、区域和 HUD 均以 AngelScript 类编写。配套的 KPFGen 转换器读取原版 CARTFILE.DAT 和 Turok.exe，把其中的纹理、字体、音效、模型、关卡和粒子特效打包为 game.kpf。引擎部分包括 OpenGL 渲染、碰撞与物理、OpenAL 音频、控制台、ENet 联网以及 SDL2 平台层。",
+    "evidence_url": "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/tools/KPFGen/src/main.c",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The original PC Turok CARTFILE.DAT and Turok.exe are required for KPFGen to build game.kpf.",
+      "Microsoft Visual Studio solutions are provided for the engine and KPFGen, plus an Xcode project for the engine; SDL2, AngelScript and ENet sources and OpenAL headers and prebuilt libraries are bundled.",
+      "KPFGen runs on Windows only; its non-Windows entry point is an #error TODO stub.",
+      "Source files carry GNU General Public License version 2 or later headers; there is no licence file at the repository root."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/tools/KPFGen/src/textures.c",
+      "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/scripts/turokgame/components/weapons/turokWeaponChronoScepter.txt",
+      "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/framework/system.cpp"
+    ]
   }
 ]
