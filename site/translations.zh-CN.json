@@ -43453,5 +43453,13 @@
       "编译最终磁盘镜像需要 bintofdf 和 fdtc；项目内附有这两个工具的版本。",
       "项目页面未说明许可证。"
     ]
+  },
+  "openjam": {
+    "name": "OpenJam：NBA JAM: On Fire Edition 的静态重编译",
+    "requirements": [
+      "需要用户自己的 Xbox Live Arcade 容器文件。在 Windows 上，把发行包解压到该文件旁边，并用 NBA JAM Mod Manager.exe 启动。在 Linux 上，把原生下载解压到 nbajam.sh 旁边，模组用 ./mods.sh 安装，这需要 Python 3。",
+      "Linux 构建需要一份打过补丁的 SDK，说明在 BUILDING.md。README 写明包含模组的整场比赛曾在 WSL 的软件 Vulkan 驱动上运行，尚未在一系列显卡上试过。",
+      "GitHub 上该仓库的许可证元数据为空。"
+    ]
   }
 }
