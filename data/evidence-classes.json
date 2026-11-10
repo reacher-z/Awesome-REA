@@ -2,11 +2,11 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-09T21:32:33+00:00",
-  "entry_count": 5148,
+  "generated_at": "2026-11-10T02:15:40+00:00",
+  "entry_count": 5149,
   "class_counts": {
    "0": 15,
-   "1": 1126,
+   "1": 1127,
    "2": 3831,
    "3": 163
   },
@@ -144554,6 +144554,35 @@
    "checked_at": "2026-11-09T15:08:39+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "papyrus-compiler",
+   "url": "https://github.com/russo-2025/papyrus-compiler",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 11674,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 11,
+    "release_asset_count": 19,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
+   "checked_at": "2026-11-09T11:08:28+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   }
