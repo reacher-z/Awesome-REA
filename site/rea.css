@@ -1044,7 +1044,7 @@ html:lang(zh-CN) .cb-n { font-family: "EB Garamond Accent", var(--font-display);
 .listing .card:focus-within { content-visibility: visible; }
 html:has(.page-resources) { scroll-behavior: auto; }
 .listing .card-face::after { width: 20px; height: 20px; }
-.no-js .list-search, .no-js .results-bar .select, .no-js .filters-btn, .no-js .pager { display: none; }
+.no-js .list-search, .no-js .results-bar .select, .no-js .filters-btn, .no-js .pager:not(.pager-static) { display: none; }
 @container (min-width: 561px) {
   .listing .card-face { grid-template-columns: 100px minmax(0, 1fr) minmax(0, max-content); grid-template-areas: "call name stamp" "call desc targets"; column-gap: 14px; row-gap: 0; padding: 7px 12px; }
   .listing .card-face::before { left: 119px; }

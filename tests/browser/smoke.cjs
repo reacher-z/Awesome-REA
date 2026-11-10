@@ -270,21 +270,33 @@ async function homepageClassFilter(page, language, viewport) {
 }
 
 // Past the hero field the sticky bar offers search; it opens over the page and closes back to the same place.
-// /resources/ holds every record; filters change the list in place, and section links return to the whole list.
+// /resources/ is split into static pages of at most 100 rows; filters search the whole catalog in place,
+// and a record or section link finds the page that lists it.
 async function resourceListing(page, language, viewport, data) {
   const label = `${language} resources ${viewport.name}`;
   const total = data.catalog.resources.length;
   const route = language === 'zh' ? '/zh/resources/' : '/resources/';
+  const perPage = 100;
+  const staticPages = Math.max(1, Math.ceil(total / perPage));
   const rows = () => count(page, '[data-cards] > .card');
-  assert.equal(await rows(), total, `${label}: every record is in the page`);
+  assert.equal(await rows(), Math.min(perPage, total), `${label}: the first page holds the first ${perPage} rows`);
+  const pageMap = await page.evaluate(async url => (await fetch(url)).json(), '/resources/pages.json');
+  const mapped = data.catalog.resources.map(record => pageMap[record.id]);
+  assert.ok(mapped.every(number => Number.isInteger(number) && number >= 1 && number <= staticPages), `${label}: every record has a static page`);
+  if (staticPages > 1) {
+    assert.equal(await page.$eval('[data-pager] a[data-page="2"]', link => new URL(link.href).pathname), `${route}page/2/`, `${label}: the pager links the next static page`);
+  }
   await noOverflow(page, label);
   const before = await page.$eval('[data-results-meta]', node => node.textContent);
   await press(page, '.page-head .folder[data-target="protocol"]');
-  await page.waitForFunction(all => document.querySelectorAll('[data-cards] > .card').length < all, {timeout: 20000}, total);
-  assert.equal(new URL(page.url()).searchParams.get('target'), 'protocol', `${label}: the filter is in the URL`);
+  await page.waitForFunction(() => new URL(location.href).searchParams.get('target') === 'protocol', {timeout: 20000});
   assert.notEqual(await page.$eval('[data-results-meta]', node => node.textContent), before, `${label}: the count follows the filter`);
+  if (staticPages > 1) {
+    const shown = await page.$$eval('[data-cards] > .card[data-id]', nodes => nodes.map(node => node.dataset.id));
+    assert.ok(shown.some(id => pageMap[id] > 1), `${label}: the filter searches rows from every static page`);
+  }
   await page.goto(page.url().split('?')[0] + '?target=protocol&kind=tool');
-  await page.waitForFunction(all => document.querySelectorAll('[data-cards] > .card').length < all, {timeout: 20000}, total);
+  await page.waitForFunction(() => document.querySelectorAll('[data-cards] > .card').length > 0, {timeout: 20000});
   const opened = await page.$$eval('[data-cards] > .card .callno', nodes => nodes.map(node => node.textContent));
   assert.ok(opened.length && opened.every(text => /tool|工具/i.test(text)), `${label}: a shared link opens the same filter`);
   // On a narrowed list a section's count follows the filters, and its link filters to that many rows.
@@ -309,20 +321,24 @@ async function resourceListing(page, language, viewport, data) {
   await page.click('[data-active] [data-unset="class"]');
   await page.waitForFunction(() => !new URL(location.href).searchParams.has('class'));
   assert.equal(await page.$eval('.results-bar [data-class-select]', select => select.value), '', `${label}: removing the class chip resets the select`);
-  // Clearing returns to the whole list, where the same link jumps to its heading and is shareable.
+  // Clearing returns to the first static page, where a section link jumps to its heading and is shareable.
   await page.goto(page.url().split('?')[0]);
-  assert.equal(await rows(), total, `${label}: clearing the filters returns the whole list`);
+  assert.equal(await rows(), Math.min(perPage, total), `${label}: clearing the filters returns the first static page`);
   await page.$eval('[data-section-link]', node => node.click());
   await page.waitForFunction(() => location.hash.startsWith('#heading-'));
-  assert.equal(new URL(page.url()).search, '', `${label}: on the whole list a section link only jumps`);
+  assert.equal(new URL(page.url()).search, '', `${label}: on the static list a section link only jumps`);
   assert.equal(new URL(page.url()).pathname, route);
-  assert.equal(await rows(), total, `${label}: a section jump keeps every row`);
   assert.deepEqual(await page.evaluate(() => [[61, 1], [64, 1], [65, 1], [65, 2], [121, 2], [120, 2], [0, 1], [3, 1]].map(([rows, page]) => {
     const {pages, start, end} = window.REA_SEARCH.pageRange(rows, 60, page);
     return [pages, end - start];
   })), [[1, 61], [1, 64], [2, 60], [2, 5], [2, 61], [2, 60], [1, 0], [1, 3]], `${label}: a last page never holds under five rows`);
-  await page.goto(page.url().split('#')[0] + '#' + data.catalog.resources[data.catalog.resources.length - 1].id);
-  await page.waitForFunction(() => { const top = document.getElementById(location.hash.slice(1)).getBoundingClientRect().top; return top >= 0 && top < innerHeight; }, {timeout: 5000});
+  // A legacy /resources/#id link opens the static page that lists that record.
+  const last = data.catalog.resources[data.catalog.resources.length - 1].id;
+  const lastPage = pageMap[last];
+  await page.goto(`${new URL(page.url()).origin}${route}#${last}`);
+  await page.waitForFunction(expected => location.pathname === expected, {timeout: 10000}, lastPage > 1 ? `${route}page/${lastPage}/` : route);
+  await page.waitForFunction(() => { const node = document.getElementById(location.hash.slice(1)); if (!node) return false; const top = node.getBoundingClientRect().top; return top >= 0 && top < innerHeight; }, {timeout: 10000});
+  if (staticPages > 1) assert.ok(await rows() <= perPage, `${label}: a later static page holds at most ${perPage} rows`);
 }
 
 async function homepageScrolledSearch(page, language, viewport) {
