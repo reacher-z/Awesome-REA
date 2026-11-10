@@ -274,7 +274,9 @@ def main() -> int:
                       f'{WAIT_SECONDS // 60} minutes; the scheduled run notifies its pages once it does.')
         elif args.command == 'serving':
             if not wait_until_served(args.sha):
-                print(f'::warning::awesomerea.org did not serve {args.sha[:12]} within {WAIT_SECONDS // 60} minutes.')
+                print(f'::error::awesomerea.org did not serve {args.sha[:12]} within {WAIT_SECONDS // 60} minutes; '
+                      'the scheduled run notifies its pages once it does.')
+                return 1
         else:
             output('previous_sha256', previous_receipt(args.directory, current_run=os.environ.get('GITHUB_RUN_ID')))
     except (ValueError, KeyError, OSError, zipfile.BadZipFile, json.JSONDecodeError) as error:
