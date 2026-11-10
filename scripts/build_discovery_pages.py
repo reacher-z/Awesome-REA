@@ -437,7 +437,8 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
               title: str, description: str, content: str, schema: dict | None,
               assets: dict, icon_stylesheet: str | None, noindex: bool = False,
               main_class: str = '', extra_styles: tuple[str, ...] = (),
-              source_export: str = 'source-index.json', alternates: str = '', page_head: str = '') -> str:
+              source_export: str = 'source-index.json', alternates: str = '', page_head: str = '',
+              trail: list[tuple[str, str]] | None = None) -> str:
     if source_export not in ('source-index.json', 'source-published.json'):
         raise ValueError('Unsupported repository export route')
     zh = language == 'zh'
@@ -486,7 +487,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
   <link rel="stylesheet" href="{assets['browse']}">{extra_css}
   {('<link rel="stylesheet" href="' + escape(icon_stylesheet, quote=True) + '">' if icon_stylesheet else '')}
   {jsonld_script(schema) if schema else ''}
-  {'' if noindex else jsonld_script(breadcrumb_schema(canonical, [('首页' if zh else 'Home', site_url + root), (title, canonical)]))}
+  {'' if noindex else jsonld_script(breadcrumb_schema(canonical, [('首页' if zh else 'Home', site_url + root), *(trail or [(title, canonical)])]))}
 </head>
 <body>
 <a class="skip-link" href="#discovery-content">{('跳到内容' if zh else 'Skip to content')}</a>
@@ -578,7 +579,8 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
             content = resource_listing(resources, groups, SECTIONS, language, repository_url, page)
             rendered[page_route] = _document(site_url=site_url, repository_url=repository_url, path=page_route, language=language, title=page_title_text, description=page_description, content=content,
                                              schema=collection_page_schema(site_url + page_route, page_title_text, page_description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href,
-                                             source_export=source_export, main_class='page-resources', page_head=resource_page_head(resources, language), extra_styles=(assets['rea'],),
+                                             source_export=source_export, main_class='page-resources', page_head=resource_page_head(resources, language, page), extra_styles=(assets['rea'],),
+                                             trail=None if page == 1 else [(title, site_url + path), (RESOURCE_TEXT[language]['page_title'].format(n=page).capitalize(), site_url + page_route)],
                                              alternates=alternate_links(markdown=page_route + MARKDOWN, json_href='/api/v1/resources.json'))
             if page > 1:
                 section_of = {record['id']: key for key, records in groups.items() for record in records}

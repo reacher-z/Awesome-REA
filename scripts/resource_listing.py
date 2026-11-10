@@ -105,10 +105,13 @@ def _pager(page: int, pages: int, language: str) -> str:
             f'<ol>{items}</ol>{step(page + 1, text["next"], "next")}</nav>')
 
 
-def resource_page_head(resources: list[dict], language: str) -> str:
+def resource_page_head(resources: list[dict], language: str, page: int = 1) -> str:
     text = TEXT[language]
     prefix = '/zh' if language == 'zh' else ''
-    return (f'<div class="page-head wrap"><nav class="crumbs" aria-label="{text["crumbs"]}"><a href="{prefix}/">{text["home"]}</a><span aria-hidden="true">/</span><span aria-current="page">{text["title"]}</span></nav>'
+    # A later page's trail names the listing, then the page.
+    current = (f'<span aria-current="page">{text["title"]}</span>' if page == 1 else
+               f'<a href="{prefix}/resources/">{text["title"]}</a><span aria-hidden="true">/</span><span aria-current="page">{text["page_title"].format(n=page).capitalize()}</span>')
+    return (f'<div class="page-head wrap"><nav class="crumbs" aria-label="{text["crumbs"]}"><a href="{prefix}/">{text["home"]}</a><span aria-hidden="true">/</span>{current}</nav>'
             f'<div class="ph-row"><div class="ph-title"><h1>{text["title"]}</h1><span class="h-count">{_count(len(resources))}</span></div>'
             f'<form class="list-search" role="search" data-list-search><label class="vh" for="lq">{text["search_label"]}</label>{icon("search")}'
             f'<input id="lq" name="q" type="search" placeholder="{text["placeholder"]}" autocomplete="off" spellcheck="false" data-list-input><kbd class="hs-kbd">/</kbd></form></div>'
