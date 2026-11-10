@@ -79,14 +79,8 @@ def pushed(record: dict) -> datetime | None:
     return None
 
 
-def short_title(title: str) -> str:
-    """The name part of a curated title such as "LibrePods: AirPods features on Android" or "REA — Reverse Engineer Anything"."""
-    return re.split(r': | — ', title, maxsplit=1)[0]
-
-
 def curated_entries(record: dict, zh: bool) -> list[tuple[str, str]]:
-    """(name, page) for each curated entry; the English title's name part reads the same in both languages."""
-    return [(short_title(entry['title_en']), entry[f'href_{"zh" if zh else "en"}'])
+    return [(entry[f'title_{"zh" if zh else "en"}'], entry[f'href_{"zh" if zh else "en"}'])
             for entry in record.get('related_entries', []) if entry.get('kind') == 'curated']
 
 
@@ -136,7 +130,8 @@ def faqs(category: str, label: str, records: list[dict], scan_classes: dict, zh:
             items.append(('Which licenses do these repositories use?', text))
     curated = [r for r in records if curated_entries(r, zh)]
     if curated:
-        examples = series([f'<a href="{escape(href, quote=True)}">{escape(title)}</a>' for r in curated[:3] for title, href in curated_entries(r, zh)[:1]], zh)
+        # Each example is the repository's owner/name, linked to its curated entry, so long entry titles stay out of the sentence.
+        examples = series([f'<a href="{escape(curated_entries(r, zh)[0][1], quote=True)}">{escape(r.get("full_name") or r["name"])}</a>' for r in curated[:3]], zh)
         items.append(('其中哪些仓库有精选条目？', f'{n(total)} 个仓库中有 {n(len(curated))} 个链接到精选条目，条目附有审阅过的说明、使用条件和证据，例如{examples}。') if zh else
                      ('Which of these repositories have a curated entry?', f'{n(len(curated))} of {n(total)} {verb(len(curated), "link", "links")} a curated entry with a reviewed description, requirements and evidence, for example {examples}.'))
     classes = Counter(scan_classes.get(r['id']) for r in records)

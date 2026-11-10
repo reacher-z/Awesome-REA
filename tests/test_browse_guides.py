@@ -69,7 +69,6 @@ class BrowseGuideTests(unittest.TestCase):
                     self.assertIn(question['name'], visible)
                     self.assertIn(question['acceptedAnswer']['text'], visible)
                 answers = ' '.join(question['acceptedAnswer']['text'] for question in questions)
-                self.assertIn('Ghidra', answers)
                 self.assertIn('tool-0', answers)
                 markdown = (output / prefix / 'browse/native-analysis/index.md').read_text()
                 self.assertIn(browse_guides.definition('native-analysis', zh), markdown)
@@ -99,7 +98,7 @@ class BrowseGuideTests(unittest.TestCase):
         self.assertIn('这些仓库中有多少在 README 中写明了安装和用法？', chinese)
         self.assertIn('哪些 Android 应用类仓库的星标最多？', chinese)
         curated = english['Which of these repositories have a curated entry?']
-        self.assertIn('>LibrePods</a>', curated)
+        self.assertIn('href="/resources/ghidra/">owner/tool-0</a>', curated)
         self.assertNotIn('AirPods', curated)
 
 
