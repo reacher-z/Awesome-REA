@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from collections import Counter
 from html import escape
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -348,8 +349,36 @@ def render_homepage(*, site_dir: Path, explorer_html: str, resources: list[dict]
             f'<body class="page-home">{sprite()}{body}\n</body>\n</html>\n')
 
 
+def _slug(text: str) -> str:
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
+
+
+def _search_parts(record: dict, language: str) -> tuple[str, str, str, str]:
+    """The repository label search matches, plus the owner and the rest of the evidence link the result row shows.
+
+    GitHub evidence becomes owner/repo + /blob/<12-character commit>/path: the index carries the repository name and the
+    text file carries the owner and the rest. Any other evidence keeps its full URL, labelled by host and path.
+    """
+    evidence = evidence_label(record['evidence_url'])
+    short = record['evidence_url'].removeprefix('https://github.com/')
+    if short == record['evidence_url'] or '/' not in short:
+        return evidence['repo'], '', record['evidence_url'], evidence
+    parts = short.split('/')
+    if len(parts) > 3 and parts[2] in ('blob', 'tree') and len(parts[3]) == 40:
+        parts[3] = parts[3][:12]
+    owner, name = parts[0], parts[1]
+    return name, owner, '/'.join(parts)[len(owner) + 1 + len(name):], evidence
+
+
 def search_index(resources: list[dict], papers: list[dict], language: str, order: dict[str, list[str]]) -> dict:
-    """The lazy index behind the palette and the home drawer: compact arrays, one file per language."""
+    """The lazy index behind the palette and the home drawer: compact arrays, one file per language.
+
+    It holds what ranking and filtering read. Row:
+    [id, name, kind, targets, category, repository, featured rank, alias, connection, class, status, section, reviewed, added].
+    "repository" is the GitHub repository name, or the host label for other evidence. id is 0 when it is the slug of that
+    repository name and 1 when it is that slug plus "-case"; alias is 1 when it is the repository name.
+    Descriptions, owners, evidence paths and previews follow in search_text(), row for row; "b" pairs the two files.
+    """
     zh = language == 'zh'
     kinds = list(KIND_ORDER)
     categories = sorted(CATEGORIES)
@@ -358,42 +387,65 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
     sections = sorted({collection_section(record) for record in resources})
     rows = []
     for record in resources:
-        evidence = evidence_label(record['evidence_url'])
-        short = record['evidence_url'].removeprefix('https://github.com/')
-        if short != record['evidence_url']:
-            parts = short.split('/')
-            if len(parts) > 3 and parts[2] in ('blob', 'tree') and len(parts[3]) == 40:
-                parts[3] = parts[3][:12]
-            short = '/'.join(parts)
+        label, _, _, evidence = _search_parts(record, language)
         alias = evidence['repo'].split('/')[-1] if evidence['host'] == 'github.com' and evidence['repo'] else ''
-        lead = _lead(record, language)
-        if len(lead) > 220:
-            lead = lead[:217].rsplit(' ', 1)[0] + '…'
-        rows.append([record['id'], _name(record, language), kinds.index(record['kind']),
+        alias = alias if alias.lower() != record['name'].lower() else ''
+        base = label.split('/')[-1]
+        identifier = record['id']
+        if base.isascii() and identifier == _slug(base):
+            identifier = 0
+        elif base.isascii() and identifier == _slug(base) + '-case':
+            identifier = 1
+        rows.append([identifier, _name(record, language), kinds.index(record['kind']),
                      ''.join(str(DOMAIN_ORDER.index(target)) for target in _ordered_targets(record, order)),
-                     categories.index(record['category']), lead,
-                     '' if short != record['evidence_url'] else evidence['repo'], short,
-                     str(record['verified_at'])[:10], record.get('added_at') or '', ranks.get(record['id'], -1),
-                     alias if alias.lower() != record['name'].lower() else '',
+                     categories.index(record['category']), label, ranks.get(record['id'], -1),
+                     1 if alias and alias == base else alias,
                      connections.index(CONNECTION_OF[record['relationship']]),
                      -1 if record.get('evidence_class') is None else int(record['evidence_class']),
                      'unknown' if record.get('evidence_status') == 'unknown' else '',
-                     record.get('preview') or '', record.get('preview_kind') or '',
-                     sections.index(collection_section(record))])
+                     sections.index(collection_section(record)),
+                     str(record['verified_at'])[:10], record.get('added_at') or ''])
     paper_rows = []
     for paper in papers_newest_first(papers):
         paper_rows.append([paper['id'], paper['title_zh'] if zh else paper['title'], paper['year'], paper['venue'],
                            DOMAIN_ORDER.index(paper['targets'][0]), paper.get('arxiv_id') or '', paper_section(paper)])
     return {
-        'v': 1, 'lang': language, 'kinds': kinds, 'kindLabels': [KIND_LABELS[kind][zh] for kind in kinds],
+        'v': 2, 'lang': language, 'kinds': kinds, 'kindLabels': [KIND_LABELS[kind][zh] for kind in kinds],
         'kindPlural': [KIND_PLURAL[kind][zh] for kind in kinds], 'kindCodes': [KIND_CODES[kind] for kind in kinds],
         'targets': list(DOMAIN_ORDER), 'targetLabels': [_target_label(target, language) for target in DOMAIN_ORDER],
         'targetCodes': [DOMAIN_CODES[target] for target in DOMAIN_ORDER],
         'categories': categories, 'categoryLabels': [CATEGORIES[category][zh] for category in categories],
         'connections': connections, 'connectionLabels': [CONNECTIONS[key][0][zh] for key in connections],
         'sections': sections, 'pinned': list(PINNED),
-        'r': rows, 'p': paper_rows,
+        'b': search_stamp(resources), 'r': rows, 'p': paper_rows,
     }
+
+
+def search_row_id(row: list) -> str:
+    """The record id of a search_index() row, as site.js reads it."""
+    base = row[5].split('/')[-1]
+    return row[0] if isinstance(row[0], str) else _slug(base) + ('-case' if row[0] == 1 else '')
+
+
+def search_stamp(resources: list[dict]) -> str:
+    """Short hash of the row order shared by search_index() and search_text(); the page pairs the two files by it."""
+    return hashlib.sha1('\n'.join(record['id'] for record in resources).encode()).hexdigest()[:12]
+
+
+def search_text(resources: list[dict], language: str) -> dict:
+    """Row for row with search_index()["r"]: [description, GitHub owner, rest of the evidence link, preview, preview kind].
+
+    preview is 1 when it is /previews/<id>.png.
+    """
+    rows = []
+    for record in resources:
+        _, owner, rest, _ = _search_parts(record, language)
+        lead = _lead(record, language)
+        if len(lead) > 220:
+            lead = lead[:217].rsplit(' ', 1)[0] + '…'
+        preview = record.get('preview') or ''
+        rows.append([lead, owner, rest, 1 if preview == f'/previews/{record["id"]}.png' else preview, record.get('preview_kind') or ''])
+    return {'v': 2, 'lang': language, 'b': search_stamp(resources), 'n': len(rows), 't': rows}
 
 
 def build_home(site_dir: Path, *, explorer_pages: dict[str, str], resources: list[dict], papers: list[dict],
@@ -412,5 +464,6 @@ def build_home(site_dir: Path, *, explorer_pages: dict[str, str], resources: lis
         page.write_text(render_homepage(site_dir=site_dir, explorer_html=explorer_pages[language], resources=resources, papers=papers,
                                         discovery_count=discovery_count, last_scan=last_scan, language=language, repository_url=repository_url,
                                         repository_export=repository_export, order=order), encoding='utf-8')
-        name = 'search-index.zh.json' if language == 'zh' else 'search-index.json'
-        (site_dir / name).write_text(json.dumps(search_index(resources, papers, language, order), ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+        suffix = '.zh' if language == 'zh' else ''
+        (site_dir / f'search-index{suffix}.json').write_text(json.dumps(search_index(resources, papers, language, order), ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+        (site_dir / f'search-text{suffix}.json').write_text(json.dumps(search_text(resources, language), ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
