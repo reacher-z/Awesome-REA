@@ -14,6 +14,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
+import build_manifest
 import indexnow_automation as automation
 import submit_indexnow as indexnow
 
@@ -86,7 +87,10 @@ class WaitTests(unittest.TestCase):
             if query:
                 self.assertRegex(query, r'^indexnow=[0-9a-f]{16}$')
                 uncached.append(url)
-                value = state['commit'] if name == 'source-commit.txt' else state['origin']
+                if name.startswith('previews/'):
+                    value = state.get('previews', {}).get(name, OSError('missing'))
+                else:
+                    value = state['commit'] if name == 'source-commit.txt' else state['origin']
             else:
                 self.assertEqual(name, 'build-manifest.json', 'only the manifest is read through the edge cache')
                 value = state['edge']
@@ -137,6 +141,42 @@ class WaitTests(unittest.TestCase):
                                    + [self.served(origin=self.manifest, edge=self.manifest)]), 'live')
         with self.assertRaises(ValueError):
             automation.wait_for_deployment('main', self.dist, github=FakeGitHub())
+
+    def test_a_build_that_differs_only_in_preview_images_takes_the_served_images(self):
+        (self.dist / 'index.html').write_bytes(b'<!doctype html><title>Home</title>')
+        (self.dist / 'sitemap.xml').write_bytes(b'<urlset></urlset>')
+        (self.dist / 'previews').mkdir()
+        (self.dist / 'previews' / 'a.png').write_bytes(b'built image')
+        built_manifest = build_manifest.write_build_manifest(self.dist)
+        built = (self.dist / 'build-manifest.json').read_bytes()
+        image = b'served image'
+        served_manifest = json.loads(built)
+        served_manifest['files']['previews/a.png'] = {'sha256': hashlib.sha256(image).hexdigest(), 'bytes': len(image)}
+        served = build_manifest.manifest_bytes(served_manifest)
+
+        # The edge has not caught up, the image is unreadable, or it does not match the served manifest: DIST is kept.
+        for previews, edge in (({'previews/a.png': image}, None), ({}, served), ({'previews/a.png': b'other'}, served)):
+            self.assertEqual(self.wait(FakeGitHub(), [{**self.served(origin=served, edge=edge), 'previews': previews}],
+                                       wait_seconds=120), 'pending')
+            self.assertEqual((self.dist / 'build-manifest.json').read_bytes(), built)
+            self.assertEqual(build_manifest.read_build_manifest(self.dist), built_manifest)
+
+        self.assertEqual(self.wait(FakeGitHub(), [{**self.served(origin=served, edge=served),
+                                                   'previews': {'previews/a.png': image}}]), 'live')
+        self.assertEqual((self.dist / 'previews' / 'a.png').read_bytes(), image)
+        self.assertEqual(build_manifest.read_build_manifest(self.dist), served_manifest)
+
+        # Any other difference, such as a page, is another build.
+        (self.dist / 'previews' / 'a.png').write_bytes(b'built image')
+        (self.dist / 'build-manifest.json').write_bytes(built)
+        page = json.loads(served)
+        page['files']['index.html']['html_sha256'] = '0' * 64
+        with self.assertRaisesRegex(ValueError, 'reproducible'):
+            self.wait(FakeGitHub(), [{**self.served(origin=build_manifest.manifest_bytes(page)),
+                                      'previews': {'previews/a.png': image}}])
+        self.assertEqual((self.dist / 'build-manifest.json').read_bytes(), built)
+        self.assertFalse(automation.differs_only_in_previews(b'not json', built))
+        self.assertFalse(automation.differs_only_in_previews(b'{"files": {}, "schema_version": 2}', b'{"files": {}}'))
 
     def test_a_deferred_wait_warns_and_succeeds(self):
         output = StringIO()
