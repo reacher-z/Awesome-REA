@@ -59,13 +59,13 @@ def validate_route_inventory(urls, resources, papers, *, include_browse=True, in
     expected = set(routes)
     for prefix in ("", "/zh"):
         expected.update(prefix + path for path in ("/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/", "/api/"))
-        # The later static pages of /resources/ and /cases/, each indexed with its own address, and the Data class pages.
+        # The later static pages of /resources/ and /cases/, each indexed with its own address.
         # /resources/ lists the classed papers with the resources, so the page count follows the same listed records.
         expected.update(page_path(page, "zh" if prefix else "en") for page in range(2, page_count(len(listed_records(resources, papers))) + 1))
         cases = len(case_order(resources))
         expected.update(case_page_path(page, "zh" if prefix else "en") for page in range(2, -(-cases // CASE_PER_PAGE) + 1))
-        expected.update(f'{prefix}/data/{key}/' for key in DATA_CLASSES)
         if include_browse:
+            expected.update(f'{prefix}/data/{key}/' for key in DATA_CLASSES)
             expected.add(prefix + "/browse/")
             expected.update(f"{prefix}/browse/{category}/" for category in CATEGORIES)
         if include_discoveries:
