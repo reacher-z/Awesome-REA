@@ -153318,6 +153318,7 @@
     "description_zh": "femto8 是 PICO-8 幻想主机的开源 C 语言重实现，面向 CPU 更小、内存更少的嵌入式系统。桌面构建使用 SDL2 和 make。README 将 Jacopo Santoni 的 retro8 列为主要影响来源。",
     "evidence_url": "https://github.com/benbaker76/femto8/blob/d83bab199a8dafb6c00aa8ecd16d2b50e7d5c562/README.md",
     "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
     "requirements": [
       "Desktop builds need SDL2 development files and pkg-config, then make. The README gives package names for Debian/Ubuntu, Fedora, Homebrew, and MSYS2.",
       "GitHub reports the license as MIT."
