@@ -45,6 +45,9 @@ from urllib.parse import unquote
 import zipfile
 import zlib
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import forked_checks  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 SALT = bytes.fromhex('9b5c46ad6b8ee9149e030519d31a8f5f')
 # sha256(SALT + gram) for each protected gram: two-word names in both orders and joined, a GitHub handle,
@@ -445,9 +448,7 @@ def default_paths(root: Path = ROOT) -> list[Path]:
     return paths
 
 
-def scan(paths, root: Path = ROOT, detector: Detector | None = None) -> list[Finding]:
-    """Findings for these files: every file, archives included, is read."""
-    detector = detector or Detector(SALT, PROTECTED, PARTS)
+def _scan_serial(paths, root: Path, detector: Detector) -> list[Finding]:
     findings = []
     for path in paths:
         if not path.is_file():
@@ -458,6 +459,34 @@ def scan(paths, root: Path = ROOT, detector: Detector | None = None) -> list[Fin
             findings.append(Finding(name, 0, 'file path'))
         findings.extend(detector.scan_bytes(data, name))
     return findings
+
+
+_WORKER_DETECTOR: Detector | None = None
+
+
+def _scan_chunk(chunk) -> list[Finding]:
+    global _WORKER_DETECTOR
+    paths, root = chunk
+    # One detector per worker process: it remembers which words it has already digested.
+    _WORKER_DETECTOR = _WORKER_DETECTOR or Detector(SALT, PROTECTED, PARTS)
+    return _scan_serial(paths, root, _WORKER_DETECTOR)
+
+
+# A default scan reads chunks of consecutive paths in forked worker processes.
+CHUNK_FILES = 200
+
+
+def scan(paths, root: Path = ROOT, detector: Detector | None = None) -> list[Finding]:
+    """Findings for these files, in path order: every file, archives included, is read.
+
+    Without a given detector, chunks of consecutive paths are read by worker processes; their findings are joined
+    in chunk order, so the result equals a scan in one process.
+    """
+    if detector is not None:
+        return _scan_serial(paths, root, detector)
+    paths = list(paths)
+    chunks = [(paths[start:start + CHUNK_FILES], root) for start in range(0, len(paths), CHUNK_FILES)]
+    return [finding for found in forked_checks.ordered_map(_scan_chunk, chunks, chunksize=1) for finding in found]
 
 
 def main(argv=None):

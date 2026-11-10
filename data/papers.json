@@ -1842,11 +1842,10 @@
       "https://github.com/chenmancm169/UI2App/blob/520a59aad0899b1eb61e80351aa1ffbfad9322a4/LICENSE",
       "https://github.com/chenmancm169/UI2App/blob/520a59aad0899b1eb61e80351aa1ffbfad9322a4/requirements.txt",
       "https://github.com/chenmancm169/UI2App/blob/520a59aad0899b1eb61e80351aa1ffbfad9322a4/iis/evaluate.py",
-      "https://huggingface.co/datasets/UI2App/UI2App/blob/32e6f6193c5c265cf6d8afcbce12b641e3c2a758/README.md",
-      "https://huggingface.co/datasets/UI2App/UI2App/blob/32e6f6193c5c265cf6d8afcbce12b641e3c2a758/annotations/rii.jsonl"
+      "https://huggingface.co/datasets/UI2App/UI2App/blob/2233b4073ffc0aae5a50eb708f85a45bc0cb15c2/README.md"
     ],
-    "metadata_notes": "Use v2’s 95 applications and 600 screenshots, not v1’s 45/327 counts. The arXiv DOI is registered. Public code is MIT; the dataset and reference annotations are CC BY 4.0, with upstream code and third-party asset rights separate. The documented pipeline needs Python 3.10+, Node/npm, pnpm, Chromium, Tesseract and model access; Auto IIS additionally needs an authenticated Codex CLI.",
-    "metadata_notes_zh": "采用 v2 的 95 个应用与 600 张截图，不混用 v1 的 45/327 数量。arXiv DOI 已注册。公开代码采用 MIT，数据集和参考标注采用 CC BY 4.0；上游代码及第三方资产权利另行处理。文档所述流水线需要 Python 3.10+、Node/npm、pnpm、Chromium、Tesseract 和模型访问权限；Auto IIS 还需要已登录的 Codex CLI。",
+    "metadata_notes": "Use v2’s 95 applications and 600 screenshots, not v1’s 45/327 counts. The arXiv DOI is registered. Public code is MIT; the dataset is CC BY 4.0, with upstream code and third-party asset rights separate. The documented pipeline needs Python 3.10+, Node/npm, pnpm, Chromium, Tesseract and model access; Auto IIS additionally needs an authenticated Codex CLI.",
+    "metadata_notes_zh": "采用 v2 的 95 个应用与 600 张截图，不混用 v1 的 45/327 数量。arXiv DOI 已注册。公开代码采用 MIT，数据集采用 CC BY 4.0；上游代码及第三方资产权利另行处理。文档所述流水线需要 Python 3.10+、Node/npm、pnpm、Chromium、Tesseract 和模型访问权限；Auto IIS 还需要已登录的 Codex CLI。",
     "kind": "research",
     "class": "website",
     "verified_at": "2026-10-17",
@@ -5986,7 +5985,6 @@
     "evidence_urls": [
       "https://arxiv.org/abs/2608.24955v1",
       "https://arxiv.org/html/2608.24955v1",
-      "https://lion10.github.io/",
       "https://github.com/lion10/csur2026_binary_decompilation/blob/e733872b892148660737926743dcbd864af86f6c/README.md",
       "https://github.com/lion10/csur2026_binary_decompilation/blob/e733872b892148660737926743dcbd864af86f6c/papers.csv",
       "https://api.github.com/repos/lion10/csur2026_binary_decompilation/git/trees/6895d55f00b8520ec345d0380c0efa65969462dc"

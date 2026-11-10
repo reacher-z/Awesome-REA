@@ -53,8 +53,8 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '26'
-      # The Cloudflare Pages build command: validate.py, node --check, build_site.py,
-      # validate_discovery.py and validate_site.py. The asset URL is only written into HTML.
+      # The production build: validate.py, node --check, build_site.py, validate_discovery.py,
+      # validate_site.py and validate_schema_org.py. Publication runs it with --publish, without the three validators.
       - name: Run the production build
         run: python3 scripts/build_production.py
   browser:
