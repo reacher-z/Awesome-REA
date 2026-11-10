@@ -97,4 +97,4 @@ python3 scripts/build_site.py
 python3 scripts/verify_evidence_entry.py <entry-url>
 ```
 
-`build_site.py` 把 `evidence_class`、`evidence_status`、`scope`、`runtime_status`、`evidence_review` 与预览字段合并进 `catalog.json` / `catalog-index.json`，为仓库视图写出紧凑的 `scan-classes.json`，并在精选条目缺少档位时直接报错。`/api/v1/resources.json`、其 CSV 版本和每个条目的 `record.json` 都带有 `evidence_class`、`evidence_status`、`scope`、`preview_kind` 与绝对地址 `preview_url`。
+`build_site.py` 把 `evidence_class`、`evidence_status`、`scope`、`runtime_status`、`evidence_review` 与预览字段合并进 `catalog.json` / `catalog-index.json`，为仓库视图写出紧凑的 `scan-classes.json`，并在精选条目缺少档位时直接报错。`/api/v1/resources.json`、其 CSV 版本和每个条目的 `record.json` 都带有 `evidence_class`、`evidence_status`、`scope`、`preview_kind` 与绝对地址 `preview_url`；这些字段自 API 1.1.0 版起提供，位于 CSV 的最后五列。`/downloads/` 数据包也带有同样的字段。
