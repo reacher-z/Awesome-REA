@@ -431,9 +431,10 @@ def _resource_content(record: dict, language: str, discussion: str = '', feedbac
     links = [_link(record['url'], label('Visit original resource', '访问原始资源'), primary=True)]
     if record['evidence_url'] != record['url']:
         links.append(_link(record['evidence_url'], label(*PRIMARY_SOURCE_LABEL)))
+    answer = (f'<p class="entry-answer">{escape(title)}是{escape(kind)}，来源复核于 {escape(record["verified_at"][:10])}。</p>' if zh else '')
     featured = f'<span class="entry-featured">{escape(HOME_COPY[language]["featured"])}</span>' if record['id'] in PINNED else ''
     content = f'''<header class="entry-heading"><p class="entry-eyebrow">{escape(kind)}{featured}</p><h1>{escape(title)}</h1>
-  <p class="entry-description">{escape(description)}</p>{_summary(facts)}{_repository_row(record, language)}</header>
+  {answer}<p class="entry-description">{escape(description)}</p>{_summary(facts)}{_repository_row(record, language)}</header>
 <nav class="entry-actions" aria-label="{label('Resource links', '资源链接')}">{''.join(links)}</nav>{_tools(record, language)}
 {evidence}<section class="entry-section" aria-labelledby="entry-requirements"><h2 id="entry-requirements">{escape(REQUIREMENTS_LABEL[zh])}</h2><ul class="entry-requirements">{requirements}</ul></section>
 {_cite(record, language, entry_url) if entry_url else ''}{_star_line(language, repository_url)}

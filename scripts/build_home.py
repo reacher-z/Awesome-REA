@@ -249,7 +249,7 @@ OLD_TITLES = {'en': ('Awesome Reverse Engineering Anything · Tools, Cases &amp;
 def home_title(resources: list[dict], papers: list[dict], language: str) -> str:
     """The homepage title: the brand, then the real counts (at most 60 characters)."""
     res, pap = _count(len(resources)), _count(len(papers))
-    return f'Awesome REA：逆向一切，{res} 项资源与 {pap} 篇论文' if language == 'zh' else f'Awesome REA: Reverse Engineering Anything, {res} Resources'
+    return f'Awesome REA（逆向一切）是资源目录：{res} 项资源与 {pap} 篇论文' if language == 'zh' else f'Awesome REA: Reverse Engineering Anything, {res} Resources'
 
 
 def _masthead(resources, papers, discovery_count, last_scan, language, prefix, repository_url) -> str:
@@ -346,7 +346,7 @@ def _featured_projects(language: str) -> str:
             f'</div><div class="promo-grid">{"".join(cards)}</div></section>')
 
 
-FAQ_TEXT = {'en': ('Questions', 'Questions about Awesome REA'), 'zh': ('常见问题', 'Awesome REA 常见问题')}
+FAQ_TEXT = {'en': ('FAQ', 'FAQ'), 'zh': ('常见问题', '常见问题')}
 
 
 def faq_items(resources: list[dict], papers: list[dict], discovery_count: int, last_scan: str | None, language: str) -> list[tuple[str, str]]:
