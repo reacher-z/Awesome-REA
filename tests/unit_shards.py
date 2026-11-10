@@ -4,42 +4,49 @@ CI_TEST_SHARD=0 CI_TEST_SHARDS=3 python3 tests/unit_shards.py
 The shard comes from the environment, so the tests see no extra command-line arguments.
 
 Discovery is the same as `python3 -m unittest discover -s tests`. Every test class stays whole in one
-shard, and so does every module that defines setUpModule, so each class or module fixture runs once.
+shard, and so does every module that defines setUpModule, so each class or module fixture runs once; the
+classes that read the shared build of tests/shared_build.py form one group, so the site is built once.
 These groups are dealt heaviest first to the lightest shard, and each shard runs its tests in discovery
 order. Every shard computes the same plan and checks that the shards
 are non-empty, pairwise disjoint and together equal the whole discovery before it runs its own part.
 """
 import os
+from pathlib import Path
 import sys
 import unittest
 
-# Approximate seconds per group on a GitHub-hosted runner, from the unit logs of November 2026.
-# They only balance the shards: an unlisted group weighs FALLBACK_SECONDS per test, and the coverage
-# checks below never depend on them. Re-measure from a run's timestamped unit logs when shards drift.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import shared_build  # noqa: E402
+
+# Approximate seconds per group on a GitHub-hosted runner, measured from the timestamped unit logs of a run of this
+# change on top of #4402 (November 2026); the shared-build group is the sum of its classes. They only balance the
+# shards: an unlisted group weighs FALLBACK_SECONDS per test, and the coverage checks below never depend on them.
+# Re-measure from a run's timestamped unit logs when shards drift.
 WEIGHTS = {
-    'test_public_source_supplements.PublicSourceSupplementTests': 369,
-    'test_link_fragments.LinkFragmentTest': 273,
-    'test_language_fragment.LanguageFragmentTests': 76,
-    'test_copy_permalinks.CopyPermalinkTests': 74,
-    'test_print_layout.PrintLayoutTests': 73,
-    'test_discovery_leads.TrustedReviewTest': 32,
-    'test_discovery_ingest.TrackerTest': 29,
-    'test_review_pr.ReviewerDataSelectionTest': 17,
-    'test_catalog_revision.CatalogRevisionTests': 16,
-    'test_discoveries.TrustedReviewTest': 16,
-    'test_requirement_budget.RequirementBudgetTests': 15,
-    'test_evidence_pins.EvidencePinTests': 11,
-    'test_discoveries.BatchValidationTest': 8,
-    'test_review_supplements.PublicSupplementReviewerTests': 6,
-    'test_readme_secondary_targets.ReadmeSecondaryTargetTest': 4,
-    'test_rest_readme_validation.RecoveryProvenanceTests': 4,
+    'shared_build': 400,
+    'test_public_source_supplements.PublicSourceSupplementTests': 375,
+    'test_staged_site_build.StagedSiteBuildTests': 144,
+    'test_discovery_leads.TrustedReviewTest': 36,
+    'test_discovery_ingest.TrackerTest': 33,
+    'test_review_pr.ReviewerDataSelectionTest': 31,
+    'test_discoveries.TrustedReviewTest': 25,
+    'test_readme_secondary_targets.ReadmeSecondaryTargetTest': 25,
+    'test_catalog_revision.CatalogRevisionTests': 20,
+    'test_requirement_budget.RequirementBudgetTests': 19,
+    'test_evidence_pins.EvidencePinTests': 18,
+    'test_discoveries.BatchValidationTest': 9,
+    'test_review_supplements.PublicSupplementReviewerTests': 7,
+    'test_review_pr.PrivateFileRulesTest': 6,
+    'test_paper_files.PaperFileTest': 6,
+    'test_privacy_guard.PrivacyGuardTests': 6,
+    'test_discovery_leads.LayersAndExportTest': 5,
+    'test_rest_readme_validation.RecoveryProvenanceTests': 5,
     'test_scheduled_source_scan.NestedSchemaTests': 4,
-    'test_review_pr.PrivateFileRulesTest': 4,
-    'test_privacy_guard.PrivacyGuardTests': 4,
-    'test_review_dispatch.DispatchedReviewTest': 4,
-    'test_evidence_withdrawal.WithdrawnEvidenceTests': 3,
+    'test_evidence_withdrawal.WithdrawnEvidenceTests': 4,
+    'test_readme_case_methods.ReadmeCaseMethodTests': 4,
+    'test_section_target_counts.SectionCountReconciliationTests': 4,
 }
-FALLBACK_SECONDS = 0.1
+FALLBACK_SECONDS = 0.05
 
 
 def cases(suite):
@@ -50,8 +57,14 @@ def cases(suite):
             yield test
 
 
+SHARED_BUILD_GROUP = 'shared_build'
+
+
 def group_key(test):
     module = type(test).__module__
+    # Tests that read the per-process build of tests/shared_build.py run in one shard, which builds the site once.
+    if getattr(sys.modules.get(module), 'built_site', None) is shared_build.built_site:
+        return SHARED_BUILD_GROUP
     if hasattr(sys.modules.get(module), 'setUpModule'):
         return module
     return f'{module}.{type(test).__qualname__}'

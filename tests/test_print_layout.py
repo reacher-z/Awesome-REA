@@ -2,12 +2,11 @@
 from pathlib import Path
 import re
 import sys
-import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-import build_site
+from shared_build import built_site
 
 CSS = (ROOT / 'site/styles.css').read_text(encoding='utf-8')
 
@@ -50,12 +49,10 @@ class PrintLayoutTests(unittest.TestCase):
     def test_print_selectors_match_the_built_pages(self):
         block = print_block(CSS)
         classes = set(re.findall(r'\.([a-z][a-z0-9-]*)', re.sub(r'content:"[^"]*"', '', block)))
-        with tempfile.TemporaryDirectory() as directory:
-            output = Path(directory) / 'dist'
-            build_site.build_site(output)
-            pages = {route: (output / route / 'index.html').read_text(encoding='utf-8') for route in (
-                '', 'resources', 'cases', 'about', 'browse', 'browse/android', 'papers', 'resources/ghidra', 'papers/paper-dire',
-                'zh/resources', 'zh/papers')}
+        output = built_site()
+        pages = {route: (output / route / 'index.html').read_text(encoding='utf-8') for route in (
+            '', 'resources', 'cases', 'about', 'browse', 'browse/android', 'papers', 'resources/ghidra', 'papers/paper-dire',
+            'zh/resources', 'zh/papers')}
         used = set()
         for html in pages.values():
             for attribute in re.findall(r'class="([^"]*)"', html):
