@@ -2,11 +2,11 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-09T21:32:33+00:00",
-  "entry_count": 5148,
+  "generated_at": "2026-11-10T01:21:51+00:00",
+  "entry_count": 5149,
   "class_counts": {
    "0": 15,
-   "1": 1126,
+   "1": 1127,
    "2": 3831,
    "3": 163
   },
@@ -144556,6 +144556,35 @@
    "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
+  },
+  {
+   "id": "femto8",
+   "url": "https://github.com/benbaker76/femto8",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 1883,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 1,
+    "release_asset_count": 3,
+    "demo": [
+     "image"
+    ],
+    "media_count": 3,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full reconstruction candidate: Class 0 requires manual scope review",
+   "checked_at": "2026-11-09T11:09:35+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": true
   }
  ]
 }
