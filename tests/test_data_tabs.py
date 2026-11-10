@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(ROOT / 'tests'))
 from build_discovery_pages import build_discovery_pages
-from build_home import _folder_tabs, search_index
+from build_home import _folder_tabs, search_index, search_row_id
 from build_readme import SECTION_TABS
 from data_classes import DATA_CLASSES, NON_DATA_TABS, listed_records
 from resource_listing import resource_listing, resource_page_head
@@ -36,7 +36,7 @@ class DataTabTests(unittest.TestCase):
         listed = listed_records(self.resources, self.papers)
         for language, prefix in [('en', ''), ('zh', '/zh')]:
             for html in (_folder_tabs(listed, language, prefix, len(self.papers)),
-                         resource_page_head(listed, language, len(self.papers))):
+                         resource_page_head(listed, language, 1, len(self.papers))):
                 tabs = re.findall(r'<a class="folder[^>]*?data-tab="([a-z]+)"[^>]*?>.*?<span class="count">(\d+)</span>', html)
                 self.assertEqual([key for key, _ in tabs], ['all', *DATA_CLASSES, *NON_DATA_TABS])
                 self.assertEqual(dict(tabs)['all'], '4')
@@ -71,15 +71,15 @@ class DataTabTests(unittest.TestCase):
         index = search_index(listed, self.papers, 'en', {})
         by_id = {record['id']: record for record in listed}
         def in_tab(row, tab):
-            cls, section = row[18], row[17]
+            cls, section = row[14], row[11]
             if tab == 'all':
                 return cls >= 0
             if tab in ('tools', 'tutorial'):
                 return cls < 0 and index['sectionTabs'][section] == tab
             return cls >= 0 and index['classes'][cls] == tab
         for row in index['r']:
-            record = by_id[row[0]]
-            expected = record.get('class') or SECTION_TABS[index['sections'][row[17]]]
+            record = by_id[search_row_id(row)]
+            expected = record.get('class') or SECTION_TABS[index['sections'][row[11]]]
             self.assertEqual([tab for tab in ('all', *DATA_CLASSES, 'tools', 'tutorial') if in_tab(row, tab)],
                              ['all', expected] if 'class' in record else [expected])
 

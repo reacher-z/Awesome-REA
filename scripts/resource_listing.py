@@ -169,7 +169,7 @@ def resource_listing(resources: list[dict], groups: dict[str, list[dict]], secti
     kind_options = [(kind, KIND_LABELS[kind][zh], number) for kind, number in kinds.most_common()]
     category_options = [(key, CATEGORIES[key][zh], number) for key, number in sorted(categories.items(), key=lambda item: (-item[1], item[0]))]
     evidence_counts = Counter('unknown' if record.get('evidence_status') == 'unknown' else str(record['evidence_class'])
-                              for record in resources if record.get('evidence_status') == 'unknown' or record.get('evidence_class') is not None)
+                              for record in data_points if record.get('evidence_status') == 'unknown' or record.get('evidence_class') is not None)
     evidence_options = ''.join(f'<option value="{key}">{text["unknown"] if key == "unknown" else "C" + key} ({_count(evidence_counts[key])})</option>'
                                for key in ('0', '1', '2', '3', 'unknown') if evidence_counts[key])
     sort_options = ''.join(f'<option value="{value}">{text[value]}</option>' for value in ('featured', 'reviewed', 'added', 'name'))

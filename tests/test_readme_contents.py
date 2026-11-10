@@ -48,7 +48,7 @@ class ReadmeContentsTest(unittest.TestCase):
 
     def test_contents_lines_give_each_section_its_count_and_what_it_holds(self):
         listed = paper(url='https://example.com/paper')
-        records = [resource(), resource(id='second', url='https://example.com/second'),
+        records = [resource(**{'class': 'website'}), resource(id='second', url='https://example.com/second', **{'class': 'website'}),
                    resource(id='paper-copy', kind='research', url=listed['url'])]
         for language, blurbs in (('en', 0), ('zh', 1)):
             with self.subTest(language=language):

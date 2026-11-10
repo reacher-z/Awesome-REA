@@ -307,7 +307,7 @@ def _drawer(resources, order, language, prefix) -> str:
     chips = ''.join(f'<button class="chip" type="button" data-kind="{kind}" aria-pressed="false"{"" if kinds[kind] else " disabled hidden"}>{icon("check")}{KIND_PLURAL[kind][zh]} <span class="count">{_count(kinds[kind])}</span></button>' for kind in present)
     options = ''.join(f'<option value="{kind}">{KIND_PLURAL[kind][zh]} ({_count(kinds[kind])})</option>' for kind in present)
     classes = Counter()
-    for record in resources:
+    for record in data_points:
         if record.get('evidence_status') == 'unknown':
             classes['unknown'] += 1
         elif record.get('evidence_class') is not None:
