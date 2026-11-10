@@ -32,6 +32,21 @@ HOLD_REASONS = frozenset({'linking-policy', 'insufficient-docs', 'capability-unc
 REASONS = {'exclude': EXCLUDE_REASONS, 'hold': HOLD_REASONS}
 DUPLICATE_REASONS = frozenset({'duplicate-curated', 'duplicate-queue'})
 PINNED_EVIDENCE = re.compile(r'https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/(?:blob|tree)/[0-9a-f]{40}(?:/\S*)?')
+# Followed-source leads also come from other forges and the web. Their decisions name the reviewed revision in that
+# host's own form: a commit on GitLab, Codeberg, sr.ht, SourceForge, Hugging Face or a gist, or an archive.org snapshot.
+_SEGMENT = r'[A-Za-z0-9_.~-]+'
+LEAD_PINNED_EVIDENCE = re.compile('|'.join((
+    PINNED_EVIDENCE.pattern,
+    rf'https://gist\.github\.com/{_SEGMENT}/[0-9a-f]+/[0-9a-f]{{40}}(?:[/#]\S*)?',
+    rf'https://gitlab\.com/{_SEGMENT}(?:/(?!-/){_SEGMENT})+/-/(?:blob|tree)/[0-9a-f]{{40}}(?:/\S*)?',
+    rf'https://codeberg\.org/{_SEGMENT}/{_SEGMENT}/src/commit/[0-9a-f]{{40}}(?:/\S*)?',
+    rf'https://git\.sr\.ht/~{_SEGMENT}/{_SEGMENT}/tree/[0-9a-f]{{40}}(?:/item/\S*)?',
+    rf'https://sourceforge\.net/p/{_SEGMENT}/{_SEGMENT}/(?:ci/[0-9a-f]{{40}}/tree|[0-9]+/tree)(?:/\S*)?',
+    rf'https://huggingface\.co/(?:datasets/|spaces/)?{_SEGMENT}/{_SEGMENT}/(?:blob|tree)/[0-9a-f]{{40}}(?:/\S*)?',
+    r'https://web\.archive\.org/web/[0-9]{14}/https?://\S+',
+)))
+# a `.` or `..` path segment resolves in the browser and can step out of the pinned revision
+DOT_SEGMENT = re.compile(r'/(?:\.|%2e){1,2}(?:/|$|[?#])', re.I)
 CHINESE = re.compile(r'[一-鿿]')
 HASH = re.compile(r'[0-9a-f]{64}')
 
@@ -76,8 +91,11 @@ def validate_reviews(batches: list[dict], reviews, errors: list[str], *, lead_ba
                 errors.append(f'{where}: invalid README hash')
             elif record is not None and entry['readme_sha256'] != record['readme_sha256']:
                 errors.append(f'{where}: README hash differs from the scanned snapshot')
-        if not isinstance(entry['evidence_url'], str) or not PINNED_EVIDENCE.fullmatch(entry['evidence_url']):
-            errors.append(f'{where}: evidence_url must be a GitHub link pinned to a commit')
+        pinned = LEAD_PINNED_EVIDENCE if is_lead else PINNED_EVIDENCE
+        if (not isinstance(entry['evidence_url'], str) or not pinned.fullmatch(entry['evidence_url'])
+                or DOT_SEGMENT.search(entry['evidence_url'])):
+            errors.append(f'{where}: evidence_url must be a ' + ('link pinned to a commit or an archive.org snapshot'
+                                                                if is_lead else 'GitHub link pinned to a commit'))
         if (isinstance(reason, str) and reason in DUPLICATE_REASONS) != isinstance(entry.get('duplicate_of'), str):
             errors.append(f'{where}: duplicate_of goes with a duplicate reason and only then')
         try:

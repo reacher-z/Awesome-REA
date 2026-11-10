@@ -21160,6 +21160,14 @@
     "evidence_url": "https://github.com/vermiceli/nes-super-c/blob/be6ccce97a73ce1ea0d3ebace85e22fca01e4ed9/docs/sprite_library/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-5041c6ce28ce583bb5414e11": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "2004Scape's from-scratch RS2 engine runs on the LostCityRS Content repository, which commits Jagex models, music, maps, sprites and textures extracted from the original game.",
+    "reason_zh": "2004Scape 从零编写的 RS2 服务端依赖 LostCityRS 的 Content 仓库，该仓库提交了从原版游戏提取的 Jagex 模型、音乐、地图、精灵图和纹理。",
+    "evidence_url": "https://github.com/LostCityRS/Content/blob/65b754f768b79b941b21b2a1eb3b0d1ecae3cdfe/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-5049836fd0ba55febcffa048": {
     "decision": "hold",
     "reason_code": "linking-policy",

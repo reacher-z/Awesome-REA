@@ -43453,5 +43453,354 @@
       "编译最终磁盘镜像需要 bintofdf 和 fdtc；项目内附有这两个工具的版本。",
       "项目页面未说明许可证。"
     ]
+  },
+  "donkey-kong-disassembly-case": {
+    "name": "Donkey Kong Disassembly：街机版 Z80 与音效代码反汇编",
+    "requirements": [
+      "主程序代码需要 Z80 版 GNU binutils，音效代码需要 asm48。",
+      "涵盖已知的 MAME Donkey Kong ROM 版本。",
+      "不收录图形数据；其他代码段可能在以后加入。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "kh-com-case": {
+    "name": "kh-com：Kingdom Hearts: Chain of Memories 反编译",
+    "requirements": [
+      "需要自备游戏副本以提取资源。",
+      "构建配置要求 devkitPro、devkitARM 和 agbcc。",
+      "项目说明目前开发阶段过早，尚无法构建有实际内容的成果。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "air-sea-battle-disassembly-case": {
+    "name": "Air-Sea Battle：Atari 2600 游戏注释反汇编",
+    "requirements": [
+      "需要 6502 汇编器和清单引用的 vcs.h 头文件。",
+      "COMPILE_VERSION 用于选择 2K ROM 的 NTSC 或 PAL 版本。",
+      "项目页面未声明许可证。"
+    ]
+  },
+  "berzerk-atari-2600-disassembly-case": {
+    "name": "Berzerk：带注释的 Atari 2600 反汇编",
+    "requirements": [
+      "汇编需要 vcs.h 105 或更高版本以及 macro.h。",
+      "作者说明部分标志位和 RAM 复用变量可能识别有误。",
+      "项目页面未注明许可证。"
+    ]
+  },
+  "combat-atari-2600-disassembly-case": {
+    "name": "Combat：Atari 2600 游戏注释反汇编",
+    "requirements": [
+      "需要 DASM 和清单引用的 vcs.h 头文件。",
+      "汇编出的镜像与卡带 ROM 基本一致，只有启动向量前少数未写入的字节不同：DASM 填 0，卡带中为 $FF。",
+      "清单删去了部分 VCS 编程入门和历史背景注释，读者需具备基本的 VCS 编程知识。",
+      "项目页面未声明许可证。"
+    ]
+  },
+  "cosmic-ark-atari-2600-disassembly-case": {
+    "name": "Cosmic Ark：带注释和 PAL 转换的 Atari 2600 反汇编",
+    "requirements": [
+      "需要 6502 汇编器和清单引用的 vcs.h 头文件；清单本身已定义较旧版本 vcs.h 缺少的 TIMINT = $285。",
+      "版本为 0.9。作者说明 PAL 版陨石速度与 NTSC 版并不完全一致，部分状态标志也可能识别有误。",
+      "项目页面未注明许可证。"
+    ]
+  },
+  "donkey-kong-atari-vcs-disassembly-case": {
+    "name": "Donkey Kong：可重建卡带 ROM 的 Atari VCS 版注释反汇编",
+    "requirements": [
+      "汇编需要 6502 汇编器以及代码引用的 Atari VCS 头文件 vcs.h。",
+      "作者说明，游戏大量使用内存复用和偏移，部分变量含义或表位置可能未能识别。",
+      "项目页面未声明许可证。"
+    ]
+  },
+  "elite-harmless-case": {
+    "name": "Elite: Harmless：Commodore 64 版 Elite 反汇编",
+    "requirements": [
+      "构建需要 cc65 工具链和仓库自带的安装脚本，可在 Linux、Mac 或装有 WSL 的 Windows 上进行；游戏需在 VICE 等 Commodore 64 模拟器中运行。",
+      "磁盘镜像只能通过自行编译源码获得。",
+      "反汇编的注释文档仍在编写中。",
+      "采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议（CC BY-NC-SA 4.0）。"
+    ]
+  },
+  "exile-enhanced-disassembly-case": {
+    "name": "Exile：BBC Micro 增强版注释反汇编",
+    "requirements": [
+      "针对增强版，该版本将代码、数据和采样音效放在 sideways RAM 中；标准版以及磁盘保护与 supervisor 部分在同一网站另有反汇编。",
+      "在没有源代码的情况下依据二进制镜像制作，作者称其相当完整。",
+      "作者在游戏原有版权之外不附加其他版权限制。"
+    ]
+  },
+  "indy-500-atari-2600-disassembly-case": {
+    "name": "Indy 500：初步标注的 Atari 2600 反汇编",
+    "requirements": [
+      "汇编需要 6502 汇编器和 vcs.h。",
+      "标签和注释仅为初步整理，若干 RAM 地址仍标为未知或待定。",
+      "项目页面未注明许可证。"
+    ]
+  },
+  "jawbreaker-atari-vcs-disassembly-case": {
+    "name": "Jawbreaker：可编译出原版 ROM 的 Atari VCS 注释反汇编",
+    "requirements": [
+      "汇编需要 6502 汇编器以及 105 或更新版本的 vcs.h。",
+      "作者说明 PAL 版本沿用了 NTSC 的游戏速度。",
+      "项目页面未声明许可证。"
+    ]
+  },
+  "kaboom-atari-2600-disassembly-case": {
+    "name": "Kaboom!：Atari 2600 游戏注释反汇编",
+    "requirements": [
+      "需要 6502 汇编器和清单引用的 vcs.h 头文件。",
+      "COMPILE_VERSION 选择 NTSC 或 PAL 版本，MAD_BOMBER_MOVEMENT 选择原版或平滑的投弹者移动方式；清单对应 2K ROM。",
+      "项目页面未声明许可证。"
+    ]
+  },
+  "outlaw-atari-2600-disassembly-case": {
+    "name": "Outlaw：逆向重建的 Atari 2600 源码清单",
+    "requirements": [
+      "汇编需要 DASM 和 vcs.h。",
+      "项目页面未注明许可证。"
+    ]
+  },
+  "pitfall-atari-vcs-disassembly-case": {
+    "name": "Pitfall!：Atari VCS 版注释反汇编，解析场景生成与显示内核",
+    "requirements": [
+      "汇编需要 6502 汇编器以及代码引用的 Atari VCS 头文件 vcs.h。",
+      "分析版本为 v0.9，最后更新于 2001 年 10 月。",
+      "项目页面未声明许可证。"
+    ]
+  },
+  "red-vs-blue-atari-2600-disassembly-case": {
+    "name": "Red vs. Blue：Atari 2600 多精灵演示程序注释反汇编",
+    "requirements": [
+      "需要 6502 汇编器和清单引用的 vcs.h 头文件。",
+      "内容为多精灵演示程序 Red vs. Blue，即后来的 RealSports Football。",
+      "项目页面未声明许可证。"
+    ]
+  },
+  "river-raid-atari-vcs-disassembly-case": {
+    "name": "River Raid：Atari VCS 版注释反汇编，解析河道生成与显示内核",
+    "requirements": [
+      "汇编需要 6502 汇编器以及代码引用的 Atari VCS 头文件 vcs.h。",
+      "分析版本为 v0.9，最后更新于 2001 年 8 月。",
+      "项目页面未声明许可证。"
+    ]
+  },
+  "space-jockey-atari-2600-disassembly-case": {
+    "name": "Space Jockey：可还原原 ROM 的 Atari 2600 注释反汇编",
+    "requirements": [
+      "需要 6502 汇编器和 105 或更高版本的 vcs.h。",
+      "可编译出与原 ROM 完全一致的镜像；PAL 版依据 Carrere Video 发行版整理，该版本的速度和音频频率未按 PAL 时序调整。",
+      "项目页面未声明许可证。"
+    ]
+  },
+  "starmaster-atari-2600-disassembly-case": {
+    "name": "Starmaster：带注释的 Atari 2600 反汇编",
+    "requirements": [
+      "汇编需要 6502 汇编器和 vcs.h。",
+      "分析版本为 0.9。",
+      "项目页面未注明许可证。"
+    ]
+  },
+  "surround-atari-vcs-disassembly-case": {
+    "name": "Surround：可编译出原版 2K ROM 的 Atari VCS 注释反汇编",
+    "requirements": [
+      "汇编需要 6502 汇编器以及 105 或更新版本的 vcs.h。",
+      "项目页面未声明许可证。"
+    ]
+  },
+  "a-team-atari-2600-disassembly-case": {
+    "name": "A-Team：带 PAL 转换的 Atari 2600 反汇编",
+    "requirements": [
+      "需要 DASM 和清单引用的 vcs.h 头文件。",
+      "COMPILE_VERSION 选择 PAL、PAL60 或 NTSC；FIX_LOGO、FIX_INTRO、COLOR_CYCLE 和 BUGFIX 在原版行为与修复之间切换。",
+      "配色转换的修改记录注明仍需更多真机测试。",
+      "项目页面未声明许可证。"
+    ]
+  },
+  "venture-atari-2600-disassembly-case": {
+    "name": "Venture：逆向重建的 Atari 2600 源码清单",
+    "requirements": [
+      "构建需要 DASM 和 vcs.h。",
+      "项目页面未注明许可证。"
+    ]
+  },
+  "blackhack-case": {
+    "name": "blackhack：runblack.exe 界面控件类反编译",
+    "requirements": [
+      "需要打过免 CD 补丁的 runblack.exe 1.41 版（md5 为 174b1a64e74b2321f3c38ccc8a511e78）；支持其他版本需要新增函数和全局变量地址表。",
+      "使用 CMake 3.14 及以上版本和 Detours 库构建。",
+      "SetupControl 类的实现接近完成。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "fc-dk-donkey-kong-disassembly-case": {
+    "name": "Donkey Kong Meta-Disassembly：可逐字节重建的 Famicom 与 Famicom Disk System 版反汇编",
+    "requirements": [
+      "需要在类 UNIX 或 Plan 9 系统上安装 cc65 6502 工具链（ca65、ld65）；FDS 构建所需的 fdtc Famicom Disk System 磁盘编译器已随仓库附带。",
+      "需要带文件头的 Famicom 版 iNES 映像或磁盘版 FDS 映像，提取脚本从中取出 CHR 图块数据。",
+      "iNES 构建可做到 1:1 一致；FDS 版的各 bank 文件一致，但部分文件系统细节不同。",
+      "控制流注释可能有误；注释与代码不一致时以代码为准。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "fdsboot-case": {
+    "name": "fdsboot：Famicom Disk System 启动 ROM 反汇编",
+    "requirements": [
+      "需要 cc65 汇编器与链接器（ca65、ld65）配合 make，或使用 plan9port 的 mk。",
+      "构建前需用 tools/extract.sh 从用户自备的启动 ROM 镜像中提取字体和两张数据表。",
+      "源码注释与汇编代码不一致时，以汇编代码为准。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "dataeast-snddrv-case": {
+    "name": "dataeast_snddrv：《High Seas Havoc》声音驱动反汇编",
+    "requirements": [
+      "构建需要 vasmm68k_mot、vasmz80_std、make 和 Python；乐曲、音色和采样需从使用该驱动的游戏 ROM 中提取。",
+      "主分支保留未经修改的原版驱动，sgdk-compat 分支则是为 SGDK 修改的版本。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "opengate-jumpgate-case": {
+    "name": "Opengate：Jumpgate 客户端与服务端重制",
+    "requirements": [
+      "使用 CMake 构建，依赖 OGRE、OIS、带 Ogre 渲染器的 CEGUI、FreeALUT、Vorbis、Bullet 以及 Boost 1.46 或更高版本。",
+      "项目标注的开发状态为 alpha 和 pre-alpha。",
+      "源文件带有 GNU 通用公共许可证第 2 版或更高版本的声明；仓库根目录没有许可证文件。"
+    ]
+  },
+  "acemulator-case": {
+    "name": "ACEmulator：《Asheron's Call》服务端模拟器",
+    "requirements": [
+      "需要 Asheron's Call 客户端安装目录中的 client_cell_1.dat、client_local_English.dat 和 client_portal.dat。",
+      "基于 .NET 10 构建（ACE.Server.csproj 的目标框架为 net10.0），数据库需要 MySQL 5.7.17 以上或 MariaDB 10.2 以上版本。",
+      "采用 GNU Affero 通用公共许可证第 3 版。"
+    ]
+  },
+  "zcure-case": {
+    "name": "ZCure：重写的《Blacklight: Retribution》v3.02 主服务器",
+    "requirements": [
+      "需要《Blacklight: Retribution》v3.02 客户端，并以 -zcureurl、-zcureport、-presenceurl 和 -presenceport 参数指向该服务器启动。",
+      "构建需要 .NET 8 SDK；可用 Docker 搭配预配置的 MySQL 容器部署，也可手动配置数据库。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "strkexeu-case": {
+    "name": "strkexeu：《Desert Strike》与《Jungle Strike》DOS 加载器反汇编及解包工具",
+    "requirements": [
+      "解包需要《Desert Strike》或《Jungle Strike》DOS 版的 DAT 文件。",
+      "strikeld.asm 需用 Turbo Assembler 3.0 汇编、Turbo Linker 3.01 链接，并且必须在 DESERT 与 JUNGLE 两个宏中定义且只定义一个；strkexeu.c 只需要 C 编译器和 C 标准库。",
+      "README 预计重新生成的加载器 EXE 与原版几乎一致，主要差别在 DOS EXE 头偏移 0Ah 处的最小内存分配字段，比原版小 500h 个段。",
+      "strkexeu 采用 3 条款 BSD 许可证。"
+    ]
+  },
+  "gyx-decomp-case": {
+    "name": "gyx-decomp：Casio ES PLUS GYX 计算器固件反编译",
+    "requirements": [
+      "构建需要 Windows 及 LAPIS U8/U16 开发工具（CCU8 与 MACU8 汇编器套件）、仓库自带的 ML610904.DCL 器件文件，转换为二进制还需 Python 和 intelhex 库。",
+      "尚缺 GY454X VerF 与 GY455X VerF 的诊断测试选择菜单以及日本型号的额外换算功能，部分功能开关也未实现。",
+      "汇编注释、C 代码可读性和 RLU8 链接顺序仍在完善中。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "vmiv-case": {
+    "name": "vmiv：View-Master Interactive Video 模拟器与格式笔记",
+    "requirements": [
+      "构建需要 C 编译器、SDL2 和 FFmpeg 库（libavcodec、libavformat、libswscale、libavutil、libavdevice）。",
+      "运行需要 VMI8802 的 8051 ROM 镜像（默认文件名 vmi8802.bin）以及 View-Master Interactive Video 录像带的视频采集文件。",
+      "Makefile 需要链接 imgdecode.o，但仓库中缺少其源文件。",
+      "仓库中没有许可证文件；8051 内核取自 jarikomppa/emu8051。"
+    ]
+  },
+  "2oom-master-of-orion-ii-case": {
+    "name": "2ooM：为重制解码《Master of Orion II》的 LBX 数据",
+    "requirements": [
+      "需要原版《Master of Orion II》的 LBX 归档文件；编译需要 GNU Autotools 和 C99 编译器，lbximg 还需要 libpng 1.2。",
+      "README 说明 2ooM 引擎目前尚无实际功能，liblbx 的 API 仍在大量开发中。",
+      "采用 GNU 通用公共许可证第 2 版或更高版本；SourceForge 项目页标注为 GPL 第 3 版。"
+    ]
+  },
+  "freesci-scientist-hunt-case": {
+    "name": "FreeSci：用 QuakeC 重写的 Scientist Hunt",
+    "requirements": [
+      "编译需要配置好 fteqw 和 fteqcc 的 Nuclide SDK；运行需要装有 Half-Life valve 目录的 FreeHL。",
+      "README 列出的未完成部分包括 Live in Fear 模式、arsenal 文件加载、部分特殊 CVAR，以及 Stealth Hunting 中行走的科学家。",
+      "ISC 许可证。"
+    ]
+  },
+  "freesynd-case": {
+    "name": "FreeSynd：Syndicate 游戏引擎重实现",
+    "requirements": [
+      "需要原版《Syndicate》的数据文件；不支持《Syndicate Plus》或《Syndicate Wars》的数据。",
+      "编译需要 CMake 3.28、Conan 2、Python 3、C++ 编译器、SDL 2、SDL_mixer、SDL_image 和 libpng。",
+      "特工 AI 仅部分可用，寻路有待改进，部分武器无法正常工作。",
+      "采用 GNU 通用公共许可证第 3 版。"
+    ]
+  },
+  "last-ninja-remix-case": {
+    "name": "The Last Ninja Remix：以 C++ 重建 1990 年 Amiga 游戏",
+    "requirements": [
+      "需要 The Last Ninja Remix 的 Amiga ADF 磁盘镜像，命名为 disk1.adf、disk2.adf 和 disk3.adf，放在游戏 data 文件夹中。",
+      "工程文件面向 Visual Studio 2010（project/vs10）。",
+      "第 3 至 6 关和音乐的代码尚未实现，敌人的武器不会绘制。",
+      "GNU 通用公共许可证第 3 版。"
+    ]
+  },
+  "sarien-agi-interpreter-case": {
+    "name": "Sarien：Sierra AGI 解释器的可移植重实现",
+    "requirements": [
+      "运行 Sierra On-Line AGI 游戏的文件；移植平台包括 MS-DOS、Win32、BeOS、QNX、多种 Unix、AmigaOS、MacOS X 以及 PocketPC 上的 WinCE。",
+      "项目自述仍在开发中，尚无正式质量的发行包；由于 AGI 规格不完整，部分脚本会出错，靠反复试验写成的精灵系统在少数情况下会造成画面错乱。",
+      "项目页面标注为 GNU 通用公共许可证第 2 版。"
+    ]
+  },
+  "soniccdrespinned-case": {
+    "name": "soniccdrespinned：基于反编译代码的跨平台 Sonic CD 移植",
+    "requirements": [
+      "makefile 使用 MinGW gcc 生成 32 位 i386 可执行文件并链接 SDL2。",
+      "运行时读取原版 Sonic CD 数据文件，包括 .CM_ 位图文件、PCM.CMP 以及 BGM_US.AFS 或 BGM_JP.AFS。",
+      "CC0 1.0 Universal。"
+    ]
+  },
+  "crystal-scrolls-case": {
+    "name": "The Crystal Scrolls：基于 Crystal Space 的《The Elder Scrolls III: Morrowind》引擎",
+    "requirements": [
+      "需要已安装的 Morrowind 及 Tribunal、Bloodmoon，或一个包含 Data Files 中 BSA 与 ESM 文件的 Morrowind 文件夹。",
+      "编译需要 Visual Studio 2008 Express SP1、修订版 35671 的 Crystal Space 1.9 开发版源码及其 Windows 依赖包。",
+      "发布版本为开发快照，文档称 NIF 动画代码仍很混乱。",
+      "作者代码采用 GNU LGPL v3；Crystal Space 采用 GNU LGPL v2；niflib 采用修改版 BSD 许可证。"
+    ]
+  },
+  "shadow-hearts-decompilation-case": {
+    "name": "shadowheartsdecompilation：Shadow Hearts PS2 运行时类的 C++ 反编译",
+    "requirements": [
+      "涵盖十二个运行时类，其中 CApp 的 Run 方法尚未反编译。",
+      "仓库只有 C++ 源文件和头文件，没有构建脚本。",
+      "CC0 1.0 Universal。"
+    ]
+  },
+  "smbdis-super-mario-bros-disassembly-case": {
+    "name": "SMBDIS.ASM：《超级马力欧兄弟》完整注释反汇编",
+    "requirements": [
+      "需要用户自备 CHR ROM 数据和 iNES 文件头。",
+      "需要 x816 汇编器。",
+      "文件声明按现状提供、供使用者自用；gist 中没有许可证文件。"
+    ]
+  },
+  "skcollectioncport-case": {
+    "name": "skcollectioncport：用 C 重建 Sonic & Knuckles Collection",
+    "requirements": [
+      "前端面向 Win32，使用 windows.h、Windows 资源脚本和 Windows 注册表。",
+      "src/data/cg 下的图形数组列在 .gitignore 中，不在仓库内。",
+      "CC0 1.0 Universal。"
+    ]
+  },
+  "dk64-decomp-case": {
+    "name": "Donkey Kong 64：N64 匹配反编译",
+    "requirements": [
+      "需要用户自备的美版《Donkey Kong 64》ROM，命名为 baserom.us.z64（SHA-1 为 cf806ff2603640a748fca5026ded28802f1f4a50）。",
+      "可用 Docker 构建，或在 Ubuntu 18.04 及以上版本、Arch 上配合 MIPS binutils 与 GCC 交叉工具链、Python 3 以及 requirements.txt 中的依赖构建。",
+      "反编译尚未完成：进度徽章显示 4502 个函数中已完成 4096 个。",
+      "采用 CC0 1.0 通用许可。"
+    ]
   }
 }
