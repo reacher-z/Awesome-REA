@@ -40,7 +40,9 @@ class FactCards(HTMLParser):
 def readme_definition(name, heading):
     about = (ROOT / name).read_text(encoding='utf-8').split(f'\n## {heading}\n', 1)[1].split('\n## ', 1)[0]
     paragraph = next(line for line in about.splitlines() if 'github.com/morluto/rea' in line)
-    label, url, rest = re.fullmatch(r'\[([^\]]+)\]\(([^)]+)\)(.*)', paragraph).groups()
+    # The definition is an HTML link: the catalog entry links the same repository, and awesome-lint's double-link
+    # rule skips HTML links.
+    url, label, rest = re.fullmatch(r'<a href="([^"]+)">([^<]+)</a>(.*)', paragraph).groups()
     return label + rest, url
 
 

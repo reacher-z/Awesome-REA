@@ -3,7 +3,8 @@
 
 The README shows this file through https://img.shields.io/endpoint. The scan-status workflow rewrites it on
 the `status` branch every hour and after every scan, so the badge turns the warning colour once the last
-successful scan of `main` is more than six hours old. A successful scan is a run of
+successful scan of `main` is more than nine hours old: one eight-hour scan interval plus an
+hour of slack, the threshold of the operators' stale-scan alert. A successful scan is a run of
 .github/workflows/source-scan.yml on `main` that concluded `success`; a run that finds nothing to ingest
 skips its ingest job and still counts.
 
@@ -21,7 +22,7 @@ import sys
 import urllib.request
 
 WORKFLOW = 'source-scan.yml'
-STALE_AFTER = timedelta(hours=6)
+STALE_AFTER = timedelta(hours=9)
 LABEL = 'last discovery scan'
 COLOR = '6B5159'
 WARNING_COLOR = 'B7791F'

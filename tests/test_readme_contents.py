@@ -8,8 +8,8 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import (BADGES_BEGIN, BADGES_END, BEGIN, CONTENTS_BEGIN, CONTENTS_END, PAPER_FILES, PAPERS_BEGIN, lead_sentence,
-                         plain_text, render_badges, replace_badges, render_catalog, render_contents, render_finder, render_papers,
+from build_readme import (FINDER_BLURBS, without_leading_name, BADGES_BEGIN, BADGES_END, BEGIN, CONTENTS_BEGIN, CONTENTS_END, PAPER_FILES, PAPERS_BEGIN, lead_sentence,
+                         plain_text, render_badges, replace_badges, render_catalog, render_contents, render_papers,
                          rendered_files)
 from build_repository_index import SUMMARY_BEGIN
 
@@ -46,19 +46,18 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertIn('论文: 1', zh)
         self.assertEqual((records, [listed]), before)
 
-    def test_finder_table_has_one_aligned_row_per_section_with_its_count(self):
+    def test_contents_lines_give_each_section_its_count_and_what_it_holds(self):
         listed = paper(url='https://example.com/paper')
         records = [resource(), resource(id='second', url='https://example.com/second'),
                    resource(id='paper-copy', kind='research', url=listed['url'])]
-        for language in ('en', 'zh'):
+        for language, blurbs in (('en', 0), ('zh', 1)):
             with self.subTest(language=language):
-                rows = render_finder(records, [listed], 40, language).strip().splitlines()
-                pipes = [[i for i, c in enumerate(row) if c == '|'] for row in rows]
-                self.assertEqual(len({tuple(p) for p in pipes}), 1, rows)
-                self.assertRegex(rows[1], r'^\| -+ \| -+ \| -+: \|$')
-                counts = {re.match(r'\| \[([^\]]+)\]', row).group(1): row.rsplit('|', 2)[1].strip() for row in rows[2:]}
-                self.assertEqual(list(counts.values()), ['2', '1', '40'])
-                self.assertNotIn('awesomerea.org', '\n'.join(rows))
+                rendered = render_contents(records, [listed], 40, language)
+                website = FINDER_BLURBS['website'][blurbs]
+                self.assertRegex(rendered, rf'\n  - \[[^\]]+\]\(#website\) \(2\) — {re.escape(website)}\n')
+                self.assertRegex(rendered, rf'\n- \[[^\]]+\]\(#papers\) \(1\) — {re.escape(FINDER_BLURBS["papers"][blurbs])}\n')
+                self.assertRegex(rendered, rf'\n- \[[^\]]+\]\(#[^)]+\) \(40\) — {re.escape(FINDER_BLURBS["index"][blurbs])}\n')
+                self.assertNotIn('awesomerea.org', rendered)
 
     def test_badges_are_at_most_six_and_link_the_hugging_face_dataset(self):
         for language in ('en', 'zh'):
@@ -107,10 +106,10 @@ class ReadmeContentsTest(unittest.TestCase):
         ]
         rendered = render_contents(records, [listed], 2864, 'en')
         self.assertIn('- [Resources](#resources) (3)\n', rendered)
-        self.assertIn('  - [Website](#website) (2)\n', rendered)
-        self.assertIn('  - [Game](#game) (1)\n', rendered)
-        self.assertIn('- [Papers](#papers) (1)\n', rendered)
-        self.assertIn('- [Full Repository Index](#full-repository-index) (2,864)\n', rendered)
+        self.assertIn('  - [Website](#website) (2) — ', rendered)
+        self.assertIn('  - [Game](#game) (1) — ', rendered)
+        self.assertIn('- [Papers](#papers) (1) — ', rendered)
+        self.assertIn('- [Full Repository Index](#full-repository-index) (2,864) — ', rendered)
         # Cases are browsed from the link row above Contents; Contents only lists README headings.
         self.assertNotIn('awesomerea.org', rendered)
         # A research record listed under Papers is not rendered in Learning, so it is not counted there.
@@ -121,10 +120,10 @@ class ReadmeContentsTest(unittest.TestCase):
 
     def test_chinese_contents_use_chinese_labels_and_anchors(self):
         rendered = render_contents([resource()], [paper()], 10, 'zh')
-        self.assertTrue(rendered.startswith('- [按任务查找](#按任务查找)\n- [使用数据](#使用数据)\n- [资源](#资源) (1)\n  - [网站](#website) (1)\n'),
+        self.assertTrue(rendered.startswith('- [按任务查找](#按任务查找)\n- [使用数据](#使用数据)\n- [资源](#资源) (1)\n  - [网站](#website) (1) — '),
                         rendered)
-        self.assertIn('\n- [完整仓库索引](#完整仓库索引) (10)\n', rendered)
-        self.assertTrue(rendered.endswith('\n- [完整仓库索引](#完整仓库索引) (10)\n- [关于](#关于)\n- [Star 历史](#star-历史)\n\n本页还有：[参与贡献](#参与贡献)\n'), rendered)
+        self.assertIn('\n- [完整仓库索引](#完整仓库索引) (10) — ', rendered)
+        self.assertTrue(rendered.endswith('\n- [关于](#关于)\n- [Star 历史](#star-历史)\n'), rendered)
         # Neither README has a contributors section, so Contents lists none.
         self.assertNotIn('贡献者', rendered)
         self.assertNotIn('Contributors', render_contents([resource()], [paper()], 10, 'en'))
@@ -148,6 +147,32 @@ class ReadmeContentsTest(unittest.TestCase):
                 self.assertIn(f'<source media="(prefers-color-scheme: light)" srcset="{chart}">', section)
                 self.assertIn(f'<img alt="{alt}" src="{chart}" width="100%">', section)
                 self.assertIn(marker + section, rebuilt[name])
+
+    def test_english_lines_do_not_open_with_the_entry_name(self):
+        """awesome-lint's no-repeat-item-in-description rule: the link text already gives the name."""
+        cases = {
+            ('Mesen', 'Mesen is an NES/Famicom emulator with debugging tools.'): 'An NES/Famicom emulator with debugging tools.',
+            ('gore', 'gore recovers a Godot game into a project.'): 'Recovers a Godot game into a project.',
+            ('GameMaker 8.1 Decompiler', 'GameMaker 8.1 Decompiler is the 2011 source of a decompiler.'): 'The 2011 source of a decompiler.',
+            ('RFLink ESP', 'RFLink ESP is ESP32 and ESP8266 firmware.'): 'ESP32 and ESP8266 firmware.',
+            ('Source 2 Decompiler', 'Source 2 Decompiler, s2dc, decompiles Source 2 resource files.'): 'Decompiles Source 2 resource files.',
+            ('Mach-O-Scope', 'Mach-O-Scope 0.2 browses the disassembly of Mach-O bundles.'): 'Browses the disassembly of Mach-O bundles.',
+            ('Thug', 'Thug is a Python low-interaction honeyclient.'): 'A Python low-interaction honeyclient.',
+            # Openings that do not repeat the name, or that cannot drop it cleanly, stay as written.
+            ('Ghidra', 'A software reverse engineering framework.'): 'A software reverse engineering framework.',
+            ('Ghidra', "Ghidra's decompiler runs headless."): "Ghidra's decompiler runs headless.",
+            ('dcc', 'dcc is written for DOS executables.'): 'dcc is written for DOS executables.',
+            ('box', 'boxes and arrows.'): 'boxes and arrows.',
+        }
+        for (name, text), expected in cases.items():
+            with self.subTest(name=name, text=text):
+                self.assertEqual(without_leading_name(name, text), expected)
+        line = render_catalog([resource(name='Thug', description_en='Thug is a Python low-interaction honeyclient that '
+                                        'mimics a web browser.')], 'en')
+        self.assertIn('[**Thug**](https://example.com/tool) - A Python low-interaction honeyclient that mimics a web browser.', line)
+        # Chinese lines keep their wording; only the English README is linted.
+        zh = render_catalog([resource(name='Thug', description_zh='Thug 是一个模拟浏览器的低交互蜜罐客户端。')], 'zh')
+        self.assertIn(' - Thug 是一个模拟浏览器的低交互蜜罐客户端。', zh)
 
     def test_resource_line_keeps_title_opening_sentence_tags_and_full_entry(self):
         record = resource(name='Fixture [tool]', name_zh='测试 [工具]',
@@ -195,15 +220,12 @@ class ReadmeContentsTest(unittest.TestCase):
             with self.subTest(readme=name):
                 text = (ROOT / name).read_text(encoding='utf-8')
                 contents = text.split(CONTENTS_BEGIN + '\n', 1)[1].split(CONTENTS_END, 1)[0]
-                # A collapsed list, then the Contributing link that the ToC check keeps out of it.
+                # One visible list and nothing else; the navigation row links Contributing, which the ToC check excludes.
                 contents = contents.split('\n', 1)[1]
-                opening, rest = contents.split('\n\n', 2)[0], contents.split('\n\n', 2)[1:]
-                self.assertTrue(opening.startswith('<details>\n<summary>'), opening)
-                items = rest[0].split('\n')
-                tail = contents.split('\n\n')[2:]
-                self.assertEqual(tail, ['本页还有：[参与贡献](#参与贡献)' if language == 'zh'
-                                        else 'Also on this page: [Contributing](#contributing)', '</details>\n'])
-                self.assertTrue(all(re.fullmatch(r'(  )?- \[[^\]]+\]\(#[^)]+\)( \([\d,]+\))?', line) for line in items), items)
+                self.assertNotIn('<details>', contents)
+                items = contents.rstrip('\n').split('\n')
+                self.assertTrue(all(re.fullmatch(r'(  )?- \[[^\]]+\]\(#[^)]+\)( \([\d,]+\))?( — [^\[\]]+)?', line)
+                                    for line in items), items)
                 body = text.split(CONTENTS_END, 1)[1]
                 expected = []
                 for level, heading in re.findall(r'^(##|###) (.+)$', body, re.MULTILINE):

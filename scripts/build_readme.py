@@ -360,12 +360,41 @@ def tag_legend(records, language):
     return ('**标签：** ' if zh else '**Tags:** ') + plain_text(' · '.join(parts)) + ('。' if zh else '.')
 
 
+# awesome-lint's no-repeat-item-in-description rule: a description must not open with the entry's name followed
+# by a space or punctuation. The name is already the link text, so the line drops it with the words that join it.
+NAME_BOUNDARY = re.compile(r'[\s.,!?:-]')
+JOINED_BY_IS = re.compile(r'\s+(?:is|was)\s+(?=(?:a|an|the)\s|[A-Z0-9])')
+APPOSITIVE = re.compile(r'^,\s[^,]+,(?=\s)')
+VERSION = re.compile(r'^\s+v?\d[\w.]*(?=\s)')
+NOT_A_VERB = {'is', 'are', 'was', 'were', 'and', 'or', 'for', 'by', 'from', 'with', 'on', 'in', 'to', 'of', 'as', 'at'}
+
+
+def without_leading_name(name, text):
+    """'Mesen is an NES emulator ...' -> 'An NES emulator ...'; 'gore recovers a Godot game ...' -> 'Recovers a
+    Godot game ...'; 'Source 2 Decompiler, s2dc, decompiles ...' -> 'Decompiles ...'. Any other opening is kept."""
+    if not text.casefold().startswith(name.casefold()):
+        return text
+    rest = text[len(name):]
+    if not rest or not NAME_BOUNDARY.match(rest):
+        return text
+    rest = APPOSITIVE.sub('', rest, count=1) if rest.startswith(',') else VERSION.sub('', rest, count=1)
+    joined = JOINED_BY_IS.match(rest)
+    if joined:
+        rest = rest[joined.end():]
+    elif re.match(r'\s+[a-z]', rest) and rest.split()[0] not in NOT_A_VERB:
+        rest = rest.lstrip()
+    else:
+        return text
+    return rest[:1].upper() + rest[1:]
+
+
 def resource_line(record, section, language, translations, linked=True):
     """The shared README and case-file list line."""
     index = language == 'zh'
     name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if index else record['name'])
     title = f'[**{name}**]({record["url"]})' if linked else f'**{name}**'
-    description = plain_text(lead_sentence(record[f'description_{language}'], language))
+    lead = lead_sentence(record[f'description_{language}'], language)
+    description = plain_text(lead if index else without_leading_name(record['name'], lead))
     metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
     detail_url = f"https://awesomerea.org/{'zh/' if index else ''}resources/{record['id']}/"
     return f'- {title} - {description} <sub>{metadata} · [{FULL_ENTRY[index]}]({detail_url})</sub>'
@@ -387,8 +416,9 @@ def render_catalog(records, language, paper_urls=frozenset()):
     for section in COLLECTION_SECTIONS:
         if not groups[section]:
             continue
-        contents = '[↑ Contents](#contents)' if language == 'en' else '[↑ 返回目录](#目录)'
-        lines.extend([f'<a id="{section}"></a>', f'### {section_heading(section, language)}', '', contents, ''])
+        # No "back to Contents" link per section: awesome-lint flags a repeated link, and GitHub's outline menu
+        # reaches every heading.
+        lines.extend([f'<a id="{section}"></a>', f'### {section_heading(section, language)}', ''])
         if section == 'agents-and-mcp':
             lines.extend(agent_cross_reference(groups, language, translations))
         cases = [record for record in groups[section] if record['kind'] == 'case-study']
@@ -441,7 +471,8 @@ def agent_cross_reference(groups, language, translations):
                 name = (record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if index else record['name']
                 names.append(f"[{plain_text(name)}](https://awesomerea.org/{'zh/' if index else ''}resources/{record['id']}/)")
         if names:
-            parts.append(f'[{COLLECTION_SECTIONS[section][index]}](#{section}){"：" if index else ": "}'
+            # The section name is plain text: the finder table above already links each section once.
+            parts.append(f'{COLLECTION_SECTIONS[section][index]}{"：" if index else ": "}'
                          + ('、' if index else ', ').join(names))
     if not parts:
         return []
@@ -462,19 +493,22 @@ def heading_anchor(text):
 
 
 def render_contents(records, papers, index_count, language):
-    """One nested list that mirrors the ## and ### headings in order, as awesome-lint's ToC check expects, with the
-    entry count of each section. English links use the heading slugs that check resolves; Chinese headings repeat
-    the English section name, so Chinese links keep the explicit section anchors (#firmware, #papers-recent)."""
+    """The README's one section map: a nested list that mirrors the ## and ### headings in order, as awesome-lint's
+    ToC check expects, with each section's entry count and what it holds. Each heading is linked once, here.
+    English links use the heading slugs that check resolves; Chinese headings repeat the English section name, so
+    Chinese links keep the explicit section anchors (#firmware, #papers-recent). Contributing stays out of the
+    list (the ToC check excludes it); the navigation row links it."""
     zh = language == 'zh'
     paper_urls = {paper['url'] for paper in papers}
     counts = Counter(collection_section(record) for record in records if record['url'] not in paper_urls)
 
-    def item(labels, explicit=None, count=None):
+    def item(labels, explicit=None, count=None, blurb=None):
         label = labels[int(zh)]
         anchor = f'#{explicit}' if zh and explicit else heading_anchor(label)
-        return f'[{label}]({anchor})' + ('' if count is None else f' ({count:,})')
+        return (f'[{label}]({anchor})' + ('' if count is None else f' ({count:,})')
+                + ('' if blurb is None else ' — ' + FINDER_BLURBS[blurb][int(zh)]))
 
-    sections = [item(COLLECTION_SECTIONS[section], section, counts[section])
+    sections = [item(COLLECTION_SECTIONS[section], section, counts[section], section)
                 for section in COLLECTION_SECTIONS if counts[section]]
     # Papers counts every paper; its one subsection lists the newest, and the topics live in the paper files.
     paper_sections = [item(RECENT_HEADING, 'papers-recent', len(recent_papers(papers)))] if papers else []
@@ -482,17 +516,15 @@ def render_contents(records, papers, index_count, language):
              '- ' + item(README_HEADINGS['data']),
              '- ' + item(README_HEADINGS['resources'], count=sum(counts.values()))]
     lines += ['  - ' + line for line in sections]
-    lines += ['- ' + item(README_HEADINGS['papers'], 'papers', len(papers))]
+    lines += ['- ' + item(README_HEADINGS['papers'], 'papers', len(papers), 'papers')]
     lines += ['  - ' + line for line in paper_sections]
-    lines += ['- ' + item(README_HEADINGS['index'], count=index_count),
+    lines += ['- ' + item(README_HEADINGS['index'], count=index_count, blurb='index'),
               '- ' + item(README_HEADINGS['about']),
               '- ' + item(README_HEADINGS['star-history'])]
-    # Contributing stays out of the list (awesome-lint's ToC check excludes it) but keeps its Contents link.
-    lines += ['', ('本页还有：[参与贡献](#参与贡献)' if zh else 'Also on this page: [Contributing](#contributing)')]
     return '\n'.join(lines) + '\n'
 
 
-# One line per catalog section for the front-page finder table; wording is checked against the section's contents.
+# What each Contents line holds, per catalog section; wording is checked against the section's contents.
 FINDER_BLURBS = {
     'website': ('Tools and cases for inspecting, deobfuscating and rebuilding websites',
                '用于检查、反混淆和重建网站的工具与案例'),
@@ -517,44 +549,6 @@ FINDER_BLURBS = {
     'index': ('Public repositories found by README scans; unreviewed',
              '通过 README 扫描发现的公开仓库；未审核'),
 }
-FINDER_HEADER = (('Section', 'What you will find', 'Entries'), ('分区', '内容', '条目'))
-
-
-def render_finder(records, papers, index_count, language):
-    """Compact table of every catalog section with its live count, so the first screens show what exists and where.
-    Cells are padded to equal widths because awesome-lint compares pipe offsets."""
-    zh = language == 'zh'
-    paper_urls = {paper['url'] for paper in papers}
-    counts = Counter(collection_section(record) for record in records if record['url'] not in paper_urls)
-    rows = []
-
-    def add(labels, explicit, key, count, anchor=None):
-        label = labels[int(zh)]
-        link = anchor or (f'#{explicit}' if zh and explicit else heading_anchor(label))
-        rows.append((f'[{label}]({link})', FINDER_BLURBS[key][int(zh)], f'{count:,}'))
-
-    for section in COLLECTION_SECTIONS:
-        if counts[section]:
-            add(COLLECTION_SECTIONS[section], section, section, counts[section])
-    if papers:
-        add(README_HEADINGS['papers'], 'papers', 'papers', len(papers))
-    add(README_HEADINGS['index'], None, 'index', index_count)
-    header = FINDER_HEADER[int(zh)]
-    widths = [max(len(row[column]) for row in [header, *rows]) for column in range(3)]
-    line = lambda row: '| ' + ' | '.join(cell.ljust(width) if column < 2 else cell.rjust(width)
-                                          for column, (cell, width) in enumerate(zip(row, widths))) + ' |'
-    rule = '| ' + ' | '.join('-' * (width - 1) + (':' if column == 2 else '-') for column, width in enumerate(widths)) + ' |'
-    return '\n'.join([line(header), rule, *map(line, rows)]) + '\n\n'
-
-
-def render_contents_details(records, papers, index_count, language):
-    """The nested Contents list stays in the README for awesome-lint's ToC check; the finder table above it is what
-    readers use, so the list opens only on request."""
-    summary = '全部分区与小节' if language == 'zh' else 'All sections and subsections'
-    return (f'<details>\n<summary>{summary}</summary>\n\n'
-            + render_contents(records, papers, index_count, language) + '\n</details>\n')
-
-
 def render_totals(records, papers, index_count, language):
     """One line of collection totals and the newest review date, above the Contents sections."""
     zh = language == 'zh'
@@ -576,7 +570,7 @@ def render_badges(records, papers, language):
     """Report catalog populations, not execution verification or additive totals. Five badges, at most six. Count and
     license badges are plain images: the same pages are linked from the navigation row and the Use the data list, and
     awesome-lint flags a URL repeated in one README. The scan badge reads scan-status.json on the status branch live
-    (scripts/scan_status_badge.py), so the README is not regenerated on every scan and the badge turns amber after six
+    (scripts/scan_status_badge.py), so the README is not regenerated on every scan and the badge turns amber after nine
     hours without a successful scan. There is no CI badge: awesome lists must not carry one, and the footer already
     links the validate workflow's runs."""
     zh = language == 'zh'
@@ -902,18 +896,16 @@ def render_readme_papers(papers, language):
     lines = ['<a id="papers"></a>', '## ' + README_HEADINGS['papers'][index], '',
              (f'**{len(papers)} 篇论文**，完整列表按主题分组，组内按年份从新到旧排列。下面列出最新的 {len(recent)} 篇；每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。'
               if zh else f'**{len(papers)} papers**, grouped by topic and ordered newest first in the full paper list. The {len(recent)} most recent are below; each line shows the study’s opening sentence, venue, publication status and first author.'), '',
+             # The navigation row already links the paper directory, and Contributing links the paper form.
              f"[{'完整论文列表' if zh else 'Full paper list'}]({paper_file}) · "
-             f"[{'浏览论文目录' if zh else 'Browse the paper directory'}]({PAPER_DIRECTORY[index]}) · "
-             f"[{'完整书目 JSON' if zh else 'Complete bibliography JSON'}](data/papers.json) · "
-             f"[{'推荐论文' if zh else 'Suggest a paper'}]({SUGGEST_PAPER})", '']
+             f"[{'完整书目 JSON' if zh else 'Complete bibliography JSON'}](data/papers.json)", '']
     # One paragraph rather than a list: awesome-lint reads every list after Contents as resource entries.
     # Each topic keeps its old README anchor, so links to README.md#papers-<topic> land on its link here.
     topics = [f'<a id="papers-{section}"></a>[{labels[index]}]({paper_file}#papers-{section}) ({len(groups[section])})'
               for section, labels in PAPER_TOPIC_LABELS.items() if groups[section]]
     lines.extend([f"**{'按主题：' if zh else 'By topic:'}** " + ' · '.join(topics), '', FULL_ENTRY_NOTE[index], ''])
     if recent:
-        lines.extend(['<a id="papers-recent"></a>', '### ' + RECENT_HEADING[index], '',
-                      '[↑ 返回目录](#目录)' if zh else '[↑ Contents](#contents)', ''])
+        lines.extend(['<a id="papers-recent"></a>', '### ' + RECENT_HEADING[index], ''])
         lines.extend(paper_line(paper, language) for paper in recent)
     return '\n'.join(lines).rstrip() + '\n'
 
@@ -978,10 +970,9 @@ def rendered_files(records, papers, index_count):
         expected = replace_papers(expected, source_note('data/papers.json') + render_readme_papers(papers, language),
                                   language)
         expected = replace_contents(expected, source_note(*RESOURCE_SOURCES, 'data/papers.json', *INDEX_SOURCES)
-                                    + render_contents_details(records, papers, index_count, language))
+                                    + render_contents(records, papers, index_count, language))
         expected = replace_finder(expected, source_note(*RESOURCE_SOURCES, 'data/papers.json', *INDEX_SOURCES)
-                                  + render_totals(records, papers, index_count, language)
-                                  + render_finder(records, papers, index_count, language))
+                                  + render_totals(records, papers, index_count, language))
         files[name] = replace_badges(expected, source_note(*RESOURCE_SOURCES, 'data/papers.json')
                                      + render_badges(records, papers, language))
     for language, name in PAPER_FILES.items():

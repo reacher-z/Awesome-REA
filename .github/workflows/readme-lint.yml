@@ -1,6 +1,8 @@
 name: README lint
-# A report, not a gate: this workflow is separate from `Catalog checks`, and its job must not
-# join the required `validate` aggregate or the branch's required checks.
+# A gate on README.md: every finding that tests/awesome-lint/allowlist.json does not record as a false positive
+# fails the job. The generated list pages under docs/ are linted as reports and never fail it. This workflow
+# is separate from `Catalog checks`; its job must not join the required `validate` aggregate or the branch's
+# required checks, so a scheduled data commit is never blocked by it.
 # Both triggers use the files awesome-lint reads and the files that produce or report them: README.md
 # and docs/papers.md, docs/cases.md and docs/cases/ pages, the English lists that build_readme.py writes. The
 # repository-metadata rule also reads repository settings; rerun manually after changing them.
@@ -56,7 +58,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
         run: node tests/awesome-lint/lint.mjs README.md .cache/awesome-lint/findings.json
       # The paper lines moved out of README.md keep the same list-item and spell checks. README-level rules
-      # such as awesome-contributing also report on this file; the report is not a gate.
+      # such as awesome-contributing also report on this file, so it and the case lists are reports only.
       - name: Lint docs/papers.md
         if: ${{ !cancelled() }}
         env:
@@ -80,10 +82,10 @@ jobs:
         run: python3 scripts/awesome_lint_report.py .cache/awesome-lint/findings.json --summary "$GITHUB_STEP_SUMMARY"
       - name: Summarize paper-list findings per rule
         if: ${{ !cancelled() }}
-        run: python3 scripts/awesome_lint_report.py .cache/awesome-lint/papers-findings.json --summary "$GITHUB_STEP_SUMMARY"
+        run: python3 scripts/awesome_lint_report.py .cache/awesome-lint/papers-findings.json --report-only --summary "$GITHUB_STEP_SUMMARY"
       - name: Summarize case-list findings per rule
         if: ${{ !cancelled() }}
-        run: python3 scripts/awesome_lint_report.py .cache/awesome-lint/cases-findings.json --summary "$GITHUB_STEP_SUMMARY"
+        run: python3 scripts/awesome_lint_report.py .cache/awesome-lint/cases-findings.json --report-only --summary "$GITHUB_STEP_SUMMARY"
       - name: Keep every finding for review
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

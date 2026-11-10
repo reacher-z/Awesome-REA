@@ -45,11 +45,12 @@ class AgentCrossReferenceTest(unittest.TestCase):
         self.assertEqual([collection_section(record) for record in records],
                          ['agents-and-mcp', 'website', 'website', 'website'])
         en = render_catalog(records, 'en')
-        self.assertIn('[↑ Contents](#contents)\n\n**Also in target sections:** [Website](#website): '
+        # The section name is plain text: Contents already links each section once.
+        self.assertIn('### Agents and MCP\n\n**Also in target sections:** Website: '
                       '[Browser MCP](https://awesomerea.org/resources/chrome-devtools-mcp/), '
                       '[Web agent](https://awesomerea.org/resources/web-agent/)\n\n- [**Hub MCP**]', en)
         zh = render_catalog(records, 'zh')
-        self.assertIn('**其他分区中的智能体集成：** [网站](#website)：'
+        self.assertIn('**其他分区中的智能体集成：** 网站：'
                       '[浏览器 MCP](https://awesomerea.org/zh/resources/chrome-devtools-mcp/)、'
                       '[Web agent](https://awesomerea.org/zh/resources/web-agent/)\n', zh)
         for rendered in (en, zh):
