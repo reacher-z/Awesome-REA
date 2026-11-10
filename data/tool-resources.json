@@ -153318,6 +153318,7 @@
     "description_zh": "SF2DISASM 是《光明力量 II》的反汇编。README 写明它可以重新汇编成与原始美版 ROM 逐位一致的副本。split/split.bat 从用户提供的 ROM 中切出数据块，build/build.bat 把这些数据块和反汇编汇编回去。项目文本采用 CC BY-NC 4.0。",
     "evidence_url": "https://github.com/ShiningForceCentral/SF2DISASM/blob/b1e11fb1f69a083f9e29a408e7364c635afb471d/README.md",
     "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
     "requirements": [
       "The original US ROM is required for the split and rebuild. On the master branch, the README says the assembled ROM matches the original.",
       "The included editor tools are Java applications and need Java SE 17 or higher.",
