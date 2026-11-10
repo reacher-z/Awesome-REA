@@ -298,9 +298,11 @@ async function resourceListing(page, language, viewport, data) {
     assert.ok(shown.some(id => pageMap[id] > 1), `${label}: the filter searches rows from every static page`);
   }
   await page.goto(page.url().split('?')[0] + '?target=protocol&kind=tool');
-  await page.waitForFunction(() => document.querySelectorAll('[data-cards] > .card').length > 0, {timeout: 20000});
-  const opened = await page.$$eval('[data-cards] > .card .callno', nodes => nodes.map(node => node.textContent));
-  assert.ok(opened.length && opened.every(text => /tool|工具/i.test(text)), `${label}: a shared link opens the same filter`);
+  // The static rows show first; the filtered rows replace them once the search index arrives.
+  await page.waitForFunction(() => {
+    const kinds = [...document.querySelectorAll('[data-cards] > .card .callno')].map(node => node.textContent);
+    return kinds.length > 0 && kinds.every(text => /tool|工具/i.test(text));
+  }, {timeout: 20000}).catch(() => assert.fail(`${label}: a shared link opens the same filter`));
   // On a narrowed list a section's count follows the filters, and its link filters to that many rows.
   const sectionCounts = () => page.$$eval('[data-section-link]', links => links.map(link => [link.dataset.section, Number(link.querySelector('.count').textContent.replace(/\D/g, ''))]));
   const narrowed = await sectionCounts();
