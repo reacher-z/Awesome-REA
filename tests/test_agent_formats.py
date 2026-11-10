@@ -1,4 +1,5 @@
 """Markdown and JSON twins, alternate links and the full-catalog Markdown."""
+from copy import deepcopy
 from pathlib import Path
 import sys
 import unittest
@@ -83,6 +84,81 @@ class TwinTests(unittest.TestCase):
     def test_link_labels_escape_brackets(self):
         self.assertEqual(link('A [Bracketed] Study', 'https://x.test/'), r'[A \[Bracketed\] Study](https://x.test/)')
 
+    def test_resource_prose_preserves_literal_placeholders_in_twins_and_full_catalog(self):
+        for language, source, encoded in (
+            ('en', 'Use baserom.<version>.z64, /proc/<pid> & <region>; *BSD* and `raw` [x].',
+             r'Use baserom.&lt;version&gt;.z64, /proc/&lt;pid&gt; &amp; &lt;region&gt;; \*BSD\* and \`raw\` \[x\].'),
+            ('zh', '使用 baserom.<version>.z64、/proc/<pid> & <region>；*BSD* 与 `raw` [x]。',
+             r'使用 baserom.&lt;version&gt;.z64、/proc/&lt;pid&gt; &amp; &lt;region&gt;；\*BSD\* 与 \`raw\` \[x\]。'),
+        ):
+            with self.subTest(language=language):
+                record = deepcopy(RESOURCE)
+                record.update(name='<region> & *BSD*', name_zh='<region> & *BSD*')
+                record['description_' + language] = source
+                record['requirements_zh' if language == 'zh' else 'requirements'] = [source]
+                record['requirement_facets'] = ['prerequisites']
+                before = deepcopy(record)
+                twin = resource_markdown(record, language, site_url=ORIGIN)
+                full = full_catalog_markdown([record], [], language, site_url=ORIGIN,
+                                             sections={'test': ('Test', '测试')}, section_of=lambda row: 'test',
+                                             header='# Catalog\n')
+                for output in (twin, full):
+                    self.assertIn('# &lt;region&gt; &amp; \\*BSD\\*\n', output)
+                    self.assertIn('> ' + encoded + '\n', output)
+                    facet = '**前提条件：**' if language == 'zh' else '**Prerequisites:** '
+                    self.assertIn('- ' + facet + encoded + '\n', output)
+                    self.assertIn('1. <' + record['evidence_url'] + '>', output)
+                    self.assertIn('<' + record['url'] + '>', output)
+                    self.assertNotIn('<span>', output)
+                self.assertEqual(record, before)
+                self.assertEqual(resource_record(record, ORIGIN)['description_' + language], source)
+
+    def test_paper_prose_preserves_literal_markup_without_changing_sources(self):
+        source = '<region> &amp; *BSD* `raw` [x] \\file'
+        encoded = r'&lt;region&gt; &amp;amp; \*BSD\* \`raw\` \[x\] \\file'
+        for language in ('en', 'zh'):
+            with self.subTest(language=language):
+                paper = deepcopy(PAPER)
+                paper.update(title=source, title_zh=source, venue=source, authors=[source], authors_omitted=False,
+                             date_basis=source, date_basis_zh=source, metadata_notes=source, metadata_notes_zh=source)
+                for field in ('description_', 'scope_limitations_', 'why_fits_'):
+                    paper[field + language] = source
+                before = deepcopy(paper)
+                twin = paper_markdown(paper, language, site_url=ORIGIN)
+                full = full_catalog_markdown([], [paper], language, site_url=ORIGIN, sections={},
+                                             section_of=lambda row: None, header='# Catalog\n')
+                for output in (twin, full):
+                    self.assertIn('# ' + encoded + '\n', output)
+                    self.assertIn('> ' + encoded + '\n', output)
+                    self.assertEqual(output.count(encoded), 9 if language == 'zh' else 8)
+                    self.assertIn('1. <' + paper['url'] + '>', output)
+                    self.assertIn('<' + paper['pdf_url'] + '>', output)
+                self.assertEqual(paper, before)
+
+    def test_collection_prose_and_labels_are_literal_but_links_stay_links(self):
+        source, encoded = '<pid> & *x* [y]', r'&lt;pid&gt; &amp; \*x\* \[y\]'
+        for language in ('en', 'zh'):
+            with self.subTest(language=language):
+                output = collection_markdown(title=source, description=source, language=language,
+                                             canonical=ORIGIN + '/resources/', notes=[source], items=[],
+                                             groups=[(source, [{'name': source, 'url': 'https://example.org/approved',
+                                                               'meta': source, 'description': source}])])
+                self.assertIn('# ' + encoded + '\n', output)
+                self.assertIn('> ' + encoded + '\n', output)
+                self.assertIn('\n' + encoded + '\n', output)
+                self.assertIn('## ' + encoded + '\n', output)
+                self.assertIn('- [' + encoded + '](https://example.org/approved)', output)
+                self.assertIn(encoded + ' · ' + encoded, output)
+                self.assertIn('<' + ORIGIN + '/resources/>', output)
+
+    def test_plain_prose_cannot_introduce_markdown_blocks(self):
+        for source, encoded in (('# Heading', r'\# Heading'), ('1. List', r'1\. List'),
+                                ('2) List', r'2\) List'), ('- List', r'\- List'), ('+ List', r'\+ List'),
+                                ('---', r'\---'), ('===', r'\==='), ('> Quote', '&gt; Quote')):
+            with self.subTest(source=source):
+                output = paper_markdown({**PAPER, 'scope_limitations_en': source}, 'en', site_url=ORIGIN)
+                self.assertIn('## Scope and limitations\n\n' + encoded + '\n', output)
+
     def test_json_twins_publish_only_recorded_fields_and_their_urls(self):
         value = resource_record(RESOURCE, ORIGIN)
         self.assertNotIn('private_note', value)
@@ -113,7 +189,7 @@ class TwinTests(unittest.TestCase):
         self.assertTrue(full.startswith('# Full catalog\n\n> Everything.\n'))
         self.assertIn('### Native binaries (1)', full)
         self.assertIn('#### Ghidra\n', full)
-        self.assertIn('### A [Bracketed] Study\n', full)
+        self.assertIn('### A \\[Bracketed\\] Study\n', full)
         self.assertIn(f'<{ORIGIN}/resources/ghidra/>', full)
         # The review note is stated once, not under every entry, and the twin links are left out.
         self.assertEqual(full.count('The description was reviewed against primary sources.'), 1)

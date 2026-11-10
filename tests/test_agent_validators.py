@@ -45,6 +45,21 @@ class TwinValidatorTests(unittest.TestCase):
     def test_complete_twins_pass(self):
         validate_twins(self.output, self.routes, [RESOURCE], [PAPER])
 
+    def test_literal_heading_and_description_are_validated_in_markdown_form(self):
+        record = {**RESOURCE, 'name': '<pid> & *x*', 'name_zh': '<pid> & *x*',
+                  'description_en': 'Read <region> &amp; [x].', 'description_zh': '读取 <region> &amp; [x]。'}
+        (self.output / 'resources/ghidra/record.json').write_text(json_text(resource_record(record, ORIGIN)), encoding='utf-8')
+        for prefix, description in (('', r'Read &lt;region&gt; &amp;amp; \[x\].'),
+                                    ('/zh', r'读取 &lt;region&gt; &amp;amp; \[x\]。')):
+            route = prefix + '/resources/ghidra/'
+            (self.output / route.lstrip('/') / 'index.md').write_text(
+                '# &lt;pid&gt; &amp; \\*x\\*\n\n> ' + description + '\n\n<' + ORIGIN + route + '>\n', encoding='utf-8')
+        validate_twins(self.output, self.routes, [record], [])
+        path = self.output / 'zh/resources/ghidra/index.md'
+        path.write_text(path.read_text().replace('&lt;region&gt;', ''), encoding='utf-8')
+        with self.assertRaisesRegex(AssertionError, 'lost the description'):
+            validate_twins(self.output, self.routes, [record], [])
+
     def test_a_stale_record_a_missing_link_or_an_orphan_twin_fails(self):
         record = self.output / 'resources/ghidra/record.json'
         original = record.read_text(encoding='utf-8')

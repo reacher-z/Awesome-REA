@@ -83,9 +83,21 @@ def text(value) -> str:
     return ' '.join(str(value).split())
 
 
+def markdown_text(value) -> str:
+    """Literal prose for Markdown; generated links and markup bypass this encoder."""
+    value = escape(text(value), quote=False)
+    value = re.sub(r'([\\\[\]*_`~])', r'\\\1', value)
+    value = re.sub(r'^(#{1,6})(?= |$)', r'\\\1', value)
+    value = re.sub(r'^(\d{1,9})([.)])(?= |$)', r'\1\\\2', value)
+    value = re.sub(r'^([-+])(?= |$)', r'\\\1', value)
+    if re.fullmatch(r'-{3,}|={3,}', value):
+        value = '\\' + value
+    return value
+
+
 def label_text(value) -> str:
-    """Text inside a link label, with brackets and backslashes escaped."""
-    return re.sub(r'([\\\[\]])', r'\\\1', text(value))
+    """Literal prose inside an intentional link label."""
+    return markdown_text(value)
 
 
 def link(label, url: str) -> str:
@@ -136,7 +148,7 @@ def _requirements(record: dict, language: str) -> list[str]:
     for facet, item in ordered_items(record, items):
         # The closing ** must follow a non-space character to stay bold in CommonMark.
         lead = (f'**{FACETS[facet][1]}：**' if language == 'zh' else f'**{FACETS[facet][0]}:** ') if facet else ''
-        lines.append(f'- {lead}{text(item)}')
+        lines.append(f'- {lead}{markdown_text(item)}')
     return lines
 
 
@@ -173,7 +185,7 @@ def resource_markdown(record: dict, language: str, *, site_url: str, siblings: d
             (choose('Record JSON', '记录 JSON'), f'<{site_url}{record_json_route("resource", identifier)}>'),
             (choose('Chinese version', '英文版'), link('简体中文' if not zh else 'English', site_url + entry_route('resource', identifier, other) + MARKDOWN)),
         ]
-    lines = [f'# {text(name)}', '', f'> {text(record[f"description_{language}"])}', '', *bullet_facts(facts, language), '',
+    lines = [f'# {markdown_text(name)}', '', f'> {markdown_text(record[f"description_{language}"])}', '', *bullet_facts(facts, language), '',
              f'## {REQUIREMENTS_LABEL[zh]}', '', *_requirements(record, language), '',
              f'## {choose("Primary sources", "一手来源")}', '',
              *_sources([record['evidence_url'], *record.get('additional_evidence_urls', [])]), '']
@@ -207,14 +219,14 @@ def paper_markdown(paper: dict, language: str, *, site_url: str, related: list[t
     identifier = paper['id']
     title = paper['title_zh'] if zh else paper['title']
     authors = (link(choose(*AUTHORS_OMITTED), paper['url']) if authors_omitted(paper)
-               else text('; '.join(paper['authors'])))
+               else markdown_text('; '.join(paper['authors'])))
     facts = [
         (choose('Authors', '作者'), authors),
-        (choose('Original title', '原标题'), text(paper['title']) if zh else None),
-        (choose('Venue', '发表载体'), text(paper['venue'])),
+        (choose('Original title', '原标题'), markdown_text(paper['title']) if zh else None),
+        (choose('Venue', '发表载体'), markdown_text(paper['venue'])),
         (choose('Status', '发表状态'), STATUS_LABELS[paper['publication_status']][zh]),
         (choose('Publication / posting date', '出版／提交日期'), formatted_date(paper.get('publication_date'), language, paper['year'])),
-        (choose('Date source', '日期依据'), text(paper['date_basis_zh' if zh else 'date_basis'])),
+        (choose('Date source', '日期依据'), markdown_text(paper['date_basis_zh' if zh else 'date_basis'])),
         (choose('First arXiv submission', 'arXiv 首次提交'), formatted_date(paper['first_arxiv_date'], language) if paper.get('first_arxiv_date') else None),
         ('arXiv', paper.get('arxiv_id')),
         (choose('Reviewed arXiv version', '已复核的 arXiv 版本'), paper.get('arxiv_version_reviewed')),
@@ -233,10 +245,10 @@ def paper_markdown(paper: dict, language: str, *, site_url: str, related: list[t
             (choose('Record JSON', '记录 JSON'), f'<{site_url}{record_json_route("paper", identifier)}>'),
             (choose('Chinese version', '英文版'), link('简体中文' if not zh else 'English', site_url + entry_route('paper', identifier, 'en' if zh else 'zh') + MARKDOWN)),
         ]
-    lines = [f'# {text(title)}', '', f'> {text(paper[f"description_{language}"])}', '', *bullet_facts(facts, language), '',
-             f'## {choose("Scope and limitations", "研究范围与局限")}', '', text(paper[f'scope_limitations_{language}']), '',
-             f'## {choose("Why it fits this collection", "与本合集的关联")}', '', text(paper[f'why_fits_{language}']), '',
-             f'## {choose("Publication and review notes", "发表与复核说明")}', '', text(paper['metadata_notes_zh' if zh else 'metadata_notes']), '',
+    lines = [f'# {markdown_text(title)}', '', f'> {markdown_text(paper[f"description_{language}"])}', '', *bullet_facts(facts, language), '',
+             f'## {choose("Scope and limitations", "研究范围与局限")}', '', markdown_text(paper[f'scope_limitations_{language}']), '',
+             f'## {choose("Why it fits this collection", "与本合集的关联")}', '', markdown_text(paper[f'why_fits_{language}']), '',
+             f'## {choose("Publication and review notes", "发表与复核说明")}', '', markdown_text(paper['metadata_notes_zh' if zh else 'metadata_notes']), '',
              f'## {choose("Primary sources", "一手来源")}', '', *_sources(paper['evidence_urls']), '']
     if related:
         lines += [f'## {choose("Related entries", "相关条目")}', '']
@@ -250,17 +262,20 @@ def paper_markdown(paper: dict, language: str, *, site_url: str, related: list[t
 
 
 def collection_markdown(*, title: str, description: str, language: str, canonical: str, items: list[dict],
-                        notes: list[str] = (), groups: list[tuple[str, list[dict]]] | None = None,
+                        notes: list[str] = (), markup: list[str] = (),
+                        groups: list[tuple[str, list[dict]]] | None = None,
                         json_url: str | None = None, counterpart: str | None = None) -> str:
     """The Markdown twin of a listing: its summary, then each listed item as a link with a short description.
 
     ``items`` (or ``groups`` of items under subheadings) hold ``name``, ``url`` and optional ``description``
-    and ``meta`` strings. ``url`` should be the item's own Markdown twin where one exists.
+    and ``meta`` strings. ``url`` should be the item's own Markdown twin where one exists. ``notes`` are
+    literal prose and get escaped; ``markup`` holds generator-written Markdown that is emitted as is.
     """
     zh = language == 'zh'
-    lines = [f'# {text(title)}', '', f'> {text(description)}', '']
-    lines += [text(note) for note in notes if note]
-    if notes:
+    lines = [f'# {markdown_text(title)}', '', f'> {markdown_text(description)}', '']
+    lines += [markdown_text(note) for note in notes if note]
+    lines += [note for note in markup if note]
+    if notes or markup:
         lines.append('')
     facts = [('HTML', f'<{canonical}>')]
     if json_url:
@@ -271,11 +286,11 @@ def collection_markdown(*, title: str, description: str, language: str, canonica
 
     def rows(entries):
         for item in entries:
-            details = ' · '.join(text(part) for part in (item.get('meta'), item.get('description')) if part)
+            details = ' · '.join(markdown_text(part) for part in (item.get('meta'), item.get('description')) if part)
             yield f'- {link(item["name"], item["url"])}' + ((('：' if zh else ': ') + details) if details else '')
     for heading, entries in (groups if groups is not None else [(None, items)]):
         if heading:
-            lines += [f'## {text(heading)}', '']
+            lines += [f'## {markdown_text(heading)}', '']
         lines += [*rows(entries), '']
     return '\n'.join(lines)
 

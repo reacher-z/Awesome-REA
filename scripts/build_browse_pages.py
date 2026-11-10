@@ -340,8 +340,8 @@ def build_browse_pages(
                            for slug, labels in CATEGORIES.items()]
             rendered[path.lstrip('/') + MARKDOWN] = collection_markdown(
                 title=label, description=description, language=language, canonical=canonical, items=entries,
-                notes=[*([browse_guides.definition(category, zh)] if category else []), INDEX_NOTE[language_index], date_text,
-                       *browse_guides.markdown_notes(guide_items, zh)],
+                notes=[*([browse_guides.definition(category, zh)] if category else []), INDEX_NOTE[language_index], date_text],
+                markup=browse_guides.markdown_notes(guide_items, zh),
                 json_url=site_url + ((browse_path('en', category) + COLLECTION_JSON) if category else '/api/v1/categories.json'),
                 counterpart=site_url + counterpart + MARKDOWN)
             canonical_urls.append(canonical)
