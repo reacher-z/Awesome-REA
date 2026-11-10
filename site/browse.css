@@ -63,6 +63,11 @@ html[lang="zh-CN"] .source-card.browse-repository .source-related-label::after{c
 .browse-repository .source-card-footer{margin-top:4px;line-height:1.6}
 .browse-repository .source-card-footer .source-stars{padding:0;border:0;background:none;font-size:14px;line-height:1.6;color:var(--muted)}
 .browse-repository .source-card-pushed{white-space:nowrap;font-variant-numeric:tabular-nums}
+/* Touch targets reach 24 px: footer links are flex items and grow; the title link is inline, so padding enlarges its
+   box without moving the text. */
+.browse-repository .source-card-footer a{display:inline-flex;align-items:center;min-height:24px}
+.browse-repository .source-title-link,.browse-breadcrumbs a{padding-block:2px}
+.source-card.browse-repository .source-related-link{display:inline-block;min-height:24px;line-height:24px}
 /* Below 521 px a fourth meta item wraps the licence onto its own row: show the month alone (its "Last push" label stays
    for screen readers and in the tooltip) and tighten the gaps, so stars, README, month and licence share one row again. */
 @media(max-width:520px){
