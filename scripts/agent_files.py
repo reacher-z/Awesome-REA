@@ -20,7 +20,7 @@ def agents_markdown(site_url: str, repository_url: str, *, resources: int, paper
     s = site_url.rstrip('/')
     return f'''# Awesome REA (Awesome Reverse Engineering Anything): agent guide
 
-> Awesome REA (AwesomeREA.org) is a bilingual (English, Simplified Chinese) catalog of {resources:,} source-reviewed tools, projects, integrations and case studies ({cases:,} of them cases) and {papers:,} research papers on reverse engineering websites, games, apps, native binaries, firmware and communication protocols. It also indexes {repositories:,} browsable repositories found by automated README scans. Data updated {updated}.
+> Awesome REA (AwesomeREA.org) is a bilingual (English, Simplified Chinese) catalog of {resources:,} source-reviewed tools, projects, integrations and case studies ({cases:,} of them cases) and {papers:,} research papers on reverse engineering websites, games, apps, native binaries, firmware and communication protocols. Data updated {updated}.
 
 ## Read an item as Markdown
 
@@ -74,7 +74,7 @@ python3 scripts/catalog.py <query>        # in a clone of the repository; add --
 
 ```sh
 curl -sL {s}/llms.txt                     # index of Markdown pages
-curl -sL {s}/llms-full.txt                # every curated resource and paper in one file
+curl -sL {s}/llms-full.txt                # index of the parts holding every curated resource and paper
 curl -sL {s}/zh/llms-full.txt             # the same in Chinese
 curl -sL {s}/sitemap.xml
 curl -sLO {s}/downloads/records.jsonl     # one resource or paper per line
@@ -153,3 +153,58 @@ def add_front_matter(output: Path, site_url: str, dates: dict[str, str], fallbac
         path.write_text(front + text, encoding='utf-8')
         changed += 1
     return changed
+
+
+PART_LIMIT = 4_800_000
+
+
+def split_blocks(text: str, limit: int = PART_LIMIT) -> list[str]:
+    """Cut text into parts of at most ``limit`` bytes, only before a heading line."""
+    blocks, current = [], []
+    # Resource entries are #### headings; paper entries are ### headings whose sections are #### headings.
+    deepest = 4
+    for line in text.split('\n'):
+        if re.match(r'## [^#]', line) and ('Research papers' in line or '研究论文' in line):
+            deepest = 3
+        if re.match(rf'#{{2,{deepest}}} ', line) and current:
+            blocks.append('\n'.join(current) + '\n')
+            current = []
+        current.append(line)
+    blocks.append('\n'.join(current))
+    parts, size = [''], 0
+    for block in blocks:
+        length = len(block.encode('utf-8'))
+        if length > limit:
+            raise ValueError('A catalog entry is larger than a part of the full catalog')
+        if size + length > limit and parts[-1]:
+            parts.append('')
+            size = 0
+        parts[-1] += block
+        size += length
+    return parts
+
+
+def write_full_catalog(output: Path, language: str, text: str, *, title: str, summary: str, faq: str, site_url: str) -> list[str]:
+    """Write llms-full.txt as an index of parts of at most PART_LIMIT bytes each; return the part URLs."""
+    zh = language == 'zh'
+    prefix = '/zh' if zh else ''
+    output = Path(output)
+    parts = split_blocks(text)
+    folder = output / prefix.lstrip('/') / 'llms-full'
+    folder.mkdir(parents=True, exist_ok=True)
+    urls, rows = [], []
+    for number, part in enumerate(parts, 1):
+        body = part.split('\n', 1)[1] if part.startswith('# ') else part
+        label = f'第 {number} 卷，共 {len(parts)} 卷' if zh else f'part {number} of {len(parts)}'
+        content = f'# {title}: {label}\n{body}'.rstrip('\n') + '\n'
+        (folder / f'part-{number}.txt').write_text(content, encoding='utf-8')
+        url = f'{site_url}{prefix}/llms-full/part-{number}.txt'
+        urls.append(url)
+        headings = [line.lstrip('# ') for line in content.split('\n') if re.match(r'#{2,4} ', line)]
+        rows.append(f'- [{label}]({url}): {len(content.encode("utf-8")) / 1_000_000:.1f} MB, from {headings[0] if headings else title}')
+    intro = ('每一卷是完整目录的连续一段，按顺序读取即可得到全部精选资源与论文。' if zh else
+             'The parts are consecutive sections of the full catalog; read them in order to get every curated resource and paper.')
+    index = '\n'.join([f'# {title}: ' + ('完整精选目录（索引）' if zh else 'the full curated catalog (index)'), '', f'> {summary}', '', intro, '',
+                       f'## {"分卷" if zh else "Parts"}', '', *rows, '', faq.rstrip('\n'), ''])
+    (output / prefix.lstrip('/') / 'llms-full.txt').write_text(index, encoding='utf-8')
+    return urls

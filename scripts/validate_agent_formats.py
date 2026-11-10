@@ -34,6 +34,8 @@ EXPECTED_HEADERS = {
     '/agents.txt': {'content-type': 'text/plain; charset=utf-8'},
     '/llms-full.txt': {'content-type': 'text/plain; charset=utf-8'},
     '/zh/llms-full.txt': {'content-type': 'text/plain; charset=utf-8'},
+    '/llms-full/*': {'content-type': 'text/plain; charset=utf-8'},
+    '/zh/llms-full/*': {'content-type': 'text/plain; charset=utf-8'},
     '/feed.json': {'content-type': 'application/feed+json; charset=utf-8'},
     '/zh/feed.json': {'content-type': 'application/feed+json; charset=utf-8'},
 }
@@ -192,11 +194,19 @@ def validate_llms(output, resources, papers):
             local /= 'index.html'
         assert local.is_file(), f'llms.txt links a missing file: {url}'
     for name, prefix in (('llms-full.txt', ''), ('zh/llms-full.txt', '/zh')):
-        full = (output / name).read_text(encoding='utf-8')
-        assert full.startswith('# '), f'{name} must be Markdown'
+        index = (output / name).read_text(encoding='utf-8')
+        assert index.startswith('# '), f'{name} must be Markdown'
+        part_paths = re.findall(rf'\]\({re.escape(ORIGIN)}({re.escape(prefix)}/llms-full/part-\d+\.txt)\)', index)
+        assert part_paths, f'{name} must list its parts'
+        full = ''
+        for path in part_paths:
+            raw = (output / path.lstrip('/')).read_bytes()
+            assert len(raw) <= 5_000_000, f'{path} exceeds 5 MB'
+            assert raw.decode('utf-8').startswith('# '), f'{path} must be Markdown'
+            full += raw.decode('utf-8')
         for kind, records in (('resource', resources), ('paper', papers)):
             missing = [row['id'] for row in records if f'<{ORIGIN}{prefix}/{kind}s/{row["id"]}/>' not in full]
-            assert not missing, f'{name} lacks entries: ' + ', '.join(missing[:5])
+            assert not missing, f'{name} lacks entries in its parts: ' + ', '.join(missing[:5])
 
 
 def validate_agent_files(output, resources, papers):
