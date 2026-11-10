@@ -94,8 +94,9 @@ class BrowseGuideTests(unittest.TestCase):
         chinese = dict(browse_guides.faqs('android', 'Android 应用', records, classes, True, '2026-10-20'))
         self.assertEqual(english['How many of these repositories document installation and usage in their README?'],
                          '1 of 4 documents both installation and usage in their README (scan class C1). '
-                         '1 is missing one of the two (C2) and 1 has no usable README documentation (C3). 1 has no README scan class.')
+                         '1 is missing at least one of the two (C2) and 1 has no usable README documentation (C3). 1 has no README scan class.')
         self.assertIn('这些仓库中有多少在 README 中写明了安装和用法？', chinese)
+        self.assertIn('至少缺少其中一项', chinese['这些仓库中有多少在 README 中写明了安装和用法？'])
         self.assertIn('哪些 Android 应用类仓库的星标最多？', chinese)
         curated = english['Which of these repositories have a curated entry?']
         self.assertIn('href="/resources/ghidra/" aria-label="Curated entry: owner/tool-0">owner/tool-0</a>', curated)
