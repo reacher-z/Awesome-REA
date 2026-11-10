@@ -381,6 +381,7 @@
 - [**Pokémon Sword and Shield：Pawn 脚本的匹配反编译**](https://github.com/lincoln-lm/swsh-pawn-decomp) - 该项目从《宝可梦 剑／盾》的游戏文件重建 Pawn AMX 脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/swsh-pawn-scripts-case/)</sub>
 - [**Pokémon XD: Gale of Darkness：GameCube 字节匹配反编译**](https://github.com/DonovanMontoya/pokemon-xd-decomp) - 项目将 GameCube 游戏《Pokémon XD: Gale of Darkness》重建为 C/C++ 源码，目标是生成与零售版逐字节一致的程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-xd-gale-of-darkness-decomp-case/)</sub>
 - [**Pokémon XD：GameCube 一致性反编译**](https://github.com/TeamOrre/xd-decomp) - 该仓库是 GameCube 游戏 Pokémon XD: Gale of Darkness 的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xd-decomp/)</sub>
+- [**Pokémon Yellow：按校验和核对的重建**](https://github.com/pret/pokeyellow) - 重建Pokémon Yellow，并对照仓库中记录的校验和检查结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokeyellow-matching-case/)</sub>
 - [**Psychonauts：逐字节匹配 Lua 脚本与 PC 引擎函数**](https://github.com/DrDecki/psychonauts-decomp) - Psychonauts 项目将 PC 版游戏修改过的 Lua 4.0 脚本及部分 32 位 x86 引擎反编译为源码，并逐函数比较重新编译的字节。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/psychonauts-decomp-case/)</sub>
 - [**pw：Pokéwalker 固件的一致性反编译重建**](https://github.com/lumirth/pw) - 以 C 语言重建 Pokéwalker 的固件。 <sub>案例 · 独立重建 · 也适用：固件 · [完整条目](https://awesomerea.org/zh/resources/pokewalker-matching-decomp-case/)</sub>
 - [**ra2-decomp：《尤里的复仇》匹配反编译**](https://github.com/gibbo101/ra2-decomp) - ra2-decomp 将《命令与征服：红色警戒 2——尤里的复仇》1.001 版重建为 C++，逐函数比对编译结果与 gamemd.exe 的字节。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ra2-decomp-yuris-revenge-case/)</sub>
@@ -631,5 +632,4 @@
 - [**CMR2Decomp：反编译 Colin McRae Rally 2.0**](https://github.com/CMR2Decomp/CMR2Decomp) - CMR2Decomp 是 PC 游戏 Colin McRae Rally 2.0 的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cmr2-decomp/)</sub>
 - [**Computer Archeology：街机游戏反汇编笔记**](https://github.com/topherCantrell/computerarcheology) - Computer Archeology 存放由工具链渲染到 computerarcheology.com 的 Markdown 反汇编和注释。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/computerarcheology/)</sub>
 - [**Costume Quest：Windows x86 功能匹配反编译**](https://github.com/Costume-Quest-Modding/CostumeQuest-Decomp) - Costume Quest 项目以 C++ 重建 Windows x86 Steam Build 81338 的游戏函数，目标是保持功能一致。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/costume-quest-decomp-case/)</sub>
-- [**Crash Bandicoot: The Wrath of Cortex：早期 PS2 反编译**](https://github.com/calmsacibis995/crash-ps2) - crash-ps2 开始以 C 反编译 PS2 NTSC-U v1.00 版 Crash Bandicoot: The Wrath of Cortex。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash-ps2-case/)</sub>
 <!-- END GENERATED CASES -->

@@ -10,6 +10,7 @@
 
 ## 非匹配反编译
 
+- [**Crash Bandicoot: The Wrath of Cortex：早期 PS2 反编译**](https://github.com/calmsacibis995/crash-ps2) - crash-ps2 开始以 C 反编译 PS2 NTSC-U v1.00 版 Crash Bandicoot: The Wrath of Cortex。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash-ps2-case/)</sub>
 - [**Crash Bash：以函数比对推进的 PSX 反编译**](https://github.com/mateusfavarin/crashbash) - Crash Bash 是 PlayStation 游戏《Crash Bash》的持续反编译项目，恢复的代码按游戏二进制文件组织。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash-bash-decomp-case/)</sub>
 - [**Crash Tag Team Racing：GameCube 游戏反编译**](https://github.com/bluisblu/cttr) - Crash Tag Team Racing 是进行中的 GameCube 游戏反编译项目，提供 C/C++ 源码、符号表及美版和日版构建配置。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash-tag-team-racing-decomp-case/)</sub>
 - [**Crash Twinsanity：PAL 版 PS2 可执行文件的 C++ 重建**](https://github.com/Smartkin/twinsanity-reversed) - Crash Twinsanity 以 C++ 重建《Crash Twinsanity》PAL 版 PS2 可执行文件，通过平台层调用硬件功能，并从用户的原版可执行文件提取所需数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash-twinsanity-decomp-case/)</sub>
@@ -634,5 +635,4 @@
 - [**Luigi's Mansion：《Luigi’s Mansion》GameCube 静态重编译与启动分析**](https://github.com/sp00nznet/luigismansion) - Luigi's Mansion 项目使用 gcrecomp 将 GameCube 游戏的 PowerPC DOL 转换为 C++，并提供具备 DOL 加载、符号导入和 GameCube OS 替代实现的 Windows 运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/luigis-mansion-recomp-case/)</sub>
 - [**Luigi's Mansion：静态重编译版本的 PS5 移植**](https://github.com/leafyjerk/PS5_LuigisMansion) - Luigi's Mansion for the PlayStation 5 将 GameCube 游戏已有的静态重编译版本移植到 PS5 自制软件环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/luigis-mansion-ps5-port-case/)</sub>
 - [**Mabecs International Superstar Soccer 2000：支持三个版本的 N64 静态重编译**](https://github.com/Mabec-games/iss2000-recomp) - Mabecs International Superstar Soccer 2000 使用 N64Recomp、N64ModernRuntime 和 RT64，将三个 N64 版本转换为 Windows 与 Linux 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/iss2000-recomp-case/)</sub>
-- [**Marble Knights Recompiled：《Marble Knights》iOS 版的静态重编译移植**](https://github.com/YuutaTsubasa/MarbleKnightsRecompiled) - Marble Knights Recompiled 将《Marble Knights》iOS 版 UnityFramework 中的 ARM64 函数预先转成 C，再编译为供 Unity 2019.4.17f1 Windows 播放器加载的 GameAssembly.dll。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/marble-knights-recompiled-case/)</sub>
 <!-- END GENERATED CASES -->
