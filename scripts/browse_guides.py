@@ -141,11 +141,11 @@ def faqs(category: str, label: str, records: list[dict], scan_classes: dict, zh:
         rest = total - c1 - c2 - c3
         if zh:
             text = f'{n(total)} 个仓库中有 {n(c1)} 个在 README 中同时写明了安装和用法（README 扫描档位 C1）'
-            text += ''.join(f'，{n(count)} 个{detail}（C{c}）' for c, count, detail in ((2, c2, '缺少其中一项'), (3, c3, '没有可用的 README 文档')) if count) + '。'
+            text += ''.join(f'，{n(count)} 个{detail}（C{c}）' for c, count, detail in ((2, c2, '至少缺少其中一项'), (3, c3, '没有可用的 README 文档')) if count) + '。'
             text += f'另有 {n(rest)} 个没有 README 扫描档位。' if rest else ''
             items.append(('这些仓库中有多少在 README 中写明了安装和用法？', text))
         else:
-            tail = [f'{n(count)} {verb(count, "are", "is")} missing one of the two (C2)' if c == 2 else
+            tail = [f'{n(count)} {verb(count, "are", "is")} missing at least one of the two (C2)' if c == 2 else
                     f'{n(count)} {verb(count, "have", "has")} no usable README documentation (C3)'
                     for c, count in ((2, c2), (3, c3)) if count]
             text = f'{n(c1)} of {n(total)} {verb(c1, "document", "documents")} both installation and usage in their README (scan class C1).'
