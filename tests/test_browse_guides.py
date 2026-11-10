@@ -98,7 +98,7 @@ class BrowseGuideTests(unittest.TestCase):
         self.assertIn('这些仓库中有多少在 README 中写明了安装和用法？', chinese)
         self.assertIn('哪些 Android 应用类仓库的星标最多？', chinese)
         curated = english['Which of these repositories have a curated entry?']
-        self.assertIn('href="/resources/ghidra/">owner/tool-0</a>', curated)
+        self.assertIn('href="/resources/ghidra/" aria-label="Curated entry: owner/tool-0">owner/tool-0</a>', curated)
         self.assertNotIn('AirPods', curated)
 
 

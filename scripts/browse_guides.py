@@ -130,8 +130,9 @@ def faqs(category: str, label: str, records: list[dict], scan_classes: dict, zh:
             items.append(('Which licenses do these repositories use?', text))
     curated = [r for r in records if curated_entries(r, zh)]
     if curated:
-        # Each example is the repository's owner/name, linked to its curated entry, so long entry titles stay out of the sentence.
-        examples = series([f'<a href="{escape(curated_entries(r, zh)[0][1], quote=True)}">{escape(r.get("full_name") or r["name"])}</a>' for r in curated[:3]], zh)
+        # Each example links the repository's owner/name to its curated entry, so long entry titles stay out of the sentence.
+        # The aria-label keeps this link's name distinct from the repository link that points at the repository itself.
+        examples = series([f'<a href="{escape(curated_entries(r, zh)[0][1], quote=True)}" aria-label="{escape(("精选条目：" if zh else "Curated entry: ") + (r.get("full_name") or r["name"]), quote=True)}">{escape(r.get("full_name") or r["name"])}</a>' for r in curated[:3]], zh)
         items.append(('其中哪些仓库有精选条目？', f'{n(total)} 个仓库中有 {n(len(curated))} 个链接到精选条目，条目附有审阅过的说明、使用条件和证据，例如{examples}。') if zh else
                      ('Which of these repositories have a curated entry?', f'{n(len(curated))} of {n(total)} {verb(len(curated), "link", "links")} a curated entry with a reviewed description, requirements and evidence, for example {examples}.'))
     classes = Counter(scan_classes.get(r['id']) for r in records)
