@@ -1,0 +1,6 @@
+# Pillow makes the WebP thumbnails of /resources/ demo previews (scripts/preview_thumbs.py). The publication builds
+# (Awesome-REA/awesomerea.org and Awesome-REA/awesome-rea.com) and the IndexNow rebuild install it from this file:
+#   python3 -m pip install --disable-pip-version-check --no-deps --only-binary=:all: --require-hashes -r scripts/publish-requirements.txt
+pillow==11.3.0 \
+    --hash=sha256:67172f2944ebba3d4a7b54f2e95c786a3a50c21b88456329314caaa28cda70f6 \
+    --hash=sha256:676b2815362456b5b3216b4fd5bd89d362100dc6f4945154ff172e206a22c024

@@ -178,6 +178,15 @@ class WaitTests(unittest.TestCase):
         self.assertFalse(automation.differs_only_in_previews(b'not json', built))
         self.assertFalse(automation.differs_only_in_previews(b'{"files": {}, "schema_version": 2}', b'{"files": {}}'))
 
+    def test_served_thumbnails_count_as_preview_images(self):
+        image = b'webp bytes'
+        entry = {'sha256': hashlib.sha256(image).hexdigest(), 'bytes': len(image)}
+        served = json.dumps({'files': {'previews/thumbs/a.webp': entry}}).encode()
+        built = json.dumps({'files': {'previews/thumbs/a.webp': {'sha256': '0' * 64, 'bytes': 1}}}).encode()
+        self.assertEqual(automation.served_previews(served, built, lambda url, limit: image), {'previews/thumbs/a.webp': image})
+        nested = json.dumps({'files': {'previews/thumbs/deeper/a.webp': entry}}).encode()
+        self.assertIsNone(automation.served_previews(nested, built, lambda url, limit: image))
+
     def test_a_deferred_wait_warns_and_succeeds(self):
         output = StringIO()
         with patch.object(automation, 'wait_for_deployment', return_value='pending'), \
@@ -275,6 +284,10 @@ class WorkflowTests(unittest.TestCase):
 
     def test_builds_like_the_publication_waits_then_submits_and_keeps_the_receipt(self):
         build = self.text.index('python3 scripts/build_production.py --publish')
+        # The same pinned Pillow as the publication builds, so the preview thumbnails match.
+        pillow = self.text.index('--require-hashes -r scripts/publish-requirements.txt')
+        self.assertLess(pillow, build)
+        self.assertRegex((ROOT / 'scripts/publish-requirements.txt').read_text(encoding='utf-8'), r'(?m)^pillow==[0-9.]+ \\$')
         wait = self.text.index('python3 scripts/indexnow_automation.py wait "$SHA" dist')
         previous = self.text.index('python3 scripts/indexnow_automation.py previous')
         submit = self.text.index('python3 scripts/submit_indexnow.py "${args[@]}"')
