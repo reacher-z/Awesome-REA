@@ -409,7 +409,7 @@ def run() -> int:
         except Retry as reason:
             log(f'RETRY attempt={attempt}: {reason}')
             continue
-        # Cloudflare Pages builds production from the new main commit through its own Git integration.
+        # The publication workflows build the new main commit and publish it with GitHub Pages.
         github.call('DELETE', f'git/refs/heads/{BRANCH}', expected=(204, 422))
         elapsed = round(time.monotonic() - started)
         log(f"MERGED number={number} sha={merged} records={prepared['records']} elapsed_seconds={elapsed}")

@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from catalog import RESOURCE_FILES
 import review_disclaimers
-from review_disclaimers import banned_sentences, findings
+from review_disclaimers import banned_sentences, defensive_sentences, findings
 
 
 class ReviewDisclaimerTests(unittest.TestCase):
@@ -53,6 +53,51 @@ class ReviewDisclaimerTests(unittest.TestCase):
         translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8'))
         papers = json.loads((ROOT / 'data/papers.json').read_text(encoding='utf-8'))
         self.assertEqual(banned_sentences(records, translations, papers), [])
+
+    def test_defensive_phrasings_are_found_in_every_visible_field(self):
+        records = [{'id': 'tool', 'description_en': 'A decompiler. Its output does not imply source recovery.',
+                    'requirements': ['Needs Python 3.', 'No REA use is established.']},
+                   {'id': 'plain', 'description_en': 'A decompiler that emits C.', 'requirements': ['Needs Python 3.']}]
+        translations = {'tool': {'requirements': ['需要 Python 3。', '输出不代表恢复了源码。']}}
+        papers = [{'id': 'paper', 'scope_limitations_en': 'Passing tests is not evidence of equivalence.',
+                   'metadata_notes_zh': '会议日期并非出版日期。', 'date_basis_zh': '采用年份，不主张更精确的日期。'}]
+        ledger = [{'id': 'lead', 'reason_en': 'Retain the lead; neither asserts runtime behavior.', 'reason_zh': '保留线索。'}]
+        reviews = {'scan-1': {'reason_en': 'A CTF archive.', 'reason_zh': '列入合集不意味着已经验证。'}}
+        self.assertEqual([(identifier, field) for identifier, field, _ in
+                          defensive_sentences(records, translations, papers, ledger, reviews)],
+                         [('tool', 'description_en'), ('tool', 'requirements'), ('tool', 'requirements (zh)'),
+                          ('paper', 'scope_limitations_en'), ('paper', 'metadata_notes_zh'), ('paper', 'date_basis_zh'),
+                          ('lead', 'reason_en'),
+                          ('scan-1', 'reason_zh')])
+
+    def test_past_tense_denials_and_unestablished_claims_are_found(self):
+        ledger = [{'id': 'a', 'reason_en': 'The demo did not establish recovery.', 'reason_zh': '保留线索。'},
+                  {'id': 'b', 'reason_en': 'The tests don’t prove equivalence.', 'reason_zh': '保留线索。'},
+                  {'id': 'c', 'reason_en': 'REA’s contribution is unestablished.', 'reason_zh': '保留线索。'},
+                  {'id': 'd', 'reason_en': 'Retain the lead.', 'reason_zh': '通过测试不等于等价，作用未确立。'},
+                  {'id': 'e', 'reason_en': 'The post links no code, so REA’s part remains unconfirmed.',
+                   'reason_zh': '帖子未链接代码，REA 的作用尚待确认。'}]
+        self.assertEqual([(identifier, field) for identifier, field, _ in defensive_sentences([], {}, [], ledger)],
+                         [('a', 'reason_en'), ('b', 'reason_en'), ('c', 'reason_en'), ('d', 'reason_zh')])
+
+    def test_reviews_that_are_not_a_mapping_are_left_to_the_schema_checks(self):
+        self.assertEqual(defensive_sentences([], {}, [], [], ['scan-1']), [])
+
+    def test_plain_statements_of_scope_pass_the_defensive_check(self):
+        records = [{'id': 'tool', 'description_en': 'The output is a GBA ROM, and the README says it is not a PC port.',
+                    'requirements': ['MIT. Original game data keeps its owners’ rights.', 'Other versions are untested.']}]
+        papers = [{'id': 'paper', 'date_basis': 'Publication year from the official proceedings.'}]
+        self.assertEqual(defensive_sentences(records, {}, papers), [])
+
+    def test_the_catalog_text_uses_no_defensive_phrasing(self):
+        sys.path.insert(0, str(ROOT / 'scripts'))
+        from case_coverage import read_case_coverage
+        from discovery_reviews import read_reviews
+        records = [record for path in RESOURCE_FILES for record in json.loads(path.read_text(encoding='utf-8'))]
+        translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8'))
+        papers = json.loads((ROOT / 'data/papers.json').read_text(encoding='utf-8'))
+        self.assertEqual(defensive_sentences(records, translations, papers, read_case_coverage(ROOT)['entries'],
+                                             read_reviews(ROOT)), [])
 
     def test_banned_sentences_skips_malformed_values_for_the_schema_checks(self):
         records = [{'id': 'no-requirements'}, {'id': 'number', 'requirements': 3}]

@@ -322,6 +322,7 @@ def build_site(output: Path) -> tuple[int, int, int]:
         organization_node(SITE_URL, REPOSITORY_URL),
         website_node(SITE_URL, REPOSITORY_URL),
         catalog_node(SITE_URL),
+        {"@type": "BreadcrumbList", "@id": SITE_URL + "/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/"}]},
         {"@type": "CollectionPage", "@id": SITE_URL + "/#collection", "url": SITE_URL + "/", "name": "Awesome Reverse Engineering Anything", "inLanguage": "en", "isPartOf": {"@id": SITE_URL + "/#website"}, "description": "A collection of reverse-engineering tools, projects, case studies and research papers for websites, games, apps, binaries, firmware and communication protocols.", "mainEntity": {"@type": "ItemList", "numberOfItems": len(navigation), "itemListElement": [{"@type": "ListItem", "position": i, "name": name, "url": f"{SITE_URL}/{path}/"} for i, (path, name) in enumerate(navigation, 1)]}}
     ]}
     html = html.replace("</head>", '<script type="application/ld+json">' + json.dumps(structured, ensure_ascii=False).replace("<", "\\u003c") + '</script>\n</head>')
