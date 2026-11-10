@@ -1,7 +1,7 @@
 name: Scan status badge
 # Rewrites the README's scan badge (scripts/scan_status_badge.py) on the `status` branch, hourly and after
-# every README discovery scan, so the badge turns amber once the last successful scan is more than six
-# hours old. The branch holds only scan-status.json; the first run creates it, and later runs commit only
+# every README discovery scan, so the badge turns amber once the last successful scan is more than nine
+# hours old (scans run every eight hours). The branch holds only scan-status.json; the first run creates it, and later runs commit only
 # when the badge changes.
 on:
   schedule:
@@ -51,6 +51,6 @@ jobs:
             exit 0
           fi
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-            commit -q -m 'Update the scan status badge'
+            commit -q -m '[CF-Pages-Skip] Update the scan status badge'
           gh auth setup-git
           git push "https://github.com/$GITHUB_REPOSITORY" HEAD:status

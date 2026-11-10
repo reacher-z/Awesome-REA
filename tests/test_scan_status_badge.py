@@ -1,4 +1,4 @@
-"""The README scan badge turns the warning colour once the last successful scan is more than six hours old."""
+"""The README scan badge turns the warning colour once the last successful scan is more than nine hours old."""
 from datetime import datetime, timedelta, timezone
 import json
 from pathlib import Path
@@ -17,9 +17,9 @@ NOW = datetime(2026, 11, 9, 20, 0, tzinfo=timezone.utc)
 
 
 class BadgeTests(unittest.TestCase):
-    def test_colour_turns_after_six_hours(self):
-        for age, color in ((timedelta(0), COLOR), (timedelta(hours=6), COLOR),
-                           (timedelta(hours=6, seconds=1), WARNING_COLOR), (timedelta(days=3), WARNING_COLOR)):
+    def test_colour_turns_after_nine_hours(self):
+        for age, color in ((timedelta(0), COLOR), (timedelta(hours=8, minutes=59), COLOR), (timedelta(hours=9), COLOR),
+                           (timedelta(hours=9, seconds=1), WARNING_COLOR), (timedelta(days=3), WARNING_COLOR)):
             with self.subTest(age=age):
                 document = badge(NOW - age, NOW)
                 self.assertEqual(document['color'], color)
@@ -62,6 +62,8 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn('git push "https://github.com/$GITHUB_REPOSITORY" HEAD:status', text)
         self.assertEqual(text.count('persist-credentials: false'), 1)
         self.assertIn("user.email='41898282+github-actions[bot]@users.noreply.github.com'", text)
+        # Cloudflare Pages skips a Git-integration deployment whose commit message starts with this flag.
+        self.assertRegex(text, r"commit -q -m '\[CF-Pages-Skip\] [^']+'")
 
 
 if __name__ == '__main__':
