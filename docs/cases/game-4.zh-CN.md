@@ -631,6 +631,7 @@
 - [**touhou-engine：用 Python 重实现东方游戏玩法**](https://github.com/SaigyoujYuyuko/touhou-engine) - touhou-engine 用 Python 重实现东方弹幕游戏玩法，以 TH07《东方妖妖梦》为参考作品。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/touhou-engine-case/)</sub>
 - [**Tower Toppler：重做 Nebulus**](https://gitlab.com/roever/toppler) - Tower Toppler 重做了以旋转高塔为特色的平台解谜游戏 Nebulus，并重新绘制画面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tower-toppler-case/)</sub>
 - [**tower-together：为多人游戏重构 SimTower 模拟逻辑**](https://github.com/phulin/tower-together) - tower-together 将 SimTower 的模拟逻辑重构为多人浏览器游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tower-together-case/)</sub>
+- [**TurokEX：在 Kex 引擎上重建 PC 版 Turok**](https://github.com/svkaiser/TurokEX) - TurokEX 在 Kex 引擎上重新实现 PC 版 Turok，游戏中的角色、敌人 AI、武器、拾取物、区域和 HUD 均以 AngelScript 类编写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/turokex-case/)</sub>
 - [**TwinEngine：《Little Big Adventure 1》引擎重写**](https://github.com/LBALab/twin-e) - TwinEngine 用 C 重写《Little Big Adventure 1》引擎，读取原版安装文件运行游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twinengine-lba1-case/)</sub>
 - [**Twisted Metal：2012 年 PS3 游戏的 Rust 重实现**](https://gitlab.com/goblindo/twisted-metal) - Twisted Metal 以 Rust 重实现 2012 年 PS3 游戏的引擎，面向 Linux 和 macOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twisted-metal-native-engine-case/)</sub>
 - [**UA\_source：Urban Assault 游戏引擎重实现**](https://github.com/Marisa-Chan/UA_source) - UA\_source 使用 C++ 重实现 Urban Assault 引擎，运行时读取用户自备的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ua-source-case/)</sub>
@@ -643,5 +644,4 @@
 - [**Untangle：基于 REA 与 Ghidra 证据的浏览器重建**](https://github.com/az9713/untangle-rebuild) - 作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/untangle-rea-evidence-rebuild-case/)</sub>
 - [**vakfu：重建 Wakfu 地图渲染**](https://github.com/jac3km4/vakfu) - vakfu 用 Rust 重建 Wakfu 的等距视角地图渲染，并从用户自己的游戏副本读取资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vakfu-case/)</sub>
 - [**Vange-rs：以 Rust 重做《Vangers》**](https://github.com/kvark/vange-rs) - vange-rs 使用 Rust 和 wgpu 重做《Vangers》，目标是借助原版游戏资源重现其世界、载具和单人游戏行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vange-rs-vangers-case/)</sub>
-- [**Vault Engine：以 Rust 重建 Fallout 与 Fallout 2**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine 以 Rust 重建 Fallout 和 Fallout 2，读取用户零售版的 DAT 归档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vault-engine-case/)</sub>
 <!-- END GENERATED CASES -->

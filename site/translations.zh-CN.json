@@ -43802,5 +43802,14 @@
       "反编译尚未完成：进度徽章显示 4502 个函数中已完成 4096 个。",
       "采用 CC0 1.0 通用许可。"
     ]
+  },
+  "turokex-case": {
+    "name": "TurokEX：在 Kex 引擎上重建 PC 版 Turok",
+    "requirements": [
+      "KPFGen 生成 game.kpf 需要原版 PC Turok 的 CARTFILE.DAT 和 Turok.exe。",
+      "提供引擎和 KPFGen 的 Microsoft Visual Studio 解决方案以及引擎的 Xcode 工程，并附带 SDL2、AngelScript 和 ENet 源码，以及 OpenAL 头文件和预编译库。",
+      "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
+      "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
+    ]
   }
 }
