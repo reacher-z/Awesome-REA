@@ -262,17 +262,20 @@ def paper_markdown(paper: dict, language: str, *, site_url: str, related: list[t
 
 
 def collection_markdown(*, title: str, description: str, language: str, canonical: str, items: list[dict],
-                        notes: list[str] = (), groups: list[tuple[str, list[dict]]] | None = None,
+                        notes: list[str] = (), markup: list[str] = (),
+                        groups: list[tuple[str, list[dict]]] | None = None,
                         json_url: str | None = None, counterpart: str | None = None) -> str:
     """The Markdown twin of a listing: its summary, then each listed item as a link with a short description.
 
     ``items`` (or ``groups`` of items under subheadings) hold ``name``, ``url`` and optional ``description``
-    and ``meta`` strings. ``url`` should be the item's own Markdown twin where one exists.
+    and ``meta`` strings. ``url`` should be the item's own Markdown twin where one exists. ``notes`` are
+    literal prose and get escaped; ``markup`` holds generator-written Markdown that is emitted as is.
     """
     zh = language == 'zh'
     lines = [f'# {markdown_text(title)}', '', f'> {markdown_text(description)}', '']
     lines += [markdown_text(note) for note in notes if note]
-    if notes:
+    lines += [note for note in markup if note]
+    if notes or markup:
         lines.append('')
     facts = [('HTML', f'<{canonical}>')]
     if json_url:
