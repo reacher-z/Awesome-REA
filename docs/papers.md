@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**263 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**264 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (133)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (134)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (18)
@@ -120,6 +120,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Code is not Natural Language: Unlock the Power of Semantics-Oriented Graph Representation for Binary Code Similarity Detection**](https://www.usenix.org/conference/usenixsecurity24/presentation/he-haojie) - HermesSim detects binary code similarity by lifting each function to Ghidra P-code and building a semantics-oriented graph that exposes operand structure inside instructions, def-use, control-flow and effect-order relations, while dropping semantics-independent details such as which register temporarily holds a value. <sub>USENIX Security 2024 · Conference paper · Haojie He et al. · [PDF](https://www.usenix.org/system/files/usenixsecurity24-he-haojie.pdf) · [Code](https://github.com/NSSL-SJTU/HermesSim) · [Full entry](https://awesomerea.org/papers/paper-hermessim/)</sub>
 - [**A Taxonomy of C Decompiler Fidelity Issues**](https://www.usenix.org/conference/usenixsecurity24/presentation/dramko) - Open-codes decompiled/original C function pairs to classify how decompiler output departs from the source beyond missing names and types. <sub>USENIX Security 2024 · Conference paper · Luke Dramko et al. · [PDF](https://www.usenix.org/system/files/usenixsecurity24-dramko.pdf) · [Full entry](https://awesomerea.org/papers/paper-decompiler-fidelity-taxonomy/)</sub>
 - [**CodeArt: Better Code Models by Attention Regularization When Symbols Are Lacking**](https://dl.acm.org/doi/10.1145/3643752) - CodeArt pre-trains a BERT-sized encoder from scratch on 26 million stripped x86-64 functions built from jTrans's BinaryCorp. <sub>Proceedings of the ACM on Software Engineering (FSE 2024) · Journal article · Zian Su et al. · [PDF](https://arxiv.org/pdf/2402.11842v1) · [Code](https://github.com/ziansu/codeart) · [Full entry](https://awesomerea.org/papers/paper-codeart/)</sub>
+- [**A Survey on Malware Detection and Analysis**](https://doi.org/10.55662/jst.2024.5401) - This survey reviews malware detection and analysis methods, with the fetched abstract emphasizing data-mining approaches. <sub>Journal of Science &amp; Technology 2024 · Journal article · Joshua Smallman · [PDF](https://thesciencebrigade.com/jst/article/download/240/233) · [Full entry](https://awesomerea.org/papers/paper-malware-detection-analysis-survey/)</sub>
 - [**StackSight: Unveiling WebAssembly through Large Language Models and Neurosymbolic Chain-of-Thought Decompilation**](https://proceedings.mlr.press/v235/fang24e.html) - StackSight decompiles WebAssembly text-format functions into C++ with LLM prompting. <sub>ICML 2024 · Conference paper · Weike Fang et al. · [PDF](https://raw.githubusercontent.com/mlresearch/v235/main/assets/fang24e/fang24e.pdf) · [Full entry](https://awesomerea.org/papers/paper-stacksight/)</sub>
 - [**STRIDE: Simple Type Recognition In Decompiled Executables**](https://arxiv.org/abs/2407.02733) - STRIDE predicts the names and types of variables in decompiler output without a neural model. <sub>arXiv 2024 · Preprint · Harrison Green et al. · [PDF](https://arxiv.org/pdf/2407.02733v1) · [Code](https://github.com/hgarrereyn/STRIDE) · [Full entry](https://awesomerea.org/papers/paper-stride/)</sub>
 - [**Exploring the Efficacy of Large Language Models (GPT-4) in Binary Reverse Engineering**](https://arxiv.org/abs/2406.06637) - The paper evaluates GPT-4 for binary reverse engineering through interpretation of human-written and decompiled code, from basic code explanation to malware analysis. <sub>arXiv 2024 · Preprint · Saman Pordanesh et al. · [PDF](https://arxiv.org/pdf/2406.06637) · [Full entry](https://awesomerea.org/papers/paper-gpt4-binary-re/)</sub>
