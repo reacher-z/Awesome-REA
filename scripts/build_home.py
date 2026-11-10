@@ -6,10 +6,11 @@ form opens the full listing. site.js adds search in place from the lazily loaded
 """
 from __future__ import annotations
 
-from collections import Counter
+from collections import Counter, defaultdict
 from html import escape
 import hashlib
 import json
+from math import cos, pi, sin, sqrt
 from pathlib import Path
 import re
 from urllib.parse import urlsplit
@@ -61,6 +62,19 @@ EVIDENCE_DETAIL = {
     2: ('code & docs, no demo or download', '有代码和文档，缺演示或下载'),
     3: ('notes only', '仅笔记'),
 }
+# The homepage overview adds the two buckets the card badges leave implicit: unreadable sources and unclassified papers.
+OVERVIEW_EVIDENCE = {
+    '0': ('C0', 'full software reconstruction', '完整软件复现', 'card-class-0'),
+    '1': ('C1', 'partial scope or analysis entry', '部分范围或非复现条目', 'card-class-1'),
+    '2': ('C2', 'code & docs, no demo or download', '有代码和文档，缺演示或下载', 'card-class-2'),
+    '3': ('C3', 'notes only', '仅笔记或进度记录', 'card-class-3'),
+    'unknown': ('?', 'source unavailable or unreadable', '来源不可达或不可读', 'card-class-unknown'),
+    'unclassified': ('–', 'benchmark & dataset papers', '基准与数据集论文', 'card-class-none'),
+}
+OVERVIEW_ORDER = tuple(OVERVIEW_EVIDENCE)
+# Equal minimum widths plus sqrt scaling: small classes stay visible, the largest still reads as the bulk.
+OVERVIEW_MIN_SHARE = 0.45
+OVERVIEW_SECTOR_GAP = 0.012
 COPY = {
     'en': {
         'h1': 'Reverse engineer <em>anything</em>',
@@ -76,6 +90,9 @@ COPY = {
         'all_classes': 'All classes', 'class_unknown_short': 'Unknown', 'class_info_label': 'What the evidence classes mean',
         'class_guide': 'How classes are assigned',
         'unknown_title': 'Source unavailable or unreadable at review time',
+        'overview_label': 'Data classes by evidence class', 'overview_total': 'data points',
+        'overview_note': 'C0 needs a manual full-reconstruction review. C1–C3 follow the public repository evidence.',
+        'overview_browse': 'Browse {name}',
         'preview_image_alt': "Demo screenshot from the project's public documentation",
         'preview_video_alt': "Demo video thumbnail from the project's public documentation",
         'preview_full_label': 'Full-size demo screenshot: {name}',
@@ -95,6 +112,9 @@ COPY = {
         'all_classes': '全部档位', 'class_unknown_short': '未知', 'class_info_label': '证据档位说明',
         'class_guide': '档位判定方法',
         'unknown_title': '复核时来源不可达或不可读',
+        'overview_label': '数据类别与证据档位', 'overview_total': '数据点',
+        'overview_note': 'C0 需人工复核完整复现。C1–C3 依据公开仓库证据。',
+        'overview_browse': '查看{name}',
         'preview_image_alt': '项目公开文档中的演示截图',
         'preview_video_alt': '项目公开文档中演示视频的封面',
         'preview_full_label': '完整演示截图：{name}',
@@ -177,6 +197,109 @@ def evidence_legend(language: str) -> str:
     items += f'<li><span class="card-class card-class-unknown">?</span>{_e(text["unknown_title"])}</li>'
     guide = f'<a class="evidence-guide" href="{_e(evidence_guide_url(language))}" rel="noopener">{text["class_guide"]}{icon("external")}</a>'
     return f'<div class="evidence-legend"><strong>{text["class_label"]}</strong><ul>{items}</ul>{guide}</div>'
+
+
+def evidence_bucket(record: dict) -> str:
+    """The overview's evidence bucket for a data point: C0–C3, unreadable, or a classless paper record."""
+    if record.get('evidence_status') == 'unknown':
+        return 'unknown'
+    value = record.get('evidence_class')
+    return 'unclassified' if value is None else str(int(value))
+
+
+def _overview_polar(radius: float, angle: float) -> tuple[float, float]:
+    return 320 + radius * sin(angle), 320 - radius * cos(angle)
+
+
+def _overview_arc(inner: float, outer: float, start: float, end: float) -> str:
+    """A ring segment from the top, clockwise; the same path shape as the taxonomy donut."""
+    large = 1 if end - start > pi else 0
+    outer_start, outer_end = _overview_polar(outer, start), _overview_polar(outer, end)
+    inner_end, inner_start = _overview_polar(inner, end), _overview_polar(inner, start)
+    return (f'M {outer_start[0]:.2f} {outer_start[1]:.2f} A {outer:.2f} {outer:.2f} 0 {large} 1 {outer_end[0]:.2f} {outer_end[1]:.2f} '
+            f'L {inner_end[0]:.2f} {inner_end[1]:.2f} A {inner:.2f} {inner:.2f} 0 {large} 0 {inner_start[0]:.2f} {inner_start[1]:.2f} Z')
+
+
+def _overview_breakdown(key: str, label: str, counts: Counter, language: str, prefix: str) -> str:
+    """The detail panel of one data class, counted by evidence bucket."""
+    text, zh = COPY[language], language == 'zh'
+    total = counts.total()
+    rows = ''.join(f'<li><span class="card-class {OVERVIEW_EVIDENCE[bucket][3]}">{OVERVIEW_EVIDENCE[bucket][0]}</span>'
+                   f'<span class="od-label">{_e(OVERVIEW_EVIDENCE[bucket][2 if zh else 1])}</span>'
+                   f'<span class="od-count">{_count(counts[bucket])}</span></li>' for bucket in OVERVIEW_ORDER)
+    return (f'<div class="overview-detail" id="overview-detail-{_e(key)}" data-overview-detail="{_e(key)}" hidden>'
+            f'<p class="od-head"><strong>{_e(label)}</strong><span class="od-total">{_count(total)}</span></p>'
+            f'<ul class="od-list">{rows}</ul>'
+            f'<a class="od-link" href="{_e(prefix)}/data/{_e(key)}/">{text["overview_browse"].format(name=_e(label))}{icon("arrow")}</a></div>')
+
+
+def _overview(resources: list[dict], language: str, prefix: str) -> str:
+    """The All tab's opening view: six class counts above a donut of data classes split by evidence class.
+
+    Sector angles keep a minimum width and scale by the square root of the class count, so a four-entry class stays
+    selectable beside the largest. site.js shows this in place of the opening cards and toggles the detail panel.
+    """
+    text, zh = COPY[language], language == 'zh'
+    totals = Counter()
+    mixes = defaultdict(Counter)
+    for record in resources:
+        data_class = record.get('class')
+        if not data_class:
+            continue
+        totals[data_class] += 1
+        mixes[data_class][evidence_bucket(record)] += 1
+    present = [key for key in DATA_CLASSES if totals[key]]
+    if not present:
+        return ''
+    weights = [sqrt(totals[key]) for key in present]
+    weight_sum = sum(weights)
+    tiles, sectors, details = [], [], []
+    angle = 0.0
+    for index, key in enumerate(present):
+        share = OVERVIEW_MIN_SHARE / len(present) + (1 - OVERVIEW_MIN_SHARE) * weights[index] / weight_sum
+        start, turn = angle, share * 2 * pi
+        end = angle + turn - OVERVIEW_SECTOR_GAP
+        middle = (start + end) / 2
+        angle += turn
+        label, total, counts = DATA_CLASSES[key][zh], totals[key], mixes[key]
+        selected = index == 0
+        segments, cursor = '', start
+        for bucket in OVERVIEW_ORDER:
+            if not counts[bucket]:
+                continue
+            stop = cursor + (end - start) * counts[bucket] / total
+            segments += f'<path class="overview-band overview-{bucket}" d="{_overview_arc(201, 282, cursor, stop)}"/>'
+            cursor = stop
+        aria = (f'{label}: {_count(total)} {text["overview_total"]}. '
+                + ', '.join(f'{OVERVIEW_EVIDENCE[bucket][0]} {_count(counts[bucket])}' for bucket in OVERVIEW_ORDER))
+        text_x, text_y = _overview_polar(141, middle)
+        rotation = middle * 180 / pi - 90 + (180 if middle * 180 / pi > 180 else 0)
+        sectors.append(f'<g class="overview-sector" data-overview-sector="{key}" role="button" tabindex="0" '
+                       f'aria-pressed="{str(selected).lower()}" aria-label="{_e(aria)}">'
+                       f'<path class="overview-track" d="{_overview_arc(85, 197, start, end)}"/>'
+                       f'<path class="overview-outline" d="{_overview_arc(197, 286, start, end)}"/>{segments}'
+                       f'<text class="overview-name" x="{text_x:.1f}" y="{text_y:.1f}" text-anchor="middle" '
+                       f'transform="rotate({rotation:.1f},{text_x:.1f},{text_y:.1f})">{_e(label)}</text></g>')
+        tiles.append(f'<li><button type="button" class="class-tile" data-overview-tile="{key}" '
+                     f'aria-controls="overview-detail-{key}" aria-pressed="{str(selected).lower()}">'
+                     f'<span class="ct-name">{_e(label)}</span><span class="ct-count">{_count(total)}</span></button></li>')
+        detail = _overview_breakdown(key, label, counts, language, prefix)
+        if index == 0:
+            detail = detail.replace(' hidden>', '>', 1)
+        details.append(detail)
+    legend = ''.join(f'<li><span class="card-class {OVERVIEW_EVIDENCE[bucket][3]}">{OVERVIEW_EVIDENCE[bucket][0]}</span>'
+                     f'{_e(OVERVIEW_EVIDENCE[bucket][2 if zh else 1])}</li>' for bucket in OVERVIEW_ORDER)
+    total = sum(totals.values())
+    svg = (f'<svg viewBox="0 0 640 640" role="group" aria-label="{_e(text["overview_label"])}">'
+           f'<text class="overview-total" x="320" y="314" text-anchor="middle">{_count(total)}</text>'
+           f'<text class="overview-total-label" x="320" y="342" text-anchor="middle">{_e(text["overview_total"])}</text>'
+           f'{"".join(sectors)}</svg>')
+    return (f'<section class="overview" data-overview hidden aria-label="{_e(text["overview_label"])}">'
+            f'<ul class="class-tiles" aria-label="{_e(text["domains"])}">{"".join(tiles)}</ul>'
+            f'<div class="overview-grid"><div class="overview-chart">{svg}</div>'
+            f'<div class="overview-details">{"".join(details)}</div></div>'
+            f'<div class="overview-legend"><p><strong>{_e(text["class_info_label"])}</strong> · {_e(text["overview_note"])}</p>'
+            f'<ul>{legend}</ul></div></section>')
 
 
 def preview_figure(record: dict, language: str, *, thumb: bool = False) -> str:
@@ -332,7 +455,8 @@ def _drawer(resources, order, language, prefix) -> str:
             f'<label class="select"><span class="select-label">{text["sort"]}</span><select data-sort aria-label="{text["sort"]}">'
             f'<option value="featured">{text["featured"]}</option><option value="reviewed">{text["recent"]}</option><option value="name">{text["az"]}</option></select>{icon("chevron")}</label>'
             f'<p class="drawer-meta" data-drawer-meta aria-live="polite">{text["showing"].format(n=len(featured), total=_count(total))}</p></div>'
-            f'<ul class="cards" data-cards>{cards}</ul><div class="drawer-foot">'
+            + _overview(resources, language, prefix)
+            + f'<ul class="cards" data-cards>{cards}</ul><div class="drawer-foot">'
             f'<a class="btn btn-primary" href="{prefix}/resources/" data-show-all>{text["show_all"].format(n=_count(total))}{icon("arrow")}</a>'
             f'<p class="note">{text["drawer_note"]}</p></div></div></section>')
 
