@@ -43453,5 +43453,13 @@
       "编译最终磁盘镜像需要 bintofdf 和 fdtc；项目内附有这两个工具的版本。",
       "项目页面未说明许可证。"
     ]
+  },
+  "papyrus-compiler": {
+    "name": "Papyrus Compiler（Papyrus 脚本编译器）",
+    "requirements": [
+      "构建需要 V 编译器 0c3183c（0.5.1）。README 的构建命令是 v -o bin\\papyrus-compiler.exe -prod -g -gc none compiler.v。",
+      "compile 命令接受输入路径、输出路径，以及 Form、Actor 这类脚本的头文件目录。",
+      "GitHub 报告许可证为 MIT。"
+    ]
   }
 }
