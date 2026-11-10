@@ -142,6 +142,20 @@ class WaitTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             automation.wait_for_deployment('main', self.dist, github=FakeGitHub())
 
+    def test_the_build_waits_until_the_site_serves_the_commit(self):
+        clock, sha = Clock(), 'a' * 40
+        served = [b'b' * 40, OSError('down'), sha.encode()]
+
+        def fetch(url, limit):
+            value = served[min(int(clock() // automation.POLL_SECONDS), len(served) - 1)]
+            if isinstance(value, Exception):
+                raise value
+            return value
+        self.assertTrue(automation.wait_until_served(sha, fetch=fetch, clock=clock, sleep=clock.sleep))
+        clock.now = 0
+        self.assertFalse(automation.wait_until_served('c' * 40, fetch=fetch, clock=clock, sleep=clock.sleep,
+                                                      wait_seconds=100))
+
     def test_a_build_that_differs_only_in_preview_images_takes_the_served_images(self):
         (self.dist / 'index.html').write_bytes(b'<!doctype html><title>Home</title>')
         (self.dist / 'sitemap.xml').write_bytes(b'<urlset></urlset>')

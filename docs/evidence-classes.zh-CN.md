@@ -80,7 +80,7 @@
 - Class 0 是 `evidence_class == 0` 与 `data/evidence-class-zero-reviews.json` 中 `scope: full` 的交集。除 Class 0 外没有逐条 class override。
 - GitHub token 只发送到 `api.github.com`；跨域重定向会剥离认证头。普通页面抓取不携带 token。
 - 图片过滤掉 logo、徽章、二维码、群聊和赞助链接，避免把品牌图当成 demo。
-- 主页预览由 [`scripts/build_evidence_previews.py`](../scripts/build_evidence_previews.py) 选取并写入 [`data/evidence-previews.json`](../data/evidence-previews.json)；[`scripts/fetch_previews.py`](../scripts/fetch_previews.py) 在构建前下载到 `.cache/previews/`，构建复制到站点的 `previews/` 目录，页面不外链第三方图片。安装了 Pillow 时（发布构建按 [publish-requirements.txt](../scripts/publish-requirements.txt) 安装），[`scripts/preview_thumbs.py`](../scripts/preview_thumbs.py) 另在 `previews/thumbs/` 写入宽度不超过 480 px 的 WebP 缩略图。`/resources/` 的条目行显示缩略图并链接完整截图（视频封面只显示、不加链接）。无法转换或转换后不更小的图片保留原图，构建会输出原因。首页和条目页显示原图。
+- 主页预览由 [`scripts/build_evidence_previews.py`](../scripts/build_evidence_previews.py) 选取并写入 [`data/evidence-previews.json`](../data/evidence-previews.json)；[`scripts/fetch_previews.py`](../scripts/fetch_previews.py) 在构建前写入 `.cache/previews/`，来源依次为：已缓存的图片、awesomerea.org 正在提供的副本（由 `previews/sources.json` 指明，并按 `build-manifest.json` 校验）、上游主机（最多尝试三次），因此站点已有的图片不会因主机变慢而消失，构建复制到站点的 `previews/` 目录，页面不外链第三方图片。安装了 Pillow 时（发布构建按 [publish-requirements.txt](../scripts/publish-requirements.txt) 安装），[`scripts/preview_thumbs.py`](../scripts/preview_thumbs.py) 另在 `previews/thumbs/` 写入宽度不超过 480 px 的 WebP 缩略图。`/resources/` 的条目行显示缩略图并链接完整截图（视频封面只显示、不加链接）。无法转换或转换后不更小的图片保留原图，构建会输出原因。首页和条目页显示原图。
 - 单条复核使用 [`scripts/verify_evidence_entry.py`](../scripts/verify_evidence_entry.py)。
 
 ## 5. 重新生成
