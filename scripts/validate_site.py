@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check generated canonical pages, structured data, local links and ownership files."""
 from collections import Counter, defaultdict
+import gzip
 from html import unescape as html_unescape
 from html.parser import HTMLParser
 import json
@@ -558,6 +559,20 @@ def validate_catalog_index(output):
     catalog = json.loads((Path(output) / 'catalog.json').read_text(encoding='utf-8'))
     index = json.loads((Path(output) / 'catalog-index.json').read_text(encoding='utf-8'))
     assert index == catalog_index(catalog), 'catalog-index.json must project catalog.json record for record'
+
+
+SEARCH_INDEX_BUDGET = 250 * 1024
+
+
+def validate_search_files(output):
+    """The search index fits its gzip budget, and the text file has one row per index row."""
+    for suffix in ('', '.zh'):
+        raw = (Path(output) / f'search-index{suffix}.json').read_bytes()
+        size = len(gzip.compress(raw, compresslevel=6))
+        assert size <= SEARCH_INDEX_BUDGET, f'search-index{suffix}.json is {size} bytes gzip; the budget is {SEARCH_INDEX_BUDGET}'
+        text = json.loads((Path(output) / f'search-text{suffix}.json').read_text(encoding='utf-8'))
+        rows = len(json.loads(raw)['r'])
+        assert text['n'] == rows == len(text['t']), f'search-text{suffix}.json must have one row per search-index{suffix}.json row'
 
 
 def validate_category_labels(output):
@@ -1790,6 +1805,7 @@ def _validate_pages(urls, resources, papers):
         lambda: validate_fingerprinted_assets(OUTPUT),
         lambda: validate_catalog_preload(OUTPUT),
         lambda: validate_catalog_index(OUTPUT),
+        lambda: validate_search_files(OUTPUT),
         lambda: validate_website_identity(pages),
         lambda: validate_category_labels(OUTPUT),
         validate_llms_and_ownership_proof,

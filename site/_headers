@@ -23,6 +23,10 @@
   Cache-Control: no-cache, must-revalidate
 /search-index.zh.json
   Cache-Control: no-cache, must-revalidate
+/search-text.json
+  Cache-Control: no-cache, must-revalidate
+/search-text.zh.json
+  Cache-Control: no-cache, must-revalidate
 /source-index.json
   Cache-Control: no-cache, must-revalidate
 /source-browser.json
