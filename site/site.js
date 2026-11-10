@@ -29,7 +29,7 @@
     recent: '最近搜索', popular: '常用入口', groups: { tool: '工具', 'case-study': '案例', integration: '集成', other: '学习与参考', paper: '论文' }, papers: '论文',
     remove: (l) => `移除筛选：${l}`, page: (a, b) => `第 ${a}/${b} 页`, shelf: (a, n) => `${fmt(a)} / ${fmt(n)} 个案例`,
     classLabel: '证据档位', classDetail: ['完整软件复现', '部分范围或分析条目', '有代码和文档，缺演示或下载', '仅笔记'],
-    unknownTitle: '复核时来源不可达或不可读', previewAlt: '项目公开文档中的演示截图', previewVideoAlt: '项目公开文档中演示视频的封面', demoNote: '有 demo · 暂无截图',
+    unknownTitle: '复核时来源不可达或不可读', previewAlt: '项目公开文档中的演示截图', previewVideoAlt: '项目公开文档中演示视频的封面', previewFull: (name) => `完整演示截图：${name}`, demoNote: '有 demo · 暂无截图',
   } : {
     featured: 'Featured', theme: 'Colour theme', system: 'system', light: 'light', dark: 'dark', reviewed: 'Reviewed', targets: 'Targets', copied: 'Copied',
     showing: (a, n) => `Showing <strong>${fmt(a)}</strong> of <strong>${fmt(n)}</strong>`, range: (a, b, n) => `Showing <strong>${fmt(a)}–${fmt(b)}</strong> of <strong>${fmt(n)}</strong>`,
@@ -38,7 +38,7 @@
     recent: 'Recent searches', popular: 'Popular', groups: { tool: 'Tools', 'case-study': 'Case studies', integration: 'Integrations', other: 'Learning and reference', paper: 'Papers' }, papers: 'Papers',
     remove: (l) => `Remove filter: ${l}`, page: (a, b) => `Page ${a} of ${b}`, shelf: (a, n) => `${fmt(a)} of ${fmt(n)} cases`,
     classLabel: 'Evidence class', classDetail: ['full software reconstruction', 'partial scope or analysis entry', 'code & docs, no demo or download', 'notes only'],
-    unknownTitle: 'Source unavailable or unreadable at review time', previewAlt: "Demo screenshot from the project's public documentation", previewVideoAlt: "Demo video thumbnail from the project's public documentation", demoNote: 'Demo available · no screenshot',
+    unknownTitle: 'Source unavailable or unreadable at review time', previewAlt: "Demo screenshot from the project's public documentation", previewVideoAlt: "Demo video thumbnail from the project's public documentation", previewFull: (name) => `Full-size demo screenshot: ${name}`, demoNote: 'Demo available · no screenshot',
   };
   const ISSUE = 'https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml';
   const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
@@ -231,9 +231,10 @@
         .then(async (j) => {
           if (j.n !== IDX.res.length || j.b !== IDX.raw.b) throw new Error('search text does not match the index');
           let i = 0;
-          await chunked(j.t, ([lead, owner, rest, prev, prevKind]) => {
+          await chunked(j.t, ([lead, owner, rest, prev, prevKind, thumb]) => {
             const r = IDX.res[i++];
             r.lead = lead; r.prev = prev === 1 ? `/previews/${r.id}.png` : prev; r.prevKind = prevKind;
+            r.thumb = thumb === 1 ? `/previews/thumbs/${r.id}.webp` : thumb || '';
             r.nDesc = norm(lead); r.dw = words(r.nDesc);
             setEvidence(r, owner, rest);
           });
@@ -432,18 +433,21 @@
     const detail = T.classDetail[r.cls] || '';
     return `<span class="card-class card-class-${r.cls}" title="${esc(`${T.classLabel} ${r.cls} · ${detail}`)}">C${r.cls}</span>`;
   }
-  function previewHTML(r) {
+  // On /resources/ (thumb) a row shows the small thumbnail when there is one; a screenshot thumbnail links the full image.
+  function previewHTML(r, thumb) {
     if (r.prev) {
       const video = r.prevKind === 'video';
+      const small = thumb && r.thumb;
+      const img = `<img src="${esc(small || r.prev)}" alt="${esc(video ? T.previewVideoAlt : T.previewAlt)}" loading="lazy" decoding="async">`;
       return `<figure class="card-preview">${video ? '<span class="card-preview-play" aria-hidden="true">▶</span>' : ''}`
-        + `<img src="${esc(r.prev)}" alt="${esc(video ? T.previewVideoAlt : T.previewAlt)}" loading="lazy" decoding="async"></figure>`;
+        + `${small && !video ? `<a class="card-preview-link" href="${esc(r.prev)}" aria-label="${esc(T.previewFull(r.name))}">${img}</a>` : img}</figure>`;
     }
     if (r.prevKind === 'demo') {
       return `<figure class="card-preview card-preview-demo"><span class="card-preview-play" aria-hidden="true">▶</span><span>${esc(T.demoNote)}</span></figure>`;
     }
     return '';
   }
-  function cardHTML(r, toks) {
+  function cardHTML(r, toks, thumb = false) {
     const X = IDX.raw;
     const t0 = r.targets[0];
     const label = `${X.targetLabels[t0]} · ${X.kindLabels[r.k]}`;
@@ -454,7 +458,7 @@
     return `<li class="card${r.kind === 'case-study' ? ' is-case' : ''}" id="r-${esc(r.id)}" data-id="${esc(r.id)}"><article class="card-face">`
       + `<p class="callno" title="${esc(label)}"><span class="vh">${esc(label)}: </span><span aria-hidden="true">${callno(r)}</span></p>`
       + `<h3 class="card-name"><a class="stretch" href="${href(r)}">${hl(r.name, toks)}</a>${r.pin ? `<span class="row-mark">${T.featured}</span>` : ''}${classChip(r)}</h3>`
-      + `<p class="card-desc">${hl(r.lead, toks)}</p>${previewHTML(r)}`
+      + `<p class="card-desc">${hl(r.lead, toks)}</p>${previewHTML(r, thumb)}`
       + `<ul class="card-targets" aria-label="${T.targets}">${tg}</ul>`
       + `<p class="stamp">${ico('check')}<span>${T.reviewed} <time datetime="${r.rev}">${r.rev}</time></span>`
       + (ev ? `<a class="ev" href="${esc(ev)}" rel="noopener">${repo}</a>` : `<span class="ev">${repo}</span>`) + '</p></article></li>';
@@ -1020,7 +1024,7 @@
       st.page = page;
       const slice = hits.slice(a, end);
       const toks = tokens(st.q);
-      list.innerHTML = slice.length ? slice.map((h) => cardHTML(h.r, toks)).join('') : emptyHTML(st.q, X.res, 'li');
+      list.innerHTML = slice.length ? slice.map((h) => cardHTML(h.r, toks, true)).join('') : emptyHTML(st.q, X.res, 'li');
       meta.innerHTML = hits.length ? T.range(a + 1, a + slice.length, hits.length) : T.results(0);
       $('[data-pager]', listing).outerHTML = pagerHTML(st.page, pages);
       const chipsHTML = [...[...st.targets].map((v) => ['target', v, R.targetLabels[R.targets.indexOf(v)]]),

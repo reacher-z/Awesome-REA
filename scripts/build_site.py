@@ -36,6 +36,7 @@ from data_downloads import build_data_downloads
 from open_graph import website_node
 from structured_data import catalog_node, organization_node
 from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
+from preview_thumbs import thumbnail
 from media_privacy import public_media_url
 from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
@@ -204,6 +205,12 @@ def build_site(output: Path) -> tuple[int, int, int]:
                     record["preview"] = "/" + relative
                     record["preview_kind"] = preview["kind"]
                     preview_files.append((cached, relative))
+                    # Rows and cards show a small WebP and link the original; without one they show the original.
+                    thumb = thumbnail(cached, PREVIEW_CACHE / "thumbs")
+                    if thumb:
+                        thumb_relative = f"previews/thumbs/{record['id']}{thumb.suffix}"
+                        record["preview_thumb"] = "/" + thumb_relative
+                        preview_files.append((thumb, thumb_relative))
                 elif evidence_entry.get("signals", {}).get("demo"):
                     record["preview_kind"] = "demo"
             translation = translations.get(record["id"], {})
@@ -231,7 +238,7 @@ def build_site(output: Path) -> tuple[int, int, int]:
     (output / "badges").mkdir()
     shutil.copy2(ROOT / "assets" / LISTED_BADGE, output / "badges" / LISTED_BADGE)
     if preview_files:
-        (output / "previews").mkdir()
+        (output / "previews" / "thumbs").mkdir(parents=True)
         for cached, relative in preview_files:
             shutil.copy2(cached, output / relative)
     html = (output / "index.html").read_text(encoding="utf-8")
@@ -314,7 +321,9 @@ def build_site(output: Path) -> tuple[int, int, int]:
     catalog = {"meta": metadata, "resources": resources, "topic_labels": topic_labels, "category_labels": category_labels}
     # The repository view's Category filter labels the same categories as the /browse/ pages.
     catalog["source_category_labels"] = {category: list(labels) for category, labels in REPOSITORY_CATEGORIES.items()}
-    (output / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # The thumbnail path is a page-rendering detail of /resources/ (search-index.json carries it); catalog.json keeps the record fields.
+    public_catalog = {**catalog, "resources": [{key: value for key, value in record.items() if key != "preview_thumb"} for record in resources]}
+    (output / "catalog.json").write_text(json.dumps(public_catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     # Requirement lists and additional evidence stay out of the first-render index; app.js fetches catalog.json afterwards.
     (output / "catalog-index.json").write_text(json.dumps(catalog_index(catalog), ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     (output / "papers.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

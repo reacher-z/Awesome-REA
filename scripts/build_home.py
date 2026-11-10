@@ -71,6 +71,7 @@ COPY = {
         'unknown_title': 'Source unavailable or unreadable at review time',
         'preview_image_alt': "Demo screenshot from the project's public documentation",
         'preview_video_alt': "Demo video thumbnail from the project's public documentation",
+        'preview_full_label': 'Full-size demo screenshot: {name}',
         'demo_note': 'Demo available · no screenshot',
     },
     'zh': {
@@ -89,6 +90,7 @@ COPY = {
         'unknown_title': '复核时来源不可达或不可读',
         'preview_image_alt': '项目公开文档中的演示截图',
         'preview_video_alt': '项目公开文档中演示视频的封面',
+        'preview_full_label': '完整演示截图：{name}',
         'demo_note': '有 demo · 暂无截图',
     },
 }
@@ -170,15 +172,21 @@ def evidence_legend(language: str) -> str:
     return f'<div class="evidence-legend"><strong>{text["class_label"]}</strong><ul>{items}</ul>{guide}</div>'
 
 
-def preview_figure(record: dict, language: str) -> str:
+def preview_figure(record: dict, language: str, *, thumb: bool = False) -> str:
     """A documented demo preview for Class 0/1 entries; a demo without a screenshot gets a placeholder."""
     text = COPY[language]
     if record.get('preview'):
         kind = record.get('preview_kind')
         alt = text['preview_video_alt'] if kind == 'video' else text['preview_image_alt']
         play = '<span class="card-preview-play" aria-hidden="true">▶</span>' if kind == 'video' else ''
-        return (f'<figure class="card-preview">{play}<img src="{_e(record["preview"])}" alt="{_e(alt)}" '
-                f'loading="lazy" decoding="async"></figure>')
+        # A /resources/ row shows the small thumbnail when there is one; a screenshot thumbnail links the full image.
+        small = record.get('preview_thumb') if thumb else None
+        image = f'<img src="{_e(small or record["preview"])}" alt="{_e(alt)}" loading="lazy" decoding="async">'
+        if small and kind != 'video':
+            name = (record.get('name_zh') or record['name']) if language == 'zh' else record['name']
+            label = text['preview_full_label'].format(name=name)
+            image = f'<a class="card-preview-link" href="{_e(record["preview"])}" aria-label="{_e(label)}">{image}</a>'
+        return f'<figure class="card-preview">{play}{image}</figure>'
     if record.get('preview_kind') == 'demo':
         return (f'<figure class="card-preview card-preview-demo"><span class="card-preview-play" aria-hidden="true">▶</span>'
                 f'<span>{_e(text["demo_note"])}</span></figure>')
@@ -207,7 +215,7 @@ def index_card(record: dict, language: str, targets: list[str], *, prefix: str =
     return (f'<li class="card{case}" id="r-{identifier}" data-id="{identifier}"><article class="card-face"{article}>'
             f'<p class="callno" title="{_e(label)}"><span class="vh">{_e(label)}: </span><span aria-hidden="true">{DOMAIN_CODES[targets[0]]}·{KIND_CODES[kind]}</span></p>'
             f'<h3 class="card-name"><a class="stretch{entry}" href="{prefix}/resources/{identifier}/">{_e(_name(record, language))}</a>{mark}{evidence_chip(record, language)}</h3>'
-            f'<p class="card-desc">{_e(_lead(record, language))}</p>{preview_figure(record, language)}'
+            f'<p class="card-desc">{_e(_lead(record, language))}</p>{preview_figure(record, language, thumb=listing)}'
             f'<ul class="card-targets" aria-label="{text["targets"]}">{items}</ul>'
             f'<p class="stamp">{icon("check")}<span>{text["reviewed"]} <time datetime="{reviewed}">{reviewed}</time></span>'
             f'<a class="ev" href="{_e(record["evidence_url"])}" rel="noopener"><span class="ev-repo">{_e(evidence["repo"])}</span>{revision}</a></p>'
@@ -433,9 +441,10 @@ def search_stamp(resources: list[dict]) -> str:
 
 
 def search_text(resources: list[dict], language: str) -> dict:
-    """Row for row with search_index()["r"]: [description, GitHub owner, rest of the evidence link, preview, preview kind].
+    """Row for row with search_index()["r"]: [description, GitHub owner, rest of the evidence link, preview, preview kind,
+    preview thumbnail].
 
-    preview is 1 when it is /previews/<id>.png.
+    preview is 1 when it is /previews/<id>.png, and the thumbnail 1 when it is /previews/thumbs/<id>.webp.
     """
     rows = []
     for record in resources:
@@ -444,7 +453,9 @@ def search_text(resources: list[dict], language: str) -> dict:
         if len(lead) > 220:
             lead = lead[:217].rsplit(' ', 1)[0] + '…'
         preview = record.get('preview') or ''
-        rows.append([lead, owner, rest, 1 if preview == f'/previews/{record["id"]}.png' else preview, record.get('preview_kind') or ''])
+        thumb = record.get('preview_thumb') or ''
+        rows.append([lead, owner, rest, 1 if preview == f'/previews/{record["id"]}.png' else preview, record.get('preview_kind') or '',
+                     1 if thumb == f'/previews/thumbs/{record["id"]}.webp' else thumb])
     return {'v': 2, 'lang': language, 'b': search_stamp(resources), 'n': len(rows), 't': rows}
 
 

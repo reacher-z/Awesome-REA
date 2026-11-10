@@ -107,7 +107,7 @@ def served_previews(served: bytes, built: bytes, read) -> dict[str, bytes] | Non
         if served_files.get(name) == built_files.get(name):
             continue
         entry = served_files.get(name)
-        if not re.fullmatch(r'previews/[A-Za-z0-9][A-Za-z0-9._-]*', name) or not isinstance(entry, dict):
+        if not re.fullmatch(r'previews/(?:thumbs/)?[A-Za-z0-9][A-Za-z0-9._-]*', name) or not isinstance(entry, dict):
             return None
         body = read(uncached(name), MAX_PREVIEW_BYTES)
         if body is None or len(body) != entry.get('bytes') or hashlib.sha256(body).hexdigest() != entry.get('sha256'):

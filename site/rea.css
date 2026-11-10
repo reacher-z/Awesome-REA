@@ -167,6 +167,9 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .card-preview { grid-area: prev; position: relative; margin-top: 6px; max-width: 420px; aspect-ratio: 16 / 9;
   border: 1px solid var(--line-strong); border-radius: 2px; background: var(--surface-2); overflow: hidden; }
 .card-preview img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Above the title link's card-wide click area, so a click on a screenshot thumbnail opens the full image. */
+.card-preview-link { position: relative; z-index: 2; display: block; width: 100%; height: 100%; }
+.card-preview-link:focus-visible { outline-offset: -3px; }
 .card-preview-play { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 26px; height: 26px;
   border-radius: 50%; background: var(--btn-bg); color: var(--btn-ink); font-size: .6875rem; }
 .card-preview > .card-preview-play { position: absolute; left: 10px; bottom: 8px; z-index: 1; }
@@ -1047,6 +1050,8 @@ html:has(.page-resources) { scroll-behavior: auto; }
 .no-js .list-search, .no-js .results-bar .select, .no-js .filters-btn, .no-js .pager:not(.pager-static) { display: none; }
 @container (min-width: 561px) {
   .listing .card-face { grid-template-columns: 100px minmax(0, 1fr) minmax(0, max-content); grid-template-areas: "call name stamp" "call desc targets"; column-gap: 14px; row-gap: 0; padding: 7px 12px; }
+  /* A demo preview sits below the description; without its own area it widened the last column and squeezed the text. */
+  .listing .card-face:has(.card-preview) { grid-template-areas: "call name stamp" "call desc targets" "call prev prev"; }
   .listing .card-face::before { left: 119px; }
   .listing .callno { padding-top: 2px; font-size: .75rem; }
   .listing .card-name { font-size: 1rem; line-height: 1.35; }
