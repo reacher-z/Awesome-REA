@@ -2,7 +2,7 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "scan-evidence-class-v1",
-  "generated_at": "2026-11-09T16:37:14+00:00",
+  "generated_at": "2026-11-10T12:59:27+00:00",
   "source": "data/source-index.json",
   "source_completed_at": "2026-10-16T11:55:19.172701Z",
   "entry_count": 3500,
