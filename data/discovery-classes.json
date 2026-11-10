@@ -34085,6 +34085,9 @@
   "class": "game",
   "reproduced": "Duke Nukem 1"
  },
+ "lead-02fba3ccfa82c32925f35338": {
+  "decision": "outside"
+ },
  "lead-0302698059076af0dddfc9b0": {
   "decision": "outside"
  },
@@ -34286,6 +34289,9 @@
   "class": "game",
   "reproduced": "VETTE!"
  },
+ "lead-044f62b754a0914c6e827be0": {
+  "decision": "outside"
+ },
  "lead-045145bfc14d3cadec6f1fac": {
   "decision": "data",
   "class": "game",
@@ -34415,6 +34421,9 @@
   "reproduced": "Mystery House"
  },
  "lead-0505370d9316db6d42ebe2e9": {
+  "decision": "outside"
+ },
+ "lead-0510d0b8a89555a51dcf16b4": {
   "decision": "outside"
  },
  "lead-0511a5211b0cf7f791b9ebb6": {
@@ -35271,6 +35280,11 @@
  },
  "lead-09c9ca3b3917eb40b9ca6a5d": {
   "decision": "outside"
+ },
+ "lead-09cb9d928635c6a1dceeaf43": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Turok: Dinosaur Hunter (PC version)"
  },
  "lead-09dade1f836692ff76bf2698": {
   "decision": "data",
@@ -37145,6 +37159,9 @@
   "class": "game",
   "reproduced": "Blake Stone: Aliens of Gold and Planet Strike"
  },
+ "lead-1409d171647858290aa74ed2": {
+  "decision": "outside"
+ },
  "lead-140c188dea7db1e8a83f46c4": {
   "decision": "outside"
  },
@@ -38191,6 +38208,9 @@
   "reproduced": "In Pursuit of Greed"
  },
  "lead-1a4b6a3103c05ee2498e3dc1": {
+  "decision": "outside"
+ },
+ "lead-1a4be56a6b1706e36b691307": {
   "decision": "outside"
  },
  "lead-1a547a221c79827c23befbda": {
@@ -39936,6 +39956,9 @@
   "class": "game",
   "reproduced": "Game Maker"
  },
+ "lead-23efd7a44214bf6be39a468d": {
+  "decision": "outside"
+ },
  "lead-23efeb3e410ed97423eeb79d": {
   "decision": "outside"
  },
@@ -40832,6 +40855,9 @@
   "class": "game",
   "reproduced": "Battlezone (1980)"
  },
+ "lead-28c5d2474802f7b092703e36": {
+  "decision": "outside"
+ },
  "lead-28c7cf4614e6619f246f57c6": {
   "decision": "outside"
  },
@@ -41716,6 +41742,9 @@
  "lead-2d9a1f5fed2b345b20329258": {
   "decision": "outside"
  },
+ "lead-2d9d25bebc3ca24f4ec95d5d": {
+  "decision": "outside"
+ },
  "lead-2da3f648d9efd3baeb71c29e": {
   "decision": "outside"
  },
@@ -41800,6 +41829,9 @@
   "decision": "data",
   "class": "software",
   "reproduced": "Steam server client interface"
+ },
+ "lead-2e473474d758872d2ad46f0c": {
+  "decision": "outside"
  },
  "lead-2e475b38ad0a29e0068a13a9": {
   "decision": "outside"
@@ -42053,6 +42085,9 @@
   "reproduced": "Dragon Ball Z: Budokai HD Collection"
  },
  "lead-2fe7ae3ed3a9618f821d72a9": {
+  "decision": "outside"
+ },
+ "lead-2fe90d16b3ea003161ba0a86": {
   "decision": "outside"
  },
  "lead-2ff00135d6f081e9f5f6901a": {
@@ -42397,6 +42432,9 @@
   "decision": "data",
   "class": "software",
   "reproduced": "NVIDIA GameStream client"
+ },
+ "lead-3181c0bf8048e55fb23d7cdd": {
+  "decision": "outside"
  },
  "lead-3185209b26097d726c263229": {
   "decision": "data",
@@ -43047,6 +43085,9 @@
   "reproduced": "Bomberman 64"
  },
  "lead-350b910a60d9edfd8680ce0c": {
+  "decision": "outside"
+ },
+ "lead-350f65a414a7c15bae87ea63": {
   "decision": "outside"
  },
  "lead-35140ce9a53a4a9b33fbe695": {
@@ -43802,6 +43843,9 @@
  "lead-390667ae4280b817a9857edc": {
   "decision": "outside"
  },
+ "lead-390943e8b1807ab5b466b421": {
+  "decision": "outside"
+ },
  "lead-390ab333b6f20fbb3f284f7a": {
   "decision": "outside"
  },
@@ -43972,6 +44016,9 @@
   "class": "game",
   "reproduced": "Lunar Lander"
  },
+ "lead-39f50beac271ea67c3df1aff": {
+  "decision": "outside"
+ },
  "lead-39fb34a235dbebf72cc21504": {
   "decision": "data",
   "class": "game",
@@ -44025,6 +44072,11 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Halo 3 Mythic multiplayer disc"
+ },
+ "lead-3a45b9d7e0ae938dc96994d0": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Donkey Kong Country 3 (SNES, North America)"
  },
  "lead-3a462b38187cfcade98f6e55": {
   "decision": "data",
@@ -45952,6 +46004,9 @@
   "class": "game",
   "reproduced": "Grand Theft Auto IV"
  },
+ "lead-439c5102eff724b65b6295b8": {
+  "decision": "outside"
+ },
  "lead-439de1f7e35d0327ad12694c": {
   "decision": "outside"
  },
@@ -46605,6 +46660,9 @@
  "lead-4726c8366ccbe0f3cbe5fab4": {
   "decision": "outside"
  },
+ "lead-4727c5bac7934838c96342ec": {
+  "decision": "outside"
+ },
  "lead-472b705ce80ef7e98bbca0b7": {
   "decision": "data",
   "class": "game",
@@ -46978,6 +47036,9 @@
   "decision": "outside"
  },
  "lead-4970936a5947e6f8caefacb1": {
+  "decision": "outside"
+ },
+ "lead-4979f7b2a41a54644288d5cb": {
   "decision": "outside"
  },
  "lead-497f010c47b7d8d06fbffe7e": {
@@ -48916,6 +48977,9 @@
  "lead-544f9e253a39be5bbbbdbd33": {
   "decision": "outside"
  },
+ "lead-544fa57424b4baf04e0542bb": {
+  "decision": "outside"
+ },
  "lead-5455056a4174155afaa6e824": {
   "decision": "data",
   "class": "hardware",
@@ -48968,6 +49032,9 @@
   "reproduced": "Windows Event Log EVTX format"
  },
  "lead-54972f71b619acf098ac6672": {
+  "decision": "outside"
+ },
+ "lead-549a749531df767a9eb12885": {
   "decision": "outside"
  },
  "lead-549e43c860bc70741c1166c3": {
@@ -50862,6 +50929,9 @@
  "lead-5ef486b18452d3737aa80edc": {
   "decision": "outside"
  },
+ "lead-5ef795d428318686964aebee": {
+  "decision": "outside"
+ },
  "lead-5ef8dce6fa52395468b290f0": {
   "decision": "outside"
  },
@@ -50907,6 +50977,9 @@
   "decision": "outside"
  },
  "lead-5f6a13099eb01101f8d886b7": {
+  "decision": "outside"
+ },
+ "lead-5f6abe72f438e5a41d3cda86": {
   "decision": "outside"
  },
  "lead-5f701fc984d7967519a96b08": {
@@ -51799,6 +51872,11 @@
   "class": "game",
   "reproduced": "Pokémon Red and Pokémon Blue"
  },
+ "lead-6476f89ebe51803fa0c07755": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Sonic the Hedgehog 2 August 21, 1992 prototype (Mega Drive)"
+ },
  "lead-6477999874ab27ed1d87dac8": {
   "decision": "data",
   "class": "game",
@@ -52153,6 +52231,9 @@
   "reproduced": "God of War II"
  },
  "lead-66b9d8bb7f790e9cbfc6f00e": {
+  "decision": "outside"
+ },
+ "lead-66bd06b002ef9ae0d3539c48": {
   "decision": "outside"
  },
  "lead-66c2fda96e85c1a39f5a6241": {
@@ -53348,6 +53429,9 @@
   "class": "game",
   "reproduced": "Hitman: Absolution and Hitman: Sniper Challenge server"
  },
+ "lead-6cd5f31045660d507fca502c": {
+  "decision": "outside"
+ },
  "lead-6cde838d06f664e417a92943": {
   "decision": "outside"
  },
@@ -53679,6 +53763,9 @@
   "decision": "outside"
  },
  "lead-6ed85d58b73403817623244e": {
+  "decision": "outside"
+ },
+ "lead-6ed9d10e65955ed92948b783": {
   "decision": "outside"
  },
  "lead-6ede5f46fd21d4b6cd007c86": {
@@ -54527,9 +54614,7 @@
   "reproduced": "New Play Control! Pikmin"
  },
  "lead-737efea740ce8a467b6cf91b": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Corel PHOTO-PAINT CPT9 format"
+  "decision": "outside"
  },
  "lead-73811cf746126ed6617a1192": {
   "decision": "data",
@@ -54552,6 +54637,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Chuckie Egg"
+ },
+ "lead-739fa5385278c0e237daa555": {
+  "decision": "outside"
  },
  "lead-73a830a5fcbeebf52e30281e": {
   "decision": "data",
@@ -54889,6 +54977,11 @@
  },
  "lead-75408207b5ca0d449b70de9d": {
   "decision": "outside"
+ },
+ "lead-7543505e6beb15b297315186": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Eltale Monsters (Japanese N64 release, Eltail)"
  },
  "lead-7548d3e85fe914031a3d312b": {
   "decision": "outside"
@@ -56933,6 +57026,11 @@
   "class": "game",
   "reproduced": "Haunting Ground"
  },
+ "lead-7ff5443f20eaae61334f02da": {
+  "decision": "data",
+  "class": "software",
+  "reproduced": "functions of open-source programs such as DuckDB"
+ },
  "lead-7ff853159c13283162d3a3f3": {
   "decision": "data",
   "class": "game",
@@ -57672,6 +57770,9 @@
   "decision": "data",
   "class": "software",
   "reproduced": "Epic Games Launcher"
+ },
+ "lead-843369ca9b96ce50e0e7f53b": {
+  "decision": "outside"
  },
  "lead-8433b8a1e854e8ba0bb9da9e": {
   "decision": "outside"
@@ -58861,6 +58962,9 @@
  "lead-8a845d8768c1ea70676cd18d": {
   "decision": "outside"
  },
+ "lead-8a8fa68ea590dd71867b0c01": {
+  "decision": "outside"
+ },
  "lead-8a9deba041d2943b0cc028e4": {
   "decision": "data",
   "class": "game",
@@ -58886,6 +58990,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Oregon Trail II"
+ },
+ "lead-8ab507e71cae58e24d96284d": {
+  "decision": "outside"
  },
  "lead-8abb53283684d27c512e4fd1": {
   "decision": "data",
@@ -59611,6 +59718,9 @@
  "lead-8ea46a5a00a5bc124ba9d03c": {
   "decision": "outside"
  },
+ "lead-8ea4dbef9934b651a718fd76": {
+  "decision": "outside"
+ },
  "lead-8eb23110c8248fb24c39f4a9": {
   "decision": "outside"
  },
@@ -59984,6 +60094,9 @@
  "lead-908ee22e6296aa9f7bbe1da6": {
   "decision": "outside"
  },
+ "lead-9097c71e263b5b2d16aa9ad5": {
+  "decision": "outside"
+ },
  "lead-9099c7489c1824687c796d15": {
   "decision": "outside"
  },
@@ -60305,6 +60418,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Jade Cocoon: Story of the Tamamayu"
+ },
+ "lead-922a19b05372a60d5e8b099b": {
+  "decision": "outside"
  },
  "lead-922f0411ae95045156807318": {
   "decision": "outside"
@@ -62899,6 +63015,9 @@
   "class": "game",
   "reproduced": "Burnout 3: Takedown"
  },
+ "lead-a041aaab42e3de3ea0db172c": {
+  "decision": "outside"
+ },
  "lead-a04778050a11e0b14498d62e": {
   "decision": "data",
   "class": "game",
@@ -65430,6 +65549,9 @@
   "class": "game",
   "reproduced": "Cars Race-O-Rama"
  },
+ "lead-ad7d765e0997901fca3c3bff": {
+  "decision": "outside"
+ },
  "lead-ad84917a424df10c898cab2d": {
   "decision": "data",
   "class": "game",
@@ -66827,6 +66949,9 @@
   "class": "game",
   "reproduced": "Grand Theft Auto IV"
  },
+ "lead-b569535842a56b800522722f": {
+  "decision": "outside"
+ },
  "lead-b56cba8faaf44c49c9efb95d": {
   "decision": "outside"
  },
@@ -66878,6 +67003,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Tyrian"
+ },
+ "lead-b5b09b360fc06b3be152415c": {
+  "decision": "outside"
  },
  "lead-b5b216f07c2924a35c5bddbe": {
   "decision": "data",
@@ -67319,6 +67447,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "inFamous"
+ },
+ "lead-b8492c5a90e04fb18cc2d3a5": {
+  "decision": "outside"
  },
  "lead-b8567b7afbd8a3de69c93c87": {
   "decision": "data",
@@ -68565,6 +68696,9 @@
   "class": "game",
   "reproduced": "Quake II: Zaero"
  },
+ "lead-bf9d0ac5084f4c4aaf8eb241": {
+  "decision": "outside"
+ },
  "lead-bf9f2fcbc7708d6d9c998e02": {
   "decision": "data",
   "class": "hardware",
@@ -68646,6 +68780,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Pokémon Sword and Shield Pawn scripts"
+ },
+ "lead-c02c01373101885042ab377a": {
+  "decision": "outside"
  },
  "lead-c031501896aeb0f92423651f": {
   "decision": "outside"
@@ -70524,6 +70661,11 @@
  "lead-cac56f06f63264412b8476bc": {
   "decision": "outside"
  },
+ "lead-cacdc8afc255914596ef2e57": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "SimCopter (Windows game)"
+ },
  "lead-cacf1ea01dcb5e238f0b0089": {
   "decision": "outside"
  },
@@ -71675,6 +71817,9 @@
  "lead-d0b0232c96f1363f0173af93": {
   "decision": "outside"
  },
+ "lead-d0b27520f38839953bf4cdff": {
+  "decision": "outside"
+ },
  "lead-d0b3e486a9699f8ac7eb9d2c": {
   "decision": "outside"
  },
@@ -72495,6 +72640,9 @@
   "decision": "data",
   "class": "game",
   "reproduced": "Dungeon Master"
+ },
+ "lead-d4edfd6e7194d3c998f51964": {
+  "decision": "outside"
  },
  "lead-d4ee48d0ebfc19076f976c43": {
   "decision": "data",
@@ -74471,6 +74619,9 @@
  "lead-df3c615378021826e3f9fe4d": {
   "decision": "outside"
  },
+ "lead-df40748de33804cf259c0814": {
+  "decision": "outside"
+ },
  "lead-df427921ed0775b9de188f31": {
   "decision": "outside"
  },
@@ -74691,6 +74842,11 @@
  },
  "lead-e0ac4648242de930f87220fa": {
   "decision": "outside"
+ },
+ "lead-e0b16843dac7e6f58d4e228f": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Powerslave (Exhumed) by Lobotomy Software"
  },
  "lead-e0b2bfba16c4ee95d77d5901": {
   "decision": "outside"
@@ -75763,6 +75919,11 @@
   "decision": "data",
   "class": "game",
   "reproduced": ".hack//INFECTION"
+ },
+ "lead-e681e9683539cc514bf19781": {
+  "decision": "data",
+  "class": "game",
+  "reproduced": "Dino Hunter by Triniti (mobile game)"
  },
  "lead-e685b9c978b019c68c78f3c0": {
   "decision": "outside"
@@ -77770,6 +77931,9 @@
  "lead-f1668bcd5377560c4d303900": {
   "decision": "outside"
  },
+ "lead-f17c43d2e97b6072ddb6e50e": {
+  "decision": "outside"
+ },
  "lead-f182a3f96ff358ef903b7504": {
   "decision": "data",
   "class": "game",
@@ -78233,6 +78397,9 @@
   "decision": "outside"
  },
  "lead-f4287cd98a58d5f44aa08d38": {
+  "decision": "outside"
+ },
+ "lead-f4308221c94b094b17621299": {
   "decision": "outside"
  },
  "lead-f436c717246303130d57ec4e": {
@@ -80120,6 +80287,9 @@
  "lead-fe243006badb85fb14f7de6b": {
   "decision": "outside"
  },
+ "lead-fe2ad7c8511132c8b8c209b5": {
+  "decision": "outside"
+ },
  "lead-fe2c8ecbdae548e0c85b5f3e": {
   "decision": "data",
   "class": "game",
@@ -80244,6 +80414,9 @@
   "decision": "outside"
  },
  "lead-feeee6679cf26c7378e98ff4": {
+  "decision": "outside"
+ },
+ "lead-fef3a9cdeab1a60e78c19036": {
   "decision": "outside"
  },
  "lead-fefc7e206b958d4030664aa9": {
