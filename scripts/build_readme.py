@@ -576,7 +576,7 @@ def render_badges(records, papers, language):
     """Report catalog populations, not execution verification or additive totals. Five badges, at most six. Count and
     license badges are plain images: the same pages are linked from the navigation row and the Use the data list, and
     awesome-lint flags a URL repeated in one README. The scan badge reads scan-status.json on the status branch live
-    (scripts/scan_status_badge.py), so the README is not regenerated on every scan and the badge turns amber after six
+    (scripts/scan_status_badge.py), so the README is not regenerated on every scan and the badge turns amber after nine
     hours without a successful scan. There is no CI badge: awesome lists must not carry one, and the footer already
     links the validate workflow's runs."""
     zh = language == 'zh'
