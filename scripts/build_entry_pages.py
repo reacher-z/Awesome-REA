@@ -8,6 +8,7 @@ import re
 from urllib.parse import quote, urlencode, urlsplit
 
 from artifact_links import github_repository
+from build_home import COPY as HOME_COPY, EVIDENCE_DETAIL, PINNED
 from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, jsonld_script, publication_keys
 from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, formatted_date, scholarly_article
 from build_readme import (CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section,
@@ -25,6 +26,37 @@ from site_footer import site_footer
 
 MARKER = '<!-- Generated curated entry page. -->'
 REPOSITORY_URL = 'https://github.com/reacher-z/Awesome-REA'
+# What the classifier observed, keyed by its reason string in data/evidence-classes.json; tests require every reason in the data to be listed.
+EVIDENCE_REASONS = {
+    'case study: download and demo exist, scope stays partial': (
+        'Download and demo observed; the case covers part of the target software.', '有下载方式和演示；案例覆盖目标软件的一部分。'),
+    'complete evidence for a tool, integration, guide or analysis entry': (
+        'Code, documentation, download and demo observed for a tool, integration, guide or analysis entry.', '工具、集成、指南或分析条目，有代码、文档、下载方式和演示。'),
+    'analysis entry with complete evidence': (
+        'Code, documentation, download and demo observed for an analysis entry.', '分析条目，有代码、文档、下载方式和演示。'),
+    'full reconstruction candidate: Class 0 requires manual scope review': (
+        'Code, documentation, download and demo observed; a full-reconstruction candidate for manual Class 0 review.', '有代码、文档、下载方式和演示；完整复现候选，待人工复核 C0。'),
+    'full reconstruction candidate: Class 0 requires manual review': (
+        'Code, documentation, download and demo observed; a full-reconstruction candidate for manual Class 0 review.', '有代码、文档、下载方式和演示；完整复现候选，待人工复核 C0。'),
+    'download and demo exist, but docs do not cover the full feature set': (
+        'Download and demo observed; the documentation covers part of the feature set.', '有下载方式和演示；文档覆盖部分功能。'),
+    'download and demo exist, but the described scope is a partial feature or patch': (
+        'Download and demo observed; the described scope is one feature or patch.', '有下载方式和演示；描述的范围是单个功能或补丁。'),
+    'case study demo is documented but docs do not cover the full feature set': (
+        'Demo documented; the documentation covers part of the feature set.', '有文档记录的演示；文档覆盖部分功能。'),
+    'code and docs only: no download method and no demo': (
+        'Code and documentation observed; no download method or demo found.', '有代码和文档；未发现下载方式或演示。'),
+    'code and docs only: no demo': (
+        'Code, documentation and a download method observed; no demo found.', '有代码、文档和下载方式；未发现演示。'),
+    'code and docs only: no download method': (
+        'Code, documentation and a demo observed; no download method found.', '有代码、文档和演示；未发现下载方式。'),
+    'no usable documentation at the code source': (
+        'Code observed; no usable documentation found.', '有代码；未发现可用文档。'),
+    'no code behind the entry URL': (
+        'No code found behind the entry URL.', '条目链接后未发现代码。'),
+}
+EVIDENCE_SCOPES = {'full': ('Full reconstruction', '完整复现'), 'partial': ('Partial', '部分范围'),
+                   'analysis': ('Analysis, tool or guide', '分析、工具或指南'), 'notes': ('Notes', '笔记')}
 # Issue forms whose `resource` input (a catalog ID or resource URL) accepts a URL prefill.
 FEEDBACK_FORMS = (('broken-resource.yml', 'Correction', 'Report an outdated entry', '报告条目过时'),
                   ('translation.yml', 'Translation', 'Suggest a translation fix', '建议修正翻译'))
@@ -104,6 +136,61 @@ def _definitions(items: list[tuple[str, str]]) -> str:
 def _summary(items: list[tuple[str, str]]) -> str:
     """Compact header facts; values are trusted markup built by the caller."""
     return '<dl class="entry-summary">' + ''.join(f'<div><dt>{escape(label)}</dt><dd>{value}</dd></div>' for label, value in items) + '</dl>'
+
+
+def evidence_class_badge(record: dict, language: str) -> str:
+    """The C0–C3 badge and its meaning, as on the catalogue cards; '?' when the source was unreadable."""
+    zh = language == 'zh'
+    if record.get('evidence_status') == 'unknown':
+        return f'<span class="evidence-class evidence-class-unknown">?</span> {escape(HOME_COPY[language]["unknown_title"])}'
+    value = record.get('evidence_class')
+    if value is None:
+        return ''
+    return f'<span class="evidence-class evidence-class-{int(value)}">C{int(value)}</span> {escape(EVIDENCE_DETAIL[int(value)][int(zh)])}'
+
+
+def _evidence_preview(record: dict, language: str) -> str:
+    text = HOME_COPY[language]
+    if record.get('preview'):
+        video = record.get('preview_kind') == 'video'
+        alt = text['preview_video_alt' if video else 'preview_image_alt']
+        return (f'<figure class="entry-preview"><img src="{_asset_url(record["preview"])}" alt="{escape(alt, quote=True)}" '
+                f'loading="lazy" decoding="async"><figcaption>{escape(alt)}</figcaption></figure>')
+    if record.get('preview_kind') == 'demo':
+        return f'<p class="entry-preview-demo">{escape(text["demo_note"])}</p>'
+    return ''
+
+
+def _evidence_section(record: dict, language: str, note: dict | None, repository_url: str) -> str:
+    """What the evidence class rests on: observations, scope, any manual Class 0 review and the documented demo preview."""
+    zh = language == 'zh'
+    label = lambda en, cn: cn if zh else en
+    if not evidence_class_badge(record, language):
+        return ''
+    facts = []
+    reason = EVIDENCE_REASONS.get((note or {}).get('reason'))
+    if reason and record.get('evidence_status') != 'unknown':
+        facts.append((label('Observed', '观察到'), escape(reason[int(zh)])))
+    scope = EVIDENCE_SCOPES.get(record.get('scope'))
+    if scope:
+        facts.append((label('Scope', '范围'), escape(scope[int(zh)])))
+    review = record.get('evidence_review')
+    if record.get('evidence_class') == 0 and review:
+        reviewed = escape(str(review['reviewed_at'])[:10])
+        version = escape(review['version'])
+        facts.append((label('Manual review', '人工复核'),
+                      f'{reviewed} · '
+                      f'<a href="{_public_url(review["primary_evidence"])}" target="_blank" rel="noopener">{version} <span aria-hidden="true">↗</span></a>'))
+    checked = str((note or {}).get('checked_at') or '')[:10]
+    if re.fullmatch(r'\d{4}-\d{2}-\d{2}', checked):
+        facts.append((label('Checked', '检查于'), checked))
+    rows = ''.join(f'<dt>{escape(name)}</dt><dd>{value}</dd>' for name, value in facts)
+    rows = f'<dl class="entry-facts">{rows}</dl>' if rows else ''
+    guide = f'{repository_url}/blob/main/docs/evidence-classes{".zh-CN" if zh else ""}.md'
+    return (f'<section class="entry-section entry-evidence" aria-labelledby="entry-evidence"><h2 id="entry-evidence">{label("Evidence", "证据")}</h2>'
+            f'{_evidence_preview(record, language)}{rows}'
+            f'<p class="entry-evidence-guide"><a href="{_public_url(guide)}" target="_blank" rel="noopener">'
+            f'{label("How evidence classes are assigned", "证据档位的判定方法")} <span aria-hidden="true">↗</span></a></p></section>')
 
 
 def _survey_discussion(sections: list[dict], language: str) -> str:
@@ -313,7 +400,7 @@ def _tools(record: dict, language: str) -> str:
 
 
 def _resource_content(record: dict, language: str, discussion: str = '', feedback: str = '', *,
-                      entry_url: str = '', repository_url: str = REPOSITORY_URL) -> tuple[str, str, str]:
+                      entry_url: str = '', repository_url: str = REPOSITORY_URL, evidence: str = '') -> tuple[str, str, str]:
     zh = language == 'zh'
     label = lambda en, cn: cn if zh else en
     title = _text(record, 'name_zh' if zh else 'name')
@@ -326,6 +413,8 @@ def _resource_content(record: dict, language: str, discussion: str = '', feedbac
              (label('Category', '类别'), escape(CATEGORIES[record['category']][int(zh)])),
              (label('Relationship', '关联'), escape(RELATIONSHIPS[record['relationship']][int(zh)])),
              (label('Sources reviewed', '来源复核于'), reviewed)]
+    if evidence_class_badge(record, language):
+        facts.append((label('Evidence class', '证据档位'), f'<a class="entry-class-link" href="#entry-evidence">{evidence_class_badge(record, language)}</a>'))
     # Plain text: the page's one <time> element is the review date, which validate_site.py checks.
     if source_status(record, language):
         facts.append((label('Source status', '来源状态'), escape(source_status(record, language))))
@@ -333,10 +422,11 @@ def _resource_content(record: dict, language: str, discussion: str = '', feedbac
     links = [_link(record['url'], label('Visit original resource', '访问原始资源'), primary=True)]
     if record['evidence_url'] != record['url']:
         links.append(_link(record['evidence_url'], label(*PRIMARY_SOURCE_LABEL)))
-    content = f'''<header class="entry-heading"><p class="entry-eyebrow">{escape(kind)}</p><h1>{escape(title)}</h1>
+    featured = f'<span class="entry-featured">{escape(HOME_COPY[language]["featured"])}</span>' if record['id'] in PINNED else ''
+    content = f'''<header class="entry-heading"><p class="entry-eyebrow">{escape(kind)}{featured}</p><h1>{escape(title)}</h1>
   <p class="entry-description">{escape(description)}</p>{_summary(facts)}{_repository_row(record, language)}</header>
 <nav class="entry-actions" aria-label="{label('Resource links', '资源链接')}">{''.join(links)}</nav>{_tools(record, language)}
-<section class="entry-section" aria-labelledby="entry-requirements"><h2 id="entry-requirements">{escape(REQUIREMENTS_LABEL[zh])}</h2><ul class="entry-requirements">{requirements}</ul></section>
+{evidence}<section class="entry-section" aria-labelledby="entry-requirements"><h2 id="entry-requirements">{escape(REQUIREMENTS_LABEL[zh])}</h2><ul class="entry-requirements">{requirements}</ul></section>
 {_cite(record, language, entry_url) if entry_url else ''}{_star_line(language, repository_url)}
 <section class="entry-section" aria-labelledby="entry-review"><h2 id="entry-review">{label('About this entry', '关于此条目')}</h2>
 <p class="entry-review-note">{label('The description was reviewed against primary sources.', '说明已依据一手来源复核。')}</p>{feedback}</section>
@@ -385,7 +475,7 @@ def _paper_content(paper: dict, language: str, discussion: str = '', feedback: s
 
 def _document(record, kind, language, *, site_url, repository_url, styles_href, entry_styles_href,
               favicon_href, social_image_href, icon_stylesheet_href, survey_discussions, related_entries, siblings=None,
-              repository_export):
+              repository_export, evidence_notes=None):
     zh = language == 'zh'
     label = lambda en, cn: cn if zh else en
     locale, prefix = ('zh-CN', '/zh') if zh else ('en', '')
@@ -404,8 +494,9 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
                   + _survey_discussion(survey_discussions.get(record['id'], []), language))
     feedback = _feedback(kind, record, language, repository_url)
     if kind == 'resource':
+        evidence = _evidence_section(record, language, (evidence_notes or {}).get(record['id']), repository_url)
         title, description, content = _resource_content(record, language, discussion, feedback,
-                                                         entry_url=site_url + path, repository_url=repository_url)
+                                                         entry_url=site_url + path, repository_url=repository_url, evidence=evidence)
     else:
         title, description, content = _paper_content(record, language, discussion, feedback)
     # Resource names such as rr or GDB are often identical in both languages; the localized
@@ -461,8 +552,12 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
                       favicon_href: str = '/favicon.svg', social_image_href: str = 'https://awesomerea.org/social-card.png',
                       icon_stylesheet_href: str | None = None,
                       survey_discussions: dict | None = None,
-                      repository_export: str = 'source-index.json') -> list[str]:
-    """Write only curated /resources/<id>/ and /papers/<id>/ pairs; return sitemap URLs."""
+                      repository_export: str = 'source-index.json',
+                      evidence_notes: dict | None = None) -> list[str]:
+    """Write only curated /resources/<id>/ and /papers/<id>/ pairs; return sitemap URLs.
+
+    ``evidence_notes`` maps resource IDs to their data/evidence-classes.json entry (reason, checked_at).
+    """
     site_dir = Path(site_dir)
     site_url = site_url.rstrip('/')
     _public_url(site_url)
@@ -472,7 +567,8 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
                    entry_styles_href=entry_styles_href, favicon_href=favicon_href,
                    social_image_href=social_image_href, icon_stylesheet_href=icon_stylesheet_href,
                    survey_discussions=survey_discussions or {},
-                   related_entries=matching_entries(resources, papers), repository_export=repository_export)
+                   related_entries=matching_entries(resources, papers), repository_export=repository_export,
+                   evidence_notes=evidence_notes or {})
     rendered, twins, records_json = {}, {}, {}
     siblings = section_siblings(resources)
     for kind, records in (('resource', resources), ('paper', papers)):

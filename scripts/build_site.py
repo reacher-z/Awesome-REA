@@ -422,7 +422,7 @@ def build_site(output: Path) -> tuple[int, int, int]:
         styles_href=asset_hrefs["styles.css"], entry_styles_href=fingerprinted_href(output, "entry.css"),
         favicon_href=asset_hrefs["favicon.svg"], social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         icon_stylesheet_href=icon_stylesheet, survey_discussions=discussion_sections(survey_document),
-        repository_export=repository_export,
+        repository_export=repository_export, evidence_notes=evidence_entries,
     )
     # Feeds list inclusion dates; they link from pages written above and are not sitemap pages.
     build_feeds(output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
