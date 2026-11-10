@@ -1,6 +1,7 @@
 """The shared chrome: every page gets it once, without network, clock or inline styles, and old links still work."""
 from __future__ import annotations
 
+from html import unescape
 from pathlib import Path
 import re
 import sys
@@ -10,7 +11,10 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 
-from build_home import COPY, FEATURED, KIND_CODES, _featured_projects, evidence_label, search_index  # noqa: E402
+from build_home import COPY, FEATURED, KIND_CODES, _featured_projects, evidence_label, render_homepage, search_index  # noqa: E402
+from homepage_locales import _Document, localized_homepage  # noqa: E402
+from open_graph import SITE_ALTERNATE_NAMES, SITE_NAME, website_node  # noqa: E402
+from page_metadata import description_problem, title_problem  # noqa: E402
 from site_footer import site_footer  # noqa: E402
 import site_shell  # noqa: E402
 
@@ -113,6 +117,50 @@ class ShellTests(unittest.TestCase):
 
 
 class HomeTests(unittest.TestCase):
+    def test_homepage_definition_matches_readme_and_preserves_discovery_metadata(self):
+        origin = 'https://awesomerea.org'
+        template = (ROOT / 'site/index.html').read_text(encoding='utf-8')
+        app = (ROOT / 'site/app.js').read_text(encoding='utf-8')
+        identity = 'Awesome REA (Awesome Reverse Engineering Anything)'
+        for language, readme, canonical in (('en', 'README.md', origin + '/'),
+                                            ('zh', 'README.zh-CN.md', origin + '/zh/')):
+            with self.subTest(language=language), tempfile.TemporaryDirectory() as directory:
+                explorer = localized_homepage(template, app, language)
+                html = render_homepage(site_dir=Path(directory), explorer_html=explorer, resources=[], papers=[],
+                                       discovery_count=0, last_scan=None, language=language, repository_url=REPOSITORY,
+                                       repository_export='source-index.json', order={})
+                document = _Document(html)
+                ledes = [node for node in document.nodes if node['tag'] == 'p' and node['attrs'].get('class') == 'lede']
+                self.assertEqual(len(ledes), 1)
+                lede = ledes[0]
+                prose = html[lede['inner']:lede['close']]
+                self.assertTrue(prose.startswith(identity), prose)
+                self.assertEqual(prose, (ROOT / readme).read_text(encoding='utf-8').split('\n\n', 2)[1])
+                self.assertEqual(lede['parent']['attrs'].get('class'), 'hero-top')
+                self.assertEqual(lede['attrs'], {'class': 'lede'})
+                self.assertNotIn('<', prose)
+                headings = [node for node in document.nodes if node['tag'] == 'h1']
+                self.assertEqual(len(headings), 1)
+                self.assertEqual(html[headings[0]['inner']:headings[0]['close']], COPY[language]['h1'])
+                links = [node['attrs'] for node in document.nodes if node['tag'] == 'link']
+                self.assertEqual([link['href'] for link in links if link.get('rel') == 'canonical'], [canonical])
+                self.assertEqual({link['hreflang']: link['href'] for link in links if link.get('hreflang')},
+                                 {'en': origin + '/', 'zh-CN': origin + '/zh/', 'x-default': origin + '/'})
+                meta = {node['attrs'].get('name') or node['attrs'].get('property'): node['attrs'].get('content')
+                        for node in document.nodes if node['tag'] == 'meta'}
+                title_node = next(node for node in document.nodes if node['tag'] == 'title')
+                self.assertIsNone(title_problem(unescape(html[title_node['inner']:title_node['close']])))
+                self.assertIsNone(description_problem(meta['description']))
+                self.assertEqual(meta['og:site_name'], SITE_NAME)
+                self.assertEqual(meta['og:url'], canonical)
+                self.assertEqual(meta['description'], meta['og:description'])
+                self.assertEqual(meta['description'], meta['twitter:description'])
+                self.assertIn(SITE_NAME, prose)
+                self.assertIn('Awesome REA', SITE_ALTERNATE_NAMES)
+                self.assertEqual(website_node(origin, REPOSITORY)['sameAs'], REPOSITORY)
+                self.assertIn(f'href="{REPOSITORY}"', html)
+                self.assertIn('href="/zh/about/"' if language == 'zh' else 'href="/about/"', html)
+
     def test_evidence_label_reads_a_pinned_commit(self):
         label = evidence_label('https://github.com/NationalSecurityAgency/ghidra/blob/' + 'a' * 40 + '/README.md')
         self.assertEqual(label['repo'], 'NationalSecurityAgency/ghidra')

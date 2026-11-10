@@ -1,6 +1,6 @@
 <h1 align="center"><a href="https://awesomerea.org/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/brand/readme-banner-dark.svg"><img src="assets/brand/readme-banner-light.svg" alt="Awesome Reverse Engineering Anything: tools, cases and papers across six reverse-engineering domains" width="960"></picture></a></h1>
 
-A collection of tools, case studies and research for websites, games, apps, native binaries, firmware and communication protocols.
+Awesome REA (Awesome Reverse Engineering Anything) is a bilingual, source-reviewed catalog of reverse-engineering tools, case studies and papers for websites, games, apps, native binaries, firmware and communication protocols.
 
 **English** · [简体中文](README.zh-CN.md)
 
