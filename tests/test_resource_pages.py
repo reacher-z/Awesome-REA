@@ -49,10 +49,16 @@ class ResourcePagesTests(unittest.TestCase):
             self.assertFalse((self.output / f'{prefix.lstrip("/")}/resources/page/{expected_pages + 1}'.lstrip('/')).exists())
         validate_resource_listing(self.pages, self.resources)
 
-    def test_later_pages_are_noindex_and_list_only_their_rows(self):
+    def test_later_pages_are_indexed_with_their_own_address_and_rows(self):
         first, second = self.pages['/resources/'], self.pages['/resources/page/2/']
-        self.assertFalse(first.noindex)
-        self.assertTrue(second.noindex)
+        self.assertFalse(first.noindex or second.noindex)
+        self.assertEqual(second.canonicals, [ORIGIN + '/resources/page/2/'])
+        self.assertEqual(dict(second.alternates)['zh-CN'], ORIGIN + '/zh/resources/page/2/')
+        twin = (self.output / 'resources/page/2/index.md').read_text(encoding='utf-8')
+        self.assertIn(f'<{ORIGIN}/resources/page/2/>', twin)
+        self.assertEqual(twin.count('/index.md)'), len(second.record_ids))
+        self.assertIn('href="/resources/page/2/index.md"', self.html('/resources/page/2/'))
+        self.assertIn('Page 2 of 3, entries 101–200.', self.html('/resources/page/2/'))
         items = next(schema_entities(second.schemas, 'CollectionPage'))['mainEntity']
         self.assertEqual(items['numberOfItems'], len(second.record_ids))
         self.assertIn('page 2', self.html('/resources/page/2/').split('</title>')[0])

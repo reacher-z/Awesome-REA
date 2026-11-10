@@ -309,7 +309,9 @@ async function resourceListing(page, language, viewport, data) {
   const before = await page.$eval('[data-results-meta]', node => node.textContent);
   await press(page, '.page-head .folder[data-target="protocol"]');
   await page.waitForFunction(() => new URL(location.href).searchParams.get('target') === 'protocol', {timeout: 20000});
-  assert.notEqual(await page.$eval('[data-results-meta]', node => node.textContent), before, `${label}: the count follows the filter`);
+  // The search index loads on the first interaction, so the count changes once it arrives.
+  await page.waitForFunction(text => document.querySelector('[data-results-meta]').textContent !== text, {timeout: 20000}, before)
+    .catch(() => assert.fail(`${label}: the count follows the filter`));
   if (staticPages > 1) {
     const shown = await page.$$eval('[data-cards] > .card[data-id]', nodes => nodes.map(node => node.dataset.id));
     assert.ok(shown.some(id => pageMap[id] > 1), `${label}: the filter searches rows from every static page`);

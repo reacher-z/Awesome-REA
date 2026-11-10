@@ -35,10 +35,20 @@ def english_path(path: str) -> str:
     return path.removeprefix('/zh') if path.startswith('/zh/') else path
 
 
+LISTING_PAGE = re.compile(r'(/(?:resources|cases)/)page/[1-9][0-9]*/')
+
+
+def dated_path(path: str) -> str:
+    """The English path whose date a page carries: a later static listing page takes its listing's date."""
+    english = english_path(path)
+    match = LISTING_PAGE.fullmatch(english)
+    return match[1] if match else english
+
+
 def section_for(path: str) -> str:
     """The sitemap that lists a root-relative page path."""
     english = english_path(path)
-    if english in ('/resources/', '/cases/') or english.startswith('/resources/'):
+    if english in ('/resources/', '/cases/') or english.startswith(('/resources/', '/cases/page/')):
         return 'resources'
     if english.startswith('/papers/'):
         return 'papers'
@@ -132,7 +142,7 @@ def urlset(site_url: str, paths: list[str], dates: dict[str, str]) -> str:
     for path in paths:
         alternates = ''.join(f'<xhtml:link rel="alternate" hreflang="{language}" href={quoteattr(url)}/>'
                              for language, url in language_alternates(site_url, path).items())
-        date = dates.get(english_path(path))
+        date = dates.get(dated_path(path))
         rows.append(f'<url><loc>{xml_escape(site_url + path)}</loc>{f"<lastmod>{date}</lastmod>" if date else ""}{alternates}</url>')
     return (f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="{SITEMAP_NS}" xmlns:xhtml="{XHTML_NS}">\n'
             + '\n'.join(rows) + '\n</urlset>\n')
@@ -154,7 +164,7 @@ def write_sitemaps(output: Path, site_url: str, paths: list[str], dates: dict[st
         if len(listed) > MAX_URLS:
             raise ValueError(f'The {section} sitemap exceeds {MAX_URLS} URLs; split it')
         (output / SECTION_FILES[section]).write_text(urlset(site_url, listed, dates), encoding='utf-8')
-        date = latest(dates.get(english_path(path)) for path in listed)
+        date = latest(dates.get(dated_path(path)) for path in listed)
         index.append(f'<sitemap><loc>{xml_escape(site_url + "/" + SECTION_FILES[section])}</loc>'
                      f'{f"<lastmod>{date}</lastmod>" if date else ""}</sitemap>')
     (output / SITEMAP_INDEX).write_text(
