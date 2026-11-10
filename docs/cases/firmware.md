@@ -6,8 +6,11 @@
 
 [简体中文](firmware.zh-CN.md)
 
-**172 case studies**
+**175 case studies**
 
+- [**fdsboot: Famicom Disk System boot ROM disassembly**](https://gitlab.com/segaloco/fdsboot) - fdsboot is a 6502 disassembly of the Famicom Disk System boot ROM, split into disk I/O, PPU, joypad, timer, sound, interrupt and random-number routines with include files for the console and FDS registers. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/fdsboot-case/)</sub>
+- [**gyx-decomp: Casio ES PLUS GYX firmware decompilation**](https://codeberg.org/gwetm/gyx-decomp) - gyx-decomp is a decompilation of the Casio ES PLUS GYX scientific calculator firmware, which runs on ROHM nX-U8/100 microcontrollers. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/gyx-decomp-case/)</sub>
+- [**vmiv: View-Master Interactive Video emulator and format notes**](https://codeberg.org/Sprite_tm/vmiv) - vmiv emulates the View-Master Interactive Video system by decoding a captured tape video with FFmpeg, extracting the UART-style data bytes and auxiliary audio carried in the scanlines, and feeding them to an 8051 core that runs the VMI8802 ROM alongside a TMS9128 video chip model rendered with SDL2. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/vmiv-case/)</sub>
 - [**6502 Model: reconstructing 65C02 cycle behavior**](https://github.com/EmulationOnline/model_6502) - 6502 Model reconstructs the 65C02 chip’s cycle behavior in Rust from traces of external buses recorded during execution on a physical chip. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/6502-model-case/)</sub>
 - [**B3603: reconstructing control-board behavior for replacement firmware**](https://github.com/baruch/b3603) - B3603 investigates the buck converter's control board to support replacement STM8 firmware. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/b3603-case/)</sub>
 - [**Band 9 表盘生成器: Huawei Band 9 HWT watch-face format reconstruction**](https://github.com/daiyuxiang520/band9-watchface-generator) - Band 9 表盘生成器 reconstructs the Huawei Band 9 HWT watch-face package format from binary observations of public packages and builds installable packages for the 194 × 368 HWHD07 screen. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/band9-watchface-generator-case/)</sub>

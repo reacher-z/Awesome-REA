@@ -15492,6 +15492,14 @@
     "evidence_url": "https://github.com/Ritchie333/skiing/blob/166945789eacfcd640aaea9c16501cff9338d70a/src/skiing.skool",
     "reviewed_at": "2026-11-06"
   },
+  "lead-02a30440106885b835d71ef8": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The MIPS O2 CSV splits pair named and stripped decompiled functions with LLM naming prompts, but no card or linked paper states how the binaries, decompilation and generations were produced or under what licence.",
+    "reason_zh": "该数据集的 MIPS O2 CSV 将带符号与去符号的反编译函数和大模型命名提示配对，但没有数据集卡片或论文说明二进制来源、反编译与生成过程及许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_reverse_engineering_code_dataset_O2_mips_O2/tree/2f7f543adec488c844a44c3f2c6a939d68027021",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-02bd1cb1efaec160ede92310": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -15764,6 +15772,14 @@
     "reason_zh": "仓库收录了《What on Earth》的反编译 Unity 工程及预制件、材质、图像和插件，其再分发内容需要维护者裁定。",
     "evidence_url": "https://github.com/Dodonickey/WOE-Decompiled/blob/af4079a4f7c8a228e37536a6327249d66ff29f53/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-066b73dd2ef6e836cf1586e7": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The TU58 firmware project commits the original DEC ROM images as roms/*.bin and roms/*.hex for three firmware versions beside its commented 8085 disassemblies.",
+    "reason_zh": "该 TU58 固件项目除了带注释的 8085 反汇编外，还在 roms/ 中以 .bin 和 .hex 形式提交了三个版本的 DEC 原始 ROM 映像。",
+    "evidence_url": "https://gitlab.com/NF6X_Retrocomputing/tu58firmware/-/blob/4e3aff152c336b2587ded09db8367b8f2a98af8a/README.txt",
+    "reviewed_at": "2026-11-09"
   },
   "lead-06a2be61b5a4dc91f294484a": {
     "decision": "exclude",
@@ -16616,6 +16632,14 @@
     "evidence_url": "https://github.com/The-New-Platinum-Team/OpenMBG/blob/9c5673f9a1c26348da445bb1dbfd88bf1ed3c3b7/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-1261ed7c00e2d26520134802": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The file is a 2003 transcription of the original 1982 developer source of Riddle of the Sphinx (working title Dank Tower), with the origin of that source unstated.",
+    "reason_zh": "该文件是 2003 年转录的 Riddle of the Sphinx（开发代号 Dank Tower）1982 年原始开发源码，原始源码的出处未作说明。",
+    "evidence_url": "https://web.archive.org/web/20260213091240/https://www.qotile.net/minidig/disassembly/riddle-pal.asm",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-12970b5c8d18b57d5ce91d0c": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -16810,6 +16834,14 @@
     "evidence_url": "https://github.com/psxports/FightingForce-xport/blob/d0fc131666c81f10451909665c8037baa987d965/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-1657dba4d9117b1176a78e53": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The site serves a complete playable browser build of Rainbow Arts’ 1991 Mad TV at /game/, requiring a maintainer decision on linking it.",
+    "reason_zh": "网站通过 /game/ 提供可直接游玩的 1991 年 Mad TV 浏览器版本；是否收录这个完整游戏构建包，仍需维护者决定。",
+    "evidence_url": "https://web.archive.org/web/20261110014007/https://madtvgame-tribute.com/en/",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-16ade08e81a00c6c6d650659": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -16913,6 +16945,14 @@
     "reason_zh": "JFTekWar 基于已公开的 TekWar 源码和现有 Build 引擎移植版开发，文档未描述依据原作观察进行重建。",
     "evidence_url": "https://github.com/jonof/jftekwar/blob/b1cd0c8d04704e665445c3f4ad77f31264f611d2/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-190d4224eb40639b68743e8a": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The x64 O2 CSV splits pair named and stripped decompiled functions with LLM function-naming prompts and outputs, but no card, discussion or author page documents their provenance, tooling or licence.",
+    "reason_zh": "该数据集的 x64 O2 CSV 将带符号与去符号的反编译函数和大模型函数命名提示及输出配对，但没有数据集卡片、讨论或作者页面说明其来源、工具与许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_reverse_engineering_code_dataset_O2_x64_O2/tree/f477e1012b16b17748141b73693d587ff601ab49",
+    "reviewed_at": "2026-11-09"
   },
   "lead-191783b6c7e70df1052458d0": {
     "decision": "hold",
@@ -17057,6 +17097,15 @@
     "reason_zh": "仓库展示的是已收录的 tangosdev/sm64ds-decomp 项目；README 将 tangosdev 列为负责人，许可证署名也沿用原项目。",
     "evidence_url": "https://github.com/SahilKDas/64DS-DX/blob/82ccfb1316ca6044cb6c0cc273c489e7a19fd2e2/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-1b539df11a74a6a0490e13c8": {
+    "decision": "exclude",
+    "reason_code": "duplicate-curated",
+    "reason_en": "Catalog record sonic-gems-sonic-cd-decomp-case lists Clownacy/Sonic-CD-Decompilation, which carries this repository's README and the author's commit history from 2023 onward.",
+    "reason_zh": "目录条目 sonic-gems-sonic-cd-decomp-case 收录的 Clownacy/Sonic-CD-Decompilation 与本仓库 README 相同，并沿用作者自 2023 年起的提交历史。",
+    "evidence_url": "https://git.sr.ht/~benoitren/soniccddecompilation/tree/0d54eb6e9d135c79b4575a68261b83ea26ad3d33/item/README.md",
+    "reviewed_at": "2026-11-09",
+    "duplicate_of": "sonic-gems-sonic-cd-decomp-case"
   },
   "lead-1b83aef4d90989f0a7148846": {
     "decision": "exclude",
@@ -17853,6 +17902,14 @@
     "reason_zh": "InkBall 以 C++ 重建原游戏行为，同时提交位图、图标和二进制资源，资源再分发需要维护者决定。",
     "evidence_url": "https://github.com/arceuss/InkBall/blob/bb10e4d24a57a38355c04895ca753e774a2da435/InkBall/src/Main.cpp",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-268f5166fdde08b525162fce": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "vt100-firmware pairs its annotated 8080 disassembly with committed DEC VT100 ROM images in bin/, including the 23-018E2 character generator and vt100.bin.",
+    "reason_zh": "vt100-firmware 除了带注释的 8080 反汇编外，还在 bin/ 中提交了 DEC VT100 的 ROM 镜像，包括 23-018E2 字符发生器和 vt100.bin。",
+    "evidence_url": "https://codeberg.org/hisdeedsaredust/vt100-firmware/src/commit/17e1af76527a5442eaeaa0e4ede95ed82f70e9cd/awnty/awnty.c",
+    "reviewed_at": "2026-11-09"
   },
   "lead-2694ee767e43acae376625a4": {
     "decision": "exclude",
@@ -19252,6 +19309,14 @@
     "evidence_url": "https://github.com/summerkirakira/RefugeNext/blob/0c25f839e6429b73afc0567fdd2163bf50cde823/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-37e7965870d8b9d5dd5da1fc": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "DMOE is an early SDL rebuild of Dungeon Master, and its release archives bundle the original FTL/Interplay graphics, including ripped screen images.",
+    "reason_zh": "DMOE 是用 SDL 重建《Dungeon Master》的早期项目，其发布包附带 FTL/Interplay 原版图像，其中包括从游戏中提取的画面。",
+    "evidence_url": "https://web.archive.org/web/20021016180954/http://dmle.sourceforge.net:80/",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-37f7a8f2d97b92cab428bca8": {
     "decision": "exclude",
     "reason_code": "no-real-content",
@@ -19373,6 +19438,14 @@
     "evidence_url": "https://github.com/r41n60w/planetoid-disasm/blob/0581d6d43d3057e2fae76f21d1b5cd45bfe09d0a/planet2.asm",
     "reviewed_at": "2026-11-06"
   },
+  "lead-39b3a8d087fc6b6415943b2d": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "One CSV of 2,236 rows gives whole-program decompiled pseudocode for named Linux binaries such as 7zr and alsamixer, but no card states the binaries' source, the decompiler, or the purpose.",
+    "reason_zh": "该数据集只有一个 CSV，共 2,236 行，收录 7zr、alsamixer 等 Linux 程序的整程序反编译伪代码，但没有数据集卡片说明二进制来源、所用反编译器和用途。",
+    "evidence_url": "https://huggingface.co/datasets/andrewy1n/pseudocode-decompiled-samples-small/tree/86c8bb99bd8002aed696af6e8581b352f3cd7ce6",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-39d44c4bc3df65a40921ea9f": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -19428,6 +19501,14 @@
     "reason_zh": "Kain-Disassembly 收录了 Soul Reaver 1 的反汇编文件和反编译数据库；发布商业游戏分析产物需要维护者决定。",
     "evidence_url": "https://github.com/MicroTransactionsMatterToo/Kain-Disassembly/tree/fa01e91249c43c93f45c997000a1d74d74098c70",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-3a45b9d7e0ae938dc96994d0": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The SNES disassembly of Donkey Kong Country 3 commits thousands of extracted ROM data files, including BRR sound samples, level, palette and graphics data, which the build includes directly.",
+    "reason_zh": "这份《Donkey Kong Country 3》SNES 反汇编提交了数千个从 ROM 提取的数据文件，包括 BRR 音频采样、关卡、调色板和图形数据，并在构建时直接引入。",
+    "evidence_url": "https://github.com/BlueImp78/DKC3-Disassembly/blob/ca35c30e2639fb8df450b664b24731e16d9fd586/header.asm",
+    "reviewed_at": "2026-11-09"
   },
   "lead-3a71983de3ef486f31ac3ea5": {
     "decision": "hold",
@@ -19854,6 +19935,14 @@
     "evidence_url": "https://github.com/jorio/Bugdom2/blob/a0e59762400447706c2a15e052837c1f9a7e8dae/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-3e856f7b49e2ba0c34afc979": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "RedneckGDX holds Java game code built on Duke Nukem 3D 1.5 sources that loads Redneck Rampage CON files, but has no README describing the port, its inputs or its build.",
+    "reason_zh": "RedneckGDX 包含基于 Duke Nukem 3D 1.5 源码、可读取 Redneck Rampage CON 文件的 Java 游戏代码，但没有 README 说明移植内容、所需文件和构建方法。",
+    "evidence_url": "https://gitlab.com/m210/RedneckGDX/-/tree/b7855229adb5a5709058abb8babd4cd13b3e4265",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-3ea06fb4eb160110339ebec0": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -20181,6 +20270,14 @@
     "reason_zh": "Carrot Crazy 反汇编仓库提交了大量游戏图像与关卡数据；即使提供哈希匹配构建，收录链接仍需维护者决定。",
     "evidence_url": "https://github.com/huderlem/carrotcrazy/blob/d4b18699b135214971be1985b22169a1845c9f22/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-42065ca63a8e5302d8c13d5d": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "PAWS-Decomp commits decompiled ActionScript of the 2023 commercial game Super Cat Tales: PAWS together with its MP3 audio, texture atlases and level maps.",
+    "reason_zh": "PAWS-Decomp 提交了 2023 年商业手游《Super Cat Tales: PAWS》反编译出的 ActionScript 代码，以及游戏的 MP3 音频、纹理图集和关卡地图。",
+    "evidence_url": "https://codeberg.org/heathercat123/PAWS-Decomp/src/commit/d895053d8c1686b5b4894d43c018e5601f76c4fa/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-42262aadbfeff4b34c15e7f1": {
     "decision": "hold",
@@ -21160,6 +21257,14 @@
     "evidence_url": "https://github.com/vermiceli/nes-super-c/blob/be6ccce97a73ce1ea0d3ebace85e22fca01e4ed9/docs/sprite_library/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-5041c6ce28ce583bb5414e11": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "2004Scape's from-scratch RS2 engine runs on the LostCityRS Content repository, which commits Jagex models, music, maps, sprites and textures extracted from the original game.",
+    "reason_zh": "2004Scape 从零编写的 RS2 服务端依赖 LostCityRS 的 Content 仓库，该仓库提交了从原版游戏提取的 Jagex 模型、音乐、地图、精灵图和纹理。",
+    "evidence_url": "https://github.com/LostCityRS/Content/blob/65b754f768b79b941b21b2a1eb3b0d1ecae3cdfe/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-5049836fd0ba55febcffa048": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -21594,6 +21699,14 @@
     "evidence_url": "https://github.com/danopstech/starlink_exporter/blob/4fc399264d66a9326551e828149f21e96b565453/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-56b4f082a40da0b5719c6596": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "reDeuteros keeps the Deuteros disk images out of git, but the browser build its README links bundles both commercial game disks as a playable copy.",
+    "reason_zh": "reDeuteros 未把 Deuteros 磁盘镜像提交进仓库，但 README 链接的浏览器版打包了两张商业游戏磁盘，可直接游玩。",
+    "evidence_url": "https://codeberg.org/CyCl0ne/reDeuteros/src/commit/9a78dfcd58d7a2a81e515de98a63688787752dce/build-wasm.sh",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-56cd57b93e814f4a343a9606": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -21977,6 +22090,14 @@
     "reason_zh": "ArashiJS 改编自已有的《Tempest》仿作，开发说明指出仓库收录由原版声音和图片转换而来的文件。",
     "evidence_url": "https://github.com/stephank/arashi-js/blob/cb8c908591e8c73cd23508d177c9803325b7d12b/HACKING.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-5c9a98d21df4e324a8db4b74": {
+    "decision": "exclude",
+    "reason_code": "no-real-content",
+    "reason_en": "Smash-Hit-Decomp states a plan to decompile Smash Hit 1.4.3, but its files hold only that plan, compiler and NDK notes, and a licence.",
+    "reason_zh": "Smash-Hit-Decomp 计划反编译 Smash Hit 1.4.3，但仓库只有项目说明、编译器与 NDK 笔记以及许可证，尚无重建代码。",
+    "evidence_url": "https://codeberg.org/Shards/Smash-Hit-Decomp/src/commit/46d83f557ca2ca4801fe5373be6a83743ef654b5/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-5cb0b748a787db3a93518509": {
     "decision": "exclude",
@@ -22509,6 +22630,14 @@
     "evidence_url": "https://github.com/xTYTY/Snowlight/blob/97b2f5051f0dc4be68bef10b4dd9cf28e67a77cd/README",
     "reviewed_at": "2026-11-06"
   },
+  "lead-63d56d4c8b5046cac2da2f14": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The x64 O3 CSV splits pair named and stripped decompiled functions with LLM naming prompts, but no card or linked paper states how the binaries, decompilation and generations were produced or under what licence.",
+    "reason_zh": "该数据集的 x64 O3 CSV 将带符号与去符号的反编译函数和大模型函数命名提示配对，但没有数据集卡片或论文说明二进制来源、反编译与生成过程及许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/final_reverse_engineering_code_dataset_O3_x64_O3/tree/c1c615348ce309c6093d9418443977504a950066",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-64140887385860dd1cc5c8d3": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -22572,6 +22701,14 @@
     "reason_zh": "Cro-Mag Rally 移植了原版游戏，并在仓库中提交音频、图像和模型等游戏资源；即使项目声明获得许可，收录仍需维护者决定。",
     "evidence_url": "https://github.com/jorio/CroMagRally/blob/370fc175466d6ced3612afb7b171c958cb6b76e1/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-6476f89ebe51803fa0c07755": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The disassembly of the August 21, 1992 Sonic 2 prototype commits the ROM's compressed art, level data and DAC samples as separate binary files alongside the assembly.",
+    "reason_zh": "这份 1992 年 8 月 21 日《Sonic 2》原型版反汇编，在汇编源码之外以独立二进制文件提交了 ROM 中的压缩美术、关卡数据和 DAC 音频采样。",
+    "evidence_url": "https://github.com/Filter011/s2-821-disasm/blob/5210256e873093415352ce021d4c8979d759288b/s2.sounddriver.asm",
+    "reviewed_at": "2026-11-09"
   },
   "lead-6482454b83ee90c574bcc028": {
     "decision": "exclude",
@@ -22911,6 +23048,14 @@
     "evidence_url": "https://github.com/xrip/spy-vs-spy/blob/287c35e1872b5ebda6054cbd1dde59074cc53442/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-695ed6da2c6ccb578445c279": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "A Link to the Dream remakes Link's Awakening DX as a Solarus quest and commits 76 Game Boy soundtrack tracks under data/musics/gb, so linking it needs a maintainer decision.",
+    "reason_zh": "A Link to the Dream 以 Solarus 任务的形式重制《Link's Awakening DX》，仓库在 data/musics/gb 下提交了 76 首 Game Boy 原声曲目，收录与否需维护者决定。",
+    "evidence_url": "https://gitlab.com/zeldaforce/zelda-alttd/-/tree/bf84135dff3577a5607e875150229783b6f2428d/data/musics/gb",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-69868350698c6ba1b5bacbeb": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -23086,6 +23231,14 @@
     "reason_zh": "PeonPad 将现有 Stratagus 引擎和 Wargus 游戏层移植到 iPadOS；文档重点是原生打包、触控操作和用户数据准备。",
     "evidence_url": "https://github.com/chrissotraidis/peonpad/blob/192baec36afc605f39655efb915f72c5f1a52148/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-6b845e5a684678b3e73c72d3": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The ARM O3 CSV splits pair named and stripped decompiled functions with LLM naming prompts, but no card or linked paper states how the binaries, decompilation and generations were produced or under what licence.",
+    "reason_zh": "该数据集的 ARM O3 CSV 将带符号与去符号的反编译函数和大模型命名提示配对，但没有数据集卡片或论文说明二进制来源、反编译与生成过程及许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_dataset_O3_arm_O3_advanced_custom_test/tree/0505af582c8c1229f9e8226b086e330dd09e9578",
+    "reviewed_at": "2026-11-09"
   },
   "lead-6b85b93461324f2684493750": {
     "decision": "exclude",
@@ -23387,6 +23540,14 @@
     "evidence_url": "https://github.com/FireEmblemUniverse/fireemblem8u/blob/04d1edb163d14bd10777a065697e1a9f17be65f2/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-6f17ce74aebcc930e679b372": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The MIPS O1 CSV splits pair named and stripped decompiled functions with LLM naming prompts, but no card or linked paper states how the binaries, decompilation and generations were produced or under what licence.",
+    "reason_zh": "该数据集的 MIPS O1 CSV 将带符号与去符号的反编译函数和大模型函数命名提示配对，但没有数据集卡片或论文说明二进制来源、反编译与生成过程及许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_reverse_engineering_code_dataset_O1_mips_O1/tree/66a51aab564accaba2a2a8d32d2f406379cba5d4",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-6f1c4de5a3d94aafd909f236": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -23434,6 +23595,14 @@
     "reason_zh": "Elite 演示版反汇编仓库同时提交了 Game Boy ROM 和 ZIP 压缩包，涉及游戏数据再分发，需由维护者决定。",
     "evidence_url": "https://github.com/Villagerjj/Elite-GB-Decomp/blob/4ec5aec66f4f5c24c19fd2a0df69a71875d0fa8c/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-6f9c4757c9bf2e558a6d6001": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The x86 O1 CSV splits pair named and stripped decompiled functions with LLM function-naming prompts and outputs, but no card, discussion or author page documents their provenance, tooling or licence.",
+    "reason_zh": "该数据集的 x86 O1 CSV 将带符号与去符号的反编译函数和大模型函数命名提示及输出配对，但没有数据集卡片、讨论或作者页面说明其来源、工具与许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_dataset_O1_x86_O1/tree/7668d53095bac774ed35e5182f41b3619c1fc777",
+    "reviewed_at": "2026-11-09"
   },
   "lead-6fcacd1be4f5612f2b988b04": {
     "decision": "hold",
@@ -23900,6 +24069,14 @@
     "evidence_url": "https://github.com/froggestspirit/marioland2/blob/c596a9577379fddaf3a9a37309286662116d33c9/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-7543505e6beb15b297315186": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The repository has no README; its files are only a splat configuration, symbol map and IDO build script for the Japanese Eltail N64 ROM, with no disassembled or decompiled sources committed.",
+    "reason_zh": "仓库没有 README，只有针对日版 N64 ROM《Eltail》的 splat 配置、符号表和 IDO 构建脚本，未提交任何反汇编或反编译源码。",
+    "evidence_url": "https://github.com/Rainchus/EltaleMonsters-Decomp/blob/6586f46a0a8e30e48f92a13ae6e73b4c51098b87/eltail.yaml",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-755175bc6425754debfdeef2": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -24019,6 +24196,14 @@
     "reason_zh": "《火焰之纹章》反编译仓库提交了提取的游戏数据及大量二进制、图像、调色板和音乐文件，需由维护者判断其再分发问题。",
     "evidence_url": "https://github.com/laqieer/fireemblem8u/blob/2eb90faab758b2efbf9863ca7667f11314dd2ca5/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-76f396f02ebfd0229a525baf": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The ARM O2 CSV splits pair named and stripped decompiled functions with LLM function-naming prompts and outputs, but no card, discussion or author page documents their provenance, tooling or licence.",
+    "reason_zh": "该数据集的 ARM O2 CSV 将带符号与去符号的反编译函数和大模型函数命名提示及输出配对，但没有数据集卡片、讨论或作者页面说明其来源、工具与许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_dataset_O2_arm_O2_advanced_custom_test/tree/c3a6055d15cc230d32360ad360dd54165f731b03",
+    "reviewed_at": "2026-11-09"
   },
   "lead-775b14df83f2533614d378c6": {
     "decision": "hold",
@@ -24516,6 +24701,14 @@
     "evidence_url": "https://github.com/russo-2025/papyrus-compiler/blob/b9dc9951f4264084c8ded6721b20f0d81c021d58/bin/Original%20Compiler/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "lead-7d798673595bb36ced5f4c77": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "Stone Kingdoms, a LÖVE remake of Stronghold, commits image assets that its README identifies as property of Firefly Studios' Stronghold (2001), stored under assets/ through Git LFS.",
+    "reason_zh": "Stone Kingdoms 是用 LÖVE 制作的《Stronghold》重制版，仓库通过 Git LFS 在 assets/ 中提交了图像素材，README 说明这些素材归 Firefly Studios 的《Stronghold》（2001）所有。",
+    "evidence_url": "https://gitlab.com/stone-kingdoms/stone-kingdoms/-/blob/429d7a33b6c58c7eaa21e5310f75ebbf61463554/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-7db00bf15995b63827001569": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
@@ -24747,6 +24940,14 @@
     "reason_zh": "coab 将《Curse of the Azure Bonds》重写为 C# 程序，同时提交了大量原版游戏 DAX 数据文件，需要维护者决定能否收录。",
     "evidence_url": "https://github.com/simeonpilgrim/coab/blob/9dc46f1d5911710fb2fcb7a9c0ec0ef74264d17c/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-7ff5443f20eaae61334f02da": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The Parquet file pairs source code of real open-source functions, such as DuckDB and cfd-go, with their compiled assembly and binary addresses, but no card states its origin, purpose or licence.",
+    "reason_zh": "该 Parquet 文件把 DuckDB、cfd-go 等真实开源项目中函数的源码与编译后的汇编及二进制地址配对，但没有数据集卡片说明来源、用途或许可证。",
+    "evidence_url": "https://huggingface.co/datasets/cmstone/decompilebench-with-addresses/tree/fc58bae6f9d0bc33006f942cb2840d58a066e2eb",
+    "reviewed_at": "2026-11-09"
   },
   "lead-7ff853159c13283162d3a3f3": {
     "decision": "hold",
@@ -25588,6 +25789,14 @@
     "evidence_url": "https://github.com/glKarin/com.n0n3m4.diii4a/blob/93cc0fa12581dfe2f4d060f8a7e84cb974bd4a64/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-8ac6bc0cd8624cf690ec7109": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "ZED Online rebuilds the Bitmap Brothers RTS Z with decoders for its JV video and map formats, but its repository commits original Z artwork and map renders.",
+    "reason_zh": "ZED Online 重建了 Bitmap Brothers 的即时战略游戏 Z，含 JV 视频与地图格式解码代码，但仓库提交了原版 Z 的美术图和地图渲染图。",
+    "evidence_url": "https://sourceforge.net/p/zedonline/code/ci/e0422d5cd7e8ab3a480244bd5ff7710f3cce26c5/tree/resources/ui/",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-8ade91f83117f7174e07d303": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -25934,6 +26143,14 @@
     "evidence_url": "https://github.com/sp00nznet/kotor-recomp/blob/32b287ab3a63e56f48ab9f42137f1b407b1894b7/docs/architecture.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-8fbe09e8fbc7d607230cead9": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The ARM O0 CSV splits pair named and stripped decompiled functions with LLM naming prompts, but no card or linked paper states how the binaries, decompilation and generations were produced or under what licence.",
+    "reason_zh": "该数据集的 ARM O0 CSV 将带符号与去符号的反编译函数和大模型命名提示配对，但没有数据集卡片或论文说明二进制来源、反编译与生成过程及许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_dataset_O0_arm_O0/tree/0a3b696e9fb906d9569dd26463b98bdeab3c9d8b",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-8fdf378f7f21d180018c5b78": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -26125,6 +26342,14 @@
     "reason_zh": "Scripted Amiga Emulator 的文档介绍 Amiga 模拟器及兼容性测试，没有说明针对原始软件的逆向或检查流程。",
     "evidence_url": "https://github.com/naTmeg/ScriptedAmigaEmulator/blob/8ebce7b8beb9ebe243e5ea7b5150b3f16f665303/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-91ea9dd8eac60f1ad4379d60": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The x64 O0 CSV splits pair named and stripped decompiled functions with LLM function-naming prompts and outputs, but no card, discussion or author page documents their provenance, tooling or licence.",
+    "reason_zh": "该数据集的 x64 O0 CSV 将带符号与去符号的反编译函数和大模型函数命名提示及输出配对，但没有数据集卡片、讨论或作者页面说明其来源、工具与许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_reverse_engineering_code_dataset_O0_x64_O0/tree/49c100ac6977648adc2e61ce045f04b2b65f2865",
+    "reviewed_at": "2026-11-09"
   },
   "lead-91ff82590d6746ec01361d15": {
     "decision": "exclude",
@@ -26777,6 +27002,14 @@
     "evidence_url": "https://github.com/antxiko/AleHop-disassembly/blob/5277ab7f944fd76ed0d7de0750ee8f1d3e26f0cb/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-9a3968a41b1693b697124394": {
+    "decision": "exclude",
+    "reason_code": "fork-or-mirror",
+    "reason_en": "New RAW is a copy of raw 0.1.1, an Another World engine reimplementation, whose only listed change is 2x and 3x scalers taken from REminiscence.",
+    "reason_zh": "New RAW 复制自 Another World 引擎重实现 raw 0.1.1，唯一列出的改动是加入了取自 REminiscence 的 2x 和 3x 缩放器。",
+    "evidence_url": "https://sourceforge.net/p/newraw/code/3/tree/README.newraw",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-9a42da848e71603215210793": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -27097,6 +27330,14 @@
     "evidence_url": "https://github.com/ZackWilde27/FlatOut-2-decomp/blob/e22b2417f8c17c064fa08552cc7ec622d388f7cb/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-9e20b1d6cfd214093a4caca2": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The ARM O0 CSV splits pair named and stripped decompiled functions with LLM naming prompts, but no card or linked paper states how the binaries, decompilation and generations were produced or under what licence.",
+    "reason_zh": "该数据集的 ARM O0 CSV 将带符号与去符号的反编译函数和大模型命名提示配对，但没有数据集卡片或论文说明二进制来源、反编译与生成过程及许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_dataset_O0_arm_O0_advanced_custom_test/tree/636004314f741f4b83a61958096a7beb6d87cff1",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-9e236652c5f7e74541b7da19": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -27273,6 +27514,14 @@
     "evidence_url": "https://github.com/OpenCrystalCaves/OpenCrystalCaves/blob/d4997d5e8b969cf59bdf97c031d42fc41509c9ce/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-a1266f6223514b985c349d3c": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "Project Aedra reimplements the Morrowind engine over the user's game files, but its SVN tree commits a HUD texture made of Morrowind interface art and images rendered from the game data.",
+    "reason_zh": "Project Aedra 基于用户自有的游戏文件重写 Morrowind 引擎，但其 SVN 仓库提交了由 Morrowind 界面美术拼成的 HUD 贴图，以及从游戏数据渲染出的图像。",
+    "evidence_url": "https://sourceforge.net/p/aedra/code/413/tree/build/",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-a1560ecd21478176a2a43ca5": {
     "decision": "exclude",
     "reason_code": "forensics-only",
@@ -27433,6 +27682,14 @@
     "evidence_url": "https://github.com/ptitSeb/roadfighter/blob/fd3e1ec14d6b84c408dca50081da0a61f8a4f73d/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-a2fd9567b7af33b587a9e167": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "BloodGDX holds Java source for Blood's game logic that loads BLOOD.RFF, but the repository has no README, wiki, releases or build file, and its page carries only the words Blood java port.",
+    "reason_zh": "BloodGDX 包含读取 BLOOD.RFF 的《Blood》游戏逻辑 Java 源码，但仓库没有 README、wiki、发布版或构建文件，项目页只写了 Blood java port。",
+    "evidence_url": "https://gitlab.com/m210/BloodGDX/-/tree/d061782d9fcdec9fd66bb73a953d18e33ecf663e",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-a3032359243acc27f3defd88": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -27505,6 +27762,14 @@
     "reason_zh": "Minigore 2 加载器记录了专属的 Android 兼容工作，但仓库中的封面与启动图被标明为宣传美术，收录范围需由维护者判断。",
     "evidence_url": "https://github.com/EapRules/minigore2-native-arm/blob/af5f152cd077106aa3f5415cc4c5a8fd97e36e89/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-a35e1fb246da97cfc1b3f862": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The x86 O3 CSV splits pair named and stripped decompiled functions with LLM naming prompts, but no card or linked paper states how the binaries, decompilation and generations were produced or under what licence.",
+    "reason_zh": "该数据集的 x86 O3 CSV 将带符号与去符号的反编译函数和大模型命名提示配对，但没有数据集卡片或论文说明二进制来源、反编译与生成过程及许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/final_reverse_engineering_dataset_O3_x86_O3/tree/748200a9d4ee3331f7d2a480e7b65d7ebf926924",
+    "reviewed_at": "2026-11-09"
   },
   "lead-a3b5ce229a0091f133a9360c": {
     "decision": "hold",
@@ -27706,6 +27971,14 @@
     "reason_zh": "Wipeout-DC 是有实质源码的 Dreamcast 移植项目，但其发布说明提供可提取游戏数据的 CDI 光盘镜像，需维护者判断。",
     "evidence_url": "https://github.com/jnmartin84/wipeout-dc/blob/b54f5966a05fb10c4496d8c5df1a968151f2808f/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-a65408e7a318835e7e90cb0f": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The ABM project offers a2-abm.zip, which bundles ABM, the original 1980 Muse Software game program file, with the SourceGen project files.",
+    "reason_zh": "ABM 项目提供的 a2-abm.zip 除 SourceGen 工程文件外，还打包了 Muse Software 1980 年原版游戏程序文件 ABM。",
+    "evidence_url": "https://web.archive.org/web/20260617185135/https://www.6502disassembly.com/a2-abm/",
+    "reviewed_at": "2026-11-09"
   },
   "lead-a65d12a317cd179ef2f0ba02": {
     "decision": "hold",
@@ -27947,6 +28220,14 @@
     "evidence_url": "https://github.com/HomeACcessoryKid/AQARA-ZNCLDJ11LM/blob/c2e7abdc4548bd9277236b045fad439eef4ebc10/README.md",
     "reviewed_at": "2026-11-08"
   },
+  "lead-a97422b4017f3582231c1bc1": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The ARM O1 CSV splits pair named and stripped decompiled functions with LLM naming prompts, but no card or linked paper states how the binaries, decompilation and generations were produced or under what licence.",
+    "reason_zh": "该数据集的 ARM O1 CSV 将带符号与去符号的反编译函数和大模型函数命名提示配对，但没有数据集卡片或论文说明二进制来源、反编译与生成过程及许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_dataset_O1_arm_O1_advanced_custom_test/tree/275c5b9f84e4e4a614d999245ca513b0324ff865",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-a97651228b0b7dd3af49cb49": {
     "decision": "exclude",
     "reason_code": "duplicate-curated",
@@ -28094,6 +28375,14 @@
     "reason_zh": "ArtJourney 2API 将图像服务封装为 OpenAI 兼容网关，逆向报告还说明付费权限仅由客户端判断，Premium 修改版可绕过该检查。",
     "evidence_url": "https://github.com/lza6/ArtJourney-APP-2api/blob/ef6a23eab3168f2aa9b1fe7fad778b95a433397a/docs/%E9%80%86%E5%90%91%E6%8A%A5%E5%91%8A.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-aaf1efc9cd9f22fc73e12222": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The MIPS O3 CSV splits pair named and stripped decompiled functions with LLM naming prompts, but no card or linked paper states how the binaries, decompilation and generations were produced or under what licence.",
+    "reason_zh": "该数据集的 MIPS O3 CSV 将带符号与去符号的反编译函数和大模型函数命名提示配对，但没有数据集卡片或论文说明二进制来源、反编译与生成过程及许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_reverse_engineering_code_dataset_O3_mips_O3/tree/7ea7080705773c40e1e3c77fdd0f01b23c70d82b",
+    "reviewed_at": "2026-11-09"
   },
   "lead-ab5a8f7ee27f37e58113e420": {
     "decision": "hold",
@@ -28482,6 +28771,14 @@
     "evidence_url": "https://github.com/Denisovich728/FIO-DECOMP-HMFOMT/blob/93258102bf06e97e540a39f8ba3506ad30f0f464/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-b124b3778994a66459a140ae": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The ARM O2 CSV splits pair named and stripped decompiled functions with LLM function-naming prompts and outputs, but no card, discussion or author page documents their provenance, tooling or licence.",
+    "reason_zh": "该数据集的 ARM O2 CSV 将带符号与去符号的反编译函数和大模型函数命名提示及输出配对，但没有数据集卡片、讨论或作者页面说明其来源、工具与许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_dataset_O2_arm_O2_issue/tree/37cf7517da3c89bf2f834135dfa7e020b0e649fa",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-b1328009b5f9a3c29a1763fd": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -28771,6 +29068,14 @@
     "reason_zh": "Classic Brawl 提供 Brawl Stars 服务端模拟器及修改版客户端的连接方法，但未记录消息结构或游戏行为的还原过程。",
     "evidence_url": "https://github.com/PhoenixFire6934/Classic-Brawl/blob/e466d60433b754aaa1df119d4d1c752f63641322/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-b515672f8efbfc081bdcc7d3": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Saints Row decompilation commits 12,911 machine-generated Ghidra output files of the retail Xbox 360 default.xex under src/auto/ as its compilable baseline.",
+    "reason_zh": "该《Saints Row》反编译项目在 src/auto/ 下提交了 12,911 个由 Ghidra 对 Xbox 360 零售版 default.xex 自动生成的反编译文件，作为可编译的基线代码。",
+    "evidence_url": "https://gitlab.com/HttpAnimations/saints-row-1-decomp/-/blob/652cca0fe8733d7e92998b1a1f1420b20b27bad8/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-b5460944805d630c0f31344b": {
     "decision": "exclude",
@@ -29092,6 +29397,14 @@
     "evidence_url": "https://github.com/emu-rs/rustual-boy/blob/447536260072cc8cdfeaac845267057be84df65d/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-b987a399808ba0fcb3a1ebac": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Bomber project offers a2-bomber.zip, which bundles Bomber, the original 1978 Softape game program file, with the SourceGen project file.",
+    "reason_zh": "Bomber 项目提供的 a2-bomber.zip 除 SourceGen 工程文件外，还打包了 Softape 1978 年原版游戏程序文件 Bomber。",
+    "evidence_url": "https://web.archive.org/web/20260617195642/https://www.6502disassembly.com/a2-bomber/",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-b9fe2002afaeffef7872ce0b": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -29340,6 +29653,14 @@
     "reason_zh": "Moonlight iOS/tvOS 是 Sunshine 和 GameStream 串流客户端，把桌面游戏及应用传到 Apple 设备。",
     "evidence_url": "https://github.com/moonlight-stream/moonlight-ios/blob/02dc9780496eeeac6d01c8bbdccb8b6fe71ef28a/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-bcd70f305836d38f6d165f54": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "LSPGDX holds Java game code that loads the original LVART000.DAT and LMART000.DAT files, but it has no README, wiki, releases or build file, and only its project description names the game.",
+    "reason_zh": "LSPGDX 包含读取原版 LVART000.DAT、LMART000.DAT 文件的 Java 游戏代码，但没有 README、wiki、发布版或构建文件，只有项目简介写出了游戏名。",
+    "evidence_url": "https://gitlab.com/m210/LSPGDX/-/tree/b77dd5ef07713e6dd6e83cb49eccb234dcb88fc1",
+    "reviewed_at": "2026-11-09"
   },
   "lead-bd3a26ec84eb82d01c4e6e53": {
     "decision": "hold",
@@ -30359,6 +30680,14 @@
     "evidence_url": "https://github.com/XOlifreX/mksc-decompilation/blob/31b953f0b9e297c83331071ecd6d84eb3445a96b/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-cacdc8afc255914596ef2e57": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "Every source file is generated by simcopter_tool from the SimCopter PDB, emitting each function of the COPTER_D executable as per-line inline assembly, so the repository is a bulk machine-generated dump.",
+    "reason_zh": "仓库中的源文件全部由 simcopter_tool 依据 SimCopter 的 PDB 自动生成，把 COPTER_D 可执行文件的每个函数按源码行输出为内联汇编，属于批量机器生成的转储。",
+    "evidence_url": "https://github.com/phire/simcopter_auto_decomp/blob/00bfa489c33cf283e88b7483edcd9f9eda804031/game/s3heli.c",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-cad12e15478ab5bbbcb3e937": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -30497,6 +30826,14 @@
     "reviewed_at": "2026-11-06",
     "duplicate_of": "#1561"
   },
+  "lead-cc30f9773118c1ee81c3aa7b": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "TSSHP pairs System Shock and Ultima Underworld format specs and an engine recreation with downloads on its own site of System Shock textures and levels converted for System Shock 2.",
+    "reason_zh": "TSSHP 提供 System Shock 和 Ultima Underworld 的格式规格与引擎重建代码，但其网站同时提供 System Shock 贴图以及转换为 System Shock 2 格式的关卡下载。",
+    "evidence_url": "https://web.archive.org/web/20031003211422/http://tsshp.sourceforge.net:80/glen/ss1.html",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-cc6d126a9641af57dfd002d6": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -30576,6 +30913,14 @@
     "reason_zh": "Gish 将公开发布的游戏源码移植到 Android，加入渲染和触控适配，未记载逆向分析。",
     "evidence_url": "https://github.com/EXL/Gish/blob/7f6dc86fd1a4a8ab0b6ce2c28bc9cc8be0bacac1/ReadMe.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-ce1e1b7be50d1c91b6adc28d": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The RuneScape 530 server repository commits the game's client cache under Server/data/cache/ through Git LFS and grew from a closed-source server whose code was released by one of its developers.",
+    "reason_zh": "这个 RuneScape 530 服务端仓库通过 Git LFS 在 Server/data/cache/ 中提交了游戏客户端缓存，其代码源自一个由开发者外泄源码的闭源服务端。",
+    "evidence_url": "https://gitlab.com/2009scape/2009scape/-/blob/40dddf8d5dca67987331468eab3bab0428af4afc/README.md",
+    "reviewed_at": "2026-11-09"
   },
   "lead-ce2b31bcf5896000c8fcf39f": {
     "decision": "exclude",
@@ -31506,6 +31851,14 @@
     "evidence_url": "https://github.com/Sora-yx/SADX-Boss-Decompilation/blob/a803f1bca43a0884ff2841cfb617c0680b91630f/SADX-Boss-Decompilation/Chaos0.cpp",
     "reviewed_at": "2026-11-06"
   },
+  "lead-da73f0437148c92c78ff1612": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "jminequest reimplements Mine Quest in Java, but its resources/ directory holds the original game's extracted assets and the repository commits LJD-decompiled Lua files from the game.",
+    "reason_zh": "jminequest 用 Java 重写了《Mine Quest》，但 resources/ 目录存放的是从原版游戏提取的素材，仓库还提交了经 LJD 反编译的游戏 Lua 文件。",
+    "evidence_url": "https://codeberg.org/glowiak/jminequest/src/commit/7d1fcf409bd1fb7213da7396dbdf5803a30fdaf2/README.md",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-da7788e0aa36f87292dccfd9": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -31811,6 +32164,14 @@
     "evidence_url": "https://github.com/antxiko/CircusCharlie-disassembly/blob/fbb8de13f4bfdddaf96b60e7f2ce072cc347abe9/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-defe3ea52e24d19a62ce24ba": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Barbarian remakes are offered as complete playable builds whose archives bundle sprite, stage and music files recreating the 1987 game's graphics and sound beside the QB64 BASIC source.",
+    "reason_zh": "Barbarian 重制版以完整可玩的构建包发布，压缩包内除 QB64 BASIC 源码外，还附带复刻 1987 年原作画面与音效的精灵图、场景图和音乐文件。",
+    "evidence_url": "https://web.archive.org/web/20260530204321/http://barbarian.1987.free.fr/download/download.htm",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-df01e6c65f72cc68536f36b6": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -31906,6 +32267,14 @@
     "reason_zh": "pacman.c 提供可运行的 Pacman 克隆游戏及构建说明，但没有记录对原版游戏的分析或重建方法。",
     "evidence_url": "https://github.com/floooh/pacman.c/blob/ccfc0e8411811324dd4533a43f171bf3af031339/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-e0b16843dac7e6f58d4e228f": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "PowerslaveGDX commits core/res/psgdx.dat, a package of 34 PNG tiles mapped onto original Powerslave tile numbers, which are widescreen-edited copies of the game's status bar and first-person weapon sprites, requiring a maintainer decision on linking them.",
+    "reason_zh": "PowerslaveGDX 提交了 core/res/psgdx.dat，其中 34 张 PNG 图块对应原版 Powerslave 的图块编号，是游戏状态栏和第一人称武器精灵图的宽屏改版，需维护者决定是否链接。",
+    "evidence_url": "https://gitlab.com/m210/PowerslaveGDX/-/blob/d5e16962a40b312586c02e1bdfde2922bd24f0f4/core/res/psgdx.dat",
+    "reviewed_at": "2026-11-09"
   },
   "lead-e0b31c2298914ea51c30a993": {
     "decision": "hold",
@@ -32235,6 +32604,14 @@
     "evidence_url": "https://github.com/AlexOberhofer/SDL2-GNUBoy/blob/c8642d11bd2706333c5255e2b7f2b84445d0a070/README.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-e55f73782ebdcaf4e8b953fe": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The x86 O0 CSV splits pair named and stripped decompiled functions with LLM function-naming prompts and outputs, but no card, discussion or author page documents their provenance, tooling or licence.",
+    "reason_zh": "该数据集的 x86 O0 CSV 将带符号与去符号的反编译函数和大模型函数命名提示及输出配对，但没有数据集卡片、讨论或作者页面说明其来源、工具与许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_dataset_O0_x86_O0/tree/85c0ad624ae9d4eda05c68342103d9dc572260c3",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-e577968bd8e64d4836412457": {
     "decision": "hold",
     "reason_code": "linking-policy",
@@ -32314,6 +32691,14 @@
     "reason_zh": "2006rebotted 提供 RuneScape 模拟服务器、客户端和文件服务器，但没有记录对原版游戏或网络消息的研究。",
     "evidence_url": "https://github.com/dginovker/2006rebotted/blob/12bad65f6f0b5fc84804584a35f1d7bbc996be82/2006Redone%20Server/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-e681e9683539cc514bf19781": {
+    "decision": "hold",
+    "reason_code": "linking-policy",
+    "reason_en": "The Unity project commits the game's decompiled Assembly-CSharp scripts with its audio, textures, meshes and animations, and the homepage offers full Windows and Android builds.",
+    "reason_zh": "该 Unity 工程提交了游戏反编译出的 Assembly-CSharp 脚本以及音频、贴图、网格和动画资源，主页还提供完整的 Windows 和 Android 版本下载。",
+    "evidence_url": "https://github.com/Decomp-And-Recomp/Call-Of-Mini-Dino-Hunter/blob/6b4f3f0f9ed6d3d2fd853a89a97fc49ff39c502d/ProjectSettings/ProjectSettings.asset",
+    "reviewed_at": "2026-11-09"
   },
   "lead-e693456a5b5b7a9ef53d2b13": {
     "decision": "hold",
@@ -32540,6 +32925,14 @@
     "evidence_url": "https://github.com/LegacyGwent/LegacyGwent/blob/bb5946f5679023ba1a4e0b52adcf9bc6db81243e/README_EN.md",
     "reviewed_at": "2026-11-06"
   },
+  "lead-e920ca37f99c6cb3875dc170": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The ARM O2 smoke CSV splits pair named and stripped decompiled functions with LLM naming prompts, but no card or linked paper states how the binaries, decompilation and generations were produced or under what licence.",
+    "reason_zh": "该数据集的 ARM O2 冒烟测试 CSV 将带符号与去符号的反编译函数和大模型函数命名提示配对，但没有数据集卡片或论文说明二进制来源、反编译与生成过程及许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/prompt_reverse_engineering_code_dataset_O2_arm_O2_advanced_custom_test_smoketest/tree/85fed91adb73297250020cdc2a652be57c3ce820",
+    "reviewed_at": "2026-11-09"
+  },
   "lead-e93774db7462bdfdc83edf07": {
     "decision": "exclude",
     "reason_code": "general-application",
@@ -32675,6 +33068,14 @@
     "reason_zh": "Belfast 重建 Azur Lane 服务器，同时在 data/CN 提交了大量游戏 GameCfg 和 ShareCfg JSON 数据，需由维护者决定是否收录。",
     "evidence_url": "https://github.com/catgirl-systems/belfast/blob/f988535939fec97895110e1233dbdc5c95dcfa39/README.md",
     "reviewed_at": "2026-11-06"
+  },
+  "lead-eace51b0e9e5be7047b8d730": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "The x86 O2 CSV splits pair named and stripped decompiled functions with LLM naming prompts, but no card or linked paper states how the binaries, decompilation and generations were produced or under what licence.",
+    "reason_zh": "该数据集的 x86 O2 CSV 将带符号与去符号的反编译函数和大模型函数命名提示配对，但没有数据集卡片或论文说明二进制来源、反编译与生成过程及许可。",
+    "evidence_url": "https://huggingface.co/datasets/atul10/final_recreated_reverse_engineering_code_dataset_O2_x86_O2/tree/25c5389d1c3f8f685f1d8b836b14a46baaa6be49",
+    "reviewed_at": "2026-11-09"
   },
   "lead-eadf778c336c45fcb45dc7fd": {
     "decision": "exclude",
@@ -33012,6 +33413,14 @@
     "reason_zh": "access_parser 是通用的 Python Access 数据库读取库，其解析逻辑依赖现有 mdb-tools 文档，没有记录原创格式研究。",
     "evidence_url": "https://github.com/claroty/access_parser/blob/7b733913a7a8076bfd289130a9f6113002059fe0/README.md",
     "reviewed_at": "2026-11-08"
+  },
+  "lead-ef3e8de9f7a8f5b310db2a80": {
+    "decision": "hold",
+    "reason_code": "insufficient-docs",
+    "reason_en": "f3bfg has a CMake game tree with Fallout config names, empty Fallout 3 menu class stubs and OpenMW and idTech 4 code, but no README states what it implements or how to build it.",
+    "reason_zh": "f3bfg 包含带 Fallout 配置名的 CMake 游戏代码树、空的 Fallout 3 菜单类桩以及 OpenMW 和 idTech 4 代码，但没有 README 说明实现内容和构建方法。",
+    "evidence_url": "https://gitlab.com/the-big-mt/f3bfg/-/tree/15534d32b222582e70e8dac93187ff2076d8ef44",
+    "reviewed_at": "2026-11-09"
   },
   "lead-ef5973de50fd552f594f869a": {
     "decision": "hold",

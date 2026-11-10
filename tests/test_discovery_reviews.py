@@ -37,6 +37,10 @@ def queue_with(directory, entries, resources=()):
     return site.discovery_queue(root, None, [], list(resources))
 
 
+def capture_batch():
+    return make_batch([capture(1)], run_id=100, ingested='2026-11-05T17:00:00Z')
+
+
 class ValidationTest(unittest.TestCase):
     def problems(self, entries):
         batch = make_batch([capture(1)], run_id=100, ingested='2026-11-05T17:00:00Z')
@@ -62,6 +66,59 @@ class ValidationTest(unittest.TestCase):
         self.assertIn('missing or unknown fields', ' '.join(problems(lead['id'], {**entry, 'readme_sha256': 'a' * 64})))
         self.assertIn('missing or unknown fields', ' '.join(self.problems({capture(1)['id']: entry})))
         self.assertIn('precedes the lead observation', ' '.join(problems(lead['id'], {**entry, 'reviewed_at': '2026-11-01'})))
+
+    def test_lead_evidence_may_be_pinned_on_another_forge_or_archived(self):
+        lead = {'id': 'lead-' + 'a' * 24, 'observed_at': '2026-11-05T21:00:00Z'}
+        def problems(identifier, url):
+            entry = decision(1, evidence_url=url)
+            del entry['readme_sha256']
+            errors = []
+            reviews.validate_reviews([capture_batch()], {identifier: entry}, errors, lead_batches=[{'leads': [lead]}], now=NOW)
+            return errors
+        pinned = [
+            f'https://gitlab.com/group/sub/repo/-/blob/{COMMIT}/README.md',
+            f'https://gitlab.com/owner/repo/-/tree/{COMMIT}',
+            f'https://codeberg.org/owner/repo/src/commit/{COMMIT}/README.md',
+            f'https://git.sr.ht/~owner/repo/tree/{COMMIT}/item/README.md',
+            f'https://sourceforge.net/p/project/code/ci/{COMMIT}/tree/README',
+            'https://sourceforge.net/p/project/code/1234/tree/trunk/README',
+            f'https://huggingface.co/datasets/owner/data/blob/{COMMIT}/README.md',
+            f'https://huggingface.co/owner/model/blob/{COMMIT}/README.md',
+            f'https://huggingface.co/spaces/owner/app/tree/{COMMIT}',
+            f'https://gist.github.com/owner/4048722/{COMMIT}',
+            'https://web.archive.org/web/20250101000000/https://example.com/page.html',
+        ]
+        for url in pinned:
+            with self.subTest(url):
+                self.assertEqual(problems(lead['id'], url), [])
+        moving = [
+            'https://gitlab.com/owner/repo/-/blob/main/README.md',
+            'https://codeberg.org/owner/repo/src/branch/main/README.md',
+            'https://sourceforge.net/projects/project/',
+            'https://huggingface.co/datasets/owner/data',
+            'https://web.archive.org/web/2025/https://example.com/',
+            'https://example.com/page.html',
+            f'https://gitlab.com/o/r/-/blob/main/-/blob/{COMMIT}/README.md',
+            f'https://gitlab.com.evil.example/o/r/-/blob/{COMMIT}/README.md',
+            'https://codeberg.org/owner/repo/src/commit/main/README.md',
+            'https://gist.github.com/owner/4048722',
+            'https://git.sr.ht/~owner/repo/tree/main/item/README.md',
+            'https://sourceforge.net/p/project/code/ci/master/tree/README',
+            'https://sourceforge.net/p/project/code/HEAD/tree/trunk/',
+            'https://huggingface.co/owner/model/blob/main/README.md',
+            'https://github.com/owner/repo/blob/main/README.md',
+            f'https://github.com/owner/repo/blob/{COMMIT}/../../blob/main/README.md',
+            f'https://git.sr.ht/~owner/repo/tree/{COMMIT}/item/%2e%2e/%2E%2E/main/item/README',
+            'https://web.archive.org/web/20250101000000/https://example.com/../../../web/2/https://example.com/',
+        ]
+        for url in moving:
+            with self.subTest(url):
+                self.assertIn('pinned to a commit or an archive.org snapshot', ' '.join(problems(lead['id'], url)))
+        # scan decisions keep the GitHub rule
+        scan = decision(1, evidence_url=f'https://gitlab.com/owner/repo/-/blob/{COMMIT}/README.md')
+        errors = []
+        reviews.validate_reviews([capture_batch()], {capture(1)['id']: scan}, errors, now=NOW)
+        self.assertIn('GitHub link pinned to a commit', ' '.join(errors))
 
     def test_mixed_ids_sort_scan_numbers_then_leads(self):
         values = {'lead-' + 'b' * 24: {}, 'scan-10': {}, 'lead-' + 'a' * 24: {}, 'scan-2': {}}

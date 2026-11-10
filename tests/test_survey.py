@@ -42,7 +42,6 @@ def fixture():
         'subtitle': pair('A bounded editorial synthesis.', '范围明确的编辑综述。'),
         'description': pair('Evidence before conclusions.', '先看证据，再作结论。'),
         'abstract': pair('Source review does not establish reproduction.', '来源审阅不代表运行复现。'),
-        'disclosure': pair('Editorial synthesis; no new experiments.', '编辑性综合分析；无新实验。'),
         'reference_note': pair('References retain their source identities.', '参考条目保留来源身份。'),
         'figure_caption': pair('Observe, reconstruct, compare.', '观察、重建、比较。'),
         'findings': [pair('Checks constrain particular properties.', '检查约束特定性质。')],
@@ -358,13 +357,14 @@ class SurveyTests(unittest.TestCase):
     def test_byline_parts_are_separate_items_without_inline_separators(self):
         document, papers, resources = fixture()
         _, files = self.render(document, papers, resources)
-        for path, version, author in [('survey/index.html', 'Version', 'Awesome REA contributors'),
-                                      ('zh/survey/index.html', '版本', 'Awesome REA 贡献者')]:
+        for path, version in [('survey/index.html', 'Version'), ('zh/survey/index.html', '版本')]:
             with self.subTest(path=path):
                 byline = re.search(r'<p class="survey-meta">(.*?)</p>', files[path])[1]
                 # The dots are CSS-generated inside each item, so flex spacing is even on both sides.
+                # The line carries the version and date only; authorship stays in the structured citation data.
                 self.assertEqual(byline, f'<span>{version} {document["version"]}</span><span><time datetime="{document["date"]}">'
-                                         f'{document["date"]}</time></span><span>{author}</span>')
+                                         f'{document["date"]}</time></span>')
+                self.assertNotIn('class="survey-note">', files[path].split('id="references"')[0])
 
     def test_header_github_link_keeps_its_name_when_the_label_is_hidden(self):
         # Between 521 and 900 px the header hides the "GitHub" text and the icon is aria-hidden, so the link needs
@@ -392,6 +392,45 @@ class SurveyTests(unittest.TestCase):
             self.assertEqual(article['author']['@type'], 'Organization')
             self.assertEqual(article['author']['name'], 'Awesome REA contributors')
             self.assertFalse({'doi', 'identifier', 'isPartOf', 'issn'} & article.keys())
+
+
+DENIAL_ZH = re.compile('并非|不代表|不等于|不意味着')
+DENIAL_EN = re.compile(r'\b(?:is|are|was|were) not an?\b|\bnot verified\b', re.IGNORECASE)
+
+
+class SurveyCopyTests(unittest.TestCase):
+    def test_visible_survey_prose_states_what_things_are(self):
+        # Reference records are a frozen copy of paper records; the catalog validator checks those.
+        document = json.loads((ROOT / 'data' / 'survey.json').read_text(encoding='utf-8'))
+        found = []
+
+        def walk(node, path):
+            if isinstance(node, dict):
+                if isinstance(node.get('en'), str) and isinstance(node.get('zh'), str):
+                    if DENIAL_EN.search(node['en']) or DENIAL_ZH.search(node['zh']):
+                        found.append('/'.join(map(str, path)))
+                    return
+                for key, value in node.items():
+                    if key != 'reference_records':
+                        walk(value, [*path, key])
+            elif isinstance(node, list):
+                for index, value in enumerate(node):
+                    walk(value, [*path, index])
+
+        walk(document, [])
+        self.assertEqual(found, [])
+        self.assertNotIn('disclosure', document)
+
+    def test_contribution_answers_are_statements(self):
+        from contribution_pages import contribution_content
+        for language in ('en', 'zh'):
+            with self.subTest(language=language):
+                page = contribution_content('https://github.com/reacher-z/Awesome-REA', language)
+                answers = re.findall(r'<p class="card-description">(.*?)</p>', page)
+                self.assertTrue(answers)
+                for answer in answers:
+                    self.assertNotRegex(answer, r'^(?:No\.|不等于|不会)')
+                    self.assertNotRegex(answer, DENIAL_ZH)
 
 
 if __name__ == '__main__':
