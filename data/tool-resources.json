@@ -153318,6 +153318,7 @@
     "description_zh": "kirbydreamland 是 Game Boy 游戏《星之卡比》的反汇编。README 写明构建会生成 Kirby's Dream Land (UE) [!].gb，MD5 为 A66E4918EDCD042EC171A57FE3CE36C3。安装步骤在 INSTALL.md。",
     "evidence_url": "https://github.com/huderlem/kirbydreamland/blob/4b35e31d908c387a6ebac938b5e0bfa5e921b906/README.md",
     "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
     "requirements": [
       "Follow INSTALL.md to set up the repository before building.",
       "The README identifies the built ROM as Kirby's Dream Land (UE) [!].gb with MD5 A66E4918EDCD042EC171A57FE3CE36C3.",
