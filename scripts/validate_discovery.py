@@ -11,7 +11,7 @@ from build_browse_pages import CATEGORIES
 from build_discovery_pages import CASE_PER_PAGE, case_order, case_page_path
 from resource_listing import page_count, page_path
 import forked_checks
-from crawl_policy import CONTENT_SIGNAL, CRAWLERS, REQUIRED_AI_CRAWLERS, TRAINING_PREFERENCE_TOKEN
+from crawl_policy import CRAWLERS, REQUIRED_AI_CRAWLERS, TRAINING_PREFERENCE_TOKEN
 from sitemaps import (SECTION_FILES, SITEMAP_INDEX, dated_path, english_path, instant, language_alternates, latest,
                       normalized_date, page_dates, read_sitemaps, record_date, section_for)
 
@@ -169,7 +169,7 @@ def validate_robots(output, urls):
     named = set(re.findall(r"(?im)^user-agent:\s*(\S+)\s*$", text))
     missing = [token for token in (*CRAWLERS, *REQUIRED_AI_CRAWLERS, TRAINING_PREFERENCE_TOKEN, "*") if token not in named]
     assert not missing, "robots.txt must name these crawlers: " + ", ".join(missing)
-    assert text.count(f"Content-Signal: {CONTENT_SIGNAL}") == 2, "Both robots groups state the same content signals"
+    assert "content-signal" not in text.lower(), "robots.txt must use only directives Lighthouse knows"
     robots = RobotFileParser()
     robots.parse(text.splitlines())
     for bot in (*CRAWLERS, TRAINING_PREFERENCE_TOKEN, "ExampleUnlistedBot/1.0"):

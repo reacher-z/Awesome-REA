@@ -8,7 +8,7 @@ from urllib.robotparser import RobotFileParser
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from crawl_policy import (CONTENT_SIGNAL, CRAWLER_GROUPS, CRAWLERS, REQUIRED_AI_CRAWLERS, TRAINING_PREFERENCE_TOKEN,
+from crawl_policy import (CRAWLER_GROUPS, CRAWLERS, REQUIRED_AI_CRAWLERS, TRAINING_PREFERENCE_TOKEN,
                           robots_txt)
 from validate_discovery import validate_robots
 
@@ -52,7 +52,7 @@ class CrawlPolicyTests(unittest.TestCase):
 
     def test_groups_repeat_the_allow_rules_and_declare_the_sitemap_index(self):
         # A named group replaces *, so both groups carry the same rules (RFC 9309 2.2.1).
-        self.assertEqual(self.text.count(f'Content-Signal: {CONTENT_SIGNAL}'), 2)
+        self.assertNotIn('Content-Signal', self.text)
         self.assertEqual(self.parser.site_maps(), [ORIGIN + '/sitemap.xml'])
         self.assertTrue(self.text.endswith('Sitemap: https://awesomerea.org/sitemap.xml\n'))
         self.assertIn(f'# Agent-readable index: {ORIGIN}/llms.txt', self.text)
@@ -65,7 +65,7 @@ class CrawlPolicyTests(unittest.TestCase):
             for broken in (self.text + 'User-agent: GPTBot\nDisallow: /\n',
                            self.text.replace('User-agent: ClaudeBot\n', ''),
                            self.text.replace('/sitemap.xml', '/sitemap-pages.xml'),
-                           self.text.replace(f'Content-Signal: {CONTENT_SIGNAL}\n', '', 1)):
+                           self.text + 'Content-Signal: search=yes\n'):
                 (output / 'robots.txt').write_text(broken, encoding='utf-8')
                 with self.assertRaises(AssertionError):
                     validate_robots(output, URLS)

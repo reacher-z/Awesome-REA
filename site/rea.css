@@ -1091,3 +1091,5 @@ html:has(.page-resources) { scroll-behavior: auto; }
   .listing .card-desc { display: block; }
   .listing .card-targets li:nth-child(n+3) { display: inline-flex; }
 }
+
+.hero-brand { display: block; margin-bottom: 10px; font: 500 .8125rem/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }

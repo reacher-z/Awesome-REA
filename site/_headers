@@ -52,6 +52,12 @@
   Content-Type: text/plain; charset=utf-8
 /zh/llms-full.txt
   Content-Type: text/plain; charset=utf-8
+/AGENTS.md
+  Content-Type: text/markdown; charset=utf-8
+/agents.md
+  Content-Type: text/markdown; charset=utf-8
+/agents.txt
+  Content-Type: text/plain; charset=utf-8
 /*/index.md
   Link: <https://awesomerea.org/:splat/>; rel="canonical"
 # The static API: readable from any origin, revalidated on every request (Pages adds the ETag).

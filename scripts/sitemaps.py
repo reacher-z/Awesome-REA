@@ -8,8 +8,8 @@ Every URL lists its English, Chinese and x-default alternates, as the page's own
 ``lastmod`` comes from the records the page shows, never from the build time, so rebuilding a commit gives
 the same files: an entry page uses the later of its record's ``added_at`` and ``verified_at``, a listing the
 newest of its records, the repository pages the selection's publication time, the discovery list its latest
-ingest, the survey its version date, the catalog-wide pages (home, about) the newest of all of those, and
-the API guide the newest of those and both unreviewed queues, like the API's own generated_at. A page whose text no dated record describes, such as the contribution guide, has no ``lastmod``.
+ingest, the survey its version date, the catalog-wide pages (home, about, contribute) the newest of all of those, and
+the API guide the newest of those and both unreviewed queues, like the API's own generated_at.
 """
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ SITEMAP_NS = 'http://www.sitemaps.org/schemas/sitemap/0.9'
 XHTML_NS = 'http://www.w3.org/1999/xhtml'
 MAX_URLS = 50_000
 # Pages that summarize the whole catalog: their counts and dates change with any curated, paper or repository data.
-CATALOG_PAGES = ('/', '/about/')
+CATALOG_PAGES = ('/', '/about/', '/contribute/')
 DATE = re.compile(r'\d{4}-\d{2}-\d{2}')
 DATETIME = re.compile(r'(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}:\d{2})(?:\.\d+)?(Z|[+-]\d{2}:\d{2})')
 

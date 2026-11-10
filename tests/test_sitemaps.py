@@ -44,8 +44,8 @@ class PageDateTests(unittest.TestCase):
         # Catalog-wide pages follow curated, paper and repository data, not the discovery queue.
         self.assertEqual(value['/'], '2026-11-03T08:15:00Z')
         self.assertEqual(value['/about/'], value['/'])
-        # No dated record describes the contribution guide.
-        self.assertNotIn('/contribute/', value)
+        # The contribution guide takes the catalog date.
+        self.assertEqual(value['/contribute/'], value['/'])
         # The API guide follows both unreviewed queues as well, like the API's generated_at.
         self.assertEqual(value['/api/'], '2026-11-05T22:36:35Z')
         with_leads = page_dates(resources=RESOURCES, papers=PAPERS, discovery_batches=BATCHES,
@@ -100,11 +100,10 @@ class SitemapFileTests(unittest.TestCase):
             self.assertEqual(ghidra['lastmod'], '2026-10-20')
             self.assertEqual(ghidra['alternates'], {'en': ORIGIN + '/resources/ghidra/', 'zh-CN': ORIGIN + '/zh/resources/ghidra/',
                                                     'x-default': ORIGIN + '/resources/ghidra/'})
-            # Undated pages are listed without a lastmod rather than with the build time.
-            self.assertIsNone(pages[ORIGIN + '/contribute/']['lastmod'])
+            self.assertEqual(pages[ORIGIN + '/contribute/']['lastmod'], '2026-11-03T08:15:00Z')
             text = (output / 'sitemap-pages.xml').read_text(encoding='utf-8')
             self.assertIn('xmlns:xhtml="http://www.w3.org/1999/xhtml"', text)
-            self.assertEqual(text.count('<lastmod>'), 4)
+            self.assertEqual(text.count('<lastmod>'), 6)
 
     def test_paths_must_be_unique_directory_paths(self):
         with TemporaryDirectory() as directory:

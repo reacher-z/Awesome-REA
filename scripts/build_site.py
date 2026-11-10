@@ -21,7 +21,8 @@ from build_survey import TITLES as SURVEY_TITLES, build_survey, discussion_secti
 from social_cards import write_social_cards
 from build_entry_pages import build_entry_pages
 from page_twins import write_page_twins
-from build_home import build_home
+from agent_files import add_front_matter, write_agent_files
+from build_home import build_home, home_faq_markdown
 from build_feed import build_feeds
 from build_api import build_api, write_api_pages
 from agent_formats import full_catalog_markdown
@@ -42,7 +43,7 @@ from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
 from localization import read_localizations, localized_records
 from source_scope import apply_scope, read_scope
-from sitemaps import SITEMAP_INDEX, page_dates, write_sitemaps
+from sitemaps import SITEMAP_INDEX, english_path, page_dates, write_sitemaps
 from public_source_supplements import (PUBLISHED_FILENAME, compose_published, copy_public_evidence, json_bytes,
                                       load_supplements, project_additions, read_withdrawals,
                                       write_withdrawn_redirects)
@@ -397,21 +398,22 @@ def build_site(output: Path) -> tuple[int, int, int]:
     if section:
         llms_path = output / "llms.txt"
         llms = llms_path.read_text(encoding="utf-8")
-        # The unreviewed queues come after the curated collections and data, before the optional links.
-        marker = "\n## Optional\n"
-        if llms.count(marker) != 1:
-            raise ValueError("llms.txt needs exactly one Optional section")
+        # The unreviewed queues link repositories, not Markdown pages, so they close the Optional section.
+        marker = "\nThis file is a navigation aid."
+        if llms.count("\n## Optional\n") != 1 or llms.count(marker) != 1:
+            raise ValueError("llms.txt needs exactly one Optional section and one closing note")
+        section = re.sub(r"(?m)^## ", "### ", section)
         llms_path.write_text(llms.replace(marker, "\n" + section + marker), encoding="utf-8")
     # Every footer offers the same repository download as the homepage and the browse pages.
     repository_export = PUBLISHED_FILENAME if metadata["source_index"].get("full_export") == PUBLISHED_FILENAME else "source-index.json"
     discovery_paths = [*discovery_paths, *write_api_pages(output, api_index, site_url=SITE_URL, repository_url=REPOSITORY_URL,
                                                           source_export=repository_export)]
     # llms-full.txt: the whole curated catalog in Markdown, one file per language.
-    for language, header in (("en", "# Awesome Reverse Engineering Anything: the full curated catalog\n\n> Every source-reviewed resource and research paper of AwesomeREA.org, with requirements, limits and sources. The navigation index is https://awesomerea.org/llms.txt; each entry also has its own Markdown page and record.json.\n"),
-                             ("zh", "# Awesome Reverse Engineering Anything：完整精选目录\n\n> AwesomeREA.org 全部经来源复核的资源与研究论文，含使用条件、局限与来源。导航索引见 https://awesomerea.org/llms.txt；每个条目另有独立的 Markdown 页面与 record.json。\n")):
+    for language, header in (("en", f"# Awesome REA (Awesome Reverse Engineering Anything): the full curated catalog\n\n> Every source-reviewed resource ({len(resources):,}) and research paper ({len(papers):,}) of AwesomeREA.org, with requirements, limits and sources. The navigation index is https://awesomerea.org/llms.txt; each entry also has its own Markdown page and record.json.\n"),
+                             ("zh", f"# Awesome REA (Awesome Reverse Engineering Anything)：完整精选目录\n\n> AwesomeREA.org 全部经来源复核的资源（{len(resources):,} 项）与研究论文（{len(papers):,} 篇），含使用条件、局限与来源。导航索引见 https://awesomerea.org/llms.txt；每个条目另有独立的 Markdown 页面与 record.json。\n")):
         target = output / ("zh/llms-full.txt" if language == "zh" else "llms-full.txt")
         target.write_text(full_catalog_markdown(resources, papers, language, site_url=SITE_URL, sections=COLLECTION_SECTIONS,
-                                                section_of=collection_section, header=header), encoding="utf-8")
+                                                section_of=collection_section, header=header + "\n" + home_faq_markdown(resources, papers, discovery_queue, language)), encoding="utf-8")
     paper_urls = build_paper_pages(
         output, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
         styles_href=asset_hrefs["styles.css"], papers_styles_href=fingerprinted_href(output, "papers.css"),
@@ -462,7 +464,16 @@ def build_site(output: Path) -> tuple[int, int, int]:
                        discovery_batches=(discovery_queue or {}).get("batches"), lead_batches=(lead_queue or {}).get("batches"),
                        survey_date=survey_document.get("date"),
                        discovery_class_pages=[path for path in queue_paths if path.startswith('/discoveries/') and path != '/discoveries/'])
+    updated = max(value[:10] for value in dates.values())
     write_sitemaps(output, SITE_URL, [url.removeprefix(SITE_URL) for url in sitemap_urls], dates)
+    # The agent guide and the front matter of every Markdown twin use the same counts and dates as the pages.
+    write_agent_files(output, SITE_URL, REPOSITORY_URL, resources=len(resources), papers=len(papers),
+                      cases=sum(r["kind"] == "case-study" for r in resources), repositories=len(browse_records), updated=updated,
+                      faq=home_faq_markdown(resources, papers, discovery_queue, "en"))
+    for language, route in (("en", "index.md"), ("zh", "zh/index.md")):
+        twin = output / route
+        twin.write_text(twin.read_text(encoding="utf-8").rstrip("\n") + "\n\n" + home_faq_markdown(resources, papers, discovery_queue, language), encoding="utf-8")
+    add_front_matter(output, SITE_URL, dates, updated)
     build_data_downloads(output, catalog, papers,
                          (output / 'papers/references.bib').read_text(encoding='utf-8'))
     write_build_manifest(output)
