@@ -43453,5 +43453,12 @@
       "编译最终磁盘镜像需要 bintofdf 和 fdtc；项目内附有这两个工具的版本。",
       "项目页面未说明许可证。"
     ]
+  },
+  "asteroids-disassembly": {
+    "name": "asteroids-disassembly：《小行星》街机固件反汇编",
+    "requirements": [
+      "README 将该项目标为街机游戏《小行星》的固件。",
+      "GitHub 上该仓库的许可证元数据为空。"
+    ]
   }
 }
