@@ -110,8 +110,8 @@
   "scan-78891583": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Sharp Tinder is a client framework for Tinder account actions; its traffic-inspection instruction concerns obtaining a login token, not protocol analysis.",
-    "reason_zh": "Sharp Tinder 是执行 Tinder 账户操作的客户端框架；其查看网络流量的说明用于获取登录令牌，并非协议分析。",
+    "reason_en": "Sharp Tinder is a client framework for Tinder account actions; its traffic-inspection instruction concerns obtaining a login token.",
+    "reason_zh": "Sharp Tinder 是执行 Tinder 账户操作的客户端框架；其查看网络流量的说明用于获取登录令牌。",
     "readme_sha256": "4a9aa3970ca0b77deef65441d19ccc43001e0df1ba7372eacebed7f761c3bbc6",
     "evidence_url": "https://github.com/cansik/sharp-tinder/blob/2b66bbf7504abc3b2790700d5f2b8d2617577e7e/README.md",
     "reviewed_at": "2026-11-08"
@@ -317,8 +317,8 @@
   "scan-126789015": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "The three documented Securinets solutions cover archive inspection, a JavaScript challenge and RSA cryptography, rather than a reverse-engineering subject.",
-    "reason_zh": "仓库中的三份 Securinets 解题记录分别涉及压缩包检查、JavaScript 条件判断和 RSA 密码学，主题不是程序逆向。",
+    "reason_en": "The three documented Securinets solutions cover archive inspection, a JavaScript challenge and RSA cryptography.",
+    "reason_zh": "仓库中的三份 Securinets 解题记录分别涉及压缩包检查、JavaScript 条件判断和 RSA 密码学。",
     "readme_sha256": "7c509a0d326bae432242a055ff113eeb515737122bad74287a2b9bcaeabd45dd",
     "evidence_url": "https://github.com/joker-returns/ctf_writeups/blob/a6c076c3aebe817567b4e548dfaff27ccf9b246f/README.md",
     "reviewed_at": "2026-11-06"
@@ -407,8 +407,8 @@
   "scan-136004757": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "The C experiments attempt RSA factorization through number theory, while the README’s reverse-engineering phrase refers to multiplication rather than software or device analysis.",
-    "reason_zh": "这些 C 语言实验研究 RSA 大数分解；文中的“逆向”指推回乘法因子，并非分析软件或设备。",
+    "reason_en": "The C experiments attempt RSA factorization through number theory, while the README’s reverse-engineering phrase refers to recovering multiplication factors.",
+    "reason_zh": "这些 C 语言实验研究 RSA 大数分解；文中的“逆向”指推回乘法因子。",
     "readme_sha256": "c0b8c4b5a1d3e333423bd761040b5a04806394bb8542bec1157e591417183fb1",
     "evidence_url": "https://github.com/djbarrow/rsacrack/blob/1c05bb972c0a34d994aa6540de8f22a9f439c693/README.md",
     "reviewed_at": "2026-11-06"
@@ -695,8 +695,8 @@
   "scan-160101897": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "The scripts infer brain connectivity from task-based fMRI signals using voxel correlations and LASSO; they do not analyse software or devices.",
-    "reason_zh": "这些脚本通过体素相关矩阵和 LASSO 推断任务态 fMRI 的脑网络连接，研究对象并非软件或设备。",
+    "reason_en": "The scripts infer brain connectivity from task-based fMRI signals using voxel correlations and LASSO.",
+    "reason_zh": "这些脚本通过体素相关矩阵和 LASSO 推断任务态 fMRI 的脑网络连接。",
     "readme_sha256": "5b6e070e29d2dea9195b3f9fa50fa729350bb1b9547e057fc407b269676e4f84",
     "evidence_url": "https://github.com/gdelfe/Functional-network-construction-from-fMRI-signals/blob/3a74a802a0a24b79c61011585546a62040319418/README.md",
     "reviewed_at": "2026-11-06"
@@ -839,8 +839,8 @@
   "scan-183297522": {
     "decision": "exclude",
     "reason_code": "personal-profile",
-    "reason_en": "The repository is a personal blog built from the Beautiful Jekyll template, with mixed blog posts rather than a reverse-engineering resource as its primary subject.",
-    "reason_zh": "该仓库是基于 Beautiful Jekyll 模板的个人博客，文章主题混杂，整体并非逆向工程资源。",
+    "reason_en": "The repository is a personal blog built from the Beautiful Jekyll template, with mixed blog posts.",
+    "reason_zh": "该仓库是基于 Beautiful Jekyll 模板的个人博客，文章主题混杂。",
     "readme_sha256": "0bd11d4d31a4299d9d8eb20952fbead21ebcb9be4495a2b0ab19a2a28de7f5e2",
     "evidence_url": "https://github.com/nv1t/blog-backup/blob/5de2f538c820595fabf719b1a962982d23d9b88f/README.md",
     "reviewed_at": "2026-11-06"
@@ -965,8 +965,8 @@
   "scan-198916754": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "WriteUp is a mixed CTF and programming-challenge archive spanning network, cryptography, web and binary tasks, without reverse engineering as its main subject.",
-    "reason_zh": "WriteUp 汇集网络、密码学、网页、二进制及编程类 CTF 题解，逆向工程并非仓库的主要主题。",
+    "reason_en": "WriteUp is a mixed CTF and programming-challenge archive spanning network, cryptography, web and binary tasks.",
+    "reason_zh": "WriteUp 汇集网络、密码学、网页、二进制及编程类 CTF 题解。",
     "readme_sha256": "dcd64caf8520c68fb3735c7938b87399c3654ef73ef8a0066ae66031011d72aa",
     "evidence_url": "https://github.com/D3vle0/WriteUp/blob/b23912c169b9e50e60beed35f72e95d12ab34785/README.md",
     "reviewed_at": "2026-11-06"
@@ -1976,8 +1976,8 @@
   "scan-486307555": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
-    "reason_en": "smbod is a decompiled and modified copy of Santos' smbod converter, with a hashing change rather than a distinct original RE project.",
-    "reason_zh": "smbod 明确是 Santos 原版 smbod 转换器的反编译修改版，主要新增哈希处理，不构成独立原创逆向项目。",
+    "reason_en": "smbod is a decompiled and modified copy of Santos' smbod converter, with a hashing change.",
+    "reason_zh": "smbod 是 Santos 原版 smbod 转换器的反编译修改版，主要新增哈希处理。",
     "readme_sha256": "9169bd5d0856697bc838b322c903b00e56e83fa44b5aa33f1bb5a0f91f1bf587",
     "evidence_url": "https://github.com/smaugmented/smbod/blob/be753b26b70fdba393be303f34cdb12950210a5e/README.md",
     "reviewed_at": "2026-11-06"
@@ -2138,8 +2138,8 @@
   "scan-513291378": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "CC5325 is a personal copy of a broad competitive-hacking course's challenges and solutions, covering steganography, cryptography, web tasks, and forensics rather than RE as its main subject.",
-    "reason_zh": "CC5325 是综合黑客竞赛课程题目与解答的个人存档，涵盖隐写、密码学、网页题和取证，逆向工程并非其主要主题。",
+    "reason_en": "CC5325 is a personal copy of a broad competitive-hacking course's challenges and solutions, covering steganography, cryptography, web tasks, and forensics.",
+    "reason_zh": "CC5325 是综合黑客竞赛课程题目与解答的个人存档，涵盖隐写、密码学、网页题和取证。",
     "readme_sha256": "a379f032f91fc169c8d031aa4eb31e79e8896287f238645dbd5a9515a2e506e8",
     "evidence_url": "https://github.com/vrojasosorio/CC5325/blob/7e44f619076df05990bc083977f6496484a47069/README.md",
     "reviewed_at": "2026-11-06"
@@ -2166,7 +2166,7 @@
     "decision": "exclude",
     "reason_code": "general-security",
     "reason_en": "The picoCTF notes span beginner cryptography, forensics, general skills and web exploitation as well as a few reverse-engineering puzzles.",
-    "reason_zh": "这份 picoCTF 初级题解同时覆盖密码、取证、基础技能和网页漏洞利用，仅有少数逆向题，并非以逆向分析为主体。",
+    "reason_zh": "这份 picoCTF 初级题解覆盖密码、取证、基础技能和网页漏洞利用，另有少数逆向题。",
     "readme_sha256": "c328e28ae1822227a3505d758bf2c0c47a9a2ce9c44d57c6ff2ea25c3c22f817",
     "evidence_url": "https://github.com/Ninja-Yubaraj/picoCTF-Writeups/blob/b8b2653e29399cc9aa55760067a79802fdb72b1d/README.md",
     "reviewed_at": "2026-11-06"
@@ -2237,8 +2237,8 @@
   "scan-533021852": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "The notebook solves a supplied-source cryptographic programming challenge by analyzing and reversing its algorithm, rather than investigating shipped software.",
-    "reason_zh": "笔记本分析并逆推一道已给出 C 源码的密码算法编程挑战，主题并非对已发布软件进行逆向调查。",
+    "reason_en": "The notebook solves a supplied-source cryptographic programming challenge by analyzing and reversing its algorithm.",
+    "reason_zh": "笔记本分析并逆推一道已给出 C 源码的密码算法编程挑战。",
     "readme_sha256": "e7476aa82d8adbb7beca2175eac1c2a0b34461e04d3471f26d4ac55b3368fc0a",
     "evidence_url": "https://github.com/vobst/ctf-hireme/blob/905220e9e1aec726bcd547540ef98fc708e8f96a/HireMe.c.ipynb",
     "reviewed_at": "2026-11-06"
@@ -2300,8 +2300,8 @@
   "scan-544068731": {
     "decision": "exclude",
     "reason_code": "cheat-or-evasion",
-    "reason_en": "The Rust entry point creates multiple game bots and starts each one's cheat loop; the repository presents no separate protocol investigation as its main work.",
-    "reason_zh": "Rust 入口会创建多个游戏机器人并启动各自的作弊循环；项目主体不是独立的协议研究。",
+    "reason_en": "The Rust entry point creates multiple game bots and starts each one's cheat loop; the repository centres on these bots.",
+    "reason_zh": "Rust 入口会创建多个游戏机器人并启动各自的作弊循环；项目主体是游戏机器人及其作弊循环。",
     "readme_sha256": "3662376fff6bc56218bc33d21c7a02eae330586801f7ad193f83dd15561ed5c7",
     "evidence_url": "https://github.com/scirpter/Nebul0us.rs/blob/f50b58c810d6851369a3dccea320ecd298cdd564/src/main.rs",
     "reviewed_at": "2026-11-06"
@@ -2345,8 +2345,8 @@
   "scan-559810375": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "The repository is a broad CTF challenge and write-up archive containing reversing alongside other contest material, rather than a focused reverse-engineering resource.",
-    "reason_zh": "该仓库是混合题型的 CTF 赛题与题解归档，逆向题只是其中一部分，整体主题并非逆向工程。",
+    "reason_en": "The repository is a broad CTF challenge and write-up archive containing reversing alongside other contest material.",
+    "reason_zh": "该仓库是混合题型的 CTF 赛题与题解归档，逆向题只是其中一部分。",
     "readme_sha256": "15eb87b1ee71d6efafead476be576865753f01fa28d09df1591a89259f629fec",
     "evidence_url": "https://github.com/lephuduc/CTFs-Honors/blob/81105801ee09a2cc0fec2b972ac0f4753d6a8b7b/README.md",
     "reviewed_at": "2026-11-06"
@@ -2381,8 +2381,8 @@
   "scan-568572231": {
     "decision": "exclude",
     "reason_code": "personal-profile",
-    "reason_en": "The repository is a personal blog built on a Jekyll template, with mixed security posts rather than a reverse-engineering resource as its primary subject.",
-    "reason_zh": "该仓库是基于 Jekyll 模板的个人博客，文章涵盖多种安全主题，整体并非专门的逆向资源。",
+    "reason_en": "The repository is a personal blog built on a Jekyll template, with mixed security posts as its primary subject.",
+    "reason_zh": "该仓库是基于 Jekyll 模板的个人博客，主要收录不同安全主题的文章。",
     "readme_sha256": "1eacc28e59466b3564a6fa428fcc9c866c50547dd08984fe0d286cfa7fd767a3",
     "evidence_url": "https://github.com/0xFh/0xfh.github.io/blob/74794ad673c1480d2a565b1c12853723f92cdcd7/README.md",
     "reviewed_at": "2026-11-06"
@@ -2498,8 +2498,8 @@
   "scan-584042023": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "The repository applies a TensorFlow model to the FICO credit-scoring algorithm, a financial model rather than a program, format or device analysis.",
-    "reason_zh": "该仓库以 TensorFlow 实现 FICO 信用评分模型，研究对象是金融评分算法，并非软件、文件格式或设备的逆向分析。",
+    "reason_en": "The repository applies a TensorFlow model to the FICO credit-scoring algorithm; its subject is financial scoring, with no program, format or device analysis described.",
+    "reason_zh": "该仓库以 TensorFlow 实现 FICO 信用评分模型，研究对象是金融评分算法。",
     "readme_sha256": "20c73770169bef1ae2a9467006e6a444bc12d4654bbec58d8efe87697910a311",
     "evidence_url": "https://github.com/mfow/fico/blob/0303b7360393f7cf854a7ce2ea62351711a39ec3/README.md",
     "reviewed_at": "2026-11-08"
@@ -2525,8 +2525,8 @@
   "scan-588405405": {
     "decision": "exclude",
     "reason_code": "personal-profile",
-    "reason_en": "h0ffmann is a personal profile repository containing a CV, biography, journal and profile-site code rather than an RE resource.",
-    "reason_zh": "h0ffmann 是个人资料仓库，收录履历、自我介绍、日志和个人网站代码，不是逆向工程资源。",
+    "reason_en": "h0ffmann is a personal profile repository containing a CV, biography, journal and profile-site code.",
+    "reason_zh": "h0ffmann 是个人资料仓库，收录履历、自我介绍、日志和个人网站代码。",
     "readme_sha256": "d651238c114774c29623de7d4f8e9e936794862dbf4c392fbe3bedea9f06cabe",
     "evidence_url": "https://github.com/h0ffmann/h0ffmann/blob/2f2813d9626d45dd262ea2c871a9571513f6f421/README.md",
     "reviewed_at": "2026-11-06"
@@ -2534,8 +2534,8 @@
   "scan-588625469": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "The README presents a broad computer-security coursework repository spanning crypto, reverse, exploitation and web assignments, rather than a focused RE resource.",
-    "reason_zh": "README 将仓库列为涵盖密码学、逆向、漏洞利用和 Web 的计算机安全课程作业，并非专门的逆向资源。",
+    "reason_en": "The README presents a broad computer-security coursework repository spanning crypto, reverse, exploitation and web assignments.",
+    "reason_zh": "README 将仓库列为涵盖密码学、逆向、漏洞利用和 Web 的计算机安全课程作业。",
     "readme_sha256": "9d228b730f4968fc8728dcff77d64963e35ecef5ba7b1caa3d8c36078b98e2e6",
     "evidence_url": "https://github.com/eric070021/2022-Computer-Security/blob/36e5564ce4e7f748d3b42a25388bd2277d348c78/README.md",
     "reviewed_at": "2026-11-06"
@@ -2778,8 +2778,8 @@
   "scan-626582050": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "TechnoceanCTF is a set of varied capture-the-flag challenges, including exploitation and password tasks, rather than a reverse-engineering resource with a defined analysis method.",
-    "reason_zh": "TechnoceanCTF 收录多类夺旗赛题，包括漏洞利用和密码任务，主体不是有明确分析方法的逆向工程资源。",
+    "reason_en": "TechnoceanCTF is a set of varied capture-the-flag challenges, including exploitation and password tasks; its description specifies no reverse-engineering analysis method.",
+    "reason_zh": "TechnoceanCTF 收录多类夺旗赛题，包括漏洞利用和密码任务；项目说明未列出明确的逆向分析方法。",
     "readme_sha256": "b4110afb737224ee2f826c3ff81a1420ebfe6ed5fd6cc8eae3d0129f848df5f8",
     "evidence_url": "https://github.com/Kartik-Dixit/TechnoceanCTF/blob/9a0bc8fe6779d7da6117a01c130923107344c9dc/README.md",
     "reviewed_at": "2026-11-06"
@@ -3093,8 +3093,8 @@
   "scan-662563496": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
-    "reason_en": "The Legend of Random repository identifies itself as a static copy of the earlier reverse-engineering blog by R4ndom, rather than original research or tooling.",
-    "reason_zh": "The Legend of Random 仓库自称是 R4ndom 早期逆向工程博客的静态副本，并非原创研究或工具。",
+    "reason_en": "The Legend of Random repository identifies itself as a static copy of the earlier reverse-engineering blog by R4ndom; it presents no original research or tooling.",
+    "reason_zh": "The Legend of Random 仓库自称是 R4ndom 早期逆向工程博客的静态副本；仓库未提供原创研究或工具。",
     "readme_sha256": "9cc9c8c489509e4a03715fe9bd415816a8b399b348d1fd099fe1395a80c76620",
     "evidence_url": "https://github.com/8ctopus/legendofrandom/blob/a8d8c26116746f8006e12a4f8159bc79fb8953bb/README.md",
     "reviewed_at": "2026-11-08"
@@ -3552,8 +3552,8 @@
   "scan-718362717": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
-    "reason_en": "The repository identifies itself as a read-only mirror of the original pornolab.net project at git.hloth.dev, so this GitHub copy is not the original project.",
-    "reason_zh": "仓库标明自己是 git.hloth.dev 上 pornolab.net 项目的只读镜像；此 GitHub 副本并非原项目。",
+    "reason_en": "The repository identifies this GitHub copy as a read-only mirror of the original pornolab.net project at git.hloth.dev.",
+    "reason_zh": "仓库标明自己是 git.hloth.dev 上 pornolab.net 项目的只读镜像；此 GitHub 副本是只读镜像。",
     "readme_sha256": "fdfcb65f6b5019320b0d6efe7f5ce1bfef34970eb6f0e72d452062a023b9e332",
     "evidence_url": "https://github.com/VityaSchel/pornolab.net/blob/00f3557cf125860c0c069d6f94107475d60db803/README.md",
     "reviewed_at": "2026-11-06"
@@ -4587,8 +4587,8 @@
   "scan-945086014": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "This is a mixed PicoCTF answer archive covering exploitation, cryptography, forensics and general skills; the repository does not establish reverse engineering as its primary subject.",
-    "reason_zh": "这是涵盖漏洞利用、密码学、取证和基础技能的 PicoCTF 综合答案仓库；仓库内容未表明逆向工程是其主要主题。",
+    "reason_en": "This is a mixed PicoCTF answer archive covering exploitation, cryptography, forensics and general skills; its documented scope centers on those subjects, with no primary reverse-engineering focus identified.",
+    "reason_zh": "这是涵盖漏洞利用、密码学、取证和基础技能的 PicoCTF 综合答案仓库；仓库记录的主题以这些方向为主，未表明逆向工程是其主要主题。",
     "readme_sha256": "7f0c1c06cdac1987f194dada27d91c4f089e19780ddf58f336f930765fc7a493",
     "evidence_url": "https://github.com/LakshayBaijal/PicoCTF-2025-Questions-with-Answers/blob/85877189a3abfe82290884a18ece6fc432eede0a/README.md",
     "reviewed_at": "2026-11-06"
@@ -4596,8 +4596,8 @@
   "scan-945193291": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "The repository collects picoCTF solutions across cryptography, forensics, exploitation, reversing, and web tasks rather than focusing on reverse engineering.",
-    "reason_zh": "仓库汇集密码学、取证、漏洞利用、逆向和 Web 等多类 picoCTF 题解，主题并非逆向工程。",
+    "reason_en": "The repository collects picoCTF solutions across cryptography, forensics, exploitation, reversing, and web tasks.",
+    "reason_zh": "仓库汇集密码学、取证、漏洞利用、逆向和 Web 等多类 picoCTF 题解。",
     "readme_sha256": "6513745e5672259a2adeb6117e619151c9de9f205eec8228e96336306e9b1fdb",
     "evidence_url": "https://github.com/asatpathy314/picoctf-2025/blob/1fe524923f1b224c7c51743afc638e23b05d1f1e/README.md",
     "reviewed_at": "2026-11-06"
@@ -4839,8 +4839,8 @@
   "scan-966487452": {
     "decision": "exclude",
     "reason_code": "community-or-event",
-    "reason_en": "The repository distributes challenges and PDF write-ups for a state cybersecurity competition, without presenting a reverse-engineering resource as its main subject.",
-    "reason_zh": "该仓库发布州级网络安全竞赛的题目文件及 PDF 题解，主体是赛事材料，并非逆向工程资源。",
+    "reason_en": "The repository distributes challenges and PDF write-ups for a state cybersecurity competition; its main subject is competition material.",
+    "reason_zh": "该仓库发布州级网络安全竞赛的题目文件及 PDF 题解，主体是赛事材料。",
     "readme_sha256": "ae78f542798b1e8507984f1f4ab3dc68297fbac745525b781788e26381d2105e",
     "evidence_url": "https://github.com/BiscottiMuncher/SkillsUsa_2025_Challenges/blob/49ecbdc965e59a647df3e47a87f0084efc419c14/README.md",
     "reviewed_at": "2026-11-06"
@@ -4848,8 +4848,8 @@
   "scan-967504177": {
     "decision": "exclude",
     "reason_code": "personal-profile",
-    "reason_en": "The root README presents a Windows-internals and malware-evasion portfolio with several separate demos, rather than a single reverse-engineering project.",
-    "reason_zh": "根 README 将仓库定位为 Windows 内部机制与恶意软件规避作品集，收录多个独立演示，并非单一逆向工程项目。",
+    "reason_en": "The root README presents a Windows-internals and malware-evasion portfolio with several separate demos.",
+    "reason_zh": "根 README 将仓库定位为 Windows 内部机制与恶意软件规避作品集，收录多个独立演示。",
     "readme_sha256": "c83f793b6d8fc66992b563ae2a60392d83a2d8133e1632bcbe3d31ed1ccb83d2",
     "evidence_url": "https://github.com/nivedhcarr/sample/blob/331667166d5a56545a085b5afeaa9a8eae39a419/README.md",
     "reviewed_at": "2026-11-06"
@@ -5154,8 +5154,8 @@
   "scan-1006162614": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "GTA Benchmark asks participants to infer hidden byte transformations from input-output pairs as an AI reasoning puzzle, rather than investigate shipped software.",
-    "reason_zh": "GTA Benchmark 让参与者根据输入输出样例猜测隐藏的字节变换，用于评测算法推理能力，研究对象并非现有软件。",
+    "reason_en": "GTA Benchmark asks participants to infer hidden byte transformations from input-output pairs as an AI reasoning puzzle.",
+    "reason_zh": "GTA Benchmark 让参与者根据输入输出样例猜测隐藏的字节变换，用于评测算法推理能力。",
     "readme_sha256": "f9421814c6564164cc097be7e7b8e3274fe6722d33fcb570b7caf7121e8e07e4",
     "evidence_url": "https://github.com/dosa122/gta-benchmark/blob/82d68e97a10a5421ba4fa0eda94bc22a76dbca69/docs/gta_benchmark.md",
     "reviewed_at": "2026-11-06"
@@ -5208,8 +5208,8 @@
   "scan-1012615331": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "VNU Dashboard is a student portal built using OneVNU API endpoints; its main output is grades and schedules rather than reverse-engineering findings or a reusable analyser.",
-    "reason_zh": "VNU Dashboard 利用 OneVNU 接口提供成绩和课表等学生信息，主体是学生门户，并非逆向研究成果或可复用的分析工具。",
+    "reason_en": "VNU Dashboard is a student portal built using OneVNU API endpoints; its main output is grades and schedules, with no reverse-engineering findings or reusable analyser presented.",
+    "reason_zh": "VNU Dashboard 利用 OneVNU 接口提供成绩和课表等学生信息，主体是学生门户；项目未提供逆向研究成果或可复用的分析工具。",
     "readme_sha256": "b3955d29956e9a8a282b9c122f84fbdfff162378d7b2ef06e7cbcb854442e4f7",
     "evidence_url": "https://github.com/gawgua/vnu-dashboard/blob/f12248ac659eaee9119faf676153279639aed46f/README.md",
     "reviewed_at": "2026-11-07"
@@ -5235,8 +5235,8 @@
   "scan-1015157449": {
     "decision": "exclude",
     "reason_code": "general-programming-tutorial",
-    "reason_en": "These computer systems course labs cover bit operations, one reversing exercise and cache simulation; reverse engineering is only one part of a general course.",
-    "reason_zh": "这是计算机系统课程的实验作业，内容包括位运算、一次逆向练习和缓存模拟，逆向工程并非课程主体。",
+    "reason_en": "These computer systems course labs cover bit operations, one reversing exercise and cache simulation; reverse engineering is one part of the general course.",
+    "reason_zh": "这是计算机系统课程的实验作业，内容包括位运算、一次逆向练习和缓存模拟，逆向工程是课程的一部分。",
     "readme_sha256": "6ded4b137b8c01d4e5369075a43feb936bac8676b5c5be34d13c086c40b40d5c",
     "evidence_url": "https://github.com/bbangjee/cse3030_introduction_to_computer_systems/blob/c4ba7e1b348208add2ffa1b3661fc79d684d1f23/README.md",
     "reviewed_at": "2026-11-06"
@@ -5586,8 +5586,8 @@
   "scan-1070289130": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "Awesome Weird Computing is a broad list of operating systems, ports, hardware, and experiments; reverse engineering is only one section of its subject matter.",
-    "reason_zh": "Awesome Weird Computing 汇集操作系统、硬件、移植和实验项目；逆向工程只是其中一个栏目，并非清单主旨。",
+    "reason_en": "Awesome Weird Computing is a broad list of operating systems, ports, hardware, and experiments; reverse engineering is one section of its subject matter.",
+    "reason_zh": "Awesome Weird Computing 汇集操作系统、硬件、移植和实验项目；逆向工程只是其中一个栏目。",
     "readme_sha256": "584696fd0c3632ec3676db34d8fb48aef6b18648810e69af66e17cd2208a5bc0",
     "evidence_url": "https://github.com/dennishilk/awesome/blob/b4d13941c9f759b95ec20d8bd1c694db8a1c6643/README.md",
     "reviewed_at": "2026-11-06"
@@ -5676,8 +5676,8 @@
   "scan-1079312760": {
     "decision": "exclude",
     "reason_code": "personal-profile",
-    "reason_en": "The repository is a personal blog site with assorted posts and write-ups, rather than a dedicated reverse-engineering project or resource.",
-    "reason_zh": "该仓库是个人博客网站，收录不同主题的文章和笔记，并非专门的逆向工程项目或资料。",
+    "reason_en": "The repository is a personal blog site with assorted posts and write-ups.",
+    "reason_zh": "该仓库是个人博客网站，收录不同主题的文章和笔记。",
     "readme_sha256": "54ebe91a56a91367a2e6c4238cfdb6a6875aff8031f1e566d03919145afa15ec",
     "evidence_url": "https://github.com/0xnull007/0xnull007.github.io/blob/e069c7a97101588c8314a9d60ef43d83db2b0b45/README.md",
     "reviewed_at": "2026-11-06"
@@ -6450,8 +6450,8 @@
   "scan-1121323197": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "The repository publishes a broad offensive and defensive security archive; malware reverse engineering is one division among many unrelated report areas.",
-    "reason_zh": "该仓库是涵盖攻防安全多个方向的研究网站，恶意软件逆向只是其中一个栏目，并非项目主线。",
+    "reason_en": "The repository publishes a broad offensive and defensive security archive; malware reverse engineering is one division among many report areas.",
+    "reason_zh": "该仓库是涵盖攻防安全多个方向的研究网站，恶意软件逆向只是其中一个栏目。",
     "readme_sha256": "9c6aad1e54905017965d4e190fc958176c4607a6014e8af4d69db30c3cce6b9c",
     "evidence_url": "https://github.com/0xDelta-Research/root/blob/ec229d5aae430bbc5a0979c9cce8e1fb1c493924/README.md",
     "reviewed_at": "2026-11-06"
@@ -6495,8 +6495,8 @@
   "scan-1123548815": {
     "decision": "hold",
     "reason_code": "capability-unclear",
-    "reason_en": "The repository has VM introspection and process-monitor code, but its documentation does not establish what analysis the sandbox performs or reports.",
-    "reason_zh": "仓库含虚拟机自省和进程监控代码，但文档未说明沙箱具体分析什么、产生哪些分析结果。",
+    "reason_en": "The repository has VM introspection and process-monitor code; its documentation leaves the sandbox’s analyses and reported results unspecified.",
+    "reason_zh": "仓库含虚拟机自省和进程监控代码；文档未说明沙箱具体分析什么、产生哪些分析结果。",
     "readme_sha256": "39d38e67a4c7b5714bd80ce759b4e8e50b9b660b410d6546eb6cb6de7a940818",
     "evidence_url": "https://github.com/416rehman/loonaro-kvm/blob/52bcce66ea514528ba3b0aa885690bc2c2cdab46/loonaro/README.md",
     "reviewed_at": "2026-11-06"
@@ -6684,8 +6684,8 @@
   "scan-1135280114": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "AgentReverse extracts and installs agent skills and plugins from repositories and articles; its use of reverse engineering refers to agent capabilities, not software or protocol analysis.",
-    "reason_zh": "AgentReverse 从仓库和文章提取并安装智能体技能、插件；这里的“逆向”指分析智能体功能，并非软件或协议逆向。",
+    "reason_en": "AgentReverse extracts and installs agent skills and plugins from repositories and articles; its use of reverse engineering refers to agent capabilities.",
+    "reason_zh": "AgentReverse 从仓库和文章提取并安装智能体技能、插件；这里的“逆向”指分析智能体功能。",
     "readme_sha256": "6494515cf841d253c3dd134f927675220e7a6c434cebf7fadc4f97f682289690",
     "evidence_url": "https://github.com/shihwesley/agent-reverse/blob/9ab6e8e36e837784d0eef6080e69ec606af18b2d/README.md",
     "reviewed_at": "2026-11-06"
@@ -6702,8 +6702,8 @@
   "scan-1135750178": {
     "decision": "exclude",
     "reason_code": "development-tool",
-    "reason_en": "extract-shellcode trims a program's own PE .text section using its matching linker map and optionally executes the result; the workflow is build validation rather than target analysis.",
-    "reason_zh": "extract-shellcode 根据匹配的链接器映射裁剪程序自身的 PE .text 节，并可执行结果；该流程用于构建验证，并非目标分析。",
+    "reason_en": "extract-shellcode trims a program’s own PE .text section using its matching linker map and optionally executes the result; the workflow serves build validation.",
+    "reason_zh": "extract-shellcode 根据匹配的链接器映射裁剪程序自身的 PE .text 节，并可执行结果；该流程用于构建验证。",
     "readme_sha256": "a2968286fd2f086a2409c06d1ae173c54594cc1943f431c44b7cdaa155be1194",
     "evidence_url": "https://github.com/11philip22/extract-shellcode/blob/30ac11fb913a07ee185f1d5d68412e4b31f09803/README.md",
     "reviewed_at": "2026-11-06"
@@ -6981,8 +6981,8 @@
   "scan-1152003956": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "rilua implements and embeds Lua 5.1.1 for Rust and World of Warcraft addon workflows; its bytecode lister is part of a compiler, not a reverse-engineering focus.",
-    "reason_zh": "rilua 是面向 Rust 嵌入和魔兽世界插件的 Lua 5.1.1 解释器；字节码列表功能属于编译器配套功能，项目重点并非逆向分析。",
+    "reason_en": "rilua implements and embeds Lua 5.1.1 for Rust and World of Warcraft addon workflows; its bytecode lister is part of the compiler.",
+    "reason_zh": "rilua 是面向 Rust 嵌入和魔兽世界插件的 Lua 5.1.1 解释器；字节码列表功能属于编译器配套功能。",
     "readme_sha256": "d820a5e2be27683e79839595e9574adce0cc3d5585d347f4a286d509ce3ed2ce",
     "evidence_url": "https://github.com/wowemulation-dev/rilua/blob/0880b723d0f9a494f12b3b36e2b1e2c470485b81/README.md",
     "reviewed_at": "2026-11-07"
@@ -6999,8 +6999,8 @@
   "scan-1153088164": {
     "decision": "hold",
     "reason_code": "target-unsupported",
-    "reason_en": "pyzdb substantially decodes ZFS disk structures, but the available target labels do not cover file systems or raw storage formats without inventing another target.",
-    "reason_zh": "pyzdb 对 ZFS 磁盘结构有实质性解析，但现有目标标签没有文件系统或原始存储格式，不能据此虚构其他目标。",
+    "reason_en": "pyzdb substantially decodes ZFS disk structures, but the available target labels lack a category for file systems or raw storage formats.",
+    "reason_zh": "pyzdb 对 ZFS 磁盘结构有实质性解析，但现有目标标签没有文件系统或原始存储格式。",
     "readme_sha256": "124404a6608a479cc543accdf898461c22d74a6cf0456d42b856fd675770333b",
     "evidence_url": "https://github.com/zhengyp36/pyzdb/blob/15ec6947c1efa6e982820d896e4b0208f254361e/ReadMe.md",
     "reviewed_at": "2026-11-06"
@@ -7539,8 +7539,8 @@
   "scan-1200503332": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "The project primarily provides an Anthropic- and OpenAI-compatible proxy backed by a ChatGPT browser session, with no reverse-engineering findings as its subject.",
-    "reason_zh": "该项目主要通过 ChatGPT 浏览器会话提供 Anthropic 与 OpenAI 兼容代理，主题并非逆向分析成果。",
+    "reason_en": "The project primarily provides an Anthropic- and OpenAI-compatible proxy backed by a ChatGPT browser session; its description presents no reverse-engineering findings.",
+    "reason_zh": "该项目主要通过 ChatGPT 浏览器会话提供 Anthropic 与 OpenAI 兼容代理；项目介绍未呈现逆向分析成果。",
     "readme_sha256": "5e902a0008917f6e69a33ef8de43e0a0e6804e23ec6243b482709798ccee1247",
     "evidence_url": "https://github.com/WackyDawg/free-gpt-api/blob/ef6f8be46d43c46c4a96ec9186d0f849d91f1ae0/README.md",
     "reviewed_at": "2026-11-06"
@@ -7584,8 +7584,8 @@
   "scan-1202397101": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "JDX_ReverseEngineeringExample uses reverse engineering to mean generating Java ORM classes and mappings from a MySQL schema, outside program or protocol analysis.",
-    "reason_zh": "JDX_ReverseEngineeringExample 所称的逆向工程是根据 MySQL 数据库结构生成 Java ORM 类和映射，并非程序或协议分析。",
+    "reason_en": "JDX_ReverseEngineeringExample uses reverse engineering to mean generating Java ORM classes and mappings from a MySQL schema.",
+    "reason_zh": "JDX_ReverseEngineeringExample 所称的逆向工程是根据 MySQL 数据库结构生成 Java ORM 类和映射。",
     "readme_sha256": "057bb86745582335de38fadf88d89c301fd873a6f9efa102c402b918d67a9af5",
     "evidence_url": "https://github.com/SoftwareTree/JDX_ReverseEngineeringExample/blob/68f86c39c8920175d940bbaafbbed5a266a36038/README.md",
     "reviewed_at": "2026-11-06"
@@ -7782,8 +7782,8 @@
   "scan-1224800295": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "The project's main deliverable is an image-generation CLI that reuses an OpenClaw OAuth flow; its reverse-engineering section documents that borrowed service workflow rather than a distinct RE tool.",
-    "reason_zh": "项目主要提供复用 OpenClaw OAuth 流程的图片生成命令行工具；逆向章节描述的是该服务调用流程，并非独立的逆向分析工具。",
+    "reason_en": "The project’s main deliverable is an image-generation CLI that reuses an OpenClaw OAuth flow; its reverse-engineering section documents that borrowed service workflow.",
+    "reason_zh": "项目主要提供复用 OpenClaw OAuth 流程的图片生成命令行工具；逆向章节描述的是该服务调用流程。",
     "readme_sha256": "24b1b9b48db117d1387383b5404ebaac9b9ef669a83e02ff1827be0e38b70214",
     "evidence_url": "https://github.com/whackw-kali/chatgpt-image-cli/blob/dd5ca8e164b91ee9c1262572eb338e576f7035b9/README.md",
     "reviewed_at": "2026-11-08"
@@ -8259,8 +8259,8 @@
   "scan-1267750763": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "The Delta Force study analyzes level-design choices in three maps, using reverse study to mean design critique rather than software or game reverse engineering.",
-    "reason_zh": "这份《三角洲行动》研究讨论三张地图的关卡设计；其中的“逆向拆解”是设计评论，并非对游戏软件的逆向工程。",
+    "reason_en": "The Delta Force study analyzes level-design choices in three maps, using reverse study to mean design critique.",
+    "reason_zh": "这份《三角洲行动》研究讨论三张地图的关卡设计；其中的“逆向拆解”是设计评论。",
     "readme_sha256": "f58fc84c054a470f04527e246ec504a54a7caaa68185bce677b1e9cefee88a6a",
     "evidence_url": "https://github.com/momowangOUO/delta-force-map-system-reverse-study/blob/33c844fcac6fa35502c0c73b8096e6c6d2875f6c/README.md",
     "reviewed_at": "2026-11-06"
@@ -8403,8 +8403,8 @@
   "scan-1276295845": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "ScanAlign processes 3D scans for CAD alignment; its use of reverse engineering concerns physical-part modeling, not software, firmware, protocol, or device analysis.",
-    "reason_zh": "ScanAlign 将三维扫描网格对齐以便导入 CAD；这里的“逆向”指实体零件建模，并非软件、固件、协议或设备分析。",
+    "reason_en": "ScanAlign processes 3D scans for CAD alignment; its use of reverse engineering concerns physical-part modeling.",
+    "reason_zh": "ScanAlign 将三维扫描网格对齐以便导入 CAD；这里的“逆向”指实体零件建模。",
     "readme_sha256": "f10b0da5645a1f346152c3357ca0900842652e300ee2fb743eb2bc1516cdf9ea",
     "evidence_url": "https://github.com/Stastyle/ScanAlign/blob/6cb10ce6496e8fe19a2a0f94a51eaa0fa0e34009/README.md",
     "reviewed_at": "2026-11-06"
@@ -8466,8 +8466,8 @@
   "scan-1278515965": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "AMS-X is a filament-swap automation system for Bambu printers using local MQTT and sliced 3MF jobs; its documented research supports the app rather than analyzing a proprietary interface.",
-    "reason_zh": "AMS-X 是利用本地 MQTT 和切片 3MF 作业管理 Bambu 打印机换料的自动化系统；所述研究服务于应用实现，并非以专有接口分析为主体。",
+    "reason_en": "AMS-X is a filament-swap automation system for Bambu printers using local MQTT and sliced 3MF jobs; its documented research supports the app.",
+    "reason_zh": "AMS-X 是利用本地 MQTT 和切片 3MF 作业管理 Bambu 打印机换料的自动化系统；所述研究服务于应用实现。",
     "readme_sha256": "2956cd1a75274b844a608ea83011dd5c7b0681fa30158a3971c43c2cf70356e6",
     "evidence_url": "https://github.com/Amsozzer1/AMS/blob/9e9d33891a7708e17a44290cb3cfc26ec8e55eef/README.md",
     "reviewed_at": "2026-11-06"
@@ -8637,8 +8637,8 @@
   "scan-1288671896": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Weave is chiefly a Rust Windows compatibility runtime for Linux; behavioral references inform its API implementation, but it does not present reverse engineering as its primary work.",
-    "reason_zh": "Weave 主要是面向 Linux 的 Rust Windows 兼容层；行为参考用于实现 API，项目本身并非以逆向分析为主。",
+    "reason_en": "Weave is chiefly a Rust Windows compatibility runtime for Linux; behavioral references inform its API implementation.",
+    "reason_zh": "Weave 主要是面向 Linux 的 Rust Windows 兼容层；行为参考用于实现 API。",
     "readme_sha256": "eee44480f330a1c9f903f0074afc036f84691a599f8b39e83b99502fd1f9d1d0",
     "evidence_url": "https://github.com/The-Libre-Project/Weave/blob/93abf0a95598a26a7796dfa07c315df9ec0347cc/README.md",
     "reviewed_at": "2026-11-06"
@@ -9078,8 +9078,8 @@
   "scan-1311051794": {
     "decision": "exclude",
     "reason_code": "game-mod-no-re",
-    "reason_en": "The repository's published subject is installing force feedback, camera and shifter mods for Mafia; the documentation does not establish an RE investigation as its main work.",
-    "reason_zh": "仓库主要提供《Mafia》的力反馈、视角和排挡杆模组安装工具；仓库资料不足以把逆向调查视为项目主体。",
+    "reason_en": "The repository’s published subject is installing force feedback, camera and shifter mods for Mafia; its documentation focuses on those mod tools.",
+    "reason_zh": "仓库主要提供《Mafia》的力反馈、视角和排挡杆模组安装工具；仓库资料聚焦这些模组工具。",
     "readme_sha256": "036d5d48a64d1388434c9494c1dd2781d276b14840dbd63ac22f25c0fa07a9f6",
     "evidence_url": "https://github.com/ALXGtech/alxgtech-mafia1-mods/blob/4a13de0ef78ae11527755d0644fe0565dc32ef36/README.md",
     "reviewed_at": "2026-11-06"
@@ -9186,8 +9186,8 @@
   "scan-1315713083": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "specback derives specification documents from existing source code for maintenance and onboarding; its reverse direction concerns software documentation, not target reverse engineering.",
-    "reason_zh": "specback 从现有源码生成维护和交接用规格文档；这里的“逆向”指由代码回推文档，不是对目标程序进行逆向分析。",
+    "reason_en": "specback derives specification documents from existing source code for maintenance and onboarding; its reverse direction concerns software documentation.",
+    "reason_zh": "specback 从现有源码生成维护和交接用规格文档；这里的“逆向”指由代码回推文档。",
     "readme_sha256": "02b8509c992e4a0ed79ca2d01e94df201f09ffc430d96a63106964677d8ba713",
     "evidence_url": "https://github.com/nekolife1984/specback/blob/2543821c2850f88418e5702775071ab848314c5e/README.md",
     "reviewed_at": "2026-11-06"
@@ -9258,8 +9258,8 @@
   "scan-1318760294": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "The 13-chapter guide teaches Windows architecture, authentication and endpoint defense; it does not present reverse-engineering instruction or findings as its subject.",
-    "reason_zh": "这份 13 章指南讲解 Windows 架构、身份认证和终端防护，主体并非逆向工程教学或研究成果。",
+    "reason_en": "The 13-chapter guide teaches Windows architecture, authentication and endpoint defense.",
+    "reason_zh": "这份 13 章指南讲解 Windows 架构、身份认证和终端防护。",
     "readme_sha256": "3a7e207d8393b295474ce1ea9f8581d3c71cbb1578092009776e2c5ba7feab14",
     "evidence_url": "https://github.com/akn-cybersec/windows-internals-security/blob/cae4c3220de0c1c837ad5411cf1a144b9ddfba8b/README.md",
     "reviewed_at": "2026-11-06"
@@ -9420,8 +9420,8 @@
   "scan-1328916072": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "baiduwangpan-cli is chiefly a Baidu Netdisk file-management CLI and MCP service; its group API research supports that app rather than forming the project's primary subject.",
-    "reason_zh": "baiduwangpan-cli 主要是百度网盘文件管理 CLI 和 MCP 服务；群聊 API 逆向笔记服务于该应用，并非项目主体。",
+    "reason_en": "baiduwangpan-cli is chiefly a Baidu Netdisk file-management CLI and MCP service; its group API research supports that app.",
+    "reason_zh": "baiduwangpan-cli 主要是百度网盘文件管理 CLI 和 MCP 服务；群聊 API 逆向笔记服务于该应用。",
     "readme_sha256": "a320d94db6fd0742e8b1e8fa65340d87be1901999c13a6a6a785269b415f2c1b",
     "evidence_url": "https://github.com/NkAntony777/baiduwangpan-cli/blob/ccdacc553f4df591bd9fe77b97693847fde6e75c/README.md",
     "reviewed_at": "2026-11-06"
@@ -9601,8 +9601,8 @@
   "scan-1338686923": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "The skill reconstructs a product's user journey and architecture from pages and screenshots, rather than analyzing software internals or an original program.",
-    "reason_zh": "该 Skill 根据页面和截图梳理产品用户旅程与架构，研究对象不是软件内部实现或原程序行为。",
+    "reason_en": "The skill reconstructs a product’s user journey and architecture from pages and screenshots.",
+    "reason_zh": "该 Skill 根据页面和截图梳理产品用户旅程与架构。",
     "readme_sha256": "75846b8545285cded0a23f7d44f53155bb29286bedeeaf087cba3678330125f3",
     "evidence_url": "https://github.com/HengboLee/product-reverse-engineering-skill/blob/63a3ad29457bdff5f5918e27edbfcf38b9907575/README.md",
     "reviewed_at": "2026-11-06"
@@ -9835,8 +9835,8 @@
   "scan-1345013280": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Elden Ring Live Map is primarily a play companion; its save-format and archive investigations support map generation and progress tracking rather than being its primary subject.",
-    "reason_zh": "Elden Ring Live Map 主要是游戏辅助地图；存档格式和资源档案研究用于生成地图及追踪进度，并非项目主旨。",
+    "reason_en": "Elden Ring Live Map is primarily a play companion; its save-format and archive investigations support map generation and progress tracking.",
+    "reason_zh": "Elden Ring Live Map 主要是游戏辅助地图；存档格式和资源档案研究用于生成地图及追踪进度。",
     "readme_sha256": "662a9e16593d0fcd9a2b811c21c543b5ac98549e29cb9b6000438c28fed08060",
     "evidence_url": "https://github.com/egormagurin/EldenRingMap/blob/48f42e570ada1dd28717d7ce56aaeb92ee14521b/README.md",
     "reviewed_at": "2026-11-06"
@@ -9853,8 +9853,8 @@
   "scan-1346705861": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "rknpu-submit adapts librocketnpu’s submission interface to a documented vendor driver ioctl API for inference; it does not present analysis as its subject.",
-    "reason_zh": "rknpu-submit 将 librocketnpu 的提交接口适配到厂商驱动公开的 ioctl API，用于推理运行，并非以逆向分析为主题。",
+    "reason_en": "rknpu-submit adapts librocketnpu’s submission interface to a documented vendor driver ioctl API for inference.",
+    "reason_zh": "rknpu-submit 将 librocketnpu 的提交接口适配到厂商驱动公开的 ioctl API，用于推理运行。",
     "readme_sha256": "b414cbe4a7c23961e61b30018c8d5074384d06f3ed03054af46bd19515cade1d",
     "evidence_url": "https://github.com/gregordinary/rknpu-submit/blob/20543f62bd5218924484b1e4951e4e5ed8d1fe72/README.md",
     "reviewed_at": "2026-11-06"
@@ -10151,8 +10151,8 @@
   "scan-1357121826": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "Hermes Unrestricted modifies agent approvals, filtering and model-provider setup; its reverse-engineering language appears only in a general persona file.",
-    "reason_zh": "Hermes Unrestricted 修改智能体审批、过滤和模型接入；逆向工程只出现在通用角色设定中，并非项目功能。",
+    "reason_en": "Hermes Unrestricted modifies agent approvals, filtering and model-provider setup; reverse-engineering language appears only in a general persona file.",
+    "reason_zh": "Hermes Unrestricted 修改智能体审批、过滤和模型接入；逆向工程只出现在通用角色设定中。",
     "readme_sha256": "54e645438b77def3494895fb3b7ed6ebb81fe165dda4b6ba6e2013dd6ce993de",
     "evidence_url": "https://github.com/TLcmmmm/hermes-unrestricted/blob/732a888712b21240b7bee3ec7a2bb8a8728a3043/README.md",
     "reviewed_at": "2026-11-06"
@@ -10277,8 +10277,8 @@
   "scan-1361668998": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "PromptLens estimates image and video generation prompts through vision analysis; its use of reverse engineering concerns media prompts rather than software or systems.",
-    "reason_zh": "PromptLens 通过视觉分析推测图片和视频的生成提示词；这里的“逆向”针对媒体提示词，并非软件或系统。",
+    "reason_en": "PromptLens estimates image and video generation prompts through vision analysis; its use of reverse engineering concerns media prompts.",
+    "reason_zh": "PromptLens 通过视觉分析推测图片和视频的生成提示词；这里的“逆向”针对媒体提示词。",
     "readme_sha256": "3925131f04caa444f078217e6e7758079f361aa975229042f851ea51932b754a",
     "evidence_url": "https://github.com/rootkiller6788/PromptLens/blob/5b32f4858c67fd10f7d222fb45b1d0cbfec50d80/README.en.md",
     "reviewed_at": "2026-11-06"
@@ -10304,8 +10304,8 @@
   "scan-1362818555": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Keystroke-LLM primarily predicts typing with a NumPy model and lights keyboard keys; its recovered HID mapping serves that application rather than a standalone analysis resource.",
-    "reason_zh": "Keystroke-LLM 主要用 NumPy 模型预测输入并点亮键盘，逆向得到的 HID 映射服务于该应用，并非独立的分析项目。",
+    "reason_en": "Keystroke-LLM primarily predicts typing with a NumPy model and lights keyboard keys; its recovered HID mapping serves that application.",
+    "reason_zh": "Keystroke-LLM 主要用 NumPy 模型预测输入并点亮键盘，逆向得到的 HID 映射服务于该应用。",
     "readme_sha256": "035a3aaf10e36e51bb69e3b726bea9ef2baaa299988930d83ef643d84bafb67b",
     "evidence_url": "https://github.com/Drix10/keystroke-llm/blob/96bd67a6daa5e0b8722ab51dfed7aed36032da43/README.md",
     "reviewed_at": "2026-11-06"
@@ -10322,8 +10322,8 @@
   "scan-1363387163": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "exploitcraft is an offline binary-exploitation lab centered on vulnerable fixtures, crash offsets, ROP chains, PoC payloads and fuzzing rather than reverse engineering.",
-    "reason_zh": "exploitcraft 是围绕自制漏洞样本、崩溃偏移、ROP 链、PoC 载荷和模糊测试的离线漏洞利用实验室，主线并非逆向分析。",
+    "reason_en": "exploitcraft is an offline binary-exploitation lab centered on vulnerable fixtures, crash offsets, ROP chains, PoC payloads and fuzzing.",
+    "reason_zh": "exploitcraft 是围绕自制漏洞样本、崩溃偏移、ROP 链、PoC 载荷和模糊测试的离线漏洞利用实验室。",
     "readme_sha256": "8cc466c8c1f5b150a4d7c518c66df8062ba9d5206c2f497afce039f159afe20d",
     "evidence_url": "https://github.com/5h4d0wn1k/exploitcraft/blob/b2a12302beab0f1490627b0a92317d04a4ff0ad4/README.md",
     "reviewed_at": "2026-11-06"
@@ -10817,8 +10817,8 @@
   "scan-1393271188": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "The README documents APIMart video-generation routes, pricing and prompts; it makes no claim of original reverse-engineering work.",
-    "reason_zh": "README 介绍 APIMart 视频生成接口、价格和提示词，没有记录仓库自身进行的逆向研究。",
+    "reason_en": "The README documents APIMart video-generation routes, pricing and prompts, with no original reverse-engineering work described.",
+    "reason_zh": "README 介绍 APIMart 视频生成接口、价格和提示词，未记录仓库自身进行的逆向研究。",
     "readme_sha256": "26370e825fd319da336a6ce4a139982b739f09063394070f1c00b21bef51244f",
     "evidence_url": "https://github.com/apimartows0gtnwi/reverse-engineered-api-fr/blob/bc400950dedcc9d3dbce06651fae6e424098f886/README.md",
     "reviewed_at": "2026-11-06"
@@ -11476,8 +11476,8 @@
   "scan-1424464498": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "REM studies companies' advertising, search presence, and customer funnels; its stated inspiration from REA does not make marketing analysis a reverse-engineering target.",
-    "reason_zh": "REM 分析企业广告、搜索曝光和获客漏斗；虽然提到受 REA 启发，研究对象仍是营销活动。",
+    "reason_en": "REM studies companies' advertising, search presence, and customer funnels; its stated REA inspiration informs a marketing-analysis project.",
+    "reason_zh": "REM 分析企业广告、搜索曝光和获客漏斗；其提到的 REA 启发用于营销活动研究。",
     "readme_sha256": "e2912c188604c27b09a551ab0eae70efa24470410d9c30e67ae29a8003cde674",
     "evidence_url": "https://github.com/dansugc/reverse-engineer-marketing/blob/5b78198b2578997412853ab0858b10670fa74984/README.md",
     "reviewed_at": "2026-11-06"
@@ -11881,8 +11881,8 @@
   "scan-1432052004": {
     "decision": "hold",
     "reason_code": "needs-maintainer-decision",
-    "reason_en": "The project reconstructs an RC aircraft control protocol and distributes transmitter firmware, while stating that flight behavior, range and lost-link response remain unverified.",
-    "reason_zh": "该项目重建遥控飞机控制协议并提供发射模块固件，但明确表示飞行行为、航程和失联响应尚未验证，需要维护者判断。",
+    "reason_en": "The project reconstructs an RC aircraft control protocol and distributes transmitter firmware; flight behavior, range and lost-link response remain unverified.",
+    "reason_zh": "该项目重建遥控飞机控制协议并提供发射模块固件；飞行行为、航程和失联响应尚未验证，需要维护者判断。",
     "readme_sha256": "ae53fdde8e59c209c0d23d166353e5f2b90b21c00c99d44ee5aa3e745db41e37",
     "evidence_url": "https://github.com/HermanL1106/fms-beaver-multiprotocol/blob/76ebb3d254f5484285c5a8bf95d9a4cc1517ae35/README.md",
     "reviewed_at": "2026-11-06"
@@ -11962,8 +11962,8 @@
   "scan-1433050489": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "The repository reconstructs a physical model-kit connector from photographs for 3D printing, rather than analyzing software, firmware or a communication format.",
-    "reason_zh": "仓库依据照片重建拼装模型的实体连接轴并提供 3D 打印文件，研究对象不是软件、固件或通信格式。",
+    "reason_en": "The repository reconstructs a physical model-kit connector from photographs for 3D printing; the subject is a physical part.",
+    "reason_zh": "仓库依据照片重建拼装模型的实体连接轴并提供 3D 打印文件，研究对象是实体零件。",
     "readme_sha256": "94423f9bb1e2cbe5026a08c769b74adf459c0dc664cbcea8fb86cc35ad824e3a",
     "evidence_url": "https://github.com/102637111/bzliuxing-wing-backpack-shaft/blob/3940c5dfd13c1ad942f960bb14a1757cf0a6bd8d/README.md",
     "reviewed_at": "2026-11-06"
@@ -12322,8 +12322,8 @@
   "scan-1435118471": {
     "decision": "exclude",
     "reason_code": "general-security",
-    "reason_en": "ai-web-arsenal is chiefly a web attack-surface and security-testing inventory; its configured REA MCP entry is one supporting tool, not the project's subject.",
-    "reason_zh": "ai-web-arsenal 主要整理 Web 攻击面和安全测试流程；REA MCP 配置只是辅助工具之一，并非项目主体。",
+    "reason_en": "ai-web-arsenal is chiefly a web attack-surface and security-testing inventory; its configured REA MCP entry is one supporting tool.",
+    "reason_zh": "ai-web-arsenal 主要整理 Web 攻击面和安全测试流程；REA MCP 配置是辅助工具之一。",
     "readme_sha256": "035fc4553b6b4e6c01b1a76982e172d849044543eb8cd2289a53d78efefd2753",
     "evidence_url": "https://github.com/harshgounder/ai-web-arsenal/blob/eb73b1f98c55ebcdaf134d7109bbed4b3da81f7e/README.md",
     "reviewed_at": "2026-11-06"
@@ -12349,7 +12349,7 @@
   "scan-1435151157": {
     "decision": "exclude",
     "reason_code": "game-mod-no-re",
-    "reason_en": "altered-space-gb-cn is a Chinese translation build pipeline for an original Game Boy ROM; its documentation describes patch layout and verification, not an investigation of the game.",
+    "reason_en": "altered-space-gb-cn is a Chinese translation build pipeline for an original Game Boy ROM; its documentation covers patch layout and verification, with no investigation of the game documented.",
     "reason_zh": "altered-space-gb-cn 是从原版 Game Boy ROM 生成中文汉化版的构建流程；文档说明补丁布局与校验，未记录对游戏的逆向分析。",
     "readme_sha256": "d5e022f3478fe196c7152a528577aaf06029a7beeb7cb4096cc9d04ba2abaee8",
     "evidence_url": "https://github.com/krallenas/altered-space-gb-cn/blob/c126b93bfc4aad42db716aa7a18e553f368450f7/README.md",
@@ -12403,8 +12403,8 @@
   "scan-1435393249": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "RevokeTrace forecasts effects of Stellar issuer authorization changes from ledger snapshots; its protocol research supports that application rather than analyzing an unknown protocol.",
-    "reason_zh": "RevokeTrace 根据账本快照预测 Stellar 发行方授权变更的影响；协议资料服务于该应用，并非对未知协议开展逆向分析。",
+    "reason_en": "RevokeTrace forecasts effects of Stellar issuer authorization changes from ledger snapshots; its protocol research supports that application.",
+    "reason_zh": "RevokeTrace 根据账本快照预测 Stellar 发行方授权变更的影响；协议资料服务于该应用。",
     "readme_sha256": "ce16ab67019681d328053313ab538de8b0cee6666e5ebc12b868bc40ac566db1",
     "evidence_url": "https://github.com/RevokeTrace/revoketrace/blob/e09c5c78ad32c315e51110e9f35b2827b4a50381/README.md",
     "reviewed_at": "2026-11-06"
@@ -12430,8 +12430,8 @@
   "scan-1435458925": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "The Chrome CDP program automates Douyin playback quality, fullscreen and window behavior; the page observations support those features rather than an RE investigation.",
-    "reason_zh": "该 CDP 程序用于自动调整抖音网页画质、全屏和窗口行为；页面观察服务于这些功能，并非独立的逆向研究。",
+    "reason_en": "The Chrome CDP program automates Douyin playback quality, fullscreen and window behavior; the page observations support those features.",
+    "reason_zh": "该 CDP 程序用于自动调整抖音网页画质、全屏和窗口行为；页面观察服务于这些功能。",
     "readme_sha256": "aa39963e789c20db416b10fa1113431a4778bd84cbea324d0f156b8c42abb44a",
     "evidence_url": "https://github.com/2458090042-gif/kaidouyin-web/blob/ef4ba82ad0ba749c6a9a325a3c1b11f107dc1c11/README.md",
     "reviewed_at": "2026-11-06"
@@ -12520,7 +12520,7 @@
   "scan-1435613344": {
     "decision": "exclude",
     "reason_code": "no-real-content",
-    "reason_en": "The repository is a website showcase intake with one project card and a generated index, not a substantive set of reverse-engineering findings or resources.",
+    "reason_en": "The repository is a website showcase intake with one project card and a generated index; its visible content has no substantive reverse-engineering findings or resources.",
     "reason_zh": "仓库用于接收网站展示卡片，现有内容仅一条项目记录和生成索引，缺少实质性的逆向成果或资源整理。",
     "readme_sha256": "1603676f222c7efb034a7f71461711b7e948b6bc8cd339a0c3de03c238fd11b8",
     "evidence_url": "https://github.com/RusticStack/hydra-re-showcase/blob/70fa98c8db08fcb24c80c9ba56bb20ce85bbb070/README.md",
@@ -12925,8 +12925,8 @@
   "scan-1436717807": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "CabinetSize primarily changes Survival Log storage capacity; its reverse-engineering findings support the mod but are not the project's primary deliverable.",
-    "reason_zh": "CabinetSize 的主要成果是调整《生存日志》柜子容量；逆向记录用于实现模组，并非仓库的主要交付内容。",
+    "reason_en": "CabinetSize primarily changes Survival Log storage capacity; its reverse-engineering findings support the mod.",
+    "reason_zh": "CabinetSize 的主要成果是调整《生存日志》柜子容量；逆向记录用于实现模组。",
     "readme_sha256": "2dcbfbfaa4d53bf7da45b380edba9423f64ec9e3cc04a4db2d71c30289ac889a",
     "evidence_url": "https://github.com/survivallog-mods/CabinetSize/blob/b8dbad5979b0d8e25dde33139f3bb6cf54c10271/README.md",
     "reviewed_at": "2026-11-06"
@@ -13015,8 +13015,8 @@
   "scan-1436727442": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "The repository is chiefly a release hub and source tree for Survival Log gameplay mods; its disassembly notes support mod implementation rather than a standalone analysis entry.",
-    "reason_zh": "该仓库主要汇集《生存日志》玩法模组及发布入口；其中反汇编笔记服务于模组实现，并非独立的分析项目。",
+    "reason_en": "The repository is chiefly a release hub and source tree for Survival Log gameplay mods; its disassembly notes support mod implementation.",
+    "reason_zh": "该仓库主要汇集《生存日志》玩法模组及发布入口；其中反汇编笔记服务于模组实现。",
     "readme_sha256": "c4773c3bdd9ab2b411d71225cc6e5b6356f343d19d989373475717cf4169aa89",
     "evidence_url": "https://github.com/survivallog-mods/survivallog-mods/blob/cb05a26fc692f300b4c1dc07cd33b1d7bcc4c59d/README.md",
     "reviewed_at": "2026-11-06"
@@ -13168,8 +13168,8 @@
   "scan-1437110155": {
     "decision": "hold",
     "reason_code": "target-unsupported",
-    "reason_en": "BlackBox Twin has substantive behavioral reconstruction tooling, but its documented support is confined to owned synthetic fixtures and does not establish a catalog target.",
-    "reason_zh": "BlackBox Twin 提供了实质性的黑盒行为重建工具，但文档所支持的对象仅为自有合成样例，尚无法确定目录所需的目标类型。",
+    "reason_en": "BlackBox Twin has substantive behavioral reconstruction tooling, but its documented support is confined to owned synthetic fixtures; a catalog target remains unidentified.",
+    "reason_zh": "BlackBox Twin 提供了实质性的黑盒行为重建工具，但文档所支持的对象仅为自有合成样例；目录所需的目标类型尚待确定。",
     "readme_sha256": "2c26f3ba1f15fa07a32707edca83379acc36c0fe659e0c239425f4f2a6f9ad60",
     "evidence_url": "https://github.com/Aayush-Kadam/blackbox-twin/blob/48248a04df8e30f6028b57d39f3bb7db7255e937/README.md",
     "reviewed_at": "2026-11-06"
@@ -13285,8 +13285,8 @@
   "scan-1437564110": {
     "decision": "hold",
     "reason_code": "needs-maintainer-decision",
-    "reason_en": "The APK investigation is substantive, but its tools harvest VPN configurations containing private keys and convert the recovered nodes into proxy endpoints despite acknowledging an authorization gap.",
-    "reason_zh": "APK 分析有实质内容，但工具会批量获取含私钥的 VPN 配置并转为代理出口；作者也承认取得凭证不等于获得使用授权，需要维护者裁定。",
+    "reason_en": "The APK investigation is substantive, but its tools harvest VPN configurations containing private keys and convert the recovered nodes into proxy endpoints despite an acknowledged authorization gap.",
+    "reason_zh": "APK 分析有实质内容，但工具会批量获取含私钥的 VPN 配置并转为代理出口；作者也承认使用这些凭证仍需另行授权，需要维护者裁定。",
     "readme_sha256": "d1d6df8f7db75ac171587431fa62347ba648a2cb5af5c38bb61316c56138f887",
     "evidence_url": "https://github.com/lza6/Russia-VPN-APP/blob/4c8043ee0ed3cd7c0d6b9b3898c56ba9f7edb9dc/README.md",
     "reviewed_at": "2026-11-06"
@@ -13439,7 +13439,7 @@
     "decision": "exclude",
     "reason_code": "cheat-or-evasion",
     "reason_en": "The High Tech VPN tools decrypt a provider's live node credentials and prepare them for a proxy pool despite the source acknowledging that access may lack authorization.",
-    "reason_zh": "该工具解密服务商实时下发的节点凭证并导出代理池；文中也承认取得凭证不等于获准使用。",
+    "reason_zh": "该工具解密服务商实时下发的节点凭证并导出代理池；文中也承认这些凭证可能缺乏使用授权。",
     "readme_sha256": "4b06151b7cb7fc9f7be8cef286a52ef915623669617e4d31b6f33d9e7d129197",
     "evidence_url": "https://github.com/lza6/High-Tech-VPN-APK-Reverse/blob/4b9382e1516da0de83e0f3becdfbac38891b7081/README.md",
     "reviewed_at": "2026-11-06"
@@ -13457,7 +13457,7 @@
     "decision": "exclude",
     "reason_code": "cheat-or-evasion",
     "reason_en": "Although it contains APK analysis, the stated follow-on objective is extracting VPN credentials to assemble a usable pool of the operator's nodes without authorization.",
-    "reason_zh": "仓库虽有 APK 分析，但后续目标是提取 VPN 凭证并组建可用的运营方节点池；来源自身指出取得凭证也不等于获得使用授权。",
+    "reason_zh": "仓库虽有 APK 分析，但后续目标是提取 VPN 凭证并组建可用的运营方节点池；来源自身指出使用这些凭证需要另行授权。",
     "readme_sha256": "110d798cee8b22a07a96c9d30b0742bec81d1b88ea06ef4f03ecbd115a5d1b9a",
     "evidence_url": "https://github.com/lza6/Aloha-VPN-APK-RE/blob/1dd10b2d20111a90a6e3e18d13b3a3f2eca160ba/docs/NEWAPI_INTEGRATION.md",
     "reviewed_at": "2026-11-06"
@@ -13537,8 +13537,8 @@
   "scan-1437758620": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "The primary deliverable is an ASKA companion mod for chat and planned orders; the RE notes support its development rather than constitute its main subject.",
-    "reason_zh": "仓库的主要成果是 ASKA 同伴聊天模组及后续指令功能；逆向笔记服务于模组开发，并非项目主体。",
+    "reason_en": "The primary deliverable is an ASKA companion mod for chat and planned orders; the RE notes support its development.",
+    "reason_zh": "仓库的主要成果是 ASKA 同伴聊天模组及后续指令功能；逆向笔记服务于模组开发。",
     "readme_sha256": "74b1d2c1fb5d45c07fef6bf05df687a07b683bc18e88b7cd647f4c41191f328f",
     "evidence_url": "https://github.com/julianu37/AI-Companions-Aska/blob/85e288802941115d86a965c6954b8857e2476cc2/README.md",
     "reviewed_at": "2026-11-06"
@@ -13915,8 +13915,8 @@
   "scan-1438676866": {
     "decision": "hold",
     "reason_code": "target-unsupported",
-    "reason_en": "Byte-0-scope visualizes arbitrary file bytes and compares files, but the repository does not establish executable analysis or another supported target.",
-    "reason_zh": "Byte-0-scope 能将任意文件的字节可视化并比较差异，但现有材料没有说明它分析可执行文件或其他可支持的目标。",
+    "reason_en": "Byte-0-scope visualizes arbitrary file bytes and compares files; the repository leaves executable analysis and other supported targets undocumented.",
+    "reason_zh": "Byte-0-scope 能将任意文件的字节可视化并比较差异；现有材料未说明它分析可执行文件或其他可支持的目标。",
     "readme_sha256": "e1e4c68013bf7e5e3c963f7b4c345c9d92e007c9fbab0bb74c7cae841e4e3e95",
     "evidence_url": "https://github.com/pav1388/byte-0-scope/blob/b793eda7f9a07702a6c8705c438c4a96b04f2989/README.md",
     "reviewed_at": "2026-11-06"
@@ -13942,8 +13942,8 @@
   "scan-1438769889": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Gateway Manager's own description centers on a local AI API proxy, routing, prompt injection and observability; its claimed protocol inspiration does not make analysis its subject.",
-    "reason_zh": "Gateway Manager 的主体是本地 AI API 代理，提供路由、提示词注入和监控；协议借鉴只是背景，仓库没有以逆向分析为主要成果。",
+    "reason_en": "Gateway Manager's own description centers on a local AI API proxy, routing, prompt injection and observability; its claimed protocol inspiration is background to those functions.",
+    "reason_zh": "Gateway Manager 的主体是本地 AI API 代理，提供路由、提示词注入和监控；协议借鉴是这些功能的背景。",
     "readme_sha256": "b512bd0dfaef97dcd4d0342aa7b135f0624236ec08cfe0173de7725339a5f68e",
     "evidence_url": "https://github.com/fengye102/Gateway-Manager/blob/d3e49d7cfeda9e47a08ce68c81c983e29895a213/README.md",
     "reviewed_at": "2026-11-06"
@@ -14140,8 +14140,8 @@
   "scan-1439250715": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "The bridge customizes the NetEase CloudMusic interface with Wallpaper Engine backgrounds; the documented CEF observations serve that customization rather than an RE investigation.",
-    "reason_zh": "该桥接程序把 Wallpaper Engine 壁纸放进网易云音乐界面；文中的 CEF 观察用于实现界面定制，并非项目的逆向研究主题。",
+    "reason_en": "The bridge customizes the NetEase CloudMusic interface with Wallpaper Engine backgrounds; the documented CEF observations serve that customization.",
+    "reason_zh": "该桥接程序把 Wallpaper Engine 壁纸放进网易云音乐界面；文中的 CEF 观察用于实现界面定制。",
     "readme_sha256": "ca8cbf11244cda5abbd44b01153a773dc42d05abecf45ff141386cc247167840",
     "evidence_url": "https://github.com/rainyao15/rev-practice/blob/6118bd5222c2ad050e1473a6fdbe21e03f67173f/README.md",
     "reviewed_at": "2026-11-06"
@@ -14149,8 +14149,8 @@
   "scan-1439253853": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "WhatsApp Local Server implements a local protocol simulator and phone test setup, but its documentation does not establish original protocol reconstruction or findings.",
-    "reason_zh": "WhatsApp Local Server 提供本地协议模拟服务和手机测试接入流程，但文档未交代原创的协议逆向过程或研究发现。",
+    "reason_en": "WhatsApp Local Server implements a local protocol simulator and phone test setup; its documentation leaves original protocol reconstruction and findings undescribed.",
+    "reason_zh": "WhatsApp Local Server 提供本地协议模拟服务和手机测试接入流程；文档未交代原创的协议逆向过程或研究发现。",
     "readme_sha256": "bda59332e38e7b19e40c4c4bb315914f29a79a7beed7d8d7ccad87653296b417",
     "evidence_url": "https://github.com/WhatsappWiki/whatsapp-server-demo/blob/1b5a8380c9ef275cef46c374454497994ca7c8f7/README.md",
     "reviewed_at": "2026-11-06"
@@ -14221,8 +14221,8 @@
   "scan-1439486550": {
     "decision": "exclude",
     "reason_code": "detection-only",
-    "reason_en": "BinStat classifies PE and ELF executables as packed or unpacked; its stated purpose is detection rather than analysis of their code or behaviour.",
-    "reason_zh": "BinStat 对 PE 和 ELF 可执行文件进行加壳判定，文档所述功能是检测，并非分析程序代码或行为。",
+    "reason_en": "BinStat classifies PE and ELF executables as packed or unpacked; its documented function is detection, with no code or behavior analysis described.",
+    "reason_zh": "BinStat 对 PE 和 ELF 可执行文件进行加壳判定；文档所述功能限于检测，缺少程序代码或行为分析。",
     "readme_sha256": "4cd027f28c8adffa67c1fafdc3b4bfe89102b97c56accc8405f424fb13dca068",
     "evidence_url": "https://github.com/packing-box/binstat/blob/86adb6c8310cfe1f36b2bf43cfc70cf51960c79d/README.md",
     "reviewed_at": "2026-11-06"
@@ -14266,8 +14266,8 @@
   "scan-1439692800": {
     "decision": "exclude",
     "reason_code": "game-mod-no-re",
-    "reason_en": "Lycoreia primarily delivers a Slime Rancher 2 multiplayer mod; its game-behavior notes support fixes but do not make reverse engineering the project's main subject.",
-    "reason_zh": "Lycoreia 的主体是《Slime Rancher 2》多人联机模组；游戏行为笔记服务于模组修复，逆向分析并非项目主旨。",
+    "reason_en": "Lycoreia primarily delivers a Slime Rancher 2 multiplayer mod; its game-behavior notes support fixes.",
+    "reason_zh": "Lycoreia 的主体是《Slime Rancher 2》多人联机模组；游戏行为笔记服务于模组修复。",
     "readme_sha256": "af4e1417c334ceeef69e51d54b77ffc3d9cb64551467afa65005beea9c370ced",
     "evidence_url": "https://github.com/rylaix/LYCOREIA/blob/da9af649b2d4f10a41bb6d4fc9c9ebfc4756249a/README.md",
     "reviewed_at": "2026-11-06"
@@ -14419,8 +14419,8 @@
   "scan-1440290961": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Crypto Quant Lab's primary subject is cryptocurrency trading backtests; the bytecode recovery explains the provenance of its script rather than forming its main work.",
-    "reason_zh": "Crypto Quant Lab 的主体是加密货币交易策略回测；字节码恢复只是解释脚本来源，并非项目的主要研究内容。",
+    "reason_en": "Crypto Quant Lab's primary subject is cryptocurrency trading backtests; the bytecode recovery explains the provenance of its script.",
+    "reason_zh": "Crypto Quant Lab 的主体是加密货币交易策略回测；字节码恢复用于解释脚本来源。",
     "readme_sha256": "7d6be1472aa7b81fe679205a8a157089f41d7efa5e6395a103babc16859a8f77",
     "evidence_url": "https://github.com/ilyaeis/crypto-quant-lab/blob/1ff93aa2cafdf8419f732c1e5b22a9b9239d65bd/README.md",
     "reviewed_at": "2026-11-06"
@@ -14500,8 +14500,8 @@
   "scan-1440404304": {
     "decision": "exclude",
     "reason_code": "no-real-content",
-    "reason_en": "The README is a TODO, and the file list shows no analysis or findings; the C file alone does not establish a completed ELF lab.",
-    "reason_zh": "README 仍是待填写的占位文本，文件清单也没有分析成果；仅有一份 C 文件不足以构成 ELF 分析实验。",
+    "reason_en": "The README is a TODO, and the file list shows a C file but no ELF analysis or findings for a completed lab.",
+    "reason_zh": "README 仍是待填写的占位文本，文件清单显示一份 C 文件，但没有 ELF 分析实验的成果。",
     "readme_sha256": "f723b172dd72645ff5d5eeeec5c0a9b9335defe1a2b99caf6b7d3c6995735084",
     "evidence_url": "https://github.com/wsuits6/p5-elf-lab/blob/e2e0cf37424dae51e444d195ee2c094756f3da35/README.md",
     "reviewed_at": "2026-11-06"
@@ -14545,8 +14545,8 @@
   "scan-1440508635": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "The repository's main deliverables are TV rooting, privacy-blocking and ad-free YouTube guides; its findings support those procedures rather than form a focused RE resource.",
-    "reason_zh": "仓库主要提供电视 root、隐私屏蔽和免广告 YouTube 操作指南；分析记录用于支撑这些操作，并非独立的逆向资源。",
+    "reason_en": "The repository's main deliverables are TV rooting, privacy-blocking and ad-free YouTube guides; its findings support those procedures.",
+    "reason_zh": "仓库主要提供电视 root、隐私屏蔽和免广告 YouTube 操作指南；分析记录用于支撑这些操作。",
     "readme_sha256": "8b0b7bb8fa40e38840af966ba023fd267931e12f6ca08a6c14b6c19abe3b100c",
     "evidence_url": "https://github.com/F4zzz/reversing-my-lg-tv/blob/a7b02c95909640f903074b21301074f8bfe2e816/README.md",
     "reviewed_at": "2026-11-06"
@@ -14626,8 +14626,8 @@
   "scan-1440757931": {
     "decision": "exclude",
     "reason_code": "unrelated",
-    "reason_en": "REE measures YouTube video-editing styles and generates style packs; its stated reverse engineering concerns editing technique rather than software or protocols.",
-    "reason_zh": "REE 测量 YouTube 视频的剪辑风格并生成风格包；这里的“逆向”对象是剪辑手法，不是软件或协议。",
+    "reason_en": "REE measures YouTube video-editing styles and generates style packs; its stated reverse engineering concerns editing technique.",
+    "reason_zh": "REE 测量 YouTube 视频的剪辑风格并生成风格包；这里的“逆向”对象是剪辑手法。",
     "readme_sha256": "d0c0a35c4cce84a3b7b15ca1cdc059106801b3dd4c2d586657971f2b3b19acc6",
     "evidence_url": "https://github.com/saifullahshafin/ree/blob/04f67cda41c0196cebac1e4a949ed73f24f3a5dd/README.md",
     "reviewed_at": "2026-11-06"
@@ -14635,8 +14635,8 @@
   "scan-1440764442": {
     "decision": "exclude",
     "reason_code": "cheat-or-evasion",
-    "reason_en": "Wildwood Pact is explicitly a Dimraeth cheat menu offering god mode, free purchases and skill points, with no analysis deliverable as its subject.",
-    "reason_zh": "Wildwood Pact 明确是一款 Dimraeth 作弊菜单，提供无敌、免费购买和技能点等功能，主体不是分析成果。",
+    "reason_en": "Wildwood Pact is explicitly a Dimraeth cheat menu offering god mode, free purchases and skill points; the repository provides no analysis deliverable.",
+    "reason_zh": "Wildwood Pact 明确是一款 Dimraeth 作弊菜单，提供无敌、免费购买和技能点等功能；仓库未提供分析成果。",
     "readme_sha256": "fdc54e28d24b307ec50cb8e710ca10e3e0806f7510459ccf5ffb2ab7b1722962",
     "evidence_url": "https://github.com/falorfrozen-cmd/dimraeth-wildwood-pact/blob/8db31fd2e1ef7d4cc983a275c3cbf5d46bb39568/README.md",
     "reviewed_at": "2026-11-06"
@@ -14653,8 +14653,8 @@
   "scan-1440896461": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Fire TV Burton Activation primarily activates a disabled launcher interface through a device configuration patch; its workflow is not an analysis or reconstruction resource.",
-    "reason_zh": "Fire TV Burton Activation 的主要用途是修改设备配置以启用原厂启动器界面，提供的是激活与恢复流程，而非逆向分析或重建成果。",
+    "reason_en": "Fire TV Burton Activation activates a disabled launcher interface through a device configuration patch; it provides activation and recovery procedures.",
+    "reason_zh": "Fire TV Burton Activation 的主要用途是修改设备配置以启用原厂启动器界面，提供激活与恢复流程。",
     "readme_sha256": "2a509255b95fc9fc4d6a544e03f71b85b9b1b9b080e836ae881b9352404af528",
     "evidence_url": "https://github.com/vage88sg1/firetv-burton-activation/blob/54dca01304afba78b9b72bf56acc9dc529d7d067/README.md",
     "reviewed_at": "2026-11-06"
@@ -14833,8 +14833,8 @@
   "scan-1441285867": {
     "decision": "exclude",
     "reason_code": "game-mod-no-re",
-    "reason_en": "Moon Sweepers QoL primarily adds purchasable gameplay upgrades; its member-inspection notes serve plugin development rather than a reverse-engineering study.",
-    "reason_zh": "Moon Sweepers QoL 的主体是增加可购买的游戏升级；成员检查笔记用于开发插件，并非独立的逆向研究。",
+    "reason_en": "Moon Sweepers QoL primarily adds purchasable gameplay upgrades; its member-inspection notes serve plugin development.",
+    "reason_zh": "Moon Sweepers QoL 的主体是增加可购买的游戏升级；成员检查笔记用于开发插件。",
     "readme_sha256": "6a15a41dbb0262a90394e539ee33ee9233bb00d1ad32eccd66cf816beff06b38",
     "evidence_url": "https://github.com/dodoflix/moon-sweepers-qol/blob/998beea1f2ea8c23a502cec0d6eb0f510653bfd9/README.md",
     "reviewed_at": "2026-11-06"
@@ -14923,8 +14923,8 @@
   "scan-1441383875": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
-    "reason_en": "ECC-Universal reproduces affaan-m/ECC's agent harness and identifies its changes as modifications and REA integration; the visible material does not establish a separate original RE project.",
-    "reason_zh": "ECC-Universal 沿用 affaan-m/ECC 的智能体框架，并将自身改动标为修改与 REA 集成；可见内容不足以构成独立原创逆向项目。",
+    "reason_en": "ECC-Universal reproduces affaan-m/ECC's agent harness and identifies its changes as modifications and REA integration; the visible material documents the existing harness and its modifications, with no separate original RE project documented.",
+    "reason_zh": "ECC-Universal 沿用 affaan-m/ECC 的智能体框架，并将自身改动标为修改与 REA 集成；可见内容以现有框架及其改动为主，未见独立原创逆向项目的记录。",
     "readme_sha256": "239ded1084a5bafbff647da223f5d0a1bc191b1cc8e5e9dc1481286dba3d69be",
     "evidence_url": "https://github.com/Karan546-ai/ECC-Universal/blob/8a9f60cab4fec227c9865a01795036defa3e08e8/README.md",
     "reviewed_at": "2026-11-06"
@@ -16064,8 +16064,8 @@
   "lead-0a436f6daf9b7af3c741e19d": {
     "decision": "exclude",
     "reason_code": "game-mod-no-re",
-    "reason_en": "This Duke Nukem 3D port starts from the officially released game source and documents compiler and platform changes, rather than reconstruction from the game binary.",
-    "reason_zh": "这个《毁灭公爵 3D》移植版以正式公开的游戏源码为基础，记录的是编译器与平台改动，并非从游戏二进制重建。",
+    "reason_en": "This Duke Nukem 3D port starts from the officially released game source and documents compiler and platform changes.",
+    "reason_zh": "这个《毁灭公爵 3D》移植版以正式公开的游戏源码为基础，记录编译器与平台改动。",
     "evidence_url": "https://github.com/icculus/duke3d/blob/f5145b2a745853fede7635d1a1704e69578809ea/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -16137,8 +16137,8 @@
   "lead-0ae7f439b2b1fced594b39a9": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "teams-api is a work-in-progress Go wrapper for Microsoft Teams endpoints, aimed at alternative clients rather than protocol analysis.",
-    "reason_zh": "teams-api 是用于开发 Microsoft Teams 替代客户端的 Go API 封装，当前只处理少量端点，主题不是协议分析。",
+    "reason_en": "teams-api is a work-in-progress Go wrapper for Microsoft Teams endpoints, aimed at alternative clients.",
+    "reason_zh": "teams-api 是用于开发 Microsoft Teams 替代客户端的 Go API 封装，当前只处理少量端点。",
     "evidence_url": "https://github.com/fossteams/teams-api/blob/60cd5c17a45f7defc0ab21733295fb7e7583e8f5/README.md",
     "reviewed_at": "2026-11-08"
   },
@@ -17656,8 +17656,8 @@
   "lead-2322161040de06d6d00609b1": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "bscpylgtv primarily controls and calibrates LG webOS TVs; its firmware-decompilation guide supports settings maintenance but is incidental to the library.",
-    "reason_zh": "bscpylgtv 主要用于控制和校准 LG webOS 电视；固件反编译指南用于维护设置资料，并非该库的主要工作。",
+    "reason_en": "bscpylgtv primarily controls and calibrates LG webOS TVs; its firmware-decompilation guide supports settings maintenance.",
+    "reason_zh": "bscpylgtv 主要用于控制和校准 LG webOS 电视；固件反编译指南用于维护设置资料。",
     "evidence_url": "https://github.com/chros73/bscpylgtv/blob/191e8957a164a7a15b0b687071b534394a161aed/README.md",
     "reviewed_at": "2026-11-09"
   },
@@ -18003,8 +18003,8 @@
   "lead-27b87b2bde68a05da497955b": {
     "decision": "exclude",
     "reason_code": "forensics-only",
-    "reason_en": "gr-smartnet follows and records Motorola SmartNet conversations so users can review incidents, rather than investigating how the radio protocol works.",
-    "reason_zh": "gr-smartnet 跟踪并录制 Motorola SmartNet 通话，供事后回顾事件；其重点不是研究无线电协议的工作机制。",
+    "reason_en": "gr-smartnet follows and records Motorola SmartNet conversations so users can review incidents; its documented work centers on recordings, with no investigation of the radio protocol described.",
+    "reason_zh": "gr-smartnet 跟踪并录制 Motorola SmartNet 通话，供事后回顾事件；其工作重点是事件录音，现有资料未记录无线电协议机制研究。",
     "evidence_url": "https://github.com/bistromath/gr-smartnet/blob/5d4538051df6b99d321c04512f54307b7b328f0f/README",
     "reviewed_at": "2026-11-08"
   },
@@ -19135,8 +19135,8 @@
   "lead-364029233ab4e74fbb5ad7e1": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Mighty Mike republishes and updates the original game's source and assets with permission for modern systems; it documents a modernization, not a reverse-engineering reconstruction.",
-    "reason_zh": "Mighty Mike 经授权重新发布并更新原游戏源码与素材，使其适配现代系统；文档描述的是移植更新，而非逆向重建。",
+    "reason_en": "Mighty Mike republishes and updates the original game's source and assets with permission for modern systems; its documentation describes that modernization.",
+    "reason_zh": "Mighty Mike 经授权重新发布并更新原游戏源码与素材，使其适配现代系统；文档描述这一移植更新。",
     "evidence_url": "https://github.com/jorio/MightyMike/blob/fd98a629f7c795b20a6f79b8cf843d8a96a4ebbe/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -20442,8 +20442,8 @@
   "lead-46a9d2e7dd5c0a2e90a24c0e": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "DGEngine is a configurable 2D game engine that loads Diablo game files; its documentation does not establish reverse engineering of Diablo's program or behavior.",
-    "reason_zh": "DGEngine 是读取 Diablo 游戏文件的可配置 2D 引擎；文档没有说明对 Diablo 程序或行为进行逆向分析。",
+    "reason_en": "DGEngine is a configurable 2D game engine that loads Diablo game files; its documentation covers the engine without describing reverse engineering of Diablo's program or behavior.",
+    "reason_zh": "DGEngine 是读取 Diablo 游戏文件的可配置 2D 引擎；文档介绍该引擎，未说明对 Diablo 程序或行为进行逆向分析。",
     "evidence_url": "https://github.com/dgcor/DGEngine/blob/ae6dcabf4f824d617dc4b15ead1f0ef206c9a106/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -21485,7 +21485,7 @@
   "lead-556e54d2a31eda20a490dfac": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
-    "reason_en": "Castle Adventure states that its remake code was taken from an earlier allegro.cc project and updated here, so this is not the original reconstruction.",
+    "reason_en": "Castle Adventure states that its remake code was taken from an earlier allegro.cc project and updated here.",
     "reason_zh": "Castle Adventure 明确说明重制代码取自更早的 allegro.cc 项目，此仓库是后续更新版本。",
     "evidence_url": "https://github.com/elishacloud/Castle-Adventure/blob/5e6390935b88fc14f0470546f4d808c065160e19/README.md",
     "reviewed_at": "2026-11-06"
@@ -21877,8 +21877,8 @@
   "lead-5af6808c8665681e7d7f7e17": {
     "decision": "exclude",
     "reason_code": "detection-only",
-    "reason_en": "PEiD mainly runs bundled YARA signatures to classify files and report packing or other indicators, rather than analyzing program behavior.",
-    "reason_zh": "PEiD 主要运行内置 YARA 规则来分类文件并报告加壳等特征，重点不是分析程序行为。",
+    "reason_en": "PEiD mainly runs bundled YARA signatures to classify files and report packing or other indicators; its documented work covers signature detection, with no program-behavior analysis described.",
+    "reason_zh": "PEiD 主要运行内置 YARA 规则来分类文件并报告加壳等特征；文档所述功能限于特征检测，未见程序行为分析。",
     "evidence_url": "https://github.com/K-atc/PEiD/blob/e4fde9c6dc54520aa80ac64ae4537a7f643cca29/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -22045,8 +22045,8 @@
   "lead-5d5b586ecc411baf78dd7058": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "invaders is primarily an Intel 8080 emulator for playing Space Invaders; its disassembler is a supporting component rather than a documented analysis tool.",
-    "reason_zh": "invaders 主要是运行 Space Invaders 的 Intel 8080 模拟器，反汇编器只是辅助组件，并非文档所述的分析工具。",
+    "reason_en": "invaders is primarily an Intel 8080 emulator for playing Space Invaders; its disassembler supports the emulator, with no use as an analysis tool documented.",
+    "reason_zh": "invaders 主要是运行 Space Invaders 的 Intel 8080 模拟器，反汇编器是辅助组件；文档未将其描述为分析工具。",
     "evidence_url": "https://github.com/herrecito/invaders/blob/c4021a0f956a699f56d416a6644e7dcc17ab7630/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -22215,8 +22215,8 @@
   "lead-5f770a4f26a5a45e62e015fd": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Gromox is a groupware server implementing mail and Exchange interfaces; its protocol parsers serve normal server operation rather than program analysis.",
-    "reason_zh": "Gromox 是实现邮件及 Exchange 接口的群组协作服务器；协议解析器用于服务器正常运行，并非程序分析。",
+    "reason_en": "Gromox is a groupware server implementing mail and Exchange interfaces; its protocol parsers serve normal server operation.",
+    "reason_zh": "Gromox 是实现邮件及 Exchange 接口的群组协作服务器；协议解析器用于服务器正常运行。",
     "evidence_url": "https://github.com/grommunio/gromox/blob/a56a7d5e235f88c6d93b898742cc8eab7dda927d/README.rst",
     "reviewed_at": "2026-11-09"
   },
@@ -22737,8 +22737,8 @@
   "lead-67480ac096d1f7d3f6985551": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
-    "reason_en": "fonline describes itself as a cleaned-up, slightly refactored copy of an earlier GPL Fallout Online implementation, rather than the originating project.",
-    "reason_zh": "fonline 自称是早期 GPL 版 Fallout Online 实现的整理和轻度重构副本，不是原始项目。",
+    "reason_en": "fonline describes itself as a cleaned-up, slightly refactored copy of an earlier GPL Fallout Online implementation.",
+    "reason_zh": "fonline 自称是早期 GPL 版 Fallout Online 实现的整理和轻度重构副本。",
     "evidence_url": "https://github.com/sir-wabbit/fonline/blob/235894f28ee598308efe08e9d75eedee1dc57d44/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -22753,8 +22753,8 @@
   "lead-67820bb99cc023a2ad937b31": {
     "decision": "exclude",
     "reason_code": "development-tool",
-    "reason_en": "Acolyte presents itself as a compiler and runtime for GameMaker: Studio projects, with no game-binary or format analysis as its subject.",
-    "reason_zh": "Acolyte 是面向 GameMaker: Studio 项目的编译器和运行时，主体并非分析游戏二进制或文件格式。",
+    "reason_en": "Acolyte presents itself as a compiler and runtime for GameMaker: Studio projects.",
+    "reason_zh": "Acolyte 是面向 GameMaker: Studio 项目的编译器和运行时。",
     "evidence_url": "https://github.com/gm-archive/acolyte/blob/83b580e8214be4a45493b3e76a9dbc278ae2c39f/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -23606,8 +23606,8 @@
   "lead-72774eab7e2eee811be05047": {
     "decision": "exclude",
     "reason_code": "game-mod-no-re",
-    "reason_en": "OpenNox extends and ports an existing Nox engine codebase for play and modding, while its own documentation does not establish a reconstruction from the original program.",
-    "reason_zh": "OpenNox 基于已有的《Nox》引擎代码开展移植、维护和模组开发，项目文档未说明其从原程序重建的过程。",
+    "reason_en": "OpenNox extends and ports an existing Nox engine codebase for play and modding; its documentation leaves the reconstruction process from the original program undocumented.",
+    "reason_zh": "OpenNox 基于已有的《Nox》引擎代码开展移植、维护和模组开发；项目文档缺少从原程序重建的过程说明。",
     "evidence_url": "https://github.com/opennox/opennox/blob/0aae395c81b41dad16dd30ac3d1d81c52aca90b4/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -23935,8 +23935,8 @@
   "lead-75baf9fee17418955f43d283": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "wizball-remake preserves and ports the earlier Retrospec remake source to modern Linux and handhelds; its documented work concerns platform migration, not reverse engineering.",
-    "reason_zh": "wizball-remake 保存较早的 Retrospec 重制版源码并移植到现代 Linux 与掌机；记录的工作是平台迁移，并非逆向研究。",
+    "reason_en": "wizball-remake preserves and ports the earlier Retrospec remake source to modern Linux and handhelds; its documented work concerns platform migration.",
+    "reason_zh": "wizball-remake 保存较早的 Retrospec 重制版源码并移植到现代 Linux 与掌机；记录的工作聚焦平台迁移。",
     "evidence_url": "https://github.com/craigchandler/wizball-remake/blob/12759a163929a8d4bceb11932a1dbf875f01f50a/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -24063,8 +24063,8 @@
   "lead-77f2813f41e0ce868db09841": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
-    "reason_en": "The PyTouhou repository identifies itself as an outdated fork of the project hosted at pytouhou.linkmauve.fr, so it is not the original project.",
-    "reason_zh": "PyTouhou 仓库明确称自己是 pytouhou.linkmauve.fr 项目的过时分支，因此不作为原项目收录。",
+    "reason_en": "The PyTouhou repository identifies itself as an outdated fork of the project hosted at pytouhou.linkmauve.fr.",
+    "reason_zh": "PyTouhou 仓库明确称自己是 pytouhou.linkmauve.fr 项目的过时分支；原项目条目对应 pytouhou.linkmauve.fr。",
     "evidence_url": "https://github.com/GovanifY/PyTouhou/blob/fbfba5269cfc98def3ff0e899694d2686c8f9eac/README",
     "reviewed_at": "2026-11-06"
   },
@@ -26243,8 +26243,8 @@
   "lead-93d4c65b8f2311ba75f3e58d": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
-    "reason_en": "The KaM Remake repository points to reyandme/kam_remake as the main development source, so this copy is not the original project.",
-    "reason_zh": "KaM Remake 将 reyandme/kam_remake 标为主要开发仓库，此仓库不是原始项目所在。",
+    "reason_en": "KaM Remake identifies reyandme/kam_remake as its main development repository.",
+    "reason_zh": "KaM Remake 将 reyandme/kam_remake 标为主要开发仓库。",
     "evidence_url": "https://github.com/Kromster80/kam_remake/blob/b199128f2ce826302a7626463018bfb88cfde032/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -27020,8 +27020,8 @@
   "lead-9d2a54c78e5b776c1ac2bb33": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
-    "reason_en": "re3-Resurrected republishes the pre-existing re3 tree under re3-master, and its author says they did not write that code and made only minor tweaks.",
-    "reason_zh": "re3-Resurrected 在 re3-master 目录重新发布既有 re3 项目；作者承认原有代码并非自己编写，仅做少量修改。",
+    "reason_en": "re3-Resurrected republishes the pre-existing re3 tree under re3-master, and its author credits others with the original code and reports only minor tweaks.",
+    "reason_zh": "re3-Resurrected 在 re3-master 目录重新发布既有 re3 项目；作者称原有代码由他人编写，自己仅做少量修改。",
     "evidence_url": "https://github.com/cinchitsolutions/re3-Resurrected/blob/38df6deed7440298519727bfeb92a47674af981b/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -27566,8 +27566,8 @@
   "lead-a4e2c3fc480d5c845cd34ed9": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "MCGalaxy is ClassiCube server software with setup, administration and build instructions; its documentation does not make reverse engineering the subject.",
-    "reason_zh": "MCGalaxy 是 ClassiCube 服务器软件，文档聚焦安装、管理与构建，没有将逆向工程作为项目主题。",
+    "reason_en": "MCGalaxy is ClassiCube server software with documentation on setup, administration and builds.",
+    "reason_zh": "MCGalaxy 是 ClassiCube 服务器软件，文档聚焦安装、管理与构建。",
     "evidence_url": "https://github.com/ClassiCube/MCGalaxy/blob/d48a9dc21344ad4ec46118d0e298f7843249a7e6/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -27662,8 +27662,8 @@
   "lead-a5c6ed57878e1d3558a73617": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
-    "reason_en": "evemu_crucible identifies itself as an EVEmu variant modified for one Crucible client build, rather than the original EVEmu project.",
-    "reason_zh": "evemu_crucible 自称是在 EVEmu 基础上适配特定 Crucible 客户端版本的分支，并非 EVEmu 原项目。",
+    "reason_en": "evemu_crucible identifies itself as an EVEmu variant modified for one Crucible client build.",
+    "reason_zh": "evemu_crucible 自称是基于 EVEmu、适配特定 Crucible 客户端版本的分支。",
     "evidence_url": "https://github.com/evemuproject/evemu_crucible/blob/d4ddda4db77b44665e9c43adb0f4247fe4742d35/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -28034,8 +28034,8 @@
   "lead-aa7d96a14cee34a54151dfde": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "clip_to_psd primarily converts Clip Studio Paint files to PSD; its auxiliary PSD inspection script supports converter development rather than making format analysis the project's subject.",
-    "reason_zh": "clip_to_psd 的核心是把 Clip Studio Paint 文件转换为 PSD；附带的 PSD 检查脚本服务于转换器开发，并非项目主体。",
+    "reason_en": "clip_to_psd primarily converts Clip Studio Paint files to PSD; its auxiliary PSD inspection script supports converter development.",
+    "reason_zh": "clip_to_psd 的核心是把 Clip Studio Paint 文件转换为 PSD；附带的 PSD 检查脚本服务于转换器开发。",
     "evidence_url": "https://github.com/dobrokot/clip_to_psd/blob/e8db68c768f52ec91ba7530820f52537261cbad0/README.md",
     "reviewed_at": "2026-11-08"
   },
@@ -28171,8 +28171,8 @@
   "lead-ac3c718ff9fa5c090604a151": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Ryu64 is an in-progress Nintendo 64 emulator; its README describes console emulation and commercial-game support, with no program analysis or reconstruction as its subject.",
-    "reason_zh": "Ryu64 是开发中的 Nintendo 64 模拟器；README 讨论主机模拟和商业游戏兼容性，项目主题并非程序分析或重建。",
+    "reason_en": "Ryu64 is an in-progress Nintendo 64 emulator; its README describes console emulation and commercial-game support.",
+    "reason_zh": "Ryu64 是开发中的 Nintendo 64 模拟器；README 讨论主机模拟和商业游戏兼容性。",
     "evidence_url": "https://github.com/Ryu64Emulator/Ryu64/blob/b801de3dfa7df082803e232f3d336edb1ae64ded/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -28421,8 +28421,8 @@
   "lead-b0139dbf06be7ec80847c679": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "DobieStation is a PS2 emulator for booting games and homebrew; its described frame controls do not make program analysis its subject.",
-    "reason_zh": "DobieStation 主要用于运行 PS2 游戏和自制程序；逐帧操作等功能只是模拟器操作功能，项目主题不是程序分析。",
+    "reason_en": "DobieStation is a PS2 emulator for booting games and homebrew; its described frame controls support emulator operation.",
+    "reason_zh": "DobieStation 主要用于运行 PS2 游戏和自制程序；逐帧操作等功能用于模拟器操作。",
     "evidence_url": "https://github.com/PSI-Rockin/DobieStation/blob/68dd073e751960fd01c839ac34ce6e056d70024a/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -28663,8 +28663,8 @@
   "lead-b3ac9cc81299907d64fd9c0e": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Rare is a PySide6 graphical launcher for Legendary and documents game installation and library management rather than reverse engineering.",
-    "reason_zh": "Rare 是 Legendary 的 PySide6 图形启动器，项目内容围绕游戏安装和库管理，并非逆向分析。",
+    "reason_en": "Rare is a PySide6 graphical launcher for Legendary and documents game installation and library management.",
+    "reason_zh": "Rare 是 Legendary 的 PySide6 图形启动器，项目内容围绕游戏安装和库管理。",
     "evidence_url": "https://github.com/RareDevs/Rare/blob/7123739ae66368f4a087aa915e7d07fd9d17135b/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -28863,8 +28863,8 @@
   "lead-b6b782bb7341517ba35f2e08": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Jangada is a feature-rich synthesizer firmware fork of Felucca; its editor protocol documents the project's own commands, not an investigation of another device.",
-    "reason_zh": "Jangada 是 Felucca 的合成器固件分支，扩展了音色和功能；编辑器协议文档记录的是项目自己的命令，并非对其他设备的逆向调查。",
+    "reason_en": "Jangada is a feature-rich synthesizer firmware fork of Felucca; its editor protocol documents the project's own commands.",
+    "reason_zh": "Jangada 是 Felucca 的合成器固件分支，扩展了音色和功能；编辑器协议文档记录项目自己的命令。",
     "evidence_url": "https://github.com/zednaked/jangada/blob/b546675f965b15704b0d9f56c38401c777d98048/README.md",
     "reviewed_at": "2026-11-08"
   },
@@ -30274,8 +30274,8 @@
   "lead-c8e895720d517ad13f056041": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "The Asteroids repository ports an existing Pygame clone and supplies gameplay instructions; its historical article is not an investigation of the original game.",
-    "reason_zh": "该仓库移植了已有的 Pygame《Asteroids》仿作，并提供玩法说明；附带的历史文章并非对原游戏的逆向分析。",
+    "reason_en": "The Asteroids repository ports an existing Pygame clone and supplies gameplay instructions; its accompanying article is historical in scope.",
+    "reason_zh": "该仓库移植了已有的 Pygame《Asteroids》仿作，并提供玩法说明；附带文章是历史介绍，内容范围限于历史叙述。",
     "evidence_url": "https://github.com/TheBeachLab/asteroids/blob/54021cc26e219b60a2d4406f27fd6880fa31a313/readme.md",
     "reviewed_at": "2026-11-06"
   },
@@ -31550,8 +31550,8 @@
   "lead-db07614efd06bd4e6a8723fc": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Zero Hour Reforged modifies the game from EA's published source, adding rendering, AI and interface changes rather than reconstructing it through reverse engineering.",
-    "reason_zh": "Zero Hour Reforged 基于 EA 已公开的游戏源码修改渲染、AI 和界面，所述工作并非通过逆向分析重建游戏。",
+    "reason_en": "Zero Hour Reforged modifies the game from EA's published source, adding rendering, AI and interface changes.",
+    "reason_zh": "Zero Hour Reforged 基于 EA 已公开的游戏源码修改渲染、AI 和界面。",
     "evidence_url": "https://github.com/olcayseygan/CnCGeneralsZH-Reforged/blob/cf2cb2730533c93e35ac10e6dc6a8697162178a5/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -31782,8 +31782,8 @@
   "lead-de811145251042925045a237": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
-    "reason_en": "Portal 64: Still Alive identifies itself as a continuation of the original Portal 64 demake for the same game and platform, rather than the original reconstruction project.",
-    "reason_zh": "Portal 64: Still Alive 明确承接原版 Portal 64 项目，继续开发同一款 Nintendo 64 游戏改编作品，并非原始重建项目。",
+    "reason_en": "Portal 64: Still Alive identifies itself as a continuation of the original Portal 64 demake for the same game and platform.",
+    "reason_zh": "Portal 64: Still Alive 明确承接原版 Portal 64 项目，继续开发同一款 Nintendo 64 游戏改编作品。",
     "evidence_url": "https://github.com/mwpenny/portal64-still-alive/blob/277172ab78b29a664687601dc8cfef238c6e4845/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -33249,8 +33249,8 @@
   "lead-f2e06df5de6d81e05b5505d5": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "The BGW320-505 repository provides a router monitoring and configuration client; its page parsing serves those operations rather than an investigation of the gateway.",
-    "reason_zh": "BGW320-505 仓库提供路由器监测与配置客户端，页面解析用于读取状态和修改设置，并非研究网关工作机制。",
+    "reason_en": "The BGW320-505 repository provides a router monitoring and configuration client; its page parsing reads status and changes settings.",
+    "reason_zh": "BGW320-505 仓库提供路由器监测与配置客户端，页面解析用于读取状态和修改设置。",
     "evidence_url": "https://github.com/TheSethRose/BGW320-505-Unofficial-API-Network-Auditor/blob/cfbb2c7fe5e558a57cc0996161502e9823d7e925/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -33698,8 +33698,8 @@
   "lead-f8bc1131a2c5eefd046d4382": {
     "decision": "exclude",
     "reason_code": "fork-or-mirror",
-    "reason_en": "HavanaR39 explicitly continues Quackster/Havana, adding V39 Flash support and site features to that existing emulator rather than presenting an original reconstruction.",
-    "reason_zh": "HavanaR39 明确基于 Quackster/Havana 继续开发，为现有模拟服务器增加 V39 Flash 支持和网站功能，并非独立重建项目。",
+    "reason_en": "HavanaR39 explicitly continues Quackster/Havana, adding V39 Flash support and site features to that existing emulator.",
+    "reason_zh": "HavanaR39 明确基于 Quackster/Havana 继续开发，为现有模拟服务器增加 V39 Flash 支持和网站功能。",
     "evidence_url": "https://github.com/jeppe9821/HavanaR39/blob/20cbce083ae8e70c0d6bf264da1cccfb45e56f40/README.md",
     "reviewed_at": "2026-11-06"
   },
@@ -33931,8 +33931,8 @@
   "lead-fc1ef9fd17e4db5cfdcb7501": {
     "decision": "exclude",
     "reason_code": "general-application",
-    "reason_en": "Ikemen GO is a fighting-game engine compatible with M.U.G.E.N resources; its documented rewrite is of an earlier Ikemen engine, not an investigation of M.U.G.E.N.",
-    "reason_zh": "Ikemen GO 是兼容 M.U.G.E.N 资源的格斗游戏引擎；其文档所说的重写对象是旧版 Ikemen 引擎，并非对 M.U.G.E.N 的逆向研究。",
+    "reason_en": "Ikemen GO is a fighting-game engine compatible with M.U.G.E.N resources; its documented rewrite targets an earlier Ikemen engine.",
+    "reason_zh": "Ikemen GO 是兼容 M.U.G.E.N 资源的格斗游戏引擎；其文档所说的重写对象是旧版 Ikemen 引擎。",
     "evidence_url": "https://github.com/ikemen-engine/Ikemen-GO/blob/fb269c975745d3effc447af4c6d74dd2988fc9ba/README.md",
     "reviewed_at": "2026-11-06"
   },

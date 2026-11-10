@@ -53,7 +53,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -90,7 +90,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -127,7 +127,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -164,7 +164,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -201,7 +201,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -275,7 +275,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -312,7 +312,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -349,7 +349,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -386,7 +386,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -423,7 +423,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -460,7 +460,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -497,7 +497,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -534,7 +534,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -1907,7 +1907,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:15+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -1917,7 +1917,7 @@
     "version": "README commit 37a01ca8746c121170644a07968d11263ef64407",
     "primary_evidence": "https://github.com/storytold/photocraft/blob/37a01ca8746c121170644a07968d11263ef64407/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -1948,7 +1948,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:16+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -1958,7 +1958,7 @@
     "version": "README commit 08afab50b6a1ed19f9af55bb9f74d18f5e17bfa0",
     "primary_evidence": "https://github.com/storytold/wordcraft/blob/08afab50b6a1ed19f9af55bb9f74d18f5e17bfa0/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -1988,7 +1988,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:15+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -1998,7 +1998,7 @@
     "version": "README commit 632e4a1bc51ee86b3f0a55e95ee78def391aab30",
     "primary_evidence": "https://github.com/storytold/gridcraft/blob/632e4a1bc51ee86b3f0a55e95ee78def391aab30/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -2028,7 +2028,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:16+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -2038,7 +2038,7 @@
     "version": "README commit 23ac4f7efdbd1e538bd9a7869584d4adeb9039b0",
     "primary_evidence": "https://github.com/storytold/deckcraft/blob/23ac4f7efdbd1e538bd9a7869584d4adeb9039b0/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -2368,7 +2368,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -2405,7 +2405,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -2442,7 +2442,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -2684,7 +2684,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:43:49+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -3776,7 +3776,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:16+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -3786,7 +3786,7 @@
     "version": "README commit 2099288f5449b1602d2e2eedca92fe99fb19b973",
     "primary_evidence": "https://github.com/storytold/cadcraft/blob/2099288f5449b1602d2e2eedca92fe99fb19b973/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -3816,7 +3816,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:16+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -3826,7 +3826,7 @@
     "version": "README commit a4017a3cda704850fcb6ed9f8513fdb2e7fb04c1",
     "primary_evidence": "https://github.com/storytold/designcraft/blob/a4017a3cda704850fcb6ed9f8513fdb2e7fb04c1/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -3856,7 +3856,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:16+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -3866,7 +3866,7 @@
     "version": "README commit 58ca9c1c1b163fdada41291847f3d0f7559339b2",
     "primary_evidence": "https://github.com/storytold/effectcraft/blob/58ca9c1c1b163fdada41291847f3d0f7559339b2/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -3896,7 +3896,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:19+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -3906,7 +3906,7 @@
     "version": "README commit 6f780211dda0706aa474bcc9be4cec99149acef3",
     "primary_evidence": "https://github.com/storytold/figcraft/blob/6f780211dda0706aa474bcc9be4cec99149acef3/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -3936,7 +3936,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:25+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -3946,7 +3946,7 @@
     "version": "README commit c9be14245a6c9da585ff906a6e0ca9c8200652ea",
     "primary_evidence": "https://github.com/storytold/filmcraft/blob/c9be14245a6c9da585ff906a6e0ca9c8200652ea/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -3976,7 +3976,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:27+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -3986,7 +3986,7 @@
     "version": "README commit 4d42507bbcc180df831435c8ef2c29740b5216aa",
     "primary_evidence": "https://github.com/storytold/lightcraft/blob/4d42507bbcc180df831435c8ef2c29740b5216aa/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -4016,7 +4016,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:29+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -4026,7 +4026,7 @@
     "version": "README commit 9bbcde4699c9cb472d9b579fb04e19c6b493d435",
     "primary_evidence": "https://github.com/storytold/pdfcraft/blob/9bbcde4699c9cb472d9b579fb04e19c6b493d435/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -4056,7 +4056,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:26+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -4066,7 +4066,7 @@
     "version": "README commit 5fabf28c315ee72ad5c0234beeb35ec832c11476",
     "primary_evidence": "https://github.com/storytold/soundcraft/blob/5fabf28c315ee72ad5c0234beeb35ec832c11476/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -4096,7 +4096,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README.",
    "checked_at": "2026-11-04T08:19:28+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -4106,7 +4106,7 @@
     "version": "README commit 6bde3c59a544873a32537b557e97a582dbb6e912",
     "primary_evidence": "https://github.com/storytold/vectorcraft/blob/6bde3c59a544873a32537b557e97a582dbb6e912/README.md",
     "reviewed_at": "2026-11-04",
-    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README."
    }
   },
   {
@@ -5733,7 +5733,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:04+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -5794,7 +5794,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:05+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -5910,7 +5910,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:06+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -5939,7 +5939,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:06+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6000,7 +6000,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:07+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6114,7 +6114,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:08+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6144,7 +6144,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:09+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6176,7 +6176,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:08+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6239,7 +6239,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:09+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6351,7 +6351,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:10+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6470,7 +6470,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:11+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6560,7 +6560,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:11+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6707,7 +6707,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:13+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6766,7 +6766,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:14+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6796,7 +6796,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:13+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6879,7 +6879,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:14+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -6937,7 +6937,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:15+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -7427,7 +7427,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:21+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -7458,7 +7458,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:21+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -7489,7 +7489,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:21+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -7576,7 +7576,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:22+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -7690,7 +7690,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:23+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -7719,7 +7719,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:23+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -7808,7 +7808,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:24+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -8118,7 +8118,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:27+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -8458,7 +8458,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:29+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -8599,7 +8599,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:30+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -8632,7 +8632,7 @@
     "archived": true,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:30+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -8773,7 +8773,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:31+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -9756,7 +9756,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full multi-platform port of the decompiled LEGO Island 1.1 with release assets and a video demo; runtime not verified here.",
+   "reason": "Full multi-platform port of the decompiled LEGO Island 1.1 with release assets and a video demo.",
    "checked_at": "2026-11-07T03:44:41+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -9766,7 +9766,7 @@
     "version": "portable build of LEGO Island 1.1 (isle-portable, README commit d0bf04f)",
     "primary_evidence": "https://github.com/isledecomp/isle-portable/blob/d0bf04fe605d7ec2a291e65df08bf26712452379/README.md",
     "reviewed_at": "2026-11-02",
-    "note": "Full multi-platform port of the decompiled LEGO Island 1.1 with release assets and a video demo; runtime not verified here."
+    "note": "Full multi-platform port of the decompiled LEGO Island 1.1 with release assets and a video demo."
    }
   },
   {
@@ -11309,7 +11309,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:52+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -12066,7 +12066,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full re-implementation of the RollerCoaster Tycoon 2 engine; release assets and demo screenshots; runtime not verified here.",
+   "reason": "Full re-implementation of the RollerCoaster Tycoon 2 engine; release assets and demo screenshots.",
    "checked_at": "2026-11-07T03:44:59+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -12076,7 +12076,7 @@
     "version": "v0.5.6 (2026-10-10)",
     "primary_evidence": "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/readme.md",
     "reviewed_at": "2026-11-02",
-    "note": "Full re-implementation of the RollerCoaster Tycoon 2 engine; release assets and demo screenshots; runtime not verified here."
+    "note": "Full re-implementation of the RollerCoaster Tycoon 2 engine; release assets and demo screenshots."
    }
   },
   {
@@ -12128,7 +12128,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:59+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -12188,7 +12188,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:44:59+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -13243,7 +13243,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:08+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -13329,7 +13329,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:08+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -13441,7 +13441,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:09+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -13558,7 +13558,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:10+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -13676,7 +13676,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:11+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -13849,7 +13849,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:12+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -13878,7 +13878,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:13+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -14053,7 +14053,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:14+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -14310,7 +14310,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:18+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -14423,7 +14423,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:19+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -14485,7 +14485,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:20+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -14541,7 +14541,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:21+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -14799,7 +14799,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:23+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -14893,7 +14893,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:24+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -15010,7 +15010,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:25+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -15128,7 +15128,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:26+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -15391,7 +15391,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:30+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -15509,7 +15509,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:31+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -15538,7 +15538,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:31+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -15655,7 +15655,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:32+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -15687,7 +15687,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:33+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -16119,7 +16119,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:41+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -16318,7 +16318,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:45:44+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -18645,7 +18645,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:01+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -18757,7 +18757,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:02+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -18930,7 +18930,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:04+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -18961,7 +18961,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:04+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -19133,7 +19133,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:06+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -19274,7 +19274,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:07+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -19389,7 +19389,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:08+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -19531,7 +19531,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:09+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -19587,7 +19587,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:10+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -20100,7 +20100,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:14+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -20780,7 +20780,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:22+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -20926,7 +20926,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:23+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -21096,7 +21096,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:25+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -21210,7 +21210,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:26+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -21296,7 +21296,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:26+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -21553,7 +21553,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:28+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -21838,7 +21838,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:30+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -21867,7 +21867,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:30+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -21929,7 +21929,7 @@
     "archived": true,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:31+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -22043,7 +22043,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:31+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -22188,7 +22188,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:33+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -22410,7 +22410,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:35+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -22637,7 +22637,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:36+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -22696,7 +22696,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:37+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -23185,7 +23185,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:41+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -23276,7 +23276,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:42+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -23305,7 +23305,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:41+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -23365,7 +23365,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:42+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -23562,7 +23562,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:46+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -23620,7 +23620,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:46+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -24014,7 +24014,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:49+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -24323,7 +24323,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:51+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -24408,7 +24408,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:51+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -24549,7 +24549,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:52+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -24666,7 +24666,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:53+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -24722,7 +24722,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:53+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -24751,7 +24751,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:53+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -24948,7 +24948,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:55+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -25318,7 +25318,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:57+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -25403,7 +25403,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:58+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -25519,7 +25519,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:46:59+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -25779,7 +25779,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:00+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -26009,7 +26009,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:02+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -26343,7 +26343,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:04+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -26489,7 +26489,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:04+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -26634,7 +26634,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:05+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -26802,7 +26802,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:06+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -26833,7 +26833,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:07+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -26978,7 +26978,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:07+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -27034,7 +27034,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:08+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -27408,7 +27408,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:10+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -27748,7 +27748,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:12+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -28206,7 +28206,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:15+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -29353,7 +29353,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:22+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -29694,7 +29694,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:26+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -30137,7 +30137,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:30+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -30339,7 +30339,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:32+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -32425,7 +32425,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:48+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -32535,7 +32535,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:49+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -33233,7 +33233,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:53+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -33734,7 +33734,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:56+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -34266,7 +34266,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:47:59+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -35080,7 +35080,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:48:05+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -35822,7 +35822,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:48:10+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -36196,7 +36196,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:48:12+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -36308,7 +36308,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:48:12+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -36475,7 +36475,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:48:14+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -36845,7 +36845,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:48:16+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -37535,7 +37535,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:48:22+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -37647,7 +37647,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-07T03:48:23+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -81338,7 +81338,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:31:45+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -83710,7 +83710,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:33:34+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -94860,7 +94860,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:33:36+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -95451,7 +95451,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:33:59+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -96296,7 +96296,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:34:30+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -96999,7 +96999,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:34:51+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -97582,7 +97582,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:35:07+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -97752,7 +97752,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:35:13+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -97980,7 +97980,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:35:18+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -98232,7 +98232,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:35:25+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -110142,7 +110142,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:36:05+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -111938,7 +111938,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:37:30+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -112198,7 +112198,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:37:38+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -112339,7 +112339,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:37:44+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -134109,7 +134109,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:41:51+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -135796,7 +135796,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:43:37+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -136139,7 +136139,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:43:57+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -136170,7 +136170,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:43:58+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -136201,7 +136201,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:43:59+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -136230,7 +136230,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:43:59+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -136262,7 +136262,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:44:08+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -136579,7 +136579,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:44:25+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -136784,7 +136784,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:44:44+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -136869,7 +136869,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:44:56+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -137150,7 +137150,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:45:09+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -137317,7 +137317,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:45:18+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -137738,7 +137738,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:45:43+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -138127,7 +138127,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T01:46:01+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -140891,7 +140891,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T13:27:52+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -142167,7 +142167,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T13:28:05+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -142281,7 +142281,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T13:28:08+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -142368,7 +142368,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T13:28:09+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -142615,7 +142615,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T13:28:12+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -142698,7 +142698,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T13:28:12+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -142900,7 +142900,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T13:28:16+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -143230,7 +143230,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "complete evidence, but this is not a software reconstruction",
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
    "checked_at": "2026-11-09T13:28:19+00:00",
    "evidence_status": "observed",
    "scope": "analysis",

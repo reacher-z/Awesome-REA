@@ -177,7 +177,7 @@
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "description_en": "Inspect Android package identity, classes, methods and references through REA's JADX integration.",
-    "description_zh": "经 REA 的 JADX 集成检查 APK、类、方法与引用；结果不等于运行时验证。",
+    "description_zh": "经 REA 的 JADX 集成检查 APK、类、方法与引用。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/android-analysis.md",
     "verified_at": "2026-10-15",
     "added_at": "2026-10-16",
@@ -273,7 +273,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Caller-supplied TShark 4.x on Linux with util-linux prlimit; macOS and Windows hosts are refused before inspection. Listed in the rea-agents 6.5.0 release notes.",
-      "Dissector output describes the selected recording, not verified device behavior. Upstream fixtures are generated Ethernet/UDP/DNS and Bluetooth HCI PCAPs and do not cover PCAPNG, USB, BLE ATT or physical capture."
+      "Dissector output describes the selected recording. Upstream fixtures are generated Ethernet/UDP/DNS and Bluetooth HCI PCAPs and do not cover PCAPNG, USB, BLE ATT or physical capture."
     ],
     "targets": [
       "protocol"
@@ -297,7 +297,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Caller-supplied Wireshark 4.x tshark and capinfos. Capture inspection needs Linux with util-linux prlimit or Windows Job Objects; macOS reports a capability gap. Listed in the rea-agents 6.5.0 release notes.",
-      "Upstream’s current verification used Linux, Node 24.18.0 and Wireshark 4.0.17; actual Windows execution is unverified. Summaries do not establish decrypted payloads, process identity or the absence of unrecorded traffic."
+      "Upstream’s current verification used Linux, Node 24.18.0 and Wireshark 4.0.17; actual Windows execution is unverified. Summaries cover recorded traffic; decrypted payloads and process identity remain unverified, and unrecorded traffic remains unknown."
     ],
     "targets": [
       "protocol"
@@ -493,7 +493,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Supported Node.js and REA; no native engine is required for this static fixture.",
-      "The fixture is source-owned teaching material, not an installed Electron distribution."
+      "The fixture consists of source-owned teaching material; the exercise uses no installed Electron distribution."
     ],
     "targets": [
       "app"
@@ -534,7 +534,7 @@
     "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
-      "Requires REA and the relevant analysis providers; distributed as a local bundle rather than a public npm package.",
+      "Requires REA and the relevant analysis providers; distributed as a local bundle. It is unpublished as a public npm package.",
       "Use the documented REA_ENTRY mode for direct execution; PATH fallback invokes a shell."
     ],
     "targets": [
@@ -561,7 +561,7 @@
     "requirements": [
       "Claude Code, supported Node.js and the plugin's documented macOS/Linux environment.",
       "Optional Jev service credentials enable external model calls; excerpts may be sent to that service.",
-      "Hooks fail open on provider failure; they are not a security guarantee."
+      "Hooks fail open on provider failure."
     ],
     "targets": [
       "app",
@@ -718,7 +718,7 @@
     "requirements": [
       "The v0.5.0 preview reports macOS Apple Silicon testing; Windows/Linux builds still need device validation. The macOS package is ad-hoc signed and not notarized.",
       "The experimental importer is documented against controlled Jianying 11.0.12922 drafts. Basic conversions are lossy: effects, keyframes and styles can be lost, and projects cannot be written back.",
-      "REA supports the reported research workflow but is not a runtime dependency. The project uses its own code and format; MIT source and bundled third-party components retain separate licenses."
+      "REA supports the reported research workflow; the project runs without REA. The project uses its own code and format; MIT source and bundled third-party components retain separate licenses."
     ],
     "requirement_facets": [
       "testing",
@@ -890,7 +890,7 @@
     "requirements": [
       "Requires the user’s cartridge dump, the pinned mwccarm matching compiler, its separate linker/setup and Python tooling such as ndspy, Capstone and pyelftools.",
       "The pinned README reports 11,389/11,389 matched functions, including 108 byte-exact assembly primitives, but only 10,957 linked into the PC port. These counters describe different gates.",
-      "The same README retains older near-finished prose, and port/README.md describes a historical smoke-build stage. Treat matching and port-playability statements as source-specific reports, not a verified complete playable port.",
+      "The same README retains older near-finished prose, and port/README.md describes a historical smoke-build stage. Matching and port playability are reported separately in the cited sources; verification of a complete playable port remains open.",
       "Agent-assisted matching is documented, together with source review and relocation checks.",
       "The repository has an MIT license; original game data and external compiler rights remain separate."
     ],
@@ -928,10 +928,10 @@
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed v0.5.0 documentation supports Windows 10/11 x64 and x86-64 Linux/Steam Deck with glibc 2.31+; both need OpenGL 3.0 drivers. macOS and ARM builds remain planned, despite the broader repository About description.",
-      "Release packages require the user’s US NTSC-U ROM; PAL and Japanese releases are not yet supported. This is a native port from decompiled source, not static binary recompilation.",
+      "Release packages require the user’s US NTSC-U ROM; PAL and Japanese releases are not yet supported. This is a native port from decompiled source.",
       "Source builds need CMake 3.16+, C/C++, SDL2, zlib, OpenGL, Python 3 and the documented asset-extraction tools.",
       "v0.5.0 playtests were campaign spot-checks and multiplayer sessions; the full Agent-difficulty campaign was last reported end-to-end at v0.4.0.",
-      "MIT covers original port/build/tooling/docs work only. NOTICE states inherited n64decomp/007 material has no explicit upstream license, and vendored components have separate terms; the MIT file is not a blanket grant over all contents."
+      "MIT covers original port/build/tooling/docs work only. NOTICE states inherited n64decomp/007 material has no explicit upstream license, and vendored components have separate terms; the MIT grant is limited to the original port/build/tooling/docs work."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -1215,7 +1215,7 @@
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
-      "Requires the user’s original Steam Isaac.exe; Wrath of the Lamb and Eternal Edition depend on the corresponding game version. This is ahead-of-time translation, not recovery of the original authored ActionScript project.",
+      "Requires the user’s original Steam Isaac.exe; Wrath of the Lamb and Eternal Edition depend on the corresponding game version. This translates the original game code ahead of time. The original authored ActionScript project remains unrecovered.",
       "Documented targets include 64-bit Windows/Linux, Android 7.0+ on 64-bit ARM and Switch homebrew. Source builds use CMake/Ninja and SDL2/OpenGL 3.3 or ES 3.0; mobile/console builds have separate SDK/toolchain requirements.",
       "The author credits AI assistance and reports 30 Hz game logic with higher-rate interpolated rendering.",
       "Reported regression tests compare deterministic logic and screenshots across engine revisions.",
@@ -1252,7 +1252,7 @@
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
-      "Requires the official macOS Virtual Desktop installer for proprietary libraries and the user’s Virtual Desktop headset application. It is not a complete protocol reimplementation or an official vendor port.",
+      "Requires the official macOS Virtual Desktop installer for proprietary libraries and the user’s Virtual Desktop headset application. The protocol reimplementation is incomplete, and the port is independent of the vendor.",
       "The build uses .NET 8. Linux runtime dependencies include GStreamer 1.16+, PulseAudio/PipeWire, X11 or an appropriate Wayland portal, OpenSSL 1.1 or 3 and uinput access; video-file playback additionally needs FFmpeg 7.",
       "Published testing used a simulated headset, mock portal and container networking. No real headset, real Wi-Fi or GPU encoder was available; internet matchmaking and same-address network changes were untested.",
       "The scroll fix was checked at device/libinput level without directly observing the receiving X11 app.",
@@ -1280,8 +1280,8 @@
     "url": "https://github.com/Caho1/open-claude-ui",
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
-    "description_en": "Publishes React components, motion helpers and design-system notes derived from the author’s reported REA investigation of Claude Desktop. It is useful as an interface-reconstruction case, with version-specific observations rather than proof of a complete assistant application or backend clone.",
-    "description_zh": "发布 React 组件、动效辅助模块和设计系统笔记，作者将其归因于使用 REA 调查 Claude Desktop。它可作为界面重建案例；观察结果受版本约束，不能证明已完整复刻助手应用或后端。",
+    "description_en": "Publishes React components, motion helpers and design-system notes derived from the author’s reported REA investigation of Claude Desktop. It is useful as an interface-reconstruction case, with version-specific observations; a complete assistant application and backend clone remain outside the documented scope.",
+    "description_zh": "发布 React 组件、动效辅助模块和设计系统笔记，作者将其归因于使用 REA 调查 Claude Desktop。它可作为界面重建案例；观察结果对应所分析的版本。",
     "evidence_url": "https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/README.md",
     "verified_at": "2026-10-17",
     "added_at": "2026-10-17",
@@ -1446,7 +1446,7 @@
     "requirements": [
       "The recorded target is wayou’s HTTP browser edition at the cited revision, not chrome://dino/. Source and observation hashes identify that edition.",
       "After read-only inspection, a separate Playwright controller disabled future scheduling and obstacles to call the original update function under controlled conditions.",
-      "The reconstructed claim is limited to acceleration. Drawing, jumping, collisions and controls in the teaching game are newly authored, not independently recovered original gameplay.",
+      "The reconstructed claim is limited to acceleration. Drawing, jumping, collisions and controls in the teaching game are newly authored.",
       "Public result tables and code document the author’s checks. The cited original-source excerpts retain Chromium attribution and BSD-3-Clause terms."
     ],
     "requirement_facets": [
@@ -1477,9 +1477,9 @@
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
-      "The documented target is Calculator 11.2508.4.0 x64. The public source commit is an interpretation cross-check, not an identified build commit for that installed DLL.",
+      "The documented target is Calculator 11.2508.4.0 x64. The public source commit serves as an interpretation cross-check for the installed DLL; the DLL’s build commit remains unidentified.",
       "Function selection was analyst-assisted.",
-      "This reconstructs a bounded arithmetic rule, not the Calculator application. Public Microsoft source is MIT-licensed; access and rights to the installed target remain separate."
+      "This reconstructs a bounded arithmetic rule. Public Microsoft source is MIT-licensed; access and rights to the installed target remain separate."
     ],
     "requirement_facets": [
       "scope",
@@ -1538,7 +1538,7 @@
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
-      "The reviewed build accepts the US Nintendo 64 Majora’s Mask ROM supplied by the user; game assets are not included. Ocarina of Time remains planned, and this is not an emulator for arbitrary ROMs.",
+      "The reviewed build accepts the US Nintendo 64 Majora’s Mask ROM supplied by the user; game assets are not included. Ocarina of Time remains planned; the reviewed build is limited to the user-supplied US Nintendo 64 Majora’s Mask ROM.",
       "Runtime graphics require Direct3D 12.0 with Shader Model 6, Vulkan 1.2, or Metal Argument Buffers Tier 2. x86-64 needs SSE4.1; the README lists macOS 13.0+ with Apple Silicon or a 7th-generation Intel CPU.",
       "Source builds additionally require submodules, CMake 3.20+, C++20 tooling, N64Recomp/RSPRecomp and the specified decompressed ROM. The build guide lists SDL2 and platform dependencies; ordinary play uses the standard ROM.",
       "The project documents high-frame-rate, widescreen, camera and save enhancements, plus overlay and cutscene issues. These are project claims.",
@@ -1892,7 +1892,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "The pinned workspace identifies version 0.9.0 and declares Rust 1.95+ for source builds with Cargo. Native and WebAssembly paths have platform-specific dependencies; optional font inputs and reference documents are separate.",
-      "This is an implemented document/compositing engine and editing interface, not merely a screenshot mockup.",
+      "This includes an implemented document/compositing engine and editing interface.",
       "The editor-level corpus tests compare rendering before and after export/reimport. Separate PSD codec tests compare bytes for parseable files, with a named malformed-file exception. Editor saves are explicitly not byte-identical to their inputs.",
       "The project remains alpha and distinguishes menu-command coverage from behavioral fidelity. Its dated parity assessment retains gaps in PSD exchange, typography, professional workflows, performance and plug-in compatibility.",
       "Project code is MIT OR Apache-2.0, subject to NOTICE; fonts, artwork and other assets retain separate terms. ArtCraft branding is excluded; published modified versions must remove it, apart from contribution-only forks."
@@ -2110,7 +2110,7 @@
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
-      "The reviewed target is a Lenovo ThinkPad X1 Carbon Gen 14 (Aura Edition), with a Sony IMX471 sensor behind Intel IPU7. The author tested Fedora 44 kernel 7.2.8 and a libcamera 0.7.1 backport. The published kernel package omits BTF/debug information and is described as a test kernel, not a daily-driver recommendation.",
+      "The reviewed target is a Lenovo ThinkPad X1 Carbon Gen 14 (Aura Edition), with a Sony IMX471 sensor behind Intel IPU7. The author tested Fedora 44 kernel 7.2.8 and a libcamera 0.7.1 backport. The published kernel package omits BTF/debug information and is described as a test kernel; the author does not recommend it for daily use.",
       "The Python 3 analysis tools use NumPy and assume a 1928x1088 RG10 stream with a 3904-byte stride. Some scripts embed the author’s local layout and need path adaptation. Repeating the tuning analysis requires the corresponding vendor driver-package data or device captures.",
       "The author’s controlled low-light comparison holds 400 frames for convergence and reports frame brightness rising from 31.1 to 90.9. The test record describes crop-selection, colour-bar and analogue-gain checks on the affected device. Its 46/46 v4l2-compliance passes occurred before and after the crop fix, so that pass count alone did not detect the defect.",
       "The work adds three kernel fixes plus lens-shading and white-balance-statistics changes to an existing Linux driver and software ISP. Low-light blue remains about 17% short, an 18.8 ms exposure ceiling is not fixed here, and the second IR camera is outside scope. It does not recover the entire Windows driver, emulate the laptop or establish compatibility across camera models.",
@@ -2159,7 +2159,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed release is 2026.10.12-preview.1. The local browser edition needs Python 3.11+; the accounting core uses the standard library and SQLite. Native desktop builds use pywebview 6.2.1, PyInstaller 6.22.3 and Pillow 12.3.0, built on the target OS; Windows additionally needs the separately installed WebView2 runtime.",
-      "The maintainer identifies QuickBooks Desktop for Mac 2024 Trial, version 23.1.13.962 R14 Trial, as the investigation target. REA 6.4.0 with Ghidra, NIB decoding and selected runtime observations informed inventory arithmetic, budget signs, reconciliation paths and layouts. The Python/SQLite engine and frontend are independently written, not recovered Intuit source.",
+      "The maintainer identifies QuickBooks Desktop for Mac 2024 Trial, version 23.1.13.962 R14 Trial, as the investigation target. REA 6.4.0 with Ghidra, NIB decoding and selected runtime observations informed inventory arithmetic, budget signs, reconciliation paths and layouts. The Python/SQLite engine and frontend are independently written.",
       "Public synthetic fixtures contain frozen, independently specified integer-cent expectations. Reviewed tests compare reports and check atomic rollback of invalid journals, bills and inventory operations. These are implementation checks.",
       "The separate original-software comparison reportedly matched three official-sample reports account-by-account to the cent. The vendor sample company and exports are not public here, so that result remains author-reported.",
       "The preview is single-user, local and USD-only. Payroll, tax filing, live bank/payment services, multicurrency and complete QuickBooks migration are outside the implementation. Its cash-basis output is a defined management cash view.",
@@ -2249,11 +2249,11 @@
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
-      "Input is the camera’s Wi-Fi i4season/Soulear UDP traffic. An ESP32-C3 SuperMini with a 0.42-inch, 72×40 SSD1306 OLED reassembles JPEG frames and sends them with accelerometer data over custom USB CDC serial to the viewer. It is not a UVC webcam, the camera’s USB port is charge-only, and no vendor firmware or full app source is recovered.",
+      "Input is the camera’s Wi-Fi i4season/Soulear UDP traffic. An ESP32-C3 SuperMini with a 0.42-inch, 72×40 SSD1306 OLED reassembles JPEG frames and sends them with accelerometer data over custom USB CDC serial to the viewer. The output uses custom USB CDC serial, with UVC compatibility outside its scope; the camera’s USB port is charge-only, and vendor firmware and full app source remain unrecovered.",
       "Builds with PlatformIO espressif32 6.11.0, Arduino core 2.0.17 and U8g2 ^2.35.30; the desktop tools need Python with Tkinter, pyserial >=3.5, opencv-python >=4.8, NumPy >=1.24 and Pillow >=12.3.0. Only Windows testing is reported.",
       "Packet format, commands, frame assembly and rotation logic are credited to rbeilvert/otoscope, which reverse engineered Soulear’s libWifiCamera.so; NJFE does not pin the borrowed revision.",
       "Results come from a single HKV41B-firmware Hopefox Find T (480×480 JPEG at about 17 fps). The --test N mode needs the hardware and there is no offline conformance suite.",
-      "The camera network is open: the bridge accepts unauthenticated UDP that can inject images or replies, serial access is trusted and recordings are unencrypted. It is an inspection tool, not a medical device.",
+      "The camera network is open: the bridge accepts unauthenticated UDP that can inject images or replies, serial access is trusted and recordings are unencrypted. Its role is inspection; it has no medical-device status.",
       "GPL-3.0-or-later, with protocol code and roll calculation derived from GPL otoscope; third-party libraries keep their licenses, and no rights to vendor software or images are granted."
     ],
     "requirement_facets": [
@@ -2291,7 +2291,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "description_en": "Documents BaoCut’s interactive slide editor, whose author says the implementation draws on Claude Slides. It adds a local deck store, HTML/CSS compiler and annotation-to-agent bridge for browser and desktop hosts; the design reports a Web-flow check, without establishing original backend recovery or full behavioral parity.",
-    "description_zh": "记录 BaoCut 交互式幻灯片编辑器，作者称其实现借鉴自 Claude Slides。它为浏览器与桌面宿主加入本地文稿存储、HTML/CSS 编译器及标注到智能体的桥接；设计说明报告了 Web 流程检查，但未确立原有后端恢复或完整行为一致性。",
+    "description_zh": "记录 BaoCut 交互式幻灯片编辑器，作者称其实现借鉴自 Claude Slides。它为浏览器与桌面宿主加入本地文稿存储、HTML/CSS 编译器及标注到智能体的桥接；设计说明只报告了 Web 流程检查，原有后端恢复与完整行为一致性仍未知。",
     "evidence_url": "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/docs/design/slides/slides-design.md",
     "verified_at": "2026-10-17",
     "added_at": "2026-10-17",
@@ -2350,8 +2350,8 @@
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
-      "Pocket Tasks 1.0.0 is an authored local command-line app, not a commercial app or native-binary benchmark. The Node.js 20+ candidate implements nine commands and schema-1 JSON storage with only the standard library and disposable local stores; there is no GUI or network backend.",
-      "The REA excerpt identifies the target bytes but keeps semantic coverage unknown, with 230 semantic unknowns; it is not a canonical Evidence bundle, and the later Node validator does not repeat the REA session.",
+      "Pocket Tasks 1.0.0 is an authored local command-line app. The Node.js 20+ candidate implements nine commands and schema-1 JSON storage with only the standard library and disposable local stores; there is no GUI or network backend.",
+      "The REA excerpt identifies the target bytes but keeps semantic coverage unknown, with 230 semantic unknowns; the excerpt has a noncanonical Evidence format, and the later Node validator runs separately and does not repeat the REA session.",
       "The author saw the target source, scenarios, tests and prior answers before implementing.",
       "Reported 16/16 checker sessions (12 scenarios) and 10/10 replays (seven scenarios) overlap; expectations are hand-authored, and the report keeps humanReview=pending, reaTrial=unverified and independentEvaluation=false.",
       "Six recorded hashes and the oracle digest match the reviewed source, but the TASK.md packet hash matches an earlier wording-only revision, so the packet is historical evidence. A restricted-Windows attempt (five passes, four failures) preceded nine passes with unchanged code.",
@@ -2394,17 +2394,17 @@
       "app"
     ],
     "description_en": "Reconstructs the Johnny Castaway screensaver engine in Rust, with author-disclosed REA and Claude Code use. It reads original files to run recovered animation scripts and calendar-based story state on modern desktops; documented deviations and limited tests stop short of complete behavioral equivalence.",
-    "description_zh": "以 Rust 重建 Johnny Castaway 屏幕保护程序引擎，作者明确披露使用 REA 与 Claude Code。它读取原始文件，在现代桌面上运行恢复的动画脚本及按日历推进的故事状态；文档保留实现差异与有限测试范围，未确立完整行为等价。",
+    "description_zh": "以 Rust 重建 Johnny Castaway 屏幕保护程序引擎，作者明确披露使用 REA 与 Claude Code。它读取原始文件，在现代桌面上运行恢复的动画脚本及按日历推进的故事状态；文档记录了实现差异，测试范围有限，完整行为等价性仍未知。",
     "evidence_url": "https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/README.md",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
-      "Reviewed at v0.3.0: this is a Windows 3.1 screensaver-engine reconstruction, not a game port. The author reports recovering formats and TTM/ADS script semantics from disassembly, with human-directed REA/Claude Code work and comparisons against the original.",
+      "Reviewed at v0.3.0: this is a Windows 3.1 screensaver-engine reconstruction. The author reports recovering formats and TTM/ADS script semantics from disassembly, with human-directed REA/Claude Code work and comparisons against the original.",
       "Builds pin Rust 1.99.1; Cargo declares minimum Rust 1.99 and edition 2024. The project targets Windows, macOS and Linux using winit, softbuffer and rodio. Linux builds also require ALSA development headers and pkg-config.",
       "Runtime requires separately obtained SCRANTIC.SCR, RESOURCE.MAP and RESOURCE.001 beside the executable. README sizes and SHA-256 values identify the expected original files; the loader instead checks known executable strings/layout, not whole-file hashes. Arbitrary original builds are unsupported. Options and story state use SCRANTIC.INI, saved on normal exit.",
       "Deliberate differences include full-frame redraw, potentially one-pixel line/ellipse differences, bounded final-scene selection and a fixed two-second title display. Optional dedithering and softened audio default off. The original settings dialog and password feature are absent, as are unused animated-palette, 256-color and ADS-variable features.",
-      "The headless test runs 6,000 steps and requires three completed scenes, without original-frame comparison. Data-dependent tests silently return when OPEN_SCRANTIC_DATA is unset; other tests cover parsing and arithmetic. CI checks formatting, lint, three-platform builds and --version, not cargo test or original-data playback. Snapshot output supports inspection, not an automated original-output oracle.",
+      "The headless test runs 6,000 steps and requires three completed scenes, without original-frame comparison. Data-dependent tests silently return when OPEN_SCRANTIC_DATA is unset; other tests cover parsing and arithmetic. CI checks formatting, lint, three-platform builds and --version, not cargo test or original-data playback. Snapshot output supports inspection.",
       "MIT covers project source, not original executable content, art, scripts or sounds, which users must supply with appropriate authorization. The author describes independent, non-commercial interoperability without Sierra/Dynamix endorsement."
     ],
     "requirement_facets": [
@@ -2442,8 +2442,8 @@
       "app",
       "binary"
     ],
-    "description_en": "An agent-first desktop reverse-engineering app that opens Mach-O, ELF and PE binaries, Android packages and GPU kernels, and lets any Agent Client Protocol agent read code, rename functions, add notes and propose patches in a shared window. Native code is decompiled by Ghidra through a bundled REA build, with Rizin and jadx as alternative engines. It is a workbench around existing engines, not a new decompiler or a reconstruction case.",
-    "description_zh": "以智能体为核心的桌面逆向工程应用，可打开 Mach-O、ELF、PE 二进制、Android 安装包和 GPU 内核，让任何支持 Agent Client Protocol 的智能体在同一窗口中阅读代码、重命名函数、添加笔记并提出补丁。原生代码通过内置的 REA 构建交由 Ghidra 反编译，也可改用 Rizin 和 jadx。它是围绕现有引擎的工作台，并非新的反编译器或重建案例。",
+    "description_en": "An agent-first desktop reverse-engineering app that opens Mach-O, ELF and PE binaries, Android packages and GPU kernels, and lets any Agent Client Protocol agent read code, rename functions, add notes and propose patches in a shared window. Native code is decompiled by Ghidra through a bundled REA build, with Rizin and jadx as alternative engines. It is a workbench around existing engines.",
+    "description_zh": "以智能体为核心的桌面逆向工程应用，可打开 Mach-O、ELF、PE 二进制、Android 安装包和 GPU 内核，让任何支持 Agent Client Protocol 的智能体在同一窗口中阅读代码、重命名函数、添加笔记并提出补丁。原生代码通过内置的 REA 构建交由 Ghidra 反编译，也可改用 Rizin 和 jadx。它是围绕现有引擎的工作台。",
     "evidence_url": "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-18",
@@ -2478,8 +2478,8 @@
     "targets": [
       "app"
     ],
-    "description_en": "Identifies a Flutter APK’s Dart snapshot hash, per-ABI library digests and engine build provenance, then inspects one ABI’s AOT snapshot sections, through REA’s pure-parsing CLI and MCP tools. The string-pool output is a bounded byte-pattern projection of package and SDK URIs, not deserialized Dart classes or recovered source.",
-    "description_zh": "通过 REA 的纯解析命令行与 MCP 工具，识别 Flutter APK 的 Dart 快照哈希、各 ABI 库摘要与引擎构建来源，再检查单个 ABI 的 AOT 快照段。字符串池输出是对 package 与 SDK URI 的有界字节模式投影，并非反序列化的 Dart 类或恢复的源码。",
+    "description_en": "Identifies a Flutter APK’s Dart snapshot hash, per-ABI library digests and engine build provenance, then inspects one ABI’s AOT snapshot sections, through REA’s pure-parsing CLI and MCP tools. The string-pool output is a bounded byte-pattern projection of package and SDK URIs.",
+    "description_zh": "通过 REA 的纯解析命令行与 MCP 工具，识别 Flutter APK 的 Dart 快照哈希、各 ABI 库摘要与引擎构建来源，再检查单个 ABI 的 AOT 快照段。字符串池输出是对 package 与 SDK URI 的有界字节模式投影。",
     "evidence_url": "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/docs/flutter-analysis.md",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-18",
@@ -2518,7 +2518,7 @@
     "requirements": [
       "Reviewed on main as rea-agents 6.7.0, which declares Node ^22.19.0, ^24.11.0 or 26+. No HarmonyOS SDK, toolchain or engine is needed: inspect-artifact produces the inventory and project-harmony-application-graph (MCP project_harmony_application_graph) projects it, with CLI and MCP sharing one workflow. .hap, .hsp and ZIP-verified root .app inputs are recognized; .har shared libraries are deferred because the suffix also names HTTP Archive JSON.",
       "Outputs are path-presence claims: Stage is inferred only from module.json and FA only from config.json, App Pack children are listed without recursive inventory, encrypted or unavailable entries make coverage partial, and N-API bridge entries are hypotheses. Manifest semantics, Ark bytecode contents and versions, resource resolution, signing verification and observed native boundaries stay listed as limitations, and inventories that cannot be authenticated fail closed.",
-      "The verification lane downloads a SHA-256-pinned harmony-next-pipeline 1.0.1 HAP from an MIT-licensed source repository into an ignored directory and checks inventory authenticity, projection determinism, Stage path hints, exact component sets, complete coverage and CLI/MCP parity. The fixture’s compiler/SDK versions and reproducible build are not established, and the lane does not complete the pinned-toolchain acceptance in roadmap issue #1431.",
+      "The verification lane downloads a SHA-256-pinned harmony-next-pipeline 1.0.1 HAP from an MIT-licensed source repository into an ignored directory and checks inventory authenticity, projection determinism, Stage path hints, exact component sets, complete coverage and CLI/MCP parity. The fixture records no compiler/SDK versions or reproducible build, and the pinned-toolchain acceptance in roadmap issue #1431 remains open.",
       "REA declares MIT. Analysed packages keep their own licenses, and the guide says the fixture’s bundled component licenses were not independently audited; the downloaded artifact is not redistributed. Merged PR #1447 introduced this increment."
     ],
     "additional_evidence_urls": [
@@ -2547,7 +2547,7 @@
     "requirements": [
       "Needs a caller-installed Ghidra and compatible JDK on a supported Linux or macOS host; Windows Ghidra P0 does not admit MIPS, and Hopper/IDA gain no MIPS support. The lane does not execute MIPS code or rehost firmware. The standard profile admits ELF32 executables and relocatable objects declaring o32 and MIPS32r2; MIPS16 shared images have a separate bounded profile. ELF64, n32/n64, microMIPS, machine variants, FP64, NAN2008 and PSP PRX are refused.",
       "Merged PR #1898, for issue #1620, admits recordless legacy ELF32 executables with EF_MIPS_ARCH_32 or 32R2, an unspecified ABI field and an inspected absence of ABI-flags records. It pins MIPS:<LE|BE>:32:default and checks the language Ghidra reports after import. o32 is recorded as an analysis assumption, not a declared fact, and floating-point ABI semantics stay unverified.",
-      "Optional real-provider lanes need caller-supplied Clang with MIPS targets, LLD, GNU readelf or MIPS cross-binutils, and Ghidra. They build source-owned fixtures in both byte orders without executing them, comparing instruction bytes, symbols, languages and relocations with independent readelf facts. The guide states that pseudocode presence and decoding agreement do not establish runtime, delay-slot or complete floating-point semantics.",
+      "Optional real-provider lanes need caller-supplied Clang with MIPS targets, LLD, GNU readelf or MIPS cross-binutils, and Ghidra. They build source-owned fixtures in both byte orders without executing them, comparing instruction bytes, symbols, languages and relocations with independent readelf facts. The guide treats pseudocode presence and decoding agreement as static analysis checks; runtime behavior, delay-slot semantics and complete floating-point semantics remain unverified.",
       "The issue author reports gating a local patch on four real MIPS32 LE firmware ELFs whose function entries matched separate 32-bit Ghidra exports, and 400 of 5,250 functions lost on one image under auto-selection; those files are not public. A PR reviewer tested header-edited OpenWrt kernels and BusyBox builds with Capstone cross-checks and found no unedited public recordless file.",
       "REA declares MIT. Ghidra, compilers, binutils and analysed firmware keep their own terms, and the firmware behind the author’s results is not supplied."
     ],
@@ -2690,8 +2690,8 @@
       "app",
       "website"
     ],
-    "description_en": "A Japanese field report connects REA 6.4.0 to Claude Code in a separate project directory, denies 43 of its 170 tools and common shell launch forms, and compares REA-enabled and REA-disabled runs on two real tasks: an Electron terminal’s packaged files and a saved HAR capture. Both arms answered correctly, while the REA arm took up to 2.00× the time and 1.67× the API-equivalent cost. It is an analysis-evaluation and safety-configuration case, not a reconstruction.",
-    "description_zh": "一篇日文实践报告在单独的项目目录中把 REA 6.4.0 接入 Claude Code，屏蔽其 170 个工具中的 43 个以及常见的命令行启动方式，并在两个真实任务上比较启用与禁用 REA 的运行：一个 Electron 终端的分发文件，以及一份保存的 HAR 通信记录。两组都给出正确答案，而启用 REA 的一组耗时最多为 2.00 倍、按 API 计价的费用最多为 1.67 倍。这是分析评估与安全配置案例，而非重建案例。",
+    "description_en": "A Japanese field report connects REA 6.4.0 to Claude Code in a separate project directory, denies 43 of its 170 tools and common shell launch forms, and compares REA-enabled and REA-disabled runs on two real tasks: an Electron terminal’s packaged files and a saved HAR capture. Both arms answered correctly, while the REA arm took up to 2.00× the time and 1.67× the API-equivalent cost. It is an analysis-evaluation and safety-configuration case.",
+    "description_zh": "一篇日文实践报告在单独的项目目录中把 REA 6.4.0 接入 Claude Code，屏蔽其 170 个工具中的 43 个以及常见的命令行启动方式，并在两个真实任务上比较启用与禁用 REA 的运行：一个 Electron 终端的分发文件，以及一份保存的 HAR 通信记录。两组都给出正确答案，而启用 REA 的一组耗时最多为 2.00 倍、按 API 计价的费用最多为 1.67 倍。这是分析评估与安全配置案例。",
     "evidence_url": "https://zenn.dev/keigoly/articles/8738d8d241b5a1",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-18",
@@ -2730,7 +2730,7 @@
     "requirements": [
       "Reviewed on main as rea-agents 6.7.0, which declares Node ^22.19.0, ^24.11.0 or 26+. Bring your own Ghidra and JDK; the guide’s Windows check used Ghidra 12.1.4 and JDK 21. The built-in parser handles x64 PE32+ with .NET 8 RTR 9.1 metadata and needs a unique RTR header and exactly one DEHYDRATED_DATA row; other RTR versions and PE architectures are reported as unsupported or partial. Ordinary PE/CLI or ReadyToRun assemblies belong to REA’s managed-code tools instead.",
       "The optional adapter is built from a clean pinned checkout of Washi1337/ghidra-nativeaot with existing git, javac and jar; REA records the JAR’s SHA-256, copies it and rechecks the digest before loading, and JARs run inside Ghidra, so supply a trusted build. It annotates within an ephemeral Program transaction and never changes the original executable. It is unavailable on Windows Ghidra P0, where database tools do not see rehydrated bytes and slot targets come from the parser report.",
-      "Outputs include MethodTable addresses, base types, interfaces, virtual slots and frozen strings, within documented local limits such as 128 MiB of captured PE bytes and 4 MiB of report JSON; rows beyond the report budget are omitted with partial coverage. Type identification uses upstream heuristics and prototypes remain inferences. Pseudocode is recovered native logic, not original C# source, and original class/member names and custom field layouts stay unknown.",
+      "Outputs include MethodTable addresses, base types, interfaces, virtual slots and frozen strings, within documented local limits such as 128 MiB of captured PE bytes and 4 MiB of report JSON; rows beyond the report budget are omitted with partial coverage. Type identification uses upstream heuristics and prototypes remain inferences. Pseudocode presents recovered native logic, and original class/member names and custom field layouts stay unknown.",
       "Verification uses benign source-built .NET 8.0.22 fixtures with independent compiler/linker-symbol and directory-byte oracles, plus stripped and negative inputs; fixtures are never executed, and building them needs .NET SDK 8.0.416 and platform NativeAOT tools. The real MCP lane runs only on Linux x64 with the adapter. Windows-host behavior was checked manually once on Windows 11 x64 without the JAR against the fixture oracle and linker map; no CI lane repeats that check.",
       "REA declares MIT. The parser’s hydration semantics are adapted from Washi1337/ghidra-nativeaot (MIT, with its notice shipped under licenses/) and cross-checked against .NET’s MethodTable.h. Analysed executables keep their own licenses. Merged PR #748 introduced the integration and issue #744 records the request and its closure."
     ],
@@ -2757,7 +2757,7 @@
     "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
-      "README reports that the original and combined rebuilt games reproduce controllable bedroom gameplay, that both C replacements are behavior-tested but nonmatching, and that no completion percentage is claimed. STATUS.md (updated 2026-10-12) lists an unchanged main executable and one CRO module rebuilt byte for byte, the integrated __aeabi_vec_ctor_nocookie_nodtor helper and a 36-byte startup BSS clearer. The hybrid builds still contain mostly original code and assets and need a 3DS runtime; a native PC port is a later phase.",
+      "README reports that the original and combined rebuilt games reproduce controllable bedroom gameplay and that both C replacements are behavior-tested but do not match byte for byte. The README gives no completion percentage. STATUS.md (updated 2026-10-12) lists an unchanged main executable and one CRO module rebuilt byte for byte, the integrated __aeabi_vec_ctor_nocookie_nodtor helper and a 36-byte startup BSS clearer. The hybrid builds still contain mostly original code and assets and need a 3DS runtime; a native PC port is a later phase.",
       "Requires the user’s own Ultra Sun base version 0 container (title 00040000001b5000, product code CTR-P-A2AA) kept locally; the v1.2 update stays a separate comparison input. TARGET.md records the author’s base container SHA-256 3bb3b4eb0d17f18875d8b847c871dc97a172beeda03ce99e59e62a78ed5c1a53 and notes that these hashes identify the supplied dumps, not every copy. Retail containers, extracted code, raw REA dossiers, game frames and emulator logs stay in ignored private directories.",
       "SETUP.md uses Ubuntu WSL on Windows with Node.js 22, Python 3, GCC and readelf. Its bootstrap builds REA from source revision 7ae3c50a9d49c480035855de9fcc4484befacd92 (package version 6.4.0) and runs it with Ghidra 12.1.4 and Temurin JDK 21, with Capstone 5.0.7 as an independent decoder. Rebuilds use a pinned 3DS Decomp Pipeline revision, the C replacements were compiled with Ubuntu’s gcc-arm-none-eabi (GCC 10.3.1), and runtime checks use Azahar 2126.2 and its RPC interface.",
       "The project reports independent byte checks of the unchanged rebuilds, isolated behavior tests and live RPC readbacks for the replaced routines, and 60 passing source-owned tests. Runtime evidence is a bounded startup, setup and bedroom comparison under one input movie; routine execution counts, battles, overworld coverage, full-movie completion and timing determinism remain unverified. The tests use source-owned fixtures, not retail bytes.",
@@ -2804,9 +2804,9 @@
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed as a live website on 2026-10-18, when the homepage reported 180 projects, 100 marked Works, 12 guides and 166 tools, and the sitemap listed 180 project pages. The site has no pinned revision or public source repository, so entries, counts and labels can change after this review.",
-      "Entries record target, model, tools, time, cost, outcome (Works, Partial or Research), a 1–5 human-effort scale and four reproducibility checks. The About page says figures are reported by authors, not measured by the site, and unknown fields are marked Not reported; a Works label is the author’s claim. A Reproducible badge needs Works plus public source and repro steps, with real-hardware or third-party confirmation for firmware and devices.",
+      "Entries record target, model, tools, time, cost, outcome (Works, Partial or Research), a 1–5 human-effort scale and four reproducibility checks. The About page says figures are reported by authors and remain unmeasured by the site, and unknown fields are marked Not reported; a Works label is the author’s claim. A Reproducible badge needs Works plus public source and repro steps, with real-hardware or third-party confirmation for firmware and devices.",
       "The policy lists interoperability, preservation, modding that does not bypass DRM or anti-cheat, legacy-software recovery, format, protocol and API documentation, the user’s own devices, CTFs and defensive malware analysis without live samples. It declines DRM, licence-check and anti-cheat bypasses, online cheats, leaked source, live malware samples and weaponised exploits. The site says it hosts no binaries or code and accepts takedown requests.",
-      "The maintainer, smyaseen (@whyamas on X), reviews every submission; sponsored placements are labelled, and the site says sponsors do not affect listings or order. Its guides include a third-party REA setup guide updated 2026-10-14, but the directory covers many tools beyond REA and is not an official REA resource. The reviewed pages show a copyright notice and no reuse license for directory content."
+      "The maintainer, smyaseen (@whyamas on X), reviews every submission; sponsored placements are labelled, and the site says sponsors do not affect listings or order. Its guides include a third-party REA setup guide updated 2026-10-14, among guides for many tools. The directory is independent of REA. The reviewed pages show a copyright notice and no reuse license for directory content."
     ],
     "targets": [
       "game",
@@ -2841,10 +2841,10 @@
     "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
-      "plugin.json declares 0.1.0 under MIT. Hermes’ catalog lists it as an official Nous Research plugin for Hermes 0.22.0+, installed with hermes plugins install rea and hermes plugins enable rea; it is not published by REA. Requires Node.js 22.19+, 24.11+ or 26+ with npx, not 23 or 25. A later rea-agents setup for Hermes replaces the pinned server entry.",
+      "plugin.json declares 0.1.0 under MIT. Hermes’ catalog lists it as an official Nous Research plugin for Hermes 0.22.0+, installed with hermes plugins install rea and hermes plugins enable rea; its publisher is a party outside REA. Requires Node.js 22.19+, 24.11+ or 26+ with npx, not 23 or 25. A later rea-agents setup for Hermes replaces the pinned server entry.",
       "Static JavaScript/ASAR, package, Go/Rust, PE, .NET and HAR analysis needs nothing else. Core-dump and ELF-layout tools need a Python with pwntools 4.15.0, pyelftools 0.33 and Unicorn 2.1.2 set in Hermes’ .env. Native decompilation needs Ghidra with a JDK, Hopper or IDA; Android needs JADX and Java; firmware and captures need Binwalk/Unblob, TShark, sigrok or WABT.",
       "Only the adapted skill asks: Hermes itself does not prompt before REA tools that run PTY commands, drive apps, change Android devices or overwrite files; skip them in unattended runs. Analyze untrusted programs in a prepared environment.",
-      "In the README’s WinSCP 6.7 test the GUI import took 663 seconds under a 1000-second call budget, an author observation rather than a guarantee. Ghidra’s startup deadline is 900 seconds, while each call keeps Hermes’ 300-second MCP default.",
+      "In the README’s WinSCP 6.7 test the author observed a 663-second GUI import under a 1000-second call budget. Ghidra’s startup deadline is 900 seconds, while each call keeps Hermes’ 300-second MCP default.",
       "Hermes v0.22.2 installs the package; the per-server call budget needs v0.23.0. The about-170-tool and 460 KB schema figures describe REA 6.4.0. REA’s MIT notice is included and the crash-triage workflow credits crashlens (MIT); external engines and targets keep their own terms."
     ],
     "additional_evidence_urls": [
@@ -2868,8 +2868,8 @@
     "targets": [
       "binary"
     ],
-    "description_en": "A crash-triage tool that turns Linux core dumps, runtime panics, exception traces and sanitizer reports into Markdown bug reports naming the crash type, the first frame in the user’s code and a stable signature. Its core-dump path calls the REA CLI to read the recorded crash and the binary layout, and can ask REA’s Ghidra provider for pseudocode of stripped functions; a Claude Code plugin bundles a skill and read-only MCP tools. It is a debugging integration around REA, not a reconstruction case, and its diagnostic accuracy remains author-reported.",
-    "description_zh": "崩溃分诊工具，将 Linux 核心转储、运行时 panic、异常堆栈和 sanitizer 报告整理为 Markdown 缺陷报告，指出崩溃类型、首个用户代码帧和稳定签名。核心转储分析通过 REA 命令行读取崩溃记录与二进制布局，并可调用 REA 的 Ghidra 引擎为无符号函数生成伪代码；附带的 Claude Code 插件包含技能与只读 MCP 工具。它是围绕 REA 的调试集成，不是重建案例，诊断准确性仍为作者报告。",
+    "description_en": "A crash-triage tool that turns Linux core dumps, runtime panics, exception traces and sanitizer reports into Markdown bug reports naming the crash type, the first frame in the user’s code and a stable signature. Its core-dump path calls the REA CLI to read the recorded crash and the binary layout, and can ask REA’s Ghidra provider for pseudocode of stripped functions; a Claude Code plugin bundles a skill and read-only MCP tools. It is an REA debugging integration with author-reported diagnostic accuracy.",
+    "description_zh": "崩溃分诊工具，将 Linux 核心转储、运行时 panic、异常堆栈和 sanitizer 报告整理为 Markdown 缺陷报告，指出崩溃类型、首个用户代码帧和稳定签名。核心转储分析通过 REA 命令行读取崩溃记录与二进制布局，并可调用 REA 的 Ghidra 引擎为无符号函数生成伪代码；附带的 Claude Code 插件包含技能与只读 MCP 工具。它是围绕 REA 的调试集成，诊断准确性由作者报告。",
     "evidence_url": "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/README.md",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-19",
@@ -2901,8 +2901,8 @@
     "url": "https://github.com/zhxunzh84/rea-dino-reverse-engineering",
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
-    "description_en": "The author uses REA’s MCP browser tools to passively capture the JavaScript loaded by wayou’s open-source T-Rex Runner page, then has Codex rebuild its acceleration rule in one self-contained HTML5 Canvas game. The report identifies the captured script by SHA-256 and separates verified source facts from reconstruction choices; only the speed rule is claimed, not full gameplay equivalence.",
-    "description_zh": "作者使用 REA 的 MCP 浏览器工具被动捕获 wayou 开源 T-Rex Runner 页面已加载的 JavaScript，再由 Codex 在一个自包含的 HTML5 Canvas 游戏中重建其加速规则。报告以 SHA-256 标识所捕获的脚本，并区分已核实的源码事实与重建选择；只主张速度规则一致，不主张完整玩法等价。",
+    "description_en": "The author uses REA’s MCP browser tools to passively capture the JavaScript loaded by wayou’s open-source T-Rex Runner page, then has Codex rebuild its acceleration rule in one self-contained HTML5 Canvas game. The report identifies the captured script by SHA-256 and separates verified source facts from reconstruction choices; the report claims speed-rule parity.",
+    "description_zh": "作者使用 REA 的 MCP 浏览器工具被动捕获 wayou 开源 T-Rex Runner 页面已加载的 JavaScript，再由 Codex 在一个自包含的 HTML5 Canvas 游戏中重建其加速规则。报告以 SHA-256 标识所捕获的脚本，并区分已核实的源码事实与重建选择；项目报告速度规则一致。",
     "evidence_url": "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/README.md",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-19",
@@ -2976,8 +2976,8 @@
     "url": "https://github.com/Henry-fan88/claude-code-background",
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
-    "description_en": "Reimplements the glyph-wind background of the Claude desktop app’s Claude Code New session view as an offline WebGL2 page with a 38-slider control panel. The author reports a static REA investigation of the desktop shell and its remote web bundle, followed by a newly written renderer that reuses recovered timing and layout values. It shares the original’s visual vocabulary and interaction model but is not a pixel-identical extraction.",
-    "description_zh": "将 Claude 桌面应用中 Claude Code“新会话”界面的字符风场背景，重新实现为可离线运行的 WebGL2 页面，并附带 38 个滑块的控制面板。作者报告先用 REA 对桌面外壳及其远程网页包进行静态调查，再以新编写的渲染器复用恢复出的时序与布局参数。它与原效果的视觉语言和交互方式相近，但不是逐像素一致的提取。",
+    "description_en": "Reimplements the glyph-wind background of the Claude desktop app’s Claude Code New session view as an offline WebGL2 page with a 38-slider control panel. The author reports a static REA investigation of the desktop shell and its remote web bundle, followed by a newly written renderer that reuses recovered timing and layout values. It shares the original’s visual vocabulary and interaction model.",
+    "description_zh": "将 Claude 桌面应用中 Claude Code“新会话”界面的字符风场背景，重新实现为可离线运行的 WebGL2 页面，并附带 38 个滑块的控制面板。作者报告先用 REA 对桌面外壳及其远程网页包进行静态调查，再以新编写的渲染器复用恢复出的时序与布局参数。它与原效果的视觉语言和交互方式相近。",
     "evidence_url": "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/docs/PROVENANCE.md",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-19",
@@ -3026,10 +3026,10 @@
     "verification": "source-reviewed",
     "requirements": [
       "README marks exact reconstruction as in progress, to be followed by a playable Visual C++ 4.0 build and later platform ports. Generated PROGRESS.md counts 553 provisional function candidates, 475 with source, 395 byte-exact (85,106 exact code bytes) and 249 with scoped semantic acceptance, and says both Windows builds completed recorded original-board campaigns under Wine. A separate 50-board restored-CRT attempt on October 17 ended at its time limit without a full pass.",
-      "Supply the English v1.07 Windows archive identified in config/target.toml; the importer verifies the archive and DXBALL.EXE hashes and puts the executable and assets in the git-ignored original/ directory. README points to a third-party download site for that archive; the repository does not establish its distribution rights.",
+      "Supply the English v1.07 Windows archive identified in config/target.toml; the importer verifies the archive and DXBALL.EXE hashes and puts the executable and assets in the git-ignored original/ directory. README points to a third-party download site for that archive; distribution rights for the archive remain undocumented in the repository.",
       "The documented host is Linux x86-64 with Git, Python 3.11+, Node.js 22.19.0, 32-bit Wine, Xvfb, CMake, Ninja and GCC or Clang, plus i686 MinGW for Windows cross-builds. Bootstrap scripts fetch a hash-pinned JDK, Ghidra and a Visual C++ 4.0 compiler from a third-party archive repository. The REA lock file pins rea-agents 6.5.0 with Ghidra 12.1.4, while docs/REA.md still names 6.4.0; the Codex goal workflow needs Codex 0.128.0 or newer.",
       "An exact unit has zero differences across the whole function after COFF relocations are mapped to original functions, imports and data, with literal data also checked; match-units.toml records the inputs needed to replay each unit. Differential tests run original x86 routines under Unicorn emulation against the compiled maintained C, and public CI builds the portable source, validates recorded evidence and compiles the Windows adapter without game resources. All results are project-reported.",
-      "MIT covers repository code; the original game, credited to Michael P. Welch with 3D graphics by Seumas McNally, is supplied separately and keeps its own rights, as do the downloaded compiler and tools. REA use is documented through saved responses and a worked projectile-list example, but agent effectiveness is not independently measured."
+      "MIT covers repository code; the original game, credited to Michael P. Welch with 3D graphics by Seumas McNally, is supplied separately and keeps its own rights, as do the downloaded compiler and tools. REA use is documented through saved responses and a worked projectile-list example; agent effectiveness remains unmeasured independently."
     ],
     "requirement_facets": [
       "scope",
@@ -3072,7 +3072,7 @@
     "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
-      "The reviewed commit targets the PAL PS1 release (SLES-00972), disc 1 with Leon. README reports all 125 disc 1 rooms, a script interpreter covering every opcode used on that disc, zombies, the lower-screen status menu, sound, voices, the opening movies and typewriter saves; it lists the map and files, other enemy types, the remaining movies and Claire’s disc as missing. It is a native engine, not an emulator, a matching decompilation or a complete port.",
+      "The reviewed commit targets the PAL PS1 release (SLES-00972), disc 1 with Leon. README reports all 125 disc 1 rooms, a script interpreter covering every opcode used on that disc, zombies, the lower-screen status menu, sound, voices, the opening movies and typewriter saves; it lists the map and files, other enemy types, the remaining movies and Claire’s disc as missing. It is a native engine.",
       "Requires the user’s own Resident Evil 2 PAL disc 1 as a .bin/.cue dump, of which only Track 1 is used; local conversion produces about 290 MB of DS data. The repository states that it contains no game data and that the generated build/, nitrofiles/ and re2ds.nds outputs contain Capcom data that must never be committed or shared.",
       "Building uses devkitARM and libnds (devkitPro nds-dev), Python 3, FFmpeg with its development libraries, a C compiler and pkg-config. Windows builds run in WSL Ubuntu, and make falls back to devkitPro’s Docker image when no local devkitARM is found. The README plays the ROM in melonDS, needs DLDI SD-card setup for saves and shows a photo captioned as running on a Nintendo DSi XL.",
       "Host tests compile the platform-independent script, enemy and cutscene code for a PC and run it against the user’s converted data; the script test reports unknown opcodes, and scd_disasm.py --check validates jump targets across rooms. Analysis notes cite PS1 addresses and mark observed versus assumed behavior. psxexe_to_elf.py wraps the executable and symbol lists as a MIPS ELF accepted by REA’s Ghidra lane; Claude Code use is stated only in the Reddit post.",
@@ -3123,7 +3123,7 @@
       "Engines are separate: APK DEX work needs JADX and a full JDK, native targets need a Ghidra, Hopper or IDA provider configured through REA’s installation guide, and commercial engines need their own licenses; source, JS/Electron and saved-HAR workflows need no native decompiler. The prompts cover source mapping, API reconstruction from a sanitized HAR to OpenAPI 3.1 and a TypeScript client, JavaScript, native binaries (at most 30 functions per round), APKs, unknown file formats and session handoff.",
       "scripts/workspace.py copies one target into a Git-ignored target/ directory without running it, records SHA-256 baselines, sets files to 0444, rejects symlinks and special files, and creates a writable work/ copy; verify reports changed, added or missing files. sanitize_har.py rebuilds a structural HAR copy, removing header values, cookies, URL credentials and query strings and replacing JSON values with placeholders. README warns that hosts, paths and field names can still identify users and need manual review.",
       "docs/VALIDATION.md (2026-10-17) reports 12 passing standard-library tests, a healthy rea mcp doctor run listing 170 tools, and REA static analysis of a synthetic JavaScript app and a synthetic HAR with Node 24.18.0 and Python 3.12.7. It lists client MCP connection after restart, real APK and native targets, real-HAR anonymization and runtime work as unverified, and its smoke-test outputs are not committed.",
-      "README states that the Claude Code permission rules, read-only file modes and SHA-256 baselines are not an isolation boundary, and recommends read-only mounts and controlled networking where strong isolation is needed. AGENTS.md defaults to static analysis and reserves running samples, connecting devices and contacting target services for authorized tasks. The repository has no license file, so reuse terms are unstated; REA, analysis engines, clients and targets keep their own terms."
+      "README states that the Claude Code permission rules, read-only file modes and SHA-256 baselines provide permission and integrity checks only; strong isolation requires separate controls, so the README recommends read-only mounts and controlled networking where strong isolation is needed. AGENTS.md defaults to static analysis and reserves running samples, connecting devices and contacting target services for authorized tasks. The repository has no license file, so reuse terms are unstated; REA, analysis engines, clients and targets keep their own terms."
     ],
     "additional_evidence_urls": [
       "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/docs/VALIDATION.md",
@@ -3149,8 +3149,8 @@
       "app",
       "binary"
     ],
-    "description_en": "A third-party Agent Skill that works alongside REA’s own skill to turn reverse-engineering evidence into scoped requirements, design, staged implementation and validation, from one feature or format to a whole app. An optional installer can add a marked routing block to the user’s REA SKILL.md so that relevant reconstruction requests load both skills. Its bundled evaluation kit consists of source-exposed, maintainer-authored examples with literal oracles, not a model benchmark.",
-    "description_zh": "第三方 Agent Skill，与 REA 自身的技能配合使用，把逆向分析证据整理成限定范围的需求、设计、分阶段实现与验证，范围可从单个功能或格式扩展到整个应用。可选安装程序能在用户的 REA SKILL.md 中加入带标记的路由段落，使相关重建请求同时加载两个技能。附带的评估套件由维护者编写、已接触源码的示例及字面预期值组成，并非模型基准。",
+    "description_en": "A third-party Agent Skill that works alongside REA’s own skill to turn reverse-engineering evidence into scoped requirements, design, staged implementation and validation, from one feature or format to a whole app. An optional installer can add a marked routing block to the user’s REA SKILL.md so that relevant reconstruction requests load both skills. Its bundled evaluation kit provides source-exposed, maintainer-authored examples with literal oracles for example-level checks.",
+    "description_zh": "第三方 Agent Skill，与 REA 自身的技能配合使用，把逆向分析证据整理成限定范围的需求、设计、分阶段实现与验证，范围可从单个功能或格式扩展到整个应用。可选安装程序能在用户的 REA SKILL.md 中加入带标记的路由段落，使相关重建请求同时加载两个技能。附带的评估套件由维护者编写、已接触源码的示例及字面预期值组成，用于对这些示例逐一检查。",
     "evidence_url": "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/README.md",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-20",
@@ -3184,8 +3184,8 @@
     "targets": [
       "binary"
     ],
-    "description_en": "An unofficial field study that reads REA's source and then drives the running server through 1,012 recorded calls across 27 artifact classes, measuring its content-addressed Evidence records, revision-chained unknown ledger, typed refusals, cold starts and response limits. The author maps those mechanisms onto vulnerability-research agents as an argument for not overclaiming. It evaluates REA's tool surface; it is not a reconstruction or a vulnerability finding.",
-    "description_zh": "一篇非官方的实测研究：先阅读 REA 源码，再在 27 类分析对象上对运行中的服务器发出 1,012 次有记录的调用，测量其按内容寻址的 Evidence 记录、按修订串联的未知项台账、带类型的拒绝、冷启动及响应上限。作者把这些机制对应到漏洞研究智能体上，论证为何不应过度声称结论。它评估的是 REA 的工具接口，而非重建案例或漏洞发现。",
+    "description_en": "An unofficial field study that reads REA's source and then drives the running server through 1,012 recorded calls across 27 artifact classes, measuring its content-addressed Evidence records, revision-chained unknown ledger, typed refusals, cold starts and response limits. The author maps those mechanisms onto vulnerability-research agents as an argument for not overclaiming. It evaluates REA's tool surface.",
+    "description_zh": "一篇非官方的实测研究：先阅读 REA 源码，再在 27 类分析对象上对运行中的服务器发出 1,012 次有记录的调用，测量其按内容寻址的 Evidence 记录、按修订串联的未知项台账、带类型的拒绝、冷启动及响应上限。作者把这些机制对应到漏洞研究智能体上，论证为何不应过度声称结论。它评估 REA 的工具接口。",
     "evidence_url": "https://no-flag.com/2026/10/18/REA-paper/",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-20",
@@ -3194,7 +3194,7 @@
       "Published 2026-10-18 on the author's HackThe4O4 blog under the byline Noflag, who calls it unofficial, not peer-reviewed and unaffiliated with REA's maintainers, and says the official source wins where they disagree. The main study used the published rea-agents 6.5.0 package for 993 of the 1,012 calls; 19 calls comparing two deep providers ran a build of commit fe2a398dd, 286 commits later.",
       "All runs used one Debian-derived Linux VM (4 vCPU, 7.9 GB RAM) with operator-supplied engines, including a headless Ghidra 12.x decompiler, GDB, Rizin, a packet dissector, firmware tools, headless Chromium and Electron; the Android device was a container sharing the host kernel. The decompiler startup deadline was raised to 1,200 s, and macOS-only tools, a GUI-attached disassembler's cursor tools and an unlicensed commercial Java decompiler could not be exercised.",
       "The author reports calling all 207 advertised tools, 178 with at least one success, and 454 Evidence-bearing replies. Oversized replies were refused with a retained-Evidence pointer, but a 10.1 MiB request dropped the connection without a reply. Decompiler cold starts ranged from 14 s to 827 s, and two schema switches cut the default 3.09 MB tool catalog to 215 KB.",
-      "Timings come from one lightly loaded VM and are offered as orders of magnitude. The calls came from the author's scripted campaign driver acting as an informed caller, and the article names no analyzed targets. The security-agent mapping is presented as argument, not a built system. Per-call records, campaign files and scripts are described as accompanying the research but are not linked from the page.",
+      "Timings come from one lightly loaded VM and are offered as orders of magnitude. The calls came from the author's scripted campaign driver acting as an informed caller, and the article names no analyzed targets. The security-agent mapping remains an argument in the article; an implemented system is absent. Per-call records, campaign files and scripts are described as accompanying the research but are not linked from the page.",
       "This evaluates REA's evidence model and tool surface; no reconstruction, exploit or vulnerability is reported. The page states no license; REA, the third-party engines and the analyzed artifacts keep their own terms."
     ],
     "additional_evidence_urls": [
@@ -3212,8 +3212,8 @@
     "targets": [
       "app"
     ],
-    "description_en": "A Chinese article breaks three versions of a Python CSV exporter that reproduces the Notes teaching app shipped with REA. It shows that a simple export-and-read-back test passes all three, while byte comparisons against the official JavaScript formatter on 215 fixed inputs catch each one. The author also connects REA 6.5.0 over MCP, reruns its JavaScript analysis and checks that an edited evidence record is rejected on import; this is a study of acceptance checks, not a new reconstruction.",
-    "description_zh": "一篇中文文章把复刻 REA 自带 Notes 教学应用的 Python CSV 导出器故意改坏三个版本，展示简单的“导出再读回”测试能让三者全部通过，而以官方 JavaScript 格式化函数为参照、在 215 组固定输入上逐字节比较则能逐一识破。作者还通过 MCP 连接 REA 6.5.0，重新运行其 JavaScript 分析，并验证被改动的证据记录在导入时会被拒绝；这是对验收检查的研究，而非新的重建。",
+    "description_en": "A Chinese article breaks three versions of a Python CSV exporter that reproduces the Notes teaching app shipped with REA. It shows that a simple export-and-read-back test passes all three, while byte comparisons against the official JavaScript formatter on 215 fixed inputs catch each one. The author also connects REA 6.5.0 over MCP, reruns its JavaScript analysis and checks that an edited evidence record is rejected on import; the article studies acceptance checks.",
+    "description_zh": "一篇中文文章把复刻 REA 自带 Notes 教学应用的 Python CSV 导出器故意改坏三个版本，展示简单的“导出再读回”测试能让三者全部通过，而以官方 JavaScript 格式化函数为参照、在 215 组固定输入上逐字节比较则能逐一识破。作者还通过 MCP 连接 REA 6.5.0，重新运行其 JavaScript 分析，并验证被改动的证据记录在导入时会被拒绝；文章研究验收检查。",
     "evidence_url": "https://x.com/i/article/2110962506604929025",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-27",
@@ -3221,8 +3221,8 @@
     "requirements": [
       "The 2026-10-16 article by @superfang119 follows the author’s earlier walkthrough, in which a Python reimplementation of the Notes app’s CSV export reportedly matched the original byte for byte on 215 inputs. It used Windows, Node 22.19.0 and rea-agents 6.5.0 through a temporary stdio client that listed 207 tools; the JavaScript analysis returned 6 files, 32 nodes and 45 edges. The author notes that this static graph locates the export path.",
       "The frozen byte contract quotes every title, doubles inner quotes and ends lines and the file with LF, for safe-integer ids and string titles. Each mutant changes one rule: quoting only when needed, leaving inner quotes unescaped, or dropping the final LF. A one-note read-back test passed all three. Against references from running the official JavaScript formatter on 15 fixed edge cases and 200 seeded inputs, the baseline matched 215/215 and the mutants differed on 26, 166 and 215 inputs.",
-      "Changing one evidence field from 6 to 999 while keeping its evidence_id made the same REA server reject the import with evidence_integrity_mismatch and leave session evidence unchanged; the author adds that this detects tampering but cannot show an interpretation is correct. The article also cites, without rerunning it, a TH08 project fix in which a comparator missed a 128.0 constant written as 0.0.",
-      "Analysis and implementation ran in the same Codex context, so the author states this is not clean-room separation, and the handoff prompts offered are proposals rather than a tested protocol. Scripts, mutants and outputs are not published; the three probes do not cover permissions, write failures, concurrency or the full interface. The target is REA’s own teaching sample, not a third-party product."
+      "Changing one evidence field from 6 to 999 while keeping its evidence_id made the same REA server reject the import with evidence_integrity_mismatch and leave session evidence unchanged; the author adds that this detects tampering, while interpretation correctness remains unverified. The article also cites, without rerunning it, a TH08 project fix in which a comparator missed a 128.0 constant written as 0.0.",
+      "Analysis and implementation ran in the same Codex context, so the author states this is not clean-room separation, and the handoff prompts offered are proposals rather than a tested protocol. Scripts, mutants and outputs are not published; the three probes do not cover permissions, write failures, concurrency or the full interface. The target is REA’s own teaching sample."
     ],
     "additional_evidence_urls": [
       "https://x.com/i/status/2110963427791487391"
@@ -3238,8 +3238,8 @@
     "targets": [
       "binary"
     ],
-    "description_en": "Fedele Mantuano reports using Codex with REA in an offline Docker lab to statically analyze a public Windows malware sample without executing it. The article separates behavior supported by the extracted JavaScript bundle from claims that would depend on remote components that were never obtained, and reclassifies a suspected infostealer as a loader. It is a defensive analysis case built on an author-reviewed agent report, not a reconstruction or a dynamic detonation.",
-    "description_zh": "Fedele Mantuano 报告在离线 Docker 实验环境中让 Codex 借助 REA，对一个公开的 Windows 恶意软件样本做静态分析，全程不执行样本。文章区分了提取出的 JavaScript 代码包能够支持的行为与依赖从未获取的远程组件的推断，并将原本疑为信息窃取程序的样本重新归类为加载器。这是以作者审阅过的智能体报告为基础的防御性分析案例，不是重建，也不是动态引爆分析。",
+    "description_en": "Fedele Mantuano reports using Codex with REA in an offline Docker lab to statically analyze a public Windows malware sample without executing it. The article separates behavior supported by the extracted JavaScript bundle from claims that would depend on remote components that were never obtained, and reclassifies a suspected infostealer as a loader. It is a defensive static analysis case built on an author-reviewed agent report; reconstruction and dynamic detonation were outside its scope.",
+    "description_zh": "Fedele Mantuano 报告在离线 Docker 实验环境中让 Codex 借助 REA，对一个公开的 Windows 恶意软件样本做静态分析，全程不执行样本。文章区分了提取出的 JavaScript 代码包能够支持的行为与依赖从未获取的远程组件的推断，并将原本疑为信息窃取程序的样本重新归类为加载器。这是以作者审阅过的智能体报告为基础的防御性静态分析案例；研究范围限于静态分析，未进行重建或动态引爆分析。",
     "evidence_url": "https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-27",
@@ -3248,7 +3248,7 @@
       "The Code Geeks article by Fedele Mantuano is dated 2026-10-18, with an Italian version, and reports an analysis performed on 2026-10-17. Codex was asked to use REA on one Windows x64 executable obtained from MalwareBazaar and to write a Markdown report on files, processes, persistence, network destinations, updates, defensive indicators and limits. The agent’s technical report, artifacts and code references are not published; the author offers further details privately.",
       "Analysis ran in a Linux/amd64 Docker Desktop container with REA 6.5.0 and Node 24.22.0, no network, a read-only root filesystem and sample mount, an unprivileged user and dropped capabilities. Neither the sample nor extracted code was executed, and Wine was not used; the author notes that Codex still communicated with its model service while the container was offline. The appendix separately documents a macOS Apple Silicon setup of REA 6.5.0, Ghidra 12.1.4, Temurin JDK 25.0.4.1 and Node.js 24.21.0 connected to Codex over MCP with the REA skill; it was not repeated on a clean Mac or tested on other hosts.",
       "After initial PE inspection, work focused on a JavaScript bundle extracted from the executable’s embedded Bun runtime; the roughly 98 MB native executable was not fully decompiled. The author reports analyst-written decoders for the bundle’s layered string obfuscation, run without evaluating the sample’s code, and spot checks of hashes, the extraction range and decoded tables, partly against an independent Python implementation. These checks support specific findings.",
-      "The author reclassifies the suspected infostealer as a loader: its code supports host and screenshot collection, encrypted reporting, download and in-memory loading of further components, and server changes through fixed fallbacks and a remote lookup, with no DGA found in the bundle. Those further components were not obtained, so mining, credential theft, persistence and execution on a victim system remain unestablished, and one reported initialization inconsistency is left for dynamic verification. The article’s threat-intelligence pipeline is a proposed use, not an implemented or measured one.",
+      "The author reclassifies the suspected infostealer as a loader: its code supports host and screenshot collection, encrypted reporting, download and in-memory loading of further components, and server changes through fixed fallbacks and a remote lookup, with no DGA found in the bundle. Those further components were not obtained; mining, credential theft, persistence and execution on a victim system remain open questions, and one reported initialization inconsistency awaits dynamic verification. The article proposes a threat-intelligence pipeline; implementation and measurement remain future work.",
       "Handling live malware needs an isolated lab and the analyst’s own authorization. The article credits REA, Ghidra and Codex together and relies on an agent-written report reviewed by the author. The pinned blog repository has no license file; REA, Ghidra, Codex and the model service keep their own terms."
     ],
     "additional_evidence_urls": [
@@ -3274,7 +3274,7 @@
       "The repository was created on 2026-10-03, and the reviewed main snapshot (2026-10-19) follows the date-tagged release v2026.10.19.12. README reports a playable client on Linux, macOS (Apple Silicon) and Windows with vanilla world generation, mobs and their AI, villagers, raids, redstone, every command, Anvil saves and joining vanilla servers, and its own audit of 2026-10-13 scores every subsystem complete. Listed known issues include unsupported online-mode servers, skin and pack-icon gaps, unwired creative hotbar keys and missing attribute lines in tooltips.",
       "Needs Minecraft: Java Edition installed with the official launcher and 26.3 played once, plus the 26.3 server jar for the first preparation; research-lock.json pins the client and server jar SHA-1 checksums. horizon-prepare (Python 3.10+ and JDK 25) builds resources from that copy into the gitignored .local/ directory. README says Horizon never downloads game files and never publishes decompiled source or prepared resources, and tools/check_public_tree.py rejects them in commits.",
       "Players install through the Horizon launcher for Linux x86-64, macOS Apple Silicon or Windows x64, which also starts a dedicated server that needs no Java; rendering needs Vulkan on Linux and Windows. Source builds need Rust 1.90+, Python 3.10+, JDK 25 and, on Linux, the ALSA and udev headers; development and the vanilla harnesses run on Linux. tools/rea_vanilla.py needs Node.js 22.19+ and Java 17+, runs rea-agents 6.4.0 through npx unless that version is installed, and downloads jadx-headless-mcp 0.7.1 checked by SHA-256.",
-      "Each tools/test_*_parity.py harness drives the same inputs through a Java oracle under mods/horizon running the vanilla code and through a Rust probe, then compares the outputs; README says 100% means 100% of what the harnesses compare, not proof that nothing else differs. CI runs the Python and cargo tests on GitHub-hosted Linux runners and the vanilla harnesses on a self-hosted runner holding the maintainer’s copy of the game.",
+      "Each tools/test_*_parity.py harness drives the same inputs through a Java oracle under mods/horizon running the vanilla code and through a Rust probe, then compares the outputs; README says 100% refers to the outputs compared by the harnesses. CI runs the Python and cargo tests on GitHub-hosted Linux runners and the vanilla harnesses on a self-hosted runner holding the maintainer’s copy of the game.",
       "LICENSE applies MIT to the project’s original work; dependencies, including the wgpu-hal copy under third_party/, keep their own licences, and README says Minecraft code and assets belong to Mojang and Microsoft under the Minecraft EULA and that the project is not affiliated with them. docs/parity-workflow.md describes agents working in parallel worktrees behind a shared gate, and horizon-ctl exposes the game to AI agents as a CLI and MCP server. REA’s documented role is limited to the bytecode queries in CONTRIBUTING.md and tools/rea_vanilla.py."
     ],
     "targets": [
@@ -3380,7 +3380,7 @@
     "requirements": [
       "Reproducing the documented analysis needs the target package binary, REA, Ghidra 12.1.x and JDK 21; the README records additional pwntools tooling.",
       "The author explicitly reports no target execution or dynamic analysis. Function roles remain inferred, and compiler inlining or hot/cold splitting obscures boundaries.",
-      "Upstream netcat.c was consulted for function naming; recovered pseudocode is not an independently reconstructed or behaviorally validated program.",
+      "Upstream netcat.c was consulted for function naming; the recovered pseudocode is a static analysis artifact, with independent reconstruction and behavioral validation still unperformed.",
       "Analysis and documentation use MIT; upstream BSD attribution is retained in NOTICE."
     ],
     "requirement_facets": [
@@ -3409,7 +3409,7 @@
     "requirements": [
       "Source builds need the documented Rust toolchain; release archives target Linux, Windows and macOS. Linux needs GTK 3 and a Wayland or X11 session.",
       "The README attributes the reverse engineering to REA and Ghidra 12.1.3. Its behavioral-identity and validation statements are author-reported.",
-      "Native .sto input lacks a supplied sample, and the egui interface is not pixel-identical to original GDI/MFC rendering; original bitmaps are replaced.",
+      "Native .sto input lacks a supplied sample, and the egui interface differs in pixel rendering from the original GDI/MFC interface; original bitmaps are replaced.",
       "Reconstruction code offers MIT or Apache-2.0. Embedded fonts and Intel-derived trigonometry keep separate licenses; the bundled FastView.fvb characteristic data remains original-vendor data."
     ],
     "requirement_facets": [
@@ -3444,7 +3444,7 @@
       "Requires an owned Battlefield 2 1.5 installation, CMake 3.24+, Ninja, a C++20 compiler and SDL3; the Flash menu additionally needs Rust and Ruffle.",
       "Published crosshair research cites REA Evidence IDs; CLAUDE.md describes the mixed REA/Ghidra workflow and its payload and temporary-project limitations.",
       "macOS arm64 is the primary platform; the Windows preset is kept building but is not exercised. Tests needing game files can pass with a note when those files are absent.",
-      "Ammunition/reloading, recoil, projectiles, audio, driving and full commander/squad interaction remain unfinished; this is an engine research project, not a complete game port.",
+      "Ammunition/reloading, recoil, projectiles, audio, driving and full commander/squad interaction remain unfinished in this engine research project.",
       "MIT covers the project code; no original Battlefield 2 game content is redistributed."
     ],
     "requirement_facets": [
@@ -3472,8 +3472,8 @@
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
     "reconstruction_method": "decompilation",
-    "description_en": "A native Linux and browser port of Commander Keen Episode One is documented as a function-by-function REA/Ghidra reconstruction of KEEN1.EXE. Published analysis artifacts accompany the C/SDL2 game; the scope is the first episode, rather than the entire series.",
-    "description_zh": "Linux 原生与浏览器移植面向 Commander Keen 第一章，作者记录以 REA/Ghidra 对 KEEN1.EXE 逐函数研究并重建 C/SDL2 游戏，附带公开分析资料；范围仅为第一章，并非全系列。",
+    "description_en": "A native Linux and browser port of Commander Keen Episode One is documented as a function-by-function REA/Ghidra reconstruction of KEEN1.EXE. Published analysis artifacts accompany the C/SDL2 game; the scope is the first episode.",
+    "description_zh": "Linux 原生与浏览器移植面向 Commander Keen 第一章，作者记录以 REA/Ghidra 对 KEEN1.EXE 逐函数研究并重建 C/SDL2 游戏，附带公开分析资料；范围为第一章。",
     "evidence_url": "https://github.com/carlhako/keen-clone/blob/9c6ac72734c95c3260c23b57158ea5876abc14b3/README.md",
     "verified_at": "2026-11-01",
     "added_at": "2026-11-01",
@@ -3504,8 +3504,8 @@
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
     "reconstruction_method": "other",
-    "description_en": "A documented REA/Ghidra investigation maps SA-MP 0.3.DL-R1 client subsystems to a new C++ DLL, loader and smoke-test executable. The result is an architectural reconstruction with explicitly unresolved network and graphics behavior, not an established retail-compatible client.",
-    "description_zh": "REA/Ghidra 调查将 SA-MP 0.3.DL-R1 客户端子系统映射到新的 C++ DLL、加载器和冒烟测试程序，产物属于架构重建，网络与图形行为仍有明确未知项，未建立零售版兼容性。",
+    "description_en": "A documented REA/Ghidra investigation maps SA-MP 0.3.DL-R1 client subsystems to a new C++ DLL, loader and smoke-test executable. The result is an architectural reconstruction with unresolved network and graphics behavior; retail-client compatibility remains unverified.",
+    "description_zh": "REA/Ghidra 调查将 SA-MP 0.3.DL-R1 客户端子系统映射到新的 C++ DLL、加载器和冒烟测试程序，产物属于架构重建，网络与图形行为仍有明确未知项，零售版兼容性尚未验证。",
     "evidence_url": "https://github.com/NathanKanaeru/samp-client-re/blob/6efde5d3042ee87f0c183a6c68b7e1b26a000cac/README.md",
     "verified_at": "2026-11-01",
     "added_at": "2026-11-01",
@@ -3513,7 +3513,7 @@
     "requirements": [
       "The README reports a Windows/MinGW x64 build and a GTA-independent smoke executable; actual GTA: San Andreas use requires a separate 32-bit toolchain/build.",
       "The architecture table attributes addresses and recovered procedures to REA/Ghidra 12.1.4; names inferred from the stripped binary remain analyst interpretations.",
-      "Full RCON/RPC handling, the default-port wire format and the exact Present trampoline are marked unknown/TODO. The archive parser is described as behavior-equivalent, not a complete decryptor.",
+      "Full RCON/RPC handling, the default-port wire format and the exact Present trampoline are marked unknown/TODO. The archive parser is described as behavior-equivalent, with full decryption still outside its scope.",
       "No project license file was present in the reviewed root. Original GTA and SA-MP components remain separate prerequisites with their own rights."
     ],
     "requirement_facets": [
@@ -3568,8 +3568,8 @@
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
     "reconstruction_method": "engine-reimplementation",
-    "description_en": "A Rust/Bevy port reads GunZ: The Duel files from the user's installation and provides native releases, browser build tooling, screenshots and a documented REA/Ghidra investigation framework. Its LAN protocol and inferred movement behavior remain distinct from retail-server compatibility and proven gameplay parity.",
-    "description_zh": "Rust/Bevy 移植从用户安装中读取 GunZ: The Duel 数据，提供原生发布包、浏览器构建工具、截图及 REA/Ghidra 调查框架；自有局域网协议和推断的移动行为不代表兼容零售服务器或已证明玩法一致。",
+    "description_en": "A Rust/Bevy port reads GunZ: The Duel files from the user’s installation and provides native releases, browser build tooling, screenshots and a documented REA/Ghidra investigation framework. Its LAN uses the port’s own protocol, with retail-server compatibility unverified; movement behavior is inferred, with gameplay parity unproven.",
+    "description_zh": "Rust/Bevy 移植从用户安装中读取 GunZ: The Duel 数据，提供原生发布包、浏览器构建工具、截图及 REA/Ghidra 调查框架；局域网使用自有协议，零售服务器兼容性尚未验证；移动行为根据推断实现，玩法一致性尚未证实。",
     "evidence_url": "https://github.com/OpenRsG/GunZRs/blob/485575b7451912ed1d62661c388663b08dce4faf/README.md",
     "verified_at": "2026-11-01",
     "added_at": "2026-11-01",
@@ -3601,8 +3601,8 @@
     "url": "https://github.com/bigtower17/mxqpro-rk3229",
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
-    "description_en": "An owner documents identifying an RK3229 TV box, investigating its stock Android ROM and repurposing it with a userspace gamepad driver and Armbian. REA assisted ADB inventory and Android-provider routing; APK analysis and device changes are reported as a mixed workflow, not firmware reconstruction.",
-    "description_zh": "设备所有者记录了 RK3229 电视盒的硬件识别、原厂 Android ROM 调查、用户态手柄驱动及 Armbian 改造；REA 用于 ADB 清点和 Android 分析引擎引导，APK 分析与设备修改属于混合工作流，并非固件重建。",
+    "description_en": "An owner documents identifying an RK3229 TV box, investigating its stock Android ROM and repurposing it with a userspace gamepad driver and Armbian. REA assisted ADB inventory and Android-provider routing; APK analysis and device changes are reported as a mixed workflow.",
+    "description_zh": "设备所有者记录了 RK3229 电视盒的硬件识别、原厂 Android ROM 调查、用户态手柄驱动及 Armbian 改造；REA 用于 ADB 清点和 Android 分析引擎引导，APK 分析与设备修改属于混合工作流，工作范围未涉及固件重建。",
     "evidence_url": "https://github.com/bigtower17/mxqpro-rk3229/blob/b9079b419373eec439d85df4a8a11be549cd2f56/README.md",
     "verified_at": "2026-11-01",
     "added_at": "2026-11-01",
@@ -3643,7 +3643,7 @@
       "Tested only on one XM530V200 / IPG-X2-WQ-BL unit. There is no universal image or public flash installer; source builds need a compatible ARM toolchain and matching Dropbear crypto library.",
       "The documented investigation used REA 6.8.0 and Ghidra 12.1.4. Binary addresses are specific to the analyzed Sofia build; the project is stock firmware with additions, not OpenIPC or a full DVRIP implementation.",
       "The owner reports physical PTZ/LED/audio and restart/SD-recording checks. QEMU tests use fake backends.",
-      "The local bridge uses the existing device account over plain HTTP; the route-removal guard is not a firewall. Original additions are MIT, while stock firmware/drivers and third-party components retain their own rights."
+      "The local bridge uses the existing device account over plain HTTP; the route-removal guard only removes a route. Original additions are MIT, while stock firmware/drivers and third-party components retain their own rights."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -3668,15 +3668,15 @@
     "url": "https://github.com/Eliot5566/app-xray",
     "category": "community-integrations",
     "relationship": "community-integration",
-    "description_en": "Builds evidence-linked HTML/JSON reports, summary cards and diffs from REA analysis of app packages, native build metadata and model files. Its component and configuration findings come from static inputs; they are not observed runtime traffic, a complete security audit or reconstructed software.",
-    "description_zh": "基于 REA 对应用包、原生构建元数据和模型文件的分析生成带证据链接的 HTML/JSON 报告、摘要卡片及差异；组件与配置发现来自静态输入，并非实测流量、完整安全审计或重建软件。",
+    "description_en": "Builds evidence-linked HTML/JSON reports, summary cards and diffs from REA analysis of app packages, native build metadata and model files. Its component and configuration findings come from static inputs.",
+    "description_zh": "基于 REA 对应用包、原生构建元数据和模型文件的分析生成带证据链接的 HTML/JSON 报告、摘要卡片及差异；组件与配置发现来自静态输入，范围限于静态发现，未提供实测流量、完整安全审计或软件重建的结果。",
     "evidence_url": "https://github.com/Eliot5566/app-xray/blob/66a7b06fb45d99e0e1d1dbcf221856a62639faab/README.md",
     "verified_at": "2026-11-01",
     "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "README requires Node.js 22+; supported inputs include Electron/app.asar/source folders, APKs, Go/Rust executables and listed model formats. REA analysis requirements vary with the input.",
-      "Rules see literal values and metadata; runtime-generated addresses are missed. A detected setting or dependency does not prove runtime behavior or exploitability, and unsupported/obfuscated inputs can leave unknowns.",
+      "Rules see literal values and metadata; runtime-generated addresses are missed. Detected settings and dependencies are static findings, with runtime behavior and exploitability unverified; unsupported or obfuscated inputs can leave unknowns.",
       "The public gallery uses open-source app snapshots. Report-derived REA-Bench answers reuse those reports as their reference.",
       "Code is MIT; bundled Inter fonts retain SIL OFL 1.1. Reports omit target app code, and upstream software/model rights remain separate."
     ],
@@ -3736,8 +3736,8 @@
     "url": "https://github.com/B-Howell/soundconnect-desktop",
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
-    "description_en": "A Windows Sony-headphone client adopts existing libmdr/libmdr-bt engine DLLs after a documented REA-assisted binary inventory and source review. The desktop interface is modeled on Sound Connect, while protocol implementation and device support are inherited rather than newly reconstructed.",
-    "description_zh": "Windows 索尼耳机客户端在 REA 辅助二进制清点及源码检查后采用既有 libmdr/libmdr-bt 引擎 DLL，桌面界面参考 Sound Connect；协议实现和设备支持来自上游复用，并非本项目重新恢复。",
+    "description_en": "A Windows Sony-headphone client adopts existing libmdr/libmdr-bt engine DLLs after a documented REA-assisted binary inventory and source review. The desktop interface is modeled on Sound Connect, while protocol implementation and device support are inherited.",
+    "description_zh": "Windows 索尼耳机客户端在 REA 辅助二进制清点及源码检查后采用既有 libmdr/libmdr-bt 引擎 DLL，桌面界面参考 Sound Connect；协议实现和设备支持来自上游复用。",
     "evidence_url": "https://github.com/B-Howell/soundconnect-desktop/blob/481f4af2da2c96026bd14d19f366c76aa737ccd0/README.md",
     "verified_at": "2026-11-01",
     "added_at": "2026-11-01",
@@ -4179,7 +4179,7 @@
       "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
       "The README calls CADCraft early development and links a parity checklist and gap list; it does not claim complete CAD compatibility.",
       "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
-      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -4214,7 +4214,7 @@
       "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
       "The README calls the project pre-alpha and links a parity checklist and gap list; it does not claim complete publishing-workflow compatibility.",
       "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
-      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -4247,9 +4247,9 @@
     "verification": "source-reviewed",
     "requirements": [
       "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
-      "The README calls the project alpha and estimates about 91% of its tracked features; the linked parity document lists remaining gaps, and complete compatibility is not claimed.",
+      "The README calls the project alpha and estimates about 91% of its tracked features; the linked parity document lists remaining gaps.",
       "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
-      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -4282,9 +4282,9 @@
     "verification": "source-reviewed",
     "requirements": [
       "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
-      "The README calls the project alpha and estimates about 49% of the parity needed to replace proprietary design tools for real work; complete compatibility is not claimed.",
+      "The README calls the project alpha and estimates about 49% of the parity needed to replace proprietary design tools for real work.",
       "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
-      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -4317,9 +4317,9 @@
     "verification": "source-reviewed",
     "requirements": [
       "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
-      "The README calls the project alpha and reports about 86% feature breadth and about 56% readiness for real production work; complete compatibility is not claimed.",
+      "The README calls the project alpha and reports about 86% feature breadth and about 56% readiness for real production work.",
       "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
-      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -4352,9 +4352,9 @@
     "verification": "source-reviewed",
     "requirements": [
       "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
-      "The README calls the project alpha and documents remaining gaps in professional photo workflows; complete compatibility is not claimed.",
+      "The README calls the project alpha and documents remaining gaps in professional photo workflows.",
       "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
-      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -4387,9 +4387,9 @@
     "verification": "source-reviewed",
     "requirements": [
       "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
-      "The README calls the project alpha and reports 57% of tracked features and 94% of commands; complete PDF compatibility is not claimed.",
+      "The README calls the project alpha and reports 57% of tracked features and 94% of commands.",
       "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
-      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -4422,9 +4422,9 @@
     "verification": "source-reviewed",
     "requirements": [
       "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
-      "The README calls the project pre-alpha and reports 94% menu coverage, about 70% feature presence and roughly 40% readiness for real work; complete compatibility is not claimed.",
+      "The README calls the project pre-alpha and reports 94% menu coverage, about 70% feature presence and roughly 40% readiness for real work.",
       "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
-      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -4457,9 +4457,9 @@
     "verification": "source-reviewed",
     "requirements": [
       "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
-      "The README calls the project alpha and reports about 88% of core menu items; complete compatibility is not claimed.",
+      "The README calls the project alpha and reports about 88% of core menu items.",
       "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
-      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -4492,9 +4492,9 @@
     "verification": "source-reviewed",
     "requirements": [
       "Install with cargo, pip, the npm WebAssembly package, or GitHub release archives; releases include Linux, macOS (not notarized) and Windows builds for x86-64 and arm64.",
-      "Implements a subset of the Wolfram Language; the README links CLI tests and a functions.csv implementation-status list. Full Mathematica compatibility is not claimed.",
+      "Implements a subset of the Wolfram Language; the README links CLI tests and a functions.csv implementation-status list.",
       "The macOS Woxi Studio bundle is not notarized and is quarantined after download; the README documents this limit.",
-      "AGPL-3.0; REA use is not established."
+      "AGPL-3.0."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -4529,8 +4529,8 @@
     "requirements": [
       "No prebuilt binaries; the README documents source builds with Rust 1.94+ and a hosted WebAssembly demo. The desktop app opens user-supplied image files.",
       "The README says the original source was lost and the algorithms were recovered by disassembling PMAN.EXE and its converter DLLs, with recovered specifications under re/.",
-      "The rebuild is an independent implementation and does not include the original proprietary application or its assets; complete behavioral equivalence is not claimed.",
-      "Code is MIT; NOTICE and the original Picture Man rights remain with their owners. REA use is not established."
+      "The rebuild is an independent implementation and contains neither the original proprietary application nor its assets. Complete behavioral equivalence with the original remains unverified.",
+      "Code is MIT; NOTICE and the original Picture Man rights remain with their owners."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -6043,7 +6043,7 @@
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
     "description_en": "The author uses REA 6.3.0 with Ghidra to export dossiers, pseudocode and assembly for all 215 discovered procedures in the DOS shareware LEZAC.EXE, then recovers a small set of routines as Pascal and portable C. Recovered code is tested against the original x86 instructions, and a pinned DOSBox-X baseline records original-game runs..",
-    "description_zh": "作者使用 REA 6.3.0 与 Ghidra，为 DOS 共享软件 LEZAC.EXE 中发现的全部 215 个过程导出档案、伪代码和汇编，再将其中少量例程恢复为 Pascal 和可移植 C。恢复的代码以原 x86 指令为对照进行测试，固定版本的 DOSBox-X 基线记录了原游戏的运行情况。README 说明这既不是可游玩或逐位一致的重建，也不是原作者的源码。。",
+    "description_zh": "作者使用 REA 6.3.0 与 Ghidra，为 DOS 共享软件 LEZAC.EXE 中发现的全部 215 个过程导出档案、伪代码和汇编，再将其中少量例程恢复为 Pascal 和可移植 C。恢复的代码以原 x86 指令为对照进行测试，固定版本的 DOSBox-X 基线记录了原游戏的运行情况。README 将成果界定为分析档案和少量恢复例程；尚无可游玩或逐位一致的重建，恢复代码也不是原作者的源码。",
     "evidence_url": "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/README.md",
     "verified_at": "2026-10-18",
     "added_at": "2026-11-09",
