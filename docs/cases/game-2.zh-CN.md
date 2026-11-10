@@ -6,7 +6,7 @@
 
 [English](game-2.md)
 
-**621 个案例**
+**622 个案例**
 
 ## 非匹配反编译
 
@@ -634,4 +634,5 @@
 - [**Jet Force Gemini Recomp：Windows 原生重编译版本**](https://github.com/TK22-26/JetForceGemini-Recomp) - Jet Force Gemini Recomp 提供《Jet Force Gemini》的 Windows x64 原生重编译版本，从用户导入的北美版 ROM 读取游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jet-force-gemini-recomp-case/)</sub>
 - [**Jet Force Gemini: Recompiled：N64 游戏静态重编译移植**](https://github.com/VibinToast/JetForceGemini-Recompiled) - Jet Force Gemini: Recompiled 使用 N64Recomp 将用户自备的美版 N64 ROM 代码转换为 C，并通过 N64ModernRuntime 和 RT64 运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jet-force-gemini-recompiled-case/)</sub>
 - [**Jet Moto 2 Recompiled：PlayStation 游戏静态重编译 PC 版**](https://github.com/goodshepherd23/JetMoto2-Recomp) - Jet Moto 2 Recompiled 使用 RecompOne 从用户的 PlayStation 光盘将《Jet Moto 2: Championship Edition》的 MIPS 代码转为原生 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jet-moto-2-recompiled-case/)</sub>
+- [**Juiced 2 Recompiled：Xbox 360 游戏的 Windows 静态重编译**](https://github.com/anishchandra24/Juiced2-Recompiled) - Juiced 2 Recompiled 使用 ReXGlue 静态转换用户自有的 Xbox 360 版 Juiced 2: Hot Import Nights 可执行文件，构建原生 Windows 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/juiced-2-recompiled-case/)</sub>
 <!-- END GENERATED CASES -->

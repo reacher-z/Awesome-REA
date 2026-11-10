@@ -10,7 +10,6 @@
 
 ## 静态重编译
 
-- [**Juiced 2 Recompiled：Xbox 360 游戏的 Windows 静态重编译**](https://github.com/anishchandra24/Juiced2-Recompiled) - Juiced 2 Recompiled 使用 ReXGlue 静态转换用户自有的 Xbox 360 版 Juiced 2: Hot Import Nights 可执行文件，构建原生 Windows 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/juiced-2-recompiled-case/)</sub>
 - [**Juiced：Windows 游戏可执行文件的静态重编译**](https://github.com/mafph/juiced-recomp) - Juiced 项目用 pcrecomp 将 2005 年 Windows 游戏的 x86-32 可执行文件静态重编译为可移植 C。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/juiced-recomp-case/)</sub>
 - [**JUS Decomp：NDS 游戏 JUS 的原生移植**](https://github.com/piuzera/JUSDecomp) - JUS Decomp 使用 ndsrecomp 和玩家自备的 ROM，将 NDS 游戏 JUS 静态重编译为可在 Windows 和 Linux 上原生运行的版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jus-decomp-case/)</sub>
 - [**KameoRecomp：Kameo 的 Windows 静态重编译移植版**](https://github.com/ElGuslml/KameoRecomp) - KameoRecomp 将 Xbox 360 游戏《Kameo: Elements of Power》的代码静态转换为 C++，借助 ReXGlue SDK 编译为 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kameorecomp-case/)</sub>
@@ -625,4 +624,5 @@
 - [**MechWarrior SDL port：以 C17 重建 1989 年游戏**](https://github.com/Elthial/Mechwarrior-sdl-port) - MechWarrior SDL port 用 C17 和 SDL3 为 Windows x64 重建 1989 年游戏的战役与战斗系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mechwarrior-sdl-port-case/)</sub>
 - [**MedalOfHonor-xport：Medal Of Honor PlayStation 反编译移植工程**](https://github.com/psxports/MedalOfHonor-xport) - MedalOfHonor-xport 移植 PlayStation 游戏 Medal Of Honor 的重建例程。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/medalofhonor-xport-case/)</sub>
 - [**MediEvil：2019 年 PS4 游戏的原生 PC 移植**](https://github.com/bc160201983/medievil_2019_pc_port) - MediEvil for PC 在 Windows 上运行 2019 年 PS4 游戏原有的 x86-64 可执行文件，以替代系统库提供运行环境，并使用基于 shadPS4 的 Vulkan 图形核心。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/medievil-2019-pc-port-case/)</sub>
+- [**Mega Man 64：重编译版本的 Android 与 iOS 移植**](https://github.com/DevZer0D4Y/MegaMan64Recompiled-Mobile) - Mega Man 64 Recompiled Mobile 基于 N64ModernRuntime 和 RT64，将 MegaMan64Recompiled 移植到 Android 与 iOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mega-man-64-mobile-port-case/)</sub>
 <!-- END GENERATED CASES -->

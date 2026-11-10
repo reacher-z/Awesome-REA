@@ -23,13 +23,16 @@ class ReadmeContributionLinkTest(unittest.TestCase):
                 heading = anchor[1:] if name.endswith('zh-CN.md') else 'Contributing'
                 self.assertIn(f'\n## {heading}\n', text)
 
-    def test_generated_contents_link_the_contributing_section(self):
-        # The link follows the Contents list rather than joining it: awesome-lint's ToC check excludes Contributing.
-        self.assertTrue(render_contents([], [], 0, 'en').rstrip().endswith('\n\nAlso on this page: [Contributing](#contributing)'))
-        self.assertTrue(render_contents([], [], 0, 'zh').rstrip().endswith('\n\n本页还有：[参与贡献](#参与贡献)'))
-        for name, link in (('README.md', '[Contributing](#contributing)'), ('README.zh-CN.md', '[参与贡献](#参与贡献)')):
+    def test_contributing_is_linked_once_from_the_navigation_row(self):
+        # awesome-lint's ToC check excludes Contributing from Contents, and its double-link check allows one link per
+        # address, so the navigation row is the one link to the section and to the resource form.
+        self.assertNotIn('#contributing', render_contents([], [], 0, 'en'))
+        self.assertNotIn('#参与贡献', render_contents([], [], 0, 'zh'))
+        for name, link in (('README.md', '](#contributing)'), ('README.zh-CN.md', '](#参与贡献)')):
             text = (ROOT / name).read_text(encoding='utf-8')
-            self.assertIn(link, text.split(CONTENTS_BEGIN, 1)[1].split(CONTENTS_END, 1)[0])
+            self.assertNotIn(link, text.split(CONTENTS_BEGIN, 1)[1].split(CONTENTS_END, 1)[0])
+            self.assertEqual(text.count(link), 1)
+            self.assertEqual(text.count(f']({RESOURCE_FORM})'), 1)
 
     def test_chinese_readme_prefers_the_chinese_guide_and_labels_the_english_one(self):
         zh = (ROOT / 'README.zh-CN.md').read_text(encoding='utf-8')

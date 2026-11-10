@@ -90,9 +90,12 @@ class PaperFileTest(unittest.TestCase):
                 for target, fragment in links:
                     self.assertEqual(target, PAPER_FILES[language])
                     self.assertIn(fragment, anchors)
-                # The links line opens the paper file itself, and the website's paper directory.
+                # The links line opens the paper file itself; the navigation row links the website's paper directory,
+                # so the block does not repeat it (awesome-lint flags a URL linked twice in one README).
                 self.assertIn(f']({PAPER_FILES[language]}) · ', block)
-                self.assertIn(f"](https://awesomerea.org/{'zh/' if language == 'zh' else ''}papers/) · ", block)
+                directory = f"](https://awesomerea.org/{'zh/' if language == 'zh' else ''}papers/)"
+                self.assertNotIn(directory, block)
+                self.assertEqual((ROOT / name).read_text(encoding='utf-8').count(directory), 1)
 
     def test_paper_files_link_back_to_the_readme_and_to_each_other(self):
         for language, text in self.files.items():
