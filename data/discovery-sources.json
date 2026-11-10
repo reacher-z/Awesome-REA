@@ -2726,6 +2726,33 @@
           "linking-policy-decisions"
         ]
       }
+    },
+    {
+      "id": "kaixinbaba-awesome-rea",
+      "type": "github-readme-list",
+      "repository": "kaixinbaba/awesome-rea",
+      "path": "README.md",
+      "why": "Independent REA directory (171 entries, 6 categories): game reimplementations and static-recomp ports, clean-room Photoshop/Illustrator-style apps, hardware utilities and community REA plugins, each with a one-line source note.",
+      "scope": {
+        "include_sections": "^Directory > (Developer & security tools|Games & game engines|Desktop & productivity apps|Audio, hardware & drivers|REA plugins, integrations & packaging|Tutorials, case studies & resources)$",
+        "kind_rules": [
+          [
+            "^Directory > (Games & game engines|Desktop & productivity apps|Audio, hardware & drivers)$",
+            "case-study"
+          ],
+          [
+            "^Directory > Tutorials, case studies & resources$",
+            "learning-resource"
+          ],
+          [
+            "^Directory > (Developer & security tools|REA plugins, integrations & packaging)$",
+            "tool"
+          ]
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
     }
   ]
 }
