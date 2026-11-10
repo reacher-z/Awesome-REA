@@ -378,7 +378,7 @@ def _section_index_link(index: str, zh: bool) -> str:
 
 
 CASE_PER_PAGE = 200
-CASE_PAGE_TEXT = {'en': ('page {n}', 'Pages', 'Previous', 'Next', 'Cases {a}–{b} of {n}'),
+CASE_PAGE_TEXT = {'en': ('Page {n}', 'Pages', 'Previous', 'Next', 'Cases {a}–{b} of {n}'),
                   'zh': ('第 {n} 页', '分页', '上一页', '下一页', '第 {a}–{b} 个案例，共 {n} 个')}
 
 
@@ -440,7 +440,8 @@ def _case_pager(page: int, pages: int, language: str) -> str:
 
 def _case_collection(resources: list[dict], language: str, site_url: str,
                      repository_url: str = 'https://github.com/reacher-z/Awesome-REA', page: int = 1) -> tuple[str, list[dict]]:
-    """One static page of at most CASE_PER_PAGE case rows, with the subject and method navigation for every page.
+    """One static page of at most CASE_PER_PAGE case rows. The subject navigation leads to every section, and a section's
+    method navigation, on each page holding part of it, leads to every method group.
 
     A section or method group keeps its anchor on each page it appears on; the target count line sits on the page
     where its section starts. Sections absent from a page keep their old fragment on their navigation link.
@@ -488,7 +489,7 @@ def _case_collection(resources: list[dict], language: str, site_url: str,
                 f'<a href="{case_href(f"cases-{key}-{method}", anchors, language, page)}"'
                 f'{"" if (key, method) in methods_on_page else f' id="cases-{key}-{method}"'}>'
                 f'{escape(METHOD_HEADINGS[method][int(zh)])}<span>{method_totals[(key, method)]}</span></a>'
-                for method in method_order) if starts_here else ''
+                for method in method_order)
             nav_html = (f'<nav class="browse-category-nav case-method-nav" aria-label="{("重建方法" if zh else "Reconstruction methods")}">{method_nav}</nav>'
                         if method_nav else '')
             body = nav_html + ''.join(
@@ -696,12 +697,13 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
 
         path = prefix + '/cases/'
         title = '逆向工程案例合集' if zh else 'Reverse-engineering case studies'
-        case_total = sum(record['kind'] == 'case-study' for record in resources)
+        # Pages, counts and twins all count the rows case_order places, so they cannot drift apart.
+        case_rows = case_order(resources)
+        case_total = len(case_rows)
         description = (f'从 {len(resources):,} 项精选资源中筛选出的 {case_total:,} 个案例，保留重建方法、成果边界与原始证据，并按网站、游戏、应用等目标分组，可逐条打开条目查看来源与复核日期。'
                        if zh else f'{case_total:,} case studies from {len(resources):,} curated resources, with documented reconstruction methods, scope, and original evidence.')
         # Each static page is indexed like the /resources/ pages; /cases/index.md lists every case, a later page's twin its rows.
         case_page_total = max(1, -(-case_total // CASE_PER_PAGE))
-        case_rows = case_order(resources)
         for page in range(1, case_page_total + 1):
             page_route = case_page_path(page, language)
             page_label = CASE_PAGE_TEXT[language][0].format(n=page)
@@ -714,7 +716,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
                                              schema=collection_page_schema(site_url + page_route, page_title_text, page_description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href,
                                              source_export=source_export, main_class='cases-main', extra_styles=(_asset(site_dir, 'cases.css'),),
                                              alternates=alternate_links(markdown=page_route + MARKDOWN), heading=title,
-                                             trail=None if page == 1 else [(title, site_url + path), (page_label.capitalize(), site_url + page_route)])
+                                             trail=None if page == 1 else [(title, site_url + path), (page_label, site_url + page_route)])
             if page > 1:
                 page_groups = defaultdict(list)
                 for key, _, record in case_rows[first - 1:last]:

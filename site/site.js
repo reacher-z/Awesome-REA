@@ -856,6 +856,19 @@
     if (!pristine()) render();
   }
 
+  /* ---------- static listing pages: an older #fragment for a row or section on another page opens that page ---------- */
+  // map names each fragment's page; a target matching placeholder is a link standing in for content on another page.
+  const openPageFor = async (map, base, current, placeholder) => {
+    try {
+      const key = decodeURIComponent(location.hash.slice(1));
+      if (!/^[a-z0-9-]+$/.test(key)) return;
+      const target = document.getElementById(key);
+      if (target && !target.matches(placeholder)) return;
+      const page = (await (await fetch(map)).json())[key];
+      if (page && String(page) !== current) location.replace(`${P}${base}${page > 1 ? `page/${page}/` : ''}#${key}`);
+    } catch { /* a malformed fragment or a failed fetch leaves the page where it is */ }
+  };
+
   /* ---------- /resources/: facets, sort, pagination, URL state ---------- */
   const listing = $('[data-listing]');
   if (listing) {
@@ -1097,19 +1110,8 @@
       requestAnimationFrame(settle);
     };
     // An older link to a row or section on another static page goes to that page.
-    const findPage = async () => {
-      // Filtered results are not static pages; a fragment there stays where it is.
-      if (location.search) return;
-      try {
-        const key = decodeURIComponent(location.hash.slice(1));
-        const target = hashTarget();
-        // A section's old fragment sits on its sidebar link until scripts open the page where the section starts.
-        if (!key || (target && !target.matches('[data-section-link]')) || !/^[a-z0-9-]+$/.test(key)) return;
-        const pages = await (await fetch('/resources/pages.json')).json();
-        const page = pages[key];
-        if (page && String(page) !== listing.dataset.staticPage) location.replace(`${P}/resources/${page > 1 ? `page/${page}/` : ''}#${key}`);
-      } catch { /* the hash stays where it is */ }
-    };
+    // A section's old fragment sits on its sidebar link until scripts open the page where the section starts.
+    const findPage = () => { if (!location.search) openPageFor('/resources/pages.json', '/resources/', listing.dataset.staticPage, '[data-section-link]'); };
     findPage();
     window.addEventListener('hashchange', () => { findPage(); revealHash(); });
     if (document.readyState === 'complete') revealHash();
@@ -1121,17 +1123,8 @@
   /* ---------- /cases/: an older link to a case or section on another static page goes to that page ---------- */
   const casePages = $('.cases-collection[data-case-page]');
   if (casePages) {
-    const findCasePage = async () => {
-      const key = decodeURIComponent(location.hash.slice(1));
-      if (!/^[a-z0-9-]+$/.test(key)) return;
-      const target = document.getElementById(key);
-      // A section on another page keeps its old fragment on its navigation link.
-      if (target && !target.matches('.cases-nav a, .case-method-nav a')) return;
-      try {
-        const page = (await (await fetch('/cases/pages.json')).json())[key];
-        if (page && String(page) !== casePages.dataset.casePage) location.replace(`${P}/cases/${page > 1 ? `page/${page}/` : ''}#${key}`);
-      } catch { /* the hash stays where it is */ }
-    };
+    // A section on another page keeps its old fragment on its navigation link.
+    const findCasePage = () => openPageFor('/cases/pages.json', '/cases/', casePages.dataset.casePage, '.cases-nav a, .case-method-nav a');
     findCasePage();
     window.addEventListener('hashchange', findCasePage);
   }

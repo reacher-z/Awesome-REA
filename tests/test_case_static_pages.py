@@ -63,7 +63,7 @@ class CaseStaticPagesTests(unittest.TestCase):
         self.assertIn('Page 2 of 2, cases 201–270.', html)
         items = next(schema_entities(second.schemas, 'CollectionPage'))['mainEntity']
         self.assertEqual(items['numberOfItems'], len(second.case_rows))
-        self.assertIn('page 2', self.html('/cases/page/2/').split('</title>')[0])
+        self.assertIn('· Page 2', self.html('/cases/page/2/').split('</title>')[0])
         self.assertIn('第 2 页', self.html('/zh/cases/page/2/').split('</title>')[0])
 
     def test_sections_keep_anchors_and_navigation_leads_to_their_page(self):
@@ -92,6 +92,17 @@ class CaseStaticPagesTests(unittest.TestCase):
         for route in ('/cases/', '/cases/page/2/'):
             number = 1 if route == '/cases/' else 2
             self.assertTrue(all(mapping[row['id']] == number for row in self.pages[route].case_rows), route)
+
+    def test_validator_checks_the_page_map(self):
+        validate_case_outputs(self.pages, self.resources, self.output)
+        path = self.output / 'cases/pages.json'
+        original = path.read_text(encoding='utf-8')
+        self.addCleanup(path.write_text, original, encoding='utf-8')
+        mapping = json.loads(original)
+        mapping['cases-protocol'] = 1
+        path.write_text(json.dumps(mapping), encoding='utf-8')
+        with self.assertRaises(AssertionError):
+            validate_case_outputs(self.pages, self.resources, self.output)
 
     def test_validator_rejects_a_missing_page(self):
         pages = dict(self.pages)
