@@ -33,7 +33,7 @@ BANNED_ZH = re.compile(r'本合集未|本目录未')
 # Visitor-facing record text states what a thing is. These phrasings frame a fact as a denial or a disclaimer
 # ("does not imply", "no REA use is established", "不代表"); validate.py rejects them in every visible field.
 DEFENSIVE_EN = re.compile(
-    r"\bdoes(?:n[’']t| not) (?:imply|mean|establish|constitute|represent|prove)\b"
+    r"\b(?:do|does|did)(?:n[’']t| not) (?:imply|mean|establish|constitute|represent|prove)\b|\bunestablished\b"
     r"|\bnot (?:evidence|proof) (?:of|that)\b|\b(?:is|are) not (?:claimed|established|asserted|implied)\b"
     r"|\bimplies no\b|\bno (?:claim|endorsement) (?:is|of)\b|\bneither asserts\b"
     r"|\bno\b[^.;]{0,80}\b(?:is|are|was|were) (?:claimed|implied|established|asserted)\b",
@@ -113,7 +113,7 @@ def defensive_sentences(records, translations, papers, ledger_entries=(), review
         if isinstance(entry, dict):
             for field in ('reason_en', 'reason_zh'):
                 check(entry.get('id'), field, entry.get(field))
-    for identifier, decision in (reviews or {}).items():
+    for identifier, decision in (reviews.items() if isinstance(reviews, dict) else ()):
         if isinstance(decision, dict):
             for field in ('reason_en', 'reason_zh'):
                 check(identifier, field, decision.get(field))

@@ -1511,8 +1511,8 @@ def main():
     reviews = discovery_reviews.read_reviews(ROOT)
     discovery_reviews.validate_reviews(discovery_batches, reviews, errors, lead_batches=lead_batches)
     try:
-        ledger_entries = read_case_coverage(ROOT).get('entries', [])
-    except (OSError, ValueError, AttributeError):
+        ledger_entries = coverage.get('entries', [])
+    except (NameError, AttributeError):
         ledger_entries = []
     translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8'))
     for identifier, field, _ in defensive_sentences(records, translations, papers, ledger_entries, reviews):

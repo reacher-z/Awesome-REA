@@ -5503,7 +5503,7 @@
     "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
-      "The reviewed main snapshot follows v1.0.4 (2026-10-18), packaged for Windows x64 with AVX, Linux x64 AppImage/Flatpak, macOS 15+ on Apple Silicon and 64-bit Android 8.0+ with Vulkan. STATUS.md and ROADMAP.md record each release as published but not accepted by the maintainer. This is static recompilation of the shipped executable.",
+      "The reviewed main snapshot follows v1.0.4 (2026-10-18), packaged for Windows x64 with AVX, Linux x64 AppImage/Flatpak, macOS 15+ on Apple Silicon and 64-bit Android 8.0+ with Vulkan. STATUS.md and ROADMAP.md record each release as published but not accepted by the maintainer. It is a static recompilation of this one game’s shipped executable, made of recompiled code, with no authored source and no general Xbox 360 emulation.",
       "Players import data from one supported four-disc set, Asian multilingual or USA/Europe (Title ID 4D5307FA); Disc 1 is required, DLC is optional, and other regions, title updates and modified XEX files are unsupported. Source builds use the Asian multilingual Disc 1 default.xex, LO.fpi and resource archives, and BUILDING.md still calls four-disc integration incomplete. Game data and generated code are kept out of the repository.",
       "Builds need submodules including XenonRecomp, XenosRecomp, plume and SDL 3, with project patches applied, plus Python 3.11+, CMake 3.28+, Ninja and Clang: clang-cl with Visual Studio 2022 Build Tools on Windows 10 1803+, or Clang/LLD with a Vulkan driver on Linux. tools/ppc_codegen.py regenerates the guest sources locally before the runtime build.",
       "STATUS.md separates implementation, validation, acceptance and release; for example, v1.0.4’s save fix passed a logic review, a CPU fixture and a Release link but was not run in-game. Upscaler and rendering checks name bounded fixtures and GPUs. The workflow guide records release status separately from start-to-finish game completion.",
@@ -24844,8 +24844,8 @@
     "targets": [
       "website"
     ],
-    "description_en": "Browser-based workbench for deobfuscating JavaScript by hand, also hosted on GitHub Pages, that pairs a Monaco editor with step-by-step rewriting and evaluation commands that the analyst operates step by step. Formatting commands beautify the code and, on a selection or the whole file, decode escaped strings, convert hex numbers, turn bracketed property access into dot notation and rename _0x-style identifiers to short names; evaluation commands push declarations onto a code stack, evaluate a selected expression against it and substitute JSON results, replace captured variables automatically and collapse chains of aliases. The README expects the analyst to know JavaScript and perform the process by hand.",
-    "description_zh": "一个在浏览器中手动反混淆 JavaScript 的工作台，也部署在 GitHub Pages 上，以 Monaco 编辑器搭配逐步改写和求值命令，由分析者逐步操作。格式化命令可美化代码，并对选区或整个文件解码转义字符串、转换十六进制数字、把方括号属性访问改为点号形式、把 _0x 式标识符改为短名称；求值命令可把声明压入代码栈，在其基础上对选中的表达式求值并用 JSON 结果替换，自动替换捕获到的变量，以及合并层层别名。README 要求分析者熟悉 JavaScript，并手动完成这一过程。",
+    "description_en": "Browser-based workbench for deobfuscating JavaScript by hand, also hosted on GitHub Pages, that pairs a Monaco editor with step-by-step rewriting and evaluation commands instead of a one-click pipeline. Formatting commands beautify the code and, on a selection or the whole file, decode escaped strings, convert hex numbers, turn bracketed property access into dot notation and rename _0x-style identifiers to short names; evaluation commands push declarations onto a code stack, evaluate a selected expression against it and substitute JSON results, replace captured variables automatically and collapse chains of aliases. The README says the process is manual and expects the analyst to know JavaScript.",
+    "description_zh": "一个在浏览器中手动反混淆 JavaScript 的工作台，也部署在 GitHub Pages 上，以 Monaco 编辑器搭配逐步改写和求值命令，而非一键式流程。格式化命令可美化代码，并对选区或整个文件解码转义字符串、转换十六进制数字、把方括号属性访问改为点号形式、把 _0x 式标识符改为短名称；求值命令可把声明压入代码栈，在其基础上对选中的表达式求值并用 JSON 结果替换，自动替换捕获到的变量，以及合并层层别名。README 说明这一过程需手动完成，并要求分析者熟悉 JavaScript。",
     "evidence_url": "https://github.com/willnode/deobfuscator/blob/313ab0dcc0211e3c662514b4448153963fce22c6/README.md",
     "verified_at": "2026-10-27",
     "added_at": "2026-11-03",
@@ -25735,7 +25735,7 @@
     "requirements": [
       "A young, fast-moving project: the repository was created on 2026-09-07, and v0.4.0, published 2026-10-22, is the latest release at review, with Linux x86_64 and arm64 and macOS arm64 archives plus Debian packages for amd64 and arm64; the reviewed commit is the merge of that release.",
       "Source builds need CMake 3.20+ and a C++20 compiler and link no third-party libraries; flake.nix, package.nix and Debian packaging are included. Input is a firmware file or a directory already extracted by moria or another unpacker; the --boot pass also reads a raw AMI or EDK2 BIOS image to report UEFI Secure Boot posture.",
-      "Scans make no network calls. The CVE pass needs a local mirror in .local/share/mithril under the home directory (or $MITHRIL_DB), downloaded once with --fetch-db from the project's weekly rebuilt db-latest release and checked against published SHA-256 sums (needs curl), or rebuilt from OSV.dev, NVD, CISA KEV, EPSS and the optional kernel.org feed with --update-db. README describes the kernel checklist as curated and limited to its listed checks; secret findings report well-formed matches pending credential validation.",
+      "Scans make no network calls. The CVE pass needs a local mirror in .local/share/mithril under the home directory (or $MITHRIL_DB), downloaded once with --fetch-db from the project's weekly rebuilt db-latest release and checked against published SHA-256 sums (needs curl), or rebuilt from OSV.dev, NVD, CISA KEV, EPSS and the optional kernel.org feed with --update-db. README notes that the kernel checklist is curated rather than exhaustive, so an empty kernel result covers only the listed checks, and that secret findings are well-formed pattern matches; the tool never checks whether credentials are live.",
       "The compiled-in key corpora are built from public keys and certificates vendored under data/: the public halves of rapid7 ssh-badkeys, the Vagrant insecure public key, eMudhra intermediate CA certificates, AOSP test-key public halves and the PKfail AMI test Platform Key certificate. THIRD_PARTY.md states that no private-key material is stored, and the key tests generate their keys with openssl at run time.",
       "MIT; the vendored key data keeps its upstream MIT or Apache-2.0 terms, and the mirrored vulnerability feeds belong to their sources."
     ],
@@ -27199,8 +27199,8 @@
     "targets": [
       "game"
     ],
-    "description_en": "Cross-platform reader and writer for the asset bundles and serialized asset files of Unity games, originally based on the archived UABE as a separate project. Its README presents it as a modding and research tool; users seeking asset extraction are directed to AssetRipper or AssetStudio; it opens bundles from Unity's Addressables system, whose CRC checks must be cleared with a separate tool before edited bundles load. It builds on AssetsTools.NET with Cpp2IL and Mono.Cecil, and the repository includes texture, audio-clip, font and text-asset plugins.",
-    "description_zh": "跨平台的 Unity 游戏资源包（asset bundle）与序列化资源文件读写工具，最初以已归档的 UABE 为基础，作为独立项目编写。README 将它定位为改造（modding）与研究工具，并引导只想提取资源的用户使用 AssetRipper 或 AssetStudio；它能打开 Unity Addressables 系统使用的资源包，但修改后的资源包须先用另一个工具清除 CRC 校验才能加载。它基于 AssetsTools.NET，并借助 Cpp2IL 和 Mono.Cecil；仓库中还附有纹理、音频片段、字体和文本资源插件。",
+    "description_en": "Cross-platform reader and writer for the asset bundles and serialized asset files of Unity games, an independent project that started from the archived UABE. Its README presents it as a modding and research tool rather than an extractor and points users who only want to extract assets to AssetRipper or AssetStudio; it opens bundles from Unity's Addressables system, whose CRC checks must be cleared with a separate tool before edited bundles load. It builds on AssetsTools.NET with Cpp2IL and Mono.Cecil, and the repository includes texture, audio-clip, font and text-asset plugins.",
+    "description_zh": "跨平台的 Unity 游戏资源包（asset bundle）与序列化资源文件读写工具，是以已归档的 UABE 为起点的独立项目。README 将它定位为改造（modding）与研究工具而非提取工具，只想提取资源的用户可改用 AssetRipper 或 AssetStudio；它能打开 Unity Addressables 系统使用的资源包，但修改后的资源包须先用另一个工具清除 CRC 校验才能加载。它基于 AssetsTools.NET，并借助 Cpp2IL 和 Mono.Cecil；仓库中还附有纹理、音频片段、字体和文本资源插件。",
     "evidence_url": "https://github.com/nesrak1/UABEA/blob/057e2f6ae67ebc94a38faca9f946f8577162fa99/readme.md",
     "verified_at": "2026-11-05",
     "added_at": "2026-11-06",
@@ -31060,7 +31060,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "A VanMoof account with a supported bike is needed to request certificates.",
-      "The source states that the Series 6 signing key remains unknown, so its signatures remain unverified.",
+      "The source states that the Series 6 signing key is not yet known, so the tool skips signature checks for Series 6 certificates.",
       "No licence file in the repository."
     ],
     "requirement_facets": [
@@ -44172,7 +44172,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "A Raspberry Pi with Linux SPI and GPIO access, an nRF24L01+ radio and a matching powered receiver are required.",
-      "The author reports testing one remote and receiver setup; compatibility with other units or revisions is unestablished.",
+      "The author reports testing one remote and receiver setup; compatibility with other units or revisions remains unconfirmed.",
       "Packet field meanings, checksum and radio-chip identity remain unresolved.",
       "MIT license."
     ],

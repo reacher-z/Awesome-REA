@@ -1299,8 +1299,8 @@
   "scan-281293049": {
     "decision": "exclude",
     "reason_code": "personal-profile",
-    "reason_en": "The README presents a personal Jekyll website, while the post contents do not establish a repository-level reverse-engineering resource.",
-    "reason_zh": "README 将仓库介绍为个人 Jekyll 网站；仓库资料没有展示可作为逆向资源收录的具体文章内容。",
+    "reason_en": "The README presents a personal Jekyll website, and its posts show no repository-level reverse-engineering resource.",
+    "reason_zh": "README 将仓库介绍为个人 Jekyll 网站，其文章内容未展示仓库层面的逆向工程资源。",
     "readme_sha256": "49a57aba2d956fa5c6d07b270c40f818e5a780b783cadf735a6e5cdcc4a9b650",
     "evidence_url": "https://github.com/thelumberjhack/thelumberjhack.github.io/blob/ea58c9b2f481dfce790176f916c5fccdf1765a33/README.md",
     "reviewed_at": "2026-11-06"
@@ -3147,8 +3147,8 @@
   "scan-667886631": {
     "decision": "exclude",
     "reason_code": "general-programming-tutorial",
-    "reason_en": "The repository presents a broad personal computer-science notes site; its README and file list do not establish reverse engineering as its subject.",
-    "reason_zh": "该仓库是涵盖广泛计算机科学主题的个人笔记站点； README 和文件清单没有表明逆向工程是其主题。",
+    "reason_en": "The repository presents a broad personal computer-science notes site; its README and file list do not name reverse engineering as its subject.",
+    "reason_zh": "该仓库是涵盖广泛计算机科学主题的个人笔记站点；README 和文件清单均未把逆向工程列为其主题。",
     "readme_sha256": "8f2898f95a7b5d59fa9cea242dc39a29e1f381e763d6f17f8514c579b2150ad2",
     "evidence_url": "https://github.com/glennhenry/cs-notes/blob/394fda9166fc209b9802dc374c91e054b8e30cf5/README.md",
     "reviewed_at": "2026-11-06"
@@ -3786,8 +3786,8 @@
   "scan-775013970": {
     "decision": "hold",
     "reason_code": "capability-unclear",
-    "reason_en": "The README promises P3D-to-PX conversion, but the conversion method is empty; the format sketches do not establish a usable converter.",
-    "reason_zh": "README 宣称能将 P3D 转成 PX，但转换函数为空；格式结构草案也不足以证明转换工具可用。",
+    "reason_en": "The README promises P3D-to-PX conversion, but the conversion method is empty, and the format sketches fall short of a usable converter.",
+    "reason_zh": "README 宣称能将 P3D 转成 PX，但转换函数为空，格式结构草案也算不上可用的转换工具。",
     "readme_sha256": "f0b20e86052a62d392265223ddcba69986ae8f500c7908fc1e5ef593858f0924",
     "evidence_url": "https://github.com/BuilderDemo7/RD3_BD7sTools/blob/26580c588d1db1f4245007a929b092244d41482b/RD3_p3d2px/Program.cs",
     "reviewed_at": "2026-11-06"
@@ -11881,8 +11881,8 @@
   "scan-1432052004": {
     "decision": "hold",
     "reason_code": "needs-maintainer-decision",
-    "reason_en": "The project reconstructs an RC aircraft control protocol and distributes transmitter firmware; flight behavior, range and lost-link response remain unverified.",
-    "reason_zh": "该项目重建遥控飞机控制协议并提供发射模块固件；飞行行为、航程和失联响应尚未验证，需要维护者判断。",
+    "reason_en": "The project reconstructs an RC aircraft control protocol and distributes transmitter firmware, and it states that flight behavior, range and lost-link response remain unverified.",
+    "reason_zh": "该项目重建遥控飞机控制协议并提供发射模块固件，并明确表示飞行行为、航程和失联响应尚未验证。",
     "readme_sha256": "ae53fdde8e59c209c0d23d166353e5f2b90b21c00c99d44ee5aa3e745db41e37",
     "evidence_url": "https://github.com/HermanL1106/fms-beaver-multiprotocol/blob/76ebb3d254f5484285c5a8bf95d9a4cc1517ae35/README.md",
     "reviewed_at": "2026-11-06"
@@ -19761,8 +19761,8 @@
   "lead-3d3918331a4ba865c3c6945c": {
     "decision": "hold",
     "reason_code": "capability-unclear",
-    "reason_en": "Caper contains The Italian Job code and RenderWare components, but its README is only a heading and the shown files do not establish a decompilation method or result.",
-    "reason_zh": "Caper 含有 The Italian Job 相关代码和 RenderWare 组件，但说明仅有标题，展示的文件不足以明确其反编译方法或成果。",
+    "reason_en": "Caper contains The Italian Job code and RenderWare components, but its README is only a heading and the shown files leave its decompilation method and result unconfirmed.",
+    "reason_zh": "Caper 含有 The Italian Job 相关代码和 RenderWare 组件，但说明仅有标题，所展示的文件中，其反编译方法和成果仍未确认。",
     "evidence_url": "https://github.com/dashr9230/Caper/blob/17eda11193113243828b4c8a21e64cbe92902a24/README.md",
     "reviewed_at": "2026-11-06"
   },
