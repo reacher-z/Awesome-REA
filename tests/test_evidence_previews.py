@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 
-from build_evidence_previews import carried_forward, github_preview, usable_image, with_raw_image  # noqa: E402
+from build_evidence_previews import best_image, carried_forward, github_preview, usable_image, with_raw_image  # noqa: E402
 from media_privacy import public_media_url  # noqa: E402
 
 
@@ -33,6 +33,11 @@ class EvidencePreviewTests(unittest.TestCase):
                          'https://raw.githubusercontent.com/DenSinH/DSHBA/' + 'b' * 40 + '/files/DSHBA_unlocked.png')
         self.assertEqual(usable_image('https://github.com/other/repo/blob/main/a.png?raw=true', base),
                          'https://raw.githubusercontent.com/other/repo/main/a.png')
+    def test_forge_default_avatar_is_not_a_preview(self):
+        page = 'https://codeberg.org/o/r'
+        self.assertIsNone(best_image('<img src="/assets/img/avatar_default.png">', page))
+        self.assertEqual(best_image('<img src="/assets/img/avatar_default.png"><img src="/shot.png">', page),
+                         'https://codeberg.org/shot.png')
     def test_schema_and_counts_agree(self):
         self.assertEqual(self.document['schema_version'], 1)
         meta = self.document['meta']

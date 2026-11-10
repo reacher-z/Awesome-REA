@@ -15,7 +15,6 @@
       "appshark",
       "bellpad-animal-crossing-port-case",
       "bumpys-arcade-fantasy-decomp-case",
-      "commander-genius-case",
       "corefw-launchpad-case",
       "de4js",
       "dkb-recomp-case",
@@ -31,6 +30,7 @@
       "openkeeper-dungeon-keeper-ii-case",
       "outrun-sonic-runners-server-case",
       "pdbinspector",
+      "perception-pnrf-case",
       "react-native-decompiler",
       "sdlpal",
       "swos-port-case",
@@ -1330,6 +1330,15 @@
       "source_url": "https://github.com/alexbeavs-ps1-ports/colony-wars-red-sun-recomp",
       "revision": "8e48605680d41f0e6de5721421c5d8caf65bd329",
       "checked_at": "2026-11-09T07:55:54+00:00"
+    },
+    {
+      "id": "commander-genius-case",
+      "image_url": "https://clonekeenplus.sourceforge.io/img/galaxyMultiplayer.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://gitlab.com/Dringgstein/Commander-Genius",
+      "revision": "58a3c4fd0782fa2a087e38a039599b2ecf69ccc9",
+      "checked_at": "2026-11-10T05:57:58+00:00"
     },
     {
       "id": "conker-lr-native",
@@ -6046,14 +6055,6 @@
       "source_url": "https://github.com/storytold/pdfcraft",
       "revision": "5588db4b629b31569349fb9553084e9e796feeb9",
       "checked_at": "2026-11-10T02:57:21+00:00"
-    },
-    {
-      "id": "perception-pnrf-case",
-      "image_url": "https://codeberg.org/assets/img/avatar_default.png",
-      "kind": "image",
-      "basis": "page-image",
-      "source_url": "https://codeberg.org/Apollo3zehn/perception-pnrf",
-      "checked_at": "2026-11-09T11:39:42+00:00"
     },
     {
       "id": "perfect-dark-xbla-recomp",
