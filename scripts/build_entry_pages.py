@@ -154,7 +154,8 @@ def _evidence_preview(record: dict, language: str) -> str:
     if record.get('preview'):
         video = record.get('preview_kind') == 'video'
         alt = text['preview_video_alt' if video else 'preview_image_alt']
-        return (f'<figure class="entry-preview"><img src="{_asset_url(record["preview"])}" alt="{escape(alt, quote=True)}" '
+        # The caption names the image, so the image itself is not announced twice.
+        return (f'<figure class="entry-preview"><img src="{_asset_url(record["preview"])}" alt="" '
                 f'loading="lazy" decoding="async"><figcaption>{escape(alt)}</figcaption></figure>')
     if record.get('preview_kind') == 'demo':
         return f'<p class="entry-preview-demo">{escape(text["demo_note"])}</p>'

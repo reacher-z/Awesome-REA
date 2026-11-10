@@ -22,7 +22,7 @@
     none: (q) => `没有与“${esc(q)}”匹配的记录。`, near: '相近名称：', noneFilters: '没有符合这些筛选条件的记录。', clearSearch: '清除搜索', sources: (q) => `在仓库目录中搜索“${esc(q)}”`, discoveries: '查看未审核的发现', keyMove: '移动', keyOpen: '打开', keyClear: '清除', suggest: '推荐收录这个资源', clear: '清除筛选', loading: '正在载入索引…', failed: '索引载入失败，请检查网络后重试。',
     recent: '最近搜索', popular: '常用入口', groups: { tool: '工具', 'case-study': '案例', integration: '集成', other: '学习与参考', paper: '论文' }, papers: '论文',
     remove: (l) => `移除筛选：${l}`, page: (a, b) => `第 ${a}/${b} 页`, shelf: (a, n) => `${fmt(a)} / ${fmt(n)} 个案例`,
-    classLabel: '证据档位', classDetail: ['完整软件复现', '部分范围或非复现条目', '有代码和文档，缺演示或下载', '仅笔记或进度记录'],
+    classLabel: '证据档位', classDetail: ['完整软件复现', '部分范围或分析条目', '有代码和文档，缺演示或下载', '仅笔记'],
     unknownTitle: '复核时来源不可达或不可读', previewAlt: '项目公开文档中的演示截图', previewVideoAlt: '项目公开文档中演示视频的封面', demoNote: '有 demo · 暂无截图',
   } : {
     featured: 'Featured', theme: 'Colour theme', system: 'system', light: 'light', dark: 'dark', reviewed: 'Reviewed', targets: 'Targets', copied: 'Copied',
@@ -689,7 +689,8 @@
       st.targets = new Set((u.searchParams.get('target') || '').split(',').filter(Boolean));
       MULTI.forEach((k) => { st[k] = new Set((u.searchParams.get(k) || '').split(',').filter(Boolean)); });
       st.reviewed = u.searchParams.get('reviewed') || '';
-      st.cls = u.searchParams.get('class') || '';
+      const cls = u.searchParams.get('class') || '';
+      st.cls = ['0', '1', '2', '3', 'unknown'].includes(cls) ? cls : '';
       if (classSel) classSel.value = st.cls;
       st.sort = u.searchParams.get('sort') || 'featured';
       st.page = Math.max(1, +(u.searchParams.get('page') || 1));
@@ -737,6 +738,7 @@
       return el ? $('.opt-l', el.closest('.opt')).textContent : value;
     };
     const render = async (push = false, scroll = false) => {
+      if (classSel) classSel.value = st.cls;
       tabs.forEach((t) => {
         const on = t.dataset.target === 'all' ? !st.targets.size : st.targets.size === 1 && st.targets.has(t.dataset.target);
         if (on) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current');

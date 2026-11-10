@@ -299,6 +299,16 @@ async function resourceListing(page, language, viewport, data) {
   assert.equal(await page.$eval(`[data-section-link][data-section="${section}"]`, node => node.getAttribute('aria-current')), 'true', `${label}: the chosen section is marked`);
   await page.$eval(`[data-section-link][data-section="${section}"]`, node => node.click());
   await page.waitForFunction(() => !new URL(location.href).searchParams.has('section'));
+  // The Evidence class select narrows to its stated count; removing its chip resets the select.
+  await page.goto(page.url().split('?')[0]);
+  const classOption = await page.$eval('.results-bar [data-class-select] option[value="0"]', option => Number(option.textContent.replace(/\D/g, '').slice(1)));
+  await page.select('.results-bar [data-class-select]', '0');
+  await page.waitForFunction(() => new URL(location.href).searchParams.get('class') === '0'
+    && [...document.querySelectorAll('[data-cards] > .card')].every(card => card.querySelector('.card-class-0')), {timeout: 20000});
+  assert.deepEqual(numbers(await text(page, '[data-results-meta]')).slice(-1), [classOption], `${label}: the class filter shows the rows its option promised`);
+  await page.click('[data-active] [data-unset="class"]');
+  await page.waitForFunction(() => !new URL(location.href).searchParams.has('class'));
+  assert.equal(await page.$eval('.results-bar [data-class-select]', select => select.value), '', `${label}: removing the class chip resets the select`);
   // Clearing returns to the whole list, where the same link jumps to its heading and is shareable.
   await page.goto(page.url().split('?')[0]);
   assert.equal(await rows(), total, `${label}: clearing the filters returns the whole list`);

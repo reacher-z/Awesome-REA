@@ -49,9 +49,9 @@ CONNECTION_OF = {relationship: key for key, (_, relationships) in CONNECTIONS.it
 # C0–C3 on the homepage cards; the legend on /explore/ carries the same wording.
 EVIDENCE_DETAIL = {
     0: ('full software reconstruction', '完整软件复现'),
-    1: ('partial scope or analysis entry', '部分范围或非复现条目'),
+    1: ('partial scope or analysis entry', '部分范围或分析条目'),
     2: ('code & docs, no demo or download', '有代码和文档，缺演示或下载'),
-    3: ('notes only', '仅笔记或进度记录'),
+    3: ('notes only', '仅笔记'),
 }
 COPY = {
     'en': {
@@ -164,6 +164,7 @@ def evidence_legend(language: str) -> str:
     text = COPY[language]
     items = ''.join(f'<li><span class="card-class card-class-{value}">C{value}</span>{_e(details[language == "zh"])}</li>'
                     for value, details in EVIDENCE_DETAIL.items())
+    items += f'<li><span class="card-class card-class-unknown">?</span>{_e(text["unknown_title"])}</li>'
     guide = f'<a class="evidence-guide" href="{_e(evidence_guide_url(language))}" rel="noopener">{text["class_guide"]}{icon("external")}</a>'
     return f'<div class="evidence-legend"><strong>{text["class_label"]}</strong><ul>{items}</ul>{guide}</div>'
 
