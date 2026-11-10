@@ -9,6 +9,7 @@ from pathlib import Path
 import sys
 from tempfile import TemporaryDirectory
 import unittest
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -189,7 +190,7 @@ class EntryPageTests(unittest.TestCase):
                      verified_at='2026-10-17T01:02:03Z', requirements=['First.', 'Second.', 'Third.'],
                      requirements_zh=['一。', '二。', '三。'])
         p = paper()
-        with TemporaryDirectory() as tmp:
+        with TemporaryDirectory() as tmp, mock.patch('build_entry_pages.repository_facts', return_value={}):
             root = Path(tmp)
             build_entry_pages(root, [r], [p])
             for language, expected in [

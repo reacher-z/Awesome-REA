@@ -30,6 +30,20 @@ BANNED_EN = re.compile(
 BANNED_ZH = re.compile(r'本合集未|本目录未')
 
 
+# Visitor-facing record text states what a thing is. These phrasings frame a fact as a denial or a disclaimer
+# ("does not imply", "no REA use is established", "不代表"); validate.py rejects them in every visible field.
+DEFENSIVE_EN = re.compile(
+    r"\b(?:do|does|did)(?:n[’']t| not) (?:imply|mean|establish|constitute|represent|prove)\b|\bunestablished\b"
+    r"|\bnot (?:evidence|proof) (?:of|that)\b|\b(?:is|are) not (?:claimed|established|asserted|implied)\b"
+    r"|\bimplies no\b|\bno (?:claim|endorsement) (?:is|of)\b|\bneither asserts\b"
+    r"|\bno\b[^.;]{0,80}\b(?:is|are|was|were) (?:claimed|implied|established|asserted)\b",
+    re.IGNORECASE)
+DEFENSIVE_ZH = re.compile(r'并非|不代表|不意味着|不等于|不构成|不主张|未主张|不能证明|不确立|未确立')
+RESOURCE_TEXT = ('name', 'description_en', 'description_zh', 'requirements')
+PAPER_TEXT = ('title', 'description_en', 'description_zh', 'scope_limitations_en', 'scope_limitations_zh', 'why_fits_en',
+              'why_fits_zh', 'metadata_notes', 'metadata_notes_zh', 'date_basis', 'date_basis_zh')
+
+
 def sentences(text, chinese=False):
     pattern = r'(?<=[。；])' if chinese else r'(?<=[.;])\s+'
     return [part.strip() for part in re.split(pattern, text) if part.strip()]
@@ -72,6 +86,37 @@ def banned_sentences(records, translations, papers):
             for item in strings(paper.get(field)):
                 if pattern.search(item):
                     found.append((paper.get('id'), field, item))
+    return found
+
+
+def defensive_sentences(records, translations, papers, ledger_entries=(), reviews=None):
+    """Return (id, field, text) for each visible record text that uses a defensive phrasing."""
+    found = []
+
+    def check(identifier, field, value):
+        for item in value if isinstance(value, list) else [value]:
+            if isinstance(item, str) and (DEFENSIVE_EN.search(item) or DEFENSIVE_ZH.search(item)):
+                found.append((identifier, field, item))
+
+    for record in records:
+        identifier = record.get('id')
+        for field in RESOURCE_TEXT:
+            check(identifier, field, record.get(field))
+        translation = translations.get(identifier) if isinstance(identifier, str) else None
+        if isinstance(translation, dict):
+            check(identifier, 'name (zh)', translation.get('name'))
+            check(identifier, 'requirements (zh)', translation.get('requirements'))
+    for paper in papers:
+        for field in PAPER_TEXT:
+            check(paper.get('id'), field, paper.get(field))
+    for entry in ledger_entries:
+        if isinstance(entry, dict):
+            for field in ('reason_en', 'reason_zh'):
+                check(entry.get('id'), field, entry.get(field))
+    for identifier, decision in (reviews.items() if isinstance(reviews, dict) else ()):
+        if isinstance(decision, dict):
+            for field in ('reason_en', 'reason_zh'):
+                check(identifier, field, decision.get(field))
     return found
 
 

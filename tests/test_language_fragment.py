@@ -10,7 +10,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from asset_paths import digest
-import build_site
+from shared_build import built_site
 from language_fragment import HEADER, add_language_fragment_script, language_fragment_script
 
 IDS = re.compile(r'\sid="([^"]+)"')
@@ -23,36 +23,34 @@ class LanguageFragmentTests(unittest.TestCase):
         self.assertIn('Static language fragment checks passed', result.stdout)
 
     def test_built_pages_load_the_script_and_share_ids_with_their_counterpart(self):
-        with tempfile.TemporaryDirectory() as directory:
-            output = Path(directory) / 'dist'
-            build_site.build_site(output)
-            # The build serves the script only from its content-addressed copy and removes the root copy.
-            source = (ROOT / 'site/language-fragment.js').read_bytes()
-            name = f'language-fragment.{digest(source)}.js'
-            tag = f'<script src="/assets/{name}" defer></script>'
-            self.assertEqual((output / 'assets' / name).read_bytes(), source)
-            self.assertFalse((output / 'language-fragment.js').exists())
-            kinds = Counter()
-            for page in sorted(output.rglob('*.html')):
-                route = page.relative_to(output).as_posix()
-                html = page.read_text(encoding='utf-8')
-                header = HEADER.search(html)
-                expected = route not in ('index.html', 'zh/index.html', 'explore/index.html', 'zh/explore/index.html') and bool(header) and 'hreflang=' in header.group(0)
-                with self.subTest(route=route):
-                    self.assertEqual(html.count(tag), int(expected))
-                    self.assertNotIn('language-fragment.js', html.replace(tag, ''))
-                if not expected or route.startswith('zh/'):
-                    continue
-                counterpart = output / 'zh' / route
-                self.assertTrue(counterpart.is_file(), route)
-                with self.subTest(route=route, check='ids'):
-                    # The script carries a fragment only when it names an element on the current page.
-                    self.assertEqual(set(IDS.findall(html)), set(IDS.findall(counterpart.read_text(encoding='utf-8'))))
-                parts = route.split('/')
-                kinds[parts[0] + ('/<id>' if parts[0] in ('resources', 'papers', 'browse') and len(parts) > 2 else '')] += 1
-            for kind in ('browse', 'browse/<id>', 'resources', 'resources/<id>', 'papers', 'papers/<id>', 'cases', 'about', 'survey'):
-                self.assertGreater(kinds[kind], 0, kind)
-            self.assertNotIn('language-fragment.js', (output / '404.html').read_text(encoding='utf-8'))
+        output = built_site()
+        # The build serves the script only from its content-addressed copy and removes the root copy.
+        source = (ROOT / 'site/language-fragment.js').read_bytes()
+        name = f'language-fragment.{digest(source)}.js'
+        tag = f'<script src="/assets/{name}" defer></script>'
+        self.assertEqual((output / 'assets' / name).read_bytes(), source)
+        self.assertFalse((output / 'language-fragment.js').exists())
+        kinds = Counter()
+        for page in sorted(output.rglob('*.html')):
+            route = page.relative_to(output).as_posix()
+            html = page.read_text(encoding='utf-8')
+            header = HEADER.search(html)
+            expected = route not in ('index.html', 'zh/index.html', 'explore/index.html', 'zh/explore/index.html') and bool(header) and 'hreflang=' in header.group(0)
+            with self.subTest(route=route):
+                self.assertEqual(html.count(tag), int(expected))
+                self.assertNotIn('language-fragment.js', html.replace(tag, ''))
+            if not expected or route.startswith('zh/'):
+                continue
+            counterpart = output / 'zh' / route
+            self.assertTrue(counterpart.is_file(), route)
+            with self.subTest(route=route, check='ids'):
+                # The script carries a fragment only when it names an element on the current page.
+                self.assertEqual(set(IDS.findall(html)), set(IDS.findall(counterpart.read_text(encoding='utf-8'))))
+            parts = route.split('/')
+            kinds[parts[0] + ('/<id>' if parts[0] in ('resources', 'papers', 'browse') and len(parts) > 2 else '')] += 1
+        for kind in ('browse', 'browse/<id>', 'resources', 'resources/<id>', 'papers', 'papers/<id>', 'cases', 'about', 'survey'):
+            self.assertGreater(kinds[kind], 0, kind)
+        self.assertNotIn('language-fragment.js', (output / '404.html').read_text(encoding='utf-8'))
 
     def test_pages_are_changed_once(self):
         with tempfile.TemporaryDirectory() as directory:
