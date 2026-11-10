@@ -153301,5 +153301,32 @@
       "prerequisites",
       "license"
     ]
+  },
+  {
+    "id": "asteroids-disassembly",
+    "name": "asteroids-disassembly: Asteroids arcade firmware",
+    "url": "https://github.com/nmikstas/asteroids-disassembly",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "asteroids-disassembly is a disassembly of the Asteroids arcade game firmware. The README states that subject and does not name a toolchain, platform, or license.",
+    "description_zh": "asteroids-disassembly 是街机游戏《小行星》固件的反汇编。README 只说明了这个对象，没有写出工具链、平台或许可证。",
+    "evidence_url": "https://github.com/nmikstas/asteroids-disassembly/blob/1122a8ec831fcb9fdc6fd8b5525d782553060d51/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
+    "requirements": [
+      "The README identifies the subject as the Asteroids arcade game firmware.",
+      "GitHub's license metadata for this repository is empty."
+    ],
+    "requirement_facets": [
+      "scope",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
