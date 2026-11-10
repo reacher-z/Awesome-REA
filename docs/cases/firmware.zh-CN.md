@@ -6,8 +6,11 @@
 
 [English](firmware.md)
 
-**172 个案例**
+**175 个案例**
 
+- [**fdsboot：Famicom Disk System 启动 ROM 反汇编**](https://gitlab.com/segaloco/fdsboot) - fdsboot 是 Famicom Disk System 启动 ROM 的 6502 反汇编，按磁盘读写、PPU、手柄、计时器、声音、中断和随机数等例程拆分源码，并附带主机与 FDS 寄存器的定义文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fdsboot-case/)</sub>
+- [**gyx-decomp：Casio ES PLUS GYX 计算器固件反编译**](https://codeberg.org/gwetm/gyx-decomp) - gyx-decomp 是 Casio ES PLUS GYX 科学计算器固件的反编译项目，该固件运行在 ROHM nX-U8/100 微控制器上。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gyx-decomp-case/)</sub>
+- [**vmiv：View-Master Interactive Video 模拟器与格式笔记**](https://codeberg.org/Sprite_tm/vmiv) - vmiv 用 FFmpeg 解码录像带采集视频，从扫描线中提取按 UART 方式编码的数据字节和辅助音频，交给运行 VMI8802 ROM 的 8051 内核处理，同时模拟 TMS9128 显示芯片并用 SDL2 渲染，以此模拟 View-Master Interactive Video 系统。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/vmiv-case/)</sub>
 - [**6502 Model：重建 65C02 芯片的逐周期行为**](https://github.com/EmulationOnline/model_6502) - 6502 Model 用 Rust 根据实体 65C02 芯片运行程序时采集的外部总线跟踪记录，重建其逐周期行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/6502-model-case/)</sub>
 - [**B3603：研究控制板行为并编写替代固件**](https://github.com/baruch/b3603) - B3603 研究降压模块的控制板，以编写 STM8 替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/b3603-case/)</sub>
 - [**Band 9 表盘生成器：华为手环 9 HWT 表盘格式复现**](https://github.com/daiyuxiang520/band9-watchface-generator) - Band 9 表盘生成器通过观察公开的 HWT 包，归纳华为手环 9 表盘格式，并为 194 × 368 的 HWHD07 屏幕生成可安装的表盘包。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/band9-watchface-generator-case/)</sub>

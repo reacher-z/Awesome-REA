@@ -153301,5 +153301,1408 @@
       "prerequisites",
       "license"
     ]
+  },
+  {
+    "id": "donkey-kong-disassembly-case",
+    "name": "Donkey Kong Disassembly: Arcade Z80 and sound code",
+    "url": "https://gitlab.com/segaloco/dk",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Donkey Kong Disassembly reconstructs the arcade game's Z80 CPU and sound code as assembly for known MAME ROM sets. Its build targets produce ROM files and compare their checksums with recorded values; graphics data is excluded.",
+    "description_zh": "Donkey Kong Disassembly 将街机版 Donkey Kong 的 Z80 主程序和音效代码整理为汇编，覆盖已知的 MAME ROM 版本。构建脚本可生成 ROM 文件并按预存校验和检查；仓库不收录图形数据。",
+    "evidence_url": "https://gitlab.com/segaloco/dk/-/blob/a6acaa79424da7dc1c1facad8ac549f76555b867/README",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Z80 GNU binutils for CPU code and asm48 for sound code.",
+      "Covers known MAME Donkey Kong ROM sets.",
+      "Graphics data is excluded; additional banks may be added later.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://gitlab.com/segaloco/dk/-/blob/a6acaa79424da7dc1c1facad8ac549f76555b867/Makefile",
+      "https://gitlab.com/segaloco/dk/-/tree/a6acaa79424da7dc1c1facad8ac549f76555b867"
+    ]
+  },
+  {
+    "id": "kh-com-case",
+    "name": "kh-com: Kingdom Hearts: Chain of Memories decompilation",
+    "url": "https://codeberg.org/aryan-sinhala349/kh-com",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "kh-com reconstructs code from the US Game Boy Advance release of Kingdom Hearts: Chain of Memories. The early source covers startup, initialization, the main loop and interrupt handling; many called routines remain placeholders.",
+    "description_zh": "kh-com 正在还原美版 GBA 游戏 Kingdom Hearts: Chain of Memories 的代码。现有源码涉及启动、初始化、主循环和中断处理，许多被调用的例程仍是占位实现。",
+    "evidence_url": "https://codeberg.org/aryan-sinhala349/kh-com/src/commit/b85fb33bfc1ff5474920efd422df45b53b8409a4/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A prior copy of the game is required to extract assets.",
+      "The build configuration requires devkitPro, devkitARM and agbcc.",
+      "The project states that development is too early to build anything of note.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://codeberg.org/aryan-sinhala349/kh-com/src/commit/b85fb33bfc1ff5474920efd422df45b53b8409a4/src/main.c",
+      "https://codeberg.org/aryan-sinhala349/kh-com/src/commit/b85fb33bfc1ff5474920efd422df45b53b8409a4/src/blank.c",
+      "https://codeberg.org/aryan-sinhala349/kh-com/src/commit/b85fb33bfc1ff5474920efd422df45b53b8409a4/asm/src/crt0.s",
+      "https://codeberg.org/aryan-sinhala349/kh-com/src/commit/b85fb33bfc1ff5474920efd422df45b53b8409a4/Toolchain.mk"
+    ]
+  },
+  {
+    "id": "air-sea-battle-disassembly-case",
+    "name": "Air-Sea Battle: an annotated Atari 2600 disassembly",
+    "url": "https://www.qotile.net/minidig/disassembly/air_sea_battle.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A labeled and commented 6502 assembly listing reconstructs Air-Sea Battle, Atari's 1977 game for the Atari 2600, on the MiniDig disassembly page. An assembler switch selects the NTSC or PAL build of the 2K ROM. Header notes cover the taller PAL kernel zones, why the NTSC version's EXPERT difficulty gives a missile size of 0, and the two RAM locations, $91 and $92, that the author marks as unused.",
+    "description_zh": "MiniDig 网站上的这份 6502 汇编清单带有标签和注释，重建了 Atari 1977 年为 Atari 2600 推出的 Air-Sea Battle。汇编开关可在 2K ROM 的 NTSC 与 PAL 版本间切换。文件头说明了 PAL 版内核区加高、NTSC 版 EXPERT 难度下导弹尺寸为 0 的原因，以及作者标为未使用的两个 RAM 地址 $91 和 $92。",
+    "evidence_url": "https://web.archive.org/web/20260910210732/https://www.qotile.net/minidig/disassembly/air_sea_battle.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A 6502 assembler and the vcs.h header that the listing includes.",
+      "COMPILE_VERSION selects the NTSC or PAL build of the 2K ROM.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://web.archive.org/web/20260714091141/https://www.qotile.net/minidig/"
+    ]
+  },
+  {
+    "id": "berzerk-atari-2600-disassembly-case",
+    "name": "Berzerk: a commented Atari 2600 disassembly",
+    "url": "https://www.qotile.net/minidig/disassembly/berzerk.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Berzerk for the Atari 2600 (Atari, 1982) is reconstructed as a labeled, commented 6502 assembly listing that assembles to the exact original ROM image, with a switch for the NTSC or PAL build. The notes cover the game's sprite-drawing technique, PAL frame-delay values set at 1.2 times the NTSC ones, unused diagonal robot-fire values left in the ROM, unused RAM and the roughly 12-second launch of Evil Otto.",
+    "description_zh": "将 Atari 1982 年发行的 Atari 2600 游戏 Berzerk 整理为带标签和注释的 6502 汇编清单，可汇编出与原版完全一致的 ROM 映像，并可通过开关选择 NTSC 或 PAL 版本。注释说明了游戏的精灵绘制方式、PAL 版帧延迟取 NTSC 值的 1.2 倍、ROM 中残留但未使用的机器人斜向射击数值、未使用的 RAM，以及 Evil Otto 约 12 秒后出场的时机。",
+    "evidence_url": "https://web.archive.org/web/20260501205549/https://www.qotile.net/minidig/disassembly/berzerk.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Assembling requires vcs.h version 105 or greater and macro.h.",
+      "The author notes that some flags and RAM overlays may be misidentified.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "combat-atari-2600-disassembly-case",
+    "name": "Combat: an annotated Atari 2600 disassembly",
+    "url": "https://www.qotile.net/minidig/disassembly/dicombat.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A commented 6502 assembly listing reconstructs Combat, the Atari 2600 tank, biplane and jet game, aiming to explain every instruction, memory location and table. Assembled with DASM it yields an image that differs from the cartridge ROM only in the unwritten padding bytes before the startup vectors. The header maps all 27 game variations to their missile, maze and cloud options, and main-loop routines carry Atari's original names, taken from presentation notes.",
+    "description_zh": "这份带注释的 6502 汇编清单重建了 Atari 2600 坦克、双翼机与喷气机对战游戏 Combat，目标是讲清每条指令、每个内存地址和每张表的用途。用 DASM 汇编后得到的镜像与卡带 ROM 仅在启动向量前未写入的填充字节上有差别。文件头给出 27 种游戏变体与导弹、迷宫、云层选项的对照表，主循环例程采用演示笔记中披露的 Atari 原始名称。",
+    "evidence_url": "https://web.archive.org/web/20250715155012/https://www.qotile.net/minidig/disassembly/dicombat.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "DASM and the vcs.h header that the listing includes.",
+      "The assembled image matches the cartridge ROM except for a few unwritten bytes before the startup vectors, which DASM sets to zero and the cartridge holds as $FF.",
+      "Some introductory VCS programming and historical comments were removed; the listing assumes basic familiarity with VCS programming.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://web.archive.org/web/20260714091141/https://www.qotile.net/minidig/"
+    ]
+  },
+  {
+    "id": "cosmic-ark-atari-2600-disassembly-case",
+    "name": "Cosmic Ark: a commented Atari 2600 disassembly with PAL conversion",
+    "url": "https://www.qotile.net/minidig/disassembly/CosmicArk.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Cosmic Ark for the Atari 2600 (Imagic, 1982) is reconstructed as an analyzed, labeled and commented 6502 assembly listing with NTSC and PAL builds. The PAL conversion rescales nearly all game speeds through the game's fractional addition so both versions play at the same pace, and optional switches enable size optimizations. The notes point out the leftover code for a non-cooperative two-player mode and the game's heavy use of status flags.",
+    "description_zh": "将 Imagic 1982 年的 Atari 2600 游戏 Cosmic Ark 整理为经过分析、带标签和注释的 6502 汇编清单，可构建 NTSC 和 PAL 版本。PAL 转换利用游戏的小数累加机制重新换算了几乎所有速度，使两个版本节奏一致；另有开关可启用体积优化。注释还指出了为非合作双人模式残留的代码，以及游戏大量使用的状态标志。",
+    "evidence_url": "https://web.archive.org/web/20260221014224/https://www.qotile.net/minidig/disassembly/CosmicArk.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A 6502 assembler and the vcs.h header that the listing includes; the listing itself defines TIMINT = $285, which older versions of vcs.h lack.",
+      "Version 0.9. The author states that PAL meteor speeds do not match NTSC exactly and that some status flags may be misidentified.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://www.qotile.net/minidig/"
+    ]
+  },
+  {
+    "id": "donkey-kong-atari-vcs-disassembly-case",
+    "name": "Donkey Kong: an annotated Atari VCS disassembly that rebuilds the cartridge",
+    "url": "https://www.qotile.net/minidig/disassembly/dk.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Coleco's 1982 Atari VCS cartridge of Donkey Kong is disassembled into labeled and commented 6502 assembly kept byte-identical to the cartridge, down to a filler byte that pushes the audio frequency table to the next page. Comments outline the overscan, vertical blank and kernel main loop and the horizontal positioning routine, and an NTSC switch selects the PAL listing, which retimes vertical blank and overscan for 312 scan lines and changes colours and sound frequencies.",
+    "description_zh": "Coleco 1982 年 Atari VCS 卡带版《Donkey Kong》被反汇编为带标签和注释的 6502 汇编，连把音频频率表推到下一页的填充字节也保留，使汇编结果与卡带逐字节一致。注释梳理了 overscan、vertical blank 与 kernel 组成的主循环以及水平定位例程；NTSC 开关可切换到 PAL 版本，该版本把 vertical blank 和 overscan 时序调整为 312 条扫描线，并修改了颜色和音频频率。",
+    "evidence_url": "https://web.archive.org/web/20260714101337/https://www.qotile.net/minidig/disassembly/dk.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Assembling needs a 6502 assembler and the vcs.h Atari VCS header that the listing includes.",
+      "The author notes that heavy use of overlays and offsets may leave some variable meanings or table positions unidentified.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "elite-harmless-case",
+    "name": "Elite: Harmless — a Commodore 64 Elite disassembly",
+    "url": "https://codeberg.org/Kroc/elite-harmless",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Elite: Harmless is a full ca65 disassembly of the Commodore 64 release of Elite, taken from the 1986 GMA86 disk, with the code split into flight, docked, text, ship-hull, math, sound and graphics modules. Its build script reassembles the original loader stages and game files, checks them against MD5 sums, and writes a disk image. The same source builds an enhanced variant with a faster multiplication routine and faster line drawing, and a loader document explains the choice of the GMA86 disk and describes the first stage of its copy-protected loader.",
+    "description_zh": "Elite: Harmless 是 Commodore 64 版 Elite 的完整 ca65 反汇编，底本为 1986 年的 GMA86 磁盘版，代码按飞行、停靠、文本、飞船模型、数学、声音和图形等模块拆分。构建脚本会重新汇编原版加载器各阶段和游戏文件，按 MD5 校验后生成磁盘镜像。同一套源码还能构建增强版，采用更快的乘法例程和画线代码；另有加载器文档说明选用 GMA86 磁盘版的原因，并解析带拷贝保护的加载器的第一阶段。",
+    "evidence_url": "https://codeberg.org/Kroc/elite-harmless/src/commit/a8b7615a57a814c1312a39e68f4b371e7eb7dc43/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building uses the cc65 toolchain and the repository setup script under Linux, Mac or Windows with WSL; the game runs in a Commodore 64 emulator such as VICE.",
+      "Disk images are produced only by building the source.",
+      "Documentation of the disassembly is ongoing.",
+      "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://codeberg.org/Kroc/elite-harmless/src/commit/a8b7615a57a814c1312a39e68f4b371e7eb7dc43/build.sh",
+      "https://codeberg.org/Kroc/elite-harmless/src/commit/a8b7615a57a814c1312a39e68f4b371e7eb7dc43/src/boot/gma/README.md",
+      "https://codeberg.org/Kroc/elite-harmless/src/commit/a8b7615a57a814c1312a39e68f4b371e7eb7dc43/INSTALL.md",
+      "https://codeberg.org/Kroc/elite-harmless/src/commit/a8b7615a57a814c1312a39e68f4b371e7eb7dc43/LICENSE.txt"
+    ]
+  },
+  {
+    "id": "exile-enhanced-disassembly-case",
+    "name": "Exile: an annotated disassembly of the enhanced BBC Micro version",
+    "url": "https://level7.org.uk/miscellany/exile-enhanced-disassembly.txt",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An annotated disassembly reconstructs the enhanced BBC Micro version of Exile, the 1988 Superior Software adventure game, from its binary images, covering the sideways-RAM sample loader, the decryption code and the main game. Technical notes give the address ranges of the sprite plotter, the procedural 256x256 tile landscape generator, the three-list object physics engine, envelope-based sound, NPC mood stimuli and the novella-word copy protection, alongside game-play notes and a list of memory pokes.",
+    "description_zh": "这份注释反汇编依据二进制镜像重建了 Superior Software 1988 年在 BBC Micro 上发行的冒险游戏 Exile 增强版，涵盖把采样音效装入 sideways RAM 的加载器、解密代码和游戏主体。技术说明给出了精灵绘制、256x256 图块程序化地形生成、三级对象列表物理引擎、包络音效、NPC 情绪刺激以及基于随附小说单词的拷贝保护所在的地址范围，另附玩法说明和内存修改（poke）清单。",
+    "evidence_url": "https://web.archive.org/web/20260304035822/http://level7.org.uk/miscellany/exile-enhanced-disassembly.txt",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers the enhanced version, which keeps code, data and sampled sounds in sideways RAM; the standard version and the disk protection and supervisor have separate disassemblies on the same site.",
+      "Created from binary images without access to source code; the author describes it as reasonably complete.",
+      "The author imposes no copyright restrictions beyond those already present on the game."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "indy-500-atari-2600-disassembly-case",
+    "name": "Indy 500: a first-pass labeled Atari 2600 disassembly",
+    "url": "https://www.qotile.net/minidig/disassembly/indy_500_pass_01.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Indy 500 for the Atari 2600 is disassembled with DiStella v3.0 into a 6502 listing carrying a first pass of hand-written labels and comments. Named RAM locations cover game state, scores, speed settings, car positions, collision state and audio channels, and comments mark the mirror-symmetrical racetrack kernel, acceleration handling for both cars and per-game color-palette tables.",
+    "description_zh": "用 DiStella v3.0 将 Atari 2600 游戏 Indy 500 反汇编为 6502 清单，并做了第一轮手工标注和注释。已命名的 RAM 地址涵盖游戏状态、比分、速度设定、赛车位置、碰撞状态和音频通道；注释标出了左右对称的赛道显示内核、两辆赛车的加速处理以及按游戏模式切换的配色表。",
+    "evidence_url": "https://web.archive.org/web/20260213080646/https://www.qotile.net/minidig/disassembly/indy_500_pass_01.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Assembling requires a 6502 assembler and vcs.h.",
+      "Labels and comments are an initial pass; several RAM locations are marked unknown or tentative.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://www.qotile.net/minidig/"
+    ]
+  },
+  {
+    "id": "jawbreaker-atari-vcs-disassembly-case",
+    "name": "Jawbreaker: an annotated Atari VCS disassembly that compiles to the exact ROM",
+    "url": "https://www.qotile.net/minidig/disassembly/jaw_breaker.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Tiger Electronic Toys' 1982 Atari VCS game Jawbreaker is disassembled into labeled and commented 6502 assembly that compiles to the exact ROM image. Notes explain how sprite positions are kept as combined fine-motion and coarse values and how an inverted playfield masks the maze, and record that joystick input is read from $0288 instead of SWCHA; assembler switches select an NTSC or PAL build and an optional no-defeat mode.",
+    "description_zh": "Tiger Electronic Toys 1982 年的 Atari VCS 游戏 Jawbreaker 被反汇编为带标签和注释的 6502 汇编，可编译出与原版完全一致的 ROM 镜像。注释说明了精灵位置如何以精细移动值与粗略值合并保存、反转的 playfield 如何遮罩迷宫，并记录了摇杆输入读取的是 $0288 而不是 SWCHA；汇编开关可选择 NTSC 或 PAL 版本，并可开启不会失败的模式。",
+    "evidence_url": "https://web.archive.org/web/20260222165051/https://www.qotile.net/minidig/disassembly/jaw_breaker.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Assembling needs a 6502 assembler and vcs.h version 105 or later.",
+      "The author notes that the PAL version keeps the NTSC game speeds.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "kaboom-atari-2600-disassembly-case",
+    "name": "Kaboom!: an annotated Atari 2600 disassembly",
+    "url": "https://www.qotile.net/minidig/disassembly/kaboom.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A labeled and commented 6502 assembly listing reconstructs Kaboom!, Activision's 1981 paddle game for the Atari 2600, as a 2K ROM source on the MiniDig disassembly page. Assembler switches select NTSC or PAL timing and colors and choose between the original back-and-forth Mad Bomber movement and a smooth variant. Labeled constants cover paddle limits, bomb-group sizes and the display kernels, and comments note bomb-group table entries the game never reads.",
+    "description_zh": "MiniDig 网站上的这份 6502 汇编清单带有标签和注释，把 Activision 1981 年为 Atari 2600 推出的手柄游戏 Kaboom! 重建为 2K ROM 源码。汇编开关可选择 NTSC 或 PAL 的时序与配色，并可在 Mad Bomber 原版的来回移动与平滑移动之间切换。带标签的常量涵盖手柄范围、炸弹组规模和各显示内核，注释还指出了游戏从未读取的炸弹组表项。",
+    "evidence_url": "https://web.archive.org/web/20260213080655/https://www.qotile.net/minidig/disassembly/kaboom.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A 6502 assembler and the vcs.h header that the listing includes.",
+      "COMPILE_VERSION selects the NTSC or PAL build and MAD_BOMBER_MOVEMENT selects the original or smooth bomber movement; the listing targets a 2K ROM.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://web.archive.org/web/20260714091141/https://www.qotile.net/minidig/"
+    ]
+  },
+  {
+    "id": "outlaw-atari-2600-disassembly-case",
+    "name": "Outlaw: a reverse-engineered Atari 2600 source listing",
+    "url": "https://www.qotile.net/minidig/disassembly/outlaw.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Outlaw for the Atari 2600 (Atari, 1978) is reverse-engineered into commented 6502 source that compiles with DASM. Named RAM variables cover the playfield arrays, scores, bullets in each gun, sound state and obstacle positions, and the commented code walks through the score and magazine display, the main four-line display kernel, gun reloading, select handling, movement and bullet bouncing.",
+    "description_zh": "将 Atari 1978 年的 Atari 2600 游戏 Outlaw 逆向重建为带注释、可用 DASM 编译的 6502 源码。已命名的 RAM 变量涵盖背景数组、比分、每把枪的剩余子弹、音效状态和障碍物位置；注释代码依次说明了比分与弹匣显示、每四行一组的主显示内核、换弹、选择键处理、移动以及子弹反弹。",
+    "evidence_url": "https://web.archive.org/web/20260217100036/https://www.qotile.net/minidig/disassembly/outlaw.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Assembling requires DASM and vcs.h.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "pitfall-atari-vcs-disassembly-case",
+    "name": "Pitfall!: an annotated Atari VCS disassembly of scene generation and the kernel",
+    "url": "https://www.qotile.net/minidig/disassembly/pitfall.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Activision's 1982 Atari VCS game Pitfall! is disassembled into labeled and commented 6502 assembly (version 0.9). Notes explain how a reversible LFSR generates the 255 jungle scenes, which bits of the random number select ground objects, scene type, tree pattern and wall position, and how the nine-stripe display kernel draws Harry, the liana, holes, ladder and wall; assembler switches add optional optimizations, screensaver code and a training mode.",
+    "description_zh": "Activision 1982 年的 Atari VCS 游戏 Pitfall! 被反汇编为带标签和注释的 6502 汇编（v0.9）。注释解释了可逆 LFSR 如何生成 255 个丛林场景、随机数各比特如何决定地面物体、场景类型、树木图案和墙的位置，以及九段式显示内核如何绘制 Harry、藤蔓、坑洞、梯子和墙；汇编开关可启用可选优化、屏保代码和练习模式。",
+    "evidence_url": "https://web.archive.org/web/20260213080644/https://www.qotile.net/minidig/disassembly/pitfall.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Assembling needs a 6502 assembler and the vcs.h Atari VCS header that the listing includes.",
+      "Version 0.9 of the analysis, last updated in October 2001.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "red-vs-blue-atari-2600-disassembly-case",
+    "name": "Red vs. Blue: an annotated Atari 2600 multi-sprite demo disassembly",
+    "url": "https://www.qotile.net/minidig/disassembly/redblue.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A labeled and commented 6502 assembly listing reconstructs Red vs. Blue, a 1981 Atari 2600 multi-sprite demo that later became RealSports Football. The listing labels the vertical sync and timer loop, the display kernel for the red and blue animated players, eight animation frames of player graphics, and the horizontal-position and sprite-copy tables. A comment marks a frame-timing counter that has no effect on the animation rate.",
+    "description_zh": "这份带标签和注释的 6502 汇编清单重建了 1981 年的 Atari 2600 多精灵演示程序 Red vs. Blue，该程序后来发展为 RealSports Football。清单标注了垂直同步与定时循环、绘制红蓝两色动画球员的显示内核、八帧球员动画图形，以及水平定位和精灵复制表。注释还指出其中一个帧计时计数器对动画速度并无影响。",
+    "evidence_url": "https://web.archive.org/web/20251114052829/https://www.qotile.net/minidig/disassembly/redblue.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A 6502 assembler and the vcs.h header that the listing includes.",
+      "Covers the Red vs. Blue multi-sprite demo, the program that became RealSports Football.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://web.archive.org/web/20260714091141/https://www.qotile.net/minidig/"
+    ]
+  },
+  {
+    "id": "river-raid-atari-vcs-disassembly-case",
+    "name": "River Raid: an annotated Atari VCS disassembly of river generation and the kernel",
+    "url": "https://www.qotile.net/minidig/disassembly/RiverRaid.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Activision's 1982 Atari VCS game River Raid is disassembled into labeled and commented 6502 assembly (version 0.9). Notes explain how random river sections of 16 blocks ending in a bridge are generated, how one fuel tank, enemy or house is placed per block, how a two-line kernel repeated twelve times draws each 32-line block with hardware-only collision checks, and how the score lives directly in the display pointers; switches add screensaver code and a training mode.",
+    "description_zh": "Activision 1982 年的 Atari VCS 游戏 River Raid 被反汇编为带标签和注释的 6502 汇编（v0.9）。注释说明了由 16 个块组成、以桥梁收尾的河段如何随机生成，每个块如何放置一个油箱、敌人或房屋，重复十二次的双行显示内核如何绘制每个 32 条扫描线高的块并只用硬件碰撞寄存器检测碰撞，以及分数如何直接存放在显示指针中；汇编开关可加入屏保代码和练习模式。",
+    "evidence_url": "https://web.archive.org/web/20260223204810/https://www.qotile.net/minidig/disassembly/RiverRaid.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Assembling needs a 6502 assembler and the vcs.h Atari VCS header that the listing includes.",
+      "Version 0.9 of the analysis, last updated in August 2001.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "space-jockey-atari-2600-disassembly-case",
+    "name": "Space Jockey: an exact-ROM Atari 2600 disassembly",
+    "url": "https://www.qotile.net/minidig/disassembly/space_jockey.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A labeled and commented 6502 assembly listing reconstructs Space Jockey, US Games' first Atari 2600 game from 1982, and sets the TIA read base so it compiles to the exact 2K ROM image. An assembler switch selects NTSC or a PAL listing taken from the Carrere Video release, whose changes to vertical blank timing and colors are documented. Header notes discuss the origin of its horizontal positioning routine, and comments label obstacle attributes such as shot and firing flags.",
+    "description_zh": "这份带标签和注释的 6502 汇编清单重建了 US Games 1982 年推出的首款 Atari 2600 游戏 Space Jockey，并设置 TIA 读地址基址，使其编译结果与原 2K ROM 镜像完全一致。汇编开关可选择 NTSC 版或依据 Carrere Video 发行版整理的 PAL 版，并说明了 PAL 版对垂直消隐时序和配色的改动。文件头讨论了其水平定位例程的来历，注释还标注了障碍物的被击中、可开火等属性位。",
+    "evidence_url": "https://web.archive.org/web/20260501090911/https://www.qotile.net/minidig/disassembly/space_jockey.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A 6502 assembler and vcs.h version 105 or later.",
+      "Compiles to the exact ROM image; the PAL listing follows the Carrere Video release, where speeds and sound frequencies were not adjusted for PAL timing.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://web.archive.org/web/20260714091141/https://www.qotile.net/minidig/"
+    ]
+  },
+  {
+    "id": "starmaster-atari-2600-disassembly-case",
+    "name": "Starmaster: a commented Atari 2600 disassembly",
+    "url": "https://www.qotile.net/minidig/disassembly/Starmaster.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Starmaster for the Atari 2600 (Activision, 1982) is disassembled with DiStella v2.0 and then analyzed, named and commented into readable 6502 source. Named constants describe the 6x6 sector map, starbases, enemy IDs, star field, warp and laser timing and enemy fire distance, and an OPTIMIZE switch swaps in code improvements the author identified while studying the routines.",
+    "description_zh": "用 DiStella v2.0 反汇编 Activision 1982 年的 Atari 2600 游戏 Starmaster，再经手工分析、命名和注释整理为可读的 6502 源码。命名常量描述了 6x6 星区地图、星际基地、敌人编号、星空、曲速与激光时长以及敌方射击距离；OPTIMIZE 开关可换入作者在研究各例程时发现的改进写法。",
+    "evidence_url": "https://web.archive.org/web/20260730190418/https://www.qotile.net/minidig/disassembly/Starmaster.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Assembling requires a 6502 assembler and vcs.h.",
+      "Version 0.9 of the analysis.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "surround-atari-vcs-disassembly-case",
+    "name": "Surround: an annotated Atari VCS disassembly that compiles to the exact 2K ROM",
+    "url": "https://www.qotile.net/minidig/disassembly/surround.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Atari's 1977 VCS game Surround is disassembled into labeled and commented 6502 assembly that compiles to the exact 2K ROM image. The listing names the zero-page variables, the game-variation flags for speed-up, wraparound, erase, diagonal movement and single-player play, the joystick and switch masks, and the score and playfield drawing routines, with a compile switch for NTSC or PAL builds.",
+    "description_zh": "Atari 1977 年的 VCS 游戏 Surround 被反汇编为带标签和注释的 6502 汇编，可编译出与原版完全一致的 2K ROM 镜像。代码为零页变量、加速、穿墙、擦除、斜向移动和单人模式等游戏变体标志、摇杆与开关掩码以及分数和 playfield 绘制例程命名，并提供 NTSC 与 PAL 编译开关。",
+    "evidence_url": "https://web.archive.org/web/20260213080708/https://www.qotile.net/minidig/disassembly/surround.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Assembling needs a 6502 assembler and vcs.h version 105 or later.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "a-team-atari-2600-disassembly-case",
+    "name": "A-Team: an Atari 2600 disassembly with PAL conversion",
+    "url": "https://www.qotile.net/minidig/disassembly/a-team.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A two-bank 6502 disassembly of A-Team for the Atari 2600 assembles with DASM and doubles as the basis for a PAL conversion. Compile switches pick NTSC, PAL 50 Hz or PAL60 colors and timing, and toggle the intro logo and intro glitch fixes, the level-1 border color cycling and a bug fix that keeps the scanline count fixed, each with the original behaviour available. Comments mark the color register writes for backgrounds, characters, missiles, the score panel and the intro screen.",
+    "description_zh": "这份 Atari 2600 游戏 A-Team 的双 bank 6502 反汇编可用 DASM 汇编，也是其 PAL 转换的基础。编译开关可选择 NTSC、PAL 50 Hz 或 PAL60 的配色与时序，并可开关片头标志与片头画面故障的修复、第一关边框颜色循环，以及保持扫描线数固定的错误修复，每项都能恢复原版行为。注释标出了为背景、角色、导弹、记分栏和片头画面写入颜色寄存器的位置。",
+    "evidence_url": "https://web.archive.org/web/20260213080632/https://www.qotile.net/minidig/disassembly/a-team.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "DASM and the vcs.h header that the listing includes.",
+      "COMPILE_VERSION selects PAL, PAL60 or NTSC; FIX_LOGO, FIX_INTRO, COLOR_CYCLE and BUGFIX switch between the original behaviour and the fixes.",
+      "The color conversion history notes that it needs more real-hardware testing.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://web.archive.org/web/20260714091141/https://www.qotile.net/minidig/"
+    ]
+  },
+  {
+    "id": "venture-atari-2600-disassembly-case",
+    "name": "Venture: a reverse-engineered Atari 2600 source listing",
+    "url": "https://www.qotile.net/minidig/disassembly/venture.asm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Venture for the Atari 2600 (Coleco) is reverse-engineered into commented 6502 source with a DASM build command that writes a listing, symbol table and binary. Comments document the screen region used for rooms, sprite timesharing in the moving-wall room, monster status values, shot range, collision handling and per-room playfield offsets, and every graphics table carries a visual comment of its pixels; two RAM bytes are marked unused by the original code.",
+    "description_zh": "将 Coleco 的 Atari 2600 游戏 Venture 逆向重建为带注释的 6502 源码，并给出可生成清单、符号表和二进制文件的 DASM 构建命令。注释说明了房间的绘制区域、移动墙房间中的精灵分时复用、怪物状态值、射程、碰撞处理以及各房间的背景偏移，所有图形数据表都附有像素示意注释；另标出两个原代码未使用的 RAM 字节。",
+    "evidence_url": "https://web.archive.org/web/20260202113530/https://www.qotile.net/minidig/disassembly/venture.asm",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building requires DASM and vcs.h.",
+      "No licence stated on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "blackhack-case",
+    "name": "blackhack: runblack.exe UI widget decompilation",
+    "url": "https://gitlab.com/bwrsandman/blackhack",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "blackhack rebuilds the SetupControl UI widget classes of runblack.exe as hand-decompiled C, covering buttons, big and tab buttons, check boxes, lists, sliders, edit fields, colour pickers, pictures and graph widgets, along with parts of Lionhead's lhlib. A Detours launcher checks the executable's md5, injects a DLL and swaps original functions for the rebuilt ones through per-version tables of function and data addresses. It also patches the fullscreen setter so runblack.exe always runs windowed.",
+    "description_zh": "blackhack 用手工反编译的 C 代码重建 runblack.exe 的 SetupControl 界面控件类，涵盖按钮、大按钮与标签按钮、复选框、列表、滑块、输入框、取色器、图片和图表控件，并重建了部分 Lionhead lhlib 库。基于 Detours 的启动器先校验可执行文件的 md5，再注入 DLL，按各版本的函数与数据地址表把原函数替换为重建版本。项目还修改了全屏设置函数，使 runblack.exe 始终以窗口模式运行。",
+    "evidence_url": "https://gitlab.com/bwrsandman/blackhack/-/blob/d4f2a517f52d174cf5429b304797d01c3221e1b6/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires runblack.exe version 1.41 with the no-CD patch (md5 174b1a64e74b2321f3c38ccc8a511e78); other versions need new function and global address tables.",
+      "Builds with CMake 3.14 or later and the Detours library.",
+      "The SetupControl implementation is almost complete.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://gitlab.com/bwrsandman/blackhack/-/blob/d4f2a517f52d174cf5429b304797d01c3221e1b6/launcher.c",
+      "https://gitlab.com/bwrsandman/blackhack/-/blob/d4f2a517f52d174cf5429b304797d01c3221e1b6/Libs/SetupThing/src/SetupButton.cpp",
+      "https://gitlab.com/bwrsandman/blackhack/-/blob/d4f2a517f52d174cf5429b304797d01c3221e1b6/src/Game.h"
+    ]
+  },
+  {
+    "id": "fc-dk-donkey-kong-disassembly-case",
+    "name": "Donkey Kong Meta-Disassembly: matching Famicom and Famicom Disk System rebuilds",
+    "url": "https://gitlab.com/segaloco/fc_dk",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Annotated 6502 disassembly of Nintendo's Donkey Kong for the Family Computer and the Famicom Disk System that reassembles with cc65 into ROM images checked by CRC against the released versions. Build targets cover the original and global revisions, the e-Reader, Animal Crossing and Wii and 3DS Virtual Console releases. CHR tile data is extracted from the user's own iNES or FDS image, and the code carries C-like control-flow comments.",
+    "description_zh": "任天堂《Donkey Kong》Family Computer 与 Famicom Disk System 版的 6502 注释反汇编，用 cc65 重新汇编后生成的 ROM 映像会按 CRC 与发行版比对。构建目标涵盖初版与全球版修订、e-Reader、Animal Crossing 以及 Wii 和 3DS Virtual Console 版本。CHR 图块数据从用户自有的 iNES 或 FDS 映像中提取，代码附有类 C 的控制流注释。",
+    "evidence_url": "https://gitlab.com/segaloco/fc_dk/-/blob/fc08dba09aa36fefb248a94064564ccfe1835cce/README",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The cc65 6502 suite (ca65, ld65) on a UNIX-like or Plan 9 system; the fdtc Famicom Disk System compiler is bundled for the FDS build.",
+      "A headered iNES image of the Famicom release or a headered FDS image of the disk release, from which the extraction scripts pull the CHR tile data.",
+      "The iNES build matches 1:1; for the FDS release the bank files match while some filesystem details differ.",
+      "The control-flow commentary may contain inaccuracies; where it disagrees with the code, the code is correct.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://gitlab.com/segaloco/fc_dk/-/blob/fc08dba09aa36fefb248a94064564ccfe1835cce/Makefile",
+      "https://gitlab.com/segaloco/fc_dk/-/blob/fc08dba09aa36fefb248a94064564ccfe1835cce/tools/extract.fc.sh",
+      "https://gitlab.com/segaloco/fc_dk/-/tree/fc08dba09aa36fefb248a94064564ccfe1835cce/src"
+    ]
+  },
+  {
+    "id": "fdsboot-case",
+    "name": "fdsboot: Famicom Disk System boot ROM disassembly",
+    "url": "https://gitlab.com/segaloco/fdsboot",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "fdsboot is a 6502 disassembly of the Famicom Disk System boot ROM, split into disk I/O, PPU, joypad, timer, sound, interrupt and random-number routines with include files for the console and FDS registers. The ca65/ld65 build reassembles fdsboot.bin and compares its CRC with the original and with a second revision, 3DS and Wii VC builds, and GW and TWIN variants selected by assembler flags. It serves as a reference when disassembling Famicom Disk System titles.",
+    "description_zh": "fdsboot 是 Famicom Disk System 启动 ROM 的 6502 反汇编，按磁盘读写、PPU、手柄、计时器、声音、中断和随机数等例程拆分源码，并附带主机与 FDS 寄存器的定义文件。使用 ca65/ld65 构建可重新生成 fdsboot.bin，并将其 CRC 与原版以及通过汇编参数选择的第二版、3DS 与 Wii VC 版、GW 和 TWIN 变体逐一比对。项目可作为反汇编 Famicom Disk System 游戏时的参考。",
+    "evidence_url": "https://gitlab.com/segaloco/fdsboot/-/blob/61707587905f2567650ae9a3e77c33c88905af62/README",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs the cc65 assembler and linker (ca65, ld65) with make, or plan9port mk.",
+      "The font and two data tables are extracted from the user's own boot ROM image with tools/extract.sh before building.",
+      "Where the source commentary and the assembly differ, the assembly is authoritative.",
+      "No licence file in the repository."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://gitlab.com/segaloco/fdsboot/-/blob/61707587905f2567650ae9a3e77c33c88905af62/Makefile",
+      "https://gitlab.com/segaloco/fdsboot/-/blob/61707587905f2567650ae9a3e77c33c88905af62/.gitlab-ci.yml",
+      "https://gitlab.com/segaloco/fdsboot/-/blob/61707587905f2567650ae9a3e77c33c88905af62/tools/extract.sh"
+    ]
+  },
+  {
+    "id": "dataeast-snddrv-case",
+    "name": "dataeast_snddrv: High Seas Havoc sound driver disassembly",
+    "url": "https://codeberg.org/techmetx11/dataeast_snddrv",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "dataeast_snddrv is a disassembly of the sound driver Data East used in High Seas Havoc, split into 68000 driver code, a Z80 DAC sample player and a frequency table, assembled with vasm. Its documentation describes the song layout of six track pointers mapped to YM2612 channels, the track command opcodes for tempo, loops, portamento, LFO, panning and DAC samples, and the 32-byte instrument record. Python scripts extract songs, instruments and samples from a ROM of a game that uses the driver.",
+    "description_zh": "dataeast_snddrv 是 Data East 在《High Seas Havoc》中所用声音驱动的反汇编，分为 68000 驱动代码、Z80 DAC 采样播放程序和频率表，使用 vasm 汇编。文档说明了乐曲结构（六个音轨指针映射到 YM2612 声道）、控制速度、循环、滑音、LFO、声像和 DAC 采样的音轨指令，以及 32 字节的音色记录格式。Python 脚本可从使用该驱动的游戏 ROM 中提取乐曲、音色和采样。",
+    "evidence_url": "https://codeberg.org/techmetx11/dataeast_snddrv/src/commit/658d2a2824a01b1c8c1c2cfb7338bd51bb70d36d/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building uses vasmm68k_mot, vasmz80_std, make and Python; songs, instruments and samples are extracted from a ROM of a game that uses the driver.",
+      "The main branch keeps the original driver unmodified; an sgdk-compat branch carries a version modified for SGDK.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://codeberg.org/techmetx11/dataeast_snddrv/src/commit/658d2a2824a01b1c8c1c2cfb7338bd51bb70d36d/docs/song.md",
+      "https://codeberg.org/techmetx11/dataeast_snddrv/src/commit/658d2a2824a01b1c8c1c2cfb7338bd51bb70d36d/docs/instrument.md",
+      "https://codeberg.org/techmetx11/dataeast_snddrv/src/commit/658d2a2824a01b1c8c1c2cfb7338bd51bb70d36d/Makefile",
+      "https://codeberg.org/techmetx11/dataeast_snddrv/src/commit/658d2a2824a01b1c8c1c2cfb7338bd51bb70d36d/scripts/extract_songs.py"
+    ]
+  },
+  {
+    "id": "opengate-jumpgate-case",
+    "name": "Opengate: a client and server remake of Jumpgate",
+    "url": "https://sourceforge.net/projects/opengate/",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Opengate remakes NetDevil's online space game Jumpgate in C++ as a game client, a game server and a state server built on OGRE, CEGUI, Bullet and Boost asio, which log in through a metaserver whose requests the project documents. Its data recreates the Jumpgate sector map with jumpgate links and faction ships such as the Tauseti Lady Kickstart, and its design notes list item prices, scale ships from NetDevil's DirectX models and include an item data set that uses data extracted from NetDevil's JOSSH database.",
+    "description_zh": "Opengate 用 C++ 重制 NetDevil 的太空网游 Jumpgate，包含基于 OGRE、CEGUI、Bullet 和 Boost asio 的游戏客户端、游戏服务端和状态服务端，它们通过 metaserver 登录，项目文档记录了各项 metaserver 请求。数据部分重建了 Jumpgate 的星区地图与跳跃门连接，以及 Tauseti 的 Lady Kickstart 等各阵营舰船；设计笔记列出了物品价格，说明了如何按 NetDevil 原版 DirectX 模型换算舰船尺寸，并收录了一份使用 NetDevil JOSSH 数据库导出数据的物品数据集。",
+    "evidence_url": "https://sourceforge.net/p/opengate/code/ci/7412412608dfea39245a35e32797dcf17d7a2d51/tree/README.rst",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Builds with CMake against OGRE, OIS, CEGUI with its Ogre renderer, FreeALUT, Vorbis, Bullet and Boost 1.46 or later.",
+      "The project lists its development status as alpha and pre-alpha.",
+      "Source files carry the GNU General Public License version 2 or later notice; the repository has no top-level licence file."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://sourceforge.net/p/opengate/opengate-doc/ci/7bf1e942a9e0285c355c51958cfa99760eb1546e/tree/scaling.txt",
+      "https://sourceforge.net/p/opengate/opengate-doc/ci/7bf1e942a9e0285c355c51958cfa99760eb1546e/tree/info.ini",
+      "https://sourceforge.net/p/opengate/code/ci/7412412608dfea39245a35e32797dcf17d7a2d51/tree/data/misc/sectors.xml",
+      "https://sourceforge.net/p/opengate/code/ci/7412412608dfea39245a35e32797dcf17d7a2d51/tree/CMakeLists.txt"
+    ]
+  },
+  {
+    "id": "acemulator-case",
+    "name": "ACEmulator: Asheron's Call server emulator",
+    "url": "https://emulator.ac",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "description_en": "ACEmulator rebuilds the Asheron's Call MMORPG server in C#, aiming to reproduce the game world as it was when the official servers closed in January 2017. The source implements the client network protocol (packets, game actions, events and messages), physics, world objects and a loader for the client's .dat files, backed by MySQL or MariaDB. Server options switch individual retail behaviours, such as door holding and fast buffing, on or off.",
+    "description_zh": "ACEmulator 用 C# 重建了 MMORPG《Asheron's Call》的服务端，目标是还原 2017 年 1 月官方服务器关闭时的游戏世界。源码实现了客户端网络协议（数据包、游戏动作、事件与消息）、物理、世界对象以及客户端 .dat 文件读取，数据存储使用 MySQL 或 MariaDB。服务器选项可以逐项开关正式服的特定行为，例如卡门和快速加状态。",
+    "evidence_url": "https://github.com/ACEmulator/ACE/blob/aadedb3d6092e1952366f125b85fabc5d73c19e5/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires client_cell_1.dat, client_local_English.dat and client_portal.dat from an Asheron's Call client installation.",
+      "Builds for .NET 10 (ACE.Server.csproj targets net10.0) and uses MySQL 5.7.17+ or MariaDB 10.2+ as its database.",
+      "GNU Affero General Public License v3.0."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ACEmulator/ACE/tree/aadedb3d6092e1952366f125b85fabc5d73c19e5",
+      "https://github.com/ACEmulator/ACE/wiki/ACE-Hosting-Windows/054956a3b0d0ef65333906c2a9e598c974e8a715",
+      "https://github.com/ACEmulator/ACE/wiki/Server-Configurable-Options/054956a3b0d0ef65333906c2a9e598c974e8a715",
+      "https://github.com/ACEmulator/ACE/blob/aadedb3d6092e1952366f125b85fabc5d73c19e5/LICENSE",
+      "https://emulator.ac"
+    ]
+  },
+  {
+    "id": "zcure-case",
+    "name": "ZCure: a rewritten Blacklight: Retribution v3.02 master server",
+    "url": "https://gitlab.com/blrevive/zcure",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "description_en": "ZCure rewrites the master server of Blacklight: Retribution v3.02 in .NET 8, based on the ZCAPI library decompiled from BLRCrashReporter.exe of an older build. It serves authentication, users, funds, friends, mail, inventory, loadouts, store, clans, missions, stats, matchmaking and game-server management over TCP/HTTP, with a UDP presence server. Its documentation describes the message format (begin and end markers, header, optional zlib compression, colon-delimited serialization) and the XXTEA encryption taken from the decompiled ZCAPI.",
+    "description_zh": "ZCure 以旧版 BLRCrashReporter.exe 中反编译出的 ZCAPI 库为基础，用 .NET 8 重写《Blacklight: Retribution》v3.02 的主服务器。它通过 TCP/HTTP 提供登录认证、用户、资金、好友、邮件、物品栏、配装、商店、战队、任务、统计、匹配和游戏服务器管理，并以 UDP 运行在线状态服务器。文档说明了消息格式（起止标记、消息头、可选 zlib 压缩、冒号分隔的序列化）以及沿用自反编译 ZCAPI 的 XXTEA 加密。",
+    "evidence_url": "https://gitlab.com/blrevive/zcure/-/blob/3a9e28a3c0e520facbf47daef4eb2f3235d54b17/Readme.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the Blacklight: Retribution v3.02 client, launched with -zcureurl, -zcureport, -presenceurl and -presenceport pointing at the server.",
+      "Building needs the .NET 8 SDK; deployment uses Docker with a preconfigured MySQL container or a manually configured database.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://gitlab.com/blrevive/zcure/-/blob/3a9e28a3c0e520facbf47daef4eb2f3235d54b17/ZCure.API/Documentation/Protocol.md",
+      "https://gitlab.com/blrevive/zcure/-/blob/3a9e28a3c0e520facbf47daef4eb2f3235d54b17/ZCure.API/Documentation/Readme.md",
+      "https://gitlab.com/blrevive/zcure/-/blob/3a9e28a3c0e520facbf47daef4eb2f3235d54b17/ZCure.API/Documentation/Servers.md",
+      "https://gitlab.com/blrevive/zcure/-/blob/3a9e28a3c0e520facbf47daef4eb2f3235d54b17/ZCure.Server/Readme.md"
+    ]
+  },
+  {
+    "id": "strkexeu-case",
+    "name": "strkexeu: Desert Strike and Jungle Strike DOS loader disassembly and unpacker",
+    "url": "https://gitlab.com/NY00123/strkexeu",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "strkexeu documents how the DOS releases of Desert Strike: Return to the Gulf and Jungle Strike keep their game executables packed inside DAT files behind a small loader EXE. It contains a Turbo Assembler disassembly of the original DESERT.EXE/JUNGLE.EXE loader, with macros for each game and an optional CD check, and a single-file C unpacker that extracts the game EXEs. A technical note specifies the RLE and Huffman-forest compression.",
+    "description_zh": "strkexeu 说明了《Desert Strike: Return to the Gulf》和《Jungle Strike》DOS 版如何将游戏可执行文件打包存放在 DAT 文件中，并由一个小型加载器 EXE 负责解包运行。仓库包含原版 DESERT.EXE/JUNGLE.EXE 加载器的 Turbo Assembler 反汇编，用宏区分两款游戏并可选加入 CD 检查，另附一个单文件 C 解包程序用于提取游戏 EXE。技术文档详细描述了 RLE 与 Huffman 森林压缩格式。",
+    "evidence_url": "https://gitlab.com/NY00123/strkexeu/-/blob/0ff29f2f66deaa75be2a8acff93952fe7c1331a9/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Unpacking needs the DAT files from the DOS releases of Desert Strike or Jungle Strike.",
+      "strikeld.asm assembles with Turbo Assembler 3.0 and links with Turbo Linker 3.01, with exactly one of the DESERT and JUNGLE macros defined; strkexeu.c needs only a C compiler and the C standard library.",
+      "The README expects rebuilt loader EXEs to be virtually identical to the originals, the main difference being the minimum allocation field at offset 0Ah of the DOS EXE header, which is 500h paragraphs smaller.",
+      "strkexeu: 3-clause BSD licence."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://gitlab.com/NY00123/strkexeu/-/blob/0ff29f2f66deaa75be2a8acff93952fe7c1331a9/doc.txt",
+      "https://gitlab.com/NY00123/strkexeu/-/blob/0ff29f2f66deaa75be2a8acff93952fe7c1331a9/strikeld.asm",
+      "https://gitlab.com/NY00123/strkexeu/-/blob/0ff29f2f66deaa75be2a8acff93952fe7c1331a9/strkexeu.c"
+    ]
+  },
+  {
+    "id": "gyx-decomp-case",
+    "name": "gyx-decomp: Casio ES PLUS GYX firmware decompilation",
+    "url": "https://codeberg.org/gwetm/gyx-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "gyx-decomp is a decompilation of the Casio ES PLUS GYX scientific calculator firmware, which runs on ROHM nX-U8/100 microcontrollers. Code Casio wrote in C is recovered as ANSI C that the CCU8 compiler turns into matching assembly, Casio assembly is disassembled and reworked for RASU8, and MCU startup code is recreated from files for other U8 parts. A build script compiles, links with RLU8, converts to Intel HEX and binary, and a features file switches modes and functions to build custom ROMs. Notes cover the memory model, compiler options, segment naming and link order.",
+    "description_zh": "gyx-decomp 是 Casio ES PLUS GYX 科学计算器固件的反编译项目，该固件运行在 ROHM nX-U8/100 微控制器上。Casio 用 C 编写的部分被还原为 ANSI C，经 CCU8 编译可得到匹配的汇编；Casio 手写的汇编被反汇编并改造为可用 RASU8 汇编；MCU 启动代码则参照其他 U8 芯片的文件重建。构建脚本依次编译、用 RLU8 链接并转换为 Intel HEX 和二进制，功能配置文件可开关各模式和函数以生成定制 ROM。附带的说明记录了内存模型、编译选项、段命名和链接顺序方面的发现。",
+    "evidence_url": "https://codeberg.org/gwetm/gyx-decomp/src/commit/c8a8e72fad3a1f127db5dc9ee1ed7e19aefdb4fe/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building needs Windows with the LAPIS U8/U16 Development Tools (CCU8 and the MACU8 Assembler Package), the bundled ML610904.DCL device file, and Python with the intelhex library for binary conversion.",
+      "The diagnostic test-select menu of GY454X VerF and GY455X VerF and the extra conversions of Japanese models are missing, and not all feature toggles are implemented.",
+      "Assembly comments, readable C and the RLU8 link order are still being worked on.",
+      "No licence file in the repository."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://codeberg.org/gwetm/gyx-decomp/src/commit/c8a8e72fad3a1f127db5dc9ee1ed7e19aefdb4fe/build.bat",
+      "https://codeberg.org/gwetm/gyx-decomp/src/commit/c8a8e72fad3a1f127db5dc9ee1ed7e19aefdb4fe/CONTRIBUTING.md",
+      "https://codeberg.org/gwetm/gyx-decomp/src/commit/c8a8e72fad3a1f127db5dc9ee1ed7e19aefdb4fe/src/features/features.inc",
+      "https://codeberg.org/gwetm/gyx-decomp/src/commit/c8a8e72fad3a1f127db5dc9ee1ed7e19aefdb4fe/src/main.c"
+    ]
+  },
+  {
+    "id": "vmiv-case",
+    "name": "vmiv: View-Master Interactive Video emulator and format notes",
+    "url": "https://codeberg.org/Sprite_tm/vmiv",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "description_en": "vmiv emulates the View-Master Interactive Video system by decoding a captured tape video with FFmpeg, extracting the UART-style data bytes and auxiliary audio carried in the scanlines, and feeding them to an 8051 core that runs the VMI8802 ROM alongside a TMS9128 video chip model rendered with SDL2. Its notes document the mainboard chips, VDP register setup and VRAM map, the RLE sprite and tile records, and the packet layout with sequence numbers and CRC-CCITT checks. A companion dstool disassembles and reassembles the stack-based script bytecode delivered on the tape.",
+    "description_zh": "vmiv 用 FFmpeg 解码录像带采集视频，从扫描线中提取按 UART 方式编码的数据字节和辅助音频，交给运行 VMI8802 ROM 的 8051 内核处理，同时模拟 TMS9128 显示芯片并用 SDL2 渲染，以此模拟 View-Master Interactive Video 系统。笔记记录了主板芯片、VDP 寄存器初始化和显存布局、RLE 编码的精灵与图块数据，以及带序号和 CRC-CCITT 校验的数据包结构。配套的 dstool 可反汇编并重新汇编录像带中传送的栈式脚本字节码。",
+    "evidence_url": "https://codeberg.org/Sprite_tm/vmiv/src/commit/f5d698647720cb7a6f727349a6f7104d9f58a673/notes.txt",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building needs a C compiler, SDL2 and the FFmpeg libraries (libavcodec, libavformat, libswscale, libavutil, libavdevice).",
+      "Running needs the VMI8802 8051 ROM image (vmi8802.bin by default) and a video capture of a View-Master Interactive Video tape.",
+      "The Makefile links imgdecode.o, whose source file is absent from the repository.",
+      "No licence file in the repository; the 8051 core comes from jarikomppa/emu8051."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://codeberg.org/Sprite_tm/vmiv/src/commit/f5d698647720cb7a6f727349a6f7104d9f58a673/main.c",
+      "https://codeberg.org/Sprite_tm/vmiv/src/commit/f5d698647720cb7a6f727349a6f7104d9f58a673/emu.c",
+      "https://codeberg.org/Sprite_tm/vmiv/src/commit/f5d698647720cb7a6f727349a6f7104d9f58a673/datastream.c",
+      "https://codeberg.org/Sprite_tm/vmiv/src/commit/f5d698647720cb7a6f727349a6f7104d9f58a673/opcodes.c",
+      "https://codeberg.org/Sprite_tm/vmiv/src/commit/f5d698647720cb7a6f727349a6f7104d9f58a673/Makefile"
+    ]
+  },
+  {
+    "id": "2oom-master-of-orion-ii-case",
+    "name": "2ooM: decoding Master of Orion II's LBX data for a remake",
+    "url": "https://sourceforge.net/projects/toom/",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "2ooM works toward a remake of Master of Orion II that runs on the original game's data files. Its liblbx library and the lbxtool and lbximg tools list and extract LBX archives and decode the game's multi-frame 256-colour LBX images to PNG, applying base palettes from fonts.lbx and override palettes for player colours, with an md5-based regression test against the original archives. Notes record the music format and map stream.lbx and streamhd.lbx entries to named tracks, and the engine repository holds a plugin-based skeleton with a virtual file system and SDL and FFmpeg modules.",
+    "description_zh": "2ooM 的目标是重制《Master of Orion II》，运行时使用原版游戏的数据文件。liblbx 库及 lbxtool、lbximg 工具可列出并解包 LBX 归档，把游戏中多帧 256 色的 LBX 图像解码为 PNG，支持取自 fonts.lbx 的基础调色板和用于玩家颜色的覆盖调色板，并附有对照原版归档、以 md5 校验的回归测试。笔记记录了音乐格式，并把 stream.lbx 和 streamhd.lbx 中的条目对应到具体曲目；引擎仓库则是一个基于插件的框架，包含虚拟文件系统以及 SDL 和 FFmpeg 模块。",
+    "evidence_url": "https://sourceforge.net/p/toom/liblbx/ci/d0dbe751d79d00dc75b05358a5f2d543a8563779/tree/README",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs the original Master of Orion II LBX archives; building needs GNU Autotools and a C99 compiler, and lbximg needs libpng 1.2.",
+      "The README states that the 2ooM engine does not yet do anything useful, and the liblbx API is under heavy development.",
+      "GNU General Public License version 2 or later; the SourceForge project page lists GPL version 3."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://sourceforge.net/p/toom/liblbx/ci/d0dbe751d79d00dc75b05358a5f2d543a8563779/tree/doc/man/lbximg.1",
+      "https://sourceforge.net/p/toom/liblbx/ci/d0dbe751d79d00dc75b05358a5f2d543a8563779/tree/doc/man/lbxtool.1",
+      "https://sourceforge.net/p/toom/liblbx/ci/d0dbe751d79d00dc75b05358a5f2d543a8563779/tree/tests/regress.sh",
+      "https://sourceforge.net/p/toom/2oom/ci/f9cd4b0717dbbf5c41b6628434437972abfda7cb/tree/README",
+      "https://sourceforge.net/p/toom/2oom/ci/f9cd4b0717dbbf5c41b6628434437972abfda7cb/tree/notes/music.txt"
+    ]
+  },
+  {
+    "id": "freesci-scientist-hunt-case",
+    "name": "FreeSci: a QuakeC reimplementation of Scientist Hunt",
+    "url": "https://sourceforge.net/projects/freesci/",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "FreeSci reimplements Scientist Hunt, a Half-Life multiplayer mod about containing rapidly multiplying scientists, as a QuakeC game for FreeHL and the Nuclide SDK. The source covers client HUD and team menus, server rules for the hunt, stealth, slaughter, madness, invasion and fear modes, scientist monster behaviour, spawn-data parsing, player movement and entity definitions for the mod's weapons.",
+    "description_zh": "FreeSci 用 QuakeC 为 FreeHL 和 Nuclide SDK 重写了 Half-Life 多人模组 Scientist Hunt，这个模组的玩法是遏制不断繁殖的科学家。源码包括客户端 HUD 与选队菜单，hunt、stealth、slaughter、madness、invasion 和 fear 等模式的服务端规则，科学家怪物行为，出生点数据解析，玩家移动，以及模组武器的实体定义。",
+    "evidence_url": "https://sourceforge.net/p/freesci/code/ci/019e2c531ae20d44b56a3d964b097d852b813851/tree/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building needs the Nuclide SDK with fteqw and fteqcc; playing needs a FreeHL installation with the Half-Life valve directory.",
+      "The README lists the Live in Fear game mode, arsenal file loading, some special CVARs and walking scientists in Stealth Hunting as still missing.",
+      "ISC License."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://sourceforge.net/p/freesci/code/ci/019e2c531ae20d44b56a3d964b097d852b813851/tree/LICENSE",
+      "https://sourceforge.net/p/freesci/code/ci/019e2c531ae20d44b56a3d964b097d852b813851/tree/instructions.txt",
+      "https://sourceforge.net/p/freesci/code/ci/019e2c531ae20d44b56a3d964b097d852b813851/tree/"
+    ]
+  },
+  {
+    "id": "freesynd-case",
+    "name": "FreeSynd: Syndicate engine reimplementation",
+    "url": "https://sourceforge.net/projects/freesynd/",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "FreeSynd reimplements the engine for Bullfrog's Syndicate using the original game's data files. Its source covers missions, rendering, sound and gameplay; the changelog documents work on vehicle pathfinding and mission inspection. The project runs on Windows, Linux and Mac.",
+    "description_zh": "FreeSynd 重实现 Bullfrog《Syndicate》的游戏引擎，运行时读取原版游戏数据。源码涵盖任务、渲染、声音与玩法；更新记录还记载了车辆寻路和任务查看功能。项目支持 Windows、Linux 和 Mac。",
+    "evidence_url": "https://sourceforge.net/p/freesynd/freesynd/ci/2dba25a758a69ee2a5bf4dd7cb368239f1f0e23a/tree/README",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires data files from the original Syndicate; Syndicate Plus and Syndicate Wars data are unsupported.",
+      "Building requires CMake 3.28, Conan 2, Python 3, a C++ compiler, SDL 2, SDL_mixer, SDL_image and libpng.",
+      "Agent AI is partially operational, pathfinding needs improvement and not all weapons function correctly.",
+      "GNU General Public License, version 3."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://sourceforge.net/p/freesynd/freesynd/ci/2dba25a758a69ee2a5bf4dd7cb368239f1f0e23a/tree/INSTALL",
+      "https://sourceforge.net/p/freesynd/freesynd/ci/2dba25a758a69ee2a5bf4dd7cb368239f1f0e23a/tree/packaging/ChangeLog",
+      "https://sourceforge.net/p/freesynd/freesynd/ci/2dba25a758a69ee2a5bf4dd7cb368239f1f0e23a/tree/"
+    ]
+  },
+  {
+    "id": "last-ninja-remix-case",
+    "name": "The Last Ninja Remix: rebuilding the 1990 Amiga game in C++",
+    "url": "https://sourceforge.net/projects/lastninja/",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds the 1990 Amiga version of System 3's The Last Ninja Remix in C++, loading game data from the user's ADF disk images of the original. The source includes an ADF disk reader, actor, enemy, room, level and HUD code, and keeps disassembly labels such as sub_46A2 and word_14D6 for the routines and variables it reproduces. The first level is completable.",
+    "description_zh": "以 C++ 重建 System 3 出品、1990 年 Amiga 版的 The Last Ninja Remix，游戏数据从用户自备的原版 ADF 磁盘镜像读取。源码包含 ADF 磁盘读取、角色、敌人、房间、关卡与 HUD 代码，所复现的例程和变量沿用 sub_46A2、word_14D6 等反汇编标签。第一关可以通关。",
+    "evidence_url": "https://sourceforge.net/p/lastninja/code/96/tree/head/readme.txt",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Amiga ADF disk images of The Last Ninja Remix, named disk1.adf, disk2.adf and disk3.adf, in the game data folder.",
+      "Project files target Visual Studio 2010 (project/vs10).",
+      "Code for levels 3 to 6 and music is missing, and enemy weapons are not drawn.",
+      "GNU General Public License, version 3."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://sourceforge.net/p/lastninja/code/96/tree/head/src/level.cpp",
+      "https://sourceforge.net/p/lastninja/code/96/tree/head/src/disk.cpp",
+      "https://sourceforge.net/p/lastninja/code/96/tree/head/License.txt",
+      "https://sourceforge.net/p/lastninja/code/96/tree/head/www/htdocs/index.shtml"
+    ]
+  },
+  {
+    "id": "sarien-agi-interpreter-case",
+    "name": "Sarien: a portable reimplementation of Sierra's AGI interpreter",
+    "url": "https://sourceforge.net/projects/sarien/",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Sarien reimplements Sierra On-Line's Adventure Game Interpreter (AGI) in C so that AGI games such as Leisure Suit Larry, King's Quest II and Mixed-Up Mother Goose run across many platforms. It executes the compiled Logic bytecode and handles AGI graphic, text and sound resources, including Amiga and Apple IIgs versions and AGDS games, and adds extras such as a debugger console, picture and dictionary viewers and three-channel PCM sound. The Hacker's Guide documents the interpreter's architecture, drivers, graphics and sound; the project later merged into ScummVM.",
+    "description_zh": "Sarien 用 C 重新实现了 Sierra On-Line 的 Adventure Game Interpreter（AGI），可以运行《Leisure Suit Larry》《King's Quest II》《Mixed-Up Mother Goose》等 AGI 游戏。它执行编译后的 Logic 字节码，处理 AGI 的图形、文本和声音资源，支持 Amiga 和 Apple IIgs 版本以及 AGDS 游戏，并加入了调试控制台、图片与词典查看器和三声道 PCM 音效等功能。项目的 Hacker's Guide 记录了解释器的架构、驱动、图形和声音实现；Sarien 后来并入了 ScummVM。",
+    "evidence_url": "https://web.archive.org/web/20010522222354/http://sarien.sourceforge.net:80/hackersguide/intro.html",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs files of Sierra On-Line AGI games; ports cover MS-DOS, Win32, BeOS, QNX, several Unix flavours, AmigaOS, MacOS X and WinCE for PocketPC.",
+      "The project describes itself as under development with no production-quality packages; script errors stem from incomplete AGI specifications, and the sprite system built by trial and error corrupts the screen in a few situations.",
+      "GNU General Public License version 2, as listed on the project page."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://web.archive.org/web/20030722160121/http://sarien.sourceforge.net:80/",
+      "https://web.archive.org/web/20020302194540/http://sarien.sourceforge.net:80/Changelog",
+      "https://web.archive.org/web/20260718003834/https://sarien.sourceforge.net/"
+    ]
+  },
+  {
+    "id": "soniccdrespinned-case",
+    "name": "soniccdrespinned: a cross-platform Sonic CD port built on the decompiled code",
+    "url": "https://git.sr.ht/~benoitren/soniccdrespinned",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "soniccdrespinned is a cross-platform port of Sonic CD that runs the decompiled stage, special-stage, time-warp and title-screen code on a newly written platform layer. That layer decompresses the original SZDD-packed CMP sprite and tile bitmaps, streams ADX music from the US or Japanese AFS soundtrack, and renders through SDL 1.2 or SDL2, with PC and PSP input backends.",
+    "description_zh": "soniccdrespinned 是 Sonic CD 的跨平台移植：反编译得到的关卡、特殊关卡、时空穿越和标题画面代码运行在新写的平台层上。平台层解压原版经 SZDD 压缩的 CMP 精灵与图块位图，从美版或日版 AFS 原声中流式播放 ADX 音乐，通过 SDL 1.2 或 SDL2 渲染，并提供 PC 与 PSP 输入后端。",
+    "evidence_url": "https://git.sr.ht/~benoitren/soniccdrespinned/tree/38a212b8482627a9417567ee569f81fbfe130d56/item/makefile",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The makefile builds a 32-bit i386 executable with MinGW gcc and links SDL2.",
+      "Original Sonic CD data files are read at runtime, including the .CM_ bitmap files, PCM.CMP and BGM_US.AFS or BGM_JP.AFS.",
+      "CC0 1.0 Universal."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://git.sr.ht/~benoitren/soniccdrespinned/tree/38a212b8482627a9417567ee569f81fbfe130d56/item/src/audio.c",
+      "https://git.sr.ht/~benoitren/soniccdrespinned/tree/38a212b8482627a9417567ee569f81fbfe130d56/item/src/szdd.c",
+      "https://git.sr.ht/~benoitren/soniccdrespinned/tree/38a212b8482627a9417567ee569f81fbfe130d56/item/src/input/input-psp.c"
+    ]
+  },
+  {
+    "id": "crystal-scrolls-case",
+    "name": "The Crystal Scrolls: a Crystal Space engine for The Elder Scrolls III: Morrowind",
+    "url": "https://sourceforge.net/projects/crystalscrolls/",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements the engine of The Elder Scrolls III: Morrowind on the Crystal Space 3D engine, loading the BSA and ESM files of an installed Morrowind with Tribunal and Bloodmoon. Plugins cover a BSA virtual file system, NIF mesh loading through niflib, terrain, skybox and game logic. The docs describe how NIF scene trees and animations are converted, how plugin reference IDs are remapped when several master files load, and list original Morrowind bugs with their causes, fixes and status in the engine.",
+    "description_zh": "在 Crystal Space 3D 引擎上重写《The Elder Scrolls III: Morrowind》的引擎，读取已安装的 Morrowind 及 Tribunal、Bloodmoon 的 BSA 与 ESM 文件。插件涵盖 BSA 虚拟文件系统、借助 niflib 加载 NIF 模型、地形、天空盒和游戏逻辑。文档说明了 NIF 场景树与动画如何转换、加载多个主文件时插件引用 ID 如何重新映射，并列出 Morrowind 原版缺陷的成因、修复方法及其在该引擎中的状态。",
+    "evidence_url": "https://sourceforge.net/p/crystalscrolls/code/93/tree/trunk/readme.txt",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an installed Morrowind with Tribunal and Bloodmoon, or a Morrowind folder holding the Data Files BSA and ESM files.",
+      "Building requires Visual Studio 2008 Express SP1, the Crystal Space 1.9 development source at revision 35671 and its Windows dependency package.",
+      "Releases are development snapshots, and the docs call the NIF animation code still a mess.",
+      "Own code under the GNU LGPL v3; Crystal Space under the GNU LGPL v2; niflib under a modified BSD licence."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://sourceforge.net/p/crystalscrolls/code/93/tree/trunk/docs/Hacking.txt",
+      "https://sourceforge.net/p/crystalscrolls/code/93/tree/trunk/docs/details-references.txt",
+      "https://sourceforge.net/p/crystalscrolls/code/93/tree/trunk/docs/Morrowind%20bugs.txt",
+      "https://sourceforge.net/p/crystalscrolls/code/93/tree/trunk/docs/building.txt",
+      "https://sourceforge.net/p/crystalscrolls/code/93/tree/trunk/license.txt"
+    ]
+  },
+  {
+    "id": "shadow-hearts-decompilation-case",
+    "name": "shadowheartsdecompilation: Shadow Hearts PS2 runtime classes decompiled to C++",
+    "url": "https://git.sr.ht/~benoitren/shadowheartsdecompilation",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "shadowheartsdecompilation reconstructs C++ source for the core runtime classes of the PS2 game Shadow Hearts. It covers CThread, CTimer, CPoller, CPolling, CPolObj, CDrawObj, CDrawPolling, CDraw, CApp, CPause, FVector and Matrix, with each method annotated with its address in the original executable and written against Emotion Engine kernel calls and hardware timer registers.",
+    "description_zh": "shadowheartsdecompilation 为 PS2 游戏 Shadow Hearts 的核心运行时类重建 C++ 源码，涵盖 CThread、CTimer、CPoller、CPolling、CPolObj、CDrawObj、CDrawPolling、CDraw、CApp、CPause、FVector 和 Matrix。每个方法都注明其在原可执行文件中的地址，代码直接调用 Emotion Engine 内核接口和硬件定时器寄存器。",
+    "evidence_url": "https://git.sr.ht/~benoitren/shadowheartsdecompilation/tree/a757b59f228f4dd382688a5fee2946ea4cb4f31c/item/src/ctimer.h",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers twelve runtime classes; CApp is decompiled except for its Run method.",
+      "The repository contains C++ sources and headers without build scripts.",
+      "CC0 1.0 Universal."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://git.sr.ht/~benoitren/shadowheartsdecompilation/tree/a757b59f228f4dd382688a5fee2946ea4cb4f31c/item/README.md",
+      "https://git.sr.ht/~benoitren/shadowheartsdecompilation/tree/a757b59f228f4dd382688a5fee2946ea4cb4f31c/item/src/ctimer.cpp",
+      "https://git.sr.ht/~benoitren/shadowheartsdecompilation/tree/a757b59f228f4dd382688a5fee2946ea4cb4f31c/item/src/eekernel.h"
+    ]
+  },
+  {
+    "id": "smbdis-super-mario-bros-disassembly-case",
+    "name": "SMBDIS.ASM: a comprehensive Super Mario Bros. disassembly",
+    "url": "https://gist.github.com/1wErt3r/4048722",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "SMBDIS.ASM reconstructs the NES game Super Mario Bros. as a single commented 6502 assembly file of about 16,000 lines. It names the PPU, APU and joypad registers and the game RAM variables, comments routines such as the sound engine, player movement and enemy handling, and lays out the metatile graphics table, level, enemy object, area object and music data; it assembles with x816 once the user supplies the character ROM data and an iNES header.",
+    "description_zh": "SMBDIS.ASM 以约 16,000 行的单个注释 6502 汇编文件重建 NES 游戏《超级马力欧兄弟》。文件为 PPU、APU、手柄寄存器和游戏 RAM 变量命名，注释了音效引擎、玩家移动和敌人处理等例程，并整理出 metatile 图形表以及关卡、敌人对象、区域对象和音乐数据；用户补上 CHR ROM 数据和 iNES 文件头后，可用 x816 汇编。",
+    "evidence_url": "https://gist.github.com/1wErt3r/4048722/59e88c0028a58c6d7b9156749230ccac647bc7d4",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The user must provide the character ROM data and an iNES file header.",
+      "The x816 assembler.",
+      "The file states that it is provided for the user's own use as-is; no licence file in the gist."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://gist.githubusercontent.com/1wErt3r/4048722/raw/59e88c0028a58c6d7b9156749230ccac647bc7d4/SMBDIS.ASM"
+    ]
+  },
+  {
+    "id": "skcollectioncport-case",
+    "name": "skcollectioncport: Sonic & Knuckles Collection rebuilt in C",
+    "url": "https://git.sr.ht/~benoitren/skccport",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "skcollectioncport reconstructs the Windows game Sonic & Knuckles Collection as C and C++ source. It covers player and character objects, per-zone objects, the game, opening and stage-select modes, save data, collision and scrolling, map and sprite-pattern tables, and a Win32 front end whose functions are decompiled from the PC executable by address, including the software VDP renderer, sound, registry and controller handling.",
+    "description_zh": "skcollectioncport 把 Windows 游戏 Sonic & Knuckles Collection 重建为 C/C++ 源码，涵盖玩家与角色对象、各关卡对象、游戏/开场/选关模式、存档、碰撞与卷轴、地图和精灵图案表，以及按原地址从 PC 可执行文件反编译出的 Win32 前端，包括软件 VDP 渲染、声音、注册表和手柄处理。",
+    "evidence_url": "https://git.sr.ht/~benoitren/skccport/tree/9f0f1fbef1f5520a59f9fbcead2dd973bec1df63/item/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The front end targets Win32, using windows.h, Windows resource scripts and the Windows registry.",
+      "Graphics arrays under src/data/cg are listed in .gitignore and are absent from the repository.",
+      "CC0 1.0 Universal."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://git.sr.ht/~benoitren/skccport/tree/9f0f1fbef1f5520a59f9fbcead2dd973bec1df63/item/src/win32/main.cpp",
+      "https://git.sr.ht/~benoitren/skccport/tree/9f0f1fbef1f5520a59f9fbcead2dd973bec1df63/item/src/data/.gitignore",
+      "https://git.sr.ht/~benoitren/skccport/tree/9f0f1fbef1f5520a59f9fbcead2dd973bec1df63/item/src/win32/vdp.c"
+    ]
+  },
+  {
+    "id": "dk64-decomp-case",
+    "name": "Donkey Kong 64: matching N64 decompilation",
+    "url": "https://gitlab.com/dk64_decomp/dk64",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A matching decompilation of the US release of Donkey Kong 64 for the Nintendo 64, rebuilding the ROM from C source organised by the boot segment, global code and overlays named arcade, jetpac, bonus, boss, menu, minecart, multiplayer, race and critter. The build splits the user's own ROM, compiles with IDO 5.3 and 7.1 compiler builds kept in ido/, and a verify target compares the rebuilt ROM with the original; objdiff and asm-differ support function-level comparison. The progress badge reports 4096 of 4502 functions.",
+    "description_zh": "这是任天堂 64 游戏《Donkey Kong 64》美版的匹配反编译，按启动段、全局代码以及 arcade、jetpac、bonus、boss、menu、minecart、multiplayer、race、critter 等 overlay 组织 C 源码并重建 ROM。构建时先拆分用户自备的 ROM，再用 ido/ 目录中的 IDO 5.3 与 7.1 编译器编译，verify 目标会将重建的 ROM 与原版比对；objdiff 和 asm-differ 用于逐函数比较。进度徽章显示已完成 4502 个函数中的 4096 个。",
+    "evidence_url": "https://gitlab.com/dk64_decomp/dk64/-/blob/1d39844b5a5dcddaa7ad3b2a4115b2e33352a09a/README.md",
+    "verified_at": "2026-11-09",
+    "added_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user's own US Donkey Kong 64 ROM as baserom.us.z64 (SHA-1 cf806ff2603640a748fca5026ded28802f1f4a50).",
+      "Builds with Docker, or on Ubuntu 18.04 or later or Arch with a MIPS binutils and GCC cross toolchain, Python 3 and the packages in requirements.txt.",
+      "Decompilation is partial: the progress badge reports 4096 of 4502 functions.",
+      "CC0 1.0 Universal."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://gitlab.com/dk64_decomp/dk64/-/blob/1d39844b5a5dcddaa7ad3b2a4115b2e33352a09a/CONTRIBUTING.md",
+      "https://gitlab.com/dk64_decomp/dk64/-/blob/1d39844b5a5dcddaa7ad3b2a4115b2e33352a09a/Makefile",
+      "https://gitlab.com/dk64_decomp/dk64/-/blob/1d39844b5a5dcddaa7ad3b2a4115b2e33352a09a/progress/progress_total.svg",
+      "https://gitlab.com/dk64_decomp/dk64/-/blob/1d39844b5a5dcddaa7ad3b2a4115b2e33352a09a/LICENSE.md"
+    ]
   }
 ]
