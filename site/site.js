@@ -902,7 +902,8 @@
       if (st.cls) p.set('class', st.cls);
       if (st.sort !== 'featured') p.set('sort', st.sort);
       if (st.page > 1) p.set('page', st.page);
-      const url = `${P}/resources/${p.toString() ? `?${p}` : location.hash}`;
+      // Unfiltered, a static page keeps its own address; filters always apply to the whole catalogue at /resources/.
+      const url = p.toString() ? `${P}/resources/?${p}` : `${listing.dataset.base || `${P}/resources/`}${location.hash}`;
       if (push) history.pushState(null, '', url); else history.replaceState(null, '', url);
     };
     const pagerHTML = (page, pages) => {
@@ -1029,7 +1030,8 @@
     listing.addEventListener('click', (e) => {
       const a = e.target.closest('[data-page]');
       if (a && a.closest('[data-pager]')) {
-        if (e.metaKey || e.ctrlKey) return;
+        // The unfiltered list pages through its static pages; filtered results page in place.
+        if (e.metaKey || e.ctrlKey || !narrowed) return;
         e.preventDefault(); st.page = +a.dataset.page; render(true, true);
         return;
       }
@@ -1081,7 +1083,20 @@
       };
       requestAnimationFrame(settle);
     };
-    window.addEventListener('hashchange', revealHash);
+    // An older link to a row or section on another static page goes to that page.
+    const findPage = async () => {
+      const key = decodeURIComponent(location.hash.slice(1));
+      const target = hashTarget();
+      // A section's old fragment sits on its sidebar link until scripts open the page where the section starts.
+      if (!key || (target && !target.matches('[data-section-link]')) || !/^[a-z0-9-]+$/.test(key)) return;
+      try {
+        const pages = await (await fetch('/resources/pages.json')).json();
+        const page = pages[key];
+        if (page && String(page) !== listing.dataset.staticPage) location.replace(`${P}/resources/${page > 1 ? `page/${page}/` : ''}#${key}`);
+      } catch { /* the hash stays where it is */ }
+    };
+    findPage();
+    window.addEventListener('hashchange', () => { findPage(); revealHash(); });
     if (document.readyState === 'complete') revealHash();
     else window.addEventListener('load', revealHash, { once: true });
     idle(warm);

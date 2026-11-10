@@ -17,7 +17,7 @@ from build_readme import (KIND_LABELS, METHOD_HEADINGS, METHOD_SECTIONS, RELATIO
 from agent_formats import MARKDOWN, alternate_links, collection_markdown
 from contribution_pages import TITLES as CONTRIBUTION_TITLES, contribution_content
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
-from resource_listing import TEXT as RESOURCE_TEXT, in_listing_order, resource_listing, resource_page_head
+from resource_listing import TEXT as RESOURCE_TEXT, in_listing_order, listing_pages, page_count, page_path, resource_listing, resource_page_head
 from page_metadata import meta_description, page_title
 from sitemaps import latest, record_date
 from structured_data import dataset_node, publisher_reference
@@ -455,7 +455,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
     github_icon = ('<span class="icon fa-symbol fa-github" aria-hidden="true"></span>' if icon_stylesheet
                    else '<span class="icon browse-github-fallback" aria-hidden="true">GH</span>')
     # A 404 page answers any missing path, so its language link opens the other homepage.
-    counterpart = ('/' if zh else '/zh/') if noindex else counterpart
+    counterpart = ('/' if zh else '/zh/') if noindex and path.endswith('/404.html') else counterpart
     language_link = f'<a class="browse-language" href="{counterpart}" lang="{("en" if zh else "zh-CN")}" hreflang="{("en" if zh else "zh-CN")}">{globe_icon}<span>{("English" if zh else "简体中文")}</span></a>'
     prefix = '/zh' if zh else ''
     # The 404 templates have no canonical address or language counterpart.
@@ -563,12 +563,17 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         note = ('“来源已复核”表示说明已依据一手文档核对。完整的使用条件与来源列在各条目页面，本页显示其数量和复核日期。'
                 if zh else 'Source-reviewed means descriptions were checked against primary documentation. Each entry page lists the full requirements and sources; this page shows their counts and the review date.')
         # Items identify the site's own entry pages, in the order the rows appear.
-        items = [{'name': (record.get('name_zh') or record['name']) if zh else record['name'], 'url': f"{site_url}{prefix}/resources/{record['id']}/"}
-                 for record in in_listing_order(groups, SECTIONS)]
-        content = resource_listing(resources, groups, SECTIONS, language, repository_url)
-        rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=collection_page_schema(site_url + path, title, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href, source_export=source_export,
-                                   main_class='page-resources', page_head=resource_page_head(resources, language), extra_styles=(assets['rea'],),
-                                   alternates=alternate_links(markdown=path + MARKDOWN, json_href='/api/v1/resources.json'))
+        # /resources/ is the first static page; later pages are unlisted and noindex, and every entry has its own sitemap URL.
+        for page in range(1, page_count(len(resources)) + 1):
+            page_route = page_path(page, language)
+            page_title_text = title if page == 1 else f"{title} · {RESOURCE_TEXT[language]['page_title'].format(n=page)}"
+            items = [{'name': (record.get('name_zh') or record['name']) if zh else record['name'], 'url': f"{site_url}{prefix}/resources/{record['id']}/"}
+                     for record in in_listing_order(groups, SECTIONS, page)]
+            content = resource_listing(resources, groups, SECTIONS, language, repository_url, page)
+            rendered[page_route] = _document(site_url=site_url, repository_url=repository_url, path=page_route, language=language, title=page_title_text, description=description, content=content,
+                                             schema=collection_page_schema(site_url + page_route, page_title_text, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href,
+                                             source_export=source_export, noindex=page > 1, main_class='page-resources', page_head=resource_page_head(resources, language), extra_styles=(assets['rea'],),
+                                             alternates=alternate_links(markdown=path + MARKDOWN, json_href='/api/v1/resources.json'))
         twins[path] = _collection_twin(site_url, path, language, title, description, groups, note, json_url=site_url + '/api/v1/resources.json')
         paths.append(path)
 
@@ -643,6 +648,11 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         directory = site_dir / legacy
         if directory.is_dir():
             shutil.rmtree(directory)
+    # Older links name a row or section of the single-page listing; site.js looks up its static page here.
+    record_pages, section_pages = listing_pages(groups, SECTIONS)
+    page_index = {**record_pages, **{f'heading-{key}': page for key, page in section_pages.items()}, **section_pages}
+    (site_dir / 'resources').mkdir(parents=True, exist_ok=True)
+    (site_dir / 'resources' / 'pages.json').write_text(json.dumps(page_index, separators=(',', ':'), sort_keys=True) + '\n', encoding='utf-8')
     for path, document in rendered.items():
         destination = site_dir / path.lstrip('/') / 'index.html'
         destination.parent.mkdir(parents=True, exist_ok=True)

@@ -40,6 +40,12 @@ def discovery_class_pages(output):
     return [urlsplit(entry["page"]).path for entry in json.loads(export.read_text(encoding="utf-8")).get("class_pages", [])]
 
 
+def resource_pages(path):
+    """The built /resources/page/<n>/ files after page 1, in page order."""
+    pages = (OUTPUT / path.strip("/") / "page").glob("*/index.html")
+    return sorted(pages, key=lambda page: int(page.parent.name))
+
+
 def validate_route_inventory(urls, resources, papers, *, include_browse=True, include_discoveries=False, discovery_classes=()):
     """Require exact sitemap coverage; unknown automatic-repository pages are refused.
 
@@ -218,8 +224,11 @@ def main():
             assert any(item.get("rel") == "alternate" and item.get("href") == url for item in other.links), url
     expected = {r["id"] for r in records}
     for path in ("/resources/", "/zh/resources/"):
-        page = documents[ORIGIN + path]
-        assert len(page.resources) == len(expected) and set(page.resources) == expected, path
+        # Page 1 is in the sitemap; the later static pages are noindex and reached from its pager.
+        listed = list(documents[ORIGIN + path].resources)
+        for later in resource_pages(path):
+            listed += Document(later.read_text(encoding="utf-8")).resources
+        assert len(listed) == len(expected) and set(listed) == expected, path
     expected_cases = {record["id"] for record in records if record["kind"] == "case-study"}
     for path in ("/cases/", "/zh/cases/"):
         page = documents[ORIGIN + path]
@@ -228,6 +237,7 @@ def main():
     assert (OUTPUT / "llms.txt").is_file(), "Missing optional catalog index"
     # The transitional explorer pages are noindex, so they stay out of the sitemap.
     explorer = {OUTPUT / "explore/index.html", OUTPUT / "zh/explore/index.html"}
+    explorer.update(page for path in ("/resources/", "/zh/resources/") for page in resource_pages(path))
     assert len(urls) == len([page for page in OUTPUT.rglob("index.html") if page not in explorer]), "A generated page is absent from the sitemap"
     print(f"Discovery checks passed: {len(urls)} canonical pages in the sitemap index with data-dated lastmod and hreflang alternates, {len(entries)} localized detail pages, reciprocal languages, {len(records)} static curated entries per language, JSON-LD, and permissions for {len(CRAWLERS)} named crawlers.")
 

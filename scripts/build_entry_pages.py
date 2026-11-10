@@ -11,6 +11,7 @@ from artifact_links import github_repository
 from build_home import COPY as HOME_COPY, EVIDENCE_DETAIL, PINNED
 from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, jsonld_script, publication_keys
 from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, formatted_date, scholarly_article
+from resource_listing import listing_pages, record_href, section_href
 from build_readme import (CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section,
                           section_order)
 from agent_formats import (MARKDOWN, source_status, RECORD_JSON, alternate_links, json_text, paper_markdown, paper_record,
@@ -266,6 +267,8 @@ def section_siblings(resources: list[dict], limit: int = SIBLING_LIMIT) -> dict[
     groups = defaultdict(list)
     for record in resources:
         groups[collection_section(record)].append(record)
+    # The /resources/ page that lists each entry and the page where each section starts.
+    record_pages, section_pages = listing_pages(groups, SECTIONS)
     related = {}
     for section, records in groups.items():
         ordered = section_order(section, records)
@@ -273,7 +276,8 @@ def section_siblings(resources: list[dict], limit: int = SIBLING_LIMIT) -> dict[
         for index, record in enumerate(ordered):
             following = ordered[index + 1:] + ordered[:index]
             related[record['id']] = {'section': section, 'siblings': following[:limit],
-                                     'count': len(ordered), 'cases': cases}
+                                     'count': len(ordered), 'cases': cases,
+                                     'page': record_pages.get(record['id'], 1), 'section_page': section_pages.get(section, 1)}
     return related
 
 
@@ -292,7 +296,7 @@ def _section_links(record: dict, language: str, related: dict) -> str:
                     f'<span class="entry-siblings-kind">· {escape(KIND_LABELS[sibling["kind"]][int(zh)])}</span></li>'
                     for sibling in related['siblings'])
     count = related['count']
-    links = [f'<a href="{prefix}/resources/#heading-{section}">'
+    links = [f'<a href="{section_href(section, related.get("section_page", 1), language)}">'
              + (f'{name}分区全部 {count} 项资源' if zh else f'All {count} entries in {name}') + '</a>']
     if record['kind'] == 'case-study':
         links.append(f'<a href="{prefix}/cases/#cases-{section}">'
@@ -491,6 +495,9 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
         # /cases/ groups case studies by subject with scope and evidence; /resources/ stays one link away.
         extra_return = f'<a href="{listing}">{list_name}</a>'
         listing, list_name = f'{prefix}/cases/', label('Case studies', '案例合集')
+    # Resources link to the static /resources/ page that lists them; case studies to their /cases/ row.
+    directory_link = (record_href(record['id'], (siblings or {}).get('page', 1), language)
+                      if kind == 'resource' and record['kind'] != 'case-study' else f"{listing}#{record['id']}")
     discussion = (_related_entries(related_entries.get((kind, record['id']), []), language)
                   + _survey_discussion(survey_discussions.get(record['id'], []), language))
     feedback = _feedback(kind, record, language, repository_url)
@@ -540,7 +547,7 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
 <nav class="header-nav" aria-label="{label('Main navigation', '主导航')}"><a class="entry-language" href="{counterpart}" lang="{('en' if zh else 'zh-CN')}" hreflang="{('en' if zh else 'zh-CN')}">{label('简体中文', 'English')}</a><a class="github-link" href="{_public_url(repository_url)}" target="_blank" rel="noopener" aria-label="GitHub">{github_icon}<span>GitHub</span></a></nav></div></header>
 <main class="shell entry-main" id="entry-content"><nav class="entry-breadcrumbs" aria-label="{label('Breadcrumb', '当前位置')}"><a href="{prefix}/">{label('Home', '首页')}</a><span aria-hidden="true">/</span><a href="{listing}">{list_name}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(title)}</span></nav>
 <article class="entry-article" data-entry-kind="{kind}" data-entry-id="{record['id']}">{content}</article>
-{_section_links(record, language, siblings) if kind == 'resource' else ''}<nav class="entry-return" aria-label="{label('Collection navigation', '合集导航')}"><a href="{listing}#{record['id']}">← {label('View in the directory', '在目录中查看')}</a><a href="{listing}">{list_name}</a>{extra_return}<a href="{prefix}/">{label('Search the collection', '搜索合集')}</a></nav></main>
+{_section_links(record, language, siblings) if kind == 'resource' else ''}<nav class="entry-return" aria-label="{label('Collection navigation', '合集导航')}"><a href="{directory_link}">← {label('View in the directory', '在目录中查看')}</a><a href="{listing}">{list_name}</a>{extra_return}<a href="{prefix}/">{label('Search the collection', '搜索合集')}</a></nav></main>
 {site_footer(language, note=escape(label('Original editorial content: MIT. Linked projects, papers and assets retain their own rights and licenses.', '原创说明采用 MIT 许可；外部项目、论文与素材保留各自的权利和许可。')), repository_url=repository_url, repository_export=repository_export)}
 </body></html>
 '''
