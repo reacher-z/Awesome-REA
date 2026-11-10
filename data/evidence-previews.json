@@ -3,13 +3,13 @@
   "meta": {
     "spec_version": "evidence-preview-v1",
     "generated_at": "2026-11-09T19:34:18+00:00",
-    "entry_count": 1099,
+    "entry_count": 1103,
     "class_entry_count": 1141,
     "class_counts": {
-      "image": 1061,
+      "image": 1065,
       "video": 38
     },
-    "missing_count": 42,
+    "missing_count": 38,
     "missing": [
       "aotopsy",
       "appshark",
@@ -18,13 +18,11 @@
       "commander-genius-case",
       "corefw-launchpad-case",
       "de4js",
-      "dearmoredcorev-case",
       "dkb-recomp-case",
       "ezeus-case",
       "golden-sun-recompiled-case",
       "grpc-tools",
       "irisu-ml-case",
-      "jni-helper",
       "jsettlers-case",
       "labelwriter-dymo-case",
       "lego-island-decomp-case",
@@ -36,7 +34,6 @@
       "openkeeper-dungeon-keeper-ii-case",
       "outrun-sonic-runners-server-case",
       "pdbinspector",
-      "pince",
       "project-vekta-case",
       "pymobiledevice3",
       "react-native-decompiler",
@@ -44,7 +41,6 @@
       "scapy",
       "sdlpal",
       "severed-chains",
-      "sightline-goldeneye-port-case",
       "swos-port-case",
       "tower-toppler-case",
       "uncharted-collection-pc-port-case",
@@ -1622,6 +1618,15 @@
       "source_url": "https://github.com/Fadi002/de4py",
       "revision": "0f66191b514e8c5a4de82aef7b01704385066629",
       "checked_at": "2026-11-09T02:41:36+00:00"
+    },
+    {
+      "id": "dearmoredcorev-case",
+      "image_url": "https://raw.githubusercontent.com/GrayRats/ArmoredcoreV-Port/eddd9d9b1067887807f2e45f554a46ec69eddc05/docs/images/gameplay-vulkan.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/GrayRats/ArmoredcoreV-Port",
+      "revision": "eddd9d9b1067887807f2e45f554a46ec69eddc05",
+      "checked_at": "2026-11-09T16:44:54+00:00"
     },
     {
       "id": "death-road-to-canada-lite-case",
@@ -3818,6 +3823,15 @@
       "source_url": "https://github.com/goodshepherd23/JetMoto2-Recomp",
       "revision": "cd14d8727d16c1da12cf1da547de3f5b8d6b473b",
       "checked_at": "2026-11-09T04:14:52+00:00"
+    },
+    {
+      "id": "jni-helper",
+      "image_url": "https://i-blog.csdnimg.cn/blog_migrate/f2deaf1b343bdb69650ff9b6612b1466.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/evilpan/jni_helper",
+      "revision": "04b844c43438c2c0bbef29bf9b9695e5aba9a4bc",
+      "checked_at": "2026-11-09T16:44:54+00:00"
     },
     {
       "id": "jnitrace",
@@ -6096,6 +6110,15 @@
       "checked_at": "2026-11-07T03:50:12+00:00"
     },
     {
+      "id": "pince",
+      "image_url": "https://github.com/user-attachments/assets/7894b8da-160b-437f-9d02-a2ba6ebbcc02",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/korcankaraokcu/PINCE",
+      "revision": "9357ba3d8d96477f9bb81e427a97c57f67725c74",
+      "checked_at": "2026-11-09T16:44:54+00:00"
+    },
+    {
       "id": "pinyon-shift",
       "image_url": "https://raw.githubusercontent.com/deivid22srk/pinyon-shift-android/dca4da9327bb695561b62011e7007830c44049cc/.github/launcher-ready.png",
       "kind": "image",
@@ -7894,6 +7917,15 @@
       "source_url": "https://github.com/BatchDrake/SigDigger",
       "revision": "70f688bb1ee7532fd45df079f753f7f92e841c08",
       "checked_at": "2026-11-07T03:50:06+00:00"
+    },
+    {
+      "id": "sightline-goldeneye-port-case",
+      "image_url": "https://raw.githubusercontent.com/mscrnt/Sightline/d11d271d72527e17ba58cd0fa04b9e12d98a895e/docs/images/dam-presentations.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/mscrnt/Sightline",
+      "revision": "d11d271d72527e17ba58cd0fa04b9e12d98a895e",
+      "checked_at": "2026-11-09T16:44:54+00:00"
     },
     {
       "id": "siglus-rs-case",

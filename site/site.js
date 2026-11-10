@@ -112,6 +112,21 @@
     clearTimeout(toast.t);
     toast.t = setTimeout(() => toastEl.classList.remove('is-on'), 1800);
   };
+  // A link with data-copy-url copies the text it points to (a page's index.md twin); without the Clipboard API it stays a link.
+  document.addEventListener('click', async (e) => {
+    const a = e.target.closest('a[data-copy-url]');
+    if (!a || !navigator.clipboard || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+    e.preventDefault();
+    const text = fetch(a.href).then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status)))));
+    try {
+      if (window.ClipboardItem && navigator.clipboard.write) {
+        await navigator.clipboard.write([new ClipboardItem({ 'text/plain': text.then((t) => new Blob([t], { type: 'text/plain' })) })]);
+      } else await navigator.clipboard.writeText(await text);
+      a.classList.add('is-done');
+      toast(a.dataset.copyLabel || T.copied);
+      setTimeout(() => a.classList.remove('is-done'), 1800);
+    } catch (err) { location.href = a.href; }
+  });
   document.addEventListener('click', async (e) => {
     const b = e.target.closest('[data-copy]');
     if (!b) return;
