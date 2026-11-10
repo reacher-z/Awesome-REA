@@ -14,7 +14,7 @@ from pathlib import Path
 import re
 import xml.etree.ElementTree as ET
 
-from agent_formats import (COLLECTION_JSON, MARKDOWN, MARKDOWN_TYPE, JSON_TYPE, json_text, paper_record,
+from agent_formats import (COLLECTION_JSON, MARKDOWN, MARKDOWN_TYPE, JSON_TYPE, json_text, markdown_text, paper_record,
                            record_json_route, resource_record)
 from build_api import API_PATH, API_VERSION, CSV_COLUMNS, ENDPOINTS, paper_api_record, snapshot_time
 from build_feed import FEED_PATHS, JSON_FEED_PATHS, JSON_FEED_VERSION
@@ -97,8 +97,8 @@ def validate_twins(output, routes, resources, papers):
             for prefix, zh in (('', False), ('/zh', True)):
                 text = (output / f'{prefix.lstrip("/")}/{kind}s/{identifier}/{MARKDOWN}'.lstrip('/')).read_text(encoding='utf-8')
                 name = (record.get('name_zh') or record['name']) if kind == 'resource' and zh else record.get('name') if kind == 'resource' else record['title_zh' if zh else 'title']
-                assert text.startswith(f'# {" ".join(name.split())}\n'), f'Markdown twin heading differs from the entry: {prefix}/{kind}s/{identifier}/'
-                assert ' '.join(record[f'description_{"zh" if zh else "en"}'].split()) in text, f'Markdown twin lost the description: {identifier}'
+                assert text.startswith(f'# {markdown_text(name)}\n'), f'Markdown twin heading differs from the entry: {prefix}/{kind}s/{identifier}/'
+                assert markdown_text(record[f'description_{"zh" if zh else "en"}']) in text, f'Markdown twin lost the description: {identifier}'
                 if kind == 'paper' and authors_omitted(record):
                     assert AUTHORS_OMITTED[zh] in text, f'Markdown twin must send readers to the paper for its authors: {identifier}'
     for path in output.rglob(MARKDOWN):

@@ -1,6 +1,6 @@
 <h1 align="center"><a href="https://awesomerea.org/zh/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/brand/readme-banner-dark.svg"><img src="assets/brand/readme-banner-light.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></picture></a></h1>
 
-工具、案例与研究论文合集，涵盖网站、游戏、应用、原生二进制、固件和通信协议。
+Awesome REA (Awesome Reverse Engineering Anything) 是中英双语逆向工程资源目录，收录面向网站、游戏、应用、原生二进制、固件和通信协议的工具、案例与论文，每条均对照原始来源核查。
 
 [English](README.md) · **简体中文**
 
