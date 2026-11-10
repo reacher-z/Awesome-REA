@@ -2,7 +2,8 @@
 """Steps of the unattended IndexNow run (.github/workflows/indexnow.yml).
 
 ``wait SHA DIST`` waits, bounded, until https://awesomerea.org serves the build in DIST: its public
-source-commit.txt must name SHA and its build-manifest.json must equal DIST/build-manifest.json byte for byte.
+source-commit.txt must name SHA and its build-manifest.json must equal DIST/build-manifest.json byte for byte,
+except for downloaded preview images: where only those differ, the served images and manifest replace DIST's.
 Both are read with a query no edge cache has seen, so the GitHub Pages origin answers; then the manifest must
 also come through the edge cache, as submit_indexnow.py reads it, which happens once the zone is purged after the
 deployment. It writes ``state=live``,
@@ -49,6 +50,10 @@ MAX_COMMIT_BYTES = 256
 RECEIPT_PAGES = 5
 MAX_RECEIPT_ARCHIVE = 16 * 1024 * 1024
 MAX_MANIFEST_BYTES = 8_000_000
+# Preview images are downloaded from their upstream hosts during each build, and some hosts send different
+# bytes to different runners. No sitemap page is a preview, so these entries never select a URL.
+PREVIEWS = 'previews/'
+MAX_PREVIEW_BYTES = 8 * 1024 * 1024
 
 
 def output(name: str, value: str) -> None:
@@ -77,6 +82,40 @@ def uncached(name: str) -> str:
     return f'{ORIGIN}/{name}?indexnow={secrets.token_hex(8)}'
 
 
+def differs_only_in_previews(served: bytes, built: bytes) -> bool:
+    """Whether two build manifests agree on everything except downloaded preview images."""
+    try:
+        served, built = json.loads(served), json.loads(built)
+    except ValueError:
+        return False
+    if not (isinstance(served, dict) and isinstance(built, dict)
+            and isinstance(served.get('files'), dict) and isinstance(built.get('files'), dict)):
+        return False
+
+    def pages(manifest):
+        files = {name: entry for name, entry in manifest['files'].items() if not name.startswith(PREVIEWS)}
+        return {**manifest, 'files': files}
+    return pages(served) == pages(built)
+
+
+
+def served_previews(served: bytes, built: bytes, read) -> dict[str, bytes] | None:
+    """The preview files the site serves where SERVED differs from BUILT, each matching SERVED's entry, or None."""
+    served_files, built_files = json.loads(served)['files'], json.loads(built)['files']
+    previews = {}
+    for name in sorted(set(served_files) | set(built_files)):
+        if served_files.get(name) == built_files.get(name):
+            continue
+        entry = served_files.get(name)
+        if not re.fullmatch(r'previews/[A-Za-z0-9][A-Za-z0-9._-]*', name) or not isinstance(entry, dict):
+            return None
+        body = read(uncached(name), MAX_PREVIEW_BYTES)
+        if body is None or len(body) != entry.get('bytes') or hashlib.sha256(body).hexdigest() != entry.get('sha256'):
+            return None
+        previews[name] = body
+    return previews
+
+
 def wait_for_deployment(sha: str, dist: Path, *, github=None, fetch=fetch_bytes, clock=time.monotonic,
                         sleep=time.sleep, wait_seconds=WAIT_SECONDS) -> str:
     """Return 'live', 'superseded' or 'pending'; raise when the site serves SHA with other bytes."""
@@ -98,10 +137,21 @@ def wait_for_deployment(sha: str, dist: Path, *, github=None, fetch=fetch_bytes,
         served = served.decode('ascii', 'replace').strip() if served is not None else None
         if served == sha:
             origin = read(uncached(MANIFEST_NAME), MAX_MANIFEST_BYTES)
-            if origin == expected:
+            build, previews = expected, {}
+            if origin is not None and origin != expected and differs_only_in_previews(origin, expected):
+                # The served preview bytes, verified against the served manifest, take the place of this build's.
+                previews = served_previews(origin, expected, read)
+                build = origin if previews is not None else expected
+            if origin == build:
                 differs_since = None
                 # submit_indexnow.py verifies through the edge cache, which keeps the previous build until it is purged.
-                if read(ORIGIN + '/' + MANIFEST_NAME, MAX_MANIFEST_BYTES) == expected:
+                if read(ORIGIN + '/' + MANIFEST_NAME, MAX_MANIFEST_BYTES) == build:
+                    if previews:
+                        for name, body in previews.items():
+                            (Path(dist) / name).write_bytes(body)
+                        (Path(dist) / MANIFEST_NAME).write_bytes(build)
+                        print(f'The site serves {len(previews)} downloaded preview image(s) with other bytes; '
+                              'DIST now holds the served copies', flush=True)
                     return 'live'
                 status = 'the edge cache still serves the previous build'
             elif origin is not None:

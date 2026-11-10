@@ -48,9 +48,9 @@ Run every test with one command from the repository root. It needs Node.js for t
 python3 -m unittest discover -s tests -v
 ```
 
-The required `validate` check runs no step itself. It is the aggregate of the parallel jobs in the `Catalog checks` workflow and succeeds only when the three `unit` shards, `production` and `browser` all succeed; a failed, skipped or cancelled job fails it. When `validate` fails, open the failed job in the check list:
+The required `validate` check runs no step itself. It is the aggregate of the parallel jobs in the `Catalog checks` workflow and succeeds only when the four `unit` shards, `production` and `browser` all succeed; a failed, skipped or cancelled job fails it. When `validate` fails, open the failed job in the check list:
 
-- `unit (0)`, `unit (1)` and `unit (2)` each byte-compile every script and test, then run their share of the tests that the test command discovers. [tests/unit_shards.py](tests/unit_shards.py) keeps each test class in one shard and checks that the three shards together equal the whole discovery; `CI_TEST_SHARD=0 CI_TEST_SHARDS=3 python3 tests/unit_shards.py` runs the first shard locally. A syntax error fails every shard; a failing test appears in one of them.
+- `unit (0)`, `unit (1)`, `unit (2)` and `unit (3)` each byte-compile every script and test, then run their share of the tests that the test command discovers. [tests/unit_shards.py](tests/unit_shards.py) keeps each test class in one shard and checks that the shards together equal the whole discovery; `CI_TEST_SHARD=0 CI_TEST_SHARDS=3 python3 tests/unit_shards.py` runs the first shard locally. A syntax error fails every shard; a failing test appears in one of them.
 - `production` runs the production build. That build repeats catalog validation, including the check that the README sections, paper lists, repository directory and case-coverage summaries match their generators, then the JavaScript syntax check, the site build and both site validators, without fetching the asset origin.
 - `browser` runs the [browser smoke test](docs/website.md#browser-smoke-test), which rebuilds the site and loads it in headless Chrome.
 
