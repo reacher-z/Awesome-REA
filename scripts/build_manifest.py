@@ -23,7 +23,12 @@ EMAIL_SCRIPT = re.compile(r'<script\b[^>]*>\s*</script>', re.I)
 STAR_COUNT = re.compile(
     rb'<!--.*?(?:-->|\Z)'
     rb'|<(script|style|textarea|title|xmp|iframe|noembed|noframes|noscript)\b.*?(?:</\1\s*>|\Z)'
-    rb'|(<span class="[a-z-]+" data-stars="[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+">)[0-9]+(?:\.[0-9]k)?(</span>)',
+    rb'|(<span class="[a-z-]+" data-stars="[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+">)[0-9]+(?:\.[0-9]k)?(</span>)'
+    # A resource page's GitHub facts (build_entry_pages): its star count and the snapshot date in its caption change
+    # with every daily metadata refresh, so like a star count they do not make the page count as changed. A new last
+    # commit, language, license or archive state still does.
+    rb'|(<dl class="entry-repo-facts"><div><dt>[^<]*</dt><dd><data value=")[0-9]+(">)[0-9]+(?:\.[0-9]k)?(</data>)'
+    rb'|(<p class="entry-repo-date">)[^<]*(</p></div>)',
     re.I | re.S)
 
 
@@ -83,7 +88,15 @@ class _ElementSpans(HTMLParser):
 
 
 def without_star_counts(content: bytes) -> bytes:
-    return STAR_COUNT.sub(lambda match: match[2] + match[3] if match[2] else match[0], content)
+    def blank(match):
+        if match[2]:
+            return match[2] + match[3]
+        if match[4]:
+            return match[4] + match[5] + match[6]
+        if match[7]:
+            return match[7] + match[8]
+        return match[0]
+    return STAR_COUNT.sub(blank, content)
 
 
 def normalized_html_bytes(content: bytes) -> bytes:

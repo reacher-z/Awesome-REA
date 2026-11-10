@@ -39,7 +39,7 @@ BATCH = 50
 # token's GraphQL budget gets low or GitHub reports an error other than a repository it cannot resolve.
 MAX_REPOSITORIES = 10_000
 MIN_RATE_REMAINING = 100
-# A refresh that resolves fewer than this share of the repositories the last snapshot held is refused.
+# A refresh that resolves fewer than this share of the catalog's GitHub repositories is refused.
 MIN_KEPT = 0.9
 BRANCH = 'automation/repository-metadata'
 TITLE = 'Refresh GitHub facts for {count} curated repositories'
@@ -111,6 +111,18 @@ def _token() -> str:
     return token
 
 
+def _missing_repository(error, data: dict) -> bool:
+    if not isinstance(error, dict):
+        return False
+    path = error.get('path')
+    return (error.get('type') == 'NOT_FOUND' and isinstance(path, list) and len(path) == 1 and isinstance(path[0], str)
+            and re.fullmatch(r'r\d+', path[0]) is not None and path[0] in data and data[path[0]] is None)
+
+
+def observed_at(path: Path = SNAPSHOT) -> str | None:
+    return _snapshot(str(path))[0]
+
+
 def _query(token: str, keys: list[str]) -> dict:
     parts = []
     for index, key in enumerate(keys):
@@ -132,10 +144,12 @@ def _query(token: str, keys: list[str]) -> dict:
                 raise SystemExit(f'A GitHub batch failed three times ({error}); the snapshot is unchanged.')
             time.sleep(5 * (attempt + 1))
     data = document.get('data') or {}
-    # A repository GitHub cannot resolve is a NOT_FOUND error with a null node; any other error stops the refresh.
-    errors = [error for error in document.get('errors') or [] if error.get('type') != 'NOT_FOUND']
+    # A repository GitHub cannot resolve is a top-level NOT_FOUND error on its alias, whose node is null; any other
+    # error stops the refresh (the same rule as scan_graphql_transport._only_missing_repositories).
+    errors = [error for error in document.get('errors') or [] if not _missing_repository(error, data)]
     if errors or not data:
-        raise SystemExit(f"GitHub returned {errors[0].get('type') or errors[0].get('message') if errors else 'no data'} "
+        first = errors[0] if errors and isinstance(errors[0], dict) else {}
+        raise SystemExit(f"GitHub returned {first.get('type') or first.get('message') or 'an error' if errors else 'no data'} "
                          'for a batch; the snapshot is unchanged.')
     remaining = (data.get('rateLimit') or {}).get('remaining')
     if type(remaining) is int and remaining < MIN_RATE_REMAINING:
@@ -157,7 +171,7 @@ def catalog_keys() -> list[str]:
                    if (key := repository_key(record.get('url', '')))})
 
 
-def fetch(keys: list[str], previous: int = 0) -> dict:
+def fetch(keys: list[str]) -> dict:
     """A new snapshot document for ``keys``; raises SystemExit, having written nothing, if the read is incomplete."""
     if len(keys) > MAX_REPOSITORIES:
         raise SystemExit(f'{len(keys)} repositories exceed the {MAX_REPOSITORIES} per-run cap; the snapshot is unchanged.')
@@ -167,9 +181,8 @@ def fetch(keys: list[str], previous: int = 0) -> dict:
     for start in range(0, len(keys), BATCH):
         repositories.update(_query(token, keys[start:start + BATCH]))
         print(f'{min(start + BATCH, len(keys))} of {len(keys)}', file=sys.stderr, flush=True)
-    if len(repositories) < MIN_KEPT * min(previous, len(keys)):
-        raise SystemExit(f'GitHub resolved {len(repositories)} repositories, against {previous} in the last snapshot; '
-                         'the snapshot is unchanged.')
+    if len(repositories) < MIN_KEPT * len(keys):
+        raise SystemExit(f'GitHub resolved {len(repositories)} of {len(keys)} repositories; the snapshot is unchanged.')
     # Every fact carries the one observation date; a repository the API did not return is left out.
     return {'observed_at': observed, 'source': 'GitHub GraphQL API', 'repositories': dict(sorted(repositories.items()))}
 
@@ -180,7 +193,7 @@ def snapshot_bytes(document: dict) -> bytes:
 
 def refresh(path: Path = SNAPSHOT) -> tuple[int, int]:
     keys = catalog_keys()
-    document = fetch(keys, len(_snapshot(str(path))[1]))
+    document = fetch(keys)
     path.write_bytes(snapshot_bytes(document))
     return len(document['repositories']), len(keys)
 
@@ -233,20 +246,24 @@ def publish() -> int:
     if os.environ.get('GITHUB_REF') != f'refs/heads/{default_branch}':
         raise ValueError('The metadata refresh runs only from the default branch')
     run_url = f"https://github.com/{repository}/actions/runs/{os.environ['GITHUB_RUN_ID']}"
+    started, number = time.monotonic(), None
     keys = catalog_keys()
-    document = fetch(keys, len(_snapshot(str(SNAPSHOT))[1]))
-    if not changed(document):
+    # The snapshot this run read against; if main gets a different one meanwhile, this run's older read must not replace it.
+    starting = SNAPSHOT.read_bytes() if SNAPSHOT.is_file() else None
+    document = fetch(keys)
+    if not changed(document, SNAPSHOT):
         ingest.output('status', 'unchanged')
         ingest.step_summary([f"Repository metadata: no fact changed for {len(document['repositories'])} repositories."])
         return 0
     content = snapshot_bytes(document)
     github = ingest.GitHub(repository, token)
     title = TITLE.format(count=len(document['repositories']))
-    started, number = time.monotonic(), None
     for attempt in range(1, ingest.MAX_ATTEMPTS + 1):
         if attempt > 1 and time.monotonic() - started > ingest.JOB_SECONDS - ingest.ATTEMPT_SECONDS:
             raise RuntimeError(f'The default branch kept moving and no time is left for attempt {attempt} (PR #{number}).')
         base_sha = ingest.refresh_tree(default_branch)
+        if (SNAPSHOT.read_bytes() if SNAPSHOT.is_file() else None) != starting:
+            raise RuntimeError('The snapshot on the default branch changed during this run; the next run refreshes from it.')
         SNAPSHOT.write_bytes(content)
         try:
             ingest.run_validators(ROOT)
