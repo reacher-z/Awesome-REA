@@ -394,10 +394,6 @@ class SurveyTests(unittest.TestCase):
             self.assertFalse({'doi', 'identifier', 'isPartOf', 'issn'} & article.keys())
 
 
-if __name__ == '__main__':
-    unittest.main()
-
-
 DENIAL_ZH = re.compile('并非|不代表|不等于|不意味着')
 DENIAL_EN = re.compile(r'\b(?:is|are|was|were) not an?\b|\bnot verified\b', re.IGNORECASE)
 
@@ -435,3 +431,7 @@ class SurveyCopyTests(unittest.TestCase):
                 for answer in answers:
                     self.assertNotRegex(answer, r'^(?:No\.|不等于|不会)')
                     self.assertNotRegex(answer, DENIAL_ZH)
+
+
+if __name__ == '__main__':
+    unittest.main()
