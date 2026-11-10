@@ -695,7 +695,7 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 ## API and feeds
 
 - [API guide]({site_url}/api/{MARKDOWN}): Endpoints, fields, update frequency and versioning of the static JSON and CSV API.
-- [Resources JSON]({site_url}/api/v1/resources.json): Every curated resource with stable IDs, bilingual text, requirements, evidence and review dates; CSV at {site_url}/api/v1/resources.csv.
+- [Resources JSON]({site_url}/api/v1/resources.json): Every curated resource with stable IDs, bilingual text, requirements, evidence, evidence class (C0–C3), demo preview and review dates; CSV at {site_url}/api/v1/resources.csv.
 - [Papers JSON]({site_url}/api/v1/papers.json): The bibliography with identifiers, dates and limits; CSV at {site_url}/api/v1/papers.csv.
 - [Categories JSON]({site_url}/api/v1/categories.json): Curated categories, sections, kinds and targets with counts, plus the repository categories.
 - [Candidates JSON]({site_url}/api/v1/candidates.json): Unreviewed automated discoveries and followed-source leads.

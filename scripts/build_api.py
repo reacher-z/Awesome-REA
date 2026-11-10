@@ -50,7 +50,8 @@ CANDIDATE_NOTE = ('Unreviewed candidates: automated README scans and links that 
 CSV_COLUMNS = {
     'resources': ('id', 'name', 'name_zh', 'kind', 'category', 'relationship', 'targets', 'url', 'evidence_url',
                   'description_en', 'description_zh', 'requirements', 'requirements_zh', 'added_at', 'verified_at',
-                  'verification', 'entry_url', 'entry_url_zh', 'json_url'),
+                  'verification', 'evidence_class', 'evidence_status', 'scope', 'preview_url', 'preview_kind',
+                  'entry_url', 'entry_url_zh', 'json_url'),
     'papers': ('id', 'title', 'title_zh', 'authors', 'authors_omitted', 'year', 'publication_date', 'venue',
                'publication_status', 'doi', 'arxiv_id', 'url', 'pdf_url', 'code_url', 'project_url', 'targets',
                'description_en', 'description_zh', 'added_at', 'verified_at', 'verification', 'entry_url',
@@ -255,6 +256,9 @@ def schema_document(site_url: str) -> dict:
                                    'required': ['checked_at', 'outcome', 'http_status'],
                                    'properties': {'checked_at': string, 'outcome': {'enum': ['not-found', 'blocked']},
                                                   'http_status': {'enum': [404, 410, 451]}}},
+            'evidence_class': nullable({'enum': [0, 1, 2, 3]}), 'evidence_status': {'enum': ['observed', 'unknown']},
+            'scope': nullable({'enum': ['full', 'partial', 'analysis', 'unknown', 'notes']}),
+            'preview_url': url, 'preview_kind': {'enum': ['image', 'video', 'demo']},
             **entry_urls},
     }
     paper = {
@@ -389,7 +393,7 @@ def api_page(language: str, index: dict, site_url: str) -> tuple[str, str, str, 
         f"Read the curated catalog as JSON or CSV: {records['resources']:,} resources, {records['papers']:,} papers, categories, unreviewed candidates and 30 days of changes.",
         f"以 JSON 或 CSV 读取精选目录：{records['resources']:,} 项资源、{records['papers']:,} 篇论文、分类、未审核候选与最近 30 天的变更。所有文件均为静态内容，可直接下载。")
     rows = [
-        ('resources', choose('Curated resources: stable IDs, bilingual names and descriptions, requirements, evidence and review dates.', '精选资源：稳定 ID、中英文名称与说明、使用条件、证据与复核日期。')),
+        ('resources', choose('Curated resources: stable IDs, bilingual names and descriptions, requirements, evidence, evidence class (C0–C3), demo preview and review dates.', '精选资源：稳定 ID、中英文名称与说明、使用条件、证据、证据档位（C0–C3）、演示预览与复核日期。')),
         ('papers', choose('The research bibliography: identifiers, dates and their basis, limits, sources and recorded authors.', '研究文献：标识、日期及其依据、研究边界、来源和已记录的作者。')),
         ('categories', choose('Curated categories, sections, kinds, targets and relationships with counts, plus the repository categories.', '精选分类、分区、类型、目标与关联及其数量，以及仓库分类。')),
         ('candidates', choose('Unreviewed automated discoveries and followed-source leads, newest first.', '未审核的自动发现与关注来源线索，按时间从新到旧。')),
