@@ -154740,31 +154740,5 @@
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/scripts/turokgame/components/weapons/turokWeaponChronoScepter.txt",
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/framework/system.cpp"
     ]
-  },
-  {
-    "id": "design-os-studio",
-    "name": "DESIGN:OS Studio",
-    "url": "https://github.com/jangtrinh/design-os-studio",
-    "category": "web-analysis",
-    "relationship": "foundation",
-    "kind": "tool",
-    "targets": [
-      "website",
-      "app"
-    ],
-    "description_en": "Independent reimplementation of a Figma-style desktop editor that reads and writes Figma .fig containers (fig-kiwi, writes version 106). A bundled stdio MCP server (39 tools in the reviewed README tool table) lets a coding agent inspect, edit and lint the open file and generate CSS, Tailwind, React, SwiftUI, UIKit, Compose, Android XML or HTML from a selected layer. Source-available under PolyForm Shield 1.0.0.",
-    "description_zh": "独立重实现的 Figma 风格桌面编辑器，可读写 Figma 的 .fig 容器（fig-kiwi，写出 version 106）。附带的 stdio MCP 服务器（审阅时 README 工具表列出 39 个工具）可将编程智能体连接到当前打开的文件，以便查看、编辑、检查，以及从选定图层生成 CSS、Tailwind、React、SwiftUI、UIKit、Compose、Android XML 或 HTML 代码。源码可用，采用 PolyForm Shield 1.0.0 许可证。",
-    "evidence_url": "https://github.com/jangtrinh/design-os-studio/blob/df14c593e86edcc039adc2c67067bf8db64e9e84/README.md",
-    "additional_evidence_urls": [
-      "https://github.com/jangtrinh/design-os-studio/blob/df14c593e86edcc039adc2c67067bf8db64e9e84/LICENSE",
-      "https://github.com/jangtrinh/design-os-studio/releases/tag/v0.7.11"
-    ],
-    "verified_at": "2026-11-10",
-    "verification": "source-reviewed",
-    "requirements": [
-      "Install the v0.7.11 GitHub Release for macOS (universal .dmg, verified on Apple Silicon), Windows x64 (.zip with a per-user install.ps1) or Linux x64 (.deb or .tar.gz), or build from source with `cargo run --release -p designos-app --bin designos-studio`. The README says the Windows and Linux packages are built by the same release workflow but are not verified before release.",
-      "Licensed under PolyForm Shield 1.0.0 (source-available). The studio needs no account or API key; the Agents panel starts the user's own Claude Code, Codex, Grok, Antigravity or Gemini CLI with that CLI's sign-in.",
-      "designos-mcp serves its tools over stdio. The README's generated tool table at the reviewed commit lists 39 tools. A known issue documented in the README remains open: saving a .fig file drops numbered-list formatting and writes inherited or variable-bound paints on instances as fixed values."
-    ]
   }
 ]
