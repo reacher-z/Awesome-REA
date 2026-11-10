@@ -6,10 +6,11 @@
 
 [English](game-5.md)
 
-**309 个案例**
+**310 个案例**
 
 ## 其他方法与分析
 
+- [**Aion 2：客户端到服务端网络协议复现**](https://github.com/lunixxx37/aion2-protocol-research) - Aion 2 Network Protocol Research 根据抓包和客户端分析复现游戏的部分客户端到服务端协议。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aion2-protocol-research-case/)</sub>
 - [**alive-serv：重建 SIF2 MIRACLE LIVE! 游戏服务器**](https://github.com/miraclealive/alive-serv) - alive-serv 根据 SIF2 MIRACLE LIVE! 国际服客户端的服务器协议，以 C 语言重建部分游戏服务。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/alive-serv-case/)</sub>
 - [**Alley Cat：DOS 游戏可执行文件的注释反汇编**](https://github.com/gmegidish/alleycat-disassembly) - Alley Cat Disassembly 正在将这款 DOS 游戏的 Ghidra 反汇编结果整理为带注释的 NASM x86 汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/alley-cat-disassembly-case/)</sub>
 - [**Alleyway：按校验值匹配的 Game Boy 反汇编**](https://github.com/Wit-MKW/alleyway-gb) - Alleyway 将 1989 年的 Game Boy 游戏整理为汇编源码，按音频、显示、输入、物理和关卡代码分文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/alleyway-gb-case/)</sub>
