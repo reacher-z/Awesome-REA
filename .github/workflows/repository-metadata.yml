@@ -1,0 +1,44 @@
+name: Repository metadata refresh
+on:
+  workflow_dispatch:
+  # Daily at 04:37 UTC, away from the eight-hourly discovery ingests at minute 7, which share the required-check
+  # runners. If an ingest merges first, the refresh rebuilds its commit on the new default branch and retries.
+  schedule:
+    - cron: '37 4 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: repository-metadata-refresh
+  cancel-in-progress: false
+jobs:
+  # Reads stars, last commit, language, license and archive state for every curated GitHub repository with the
+  # workflow token, at most 200 GraphQL queries of 50 repositories, and keeps only values that pass the snapshot's
+  # format checks. When any fact changed, it commits data/repository-metadata.json alone to a pull request that it
+  # checks and merges itself (docs/automation.md#repository-metadata-refresh). A failed run commits nothing, so the
+  # snapshot on main stays as it was.
+  refresh:
+    if: ${{ !github.event.repository.fork && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      # Commit the snapshot to the refresh branch and merge its pull request.
+      contents: write
+      # Open or update that pull request.
+      pull-requests: write
+      # Dispatch the two required checks.
+      actions: write
+      # Read the validate and review commit statuses and check runs on the pull request head.
+      checks: read
+      statuses: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Refresh the snapshot through a checked pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: python3 scripts/repository_metadata.py publish

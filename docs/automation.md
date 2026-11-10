@@ -185,6 +185,16 @@ A merged batch reaches awesomerea.org after the scan, ingest checks and publicat
 
 **Budget.** A batch holds at most 300 records, and the queue at most 25,000 records and 64 MiB; at either limit the ingest fails and its tracking issue explains why. See [growth budget](../data/discoveries/README.md#growth-budget).
 
+## Repository metadata refresh
+
+Curated resource pages show each GitHub repository's stars, last default-branch commit, primary language and detected license from [data/repository-metadata.json](../data/repository-metadata.json), under the line "GitHub data as of <date>" that the page builder takes from the snapshot's `observed_at`. The `Repository metadata refresh` workflow ([repository-metadata.yml](../.github/workflows/repository-metadata.yml)) rebuilds it daily at 04:37 UTC, and on dispatch, with `python3 scripts/repository_metadata.py publish`:
+
+1. **Read.** With the workflow token, it sends one GraphQL query per 50 repositories that curated records name, at most 10,000 repositories per run. It stops, committing nothing, when a batch fails three times, when GitHub reports any error other than a repository it cannot resolve, when fewer than 100 GraphQL points remain, or when it resolves fewer than 90% of the repositories the last snapshot held.
+2. **Compare.** When no repository fact changed, the run ends without a commit; the observation date alone is not a change.
+3. **Validate, commit and merge.** As in the [discovery ingest](#automated-discovery-ingest), it runs the validators on the default branch's current commit plus the new snapshot, commits only `data/repository-metadata.json` to the `automation/repository-metadata` branch through the Git data API, opens or updates one pull request, dispatches both required checks and rebase-merges that exact commit after they pass. If the default branch moves first, it rebuilds the commit on the new head, up to three attempts.
+
+A failed run leaves the committed snapshot as it was; pages keep the previous facts and their earlier date. `python3 scripts/repository_metadata.py --refresh` runs the same read locally and rewrites the file.
+
 ## Followed-source lead discovery
 
 `Followed-source lead discovery` ([discovery-leads.yml](../.github/workflows/discovery-leads.yml)) runs **every eight hours at minute 7 UTC** (`7 */8 * * *`), the same requested start as the README scan, and can be started manually from the default branch. It follows the public sources registered in [data/discovery-sources.json](../data/discovery-sources.json): other reverse-engineering list READMEs, GitHub topics, the Binary Ninja, radare2-pm and SubmitGame registries, the bibliographies of curated surveys, an arXiv query and Hugging Face searches. What they list becomes unreviewed leads in the [discovery queue](../data/discoveries/README.md#followed-source-leads); nothing is curated, translated or marked `source-reviewed`.
