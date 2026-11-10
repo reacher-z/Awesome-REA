@@ -669,6 +669,7 @@
     const meta = $('[data-results-meta]', listing);
     const pagerEl = $('[data-pager]', listing);
     const sort = $('[data-sort]', listing);
+    const classSel = $('[data-class-select]', listing);
     const activeEl = $('[data-active]', listing);
     const clearBtn = $('[data-clear]', listing);
     const badge = $('[data-filter-count]', listing);
@@ -689,6 +690,7 @@
       MULTI.forEach((k) => { st[k] = new Set((u.searchParams.get(k) || '').split(',').filter(Boolean)); });
       st.reviewed = u.searchParams.get('reviewed') || '';
       st.cls = u.searchParams.get('class') || '';
+      if (classSel) classSel.value = st.cls;
       st.sort = u.searchParams.get('sort') || 'featured';
       st.page = Math.max(1, +(u.searchParams.get('page') || 1));
       if (input) input.value = st.q;
@@ -824,6 +826,7 @@
       $('[data-list-search]').addEventListener('submit', (e) => { e.preventDefault(); input.blur(); });
     }
     sort.addEventListener('change', () => { st.sort = sort.value; st.page = 1; render(); });
+    if (classSel) classSel.addEventListener('change', () => { st.cls = classSel.value; st.page = 1; render(); });
     tabs.forEach((t) => t.addEventListener('click', (e) => {
       if (e.metaKey || e.ctrlKey || e.shiftKey) return;
       e.preventDefault();
@@ -848,6 +851,7 @@
     const reset = () => {
       st.q = ''; if (input) input.value = '';
       st.targets.clear(); MULTI.forEach((k) => st[k].clear()); st.reviewed = ''; st.cls = ''; st.page = 1; st.sort = 'featured'; sort.value = 'featured';
+      if (classSel) classSel.value = '';
       $$('input', facetForm).forEach((el) => { el.checked = el.type === 'radio' && el.value === ''; });
       render();
     };

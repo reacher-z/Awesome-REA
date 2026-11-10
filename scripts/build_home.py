@@ -66,6 +66,7 @@ COPY = {
         'reviewed': 'Reviewed', 'targets': 'Targets', 'licence': 'Original content: MIT. Linked projects keep their own licenses.',
         'class_label': 'Evidence class', 'class_unknown': 'Unknown · source unavailable',
         'all_classes': 'All classes', 'class_unknown_short': 'Unknown', 'class_info_label': 'What the evidence classes mean',
+        'class_guide': 'How classes are assigned',
         'unknown_title': 'Source unavailable or unreadable at review time',
         'preview_image_alt': "Demo screenshot from the project's public documentation",
         'preview_video_alt': "Demo video thumbnail from the project's public documentation",
@@ -83,6 +84,7 @@ COPY = {
         'reviewed': '已复核', 'targets': '目标', 'licence': '原创内容采用 MIT 许可。链接项目保留各自的许可。',
         'class_label': '证据档位', 'class_unknown': '未知 · 来源不可读',
         'all_classes': '全部档位', 'class_unknown_short': '未知', 'class_info_label': '证据档位说明',
+        'class_guide': '档位判定方法',
         'unknown_title': '复核时来源不可达或不可读',
         'preview_image_alt': '项目公开文档中的演示截图',
         'preview_video_alt': '项目公开文档中演示视频的封面',
@@ -152,6 +154,18 @@ def evidence_chip(record: dict, language: str) -> str:
         return ''
     detail = EVIDENCE_DETAIL[int(value)][language == 'zh']
     return f'<span class="card-class card-class-{int(value)}" title="{_e(text["class_label"])} {int(value)} · {_e(detail)}">C{int(value)}</span>'
+
+
+def evidence_guide_url(language: str, repository_url: str = 'https://github.com/reacher-z/Awesome-REA') -> str:
+    return f'{repository_url}/blob/main/docs/evidence-classes{".zh-CN" if language == "zh" else ""}.md'
+
+
+def evidence_legend(language: str) -> str:
+    text = COPY[language]
+    items = ''.join(f'<li><span class="card-class card-class-{value}">C{value}</span>{_e(details[language == "zh"])}</li>'
+                    for value, details in EVIDENCE_DETAIL.items())
+    guide = f'<a class="evidence-guide" href="{_e(evidence_guide_url(language))}" rel="noopener">{text["class_guide"]}{icon("external")}</a>'
+    return f'<div class="evidence-legend"><strong>{text["class_label"]}</strong><ul>{items}</ul>{guide}</div>'
 
 
 def preview_figure(record: dict, language: str) -> str:
