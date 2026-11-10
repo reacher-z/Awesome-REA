@@ -153301,5 +153301,34 @@
       "prerequisites",
       "license"
     ]
+  },
+  {
+    "id": "openjam",
+    "name": "OpenJam: static recompilation of NBA JAM: On Fire Edition",
+    "url": "https://github.com/GTTeancum/OpenJam",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "OpenJam is a native PC port of NBA JAM: On Fire Edition, the 2011 Xbox 360 XBLA release, built with ReXGlue. The original PowerPC code is statically recompiled to C++ and compiled for x86-64. The user supplies their own signed container file from a purchased copy.",
+    "description_zh": "OpenJam 是 2011 年 Xbox 360 XBLA 游戏 NBA JAM: On Fire Edition 的原生 PC 移植，使用 ReXGlue 构建。原始 PowerPC 代码被预先静态重编译为 C++，再编译为 x86-64。用户需要自备已购买副本中的签名容器文件。",
+    "evidence_url": "https://github.com/GTTeancum/OpenJam/blob/8daa317846f34125a147114b129f47063b7c23ee/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
+    "requirements": [
+      "The user's own Xbox Live Arcade container file. On Windows, the release is unzipped beside that file and started with NBA JAM Mod Manager.exe. On Linux, the native download is unpacked beside nbajam.sh, and mods are installed with ./mods.sh, which needs Python 3.",
+      "A Linux build needs a patched SDK, documented in BUILDING.md. The README says whole matches, including mods, were played on a software Vulkan driver in WSL, and that the port has not yet been tried on a range of graphics cards.",
+      "GitHub's license metadata for this repository is empty."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
