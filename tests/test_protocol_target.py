@@ -64,21 +64,21 @@ class ProtocolTargetTests(unittest.TestCase):
                          ['app', 'binary', 'firmware', 'game', 'website'])
         self.assertEqual(default_targets(resource()), ['protocol'])
         for record, expected in (
-            (resource(), 'protocol'),
+            (resource(), 'tools'),
             (resource(kind='documentation'), 'references-and-learning'),
             (resource(kind='collection'), 'related-collections'),
             (resource(category='agent-mcp'), 'agents-and-mcp'),
-            (resource(category='web-analysis', targets=['website', 'protocol']), 'website'),
-            (resource(category='reconstruction-cases', kind='case-study'), 'protocol'),
-            (resource(category='reconstruction-cases', kind='case-study', targets=['protocol', 'app']), 'app'),
+            (resource(category='web-analysis', targets=['website', 'protocol']), 'tools'),
+            (resource(category='reconstruction-cases', kind='case-study', **{'class': 'hardware'}), 'hardware'),
+            (resource(category='reconstruction-cases', kind='case-study', targets=['protocol', 'app'], **{'class': 'apps'}), 'apps'),
             # Reviewed records whose category would otherwise route them to another section.
-            (resource(id='humanify', category='javascript-electron', targets=['website']), 'website'),
-            (resource(id='burp-suite-mcp-server', category='agent-mcp', kind='integration', targets=['website', 'app']), 'website'),
-            (resource(id='apktool-mcp-server', category='agent-mcp', kind='integration', targets=['app']), 'app'),
-            (resource(id='grapefruit', category='dynamic-analysis', targets=['app']), 'app'),
+            (resource(id='humanify', category='javascript-electron', targets=['website']), 'tools'),
+            (resource(id='burp-suite-mcp-server', category='agent-mcp', kind='integration', targets=['website', 'app']), 'agents-and-mcp'),
+            (resource(id='apktool-mcp-server', category='agent-mcp', kind='integration', targets=['app']), 'agents-and-mcp'),
+            (resource(id='grapefruit', category='dynamic-analysis', targets=['app']), 'tools'),
             # Community device cases follow their reviewed targets rather than an ID override.
             (resource(id='picoprint-rea-investigation', category='community-case-studies', kind='case-study',
-                      relationship='community-reported-mixed-workflow', targets=['app', 'protocol']), 'app'),
+                      relationship='community-reported-mixed-workflow', targets=['app', 'protocol'], **{'class': 'hardware'}), 'hardware'),
         ):
             with self.subTest(record=record['category'], kind=record['kind']):
                 self.assertEqual(collection_section(record), expected)
@@ -109,15 +109,15 @@ class ProtocolTargetTests(unittest.TestCase):
             output = Path(directory)
             build_discovery_pages(output, {'resources': [record], 'meta': {}}, None)
             for language, route, heading, badge in (
-                ('en', 'resources', 'Protocols', 'Protocol'),
-                ('zh', 'zh/resources', '协议', '协议'),
+                ('en', 'resources', 'Tools', 'Protocol'),
+                ('zh', 'zh/resources', '工具', '协议'),
             ):
                 html = (output / route / 'index.html').read_text()
-                self.assertIn('id="heading-protocol"', html)
+                self.assertIn('id="heading-tools"', html)
                 self.assertIn(heading, html)
                 self.assertIn(badge, html)
                 self.assertEqual(html.count('data-resource-id="protocol-fixture"'), 1)
-                self.assertIn('<a id="protocol"></a>', render_catalog([record], language))
+                self.assertIn('<a id="tools"></a>', render_catalog([record], language))
         html = (ROOT / 'site/index.html').read_text()
         for attribute in ('data-target', 'data-source-target'):
             self.assertEqual(html.count(attribute + '="protocol"'), 1)

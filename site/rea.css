@@ -54,6 +54,8 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .hero-star { height: 44px; padding: 0 16px; gap: 9px; font-size: .9375rem; }
 .hero-star::after { inset: 0; }
 .hero-star .i { width: 17px; height: 17px; }
+/* The header carries the star button; the hero repeats it only on phones. */
+@media (min-width: 768px) { .hero-star { display: none; } }
 .hero-stats { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 24px; font-size: .9375rem; color: var(--ink); }
 .hero-stats strong { color: var(--ink-strong); font-weight: 600; font-variant-numeric: tabular-nums; }
 .hero-stats a { color: var(--brand-ink); }
@@ -65,7 +67,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* ---------- folder tabs (target domains) ---------- */
 .folders { position: relative; z-index: 2; display: flex; gap: 0; margin: 32px 0 -1px; padding: 0 8px; overflow-x: auto; scrollbar-width: none; }
 .folders::-webkit-scrollbar { display: none; }
-.folder { position: relative; z-index: 0; display: inline-flex; flex: none; align-items: center; gap: 8px; height: 46px; padding: 2px 20px 0;
+.folder { position: relative; z-index: 0; display: inline-flex; flex: none; align-items: center; gap: 6px; height: 46px; padding: 2px 12px 0;
   margin-right: -6px; color: var(--ink-2); font-size: 1rem; font-weight: 500; text-decoration: none; white-space: nowrap; }
 .folder::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--bg); border: 1px solid var(--line-strong);
   border-bottom: 0; border-radius: 7px 7px 0 0; transform: perspective(36px) rotateX(2.4deg); transform-origin: 50% 100%; }
@@ -79,6 +81,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .folder[aria-current="true"] .i, .folder[aria-current="true"] .count { color: var(--ink-strong); }
 .folder:focus-visible { outline-offset: -5px; box-shadow: none; }
 .folder:focus-visible::before { background: var(--secondary-soft); }
+.folder-aside[data-tab="tools"] { margin-left: 14px; }
 
 /* ---------- drawer (sage panel holding the cards) ---------- */
 .drawer { --card-ground: var(--surface); position: relative; z-index: 1; padding: 20px 24px 24px; background: var(--surface);
@@ -163,8 +166,8 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .card-class-2::before { background: var(--class-2); }
 .card-class-3::before { background: var(--class-3); }
 .card-class-unknown::before { background: var(--ink-2); }
-/* Documented demo preview, below the description and inside the same paper edge as the row. */
-.card-preview { grid-area: prev; position: relative; margin-top: 6px; max-width: 420px; aspect-ratio: 16 / 9;
+/* Demo thumbnails sit inside the card grid. */
+.card-preview { grid-area: prev; position: relative; justify-self: end; width: 160px; aspect-ratio: 16 / 9;
   border: 1px solid var(--line-strong); border-radius: 2px; background: var(--surface-2); overflow: hidden; }
 .card-preview img { display: block; width: 100%; height: 100%; object-fit: cover; }
 /* Above the title link's card-wide click area, so a click on a screenshot thumbnail opens the full image. */
@@ -173,16 +176,73 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .card-preview-play { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 26px; height: 26px;
   border-radius: 50%; background: var(--btn-bg); color: var(--btn-ink); font-size: .6875rem; }
 .card-preview > .card-preview-play { position: absolute; left: 10px; bottom: 8px; z-index: 1; }
-.card-preview-demo { display: flex; align-items: center; gap: 9px; max-width: max-content; padding: 6px 10px 6px 6px; aspect-ratio: auto;
+.card-preview-demo { display: flex; align-items: center; gap: 9px; padding: 6px; aspect-ratio: 16 / 9;
   color: var(--ink-2-panel); font: 500 .8125rem/1.4 var(--font-mono); }
 .card-preview-demo > .card-preview-play { position: static; }
-.card-face:has(.card-preview) { grid-template-areas: "call name stamp" "call desc targets" "call prev prev"; }
+.card-face:has(.card-preview) { grid-template-columns: 104px minmax(0, 1fr) 160px; grid-template-areas: "call name stamp" "call desc prev" "call targets prev"; }
 .evidence-legend { margin: 8px 0 14px; color: var(--ink-2-panel); font-size: .8125rem; }
 .evidence-legend ul { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 5px 0 0; padding: 0; list-style: none; }
 .evidence-legend li { display: inline-flex; align-items: center; gap: 5px; }
 .evidence-legend .card-class { margin-left: 0; }
 .evidence-guide { display: inline-flex; align-items: center; gap: 4px; min-height: 24px; margin-top: 4px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .evidence-guide .i { width: 12px; height: 12px; }
+/* ---------- homepage overview: data classes × evidence classes (All tab, until a filter or search) ---------- */
+.drawer.is-overview .drawer-bar, .drawer.is-overview .cards, .drawer.is-overview .drawer-foot { display: none; }
+.overview { display: grid; gap: 16px; }
+.overview[hidden] { display: none; }
+.class-tiles { list-style: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; margin: 0; padding: 0; }
+.class-tile { display: flex; flex-direction: column; gap: 1px; width: 100%; padding: 8px 10px; border: 1px solid var(--line-strong);
+  border-radius: var(--r-control); background: var(--bg-raised); color: var(--ink); font: 500 .8125rem/1.3 var(--font-body);
+  text-align: left; cursor: pointer; }
+.class-tile:hover { border-color: var(--border-input); color: var(--ink-strong); }
+.class-tile:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.class-tile[aria-pressed="true"] { border-color: var(--focus); box-shadow: inset 0 -2px 0 var(--focus); color: var(--ink-strong); }
+.class-tile .ct-count { font: 600 1.25rem/1.2 var(--font-mono); color: var(--ink-strong); font-variant-numeric: tabular-nums; }
+.overview-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(250px, 4fr); align-items: center; gap: 24px; }
+/* A bare viewBox gives the SVG a 300px intrinsic width, so the chart needs an explicit width for the grid column to fill. */
+.overview-chart { width: 100%; min-width: 0; max-width: 760px; margin-inline: auto; }
+.overview-chart svg { display: block; width: 100%; height: auto; }
+.overview-sector { cursor: pointer; outline: none; }
+.overview-track { fill: var(--surface-2); }
+.overview-outline { fill: none; stroke: transparent; stroke-width: 0; transition: stroke var(--t-base) var(--ease); }
+.overview-sector:hover .overview-outline, .overview-sector:focus-visible .overview-outline { stroke: color-mix(in srgb, var(--focus) 60%, transparent); stroke-width: 2; }
+.overview-sector[aria-pressed="true"] .overview-outline { stroke: var(--focus); stroke-width: 3; }
+.overview-band { stroke: none; }
+.overview-0 { fill: var(--class-0); }
+.overview-1 { fill: var(--class-1); }
+.overview-2 { fill: var(--class-2); }
+.overview-3 { fill: var(--class-3); }
+.overview-unknown { fill: var(--ink-2); }
+.overview-unclassified { fill: var(--ink-2); fill-opacity: .4; }
+.overview-name { font: 500 1rem/1 var(--font-body); fill: var(--ink-2); pointer-events: none; }
+.overview-total { font: 600 2rem/1 var(--font-mono); fill: var(--ink-strong); font-variant-numeric: tabular-nums; }
+.overview-total-label { font: 500 .9375rem/1 var(--font-body); fill: var(--ink-2-panel); }
+.overview-details { min-width: 0; }
+.overview-detail[hidden] { display: none; }
+.od-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0 0 8px;
+  font: 600 1.0625rem/1.3 var(--font-body); color: var(--ink-strong); }
+.od-total { font: 600 1.25rem/1 var(--font-mono); color: var(--ink-strong); font-variant-numeric: tabular-nums; }
+.od-list { list-style: none; display: grid; gap: 5px; margin: 0; padding: 0; }
+.od-list li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: baseline; gap: 8px;
+  font-size: .8125rem; color: var(--ink); }
+.od-list .card-class { margin-left: 0; white-space: nowrap; }
+.od-count { font: 500 .8125rem/1 var(--font-mono); color: var(--ink-strong); font-variant-numeric: tabular-nums; }
+.od-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; color: var(--brand-ink);
+  font: 600 .875rem/1.3 var(--font-body); text-decoration: none; }
+.od-link:hover { text-decoration: underline; }
+.od-link .i { width: 15px; height: 15px; }
+.overview-legend { padding-top: 12px; border-top: 1px solid var(--line-strong); color: var(--ink-2-panel); font-size: .8125rem; }
+.overview-legend p { margin: 0 0 7px; }
+.overview-legend p strong { color: var(--ink-strong); }
+.overview-legend ul { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; }
+.overview-legend li { display: inline-flex; align-items: center; gap: 5px; }
+.overview-legend .card-class { margin-left: 0; }
+.card-class-none::before { background: transparent; box-shadow: inset 0 0 0 1px var(--ink-2); }
+@media (max-width: 767px) {
+  .class-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .overview-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .overview-chart { max-width: 480px; }
+}
 /* Signature: the corner folds back on hover/focus and the evidence slip slides out from under it. */
 .card:hover .card-face, .card:focus-within .card-face { border-color: var(--border-input); }
 .card-face::after { content: ""; position: absolute; top: -1px; right: -1px; z-index: 2; width: 30px; height: 30px;
@@ -205,20 +265,25 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* Narrow columns (tablet home, /resources/ beside the facets, related lists): description takes the full width. */
 @container (max-width: 900px) {
   .card-face { grid-template-areas: "call name stamp" "call desc desc" "call targets targets"; }
-  .card-face:has(.card-preview) { grid-template-areas: "call name stamp" "call desc desc" "call targets targets" "call prev prev"; }
+  .card-face:has(.card-preview) { grid-template-columns: 104px minmax(0, 1fr) 112px; grid-template-areas: "call name stamp" "call desc prev" "call targets prev"; }
+  .card-preview { width: 112px; }
   .card-targets { justify-content: flex-start; max-width: none; margin-right: 0; padding-top: 2px; }
 }
 /* Phones: stacked, with the review date beside the call number. */
 @container (max-width: 560px) {
   .card-face { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "call stamp" "name name" "desc desc" "targets targets"; padding: 9px 12px 10px; row-gap: 3px; }
-  .card-face:has(.card-preview) { grid-template-areas: "call stamp" "name name" "desc desc" "targets targets" "prev prev"; }
+  .card-face:has(.card-preview) { grid-template-columns: minmax(0, 1fr) 112px; grid-template-areas: "call stamp" "name name" "desc prev" "targets prev"; }
   .card-class { margin-left: 7px; }
-  .card-preview { max-width: none; margin-top: 4px; }
+  .card-preview { width: 112px; margin-top: 4px; }
   .card-face::before { display: none; }
   .stamp { margin-right: 14px; padding-top: 2px; }
   .ev { display: none; }
   .card-targets { gap: 4px 12px; padding-top: 4px; }
   .card-targets li:nth-child(n+4) { display: none; }
+}
+@media (min-width: 900px) {
+  .card-face:has(.card-preview) { grid-template-columns: 104px minmax(0, 1fr) 160px; grid-template-areas: "call name stamp" "call desc prev" "call targets prev"; }
+  .card-preview { width: 160px; }
 }
 
 /* ---------- sections ---------- */
@@ -440,6 +505,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 
 /* ---------- listing: facets + results inside the drawer ---------- */
 .listing { display: grid; grid-template-columns: 248px minmax(0, 1fr); gap: 28px; padding-top: 24px; }
+.listing-class { grid-template-columns: minmax(0, 1fr); }
 .facets { position: static; display: block; width: auto; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: none; color: inherit; }
 .facets-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--line-strong); }
 .facets-head h2 { font-size: 1.375rem; }
@@ -691,8 +757,10 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
   .hero-search input { font-size: 1.0625rem; padding: 0 10px; }
   .hero-search > .i { margin-left: 14px; }
   .hs-kbd { display: none; }
-  .folders { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; margin: 16px 0 0; padding: 0; overflow: visible; }
+  /* Ten tabs in two rows of five: the six classes with All, then Tools, Paper and Tutorial. */
+  .folders { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; margin: 16px 0 0; padding: 0; overflow: visible; }
   .folder { flex-direction: column; justify-content: center; gap: 1px; height: 46px; padding: 0 2px; margin: 0; font-size: .875rem; line-height: 1.15; }
+  .folder-aside[data-tab="tools"] { margin-left: 0; }
   .folder::before { transform: none; border: 1px solid var(--line-strong); border-radius: var(--r-control); }
   .folder .i { display: none; }
   .folder .count { font-size: .75rem; }
@@ -702,9 +770,15 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
   .drawer-wrap { margin-top: 10px; }
 }
 
+/* Ten tabs fit the row at full width with icons; narrower desktops drop the icons. */
+@media (min-width: 1100px) and (max-width: 1339px) { .folder { padding: 2px 11px 0; } .folder .i { display: none; } }
+
 /* ---------- tablets (768–1099): folder tabs without icons; kind as a select under 920 ---------- */
 @media (min-width: 768px) and (max-width: 1099px) {
-  .folder { padding: 2px 11px 0; gap: 5px; font-size: .9063rem; }
+  .folders { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; padding: 0; overflow: visible; }
+  .folder { justify-content: center; padding: 2px 6px 0; gap: 5px; margin: 0; font-size: .9063rem; }
+  .folder::before { transform: none; border-radius: var(--r-control); }
+  .folder-aside[data-tab="tools"] { margin-left: 0; }
   .folder .i { display: none; }
 }
 @media (min-width: 768px) and (max-width: 919px) {
@@ -1037,6 +1111,7 @@ html:lang(zh-CN) .cb-n { font-family: "EB Garamond Accent", var(--font-display);
 .listing-links a { display: inline-flex; align-items: center; gap: 4px; color: var(--brand-ink); }
 .listing-links .i { width: 14px; height: 14px; }
 .list-section { display: flex; align-items: baseline; gap: 10px; padding: 16px 2px 4px; }
+.list-group { margin-top: 16px; padding: 12px 2px 4px; border-top: 1px solid var(--line-strong); color: var(--ink-2); font: 500 .75rem/1.4 var(--font-mono); letter-spacing: .04em; text-transform: uppercase; }
 .list-section:first-child { padding-top: 0; }
 .list-section h2 { font-size: 1.25rem; scroll-margin-top: 76px; }
 .list-section .count { color: var(--ink-2-panel); }

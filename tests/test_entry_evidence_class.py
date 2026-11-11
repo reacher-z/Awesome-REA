@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(ROOT / 'tests'))
 from build_entry_pages import EVIDENCE_REASONS, build_entry_pages, entry_path
 from build_home import PINNED
+from build_discovery_pages import SECTIONS
 from resource_listing import resource_listing
 from test_entry_pages import resource
 
@@ -92,11 +93,12 @@ class EntryEvidenceClassTest(unittest.TestCase):
         self.assertEqual(text.count('<time'), 1)
 
     def test_resources_listing_offers_every_class_with_its_count(self):
-        records = [resource(id=f'r-{index}', evidence_class=value, evidence_status='observed')
+        records = [resource(id=f'r-{index}', evidence_class=value, evidence_status='observed', **{'class': 'software'})
                    for index, value in enumerate((0, 1, 1, 2, 2, 2, 3))]
-        records.append(resource(id='r-unknown', evidence_class=None, evidence_status='unknown'))
-        groups = {records[0]['category']: records}
-        labels = {records[0]['category']: ('Tools', '工具')}
+        records.append(resource(id='r-unknown', evidence_class=None, evidence_status='unknown', **{'class': 'software'}))
+        # The evidence-class select counts the data points the opening All tab shows.
+        groups = {'software': records}
+        labels = {'software': SECTIONS['software']}
         for language, unknown in (('en', 'Unknown'), ('zh', '未知')):
             html = resource_listing(records, groups, labels, language, 'https://github.com/reacher-z/Awesome-REA')
             self.assertIn('data-class-select', html)

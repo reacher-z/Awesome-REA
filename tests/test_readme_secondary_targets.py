@@ -1,5 +1,4 @@
-"""README metadata lines name the targets that an entry's section heading does not already imply."""
-from collections import Counter
+"""README metadata uses a data class and Protocol tag, or every target for non-data resources."""
 from copy import deepcopy
 import json
 from pathlib import Path
@@ -11,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_readme import CASE_FILES, TARGETS, collection_section, entry_type, other_targets, render_catalog
 from catalog import load_resources
+from data_classes import DATA_CLASSES, FEATURED_DATA, FEATURED_LABEL
 from validate_papers import read_papers
 
 
@@ -23,54 +23,44 @@ def resource(**changes):
 
 
 class ReadmeSecondaryTargetTest(unittest.TestCase):
-    def test_target_sections_show_only_other_targets_in_label_order(self):
+    def test_non_data_sections_show_every_target_in_label_order(self):
         record = resource(targets=['firmware', 'binary', 'game'])
-        before = deepcopy(record)
-        self.assertEqual(collection_section(record), 'native-binary')
-        self.assertEqual(other_targets(record, 'native-binary', 'en'), ' · Also: Game, Firmware')
-        self.assertEqual(other_targets(record, 'native-binary', 'zh'), ' · 也适用：游戏、固件')
+        self.assertEqual(collection_section(record), 'tools')
+        self.assertEqual(other_targets(record, 'tools', 'en'), ' · Targets: Game, Binary, Firmware')
+        self.assertEqual(other_targets(record, 'tools', 'zh'), ' · 目标：游戏、二进制、固件')
         for language in ('en', 'zh'):
-            rendered = render_catalog([record], language)
-            self.assertIn(f'<sub>{entry_type(record, language)}{other_targets(record, "native-binary", language)} · [', rendered)
-        self.assertEqual(record, before)
+            self.assertIn(f'<sub>{entry_type(record, language)}{other_targets(record, "tools", language)} · [',
+                          render_catalog([record], language))
 
-    def test_single_target_in_its_own_section_adds_nothing(self):
-        for record, section in ((resource(), 'native-binary'),
-                                (resource(category='web-analysis', targets=['website']), 'website'),
-                                (resource(category='firmware', targets=['firmware']), 'firmware')):
-            with self.subTest(section=section):
-                self.assertEqual(collection_section(record), section)
-                self.assertEqual(other_targets(record, section, 'en'), '')
-                self.assertEqual(other_targets(record, section, 'zh'), '')
-                self.assertIn(f'<sub>{entry_type(record, "en")} · [Full entry]', render_catalog([record], 'en'))
+    def test_data_class_shows_protocol_tag_only(self):
+        record = resource(kind='project', targets=['app', 'protocol'], **{'class': 'apps'})
+        self.assertEqual(collection_section(record), 'apps')
+        self.assertEqual(other_targets(record, 'apps', 'en'), ' · Protocol')
+        self.assertEqual(other_targets(record, 'apps', 'zh'), ' · 协议')
+        record['targets'] = ['app']
+        self.assertEqual(other_targets(record, 'apps', 'en'), '')
 
-    def test_sections_without_a_target_list_every_target(self):
-        record = resource(category='agent-mcp', kind='integration', relationship='independent-agent-integration',
-                          targets=['app', 'website'])
-        self.assertEqual(collection_section(record), 'agents-and-mcp')
-        self.assertEqual(other_targets(record, 'agents-and-mcp', 'en'), ' · Targets: Website, App')
-        self.assertEqual(other_targets(record, 'agents-and-mcp', 'zh'), ' · 目标：网站、应用')
-
-    def test_generated_readmes_mark_every_outside_target_once(self):
+    def test_generated_readmes_keep_record_placement_and_metadata(self):
         records = load_resources()
         paper_urls = {paper['url'] for paper in read_papers(ROOT)}
         for name, language in (('README.md', 'en'), ('README.zh-CN.md', 'zh')):
             text = (ROOT / name).read_text(encoding='utf-8') + '\n'.join(path.read_text(encoding='utf-8') for path in (ROOT / 'docs/cases').glob('*.md') if path.name.endswith('.zh-CN.md' if language == 'zh' else '.md') and (language == 'zh' or not path.name.endswith('.zh-CN.md')))
-            entries = Counter(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', text, re.M))
+            lines = text.splitlines()
             for record in records:
                 if record['url'] in paper_urls:
                     continue
                 with self.subTest(readme=name, record=record['id']):
-                    self.assertGreaterEqual(entries[record['id']], 1)
+                    detail = f"/resources/{record['id']}/)</sub>"
+                    line = next(line for line in lines if line.endswith(detail) and line.startswith('- '))
                     section = collection_section(record)
                     suffix = other_targets(record, section, language)
-                    detail = f"/resources/{record['id']}/)</sub>"
-                    line = next(line for line in text.splitlines() if line.endswith(detail) and line.startswith('- '))
-                    self.assertTrue(line.split(' <sub>', 1)[1].startswith(f'{entry_type(record, language)}{suffix} · ['), line)
-                    implied = {'native-binary': 'binary'}.get(section, section)
-                    for target, labels in TARGETS.items():
-                        shown = labels[language == 'zh'] in suffix
-                        self.assertEqual(shown, target in record['targets'] and target != implied, target)
+                    featured = FEATURED_LABEL[language == 'zh'] + ' · ' if record['id'] in FEATURED_DATA else ''
+                    self.assertTrue(line.split(' <sub>', 1)[1].startswith(f'{featured}{entry_type(record, language)}{suffix} · ['), line)
+                    if section in DATA_CLASSES:
+                        self.assertEqual(bool(suffix), 'protocol' in record['targets'])
+                    else:
+                        for target, labels in TARGETS.items():
+                            self.assertEqual(labels[language == 'zh'] in suffix, target in record['targets'])
 
 
 if __name__ == '__main__':

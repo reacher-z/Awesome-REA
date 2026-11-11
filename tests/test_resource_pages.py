@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(ROOT / 'tests'))
 from build_discovery_pages import build_discovery_pages
+from data_classes import DATA_CLASSES
 from resource_listing import PER_PAGE, page_path, section_href
 from test_case_pages import resource
 from validate_site import Page, schema_entities, validate_resource_listing, with_resource_pages
@@ -23,12 +24,13 @@ class ResourcePagesTests(unittest.TestCase):
         cls.directory = TemporaryDirectory()
         output = cls.output = Path(cls.directory.name)
         (output / 'cases.css').write_bytes((ROOT / 'site/cases.css').read_bytes())
-        # Two sections: the first fills page 1 and spills onto page 2, where the second starts.
-        cls.resources = ([resource(f'web-{index:03}', kind='tool', targets=['website'], category='web-analysis') for index in range(PER_PAGE + 20)]
-                         + [resource(f'game-{index:03}', kind='tool') for index in range(PER_PAGE + 5)])
+        # Two class sections: Game fills page 1 and spills onto page 2, where Website starts.
+        cls.resources = ([resource(f'game-{index:03}') for index in range(PER_PAGE + 20)]
+                         + [resource(f'web-{index:03}', targets=['website']) for index in range(PER_PAGE + 5)])
         build_discovery_pages(output, {'resources': cls.resources, 'meta': {'site_url': ORIGIN}}, None)
+        routes = ['/resources/', '/zh/resources/'] + [f'{prefix}/data/{key}/' for prefix in ('', '/zh') for key in DATA_CLASSES]
         cls.pages = with_resource_pages({route: Page((output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8'))
-                                         for route in ('/resources/', '/zh/resources/')}, output)
+                                         for route in routes}, output)
 
     @classmethod
     def tearDownClass(cls):
@@ -92,6 +94,8 @@ class ResourcePagesTests(unittest.TestCase):
     def test_page_map_names_every_record(self):
         mapping = json.loads((self.output / 'resources/pages.json').read_text(encoding='utf-8'))
         for route, page in self.pages.items():
+            if '/data/' in route:
+                continue
             number = 1 if 'page/' not in route else int(route.rstrip('/').rsplit('/', 1)[1])
             self.assertTrue(all(mapping[identifier] == number for identifier in page.record_ids), route)
 

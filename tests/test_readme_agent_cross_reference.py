@@ -43,15 +43,12 @@ class AgentCrossReferenceTest(unittest.TestCase):
         ]
         before = deepcopy(records)
         self.assertEqual([collection_section(record) for record in records],
-                         ['agents-and-mcp', 'website', 'website', 'website'])
+                         ['agents-and-mcp', 'agents-and-mcp', 'tools', 'tools'])
         en = render_catalog(records, 'en')
-        # The section name is plain text: Contents already links each section once.
-        self.assertIn('### Agents and MCP\n\n**Also in target sections:** Website: '
-                      '[Browser MCP](https://awesomerea.org/resources/chrome-devtools-mcp/), '
+        self.assertIn('### Agents and MCP\n\n**Also in other sections:** Tools: '
                       '[Web agent](https://awesomerea.org/resources/web-agent/)\n\n- [**Hub MCP**]', en)
         zh = render_catalog(records, 'zh')
-        self.assertIn('**其他分区中的智能体集成：** 网站：'
-                      '[浏览器 MCP](https://awesomerea.org/zh/resources/chrome-devtools-mcp/)、'
+        self.assertIn('**其他分区中的智能体集成：** 工具：'
                       '[Web agent](https://awesomerea.org/zh/resources/web-agent/)\n', zh)
         for rendered in (en, zh):
             self.assertNotIn('web-tool/', agents_section(rendered))
@@ -61,7 +58,7 @@ class AgentCrossReferenceTest(unittest.TestCase):
 
     def test_no_line_when_every_agent_integration_is_in_agents_and_mcp(self):
         rendered = render_catalog([resource(id='hub-mcp', url='https://example.com/hub')], 'en')
-        self.assertNotIn('Also in target sections', rendered)
+        self.assertNotIn('Also in other sections', rendered)
 
     def test_generated_readmes_list_exactly_the_integrations_filed_elsewhere(self):
         paper_urls = {paper['url'] for paper in read_papers(ROOT)}

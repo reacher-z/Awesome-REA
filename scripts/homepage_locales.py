@@ -12,7 +12,7 @@ from contribution_pages import TITLES as CONTRIBUTION_TITLES
 # Homepage ItemList names: each destination page's H1, not the arrowed link text.
 HOMEPAGE_DESTINATIONS = {
     'browse': ('Browse repositories by category', '按分类浏览仓库'),
-    'resources': ('Curated reverse engineering resources', '精选逆向工程资源'),
+    'resources': ('Reverse engineering data and tools', '逆向工程数据与工具'),
     'cases': ('Reverse-engineering case studies', '逆向工程案例合集'),
     'papers': ('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准'),
     'survey': SURVEY_TITLES,

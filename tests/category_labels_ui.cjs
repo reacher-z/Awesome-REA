@@ -1,11 +1,8 @@
 /* Homepage category labels come from catalog.json, which build_site.py fills from build_readme.CATEGORIES. */
 const assert = require('node:assert/strict');
-const path = require('node:path');
-const {execFileSync} = require('node:child_process');
 const {setup} = require('./protocol_target_ui.cjs');
 
-const labels = JSON.parse(execFileSync('python3', ['-c', 'import json, build_readme; print(json.dumps(build_readme.CATEGORIES))'],
-  {cwd: path.join(__dirname, '../scripts'), encoding: 'utf8'}));
+const labels = JSON.parse(process.env.REA_CATEGORY_LABELS);
 const record = (id, category) => ({id, name: id, name_zh: id, url: 'https://github.com/fixture/' + id, evidence_url: 'https://github.com/fixture/' + id + '#readme',
   description_en: 'Fixture', description_zh: '测试', targets: ['app'], topics: [], category, group: 'tools', kind: 'tool', relationship: 'foundation',
   requirements: ['Requirement'], requirements_zh: ['条件'], verified_at: '2026-01-01'});

@@ -51,6 +51,10 @@ ICONS = {
     'binary': '<path d="M4 5h3M10 5h10M4 9.7h3M10 9.7h7M4 14.3h3M10 14.3h9M4 19h3M10 19h5"/>',
     'firmware': '<path d="M7 7h10v10H7z"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3M10.5 10.5h3v3h-3z"/>',
     'protocol': '<path d="M4 8.5h15M15.5 5 19 8.5 15.5 12M20 15.5H5M8.5 12 5 15.5 8.5 19"/>',
+    'science': '<path d="M9.5 3h5M10.5 3v6.5L5 18.7A1.5 1.5 0 0 0 6.3 21h11.4a1.5 1.5 0 0 0 1.3-2.3L13.5 9.5V3M8 15h8"/>',
+    'tools': '<path d="M14.5 6.5a4 4 0 0 1 5-3.7l-2.8 2.8 1.7 1.7 2.8-2.8a4 4 0 0 1-5.3 5L8.5 17 7 15.5l7.4-7.4a4 4 0 0 1 .1-1.6zM7 15.5l-3 3 1.5 1.5 3-3"/>',
+    'paper': '<path d="M6.5 3h8l4 4v14h-12z"/><path d="M14.5 3v4h4M9 12h6M9 15.5h6"/>',
+    'book': '<path d="M4 5.5c2.7-1 5.3-1 8 .8 2.7-1.8 5.3-1.8 8-.8v13c-2.7-1-5.3-1-8 .8-2.7-1.8-5.3-1.8-8-.8z"/><path d="M12 6.3v13"/>',
     'reg': '<circle cx="12" cy="12" r="5.5"/><path d="M12 1.5v21M1.5 12h21"/>',
     'filter': '<path d="M4 7h9.5M18.5 7H20M4 17h3.5M12.5 17H20"/><circle cx="16" cy="7" r="2.3"/><circle cx="10" cy="17" r="2.3"/>',
 }
@@ -62,14 +66,14 @@ GITHUB_MARK = ('<symbol id="i-github" viewBox="0 0 16 16"><path fill="currentCol
                '.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>')
 
 LABELS = {
-    'en': {'skip': 'Skip to content', 'home': 'Awesome REA home', 'nav': 'Main', 'resources': 'Resources', 'cases': 'Cases',
+    'en': {'skip': 'Skip to content', 'home': 'Awesome REA home', 'nav': 'Main', 'data': 'Data', 'tools': 'Tools',
            'papers': 'Papers', 'repos': 'Repositories', 'repos_short': 'Repos', 'api': 'API', 'search': 'Search',
            'search_long': 'Search the catalogue', 'lang_switch': '中文', 'lang_name': '简体中文', 'theme': 'Colour theme',
            'stars': 'stars', 'star': 'Star', 'star_long': 'Star on GitHub',
            'ann_name': 'Announcement', 'ann_new': 'New:', 'ann_line': 'Can AI agents rebuild websites through browser exploration?',
            'ann_star': 'Star WebsiteBench', 'ann_close': 'Dismiss this announcement', 'placeholder': 'Search tools, cases and papers', 'move': 'move', 'open': 'open',
            'tab': 'new tab', 'results': 'Results', 'esc': 'Close search'},
-    'zh': {'skip': '跳到正文', 'home': 'Awesome REA 首页', 'nav': '主导航', 'resources': '资源', 'cases': '案例',
+    'zh': {'skip': '跳到正文', 'home': 'Awesome REA 首页', 'nav': '主导航', 'data': '数据', 'tools': '工具',
            'papers': '论文', 'repos': '仓库', 'repos_short': '仓库', 'api': 'API', 'search': '搜索',
            'search_long': '搜索目录', 'lang_switch': 'EN', 'lang_name': 'English', 'theme': '颜色主题',
            'stars': '个星标', 'star': 'Star', 'star_long': '在 GitHub 上加星',
@@ -107,7 +111,7 @@ def star_button(language: str, repository_url: str = REPOSITORY_URL, css_class: 
 def _section(path: str) -> str:
     """The nav key a page path belongs to."""
     parts = path.removeprefix('zh/').split('/')
-    return {'resources': 'resources', 'cases': 'cases', 'papers': 'papers', 'browse': 'repos', 'api': 'api'}.get(parts[0], '')
+    return {'data': 'data', 'resources': 'data', 'cases': 'data', 'papers': 'papers', 'browse': 'repos', 'api': 'api'}.get(parts[0], '')
 
 
 def header(language: str, current: str, language_link: str, repository_url: str) -> str:
@@ -115,7 +119,7 @@ def header(language: str, current: str, language_link: str, repository_url: str)
     zh = language == 'zh'
     prefix = '/zh' if zh else ''
     links = []
-    for key, target in (('resources', '/resources/'), ('cases', '/cases/'), ('papers', '/papers/'), ('repos', '/browse/'), ('api', '/api/')):
+    for key, target in (('data', '/resources/'), ('tools', '/resources/#tools'), ('papers', '/papers/'), ('repos', '/browse/'), ('api', '/api/')):
         # "Repositories" has a short form so the five links fit a 375-px phone without scrolling.
         text = (f'<span class="nl-long">{labels[key]}</span><span class="nl-short">{labels["repos_short"]}</span>' if key == 'repos' else labels[key])
         state = ' aria-current="page"' if key == current else ''

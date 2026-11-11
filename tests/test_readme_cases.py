@@ -62,7 +62,7 @@ class ReadmeCasesTest(unittest.TestCase):
                                   if path.name.startswith(section + '.') or path.name.startswith(section + '-'))
                 self.assertEqual(set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', block, re.M)),
                                  {record['id'] for record in cases})
-            self.assertIn(f"](../{READMES[language]}#{'资源' if language == 'zh' else 'resources'})", index)
+            self.assertIn(f"](../{READMES[language]}#{'数据' if language == 'zh' else 'data'})", index)
             self.assertIn('cases.zh-CN.md' if language == 'en' else 'cases.md', index)
             self.assertIn('../cases' + ('.zh-CN' if language == 'zh' else '') + '.md', text)
             urls = re.findall(r'^- \[\*\*.*?\*\*\]\((https?://[^)]+)\) - ', text, re.M)
@@ -108,7 +108,7 @@ class ReadmeCasesTest(unittest.TestCase):
 
     def test_large_section_splits_in_both_languages(self):
         original = next(record for record in self.records if record['kind'] == 'case-study'
-                        and collection_section(record) == 'protocol')
+                        and collection_section(record) == 'game')
         records = [dict(original, id=f'large-case-{number}', url=f'https://example.com/large-{number}',
                         name=f'Large case {number}') for number in range(100)]
         budget = 8_000
@@ -116,7 +116,7 @@ class ReadmeCasesTest(unittest.TestCase):
             pages = render_case_pages(records)
         for language in ('en', 'zh'):
             suffix = '.zh-CN.md' if language == 'zh' else '.md'
-            names = [name for name in pages if re.fullmatch(r'docs/cases/protocol-\d+' + re.escape(suffix), name)]
+            names = [name for name in pages if re.fullmatch(r'docs/cases/game-\d+' + re.escape(suffix), name)]
             self.assertGreater(len(names), 1)
             self.assertTrue(all(len(pages[name].encode('utf-8')) <= budget for name in names))
             listed = [identifier for name in sorted(names, key=lambda value: int(re.search(r'-(\d+)\.', value)[1]))
