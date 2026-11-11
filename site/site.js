@@ -685,6 +685,23 @@
     classSel.value = st.cls;
     const pristine = () => !st.q && st.tab === 'all' && st.target === 'all' && !st.kinds.size && !st.cls && st.sort === 'featured';
     const foot = $('.drawer-foot', drawer);
+    // The All tab opens on the class × evidence donut; any search, filter or other tab brings the entries back.
+    const overview = $('[data-overview]', drawer);
+    const overviewTiles = overview ? $$('[data-overview-tile]', overview) : [];
+    const overviewSectors = overview ? $$('[data-overview-sector]', overview) : [];
+    const overviewDetails = overview ? $$('[data-overview-detail]', overview) : [];
+    const chooseClass = (key) => {
+      overviewTiles.forEach((tile) => tile.setAttribute('aria-pressed', String(tile.dataset.overviewTile === key)));
+      overviewSectors.forEach((sector) => sector.setAttribute('aria-pressed', String(sector.dataset.overviewSector === key)));
+      overviewDetails.forEach((detail) => { detail.hidden = detail.dataset.overviewDetail !== key; });
+    };
+    overviewTiles.forEach((tile) => tile.addEventListener('click', () => chooseClass(tile.dataset.overviewTile)));
+    overviewSectors.forEach((sector) => {
+      sector.addEventListener('click', () => chooseClass(sector.dataset.overviewSector));
+      sector.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chooseClass(sector.dataset.overviewSector); }
+      });
+    });
     $('.hs-side', form).insertAdjacentHTML('afterbegin', `<span class="hs-keys" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> ${T.keyMove} <kbd>↵</kbd> ${T.keyOpen} <kbd>Esc</kbd> ${T.keyClear}</span>`);
     let selected = -1;
     const select = (index, reveal) => {
@@ -711,6 +728,10 @@
     const flushURL = () => { clearTimeout(urlT); if (urlNext) urlNext(); };
     const render = async () => {
       form.classList.toggle('has-query', !!st.q);
+      // The opening All view is the overview; every other state shows entries under the filter bar.
+      const opening = pristine();
+      drawer.classList.toggle('is-overview', opening);
+      if (overview) overview.hidden = !opening;
       tabs.forEach((t) => { if (t.dataset.tab === st.tab) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current'); });
       chips.forEach((c) => c.setAttribute('aria-pressed', String(st.kinds.has(c.dataset.kind))));
       kindSel.value = st.kinds.size === 1 ? [...st.kinds][0] : '';
@@ -732,7 +753,7 @@
       if (st.sort !== 'featured') ex.set('sort', st.sort);
       if (langLink) langLink.href = langBase + (hp.toString() ? `?${hp}` : '');
       showAll.href = `${P}/resources/${ex.toString() ? `?${ex}` : ''}`;
-      if (pristine()) {
+      if (opening) {
         const rec = document.activeElement === input ? recent() : [];
         put(list, (rec.length ? `<li class="drawer-recent"><span class="pal-gh">${T.recent}</span> <span class="pal-recent">${rec.map((q) => `<button class="chip" type="button" data-recent="${esc(q)}">${esc(q)}</button>`).join(' ')}</span></li>` : '') + init.list);
         put(meta, init.meta); showAll.innerHTML = init.all; count.textContent = '';
@@ -871,7 +892,8 @@
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setInfo(false); });
     }
     more.addEventListener('click', () => { st.shown += 10; render(); });
-    if (!pristine()) render();
+    // Always run once: on the pristine All tab the overview has to replace the opening cards.
+    render();
   }
 
   /* ---------- static listing pages: an older #fragment for a row or section on another page opens that page ---------- */

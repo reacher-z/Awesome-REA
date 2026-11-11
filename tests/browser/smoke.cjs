@@ -216,7 +216,19 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   assert.equal(await page.$eval('[data-show-all]', link => new URL(link.href).pathname), language === 'zh' ? '/zh/resources/' : '/resources/');
   assert.equal(await page.$eval('.site-header a[hreflang]', link => link.getAttribute('href')), language === 'zh' ? '/' : '/zh/');
   await noOverflow(page, label);
-  if (!javascript) return;
+  if (!javascript) {
+    // Without scripts the opening rows stay; the overview is script-only.
+    assert(await page.$eval('[data-overview]', overview => overview.hidden), `${label}: the overview waits for scripts`);
+    return;
+  }
+  // The All tab opens on the class × evidence overview; tiles and sectors select one class's detail.
+  assert(await page.$eval('[data-drawer]', drawer => drawer.classList.contains('is-overview')), `${label}: the All tab opens on the overview`);
+  assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), false, `${label}: the overview is visible`);
+  assert.equal(await page.$eval('[data-cards]', cards => getComputedStyle(cards).display), 'none', `${label}: the opening rows wait behind the overview`);
+  assert.equal(await page.$eval('[data-overview-detail="software"]', detail => detail.hidden), false, `${label}: the first class is selected`);
+  await press(page, '[data-overview-tile="game"]');
+  assert.equal(await page.$eval('[data-overview-detail="game"]', detail => detail.hidden), false, `${label}: a class tile shows its detail`);
+  assert.equal(await page.$eval('[data-overview-detail="software"]', detail => detail.hidden), true, `${label}: only one detail shows`);
   const index = language === 'zh' ? 'search-index.zh.json' : 'search-index.json';
   assert.equal(requests(requested, index), 0, `${label}: the search index waits for the first search`);
   assert.equal(requests(requested, 'catalog-index.json') + requests(requested, 'catalog.json'), 0, `${label}: the collection data is not loaded`);
@@ -226,6 +238,7 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   await page.waitForFunction(() => document.querySelector('[data-cards] > .card') && new URL(location.href).searchParams.get('q') === 'openlw', {timeout: 15000});
   assert.equal(requests(requested, index), 1, `${label}: one search index request`);
   await page.waitForFunction(id => document.querySelector(`[data-cards] > .card[data-id="${id}"]`), {}, 'openlw-sonic-lost-world-case');
+  assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), true, `${label}: a search brings the entries back`);
   assert.equal(await page.$eval('.site-header a[hreflang]', link => new URL(link.href).search), '?q=openlw', `${label}: the language link keeps the search`);
   await noOverflow(page, label + ' with a search');
   // Arrow keys move the selection; Escape clears; zero results offer other routes rather than a count of nothing.
@@ -236,6 +249,8 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   await page.keyboard.press('Escape');
   await page.waitForFunction(() => !document.querySelector('[data-search-input]').value && !new URL(location.href).searchParams.get('q'));
   assert.equal(await count(page, '[data-cards] > .card.is-active'), 0, `${label}: Escape clears the selection`);
+  await page.waitForFunction(() => document.querySelector('[data-drawer]').classList.contains('is-overview'));
+  assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), false, `${label}: clearing the search returns to the overview`);
   await page.type('[data-search-input]', 'zzzzqqqq');
   // The empty state can appear after the first few letters; wait until it describes the whole query.
   await page.waitForSelector('[data-cards] > .empty a[href*="sourceq=zzzzqqqq"]');
