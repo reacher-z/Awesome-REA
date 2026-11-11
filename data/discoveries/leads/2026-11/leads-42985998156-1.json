@@ -1,0 +1,1288 @@
+{
+  "schema_version": 1,
+  "kind": "automated-lead-batch",
+  "batch_id": "leads-42985998156-1",
+  "review_status": "unreviewed",
+  "collected_at": "2026-11-11T08:18:43Z",
+  "provenance": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/discovery-leads.yml",
+    "run_id": 42985998156,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "76a343a401622f8cde30c0a073b4d55e345bdbb7",
+    "registry_sha256": "2ece348fd9d6608e2c4bd280526001659254bbd0fea862d1e0b1e184fa7a810f"
+  },
+  "selection": {
+    "policy": "followed-source-leads-v1",
+    "order": "source-round-robin",
+    "record_limit": 2000,
+    "eligible_count": 11,
+    "selected_count": 11,
+    "selected_ids": [
+      "lead-408de21c6b3ed967c1751dfd",
+      "lead-7de8d680b84e4b8ff61a95e3",
+      "lead-f0533362f76bd9200b562409",
+      "lead-c293e94b8b11e7e74e277bcd",
+      "lead-fd5390a76853d7b0704d299b",
+      "lead-cc8a7d688438efc8fe0f07bf",
+      "lead-d44adf12975022b5139d513b",
+      "lead-0b570a1db127e65268177a03",
+      "lead-92ea71dd7b91ec47b8911b3b",
+      "lead-11f8fcc7091579c8278bb7ef",
+      "lead-5c30b0f5eefb5c907559a598"
+    ],
+    "record_sha256": {
+      "lead-408de21c6b3ed967c1751dfd": "6542b464dd216a92a6e8b84c05434069e83a23273ba0e055b39291524233a3e2",
+      "lead-7de8d680b84e4b8ff61a95e3": "c6a1552abdaee183f8848ceb8152c288170189883aca49396e982c5e6a513574",
+      "lead-f0533362f76bd9200b562409": "8a5dcdb264a02dff6a2f5247043369a0f1412d28bd40e830a41b9f4cb35ba7c3",
+      "lead-c293e94b8b11e7e74e277bcd": "7c5a905f7419feefe19c37eac3d113a3c3a33cdd7f7e0b90dc8c2cb1070fa1a9",
+      "lead-fd5390a76853d7b0704d299b": "3a3e7a68f20d3f7dea19e33e945a3ebcebf5c87a7b433dd3ebfc34e2647215fc",
+      "lead-cc8a7d688438efc8fe0f07bf": "dc8facd05f04bcad9e4e706e8d1cf1381123de2f36abb71c39db4d3ce685fa9f",
+      "lead-d44adf12975022b5139d513b": "4cc438e3555c99dbeedfc9801b67ee0c25132193819c9df318f072a48374887f",
+      "lead-0b570a1db127e65268177a03": "5d31d8aafe32d419430d32f20fd21a8cbf7a149be4fff146dce8cac7624da89d",
+      "lead-92ea71dd7b91ec47b8911b3b": "be8f19202a8fb97fba3974fec89d58c746d80f1534512e920eb2a3714d5405c2",
+      "lead-11f8fcc7091579c8278bb7ef": "09b13075e2b0b75f8196c3b6f0c79e30cd85ce27f2e8a1bb9fdec15474a32006",
+      "lead-5c30b0f5eefb5c907559a598": "de31fdbf95c09491f3f61fcf158a380731906f4bc16c5f2dadf967204cc8015e"
+    },
+    "skipped_counts": {
+      "already-curated": 635,
+      "already-indexed": 244,
+      "already-discovered": 228,
+      "already-lead": 2219,
+      "case-lead": 0,
+      "scope-excluded": 0,
+      "unavailable": 62,
+      "privacy": 1,
+      "invalid": 0,
+      "over-limit": 0
+    }
+  },
+  "sources": [
+    {
+      "id": "gmh5225-awesome-game-security",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/gmh5225/awesome-game-security/blob/0b91779595e12a39f789bc2191f212f60a310967/README.md",
+      "revision": "0b91779595e12a39f789bc2191f212f60a310967",
+      "content_sha256": "f8d291a3441688588f0e0a561d5c68bfbafc597c70bc0d7b2e5523fb5c30d9fe",
+      "status": "captured",
+      "error": null,
+      "links": 4839,
+      "in_scope": 980
+    },
+    {
+      "id": "charlottecross1998-awesome-game-decompilations",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/CharlotteCross1998/awesome-game-decompilations/blob/b734985ef7ab687a31544e474250b38264fd3cbb/README.md",
+      "revision": "b734985ef7ab687a31544e474250b38264fd3cbb",
+      "content_sha256": "654aa2801a62ec3745568b24e65097130fd353bce184f76161c150b279418179",
+      "status": "captured",
+      "error": null,
+      "links": 497,
+      "in_scope": 495
+    },
+    {
+      "id": "vector35-community-plugins",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/Vector35/community-plugins/blob/b6a9ed476fd5725d6f83e9eddb9126374933e6db/README.md",
+      "revision": "b6a9ed476fd5725d6f83e9eddb9126374933e6db",
+      "content_sha256": "fe50570c811e225494c5d8e6d3b4613a55d4cf45363d203c1225713dfb0b3aa9",
+      "status": "captured",
+      "error": null,
+      "links": 220,
+      "in_scope": 220
+    },
+    {
+      "id": "rshipp-awesome-malware-analysis",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/rshipp/awesome-malware-analysis/blob/179887b9bfb04bb736348b2dc9d331bc860c6ef7/README.md",
+      "revision": "179887b9bfb04bb736348b2dc9d331bc860c6ef7",
+      "content_sha256": "703cad9b8040555f116fe1d3105e65f147377ca0c36b6e870552416dd3028871",
+      "status": "captured",
+      "error": null,
+      "links": 422,
+      "in_scope": 236
+    },
+    {
+      "id": "onethawt-idaplugins-list",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/onethawt/idaplugins-list/blob/decddd9fc3125eee900ec7d1cd3e557acffd26c1/README.md",
+      "revision": "decddd9fc3125eee900ec7d1cd3e557acffd26c1",
+      "content_sha256": "de96571885ce852413cbb6370f57bccb1f40353d407dd681001a9c7c6f10d705",
+      "status": "captured",
+      "error": null,
+      "links": 216,
+      "in_scope": 208
+    },
+    {
+      "id": "dsasmblr-game-hacking",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/dsasmblr/game-hacking/blob/036026438ffd533338768bc29f0424c117e7c653/README.md",
+      "revision": "036026438ffd533338768bc29f0424c117e7c653",
+      "content_sha256": "7ff334781cdb9d149e64e45d43c7ebf7ede0762683b15d31bd4c8c4746266682",
+      "status": "captured",
+      "error": null,
+      "links": 200,
+      "in_scope": 123
+    },
+    {
+      "id": "tylerha97-awesome-reversing",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/tylerha97/awesome-reversing/blob/0b7bb2b40797e996578d5175408efc7d6aac5dca/README.md",
+      "revision": "0b7bb2b40797e996578d5175408efc7d6aac5dca",
+      "content_sha256": "831c13bd1ef4c0c86244a32e0aeab4fe101206aef3904437cb35fc81b85da698",
+      "status": "captured",
+      "error": null,
+      "links": 158,
+      "in_scope": 128
+    },
+    {
+      "id": "wtsxdev-reverse-engineering",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/README.md",
+      "revision": "b25498551c6d7110685896078afeb27097aa1e24",
+      "content_sha256": "a1b8595a50c85a541661adbfe7c96220774f7882632f8b46fcb019557ffaf7ff",
+      "status": "captured",
+      "error": null,
+      "links": 149,
+      "in_scope": 121
+    },
+    {
+      "id": "morluto-awesome-reverse-engineering",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/morluto/awesome-reverse-engineering/blob/df6a2bdf15c565a7d60851e1710090d47b9a9fe4/README.md",
+      "revision": "df6a2bdf15c565a7d60851e1710090d47b9a9fe4",
+      "content_sha256": "aed625cd8ef777c870fe981a75feddd57a4ae6fcd8b4b5198fc2e88bc8bd63dc",
+      "status": "captured",
+      "error": null,
+      "links": 221,
+      "in_scope": 213
+    },
+    {
+      "id": "ashishb-android-security-awesome",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/ashishb/android-security-awesome/blob/075e21d9b2d599b7dbb9581eab48bf0c0e5a1e6c/README.md",
+      "revision": "075e21d9b2d599b7dbb9581eab48bf0c0e5a1e6c",
+      "content_sha256": "aef61ec45bc6814e198e3da16cd4c4bcb2f0a519aa4029dff7f779d285155770",
+      "status": "captured",
+      "error": null,
+      "links": 251,
+      "in_scope": 120
+    },
+    {
+      "id": "v33ru-awesome-connected-things-sec",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/V33RU/awesome-connected-things-sec/blob/0015dcee55cc0cd6eff3b4afbada2f22c245a9cc/README.md",
+      "revision": "0015dcee55cc0cd6eff3b4afbada2f22c245a9cc",
+      "content_sha256": "eb066e0680a3335e55686f67751c73ae4bd3d4d141055754edce69655f4174bd",
+      "status": "captured",
+      "error": null,
+      "links": 912,
+      "in_scope": 107
+    },
+    {
+      "id": "fkie-cad-awesome-embedded-and-iot-security",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/blob/fbd0301e6690a21d98ca8d565c0657aae0fba339/readme.md",
+      "revision": "fbd0301e6690a21d98ca8d565c0657aae0fba339",
+      "content_sha256": "d15bc2d469b35f9a517b053f5a8e6c7ee68491ca240afe62722e0e16bc9f845d",
+      "status": "captured",
+      "error": null,
+      "links": 134,
+      "in_scope": 91
+    },
+    {
+      "id": "techge-pre-list",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/techge/PRE-list/blob/9c18f7c8f00978ec70ba285a5f13b461ede12e93/README.md",
+      "revision": "9c18f7c8f00978ec70ba285a5f13b461ede12e93",
+      "content_sha256": "abad4bcd4a1ac7933d28188495ddbccf034a4746ba6436194493c297425cb9d1",
+      "status": "captured",
+      "error": null,
+      "links": 83,
+      "in_scope": 83
+    },
+    {
+      "id": "fr0gger-awesome-ida-x64-olly-plugin",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/fr0gger/awesome-ida-x64-olly-plugin/blob/7e76773e55563d53f41f71cf7397e6c4a6971b86/README.md",
+      "revision": "7e76773e55563d53f41f71cf7397e6c4a6971b86",
+      "content_sha256": "239e1b6d733b84c6ec597f7378865971c13347391b58602109782eed11b64ade",
+      "status": "captured",
+      "error": null,
+      "links": 125,
+      "in_scope": 118
+    },
+    {
+      "id": "idoka-awesome-canbus",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/iDoka/awesome-canbus/blob/77c59133db2fcdd4e4f891a55e440629e0178b8e/README.md",
+      "revision": "77c59133db2fcdd4e4f891a55e440629e0178b8e",
+      "content_sha256": "9effe72ee9980d1917bf378caba758d9ae521527f941a3b8d82267be0bcff43c",
+      "status": "captured",
+      "error": null,
+      "links": 267,
+      "in_scope": 62
+    },
+    {
+      "id": "dweinstein-awesome-frida",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/dweinstein/awesome-frida/blob/b2320aa67b6cea52ca2f7fa89a6198cd375937f4/README.md",
+      "revision": "b2320aa67b6cea52ca2f7fa89a6198cd375937f4",
+      "content_sha256": "63bbd40804114ad8aece23c269a5a84fe21a1e6572460245a04e9cade532b81e",
+      "status": "captured",
+      "error": null,
+      "links": 111,
+      "in_scope": 77
+    },
+    {
+      "id": "user1342-awesome-android-reverse-engineering",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/user1342/Awesome-Android-Reverse-Engineering/blob/0ade43d6b46ff19675ca4d8b8f1cc098e1af73b8/README.md",
+      "revision": "0ade43d6b46ff19675ca4d8b8f1cc098e1af73b8",
+      "content_sha256": "496697e295adfa484684510c3fd3f8a4d3fffd44a7fdca040da15335d18af92a",
+      "status": "captured",
+      "error": null,
+      "links": 91,
+      "in_scope": 74
+    },
+    {
+      "id": "allsafecybersecurity-awesome-ghidra",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/AllsafeCyberSecurity/awesome-ghidra/blob/9265b2f730a10f6261945ac22cb295c8f6038f87/README.md",
+      "revision": "9265b2f730a10f6261945ac22cb295c8f6038f87",
+      "content_sha256": "e908c2bd74d6f1a0bfd451e72d2a557ffd3aa23a596a775cd481dc47726805d2",
+      "status": "captured",
+      "error": null,
+      "links": 54,
+      "in_scope": 51
+    },
+    {
+      "id": "crowdere-awesome-re-mcp",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/crowdere/Awesome-RE-MCP/blob/e400b882965ef61302718c7fe7c4f1e2861bd664/README.md",
+      "revision": "e400b882965ef61302718c7fe7c4f1e2861bd664",
+      "content_sha256": "3581c57202acd3831d1ee254563456e7add2460ff80854773dbde7b0a7c41a5b",
+      "status": "captured",
+      "error": null,
+      "links": 42,
+      "in_scope": 30
+    },
+    {
+      "id": "darbra-awesome-ai-reverse",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/darbra/awesome-ai-reverse/blob/6459523eb2570a9f0da7b9589d9f7dfed54cead7/README.md",
+      "revision": "6459523eb2570a9f0da7b9589d9f7dfed54cead7",
+      "content_sha256": "230ad67f6b8bff2d9be853570f37a9fc798cbbb3a53657f5ea7a07426bcdffec",
+      "status": "captured",
+      "error": null,
+      "links": 36,
+      "in_scope": 29
+    },
+    {
+      "id": "punkpeye-awesome-mcp-servers",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/punkpeye/awesome-mcp-servers/blob/f431a5cd95cebf038e587715635b9d1a0a4d0c02/README.md",
+      "revision": "f431a5cd95cebf038e587715635b9d1a0a4d0c02",
+      "content_sha256": "6ecefcc1ce052db60d75a7a69204dff6cf4dd7d5af39b4f560c5f4df0eefe200",
+      "status": "captured",
+      "error": null,
+      "links": 8030,
+      "in_scope": 17
+    },
+    {
+      "id": "ashishb-osx-and-ios-security-awesome",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/ashishb/osx-and-ios-security-awesome/blob/7d632633447eefd49d7b9cf745a1bf0ccaac99ed/README.md",
+      "revision": "7d632633447eefd49d7b9cf745a1bf0ccaac99ed",
+      "content_sha256": "3914acd3dc9a1621a039011960ab955bb7dac79ae89dd9412ab753d8a5d674ea",
+      "status": "captured",
+      "error": null,
+      "links": 74,
+      "in_scope": 8
+    },
+    {
+      "id": "vector35-plugins-json",
+      "type": "github-json-registry",
+      "evidence_url": "https://github.com/Vector35/community-plugins/blob/b6a9ed476fd5725d6f83e9eddb9126374933e6db/plugins.json",
+      "revision": "b6a9ed476fd5725d6f83e9eddb9126374933e6db",
+      "content_sha256": "544635ea1339ea43e89c660c1953a4a230d263d547d6eb9b775bd95ec33c27e6",
+      "status": "captured",
+      "error": null,
+      "links": 219,
+      "in_scope": 219
+    },
+    {
+      "id": "radare2-pm",
+      "type": "github-directory",
+      "evidence_url": "https://github.com/radareorg/radare2-pm/tree/dff23fffbc51228e3c9d0e593b52c2078537e7a0/db",
+      "revision": "dff23fffbc51228e3c9d0e593b52c2078537e7a0",
+      "content_sha256": "b594ac24f0b650f80307f9537777b4017ed23327e4328f3275d227d519de4fac",
+      "status": "captured",
+      "error": null,
+      "links": 287,
+      "in_scope": 223
+    },
+    {
+      "id": "submitgame-games-json",
+      "type": "github-json-registry",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-reverse-engineering",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-decompiler",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-binary-analysis",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/binary-analysis",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 100,
+      "in_scope": 94
+    },
+    {
+      "id": "github-topic-protocol-reverse-engineering",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/protocol-reverse-engineering",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 25,
+      "in_scope": 25
+    },
+    {
+      "id": "github-topic-ida-pro",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-idapython",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/idapython",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 218,
+      "in_scope": 218
+    },
+    {
+      "id": "github-topic-ida",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/ida",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 300,
+      "in_scope": 279
+    },
+    {
+      "id": "github-topic-binary-ninja",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-binary-ninja-plugin",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-binaryninja",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-x64dbg",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/x64dbg",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 168,
+      "in_scope": 168
+    },
+    {
+      "id": "github-topic-x64dbg-plugin",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/x64dbg-plugin",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 93,
+      "in_scope": 93
+    },
+    {
+      "id": "github-topic-debugger",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/debugger",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 300,
+      "in_scope": 77
+    },
+    {
+      "id": "github-topic-malware",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-can-bus",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/can-bus",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 300,
+      "in_scope": 116
+    },
+    {
+      "id": "github-topic-game-hacking",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/game-hacking",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 300,
+      "in_scope": 185
+    },
+    {
+      "id": "github-topic-recompilation",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/recompilation",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 300,
+      "in_scope": 300
+    },
+    {
+      "id": "github-topic-vmprotect",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-yara",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/yara",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 300,
+      "in_scope": 152
+    },
+    {
+      "id": "github-topic-cheat-engine",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "survey-sok-ai-binary-reversing",
+      "type": "survey-references",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "survey-evolution-binary-decompilation",
+      "type": "survey-references",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "survey-sok-source-recovery-reliability",
+      "type": "survey-references",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "survey-cortexm-emulation-sok",
+      "type": "survey-references",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "arxiv-reverse-engineering",
+      "type": "arxiv-query",
+      "evidence_url": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CR+OR+cat%3Acs.SE+OR+cat%3Acs.PL+OR+cat%3Acs.AR%29+AND+%28ti%3Adecompil%2A+OR+abs%3Adecompil%2A+OR+ti%3Adisassembl%2A+OR+abs%3A%22binary+analysis%22+OR+abs%3A%22reverse+engineering%22+OR+abs%3A%22binary+code+similarity%22+OR+abs%3A%22firmware+rehosting%22+OR+abs%3A%22protocol+reverse+engineering%22+OR+ti%3Adeobfuscat%2A+OR+abs%3A%22binary+lifting%22+OR+abs%3A%22stripped+binaries%22%29&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending",
+      "revision": null,
+      "content_sha256": "2c89ddebc1ba0ce724857fc94fde4d82b243d11fe91f568f628dd9676a6a94b0",
+      "status": "captured",
+      "error": null,
+      "links": 100,
+      "in_scope": 72
+    },
+    {
+      "id": "huggingface-models-decompil",
+      "type": "huggingface-search",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "huggingface-datasets-decompil",
+      "type": "huggingface-search",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "huggingface-models-ghidra",
+      "type": "huggingface-search",
+      "evidence_url": "https://huggingface.co/api/models?search=ghidra&limit=50&sort=downloads&direction=-1",
+      "revision": null,
+      "content_sha256": "0b8d5b0e4a2a28b708c9b3746923bea0cee468b0bc3df3f465223ab4660209a0",
+      "status": "captured",
+      "error": null,
+      "links": 15,
+      "in_scope": 10
+    },
+    {
+      "id": "huggingface-datasets-ghidra",
+      "type": "huggingface-search",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "huggingface-models-reverse-engineering",
+      "type": "huggingface-search",
+      "evidence_url": "https://huggingface.co/api/models?search=reverse-engineering&limit=50&sort=downloads&direction=-1",
+      "revision": null,
+      "content_sha256": "7e3e75448694b2734dae7bccdf9ef1dcbb35e9a40a7fec7b5a8f8aa6db903d15",
+      "status": "captured",
+      "error": null,
+      "links": 5,
+      "in_scope": 3
+    },
+    {
+      "id": "huggingface-datasets-reverse-engineering",
+      "type": "huggingface-search",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "huggingface-datasets-binary-similarity",
+      "type": "huggingface-search",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "alexgaoth-re-tooling",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/alexgaoth/awesome-reverse-engineered/blob/c76407982851ff79994782005a02eaf510ca4447/categories/re-tooling.md",
+      "revision": "c76407982851ff79994782005a02eaf510ca4447",
+      "content_sha256": "d1e987ae19581142e7650456ce7dd02ada27400f301992e5bc82ecb25b64d21c",
+      "status": "captured",
+      "error": null,
+      "links": 1173,
+      "in_scope": 1173
+    },
+    {
+      "id": "alexgaoth-firmware-embedded",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/alexgaoth/awesome-reverse-engineered/blob/c76407982851ff79994782005a02eaf510ca4447/categories/firmware-embedded.md",
+      "revision": "c76407982851ff79994782005a02eaf510ca4447",
+      "content_sha256": "d9e1c0c19ac945e1fb131fba50e38fc43446db2e5ecd9c7bc972d79ac19a4c5e",
+      "status": "captured",
+      "error": null,
+      "links": 538,
+      "in_scope": 538
+    },
+    {
+      "id": "alexgaoth-network-wire-protocols",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/alexgaoth/awesome-reverse-engineered/blob/c76407982851ff79994782005a02eaf510ca4447/categories/network-wire-protocols.md",
+      "revision": "c76407982851ff79994782005a02eaf510ca4447",
+      "content_sha256": "5aabbcb4785d9dd23e14e42dc1274dedfd4ea5b6770b05d2754f6f308d256fbc",
+      "status": "captured",
+      "error": null,
+      "links": 434,
+      "in_scope": 431
+    },
+    {
+      "id": "alexgaoth-file-formats",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/alexgaoth/awesome-reverse-engineered/blob/c76407982851ff79994782005a02eaf510ca4447/categories/file-formats.md",
+      "revision": "c76407982851ff79994782005a02eaf510ca4447",
+      "content_sha256": "348655a54e20583c7deffbefe1edede89391fce37e9171cbf72c52fdae24512a",
+      "status": "captured",
+      "error": null,
+      "links": 445,
+      "in_scope": 445
+    },
+    {
+      "id": "alexgaoth-game-decompilations",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/alexgaoth/awesome-reverse-engineered/blob/c76407982851ff79994782005a02eaf510ca4447/categories/game-decompilations-reimplementations.md",
+      "revision": "c76407982851ff79994782005a02eaf510ca4447",
+      "content_sha256": "9682e51c0307d8736b6850b3dfebc9c02a8debd99f3f6c00dfa17e61d788008f",
+      "status": "captured",
+      "error": null,
+      "links": 6098,
+      "in_scope": 6092
+    },
+    {
+      "id": "alphaseclab-awesome-reverse-engineering",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/alphaSeclab/awesome-reverse-engineering/blob/1a7445d2c7e3e42350a2556c70b469fb3429d49a/Readme.md",
+      "revision": "1a7445d2c7e3e42350a2556c70b469fb3429d49a",
+      "content_sha256": "04b1937bbfe42d35554a09ceb7a6062635de454fa5ad885e083e4e60acf9e1a1",
+      "status": "captured",
+      "error": null,
+      "links": 1459,
+      "in_scope": 512
+    },
+    {
+      "id": "wangxiaoxiang5599-recompiled-games-list",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/wangxiaoxiang5599/recompiled-games-list/blob/09fcb3c21be970c87dfaf0d6d38b95cce81c1adb/README.md",
+      "revision": "09fcb3c21be970c87dfaf0d6d38b95cce81c1adb",
+      "content_sha256": "c1828fe7f17e35dd13891641cbe6441b3bbf3a889a2d8eed695ff94b2045f727",
+      "status": "captured",
+      "error": null,
+      "links": 509,
+      "in_scope": 376
+    },
+    {
+      "id": "hexsecs-awesome-embedded-security",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/hexsecs/awesome-embedded-security/blob/c7bcf4dc737b31bba222be4ac44f2c1a492c21fc/README.md",
+      "revision": "c7bcf4dc737b31bba222be4ac44f2c1a492c21fc",
+      "content_sha256": "f37b3b7073776285772fcd31360e94e155cd1aa9a9778de751e2a57e0a95e5bf",
+      "status": "captured",
+      "error": null,
+      "links": 302,
+      "in_scope": 299
+    },
+    {
+      "id": "nforest-awesome-decompilation",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/nforest/awesome-decompilation/blob/8731870b99d1816ed6979ab5745ae42b4bf73018/README.md",
+      "revision": "8731870b99d1816ed6979ab5745ae42b4bf73018",
+      "content_sha256": "7366a7d443023e226a05745815205f6b797f73a1ab1d82e8f2de05d59963f804",
+      "status": "captured",
+      "error": null,
+      "links": 45,
+      "in_scope": 45
+    },
+    {
+      "id": "systemsecuritystorm-awesome-binary-similarity",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/SystemSecurityStorm/Awesome-Binary-Similarity/blob/a800872318f202a0d726143acb378935d1dee311/README.md",
+      "revision": "a800872318f202a0d726143acb378935d1dee311",
+      "content_sha256": "24f76cadd50aba7e749d675df7f4303d171cc0ab05a2aae5ffcaa3b13035139e",
+      "status": "captured",
+      "error": null,
+      "links": 275,
+      "in_scope": 180
+    },
+    {
+      "id": "bin2own-awesome-info-inferring-binary",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/Bin2Own/Awesome-Info-Inferring-Binary/blob/664534bad7e2be68714a9724fdcf975fe53d854a/README.md",
+      "revision": "664534bad7e2be68714a9724fdcf975fe53d854a",
+      "content_sha256": "7f07aeeb6e7837b5ecb96e2b71330d195c51cc12c39f031c19e9130bb702ddcc",
+      "status": "captured",
+      "error": null,
+      "links": 111,
+      "in_scope": 54
+    }
+  ],
+  "leads": [
+    {
+      "id": "lead-408de21c6b3ed967c1751dfd",
+      "identity": "arxiv:2611.13879",
+      "aliases": [
+        "title:sfusimbitexactreverseengineeringofnvidiamufuandvalidationofptxpaths"
+      ],
+      "url": "https://arxiv.org/abs/2611.13879",
+      "name": "SFU-Sim: Bit-Exact Reverse Engineering of NVIDIA MUFU and Validation of PTX Paths",
+      "kind_hint": "research",
+      "listings": [
+        {
+          "source_id": "arxiv-reverse-engineering",
+          "section": "arXiv query (newest submissions)",
+          "label": "SFU-Sim: Bit-Exact Reverse Engineering of NVIDIA MUFU and Validation of PTX Paths",
+          "evidence_url": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CR+OR+cat%3Acs.SE+OR+cat%3Acs.PL+OR+cat%3Acs.AR%29+AND+%28ti%3Adecompil%2A+OR+abs%3Adecompil%2A+OR+ti%3Adisassembl%2A+OR+abs%3A%22binary+analysis%22+OR+abs%3A%22reverse+engineering%22+OR+abs%3A%22binary+code+similarity%22+OR+abs%3A%22firmware+rehosting%22+OR+abs%3A%22protocol+reverse+engineering%22+OR+ti%3Adeobfuscat%2A+OR+abs%3A%22binary+lifting%22+OR+abs%3A%22stripped+binaries%22%29&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending"
+        }
+      ],
+      "observed_at": "2026-11-11T08:18:43Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "paper": {
+        "title": "SFU-Sim: Bit-Exact Reverse Engineering of NVIDIA MUFU and Validation of PTX Paths",
+        "year": 2026,
+        "venue": "arXiv",
+        "arxiv_id": "2611.13879",
+        "doi": null,
+        "semantic_scholar_id": null
+      }
+    },
+    {
+      "id": "lead-7de8d680b84e4b8ff61a95e3",
+      "identity": "github:1371176882",
+      "aliases": [
+        "gh:shanning-yu/a-share-tdxdata"
+      ],
+      "url": "https://github.com/ShanNing-YU/a-share-tdxdata",
+      "name": "ShanNing-YU/a-share-tdxdata",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "github-topic-protocol-reverse-engineering",
+          "section": "topic:protocol-reverse-engineering (most stars)",
+          "label": "ShanNing-YU/a-share-tdxdata",
+          "evidence_url": "https://github.com/topics/protocol-reverse-engineering"
+        }
+      ],
+      "observed_at": "2026-11-11T08:18:43Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1371176882,
+        "full_name": "ShanNing-YU/a-share-tdxdata",
+        "description": "通达信A股行情数据客户端（2026新版协议逆向）| TDX A-share market data client for the 2026 protocol",
+        "topics": [
+          "a-share",
+          "chinese-stock",
+          "financial-data",
+          "market-data",
+          "protocol-reverse-engineering",
+          "pytdx",
+          "python",
+          "quant",
+          "quotes",
+          "stock",
+          "stock-data",
+          "tdx",
+          "tdx-protocol",
+          "tdxdata",
+          "tongdaxin"
+        ],
+        "stars": 19,
+        "pushed_at": "2026-11-10T07:44:33Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": "https://pypi.org/project/tdxdata/"
+      }
+    },
+    {
+      "id": "lead-f0533362f76bd9200b562409",
+      "identity": "github:1434613489",
+      "aliases": [
+        "gh:rigaz29/ascension-r"
+      ],
+      "url": "https://github.com/rigaz29/Ascension-R",
+      "name": "rigaz29/Ascension-R",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "github-topic-recompilation",
+          "section": "topic:recompilation (most stars)",
+          "label": "rigaz29/Ascension-R",
+          "evidence_url": "https://github.com/topics/recompilation"
+        }
+      ],
+      "observed_at": "2026-11-11T08:18:43Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1434613489,
+        "full_name": "rigaz29/Ascension-R",
+        "description": "A native Windows port of God of War: Ascension (PS3) by static recompilation on ps3recomp. No game files included; the launcher builds the game's code from your own copy.",
+        "topics": [
+          "directx12",
+          "god-of-war",
+          "god-of-war-ascension",
+          "pc-port",
+          "playstation-3",
+          "ps3",
+          "ps3recomp",
+          "recompilation",
+          "static-recompilation",
+          "windows"
+        ],
+        "stars": 52,
+        "pushed_at": "2026-11-11T08:08:56Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-c293e94b8b11e7e74e277bcd",
+      "identity": "github:1384428496",
+      "aliases": [
+        "gh:ds-sebastian/ars510-radar"
+      ],
+      "url": "https://github.com/ds-sebastian/ars510-radar",
+      "name": "ds-sebastian/ars510-radar",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "github-topic-can-bus",
+          "section": "topic:can-bus (most stars)",
+          "label": "ds-sebastian/ars510-radar",
+          "evidence_url": "https://github.com/topics/can-bus"
+        }
+      ],
+      "observed_at": "2026-11-11T08:18:43Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1384428496,
+        "full_name": "ds-sebastian/ars510-radar",
+        "description": "Radar for openpilot on the Toyota RAV4 2022/2023: decoder and installer for the Continental ARS510 front radar, with profiles, replay evidence against vision-only, and docs. Community project, not reviewed by comma.",
+        "topics": [
+          "can-bus",
+          "kalman-filter",
+          "openpilot",
+          "radar",
+          "rav4",
+          "sunnypilot",
+          "toyota"
+        ],
+        "stars": 11,
+        "pushed_at": "2026-11-09T16:36:59Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-fd5390a76853d7b0704d299b",
+      "identity": "github:1451951768",
+      "aliases": [
+        "gh:mormonftp-hub/gt5-recomp"
+      ],
+      "url": "https://github.com/MormonFTP-hub/gt5-recomp",
+      "name": "MormonFTP-hub/gt5-recomp",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "github-topic-recompilation",
+          "section": "topic:recompilation (most stars)",
+          "label": "MormonFTP-hub/gt5-recomp",
+          "evidence_url": "https://github.com/topics/recompilation"
+        }
+      ],
+      "observed_at": "2026-11-11T08:18:43Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1451951768,
+        "full_name": "MormonFTP-hub/gt5-recomp",
+        "description": "Unofficial PC port of Gran Turismo 5 on ps3recomp. Needs your own GT5 disc, EBOOT v1.00, no update: Europe BCES00569 (tested) or US BCUS98114 (untested). Code and tools only: no game files, keys or firmware.",
+        "topics": [
+          "directx12",
+          "gran-turismo",
+          "gran-turismo-5",
+          "modding",
+          "ps3",
+          "ps3recomp",
+          "racing-game",
+          "recompilation",
+          "reverse-engineering",
+          "static-recompilation"
+        ],
+        "stars": 22,
+        "pushed_at": "2026-11-10T22:26:50Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-cc8a7d688438efc8fe0f07bf",
+      "identity": "github:1449945171",
+      "aliases": [
+        "gh:kayochiaradia/mtf-recomp"
+      ],
+      "url": "https://github.com/kayochiaradia/mtf-recomp",
+      "name": "kayochiaradia/mtf-recomp",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "github-topic-recompilation",
+          "section": "topic:recompilation (most stars)",
+          "label": "kayochiaradia/mtf-recomp",
+          "evidence_url": "https://github.com/topics/recompilation"
+        }
+      ],
+      "observed_at": "2026-11-11T08:18:43Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1449945171,
+        "full_name": "kayochiaradia/mtf-recomp",
+        "description": "MTF Recomp: a static recompilation of Mario Tennis Fever (Switch 2) into a native Windows x86-64 application. No game files included.",
+        "topics": [
+          "recompilation",
+          "static-recompilation",
+          "vulkan",
+          "windows"
+        ],
+        "stars": 22,
+        "pushed_at": "2026-11-11T00:09:25Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-d44adf12975022b5139d513b",
+      "identity": "github:1449402730",
+      "aliases": [
+        "gh:nazatric/re-port"
+      ],
+      "url": "https://github.com/Nazatric/Re-Port",
+      "name": "Nazatric/Re-Port",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "github-topic-recompilation",
+          "section": "topic:recompilation (most stars)",
+          "label": "Nazatric/Re-Port",
+          "evidence_url": "https://github.com/topics/recompilation"
+        }
+      ],
+      "observed_at": "2026-11-11T08:18:43Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1449402730,
+        "full_name": "Nazatric/Re-Port",
+        "description": "Android Game Ports Put Into A Beautiful App",
+        "topics": [
+          "android",
+          "list",
+          "open-source",
+          "port",
+          "recomp",
+          "recompilation",
+          "user-interface"
+        ],
+        "stars": 16,
+        "pushed_at": "2026-11-11T07:12:25Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-0b570a1db127e65268177a03",
+      "identity": "github:1433222828",
+      "aliases": [
+        "gh:opengp-dev/opengp"
+      ],
+      "url": "https://github.com/OpenGP-dev/OpenGP",
+      "name": "OpenGP-dev/OpenGP",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "github-topic-recompilation",
+          "section": "topic:recompilation (most stars)",
+          "label": "OpenGP-dev/OpenGP",
+          "evidence_url": "https://github.com/topics/recompilation"
+        }
+      ],
+      "observed_at": "2026-11-11T08:18:43Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1433222828,
+        "full_name": "OpenGP-dev/OpenGP",
+        "description": "A native PC port of Mario Kart Arcade GP and GP 2 by static recompilation. Builds the games from your own disc images.",
+        "topics": [
+          "arcade",
+          "cpp",
+          "game-port",
+          "gamecube",
+          "mario-kart",
+          "mario-kart-arcade-gp",
+          "recompilation",
+          "sdl3",
+          "static-recompilation",
+          "triforce"
+        ],
+        "stars": 13,
+        "pushed_at": "2026-11-07T11:56:41Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-92ea71dd7b91ec47b8911b3b",
+      "identity": "github:1442563843",
+      "aliases": [
+        "gh:elguslml/ghworrecomp"
+      ],
+      "url": "https://github.com/ElGuslml/GHWoRRecomp",
+      "name": "ElGuslml/GHWoRRecomp",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "github-topic-recompilation",
+          "section": "topic:recompilation (most stars)",
+          "label": "ElGuslml/GHWoRRecomp",
+          "evidence_url": "https://github.com/topics/recompilation"
+        }
+      ],
+      "observed_at": "2026-11-11T08:18:43Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1442563843,
+        "full_name": "ElGuslml/GHWoRRecomp",
+        "description": "Guitar Hero: Warriors of Rock (Xbox 360) recompiled to run natively on PC. Xbox 360 guitars, up to 240 FPS, ultrawide, achievements, DLC read from your own folder, and a launcher that installs the game from your own ISO.",
+        "topics": [
+          "game-preservation",
+          "ghwor",
+          "guitar-hero",
+          "guitar-hero-warriors-of-rock",
+          "pc-port",
+          "recomp",
+          "recompilation",
+          "rexglue",
+          "rythm-game",
+          "static-recompilation",
+          "vulkan",
+          "warriors-of-rock",
+          "windows",
+          "xbox-360"
+        ],
+        "stars": 12,
+        "pushed_at": "2026-11-10T23:44:50Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": "https://github.com/ElGuslml/ElGusRecomps"
+      }
+    },
+    {
+      "id": "lead-11f8fcc7091579c8278bb7ef",
+      "identity": "github:1439917930",
+      "aliases": [
+        "gh:elguslml/gh5recomp"
+      ],
+      "url": "https://github.com/ElGuslml/GH5Recomp",
+      "name": "ElGuslml/GH5Recomp",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "github-topic-recompilation",
+          "section": "topic:recompilation (most stars)",
+          "label": "ElGuslml/GH5Recomp",
+          "evidence_url": "https://github.com/topics/recompilation"
+        }
+      ],
+      "observed_at": "2026-11-11T08:18:43Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1439917930,
+        "full_name": "ElGuslml/GH5Recomp",
+        "description": "Guitar Hero 5 (Xbox 360) recompiled to run natively on PC. Xbox 360 guitars, up to 240 FPS, ultrawide, achievements, DLC, and a launcher that installs the game from your own ISO.",
+        "topics": [
+          "game-preservation",
+          "gh5",
+          "guitar-hero",
+          "guitar-hero-5",
+          "pc-port",
+          "recomp",
+          "recompilation",
+          "rexglue",
+          "rythm-game",
+          "static-recompilation",
+          "vulkan",
+          "windows",
+          "xbox-360"
+        ],
+        "stars": 12,
+        "pushed_at": "2026-11-10T23:18:09Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": "https://github.com/ElGuslml/ElGusRecomps"
+      }
+    },
+    {
+      "id": "lead-5c30b0f5eefb5c907559a598",
+      "identity": "github:1442210019",
+      "aliases": [
+        "gh:amarillonl/ssx-recomp"
+      ],
+      "url": "https://github.com/AmarilloNL/ssx-recomp",
+      "name": "AmarilloNL/ssx-recomp",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "github-topic-recompilation",
+          "section": "topic:recompilation (most stars)",
+          "label": "AmarilloNL/ssx-recomp",
+          "evidence_url": "https://github.com/topics/recompilation"
+        }
+      ],
+      "observed_at": "2026-11-11T08:18:43Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1442210019,
+        "full_name": "AmarilloNL/ssx-recomp",
+        "description": "Native PC port of SSX (2012) via Xbox 360 static recompilation. Bring your own ISO.",
+        "topics": [
+          "direct3d12",
+          "pc-port",
+          "recompilation",
+          "ssx",
+          "static-recompilation",
+          "xbox-360"
+        ],
+        "stars": 9,
+        "pushed_at": "2026-11-10T21:32:25Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    }
+  ]
+}
