@@ -2,11 +2,11 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-10T03:26:21+00:00",
-  "entry_count": 5191,
+  "generated_at": "2026-11-10T14:44:34+00:00",
+  "entry_count": 5192,
   "class_counts": {
    "0": 15,
-   "1": 1126,
+   "1": 1127,
    "2": 3844,
    "3": 186
   },
@@ -5620,6 +5620,35 @@
    "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
+  },
+  {
+   "id": "design-os-studio",
+   "url": "https://github.com/jangtrinh/design-os-studio",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 89272,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 19,
+    "release_asset_count": 129,
+    "demo": [
+     "image"
+    ],
+    "media_count": 11,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full reconstruction candidate: Class 0 requires manual scope review",
+   "checked_at": "2026-11-10T14:17:30+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": true
   },
   {
    "id": "hex-rays-ida-mcp",

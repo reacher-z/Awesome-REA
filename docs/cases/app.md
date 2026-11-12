@@ -6,7 +6,7 @@
 
 [简体中文](app.zh-CN.md)
 
-**233 case studies**
+**234 case studies**
 
 - [**ag-psd: reconstructing PSD document reading and writing**](https://github.com/Agamnentzar/ag-psd) - ag-psd reconstructs reading and writing of Photoshop PSD documents in JavaScript and TypeScript using format references and trial and error. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ag-psd-case/)</sub>
 - [**AionLink Open: investigating ICCOA CarLink connectivity for the GAC AION i60**](https://github.com/codepdbh/aionlink-open) - AionLink Open investigates ICCOA CarLink connectivity for the GAC AION i60 through static analysis of Android APKs and an independently written Android client. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/aionlink-open-case/)</sub>
@@ -241,4 +241,5 @@
 - [**Notion: trace the clipboard bridge**](https://rea.tools/showcase/notion/) - Trace a packaged Electron clipboard path using REA findings and separate source inspection; the dynamic wrapper remains a stated limit. <sub>Case study · Official REA · [Full entry](https://awesomerea.org/resources/rea-notion-case/)</sub>
 - [**PicoPrint: LX-D02 printer investigation**](https://github.com/bigtower17/picoprint) - The author describes REA-assisted Android investigation followed by separate Hermes decompilation to support a Windows BLE printer. <sub>Case study · Mixed workflow · Also: Protocol · [Full entry](https://awesomerea.org/resources/picoprint-rea-investigation/)</sub>
 - [**ReaCut: video-editor reconstruction**](https://github.com/Xiangyu-CAS/rea-capcut) - An independent video editor whose authors document REA-assisted investigation of Jianying/CapCut behavior and project formats. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/reacut-reconstruction/)</sub>
+- [**DESIGN:OS Studio: an independent .fig studio informed by REA research**](https://github.com/jangtrinh/design-os-studio) - The maintainer reports using rea (morluto/rea 6.7.0) to investigate Figma Desktop JavaScript and the .fig v106 kiwi schema, then independently implements a local desktop studio that reads and writes .fig files and reimplements editor behaviour. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/design-os-studio/)</sub>
 <!-- END GENERATED CASES -->
