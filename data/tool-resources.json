@@ -154740,5 +154740,30 @@
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/scripts/turokgame/components/weapons/turokWeaponChronoScepter.txt",
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/framework/system.cpp"
     ]
+  },
+  {
+    "id": "agent-qa",
+    "name": "agent-qa",
+    "url": "https://github.com/vostride/agent-qa",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "Natural-language QA for web, Android and iOS through CLI, MCP and skills, with persistent memidex memory and validated self-improvement. Runs retain recorded step evidence.",
+    "description_zh": "通过 CLI、MCP 与技能执行 Web、Android 和 iOS 自然语言 QA，具备持久 memidex 记忆与经验证的自我改进，并保留步骤证据。",
+    "evidence_url": "https://github.com/vostride/agent-qa/blob/43618211636159a6fc6086cac90101e448ed8a63/README.md",
+    "verified_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Node.js 24+, a configured compatible model and the target browser/device environment.",
+      "License: FSL-1.1-ALv2."
+    ],
+    "additional_evidence_urls": [
+      "https://vostride.com",
+      "https://github.com/vostride/agent-qa/blob/43618211636159a6fc6086cac90101e448ed8a63/LICENSE.md"
+    ],
+    "targets": [
+      "website",
+      "app"
+    ],
+    "kind": "integration"
   }
 ]

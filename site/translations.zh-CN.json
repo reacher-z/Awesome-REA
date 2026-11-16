@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "agent-qa": {
+    "name": "agent-qa",
+    "requirements": [
+      "Node.js 24+、已配置的兼容模型，以及目标浏览器或移动设备环境。",
+      "许可证：FSL-1.1-ALv2。"
+    ]
   }
 }
