@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-44045634660-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-17T08:38:33Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 426,
+    "selected_count": 2,
+    "selected_ids": [
+      "scan-1448324076",
+      "scan-1448310645"
+    ],
+    "record_sha256": {
+      "scan-1448324076": "5f4412d8ee8ae5818dbe25ecf6d4fb835c390f9526b8fbe2c9b09c827fafe5be",
+      "scan-1448310645": "3c3b928592e03a457c152babcbf72dcf08fe0cf092848d90fe04116c5db2d1bc"
+    },
+    "skipped_counts": {
+      "already-listed": 12710,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 44045634660,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "3cff0c4e338273af715cdaf0d1caf32832180c04",
+    "artifact_id": 14311329325,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:73fac8262e33a419bdb5f40080011c5d184114298c72c249ac3c5751b5be58b5",
+    "checkpoint_sha256": "e84d0b5ac3aa9ba2a896634f82a60218ad11b47dc8b638c59e0360e94fd72b33",
+    "receipt_sha256": "6f63dc502b01131834958c1d24609c416e8e807cbaeed54584f0192f16ba95d5",
+    "scan_started_at": "2026-11-17T08:18:49.376690+00:00",
+    "scan_completed_at": "2026-11-17T08:33:07.817712+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 121583,
+      "failed": 4809,
+      "attempted_readme_scans": 126392,
+      "unique_repos": 126456,
+      "unattempted_candidates": 64
+    },
+    "integrity_counts": {
+      "qualified": 118566,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1448324076",
+      "name": "thomas-schreck/hexwerk",
+      "full_name": "thomas-schreck/hexwerk",
+      "url": "https://github.com/thomas-schreck/hexwerk",
+      "description_en": "macOS hex editor with Kaitai Struct, YARA-X, scripting and a CLI",
+      "description_zh": "macOS hex editor with Kaitai Struct, YARA-X, scripting and a CLI",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "binary-analysis",
+        "forensics",
+        "hex-editor",
+        "kaitai-struct",
+        "macos",
+        "malware-analysis",
+        "reverse-engineering",
+        "swift",
+        "yara",
+        "yara-x"
+      ],
+      "stars": 2,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-10T12:13:11Z",
+      "pushed_at": "2026-11-10T12:13:17Z",
+      "metadata_observed_at": "2026-11-17T08:31:50.407906Z",
+      "observed_at": "2026-11-17T08:31:53.989609Z",
+      "readme_url": "https://github.com/thomas-schreck/hexwerk/blob/5eaa0f6539f71ba40f51ab6c6850bdfcc1428f5b/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "0d7daba2327e06d3d72c4c1114f885a175504163",
+      "readme_content_git_sha": "0d7daba2327e06d3d72c4c1114f885a175504163",
+      "readme_sha256": "ef531644022d823097be57a5a8537c1245650e31a4d4f88a83b5d6d0e92fbc58",
+      "readme_bytes": 10026,
+      "readme_lines": 204,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "requirements",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "binary"
+      ],
+      "category": "native-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T13:13:57Z..2026-11-06T14:16:01Z",
+        "topic:binary-analysis is:public fork:false archived:false created:2026-11-06T13:13:57Z..2026-11-06T14:16:01Z",
+        "topic:malware-analysis is:public fork:false archived:false created:2026-11-06T13:13:57Z..2026-11-06T14:16:01Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "5eaa0f6539f71ba40f51ab6c6850bdfcc1428f5b"
+    },
+    {
+      "id": "scan-1448310645",
+      "name": "yangyongyongyong/GeelyPassiveKey",
+      "full_name": "yangyongyongyong/GeelyPassiveKey",
+      "url": "https://github.com/yangyongyongyong/GeelyPassiveKey",
+      "description_en": "吉利银河 & vivo 钱包蓝牙车钥匙逆向工程知识库 + 「银河无感钥匙」Android App（息屏靠近解锁 / 离开上锁）",
+      "description_zh": "吉利银河 & vivo 钱包蓝牙车钥匙逆向工程知识库 + 「银河无感钥匙」Android App（息屏靠近解锁 / 离开上锁）",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "android",
+        "ble",
+        "car-key",
+        "geely",
+        "passive-key",
+        "reverse-engineering"
+      ],
+      "stars": 19,
+      "license": null,
+      "archived": false,
+      "updated_at": "2026-11-13T11:57:25Z",
+      "pushed_at": "2026-11-16T12:44:07Z",
+      "metadata_observed_at": "2026-11-17T08:31:50.407906Z",
+      "observed_at": "2026-11-17T08:31:53.988762Z",
+      "readme_url": "https://github.com/yangyongyongyong/GeelyPassiveKey/blob/5e746a9a682069dbfaac2b8160e1d2a15deb06ca/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "ed5b35adc8e28434784a3532e1849e3e2bd79b1e",
+      "readme_content_git_sha": "ed5b35adc8e28434784a3532e1849e3e2bd79b1e",
+      "readme_sha256": "8a4965bb9bdf53a9205646e3cbe0ce261ee2aed8e3f6a34422e871f79e11d674",
+      "readme_bytes": 28372,
+      "readme_lines": 304,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app"
+      ],
+      "category": "android",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T13:13:57Z..2026-11-06T14:16:01Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "5e746a9a682069dbfaac2b8160e1d2a15deb06ca"
+    }
+  ]
+}
