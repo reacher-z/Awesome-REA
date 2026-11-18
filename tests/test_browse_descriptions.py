@@ -47,12 +47,14 @@ class BrowseDescriptionTests(unittest.TestCase):
 
     def test_validator_rejects_descriptions_that_only_differ_by_count(self):
         pages = {route: Page(f'<meta name="description" content="{description}">')
-                 for route, description in [('/a/', 'Browse 1,234 repositories.'),
-                                             ('/b/', 'Browse 67 repositories.')]}
+                 for route, description in [('/browse/web-analysis/', 'Browse 1,234 repositories.'),
+                                             ('/browse/game-analysis/', 'Browse 67 repositories.'),
+                                             ('/resources/page/2/', 'Page 2 of 3.'),
+                                             ('/resources/page/3/', 'Page 3 of 3.')]}
         with self.assertRaisesRegex(AssertionError, 'Duplicate.*description'):
-            validate_site.validate_unique_descriptions(pages)
-        pages['/b/'] = Page('<meta name="description" content="Browse 67 games.">')
-        validate_site.validate_unique_descriptions(pages)
+            validate_site.validate_browse_descriptions(pages)
+        pages['/browse/game-analysis/'] = Page('<meta name="description" content="Browse 67 games.">')
+        validate_site.validate_browse_descriptions(pages)
 
 
 if __name__ == '__main__':

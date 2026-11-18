@@ -14,7 +14,9 @@ from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
 from asset_paths import ASSET_PATH, FINGERPRINTED_SUFFIXES, UNHASHED_STYLESHEETS, digest
+from build_browse_pages import browse_path
 from build_entry_pages import entry_path, feedback_urls, matching_entries, section_siblings
+from build_repository_index import CATEGORIES as BROWSE_CATEGORIES
 from resource_listing import PER_PAGE as RESOURCE_PER_PAGE, record_href, section_href
 from build_site import REPOSITORY_URL, catalog_index
 from build_manifest import read_build_manifest
@@ -1780,10 +1782,13 @@ def validate_llms_and_ownership_proof():
     assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
 
 
-def validate_unique_descriptions(pages):
-    """A count change alone must not distinguish two indexable page descriptions."""
+def validate_browse_descriptions(pages):
+    """Counts alone must not distinguish two browse categories."""
+    category_paths = {browse_path(language, category) for language in ('en', 'zh') for category in BROWSE_CATEGORIES}
     seen = {}
     for route, page in pages.items():
+        if route not in category_paths:
+            continue
         description = page.meta.get('description', '')
         normalized = re.sub(r'\s+', ' ', re.sub(r'[\d,]', '', description)).strip()
         assert normalized, f'Missing description: {route}'
@@ -1861,7 +1866,7 @@ def _validate_pages(urls, resources, papers):
         validate_theme_color(parsed.path, page)
         problem = description_problem(page.meta.get('description') or '')
         assert problem is None, f'{problem}: {parsed.path}: {page.meta.get("description")}'
-    validate_unique_descriptions(pages)
+    validate_browse_descriptions(pages)
     report_listing_sizes(OUTPUT)
     queue = build_discoveries.discovery_queue(ROOT, published_repository_document(OUTPUT), papers, resources)
     queue = queue if queue['batches'] else None
