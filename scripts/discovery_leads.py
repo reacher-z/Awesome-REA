@@ -50,7 +50,7 @@ MAX_TOTAL_BYTES = 48 * 1024 * 1024
 MAX_LISTINGS = 12
 KINDS = ('project', 'tool', 'integration', 'case-study', 'collection', 'documentation', 'learning-resource', 'research')
 SOURCE_TYPES = ('github-readme-list', 'github-topic', 'github-json-registry', 'github-directory', 'survey-references',
-                'arxiv-query', 'huggingface-search')
+                'arxiv-query', 'huggingface-search', 'hackernews-search')
 SKIP_REASONS = ('already-curated', 'already-indexed', 'already-discovered', 'already-lead', 'case-lead',
                 'scope-excluded', 'unavailable', 'privacy', 'invalid', 'over-limit')
 # Why a registered scope rule leaves a listed link out. CONTRIBUTING.md and data/source-scope.json define scope.
@@ -76,7 +76,7 @@ HUGGINGFACE_FIELDS = {'repo_type', 'id', 'downloads', 'likes', 'last_modified'}
 TIMESTAMP = re.compile(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z')
 IDENTITY = re.compile(r'(?:github:[1-9][0-9]{0,19}|huggingface:(?:model|dataset)/[A-Za-z0-9][A-Za-z0-9_.-]{0,95}/'
                       r'[A-Za-z0-9][A-Za-z0-9_.-]{0,95}|[a-z]{1,12}:\S{1,600})')
-EVIDENCE_HOSTS = ('github.com', 'arxiv.org', 'export.arxiv.org', 'huggingface.co')
+EVIDENCE_HOSTS = ('github.com', 'arxiv.org', 'export.arxiv.org', 'huggingface.co', 'news.ycombinator.com')
 SOURCE_ID = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+){0,12}')
 FULL_NAME = re.compile(r'[A-Za-z0-9_.-]{1,100}/[A-Za-z0-9_.-]{1,100}')
 
@@ -679,6 +679,7 @@ SOURCE_FIELDS = {
     'survey-references': ({'id', 'type', 'paper_id', 'why'}, {'scope', 'every_hours'}),
     'arxiv-query': ({'id', 'type', 'query', 'limit', 'why'}, {'scope', 'every_hours'}),
     'huggingface-search': ({'id', 'type', 'repo_type', 'search', 'limit', 'why'}, {'scope', 'every_hours'}),
+    'hackernews-search': ({'id', 'type', 'queries', 'limit', 'why'}, {'scope', 'every_hours', 'since'}),
 }
 PAPER_SCREENS = ('re-subject-v1',)
 
@@ -754,6 +755,13 @@ def validate_registry(document, papers: list[dict] | None = None) -> list[str]:
             problems.append(f'{label}: Hugging Face searches name a repo type and a short term')
         if source['type'] == 'arxiv-query' and not bounded_text(source['query'], 1500):
             problems.append(f'{label}: query must be an arXiv API search_query')
+        if source['type'] == 'hackernews-search':
+            queries = source['queries']
+            if not isinstance(queries, list) or not 0 < len(queries) <= 5 or not all(
+                    isinstance(query, str) and 0 < len(query) <= 120 for query in queries):
+                problems.append(f'{label}: queries must list 1 to 5 search terms of at most 120 characters')
+            if 'since' in source and not (isinstance(source['since'], str) and TIMESTAMP.fullmatch(source['since'] + 'T00:00:00Z')):
+                problems.append(f'{label}: since must be a YYYY-MM-DD date')
         if source['type'] == 'github-json-registry':
             for key in ('items', 'url_field', 'name_field'):
                 if key in source and (not isinstance(source[key], str) or not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]{0,40}', source[key])):

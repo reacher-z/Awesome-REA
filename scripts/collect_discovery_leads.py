@@ -45,7 +45,8 @@ MAX_REQUESTS, MAX_SECONDS = 600, 18 * 60
 QUOTA_RESERVE = 200
 # Minimum seconds between requests to one host: arXiv's robots.txt asks for a 15-second crawl delay on
 # arxiv.org and its API terms for one request every three seconds.
-HOST_INTERVALS = {'arxiv.org': 15.0, 'export.arxiv.org': 3.0, 'api.semanticscholar.org': 1.5, 'huggingface.co': 0.5}
+HOST_INTERVALS = {'arxiv.org': 15.0, 'export.arxiv.org': 3.0, 'api.semanticscholar.org': 1.5, 'huggingface.co': 0.5,
+                  'hn.algolia.com': 0.5}
 GRAPHQL_CHUNK = 50
 ERRORS = ('http-error', 'network-error', 'redirect-blocked', 'response-too-large', 'request-budget', 'time-budget',
           'rate-limited', 'quota-reserve', 'invalid-upstream', 'git-blob-mismatch', 'token-unavailable', 'not-found')
@@ -94,6 +95,8 @@ def allowed(url: str, method: str = 'GET') -> bool:
         return bool(re.fullmatch(r'/graph/v1/paper/arXiv:\d{4}\.\d{4,5}/references', path))
     if host == 'huggingface.co':
         return path in ('/api/models', '/api/datasets')
+    if host == 'hn.algolia.com':
+        return path == '/api/v1/search'
     return False
 
 
@@ -731,6 +734,55 @@ ATOM = '{http://www.w3.org/2005/Atom}'
 ARXIV_NS = '{http://arxiv.org/schemas/atom}'
 
 
+def hackernews_listings(client: Client, source: dict) -> tuple[list[dict], Counter, dict]:
+    """GitHub repositories linked from Hacker News stories and comments that match the queries."""
+    scope, counts, found = source.get('scope', {}), Counter(), []
+    parts, seen = [], set()
+    cutoff = None
+    if 'since' in source:
+        cutoff = int(dt.datetime.fromisoformat(source['since'] + 'T00:00:00+00:00').timestamp())
+    for query in source['queries']:
+        params = {'query': query, 'tags': '(story,comment)', 'hitsPerPage': min(source['limit'], 100)}
+        if cutoff is not None:
+            params['numericFilters'] = f'created_at_i>{cutoff}'
+        url = 'https://hn.algolia.com/api/v1/search?' + urlencode(params)
+        raw = client.fetch(url)
+        parts.append(raw)
+        try:
+            data = json.loads(raw)
+            hits = data.get('hits') if isinstance(data, dict) else None
+            if not isinstance(hits, list):
+                raise TypeError
+        except (ValueError, TypeError, UnicodeError):
+            raise SourceError('invalid-upstream') from None
+        for hit in hits:
+            if not isinstance(hit, dict):
+                continue
+            counts['links'] += 1
+            text = ' '.join(str(hit.get(key) or '') for key in ('title', 'story_title', 'story_text', 'comment_text', 'url'))
+            for repo_url in dict.fromkeys(re.findall(r'https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', text)):
+                repo_url = repo_url.rstrip('.,;:')
+                key, link_type, flags = leads.url_key(repo_url)
+                if not key or not key.startswith('gh:') or key in seen:
+                    continue
+                reason = excluded(key, scope)
+                if reason:
+                    counts['excluded:' + reason] += 1
+                    continue
+                seen.add(key)
+                identifier = str(hit.get('objectID') or '')
+                if not re.fullmatch(r'[0-9]{1,20}', identifier):
+                    continue
+                title = single_line(hit.get('title') or hit.get('story_title') or repo_url, NAME_LIMIT)
+                found.append({'source_id': source['id'], 'url': repo_url, 'key': key, 'flags': flags,
+                              'kind': scope.get('kind', 'project'), 'label': title,
+                              'section': f'Hacker News search: {query}',
+                              'evidence_url': f'https://news.ycombinator.com/item?id={identifier}'})
+                counts['in_scope'] += 1
+    return found, counts, {'evidence_url': 'https://news.ycombinator.com/', 'revision': None,
+                           'content_sha256': hashlib.sha256(b''.join(parts)).hexdigest()}
+
+
 def arxiv_listings(client: Client, source: dict) -> tuple[list[dict], Counter, dict]:
     """The newest arXiv submissions matching a query, kept when the title passes the paper screen."""
     scope, counts, found = source.get('scope', {}), Counter(), []
@@ -1039,6 +1091,8 @@ def collect(client: Client, root: Path = ROOT, *, everything: bool = False, now:
                 found, counts, extra = survey_listings(client, source, papers)
             elif source['type'] == 'arxiv-query':
                 found, counts, extra = arxiv_listings(client, source)
+            elif source['type'] == 'hackernews-search':
+                found, counts, extra = hackernews_listings(client, source)
             else:
                 found, counts, extra = huggingface_listings(client, source)
         except (SourceError, ValueError, TypeError, UnicodeError) as error:

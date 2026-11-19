@@ -169,7 +169,9 @@ class RegistryTest(unittest.TestCase):
         self.assertEqual(problems, [])
         self.assertEqual(len({source['id'] for source in document['sources']}), len(document['sources']))
         types = {source['type'] for source in document['sources']}
-        self.assertEqual(types, set(leads.SOURCE_TYPES))
+        # A new source type can land before the registry entry it will use; the committed
+        # registry must never name a type this branch does not know.
+        self.assertLessEqual(types, set(leads.SOURCE_TYPES))
         with tempfile.TemporaryDirectory() as directory:
             self.assertIn('is missing', ' '.join(leads.load_registry(Path(directory))[1]))
 
@@ -260,6 +262,8 @@ class ClientTest(unittest.TestCase):
         self.assertTrue(collect.allowed('https://api.github.com/graphql', 'POST'))
         self.assertTrue(collect.allowed('https://arxiv.org/html/2606.17398v2'))
         self.assertTrue(collect.allowed('https://huggingface.co/api/models?search=x'))
+        self.assertTrue(collect.allowed('https://hn.algolia.com/api/v1/search?query=rea-agents'))
+        self.assertFalse(collect.allowed('https://hn.algolia.com/api/v1/items/1'))
         for url in ('https://example.org/', 'http://arxiv.org/html/2606.17398', 'https://api.github.com/user',
                     'https://arxiv.org/abs/2606.17398', 'https://user:pw@huggingface.co/api/models'):
             with self.subTest(url):
@@ -415,6 +419,19 @@ class OtherSourceTest(unittest.TestCase):
         self.assertEqual([row['key'] for row in found], ['huggingface:model/LLM4Binary/llm4decompile-6.7b'])
         self.assertEqual(found[0]['huggingface']['last_modified'], '2025-01-01T00:00:00Z')
         self.assertEqual(counts['excluded:unrelated'], 1)
+        hits = {'hits': [
+            {'objectID': '40000001', 'title': 'REA rebuilt this app',
+             'comment_text': 'Code at https://github.com/example/rebuild and https://github.com/example/rebuild.'},
+            {'objectID': '40000002', 'title': 'Unrelated', 'url': 'https://example.org/'},
+        ]}
+        fake, _, _ = client(lambda request: json.dumps(hits).encode())
+        found, counts, extra = collect.hackernews_listings(fake, {
+            'id': 'hn', 'queries': ['rea-agents'], 'limit': 10, 'since': '2026-06-01', 'scope': {}})
+        self.assertEqual([row['key'] for row in found], ['gh:example/rebuild'])
+        self.assertEqual(found[0]['evidence_url'], 'https://news.ycombinator.com/item?id=40000001')
+        self.assertEqual(counts['links'], 2)
+        self.assertEqual(counts['in_scope'], 1)
+        self.assertEqual(extra['evidence_url'], 'https://news.ycombinator.com/')
 
     def test_slow_sources_run_once_per_period(self):
         source = {'id': 'survey-sok', 'every_hours': 24}
