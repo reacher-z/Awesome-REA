@@ -21,6 +21,7 @@ RESOURCE_FIELDS = frozenset({
     'relationship', 'kind', 'class', 'evidence_url', 'additional_evidence_urls',
     'verified_at', 'verification', 'evidence_class', 'evidence_status',
     'scope', 'runtime_status', 'evidence_review', 'source_unavailable', 'preview_kind',
+    'platforms', 'platform_counts', 'platform_packages',
 })
 PAPER_FIELDS = frozenset({
     'id', 'title', 'title_zh', 'authors', 'authors_omitted', 'year', 'publication_date',
@@ -84,8 +85,9 @@ object per line. No authentication or JavaScript is required.
 ## Files
 
 - resources.json: curated resources as a JSON array, including English/Chinese
-  descriptions, requirements, source evidence, review labels and the C0–C3
-  evidence class (Class 0 is a manual scope review, not runtime acceptance).
+  descriptions, requirements, source evidence, review labels, the C0–C3
+  evidence class (Class 0 is a manual scope review, not runtime acceptance) and
+  release platforms for the Software and Website classes.
 - papers.json: the separate bibliography, including authors, publication
   identity, English/Chinese summaries, research limits and source URLs. A paper
   with authors_omitted set to true has an empty authors list; its url lists them.
