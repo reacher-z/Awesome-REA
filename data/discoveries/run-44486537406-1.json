@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-44486537406-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-19T08:41:11Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 428,
+    "selected_count": 4,
+    "selected_ids": [
+      "scan-1448551184",
+      "scan-1448552335",
+      "scan-1448570523",
+      "scan-1448544532"
+    ],
+    "record_sha256": {
+      "scan-1448551184": "1f75b28dc167e35437b6a96992ef54dcd3146f4d0961e4b27281fd643666748e",
+      "scan-1448552335": "8a10e51aff236f89c05d6d7a9ba18517438218e594f0835e4c4d1288adacc35c",
+      "scan-1448570523": "025e2f43fbd4027fb8733cd1423e3790ed94cc44f021c80ebe0dcf0e63d412ef",
+      "scan-1448544532": "16b6f34cfdf9459b59e96997b9b763f64a21ed06826c4f02ea3bf22e608a995e"
+    },
+    "skipped_counts": {
+      "already-listed": 12730,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 44486537406,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "7c8c669b43deb2487e8f7464f2638bd86e9afdf5",
+    "artifact_id": 14511093324,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:53dcbd75ad7cdf12fa508c8717fde0befb56335476cd02424883fbbb631cce06",
+    "checkpoint_sha256": "73ea3c902093e0b9415bd58a1608475de21cd7319b2a854d87d2592921e926dc",
+    "receipt_sha256": "d39e3db9918c27035ec07b6258c5ab5cd38c3e4e7a2fc4016d081ba866726282",
+    "scan_started_at": "2026-11-19T08:18:59.908728+00:00",
+    "scan_completed_at": "2026-11-19T08:35:19.505712+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 123623,
+      "failed": 4865,
+      "attempted_readme_scans": 128488,
+      "unique_repos": 128552,
+      "unattempted_candidates": 64
+    },
+    "integrity_counts": {
+      "qualified": 120606,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1448551184",
+      "name": "rimidalv333/erebus-webofshadows-native",
+      "full_name": "rimidalv333/erebus-webofshadows-native",
+      "url": "https://github.com/rimidalv333/erebus-webofshadows-native",
+      "description_en": "Native PS5 build of WoS (Xbox 360). Game code is statically recompiled for the PS5 and drawn by EoT renderer instead of GPU emulation: 60 fps target, up to 4K. Bring your own iso disc image, no game files included.",
+      "description_zh": "Native PS5 build of WoS (Xbox 360). Game code is statically recompiled for the PS5 and drawn by EoT renderer instead of GPU emulation: 60 fps target, up to 4K. Bring your own iso disc image, no game files included.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "decompilation",
+        "ps5",
+        "ps5-homebrew",
+        "recompilation",
+        "static-recompilation",
+        "xbox360"
+      ],
+      "stars": 2,
+      "license": "GPL-3.0",
+      "archived": false,
+      "updated_at": "2026-11-13T21:55:06Z",
+      "pushed_at": "2026-11-13T21:03:25Z",
+      "metadata_observed_at": "2026-11-19T08:33:42.586605Z",
+      "observed_at": "2026-11-19T08:33:48.994000Z",
+      "readme_url": "https://github.com/rimidalv333/erebus-webofshadows-native/blob/097bb91c40cd3b551a51a72d1156d45b08e3240b/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "c1dae0b677dd177bfc5952d4adb4babb3541e0f0",
+      "readme_content_git_sha": "c1dae0b677dd177bfc5952d4adb4babb3541e0f0",
+      "readme_sha256": "d64d7d8155228d15ba24f088917d3c69de9d63581e14d64c471e389b866289fe",
+      "readme_bytes": 9242,
+      "readme_lines": 145,
+      "readme_heading_count": 1,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "binary",
+        "game"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:decompilation is:public fork:false archived:false created:2026-11-06T17:13:25Z..2026-11-06T18:16:04Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "097bb91c40cd3b551a51a72d1156d45b08e3240b"
+    },
+    {
+      "id": "scan-1448552335",
+      "name": "glastor-core/byte-gauge",
+      "full_name": "glastor-core/byte-gauge",
+      "url": "https://github.com/glastor-core/byte-gauge",
+      "description_en": "🛡️ GLASTOR® Byte-Gauge — High-Performance Rust SIMD Binary & Wasm Auditor, checksec Hardening, CycloneDX 1.5 SBOM, SARIF 2.1.0 & FinOps Telemetry for GitHub Actions",
+      "description_zh": "🛡️ GLASTOR® Byte-Gauge — High-Performance Rust SIMD Binary & Wasm Auditor, checksec Hardening, CycloneDX 1.5 SBOM, SARIF 2.1.0 & FinOps Telemetry for GitHub Actions",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "binary-analysis",
+        "cyclonedx",
+        "devsecops",
+        "finops",
+        "github-actions",
+        "glastor-core",
+        "rust",
+        "sarif",
+        "sbom",
+        "simd",
+        "webassembly"
+      ],
+      "stars": 1,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-11T23:03:00Z",
+      "pushed_at": "2026-11-15T18:19:59Z",
+      "metadata_observed_at": "2026-11-19T08:33:42.586605Z",
+      "observed_at": "2026-11-19T08:33:48.993185Z",
+      "readme_url": "https://github.com/glastor-core/byte-gauge/blob/10355a65f8468605a8d97d871ccc06229f8419de/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "d8883f460c9d92e8d5bc0045f710bcbdaec44701",
+      "readme_content_git_sha": "d8883f460c9d92e8d5bc0045f710bcbdaec44701",
+      "readme_sha256": "e2ffadde9e5d8725010d94534e8dfdb186226d716f05a1ca84bb72dc19b22f82",
+      "readme_bytes": 8618,
+      "readme_lines": 114,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "usage",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "binary"
+      ],
+      "category": "native-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:binary-analysis is:public fork:false archived:false created:2026-11-06T17:13:25Z..2026-11-06T18:16:04Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "10355a65f8468605a8d97d871ccc06229f8419de"
+    },
+    {
+      "id": "scan-1448570523",
+      "name": "CatalinGB/usbd1-a1-qr-decoder",
+      "full_name": "CatalinGB/usbd1-a1-qr-decoder",
+      "url": "https://github.com/CatalinGB/usbd1-a1-qr-decoder",
+      "description_en": "Offline decoder and format specification for Ultimate Speed USBD1 A1 battery-tester QR reports (e.dh5z.com). Independent, behavior-verified, no vendor code.",
+      "description_zh": "Offline decoder and format specification for Ultimate Speed USBD1 A1 battery-tester QR reports (e.dh5z.com). Independent, behavior-verified, no vendor code.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "battery-tester",
+        "decoder",
+        "github-pages",
+        "javascript",
+        "offline",
+        "preservation",
+        "qr-code",
+        "reverse-engineering",
+        "usbd1-a1"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-06T19:07:21Z",
+      "pushed_at": "2026-11-06T19:07:24Z",
+      "metadata_observed_at": "2026-11-19T08:33:42.586605Z",
+      "observed_at": "2026-11-19T08:33:48.992041Z",
+      "readme_url": "https://github.com/CatalinGB/usbd1-a1-qr-decoder/blob/a67d4e2fde6ba599c2fc5743e1e8d6bb20a9eb81/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "e23aaecf3c0b5145f0614983d2303d82e31f72f9",
+      "readme_content_git_sha": "e23aaecf3c0b5145f0614983d2303d82e31f72f9",
+      "readme_sha256": "d9fd57eeab578112d19fa1f8d7e9046f6a80ef4c55afb6912d5fe41e04ffa502",
+      "readme_bytes": 11742,
+      "readme_lines": 282,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "usage",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T17:13:25Z..2026-11-06T18:16:04Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "a67d4e2fde6ba599c2fc5743e1e8d6bb20a9eb81"
+    },
+    {
+      "id": "scan-1448544532",
+      "name": "j0uni/galvanize-everything",
+      "full_name": "j0uni/galvanize-everything",
+      "url": "https://github.com/j0uni/galvanize-everything",
+      "description_en": "See how any website, app or game works, then have AI build your own version in modern, memory-safe C++.",
+      "description_zh": "See how any website, app or game works, then have AI build your own version in modern, memory-safe C++.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "ai",
+        "claude-code",
+        "cpp",
+        "reverse-engineering",
+        "rust"
+      ],
+      "stars": 1,
+      "license": "Apache-2.0",
+      "archived": false,
+      "updated_at": "2026-11-17T20:50:20Z",
+      "pushed_at": "2026-11-06T17:34:08Z",
+      "metadata_observed_at": "2026-11-19T08:33:42.586605Z",
+      "observed_at": "2026-11-19T08:33:48.990926Z",
+      "readme_url": "https://github.com/j0uni/galvanize-everything/blob/a657ec472887b31168a80ada1fa258152ca498a1/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "39f5de591cc918adb4ea8009e00ca342c10d90b5",
+      "readme_content_git_sha": "39f5de591cc918adb4ea8009e00ca342c10d90b5",
+      "readme_sha256": "5686dc647f3b0805630ee043dbb17e89849a25d69853dd0899f6cd677e347576",
+      "readme_bytes": 10654,
+      "readme_lines": 195,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app",
+        "game",
+        "website"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T17:13:25Z..2026-11-06T18:16:04Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "a657ec472887b31168a80ada1fa258152ca498a1"
+    }
+  ]
+}
