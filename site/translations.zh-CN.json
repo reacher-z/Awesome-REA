@@ -44219,7 +44219,7 @@
     ]
   },
   "arena-ai-code-webdev": {
-    "name": "Code Arena | WebDev（Arena.ai）",
+    "name": "Code Arena · WebDev（Arena.ai）",
     "requirements": [
       "围绕从 25 万条以上提示词归纳出的 7 类 Web 开发任务（参考式设计、品牌与信息站点、数据与分析应用、消费级产品、游戏、交互模拟、内容创作与编辑工具）实时评测模型，运行形态已从单文件 Next.js/React 沙箱（E2B Firecracker 微虚拟机）扩展至多文件工具调用编程会话。",
       "截至 2026-11-18 榜单基于 1,027,059 次社区投票计算 Bradley-Terry 评分，并同步给出单任务 P50 成本与性价比帕累托视图。",
