@@ -154740,5 +154740,160 @@
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/scripts/turokgame/components/weapons/turokWeaponChronoScepter.txt",
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/framework/system.cpp"
     ]
+  },
+  {
+    "id": "redalert2-static-recomp-case",
+    "name": "Red Alert 2 recompiled: Westwood's code on modern systems",
+    "url": "https://github.com/sp00nznet/redalert2-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Statically recompiles the shipping Win32 binaries of Command & Conquer: Red Alert 2 and Yuri's Revenge to native C, so Westwood's own code runs on a new D3D11 presenter with 720p-to-4K output and HD voxel units. It is built on the pcrecomp toolchain and ships an installer for Windows, Linux and macOS.",
+    "description_zh": "把《命令与征服：红色警戒 2》与《尤里的复仇》的 Win32 发行版二进制静态重编译为原生 C，让 Westwood 自己的代码在新 D3D11 呈现器上运行，支持 720p 到 4K 输出与高清体素单位；项目基于 pcrecomp 工具链，并提供 Windows、Linux 与 macOS 安装器。",
+    "evidence_url": "https://github.com/sp00nznet/redalert2-recomp/blob/4ecdea4dd12729696d5fe0a4296c49202695bc3e/README.md",
+    "verified_at": "2026-11-19",
+    "added_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes a static recompilation of the shipping Win32 binaries, so the game runs Westwood's recompiled code rather than a separate rules engine.",
+      "The user needs their own copy of Red Alert 2 and Yuri's Revenge, specifically game.exe 1.006 and gamemd.exe 1.001.",
+      "The installer supports Windows, Linux and macOS; the remaster adds a D3D11 presenter, 720p to 4K output and HD voxel units.",
+      "The repository is MIT; the games and their data keep their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "gow-psp-static-recomp-case",
+    "name": "God of War PSP: native ports by static recompilation",
+    "url": "https://github.com/DrummingBird1/gow-psp-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Unofficial native Windows ports of God of War: Chains of Olympus and Ghost of Sparta, statically recompiled from the user's PSP disc. The launcher adds 4K, MSAA, HDR and high frame rates.",
+    "description_zh": "把《战神：奥林匹斯之链》与《战神：斯巴达之魂》从用户自有的 PSP 光盘静态重编译为 Windows 原生版本；启动器提供 4K、MSAA、HDR 与高帧率。",
+    "evidence_url": "https://github.com/DrummingBird1/gow-psp-recomp/blob/18800afd0cfa84e5018ddb7e515f4b6571bfabe5/README.md",
+    "verified_at": "2026-11-19",
+    "added_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes native Windows ports produced by static recompilation of the original game code.",
+      "The user supplies their own PSP disc; the project ships no game content.",
+      "Releases provide a ZIP launcher (v1.6.0) with no installation, adding 4K, MSAA, HDR and high frame rates.",
+      "The repository is GPL-3.0; the games and their data keep their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "scope",
+      "license"
+    ]
+  },
+  {
+    "id": "downpour-static-recomp-case",
+    "name": "Silent Hill: Downpour recompiled for Windows",
+    "url": "https://github.com/LittleBitUA/DownpourRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A native Windows port of Silent Hill: Downpour by static recompilation of the Xbox 360 binary. The stable release runs at 1080p and 60 FPS with keyboard and mouse, a standalone launcher, DualSense adaptive triggers and portable saves, tested on USA and Europe dumps.",
+    "description_zh": "把 Xbox 360 版《寂静岭：暴雨》静态重编译为 Windows 原生端口；稳定版以 1080p、60 FPS 与键鼠操作运行，带独立启动器、DualSense 自适应扳机和可携带存档，已在美国与欧洲版镜像上测试。",
+    "evidence_url": "https://github.com/LittleBitUA/DownpourRecomp/blob/a183ff0b21f5e504526102754a04f2a9534a97b7/README.md",
+    "verified_at": "2026-11-19",
+    "added_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes a native Windows port produced by static recompilation of the Xbox 360 binary.",
+      "The user supplies their own Xbox 360 dump; the project ships no game content and was tested on USA and Europe dumps.",
+      "The current release targets Windows 10 and 11, at 1080p and 60 FPS, with a standalone launcher and DualSense adaptive triggers.",
+      "The repository is BSD-3-Clause; the game and its data keep their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "scope",
+      "license"
+    ]
+  },
+  {
+    "id": "cricket07-browser-static-recomp-case",
+    "name": "Cricket 07 in the browser: x86 to WebAssembly",
+    "url": "https://github.com/Dhaiwat10/cricket07-browser",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "EA Sports Cricket 07 running in a browser tab: every function is statically recompiled from x86 to C, then to WebAssembly, with Direct3D 8 rebuilt on WebGPU. The README reports 31,548 translated functions, browser-stored game files, controllers and online 1v1 multiplayer, plus a native Mac build.",
+    "description_zh": "让 EA Sports Cricket 07 在浏览器标签页中运行：把每个函数从 x86 静态重编译为 C，再编译为 WebAssembly，并用 WebGPU 重建 Direct3D 8。README 称已翻译 31,548 个函数，游戏文件存入浏览器私有存储，支持手柄与在线 1v1 多人，另有原生 Mac 构建。",
+    "evidence_url": "https://github.com/Dhaiwat10/cricket07-browser/blob/7faa180f9ea9f35e1cc7310973906a339310e7fa/README.md",
+    "verified_at": "2026-11-19",
+    "added_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes a static translation of the game's x86 machine code to C and then WebAssembly, with a native Mac build from the same C.",
+      "The user supplies their own copy of Cricket 07; the repository contains no game files or game code.",
+      "The browser build stores game files in private browser storage and rebuilds Direct3D 8 on WebGPU, DirectSound on Web Audio and DirectInput on browser input.",
+      "The repository is MIT; the game and its data keep their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "scope",
+      "license"
+    ]
+  },
+  {
+    "id": "simpsons-game-static-recomp-case",
+    "name": "The Simpsons Game recompiled for modern platforms",
+    "url": "https://github.com/YesterMester/TheSimpsonsGameReComp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A native port of The Simpsons Game (Xbox 360, 2007) for Linux, Steam Deck and Windows, with an Android ARM64 development preview. The PowerPC executable is translated ahead of time to C++ and compiled for x86-64 or ARM64, with the ReXGlue runtime providing the Xbox 360 kernel, audio, input and graphics layers.",
+    "description_zh": "把 Xbox 360 版《辛普森一家游戏》（2007）静态重编译为 Linux、Steam Deck 与 Windows 原生版本，并提供 Android ARM64 开发预览；PowerPC 可执行文件预先翻译为 C++ 并编译为 x86-64 或 ARM64，由 ReXGlue 运行时提供 Xbox 360 内核、音频、输入与图形层。",
+    "evidence_url": "https://github.com/YesterMester/TheSimpsonsGameReComp/blob/542aec52e7b4febd4c82cbad2b0c052b755356c1/README.md",
+    "verified_at": "2026-11-19",
+    "added_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes a static recompilation of the Xbox 360 PowerPC executable to C++, compiled for x86-64 or ARM64.",
+      "The user supplies their own copy of the Xbox 360 game; the project includes no game content.",
+      "The port targets Linux, Steam Deck and Windows, with an Android ARM64 development preview; ReXGlue provides the runtime on Vulkan, Direct3D 12 or an experimental Direct3D 11 renderer.",
+      "The repository is GPL-3.0; the game and its data keep their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "scope",
+      "license"
+    ]
   }
 ]
