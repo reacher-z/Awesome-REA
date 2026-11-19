@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-43534937571-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-14T00:53:33Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 427,
+    "selected_count": 3,
+    "selected_ids": [
+      "scan-1448018923",
+      "scan-1448016394",
+      "scan-1434193071"
+    ],
+    "record_sha256": {
+      "scan-1448018923": "193fbed9754cb8a717957f30789d5427ed77ef45649bd9bd1769481293f1d666",
+      "scan-1448016394": "5fef1737a6f3eb3bdda3172be070f4f8bda993dad53539702928f989f2d4479d",
+      "scan-1434193071": "9b4b01b6c780d102129c2e4842f852d946e80a9064e8a3395fd136f8cd23a8e8"
+    },
+    "skipped_counts": {
+      "already-listed": 12070,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 43534937571,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "3cae622208e40364011673b37e4c77354b22a7d3",
+    "artifact_id": 14090685008,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:74050c297fa76e45e004f68dc9978855915f56000a1c65203f2283274c1c7347",
+    "checkpoint_sha256": "c714278c1670a850e52072cd7121173b41cba3b196223b026fb92d7dca85c81b",
+    "receipt_sha256": "8690db064861f82de04c60baf30b3ff1dc62f5ca0987db8293a1327b727df802",
+    "scan_started_at": "2026-11-14T00:33:12.367563+00:00",
+    "scan_completed_at": "2026-11-14T00:49:45.314914+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 119059,
+      "failed": 4475,
+      "attempted_readme_scans": 123534,
+      "unique_repos": 123597,
+      "unattempted_candidates": 63
+    },
+    "integrity_counts": {
+      "qualified": 116042,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1448018923",
+      "name": "xcchc/tnt-emotes",
+      "full_name": "xcchc/tnt-emotes",
+      "url": "https://github.com/xcchc/tnt-emotes",
+      "description_en": "40 animated emotes from This is Not TNT (com.grapefruit.game.tnt), restored frame by frame - GIF / lossless WebP / APNG + reproducible build",
+      "description_zh": "40 animated emotes from This is Not TNT (com.grapefruit.game.tnt), restored frame by frame - GIF / lossless WebP / APNG + reproducible build",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "animated-gif",
+        "apng",
+        "emotes",
+        "game-assets",
+        "gif",
+        "pillow",
+        "python",
+        "reverse-engineering",
+        "webp"
+      ],
+      "stars": 0,
+      "license": "NOASSERTION",
+      "archived": false,
+      "updated_at": "2026-11-06T09:25:36Z",
+      "pushed_at": "2026-11-06T09:25:32Z",
+      "metadata_observed_at": "2026-11-14T00:48:29.165691Z",
+      "observed_at": "2026-11-14T00:48:34.778292Z",
+      "readme_url": "https://github.com/xcchc/tnt-emotes/blob/1f51fc69417493c14301d71140b863249cd9e030/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "14452d79dfc7cbb21c524faf9d288af3d918ec5b",
+      "readme_content_git_sha": "14452d79dfc7cbb21c524faf9d288af3d918ec5b",
+      "readme_sha256": "ad3ab41a4fef931b9a71439db998d6e8a9481f0f8b4fc5e36f4eedb24081f529",
+      "readme_bytes": 6408,
+      "readme_lines": 125,
+      "readme_heading_count": 6,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "game"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T08:19:49Z..2026-11-06T09:31:36Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "1f51fc69417493c14301d71140b863249cd9e030"
+    },
+    {
+      "id": "scan-1448016394",
+      "name": "hex91/zygisk-gadget-stealth",
+      "full_name": "hex91/zygisk-gadget-stealth",
+      "url": "https://github.com/hex91/zygisk-gadget-stealth",
+      "description_en": "基于 Zygisk 的 frida-gadget 按 App 持久化注入模块 | frida-gadget 17.5.2 | 去特征 / 可配置 / WebUI 查看状态",
+      "description_zh": "基于 Zygisk 的 frida-gadget 按 App 持久化注入模块 | frida-gadget 17.5.2 | 去特征 / 可配置 / WebUI 查看状态",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "android-security",
+        "frida",
+        "frida-gadget",
+        "hook",
+        "kernelsu",
+        "magisk",
+        "reverse-engineering",
+        "zygisk"
+      ],
+      "stars": 3,
+      "license": "NOASSERTION",
+      "archived": false,
+      "updated_at": "2026-11-11T06:26:46Z",
+      "pushed_at": "2026-11-06T09:41:46Z",
+      "metadata_observed_at": "2026-11-14T00:48:29.165691Z",
+      "observed_at": "2026-11-14T00:48:34.777575Z",
+      "readme_url": "https://github.com/hex91/zygisk-gadget-stealth/blob/4dc020ffb244ed4a6fefa5caafa736ecf1378759/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "b89cebaff82cff10acd83ab1d24dbfd2614b4575",
+      "readme_content_git_sha": "b89cebaff82cff10acd83ab1d24dbfd2614b4575",
+      "readme_sha256": "24bbc5eec929d76f795be0ef8bf671e25dd68a3d2bc70c89ff80dba55b874a41",
+      "readme_bytes": 21445,
+      "readme_lines": 387,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app",
+        "binary"
+      ],
+      "category": "android",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T08:19:49Z..2026-11-06T09:31:36Z",
+        "topic:frida is:public fork:false archived:false created:2026-11-06T08:19:49Z..2026-11-06T09:31:36Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "4dc020ffb244ed4a6fefa5caafa736ecf1378759"
+    },
+    {
+      "id": "scan-1434193071",
+      "name": "muzafferkadir/find-my-xiaomi-band-9",
+      "full_name": "muzafferkadir/find-my-xiaomi-band-9",
+      "url": "https://github.com/muzafferkadir/find-my-xiaomi-band-9",
+      "description_en": "Software-only Find My (OpenHaystack-style) tracking for the Xiaomi Smart Band 9 — custom watchface, Mac report client, cross-platform map viewer. No extra hardware.",
+      "description_zh": "Software-only Find My (OpenHaystack-style) tracking for the Xiaomi Smart Band 9 — custom watchface, Mac report client, cross-platform map viewer. No extra hardware.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "apple-find-my",
+        "ble",
+        "bluetooth-low-energy",
+        "find-my",
+        "lua",
+        "mi-band",
+        "openhaystack",
+        "reverse-engineering",
+        "tracker",
+        "watchface",
+        "xiaomi",
+        "xiaomi-smart-band-9"
+      ],
+      "stars": 6,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-11T19:22:57Z",
+      "pushed_at": "2026-11-11T18:23:47Z",
+      "metadata_observed_at": "2026-11-14T00:46:19.626836Z",
+      "observed_at": "2026-11-14T00:46:25.397489Z",
+      "readme_url": "https://github.com/muzafferkadir/find-my-xiaomi-band-9/blob/e85722685e97622f19a3f8f68e1eabab9834a683/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "96805f557e097b8be88216dd623b53fc59d4859a",
+      "readme_content_git_sha": "96805f557e097b8be88216dd623b53fc59d4859a",
+      "readme_sha256": "35280ae53f3639dbb92719f4c938027457a112a06f5a8ddac7bc5e1413d9fd8a",
+      "readme_bytes": 9010,
+      "readme_lines": 152,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "usage",
+        "requirements",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"reverse engineering\" in:readme is:public fork:false archived:false created:2026-10-26T07:41:48Z..2026-10-26T14:15:07Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "e85722685e97622f19a3f8f68e1eabab9834a683"
+    }
+  ]
+}

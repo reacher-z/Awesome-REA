@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from collections import Counter
 from html import escape
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -17,6 +18,7 @@ from asset_paths import fingerprinted_href
 from build_readme import CATEGORIES, KIND_LABELS, TARGETS, collection_section, lead_sentence, paper_section, papers_newest_first
 from home_art import exploded_view
 from site_footer import site_footer
+from repository_stats import REPOSITORY, compact_count, repository_stars
 from site_shell import announcement_bar, header, head_early, icon, mobile_bar, palette, plain_language_link, shell_assets, sprite, star_button, star_count
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,7 +58,7 @@ EVIDENCE_DETAIL = {
 COPY = {
     'en': {
         'h1': 'Reverse engineer <em>anything</em>',
-        'lede': 'Tools, case studies and papers for taking apart binaries, games, apps, firmware, protocols and websites, each checked against its source.',
+        'lede': 'Awesome REA (Awesome Reverse Engineering Anything) is a bilingual catalog of {res} source-reviewed tools, projects and case studies and {pap} research papers for taking apart binaries, games, apps, firmware, protocols and websites{stars}. Every entry links the primary source it was checked against.',
         'search_label': 'Search the catalogue', 'placeholder': 'Try Ghidra, IL2CPP or BLE', 'clear': 'Clear search', 'focus': 'Press / to focus',
         'stats': '<span class="s-lg"><strong>{res}</strong> curated resources and <strong>{pap}</strong> papers, each reviewed against its source. Plus <a href="/discoveries/"><strong>{idx}</strong> unreviewed discoveries</a> from the scans.</span><span class="s-sm"><strong>{res}</strong> resources, <strong>{pap}</strong> papers, <a href="/discoveries/"><strong>{idx}</strong> unreviewed</a></span>',
         'updated': 'Last scan', 'all': 'All', 'domains': 'Target domains', 'catalogue': 'Catalogue',
@@ -70,11 +72,12 @@ COPY = {
         'unknown_title': 'Source unavailable or unreadable at review time',
         'preview_image_alt': "Demo screenshot from the project's public documentation",
         'preview_video_alt': "Demo video thumbnail from the project's public documentation",
+        'preview_full_label': 'Full-size demo screenshot: {name}',
         'demo_note': 'Demo available · no screenshot',
     },
     'zh': {
         'h1': '逆向<em>一切</em>',
-        'lede': '拆解二进制、游戏、应用、固件、协议与网站所需的工具、案例与论文，每一条都对照原始来源核查。',
+        'lede': 'Awesome REA（Awesome Reverse Engineering Anything）是中英双语目录，收录 {res} 项经来源复核的工具、项目与案例，以及 {pap} 篇研究论文，涵盖二进制、游戏、应用、固件、协议与网站的逆向{stars}。每个条目都链接其核查所依据的一手来源。',
         'search_label': '搜索目录', 'placeholder': '试试 Ghidra、IL2CPP 或 BLE', 'clear': '清除搜索', 'focus': '按 / 键聚焦',
         'stats': '<span class="s-lg"><strong>{res}</strong> 项精选资源与 <strong>{pap}</strong> 篇论文，均已对照来源复核。另有 <a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核发现</a>来自自动扫描。</span><span class="s-sm"><strong>{res}</strong> 项资源、<strong>{pap}</strong> 篇论文、<a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核</a></span>',
         'updated': '最近扫描', 'all': '全部', 'domains': '目标领域', 'catalogue': '目录',
@@ -88,6 +91,7 @@ COPY = {
         'unknown_title': '复核时来源不可达或不可读',
         'preview_image_alt': '项目公开文档中的演示截图',
         'preview_video_alt': '项目公开文档中演示视频的封面',
+        'preview_full_label': '完整演示截图：{name}',
         'demo_note': '有 demo · 暂无截图',
     },
 }
@@ -169,15 +173,21 @@ def evidence_legend(language: str) -> str:
     return f'<div class="evidence-legend"><strong>{text["class_label"]}</strong><ul>{items}</ul>{guide}</div>'
 
 
-def preview_figure(record: dict, language: str) -> str:
+def preview_figure(record: dict, language: str, *, thumb: bool = False) -> str:
     """A documented demo preview for Class 0/1 entries; a demo without a screenshot gets a placeholder."""
     text = COPY[language]
     if record.get('preview'):
         kind = record.get('preview_kind')
         alt = text['preview_video_alt'] if kind == 'video' else text['preview_image_alt']
         play = '<span class="card-preview-play" aria-hidden="true">▶</span>' if kind == 'video' else ''
-        return (f'<figure class="card-preview">{play}<img src="{_e(record["preview"])}" alt="{_e(alt)}" '
-                f'loading="lazy" decoding="async"></figure>')
+        # A /resources/ row shows the small thumbnail when there is one; a screenshot thumbnail links the full image.
+        small = record.get('preview_thumb') if thumb else None
+        image = f'<img src="{_e(small or record["preview"])}" alt="{_e(alt)}" loading="lazy" decoding="async">'
+        if small and kind != 'video':
+            name = (record.get('name_zh') or record['name']) if language == 'zh' else record['name']
+            label = text['preview_full_label'].format(name=name)
+            image = f'<a class="card-preview-link" href="{_e(record["preview"])}" aria-label="{_e(label)}">{image}</a>'
+        return f'<figure class="card-preview">{play}{image}</figure>'
     if record.get('preview_kind') == 'demo':
         return (f'<figure class="card-preview card-preview-demo"><span class="card-preview-play" aria-hidden="true">▶</span>'
                 f'<span>{_e(text["demo_note"])}</span></figure>')
@@ -206,7 +216,7 @@ def index_card(record: dict, language: str, targets: list[str], *, prefix: str =
     return (f'<li class="card{case}" id="r-{identifier}" data-id="{identifier}"><article class="card-face"{article}>'
             f'<p class="callno" title="{_e(label)}"><span class="vh">{_e(label)}: </span><span aria-hidden="true">{DOMAIN_CODES[targets[0]]}·{KIND_CODES[kind]}</span></p>'
             f'<h3 class="card-name"><a class="stretch{entry}" href="{prefix}/resources/{identifier}/">{_e(_name(record, language))}</a>{mark}{evidence_chip(record, language)}</h3>'
-            f'<p class="card-desc">{_e(_lead(record, language))}</p>{preview_figure(record, language)}'
+            f'<p class="card-desc">{_e(_lead(record, language))}</p>{preview_figure(record, language, thumb=listing)}'
             f'<ul class="card-targets" aria-label="{text["targets"]}">{items}</ul>'
             f'<p class="stamp">{icon("check")}<span>{text["reviewed"]} <time datetime="{reviewed}">{reviewed}</time></span>'
             f'<a class="ev" href="{_e(record["evidence_url"])}" rel="noopener"><span class="ev-repo">{_e(evidence["repo"])}</span>{revision}</a></p>'
@@ -223,13 +233,32 @@ def _folder_tabs(resources: list[dict], language: str, prefix: str) -> str:
     return f'<nav class="folders" aria-label="{text["domains"]}">{"".join(tabs)}</nav>'
 
 
+def _stars_clause(language: str) -> str:
+    """The repository's GitHub stars, rounded like the buttons; empty when the build has no count."""
+    stars = repository_stars()
+    if stars is None:
+        return ''
+    count = compact_count(stars)
+    return f'，GitHub 星标 {count}' if language == 'zh' else f', with {count} GitHub stars'
+
+
+OLD_TITLES = {'en': ('Awesome Reverse Engineering Anything · Tools, Cases &amp; Papers', 'Awesome Reverse Engineering Anything · Tools, Cases & Papers'),
+              'zh': ('逆向工程资源合集 · Awesome Reverse Engineering Anything',)}
+
+
+def home_title(resources: list[dict], papers: list[dict], language: str) -> str:
+    """The homepage title: the brand, then the real counts (at most 60 characters)."""
+    res, pap = _count(len(resources)), _count(len(papers))
+    return f'Awesome REA（逆向一切）是资源目录：{res} 项资源与 {pap} 篇论文' if language == 'zh' else f'Awesome REA: Reverse Engineering Anything, {res} Resources'
+
+
 def _masthead(resources, papers, discovery_count, last_scan, language, prefix, repository_url) -> str:
     text = COPY[language]
     stats = text['stats'].format(res=_count(len(resources)), pap=_count(len(papers)), idx=_count(discovery_count))
     updated = (f'<p class="updated">{text["updated"]} <time datetime="{_e(last_scan)}" data-rel>{_e(last_scan[:10])}</time></p>' if last_scan else '')
     return (f'<section class="masthead" aria-labelledby="hero-title"><div class="wrap">'
             f'{icon("reg", "reg reg-tl")}{icon("reg", "reg reg-tr")}<div class="xv">{exploded_view(language)}</div>'
-            f'<div class="hero-top"><h1 class="hero-title" id="hero-title">{text["h1"]}</h1><p class="lede">{text["lede"]}</p></div>'
+            f'<div class="hero-top"><h1 class="hero-title" id="hero-title"><span class="hero-brand">Awesome REA</span> {text["h1"]}</h1><p class="lede">{text["lede"].format(res=_count(len(resources)), pap=_count(len(papers)), stars=_stars_clause(language))}</p></div>'
             f'<form class="hero-search" role="search" action="{prefix}/resources/" method="get" data-home-search>'
             f'<label class="hs-label" for="q">{text["search_label"]}</label>{icon("search")}'
             f'<input id="q" name="q" type="search" placeholder="{text["placeholder"]}" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-describedby="hs-count" data-search-input>'
@@ -317,6 +346,39 @@ def _featured_projects(language: str) -> str:
             f'</div><div class="promo-grid">{"".join(cards)}</div></section>')
 
 
+FAQ_TEXT = {'en': ('FAQ', 'FAQ'), 'zh': ('常见问题', '常见问题')}
+
+
+def faq_items(resources: list[dict], papers: list[dict], discovery_count: int, last_scan: str | None, language: str) -> list[tuple[str, str]]:
+    """Visible questions and answers, built from the same counts as the page; each answer is plain text."""
+    res, pap = _count(len(resources)), _count(len(papers))
+    cases = _count(sum(record['kind'] == 'case-study' for record in resources))
+    idx = _count(discovery_count)
+    day = last_scan[:10] if last_scan else ''
+    if language == 'zh':
+        return [
+            ('Awesome REA 是什么？', f'Awesome Reverse Engineering Anything 是中英双语的逆向工程目录，收录 {res} 项经来源复核的工具、项目、集成与案例（其中案例 {cases} 个）和 {pap} 篇研究论文，覆盖网站、游戏、应用、二进制、固件与通信协议。'),
+            ('每个条目的依据是什么？', '每个条目链接一手来源，并记录来源复核日期；描述对照项目文档或论文撰写。'),
+            ('怎样用命令读取单个条目？', '执行 curl -sL https://awesomerea.org/resources/<id>/index.md（论文用 /papers/<id>/index.md），返回带 YAML 头信息的 Markdown。完整目录在 /llms-full.txt，JSON 接口在 /api/v1/。'),
+            ('有没有数据集或 API？', '有。/api/v1/resources.json 与 /api/v1/papers.json 提供全部条目，/downloads/records.jsonl 每行一条记录，Hugging Face 上有 TIGER-Lab/AwesomeREA 镜像，也可以克隆 GitHub 仓库。'),
+            ('怎样提交新资源、案例或论文？', '在 GitHub 的 Awesome-REA 仓库使用对应的 issue 表单，或提交 pull request；投稿页 /zh/contribute/ 说明所需的一手证据。'),
+            ('数据多久更新一次？', f'精选条目通过审核后的 pull request 更新。自动扫描持续加入未审核的发现，目前 {idx} 条，最近一次扫描在 {day}。' if day else '精选条目通过审核后的 pull request 更新。自动扫描持续加入未审核的发现。'),
+        ]
+    return [
+        ('What is Awesome REA?', f'Awesome Reverse Engineering Anything is a bilingual catalog of {res} source-reviewed tools, projects, integrations and case studies ({cases} of them cases) and {pap} research papers on reverse engineering websites, games, apps, native binaries, firmware and communication protocols.'),
+        ('What is each entry based on?', 'Every entry links its primary source and records the date the source was reviewed. Descriptions are written against the project documentation or the paper.'),
+        ('How do I read one entry from a command line?', 'Run curl -sL https://awesomerea.org/resources/<id>/index.md, or /papers/<id>/index.md for a paper. The reply is Markdown with a YAML header. The full catalog is at /llms-full.txt and the JSON API under /api/v1/.'),
+        ('Is there a dataset or an API?', 'Yes. /api/v1/resources.json and /api/v1/papers.json list every entry, /downloads/records.jsonl holds one record per line, the Hugging Face mirror is TIGER-Lab/AwesomeREA, and the GitHub repository can be cloned.'),
+        ('How do I suggest a resource, case or paper?', 'Use the matching issue form in the Awesome-REA GitHub repository or open a pull request. The contribute page, /contribute/, lists the primary evidence each type needs.'),
+        ('How often is the catalog updated?', f'Curated entries change through reviewed pull requests. Automated scans keep adding unreviewed discoveries, {idx} so far, and the last scan ran on {day}.' if day else 'Curated entries change through reviewed pull requests. Automated scans keep adding unreviewed discoveries.'),
+    ]
+
+
+def faq_markdown(items: list[tuple[str, str]], language: str) -> str:
+    """The questions as a Markdown section for the agent-facing files; the homepage itself shows no FAQ."""
+    return f'## {FAQ_TEXT[language][1]}\n\n' + '\n\n'.join(f'### {q}\n\n{a}' for q, a in items) + '\n'
+
+
 def _homepage_head(explorer_html: str) -> str:
     """Keep the title, description, canonical, alternates, social and JSON-LD the homepage already carries."""
     head = re.search(r'<head>(.*?)</head>', explorer_html, re.S).group(1)
@@ -334,6 +396,9 @@ def render_homepage(*, site_dir: Path, explorer_html: str, resources: list[dict]
     locale = 'zh-CN' if zh else 'en'
     rea_css = fingerprinted_href(site_dir, 'rea.css')
     head = _homepage_head(explorer_html)
+    title = home_title(resources, papers, language)
+    for old in OLD_TITLES[language]:
+        head = head.replace(old, escape(title, quote=False))
     head = re.sub(r'(<meta name="viewport"[^>]*>)', lambda match: match.group(1) + head_early(), head, count=1)
     text = COPY[language]
     body = (f'<a class="skip" href="#main">{"跳到正文" if zh else "Skip to content"}</a>'
@@ -348,8 +413,36 @@ def render_homepage(*, site_dir: Path, explorer_html: str, resources: list[dict]
             f'<body class="page-home">{sprite()}{body}\n</body>\n</html>\n')
 
 
+def _slug(text: str) -> str:
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
+
+
+def _search_parts(record: dict, language: str) -> tuple[str, str, str, str]:
+    """The repository label search matches, plus the owner and the rest of the evidence link the result row shows.
+
+    GitHub evidence becomes owner/repo + /blob/<12-character commit>/path: the index carries the repository name and the
+    text file carries the owner and the rest. Any other evidence keeps its full URL, labelled by host and path.
+    """
+    evidence = evidence_label(record['evidence_url'])
+    short = record['evidence_url'].removeprefix('https://github.com/')
+    if short == record['evidence_url'] or '/' not in short:
+        return evidence['repo'], '', record['evidence_url'], evidence
+    parts = short.split('/')
+    if len(parts) > 3 and parts[2] in ('blob', 'tree') and len(parts[3]) == 40:
+        parts[3] = parts[3][:12]
+    owner, name = parts[0], parts[1]
+    return name, owner, '/'.join(parts)[len(owner) + 1 + len(name):], evidence
+
+
 def search_index(resources: list[dict], papers: list[dict], language: str, order: dict[str, list[str]]) -> dict:
-    """The lazy index behind the palette and the home drawer: compact arrays, one file per language."""
+    """The lazy index behind the palette and the home drawer: compact arrays, one file per language.
+
+    It holds what ranking and filtering read. Row:
+    [id, name, kind, targets, category, repository, featured rank, alias, connection, class, status, section, reviewed, added].
+    "repository" is the GitHub repository name, or the host label for other evidence. id is 0 when it is the slug of that
+    repository name and 1 when it is that slug plus "-case"; alias is 1 when it is the repository name.
+    Descriptions, owners, evidence paths and previews follow in search_text(), row for row; "b" pairs the two files.
+    """
     zh = language == 'zh'
     kinds = list(KIND_ORDER)
     categories = sorted(CATEGORIES)
@@ -358,42 +451,81 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
     sections = sorted({collection_section(record) for record in resources})
     rows = []
     for record in resources:
-        evidence = evidence_label(record['evidence_url'])
-        short = record['evidence_url'].removeprefix('https://github.com/')
-        if short != record['evidence_url']:
-            parts = short.split('/')
-            if len(parts) > 3 and parts[2] in ('blob', 'tree') and len(parts[3]) == 40:
-                parts[3] = parts[3][:12]
-            short = '/'.join(parts)
+        label, _, _, evidence = _search_parts(record, language)
         alias = evidence['repo'].split('/')[-1] if evidence['host'] == 'github.com' and evidence['repo'] else ''
-        lead = _lead(record, language)
-        if len(lead) > 220:
-            lead = lead[:217].rsplit(' ', 1)[0] + '…'
-        rows.append([record['id'], _name(record, language), kinds.index(record['kind']),
+        alias = alias if alias.lower() != record['name'].lower() else ''
+        base = label.split('/')[-1]
+        identifier = record['id']
+        if base.isascii() and identifier == _slug(base):
+            identifier = 0
+        elif base.isascii() and identifier == _slug(base) + '-case':
+            identifier = 1
+        rows.append([identifier, _name(record, language), kinds.index(record['kind']),
                      ''.join(str(DOMAIN_ORDER.index(target)) for target in _ordered_targets(record, order)),
-                     categories.index(record['category']), lead,
-                     '' if short != record['evidence_url'] else evidence['repo'], short,
-                     str(record['verified_at'])[:10], record.get('added_at') or '', ranks.get(record['id'], -1),
-                     alias if alias.lower() != record['name'].lower() else '',
+                     categories.index(record['category']), label, ranks.get(record['id'], -1),
+                     1 if alias and alias == base else alias,
                      connections.index(CONNECTION_OF[record['relationship']]),
                      -1 if record.get('evidence_class') is None else int(record['evidence_class']),
                      'unknown' if record.get('evidence_status') == 'unknown' else '',
-                     record.get('preview') or '', record.get('preview_kind') or '',
-                     sections.index(collection_section(record))])
+                     sections.index(collection_section(record)),
+                     str(record['verified_at'])[:10], record.get('added_at') or ''])
     paper_rows = []
     for paper in papers_newest_first(papers):
         paper_rows.append([paper['id'], paper['title_zh'] if zh else paper['title'], paper['year'], paper['venue'],
                            DOMAIN_ORDER.index(paper['targets'][0]), paper.get('arxiv_id') or '', paper_section(paper)])
     return {
-        'v': 1, 'lang': language, 'kinds': kinds, 'kindLabels': [KIND_LABELS[kind][zh] for kind in kinds],
+        'v': 2, 'lang': language, 'kinds': kinds, 'kindLabels': [KIND_LABELS[kind][zh] for kind in kinds],
         'kindPlural': [KIND_PLURAL[kind][zh] for kind in kinds], 'kindCodes': [KIND_CODES[kind] for kind in kinds],
         'targets': list(DOMAIN_ORDER), 'targetLabels': [_target_label(target, language) for target in DOMAIN_ORDER],
         'targetCodes': [DOMAIN_CODES[target] for target in DOMAIN_ORDER],
         'categories': categories, 'categoryLabels': [CATEGORIES[category][zh] for category in categories],
         'connections': connections, 'connectionLabels': [CONNECTIONS[key][0][zh] for key in connections],
         'sections': sections, 'pinned': list(PINNED),
-        'r': rows, 'p': paper_rows,
+        'b': search_stamp(resources), 'r': rows, 'p': paper_rows,
     }
+
+
+def scan_facts(discovery_queue: dict | None) -> tuple[str | None, int]:
+    """The last scan time and the number of listed discoveries the homepage states."""
+    batches = (discovery_queue or {}).get('batches') or []
+    last_scan = max((str(batch['ingested_at']) for batch in batches), default=None)
+    if last_scan and not last_scan.endswith('Z'):
+        last_scan = re.sub(r'\+00:00$', 'Z', last_scan)
+    return last_scan, sum(record.get('data_decision') != 'outside' for record in (discovery_queue or {}).get('listed', ()))
+
+
+def home_faq_markdown(resources: list[dict], papers: list[dict], discovery_queue: dict | None, language: str) -> str:
+    last_scan, discovery_count = scan_facts(discovery_queue)
+    return faq_markdown(faq_items(resources, papers, discovery_count, last_scan, language), language)
+
+def search_row_id(row: list) -> str:
+    """The record id of a search_index() row, as site.js reads it."""
+    base = row[5].split('/')[-1]
+    return row[0] if isinstance(row[0], str) else _slug(base) + ('-case' if row[0] == 1 else '')
+
+
+def search_stamp(resources: list[dict]) -> str:
+    """Short hash of the row order shared by search_index() and search_text(); the page pairs the two files by it."""
+    return hashlib.sha1('\n'.join(record['id'] for record in resources).encode()).hexdigest()[:12]
+
+
+def search_text(resources: list[dict], language: str) -> dict:
+    """Row for row with search_index()["r"]: [description, GitHub owner, rest of the evidence link, preview, preview kind,
+    preview thumbnail].
+
+    preview is 1 when it is /previews/<id>.png, and the thumbnail 1 when it is /previews/thumbs/<id>.webp.
+    """
+    rows = []
+    for record in resources:
+        _, owner, rest, _ = _search_parts(record, language)
+        lead = _lead(record, language)
+        if len(lead) > 220:
+            lead = lead[:217].rsplit(' ', 1)[0] + '…'
+        preview = record.get('preview') or ''
+        thumb = record.get('preview_thumb') or ''
+        rows.append([lead, owner, rest, 1 if preview == f'/previews/{record["id"]}.png' else preview, record.get('preview_kind') or '',
+                     1 if thumb == f'/previews/thumbs/{record["id"]}.webp' else thumb])
+    return {'v': 2, 'lang': language, 'b': search_stamp(resources), 'n': len(rows), 't': rows}
 
 
 def build_home(site_dir: Path, *, explorer_pages: dict[str, str], resources: list[dict], papers: list[dict],
@@ -401,16 +533,13 @@ def build_home(site_dir: Path, *, explorer_pages: dict[str, str], resources: lis
     """Write /, /zh/ and their search indexes. ``explorer_pages`` holds the localized head source of each language."""
     site_dir = Path(site_dir)
     order = stored_targets()
-    batches = (discovery_queue or {}).get('batches') or []
-    last_scan = max((str(batch['ingested_at']) for batch in batches), default=None)
-    if last_scan and not last_scan.endswith('Z'):
-        last_scan = re.sub(r'\+00:00$', 'Z', last_scan)
-    discovery_count = sum(record.get('data_decision') != 'outside' for record in (discovery_queue or {}).get('listed', ()))
+    last_scan, discovery_count = scan_facts(discovery_queue)
     for language, route in (('en', 'index.html'), ('zh', 'zh/index.html')):
         page = site_dir / route
         page.parent.mkdir(parents=True, exist_ok=True)
         page.write_text(render_homepage(site_dir=site_dir, explorer_html=explorer_pages[language], resources=resources, papers=papers,
                                         discovery_count=discovery_count, last_scan=last_scan, language=language, repository_url=repository_url,
                                         repository_export=repository_export, order=order), encoding='utf-8')
-        name = 'search-index.zh.json' if language == 'zh' else 'search-index.json'
-        (site_dir / name).write_text(json.dumps(search_index(resources, papers, language, order), ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+        suffix = '.zh' if language == 'zh' else ''
+        (site_dir / f'search-index{suffix}.json').write_text(json.dumps(search_index(resources, papers, language, order), ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+        (site_dir / f'search-text{suffix}.json').write_text(json.dumps(search_text(resources, language), ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')

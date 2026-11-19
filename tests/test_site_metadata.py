@@ -142,7 +142,8 @@ class SecurityHeaderTests(unittest.TestCase):
         bibtex = {'content-type': 'application/x-bibtex; charset=utf-8'}
         self.assertEqual(rules, {
             '/fonts/*': {'access-control-allow-origin': '*', 'cache-control': 'public, max-age=2592000'},
-            **{route: no_cache for route in ('/', '/index.html', '/catalog.json', '/catalog-index.json', '/search-index.json', '/search-index.zh.json', '/source-index.json',
+            **{route: no_cache for route in ('/', '/index.html', '/catalog.json', '/catalog-index.json', '/search-index.json', '/search-index.zh.json', '/search-text.json', '/search-text.zh.json',
+                                             '/source-index.json',
                                              '/source-browser.json', '/source-published.json', '/papers.json', '/build-manifest.json',
                                              '/data-manifest.json', '/downloads/*')},
             **{route: {'content-type': 'application/atom+xml; charset=utf-8'} for route in ('/feed.xml', '/zh/feed.xml',
@@ -159,7 +160,9 @@ class SecurityHeaderTests(unittest.TestCase):
             '/badges/*': {'content-type': 'image/svg+xml'},
             # Agent formats: JSON Feeds, the full-catalog Markdown, Markdown twins and the static API.
             **{route: {'content-type': 'application/feed+json; charset=utf-8'} for route in ('/feed.json', '/zh/feed.json')},
-            **{route: {'content-type': 'text/plain; charset=utf-8'} for route in ('/llms-full.txt', '/zh/llms-full.txt')},
+            **{route: {'content-type': 'text/plain; charset=utf-8'} for route in ('/llms-full.txt', '/zh/llms-full.txt', '/llms-full/*', '/zh/llms-full/*')},
+            **{route: {'content-type': 'text/markdown; charset=utf-8'} for route in ('/AGENTS.md', '/agents.md')},
+            '/agents.txt': {'content-type': 'text/plain; charset=utf-8'},
             '/*/index.md': {'link': '<https://awesomerea.org/:splat/>; rel="canonical"'},
             '/api/*': {**no_cache, 'access-control-allow-origin': '*'},
             '/api/v1/*.csv': {'content-type': 'text/csv; charset=utf-8'},

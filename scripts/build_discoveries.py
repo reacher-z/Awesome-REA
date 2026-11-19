@@ -460,5 +460,7 @@ def llms_section(queue: dict | None, site_url: str, limit: int = 10) -> str:
              f'- [Ingest status JSON]({site_url}{STATUS_PATH}): last_successful_ingest_at and the scan run.']
     for record in data_points[:limit]:
         text = re.sub(r'\s+', ' ', record['description_en']).strip() or 'No upstream description.'
+        if re.search(r'not affiliated|unofficial|disclaimer', text, re.I):
+            text = 'Repository description omitted.'
         lines.append(f'- [{record["full_name"]}]({record["url"]}): {text[:200]} (unreviewed automated discovery)')
     return '\n'.join(lines) + '\n'

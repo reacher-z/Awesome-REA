@@ -8,6 +8,7 @@ import json
 from pathlib import Path, PurePosixPath
 import re
 import subprocess
+import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import unquote, urlsplit
 from urllib.request import Request, urlopen
@@ -27,15 +28,30 @@ MAX_PREVIOUS_MANIFEST_BYTES = 8_000_000
 MAX_URLS_PER_REQUEST = 10_000
 
 
-def fetch_bytes(url, limit):
+RETRY_DELAYS = (2, 6, 15, 30)
+RETRY_STATUSES = frozenset({429, 500, 502, 503, 504})
+
+
+def fetch_bytes(url, limit, *, sleep=time.sleep):
+    """Read one deployed resource; a busy edge (HTTP 429 or 5xx) or a dropped connection is retried with backoff."""
     request = Request(url, headers={'User-Agent': 'AwesomeREA-IndexNow/1.0',
                                    'Accept-Encoding': 'identity', 'Cache-Control': 'no-cache'})
-    with urlopen(request, timeout=30) as response:
-        if response.geturl() != url:
-            raise ValueError('A deployed verification resource redirected away from its canonical URL')
-        if response.status != 200:
-            raise ValueError('A deployed verification resource did not return HTTP 200')
-        content = response.read(limit + 1)
+    for delay in (*RETRY_DELAYS, None):
+        try:
+            with urlopen(request, timeout=30) as response:
+                if response.geturl() != url:
+                    raise ValueError('A deployed verification resource redirected away from its canonical URL')
+                if response.status != 200:
+                    raise ValueError('A deployed verification resource did not return HTTP 200')
+                content = response.read(limit + 1)
+            break
+        except HTTPError as error:
+            if error.code not in RETRY_STATUSES or delay is None:
+                raise
+        except (URLError, TimeoutError):
+            if delay is None:
+                raise
+        sleep(delay)
     if len(content) > limit:
         raise ValueError('A deployed verification resource exceeded its size limit')
     return content

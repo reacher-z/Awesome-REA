@@ -58,8 +58,9 @@ class SiteNodeTests(unittest.TestCase):
     def test_organization_is_the_project_and_names_no_person(self):
         node = organization_node(SITE, REPOSITORY)
         self.assertEqual(node['@id'], SITE + '/#organization')
-        self.assertEqual(node['sameAs'], REPOSITORY)
-        self.assertEqual(set(node), {'@type', '@id', 'name', 'url', 'logo', 'sameAs'})
+        self.assertEqual(node['sameAs'], [REPOSITORY, 'https://huggingface.co/datasets/TIGER-Lab/AwesomeREA'])
+        self.assertEqual(node['alternateName'], ['Awesome Reverse Engineering Anything', 'AwesomeREA'])
+        self.assertEqual(set(node), {'@type', '@id', 'name', 'alternateName', 'url', 'logo', 'sameAs'})
         self.assertEqual(publisher_reference(SITE), {'@id': node['@id']})
 
     def test_website_names_its_publisher_and_search(self):

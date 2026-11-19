@@ -1,0 +1,143 @@
+{
+ "description": "Real searches on awesomerea.org. In the homepage search, the top 3 resources must include one expected record: an id from \"ids\", or a record whose name matches the \"name\" pattern (case-insensitive) and, when given, lists \"target\". Checked in English and Chinese by tests/browser/smoke.cjs.",
+ "top": 3,
+ "queries": [
+  {
+   "q": "Ghidra",
+   "expect": {
+    "ids": [
+     "ghidra"
+    ]
+   },
+   "note": "exact name"
+  },
+  {
+   "q": "IDA MCP",
+   "expect": {
+    "ids": [
+     "hex-rays-ida-mcp",
+     "ida-pro-mcp-community",
+     "mcp-server-idapro-fdrechsler",
+     "ida-no-mcp",
+     "ida-mcp-rs",
+     "ida-multi-mcp"
+    ]
+   },
+   "note": "any IDA MCP integration"
+  },
+  {
+   "q": "Frida",
+   "expect": {
+    "ids": [
+     "frida"
+    ]
+   },
+   "note": "exact name"
+  },
+  {
+   "q": "radare2",
+   "expect": {
+    "ids": [
+     "radare2"
+    ]
+   },
+   "note": "exact name"
+  },
+  {
+   "q": "jadx",
+   "expect": {
+    "ids": [
+     "jadx"
+    ]
+   },
+   "note": "lower-case name"
+  },
+  {
+   "q": "Il2CppDumper",
+   "expect": {
+    "ids": [
+     "il2cppdumper"
+    ]
+   },
+   "note": "exact name"
+  },
+  {
+   "q": "Unity",
+   "expect": {
+    "name": "\\bunity\\b|il2cpp"
+   },
+   "note": "topic: any Unity or IL2CPP resource"
+  },
+  {
+   "q": "protocol reverse",
+   "expect": {
+    "name": "protocol",
+    "target": "protocol"
+   },
+   "note": "topic: any protocol reverse-engineering record"
+  },
+  {
+   "q": "angr",
+   "expect": {
+    "ids": [
+     "angr"
+    ]
+   },
+   "note": "exact name"
+  },
+  {
+   "q": "Binary Ninja",
+   "expect": {
+    "ids": [
+     "binary-ninja"
+    ]
+   },
+   "note": "two-word name"
+  },
+  {
+   "q": "Binwalk",
+   "expect": {
+    "ids": [
+     "binwalk"
+    ]
+   },
+   "note": "exact name"
+  },
+  {
+   "q": "ghidr",
+   "expect": {
+    "ids": [
+     "ghidra"
+    ]
+   },
+   "note": "typo: missing letter"
+  },
+  {
+   "q": "fridaa",
+   "expect": {
+    "ids": [
+     "frida"
+    ]
+   },
+   "note": "typo: extra letter"
+  },
+  {
+   "q": "jdax",
+   "expect": {
+    "ids": [
+     "jadx"
+    ]
+   },
+   "note": "typo: transposed letters"
+  },
+  {
+   "q": "radere2",
+   "expect": {
+    "ids": [
+     "radare2"
+    ]
+   },
+   "note": "typo: wrong letter"
+  }
+ ]
+}

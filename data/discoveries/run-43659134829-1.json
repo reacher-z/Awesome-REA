@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-43659134829-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-15T00:56:36Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 425,
+    "selected_count": 1,
+    "selected_ids": [
+      "scan-1448162003"
+    ],
+    "record_sha256": {
+      "scan-1448162003": "9d36cfbb9f4ea01d2a139ac57b45ca409e2464bfbabf79931b6c1c835bb2f7d5"
+    },
+    "skipped_counts": {
+      "already-listed": 12083,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 43659134829,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "18e4fbcdd304aa858e364d6dd6811e9008cc25c6",
+    "artifact_id": 14139408383,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:49d26ad113bcc3e73164ddb5ca6183ee800e805f8aab13b29bcc601555f3c942",
+    "checkpoint_sha256": "22cec5196dc5f5382a2faa8adb2a1415e3e6987f2e25510e73ab905501c4eb83",
+    "receipt_sha256": "727d115a290953056cd61efe948fd504235721693c19b0a1dcdcabe69c6a53f9",
+    "scan_started_at": "2026-11-15T00:38:05.536146+00:00",
+    "scan_completed_at": "2026-11-15T00:52:48.811103+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 119749,
+      "failed": 4610,
+      "attempted_readme_scans": 124359,
+      "unique_repos": 124423,
+      "unattempted_candidates": 64
+    },
+    "integrity_counts": {
+      "qualified": 116732,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1448162003",
+      "name": "studentlanily/psp-iso-translation",
+      "full_name": "studentlanily/psp-iso-translation",
+      "url": "https://github.com/studentlanily/psp-iso-translation",
+      "description_en": "PSP ISO localization workflow: extraction, batch translation gates, font injection, ISO validator and release packager (Weiss Schwarz Portable CN).",
+      "description_zh": "PSP ISO localization workflow: extraction, batch translation gates, font injection, ISO validator and release packager (Weiss Schwarz Portable CN).",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "game-translation",
+        "iso9660",
+        "localization",
+        "ppsspp",
+        "psp",
+        "reverse-engineering",
+        "translation"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-12T11:37:34Z",
+      "pushed_at": "2026-11-12T10:47:49Z",
+      "metadata_observed_at": "2026-11-15T00:51:32.752731Z",
+      "observed_at": "2026-11-15T00:51:37.149287Z",
+      "readme_url": "https://github.com/studentlanily/psp-iso-translation/blob/09b405cfd1aeb5a4a246f4e07b5e3fccf768124e/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "597b2393faf109cfef0ca9be487533e210c50631",
+      "readme_content_git_sha": "597b2393faf109cfef0ca9be487533e210c50631",
+      "readme_sha256": "107cbf5d9739789590cea87baf95d5ec5c2b1495ec344167fe9791ee9181c94f",
+      "readme_bytes": 5312,
+      "readme_lines": 132,
+      "readme_heading_count": 6,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "game"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T10:14:41Z..2026-11-06T11:13:21Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "09b405cfd1aeb5a4a246f4e07b5e3fccf768124e"
+    }
+  ]
+}

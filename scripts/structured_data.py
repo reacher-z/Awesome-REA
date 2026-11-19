@@ -41,7 +41,8 @@ def publisher_reference(site_url: str) -> dict:
 def organization_node(site_url: str, repository_url: str) -> dict:
     """The project as an entity, defined only on the two homepages and referenced everywhere else."""
     return {'@type': 'Organization', '@id': organization_id(site_url), 'name': ORGANIZATION_NAME, 'url': site_url + '/',
-            'logo': site_url + '/favicon.svg', 'sameAs': repository_url}
+            'alternateName': ['Awesome Reverse Engineering Anything', 'AwesomeREA'], 'logo': site_url + '/favicon.svg',
+            'sameAs': [repository_url, 'https://huggingface.co/datasets/TIGER-Lab/AwesomeREA']}
 
 
 def search_action(site_url: str) -> dict:

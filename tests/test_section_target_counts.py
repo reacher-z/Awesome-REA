@@ -46,7 +46,10 @@ def build(resources):
         output = Path(directory)
         build_discovery_pages(output, {'meta': {}, 'resources': resources}, None)
         validate_section_target_counts(output, resources)
-        return {route: (output / route.lstrip('/') / 'index.html').read_text() for route in ROUTES}
+        # /cases/ and its later static pages, joined so each section's cards add up across them.
+        return {route: [(output / route.lstrip('/') / 'index.html').read_text()]
+                + [path.read_text() for path in sorted((output / route.lstrip('/') / 'page').glob('*/index.html'), key=lambda path: int(path.parent.name))]
+                for route in ROUTES}
 
 
 def current_resources():
@@ -63,7 +66,20 @@ def current_resources():
 
 
 def section_rows(html):
-    """Each top-level section's key, heading count, card count and count line (target, numbers, plain text)."""
+    """Each top-level section's key, heading count, card count and count line (target, numbers, plain text).
+
+    Given the static pages of one listing, a section's cards add up across them and its line comes from its first page.
+    """
+    if isinstance(html, list):
+        merged = {}
+        for part in html:
+            for key, row in section_rows(part).items():
+                if key in merged:
+                    assert merged[key]['heading'] == row['heading'] and not (merged[key]['line'] and row['line']), key
+                    merged[key] = {**merged[key], 'cards': merged[key]['cards'] + row['cards'], 'line': merged[key]['line'] or row['line']}
+                else:
+                    merged[key] = row
+        return merged
     html = html.split('</main>', 1)[0]
     starts = list(SECTION.finditer(html))
     rows = {}
@@ -100,7 +116,9 @@ def fixture():
 class SectionTargetCountTests(unittest.TestCase):
     def setUp(self):
         self.resources = fixture()
-        self.html = build(self.resources)
+        # The fixture fits on one static page.
+        self.html = {route: pages[0] for route, pages in build(self.resources).items() if len(pages) == 1}
+        self.assertEqual(set(self.html), set(ROUTES))
 
     def lines(self, route):
         return {target: (int(tagged), int(elsewhere), int(untagged), body)

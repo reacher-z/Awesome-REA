@@ -21,7 +21,8 @@ from build_survey import TITLES as SURVEY_TITLES, build_survey, discussion_secti
 from social_cards import write_social_cards
 from build_entry_pages import build_entry_pages
 from page_twins import write_page_twins
-from build_home import build_home
+from agent_files import add_front_matter, write_agent_files, write_full_catalog
+from build_home import build_home, home_faq_markdown
 from build_feed import build_feeds
 from build_api import build_api, write_api_pages
 from agent_formats import full_catalog_markdown
@@ -36,12 +37,13 @@ from data_downloads import build_data_downloads
 from open_graph import website_node
 from structured_data import catalog_node, organization_node
 from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
+from preview_thumbs import thumbnail
 from media_privacy import public_media_url
 from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
 from localization import read_localizations, localized_records
 from source_scope import apply_scope, read_scope
-from sitemaps import SITEMAP_INDEX, page_dates, write_sitemaps
+from sitemaps import SITEMAP_INDEX, english_path, page_dates, write_sitemaps
 from public_source_supplements import (PUBLISHED_FILENAME, compose_published, copy_public_evidence, json_bytes,
                                       load_supplements, project_additions, read_withdrawals,
                                       write_withdrawn_redirects)
@@ -174,6 +176,7 @@ def build_site(output: Path) -> tuple[int, int, int]:
         previews = {entry["id"]: entry for entry
                     in json.loads(PREVIEWS_PATH.read_text(encoding="utf-8"))["entries"]}
     preview_files = []
+    preview_sources = {}
     resources = []
     for filename in ("rea-resources.json", "tool-resources.json"):
         for original in json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")):
@@ -204,6 +207,13 @@ def build_site(output: Path) -> tuple[int, int, int]:
                     record["preview"] = "/" + relative
                     record["preview_kind"] = preview["kind"]
                     preview_files.append((cached, relative))
+                    preview_sources[record["id"]] = {"key": cached.stem, "file": Path(relative).name}
+                    # Rows and cards show a small WebP and link the original; without one they show the original.
+                    thumb = thumbnail(cached, PREVIEW_CACHE / "thumbs")
+                    if thumb:
+                        thumb_relative = f"previews/thumbs/{record['id']}{thumb.suffix}"
+                        record["preview_thumb"] = "/" + thumb_relative
+                        preview_files.append((thumb, thumb_relative))
                 elif evidence_entry.get("signals", {}).get("demo"):
                     record["preview_kind"] = "demo"
             translation = translations.get(record["id"], {})
@@ -231,9 +241,12 @@ def build_site(output: Path) -> tuple[int, int, int]:
     (output / "badges").mkdir()
     shutil.copy2(ROOT / "assets" / LISTED_BADGE, output / "badges" / LISTED_BADGE)
     if preview_files:
-        (output / "previews").mkdir()
+        (output / "previews" / "thumbs").mkdir(parents=True)
         for cached, relative in preview_files:
             shutil.copy2(cached, output / relative)
+        # Which URL each preview came from, so the next build can take the served copy instead of the host.
+        (output / "previews" / "sources.json").write_text(
+            json.dumps(preview_sources, sort_keys=True, indent=1) + "\n", encoding="utf-8")
     html = (output / "index.html").read_text(encoding="utf-8")
     for key, value in {"RESOURCE_COUNT": len(resources), "INTEGRATION_COUNT": metadata["independent_integration_count"], "REVIEWED_AT": latest_review}.items():
         html = html.replace("{{" + key + "}}", str(value))
@@ -314,7 +327,9 @@ def build_site(output: Path) -> tuple[int, int, int]:
     catalog = {"meta": metadata, "resources": resources, "topic_labels": topic_labels, "category_labels": category_labels}
     # The repository view's Category filter labels the same categories as the /browse/ pages.
     catalog["source_category_labels"] = {category: list(labels) for category, labels in REPOSITORY_CATEGORIES.items()}
-    (output / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # The thumbnail path is a page-rendering detail of /resources/ (search-index.json carries it); catalog.json keeps the record fields.
+    public_catalog = {**catalog, "resources": [{key: value for key, value in record.items() if key != "preview_thumb"} for record in resources]}
+    (output / "catalog.json").write_text(json.dumps(public_catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     # Requirement lists and additional evidence stay out of the first-render index; app.js fetches catalog.json afterwards.
     (output / "catalog-index.json").write_text(json.dumps(catalog_index(catalog), ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     (output / "papers.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -388,21 +403,34 @@ def build_site(output: Path) -> tuple[int, int, int]:
     if section:
         llms_path = output / "llms.txt"
         llms = llms_path.read_text(encoding="utf-8")
-        # The unreviewed queues come after the curated collections and data, before the optional links.
-        marker = "\n## Optional\n"
-        if llms.count(marker) != 1:
-            raise ValueError("llms.txt needs exactly one Optional section")
+        # The unreviewed queues link repositories, not Markdown pages, so they close the Optional section.
+        marker = "\nThis file is a navigation aid."
+        if llms.count("\n## Optional\n") != 1 or llms.count(marker) != 1:
+            raise ValueError("llms.txt needs exactly one Optional section and one closing note")
+        section = re.sub(r"(?m)^## ", "### ", section)
         llms_path.write_text(llms.replace(marker, "\n" + section + marker), encoding="utf-8")
     # Every footer offers the same repository download as the homepage and the browse pages.
     repository_export = PUBLISHED_FILENAME if metadata["source_index"].get("full_export") == PUBLISHED_FILENAME else "source-index.json"
     discovery_paths = [*discovery_paths, *write_api_pages(output, api_index, site_url=SITE_URL, repository_url=REPOSITORY_URL,
                                                           source_export=repository_export)]
-    # llms-full.txt: the whole curated catalog in Markdown, one file per language.
-    for language, header in (("en", "# Awesome Reverse Engineering Anything: the full curated catalog\n\n> Every source-reviewed resource and research paper of AwesomeREA.org, with requirements, limits and sources. The navigation index is https://awesomerea.org/llms.txt; each entry also has its own Markdown page and record.json.\n"),
-                             ("zh", "# Awesome Reverse Engineering Anything：完整精选目录\n\n> AwesomeREA.org 全部经来源复核的资源与研究论文，含使用条件、局限与来源。导航索引见 https://awesomerea.org/llms.txt；每个条目另有独立的 Markdown 页面与 record.json。\n")):
-        target = output / ("zh/llms-full.txt" if language == "zh" else "llms-full.txt")
-        target.write_text(full_catalog_markdown(resources, papers, language, site_url=SITE_URL, sections=COLLECTION_SECTIONS,
-                                                section_of=collection_section, header=header), encoding="utf-8")
+    # llms-full.txt indexes the parts that hold the whole curated catalog in Markdown, one set per language.
+    brand = "Awesome REA (Awesome Reverse Engineering Anything)"
+    summaries = {
+        "en": f"Every source-reviewed resource ({len(resources):,}) and research paper ({len(papers):,}) of AwesomeREA.org, with requirements, limits and sources. The navigation index is {SITE_URL}/llms.txt; each entry also has its own Markdown page and record.json.",
+        "zh": f"AwesomeREA.org 全部经来源复核的资源（{len(resources):,} 项）与研究论文（{len(papers):,} 篇），含使用条件、局限与来源。导航索引见 {SITE_URL}/llms.txt；每个条目另有独立的 Markdown 页面与 record.json。",
+    }
+    llms_text = (output / "llms.txt").read_text(encoding="utf-8")
+    for language in ("en", "zh"):
+        text = full_catalog_markdown(resources, papers, language, site_url=SITE_URL, sections=COLLECTION_SECTIONS,
+                                     section_of=collection_section, header=f"# {brand}\n\n> {summaries[language]}\n")
+        part_urls = write_full_catalog(output, language, text, title=brand, summary=summaries[language], site_url=SITE_URL,
+                                       faq=home_faq_markdown(resources, papers, discovery_queue, language))
+        bullet = f"- [{'完整目录（Markdown）' if language == 'zh' else 'Full catalog in Markdown'}]({SITE_URL}{'/zh' if language == 'zh' else ''}/llms-full.txt):"
+        line_end = llms_text.index("\n", llms_text.index(bullet)) + 1
+        parts = "".join(f"- [{'完整目录第 %d 卷' % n if language == 'zh' else 'Full catalog, part %d' % n}]({url}): {'分卷' if language == 'zh' else 'Part %d of %d' % (n, len(part_urls))}.\n"
+                        for n, url in enumerate(part_urls, 1))
+        llms_text = llms_text[:line_end] + parts + llms_text[line_end:]
+    (output / "llms.txt").write_text(llms_text, encoding="utf-8")
     paper_urls = build_paper_pages(
         output, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
         styles_href=asset_hrefs["styles.css"], papers_styles_href=fingerprinted_href(output, "papers.css"),
@@ -453,7 +481,16 @@ def build_site(output: Path) -> tuple[int, int, int]:
                        discovery_batches=(discovery_queue or {}).get("batches"), lead_batches=(lead_queue or {}).get("batches"),
                        survey_date=survey_document.get("date"),
                        discovery_class_pages=[path for path in queue_paths if path.startswith('/discoveries/') and path != '/discoveries/'])
+    updated = max(value[:10] for value in dates.values())
     write_sitemaps(output, SITE_URL, [url.removeprefix(SITE_URL) for url in sitemap_urls], dates)
+    # The agent guide and the front matter of every Markdown twin use the same counts and dates as the pages.
+    write_agent_files(output, SITE_URL, REPOSITORY_URL, resources=len(resources), papers=len(papers),
+                      cases=sum(r["kind"] == "case-study" for r in resources), repositories=len(browse_records), updated=updated,
+                      faq=home_faq_markdown(resources, papers, discovery_queue, "en"))
+    for language, route in (("en", "index.md"), ("zh", "zh/index.md")):
+        twin = output / route
+        twin.write_text(twin.read_text(encoding="utf-8").rstrip("\n") + "\n\n" + home_faq_markdown(resources, papers, discovery_queue, language), encoding="utf-8")
+    add_front_matter(output, SITE_URL, dates, updated)
     build_data_downloads(output, catalog, papers,
                          (output / 'papers/references.bib').read_text(encoding='utf-8'))
     write_build_manifest(output)

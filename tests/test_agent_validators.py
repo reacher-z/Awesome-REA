@@ -7,6 +7,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(ROOT / 'tests'))
+from agent_files import add_front_matter
 from agent_formats import alternate_links, json_text, paper_markdown, paper_record, resource_markdown, resource_record
 from test_agent_formats import PAPER, RESOURCE
 from validate_agent_formats import TWIN_LISTINGS, validate_agent_headers, validate_llms, validate_twins
@@ -39,6 +40,7 @@ class TwinValidatorTests(unittest.TestCase):
                 page(self.output / route.lstrip('/') / 'index.html', route + 'index.md')
                 (self.output / route.lstrip('/') / 'index.md').write_text(f'# Listing\n\n- HTML: <{ORIGIN}{route}>\n', encoding='utf-8')
                 self.routes.add(route)
+        add_front_matter(self.output, ORIGIN, {}, '2026-11-10')
         (self.output / 'resources/ghidra/record.json').write_text(json_text(resource_record(RESOURCE, ORIGIN)), encoding='utf-8')
         (self.output / 'papers/paper-x/record.json').write_text(json_text(paper_record(PAPER, ORIGIN)), encoding='utf-8')
 
@@ -75,7 +77,10 @@ class LlmsValidatorTests(unittest.TestCase):
                       f'## Optional\n\n- [Full]({ORIGIN}/llms-full.txt): Everything.\n')
         (self.output / 'llms.txt').write_text(self.index, encoding='utf-8')
         for name, prefix in (('llms-full.txt', ''), ('zh/llms-full.txt', '/zh')):
-            (self.output / name).write_text(f'# Full\n\n- <{ORIGIN}{prefix}/resources/ghidra/>\n- <{ORIGIN}{prefix}/papers/paper-x/>\n', encoding='utf-8')
+            (self.output / (prefix.lstrip('/') or '.') / 'llms-full').mkdir(parents=True)
+            (self.output / (prefix.lstrip('/') or '.') / 'llms-full/part-1.txt').write_text(
+                f'# Full: part 1 of 1\n\n- <{ORIGIN}{prefix}/resources/ghidra/>\n- <{ORIGIN}{prefix}/papers/paper-x/>\n', encoding='utf-8')
+            (self.output / name).write_text(f'# Full\n\n- [part 1]({ORIGIN}{prefix}/llms-full/part-1.txt): x\n', encoding='utf-8')
 
     def test_valid_files_pass_and_each_rule_fails(self):
         validate_llms(self.output, [RESOURCE], [PAPER])
@@ -87,7 +92,7 @@ class LlmsValidatorTests(unittest.TestCase):
             with self.assertRaisesRegex(AssertionError, message):
                 validate_llms(self.output, [RESOURCE], [PAPER])
         (self.output / 'llms.txt').write_text(self.index, encoding='utf-8')
-        (self.output / 'zh/llms-full.txt').write_text('# Full\n', encoding='utf-8')
+        (self.output / 'zh/llms-full/part-1.txt').write_text('# Full\n', encoding='utf-8')
         with self.assertRaisesRegex(AssertionError, 'lacks entries'):
             validate_llms(self.output, [RESOURCE], [PAPER])
 

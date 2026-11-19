@@ -11,7 +11,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 from collections import Counter
 
 from build_discovery_pages import SECTIONS, build_discovery_pages
-from build_home import search_index
+from build_home import search_index, search_row_id
 from build_readme import CATEGORIES, KIND_LABELS, collection_section
 from resource_listing import in_section_order
 
@@ -85,7 +85,7 @@ class ResourceRowTests(unittest.TestCase):
         catalogued = [dict(row, name_zh=row['name_zh']) for row in RECORDS]
         index = search_index(catalogued, [], 'en', {'website': [], 'game': [], 'app': [], 'binary': [], 'firmware': [], 'protocol': []})
         self.assertEqual(index['pinned'], ['websitebench'])
-        self.assertEqual({row[0]: index['sections'][row[-1]] for row in index['r']}, {row['id']: collection_section(row) for row in RECORDS})
+        self.assertEqual({search_row_id(row): index['sections'][row[11]] for row in index['r']}, {row['id']: collection_section(row) for row in RECORDS})
 
     def test_structured_list_follows_the_rows_without_repeating_descriptions(self):
         for language, html in self.pages.items():

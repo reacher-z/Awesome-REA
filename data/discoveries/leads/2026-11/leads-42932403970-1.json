@@ -1,0 +1,3474 @@
+{
+  "schema_version": 1,
+  "kind": "automated-lead-batch",
+  "batch_id": "leads-42932403970-1",
+  "review_status": "unreviewed",
+  "collected_at": "2026-11-11T00:34:34Z",
+  "provenance": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/discovery-leads.yml",
+    "run_id": 42932403970,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "0e699079b73d4761b6d2a83770cb9e8a02d803e9",
+    "registry_sha256": "2ece348fd9d6608e2c4bd280526001659254bbd0fea862d1e0b1e184fa7a810f"
+  },
+  "selection": {
+    "policy": "followed-source-leads-v1",
+    "order": "source-round-robin",
+    "record_limit": 2000,
+    "eligible_count": 70,
+    "selected_count": 70,
+    "selected_ids": [
+      "lead-fac487d85349bb6011d0df2b",
+      "lead-a947bd5e605f9cfd7bf8b0a9",
+      "lead-08c8daa234bfa82dc1ecbd0d",
+      "lead-dc2a266b95b3217729feb51b",
+      "lead-bfec38949408b809473dba89",
+      "lead-1cba6888b1b0eb50eaef8c8a",
+      "lead-6b38f5395885fb810c7dfa59",
+      "lead-597bbcb465212706d5c0165a",
+      "lead-cae60777d16d0801c5ea55e0",
+      "lead-acac3822187e47d77cf26f32",
+      "lead-7e6661bf2992e4d56f1b5923",
+      "lead-bee428aa3880e78ecb794cc0",
+      "lead-f0a8292aca734ec88100e424",
+      "lead-c3b2b1ba846f2edb80363a03",
+      "lead-c4ed00c0d3fefa6c0cbd7087",
+      "lead-af9419c62bac6d515b8bf05e",
+      "lead-6228cc273c99219e3c7c4b8a",
+      "lead-5acfac629aa4497d65545d6c",
+      "lead-c5b5f3a25826f8290633188c",
+      "lead-4f69618098e22a3d90904d06",
+      "lead-35d25deb6cdee968d0263f8a",
+      "lead-a901b6f5b1f1fa25dc5d26f7",
+      "lead-8ab23c13c0c0fae17113873a",
+      "lead-b501ce6f2ff124922e0fea84",
+      "lead-515835f399fce30eb6108be8",
+      "lead-af77e99f64919df188b3a7a5",
+      "lead-aca46f3546a24cc76ee65443",
+      "lead-4ffa946863dec53446514d46",
+      "lead-ba1ce4eaeb465e0b4d90df63",
+      "lead-9c4fc790e3d95f17344c1ac1",
+      "lead-af89515a2a4756e0d022279b",
+      "lead-43394af840d13d255ee100df",
+      "lead-5a153531882aefd624615930",
+      "lead-83ddab1e320b54ffe2fca43b",
+      "lead-031d36df793abcb5d2b8341b",
+      "lead-eb9412a357e9b420be5c80eb",
+      "lead-d0cfaa629d6ce42a2eac15f1",
+      "lead-aa761f4fdad0dc9c9c116f45",
+      "lead-fe7d67532d398042f6932df2",
+      "lead-22520216cdcb1a66d356717e",
+      "lead-429bfe6f5cb5fe93a2c9c8a6",
+      "lead-6fdaea070865fda37e257946",
+      "lead-6d34b7d1c5cf5a52bfc3814d",
+      "lead-789a47e03eafc9de90562cb9",
+      "lead-8b85b2d9619d984c75153df9",
+      "lead-ef6d68596caddaaac9bc20bb",
+      "lead-a1a7160b88907c8d3882af08",
+      "lead-1876367b507188a1f4d4e8f7",
+      "lead-cadc3659ee342ad6003819c6",
+      "lead-fdd8df6f927a0551eafbe1f9",
+      "lead-849bc81cb8fddf7462b4f020",
+      "lead-46e9b8035a744a147cbf2c5e",
+      "lead-42078db94d3b6b105b31e41d",
+      "lead-8b2502d94e5fbd2fb1abba4c",
+      "lead-8b26c8bd95aa6f21344e1dca",
+      "lead-b8e4cb7e21ffcf0e2c3dbe24",
+      "lead-f937d479a928db583a09ef78",
+      "lead-443b28685ae4c1f6a7d5e84e",
+      "lead-b253840f34557bff02805353",
+      "lead-06eb3c425cc183be54b38c30",
+      "lead-36b8f141a1bbf57e7704246d",
+      "lead-96bf44041437103b3f5d0479",
+      "lead-3917061c77a270cbc93055cf",
+      "lead-7191894746352dc6ec57c81a",
+      "lead-b31cc05909b143a95924f080",
+      "lead-96b3f518c82b3d078e5f098f",
+      "lead-893d1b84094fede99d4d0bc1",
+      "lead-3a32bb6592af226042be35f0",
+      "lead-fe010f7ded17b824e18fc3a3",
+      "lead-83258b0ed5df36095bb266c6"
+    ],
+    "record_sha256": {
+      "lead-fac487d85349bb6011d0df2b": "344f56e9b3c97eb38cce26c16b9f7bc4c02af87f72b45ea6b5d47ef18516981a",
+      "lead-a947bd5e605f9cfd7bf8b0a9": "0bf5e8f78a35b11ae38cdefb72c0188d261e361a32a855a362613761a7be108c",
+      "lead-08c8daa234bfa82dc1ecbd0d": "42509fa2ce4ea20d60e785f8cf43d2842e2aeff46b40973cf67bba33fb62a86a",
+      "lead-dc2a266b95b3217729feb51b": "e662afa5a964515d81e698b6dec021eebf463e9890353fceafa4d6726463f2eb",
+      "lead-bfec38949408b809473dba89": "caa5255b0c2f97878d81df4676ce7ecb217d61f53b2f384ff63b3eea795a7f81",
+      "lead-1cba6888b1b0eb50eaef8c8a": "07b2e133ef967373df7df389c2da915393308147b8beeb4178e92185941b024e",
+      "lead-6b38f5395885fb810c7dfa59": "44e4213ccc80bc9493b1404e5d3286290385ece34da0bc70097ca39e19df5db5",
+      "lead-597bbcb465212706d5c0165a": "9d8d5ffb1c2564c7c9593d685f8a8ac1385f27bae201869b9a8d719fa7205ccb",
+      "lead-cae60777d16d0801c5ea55e0": "9786a1db43906d7a9c637a1cf6d9202ccbb1e6c598d61d96fc9d163b262e6674",
+      "lead-acac3822187e47d77cf26f32": "23617ff31b85fccb52bc0ca121767f5982e4b711f6de8a3e41e28c5458da8414",
+      "lead-7e6661bf2992e4d56f1b5923": "36b150afd025a35f1e4c716e98a670611fd145109dacd0f90eaffeb1ea803fb0",
+      "lead-bee428aa3880e78ecb794cc0": "25d8740ef12f90006f05692820b5536f2901f9adaaae8e62a99bbb3faec5118a",
+      "lead-f0a8292aca734ec88100e424": "acacda10eaa2ba91644eaf2e953f2f12b1ee935aca215f1e1f82b2ababfbc937",
+      "lead-c3b2b1ba846f2edb80363a03": "40ee632c08aac31bfc6e97e9698a7ebff53520b275ebb3b0a2a2f71bda36b59b",
+      "lead-c4ed00c0d3fefa6c0cbd7087": "6068998bf664711f12e63d98352b60f642279c6c32a78bf3d216dac663dc67fb",
+      "lead-af9419c62bac6d515b8bf05e": "9d02af5e95f427fac74de81fbd0ed32ebc853f013824bcf63c3bc781b96d053a",
+      "lead-6228cc273c99219e3c7c4b8a": "2e26dd15716f261d6494c0b6138638c945a1cbaf13c631f41a5c57095855c0f7",
+      "lead-5acfac629aa4497d65545d6c": "749fcbdf809a7f62e3f37f207cf9e0d93da7b786d6757935d6eb5b514ed430a8",
+      "lead-c5b5f3a25826f8290633188c": "de926f65b5f328ab594a744cd356568d57ba79c1182cea95e01a1940c6cffc16",
+      "lead-4f69618098e22a3d90904d06": "ad6be1b7cd00c685460e6846cf1286a226f981fb714059e57f5ef1530f81359d",
+      "lead-35d25deb6cdee968d0263f8a": "5966cf9d4eac34d7beced4590668a0e62aeda9441942acafab8ebf80af6f509b",
+      "lead-a901b6f5b1f1fa25dc5d26f7": "46a6b959eb2d52e4b6060c2e687f6c14edd3257e0dd13dc55b15a571597b3d97",
+      "lead-8ab23c13c0c0fae17113873a": "c8f0a50ffdad1b65e160458fc3a6b375b79bf530d87a1c68bc9015ebc67b0b19",
+      "lead-b501ce6f2ff124922e0fea84": "e29d6baaae9c66bfbd0a776a2c6c72f48fc035b880d5e4ecad92483be60caee9",
+      "lead-515835f399fce30eb6108be8": "310869f0a7cc8f5722d038c7525b545091c726bae4be33a11f603287f48a0ac2",
+      "lead-af77e99f64919df188b3a7a5": "f5b5de9677a3e17ef8848859fbb3a4ca504314022a30b4eb6853243b7d935004",
+      "lead-aca46f3546a24cc76ee65443": "f3a39ca316af683d2e98aaae19cb8863f908a694b9d70f5f9eb756513d9e4803",
+      "lead-4ffa946863dec53446514d46": "3c077c23d9a4f5cca33147a60b36fb9eddbc9f426151277d5258fb67fdd57662",
+      "lead-ba1ce4eaeb465e0b4d90df63": "c0eac1cccc424093552ba75d1de9fcf96e83d86ac1eba27a66253a500c01c70d",
+      "lead-9c4fc790e3d95f17344c1ac1": "c8c90c7f086508e74fbb09c871445e7bf1b9c13131b4eac15e6dbdd9866fa826",
+      "lead-af89515a2a4756e0d022279b": "c00e42e0de5e137d2139d14cd6c43e393a51b0ee82aa92468e84c6e6a9d63bf6",
+      "lead-43394af840d13d255ee100df": "8ffb055b78a55658459f93f3c9a61a2f64b42a8adf316816f1a107ea3b01164b",
+      "lead-5a153531882aefd624615930": "ced01fa10fcc8b49fd65b158cc4f915db7edb8e344eaae26ed5cd7fc4dc4f11d",
+      "lead-83ddab1e320b54ffe2fca43b": "c4d7f0f16019b1c2bc0875cb2e99d37259b1cc99d7e4121309730a684d850581",
+      "lead-031d36df793abcb5d2b8341b": "944af25a3f58e40890f8ff35ac2abe5ca3e46b3168c7efa217d35cfc6c845c02",
+      "lead-eb9412a357e9b420be5c80eb": "8b4c1366ae457ca80e416dcb930256bdcd47445fca0548976cf0ee1bbc4bdbc1",
+      "lead-d0cfaa629d6ce42a2eac15f1": "bad066931ef288b5a8d6d52f38e3993d3f9b88814c9aae24b3e3715899dcf77c",
+      "lead-aa761f4fdad0dc9c9c116f45": "26f9108384c749a2d9e38f3da9ee5963b56ca83a31e5e9789bab8c610f2215ff",
+      "lead-fe7d67532d398042f6932df2": "575e2011f352cb5a0458d09903d1312ccc63bfadf061a96554e670394ce30e2a",
+      "lead-22520216cdcb1a66d356717e": "2924b41edcf21362304a726bebd12d96e026092831cc7d6321ce4592864df2b4",
+      "lead-429bfe6f5cb5fe93a2c9c8a6": "895403870526b9d189e6871daca2105c6e6e2b407fb305ca2a3013c7594d8293",
+      "lead-6fdaea070865fda37e257946": "5a29ee57c975213c8567af49e66ba11b4ab286c3ebf8bbe9e59910dd41a8c6a4",
+      "lead-6d34b7d1c5cf5a52bfc3814d": "94d5e4843d808232feea45541f2db4f077e28a5de1f2f5f34b88f0dd9c2a6f9f",
+      "lead-789a47e03eafc9de90562cb9": "5119458b978deef5498b4d9b6981f2cc62b0d965bc4ddc1471ac2022fa33b2a4",
+      "lead-8b85b2d9619d984c75153df9": "188f08b7540e1654958bea68c9825117a80766b2f3ad115bf30c94ab7cc5c899",
+      "lead-ef6d68596caddaaac9bc20bb": "5fc61955571421aae258b7ae5f257ffd3bbb065dd8498bd327a65746e22c5ad8",
+      "lead-a1a7160b88907c8d3882af08": "9e76315217c230844d860bc87bf909b91947d1d127d1a59ca6a253311a473f79",
+      "lead-1876367b507188a1f4d4e8f7": "22fc638f55856e7a5bef79bbc9d69487fa909165f7e6426f4ec6e1f64f51ac23",
+      "lead-cadc3659ee342ad6003819c6": "adce1c590fb117e66f92cd9308da92f1531a3f9713a4bd74737f955f10d33b09",
+      "lead-fdd8df6f927a0551eafbe1f9": "0fcc37b36b000135cca7d3e8faf988455b981ff2f69231ff09b145bd71a564a1",
+      "lead-849bc81cb8fddf7462b4f020": "e5ab9e534cff96a3ff14b9d2df98700978cd45391cc8867504e1147fd9f98c08",
+      "lead-46e9b8035a744a147cbf2c5e": "8c02bf7020219f7597ddadcf995c66adf621a095fc09f71bbc074a4b4b385fd1",
+      "lead-42078db94d3b6b105b31e41d": "5220a94eb9968b14948bf03b995792d5f81e59b4ebc99b2e3a15450272d209bd",
+      "lead-8b2502d94e5fbd2fb1abba4c": "0bbbabda9110cc199afe73e91f58dcd3a3bcb27e2abdd4c536189523a757183e",
+      "lead-8b26c8bd95aa6f21344e1dca": "9ff44299990993d6ee2aaa88a677a2643d940495bee2a3969ee4ceb3e786f313",
+      "lead-b8e4cb7e21ffcf0e2c3dbe24": "508ed660b94e60ac03c290e64fdaff94fe8fdd22ec1a3dff76212646a981c4e6",
+      "lead-f937d479a928db583a09ef78": "ec3909f0ccba829db98554517a34290c8fb60ea19a9964451db0f68efc8dc2fd",
+      "lead-443b28685ae4c1f6a7d5e84e": "48a30c64988aaee25da0ff9e653331e6fee8b880f742a628ac1c82c17b899aee",
+      "lead-b253840f34557bff02805353": "778676e7973ead0e38c426180e4d38e290cdb5a47c094d437a732e46aca9d1a9",
+      "lead-06eb3c425cc183be54b38c30": "34d23dd3c74eaf24537ed0a3f098b756c69215a8710cc723be028ece9c5995c7",
+      "lead-36b8f141a1bbf57e7704246d": "03952f89b91fe779539cfb656ae32574bcbb8c8d1b02b965b164dd2a9e10d1d2",
+      "lead-96bf44041437103b3f5d0479": "448cea67c5b120e2adc88a8f0d0f37cefced219524ca81b1ef8cb8b6700e546a",
+      "lead-3917061c77a270cbc93055cf": "d8f2b3f25c83c7ef7d57a4b023f5f3a997a91103d4de39b84abb0e27efb11fee",
+      "lead-7191894746352dc6ec57c81a": "b1c119a73f010fd72959cc42dacfbcac1f3fc0db9637692d6b6705214172ef3c",
+      "lead-b31cc05909b143a95924f080": "8e955053a627b74410ef4cca4898fba5972c16a24426c2d0035fb9ed42007662",
+      "lead-96b3f518c82b3d078e5f098f": "c22ba34c55e6af1aaf97f655bf81763b5ff44927293379d23b160184ce9b4b1c",
+      "lead-893d1b84094fede99d4d0bc1": "0403b5d3a3cbb4e8b5fabc54a965d69d1576d42d2a2980cad6be8baa32c145c2",
+      "lead-3a32bb6592af226042be35f0": "84651fb2e196f158b0cc75f45605ccaeff8d52b37a83d91402762fe1a09f3e51",
+      "lead-fe010f7ded17b824e18fc3a3": "0a2a5002e24561625b18f34f8300746a37021a2eac5ba0e523d8adce6790e9c5",
+      "lead-83258b0ed5df36095bb266c6": "7618caa88148d5dbbbe5f4c4031dd3c392a2d1d3c5f38bc3ce94dcb1490fdcdd"
+    },
+    "skipped_counts": {
+      "already-curated": 660,
+      "already-indexed": 207,
+      "already-discovered": 150,
+      "already-lead": 2140,
+      "case-lead": 0,
+      "scope-excluded": 0,
+      "unavailable": 62,
+      "privacy": 1,
+      "invalid": 0,
+      "over-limit": 0
+    }
+  },
+  "sources": [
+    {
+      "id": "gmh5225-awesome-game-security",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/gmh5225/awesome-game-security/blob/47c5737d0e7c9f02258c48ab4572922731137b82/README.md",
+      "revision": "47c5737d0e7c9f02258c48ab4572922731137b82",
+      "content_sha256": "b1fe8696b180285c37041bec7e4af06f85efc1e3e2b04256481f88423a32ce4c",
+      "status": "captured",
+      "error": null,
+      "links": 4834,
+      "in_scope": 980
+    },
+    {
+      "id": "charlottecross1998-awesome-game-decompilations",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/CharlotteCross1998/awesome-game-decompilations/blob/b734985ef7ab687a31544e474250b38264fd3cbb/README.md",
+      "revision": "b734985ef7ab687a31544e474250b38264fd3cbb",
+      "content_sha256": "654aa2801a62ec3745568b24e65097130fd353bce184f76161c150b279418179",
+      "status": "captured",
+      "error": null,
+      "links": 497,
+      "in_scope": 495
+    },
+    {
+      "id": "vector35-community-plugins",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/Vector35/community-plugins/blob/b6a9ed476fd5725d6f83e9eddb9126374933e6db/README.md",
+      "revision": "b6a9ed476fd5725d6f83e9eddb9126374933e6db",
+      "content_sha256": "fe50570c811e225494c5d8e6d3b4613a55d4cf45363d203c1225713dfb0b3aa9",
+      "status": "captured",
+      "error": null,
+      "links": 220,
+      "in_scope": 220
+    },
+    {
+      "id": "rshipp-awesome-malware-analysis",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/rshipp/awesome-malware-analysis/blob/179887b9bfb04bb736348b2dc9d331bc860c6ef7/README.md",
+      "revision": "179887b9bfb04bb736348b2dc9d331bc860c6ef7",
+      "content_sha256": "703cad9b8040555f116fe1d3105e65f147377ca0c36b6e870552416dd3028871",
+      "status": "captured",
+      "error": null,
+      "links": 422,
+      "in_scope": 236
+    },
+    {
+      "id": "onethawt-idaplugins-list",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/onethawt/idaplugins-list/blob/decddd9fc3125eee900ec7d1cd3e557acffd26c1/README.md",
+      "revision": "decddd9fc3125eee900ec7d1cd3e557acffd26c1",
+      "content_sha256": "de96571885ce852413cbb6370f57bccb1f40353d407dd681001a9c7c6f10d705",
+      "status": "captured",
+      "error": null,
+      "links": 216,
+      "in_scope": 208
+    },
+    {
+      "id": "dsasmblr-game-hacking",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/dsasmblr/game-hacking/blob/036026438ffd533338768bc29f0424c117e7c653/README.md",
+      "revision": "036026438ffd533338768bc29f0424c117e7c653",
+      "content_sha256": "7ff334781cdb9d149e64e45d43c7ebf7ede0762683b15d31bd4c8c4746266682",
+      "status": "captured",
+      "error": null,
+      "links": 200,
+      "in_scope": 123
+    },
+    {
+      "id": "tylerha97-awesome-reversing",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/tylerha97/awesome-reversing/blob/0b7bb2b40797e996578d5175408efc7d6aac5dca/README.md",
+      "revision": "0b7bb2b40797e996578d5175408efc7d6aac5dca",
+      "content_sha256": "831c13bd1ef4c0c86244a32e0aeab4fe101206aef3904437cb35fc81b85da698",
+      "status": "captured",
+      "error": null,
+      "links": 158,
+      "in_scope": 128
+    },
+    {
+      "id": "wtsxdev-reverse-engineering",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/README.md",
+      "revision": "b25498551c6d7110685896078afeb27097aa1e24",
+      "content_sha256": "a1b8595a50c85a541661adbfe7c96220774f7882632f8b46fcb019557ffaf7ff",
+      "status": "captured",
+      "error": null,
+      "links": 149,
+      "in_scope": 121
+    },
+    {
+      "id": "morluto-awesome-reverse-engineering",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/morluto/awesome-reverse-engineering/blob/827e010b468e48e6cadc4e1c08b26b9f5f2a24fe/README.md",
+      "revision": "827e010b468e48e6cadc4e1c08b26b9f5f2a24fe",
+      "content_sha256": "ad062b3f5da902ef18c3958e03564486bdc14ed72f39bd140cfb1f15a4315153",
+      "status": "captured",
+      "error": null,
+      "links": 217,
+      "in_scope": 209
+    },
+    {
+      "id": "ashishb-android-security-awesome",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/ashishb/android-security-awesome/blob/075e21d9b2d599b7dbb9581eab48bf0c0e5a1e6c/README.md",
+      "revision": "075e21d9b2d599b7dbb9581eab48bf0c0e5a1e6c",
+      "content_sha256": "aef61ec45bc6814e198e3da16cd4c4bcb2f0a519aa4029dff7f779d285155770",
+      "status": "captured",
+      "error": null,
+      "links": 251,
+      "in_scope": 120
+    },
+    {
+      "id": "v33ru-awesome-connected-things-sec",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/V33RU/awesome-connected-things-sec/blob/0015dcee55cc0cd6eff3b4afbada2f22c245a9cc/README.md",
+      "revision": "0015dcee55cc0cd6eff3b4afbada2f22c245a9cc",
+      "content_sha256": "eb066e0680a3335e55686f67751c73ae4bd3d4d141055754edce69655f4174bd",
+      "status": "captured",
+      "error": null,
+      "links": 912,
+      "in_scope": 107
+    },
+    {
+      "id": "fkie-cad-awesome-embedded-and-iot-security",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/blob/fbd0301e6690a21d98ca8d565c0657aae0fba339/readme.md",
+      "revision": "fbd0301e6690a21d98ca8d565c0657aae0fba339",
+      "content_sha256": "d15bc2d469b35f9a517b053f5a8e6c7ee68491ca240afe62722e0e16bc9f845d",
+      "status": "captured",
+      "error": null,
+      "links": 134,
+      "in_scope": 91
+    },
+    {
+      "id": "techge-pre-list",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/techge/PRE-list/blob/9c18f7c8f00978ec70ba285a5f13b461ede12e93/README.md",
+      "revision": "9c18f7c8f00978ec70ba285a5f13b461ede12e93",
+      "content_sha256": "abad4bcd4a1ac7933d28188495ddbccf034a4746ba6436194493c297425cb9d1",
+      "status": "captured",
+      "error": null,
+      "links": 83,
+      "in_scope": 83
+    },
+    {
+      "id": "fr0gger-awesome-ida-x64-olly-plugin",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/fr0gger/awesome-ida-x64-olly-plugin/blob/7e76773e55563d53f41f71cf7397e6c4a6971b86/README.md",
+      "revision": "7e76773e55563d53f41f71cf7397e6c4a6971b86",
+      "content_sha256": "239e1b6d733b84c6ec597f7378865971c13347391b58602109782eed11b64ade",
+      "status": "captured",
+      "error": null,
+      "links": 125,
+      "in_scope": 118
+    },
+    {
+      "id": "idoka-awesome-canbus",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/iDoka/awesome-canbus/blob/77c59133db2fcdd4e4f891a55e440629e0178b8e/README.md",
+      "revision": "77c59133db2fcdd4e4f891a55e440629e0178b8e",
+      "content_sha256": "9effe72ee9980d1917bf378caba758d9ae521527f941a3b8d82267be0bcff43c",
+      "status": "captured",
+      "error": null,
+      "links": 267,
+      "in_scope": 62
+    },
+    {
+      "id": "dweinstein-awesome-frida",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/dweinstein/awesome-frida/blob/b2320aa67b6cea52ca2f7fa89a6198cd375937f4/README.md",
+      "revision": "b2320aa67b6cea52ca2f7fa89a6198cd375937f4",
+      "content_sha256": "63bbd40804114ad8aece23c269a5a84fe21a1e6572460245a04e9cade532b81e",
+      "status": "captured",
+      "error": null,
+      "links": 111,
+      "in_scope": 77
+    },
+    {
+      "id": "user1342-awesome-android-reverse-engineering",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/user1342/Awesome-Android-Reverse-Engineering/blob/0ade43d6b46ff19675ca4d8b8f1cc098e1af73b8/README.md",
+      "revision": "0ade43d6b46ff19675ca4d8b8f1cc098e1af73b8",
+      "content_sha256": "496697e295adfa484684510c3fd3f8a4d3fffd44a7fdca040da15335d18af92a",
+      "status": "captured",
+      "error": null,
+      "links": 91,
+      "in_scope": 74
+    },
+    {
+      "id": "allsafecybersecurity-awesome-ghidra",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/AllsafeCyberSecurity/awesome-ghidra/blob/9265b2f730a10f6261945ac22cb295c8f6038f87/README.md",
+      "revision": "9265b2f730a10f6261945ac22cb295c8f6038f87",
+      "content_sha256": "e908c2bd74d6f1a0bfd451e72d2a557ffd3aa23a596a775cd481dc47726805d2",
+      "status": "captured",
+      "error": null,
+      "links": 54,
+      "in_scope": 51
+    },
+    {
+      "id": "crowdere-awesome-re-mcp",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/crowdere/Awesome-RE-MCP/blob/e400b882965ef61302718c7fe7c4f1e2861bd664/README.md",
+      "revision": "e400b882965ef61302718c7fe7c4f1e2861bd664",
+      "content_sha256": "3581c57202acd3831d1ee254563456e7add2460ff80854773dbde7b0a7c41a5b",
+      "status": "captured",
+      "error": null,
+      "links": 42,
+      "in_scope": 30
+    },
+    {
+      "id": "darbra-awesome-ai-reverse",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/darbra/awesome-ai-reverse/blob/6459523eb2570a9f0da7b9589d9f7dfed54cead7/README.md",
+      "revision": "6459523eb2570a9f0da7b9589d9f7dfed54cead7",
+      "content_sha256": "230ad67f6b8bff2d9be853570f37a9fc798cbbb3a53657f5ea7a07426bcdffec",
+      "status": "captured",
+      "error": null,
+      "links": 36,
+      "in_scope": 29
+    },
+    {
+      "id": "punkpeye-awesome-mcp-servers",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/punkpeye/awesome-mcp-servers/blob/f431a5cd95cebf038e587715635b9d1a0a4d0c02/README.md",
+      "revision": "f431a5cd95cebf038e587715635b9d1a0a4d0c02",
+      "content_sha256": "6ecefcc1ce052db60d75a7a69204dff6cf4dd7d5af39b4f560c5f4df0eefe200",
+      "status": "captured",
+      "error": null,
+      "links": 8030,
+      "in_scope": 17
+    },
+    {
+      "id": "ashishb-osx-and-ios-security-awesome",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/ashishb/osx-and-ios-security-awesome/blob/7d632633447eefd49d7b9cf745a1bf0ccaac99ed/README.md",
+      "revision": "7d632633447eefd49d7b9cf745a1bf0ccaac99ed",
+      "content_sha256": "3914acd3dc9a1621a039011960ab955bb7dac79ae89dd9412ab753d8a5d674ea",
+      "status": "captured",
+      "error": null,
+      "links": 74,
+      "in_scope": 8
+    },
+    {
+      "id": "vector35-plugins-json",
+      "type": "github-json-registry",
+      "evidence_url": "https://github.com/Vector35/community-plugins/blob/b6a9ed476fd5725d6f83e9eddb9126374933e6db/plugins.json",
+      "revision": "b6a9ed476fd5725d6f83e9eddb9126374933e6db",
+      "content_sha256": "544635ea1339ea43e89c660c1953a4a230d263d547d6eb9b775bd95ec33c27e6",
+      "status": "captured",
+      "error": null,
+      "links": 219,
+      "in_scope": 219
+    },
+    {
+      "id": "radare2-pm",
+      "type": "github-directory",
+      "evidence_url": "https://github.com/radareorg/radare2-pm/tree/dff23fffbc51228e3c9d0e593b52c2078537e7a0/db",
+      "revision": "dff23fffbc51228e3c9d0e593b52c2078537e7a0",
+      "content_sha256": "b594ac24f0b650f80307f9537777b4017ed23327e4328f3275d227d519de4fac",
+      "status": "captured",
+      "error": null,
+      "links": 287,
+      "in_scope": 223
+    },
+    {
+      "id": "submitgame-games-json",
+      "type": "github-json-registry",
+      "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json",
+      "revision": "bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1",
+      "content_sha256": "2ff8d1e3158fbd3db00451db5cc1bd2bbe809dd50ab2463285c21dd9b95977c9",
+      "status": "captured",
+      "error": null,
+      "links": 2788,
+      "in_scope": 1809
+    },
+    {
+      "id": "github-topic-reverse-engineering",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/reverse-engineering",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 200,
+      "in_scope": 162
+    },
+    {
+      "id": "github-topic-decompiler",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/decompiler",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 100,
+      "in_scope": 96
+    },
+    {
+      "id": "github-topic-binary-analysis",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-protocol-reverse-engineering",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-ida-pro",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/ida-pro",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 300,
+      "in_scope": 300
+    },
+    {
+      "id": "github-topic-idapython",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-ida",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-binary-ninja",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/binary-ninja",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 148,
+      "in_scope": 148
+    },
+    {
+      "id": "github-topic-binary-ninja-plugin",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/binary-ninja-plugin",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 63,
+      "in_scope": 63
+    },
+    {
+      "id": "github-topic-binaryninja",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/binaryninja",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 97,
+      "in_scope": 97
+    },
+    {
+      "id": "github-topic-x64dbg",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-x64dbg-plugin",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-debugger",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-malware",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/malware",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 300,
+      "in_scope": 100
+    },
+    {
+      "id": "github-topic-can-bus",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-game-hacking",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-recompilation",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-vmprotect",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/vmprotect",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 46,
+      "in_scope": 43
+    },
+    {
+      "id": "github-topic-yara",
+      "type": "github-topic",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "github-topic-cheat-engine",
+      "type": "github-topic",
+      "evidence_url": "https://github.com/topics/cheat-engine",
+      "revision": null,
+      "content_sha256": null,
+      "status": "captured",
+      "error": null,
+      "links": 218,
+      "in_scope": 90
+    },
+    {
+      "id": "survey-sok-ai-binary-reversing",
+      "type": "survey-references",
+      "evidence_url": "https://arxiv.org/html/2606.17398v2",
+      "revision": "2606.17398v2",
+      "content_sha256": "db63afe2935e183d9bc8dfec27e9594726d627891f83921fa5962906bd903f4c",
+      "status": "captured",
+      "error": null,
+      "links": 205,
+      "in_scope": 151
+    },
+    {
+      "id": "survey-evolution-binary-decompilation",
+      "type": "survey-references",
+      "evidence_url": "https://arxiv.org/html/2608.24955v1",
+      "revision": "2608.24955v1",
+      "content_sha256": "618ae1b6a506469ac5496989030c7e55f390ff14d9e83559bcbeb1afbadcaf61",
+      "status": "captured",
+      "error": null,
+      "links": 186,
+      "in_scope": 142
+    },
+    {
+      "id": "survey-sok-source-recovery-reliability",
+      "type": "survey-references",
+      "evidence_url": "https://arxiv.org/html/2610.11556v1",
+      "revision": "2610.11556v1",
+      "content_sha256": "fd6d5ddd0b1d32adb1ab1d244c89b2d6ecb6c98a4a946f9accea82323205056f",
+      "status": "captured",
+      "error": null,
+      "links": 81,
+      "in_scope": 71
+    },
+    {
+      "id": "survey-cortexm-emulation-sok",
+      "type": "survey-references",
+      "evidence_url": "https://arxiv.org/html/2609.38872v1",
+      "revision": "2609.38872v1",
+      "content_sha256": "ef145fb801912a4cb673177c46b278218b6190b6079b03fe18d462172b104b2b",
+      "status": "captured",
+      "error": null,
+      "links": 78,
+      "in_scope": 59
+    },
+    {
+      "id": "arxiv-reverse-engineering",
+      "type": "arxiv-query",
+      "evidence_url": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CR+OR+cat%3Acs.SE+OR+cat%3Acs.PL+OR+cat%3Acs.AR%29+AND+%28ti%3Adecompil%2A+OR+abs%3Adecompil%2A+OR+ti%3Adisassembl%2A+OR+abs%3A%22binary+analysis%22+OR+abs%3A%22reverse+engineering%22+OR+abs%3A%22binary+code+similarity%22+OR+abs%3A%22firmware+rehosting%22+OR+abs%3A%22protocol+reverse+engineering%22+OR+ti%3Adeobfuscat%2A+OR+abs%3A%22binary+lifting%22+OR+abs%3A%22stripped+binaries%22%29&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending",
+      "revision": null,
+      "content_sha256": "6dd3d5348c960aa1c05a5c86afdbff7bb8afde5256b0bd5e948e0394a82b9b67",
+      "status": "captured",
+      "error": null,
+      "links": 100,
+      "in_scope": 73
+    },
+    {
+      "id": "huggingface-models-decompil",
+      "type": "huggingface-search",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "huggingface-datasets-decompil",
+      "type": "huggingface-search",
+      "evidence_url": "https://huggingface.co/api/datasets?search=decompil&limit=50&sort=downloads&direction=-1",
+      "revision": null,
+      "content_sha256": "b1ceea37d270ae1773a41d4ac078ba8cc97d4e41ce542407d299940fdb8b164c",
+      "status": "captured",
+      "error": null,
+      "links": 26,
+      "in_scope": 26
+    },
+    {
+      "id": "huggingface-models-ghidra",
+      "type": "huggingface-search",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "huggingface-datasets-ghidra",
+      "type": "huggingface-search",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "huggingface-models-reverse-engineering",
+      "type": "huggingface-search",
+      "evidence_url": null,
+      "revision": null,
+      "content_sha256": null,
+      "status": "not-due",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "huggingface-datasets-reverse-engineering",
+      "type": "huggingface-search",
+      "evidence_url": "https://huggingface.co/api/datasets?search=reverse-engineering&limit=50&sort=downloads&direction=-1",
+      "revision": null,
+      "content_sha256": "a3066876242a8375697b0eae8f77093ca1eda50144e2449f8f5f8599d99c2052",
+      "status": "captured",
+      "error": null,
+      "links": 43,
+      "in_scope": 43
+    },
+    {
+      "id": "huggingface-datasets-binary-similarity",
+      "type": "huggingface-search",
+      "evidence_url": "https://huggingface.co/api/datasets?search=binary-similarity&limit=50&sort=downloads&direction=-1",
+      "revision": null,
+      "content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "status": "captured",
+      "error": null,
+      "links": 0,
+      "in_scope": 0
+    },
+    {
+      "id": "alexgaoth-re-tooling",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/alexgaoth/awesome-reverse-engineered/blob/c76407982851ff79994782005a02eaf510ca4447/categories/re-tooling.md",
+      "revision": "c76407982851ff79994782005a02eaf510ca4447",
+      "content_sha256": "d1e987ae19581142e7650456ce7dd02ada27400f301992e5bc82ecb25b64d21c",
+      "status": "captured",
+      "error": null,
+      "links": 1173,
+      "in_scope": 1173
+    },
+    {
+      "id": "alexgaoth-firmware-embedded",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/alexgaoth/awesome-reverse-engineered/blob/c76407982851ff79994782005a02eaf510ca4447/categories/firmware-embedded.md",
+      "revision": "c76407982851ff79994782005a02eaf510ca4447",
+      "content_sha256": "d9e1c0c19ac945e1fb131fba50e38fc43446db2e5ecd9c7bc972d79ac19a4c5e",
+      "status": "captured",
+      "error": null,
+      "links": 538,
+      "in_scope": 538
+    },
+    {
+      "id": "alexgaoth-network-wire-protocols",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/alexgaoth/awesome-reverse-engineered/blob/c76407982851ff79994782005a02eaf510ca4447/categories/network-wire-protocols.md",
+      "revision": "c76407982851ff79994782005a02eaf510ca4447",
+      "content_sha256": "5aabbcb4785d9dd23e14e42dc1274dedfd4ea5b6770b05d2754f6f308d256fbc",
+      "status": "captured",
+      "error": null,
+      "links": 434,
+      "in_scope": 431
+    },
+    {
+      "id": "alexgaoth-file-formats",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/alexgaoth/awesome-reverse-engineered/blob/c76407982851ff79994782005a02eaf510ca4447/categories/file-formats.md",
+      "revision": "c76407982851ff79994782005a02eaf510ca4447",
+      "content_sha256": "348655a54e20583c7deffbefe1edede89391fce37e9171cbf72c52fdae24512a",
+      "status": "captured",
+      "error": null,
+      "links": 445,
+      "in_scope": 445
+    },
+    {
+      "id": "alexgaoth-game-decompilations",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/alexgaoth/awesome-reverse-engineered/blob/c76407982851ff79994782005a02eaf510ca4447/categories/game-decompilations-reimplementations.md",
+      "revision": "c76407982851ff79994782005a02eaf510ca4447",
+      "content_sha256": "9682e51c0307d8736b6850b3dfebc9c02a8debd99f3f6c00dfa17e61d788008f",
+      "status": "captured",
+      "error": null,
+      "links": 6098,
+      "in_scope": 6092
+    },
+    {
+      "id": "alphaseclab-awesome-reverse-engineering",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/alphaSeclab/awesome-reverse-engineering/blob/1a7445d2c7e3e42350a2556c70b469fb3429d49a/Readme.md",
+      "revision": "1a7445d2c7e3e42350a2556c70b469fb3429d49a",
+      "content_sha256": "04b1937bbfe42d35554a09ceb7a6062635de454fa5ad885e083e4e60acf9e1a1",
+      "status": "captured",
+      "error": null,
+      "links": 1459,
+      "in_scope": 512
+    },
+    {
+      "id": "wangxiaoxiang5599-recompiled-games-list",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/wangxiaoxiang5599/recompiled-games-list/blob/09fcb3c21be970c87dfaf0d6d38b95cce81c1adb/README.md",
+      "revision": "09fcb3c21be970c87dfaf0d6d38b95cce81c1adb",
+      "content_sha256": "c1828fe7f17e35dd13891641cbe6441b3bbf3a889a2d8eed695ff94b2045f727",
+      "status": "captured",
+      "error": null,
+      "links": 509,
+      "in_scope": 376
+    },
+    {
+      "id": "hexsecs-awesome-embedded-security",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/hexsecs/awesome-embedded-security/blob/c7bcf4dc737b31bba222be4ac44f2c1a492c21fc/README.md",
+      "revision": "c7bcf4dc737b31bba222be4ac44f2c1a492c21fc",
+      "content_sha256": "f37b3b7073776285772fcd31360e94e155cd1aa9a9778de751e2a57e0a95e5bf",
+      "status": "captured",
+      "error": null,
+      "links": 302,
+      "in_scope": 299
+    },
+    {
+      "id": "nforest-awesome-decompilation",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/nforest/awesome-decompilation/blob/8731870b99d1816ed6979ab5745ae42b4bf73018/README.md",
+      "revision": "8731870b99d1816ed6979ab5745ae42b4bf73018",
+      "content_sha256": "7366a7d443023e226a05745815205f6b797f73a1ab1d82e8f2de05d59963f804",
+      "status": "captured",
+      "error": null,
+      "links": 45,
+      "in_scope": 45
+    },
+    {
+      "id": "systemsecuritystorm-awesome-binary-similarity",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/SystemSecurityStorm/Awesome-Binary-Similarity/blob/a800872318f202a0d726143acb378935d1dee311/README.md",
+      "revision": "a800872318f202a0d726143acb378935d1dee311",
+      "content_sha256": "24f76cadd50aba7e749d675df7f4303d171cc0ab05a2aae5ffcaa3b13035139e",
+      "status": "captured",
+      "error": null,
+      "links": 275,
+      "in_scope": 180
+    },
+    {
+      "id": "bin2own-awesome-info-inferring-binary",
+      "type": "github-readme-list",
+      "evidence_url": "https://github.com/Bin2Own/Awesome-Info-Inferring-Binary/blob/664534bad7e2be68714a9724fdcf975fe53d854a/README.md",
+      "revision": "664534bad7e2be68714a9724fdcf975fe53d854a",
+      "content_sha256": "7f07aeeb6e7837b5ecb96e2b71330d195c51cc12c39f031c19e9130bb702ddcc",
+      "status": "captured",
+      "error": null,
+      "links": 111,
+      "in_scope": 54
+    }
+  ],
+  "leads": [
+    {
+      "id": "lead-fac487d85349bb6011d0df2b",
+      "identity": "github:656000832",
+      "aliases": [
+        "gh:openstarbound/openstarbound"
+      ],
+      "url": "https://github.com/OpenStarbound/OpenStarbound",
+      "name": "Starbound (OpenStarbound)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · PC",
+          "label": "Starbound (OpenStarbound)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 656000832,
+        "full_name": "OpenStarbound/OpenStarbound",
+        "description": "",
+        "topics": [],
+        "stars": 1480,
+        "pushed_at": "2026-11-09T02:10:03Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-a947bd5e605f9cfd7bf8b0a9",
+      "identity": "github:196698008",
+      "aliases": [
+        "gh:ccomrade/c1-launcher"
+      ],
+      "url": "https://github.com/ccomrade/c1-launcher",
+      "name": "Crysis (C1-Launcher)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · PC",
+          "label": "Crysis (C1-Launcher)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 196698008,
+        "full_name": "ccomrade/c1-launcher",
+        "description": "Open-source Crysis executables",
+        "topics": [
+          "cryengine2",
+          "crysis"
+        ],
+        "stars": 501,
+        "pushed_at": "2026-01-19T21:55:23Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-08c8daa234bfa82dc1ecbd0d",
+      "identity": "github:1442243621",
+      "aliases": [
+        "gh:khorne-hub/gu-native"
+      ],
+      "url": "https://github.com/khorne-hub/gu-native",
+      "name": "Monster Hunter Generations Ultimate (MHGU for Android and PC)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · Switch",
+          "label": "Monster Hunter Generations Ultimate (MHGU for Android and PC)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1442243621,
+        "full_name": "khorne-hub/gu-native",
+        "description": "Native Android port with touch controls. Bring your own copy of the game.",
+        "topics": [],
+        "stars": 159,
+        "pushed_at": "2026-11-10T23:06:26Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-dc2a266b95b3217729feb51b",
+      "identity": "github:1426085566",
+      "aliases": [
+        "gh:skate6743/skate2-rust-port"
+      ],
+      "url": "https://github.com/skate6743/skate2-rust-port",
+      "name": "Skate 2 (skate2-rust-port)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · Xbox 360",
+          "label": "Skate 2 (skate2-rust-port)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1426085566,
+        "full_name": "skate6743/skate2-rust-port",
+        "description": "Port of Skate 2 rewritten in Rust natively for PC.",
+        "topics": [],
+        "stars": 139,
+        "pushed_at": "2026-11-08T13:49:11Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-bfec38949408b809473dba89",
+      "identity": "github:1433442985",
+      "aliases": [
+        "gh:broomstick-girl-magical-amber/tsukire-pc-port"
+      ],
+      "url": "https://github.com/Broomstick-Girl-Magical-Amber/tsukire-pc-port",
+      "name": "Tsukihime -A piece of blue glass moon- (tsukire-pc-port)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · Switch",
+          "label": "Tsukihime -A piece of blue glass moon- (tsukire-pc-port)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1433442985,
+        "full_name": "Broomstick-Girl-Magical-Amber/tsukire-pc-port",
+        "description": "",
+        "topics": [],
+        "stars": 32,
+        "pushed_at": "2026-11-10T02:40:48Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-1cba6888b1b0eb50eaef8c8a",
+      "identity": "github:1428913625",
+      "aliases": [
+        "gh:livmaster-dev/hommare-public"
+      ],
+      "url": "https://github.com/livmaster-dev/HommaRe-public",
+      "name": "Heroes of Might and Magic V (HommaRe)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · PC",
+          "label": "Heroes of Might and Magic V (HommaRe)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1428913625,
+        "full_name": "livmaster-dev/HommaRe-public",
+        "description": "Native port of Heroes of Might and Magic V for macOS and iOS",
+        "topics": [],
+        "stars": 17,
+        "pushed_at": "2026-11-07T19:03:08Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-6b38f5395885fb810c7dfa59",
+      "identity": "github:1431817360",
+      "aliases": [
+        "gh:sirnubs/project-cuga"
+      ],
+      "url": "https://github.com/SirNubs/Project-Cuga",
+      "name": "Monster Hunter Freedom Unite (Project Cuga)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · PSP",
+          "label": "Monster Hunter Freedom Unite (Project Cuga)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1431817360,
+        "full_name": "SirNubs/Project-Cuga",
+        "description": "Experimental MHP2G / FUComplete native port with QOL additions. Built on francl35/Poke and TeamGDB/Yakumo. Source only; bring your own game files.",
+        "topics": [],
+        "stars": 20,
+        "pushed_at": "2026-10-26T16:57:06Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-597bbcb465212706d5c0165a",
+      "identity": "github:1304752673",
+      "aliases": [
+        "gh:alexbeav/raptor-reclawed"
+      ],
+      "url": "https://github.com/Alexbeav/raptor-reclawed",
+      "name": "Raptor: Call of the Shadows (raptor-reclawed)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · DOS",
+          "label": "Raptor: Call of the Shadows (raptor-reclawed)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1304752673,
+        "full_name": "Alexbeav/raptor-reclawed",
+        "description": "Raptor: Call of the Shadows engine port fork - native Windows build with optional Delta Sector campaign support (GPL-2)",
+        "topics": [],
+        "stars": 10,
+        "pushed_at": "2026-10-04T19:25:12Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-2.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-cae60777d16d0801c5ea55e0",
+      "identity": "github:1431936525",
+      "aliases": [
+        "gh:revvv991/uncharted-android"
+      ],
+      "url": "https://github.com/revvv991/uncharted-android",
+      "name": "Uncharted: The Nathan Drake Collection (uncharted-android)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · PS4",
+          "label": "Uncharted: The Nathan Drake Collection (uncharted-android)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1431936525,
+        "full_name": "revvv991/uncharted-android",
+        "description": "Uncharted: The Nathan Drake Collection (PS4) on Android with Adreno GPUs: uncharted_pc on FEXCore and Turnip. No game files included.",
+        "topics": [],
+        "stars": 102,
+        "pushed_at": "2026-11-09T22:21:06Z",
+        "archived": false,
+        "fork": true,
+        "parent": "Supermedo/uncharted_pc",
+        "license": "GPL-2.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-acac3822187e47d77cf26f32",
+      "identity": "github:1430072268",
+      "aliases": [
+        "gh:vasilkovnd/gears2-nx"
+      ],
+      "url": "https://github.com/VasilkovND/gears2-nx",
+      "name": "Gears of War 2 (gears2-nx)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · Xbox 360",
+          "label": "Gears of War 2 (gears2-nx)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1430072268,
+        "full_name": "VasilkovND/gears2-nx",
+        "description": "Gears of War 2 (Xbox 360) native port for Nintendo Switch: build tools (no game data)",
+        "topics": [],
+        "stars": 33,
+        "pushed_at": "2026-11-07T11:53:39Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-7e6661bf2992e4d56f1b5923",
+      "identity": "github:1430284049",
+      "aliases": [
+        "gh:boodyandmustafa-create/moh-europeanassault-pc-port"
+      ],
+      "url": "https://github.com/boodyandmustafa-create/MOH-EuropeanAssault-PC-Port",
+      "name": "Medal of Honor: European Assault (Medal of Honor: European Assault — PC Port)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · og xbox",
+          "label": "Medal of Honor: European Assault (Medal of Honor: European Assault — PC Port)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1430284049,
+        "full_name": "boodyandmustafa-create/MOH-EuropeanAssault-PC-Port",
+        "description": "An experimental PC port / recompilation project for Medal of Honor: European Assault Xbox",
+        "topics": [],
+        "stars": 64,
+        "pushed_at": "2026-11-05T20:35:03Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-bee428aa3880e78ecb794cc0",
+      "identity": "github:1437203711",
+      "aliases": [
+        "gh:tchisholm20/starfox-adventures-vita"
+      ],
+      "url": "https://github.com/tchisholm20/starfox-adventures-vita",
+      "name": "Star Fox Adventures (Star Fox Adventures for PS Vita)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · GameCube",
+          "label": "Star Fox Adventures (Star Fox Adventures for PS Vita)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1437203711,
+        "full_name": "tchisholm20/starfox-adventures-vita",
+        "description": "Star Fox Adventures for PS Vita: a native port (source and releases; no game data, bring your own disc)",
+        "topics": [],
+        "stars": 11,
+        "pushed_at": "2026-11-06T03:46:37Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-f0a8292aca734ec88100e424",
+      "identity": "github:1443154111",
+      "aliases": [
+        "gh:mayo1970/melee-ps3"
+      ],
+      "url": "https://github.com/Mayo1970/melee-ps3",
+      "name": "Super Smash Bros. Melee (Melee-PS3)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · GameCube",
+          "label": "Super Smash Bros. Melee (Melee-PS3)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1443154111,
+        "full_name": "Mayo1970/melee-ps3",
+        "description": "Native port of Super Smash Bros. Melee for the Playstation 3",
+        "topics": [],
+        "stars": 26,
+        "pushed_at": "2026-11-07T01:49:46Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-c3b2b1ba846f2edb80363a03",
+      "identity": "github:1444312489",
+      "aliases": [
+        "gh:yaibakamikaze/izunarecomp"
+      ],
+      "url": "https://github.com/YaibaKamikaze/IzunaRecomp",
+      "name": "IzunaRecomp",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "wangxiaoxiang5599-recompiled-games-list",
+          "section": "The list > Xbox 360",
+          "label": "IzunaRecomp",
+          "evidence_url": "https://github.com/wangxiaoxiang5599/recompiled-games-list/blob/09fcb3c21be970c87dfaf0d6d38b95cce81c1adb/README.md#L73"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1444312489,
+        "full_name": "YaibaKamikaze/IzunaRecomp",
+        "description": "",
+        "topics": [],
+        "stars": 81,
+        "pushed_at": "2026-11-08T09:23:50Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-c4ed00c0d3fefa6c0cbd7087",
+      "identity": "github:1429266076",
+      "aliases": [
+        "gh:mercurialw0rld/thebeatlesrockband-pcport"
+      ],
+      "url": "https://github.com/mercurialw0rld/thebeatlesrockband-pcport",
+      "name": "The Beatles: Rock Band (The Beatles: Rock Band for PC)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · Xbox 360",
+          "label": "The Beatles: Rock Band (The Beatles: Rock Band for PC)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1429266076,
+        "full_name": "mercurialw0rld/thebeatlesrockband-pcport",
+        "description": "A PC port from the Xbox 360 TBRB version using RexGlue",
+        "topics": [],
+        "stars": 21,
+        "pushed_at": "2026-11-10T05:30:32Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-af9419c62bac6d515b8bf05e",
+      "identity": "github:2725403",
+      "aliases": [
+        "gh:aquariaose/aquaria"
+      ],
+      "url": "https://github.com/AquariaOSE/Aquaria",
+      "name": "Aquaria (Aquaria OSE)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · PC",
+          "label": "Aquaria (Aquaria OSE)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 2725403,
+        "full_name": "AquariaOSE/Aquaria",
+        "description": "Aquaria open source, forked from icculus.org due to inactivity. Has many enhancements compared to the original version.",
+        "topics": [
+          "game"
+        ],
+        "stars": 329,
+        "pushed_at": "2026-10-27T02:31:34Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-2.0",
+        "homepage": "http://bit-blot.com/aquaria"
+      }
+    },
+    {
+      "id": "lead-6228cc273c99219e3c7c4b8a",
+      "identity": "github:1431637577",
+      "aliases": [
+        "gh:jayeldragon/luigis-mansion-android"
+      ],
+      "url": "https://github.com/JayElDragon/luigis-mansion-android",
+      "name": "Luigi's Mansion (Luigi's Mansion Android Port)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · GameCube",
+          "label": "Luigi's Mansion (Luigi's Mansion Android Port)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1431637577,
+        "full_name": "JayElDragon/luigis-mansion-android",
+        "description": "Luigis Mansion Android port made by JayElDragon",
+        "topics": [],
+        "stars": 42,
+        "pushed_at": "2026-10-25T00:14:27Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-5acfac629aa4497d65545d6c",
+      "identity": "github:11555872",
+      "aliases": [
+        "gh:the3dfxdude/7kaa"
+      ],
+      "url": "https://github.com/the3dfxdude/7kaa",
+      "name": "Seven Kingdoms: Ancient Adversaries (7KAA)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · PC",
+          "label": "Seven Kingdoms: Ancient Adversaries (7KAA)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 11555872,
+        "full_name": "the3dfxdude/7kaa",
+        "description": "Seven Kingdoms: Ancient Adversaries - Go to the main source repository at https://sourceforge.net/projects/skfans/ for source code and builds",
+        "topics": [],
+        "stars": 267,
+        "pushed_at": "2023-09-25T17:46:13Z",
+        "archived": true,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": "https://7kfans.com"
+      }
+    },
+    {
+      "id": "lead-c5b5f3a25826f8290633188c",
+      "identity": "github:1440877352",
+      "aliases": [
+        "gh:rikujoukoro/stardew-valley-enhanced-vita"
+      ],
+      "url": "https://github.com/rikujoukoro/stardew-valley-enhanced-vita",
+      "name": "Stardew Valley (Stardew Valley Enhanced (PS Vita))",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · PC",
+          "label": "Stardew Valley (Stardew Valley Enhanced (PS Vita))",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1440877352,
+        "full_name": "rikujoukoro/stardew-valley-enhanced-vita",
+        "description": "Unofficial PS Vita port of Stardew Valley 1.6 — build it from your own Steam copy (Windows; Linux/macOS experimental)",
+        "topics": [
+          "homebrew",
+          "ps-vita",
+          "ps-vita-game",
+          "stardew-valley",
+          "vita-homebrew"
+        ],
+        "stars": 58,
+        "pushed_at": "2026-11-04T11:08:16Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-4f69618098e22a3d90904d06",
+      "identity": "github:1443985305",
+      "aliases": [
+        "gh:deez-coder/smo-android-port"
+      ],
+      "url": "https://github.com/Deez-coder/SMO-android-port",
+      "name": "Super Mario Odyssey (SMO Android Port)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · Switch",
+          "label": "Super Mario Odyssey (SMO Android Port)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1443985305,
+        "full_name": "Deez-coder/SMO-android-port",
+        "description": "a (very wip) port of super mario odyssey to android",
+        "topics": [],
+        "stars": 76,
+        "pushed_at": "2026-11-06T20:34:38Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-35d25deb6cdee968d0263f8a",
+      "identity": "github:1444990965",
+      "aliases": [
+        "gh:aureliob/totk-android"
+      ],
+      "url": "https://github.com/AurelioB/totk-android",
+      "name": "The Legend of Zelda: Tears of the Kingdom (TotK Native)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · Switch",
+          "label": "The Legend of Zelda: Tears of the Kingdom (TotK Native)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1444990965,
+        "full_name": "AurelioB/totk-android",
+        "description": "Tears of the Kingdom native Android port (TotK Native)",
+        "topics": [],
+        "stars": 143,
+        "pushed_at": "2026-11-10T19:00:19Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-a901b6f5b1f1fa25dc5d26f7",
+      "identity": "github:1433592999",
+      "aliases": [
+        "gh:owaissseeee/godhandandroidport"
+      ],
+      "url": "https://github.com/owaissseeee/GodHandAndroidPort",
+      "name": "God Hand (God Hand Android Port)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · PS2",
+          "label": "God Hand (God Hand Android Port)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1433592999,
+        "full_name": "owaissseeee/GodHandAndroidPort",
+        "description": "A native Android port of the God Hand PS2, utilizing static recompilation for optimized mobile performance, unlocked framerates, custom touch controls, and mores",
+        "topics": [],
+        "stars": 16,
+        "pushed_at": "2026-11-05T10:38:09Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-8ab23c13c0c0fae17113873a",
+      "identity": "github:1444006498",
+      "aliases": [
+        "gh:jayeldragon/paper-boat-android-port"
+      ],
+      "url": "https://github.com/JayElDragon/Paper-Boat-Android-Port",
+      "name": "Paper Mario (PaperBoat Android Port)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · N64",
+          "label": "Paper Mario (PaperBoat Android Port)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1444006498,
+        "full_name": "JayElDragon/Paper-Boat-Android-Port",
+        "description": "An unofficial Android port of Paper Mario 64 with HD graphics, languages and much more",
+        "topics": [],
+        "stars": 22,
+        "pushed_at": "2026-11-03T08:58:06Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "CC0-1.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-b501ce6f2ff124922e0fea84",
+      "identity": "github:1442376523",
+      "aliases": [
+        "gh:mattyken619/pikmin-ps3-port"
+      ],
+      "url": "https://github.com/MattyKen619/Pikmin-PS3-Port",
+      "name": "Pikmin (Pikmin-PS3-Port)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · GameCube",
+          "label": "Pikmin (Pikmin-PS3-Port)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1442376523,
+        "full_name": "MattyKen619/Pikmin-PS3-Port",
+        "description": "A Port of the Gamecube game Pikmin to the Ps3 using the decompilation.",
+        "topics": [],
+        "stars": 12,
+        "pushed_at": "2026-11-02T01:47:13Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "CC0-1.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-515835f399fce30eb6108be8",
+      "identity": "github:1438962285",
+      "aliases": [
+        "gh:vallfrr/sh4vita"
+      ],
+      "url": "https://github.com/vallfrr/sh4vita",
+      "name": "Silent Hill 4: The Room (sh4vita)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "source-port · PC",
+          "label": "Silent Hill 4: The Room (sh4vita)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1438962285,
+        "full_name": "vallfrr/sh4vita",
+        "description": "Native port of Silent Hill 4: The Room for PlayStationVita",
+        "topics": [],
+        "stars": 23,
+        "pushed_at": "2026-10-30T09:57:04Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-af77e99f64919df188b3a7a5",
+      "identity": "github:168788322",
+      "aliases": [
+        "gh:07th-mod/python-patcher"
+      ],
+      "url": "https://github.com/07th-mod/python-patcher",
+      "name": "Python Patcher (07th-Mod Python Patcher)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · PC",
+          "label": "Python Patcher (07th-Mod Python Patcher)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 168788322,
+        "full_name": "07th-mod/python-patcher",
+        "description": "Mod Installer for the Higurashi and Umineko Games",
+        "topics": [],
+        "stars": 216,
+        "pushed_at": "2026-11-04T13:46:43Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-aca46f3546a24cc76ee65443",
+      "identity": "github:99849340",
+      "aliases": [
+        "gh:freecol/freecol"
+      ],
+      "url": "https://github.com/FreeCol/freecol",
+      "name": "Colonization (FreeCol)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · PC",
+          "label": "Colonization (FreeCol)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 99849340,
+        "full_name": "FreeCol/freecol",
+        "description": "FreeCol: FreeCol is a turn-based strategy game based on the old game Colonization, and similar to Civilization. The objective of the game is to create an independent nation.",
+        "topics": [
+          "civilization",
+          "colonization",
+          "freecol",
+          "game",
+          "game-colonization",
+          "java-game",
+          "strategy-game"
+        ],
+        "stars": 724,
+        "pushed_at": "2026-10-29T14:08:29Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-2.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-4ffa946863dec53446514d46",
+      "identity": "github:20889734",
+      "aliases": [
+        "gh:daid/emptyepsilon"
+      ],
+      "url": "https://github.com/daid/EmptyEpsilon",
+      "name": "EmptyEpsilon",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · PC",
+          "label": "EmptyEpsilon",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 20889734,
+        "full_name": "daid/EmptyEpsilon",
+        "description": "Open source bridge simulator. Build with the SeriousProton engine.",
+        "topics": [
+          "artemis",
+          "cpp",
+          "emptyepsilon",
+          "game",
+          "multiplayer"
+        ],
+        "stars": 871,
+        "pushed_at": "2026-11-10T14:50:21Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-2.0",
+        "homepage": "https://daid.github.io/EmptyEpsilon/"
+      }
+    },
+    {
+      "id": "lead-ba1ce4eaeb465e0b4d90df63",
+      "identity": "github:186015315",
+      "aliases": [
+        "gh:sesu8642/feudaltactics"
+      ],
+      "url": "https://github.com/Sesu8642/FeudalTactics",
+      "name": "Feudal Tactics - Medieval Strategy Game",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · PC",
+          "label": "Feudal Tactics - Medieval Strategy Game",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 186015315,
+        "full_name": "Sesu8642/FeudalTactics",
+        "description": "Strategy game with countless unique and challenging levels.",
+        "topics": [
+          "android-game",
+          "f-droid",
+          "fdroid",
+          "hexagonal-grids",
+          "hexagonal-tiles",
+          "hexagons",
+          "java-game",
+          "libgdx-game",
+          "linux-game",
+          "pixel-art",
+          "strategy-game",
+          "turn-based",
+          "turn-based-strategy",
+          "windows-game"
+        ],
+        "stars": 123,
+        "pushed_at": "2026-10-19T19:09:02Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-9c4fc790e3d95f17344c1ac1",
+      "identity": "github:307030761",
+      "aliases": [
+        "gh:giovanh/unofficial-homestuck-collection"
+      ],
+      "url": "https://github.com/GiovanH/unofficial-homestuck-collection",
+      "name": "Homestuck (Unofficial Homestuck Collection)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · PC",
+          "label": "Homestuck (Unofficial Homestuck Collection)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 307030761,
+        "full_name": "GiovanH/unofficial-homestuck-collection",
+        "description": "An offline collection of Homestuck and its related works.",
+        "topics": [],
+        "stars": 265,
+        "pushed_at": "2026-04-21T00:43:50Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-af89515a2a4756e0d022279b",
+      "identity": "github:525400819",
+      "aliases": [
+        "gh:solcloud/counter-strike"
+      ],
+      "url": "https://github.com/solcloud/Counter-Strike",
+      "name": "Counter-Strike: Football",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · PC",
+          "label": "Counter-Strike: Football",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 525400819,
+        "full_name": "solcloud/Counter-Strike",
+        "description": "Multiplayer FPS game - Counter-Strike: Football 🏉",
+        "topics": [
+          "3d",
+          "clone",
+          "competetive",
+          "counterstrike",
+          "desktop",
+          "fps",
+          "free",
+          "from-scratch",
+          "game",
+          "gamedev",
+          "indie",
+          "multiplatform",
+          "multiplayer",
+          "singleplayer",
+          "wip"
+        ],
+        "stars": 986,
+        "pushed_at": "2025-09-09T12:47:29Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": "https://solcloud.itch.io/counter-strike-football#download"
+      }
+    },
+    {
+      "id": "lead-43394af840d13d255ee100df",
+      "identity": "github:458422646",
+      "aliases": [
+        "gh:taterclient/tclient"
+      ],
+      "url": "https://github.com/TaterClient/TClient",
+      "name": "ddnet t-client",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · PC",
+          "label": "ddnet t-client",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 458422646,
+        "full_name": "TaterClient/TClient",
+        "description": "Extended DDNet Teeworlds client.",
+        "topics": [],
+        "stars": 145,
+        "pushed_at": "2026-11-03T01:18:37Z",
+        "archived": false,
+        "fork": true,
+        "parent": "ddnet/ddnet",
+        "license": null,
+        "homepage": "https://TClient.app"
+      }
+    },
+    {
+      "id": "lead-5a153531882aefd624615930",
+      "identity": "github:1011291435",
+      "aliases": [
+        "gh:binary-knight/usurper-reborn"
+      ],
+      "url": "https://github.com/binary-knight/usurper-reborn",
+      "name": "Usurper Reborn",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · PC",
+          "label": "Usurper Reborn",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1011291435,
+        "full_name": "binary-knight/usurper-reborn",
+        "description": "Persistent text RPG where 60+ autonomous NPCs live, marry, and die 24/7...whether you're playing or not. Inspired by Usurper (1993).",
+        "topics": [
+          "bbs",
+          "door-game",
+          "gaming",
+          "retrogaming",
+          "text-based-game"
+        ],
+        "stars": 100,
+        "pushed_at": "2026-11-08T23:31:54Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-2.0",
+        "homepage": "https://usurper-reborn.net"
+      }
+    },
+    {
+      "id": "lead-83ddab1e320b54ffe2fca43b",
+      "identity": "github:1438381111",
+      "aliases": [
+        "gh:mamcjr/totkdroid"
+      ],
+      "url": "https://github.com/mamcjr/TOTKDroid",
+      "name": "The Legend of Zelda: Tears of the Kingdom (TOTKDroid)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · Switch",
+          "label": "The Legend of Zelda: Tears of the Kingdom (TOTKDroid)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1438381111,
+        "full_name": "mamcjr/TOTKDroid",
+        "description": "TOTKDroid (formerly TOTKRecompAndroid): The Legend of Zelda: Tears of the Kingdom (Switch 1.4.3) running natively on Android - no game files included",
+        "topics": [],
+        "stars": 230,
+        "pushed_at": "2026-11-10T16:29:35Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-031d36df793abcb5d2b8341b",
+      "identity": "github:32340929",
+      "aliases": [
+        "gh:freerct/freerct"
+      ],
+      "url": "https://github.com/FreeRCT/FreeRCT",
+      "name": "RollerCoaster Tycoon (FreeRCT)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · PC",
+          "label": "RollerCoaster Tycoon (FreeRCT)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 32340929,
+        "full_name": "FreeRCT/FreeRCT",
+        "description": "FreeRCT aims to be a free and open source game which captures the look, feel and gameplay of the popular games RollerCoaster Tycoon 1 and 2.",
+        "topics": [
+          "cplusplus",
+          "freerct",
+          "game"
+        ],
+        "stars": 257,
+        "pushed_at": "2026-10-08T23:46:59Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": "https://freerct.net"
+      }
+    },
+    {
+      "id": "lead-eb9412a357e9b420be5c80eb",
+      "identity": "github:1433753256",
+      "aliases": [
+        "gh:pallypots/projectoogie"
+      ],
+      "url": "https://github.com/Pallypots/ProjectOogie",
+      "name": "The Nightmare Before Christmas: Oogie's Revenge (Project Oogie)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · og xbox",
+          "label": "The Nightmare Before Christmas: Oogie's Revenge (Project Oogie)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1433753256,
+        "full_name": "Pallypots/ProjectOogie",
+        "description": "Native Windows PC port of The Nightmare Before Christmas: Oogie's Revenge (Xbox, 2005) by static recompilation",
+        "topics": [],
+        "stars": 25,
+        "pushed_at": "2026-11-09T06:23:56Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-d0cfaa629d6ce42a2eac15f1",
+      "identity": "github:1431563361",
+      "aliases": [
+        "gh:ciphernovaa/twine-pc"
+      ],
+      "url": "https://github.com/CipherNovaa/twine-pc",
+      "name": "007: The World Is Not Enough (TWINE-pc)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · PS1",
+          "label": "007: The World Is Not Enough (TWINE-pc)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1431563361,
+        "full_name": "CipherNovaa/twine-pc",
+        "description": "A Fan Remake of the Original PlayStation Classic \"007: The World is Not Enough\"",
+        "topics": [
+          "c",
+          "decompilation",
+          "game-port",
+          "ghidra",
+          "playstation",
+          "ps1",
+          "reverse-engineering",
+          "vulkan"
+        ],
+        "stars": 56,
+        "pushed_at": "2026-10-31T22:07:00Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MPL-2.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-aa761f4fdad0dc9c9c116f45",
+      "identity": "github:740843121",
+      "aliases": [
+        "gh:makinori/melonprimeds"
+      ],
+      "url": "https://github.com/makinori/melonPrimeDS",
+      "name": "Metroid Prime Hunters (melonPrimeDS)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · DS",
+          "label": "Metroid Prime Hunters (melonPrimeDS)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 740843121,
+        "full_name": "makinori/melonPrimeDS",
+        "description": "Modded version of melonDS emulator to play Metroid Hunters",
+        "topics": [],
+        "stars": 140,
+        "pushed_at": "2025-12-01T00:38:28Z",
+        "archived": false,
+        "fork": true,
+        "parent": "melonDS-emu/melonDS",
+        "license": "GPL-3.0",
+        "homepage": "https://melonds.kuribo64.net"
+      }
+    },
+    {
+      "id": "lead-fe7d67532d398042f6932df2",
+      "identity": "github:1426555481",
+      "aliases": [
+        "gh:cadenkalez/descai4"
+      ],
+      "url": "https://github.com/CadenKalez/DeSCAi4",
+      "name": "SimCity 4 (DeSCAi4)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "engine-remake · PC",
+          "label": "SimCity 4 (DeSCAi4)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1426555481,
+        "full_name": "CadenKalez/DeSCAi4",
+        "description": "An AI decompilation re-implementation of SimCity 4 to MacOS Apple Silicon Native Metal renderer",
+        "topics": [],
+        "stars": 11,
+        "pushed_at": "2026-10-30T23:08:11Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-22520216cdcb1a66d356717e",
+      "identity": "github:1446512658",
+      "aliases": [
+        "gh:frizti/fritchii"
+      ],
+      "url": "https://github.com/Frizti/Fritchii",
+      "name": "The Legend of Zelda: Ocarina of Time (Fritchii)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · switch2",
+          "label": "The Legend of Zelda: Ocarina of Time (Fritchii)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1446512658,
+        "full_name": "Frizti/Fritchii",
+        "description": "Frontier GREEN HAT BOY ADVENTURE specialized Lichii fork, i'm the goat",
+        "topics": [],
+        "stars": 3372,
+        "pushed_at": "2026-11-11T00:37:11Z",
+        "archived": false,
+        "fork": true,
+        "parent": "zortos293/Lichii",
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-429bfe6f5cb5fe93a2c9c8a6",
+      "identity": "github:538784647",
+      "aliases": [
+        "gh:vitor251093/khmelonmix"
+      ],
+      "url": "https://github.com/vitor251093/KHMelonMix",
+      "name": "Kingdom Hearts: Chain of Memories (KH Melon Mix)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · DS",
+          "label": "Kingdom Hearts: Chain of Memories (KH Melon Mix)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 538784647,
+        "full_name": "vitor251093/KHMelonMix",
+        "description": "KH Melon Mix (DS Emulator)",
+        "topics": [
+          "kingdom-hearts",
+          "melonds"
+        ],
+        "stars": 639,
+        "pushed_at": "2026-10-16T03:27:37Z",
+        "archived": false,
+        "fork": true,
+        "parent": "melonDS-emu/melonDS",
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-6fdaea070865fda37e257946",
+      "identity": "github:279193504",
+      "aliases": [
+        "gh:greatscottgadgets/apollo"
+      ],
+      "url": "https://github.com/greatscottgadgets/apollo",
+      "name": "Apollo",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "hexsecs-awesome-embedded-security",
+          "section": "Hardware Tools > Hardware Debug Interfaces",
+          "label": "Apollo",
+          "evidence_url": "https://github.com/hexsecs/awesome-embedded-security/blob/c7bcf4dc737b31bba222be4ac44f2c1a492c21fc/README.md#L309"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 279193504,
+        "full_name": "greatscottgadgets/apollo",
+        "description": "microcontroller-based FPGA / JTAG programmer",
+        "topics": [
+          "debugger",
+          "fpga",
+          "jtag",
+          "programmer"
+        ],
+        "stars": 91,
+        "pushed_at": "2026-11-05T23:57:48Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "BSD-3-Clause",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-6d34b7d1c5cf5a52bfc3814d",
+      "identity": "github:112048254",
+      "aliases": [
+        "gh:shiiion/dolphin"
+      ],
+      "url": "https://github.com/shiiion/dolphin",
+      "name": "Metroid Prime (PrimeHack)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · GameCube",
+          "label": "Metroid Prime (PrimeHack)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 112048254,
+        "full_name": "shiiion/dolphin",
+        "description": "Dolphin fork intended to give Metroid Prime Trilogy mouselook controls",
+        "topics": [],
+        "stars": 627,
+        "pushed_at": "2026-06-09T00:05:13Z",
+        "archived": false,
+        "fork": true,
+        "parent": "dolphin-emu/dolphin",
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-789a47e03eafc9de90562cb9",
+      "identity": "github:1373239254",
+      "aliases": [
+        "gh:project-holon/eidos"
+      ],
+      "url": "https://github.com/Project-Holon/eidos",
+      "name": "Pokemon Black / Pokemon White (Eidos)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · DS",
+          "label": "Pokemon Black / Pokemon White (Eidos)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1373239254,
+        "full_name": "Project-Holon/eidos",
+        "description": "Native PC port of Pokemon Black and White, built on aletheia",
+        "topics": [],
+        "stars": 103,
+        "pushed_at": "2026-11-09T19:32:55Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-8b85b2d9619d984c75153df9",
+      "identity": "github:1434712655",
+      "aliases": [
+        "gh:reshaped/sonic-adventure"
+      ],
+      "url": "https://github.com/reshaped/sonic-adventure",
+      "name": "Sonic Adventure",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · Dreamcast",
+          "label": "Sonic Adventure",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1434712655,
+        "full_name": "reshaped/sonic-adventure",
+        "description": "A complete matching decompilation of the original Dreamcast release of Sonic Adventure",
+        "topics": [
+          "decompilation",
+          "dreamcast",
+          "matching-decompilation",
+          "sega",
+          "sega-dreamcast",
+          "sonic",
+          "sonic-adventure",
+          "sonic-the-hedgehog"
+        ],
+        "stars": 41,
+        "pushed_at": "2026-10-31T17:16:32Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-ef6d68596caddaaac9bc20bb",
+      "identity": "github:1412953700",
+      "aliases": [
+        "gh:jake-r-r-w/crash_bash_decomp"
+      ],
+      "url": "https://github.com/jake-r-r-w/crash_bash_decomp",
+      "name": "Crash Bash",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · PS1",
+          "label": "Crash Bash",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1412953700,
+        "full_name": "jake-r-r-w/crash_bash_decomp",
+        "description": "A vibe decomp of crash bash, disk 2 disk. also windows, Linux and Android port",
+        "topics": [],
+        "stars": 10,
+        "pushed_at": "2026-11-10T23:51:36Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-a1a7160b88907c8d3882af08",
+      "identity": "github:1440368239",
+      "aliases": [
+        "gh:momusdigital/fnv_decomp"
+      ],
+      "url": "https://github.com/momusdigital/fnv_decomp",
+      "name": "Fallout: New Vegas (FNV decompilation)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · PC",
+          "label": "Fallout: New Vegas (FNV decompilation)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1440368239,
+        "full_name": "momusdigital/fnv_decomp",
+        "description": "",
+        "topics": [],
+        "stars": 417,
+        "pushed_at": "2026-11-07T15:49:13Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-1876367b507188a1f4d4e8f7",
+      "identity": "github:1447089092",
+      "aliases": [
+        "gh:sebaz07/crashwoc-vita"
+      ],
+      "url": "https://github.com/sebaz07/crashwoc-vita",
+      "name": "Crash Bandicoot: The Wrath of Cortex (crashwoc-vita)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · PS2",
+          "label": "Crash Bandicoot: The Wrath of Cortex (crashwoc-vita)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1447089092,
+        "full_name": "sebaz07/crashwoc-vita",
+        "description": "Unofficial native PS Vita port of Crash Bandicoot: The Wrath of Cortex (GameCube), built on the community decompilation. No game files included — extract them from your own USA disc with the included tool. Made with assistance from Claude Opus 5.5.",
+        "topics": [],
+        "stars": 12,
+        "pushed_at": "2026-11-06T11:42:12Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-cadc3659ee342ad6003819c6",
+      "identity": "github:1442078962",
+      "aliases": [
+        "gh:maurizi/ff9-3ds"
+      ],
+      "url": "https://github.com/maurizi/ff9-3ds",
+      "name": "Final Fantasy IX (ff9-3ds)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · PS1",
+          "label": "Final Fantasy IX (ff9-3ds)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1442078962,
+        "full_name": "maurizi/ff9-3ds",
+        "description": "Native Nintendo 3DS port of Final Fantasy IX (PS1), built from the ff9-decomp C source. No game data included.",
+        "topics": [],
+        "stars": 14,
+        "pushed_at": "2026-11-10T23:06:27Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-fdd8df6f927a0551eafbe1f9",
+      "identity": "github:1430541653",
+      "aliases": [
+        "gh:zxmarcos/mugen-unleashed"
+      ],
+      "url": "https://github.com/zxmarcos/mugen-unleashed",
+      "name": "M.U.G.E.N 1.1 Beta 1 (mugen-unleashed)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · PC",
+          "label": "M.U.G.E.N 1.1 Beta 1 (mugen-unleashed)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1430541653,
+        "full_name": "zxmarcos/mugen-unleashed",
+        "description": "Decompilation project of mugen 1.1b",
+        "topics": [],
+        "stars": 43,
+        "pushed_at": "2026-11-04T03:06:12Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-849bc81cb8fddf7462b4f020",
+      "identity": "github:1425267799",
+      "aliases": [
+        "gh:offx366/titbit-modern"
+      ],
+      "url": "https://github.com/offx366/titbit-modern",
+      "name": "Nuclear Titbit (Titbit Modern)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · PC",
+          "label": "Nuclear Titbit (Titbit Modern)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1425267799,
+        "full_name": "offx366/titbit-modern",
+        "description": "Восстановленные исходники «Ядерного Титбита» (VZlab / Бука, 2003). Win32-движок, совместимость с современными Windows и редактор сцен Titbit Studio.",
+        "topics": [
+          "cpp",
+          "game-preservation",
+          "modding",
+          "python",
+          "reverse-engineering",
+          "scene-editor",
+          "titbit",
+          "windows"
+        ],
+        "stars": 15,
+        "pushed_at": "2026-10-22T17:22:06Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-46e9b8035a744a147cbf2c5e",
+      "identity": "github:1448659806",
+      "aliases": [
+        "gh:ggmartinez/castlevanialoi-pc"
+      ],
+      "url": "https://github.com/ggMartinez/CastlevaniaLOI-PC",
+      "name": "CastlevaniaLOI-PC",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "wangxiaoxiang5599-recompiled-games-list",
+          "section": "The list > PS2",
+          "label": "CastlevaniaLOI-PC",
+          "evidence_url": "https://github.com/wangxiaoxiang5599/recompiled-games-list/blob/09fcb3c21be970c87dfaf0d6d38b95cce81c1adb/README.md#L240"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1448659806,
+        "full_name": "ggMartinez/CastlevaniaLOI-PC",
+        "description": "Castlevania: Lament of Innocence ported to PC",
+        "topics": [],
+        "stars": 37,
+        "pushed_at": "2026-11-08T19:52:56Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-42078db94d3b6b105b31e41d",
+      "identity": "github:1449936954",
+      "aliases": [
+        "gh:theluckystrike/hex-viewer-vscode"
+      ],
+      "url": "https://github.com/theluckystrike/hex-viewer-vscode",
+      "name": "hex-viewer-vscode",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "gmh5225-awesome-game-security",
+          "section": "Cheat > RE Tools",
+          "label": "hex-viewer-vscode",
+          "evidence_url": "https://github.com/gmh5225/awesome-game-security/blob/47c5737d0e7c9f02258c48ab4572922731137b82/README.md#L1083"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1449936954,
+        "full_name": "theluckystrike/hex-viewer-vscode",
+        "description": "Hex viewer, binary viewer and hex editor for VS Code. Opens files of any size (4 GB+) in under a second. Free, no sign-in, works offline.",
+        "topics": [
+          "binary-editor",
+          "binary-viewer",
+          "cursor",
+          "data-inspector",
+          "hex-editor",
+          "hex-viewer",
+          "large-files",
+          "open-vsx",
+          "reverse-engineering",
+          "visual-studio-code",
+          "vscode",
+          "vscode-extension",
+          "vscodium"
+        ],
+        "stars": 0,
+        "pushed_at": "2026-11-10T01:27:00Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": "https://marketplace.visualstudio.com/publishers/zovo"
+      }
+    },
+    {
+      "id": "lead-8b2502d94e5fbd2fb1abba4c",
+      "identity": "github:1424449020",
+      "aliases": [
+        "gh:kiddrwxssj/biohazard-vita"
+      ],
+      "url": "https://github.com/KiddRwxSsj/biohazard-vita",
+      "name": "Resident Evil (biohazard-vita)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · PS1",
+          "label": "Resident Evil (biohazard-vita)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1424449020,
+        "full_name": "KiddRwxSsj/biohazard-vita",
+        "description": "A PS Vita port of Resident Evil 1 PC based on the Decompilation",
+        "topics": [],
+        "stars": 15,
+        "pushed_at": "2026-10-19T17:58:39Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-8b26c8bd95aa6f21344e1dca",
+      "identity": "github:1452804358",
+      "aliases": [
+        "gh:ciph3r-88/nfsmw_widescreenfix"
+      ],
+      "url": "https://github.com/CiPH3R-88/NFSMW_WideScreenFix",
+      "name": "nfsmw_widescreenfix",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "gmh5225-awesome-game-security",
+          "section": "Cheat > RE Tools",
+          "label": "nfsmw_widescreenfix",
+          "evidence_url": "https://github.com/gmh5225/awesome-game-security/blob/47c5737d0e7c9f02258c48ab4572922731137b82/README.md#L1108"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1452804358,
+        "full_name": "CiPH3R-88/NFSMW_WideScreenFix",
+        "description": "A lightweight, modern widescreen plugin for Need for Speed: Most Wanted (2005) v1.3, built from the ground up with clean C++ and reverse engineering in IDA Pro.",
+        "topics": [],
+        "stars": 4,
+        "pushed_at": "2026-11-10T23:30:39Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-b8e4cb7e21ffcf0e2c3dbe24",
+      "identity": "github:1353511375",
+      "aliases": [
+        "gh:mikompilation/miopan"
+      ],
+      "url": "https://github.com/Mikompilation/MioPan",
+      "name": "Fatal Frame II: Crimson Butterfly (MioPan)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · PS2",
+          "label": "Fatal Frame II: Crimson Butterfly (MioPan)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1353511375,
+        "full_name": "Mikompilation/MioPan",
+        "description": "PC Port Of Fatal Frame 2 Based On AI Code Recreation",
+        "topics": [],
+        "stars": 10,
+        "pushed_at": "2026-11-05T14:13:30Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "AGPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-f937d479a928db583a09ef78",
+      "identity": "github:1451247044",
+      "aliases": [
+        "gh:zpp1103/smo-harmony"
+      ],
+      "url": "https://github.com/zpp1103/smo-harmony",
+      "name": "smo-harmony",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "gmh5225-awesome-game-security",
+          "section": "Cheat > RE Tools",
+          "label": "smo-harmony",
+          "evidence_url": "https://github.com/gmh5225/awesome-game-security/blob/47c5737d0e7c9f02258c48ab4572922731137b82/README.md#L1114"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1451247044,
+        "full_name": "zpp1103/smo-harmony",
+        "description": "Super Mario Odyssey (Nintendo Switch) running natively on HarmonyOS — HLE host for nn::* services + NVN replayed on Vulkan. Source only: bring your own game files.",
+        "topics": [
+          "arkts",
+          "game-port",
+          "harmonyos",
+          "hle",
+          "native-port",
+          "nintendo-switch",
+          "nvn",
+          "ohos",
+          "openharmony",
+          "reverse-engineering",
+          "switch",
+          "vulkan"
+        ],
+        "stars": 0,
+        "pushed_at": "2026-11-10T10:08:34Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-443b28685ae4c1f6a7d5e84e",
+      "identity": "github:1450959184",
+      "aliases": [
+        "gh:sts78721/mkw-thwomp"
+      ],
+      "url": "https://github.com/STS78721/MKW-THWOMP",
+      "name": "mkw-thwomp",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "gmh5225-awesome-game-security",
+          "section": "Cheat > RE Tools",
+          "label": "mkw-thwomp",
+          "evidence_url": "https://github.com/gmh5225/awesome-game-security/blob/47c5737d0e7c9f02258c48ab4572922731137b82/README.md#L1119"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1450959184,
+        "full_name": "STS78721/MKW-THWOMP",
+        "description": "Static recompilation of Mario Kart World (Switch 2) to native Windows with Vulkan. The Intro renders , graphical issues still ; not playable yet. No game files included.",
+        "topics": [],
+        "stars": 115,
+        "pushed_at": "2026-11-10T19:11:47Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-b253840f34557bff02805353",
+      "identity": "github:1430504704",
+      "aliases": [
+        "gh:gametoast/swbf2decomp"
+      ],
+      "url": "https://github.com/Gametoast/swbf2decomp",
+      "name": "Star Wars: Battlefront II (2005) (swbf2decomp (Gametoast))",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · PC",
+          "label": "Star Wars: Battlefront II (2005) (swbf2decomp (Gametoast))",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1430504704,
+        "full_name": "Gametoast/swbf2decomp",
+        "description": "",
+        "topics": [],
+        "stars": 21,
+        "pushed_at": "2026-11-10T16:23:03Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-06eb3c425cc183be54b38c30",
+      "identity": "github:1450030691",
+      "aliases": [
+        "gh:xiondigital/emblemweave"
+      ],
+      "url": "https://github.com/XiONDiGiTaL/EmblemWeave",
+      "name": "emblemweave",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "gmh5225-awesome-game-security",
+          "section": "Cheat > RE Tools",
+          "label": "emblemweave",
+          "evidence_url": "https://github.com/gmh5225/awesome-game-security/blob/47c5737d0e7c9f02258c48ab4572922731137b82/README.md#L1120"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1450030691,
+        "full_name": "XiONDiGiTaL/EmblemWeave",
+        "description": "Native Windows recompilation of Fire Emblem: Fortune's Weave: play from your own dump with no emulator, with save editing, mods, cheats and an in-game menu. AI-assisted development.",
+        "topics": [
+          "aarch64",
+          "ai-assisted",
+          "cheats",
+          "egui",
+          "fire-emblem",
+          "fortunes-weave",
+          "game-launcher",
+          "game-mods",
+          "nintendo-switch-2",
+          "recompilation",
+          "rust",
+          "save-editor",
+          "static-recompilation"
+        ],
+        "stars": 0,
+        "pushed_at": "2026-11-11T00:27:39Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-36b8f141a1bbf57e7704246d",
+      "identity": "github:1430284822",
+      "aliases": [
+        "gh:openswbf2/swbf2decomp"
+      ],
+      "url": "https://github.com/OpenSWBF2/swbf2decomp",
+      "name": "Star Wars: Battlefront II (2005) (swbf2decomp)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · PC",
+          "label": "Star Wars: Battlefront II (2005) (swbf2decomp)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1430284822,
+        "full_name": "OpenSWBF2/swbf2decomp",
+        "description": "",
+        "topics": [],
+        "stars": 13,
+        "pushed_at": "2026-10-28T18:30:26Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-96bf44041437103b3f5d0479",
+      "identity": "github:1438583903",
+      "aliases": [
+        "gh:cheviman/tmntarcade-decomp"
+      ],
+      "url": "https://github.com/cheviman/tmntarcade-decomp",
+      "name": "Teenage Mutant Ninja Turtles (tmntarcade-decomp)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · Arcade",
+          "label": "Teenage Mutant Ninja Turtles (tmntarcade-decomp)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1438583903,
+        "full_name": "cheviman/tmntarcade-decomp",
+        "description": "",
+        "topics": [],
+        "stars": 17,
+        "pushed_at": "2026-11-07T17:19:05Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "BSD-3-Clause",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-3917061c77a270cbc93055cf",
+      "identity": "github:1452033436",
+      "aliases": [
+        "gh:aauuzy/xenodllre"
+      ],
+      "url": "https://github.com/aauuzy/XenoDLLRE",
+      "name": "xenodllre",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "gmh5225-awesome-game-security",
+          "section": "Cheat > RE Tools",
+          "label": "xenodllre",
+          "evidence_url": "https://github.com/gmh5225/awesome-game-security/blob/47c5737d0e7c9f02258c48ab4572922731137b82/README.md#L1129"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1452033436,
+        "full_name": "aauuzy/XenoDLLRE",
+        "description": "Static reverse engineering of the Xeno Roblox executor (v1.3.65): attach and execution architecture, resource decryption, localhost protocol, and detection tooling for defensive and anti-cheat research.",
+        "topics": [],
+        "stars": 1,
+        "pushed_at": "2026-11-10T22:09:42Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-7191894746352dc6ec57c81a",
+      "identity": "github:1447109249",
+      "aliases": [
+        "gh:opokxeno/xsg-ii-decomp"
+      ],
+      "url": "https://github.com/OpokXeno/xsg-ii-decomp",
+      "name": "Xenosaga Episode II: Jenseits von Gut und Böse (xsg-ii-decomp)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · PS2",
+          "label": "Xenosaga Episode II: Jenseits von Gut und Böse (xsg-ii-decomp)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1447109249,
+        "full_name": "OpokXeno/xsg-ii-decomp",
+        "description": "Matching decompilation of Xenosaga Episode II: Jenseits von Gut und Böse for the PS2",
+        "topics": [],
+        "stars": 17,
+        "pushed_at": "2026-11-10T16:18:29Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-b31cc05909b143a95924f080",
+      "identity": "github:1404562645",
+      "aliases": [
+        "gh:nicoruedaa/project-arceus"
+      ],
+      "url": "https://github.com/NicoRuedaA/project-arceus",
+      "name": "Pokémon Legends: Arceus (project-arceus)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "decompilation · Switch",
+          "label": "Pokémon Legends: Arceus (project-arceus)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1404562645,
+        "full_name": "NicoRuedaA/project-arceus",
+        "description": "Clean single-commit snapshot of the project.",
+        "topics": [],
+        "stars": 13,
+        "pushed_at": "2026-10-30T18:32:33Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-96b3f518c82b3d078e5f098f",
+      "identity": "github:220449772",
+      "aliases": [
+        "gh:open-sdr/openwifi"
+      ],
+      "url": "https://github.com/open-sdr/openwifi",
+      "name": "openwifi",
+      "kind_hint": "tool",
+      "listings": [
+        {
+          "source_id": "hexsecs-awesome-embedded-security",
+          "section": "Hardware Tools > Wi-Fi Tools",
+          "label": "openwifi",
+          "evidence_url": "https://github.com/hexsecs/awesome-embedded-security/blob/c7bcf4dc737b31bba222be4ac44f2c1a492c21fc/README.md#L408"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 220449772,
+        "full_name": "open-sdr/openwifi",
+        "description": "open-source IEEE 802.11 WiFi baseband FPGA (chip) design: driver, software",
+        "topics": [
+          "802-11",
+          "ad9361",
+          "analog-devices",
+          "csma",
+          "dma",
+          "fpga",
+          "hardware",
+          "hls",
+          "ieee80211",
+          "linux",
+          "mac80211",
+          "ofdm",
+          "openwifi",
+          "sdr",
+          "software-defined-radio",
+          "verilog",
+          "wifi",
+          "xilinx",
+          "xilinx-fpga",
+          "zynq"
+        ],
+        "stars": 4868,
+        "pushed_at": "2026-10-22T14:18:58Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "AGPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-893d1b84094fede99d4d0bc1",
+      "identity": "github:120455729",
+      "aliases": [
+        "gh:josephstevenspgh/castlevania-labelled-disassembly"
+      ],
+      "url": "https://github.com/josephstevenspgh/Castlevania-Labelled-Disassembly",
+      "name": "Castlevania (Castlevania-Labelled-Disassembly)",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "disassembly · NES",
+          "label": "Castlevania (Castlevania-Labelled-Disassembly)",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 120455729,
+        "full_name": "josephstevenspgh/Castlevania-Labelled-Disassembly",
+        "description": "Incomplete labelling of a disassembly for Castlevania (NES)",
+        "topics": [],
+        "stars": 10,
+        "pushed_at": "2018-02-06T13:04:01Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": null,
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-3a32bb6592af226042be35f0",
+      "identity": "github:222542346",
+      "aliases": [
+        "gh:everestapi/olympus"
+      ],
+      "url": "https://github.com/EverestAPI/Olympus",
+      "name": "Olympus - Cross-platform Celeste Mod Manager",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "submitgame-games-json",
+          "section": "tool · PC",
+          "label": "Olympus - Cross-platform Celeste Mod Manager",
+          "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/bfacc5ab63b77d89fe02b429e82ab8a5cb5165c1/data/games.json"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 222542346,
+        "full_name": "EverestAPI/Olympus",
+        "description": "New Everest installer / manager, powered by LÖVE / love2d.",
+        "topics": [],
+        "stars": 182,
+        "pushed_at": "2026-11-01T19:50:30Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-fe010f7ded17b824e18fc3a3",
+      "identity": "github:1443755197",
+      "aliases": [
+        "gh:linuxopt/mp4-recomp"
+      ],
+      "url": "https://github.com/linuxopt/mp4-recomp",
+      "name": "Metroid Prime 4 Recomp",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "wangxiaoxiang5599-recompiled-games-list",
+          "section": "The list > Switch",
+          "label": "Metroid Prime 4 Recomp",
+          "evidence_url": "https://github.com/wangxiaoxiang5599/recompiled-games-list/blob/09fcb3c21be970c87dfaf0d6d38b95cce81c1adb/README.md#L380"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1443755197,
+        "full_name": "linuxopt/mp4-recomp",
+        "description": "metroid prime 4 beyond recomp",
+        "topics": [],
+        "stars": 88,
+        "pushed_at": "2026-11-10T23:15:24Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "GPL-3.0",
+        "homepage": null
+      }
+    },
+    {
+      "id": "lead-83258b0ed5df36095bb266c6",
+      "identity": "github:1449953540",
+      "aliases": [
+        "gh:brandon04gonzalez/nier-android"
+      ],
+      "url": "https://github.com/Brandon04Gonzalez/nier-android",
+      "name": "nier-android",
+      "kind_hint": "case-study",
+      "listings": [
+        {
+          "source_id": "wangxiaoxiang5599-recompiled-games-list",
+          "section": "The list > Switch",
+          "label": "nier-android",
+          "evidence_url": "https://github.com/wangxiaoxiang5599/recompiled-games-list/blob/09fcb3c21be970c87dfaf0d6d38b95cce81c1adb/README.md#L390"
+        }
+      ],
+      "observed_at": "2026-11-11T00:34:34Z",
+      "verification": "automated-source-lead",
+      "review_status": "unreviewed",
+      "github": {
+        "id": 1449953540,
+        "full_name": "Brandon04Gonzalez/nier-android",
+        "description": "NieR:Automata for Android: a native port that runs your own dump, prepared on the phone (the APK holds no game code or data)",
+        "topics": [],
+        "stars": 34,
+        "pushed_at": "2026-11-10T13:29:17Z",
+        "archived": false,
+        "fork": false,
+        "parent": null,
+        "license": "MIT",
+        "homepage": "https://discord.gg/rMgRneBTCe"
+      }
+    }
+  ]
+}

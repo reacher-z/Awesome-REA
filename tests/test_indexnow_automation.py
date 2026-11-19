@@ -142,6 +142,20 @@ class WaitTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             automation.wait_for_deployment('main', self.dist, github=FakeGitHub())
 
+    def test_the_build_waits_until_the_site_serves_the_commit(self):
+        clock, sha = Clock(), 'a' * 40
+        served = [b'b' * 40, OSError('down'), sha.encode()]
+
+        def fetch(url, limit):
+            value = served[min(int(clock() // automation.POLL_SECONDS), len(served) - 1)]
+            if isinstance(value, Exception):
+                raise value
+            return value
+        self.assertTrue(automation.wait_until_served(sha, fetch=fetch, clock=clock, sleep=clock.sleep))
+        clock.now = 0
+        self.assertFalse(automation.wait_until_served('c' * 40, fetch=fetch, clock=clock, sleep=clock.sleep,
+                                                      wait_seconds=100))
+
     def test_a_build_that_differs_only_in_preview_images_takes_the_served_images(self):
         (self.dist / 'index.html').write_bytes(b'<!doctype html><title>Home</title>')
         (self.dist / 'sitemap.xml').write_bytes(b'<urlset></urlset>')
@@ -177,6 +191,15 @@ class WaitTests(unittest.TestCase):
         self.assertEqual((self.dist / 'build-manifest.json').read_bytes(), built)
         self.assertFalse(automation.differs_only_in_previews(b'not json', built))
         self.assertFalse(automation.differs_only_in_previews(b'{"files": {}, "schema_version": 2}', b'{"files": {}}'))
+
+    def test_served_thumbnails_count_as_preview_images(self):
+        image = b'webp bytes'
+        entry = {'sha256': hashlib.sha256(image).hexdigest(), 'bytes': len(image)}
+        served = json.dumps({'files': {'previews/thumbs/a.webp': entry}}).encode()
+        built = json.dumps({'files': {'previews/thumbs/a.webp': {'sha256': '0' * 64, 'bytes': 1}}}).encode()
+        self.assertEqual(automation.served_previews(served, built, lambda url, limit: image), {'previews/thumbs/a.webp': image})
+        nested = json.dumps({'files': {'previews/thumbs/deeper/a.webp': entry}}).encode()
+        self.assertIsNone(automation.served_previews(nested, built, lambda url, limit: image))
 
     def test_a_deferred_wait_warns_and_succeeds(self):
         output = StringIO()
@@ -275,6 +298,10 @@ class WorkflowTests(unittest.TestCase):
 
     def test_builds_like_the_publication_waits_then_submits_and_keeps_the_receipt(self):
         build = self.text.index('python3 scripts/build_production.py --publish')
+        # The same pinned Pillow as the publication builds, so the preview thumbnails match.
+        pillow = self.text.index('--require-hashes -r scripts/publish-requirements.txt')
+        self.assertLess(pillow, build)
+        self.assertRegex((ROOT / 'scripts/publish-requirements.txt').read_text(encoding='utf-8'), r'(?m)^pillow==[0-9.]+ \\$')
         wait = self.text.index('python3 scripts/indexnow_automation.py wait "$SHA" dist')
         previous = self.text.index('python3 scripts/indexnow_automation.py previous')
         submit = self.text.index('python3 scripts/submit_indexnow.py "${args[@]}"')

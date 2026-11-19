@@ -248,6 +248,25 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   assert.match(new URL(page.url()).pathname, /\/resources\/[a-z0-9-]+\/$/, `${label}: Enter opens the selected result`);
 }
 
+// tests/e2e/search_queries.json: real searches whose expected record must rank in the homepage top 3, in both languages.
+const SEARCH_QUERIES = JSON.parse(fs.readFileSync(path.join(root, 'tests/e2e/search_queries.json'), 'utf8'));
+async function searchQuality(page, language, data) {
+  const english = new Map(data.catalog.resources.map(record => [record.id, record]));
+  const tops = await page.evaluate(async ({queries, top}) => {
+    const search = window.REA_SEARCH;
+    const index = await search.loadIndex();
+    await search.loadText();
+    return queries.map(({q}) => search.sortHits(search.search(index.res, q), 'featured', q).slice(0, top).map(hit => hit.r.id));
+  }, SEARCH_QUERIES);
+  const expected = (id, {ids, name, target}) => {
+    if (ids) return ids.includes(id);
+    const record = english.get(id);
+    return Boolean(record) && new RegExp(name, 'i').test(record.name) && (!target || record.targets.includes(target));
+  };
+  const misses = SEARCH_QUERIES.queries.map(({q, expect}, i) => (tops[i].some(id => expected(id, expect)) ? '' : `${q}: ${tops[i].join(', ')}`)).filter(Boolean);
+  assert.deepEqual(misses, [], `${language}: every query in tests/e2e/search_queries.json finds its record in the top ${SEARCH_QUERIES.top}`);
+}
+
 // The evidence-class select narrows the drawer in place, and the info button explains the classes.
 async function homepageClassFilter(page, language, viewport) {
   const label = `${language} homepage evidence-class filter ${viewport.name}`;
@@ -270,23 +289,39 @@ async function homepageClassFilter(page, language, viewport) {
 }
 
 // Past the hero field the sticky bar offers search; it opens over the page and closes back to the same place.
-// /resources/ holds every record; filters change the list in place, and section links return to the whole list.
+// /resources/ is split into static pages of at most 100 rows; filters search the whole catalog in place,
+// and a record or section link finds the page that lists it.
 async function resourceListing(page, language, viewport, data) {
   const label = `${language} resources ${viewport.name}`;
   const total = data.catalog.resources.length;
   const route = language === 'zh' ? '/zh/resources/' : '/resources/';
+  const perPage = 100;
+  const staticPages = Math.max(1, Math.ceil(total / perPage));
   const rows = () => count(page, '[data-cards] > .card');
-  assert.equal(await rows(), total, `${label}: every record is in the page`);
+  assert.equal(await rows(), Math.min(perPage, total), `${label}: the first page holds the first ${perPage} rows`);
+  const pageMap = await page.evaluate(async url => (await fetch(url)).json(), '/resources/pages.json');
+  const mapped = data.catalog.resources.map(record => pageMap[record.id]);
+  assert.ok(mapped.every(number => Number.isInteger(number) && number >= 1 && number <= staticPages), `${label}: every record has a static page`);
+  if (staticPages > 1) {
+    assert.equal(await page.$eval('[data-pager] a[data-page="2"]', link => new URL(link.href).pathname), `${route}page/2/`, `${label}: the pager links the next static page`);
+  }
   await noOverflow(page, label);
   const before = await page.$eval('[data-results-meta]', node => node.textContent);
   await press(page, '.page-head .folder[data-target="protocol"]');
-  await page.waitForFunction(all => document.querySelectorAll('[data-cards] > .card').length < all, {timeout: 20000}, total);
-  assert.equal(new URL(page.url()).searchParams.get('target'), 'protocol', `${label}: the filter is in the URL`);
-  assert.notEqual(await page.$eval('[data-results-meta]', node => node.textContent), before, `${label}: the count follows the filter`);
+  await page.waitForFunction(() => new URL(location.href).searchParams.get('target') === 'protocol', {timeout: 20000});
+  // The search index loads on the first interaction, so the count changes once it arrives.
+  await page.waitForFunction(text => document.querySelector('[data-results-meta]').textContent !== text, {timeout: 20000}, before)
+    .catch(() => assert.fail(`${label}: the count follows the filter`));
+  if (staticPages > 1) {
+    const shown = await page.$$eval('[data-cards] > .card[data-id]', nodes => nodes.map(node => node.dataset.id));
+    assert.ok(shown.some(id => pageMap[id] > 1), `${label}: the filter searches rows from every static page`);
+  }
   await page.goto(page.url().split('?')[0] + '?target=protocol&kind=tool');
-  await page.waitForFunction(all => document.querySelectorAll('[data-cards] > .card').length < all, {timeout: 20000}, total);
-  const opened = await page.$$eval('[data-cards] > .card .callno', nodes => nodes.map(node => node.textContent));
-  assert.ok(opened.length && opened.every(text => /tool|工具/i.test(text)), `${label}: a shared link opens the same filter`);
+  // The static rows show first; the filtered rows replace them once the search index arrives.
+  await page.waitForFunction(() => {
+    const kinds = [...document.querySelectorAll('[data-cards] > .card .callno')].map(node => node.textContent);
+    return kinds.length > 0 && kinds.every(text => /tool|工具/i.test(text));
+  }, {timeout: 20000}).catch(() => assert.fail(`${label}: a shared link opens the same filter`));
   // On a narrowed list a section's count follows the filters, and its link filters to that many rows.
   const sectionCounts = () => page.$$eval('[data-section-link]', links => links.map(link => [link.dataset.section, Number(link.querySelector('.count').textContent.replace(/\D/g, ''))]));
   const narrowed = await sectionCounts();
@@ -309,20 +344,24 @@ async function resourceListing(page, language, viewport, data) {
   await page.click('[data-active] [data-unset="class"]');
   await page.waitForFunction(() => !new URL(location.href).searchParams.has('class'));
   assert.equal(await page.$eval('.results-bar [data-class-select]', select => select.value), '', `${label}: removing the class chip resets the select`);
-  // Clearing returns to the whole list, where the same link jumps to its heading and is shareable.
+  // Clearing returns to the first static page, where a section link jumps to its heading and is shareable.
   await page.goto(page.url().split('?')[0]);
-  assert.equal(await rows(), total, `${label}: clearing the filters returns the whole list`);
+  assert.equal(await rows(), Math.min(perPage, total), `${label}: clearing the filters returns the first static page`);
   await page.$eval('[data-section-link]', node => node.click());
   await page.waitForFunction(() => location.hash.startsWith('#heading-'));
-  assert.equal(new URL(page.url()).search, '', `${label}: on the whole list a section link only jumps`);
+  assert.equal(new URL(page.url()).search, '', `${label}: on the static list a section link only jumps`);
   assert.equal(new URL(page.url()).pathname, route);
-  assert.equal(await rows(), total, `${label}: a section jump keeps every row`);
   assert.deepEqual(await page.evaluate(() => [[61, 1], [64, 1], [65, 1], [65, 2], [121, 2], [120, 2], [0, 1], [3, 1]].map(([rows, page]) => {
     const {pages, start, end} = window.REA_SEARCH.pageRange(rows, 60, page);
     return [pages, end - start];
   })), [[1, 61], [1, 64], [2, 60], [2, 5], [2, 61], [2, 60], [1, 0], [1, 3]], `${label}: a last page never holds under five rows`);
-  await page.goto(page.url().split('#')[0] + '#' + data.catalog.resources[data.catalog.resources.length - 1].id);
-  await page.waitForFunction(() => { const top = document.getElementById(location.hash.slice(1)).getBoundingClientRect().top; return top >= 0 && top < innerHeight; }, {timeout: 5000});
+  // A legacy /resources/#id link opens the static page that lists that record.
+  const last = data.catalog.resources[data.catalog.resources.length - 1].id;
+  const lastPage = pageMap[last];
+  await page.goto(`${new URL(page.url()).origin}${route}#${last}`);
+  await page.waitForFunction(expected => location.pathname === expected, {timeout: 10000}, lastPage > 1 ? `${route}page/${lastPage}/` : route);
+  await page.waitForFunction(() => { const node = document.getElementById(location.hash.slice(1)); if (!node) return false; const top = node.getBoundingClientRect().top; return top >= 0 && top < innerHeight; }, {timeout: 10000});
+  if (staticPages > 1) assert.ok(await rows() <= perPage, `${label}: a later static page holds at most ${perPage} rows`);
 }
 
 async function homepageScrolledSearch(page, language, viewport) {
@@ -613,7 +652,8 @@ async function midWidthPaperRows(page, label, viewport) {
 async function sectionTargetCounts(page, label) {
   const lines = await page.$$eval('.section-target-count', nodes => nodes.map(line => ({
     target: line.dataset.sectionTarget,
-    cards: line.closest('section').querySelectorAll('[data-resource-id]').length,
+    // A /cases/ section can run over several static pages; data-section-count holds all of its cases.
+    cards: Number(line.closest('section').dataset.sectionCount || line.closest('section').querySelectorAll('[data-resource-id]').length),
     stated: ['targetTagged', 'targetElsewhere', 'targetUntaggedHere'].map(key => Number(line.dataset[key])),
     right: line.getBoundingClientRect().right,
   })));
@@ -622,6 +662,19 @@ async function sectionTargetCounts(page, label) {
   for (const {target, cards, stated: [tagged, elsewhere, untagged], right} of lines) {
     assert.equal(cards, tagged - elsewhere + untagged, `${label}: ${target} section holds ${cards} cards, but its line states ${tagged} - ${elsewhere} + ${untagged}`);
     assert(right <= width + 1, `${label}: the ${target} count line extends past the viewport (${right}px of ${width}px)`);
+  }
+}
+
+// An older /cases/#<anchor> link to a section or case on a later static page opens that page at the anchor;
+// a malformed fragment leaves the page as it is, without an error.
+async function oldCaseLink(page, expected, key) {
+  if (expected) {
+    await page.waitForFunction(path => location.pathname === path, {timeout: 20000}, expected)
+      .catch(() => assert.fail(`${key} should open ${expected}, not ${page.url()}`));
+    await page.waitForFunction(id => document.getElementById(id)?.matches('section, .case-row, [data-case-row]'), {timeout: 20000}, key)
+      .catch(() => assert.fail(`${expected} should hold the ${key} content`));
+  } else {
+    assert.ok(await count(page, '.case-row, [data-case-row]') > 0, 'the first page still lists its cases');
   }
 }
 
@@ -667,6 +720,8 @@ async function staticPage(page, route, viewport) {
       for (const language of ['en', 'zh']) {
         await check(`${language} new homepage at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} new homepage ${viewport.name}`, (page, requested) => newHomepage(page, language, viewport, data, requested)));
+        if (viewport.name === 'desktop') await check(`${language} search quality`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+          `${language} search quality`, page => searchQuality(page, language, data)));
         await check(`${language} homepage evidence-class filter at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} homepage evidence-class filter ${viewport.name}`, page => homepageClassFilter(page, language, viewport)));
         await check(`${language} scrolled homepage search at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
@@ -691,6 +746,17 @@ async function staticPage(page, route, viewport) {
       for (const route of ['/cases/', '/zh/cases/']) {
         await check(`${route} without JavaScript at ${viewport.width}px`, () => visit(context, origin, route, viewport,
           `${route} ${viewport.name} without JavaScript`, page => staticPage(page, route, viewport), {javascript: false}));
+      }
+      const casePages = read('cases/pages.json');
+      const laterCase = Object.keys(casePages).find(key => /^cases-[a-z]+-[a-z-]+$/.test(key) && casePages[key] > 1);
+      for (const prefix of ['', '/zh']) {
+        if (laterCase) {
+          const expected = `${prefix}/cases/page/${casePages[laterCase]}/`;
+          await check(`${prefix}/cases/#${laterCase} at ${viewport.width}px`, () => visit(context, origin, `${prefix}/cases/#${laterCase}`, viewport,
+            `${prefix || '/en'} old case link ${viewport.name}`, page => oldCaseLink(page, expected, laterCase)));
+        }
+        await check(`${prefix}/cases/ with a malformed fragment at ${viewport.width}px`, () => visit(context, origin, `${prefix}/cases/#%E0%A4%A`, viewport,
+          `${prefix || '/en'} malformed case fragment ${viewport.name}`, page => oldCaseLink(page, null)));
       }
       for (const route of routes) {
         await check(`${route} at ${viewport.width}px`, () => visit(context, origin, route, viewport, `${route} ${viewport.name}`, page => staticPage(page, route, viewport)));

@@ -40,9 +40,6 @@ CRAWLERS = tuple(token for _, tokens in CRAWLER_GROUPS for token in tokens)
 REQUIRED_AI_CRAWLERS = ('GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-User', 'Claude-SearchBot',
                         'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot-Extended', 'CCBot',
                         'Amazonbot', 'meta-externalagent', 'DuckAssistBot', 'MistralAI-User', 'bingbot', 'Googlebot')
-# Content Signals Policy (https://contentsignals.org/): the collection welcomes search, answer engines and
-# training. Original editorial content is MIT-licensed; linked works keep their own licenses.
-CONTENT_SIGNAL = 'search=yes, ai-input=yes, ai-train=yes'
 # IETF draft-kelley-aipref-training-preference-signal-00: Allow states a preference in favour of AI
 # training. The * group never matches this token, so it needs its own group.
 TRAINING_PREFERENCE_TOKEN = '__usage_ai-training'
@@ -64,11 +61,9 @@ def robots_txt(site_url: str, sitemap_url: str) -> str:
     return '\n'.join([
         f'# Crawl policy for {site_url}/',
         '# Search engines, AI search, AI assistants and AI training crawlers are all welcome.',
-        '# Content Signals Policy: https://contentsignals.org/',
         f'# Agent-readable index: {site_url}/llms.txt',
         '',
         'User-agent: *',
-        f'Content-Signal: {CONTENT_SIGNAL}',
         'Allow: /',
         '',
         '# A crawler that matches a named group ignores the * group (RFC 9309 2.2.1),',
@@ -76,7 +71,6 @@ def robots_txt(site_url: str, sitemap_url: str) -> str:
         '# Also covered by *: 360Spider, Sogou spider and other agents outside the RFC 9309 token grammar.',
         '',
         *named,
-        f'Content-Signal: {CONTENT_SIGNAL}',
         'Allow: /',
         '',
         '# AI-training usage preference (IETF draft-kelley-aipref-training-preference-signal-00).',

@@ -359,3 +359,29 @@ class IndexNowDeltaTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class FetchRetryTests(unittest.TestCase):
+    def test_a_busy_edge_is_retried_and_other_errors_are_not(self):
+        import io
+        from urllib.error import HTTPError
+
+        class Reply(io.BytesIO):
+            status = 200
+            def geturl(self): return 'https://awesomerea.org/x'
+            def __enter__(self): return self
+            def __exit__(self, *args): return False
+
+        busy = HTTPError('https://awesomerea.org/x', 503, 'busy', {}, None)
+        waits = []
+        with patch.object(indexnow, 'urlopen', side_effect=[busy, busy, Reply(b'ok')]) as network:
+            self.assertEqual(indexnow.fetch_bytes('https://awesomerea.org/x', 10, sleep=waits.append), b'ok')
+        self.assertEqual((network.call_count, waits), (3, [2, 6]))
+        missing = HTTPError('https://awesomerea.org/x', 404, 'gone', {}, None)
+        with patch.object(indexnow, 'urlopen', side_effect=[missing]) as network:
+            with self.assertRaises(HTTPError):
+                indexnow.fetch_bytes('https://awesomerea.org/x', 10, sleep=waits.append)
+        self.assertEqual(network.call_count, 1)
+        with patch.object(indexnow, 'urlopen', side_effect=[busy] * 5):
+            with self.assertRaises(HTTPError):
+                indexnow.fetch_bytes('https://awesomerea.org/x', 10, sleep=lambda delay: None)
