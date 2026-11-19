@@ -217,6 +217,10 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   assert.equal(await page.$eval('.site-header a[hreflang]', link => link.getAttribute('href')), language === 'zh' ? '/' : '/zh/');
   await noOverflow(page, label);
   if (!javascript) return;
+  // The All view opens on the class × evidence overview; a search brings the rows back.
+  assert(await page.$eval('[data-drawer]', drawer => drawer.classList.contains('is-overview')), `${label}: the All view opens on the overview`);
+  assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), false, `${label}: the overview is visible`);
+  assert.equal(await page.$eval('[data-cards]', cards => getComputedStyle(cards).display), 'none', `${label}: the opening rows wait behind the overview`);
   const index = language === 'zh' ? 'search-index.zh.json' : 'search-index.json';
   assert.equal(requests(requested, index), 0, `${label}: the search index waits for the first search`);
   assert.equal(requests(requested, 'catalog-index.json') + requests(requested, 'catalog.json'), 0, `${label}: the collection data is not loaded`);
@@ -225,6 +229,7 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   await page.waitForFunction(() => document.querySelector('[data-cards] > .card') && new URL(location.href).searchParams.get('q') === 'ghidra', {timeout: 15000});
   assert.equal(requests(requested, index), 1, `${label}: one search index request`);
   await page.waitForFunction(id => document.querySelector(`[data-cards] > .card[data-id="${id}"]`), {}, 'ghidra');
+  assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), true, `${label}: a search brings the entries back`);
   assert.equal(await page.$eval('.site-header a[hreflang]', link => new URL(link.href).search), '?q=ghidra', `${label}: the language link keeps the search`);
   await noOverflow(page, label + ' with a search');
   // Arrow keys move the selection; Escape clears; zero results offer other routes rather than a count of nothing.
@@ -235,6 +240,8 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   await page.keyboard.press('Escape');
   await page.waitForFunction(() => !document.querySelector('[data-search-input]').value && !new URL(location.href).searchParams.get('q'));
   assert.equal(await count(page, '[data-cards] > .card.is-active'), 0, `${label}: Escape clears the selection`);
+  await page.waitForFunction(() => document.querySelector('[data-drawer]').classList.contains('is-overview'));
+  assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), false, `${label}: clearing the search returns to the overview`);
   await page.type('[data-search-input]', 'zzzzqqqq');
   // The empty state can appear after the first few letters; wait until it describes the whole query.
   await page.waitForSelector('[data-cards] > .empty a[href*="sourceq=zzzzqqqq"]');
