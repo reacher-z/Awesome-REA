@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "scope": "Class 0 records in data/evidence-classes.json",
+  "taxonomy": "frontier-taxonomy.json",
+  "reviewed_at": "2026-11-19",
+  "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy/frontier_nodes.json",
+  "entries": [
+    {
+      "id": "photocraft-case",
+      "field": "R06.02",
+      "field_name": "Photography & image editing",
+      "reason": "The reconstructed application is a raster image editor; the same repository maps to this photo-editing field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "wordcraft-case",
+      "field": "R04.02",
+      "field_name": "Word processing & long documents",
+      "reason": "The reconstructed application is a word processor; the same repository maps to this word-processing field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "gridcraft-case",
+      "field": "R04.03",
+      "field_name": "Spreadsheets & tabular data",
+      "reason": "The reconstructed application is a spreadsheet editor; the same repository maps to this spreadsheet field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "deckcraft-case",
+      "field": "R04.04",
+      "field_name": "Presentations & visual documents",
+      "reason": "The reconstructed application is a slide/presentation editor; the same repository maps to this presentation field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "cadcraft-case",
+      "field": "R07.01",
+      "field_name": "Mechanical & aerospace design (CAD)",
+      "reason": "The reconstructed application is a computer-aided design editor; the same repository maps to this CAD field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "designcraft-case",
+      "field": "R06.09",
+      "field_name": "Publishing, layout & typography",
+      "reason": "The reconstructed application is a page-layout and publishing editor; the same repository maps to this desktop-publishing field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "effectcraft-case",
+      "field": "R06.05",
+      "field_name": "Motion graphics, VFX & compositing",
+      "reason": "The reconstructed application is a motion-graphics and compositing editor; the same repository maps to this visual-effects field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "figcraft-case",
+      "field": "R06.08",
+      "field_name": "UI/UX & product design",
+      "reason": "The reconstructed application is an interface-design editor; the same repository maps to this prototyping field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "filmcraft-case",
+      "field": "R06.04",
+      "field_name": "Video editing & post-production",
+      "reason": "The reconstructed application is a video editor; the same repository maps to this video-editing field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "lightcraft-case",
+      "field": "R06.02",
+      "field_name": "Photography & image editing",
+      "reason": "The reconstructed application is a photo library and RAW developer; the same repository maps to this photo-editing field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "pdfcraft-case",
+      "field": "R04.05",
+      "field_name": "PDFs, forms & document conversion",
+      "reason": "The reconstructed application is a PDF viewer and editor; the same repository maps to this PDF field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "soundcraft-case",
+      "field": "R06.07",
+      "field_name": "Audio, music & sound post-production",
+      "reason": "The reconstructed application is an audio recording and mixing tool; the same repository maps to this audio-production field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "vectorcraft-case",
+      "field": "R06.01",
+      "field_name": "Graphic & brand design",
+      "reason": "The reconstructed application is a vector illustration editor; the same repository maps to this vector-graphics field in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "lego-island-portable-case",
+      "field": "R13.01",
+      "field_name": "Video game play",
+      "reason": "The reconstructed artifact is a game; the same repository maps to game reconstruction in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    },
+    {
+      "id": "openrct2-engine-case",
+      "field": "R13.01",
+      "field_name": "Video game play",
+      "reason": "The reconstructed artifact is a game engine and game; the same repository maps to game reconstruction in the rea-tracker audit.",
+      "source": "https://github.com/ruoxining/rea-tracker/blob/4e6e8944503e01c20a79a7562c0517c6073d7fed/data/taxonomy_page.json"
+    }
+  ]
+}
