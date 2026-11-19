@@ -28,7 +28,7 @@
 - [miscusi-peek/cheatengine-mcp-bridge](https://github.com/miscusi-peek/cheatengine-mcp-bridge) — 通过 MCP 将你喜爱的 AI 智能体直接连接到 Cheat Engine，以自然语言自动执行逆向工程、指针扫描和内存分析。 **[1,645 星标]** · 精选：[Cheat Engine MCP Bridge 进程内存分析桥接](https://awesomerea.org/zh/resources/cheatengine-mcp-bridge/)
 - [OpenDriver2/REDRIVER2](https://github.com/OpenDriver2/REDRIVER2) — PlayStation 游戏《Driver 2》的逆向工程项目。 **[1,404 星标]** · 精选：[REDRIVER2：借助 PlayStation 兼容层重建 Driver 2](https://awesomerea.org/zh/resources/redriver2-case/)
 - [Buckminsterfullerene02/UE-Modding-Tools](https://github.com/Buckminsterfullerene02/UE-Modding-Tools) — 收集各类可能适用于多款 UE 游戏的模组工具和指南的资料库。 **[1,250 星标]**
-- [dethrace-labs/dethrace](https://github.com/dethrace-labs/dethrace) — 对 1997 年游戏《Carmageddon》进行逆向工程。 **[1,218 星标]**
+- [dethrace-labs/dethrace](https://github.com/dethrace-labs/dethrace) — 对 1997 年游戏《Carmageddon》进行逆向工程。 **[1,218 星标]** · 精选：[Dethrace：重建 Carmageddon 引擎](https://awesomerea.org/zh/resources/dethrace-carmageddon-engine-case/)
 - [Xeeynamo/sotn-decomp](https://github.com/Xeeynamo/sotn-decomp) — 《恶魔城：月下夜想曲》（PSX、PSP、Saturn）的反编译代码。 **[1,144 星标]** · 精选：[Castlevania: Symphony of the Night：覆盖 PlayStation、PSP 与 Saturn 版本的一致性反编译](https://awesomerea.org/zh/resources/sotn-matching-decomp-case/)
 - [gorisanson/pikachu-volleyball](https://github.com/gorisanson/pikachu-volleyball) — 通过逆向分析原版游戏，以 JavaScript 重新实现《皮卡丘排球》。 **[1,089 星标]**
 - [focus-creative-games/hybridclr\_unity](https://github.com/focus-creative-games/hybridclr_unity) — 适用于 HybridCLR 的 Unity 软件包。 **[1,019 星标]**

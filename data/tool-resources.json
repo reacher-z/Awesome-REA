@@ -154740,5 +154740,190 @@
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/scripts/turokgame/components/weapons/turokWeaponChronoScepter.txt",
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/framework/system.cpp"
     ]
+  },
+  {
+    "id": "dethrace-carmageddon-engine-case",
+    "name": "Dethrace: rebuilding Carmageddon's engine",
+    "url": "https://github.com/dethrace-labs/dethrace",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds the 1997 Carmageddon engine to run natively on modern systems through reverse engineering and matching symbols, without shipping game content. It reads the user's own Carmageddon files and supports several freeware demos, including the GOG CD-audio convention.",
+    "description_zh": "通过逆向工程和匹配调试符号重建 1997 年 Carmageddon 引擎，使其在现代系统原生运行；不分发游戏内容，读取用户自有的 Carmageddon 文件并支持多个免费试玩版，兼容 GOG 的 CD 音频约定。",
+    "evidence_url": "https://github.com/dethrace-labs/dethrace/blob/8ea5c0d4669d3a57b9599c2d7c8c5ae4893ade4f/README.md",
+    "verified_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes a reverse-engineering rebuild of Carmageddon's engine; the repository ships no game content and expects the original data in its top-level folder.",
+      "Building needs CMake and SDL2; Dethrace supports several freeware demos in addition to the retail game, and the README names the GOG Carmageddon Max Pack as one source for the original files.",
+      "The README reports that Watcom symbols found on a Splat Pack CD did not match any known released executable, so the project does not rely on a complete symbol table.",
+      "The repository's source is for non-commercial use only; original game data and purchased editions keep their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "bimcraft-revit-workflow-case",
+    "name": "BIMCraft: a clean-room Revit-style BIM application",
+    "url": "https://github.com/IPedrax/BIMCraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "software",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A clean-room building information modeling application in Rust that follows the Revit workflow: levels, walls, doors and windows, floors, ceilings, rooms, columns, stairs and roofs, with plans, sections, sheets and IFC2x3/IFC4 import and export. Every action is a command, so agents can drive it over MCP.",
+    "description_zh": "用 Rust 实现的净室建筑信息模型应用，沿 Revit 工作流建模：标高、墙、门窗、楼板、天花、房间、柱、楼梯与屋顶，并生成平面、剖面、图纸及 IFC2x3/IFC4 导入导出；所有操作都是命令，可由 agent 通过 MCP 驱动。",
+    "evidence_url": "https://github.com/IPedrax/BIMCraft/blob/e61e6d6d6999416ea2282de7d3d60b84ccce2401/README.md",
+    "verified_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes a clean-room take on the Autodesk Revit workflow, not a port of Revit code or assets.",
+      "The README labels the project early development and packages builds for Windows, Linux and macOS; it says the macOS app has not been tried by hand yet.",
+      "Models use levels, walls, doors, windows, floors, ceilings, rooms, columns, stairs, roofs and shafts; plans, sections and sheets are generated, and IFC2x3/IFC4 import and export are supported.",
+      "The repository is MIT OR Apache-2.0; the README says every action is a command and can be driven over MCP."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "nv-rs-fallout-new-vegas-case",
+    "name": "nv-rs: Fallout: New Vegas rebuilt in Rust",
+    "url": "https://github.com/slaterain/nv-rs",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds Fallout: New Vegas in Rust from the original game's translated code and runs it from the user's own game files. The README reports the whole game and its DLCs playable in a Windows preview, with a built-in script extender in progress and more platforms planned.",
+    "description_zh": "用 Rust 从原版游戏代码翻译重建 Fallout: New Vegas，并读取用户自有的游戏文件运行；README 称 Windows 预览版中本体与 DLC 可玩，内置脚本扩展器仍在开发，更多平台已列入计划。",
+    "evidence_url": "https://github.com/slaterain/nv-rs/blob/7c60cffa4fc60eaedd1f8cea64f11a7613462880/README.md",
+    "verified_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes a Rust engine built from the original game's translated code; it ships no game files.",
+      "The Windows preview requires Fallout: New Vegas 1.4.0.525 installed; only the Steam version had been tested when reviewed, and keyboard and mouse are the only controls.",
+      "The README reports that mods needing xNVSE or JIP script-extender plugins do not work yet; the download page lists what works and the known issues.",
+      "The repository is GPL-3.0; the game and its files keep their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "1oom-master-of-orion-engine-case",
+    "name": "1oom: a Master of Orion engine recreation",
+    "url": "https://github.com/1oom-fork/1oom",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Recreates the 1993 DOS Master of Orion engine to run on modern systems from the user's own v1.3 LBX files. The README says the project aims to reproduce the original accurately and is Free Software; older saved games may not work in newer versions.",
+    "description_zh": "重建 1993 年 DOS 版 Master of Orion 引擎，在用户自有的 v1.3 LBX 文件上运行；README 称目标是准确复现原版，项目为自由软件，旧存档在新版本中可能不可用。",
+    "evidence_url": "https://github.com/1oom-fork/1oom/blob/42e9c0b316963dd891f3a8e031bacb36f8c5994e/README.md",
+    "verified_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes an engine recreation that aims to reproduce the original DOS Master of Orion accurately; it is not a port of the original executable.",
+      "Use requires a legally owned Master of Orion v1.3 copy and its LBX files; the repository ships no game data.",
+      "The README notes that older saved games may not work in newer versions and that direct use of AI-generated code is prohibited.",
+      "The repository is GPL-2.0; original game data keeps its own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "openyamm-might-and-magic-case",
+    "name": "OpenYAMM: reimplementing Might and Magic VI-VIII",
+    "url": "https://github.com/pjasicek/openyamm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A modern C++ reimplementation of Might and Magic VI, VII and VIII that runs on the original game data with HD artwork, 3D monsters, a new interface and modern rendering. The README reports all three games playable, including travel between continents, on Windows, Linux, Android, macOS and iOS.",
+    "description_zh": "用现代 C++ 重新实现 Might and Magic VI、VII、VIII，在原版游戏数据上运行，并提供高清美术、3D 怪物、新界面与现代渲染；README 称三作均可玩、支持跨大陆旅行，覆盖 Windows、Linux、Android、macOS 与 iOS。",
+    "evidence_url": "https://github.com/pjasicek/openyamm/blob/519b6c8a273faaad2445f6ce4b14c44b89d7f882/README.md",
+    "verified_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes a C++ reimplementation built on an engine that started from Might and Magic VIII, not a port of the original executables.",
+      "Playing uses the original game data with HD artwork; the repository ships no game data.",
+      "The README reports Might and Magic VI-VIII playable with continent travel; a Might and Magic IX rebuild is in progress and is not part of the releases yet.",
+      "The project builds with CMake and its dependencies, including Lua 5.4, for desktop and mobile targets; the repository is GPL-3.0."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "opencrystalcaves-engine-case",
+    "name": "OpenCrystalCaves: an open Crystal Caves engine",
+    "url": "https://github.com/OpenCrystalCaves/OpenCrystalCaves",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An open-source engine reimplementation of the Crystal Caves trilogy. The repository includes the shareware episode, and the README reports episode 1 playable while saving, high scores, episodes 2-3 and several input and sound features remain incomplete.",
+    "description_zh": "Crystal Caves 三部曲的开源引擎重实现；仓库包含共享版章节，README 称第 1 章可玩，而存档、高分、第 2-3 章以及若干输入与音效功能仍不完整。",
+    "evidence_url": "https://github.com/OpenCrystalCaves/OpenCrystalCaves/blob/0249e7f22cb930d993b5e418ef37acbf109e6939/README.md",
+    "verified_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes an unofficial open-source engine reimplementation of the Crystal Caves trilogy, not a port of the retail executables.",
+      "The repository includes the shareware episode; playing the retail episodes needs the user's own data files from Steam or GOG.",
+      "The README lists missing saving, high scores, episodes 2-3, key remapping, gamepad and mouse input and some inaccurate sound.",
+      "The repository is MIT; Crystal Caves data and retail editions keep their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
   }
 ]

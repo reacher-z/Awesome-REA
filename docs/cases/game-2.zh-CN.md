@@ -6,7 +6,7 @@
 
 [English](game-2.md)
 
-**622 个案例**
+**621 个案例**
 
 ## 非匹配反编译
 
@@ -152,6 +152,7 @@
 - [**New Play Control! Pikmin 2：Wii 版反编译**](https://github.com/projectPiki/pik2wii) - pik2wii 重建 Wii 美版 New Play Control! Pikmin 2 的源代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pik2wii-case/)</sub>
 - [**nfsu2\_decomp：原生重建《Need for Speed: Underground 2》**](https://github.com/mad0xStrixhadorami/nfsu2-native) - nfsu2\_decomp 将 PS2 PAL 版《Need for Speed: Underground 2》的逻辑改写为 Linux 原生 C++，运行时读取用户的游戏光盘数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nfsu2-decomp-case/)</sub>
 - [**Ninja Cop：两个 GBA 版本的反汇编**](https://gitlab.com/Fexean/ninjacop) - Ninja Cop 重建 GBA 游戏 Ninja Cop 与 Ninja Five-O 的汇编代码，并提供两个 ROM 版本的构建命令。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ninjacop-case/)</sub>
+- [**nv-rs：用 Rust 重建《辐射：新维加斯》**](https://github.com/slaterain/nv-rs) - 用 Rust 从原版游戏代码翻译重建 Fallout: New Vegas，并读取用户自有的游戏文件运行；README 称 Windows 预览版中本体与 DLC 可玩，内置脚本扩展器仍在开发，更多平台已列入计划。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nv-rs-fallout-new-vegas-case/)</sub>
 - [**Ocarina of Time：NTSC 1.0 版 ROM 反汇编**](https://github.com/Roman971/oot-disassembly) - Ocarina of Time 1.0 Disassembly 将 Nintendo 64 游戏 NTSC 1.0 版代码整理为汇编文件，供代码文档研究。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oot-ntsc-1-disassembly-case/)</sub>
 - [**Ogrebattle64：反编译北美版游戏**](https://codeberg.org/hijsje/ogrebattle64) - Ogrebattle64 针对游戏北美版进行反编译，构建时使用用户提供的 ROM，从 baserom.z64 提取资源后运行 make。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ogrebattle64-case/)</sub>
 - [**Onegai Monsters：小型 N64 反编译实验**](https://github.com/Ryan-Myers/onegaimonsters) - Onegai Monsters 通过源码文件和从用户 .z64 ROM 提取数据的构建流程，探索 N64 游戏反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/onegai-monsters-case/)</sub>
@@ -633,6 +634,4 @@
 - [**James Pond 2: Codename RoboCod：Amiga 版静态重编译**](https://github.com/griches/JamesPond2RobocodRecomp) - James Pond 2: Codename RoboCod — Recompiled 从使用者提供的 Amiga 游戏盘将 68000 指令转换为原生 C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/james-pond-2-robocod-recomp-case/)</sub>
 - [**Jet Force Gemini Recomp：Windows 原生重编译版本**](https://github.com/TK22-26/JetForceGemini-Recomp) - Jet Force Gemini Recomp 提供《Jet Force Gemini》的 Windows x64 原生重编译版本，从用户导入的北美版 ROM 读取游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jet-force-gemini-recomp-case/)</sub>
 - [**Jet Force Gemini: Recompiled：N64 游戏静态重编译移植**](https://github.com/VibinToast/JetForceGemini-Recompiled) - Jet Force Gemini: Recompiled 使用 N64Recomp 将用户自备的美版 N64 ROM 代码转换为 C，并通过 N64ModernRuntime 和 RT64 运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jet-force-gemini-recompiled-case/)</sub>
-- [**Jet Moto 2 Recompiled：PlayStation 游戏静态重编译 PC 版**](https://github.com/goodshepherd23/JetMoto2-Recomp) - Jet Moto 2 Recompiled 使用 RecompOne 从用户的 PlayStation 光盘将《Jet Moto 2: Championship Edition》的 MIPS 代码转为原生 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jet-moto-2-recompiled-case/)</sub>
-- [**Juiced 2 Recompiled：Xbox 360 游戏的 Windows 静态重编译**](https://github.com/anishchandra24/Juiced2-Recompiled) - Juiced 2 Recompiled 使用 ReXGlue 静态转换用户自有的 Xbox 360 版 Juiced 2: Hot Import Nights 可执行文件，构建原生 Windows 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/juiced-2-recompiled-case/)</sub>
 <!-- END GENERATED CASES -->

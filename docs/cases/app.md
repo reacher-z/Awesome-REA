@@ -6,8 +6,9 @@
 
 [简体中文](app.zh-CN.md)
 
-**233 case studies**
+**234 case studies**
 
+- [**BIMCraft: a clean-room Revit-style BIM application**](https://github.com/IPedrax/BIMCraft) - A clean-room building information modeling application in Rust that follows the Revit workflow: levels, walls, doors and windows, floors, ceilings, rooms, columns, stairs and roofs, with plans, sections, sheets and IFC2x3/IFC4 import and export. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bimcraft-revit-workflow-case/)</sub>
 - [**ag-psd: reconstructing PSD document reading and writing**](https://github.com/Agamnentzar/ag-psd) - ag-psd reconstructs reading and writing of Photoshop PSD documents in JavaScript and TypeScript using format references and trial and error. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ag-psd-case/)</sub>
 - [**AionLink Open: investigating ICCOA CarLink connectivity for the GAC AION i60**](https://github.com/codepdbh/aionlink-open) - AionLink Open investigates ICCOA CarLink connectivity for the GAC AION i60 through static analysis of Android APKs and an independently written Android client. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/aionlink-open-case/)</sub>
 - [**AirTray: reconstructing an Elgin Air cloud client**](https://github.com/JoseAlexandreMeloPacheco/airtray) - AirTray reconstructs an Elgin Air app client as a Windows system-tray controller for compatible air conditioners. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/airtray-case/)</sub>
