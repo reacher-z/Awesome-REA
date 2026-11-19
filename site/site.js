@@ -194,14 +194,14 @@
     r.nAlias = norm(`${r.alias} ${r.repo}`); r.aw = words(r.nAlias);
   }
   async function prep(raw) {
-    const res = await chunked(raw.r, ([idc, name, k, tg, c, label, feat, al, conn, cls, st, sec, rev, added]) => {
+    const res = await chunked(raw.r, ([idc, name, k, tg, c, label, feat, al, conn, cls, st, sec, rev, added, pf]) => {
       const targets = [...tg].map(Number);
       const base = label.split('/').pop();
       const id = typeof idc === 'string' ? idc : slug(base) + (idc === 1 ? '-case' : '');
       const alias = al === 1 ? base : al;
-      const tags = [raw.kindLabels[k], raw.kindPlural[k], raw.kinds[k], raw.categoryLabels[c], ...targets.map((i) => `${raw.targetLabels[i]} ${raw.targets[i]}`)].join(' ');
+      const tags = [raw.kindLabels[k], raw.kindPlural[k], raw.kinds[k], raw.categoryLabels[c], ...targets.map((i) => `${raw.targetLabels[i]} ${raw.targets[i]}`), ...(pf || []).map((key) => raw.platformLabels[raw.platformKeys.indexOf(key)])].join(' ');
       const r = { type: 'r', id, name, k, kind: raw.kinds[k], targets, c, lead: '', label, repo: label, sha: '', ev: '', rev, added, feat, alias, conn,
-        sec, pin: raw.pinned.includes(id), cls, st, prev: '', prevKind: '',
+        sec, pin: raw.pinned.includes(id), cls, st, prev: '', prevKind: '', pf: pf || [],
         nName: norm(name), nAlias: norm(`${alias} ${label}`), nTags: norm(tags), nDesc: '' };
       r.nw = words(r.nName); r.aw = words(r.nAlias); r.tw = words(r.nTags); r.dw = [];
       return r;
@@ -452,7 +452,8 @@
     const t0 = r.targets[0];
     const label = `${X.targetLabels[t0]} · ${X.kindLabels[r.k]}`;
     const tg = r.targets.slice(0, 3).map((i) => `<li>${ico(X.targets[i])}${esc(X.targetLabels[i])}</li>`).join('')
-      + (r.targets.length > 3 ? `<li class="more">+${r.targets.length - 3}</li>` : '');
+      + (r.targets.length > 3 ? `<li class="more">+${r.targets.length - 3}</li>` : '')
+      + (r.pf || []).map((key) => `<li class="platform-tag">${esc(X.platformLabels[X.platformKeys.indexOf(key)])}</li>`).join('');
     const ev = !r.ev || /^https?:/.test(r.ev) ? r.ev : `https://github.com/${r.ev}`;
     const repo = `<span class="ev-repo">${esc(r.repo)}</span>${r.sha ? `<span class="sha">@${esc(r.sha)}</span>` : ''}`;
     return `<li class="card${r.kind === 'case-study' ? ' is-case' : ''}" id="r-${esc(r.id)}" data-id="${esc(r.id)}"><article class="card-face">`

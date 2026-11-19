@@ -31,6 +31,19 @@ KIND_ORDER = tuple(KIND_CODES)
 KIND_PLURAL = {'tool': ('Tools', '工具'), 'case-study': ('Case studies', '案例'), 'integration': ('Integrations', '集成'),
                'learning-resource': ('Learning', '学习资源'), 'collection': ('Collections', '合集'),
                'documentation': ('Docs', '文档'), 'research': ('Research', '研究'), 'project': ('Projects', '项目')}
+# Release platforms shown on cards. Source/other stay on the entry page.
+PLATFORM_DISPLAY = ('windows', 'macos', 'linux', 'android', 'ios', 'web', 'freebsd')
+PLATFORM_LABELS = {
+    'windows': ('Windows', 'Windows'),
+    'macos': ('macOS', 'macOS'),
+    'linux': ('Linux', 'Linux'),
+    'android': ('Android', 'Android'),
+    'ios': ('iOS', 'iOS'),
+    'web': ('Web', 'Web'),
+    'freebsd': ('FreeBSD', 'FreeBSD'),
+    'source': ('Source / package manager', '源码 / 包管理器'),
+    'other': ('Other / unclassified', '其他 / 未分类'),
+}
 # The drawer's opening rows: flagship records across the six domains. Collections that point to individuals'
 # repositories are deliberately not featured.
 FEATURED = ('ghidra', 'hex-rays-ida-mcp', 'frida', 'jadx', 'chrome-devtools-mcp', 'il2cppdumper', 'binwalk',
@@ -210,6 +223,8 @@ def index_card(record: dict, language: str, targets: list[str], *, prefix: str =
     items = ''.join(f'<li>{icon(target)}{_e(_target_label(target, language))}</li>' for target in targets[:3])
     if len(targets) > 3:
         items += f'<li class="more">+{len(targets) - 3}</li>'
+    platform_keys = [key for key in PLATFORM_DISPLAY if key in (record.get('platforms') or [])]
+    items += ''.join(f'<li class="platform-tag">{_e(PLATFORM_LABELS[key][language == "zh"])}</li>' for key in platform_keys)
     article = f' id="{identifier}" data-record-id="{identifier}" data-resource-id="{identifier}"' if listing else ''
     entry = f' entry-detail-link" data-entry-link="{identifier}' if listing else ''
     mark = f'<span class="row-mark">{text["featured"]}</span>' if record['id'] in PINNED else ''
@@ -438,7 +453,8 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
     """The lazy index behind the palette and the home drawer: compact arrays, one file per language.
 
     It holds what ranking and filtering read. Row:
-    [id, name, kind, targets, category, repository, featured rank, alias, connection, class, status, section, reviewed, added].
+    [id, name, kind, targets, category, repository, featured rank, alias, connection, class, status, section, reviewed,
+     added, release platforms].
     "repository" is the GitHub repository name, or the host label for other evidence. id is 0 when it is the slug of that
     repository name and 1 when it is that slug plus "-case"; alias is 1 when it is the repository name.
     Descriptions, owners, evidence paths and previews follow in search_text(), row for row; "b" pairs the two files.
@@ -468,7 +484,8 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
                      -1 if record.get('evidence_class') is None else int(record['evidence_class']),
                      'unknown' if record.get('evidence_status') == 'unknown' else '',
                      sections.index(collection_section(record)),
-                     str(record['verified_at'])[:10], record.get('added_at') or ''])
+                     str(record['verified_at'])[:10], record.get('added_at') or '',
+                     [key for key in PLATFORM_DISPLAY if key in (record.get('platforms') or [])]])
     paper_rows = []
     for paper in papers_newest_first(papers):
         paper_rows.append([paper['id'], paper['title_zh'] if zh else paper['title'], paper['year'], paper['venue'],
@@ -481,6 +498,7 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
         'categories': categories, 'categoryLabels': [CATEGORIES[category][zh] for category in categories],
         'connections': connections, 'connectionLabels': [CONNECTIONS[key][0][zh] for key in connections],
         'sections': sections, 'pinned': list(PINNED),
+        'platformKeys': list(PLATFORM_DISPLAY), 'platformLabels': [PLATFORM_LABELS[key][zh] for key in PLATFORM_DISPLAY],
         'b': search_stamp(resources), 'r': rows, 'p': paper_rows,
     }
 
