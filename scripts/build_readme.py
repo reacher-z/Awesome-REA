@@ -9,6 +9,7 @@ from collections import Counter, defaultdict
 from urllib.parse import quote
 
 from catalog import ROOT, load_resources
+from data_classes import DATA_CLASSES, FEATURED_DATA, FEATURED_LABEL, NON_DATA_HEADING, TAGS, record_tags
 from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS as PAPER_STATUSES, authors_omitted, papers_newest_first
 from source_scope import apply_scope, read_scope
 from validate_papers import read_papers
@@ -158,24 +159,24 @@ def lead_sentence(text, language):
 
 # English and Chinese section names. Headings and Contents both use these labels so they cannot drift;
 # Chinese headings keep the English name as a prefix. Chinese terms follow the glossary in CONTRIBUTING.zh-CN.md.
+# Data comes first: one section per class, in the classes' order. The other sections follow under their own heading.
 COLLECTION_SECTIONS = {
-    'website': ('Website', '网站'),
-    'game': ('Game', '游戏'),
-    'app': ('App', '应用'),
-    'native-binary': ('Native Binary', '原生二进制'),
-    'firmware': ('Firmware and Hardware', '固件与硬件'),
-    'protocol': ('Protocol', '协议'),
+    **DATA_CLASSES,
+    'tools': ('Tools', '工具'),
     'agents-and-mcp': ('Agents and MCP', '智能体与 MCP'),
     'related-collections': ('Related Collections', '相关合集'),
     'references-and-learning': ('References and Learning', '文档与学习资源'),
 }
-TARGET_SECTIONS = ('website', 'game', 'app', 'native-binary', 'firmware', 'protocol')
+OTHER_SECTIONS = tuple(section for section in COLLECTION_SECTIONS if section not in DATA_CLASSES)
+# The filter tab each section outside Data belongs to. Every paper sits under Paper, on /papers/.
+SECTION_TABS = {'tools': 'tools', 'agents-and-mcp': 'tools', 'related-collections': 'tutorial', 'references-and-learning': 'tutorial'}
 INDEX_HEADINGS = ('Full Repository Index', '完整仓库索引')
-# The authored second-level headings Contents lists around the generated Resources and Papers sections.
+# The authored second-level headings Contents lists around the generated Data and Papers sections.
 README_HEADINGS = {
     'find-by-task': ('Find by task', '按任务查找'),
     'data': ('Use the data', '使用数据'),
-    'resources': ('Resources', '资源'),
+    'resources': ('Data', '数据'),
+    'other': NON_DATA_HEADING,
     'papers': ('Papers', '论文'),
     'index': INDEX_HEADINGS,
     'about': ('About', '关于'),
@@ -199,31 +200,19 @@ KIND_LABELS = {
 
 
 def collection_section(record):
-    """Each resource appears once, under its primary purpose rather than every target tag."""
+    """Each resource appears once: a data point under its class, anything else under its primary purpose."""
+    if 'class' in record:
+        return record['class']
     category, relationship = record['category'], record['relationship']
     kind = record.get('kind', '')
     if kind == 'collection' or category == 'related-lists':
         return 'related-collections'
-    if kind in {'documentation', 'learning-resource', 'research'} or category in {'workflow-guides', 'learning', 'community-labs'} or relationship in {'official-documentation', 'official-guide'}:
+    # A case study outside Data reports on or modifies its target, so it reads as learning material.
+    if kind in {'documentation', 'learning-resource', 'research', 'case-study'} or category in {'workflow-guides', 'learning', 'community-labs'} or relationship in {'official-documentation', 'official-guide'}:
         return 'references-and-learning'
-    if record['id'] in {'chrome-devtools-mcp', 'playwright-mcp', 'burp-suite-mcp-server', 'webcrack', 'humanify'} or category in {'web-analysis', 'webassembly'}:
-        return 'website'
-    if record['id'] in {'renderdoc-mcp', 'cheatengine-mcp-bridge', 'rea-dxball-case', 'rea-th04-case'} or category == 'game-analysis':
-        return 'game'
-    if record['id'] in {'jadx-ai-mcp', 'apktool-mcp-server', 'frida-mcp-yfe404', 'super-trouper', 'frida', 'grapefruit', 'rea-aegis-case', 'rea-notion-case', 'nibkit'} or category in {'android', 'dotnet', 'jvm', 'javascript-electron'}:
-        return 'app'
-    if category == 'firmware':
-        return 'firmware'
     if category in {'core', 'agent-mcp', 'agent-workflows', 'community-integrations'}:
         return 'agents-and-mcp'
-    if category == 'protocol-analysis':
-        return 'protocol'
-    if kind == 'case-study':
-        # New community cases should follow their target, not silently become binaries.
-        for target in ('website', 'game', 'app', 'firmware', 'protocol'):
-            if target in record.get('targets', []):
-                return target
-    return 'native-binary'
+    return 'tools'
 
 
 # How a case study reconstructs its game (`reconstruction_method`), in README and /cases/ order, with each group's
@@ -282,15 +271,14 @@ def section_order(section, records):
 
 
 def other_targets(record, section, language):
-    """Targets the section heading does not imply; sections without a target of their own list every target."""
+    """A data point has one class, so it shows only the Protocol tag; other sections list every target."""
     index = 0 if language == 'en' else 1
-    implied = {'native-binary': 'binary'}.get(section, section) if section in TARGET_SECTIONS else None
-    labels = [names[index] for target, names in TARGETS.items()
-              if target in record.get('targets', []) and target != implied]
+    if section in DATA_CLASSES:
+        return ''.join(' · ' + TAGS[tag][index] for tag in record_tags(record))
+    labels = [names[index] for target, names in TARGETS.items() if target in record.get('targets', [])]
     if not labels:
         return ''
-    prefix = (('Also: ', '也适用：') if implied else ('Targets: ', '目标：'))[index]
-    return ' · ' + prefix + ('、' if index else ', ').join(labels)
+    return ' · ' + ('Targets: ', '目标：')[index] + ('、' if index else ', ').join(labels)
 
 
 def entry_type(record, language):
@@ -395,12 +383,21 @@ def resource_line(record, section, language, translations, linked=True):
     title = f'[**{name}**]({record["url"]})' if linked else f'**{name}**'
     lead = lead_sentence(record[f'description_{language}'], language)
     description = plain_text(lead if index else without_leading_name(record['name'], lead))
-    metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
+    featured = FEATURED_LABEL[index] + ' · ' if record['id'] in FEATURED_DATA else ''
+    metadata = plain_text(featured + entry_type(record, language) + other_targets(record, section, language))
     detail_url = f"https://awesomerea.org/{'zh/' if index else ''}resources/{record['id']}/"
     return f'- {title} - {description} <sub>{metadata} · [{FULL_ENTRY[index]}]({detail_url})</sub>'
 
 
-def render_catalog(records, language, paper_urls=frozenset()):
+def data_papers(papers):
+    """Benchmark and dataset papers by class: they are data points, listed in their class as well as under Papers."""
+    groups = defaultdict(list)
+    for paper in papers_newest_first([paper for paper in papers if 'class' in paper]):
+        groups[paper['class']].append(paper)
+    return groups
+
+
+def render_catalog(records, language, paper_urls=frozenset(), papers=()):
     """One list line per resource: source link, opening sentence, tags and the entry page that holds
     the full description, requirements and evidence. Bibliography overlaps appear only under Papers."""
     index = 0 if language == 'en' else 1
@@ -412,17 +409,26 @@ def render_catalog(records, language, paper_urls=frozenset()):
         if record['url'] in paper_urls:
             continue
         groups[collection_section(record)].append(record)
+    benchmarks = data_papers(papers)
     lines = [tag_legend([record for entries in groups.values() for record in entries], language), '']
     for section in COLLECTION_SECTIONS:
-        if not groups[section]:
+        if section == OTHER_SECTIONS[0] and any(groups[other] for other in OTHER_SECTIONS):
+            lines.extend([f"## {README_HEADINGS['other'][index]}", ''])
+        if not groups[section] and not benchmarks[section]:
             continue
         # No "back to Contents" link per section: awesome-lint flags a repeated link, and GitHub's outline menu
         # reaches every heading.
         lines.extend([f'<a id="{section}"></a>', f'### {section_heading(section, language)}', ''])
         if section == 'agents-and-mcp':
             lines.extend(agent_cross_reference(groups, language, translations))
-        cases = [record for record in groups[section] if record['kind'] == 'case-study']
-        tools = [record for record in groups[section] if record['kind'] != 'case-study']
+        featured = [record for record in groups[section] if record['id'] in FEATURED_DATA]
+        if featured or benchmarks[section]:
+            lines.extend([f"#### {('Benchmarks and datasets', '基准与数据集')[index]}", ''])
+            lines.extend(resource_line(record, section, language, translations) for record in featured)
+            lines.extend(paper_line(paper, language) for paper in benchmarks[section])
+            lines.append('')
+        cases = [record for record in groups[section] if record['kind'] == 'case-study' and record not in featured]
+        tools = [record for record in groups[section] if record['kind'] != 'case-study' and record not in featured]
         if len(cases) > RECENT_CASES:
             case_file = CASE_FILES[language]
             lines.extend([(f'**{len(cases):,} 个案例**，下方列出最新的 {RECENT_CASES} 个。'
@@ -441,6 +447,10 @@ def render_catalog(records, language, paper_urls=frozenset()):
                 (('Case studies', '案例')[index], shown_cases),
                 (('Tools, projects and integrations', '工具、项目与集成')[index], tools),
             ]
+        if section == 'tools':
+            # The longest section reads by what each tool works on.
+            subgroups = [(CATEGORIES[category][index], [record for record in tools if record['category'] == category])
+                         for category in CATEGORIES if any(record['category'] == category for record in tools)]
         for label, entries in subgroups:
             if label:
                 lines.extend([f'#### {label}', ''])
@@ -463,7 +473,7 @@ def agent_cross_reference(groups, language, translations):
     """Point from Agents and MCP to agent integrations filed under a target section, via their entry pages."""
     index = 0 if language == 'en' else 1
     parts = []
-    for section in TARGET_SECTIONS:
+    for section in (*DATA_CLASSES, 'tools'):
         names = []
         # Same order as the section renders: case studies first, then tools.
         for record in section_order(section, groups[section]):
@@ -476,7 +486,7 @@ def agent_cross_reference(groups, language, translations):
                          + ('、' if index else ', ').join(names))
     if not parts:
         return []
-    return [('**其他分区中的智能体集成：** ' if index else '**Also in target sections:** ') + ' · '.join(parts), '']
+    return [('**其他分区中的智能体集成：** ' if index else '**Also in other sections:** ') + ' · '.join(parts), '']
 
 
 def browsable_index_count():
@@ -492,6 +502,14 @@ def heading_anchor(text):
     return '#' + re.sub(r'[^\w\- ]', '', text.lower()).replace(' ', '-')
 
 
+def section_counts(records, papers):
+    """Entries each section lists: its resources, plus the benchmark and dataset papers a class holds."""
+    paper_urls = {paper['url'] for paper in papers}
+    counts = Counter(collection_section(record) for record in records if record['url'] not in paper_urls)
+    counts.update(paper['class'] for paper in papers if 'class' in paper)
+    return counts
+
+
 def render_contents(records, papers, index_count, language):
     """The README's one section map: a nested list that mirrors the ## and ### headings in order, as awesome-lint's
     ToC check expects, with each section's entry count and what it holds. Each heading is linked once, here.
@@ -500,7 +518,7 @@ def render_contents(records, papers, index_count, language):
     list (the ToC check excludes it); the navigation row links it."""
     zh = language == 'zh'
     paper_urls = {paper['url'] for paper in papers}
-    counts = Counter(collection_section(record) for record in records if record['url'] not in paper_urls)
+    counts = section_counts(records, papers)
 
     def item(labels, explicit=None, count=None, blurb=None):
         label = labels[int(zh)]
@@ -508,14 +526,15 @@ def render_contents(records, papers, index_count, language):
         return (f'[{label}]({anchor})' + ('' if count is None else f' ({count:,})')
                 + ('' if blurb is None else ' — ' + FINDER_BLURBS[blurb][int(zh)]))
 
-    sections = [item(COLLECTION_SECTIONS[section], section, counts[section], section)
-                for section in COLLECTION_SECTIONS if counts[section]]
+    listed = lambda group: ['  - ' + item(COLLECTION_SECTIONS[section], section, counts[section], section) for section in group if counts[section]]
     # Papers counts every paper; its one subsection lists the newest, and the topics live in the paper files.
     paper_sections = [item(RECENT_HEADING, 'papers-recent', len(recent_papers(papers)))] if papers else []
     lines = ['- ' + item(README_HEADINGS['find-by-task']),
              '- ' + item(README_HEADINGS['data']),
-             '- ' + item(README_HEADINGS['resources'], count=sum(counts.values()))]
-    lines += ['  - ' + line for line in sections]
+             '- ' + item(README_HEADINGS['resources'], count=sum(counts[section] for section in DATA_CLASSES))]
+    lines += listed(DATA_CLASSES)
+    lines += ['- ' + item(README_HEADINGS['other'], count=sum(counts[section] for section in OTHER_SECTIONS))]
+    lines += listed(OTHER_SECTIONS)
     lines += ['- ' + item(README_HEADINGS['papers'], 'papers', len(papers), 'papers')]
     lines += ['  - ' + line for line in paper_sections]
     lines += ['- ' + item(README_HEADINGS['index'], count=index_count, blurb='index'),
@@ -526,18 +545,20 @@ def render_contents(records, papers, index_count, language):
 
 # What each Contents line holds, per catalog section; wording is checked against the section's contents.
 FINDER_BLURBS = {
-    'website': ('Tools and cases for inspecting, deobfuscating and rebuilding websites',
-               '用于检查、反混淆和重建网站的工具与案例'),
-    'game': ('Decompilations, recompilations, ports, engine reimplementations, analysis tools and cases',
-            '反编译、重编译、移植、引擎重新实现，以及分析工具与案例'),
-    'app': ('Analysis tools and cases for Android, .NET, JVM and Electron apps',
-           '面向 Android、.NET、JVM 和 Electron 应用的分析工具与案例'),
-    'native-binary': ('Disassemblers, decompilers, debuggers, binary libraries, diffing tools and native cases',
-                     '反汇编器、反编译器、调试器、二进制分析库、差异比较工具及原生二进制案例'),
-    'firmware': ('Firmware extraction and analysis tools, plus hardware and device-image cases',
-                '固件提取与分析工具，以及硬件和设备镜像案例'),
-    'protocol': ('Tools and cases for wire formats, device protocols and packet captures',
-                '面向通信数据格式、设备协议和抓包数据的工具与案例'),
+    'software': ('Rebuilt Mac, Linux and Windows software: decompilations, reimplementations, ports and benchmarks',
+                 '重建的 Mac、Linux 和 Windows 软件：反编译、重新实现、移植与基准'),
+    'game': ('Rebuilt games: decompilations, recompilations, ports, engine reimplementations and private servers',
+             '重建的游戏：反编译、重编译、移植、引擎重新实现与私服'),
+    'apps': ('Rebuilt Android, iOS and iPadOS apps and their formats and interfaces',
+             '重建的 Android、iOS 和 iPadOS 应用及其格式与接口'),
+    'website': ('Rebuilt websites, web apps and private web APIs, plus benchmarks of website reproduction',
+                '重建的网站、Web 应用和私有 Web API，以及网站复刻基准'),
+    'science': ('Rebuilt specialist STEM software such as CAD, EDA, simulation and lab analysis packages',
+                '重建的专业 STEM 软件，如 CAD、EDA、仿真与实验分析软件'),
+    'hardware': ('Rebuilt firmware, drivers, device clients and device protocols for chips, IoT and consumer devices',
+                 '面向芯片、物联网和消费电子设备重建的固件、驱动、设备客户端与协议'),
+    'tools': ('Disassemblers, decompilers, debuggers, proxies, libraries and format tools that work across targets',
+              '适用于多种目标的反汇编器、反编译器、调试器、代理、程序库与格式工具'),
     'agents-and-mcp': ('Official REA material, MCP servers, integrations and agent workflows, labelled by REA relationship',
                       'REA 官方资料、MCP 服务器、集成与智能体工作流程，按其与 REA 的关系标注'),
     'related-collections': ('Other curated lists on reverse engineering and related security topics',
@@ -549,6 +570,7 @@ FINDER_BLURBS = {
     'index': ('Public repositories found by README scans; unreviewed',
              '通过 README 扫描发现的公开仓库；未审核'),
 }
+
 def render_totals(records, papers, index_count, language):
     """One line of collection totals and the newest review date, above the Contents sections."""
     zh = language == 'zh'
@@ -852,7 +874,7 @@ def render_cases(groups, language, section_parts, method_paths):
     zh = language == 'zh'
     count = sum(map(len, groups.values()))
     switch = '[English](cases.md) · **简体中文**' if zh else '**English** · [简体中文](cases.zh-CN.md)'
-    lines = [f"[{'← 返回 README' if zh else '← Back to the README'}](../{READMES[language]}#{'资源' if zh else 'resources'}) · {switch}", '',
+    lines = [f"[{'← 返回 README' if zh else '← Back to the README'}](../{READMES[language]}#{'数据' if zh else 'data'}) · {switch}", '',
              f'**{count} 个案例**，按分区列出。' if zh else f'**{count} case studies**, grouped by section.', '',
              '## ' + ('目录' if zh else 'Contents'), '']
     lines += [f"- [{section_heading(section, language)}](#{section}) ({len(groups[section])})"
@@ -966,7 +988,7 @@ def rendered_files(records, papers, index_count):
         current = (ROOT / name).read_text(encoding='utf-8')
         names = RESOURCE_SOURCES + (('site/translations.zh-CN.json',) if language == 'zh' else ())
         expected = replace_catalog(current, source_note(*names)
-                                   + render_catalog(records, language, {paper['url'] for paper in papers}))
+                                   + render_catalog(records, language, {paper['url'] for paper in papers}, papers))
         expected = replace_papers(expected, source_note('data/papers.json') + render_readme_papers(papers, language),
                                   language)
         expected = replace_contents(expected, source_note(*RESOURCE_SOURCES, 'data/papers.json', *INDEX_SOURCES)

@@ -24,9 +24,9 @@ class CaseStaticPagesTests(unittest.TestCase):
         cls.directory = TemporaryDirectory()
         output = cls.output = Path(cls.directory.name)
         (output / 'cases.css').write_bytes((ROOT / 'site/cases.css').read_bytes())
-        # Game cases fill page 1 and spill onto page 2, where the protocol cases start.
+        # Game cases fill page 1 and spill onto page 2, where the Website cases start.
         cls.resources = ([resource(f'game-{index:03}') for index in range(CASE_PER_PAGE + 30)]
-                         + [resource(f'proto-{index:03}', targets=['protocol']) for index in range(40)]
+                         + [resource(f'web-{index:03}', targets=['website']) for index in range(40)]
                          + [resource('a-tool', kind='tool')])
         build_discovery_pages(output, {'resources': cls.resources, 'meta': {'site_url': ORIGIN}}, None)
         cls.pages = with_listing_pages({route: Page((output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8'))
@@ -75,9 +75,9 @@ class CaseStaticPagesTests(unittest.TestCase):
         # Page 1 links the section that starts on page 2 and keeps its old fragment on that link.
         self.assertIn(f'href="/cases/page/2/#{later}" id="{later}"', first)
         self.assertIn(f'<section class="case-section" id="{later}"', second)
-        # A section that runs onto page 2 keeps its anchor there; its count line stays on its first page.
+        # A section that runs onto page 2 keeps its anchor there and repeats its count on every page. Class
+        # sections are not target sections, so neither page carries a target count line for it.
         self.assertIn('id="cases-game"', second)
-        self.assertEqual(first.count('data-section-target="game"'), 1)
         self.assertNotIn('data-section-target="game"', second)
         self.assertIn(f'data-section-count="{CASE_PER_PAGE + 30}"', second)
 

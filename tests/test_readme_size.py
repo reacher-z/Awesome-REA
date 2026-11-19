@@ -110,7 +110,10 @@ class ReadmePaperSplitTest(unittest.TestCase):
                 # list freed 95 KB in README.md and 109 KB in README.zh-CN.md.
                 self.assertLess(5 * len(block.encode('utf-8')), len(listed.encode('utf-8')))
                 for paper in papers_newest_first(papers)[RECENT_PAPERS:]:
-                    self.assertNotIn(paper_line(paper, language), readme)
+                    if 'class' in paper:
+                        self.assertIn(paper_line(paper, language), readme)
+                    else:
+                        self.assertNotIn(paper_line(paper, language), readme)
                     self.assertIn(paper_line(paper, language), listed)
 
     def test_readme_paper_section_does_not_grow_with_the_bibliography(self):
@@ -142,7 +145,7 @@ class OneLineEntryTest(unittest.TestCase):
             prefix = 'zh/' if index else ''
             text = (ROOT / name).read_text(encoding='utf-8')
             lines = [line for line in text.splitlines() if line.startswith('- [**')]
-            groups = ((('resources', [record for record in resources if record['kind'] != 'case-study'] + [record for record in resources if record['kind'] == 'case-study' and f'/resources/{record["id"]}/)</sub>' in text]), ('papers', newest)) if name.startswith('README')
+            groups = ((('resources', [record for record in resources if record['kind'] != 'case-study'] + [record for record in resources if record['kind'] == 'case-study' and f'/resources/{record["id"]}/)</sub>' in text]), ('papers', newest + [paper for paper in papers if 'class' in paper])) if name.startswith('README')
                       else (('resources', [record for record in resources if record['kind'] == 'case-study' and f'/resources/{record["id"]}/)</sub>' in text]),) if name.startswith('docs/cases/')
                       else (('papers', papers),))
             with self.subTest(file=name):

@@ -27,7 +27,7 @@ from agent_formats import (MARKDOWN, RECORD_JSON, alternate_links, collection_ma
                            resource_record)
 from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
 from data_downloads import CITATION_FIELDS
-from data_classes import DATA_CLASSES
+from data_classes import DATA_CLASSES, FEATURED_DATA, TAGS, record_tags
 from requirement_facets import FACETS
 from review_pr import private_json_locations
 from sitemaps import instant, latest, normalized_date
@@ -44,7 +44,7 @@ API_PATH = '/api/v1/'
 DOCS_PATH = '/api/'
 CHANGE_DAYS = 30
 CANDIDATE_LIMIT = 1_000
-ENDPOINTS = ('resources', 'papers', 'categories', 'candidates', 'changes')
+ENDPOINTS = ('data', 'resources', 'papers', 'categories', 'candidates', 'changes')
 TITLES = ('Static JSON and CSV API', '静态 JSON 与 CSV API')
 REVIEW_NOTE = ('Curated resources and papers are source-reviewed: descriptions were checked against primary '
                'documentation.',
@@ -53,13 +53,14 @@ CANDIDATE_NOTE = ('Unreviewed candidates: automated README scans and links that 
                   'one means writing a new source-reviewed record.',
                   '未审核的候选：自动 README 扫描结果，以及所关注的公开列表中列出的链接。收录某项需另写一条经来源审核的记录。')
 CSV_COLUMNS = {
-    'resources': ('id', 'name', 'name_zh', 'kind', 'category', 'relationship', 'targets', 'url', 'evidence_url',
+    'data': ('class', 'record_type', 'id', 'name', 'name_zh', 'tags', 'url', 'entry_url', 'entry_url_zh', 'json_url'),
+    'resources': ('id', 'name', 'name_zh', 'kind', 'class', 'category', 'relationship', 'targets', 'url', 'evidence_url',
                   'description_en', 'description_zh', 'requirements', 'requirements_zh', 'added_at', 'verified_at',
                   'verification', 'entry_url', 'entry_url_zh', 'json_url',
                   # Added in 1.1.0 after the 1.0.0 columns, so positional readers keep working.
                   'evidence_class', 'evidence_status', 'scope', 'preview_url', 'preview_kind'),
     'papers': ('id', 'title', 'title_zh', 'authors', 'authors_omitted', 'year', 'publication_date', 'venue',
-               'publication_status', 'doi', 'arxiv_id', 'url', 'pdf_url', 'code_url', 'project_url', 'targets',
+               'publication_status', 'doi', 'arxiv_id', 'url', 'pdf_url', 'code_url', 'project_url', 'class', 'targets',
                'description_en', 'description_zh', 'added_at', 'verified_at', 'verification', 'entry_url',
                'entry_url_zh', 'json_url', 'bibtex_url'),
     'categories': ('scope', 'id', 'label', 'label_zh', 'count', 'url', 'url_zh'),
@@ -101,7 +102,30 @@ def paper_api_record(paper: dict, site_url: str) -> dict:
     return value
 
 
-def categories_document(resources, repository_records, site_url, generated_at, snapshot) -> dict:
+def data_document(resources, papers, site_url, generated_at) -> dict:
+    """Every data point by class: the six classes in order with their counts, then one row per record."""
+    rows = []
+    for record in resources:
+        if 'class' in record:
+            value = resource_record(record, site_url)
+            rows.append({'class': record['class'], 'record_type': 'resource', 'id': value['id'], 'name': value['name'],
+                         'name_zh': value.get('name_zh'), 'tags': record_tags(record), 'url': value['url'], 'entry_url': value['entry_url'],
+                         'entry_url_zh': value['entry_url_zh'], 'json_url': value['json_url']})
+    for paper in papers:
+        if 'class' in paper:
+            value = paper_api_record(paper, site_url)
+            rows.append({'class': paper['class'], 'record_type': 'paper', 'id': value['id'], 'name': value['title'],
+                         'name_zh': value.get('title_zh'), 'tags': record_tags(paper), 'url': value['url'], 'entry_url': value['entry_url'],
+                         'entry_url_zh': value['entry_url_zh'], 'json_url': value['json_url']})
+    order = list(DATA_CLASSES)
+    rows.sort(key=lambda row: (order.index(row['class']), row['record_type'] != 'resource', row['id'] not in FEATURED_DATA))
+    classes = [{'id': key, 'label': labels[0], 'label_zh': labels[1], 'count': sum(row['class'] == key for row in rows),
+                'url': f'{site_url}/resources/#heading-{key}', 'url_zh': f'{site_url}/zh/resources/#heading-{key}'}
+               for key, labels in DATA_CLASSES.items()]
+    return envelope('awesome-rea-data', generated_at, site_url, 'dataFile', count=len(rows), classes=classes, records=rows)
+
+
+def categories_document(resources, repository_records, site_url, generated_at, snapshot, papers=()) -> dict:
     from build_discovery_pages import SECTIONS
     from build_repository_index import CATEGORIES as REPOSITORY_CATEGORIES
     count = lambda field, value: sum((value in record[field]) if isinstance(record[field], list) else record[field] == value
@@ -110,7 +134,10 @@ def categories_document(resources, repository_records, site_url, generated_at, s
         {'id': key, 'label': labels[0], 'label_zh': labels[1], 'count': count(field, key),
          **(url(key) if url else {})} for key, labels in mapping.items()]
     sections = {key: sum(collection_section(record) == key for record in resources) for key in SECTIONS}
+    classes = [{'id': key, 'label': labels[0], 'label_zh': labels[1], 'count': sum(record.get('class') == key for record in (*resources, *papers))}
+               for key, labels in DATA_CLASSES.items()]
     curated = {
+        'classes': classes,
         'categories': [item for item in labelled(CATEGORIES, 'category') if item['count']],
         'sections': [{'id': key, 'label': labels[0], 'label_zh': labels[1], 'count': sections[key],
                       'url': f'{site_url}/resources/#heading-{key}', 'url_zh': f'{site_url}/zh/resources/#heading-{key}'}
@@ -202,12 +229,15 @@ def csv_bytes(columns, rows, generated_at) -> bytes:
 
 
 def csv_rows(name: str, document: dict) -> list[dict]:
+    if name == 'data':
+        return [{**row, 'tags': '; '.join(row['tags'])} for row in document['records']]
     if name == 'resources':
         return document['resources']
     if name == 'papers':
         return [{**row, 'authors': '; '.join(row['authors'])} for row in document['papers']]
     if name == 'categories':
-        rows = [{'scope': 'curated-category', **item} for item in document['curated']['categories']]
+        rows = [{'scope': 'curated-class', **item} for item in document['curated']['classes']]
+        rows += [{'scope': 'curated-category', **item} for item in document['curated']['categories']]
         rows += [{'scope': 'curated-section', **item} for item in document['curated']['sections']]
         for facet in ('kinds', 'targets', 'relationships'):
             rows += [{'scope': f'curated-{facet[:-1]}', **item} for item in document['curated'][facet]]
@@ -314,13 +344,21 @@ def schema_document(site_url: str) -> dict:
         'title': 'Awesome REA static API v1',
         'description': 'Schema of every JSON file under /api/v1/. Each file names its definition in its schema field.',
         '$defs': {
+            'dataFile': file('awesome-rea-data', ['count', 'classes', 'records'], count={'type': 'integer', 'minimum': 0},
+                             classes={'type': 'array', 'items': {'$ref': '#/$defs/label'}},
+                             records={'type': 'array', 'items': {
+                                 'type': 'object', 'required': ['class', 'record_type', 'id', 'name', 'tags', 'url', 'entry_url', 'entry_url_zh', 'json_url'],
+                                 'properties': {'class': {'enum': list(DATA_CLASSES)}, 'record_type': {'enum': ['resource', 'paper']},
+                                                'id': string, 'name': string, 'name_zh': nullable(string), 'tags': {'type': 'array', 'items': {'enum': list(TAGS)}},
+                                                'url': string, 'entry_url': string, 'entry_url_zh': string, 'json_url': string},
+                                 'additionalProperties': False}}),
             'resource': resource, 'paper': paper, 'label': labelled, 'candidate': candidate, 'change': change,
             'resourcesFile': file('awesome-rea-resources', ['count', 'resources'], note=string, note_zh=string,
                                   count={'type': 'integer', 'minimum': 0}, resources={'type': 'array', 'items': {'$ref': '#/$defs/resource'}}),
             'papersFile': file('awesome-rea-papers', ['count', 'papers'], note=string, note_zh=string,
                                count={'type': 'integer', 'minimum': 0}, papers={'type': 'array', 'items': {'$ref': '#/$defs/paper'}}),
             'categoriesFile': file('awesome-rea-categories', ['curated', 'repositories'],
-                                   curated={'type': 'object', 'required': ['categories', 'sections', 'kinds', 'targets', 'relationships'],
+                                   curated={'type': 'object', 'required': ['classes', 'categories', 'sections', 'kinds', 'targets', 'relationships'],
                                             'additionalProperties': {'type': 'array', 'items': {'$ref': '#/$defs/label'}}},
                                    repositories={'type': 'object', 'required': ['verification', 'count', 'categories'],
                                                  'properties': {'verification': {'const': 'automated-readme-scan'}, 'snapshot': nullable(string),
@@ -354,12 +392,13 @@ def build_api(output: Path, *, resources, papers, repository_document=None, disc
     repository_records = [record for record in (repository_document or {}).get('resources', [])
                           if record.get('scan_status') == 'readme-scanned' and record.get('scope_status') != 'excluded']
     documents = {
+        'data': data_document(resources, papers, site_url, generated_at),
         'resources': envelope('awesome-rea-resources', generated_at, site_url, 'resourcesFile', note=REVIEW_NOTE[0],
                               note_zh=REVIEW_NOTE[1], count=len(resources),
                               resources=[resource_record(record, site_url) for record in resources]),
         'papers': envelope('awesome-rea-papers', generated_at, site_url, 'papersFile', note=REVIEW_NOTE[0],
                            note_zh=REVIEW_NOTE[1], count=len(papers), papers=[paper_api_record(paper, site_url) for paper in papers]),
-        'categories': categories_document(resources, repository_records, site_url, generated_at, snapshot),
+        'categories': categories_document(resources, repository_records, site_url, generated_at, snapshot, papers),
         'candidates': candidates_document(discovery_queue, lead_queue, site_url, generated_at),
         'changes': changes_document(resources, papers, discovery_queue, lead_queue, site_url, generated_at),
     }
@@ -396,9 +435,10 @@ def api_page(language: str, index: dict, site_url: str) -> tuple[str, str, str, 
     title = TITLES[zh]
     records = {entry['path'].rsplit('/', 1)[1].split('.')[0]: entry.get('records') for entry in index['files']}
     description = choose(
-        f"Read the curated catalog as JSON or CSV: {records['resources']:,} resources, {records['papers']:,} papers, categories, unreviewed candidates and 30 days of changes.",
-        f"以 JSON 或 CSV 读取精选目录：{records['resources']:,} 项资源、{records['papers']:,} 篇论文、分类、未审核候选与最近 30 天的变更。所有文件均为静态内容，可直接下载。")
+        f"Read the curated catalog as JSON or CSV: {records['data']:,} data points, {records['resources']:,} resources, {records['papers']:,} papers, categories, unreviewed candidates and 30 days of changes.",
+        f"以 JSON 或 CSV 读取精选目录：{records['data']:,} 个数据点、{records['resources']:,} 项资源、{records['papers']:,} 篇论文、分类、未审核候选与最近 30 天的变更。所有文件均为静态内容，可直接下载。")
     rows = [
+        ('data', choose('Data points by class: Software, Game, Apps, Website, Hardware and Science, with each record’s tags and links.', '按类别列出的数据点：软件、游戏、移动应用、网站、硬件和科学软件，以及每条记录的标签与链接。')),
         ('resources', choose('Curated resources: stable IDs, bilingual names and descriptions, requirements, evidence, evidence class (C0–C3), demo preview and review dates.', '精选资源：稳定 ID、中英文名称与说明、使用条件、证据、证据档位（C0–C3）、演示预览与复核日期。')),
         ('papers', choose('The research bibliography: identifiers, dates and their basis, limits, sources and recorded authors.', '研究文献：标识、日期及其依据、研究边界、来源和已记录的作者。')),
         ('categories', choose('Curated categories, sections, kinds, targets and relationships with counts, plus the repository categories.', '精选分类、分区、类型、目标与关联及其数量，以及仓库分类。')),

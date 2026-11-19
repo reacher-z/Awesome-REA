@@ -12,6 +12,8 @@ import shutil
 from urllib.parse import unquote, urlsplit
 
 from asset_paths import FINGERPRINTED_SUFFIXES, fingerprinted_href
+from data_classes import DATA_CLASSES, listed_records, paper_data_record
+from build_home import _ordered_targets, evidence_legend, index_card, stored_targets
 from build_readme import (KIND_LABELS, METHOD_HEADINGS, METHOD_SECTIONS, RELATIONSHIPS, TARGETS, UNASSIGNED_METHOD,
                           collection_section, method_groups)
 from agent_formats import MARKDOWN, alternate_links, collection_markdown
@@ -35,19 +37,14 @@ PRIMARY_SOURCE_LABEL = ('Primary source', '一手来源')
 # the span inline, because a joiner cannot reach across an inline-block's edge).
 EXTERNAL_TITLE_ARROW = '<span class="browse-text-arrow" aria-hidden="true">&#8288;↗</span>'
 SECTIONS = {
-    'website': ('Websites', '网站'),
-    'game': ('Games', '游戏'),
-    'app': ('Apps', '应用'),
-    'native-binary': ('Native binaries', '原生二进制'),
-    'firmware': ('Firmware and hardware', '固件与硬件'),
-    'protocol': ('Protocols', '协议'),
+    **DATA_CLASSES,
+    'tools': ('Tools', '工具'),
     'agents-and-mcp': ('Agents and MCP', '智能体与 MCP'),
     'related-collections': ('Related collections', '相关资源合集'),
     'references-and-learning': ('References and learning', '文档与学习资源'),
 }
-# Target sections and the target tag each one corresponds to; the other sections are not target-based.
-SECTION_TARGETS = {'website': 'website', 'game': 'game', 'app': 'app', 'native-binary': 'binary',
-                   'firmware': 'firmware', 'protocol': 'protocol'}
+# Class sections are not target sections: the tag-based count line belonged to the former target layout.
+SECTION_TARGETS = {}
 
 
 def jsonld_script(value: dict) -> str:
@@ -495,7 +492,6 @@ def _case_collection(resources: list[dict], language: str, site_url: str,
             body = nav_html + ''.join(
                 f'<section class="case-method" id="cases-{key}-{method}" data-case-method="{method}" aria-labelledby="case-method-heading-{key}-{method}">'
                 f'<div class="case-method-topline"><h3 id="case-method-heading-{key}-{method}">{escape(METHOD_HEADINGS[method][int(zh)])}</h3><p>{count(method_totals[(key, method)])}</p></div>'
-                + (f'<p class="case-method-note">{escape(METHOD_NOTES[method][int(zh)])}</p>' if anchors[f'cases-{key}-{method}'] == page else '')
                 + '<div class="case-list">' + '\n'.join(_case_row(record, language, key, 'h4') for row_method, record in section_rows if row_method == method)
                 + '</div></section>'
                 for method in method_order if (key, method) in methods_on_page)
@@ -652,6 +648,12 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
                 raise ValueError(f"{record['id']}: missing localized description")
             _requirements(record, language)
         groups[section].append(record)
+    # /resources/ also lists the benchmark and dataset papers, as rows in their class.
+    listed = listed_records(resources, papers)
+    listed_groups = defaultdict(list, {key: list(records) for key, records in groups.items()})
+    for paper in papers:
+        if 'class' in paper:
+            listed_groups[paper['class']].append(paper_data_record(paper))
 
     rendered, twins = {}, {}
     paths = []
@@ -661,39 +663,73 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         prefix = '/zh' if zh else ''
         path = prefix + '/resources/'
         title = RESOURCE_TEXT[language]['title']
-        description = (f'{len(resources):,} 项工具、项目、集成、案例与参考资源，覆盖网站、游戏、应用、原生二进制、固件及通信协议。每个条目都保留一手来源链接、使用要求与复核日期。'
-                       if zh else f'{len(resources):,} tools, projects, integrations, case studies, and references for websites, games, apps, native binaries, firmware, and communication protocols.')
-        note = ('“来源已复核”表示说明已依据一手文档核对。完整的使用条件与来源列在各条目页面，本页显示其数量和复核日期。'
-                if zh else 'Source-reviewed means descriptions were checked against primary documentation. Each entry page lists the full requirements and sources; this page shows their counts and the review date.')
+        data_count = sum('class' in record for record in listed)
+        description = (f'浏览 {data_count:,} 个软件、游戏、移动应用、网站、硬件和科学软件数据点，以及工具、教程和参考资源。每个条目均有一手来源链接、使用要求与复核日期，可逐项查看。'
+                       if zh else f'Browse {data_count:,} data points across software, game, apps, website, hardware and science, followed by tools, tutorials and references.')
+        note = None
         # Items identify the site's own entry pages, in the order the rows appear.
         # Each static page is indexed with its own canonical address, language pair and Markdown twin. The twin of
         # /resources/ lists the whole collection; a later page's twin lists that page's rows.
-        pages = page_count(len(resources))
+        pages = page_count(len(listed))
         for page in range(1, pages + 1):
             page_route = page_path(page, language)
-            page_records = in_listing_order(groups, SECTIONS, page)
+            page_records = in_listing_order(listed_groups, SECTIONS, page)
             page_title_text = title if page == 1 else f"{title} · {RESOURCE_TEXT[language]['page_title'].format(n=page).capitalize()}"
             first, last = (page - 1) * PER_PAGE + 1, (page - 1) * PER_PAGE + len(page_records)
             page_description = description if page == 1 else (f'第 {page}/{pages} 页，第 {first:,}–{last:,} 项。{description}' if zh
                                                                else f'Page {page} of {pages}, entries {first:,}–{last:,}. {description}')
-            items = [{'name': (record.get('name_zh') or record['name']) if zh else record['name'], 'url': f"{site_url}{prefix}/resources/{record['id']}/"}
+            items = [{'name': (record.get('name_zh') or record['name']) if zh else record['name'],
+                      'url': f"{site_url}{prefix}/{record.get('route', 'resources')}/{record['id']}/"}
                      for record in page_records]
-            content = resource_listing(resources, groups, SECTIONS, language, repository_url, page)
+            content = resource_listing(listed, listed_groups, SECTIONS, language, repository_url, page)
             rendered[page_route] = _document(site_url=site_url, repository_url=repository_url, path=page_route, language=language, title=page_title_text, description=page_description, content=content,
                                              schema=collection_page_schema(site_url + page_route, page_title_text, page_description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href,
-                                             source_export=source_export, main_class='page-resources', page_head=resource_page_head(resources, language, page), extra_styles=(assets['rea'],),
+                                             source_export=source_export, main_class='page-resources', page_head=resource_page_head(listed, language, page, len(papers)), extra_styles=(assets['rea'],),
                                              trail=None if page == 1 else [(title, site_url + path), (RESOURCE_TEXT[language]['page_title'].format(n=page).capitalize(), site_url + page_route)],
                                              alternates=alternate_links(markdown=page_route + MARKDOWN, json_href='/api/v1/resources.json'))
             if page > 1:
-                section_of = {record['id']: key for key, records in groups.items() for record in records}
+                section_of = {record['id']: key for key, records in listed_groups.items() for record in records}
                 page_groups = defaultdict(list)
                 for record in page_records:
                     page_groups[section_of[record['id']]].append(record)
                 twins[page_route] = _collection_twin(site_url, page_route, language, page_title_text, page_description, page_groups, note,
                                                      json_url=site_url + '/api/v1/resources.json')
                 paths.append(page_route)
-        twins[path] = _collection_twin(site_url, path, language, title, description, groups, note, json_url=site_url + '/api/v1/resources.json')
+        twins[path] = _collection_twin(site_url, path, language, title, description, listed_groups, note, json_url=site_url + '/api/v1/resources.json')
         paths.append(path)
+
+        for class_key, labels in DATA_CLASSES.items():
+            class_records = sorted((record for record in listed if record.get('class') == class_key),
+                                   key=lambda record: (record.get('added_at') or '', record.get('verified_at') or '', record['id']), reverse=True)
+            class_path = f'{prefix}/data/{class_key}/'
+            class_title = f'{labels[zh]}数据' if zh else f'{labels[zh]} data'
+            class_description = (f'浏览 {len(class_records):,} 个{labels[zh]}数据点，按收录日期从新到旧排列。每条记录列出项目名称、内容简介、目标标签和来源复核日期，并链接到完整的资源或论文条目，方便查阅重建成果与数据集。'
+                                 if zh else f'Browse {len(class_records):,} {labels[zh].lower()} data points, newest first, with source review dates and links to full resource and paper entries.')
+            class_items = [{'name': (record.get('name_zh') or record['name']) if zh else record['name'],
+                            'url': f"{site_url}{prefix}/{record.get('route', 'resources')}/{record['id']}/"} for record in class_records]
+            class_rows = ''.join(index_card(record, language, _ordered_targets(record, stored_targets()), prefix=prefix, listing=True)
+                                 for record in class_records)
+            class_head = resource_page_head(listed, language, 1, len(papers)).replace(
+                RESOURCE_TEXT[language]['title'], class_title).replace(
+                f'<span class="h-count">{RESOURCE_TEXT[language]["entries"].format(n=f"{len(listed):,}")}</span>',
+                f'<span class="h-count">{RESOURCE_TEXT[language]["points"].format(n=f"{len(class_records):,}")}</span>')
+            class_head = class_head.replace('data-tab="all" aria-current="true"', 'data-tab="all"').replace(
+                f'data-tab="{class_key}" data-link', f'data-tab="{class_key}" data-link aria-current="true"')
+            class_head = re.sub(r'<form class="list-search".*?</form>', '', class_head)
+            order_note = f'{len(class_records):,} 个数据点，按收录日期从新到旧排列' if zh else f'{len(class_records):,} data points, newest first'
+            class_content = (f'<div class="wrap"><div class="drawer listing listing-class"><div class="results"><div class="results-bar">'
+                             f'<p class="results-meta">{order_note}</p></div>{evidence_legend(language)}<ul class="cards">{class_rows}</ul></div></div></div>')
+            rendered[class_path] = _document(site_url=site_url, repository_url=repository_url, path=class_path,
+                language=language, title=class_title, description=class_description, content=class_content,
+                schema=collection_page_schema(site_url + class_path, class_title, class_description, locale, class_items, site_url),
+                assets=assets, icon_stylesheet=icons.href, source_export=source_export, main_class='page-resources',
+                page_head=class_head, extra_styles=(assets['rea'],), alternates=alternate_links(markdown=class_path + MARKDOWN))
+            twins[class_path] = collection_markdown(title=class_title, description=class_description, language=language,
+                canonical=site_url + class_path, items=[{'name': item['name'],
+                    'url': item['url'] + MARKDOWN, 'meta': KIND_LABELS[record['kind']][int(zh)],
+                    'description': record[f'description_{language}']} for item, record in zip(class_items, class_records)],
+                counterpart=site_url + (f'/data/{class_key}/' if zh else f'/zh/data/{class_key}/') + MARKDOWN)
+            paths.append(class_path)
 
         path = prefix + '/cases/'
         title = '逆向工程案例合集' if zh else 'Reverse-engineering case studies'
@@ -788,7 +824,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         if directory.is_dir():
             shutil.rmtree(directory)
     # Older links name a row or section of the single-page listing; site.js looks up its static page here.
-    record_pages, section_pages = listing_pages(groups, SECTIONS)
+    record_pages, section_pages = listing_pages(listed_groups, SECTIONS)
     page_index = {**record_pages, **{f'heading-{key}': page for key, page in section_pages.items()}, **section_pages}
     (site_dir / 'resources').mkdir(parents=True, exist_ok=True)
     (site_dir / 'cases').mkdir(parents=True, exist_ok=True)
@@ -825,6 +861,7 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 ## Collections
 
 - [Curated resources]({site_url}/resources/{MARKDOWN}): All curated entries by section, each linking its own Markdown page with requirements, evidence links and review dates.
+{''.join(f'- [{labels[0]} data]({site_url}/data/{key}/): {sum(record.get("class") == key for record in listed)} data points; Chinese: {site_url}/zh/data/{key}/.' + chr(10) for key, labels in DATA_CLASSES.items())}
 - [Case studies]({site_url}/cases/{MARKDOWN}): {case_count} documented cases, a subset of the curated resources, with full descriptions and source evidence.
 - [API guide]({site_url}/api/{MARKDOWN}): Endpoints, fields, update frequency and versioning of the static JSON and CSV API.
 - [Research papers]({site_url}/papers/{MARKDOWN}): A separate research bibliography, each paper linking its own Markdown page.

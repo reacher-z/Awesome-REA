@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(ROOT / 'tests'))
 from build_discovery_pages import build_discovery_pages
+from data_classes import DATA_CLASSES
 from test_case_pages import resource
 from validate_site import Page, schema_entities, validate_resource_listing
 
@@ -22,7 +23,8 @@ class ResourceListingTests(unittest.TestCase):
         (output / 'cases.css').write_bytes((ROOT / 'site/cases.css').read_bytes())
         build_discovery_pages(output, {'resources': resources, 'meta': {'site_url': ORIGIN}}, None)
         return {route: Page((output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8'))
-                for route in ('/resources/', '/zh/resources/')}
+                for route in ('/resources/', '/zh/resources/',
+                              *(f'{prefix}/data/{key}/' for prefix in ('', '/zh') for key in DATA_CLASSES))}
 
     def test_items_point_at_localized_detail_pages_in_card_order(self):
         resources = [resource('game-tool', kind='tool'), resource('web-case', targets=['website']),
@@ -34,8 +36,8 @@ class ResourceListingTests(unittest.TestCase):
             items = next(schema_entities(page.schemas, 'CollectionPage'))['mainEntity']['itemListElement']
             self.assertEqual([item['url'] for item in items],
                              [f'{ORIGIN}{prefix}/resources/{identifier}/' for identifier in page.record_ids])
-            # Games holds a case study and a tool, and rows put tools first.
-            self.assertEqual(page.record_ids, ['web-case', 'game-tool', 'game-case'])
+            # Data classes lead; tools follow the class sections.
+            self.assertEqual(page.record_ids, ['game-case', 'web-case', 'game-tool'])
             for record in resources:
                 # Each row links to its entry page and its pinned evidence.
                 self.assertEqual(page.record_links[record['id']][0], f"{prefix}/resources/{record['id']}/")

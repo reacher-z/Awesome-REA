@@ -62,7 +62,7 @@ class TwinTests(unittest.TestCase):
         self.assertEqual(resource_record(gone, ORIGIN)['source_unavailable'], gone['source_unavailable'])
 
     def test_chinese_twin_and_section_links(self):
-        siblings = {'section': 'native-binary', 'siblings': [{'id': 'radare2', 'name': 'radare2', 'name_zh': 'radare2', 'kind': 'tool'}]}
+        siblings = {'section': 'tools', 'siblings': [{'id': 'radare2', 'name': 'radare2', 'name_zh': 'radare2', 'kind': 'tool'}]}
         related = [('paper', PAPER)]
         text = resource_markdown(RESOURCE, 'zh', site_url=ORIGIN, siblings=siblings, related=related)
         self.assertTrue(text.startswith('# Ghidra\n\n> 开源逆向工程套件。\n'))
@@ -108,8 +108,8 @@ class TwinTests(unittest.TestCase):
                                       json_url=ORIGIN + '/api/v1/resources.json', counterpart=ORIGIN + '/zh/resources/index.md')
         self.assertIn('## Native binaries (1)\n\n- [Ghidra](https://awesomerea.org/resources/ghidra/index.md): Tool · Suite.\n', listing)
         self.assertIn('- JSON: <https://awesomerea.org/api/v1/resources.json>', listing)
-        full = full_catalog_markdown([RESOURCE], [PAPER], 'en', site_url=ORIGIN, sections={'native-binary': ('Native binaries', '原生二进制')},
-                                     section_of=lambda record: 'native-binary', header='# Full catalog\n\n> Everything.\n')
+        full = full_catalog_markdown([RESOURCE], [PAPER], 'en', site_url=ORIGIN, sections={'tools': ('Native binaries', '原生二进制')},
+                                     section_of=lambda record: 'tools', header='# Full catalog\n\n> Everything.\n')
         self.assertTrue(full.startswith('# Full catalog\n\n> Everything.\n'))
         self.assertIn('### Native binaries (1)', full)
         self.assertIn('#### Ghidra\n', full)

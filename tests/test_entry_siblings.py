@@ -24,7 +24,7 @@ def resource(identifier, *, category='firmware', kind='tool', relationship='foun
 
 
 def case(identifier):
-    return resource(identifier, category='reconstruction-cases', kind='case-study', relationship='independent-reconstruction')
+    return resource(identifier, category='reconstruction-cases', kind='case-study', relationship='independent-reconstruction', **{'class': 'hardware'})
 
 
 class SectionLinks(HTMLParser):
@@ -54,12 +54,11 @@ class SectionLinks(HTMLParser):
 
 class SectionSiblingTests(unittest.TestCase):
     def test_selection_follows_readme_order_wraps_and_stops_at_six(self):
-        records = [resource(f'tool-{index}') for index in range(8)] + [case('case-a'), resource('lone', category='protocol-analysis')]
+        records = [resource(f'tool-{index}') for index in range(8)] + [case('case-a'), resource('lone', kind='documentation')]
         related = section_siblings(records)
-        # Case studies lead the section, as in the READMEs; the rest keep catalog order.
-        self.assertEqual([r['id'] for r in related['case-a']['siblings']], [f'tool-{index}' for index in range(6)])
-        self.assertEqual([r['id'] for r in related['tool-5']['siblings']], ['tool-6', 'tool-7', 'case-a', 'tool-0', 'tool-1', 'tool-2'])
-        self.assertEqual((related['tool-0']['section'], related['tool-0']['count'], related['tool-0']['cases']), ('firmware', 9, 1))
+        self.assertEqual(related['case-a']['siblings'], [])
+        self.assertEqual([r['id'] for r in related['tool-5']['siblings']], ['tool-6', 'tool-7', 'tool-0', 'tool-1', 'tool-2', 'tool-3'])
+        self.assertEqual((related['tool-0']['section'], related['tool-0']['count'], related['tool-0']['cases']), ('tools', 8, 0))
         self.assertEqual(related['lone']['siblings'], [])
         self.assertEqual(section_siblings(list(records)), related)
         small = section_siblings([resource('a'), resource('b')])
@@ -68,18 +67,18 @@ class SectionSiblingTests(unittest.TestCase):
     def test_game_case_studies_follow_their_readme_method_groups(self):
         def game_case(identifier, name, method):
             record = case(identifier)
-            record.update(name=name, targets=['game'], reconstruction_method=method)
+            record.update(name=name, targets=['game'], reconstruction_method=method, **{'class': 'game'})
             return record
         records = [game_case('zeta', 'zeta port', 'port'), resource('game-tool', category='game-analysis'),
                    game_case('alpha', 'Alpha port', 'port'), game_case('match', 'Matching', 'matching-decompilation')]
         related = section_siblings(records)
         # Method groups in vocabulary order, names ignoring case inside each, then the tools: the README order.
-        self.assertEqual([r['id'] for r in related['match']['siblings']], ['alpha', 'zeta', 'game-tool'])
-        self.assertEqual([r['id'] for r in related['zeta']['siblings']], ['game-tool', 'match', 'alpha'])
+        self.assertEqual([r['id'] for r in related['match']['siblings']], ['alpha', 'zeta'])
+        self.assertEqual([r['id'] for r in related['zeta']['siblings']], ['match', 'alpha'])
         self.assertEqual((related['alpha']['section'], related['alpha']['cases']), ('game', 3))
 
     def test_pages_link_localized_siblings_and_section_anchors(self):
-        records = [case('case-a'), resource('tool-a'), resource('tool-b'), resource('lone', category='protocol-analysis')]
+        records = [case('case-a'), resource('tool-a'), resource('tool-b'), resource('lone', kind='documentation')]
         paper = next(p for p in json.loads((ROOT / 'data/papers.json').read_text(encoding='utf-8')) if p['id'] == 'paper-fuzzware')
         outputs = []
         for _ in range(2):
@@ -89,11 +88,9 @@ class SectionSiblingTests(unittest.TestCase):
                 read = lambda kind, identifier, language: (root / entry_path(kind, identifier, language).lstrip('/') / 'index.html').read_text(encoding='utf-8')
                 outputs.append(read('resource', 'tool-a', 'en'))
                 english, chinese = SectionLinks(read('resource', 'tool-a', 'en')), SectionLinks(read('resource', 'case-a', 'zh'))
-                self.assertEqual(english.heading, 'More in Firmware and hardware')
-                self.assertEqual(english.links, ['/resources/tool-b/', '/resources/case-a/', '/resources/#heading-firmware'])
-                self.assertEqual(chinese.heading, '同分区更多条目：固件与硬件')
-                self.assertEqual(chinese.links, ['/zh/resources/tool-a/', '/zh/resources/tool-b/', '/zh/resources/#heading-firmware', '/zh/cases/#cases-firmware'])
-                self.assertIn('工具 tool-a</a>', read('resource', 'case-a', 'zh'))
+                self.assertEqual(english.heading, 'More in Tools')
+                self.assertEqual(english.links, ['/resources/tool-b/', '/resources/#heading-tools'])
+                self.assertIsNone(chinese.links)
                 self.assertIsNone(SectionLinks(read('resource', 'lone', 'en')).links)
                 self.assertIsNone(SectionLinks(read('paper', paper['id'], 'en')).links)
         self.assertEqual(outputs[0], outputs[1])

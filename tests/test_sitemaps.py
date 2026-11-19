@@ -71,6 +71,7 @@ class PageDateTests(unittest.TestCase):
     def test_page_sections(self):
         for path, section in (('/', 'pages'), ('/zh/about/', 'pages'), ('/discoveries/', 'pages'), ('/api/', 'pages'),
                               ('/resources/', 'resources'), ('/zh/cases/', 'resources'), ('/resources/ghidra/', 'resources'),
+                              ('/data/game/', 'resources'), ('/zh/data/science/', 'resources'),
                               ('/papers/', 'papers'), ('/zh/papers/paper-x/', 'papers'),
                               ('/browse/', 'categories'), ('/zh/browse/firmware/', 'categories')):
             self.assertEqual(section_for(path), section, path)

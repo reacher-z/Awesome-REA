@@ -16,6 +16,7 @@ from validate_site import Page, validate_case_outputs
 
 def record(identifier, targets, kind='case-study'):
     return {'id': identifier, 'name': 'Example ' + identifier, 'name_zh': '案例 ' + identifier,
+            **({'class': 'game' if 'game' in targets else 'website' if 'website' in targets else 'hardware'} if kind == 'case-study' else {}),
             'url': 'https://example.org/' + identifier, 'category': 'reconstruction-cases',
             'kind': kind, 'relationship': 'independent-reconstruction', 'targets': targets,
             'description_en': 'Reconstructs one observed behavior; complete equivalence is untested.',
@@ -77,9 +78,9 @@ class CaseDiscoveryTests(unittest.TestCase):
         pages = lambda: {route: Page(text) for route, text in html.items()}
         validate_case_outputs(pages(), resources)
         self.assertEqual([row['id'] for row in Page(html['/cases/']).case_rows],
-                         ['web-case', 'first-port', 'second-port', 'engine'])
+                         ['first-port', 'second-port', 'engine', 'web-case'])
         self.assertEqual([row['method'] for row in Page(html['/cases/']).case_rows],
-                         [None, 'port', 'port', 'engine-reimplementation'])
+                         ['port', 'port', 'engine-reimplementation', None])
         # A changed method or a renamed case makes the rendered groups stale.
         for changed in ({'reconstruction_method': 'other'}, {'name': 'zzz'}):
             with self.subTest(changed=changed), self.assertRaises(AssertionError):
@@ -92,7 +93,7 @@ class CaseDiscoveryTests(unittest.TestCase):
             html = {prefix + '/cases/': (output / prefix.lstrip('/') / 'cases/index.html').read_text() for prefix in ('', '/zh')}
         validate_case_outputs(pages(), resources + [pending])
         rows = Page(html['/cases/']).case_rows
-        self.assertEqual([(row['id'], row['method'], row['method_anchor']) for row in rows][-1],
+        self.assertEqual(next((row['id'], row['method'], row['method_anchor']) for row in rows if row['id'] == 'pending'),
                          ('pending', 'unassigned', 'cases-game-unassigned'))
         with self.assertRaises(AssertionError):
             validate_case_outputs(pages(), resources + [pending | {'reconstruction_method': 'port'}])

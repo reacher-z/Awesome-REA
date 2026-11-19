@@ -1,5 +1,6 @@
 """One category wording: build_readme.CATEGORIES feeds entry pages and, through catalog.json, the homepage."""
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -44,7 +45,8 @@ class CategoryLabelTests(unittest.TestCase):
                     self.assertRaises(AssertionError, validate_category_labels, directory)
 
     def test_homepage_filter_and_cards_use_the_catalog_map(self):
-        result = subprocess.run(['node', str(ROOT / 'tests/category_labels_ui.cjs')], cwd=ROOT, capture_output=True, text=True)
+        result = subprocess.run(['node', str(ROOT / 'tests/category_labels_ui.cjs')], cwd=ROOT, capture_output=True, text=True,
+                                env={**os.environ, 'REA_CATEGORY_LABELS': json.dumps(CATEGORIES)})
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('Category labels follow the catalog map in both languages', result.stdout)
 

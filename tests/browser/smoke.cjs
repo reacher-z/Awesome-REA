@@ -216,16 +216,30 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   assert.equal(await page.$eval('[data-show-all]', link => new URL(link.href).pathname), language === 'zh' ? '/zh/resources/' : '/resources/');
   assert.equal(await page.$eval('.site-header a[hreflang]', link => link.getAttribute('href')), language === 'zh' ? '/' : '/zh/');
   await noOverflow(page, label);
-  if (!javascript) return;
+  if (!javascript) {
+    // Without scripts the opening rows stay; the overview is script-only.
+    assert(await page.$eval('[data-overview]', overview => overview.hidden), `${label}: the overview waits for scripts`);
+    return;
+  }
+  // The All tab opens on the class × evidence overview; tiles and sectors select one class's detail.
+  assert(await page.$eval('[data-drawer]', drawer => drawer.classList.contains('is-overview')), `${label}: the All tab opens on the overview`);
+  assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), false, `${label}: the overview is visible`);
+  assert.equal(await page.$eval('[data-cards]', cards => getComputedStyle(cards).display), 'none', `${label}: the opening rows wait behind the overview`);
+  assert.equal(await page.$eval('[data-overview-detail="software"]', detail => detail.hidden), false, `${label}: the first class is selected`);
+  await press(page, '[data-overview-tile="game"]');
+  assert.equal(await page.$eval('[data-overview-detail="game"]', detail => detail.hidden), false, `${label}: a class tile shows its detail`);
+  assert.equal(await page.$eval('[data-overview-detail="software"]', detail => detail.hidden), true, `${label}: only one detail shows`);
   const index = language === 'zh' ? 'search-index.zh.json' : 'search-index.json';
   assert.equal(requests(requested, index), 0, `${label}: the search index waits for the first search`);
   assert.equal(requests(requested, 'catalog-index.json') + requests(requested, 'catalog.json'), 0, `${label}: the collection data is not loaded`);
   await page.$eval('[data-search-input]', node => node.scrollIntoView({block: 'center', behavior: 'instant'}));
-  await page.type('[data-search-input]', 'ghidra');
-  await page.waitForFunction(() => document.querySelector('[data-cards] > .card') && new URL(location.href).searchParams.get('q') === 'ghidra', {timeout: 15000});
+  // Data opens on the classed records, so search a classed case whose name is unique to the term.
+  await page.type('[data-search-input]', 'openlw');
+  await page.waitForFunction(() => document.querySelector('[data-cards] > .card') && new URL(location.href).searchParams.get('q') === 'openlw', {timeout: 15000});
   assert.equal(requests(requested, index), 1, `${label}: one search index request`);
-  await page.waitForFunction(id => document.querySelector(`[data-cards] > .card[data-id="${id}"]`), {}, 'ghidra');
-  assert.equal(await page.$eval('.site-header a[hreflang]', link => new URL(link.href).search), '?q=ghidra', `${label}: the language link keeps the search`);
+  await page.waitForFunction(id => document.querySelector(`[data-cards] > .card[data-id="${id}"]`), {}, 'openlw-sonic-lost-world-case');
+  assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), true, `${label}: a search brings the entries back`);
+  assert.equal(await page.$eval('.site-header a[hreflang]', link => new URL(link.href).search), '?q=openlw', `${label}: the language link keeps the search`);
   await noOverflow(page, label + ' with a search');
   // Arrow keys move the selection; Escape clears; zero results offer other routes rather than a count of nothing.
   await page.waitForSelector('[data-cards] > .card.is-active');
@@ -235,6 +249,8 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   await page.keyboard.press('Escape');
   await page.waitForFunction(() => !document.querySelector('[data-search-input]').value && !new URL(location.href).searchParams.get('q'));
   assert.equal(await count(page, '[data-cards] > .card.is-active'), 0, `${label}: Escape clears the selection`);
+  await page.waitForFunction(() => document.querySelector('[data-drawer]').classList.contains('is-overview'));
+  assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), false, `${label}: clearing the search returns to the overview`);
   await page.type('[data-search-input]', 'zzzzqqqq');
   // The empty state can appear after the first few letters; wait until it describes the whole query.
   await page.waitForSelector('[data-cards] > .empty a[href*="sourceq=zzzzqqqq"]');
@@ -242,7 +258,7 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   assert(await page.$eval('[data-cards] > .empty', box => !!box.querySelector('[data-empty-clear]') && !!box.querySelector('a[href*="sourceq=zzzzqqqq"]')), `${label}: the empty state offers other routes`);
   await page.click('[data-empty-clear]');
   await page.waitForFunction(() => document.querySelector('[data-cards] > .card'));
-  await page.type('[data-search-input]', 'ghidra');
+  await page.type('[data-search-input]', 'openlw');
   await page.waitForSelector('[data-cards] > .card.is-active');
   await Promise.all([page.waitForNavigation({waitUntil: 'load'}), page.keyboard.press('Enter')]);
   assert.match(new URL(page.url()).pathname, /\/resources\/[a-z0-9-]+\/$/, `${label}: Enter opens the selected result`);
@@ -293,35 +309,33 @@ async function homepageClassFilter(page, language, viewport) {
 // and a record or section link finds the page that lists it.
 async function resourceListing(page, language, viewport, data) {
   const label = `${language} resources ${viewport.name}`;
-  const total = data.catalog.resources.length;
+  // Data opens on the evidence-classed records: data resources plus benchmark and dataset papers.
+  const papers = Array.isArray(data.papers) ? data.papers : data.papers.papers;
+  const total = data.catalog.resources.filter(record => record.class).length + papers.filter(record => record.class).length;
   const route = language === 'zh' ? '/zh/resources/' : '/resources/';
   const perPage = 100;
   const staticPages = Math.max(1, Math.ceil(total / perPage));
   const rows = () => count(page, '[data-cards] > .card');
   assert.equal(await rows(), Math.min(perPage, total), `${label}: the first page holds the first ${perPage} rows`);
+  // The listing paginates every row it holds, papers included, so its own page count bounds the map.
+  const listingPages = Number(await page.$eval('[data-listing]', node => node.dataset.pages));
   const pageMap = await page.evaluate(async url => (await fetch(url)).json(), '/resources/pages.json');
   const mapped = data.catalog.resources.map(record => pageMap[record.id]);
-  assert.ok(mapped.every(number => Number.isInteger(number) && number >= 1 && number <= staticPages), `${label}: every record has a static page`);
+  assert.ok(mapped.every(number => Number.isInteger(number) && number >= 1 && number <= listingPages), `${label}: every record has a static page`);
   if (staticPages > 1) {
     assert.equal(await page.$eval('[data-pager] a[data-page="2"]', link => new URL(link.href).pathname), `${route}page/2/`, `${label}: the pager links the next static page`);
   }
   await noOverflow(page, label);
   const before = await page.$eval('[data-results-meta]', node => node.textContent);
-  await press(page, '.page-head .folder[data-target="protocol"]');
-  await page.waitForFunction(() => new URL(location.href).searchParams.get('target') === 'protocol', {timeout: 20000});
-  // The search index loads on the first interaction, so the count changes once it arrives.
-  await page.waitForFunction(text => document.querySelector('[data-results-meta]').textContent !== text, {timeout: 20000}, before)
-    .catch(() => assert.fail(`${label}: the count follows the filter`));
-  if (staticPages > 1) {
-    const shown = await page.$$eval('[data-cards] > .card[data-id]', nodes => nodes.map(node => node.dataset.id));
-    assert.ok(shown.some(id => pageMap[id] > 1), `${label}: the filter searches rows from every static page`);
-  }
-  await page.goto(page.url().split('?')[0] + '?target=protocol&kind=tool');
-  // The static rows show first; the filtered rows replace them once the search index arrives.
-  await page.waitForFunction(() => {
-    const kinds = [...document.querySelectorAll('[data-cards] > .card .callno')].map(node => node.textContent);
-    return kinds.length > 0 && kinds.every(text => /tool|工具/i.test(text));
-  }, {timeout: 20000}).catch(() => assert.fail(`${label}: a shared link opens the same filter`));
+  await press(page, '.page-head .folder[data-tab="tools"]');
+  // The first static page already holds 100 rows, so wait for the filtered count rather than a shorter list.
+  await page.waitForFunction(text => document.querySelector('[data-results-meta]').textContent !== text, {timeout: 20000}, before);
+  assert.equal(new URL(page.url()).searchParams.get('tab'), 'tools', `${label}: the filter is in the URL`);
+  assert.notEqual(await page.$eval('[data-results-meta]', node => node.textContent), before, `${label}: the count follows the filter`);
+  await page.goto(page.url().split('?')[0] + '?tab=tools&target=protocol&kind=tool');
+  await page.waitForFunction(() => [...document.querySelectorAll('[data-cards] > .card')].every(card => /tool|工具/i.test(card.querySelector('.callno').textContent)), {timeout: 20000});
+  const opened = await page.$$eval('[data-cards] > .card .callno', nodes => nodes.map(node => node.textContent));
+  assert.ok(opened.length && opened.every(text => /tool|工具/i.test(text)), `${label}: a shared link opens the same filter`);
   // On a narrowed list a section's count follows the filters, and its link filters to that many rows.
   const sectionCounts = () => page.$$eval('[data-section-link]', links => links.map(link => [link.dataset.section, Number(link.querySelector('.count').textContent.replace(/\D/g, ''))]));
   const narrowed = await sectionCounts();
@@ -356,7 +370,7 @@ async function resourceListing(page, language, viewport, data) {
     return [pages, end - start];
   })), [[1, 61], [1, 64], [2, 60], [2, 5], [2, 61], [2, 60], [1, 0], [1, 3]], `${label}: a last page never holds under five rows`);
   // A legacy /resources/#id link opens the static page that lists that record.
-  const last = data.catalog.resources[data.catalog.resources.length - 1].id;
+  const last = data.catalog.resources.find(record => record.class).id;
   const lastPage = pageMap[last];
   await page.goto(`${new URL(page.url()).origin}${route}#${last}`);
   await page.waitForFunction(expected => location.pathname === expected, {timeout: 10000}, lastPage > 1 ? `${route}page/${lastPage}/` : route);
@@ -683,7 +697,6 @@ async function staticPage(page, route, viewport) {
   assert((await page.$eval('h1', heading => heading.textContent.trim())).length > 0, `${label}: visible heading`);
   await noOverflow(page, label);
   if (route === '/papers/' || route === '/zh/papers/') await paperDirectory(page, route, viewport);
-  if (route === '/cases/' || route === '/zh/cases/') await sectionTargetCounts(page, label);
   if (route === '/cases/' || route === '/zh/cases/') {
     const review = await page.$eval('#review-method', section => ({
       title: section.querySelector('h2').textContent,
@@ -698,9 +711,11 @@ async function staticPage(page, route, viewport) {
 (async () => {
   execFileSync(process.env.PYTHON || 'python3', ['scripts/build_site.py'], {cwd: root, stdio: 'inherit'});
   const read = file => JSON.parse(fs.readFileSync(path.join(dist, file), 'utf8'));
-  const data = {catalog: read('catalog.json'), browser: read('source-browser.json')};
+  const data = {catalog: read('catalog.json'), papers: read('papers.json'), browser: read('source-browser.json')};
   const category = fs.readdirSync(path.join(dist, 'zh/browse')).filter(name => fs.statSync(path.join(dist, 'zh/browse', name)).isDirectory()).sort()[0];
-  const routes = ['/papers/', '/zh/papers/', '/resources/', '/zh/resources/', '/cases/', '/zh/cases/', '/about/', '/zh/about/', '/contribute/', '/zh/contribute/',
+  const routes = ['/papers/', '/zh/papers/', '/resources/', '/zh/resources/',
+    ...['software', 'game', 'apps', 'website', 'hardware', 'science'].flatMap(cls => [`/data/${cls}/`, `/zh/data/${cls}/`]),
+    '/cases/', '/zh/cases/', '/about/', '/zh/about/', '/contribute/', '/zh/contribute/',
     '/browse/', `/zh/browse/${category}/`, `/resources/${data.catalog.resources[0].id}/`];
   fs.rmSync(screenshots, {recursive: true, force: true}); fs.mkdirSync(screenshots, {recursive: true});
   const site = server(headerRules(fs.readFileSync(path.join(dist, '_headers'), 'utf8')));

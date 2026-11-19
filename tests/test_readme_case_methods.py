@@ -19,7 +19,7 @@ def case(identifier, method=None, **changes):
     """A Game case study; without `method` it has no reconstruction_method field at all."""
     record = deepcopy(json.loads((ROOT / 'data/tool-resources.json').read_text(encoding='utf-8'))[0])
     record.update(id=identifier, name=identifier, url=f'https://example.com/{identifier}', kind='case-study',
-                  category='reconstruction-cases', relationship='independent-reconstruction', targets=['game'])
+                  category='reconstruction-cases', relationship='independent-reconstruction', targets=['game'], **{'class': 'game'})
     if method is not None:
         record['reconstruction_method'] = method
     record.update(changes)
@@ -27,7 +27,9 @@ def case(identifier, method=None, **changes):
 
 
 def tool(identifier):
-    return case(identifier, kind='tool', category='game-analysis', relationship='foundation')
+    record = case(identifier, kind='tool', category='game-analysis', relationship='foundation')
+    record.pop('class')
+    return record
 
 
 class ReadmeCaseMethodTests(unittest.TestCase):
@@ -41,10 +43,9 @@ class ReadmeCaseMethodTests(unittest.TestCase):
                 headings = re.findall(r'^(#{4,5}) (.+)$', rendered, re.MULTILINE)
                 labels = [names[language == 'zh'] for names in RECONSTRUCTION_METHODS.values()]
                 self.assertEqual(headings, [
-                    ('####', '案例' if language == 'zh' else 'Case studies'),
-                    ('#####', labels[0] + ' (1)'), ('#####', labels[3] + ' (3)'),
-                    ('####', '工具、项目与集成' if language == 'zh' else 'Tools, projects and integrations')])
-                self.assertIn('<a id="game-port"></a>\n##### ', rendered)
+                    ('####', labels[0] + ' (1)'), ('####', labels[3] + ' (3)'),
+                    ('####', '游戏分析工具' if language == 'zh' else 'Game analysis tools')])
+                self.assertIn('<a id="game-port"></a>\n#### ', rendered)
                 order = re.findall(r'example\.com/([\w-]+)\)', rendered)
                 self.assertEqual(order, ['match', 'Alpha', 'beta', 'zeta', 'game-tool'])
         self.assertEqual(records, before)
@@ -59,11 +60,11 @@ class ReadmeCaseMethodTests(unittest.TestCase):
         for language in ('en', 'zh'):
             with self.subTest(language=language):
                 rendered = render_catalog(records, language)
-                headings = re.findall(r'^##### (.+)$', rendered, re.MULTILINE)
+                headings = re.findall(r'^#### (.+)$', rendered.split('\n## ', 1)[0], re.MULTILINE)
                 labels = METHOD_HEADINGS[UNASSIGNED_METHOD][language == 'zh']
                 self.assertEqual(labels, 'Other reconstruction methods' if language == 'en' else '其他重建方式')
                 self.assertEqual(headings, [METHOD_HEADINGS['matching-decompilation'][language == 'zh'] + ' (1)', labels + ' (2)'])
-                self.assertIn(f'<a id="game-{UNASSIGNED_METHOD}"></a>\n##### {labels} (2)\n', rendered)
+                self.assertIn(f'<a id="game-{UNASSIGNED_METHOD}"></a>\n#### {labels} (2)\n', rendered)
                 self.assertEqual(re.findall(r'example\.com/([\w-]+)\)', rendered), ['match', 'Pending-a', 'pending-b', 'game-tool'])
                 # The fallback heading is distinct from the `other` method's, and absent once every case has a method.
                 self.assertNotEqual(labels, RECONSTRUCTION_METHODS['other'][language == 'zh'])
@@ -81,8 +82,8 @@ class ReadmeCaseMethodTests(unittest.TestCase):
                                  (case('unknown', 'guess'), 'use one of'),
                                  (case('slug', UNASSIGNED_METHOD), 'use one of'),
                                  (case('null', None) | {'reconstruction_method': None}, 'use one of'),
-                                 (case('app-case', 'port', targets=['app']), 'only case studies listed under Game'),
-                                 (tool('game-tool') | {'reconstruction_method': 'port'}, 'only case studies listed under Game')):
+                                 (case('app-case', 'port', targets=['app'], **{'class': 'apps'}), None),
+                                 (tool('game-tool') | {'reconstruction_method': 'port'}, 'only case studies take this field')):
             with self.subTest(record=record['id']):
                 errors = []
                 validate_resources([record], errors)
@@ -93,7 +94,7 @@ class ReadmeCaseMethodTests(unittest.TestCase):
                 else:
                     self.assertEqual(errors, [])
         # A missing method is advisory: one warning names every Game case without one, and nothing else.
-        records = [case('missing-b'), case('known', 'other'), case('missing-a'), case('app-case', targets=['app']), tool('game-tool')]
+        records = [case('missing-b'), case('known', 'other'), case('missing-a'), case('app-case', targets=['app'], **{'class': 'apps'}), tool('game-tool')]
         self.assertEqual(missing_method_warnings(records), [
             '2 Game case studies have no reconstruction_method and are listed under "Other reconstruction methods": '
             'missing-b, missing-a; add one of the methods in data/README.md'])
@@ -129,6 +130,7 @@ class ReadmeCaseMethodTests(unittest.TestCase):
             self.assertEqual(order, expected)
             for method, block in __import__('build_readme').method_groups(cases):
                 self.assertIn(f'<a id="game-{method}"></a>', text)
+                self.assertIn(f'## {METHOD_HEADINGS[method][language == "zh"]}', text)
             listed[language] = order
         self.assertEqual(listed['en'], listed['zh'])
 

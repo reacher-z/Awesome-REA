@@ -59,6 +59,10 @@ def expected_twins(routes, resources, papers):
     """Map each page route that must have twins to its (Markdown path, JSON path or None)."""
     expected = {}
     for prefix in ('', '/zh'):
+        from data_classes import DATA_CLASSES
+        for key in DATA_CLASSES:
+            route = f'{prefix}/data/{key}/'
+            expected[route] = (route + MARKDOWN, None)
         for kind, records in (('resource', resources), ('paper', papers)):
             for record in records:
                 expected[f"{prefix}/{kind}s/{record['id']}/"] = (f"{prefix}/{kind}s/{record['id']}/{MARKDOWN}", record_json_route(kind, record['id']))
@@ -68,7 +72,7 @@ def expected_twins(routes, resources, papers):
         match = re.fullmatch(r'(?:/zh)?/browse/([a-z0-9-]+)/', route)
         if match:
             expected[route] = (route + MARKDOWN, f'/browse/{match[1]}/{COLLECTION_JSON}')
-    return {route: twins for route, twins in expected.items() if route in routes or not route.startswith(('/browse/', '/zh/browse/'))}
+    return {route: twins for route, twins in expected.items() if route in routes or not route.startswith(('/browse/', '/zh/browse/', '/data/', '/zh/data/'))}
 
 
 def validate_twins(output, routes, resources, papers):

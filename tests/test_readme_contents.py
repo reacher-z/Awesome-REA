@@ -48,7 +48,7 @@ class ReadmeContentsTest(unittest.TestCase):
 
     def test_contents_lines_give_each_section_its_count_and_what_it_holds(self):
         listed = paper(url='https://example.com/paper')
-        records = [resource(), resource(id='second', url='https://example.com/second'),
+        records = [resource(**{'class': 'website'}), resource(id='second', url='https://example.com/second', **{'class': 'website'}),
                    resource(id='paper-copy', kind='research', url=listed['url'])]
         for language, blurbs in (('en', 0), ('zh', 1)):
             with self.subTest(language=language):
@@ -96,16 +96,16 @@ class ReadmeContentsTest(unittest.TestCase):
     def test_counts_follow_rendered_sections(self):
         listed = paper(url='https://example.com/paper')
         records = [
-            resource(),
-            resource(id='second-web-tool', url='https://example.com/second'),
+            resource(kind='project', **{'class': 'website'}),
+            resource(id='second-web-tool', url='https://example.com/second', kind='project', **{'class': 'website'}),
             resource(id='case', kind='case-study', category='reconstruction-cases',
                      relationship='independent-reconstruction', targets=['game'], url='https://example.com/case',
-                     reconstruction_method='other'),
+                     reconstruction_method='other', **{'class': 'game'}),
             resource(id='paper-copy', kind='research', category='learning', relationship='learning',
                      url=listed['url']),
         ]
         rendered = render_contents(records, [listed], 2864, 'en')
-        self.assertIn('- [Resources](#resources) (3)\n', rendered)
+        self.assertIn('- [Data](#data) (3)\n', rendered)
         self.assertIn('  - [Website](#website) (2) — ', rendered)
         self.assertIn('  - [Game](#game) (1) — ', rendered)
         self.assertIn('- [Papers](#papers) (1) — ', rendered)
@@ -119,8 +119,8 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertNotIn('#protocol', rendered)
 
     def test_chinese_contents_use_chinese_labels_and_anchors(self):
-        rendered = render_contents([resource()], [paper()], 10, 'zh')
-        self.assertTrue(rendered.startswith('- [按任务查找](#按任务查找)\n- [使用数据](#使用数据)\n- [资源](#资源) (1)\n  - [网站](#website) (1) — '),
+        rendered = render_contents([resource(kind='project', **{'class': 'website'})], [paper()], 10, 'zh')
+        self.assertTrue(rendered.startswith('- [按任务查找](#按任务查找)\n- [使用数据](#使用数据)\n- [数据](#数据) (1)\n  - [网站](#website) (1) — '),
                         rendered)
         self.assertIn('\n- [完整仓库索引](#完整仓库索引) (10) — ', rendered)
         self.assertTrue(rendered.endswith('\n- [关于](#关于)\n- [Star 历史](#star-历史)\n'), rendered)
@@ -186,8 +186,9 @@ class ReadmeContentsTest(unittest.TestCase):
             with self.subTest(language=language):
                 rendered = render_catalog([record], language)
                 tag = '工具' if language == 'zh' else 'Tool'
+                targets = '目标：网站' if language == 'zh' else 'Targets: Website'
                 line = (f'- [**{title}**]({record["url"]}) - {description} '
-                        f'<sub>{tag} · [{label}](https://awesomerea.org/{prefix}resources/{record["id"]}/)</sub>')
+                        f'<sub>{tag} · {targets} · [{label}](https://awesomerea.org/{prefix}resources/{record["id"]}/)</sub>')
                 self.assertEqual(rendered.splitlines().count(line), 1, rendered)
                 # The remaining sentences, like requirements and evidence, stay on the entry page.
                 self.assertNotIn('A &amp; B', rendered)
@@ -259,13 +260,11 @@ class ReadmeContentsTest(unittest.TestCase):
                     end = next((later.start() for later in headings[position + 1:] if len(later[1]) <= len(heading[1])),
                                len(body))
                     entries = len(re.findall(r'^- \[\*\*', body[heading.end():end], re.MULTILINE))
-                    if heading[1] == '###' or heading[2] in ('Resources', '资源'):
+                    if heading[1] == '###':
                         language = 'zh' if name.endswith('zh-CN.md') else 'en'
                         paths = [path for path in (ROOT / 'docs/cases').glob('*.md')
                                  if path.name.endswith('.zh-CN.md' if language == 'zh' else '.md')
                                  and (language == 'zh' or not path.name.endswith('.zh-CN.md'))]
-                        case_text = '\n'.join(path.read_text(encoding='utf-8') for path in paths)
-                        case_ids = set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', case_text, re.M))
                         if heading[1] == '###':
                             anchor = re.search(r'<a id="([^"]+)"></a>\s*$', body[:heading.start()])
                             if anchor:
@@ -277,6 +276,10 @@ class ReadmeContentsTest(unittest.TestCase):
                                 case_ids = set()
                         shown = set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', body[heading.end():end], re.M))
                         entries += len(case_ids - shown)
+                    elif heading[2] in ('Data', '数据', 'Tools and tutorials', '工具与教程'):
+                        entries = sum(int(match.group(1).replace(',', '')) for later in headings[position + 1:]
+                                      if later[1] == '###' and later.start() < end
+                                      for match in [re.search(rf'\[{re.escape(later[2].split(" · ")[-1] if name.endswith("zh-CN.md") else later[2])}\]\(#[^)]+\) \(([\d,]+)\)', contents)] if match)
                     self.assertEqual(int(count[1].replace(',', '')), entries, heading[2])
                     counted += 1
                 self.assertGreater(counted, 10)
@@ -286,7 +289,7 @@ class ReadmeContentsTest(unittest.TestCase):
             with self.subTest(readme=name):
                 text = (ROOT / name).read_text(encoding='utf-8')
                 # Outside links to the old fragments keep working; old paper topic fragments land on the topic's link.
-                for anchor in ('firmware', 'game', 'papers', 'papers-decompilation', 'papers-agent-evaluation'):
+                for anchor in ('hardware', 'game', 'papers', 'papers-decompilation', 'papers-agent-evaluation'):
                     self.assertIn(f'<a id="{anchor}"></a>', text)
                 topics = next(line for line in text.splitlines() if line.startswith(label))
                 self.assertIn('[', topics)

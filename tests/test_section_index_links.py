@@ -16,6 +16,7 @@ LABELS = {'/cases/': 'All sections', '/zh/cases/': '全部主题'}
 
 def record(identifier, targets, kind='case-study'):
     return {'id': identifier, 'name': 'Example ' + identifier, 'name_zh': '案例 ' + identifier,
+            **({'class': 'website' if 'website' in targets else 'game'} if kind == 'case-study' else {}),
             'url': 'https://example.org/' + identifier, 'category': 'reconstruction-cases',
             'kind': kind, 'relationship': 'independent-reconstruction', 'targets': targets,
             'description_en': 'Reconstructs one observed behavior; complete equivalence is untested.',
@@ -90,8 +91,8 @@ class SectionIndexLinkTests(unittest.TestCase):
                     self.assertEqual(back[0]['text'].replace('↑', '').strip(), LABELS[route])
 
     def test_headings_ids_and_counts_are_unchanged(self):
-        expected = {'/cases/': [('case-heading-website', '1 case'), ('case-heading-game', '1 case')],
-                    '/zh/cases/': [('case-heading-website', '1 个案例'), ('case-heading-game', '1 个案例')]}
+        expected = {'/cases/': [('case-heading-game', '1 case'), ('case-heading-website', '1 case')],
+                    '/zh/cases/': [('case-heading-game', '1 个案例'), ('case-heading-website', '1 个案例')]}
         for route, rows in expected.items():
             with self.subTest(route=route):
                 self.assertEqual([(row['heading'], row['count']) for row in self.pages[route].rows], rows)

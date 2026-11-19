@@ -31,7 +31,10 @@ def resource(identifier, *, kind='case-study', targets=None, **changes):
     }
     if kind == 'case-study':
         record['reconstruction_method'] = 'other'
+        record['class'] = 'website' if 'website' in record['targets'] else 'game'
     record.update(changes)
+    if kind == 'case-study' and 'class' not in changes:
+        record['class'] = 'website' if 'website' in record['targets'] else 'game'
     return record
 
 
@@ -109,7 +112,8 @@ class CasePageTests(unittest.TestCase):
         paths = build_discovery_pages(output, catalog, None)
         self.assertEqual(catalog, original)
         self.assertEqual(set(paths), {'/resources/', '/zh/resources/', '/cases/', '/zh/cases/', '/about/', '/zh/about/',
-                                      '/contribute/', '/zh/contribute/'})
+                                      '/contribute/', '/zh/contribute/',
+                                      *(f'{prefix}/data/{key}/' for prefix in ('', '/zh') for key in ('software', 'game', 'apps', 'website', 'hardware', 'science'))})
         return output
 
     def test_subset_grouping_localized_links_and_itemlist_order(self):
@@ -121,9 +125,9 @@ class CasePageTests(unittest.TestCase):
             with self.subTest(language=language):
                 content = (output / prefix / 'cases/index.html').read_text()
                 page = CaseDocument(content)
-                self.assertEqual(page.sections, ['website', 'game'])
-                self.assertEqual([row['id'] for row in page.cases], ['multi-web', 'multi-game'])
-                self.assertEqual([row['section'] for row in page.cases], ['website', 'game'])
+                self.assertEqual(page.sections, ['game', 'website'])
+                self.assertEqual([row['id'] for row in page.cases], ['multi-game', 'multi-web'])
+                self.assertEqual([row['section'] for row in page.cases], ['game', 'website'])
                 self.assertIn('data-case-count="2" data-curated-count="3"', content)
                 self.assertNotIn('data-case-id="ordinary-tool"', content)
                 structured = schema(content)
@@ -131,7 +135,7 @@ class CasePageTests(unittest.TestCase):
                 self.assertEqual(structured['inLanguage'], 'en' if language == 'en' else 'zh-CN')
                 items = structured['mainEntity']['itemListElement']
                 self.assertEqual(structured['mainEntity']['numberOfItems'], 2)
-                for index, (item, record, rendered) in enumerate(zip(items, [web, game], page.cases), 1):
+                for index, (item, record, rendered) in enumerate(zip(items, [game, web], page.cases), 1):
                     self.assertEqual(item['position'], index)
                     self.assertEqual(item['url'], f'https://awesomerea.org/{prefix}resources/{record["id"]}/')
                     self.assertEqual(item['description'], record['description_' + language])
@@ -154,20 +158,19 @@ class CasePageTests(unittest.TestCase):
             with self.subTest(language=language):
                 content = (output / prefix / 'cases/index.html').read_text()
                 page = CaseDocument(content)
-                self.assertEqual([row['id'] for row in page.cases], ['web', 'matching', 'alpha', 'zeta'])
+                self.assertEqual([row['id'] for row in page.cases], ['matching', 'alpha', 'zeta', 'web'])
                 self.assertEqual([item['url'].split('/')[-2] for item in schema(content)['mainEntity']['itemListElement']],
-                                 ['web', 'matching', 'alpha', 'zeta'])
+                                 ['matching', 'alpha', 'zeta', 'web'])
                 games = content.split('id="cases-game"', 1)[1]
-                # Methods in vocabulary order, each a headed group with its count, definition and h4 case titles.
+                # Methods in vocabulary order, each a headed group with its count and h4 case titles.
                 self.assertEqual(re.findall(r'data-case-method="([a-z-]+)"', games), ['matching-decompilation', 'port'])
                 self.assertEqual(re.findall(r'<a href="#(cases-game-[a-z-]+)">', games),
                                  ['cases-game-matching-decompilation', 'cases-game-port'])
                 port = games.split('id="cases-game-port"', 1)[1]
-                heading, note = ('基于重建源码的移植', '在新的平台层上') if language == 'zh' else ('Ports of reconstructed source', 'A native or web build')
+                heading = '基于重建源码的移植' if language == 'zh' else 'Ports of reconstructed source'
                 self.assertIn(f'>{heading}</h3><p>{"2 个案例" if language == "zh" else "2 cases"}</p>', port)
-                self.assertIn(f'<p class="case-method-note">{note}', port)
                 self.assertEqual(port.count('<h4>'), 2)
-                self.assertNotIn('<h4>', content.split('id="cases-game"', 1)[0])
+                self.assertNotIn('data-case-method=', content.split('id="cases-game"', 1)[0])
         with self.assertRaisesRegex(ValueError, 'reconstruction_method'):
             self.build([resource('unsorted', reconstruction_method='guess')])
 
@@ -182,10 +185,9 @@ class CasePageTests(unittest.TestCase):
                 self.assertEqual([row['id'] for row in CaseDocument(content).cases], ['engine', 'pending'])
                 games = content.split('id="cases-game"', 1)[1]
                 self.assertEqual(re.findall(r'data-case-method="([a-z-]+)"', games), ['engine-reimplementation', 'unassigned'])
-                heading, note = ('其他重建方式', '记录中尚未注明重建方法') if language == 'zh' else ('Other reconstruction methods', 'Cases whose record does not name')
+                heading = '其他重建方式' if language == 'zh' else 'Other reconstruction methods'
                 fallback = games.split('id="cases-game-unassigned"', 1)[1]
                 self.assertIn(f'>{heading}</h3><p>{"1 个案例" if language == "zh" else "1 case"}</p>', fallback)
-                self.assertIn(f'<p class="case-method-note">{note}', fallback)
                 self.assertIn(f'<a href="#cases-game-unassigned">{heading}<span>1</span></a>', games)
         # Once every Game case names a method, the fallback group and its index link are left out.
         complete = self.build([resource('engine', reconstruction_method='engine-reimplementation'), resource('misc')])

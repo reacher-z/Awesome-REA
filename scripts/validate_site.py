@@ -36,6 +36,7 @@ from validate_discovery import discovery_class_pages, expected_entry_routes, val
 from build_readme import (CASE_FILES, README_SIZE_WARNING, CATEGORIES, METHOD_SECTIONS, PAPER_SECTIONS, REQUIREMENTS_LABEL, case_method,
                           collection_section, method_groups, paper_section)
 from build_discovery_pages import ABOUT_EXCLUDED_SECTIONS, CASE_PER_PAGE, SECTION_TARGETS, case_page_path, file_size_label
+from data_classes import DATA_CLASSES, listed_records
 from build_feed import (DISCOVERY_LABELS, DISCOVERY_PATHS, DISCOVERY_TERM, FEED_PAGES, FEED_PATHS, FEED_SIZE,
                         discovery_summary, entry_time, feed_entries, merged_entries)
 import build_discoveries
@@ -1474,7 +1475,7 @@ LISTING_PAGE_ROUTE = re.compile(r'(/zh)?/(resources|cases)/(?:page/([1-9][0-9]*)
 
 
 def listing_page_routes(pages, prefix, directory='resources'):
-    """/<directory>/ and its later static pages that pages holds, in page order."""
+    "/<directory>/ and its later static pages that pages holds, in page order."""
     numbered = sorted((int(match[3] or 1), route) for route in pages
                       if (match := LISTING_PAGE_ROUTE.fullmatch(route)) and (match[1] or '') == prefix and match[2] == directory)
     assert [number for number, _ in numbered] == list(range(1, len(numbered) + 1)), f'Listing pages must run 1, 2, 3 …: {prefix}/{directory}/'
@@ -1498,10 +1499,10 @@ def with_listing_pages(pages, output=OUTPUT):
 with_resource_pages = with_listing_pages
 
 
-def validate_resource_listing(pages, resources, output=None):
+def validate_resource_listing(pages, resources, papers=(), output=None):
     """Each static /resources/ page lists at most PER_PAGE rows; together they list every record once, and each
-    page's ItemList names its visible cards' detail pages in card order."""
-    records = {record['id']: record for record in resources}
+    page's ItemList names its visible cards' detail pages in card order. The class pages list each class's data points."""
+    records = {record['id']: record for record in listed_records(resources, papers)}
     for language, prefix in (('en', ''), ('zh', '/zh')):
         listed = []
         for route in resource_page_routes(pages, prefix):
@@ -1516,7 +1517,7 @@ def validate_resource_listing(pages, resources, output=None):
                 record = records[identifier]
                 name = (record.get('name_zh') or record['name']) if language == 'zh' else record['name']
                 expected.append({'@type': 'ListItem', 'position': position, 'name': name,
-                                 'url': f'{ORIGIN}{prefix}/resources/{identifier}/'})
+                                 'url': f"{ORIGIN}{prefix}/{record.get('route', 'resources')}/{identifier}/"})
             assert items.get('@type') == 'ItemList' and items.get('numberOfItems') == len(expected), f'Resource schema count mismatch: {route}'
             assert items.get('itemListElement') == expected, f'Resource structured list differs from visible cards or detail pages: {route}'
         assert len(listed) == len(records) and set(listed) == set(records), f'Resource pages differ from curated records: {prefix}/resources/'
@@ -1531,6 +1532,16 @@ def validate_resource_listing(pages, resources, output=None):
                 expected.update({anchor.removeprefix('heading-'): number for anchor in pages[route].ids if anchor.startswith('heading-')})
             mapping = json.loads((Path(output) / 'resources/pages.json').read_text(encoding='utf-8'))
             assert mapping == expected, f'resources/pages.json differs from the rendered pages: {prefix}/resources/'
+        for key in DATA_CLASSES:
+            class_route = f'{prefix}/data/{key}/'
+            class_page = pages[class_route]
+            expected_records = sorted((record for record in records.values() if record.get('class') == key),
+                                      key=lambda record: (record.get('added_at') or '', record.get('verified_at') or '', record['id']), reverse=True)
+            assert class_page.record_ids == [record['id'] for record in expected_records], f'Class rows differ or are out of order: {class_route}'
+            collections = list(schema_entities(class_page.schemas, 'CollectionPage'))
+            assert len(collections) == 1, f'Class page needs one CollectionPage: {class_route}'
+            class_items = collections[0]['mainEntity']['itemListElement']
+            assert [item['url'] for item in class_items] == [f"{ORIGIN}{prefix}/{record.get('route', 'resources')}/{record['id']}/" for record in expected_records], f'Class ItemList differs: {class_route}'
 
 
 def validate_entry_outputs(pages, resources, papers):
@@ -1550,7 +1561,7 @@ def validate_entry_outputs(pages, resources, papers):
                                           record_links={key: value for page in listings for key, value in page.record_links.items()})
             else:
                 listing = pages[f'{prefix}/{directory}/']
-            links = listing.detail_links
+            links = [link for link in listing.detail_links if link['id'] in catalogs[kind]]
             assert len(links) == len(catalogs[kind]), f'Detail link count mismatch: {prefix}/{directory}/'
             assert {link['id'] for link in links} == set(catalogs[kind]), f'Detail link IDs mismatch: {prefix}/{directory}/'
             for link in links:
@@ -1573,7 +1584,7 @@ def validate_entry_outputs(pages, resources, papers):
                 recorded_links = listing.record_links if kind == 'resource' else listing.paper_links
                 assert upstream <= set(recorded_links.get(link['id'], [])), f'External listing title/source links missing: {expected}'
 
-    siblings = section_siblings(resources)
+    siblings = section_siblings(resources, papers)
     for route, (kind, identifier, language) in routes.items():
         assert route in pages, f'Missing detail page: {route}'
         page, record = pages[route], catalogs[kind][identifier]
@@ -1861,7 +1872,7 @@ def _validate_pages(urls, resources, papers):
     forked_checks.run_all([
         lambda: validate_link_fragments(OUTPUT, pages, fragment_links),
         lambda: validate_homepage_destinations(pages),
-        lambda: validate_resource_listing(with_resource_pages(pages), resources, OUTPUT),
+        lambda: validate_resource_listing(with_resource_pages(pages), resources, papers, OUTPUT),
         validate_requirements_label,
         lambda: validate_paper_outputs(OUTPUT, pages),
         lambda: validate_entry_outputs(with_resource_pages(pages), resources, papers),

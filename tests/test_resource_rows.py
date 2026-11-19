@@ -24,9 +24,9 @@ def record(identifier, kind='tool', category='native-analysis', relationship='fo
             'verified_at': '2026-10-16T12:30:00Z', 'verification': 'source-reviewed'}
 
 
-RECORDS = [record('websitebench', 'project', 'web-analysis', 'learning', ('website',)),
+RECORDS = [dict(record('websitebench', 'project', 'web-analysis', 'learning', ('website',)), **{'class': 'website'}),
            record('web-tool', 'tool', 'web-analysis', targets=('website',)),
-           record('case-a', 'case-study', 'reconstruction-cases', 'independent-reconstruction', ('game',)),
+           dict(record('case-a', 'case-study', 'reconstruction-cases', 'independent-reconstruction', ('game',)), **{'class': 'game'}),
            record('tool-a', 'tool', 'game-analysis', targets=('game',)),
            record('ghidra'),
            record('tool-b')]
@@ -52,7 +52,7 @@ class ResourceRowTests(unittest.TestCase):
         sections = {collection_section(row) for row in RECORDS}
         for language, html in self.pages.items():
             with self.subTest(language=language):
-                self.assertEqual(set(re.findall(r'<a href="#heading-([a-z-]+)" data-section-link data-section="\1">', html)), sections)
+                self.assertEqual(set(re.findall(r'<a href="#heading-([a-z-]+)" data-section-link data-section="\1"[^>]*>', html)), sections)
                 self.assertEqual(set(re.findall(r'<h2 id="heading-([a-z-]+)">', html)), sections)
                 self.assertLess(set(SECTIONS) & sections, set(SECTIONS))
 
@@ -60,8 +60,14 @@ class ResourceRowTests(unittest.TestCase):
         html = self.pages['en']
         self.assertEqual(set(re.findall(r'name="kind" value="([^"]+)"', html)), {row['kind'] for row in RECORDS})
         self.assertEqual(set(re.findall(r'name="category" value="([^"]+)"', html)), {row['category'] for row in RECORDS})
-        self.assertIn(f'<span class="opt-l">{CATEGORIES["native-analysis"][0]}</span><span class="opt-n">2</span>', html)
-        self.assertIn(f'<span class="opt-l">{KIND_LABELS["case-study"][0]}</span><span class="opt-n">1</span>', html)
+        # All opens on the data points, so the facets count those; a value no data point uses is hidden until a tab needs it.
+        data_points = [row for row in RECORDS if 'class' in row]
+        for field, labels in (('kind', KIND_LABELS), ('category', CATEGORIES)):
+            for value in {row[field] for row in RECORDS}:
+                number = sum(row[field] == value for row in data_points)
+                zero = '' if number else ' is-zero" hidden data-zero="'
+                self.assertIn(f'<label class="opt{zero}"><input type="checkbox" name="{field}" value="{value}">', html)
+                self.assertIn(f'<span class="opt-l">{labels[value][0]}</span><span class="opt-n">{number}</span>', html)
         self.assertIn(f'<span class="opt-l">{KIND_LABELS["case-study"][1]}</span>', self.pages['zh'])
 
     def test_rows_put_pinned_and_featured_records_and_tools_before_case_studies(self):
@@ -72,14 +78,15 @@ class ResourceRowTests(unittest.TestCase):
     def test_a_pinned_record_opens_its_section_marked_featured(self):
         for language, label in (('en', 'Featured'), ('zh', '精选')):
             html = self.pages[language]
-            self.assertEqual(re.findall(r'data-record-id="([^"]+)"', html)[0], 'websitebench')
+            # Class order puts Game before Website; the pinned benchmark still leads Website.
+            self.assertEqual(re.findall(r'data-record-id="([^"]+)"', html)[:2], ['case-a', 'websitebench'])
             self.assertEqual(re.findall(r'class="row-mark">([^<]+)<', html), [label])
 
     def test_every_section_is_a_link_with_its_count_and_key(self):
         html = self.pages['en']
         groups = Counter(collection_section(row) for row in RECORDS)
         for key, number in groups.items():
-            self.assertRegex(html, rf'<a href="#heading-{key}" data-section-link data-section="{key}">[^<]+<span class="count">{number}</span>')
+            self.assertRegex(html, rf'<a href="#heading-{key}" data-section-link data-section="{key}"[^>]*>[^<]+<span class="count">{number}</span>')
 
     def test_search_index_carries_each_records_section_and_the_pinned_ids(self):
         catalogued = [dict(row, name_zh=row['name_zh']) for row in RECORDS]

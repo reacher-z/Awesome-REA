@@ -280,11 +280,11 @@ def validate_resources(records, errors, *, now=None):
             errors.append(f"{where}: relationship 'independent-reconstruction' requires category 'reconstruction-cases'")
         elif record['category'] == 'reconstruction-cases' and record['relationship'] != 'independent-reconstruction':
             errors.append(f"{where}: category 'reconstruction-cases' requires relationship 'independent-reconstruction'")
-        # The README and /cases/ group Game case studies by method; other records do not render the field. It is
+        # The README and /cases/ group Game case studies by method; other sections do not render the field. It is
         # optional (missing_method_warnings reports Game cases without it), but a value must be in the vocabulary.
         if 'reconstruction_method' in record:
-            if record['kind'] != 'case-study' or collection_section(record) not in METHOD_SECTIONS:
-                errors.append(f'{where}.reconstruction_method: only case studies listed under Game take this field')
+            if record['kind'] != 'case-study':
+                errors.append(f'{where}.reconstruction_method: only case studies take this field')
             elif record['reconstruction_method'] not in RECONSTRUCTION_METHODS:
                 errors.append(f'{where}.reconstruction_method: use one of ' + ', '.join(RECONSTRUCTION_METHODS)
                               + "; use 'other' when the evidence does not establish one, or leave the field out")

@@ -47,12 +47,12 @@ class LinkFragmentTest(unittest.TestCase):
                 validate_site.main()
                 page = output / 'resources/index.html'
                 html = page.read_text(encoding='utf-8')
-                # Games start on a later static page; page 1 keeps the old #game fragment on the section's sidebar link.
-                self.assertIn(' id="game"', html)
-                page.write_text(html.replace(' id="game"', ' id="games"'), encoding='utf-8')
-                with self.assertRaisesRegex(AssertionError, r'/resources/: /resources/#game(;|$)') as caught:
+                # The Software section starts on page 1, and entries link its heading anchor from their own pages.
+                self.assertIn('id="heading-software"', html)
+                page.write_text(html.replace('id="heading-software"', 'id="heading-software-renamed"'), encoding='utf-8')
+                with self.assertRaisesRegex(AssertionError, r'/resources/#heading-software') as caught:
                     validate_site.main()
-            self.assertIn('/: /resources/#game', str(caught.exception))
+            self.assertIn('#heading-software', str(caught.exception))
 
 
 if __name__ == '__main__':

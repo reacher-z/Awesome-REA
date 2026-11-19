@@ -18,6 +18,7 @@ import re
 
 from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, bibtex_text, formatted_date
 from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS
+from data_classes import placement_facts
 from requirement_facets import FACETS, ordered_items
 
 MARKDOWN = 'index.md'
@@ -157,7 +158,7 @@ def resource_markdown(record: dict, language: str, *, site_url: str, siblings: d
     other = 'en' if zh else 'zh'
     facts = [
         (choose('Type', '类型'), KIND_LABELS[record['kind']][zh]),
-        (choose('Targets', '目标'), ' · '.join(TARGETS[target][zh] for target in record['targets'])),
+        *placement_facts(record, zh, TARGETS),
         (choose('Category', '类别'), CATEGORIES[record['category']][zh]),
         (choose('Relationship', '关联'), RELATIONSHIPS[record['relationship']][zh]),
         (choose('Sources reviewed', '来源复核于'), record['verified_at'][:10]),

@@ -25,7 +25,7 @@ def errors_for(record):
 
 class DataClassVocabularyTests(unittest.TestCase):
     def test_classes_keep_the_owner_order(self):
-        self.assertEqual(list(DATA_CLASSES), ['software', 'game', 'apps', 'website', 'science', 'hardware'])
+        self.assertEqual(list(DATA_CLASSES), ['software', 'game', 'apps', 'website', 'hardware', 'science'])
 
     def test_every_class_has_english_and_chinese_labels(self):
         for labels in DATA_CLASSES.values():
@@ -63,7 +63,7 @@ class DataClassValidationTests(unittest.TestCase):
             with self.subTest(value):
                 record = deepcopy(CASE) | {'class': value}
                 self.assertEqual(errors_for(record), ["resource 'field-fixture'.class: use exactly one of "
-                                                      'software, game, apps, website, science, hardware'])
+                                                      'software, game, apps, website, hardware, science'])
 
     def test_papers_share_the_vocabulary(self):
         self.assertEqual(class_value_errors({'class': 'website'}), [])
