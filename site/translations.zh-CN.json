@@ -43811,5 +43811,429 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "awesome-fable-5-2": {
+    "name": "Awesome Fable 5.2",
+    "requirements": [
+      "收录 207 个在线网页作品与 145 个仅视频演示，README 提供 10 种语言版本，链接已于 2026-11-19 核查。",
+      "仓库仅保存低分辨率短 GIF 预览与外部链接，不托管完整作品或原视频；145 个仅视频演示无公开交互链接。",
+      "清单文本采用 CC0-1.0 协议发布；所有外链作品的权利仍归各自创作者所有。"
+    ]
+  },
+  "awesome-fable-5-2-games": {
+    "name": "Awesome Fable 5.2 与 GPT-6.2 Astra 游戏清单",
+    "requirements": [
+      "配套提供 TECH_STACK.md、PROMPTS.md、GAME_DEV_SKILLS.md 与 data/games.csv；主清单条目需提供源码仓库及作者披露的模型归属。",
+      "主清单中有 30 款作品无浏览器试玩链接，需本地启服、自行构建或下载桌面版；托管试玩页核验仅检查 HTTP 200 可达性而非完整通关流程。",
+      "MIT 协议仅覆盖本仓库的索引与原创文本；清单中各款游戏均受其原仓库版权与许可证约束。"
+    ]
+  },
+  "ai-arcade-fable-5-2-games": {
+    "name": "AI Arcade：Fable 5.2 游戏街机",
+    "requirements": [
+      "需使用支持 WebGL 的现代浏览器；站点托管游戏运行于 CSP 与 iframe 沙箱端点，作者自托管作品则通过嵌入式沙箱或外链访问原站点。",
+      "收录 91 款浏览器游戏，提供单文件 .html 下载、源码查看以及支持最高 10 MB 上传的社区投稿通道。",
+      "各游戏的桌面与移动端兼容性不尽相同，提示词是否公开取决于原作者披露情况。",
+      "每款游戏均归其创作者所有，并沿用原作者指定的许可条款。"
+    ]
+  },
+  "awesome-code-native-3d": {
+    "name": "Awesome Code-Native 3D 世界与资产清单",
+    "requirements": [
+      "包含 CODE-AUDIT.md、CODE-NATIVE-3D.md、CODE-ASSETS.md、LIFECYCLE.md、RESOURCES.md、SEARCH-LOG.md 以及通过 python3 scripts/local_app.py 启动的本地榜单预览。",
+      "热度数据为带 UTC 时间戳的缓存快照而非实时统计；部分作品混合使用其他模型或外部素材，且不少外链浏览器构建的复用许可尚未明确。",
+      "所审阅提交未发布仓库级 LICENSE 文件；外链仓库与构建产物分别遵循各自作者的条款。"
+    ]
+  },
+  "sandbase-awesome-fable-5-2": {
+    "name": "Awesome Claude Fable 5.2（SandBase Lab）",
+    "requirements": [
+      "运行文档中的 API 复现流程需要 SandBase API 密钥、curl 与 jq，以调用其 OpenAI 兼容对话补全接口。",
+      "收录 400 条署名 X 视频、65 份提示词及 docs/prompt-guide.md、docs/tutorial.md、docs/model-comparison.md，每日与 SandBase Lab 同步。",
+      "400 条视频中仅 65 条附有作者提示词；推理 token 计入 max_tokens 预算，且第三方视频复用需获得创作者许可。",
+      "MIT 协议仅适用于仓库脚本与整理结构；第三方视频、提示词与原帖权利归创作者所有（详见 MEDIA-RIGHTS.md）。"
+    ]
+  },
+  "claude-fable-5-2-prompts": {
+    "name": "Claude Fable 5.2 提示词：145 个创意编程案例",
+    "requirements": [
+      "运行附带起步模板需要 Node.js、Playwright 与 FFmpeg（starter/threejs）或 Blender 5.x（starter/blender），新生成任务还需配置智能体或模型 API。",
+      "提示词状态逐条标注：38 条含已公开完整提示词（其中 9 份长简报附节选与大纲），20 条仅有单行需求，87 条未公开；浏览与点赞数为 2026-11-11 快照。",
+      "由商业 API 网关 apimodels.app 整理；原创案例说明、大纲、起步模板与 data/cases.json 采用 CC-BY-4.0，外链创作者作品归原作者所有。"
+    ]
+  },
+  "awesome-fable-5-2-video-prompts": {
+    "name": "Awesome Fable 5.2 视频与提示词库",
+    "requirements": [
+      "克隆归档的案例视频需安装并拉取 Git LFS（git lfs install 与 git lfs pull）；运行媒体下载、目录构建和链接检查脚本需要 Python 3。",
+      "按动态图形与排版、科普教育、3D 世界与仿真、游戏与交互体验、产品与品牌视频 5 类收录 223 个示例，并附 data/videos.json 与 data/local-media.json。",
+      "未公开提示词的条目标注为 Prompt not published；仓库文件沿用上游 MIT 协议，归档视频与图片仍归原作者所有。"
+    ]
+  },
+  "awesome-fable-5-2-videos": {
+    "name": "Awesome Fable 5.2 视频索引",
+    "requirements": [
+      "为 173 条署名 X 视频提供 data/videos.json 与 prompts/ 独立页面，并关联至 fable5.app 配套画廊（该站亦整理作者自报的成本与耗时表）。",
+      "173 条视频中仅 17 条含创作者公开的提示词，模型标注以作者在 X 原帖中的自述为准。",
+      "MIT 协议仅适用于仓库代码与目录文本；视频及引用原帖的权利仍归原作者所有。"
+    ]
+  },
+  "awesome-claude-fable-games": {
+    "name": "Awesome Claude Fable 游戏清单",
+    "requirements": [
+      "收录 56 款游戏，提供 data/games.json、创作者署名、标注核查日期的互动数据以及 vibegamer.io 配套页面。",
+      "其中 11 款仅有视频演示而无公开可玩版本；评分为编辑针对视觉、打磨度与完成度的主观打分，且少量条目使用 Fable 5.2 以外的模型。",
+      "MIT 协议仅覆盖仓库中的目录文本与数据；所列游戏、视频、截图与提示词均归各自创作者所有。"
+    ]
+  },
+  "ai8games": {
+    "name": "AI8Games",
+    "requirements": [
+      "可玩游戏可直接在桌面或移动端浏览器中运行，不同作品的界面语言以及键鼠或触控支持有所差异。",
+      "收录 62 款可在线游玩的浏览器游戏与 27 个仅视频展示的 X 条目（站点标注更新于 2026-11-12），均署名作者并附 X 原帖链接。",
+      "27 个视频展示卡片会跳转至外部 X 帖子而非站内试玩；创作者修改或下架需通过 X 发布验证码核验，站点未公布整站源码许可证。"
+    ]
+  },
+  "fable-five-browser-projects": {
+    "name": "fable-five：五个零依赖浏览器项目",
+    "requirements": [
+      "零依赖免构建，可直接通过 GitHub Pages 或运行 python3 -m http.server 8000 在现代浏览器中打开；运行五套测试脚本需要 Node.js。",
+      "作者提供的 Node 测试脚本分别检验克尔黑洞阴影解析值、48 项 C 到 Wasm 用例、93 项 GPT 有限差分梯度、4,000 次矩阵分解与 3,000 步 MPM 以及 84 条 SQL 查询。",
+      "文档写明的局限包括：平直空间相机近似（blackhole）、省略部分 C 语法且 1 MiB 内存不回收（cc）、小型字符级训练（gpt）、单线程 32³ 网格上限 24,000 粒子（mpm），以及不支持事务和 RIGHT/FULL 连接的内存 SQL。",
+      "所审阅提交未发布仓库级 LICENSE 文件。"
+    ]
+  },
+  "bubblebrainbb-awesome-fable-5-2": {
+    "name": "Awesome Fable 5.2 纯代码渲染作品集（BubbleBrainBB）",
+    "requirements": [
+      "渲染四部 Metal 短片需 Apple 芯片 macOS、clang++、Python 3（numpy、scipy、Pillow）与 ffmpeg，Mountain Hike 与 Bee Documentary 的 edge-tts 旁白还需联网；Afternoon Light 需 C++17 编译器与 Python 3。",
+      "每个作品目录均含独立源码、渲染脚本与记录质检结果和已知不足的 README；中间产物 work/ 未入库，由渲染脚本本地重新生成。",
+      "成品 MP4 短片（129–384 MB）托管在 GitHub Releases 而非 git 仓库中；所审阅提交未发布仓库级 LICENSE 文件。"
+    ]
+  },
+  "ai-terrarium-catalog": {
+    "name": "Terrarium AI 3D 作品目录",
+    "requirements": [
+      "浏览 README 与配套网页索引只需网页浏览器；克隆配套 Hugging Face 源码归档时，大文件需要 Git LFS。",
+      "2026-11-19 目录快照共收录 6 个类别 1,034 条作品（574 个游戏、211 个世界与场景、115 个工具、99 个可视化、32 个视频、3 个壁纸），其中 227 个可在浏览器运行、346 个使用 Three.js。",
+      "热门排序汇总 4 个平台 815 个来源的公开点赞、星标和评论数据（9 项未计量），目录与热度时间戳分开更新；许多未归档条目标注许可证未知。",
+      "目录页面文本采用 CC0-1.0 许可；所列作品各自保留原作者许可证。"
+    ]
+  },
+  "terrarium-open-works-dataset": {
+    "name": "Terrarium Open Works 开源 3D 作品数据集",
+    "requirements": [
+      "按需下载单个作品文件夹需使用 Python 的 huggingface_hub（snapshot_download 配合 allow_patterns）；完整克隆仓库的大文件需要 Git LFS，维护者建议运行归档代码前先阅读源码。",
+      "2026-11-19 快照中的 metadata.jsonl 索引了 428 个作品文件夹（191 个游戏、95 个场景、75 个工具、49 个可视化、15 个视频、3 个壁纸），记录作者、来源链接、提交哈希、许可证、文件数、字节大小与路径。",
+      "各文件夹保存原作者最新文件但不含 Git 提交历史；DATASET_DETAILS.md 保留 2026-11-14 的 321 条历史快照，当前目录以 metadata.jsonl 为准，有害文件检查未通过的作品已剔除。",
+      "数据集标为 per-work-licenses，无全库统一许可：metadata.jsonl 中以 MIT（381）、Apache-2.0（19）、CC0-1.0（7）、GPL-3.0（7）和 AGPL-3.0（7）为主，另含 Creative Commons 与 Unlicense 条款；复用前须核对对应作品许可文件并署名原作者。"
+    ]
+  },
+  "mia-ai-lab-100-html-files": {
+    "name": "Mia's AI Lab 实验与 100 HTML Files 合集",
+    "requirements": [
+      "每项实验均为内联 CSS 与 JavaScript 的独立单文件 HTML，可直接在网页浏览器运行，无需安装、后端、外部库或外部资源。",
+      "包含 100 HTML Files 系列（自 2026 年 7 月起覆盖 27 个前沿与开源权重模型、共 2,676 个页面），以及 Gummy Bears（12 模型）、Jumpgate（3 模型）、Halden Meridian 38（5 模型）、Retro Tetris（4 模型）和 Let There Be 等同题对照。",
+      "实验页公开在线画廊与完整提示词，未提供批量下载归档或全站统一的复用许可证。"
+    ]
+  },
+  "claude-fable-5-2-html-files": {
+    "name": "Claude Fable 5.2 HTML Files 视觉研究画廊",
+    "requirements": [
+      "直接打开 index.html 或使用静态网页服务器即可本地浏览；重建画廊与抓取截图需要 Python 3、scripts/requirements.txt 以及 Playwright Chromium。",
+      "收录 76 个 HTML 视觉研究，附可展开的完整原始提示词、大图截图预览以及 thumbs/manifest.json 的 SHA-256 校验清单；原始编号保留并略去来源中缺失的 076–078 号文件。",
+      "scripts/capture_screenshots.py 在截图过程中校验搜索、提示词展开和移动端溢出情况，检查失败时会阻止 GitHub Pages 部署。",
+      "所审阅提交中不含 LICENSE 文件，仓库复用条款未作说明。"
+    ]
+  },
+  "awesome-astra-3d": {
+    "name": "Awesome GPT-6 / 6.2 Astra & Claude Fable 5.2 3D 三维案例库",
+    "requirements": [
+      "可通过 GitHub Pages 或公开 cases.json 在线浏览；本地运行静态站点需要 Node.js 22.22.0+ 且无需 API Key，作者托管的三维演示可能依赖桌面浏览器、WebGL 或 WebGPU。",
+      "2026-11-19 更新至 502 条 Astra 案例（124 条源码/工程、139 个演示、285 个完整视频）、14 条 Fable 5.2 案例、18 件原生 GIF 与 12 条方法参考，并逐条标注来源依据。",
+      "在 data/demo-audit.json 和 data/link-audit.json 记录演示与链接核查日志，并在 data/videos.json 为 GitHub Releases 中归档的完整原帖视频记录 SHA-256 清单。",
+      "仓库代码与文档采用 MIT 许可；LICENSE 明确将第三方图片、视频、提示词、模型、商标及外链作品排除在外，其权利归原所有者保留。"
+    ]
+  },
+  "awesome-gpt-6-astra-casebook": {
+    "name": "Awesome GPT-6 Astra 实战案例与提示词合集",
+    "requirements": [
+      "收录 7 个分类共 61 条案例：20 个游戏与仿真、13 个三维与空间创作、7 个视频项目、6 个应用与网站、6 个计算机操作工作流、5 个工程原型和 4 个设计案例，并附上手指南与案例拆解。",
+      "部分条目仅收录提示词摘录，完整提示词需查看原作者原帖；模型归属依据作者声明或可见标签记录。",
+      "仓库原创代码与文案采用 MIT 许可；所引用的提示词、作品与预览图权利归各自创作者所有。"
+    ]
+  },
+  "awesome-gpt-6-2-astra-guide": {
+    "name": "GPT-6.2 Astra 社区演示与用例指南",
+    "requirements": [
+      "索引 4 个任务类别共 74 条案例（三维与动画、前端与动效、游戏与场景、插画），按演示、评测、教程或局限标注，并提供 11 种语言的 README 翻译。",
+      "完整提示词为可选项，模型标签、耗时与费用数据均沿用原作者披露；README 同时包含指向 EvoLink 的推广链接。",
+      "仓库原创编辑内容采用 CC BY 4.0 许可；第三方演示作品与镜像媒体保留原作者权利。"
+    ]
+  },
+  "awesome-gpt-6-2-videos": {
+    "name": "Awesome GPT-6.2 Astra & Sol 代码渲染视频清单",
+    "requirements": [
+      "按 5 个栏目收录 78 个条目：34 个模型对比、31 个 3D 场景与游戏、8 个动态图形、4 个音乐作品与 1 个解说视频，并配套 claude-motion.com/gpt-6-2-videos 网页筛选站。",
+      "条目记录简短标题、视频时长、作者自报耗时或费用说明及 X 原帖链接，不托管源码仓库或可复现构建文件。",
+      "清单文本、分类与 videos.json 采用 CC BY 4.0 许可；所链接的视频、X 原帖和提示词保留创作者权利。"
+    ]
+  },
+  "awesome-claude-opus-5-5-demos": {
+    "name": "Awesome Claude Opus 5.5 演示目录",
+    "requirements": [
+      "截至 2026-09-25 审核记录共收录 6 个栏目 24 个案例：8 个代码视频与动画、5 个游戏、5 个网页应用、4 个 Blender 与 3D 作品、1 个音乐演示与 1 个跨模型重制，其中 7 个附作者提供的在线体验链接。",
+      "仅外链创作者原帖而不托管媒体或交互构建；许多条目仅提供录屏视频，并标注了厂商展示、多模型协作或外部素材来源。",
+      "所审阅提交中不含 LICENSE 文件；所有收录项目与预览媒体均归各自创作者所有。"
+    ]
+  },
+  "sandbase-awesome-gemini4-argon": {
+    "name": "Awesome Gemini 4 Argon 视频与提示词清单",
+    "requirements": [
+      "公开浏览清单无需账号；按文档通过兼容 OpenAI 的 SandBase API（google/gemini-4-argon）复现示例需要 SandBase API Key、curl、jq、30K+ 输出 token 空间以及浏览器或沙箱运行生成的 HTML。",
+      "收录 10 个类别共 400 个视频（182 个测试与对比、83 个 3D 场景、55 个动态图形、31 个游戏、24 个产品界面、14 个解说及 11 个其他演示），并附提示词索引、7 种提示词模式指南与 HTML 转 MP4 录制教程。",
+      "所列视频是创作者对模型生成的 HTML、Three.js、WebGL、Canvas 或 SVG 页面进行的录屏，其中 81 条附创作者提示词原文。",
+      "MIT 仅覆盖仓库原创脚本与整理结构；第三方视频、提示词与原帖文本的权利归原作者所有，详见 MEDIA-RIGHTS.md。"
+    ]
+  },
+  "sandbase-awesome-deepseek-v4-1-flash": {
+    "name": "Awesome DeepSeek V4.1 Flash 1017 视频与提示词清单",
+    "requirements": [
+      "公开浏览清单无需账号；按文档通过兼容 OpenAI 的 SandBase API（deepseek/deepseek-v4.1-flash）复现示例需要 SandBase API Key、curl、jq 以及较大的 max_tokens 预算（隐藏推理 token 计入输出配额）。",
+      "收录 9 个类别共 324 个视频（146 个测试与对比、86 个 3D 场景、29 个动态图形、28 个游戏、21 个产品界面及 14 个其他演示），并附提示词索引、提示词指南、API/CLI 教程与模型对比。",
+      "条目展示创作者对模型编写的 HTML、Three.js、WebGL、Canvas、SVG 页面或 DeepSeek Harness 驱动 Blender 场景的录屏，其中 46 条附原始提示词。",
+      "MIT 仅覆盖仓库原创脚本与整理结构；第三方视频、提示词与原帖文本的权利归原作者所有，详见 MEDIA-RIGHTS.md。"
+    ]
+  },
+  "openai-developers-showcase-games": {
+    "name": "OpenAI Developers 展示：游戏（Games）",
+    "requirements": [
+      "收录 29 个浏览器项目，涵盖 3D 世界与场景重建（Escapement、Notre Damn、Paris Atlas、Clockwork Observatory、Living Cell）以及动作、RPG、解谜与模拟游戏（Void Explorer、Sunwake、Hollowflux、Codex Pet Arena、Phantasy Codex Adventure、基于 GPT-5.4 的 Turn-based RPG、Neon FPS），隶属于更广泛的 OpenAI Developers Showcase。",
+      "需使用支持 3D/WebGL 的现代网页浏览器打开并试玩托管的在线演示。",
+      "属于 developers.openai.com 官方精选展厅，聚焦 OpenAI 模型与 Codex 作品；每张项目卡片均链接至各自的展示详情页。"
+    ]
+  },
+  "awesome-games-made-with-ai": {
+    "name": "Awesome Games Made with AI",
+    "requirements": [
+      "按厂商分组收录 209 款浏览器游戏——Claude（162）、GPT 与 Codex（33）、Gemini（5）及其他 AI（9）——按周发布期号更新，并配套 Amusehall 网页端，支持按 AI 模型、类型、定价与移动端适配筛选。",
+      "可在桌面端 Chrome 或手机浏览器游玩；每条记录均标注免费、免费试玩版、付费或含内购。",
+      "通过 GitHub Issue 表单提交，要求创作者明确署名 AI 编写主要代码、提供可在桌面 Chrome 独立运行的浏览器版本并附原帖链接；仅限下载、仅视频演示或依赖第三方游戏文件的 Mod 均予排除。",
+      "仓库自身的清单文本、数据与脚本采用 MIT 许可；收录的游戏本体、提示词与配图版权仍归各自创作者所有。"
+    ]
+  },
+  "awesome-ai-built-games": {
+    "name": "Awesome AI-Built Games",
+    "requirements": [
+      "按六大类型整理 105 款游戏（动作射击 18、竞速载具 15、冒险开放世界 14、模拟策略 27、解谜文字百科 18、街机复古 13），标注 AI 工具与引擎（Three.js、HTML5 Canvas、Godot、Phaser、Unity、PixiJS），并附 12 个工具／框架、14 个目录站与 5 个相关清单。",
+      "绝大多数作品可在浏览器直接试玩，少量条目提供桌面或移动端下载包（如 Windows、Android 或 Godot 发布版本）。",
+      "通过 GitHub Issue 表单或 Pull Request 提交，经人工审核，要求提供 AI 编写代码的公开依据及当前可玩的版本链接。",
+      "清单仓库采用 CC0-1.0 协议；所链接的游戏、框架及外部目录各自适用其原有许可。"
+    ]
+  },
+  "awesome-vibe-games": {
+    "name": "Vibe Arcade（awesome-vibe-games）",
+    "requirements": [
+      "覆盖 7 个游戏类型共 39 条记录（动作、探索、剧情与模拟、射击、竞速、沙盒、解谜与玩具），当前包含 Claude Fable 5.2（37）、GPT-6.2 Sol vs Fable（1）与 Gemini + ChatGPT（1），以经 Schema 校验的 JSON 存储 X 原帖、点赞快照以及可选耗时、API 成本、Token 与提示词记录。",
+      "在 vibe.wiz.games 浏览和游玩仅需网页浏览器；本地开发或构建仓库需 Node.js 24+ 与 pnpm（生成预览片段还需 ffmpeg）。",
+      "支持通过自动化的 GitHub Issue、X 提及或 PR 提交，接受任何分享于 X 且附创作者托管链接的模型作品；纯视频（watch）与纯源码仓库（source）条目会单独标注，点赞数为更新时的历史快照。",
+      "仓库代码采用 MIT 许可；收录的游戏、封面图、视频片段及创作者头像版权归原创作者所有。"
+    ]
+  },
+  "awesome-claude-games": {
+    "name": "Awesome Claude Games",
+    "requirements": [
+      "分设编辑精选、动作冒险、街机竞速体育、解谜叙事、RPG 策略、模拟沙盒、本地构建与交互演示等板块共 122 件作品，配套 CATALOG.md、catalog.json 导出工具及 PlayForge 站点入口。",
+      "浏览器游戏可直接在网页中启动（部分 3D 作品标注需支持 WebGPU 的桌面环境），2 个本地构建项目则需本地下载或从源码编译（如 FableFlight 需本地 Rust 构建）。",
+      "通过 GitHub Issue 模板或 PR 提交，需附可玩版本或本地构建说明及记录 Claude 参与方式的一手来源；X 浏览量为带日期的热度快照，与实际游玩次数区分标注。",
+      "已核查的提交中未发布仓库级许可证文件；所链接的游戏与代码仓库保留各自创作者的许可条款。"
+    ]
+  },
+  "vibegamedb": {
+    "name": "VibeGameDB",
+    "requirements": [
+      "以九种语言收录 1,125 款游戏（其中 756 款免费浏览器可玩），涵盖 Claude Code（489 款，含 /en/tools/claude-code/web 上的 272 款网页游戏）、Claude（273）、Codex（185）、ChatGPT（63）、Cursor（61）、TapTap Maker（43）、Gemini（29）、GitHub Copilot（8）、Gemini CLI（5）与 Windsurf（1），提供引擎分布及互不混排的 Steam 与 itch.io 评分榜。",
+      "浏览数据库与运行网页游戏仅需浏览器；外链至 Steam、itch.io、App Store 或 GitHub 的作品遵循各平台自身的客户端与定价要求。",
+      "仅收录有一手来源确认 AI 编写全部或主要代码的作品（排除仅用 AI 生成美术或运行时生成式 AI 游戏），并为每项数据标注 official、developer reported、third-party estimate、observed 或 unverified 来源标签。"
+    ]
+  },
+  "player1ai-directory": {
+    "name": "Player1AI",
+    "requirements": [
+      "收录 612 款免费 AI 浏览器游戏，支持按类型、手机触控、键盘、手柄、多人联机、Vibe Jam 2025/2026 参赛标记，以及 Claude、Claude Opus 5.5、Claude Fable 5.2、GPT、Codex、Grok 等 AI 工具筛选。",
+      "可在桌面端或手机网页浏览器直接游玩，无需下载或注册；所有 Play 按钮均直链至创作者原站。",
+      "收录标准要求具备浏览器可玩性、真实游戏截图及 AI 编写代码的公开依据（如创作者声明或 Vibe Jam 2026 要求 90% 以上 AI 代码的赛事规则）；定期巡检会将失效链接暂时隐藏直至恢复。"
+    ]
+  },
+  "aigameshare-vibe-coded-games": {
+    "name": "AIGameShare：Vibe Coded Games",
+    "requirements": [
+      "收录 580+ 款 vibe-coded HTML5 游戏（全站在线 589 款，其中 562 款适配移动端），按具体模型分组展示——Claude Fable（150）、Claude Opus（76）、GPT-6 Astra（76）、其他 GPT 模型（197）及 88 款其他或未标模型作品——并统计构建说明中提及的智能体数量：Claude Code（220）、Codex（185）、ChatGPT（40）与 GitHub Copilot（1）。",
+      "可在桌面与手机浏览器免费即点即玩，无需下载；创作者与智能体可通过引导表单、REST API 或带令牌的托管 MCP 服务（publish_game、update_game、list_my_games）发布与更新作品。",
+      "模型与编程智能体标签依据创作者发布时的自行申报，专题页按最具体的模型标签归类展示每款游戏。"
+    ]
+  },
+  "vibecruiser-claude-games": {
+    "name": "VibeCruiser",
+    "requirements": [
+      "收录 8,987 个在线浏览器项目，涵盖使用 Claude、Cursor、Lovable、Bolt、v0 等工具构建的游戏、物理玩具、生成艺术与交互网页，其中 /t/claude-code 专题页汇总 310 个 Claude 构建项目，支持社区投票并关联 GitHub 仓库。",
+      "在现代浏览器中即可免费匿名随机漫游体验；可选注册账号以将收藏项目保存至个人车库。",
+      "由持续运行的 GitHub 爬虫与用户提交的 URL／仓库共同填充，要求目标站点通过 HTTPS 在线运行且允许 iframe 嵌入；AI 构建标签基于创作者自标，下线的外部演示会自动移出轮播。"
+    ]
+  },
+  "vibecode-game-directory": {
+    "name": "Vibecode.game",
+    "requirements": [
+      "整合 100 款游戏目录（/vibe-coded-games）、263 个开发者主页、1 场由 Minds by Animoca Brands 支持的全球 Game Jam，以及涵盖 Minds、Verse8、Bolt、Claude、Cursor、Lovable、OpenAI、Replit 与 Rosebud AI 的 AI Tools Hub（/ai-tools），游戏卡片同时标注引擎（PixiJS、HTML5 Canvas、Godot、Phaser、React）及 Gemini、ChatGPT 等模型。",
+      "浏览目录与游玩免费网页游戏仅需浏览器；创建开发者简介或参与社区 Game Jam 需使用平台账号。",
+      "游戏卡片上的平台、引擎与“Built with”工具标签由创作者自行填写，特色 Game Jam 板块重点展示 Minds 等合作生态。"
+    ]
+  },
+  "jungleyard-vibe-coded-games": {
+    "name": "jungleyard",
+    "requirements": [
+      "收录 273 款 AI 制作浏览器游戏（/ai-games），提供每日轮换首页推荐、总榜 Top 10、多类型分区，以及按 Claude Code、Cursor、Lovable、v0、Bolt、Replit、Windsurf 与 ChatGPT 分类浏览的入口。",
+      "所有游戏均可在浏览器免费游玩，无需下载或注册；登录账号后可提交外链网页游戏、点赞与评论。",
+      "条目依赖创作者提交的外部游玩链接与自报 AI 工具／模型署名，目录由独立创作者投稿与 jungleyard 官方账号整理的大量作品共同组成。"
+    ]
+  },
+  "zadely-vibe-jam-winners": {
+    "name": "Zadely Vibe Jam 获奖作品档案",
+    "requirements": [
+      "截至 2026-11-18 收录 23 款获奖作品：Cursor Vibe Jam 2026 的 16 款（945 件参赛，奖金超 4 万美元）、Vibe Jam 2025 的 2 款（超 1,000 件参赛）、Focaccai 第 3 至 5 届 AI Browser Game Jam 的 4 款，以及 Vibe Summer Game Jam '26 的 1 款；其中 13 款基于 Three.js。",
+      "需使用现代网页浏览器；Vibe Jam 规则要求至少 90% 代码由 AI 编写，且无需下载或注册即可在浏览器中即开即玩。多款获奖作品依赖 WebGL/Three.js 或实时多人联机服务器。",
+      "工具署名来自作者披露、游戏内致谢、赛事页面或社区列表；部分 Vibe Jam 作品仅注明符合 90%+ AI 编程赛规，未附详细开发复盘。各游戏仍由作者自行托管并适用各自条款。"
+    ]
+  },
+  "itch-ai-browser-game-jam": {
+    "name": "AI Browser Game Jam 5（itch.io）",
+    "requirements": [
+      "举办时间为 2026-10-17 至 2026-10-31，可选主题为 TORCH，投票持续至 2026-11-16。结果页记录 312 件参赛作品与 1,929 次评分（覆盖 267 款游戏，评分中位数 6 次），Coalheart 与 Lightkeeper 并列综合第一（4.143 分）；页面同时链接前四届结果（分别为 29、47、82 和 126 件作品）。",
+      "参赛作品均免费且免下载在浏览器中运行。规则允许在代码、美术、音频或设计环节使用任意 AI 工具流，并允许人工修改及在投票期间继续更新作品。",
+      "赛事鼓励但不强制分享提示词、工具或制作管线；因锁定表单笔误，结果页中的音频（Audio）评分栏显示为第二个 Overall 列。每款参赛游戏保留在作者各自的 itch.io 页面下并遵循各自许可。"
+    ]
+  },
+  "vibepins-claude-artifacts": {
+    "name": "Vibepins（Claude Artifacts 目录）",
+    "requirements": [
+      "按 Tools、Games、Dashboards、Visuals、Templates 和 Learning 分类整理 Claude Artifacts，支持按作品、作者与合集检索，以及按 Trending、Most viewed 和 New 排序。收录类型覆盖 WebGPU/WebGL 微缩场景、数据图表、React 仪表板、模拟测验与浏览器游戏。",
+      "可在桌面或移动浏览器中直接浏览作品、查看提示词并打开在线构建；WebGPU/WebGL 作品需浏览器具备相应图形能力。收藏作品或提交新作品需要登录账号。",
+      "各条目的提示词完整度不一，部分作品仅展示在线链接与浏览量。聚合的制品与提示词均属外部托管的第三方作品；站点提供移除申请表单，并声明无广告且不出售用户数据。"
+    ]
+  },
+  "artifact-hall-of-fame": {
+    "name": "Artifact Hall of Fame（Claude 作品名人堂）",
+    "requirements": [
+      "收录 65 位署名作者的 108 件作品，涵盖 Fun、Learning、Tools 和 Design 分类，并附每日刷新的 X 浏览量榜单（当前快照为 2026-11-10）。自 2026 年 10 月起每周入选一名人堂作品，已收录 7 件并附作者自述制作过程。",
+      "可免费浏览并通过提交 X 帖子链接与公开作品链接参与收录；每条提交均经人工核查链接可打开且与帖子内容一致。名人堂入选需由原作者在近四周内公开发布可访问链接。",
+      "榜单排序基于公开 X 浏览量快照与站内投票，而名人堂入选由编辑围绕完成度、原创性与实用性人工评定。作者保有外部作品链接的控制权，并可随时申请下架。"
+    ]
+  },
+  "vibe-coding-showcase": {
+    "name": "Vibe Coding Showcase",
+    "requirements": [
+      "展示 90 个社区项目（含 7 个精选项目），支持按主流 AI 编程工具（Bolt、Cursor、Lovable、v0、Replit）筛选，以及按项目名、作者与技术栈关键词搜索，提供画廊与列表两种视图。该展示站本身使用 Bolt、Supabase 与 Netlify 构建。",
+      "需要启用 JavaScript 的浏览器，项目卡片在首屏渲染后于客户端动态加载；所链接的站点与演示帖子托管在第三方平台。",
+      "工具栈与框架信息由提交者自报，各条目详略不一，部分项目未填写框架标签或演示链接。站点版权归属标注为 Build In Public LLC，所收录项目各自适用其自身条款。"
+    ]
+  },
+  "fable-5-2-bullet-water-balloon-demo": {
+    "name": "子弹击穿水气球单文件 WebGL2 演示（fable-5.2-demos）",
+    "requirements": [
+      "本地打开 index.html 即可运行，也可直接访问 GitHub Pages 在线演示，需配备 WebGL2 与真实 GPU 的桌面浏览器。单次完整模拟约执行 8,000 步 CPU SPH 求解（视 CPU 性能耗时 20–40 秒）；如帧率偏低，可下调 Live resolution 或切换至 2,400 粒子预设。",
+      "按 Matthew Berman 评测 Claude Fable 5.2 视频中的水气球提示词实现，采用约 4,500 个弱可压缩 SPH 粒子（可选 7,700 粒子）、三维密度纹理光线步进（含菲涅耳反射、斯涅尔折射与比尔-朗伯吸收）、冻结时 96 采样精炼、时间轴回放及 17 项以上物理与光照滑块。",
+      "README 明确记录六项物理近似：亚网格分辨率子弹按能量而非动量耦合、有效阻力偏低（约 0.16 对比真实约 0.3）、单粒子最小液滴呈弹珠状、以负压内聚替代真实表面张力、基于厚度的阴影焦散近似，以及解析运动学橡胶撕裂前沿。",
+      "固定快照仓库中不含 LICENSE 文件，GitHub 亦未检测到许可证，复用条款未予声明。"
+    ]
+  },
+  "everygamemade-ai-games": {
+    "name": "EveryGameMade AI 游戏专区",
+    "requirements": [
+      "展示 8 款 Claude 原创游戏（LEXEME、MOGUL、OVERRUN、CLASP、ANTE、HOLESHOT、QUINT、OUTPOST）与 40 余款 AI 编写的经典游戏，另附 47 款外链 AI 游戏在 2026-10-15 实测的加载耗时、传输体积与 GPU 中位帧耗时，以及社区上传专栏。",
+      "原创游戏公开了具体的引擎校验与局限：MOGUL 神经网络价值评估对比启发式规则的 800 局四人测试、OVERRUN 全部 7,776 种骰子结果表校验、CLASP 相对 Mzinga 深度 6 共 12,219,480 局面的 perft 核对、ANTE 4,000 手随机牌型的 Python 交叉验证，以及按 NIST FIPS 180-4 校验的 SHA-256 可验证公平骰子。",
+      "在浏览器中免费即玩，无账号、无广告、免安装，多人房间通过四字母代码加入。社区上传须为单个自包含 HTML 文件，禁止外部服务器通信或数据采集，经人工试玩审核后在沙箱 iframe 中运行。",
+      "社区投稿者保留作品全部权利，仅授予 EveryGameMade 托管展示许可并可随时申请下架；外链目录中的作品仍托管于原作者域名。"
+    ]
+  },
+  "gamedaily-ai": {
+    "name": "GameDaily.ai",
+    "requirements": [
+      "自 2026-02-12 起持续运营的每日档案库，截至 2026-11-20 已收录 1,124 款可玩的单文件 HTML 游戏（平均每日生成约 4 款，其中 1 款作为当日精选），覆盖益智、文字、街机、策略与节奏类。",
+      "游戏由组合式命题（核心机制、形态、输入约束、视觉风格）依托共享工具库（程序化音频、确定性配色、输入/场景/镜头模块）生成，再经桌面与移动视口确定性检查（启动、布局、输入响应、画面动态）及 AI 评审筛选发布。",
+      "桌面与移动浏览器均可免费游玩，无需注册、付费或下载，同时提供随机试玩与 RSS 订阅。",
+      "具体生成提示词、模型配置与命题权重未公开；运营方说明 AI 评审存在疏漏，个别有缺陷或未完善的游戏仍可能进入档案库。"
+    ]
+  },
+  "artificial-analysis-aa-3d": {
+    "name": "AA-3D：交互式 3D 体验基准",
+    "requirements": [
+      "覆盖 7 个领域的 55 份交互式 3D 任务简报；每个模型在 Artificial Analysis 的离线 Stirrup 沙箱（4 核 CPU、8 GB 内存、软件 WebGL、无网络）中各运行 1 次，上限 250 轮或 3 小时，提供 Three.js 0.186.0、可选 Rapier 0.20.0、Blender 4.5、Python 3、Node.js 22、无头 Chromium 与 CC0 素材库，输出不超过 200 MiB 的 index.html 产物。",
+      "场景须先通过 60 秒无头浏览器自动渲染校验与人工初筛方可进入投票；Elo 评分基于 2 万次以上招募评审团盲评投票（每个场景至少交互查看 30 秒，并穿插约 25% 共识质检题），采用 Bradley-Terry 极大似然估计及 95% 置信区间计算。",
+      "公众在 AA-3D Voting 中投出的票数与官方榜单 Elo 分开计算；无头软件渲染评测受 CPU WebGL 性能条件约束。",
+      "榜单、场景浏览器与运行回放按 Artificial Analysis 平台条款托管；Stirrup 智能体运行框架另以开源形式发布。"
+    ]
+  },
+  "startrise-playable-3d-game-benchmark": {
+    "name": "Startrise 可玩 3D 游戏基准",
+    "requirements": [
+      "评测 2026 年 7 月至 10 月批次的 30 个模型单轮构建产物，统一使用同一份可玩 3D 游戏简报与单文件 HTML 输出契约（支持 Three.js CDN 或原生 WebGL）；所有未修改的产物均可在沙箱网页框架中直接试玩。",
+      "综合得分由 25% 有界面 Chromium 门禁（1440×900 真实 GPU 下检验加载、报错、亮度、封装 rAF 帧率、脚本化输入响应与自包含性）、45% 三家实验室盲评模型评审团（Claude Opus 5、GPT-5.6 Terra、Grok 4.5）及 30% 盲评人工评分（30/30 产物均已评分，其中 2 个在评审团出现分歧）加权构成。",
+      "Startrise 说明 Claude Opus 5 担任 Craft 评委而 Opus 5 与 5.5 位居榜首，跨批次 3 分以内的差距属于人工评分场次噪声，且公开完整提示词可能使其进入后续模型训练数据。",
+      "作品展示页与分数托管于 startrise.io；基准框架在 GitHub 公开，复现模型生成与评审调用需要付费服务商 API 密钥。"
+    ]
+  },
+  "worldbuild-bench": {
+    "name": "WorldBuild Bench",
+    "requirements": [
+      "需要 Node.js >= 20、Playwright Chromium、通过 npm run fetch-three 拉取的本地 Three.js 及 .env 中的模型 API 密钥（Anthropic、OpenAI、Gemini、Moonshot、OpenRouter 或兼容接口）；models.json 收录 16 个模型配置，2026 年 7 月试跑覆盖 10 个模型、3 份简报与 29 款可玩游戏。",
+      "wb gate 在无头 Chromium 中依据必填的 window.__bench 遥测契约计算可玩性（0–100）与世界一致性（0–100）得分（缺少遥测时可玩性上限 60 分且一致性为 0）；基于 Bradley-Terry 模型的公开竞技场盲评投票（每款试玩至少 20 秒、50 票前为暂定分）运行于 sandscape.app/worldbuild。",
+      "工作区路径校验与环境变量净化仅作为防误越界护栏，运行不可信模型需使用容器隔离；完整多模型试跑合计消耗约 2,370 美元 API 费用。",
+      "采用 MIT 许可证（固定提交中包含 LICENSE 文件）。"
+    ]
+  },
+  "single-html-game-bench": {
+    "name": "Single HTML Game Bench",
+    "requirements": [
+      "使用统一提示词评测 21 个参与排名的客户端与模型组合（Claude Code、Codex、ChatGPT、Gemini Web、Antigravity、Grok Web）以及 7 份附录产物（Vowline、未排名 Codex 内部暴露样本与自定义系统提示词测试）的单 HTML 首轮生成能力，无人工后期调优。",
+      "仅需现代浏览器或本地静态服务器（如 python3 -m http.server 8080）即可直接查看并试玩全部归档 HTML 产物。",
+      "排名基于作者截至 2026-11-18 的个人实机试玩主观顺序，且同时包含客户端脚手架与模型差异；输出受测试日期、模型版本、系统提示词与运行环境影响。",
+      "采用 MIT 许可证（固定提交中包含 LICENSE 文件）；归档的 AI 生成产物按现状提供。"
+    ]
+  },
+  "3d-space-dodge-benchmark": {
+    "name": "3D Space Dodge 大模型基准",
+    "requirements": [
+      "在两轮固定提示词下测试 18 个模型（10 个 API 模型、8 个本地模型）构建 680×480 画布的 Three.js r128 生存躲避游戏，仓库包含 benchmark-runs.json（27 次 2D+3D 运行记录）、evolution-results.json 与 PROMPTS.md。",
+      "作者使用 Playwright 搭配无头 Chromium 与 SwiftShader WebGL 检验画布渲染、WebGL 上下文、零 JS 报错与动画循环执行，报告 11 个 PASS、1 个 DEGRADED（Qwen 3.5 9B）与 6 个 FAILED（均为本地模型）。",
+      "在线托管版本应用了公开记录的外壳与界面后处理（隐藏默认结束提示层、正文文字配色、清理行号前缀，以及对 poolside/laguna-m.1 应用 MeshStandardMaterial 修正）；README 正文表格列出 10 个 PASS 模型，PROMPTS.md 与博客完整列出含 DeepSeek V4 Flash 在内的 11 个。",
+      "README 写明采用 MIT 许可证，固定提交中无独立 LICENSE 文件，GitHub 未检测到仓库许可证。"
+    ]
+  },
+  "kaggle-landmark-arena": {
+    "name": "Kaggle Landmark Arena",
+    "requirements": [
+      "覆盖 20 座著名地标的 Three.js 单页 Web 应用生成任务（例如亚历山大灯塔），通过基线要求为可独立渲染的自包含网页。",
+      "通过在线成对 A/B 投票对 10 个前沿模型排名，公布 Arena 分数、置信区间及各模型得票数（截至 2026-11-19 共计 1,062 票）。",
+      "公开页面提供交互式并排投票与榜单分数，未提供可下载的本地评测框架或完整提示词归档；当前分数基于尚在累积中的投票规模。",
+      "托管于 Kaggle Benchmarks 并遵循 Kaggle 平台条款，查看与投票需使用支持 WebGL 的现代浏览器。"
+    ]
+  },
+  "arena-ai-code-webdev": {
+    "name": "Code Arena | WebDev（Arena.ai）",
+    "requirements": [
+      "围绕从 25 万条以上提示词归纳出的 7 类 Web 开发任务（参考式设计、品牌与信息站点、数据与分析应用、消费级产品、游戏、交互模拟、内容创作与编辑工具）实时评测模型，运行形态已从单文件 Next.js/React 沙箱（E2B Firecracker 微虚拟机）扩展至多文件工具调用编程会话。",
+      "截至 2026-11-18 榜单基于 1,027,059 次社区投票计算 Bradley-Terry 评分，并同步给出单任务 P50 成本与性价比帕累托视图。",
+      "榜单中有 49 个模型因成本数据不足未绘入帕累托图；早期分析亦指出示例提示词重复率较高，且约 18% 的“两者皆差”投票源自依赖安装或编译错误。",
+      "作为托管式 Web 平台按 Arena.ai 条款运行，浏览榜单与参与投票仅需现代浏览器。"
+    ]
+  },
+  "design-arena-web-eval": {
+    "name": "DesignArena",
+    "requirements": [
+      "同时涵盖单轮非智能体 HTML 网页设计（及游戏开发、3D 设计、数据可视化、UI 组件子榜）与多文件智能体综合榜单（前端网页应用、全栈、智能体游戏开发、Godot、React Native、Android、幻灯片、电子表格）。",
+      "每次投票对同一提示词抽取 4 个模型（另含 1 个候补）进行 5 场匿名成对对决，经迭代 Bradley-Terry 算法计算 Elo 评分（基准 1200，附标准误），并辅以视觉聚类、依赖库使用与生成速度等博客实证分析。",
+      "排名体现众包人工对审美与功能体验的主观偏好；主柱状图过滤不足 50 次对战的模型，达到约 200 次成对比较前标记为暂定排名。",
+      "作为在线竞技场按 DesignArena 条款运行；AgentRunner 等配套开源评测工具另行发布。"
+    ]
   }
 }
