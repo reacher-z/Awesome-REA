@@ -6,8 +6,17 @@
 
 [English](app.md)
 
-**233 个案例**
+**242 个案例**
 
+- [**Anm2Ed：重建《以撒的结合：重生》的专有动画编辑器**](https://github.com/ShweetsStuff/anm2ed) - Anm2Ed 是《以撒的结合：重生》随游戏附带的专有动画编辑器的现代替代品。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/anm2ed-case/)</sub>
+- [**CapCut 9.6：REA 架构与编辑器 API 盘点**](https://github.com/marcosp34bpm/capcut-rea) - 该报告使用 REA 工具链分析本机安装的 CapCut 9.6.0.4097 Windows x64 版本。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/capcut-rea-analysis-case/)</sub>
+- [**iCSee Local Control：iCSee Android 应用的 FOSS 重实现**](https://github.com/voidnullvalue/Icsee-android) - iCSee Local Control 是用 Kotlin 与 Jetpack Compose 编写的全新 Android 应用，通过 DVRIP 协议在局域网直接控制 iCSee、雄迈与 XMEye 摄像头，无需云账号或厂商 SDK。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/icsee-android-reimplementation-case/)</sub>
+- [**OpenStride：Strava Android 应用的净室重实现**](https://github.com/Kamalakanta01/openstride) - OpenStride 是用 Kotlin 净室重建的 Strava Android 应用，同时发布记录 Strava Android v456.10 的静态分析工具与接口规范。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openstride-case/)</sub>
+- [**Palmier Win：面向 Windows 的 Palmier Pro 独立重实现**](https://github.com/davurpi/palmier-win) - Palmier Win 在 Windows 与 macOS 上重建仅支持 macOS 的 Palmier Pro 视频编辑器概念。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/palmier-win-case/)</sub>
+- [**SketchUp .skp 分析：Trimble SDK、Wine 与 Blender 工具链**](https://github.com/hohomehk/sketchupdrawing) - 该工作区通过为 Wine 交叉编译的 Trimble C SDK 与 Docker 工具链读取 SketchUp .skp 设计文件，抽取组件、场景、尺寸与材质，用于切割清单、草图标注复用和 3D 预览，并附带一个用于图像增强的 SketchUp Ruby 插件。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/sketchup-skp-reverse-engineering-case/)</sub>
+- [**SolidCraft：纯 Rust 开源参数化 3D CAD 应用**](https://github.com/tangency-labs/solidcraft) - SolidCraft 是用纯 Rust 编写的开源参数化 3D CAD 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/solidcraft-case/)</sub>
+- [**SurfaceCraft：纯 Rust 净室扫描转 CAD 应用**](https://github.com/d0pawlus/SurfaceCraft) - SurfaceCraft 是用纯 Rust 编写的开源净室扫描转 CAD 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/surfacecraft-case/)</sub>
+- [**ZapCut：面向 Windows 的 CapCut 风格净室视频编辑器**](https://github.com/DOCKERNOIN-VibeCoding/ZapCut) - ZapCut 是离线运行的 Windows 桌面视频编辑器，默认韩语界面，依据 CapCut 的可观察行为独立实现，不使用 CapCut 的代码与素材。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zapcut-case/)</sub>
 - [**ag-psd：重建 PSD 文档读写功能**](https://github.com/Agamnentzar/ag-psd) - ag-psd 结合格式资料与反复试验，用 JavaScript 和 TypeScript 实现 Photoshop PSD 文档的读写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ag-psd-case/)</sub>
 - [**AionLink Open：研究 GAC AION i60 的 ICCOA CarLink 连接**](https://github.com/codepdbh/aionlink-open) - AionLink Open 通过静态分析 Android APK 并编写独立客户端，研究 GAC AION i60 的 ICCOA CarLink 连接。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aionlink-open-case/)</sub>
 - [**AirTray：重建 Elgin Air 云端控制客户端**](https://github.com/JoseAlexandreMeloPacheco/airtray) - AirTray 根据 Elgin Air 应用的行为重建 Windows 系统托盘客户端，用于控制兼容空调。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/airtray-case/)</sub>

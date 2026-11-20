@@ -6,8 +6,9 @@
 
 [English](website.md)
 
-**76 个案例**
+**77 个案例**
 
+- [**Papers with Code：保存并重实现已停运的站点**](https://github.com/World-Snapshot/papers-with-code) - Papers with Code 于 2025 年 7 月停止运营后，该项目保存并分析站点的任务与论文核心数据，发布带交互式任务查看器的服务端渲染重建版，并链接同一数据的存档快照与替代部署。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/paperswithcode-rebuild-case/)</sub>
 - [**canopy-dotmatrix：重建 davidluft.com 的点阵窗景**](https://github.com/isjiajia01/canopy-dotmatrix) - 项目依据 davidluft.com 的公开 JavaScript 文件和场景数据重建首页点阵窗景。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/canopy-dotmatrix-case/)</sub>
 - [**Dih Pinterest：重建 Pinterest 搜索站点的页面与数据流**](https://github.com/Ikyletwar/dih-pinterest-replica) - Dih Pinterest 将 searchpinterest.vercel.app 的搜索界面和数据流重建为静态网页，可选配 Vercel 代理。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dih-pinterest-case/)</sub>
 - [**Drama Live：分析 Android 与网页客户端并重建 API 客户端**](https://github.com/barhomus10/dramalive-analysis) - Drama Live analysis 记录这款 IPTV 播放器的 Android APK 与网页 PWA，包括组件栈、接口路径和内容来源流程。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/dramalive-analysis-case/)</sub>

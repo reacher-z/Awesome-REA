@@ -6,8 +6,9 @@
 
 [简体中文](website.zh-CN.md)
 
-**76 case studies**
+**77 case studies**
 
+- [**Papers with Code: preserving and reimplementing the closed site**](https://github.com/World-Snapshot/papers-with-code) - After Papers with Code stopped operating in July 2025, this project preserved and analysed the site's core task and paper data and published a server-rendered reimplementation with an interactive task viewer. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/paperswithcode-rebuild-case/)</sub>
 - [**canopy-dotmatrix: reconstructing davidluft.com's dot-matrix window**](https://github.com/isjiajia01/canopy-dotmatrix) - Reconstructs the dot-matrix window on davidluft.com from its public JavaScript bundle and scene payloads. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/canopy-dotmatrix-case/)</sub>
 - [**Dih Pinterest: reconstructing a Pinterest search site's page and data flow**](https://github.com/Ikyletwar/dih-pinterest-replica) - Dih Pinterest reconstructs the search interface and data flow of searchpinterest.vercel.app as a static web app with an optional Vercel proxy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dih-pinterest-case/)</sub>
 - [**Drama Live: analysing its Android and web clients and rebuilding an API client**](https://github.com/barhomus10/dramalive-analysis) - Drama Live analysis documents the Android APK and web PWA of the IPTV player, including their component stacks, endpoint maps and content-source flows. <sub>Case study · Independent reconstruction · Also: App · [Full entry](https://awesomerea.org/resources/dramalive-analysis-case/)</sub>

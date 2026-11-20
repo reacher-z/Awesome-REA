@@ -154779,5 +154779,307 @@
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/scripts/turokgame/components/weapons/turokWeaponChronoScepter.txt",
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/framework/system.cpp"
     ]
+  },
+  {
+    "id": "surfacecraft-case",
+    "name": "SurfaceCraft: a clean-room scan-to-CAD application in Rust",
+    "url": "https://github.com/d0pawlus/SurfaceCraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "SurfaceCraft is an open-source, clean-room scan-to-CAD application in pure Rust. It turns a scanner mesh into aligned primitives, NURBS surfaces and a parametric feature tree, then exports STEP or IGES; desktop builds run on Windows, macOS and Linux, and a WebAssembly build runs in the browser with CLI and MCP access.",
+    "description_zh": "SurfaceCraft 是用纯 Rust 编写的开源净室扫描转 CAD 应用。它把扫描网格对齐为基本体、拟合 NURBS 曲面并重建参数化特征树，再导出 STEP 或 IGES；桌面版支持 Windows、macOS 与 Linux，另有浏览器 WebAssembly 版，并提供 CLI 与 MCP 接口。",
+    "evidence_url": "https://github.com/d0pawlus/SurfaceCraft/blob/da3a6a4a92812d1b681e532597499c1b189802ff/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Desktop builds run on Windows, macOS and Linux; the browser build needs wasm-bindgen on PATH and the nightly toolchain pinned by Cargo.lock.",
+      "Input is a scanner mesh; the application aligns it, extracts primitives, fits NURBS surfaces and rebuilds a parametric feature tree, then exports STEP or IGES.",
+      "The README describes early development and reports accuracy against fixed test thresholds; it links the parity checklist and kernel notes.",
+      "Code is Apache-2.0, with third-party notices and assets listed in the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "3d-design"
+  },
+  {
+    "id": "solidcraft-case",
+    "name": "SolidCraft: an open-source parametric 3D CAD application in Rust",
+    "url": "https://github.com/tangency-labs/solidcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "SolidCraft is an open-source parametric 3D CAD application in pure Rust. Its sketch-and-constraint workflow builds solids on a parametric feature timeline, and the project ships Windows, macOS and Linux builds, a browser version and MCP automation for agents.",
+    "description_zh": "SolidCraft 是用纯 Rust 编写的开源参数化 3D CAD 应用。它通过草图与约束工作流在参数化特征时间线上构建立体，并提供 Windows、macOS、Linux 安装包、浏览器版本以及面向智能体的 MCP 自动化。",
+    "evidence_url": "https://github.com/tangency-labs/solidcraft/blob/8e38f9afafd5a34902be9d6c148c3f9fa8a352dc/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows uses the MSI installer, macOS the disk image for Intel and Apple silicon, Linux the AppImage or Snap package, and the web build runs without installation.",
+      "The workflow starts from sketches and dimensions, then extrudes, fillets, shells and patterns features on a parametric timeline that rebuilds when dimensions change.",
+      "Automation is exposed through MCP for agent-driven modelling; the README documents a Raspberry Pi 4 case built from board parameters.",
+      "Code is Apache-2.0; the repository lists brand and asset terms separately."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "3d-design"
+  },
+  {
+    "id": "sketchup-skp-reverse-engineering-case",
+    "name": "SketchUp .skp analysis: Trimble SDK, Wine and Blender tooling",
+    "url": "https://github.com/hohomehk/sketchupdrawing",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "This workspace reads SketchUp .skp design files through the Trimble C SDK cross-compiled for Wine and a Docker toolchain. It extracts components, scenes, dimensions and materials for cut lists, draft annotations and 3D previews, and packages a SketchUp Ruby plugin for image enhancement.",
+    "description_zh": "该工作区通过为 Wine 交叉编译的 Trimble C SDK 与 Docker 工具链读取 SketchUp .skp 设计文件，抽取组件、场景、尺寸与材质，用于切割清单、草图标注复用和 3D 预览，并附带一个用于图像增强的 SketchUp Ruby 插件。",
+    "evidence_url": "https://github.com/hohomehk/sketchupdrawing/blob/789a8cd353edabbc4c4545867b86d143d0fe4b28/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The toolchain combines the Trimble C SDK Windows DLL, MinGW cross-compilation, Wine 9 and a Docker image; the first build installs the toolchain.",
+      "Input is a user-supplied .skp file mounted into the container; ASCII paths avoid the documented Wine path bug.",
+      "The workspace includes four SDK dumpers for structure, dimensions, trees and wardrobe parts, plus a knowledge wiki of procedures and findings.",
+      "The repository is MIT-licensed; the Trimble SDK and SketchUp remain under their own terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "kind": "case-study",
+    "class": "3d-design"
+  },
+  {
+    "id": "anm2ed-case",
+    "name": "Anm2Ed: reconstructing Isaac Rebirth's proprietary animation editor",
+    "url": "https://github.com/ShweetsStuff/anm2ed",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Anm2Ed is a modern replacement for the proprietary animation editor shipped with The Binding of Isaac: Rebirth. It edits the game's XML .anm2 animation format with a dockable Dear ImGui interface, layered animations, a multi-select timeline and frame rendering, and writes files the game reads.",
+    "description_zh": "Anm2Ed 是《以撒的结合：重生》随游戏附带的专有动画编辑器的现代替代品。它以可停靠的 Dear ImGui 界面编辑游戏的 XML .anm2 动画格式，支持分层动画、多选时间线与逐帧渲染，并写出游戏可读取的文件。",
+    "evidence_url": "https://github.com/ShweetsStuff/anm2ed/blob/8ef089d306bb82108fcf27edf0375efbc5066faf/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows and Linux builds use CMake; tests run through ctest, and render tests need an OpenGL display.",
+      "Input is a .anm2 file; spritesheets may be PNG or SVG, and saves embed the editor's own SourceDocument copy while flattening animation layers for the game.",
+      "The README discloses large-language-model assistance and lists supported languages and editor features.",
+      "Code is GPL-3.0; the game and its assets remain under their own terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "attribution",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "animation"
+  },
+  {
+    "id": "zapcut-case",
+    "name": "ZapCut: a clean-room CapCut-style video editor for Windows",
+    "url": "https://github.com/DOCKERNOIN-VibeCoding/ZapCut",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "ZapCut is an offline Windows desktop video editor with a Korean interface, implemented independently from CapCut's observable behaviour and without CapCut code or assets. It offers a multi-track timeline, transitions, effects, filters, keyframes, masks, chroma key and FFmpeg export, with .zapcut projects and MCP tools.",
+    "description_zh": "ZapCut 是离线运行的 Windows 桌面视频编辑器，默认韩语界面，依据 CapCut 的可观察行为独立实现，不使用 CapCut 的代码与素材。它提供多轨时间线、转场、特效、滤镜、关键帧、遮罩、抠像与 FFmpeg 导出，并支持 .zapcut 项目和 MCP 工具。",
+    "evidence_url": "https://github.com/DOCKERNOIN-VibeCoding/ZapCut/blob/50f834208531a1a077765f4212e9e8ff9949f6cc/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The official build is a Windows desktop installer; it is unsigned, so Windows SmartScreen warns before installation.",
+      "FFmpeg is bundled, and projects use the .zapcut format with autosave and recovery.",
+      "The README documents 25 transitions, 31 effects, 43 filters, keyframed transforms, masks, chroma key and an MCP tool surface.",
+      "The repository metadata reports no SPDX license; the repository carries its own terms and a clean-room specification."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "video"
+  },
+  {
+    "id": "palmier-win-case",
+    "name": "Palmier Win: an independent reimplementation of Palmier Pro for Windows",
+    "url": "https://github.com/davurpi/palmier-win",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Palmier Win rebuilds the concept behind the macOS-only Palmier Pro video editor on Windows and macOS. It pairs a Tauri 2 and React interface with an FFmpeg engine, a multi-track timeline, project files and an MCP server so external agents can edit alongside the user.",
+    "description_zh": "Palmier Win 在 Windows 与 macOS 上重建仅支持 macOS 的 Palmier Pro 视频编辑器概念。它以 Tauri 2 与 React 界面配合 FFmpeg 引擎，提供多轨时间线、项目文件和 MCP 服务，让外部智能体与用户并行编辑。",
+    "evidence_url": "https://github.com/davurpi/palmier-win/blob/7ef9a81fbb043f6b9bc23b5de4f8785fa3c95bdd/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows and macOS builds need FFmpeg installed through winget or Homebrew; building from source needs Node 20+, Rust 1.77+ and platform WebView tooling.",
+      "Projects use .palmierwin JSON files with undo/redo, multi-track timelines, inspector transforms, layouts, opacity and brightness controls.",
+      "The MCP server listens on localhost for agent-driven edits; the README lists transcription, captions and word-based cuts as not yet implemented.",
+      "The core is GPLv3, and the README compares the Windows stack with Palmier Pro's SwiftUI and AVFoundation implementation."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "video"
+  },
+  {
+    "id": "icsee-android-reimplementation-case",
+    "name": "iCSee Local Control: a FOSS reimplementation of the iCSee Android app",
+    "url": "https://github.com/voidnullvalue/Icsee-android",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "iCSee Local Control is a greenfield Android app that controls iCSee, Xiongmai and XMEye cameras on the local network over their DVRIP protocol without a cloud account or vendor SDK. It implements DVRIP login, RTSP live video and camera settings in Kotlin and Jetpack Compose.",
+    "description_zh": "iCSee Local Control 是用 Kotlin 与 Jetpack Compose 编写的全新 Android 应用，通过 DVRIP 协议在局域网直接控制 iCSee、雄迈与 XMEye 摄像头，无需云账号或厂商 SDK。它实现 DVRIP 登录、RTSP 实时画面与摄像头设置。",
+    "evidence_url": "https://github.com/voidnullvalue/Icsee-android/blob/74a2ed41923f1c2b3e880222aa3d76af10389c82/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Android 8.0+; release APKs are built by CI and signed with the Android debug key for sideloading.",
+      "DVRIP login and RTSP live video are reported verified against a target camera; the README records the protocol path, including the Sofia mod-62 password hash.",
+      "The app talks only to the local camera and does not use a cloud account, cloud SDK or analytics.",
+      "Code is MIT-licensed; camera firmware and vendor services remain under their own terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "mobile-app-dev"
+  },
+  {
+    "id": "openstride-case",
+    "name": "OpenStride: a clean-room reimplementation of the Strava Android app",
+    "url": "https://github.com/Kamalakanta01/openstride",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "OpenStride is a clean-room Kotlin reimplementation of the Strava Android app, published with the static-analysis toolkit and interface specification that documented Strava Android v456.10. The repository separates the evidence-backed interface documents from the from-scratch application implementation.",
+    "description_zh": "OpenStride 是用 Kotlin 净室重建的 Strava Android 应用，同时发布记录 Strava Android v456.10 的静态分析工具与接口规范。仓库把有证据支撑的接口文档与从零实现的应用代码分开组织。",
+    "evidence_url": "https://github.com/Kamalakanta01/openstride/blob/8e0257e7c06d68f85c78d0ce8f62662e03ab0de0/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The Android app builds with Gradle and Kotlin; CI runs build, lint and tests on every push.",
+      "The analysis covers the container format, manifest, 72,470 class definitions, the native engine, network surface and privacy posture in ten documents.",
+      "Contributors work from spec/ and the README; the repository states that its code and binary artifacts contain no Strava code.",
+      "Code is Apache-2.0; Strava's service and trademarks remain under their own terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "mobile-app-dev"
+  },
+  {
+    "id": "paperswithcode-rebuild-case",
+    "name": "Papers with Code: preserving and reimplementing the closed site",
+    "url": "https://github.com/World-Snapshot/papers-with-code",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "After Papers with Code stopped operating in July 2025, this project preserved and analysed the site's core task and paper data and published a server-rendered reimplementation with an interactive task viewer. It links archived snapshots and alternative deployments of the same data.",
+    "description_zh": "Papers with Code 于 2025 年 7 月停止运营后，该项目保存并分析站点的任务与论文核心数据，发布带交互式任务查看器的服务端渲染重建版，并链接同一数据的存档快照与替代部署。",
+    "evidence_url": "https://github.com/World-Snapshot/papers-with-code/blob/1475681167c89ce590559619c56db02e2bd93b85/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reimplementation is a server-rendered website template; local viewing uses a Live Server extension rather than opening the HTML directly.",
+      "It preserves task information across computer vision, natural language processing and audio domains from archived site data.",
+      "The README links the Wayback Machine snapshot and several independent deployments of the preserved data.",
+      "The repository metadata reports no SPDX license; the repository carries its own terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "website"
+    ],
+    "kind": "case-study",
+    "class": "website"
+  },
+  {
+    "id": "capcut-rea-analysis-case",
+    "name": "CapCut 9.6: an REA architecture and editor-API inventory",
+    "url": "https://github.com/marcosp34bpm/capcut-rea",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "This report analyses a locally installed CapCut 9.6.0.4097 Windows x64 build with the REA toolchain. It maps the C++/Qt 6 and CEF architecture, inventories the native editor API and records reconstruction obligation ledgers, marking each claim as an evidence-numbered static observation or an explicit inference.",
+    "description_zh": "该报告使用 REA 工具链分析本机安装的 CapCut 9.6.0.4097 Windows x64 版本。它梳理 C++/Qt 6 与 CEF 架构、盘点原生编辑器 API 并记录重建义务台账，每条结论都标为带证据编号的静态观察或显式推断。",
+    "evidence_url": "https://github.com/marcosp34bpm/capcut-rea/blob/1034d34f9a7814d6f508c517268b7c80223612ed/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The analysis targets CapCut 9.6.0.4097 on Windows x64 and records the install-root SHA-256 and observed component sizes.",
+      "The report covers the launcher, C++/Qt 6 and CEF layers, bundled JavaScript applications and an embedded AI agent runtime.",
+      "Claims are tied to evidence IDs or labelled as inference; JavaScript tooling supports dry runs and timeline revisions.",
+      "The repository metadata reports no SPDX license; the repository carries its own terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "kind": "case-study",
+    "class": "analysis"
   }
 ]

@@ -4,19 +4,19 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**4025 case studies**, grouped by section.
+**4035 case studies**, grouped by section.
 
 ## Contents
 
-- [Website](#website) (76)
+- [Website](#website) (77)
 - [Game](#game) (2832)
-- [App](#app) (233)
+- [App](#app) (242)
 - [Native Binary](#native-binary) (64)
 - [Firmware and Hardware](#firmware) (175)
 - [Protocol](#protocol) (645)
 
 <a id="website"></a>
-## Website (76)
+## Website (77)
 
 - [Case studies](cases/website.md)
 
@@ -43,7 +43,7 @@
 - [Other methods and analyses](cases/game-5.md#game-other) (321)
 
 <a id="app"></a>
-## App (233)
+## App (242)
 
 - [Case studies](cases/app.md)
 
