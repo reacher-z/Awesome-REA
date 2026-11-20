@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-10T03:26:21+00:00",
-  "entry_count": 5191,
+  "generated_at": "2026-11-19T06:38:24+00:00",
+  "entry_count": 5197,
   "class_counts": {
    "0": 15,
-   "1": 1126,
-   "2": 3844,
+   "1": 1130,
+   "2": 3846,
    "3": 186
   },
   "unknown_count": 20,
@@ -145723,6 +145723,177 @@
    "scope": "notes",
    "runtime_status": "not-run",
    "c0_candidate": false
+  },
+  {
+   "id": "dethrace-carmageddon-engine-case",
+   "url": "https://github.com/dethrace-labs/dethrace",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4747,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 12,
+    "release_asset_count": 54,
+    "demo": [
+     "image",
+     "demo-link"
+    ],
+    "media_count": 2,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-19T06:38:20+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "bimcraft-revit-workflow-case",
+   "url": "https://github.com/IPedrax/BIMCraft",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 223763,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 13,
+    "release_asset_count": 199,
+    "demo": [
+     "image"
+    ],
+    "media_count": 32,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-19T06:38:20+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "nv-rs-fallout-new-vegas-case",
+   "url": "https://github.com/slaterain/nv-rs",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 22456,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 2,
+    "release_asset_count": 4,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-19T06:38:20+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "1oom-master-of-orion-engine-case",
+   "url": "https://github.com/1oom-fork/1oom",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4467,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 3,
+    "release_asset_count": 7,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-19T06:38:20+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "openyamm-might-and-magic-case",
+   "url": "https://github.com/pjasicek/openyamm",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 10640,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 41,
+    "release_asset_count": 241,
+    "demo": [
+     "image"
+    ],
+    "media_count": 26,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full reconstruction candidate: Class 0 requires manual scope review",
+   "checked_at": "2026-11-19T06:38:20+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": true
+  },
+  {
+   "id": "opencrystalcaves-engine-case",
+   "url": "https://github.com/OpenCrystalCaves/OpenCrystalCaves",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 11684,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 7,
+    "release_asset_count": 10,
+    "demo": [
+     "image"
+    ],
+    "media_count": 56,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full reconstruction candidate: Class 0 requires manual scope review",
+   "checked_at": "2026-11-19T06:38:20+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": true
   }
  ]
 }

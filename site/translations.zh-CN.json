@@ -43811,5 +43811,59 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "dethrace-carmageddon-engine-case": {
+    "name": "Dethrace：重建 Carmageddon 引擎",
+    "requirements": [
+      "所审阅的 README 描述的是对 Carmageddon 引擎的逆向重建；仓库不分发游戏内容，并期望原版数据放在顶层目录。",
+      "构建需要 CMake 与 SDL2；除零售版外，Dethrace 还支持多个免费试玩版，README 将 GOG 的 Carmageddon Max Pack 列为原版文件来源之一。",
+      "README 记录称，在 Splat Pack CD 中发现的 Watcom 符号并不匹配任何已知发行版可执行文件，因此项目不依赖完整符号表。",
+      "仓库源码仅限非商业用途；原游戏数据与购买的版本保留各自权利。"
+    ]
+  },
+  "bimcraft-revit-workflow-case": {
+    "name": "BIMCraft：净室 Revit 风格 BIM 应用",
+    "requirements": [
+      "所审阅的 README 描述的是对 Autodesk Revit 工作流的净室实现，而非 Revit 代码或资产的移植。",
+      "README 将项目标为早期开发，并为 Windows、Linux 与 macOS 打包；其中说明 macOS 应用尚未人工试用。",
+      "模型包含标高、墙、门窗、楼板、天花、房间、柱、楼梯、屋顶与竖井；可生成平面、剖面与图纸，并支持 IFC2x3/IFC4 导入导出。",
+      "仓库采用 MIT OR Apache-2.0；README 称所有操作都是命令，可通过 MCP 驱动。"
+    ]
+  },
+  "nv-rs-fallout-new-vegas-case": {
+    "name": "nv-rs：用 Rust 重建《辐射：新维加斯》",
+    "requirements": [
+      "所审阅的 README 描述的是由原版游戏代码翻译而来的 Rust 引擎；仓库不分发游戏文件。",
+      "Windows 预览版要求已安装 Fallout: New Vegas 1.4.0.525；审阅时仅测试了 Steam 版本，且目前只支持键盘与鼠标。",
+      "README 称依赖 xNVSE 或 JIP 脚本扩展插件的模组尚不可用；下载页列出了可用功能与已知问题。",
+      "仓库采用 GPL-3.0；游戏及其文件保留各自权利。"
+    ]
+  },
+  "1oom-master-of-orion-engine-case": {
+    "name": "1oom：Master of Orion 引擎重实现",
+    "requirements": [
+      "所审阅的 README 描述的是旨在准确复现 DOS 原版 Master of Orion 的引擎重实现，而非原可执行文件的移植。",
+      "使用需要合法持有的 Master of Orion v1.3 及 LBX 文件；仓库不分发游戏数据。",
+      "README 指出旧存档在新版本中可能不可用，并禁止直接使用 AI 生成的代码。",
+      "仓库采用 GPL-2.0；原游戏数据保留各自权利。"
+    ]
+  },
+  "openyamm-might-and-magic-case": {
+    "name": "OpenYAMM：重新实现《魔法门》VI–VIII",
+    "requirements": [
+      "所审阅的 README 描述的是以 Might and Magic VIII 为起点的 C++ 引擎重实现，而非原可执行文件的移植。",
+      "游玩使用原版游戏数据与高清美术；仓库不分发游戏数据。",
+      "README 称 Might and Magic VI–VIII 均可玩并支持跨大陆旅行；Might and Magic IX 的重建仍在进行，尚未进入发布版。",
+      "项目使用 CMake 及依赖构建，包括 Lua 5.4，面向桌面与移动目标；仓库采用 GPL-3.0。"
+    ]
+  },
+  "opencrystalcaves-engine-case": {
+    "name": "OpenCrystalCaves：Crystal Caves 开源引擎",
+    "requirements": [
+      "所审阅的 README 描述的是 Crystal Caves 三部曲的非官方开源引擎重实现，而非零售版可执行文件的移植。",
+      "仓库包含共享版章节；游玩零售章节需要用户自有的 Steam 或 GOG 数据文件。",
+      "README 列出缺失的存档、高分、第 2–3 章、按键重映射、手柄与鼠标输入，以及部分不准确的音效。",
+      "仓库采用 MIT；Crystal Caves 数据与零售版本保留各自权利。"
+    ]
   }
 }

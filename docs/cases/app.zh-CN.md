@@ -6,8 +6,9 @@
 
 [English](app.md)
 
-**233 个案例**
+**234 个案例**
 
+- [**BIMCraft：净室 Revit 风格 BIM 应用**](https://github.com/IPedrax/BIMCraft) - 用 Rust 实现的净室建筑信息模型应用，沿 Revit 工作流建模：标高、墙、门窗、楼板、天花、房间、柱、楼梯与屋顶，并生成平面、剖面、图纸及 IFC2x3/IFC4 导入导出；所有操作都是命令，可由 agent 通过 MCP 驱动。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bimcraft-revit-workflow-case/)</sub>
 - [**ag-psd：重建 PSD 文档读写功能**](https://github.com/Agamnentzar/ag-psd) - ag-psd 结合格式资料与反复试验，用 JavaScript 和 TypeScript 实现 Photoshop PSD 文档的读写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ag-psd-case/)</sub>
 - [**AionLink Open：研究 GAC AION i60 的 ICCOA CarLink 连接**](https://github.com/codepdbh/aionlink-open) - AionLink Open 通过静态分析 Android APK 并编写独立客户端，研究 GAC AION i60 的 ICCOA CarLink 连接。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aionlink-open-case/)</sub>
 - [**AirTray：重建 Elgin Air 云端控制客户端**](https://github.com/JoseAlexandreMeloPacheco/airtray) - AirTray 根据 Elgin Air 应用的行为重建 Windows 系统托盘客户端，用于控制兼容空调。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/airtray-case/)</sub>

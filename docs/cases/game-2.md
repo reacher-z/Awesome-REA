@@ -6,7 +6,7 @@
 
 [简体中文](game-2.zh-CN.md)
 
-**622 case studies**
+**621 case studies**
 
 ## Non-matching decompilations
 
@@ -152,6 +152,7 @@
 - [**New Play Control! Pikmin 2: a Wii decompilation**](https://github.com/projectPiki/pik2wii) - pik2wii reconstructs source for the USA Wii release of New Play Control! <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pik2wii-case/)</sub>
 - [**nfsu2\_decomp: a native reconstruction of Need for Speed: Underground 2**](https://github.com/mad0xStrixhadorami/nfsu2-native) - nfsu2\_decomp rewrites logic from the PS2 PAL release of Need for Speed: Underground 2 as native Linux C++ and uses the user's disc data at runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/nfsu2-decomp-case/)</sub>
 - [**Ninja Cop: disassembly of two GBA releases**](https://gitlab.com/Fexean/ninjacop) - Ninja Cop reconstructs assembly for the GBA releases Ninja Cop and Ninja Five-O and provides commands to build both ROM versions. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ninjacop-case/)</sub>
+- [**nv-rs: Fallout: New Vegas rebuilt in Rust**](https://github.com/slaterain/nv-rs) - Rebuilds Fallout: New Vegas in Rust from the original game's translated code and runs it from the user's own game files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/nv-rs-fallout-new-vegas-case/)</sub>
 - [**Ocarina of Time: an NTSC 1.0 ROM disassembly**](https://github.com/Roman971/oot-disassembly) - Ocarina of Time 1.0 Disassembly records the NTSC 1.0 Nintendo 64 game's code as assembly files for documentation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/oot-ntsc-1-disassembly-case/)</sub>
 - [**Ogrebattle64: decompiling the North American game release**](https://codeberg.org/hijsje/ogrebattle64) - Ogrebattle64 decompiles the North American release of the game using a user-provided ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ogrebattle64-case/)</sub>
 - [**Onegai Monsters: a small N64 decompilation experiment**](https://github.com/Ryan-Myers/onegaimonsters) - Onegai Monsters explores decompilation of the N64 game through source files and a build that extracts data from a user-supplied .z64 ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/onegai-monsters-case/)</sub>
@@ -633,6 +634,4 @@
 - [**James Pond 2: Codename RoboCod — an Amiga static recompilation**](https://github.com/griches/JamesPond2RobocodRecomp) - James Pond 2: Codename RoboCod — Recompiled turns the Amiga game's 68000 instructions into native C++ using a user-provided disk image. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/james-pond-2-robocod-recomp-case/)</sub>
 - [**Jet Force Gemini Recomp: a native Windows recompilation**](https://github.com/TK22-26/JetForceGemini-Recomp) - Jet Force Gemini Recomp provides a native Windows x64 recompilation of the Nintendo 64 game that loads game data from an imported North American ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/jet-force-gemini-recomp-case/)</sub>
 - [**Jet Force Gemini: Recompiled — an N64 static recompilation port**](https://github.com/VibinToast/JetForceGemini-Recompiled) - Jet Force Gemini: Recompiled translates the US N64 game's code from a user-supplied ROM into C with N64Recomp and runs it with N64ModernRuntime and RT64. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/jet-force-gemini-recompiled-case/)</sub>
-- [**Jet Moto 2 Recompiled: a PlayStation game statically recompiled for PC**](https://github.com/goodshepherd23/JetMoto2-Recomp) - Jet Moto 2 Recompiled turns the PlayStation release of Jet Moto 2: Championship Edition into a native Windows program by translating its MIPS code with RecompOne from the user's disc. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/jet-moto-2-recompiled-case/)</sub>
-- [**Juiced 2 Recompiled: an Xbox 360 static recompilation for Windows**](https://github.com/anishchandra24/Juiced2-Recompiled) - Juiced 2 Recompiled builds a native Windows port of the Xbox 360 Juiced 2: Hot Import Nights by statically translating the user's executable with ReXGlue. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/juiced-2-recompiled-case/)</sub>
 <!-- END GENERATED CASES -->
