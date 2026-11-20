@@ -6245,5 +6245,41 @@
     "additional_evidence_urls": [
       "https://github.com/literalynn/BurnoutDominatorReversed/blob/37581374987e161dd75d031ee8fb0c7ea9290fda/docs/STATUS.md"
     ]
+  },
+  {
+    "id": "design-os-studio",
+    "name": "DESIGN:OS Studio: an independent .fig studio informed by REA research",
+    "url": "https://github.com/jangtrinh/design-os-studio",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "class": "software",
+    "targets": [
+      "app"
+    ],
+    "description_en": "The maintainer reports using rea (morluto/rea 6.7.0) to investigate Figma Desktop JavaScript and the .fig v106 kiwi schema, then independently implements a local desktop studio that reads and writes .fig files and reimplements editor behaviour. Public specs record that wasm lanes were unavailable, so a local schema reader was used; checked-in reports include completed and failed rea CLI runs. The product README does not mention REA. Source-available under PolyForm Shield 1.0.0.",
+    "description_zh": "维护者报告使用 rea（morluto/rea 6.7.0）研究 Figma Desktop 的 JavaScript 与 .fig v106 kiwi schema，随后独立实现可读写 .fig 并重实现编辑器行为的本地桌面工作室。公开规格记载当时 wasm 路径不可用，因而使用了本地 schema 读取器；入库报告中既有已完成的 rea CLI 运行，也有失败调用。产品 README 没有提及 REA。源码可用，采用 PolyForm Shield 1.0.0 许可证。",
+    "evidence_url": "https://github.com/jangtrinh/design-os-studio/blob/df14c593e86edcc039adc2c67067bf8db64e9e84/docs/specs/v0.6/E1-4-styles-hold-variable-aliases.md",
+    "additional_evidence_urls": [
+      "https://github.com/jangtrinh/design-os-studio/blob/df14c593e86edcc039adc2c67067bf8db64e9e84/plans/261017-figma-parity-wave-ab/rea-findings.md",
+      "https://github.com/jangtrinh/design-os-studio/blob/df14c593e86edcc039adc2c67067bf8db64e9e84/plans/reports/agy-1277-shadow-knockout-evidence/step1-figma-re.log",
+      "https://github.com/jangtrinh/design-os-studio/blob/df14c593e86edcc039adc2c67067bf8db64e9e84/README.md",
+      "https://github.com/jangtrinh/design-os-studio/blob/df14c593e86edcc039adc2c67067bf8db64e9e84/LICENSE",
+      "https://github.com/jangtrinh/design-os-studio/releases/tag/v0.7.11"
+    ],
+    "verified_at": "2026-11-10",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Install the v0.7.11 GitHub Release for macOS (universal .dmg, verified on Apple Silicon), Windows x64 (.zip with a per-user install.ps1) or Linux x64 (.deb or .tar.gz), or build from source with `cargo run --release -p designos-app --bin designos-studio`. The README says the Windows and Linux packages are built by the same release workflow but are not verified before release.",
+      "Public specs at the reviewed commit state that reverse-engineering of Figma fields uses rea (morluto/rea 6.7.0, `npx -y rea-agents`). E1-4 records that wasm lanes were unavailable (WABT and Ghidra were not installed) and that a local kiwi schema reader was used instead. Some checked-in rea invocations failed. The product README does not credit REA.",
+      "Licensed under PolyForm Shield 1.0.0 (source-available, not an open-source license). The studio needs no account or API key; the Agents panel starts the user's own Claude Code, Codex, Grok, Antigravity or Gemini CLI with that CLI's sign-in.",
+      "designos-mcp serves its tools over stdio. The README's generated tool table at the reviewed commit lists 39 tools. A known issue documented in the README remains open: saving a .fig file drops numbered-list formatting and writes inherited or variable-bound paints on instances as fixed values."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "license",
+      "limits"
+    ]
   }
 ]
