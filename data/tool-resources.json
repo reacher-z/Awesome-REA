@@ -154779,5 +154779,669 @@
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/scripts/turokgame/components/weapons/turokWeaponChronoScepter.txt",
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/framework/system.cpp"
     ]
+  },
+  {
+    "id": "surfacecraft-case",
+    "name": "SurfaceCraft: a clean-room scan-to-CAD application in Rust",
+    "url": "https://github.com/d0pawlus/SurfaceCraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "SurfaceCraft is an open-source, clean-room scan-to-CAD application in pure Rust. It turns a scanner mesh into aligned primitives, NURBS surfaces and a parametric feature tree, then exports STEP or IGES; desktop builds run on Windows, macOS and Linux, and a WebAssembly build runs in the browser with CLI and MCP access.",
+    "description_zh": "SurfaceCraft 是用纯 Rust 编写的开源净室扫描转 CAD 应用。它把扫描网格对齐为基本体、拟合 NURBS 曲面并重建参数化特征树，再导出 STEP 或 IGES；桌面版支持 Windows、macOS 与 Linux，另有浏览器 WebAssembly 版，并提供 CLI 与 MCP 接口。",
+    "evidence_url": "https://github.com/d0pawlus/SurfaceCraft/blob/da3a6a4a92812d1b681e532597499c1b189802ff/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Desktop builds run on Windows, macOS and Linux; the browser build needs wasm-bindgen on PATH and the nightly toolchain pinned by Cargo.lock.",
+      "Input is a scanner mesh; the application aligns it, extracts primitives, fits NURBS surfaces and rebuilds a parametric feature tree, then exports STEP or IGES.",
+      "The README describes early development and reports accuracy against fixed test thresholds; it links the parity checklist and kernel notes.",
+      "Code is available under MIT or Apache-2.0, at the user's option; third-party notices and assets have their own listed terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "3d-design"
+  },
+  {
+    "id": "solidcraft-case",
+    "name": "SolidCraft: an open-source parametric 3D CAD application in Rust",
+    "url": "https://github.com/tangency-labs/solidcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "SolidCraft is an open-source parametric 3D CAD application in pure Rust. Its sketch-and-constraint workflow builds solids on a parametric feature timeline, and the project ships Windows, macOS and Linux builds, a browser version and MCP automation for agents.",
+    "description_zh": "SolidCraft 是用纯 Rust 编写的开源参数化 3D CAD 应用。它通过草图与约束工作流在参数化特征时间线上构建立体，并提供 Windows、macOS、Linux 安装包、浏览器版本以及面向智能体的 MCP 自动化。",
+    "evidence_url": "https://github.com/tangency-labs/solidcraft/blob/8e38f9afafd5a34902be9d6c148c3f9fa8a352dc/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows uses the MSI installer, macOS the disk image for Intel and Apple silicon, Linux the AppImage or Snap package, and the web build runs without installation.",
+      "The workflow starts from sketches and dimensions, then extrudes, fillets, shells and patterns features on a parametric timeline that rebuilds when dimensions change.",
+      "Automation is exposed through MCP for agent-driven modelling; the README documents a Raspberry Pi 4 case built from board parameters.",
+      "Code is Apache-2.0; the repository lists brand and asset terms separately."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "3d-design"
+  },
+  {
+    "id": "sketchup-skp-reverse-engineering-case",
+    "name": "SketchUp .skp analysis: Trimble SDK, Wine and Blender tooling",
+    "url": "https://github.com/hohomehk/sketchupdrawing",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "This workspace reads SketchUp .skp design files through the Trimble C SDK cross-compiled for Wine and a Docker toolchain. It extracts components, scenes, dimensions and materials for cut lists, draft annotations and 3D previews, and packages a SketchUp Ruby plugin for image enhancement.",
+    "description_zh": "该工作区通过为 Wine 交叉编译的 Trimble C SDK 与 Docker 工具链读取 SketchUp .skp 设计文件，抽取组件、场景、尺寸与材质，用于切割清单、草图标注复用和 3D 预览，并附带一个用于图像增强的 SketchUp Ruby 插件。",
+    "evidence_url": "https://github.com/hohomehk/sketchupdrawing/blob/789a8cd353edabbc4c4545867b86d143d0fe4b28/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The toolchain combines the Trimble C SDK Windows DLL, MinGW cross-compilation, Wine 9 and a Docker image; the first build installs the toolchain.",
+      "Input is a user-supplied .skp file mounted into the container; ASCII paths avoid the documented Wine path bug.",
+      "The workspace includes SDK-based dumpers and a wiki of procedures, extracted model structure and measured wardrobe dimensions.",
+      "The repository is MIT-licensed; the Trimble SDK and SketchUp remain under their own terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "analysis",
+    "additional_evidence_urls": [
+      "https://github.com/hohomehk/sketchupdrawing/blob/789a8cd353edabbc4c4545867b86d143d0fe4b28/LICENSE"
+    ]
+  },
+  {
+    "id": "anm2ed-case",
+    "name": "Anm2Ed: reconstructing Isaac Rebirth's proprietary animation editor",
+    "url": "https://github.com/ShweetsStuff/anm2ed",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Anm2Ed is a modern replacement for the proprietary animation editor shipped with The Binding of Isaac: Rebirth. It edits the game's XML .anm2 animation format with a dockable Dear ImGui interface, layered animations, a multi-select timeline and frame rendering, and writes files the game reads.",
+    "description_zh": "Anm2Ed 是《以撒的结合：重生》随游戏附带的专有动画编辑器的现代替代品。它以可停靠的 Dear ImGui 界面编辑游戏的 XML .anm2 动画格式，支持分层动画、多选时间线与逐帧渲染，并写出游戏可读取的文件。",
+    "evidence_url": "https://github.com/ShweetsStuff/anm2ed/blob/8ef089d306bb82108fcf27edf0375efbc5066faf/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows and Linux builds use CMake; tests run through ctest, and render tests need an OpenGL display.",
+      "Input is a .anm2 file; spritesheets may be PNG or SVG, and saves embed the editor's own SourceDocument copy while flattening animation layers for the game.",
+      "The README discloses large-language-model assistance and lists supported languages and editor features.",
+      "Code is GPL-3.0; the game and its assets remain under their own terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "attribution",
+      "license"
+    ],
+    "targets": [
+      "game",
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "game-dev",
+    "reconstruction_method": "other",
+    "additional_evidence_urls": [
+      "https://github.com/ShweetsStuff/anm2ed/blob/8ef089d306bb82108fcf27edf0375efbc5066faf/LICENSE"
+    ]
+  },
+  {
+    "id": "zapcut-case",
+    "name": "ZapCut: a clean-room CapCut-style video editor for Windows",
+    "url": "https://github.com/DOCKERNOIN-VibeCoding/ZapCut",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "ZapCut is an offline Windows desktop video editor with a Korean interface, implemented independently from CapCut's observable behaviour and without CapCut code or assets. It offers a multi-track timeline, transitions, effects, filters, keyframes, masks, chroma key and FFmpeg export, with .zapcut projects and MCP tools.",
+    "description_zh": "ZapCut 是离线运行的 Windows 桌面视频编辑器，默认韩语界面，依据 CapCut 的可观察行为独立实现，不使用 CapCut 的代码与素材。它提供多轨时间线、转场、特效、滤镜、关键帧、遮罩、抠像与 FFmpeg 导出，并支持 .zapcut 项目和 MCP 工具。",
+    "evidence_url": "https://github.com/DOCKERNOIN-VibeCoding/ZapCut/blob/50f834208531a1a077765f4212e9e8ff9949f6cc/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The official build is a Windows desktop installer; it is unsigned, so Windows SmartScreen warns before installation.",
+      "FFmpeg is bundled, and projects use the .zapcut format with autosave and recovery.",
+      "The README documents 25 transitions, 31 effects, 43 filters, keyframed transforms, masks, chroma key and an MCP tool surface.",
+      "ZapCut source is MIT-licensed; the bundled FFmpeg build is GPLv3 and the bundled fonts use SIL OFL 1.1."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "video"
+  },
+  {
+    "id": "palmier-win-case",
+    "name": "Palmier Win: an independent reimplementation of Palmier Pro for Windows",
+    "url": "https://github.com/davurpi/palmier-win",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Palmier Win rebuilds the concept behind the macOS-only Palmier Pro video editor on Windows and macOS. It pairs a Tauri 2 and React interface with an FFmpeg engine, a multi-track timeline, project files and an MCP server so external agents can edit alongside the user.",
+    "description_zh": "Palmier Win 在 Windows 与 macOS 上重建仅支持 macOS 的 Palmier Pro 视频编辑器概念。它以 Tauri 2 与 React 界面配合 FFmpeg 引擎，提供多轨时间线、项目文件和 MCP 服务，让外部智能体与用户并行编辑。",
+    "evidence_url": "https://github.com/davurpi/palmier-win/blob/7ef9a81fbb043f6b9bc23b5de4f8785fa3c95bdd/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows and macOS builds need FFmpeg installed through winget or Homebrew; building from source needs Node 20+, Rust 1.77+ and platform WebView tooling.",
+      "Projects use .palmierwin JSON files with undo/redo, multi-track timelines, inspector transforms, layouts, opacity and brightness controls.",
+      "The MCP server listens on localhost for agent-driven edits; the README lists transcription, captions and word-based cuts as not yet implemented.",
+      "The core is GPLv3, and the README compares the Windows stack with Palmier Pro's SwiftUI and AVFoundation implementation."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "video"
+  },
+  {
+    "id": "icsee-android-reimplementation-case",
+    "name": "iCSee Local Control: a FOSS reimplementation of the iCSee Android app",
+    "url": "https://github.com/voidnullvalue/Icsee-android",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "iCSee Local Control is a greenfield Android app that controls iCSee, Xiongmai and XMEye cameras on the local network over their DVRIP protocol without a cloud account or vendor SDK. It implements DVRIP login, RTSP live video and camera settings in Kotlin and Jetpack Compose.",
+    "description_zh": "iCSee Local Control 是用 Kotlin 与 Jetpack Compose 编写的全新 Android 应用，通过 DVRIP 协议在局域网直接控制 iCSee、雄迈与 XMEye 摄像头，无需云账号或厂商 SDK。它实现 DVRIP 登录、RTSP 实时画面与摄像头设置。",
+    "evidence_url": "https://github.com/voidnullvalue/Icsee-android/blob/74a2ed41923f1c2b3e880222aa3d76af10389c82/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Android 8.0+; release APKs are built by CI and signed with the Android debug key for sideloading.",
+      "DVRIP login and RTSP live video are reported verified against a target camera; the README records the protocol path, including the Sofia mod-62 password hash.",
+      "The app talks only to the local camera and does not use a cloud account, cloud SDK or analytics.",
+      "Code is MIT-licensed; camera firmware and vendor services remain under their own terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "mobile-app-dev"
+  },
+  {
+    "id": "openstride-case",
+    "name": "OpenStride: a clean-room reimplementation of the Strava Android app",
+    "url": "https://github.com/Kamalakanta01/openstride",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "OpenStride is a clean-room Kotlin reimplementation of the Strava Android app, published with the static-analysis toolkit and interface specification that documented Strava Android v456.10. The repository separates the evidence-backed interface documents from the from-scratch application implementation.",
+    "description_zh": "OpenStride 是用 Kotlin 净室重建的 Strava Android 应用，同时发布记录 Strava Android v456.10 的静态分析工具与接口规范。仓库把有证据支撑的接口文档与从零实现的应用代码分开组织。",
+    "evidence_url": "https://github.com/Kamalakanta01/openstride/blob/8e0257e7c06d68f85c78d0ce8f62662e03ab0de0/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The Android app builds with Gradle and Kotlin; CI runs build, lint and tests on every push.",
+      "The analysis covers the container format, manifest, 72,470 class definitions, the native engine, network surface and privacy posture in ten documents.",
+      "Contributors work from spec/ and the README; the repository states that its code and binary artifacts contain no Strava code.",
+      "Code is Apache-2.0; Strava's service and trademarks remain under their own terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "mobile-app-dev"
+  },
+  {
+    "id": "paperswithcode-rebuild-case",
+    "name": "Papers with Code: preserving and reimplementing the closed site",
+    "url": "https://github.com/World-Snapshot/papers-with-code",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "This project preserves Papers with Code task and paper data after the site stopped operating in July 2025, and provides an interactive task viewer. Its documentation indexes the archived exports, processing scripts and alternative deployments.",
+    "description_zh": "该项目在 Papers with Code 于 2025 年 7 月停止运营后保存其任务与论文数据，并提供交互式任务查看器；文档梳理存档导出、处理脚本与替代部署。",
+    "evidence_url": "https://github.com/World-Snapshot/papers-with-code/blob/1475681167c89ce590559619c56db02e2bd93b85/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reimplementation is a server-rendered website template; local viewing uses a Live Server extension rather than opening the HTML directly.",
+      "It preserves task information across computer vision, natural language processing and audio domains from archived site data.",
+      "The README links the Wayback Machine snapshot and several independent deployments of the preserved data.",
+      "The website template uses CC BY-SA 4.0 and requires World Snapshot Doc attribution."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "website"
+    ],
+    "kind": "case-study",
+    "class": "website"
+  },
+  {
+    "id": "cnccraft-vectric-spark-case",
+    "name": "CncCraft: reconstructing Vectric Spark design and milling workflows",
+    "url": "https://github.com/freegroup/CncCraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "CncCraft reimplements Vectric Spark's observable design and CNC milling workflows in Rust. It combines a drawing canvas, parametric dimensions, toolpath generation, a 3D milling preview and G-Code export in a native application.",
+    "description_zh": "CncCraft 用 Rust 重建 Vectric Spark 可观察的设计与 CNC 铣削工作流，在原生应用中整合绘图画布、参数化尺寸、刀路生成、3D 铣削预览与 G-Code 导出。",
+    "evidence_url": "https://github.com/freegroup/CncCraft/blob/4b9debd4aff7b81f33a230e25dbe336c675de40e/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Desktop builds target Windows, macOS and Linux; building from source uses stable Rust.",
+      "Imports DXF, exports DXF and SVG, and generates G-Code for GRBL or custom post-processors.",
+      "Profiles, pockets, V-carving and drilling share the design with a cutter-based 3D simulation.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "3d-design",
+    "additional_evidence_urls": [
+      "https://github.com/freegroup/CncCraft/blob/4b9debd4aff7b81f33a230e25dbe336c675de40e/LICENSE"
+    ]
+  },
+  {
+    "id": "autocaded-autocad-14-case",
+    "name": "AutoCADED: rebuilding AutoCAD 1.4 drafting commands and DWG codecs",
+    "url": "https://github.com/dmytro-yemelianov/autocaded",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "AutoCADED rebuilds the 1983 MS-DOS AutoCAD 1.4 drafting workflow as a native Rust application. It implements drawing commands and early DWG/DXF codecs, using Ghidra analysis and differential tests against the original executable to guide compatibility.",
+    "description_zh": "AutoCADED 将 1983 年 MS-DOS 版 AutoCAD 1.4 的绘图工作流重建为 Rust 原生应用，实现绘图命令与早期 DWG/DXF 编解码器，并通过 Ghidra 分析和原版可执行文件的差分测试检验兼容性。",
+    "evidence_url": "https://github.com/dmytro-yemelianov/autocaded/blob/544fdb6b57d573aa72358bad623f8e5c6ceaf059/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Builds use the pinned Rust 1.88.0 toolchain; corpus and oracle tests require user-supplied original disk archives, with QEMU for the oracle path.",
+      "Targets AutoCAD 1.4 2D commands and the AC1.2/AC1.40 DWG formats, with native and browser front ends.",
+      "The reviewed README reports differential coverage for 44 of 54 software commands; command and oracle work continues.",
+      "Project code is MIT-licensed; original AutoCAD artifacts are supplied separately."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "kind": "case-study",
+    "class": "3d-design",
+    "additional_evidence_urls": [
+      "https://github.com/dmytro-yemelianov/autocaded/blob/544fdb6b57d573aa72358bad623f8e5c6ceaf059/LICENSE"
+    ]
+  },
+  {
+    "id": "minnamate-adobe-animate-case",
+    "name": "minnamate: a Rust reconstruction of Adobe Animate editing and publishing",
+    "url": "https://github.com/mirvoxtm/minnamate",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "minnamate is a clean-room Adobe Animate alternative in Rust. It opens FLA/XFL documents in an Animate-style editor, reproduces timeline, symbol and drawing workflows, and publishes SWF movies for Ruffle alongside HTML5 Canvas and image exports.",
+    "description_zh": "minnamate 是用 Rust 净室实现的 Adobe Animate 替代应用，可在 Animate 风格的编辑器中打开 FLA／XFL 文档，重建时间线、符号和绘图工作流，并发布供 Ruffle 播放的 SWF，以及 HTML5 Canvas 和图像产物。",
+    "evidence_url": "https://github.com/mirvoxtm/minnamate/blob/cd2afd95b5b235ec9b1b7b70b0c5b9503d6068c1/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The documented editor build runs on Windows with Rust; input is a FLA file or unpacked XFL directory.",
+      "The CLI renders frames and exports SWF, HTML5 Canvas, GIF and image sequences; video export uses FFmpeg.",
+      "The reviewed version lists bones, 3D, Asset Warp, input text and multiple open documents as pending."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "animation"
+  },
+  {
+    "id": "fla-viewer-animate-playback-case",
+    "name": "FLA Viewer: rebuilding Adobe Animate document playback in the browser",
+    "url": "https://github.com/lifeart/fla-viewer",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "FLA Viewer implements local parsing, timeline playback and export for Adobe Animate and Flash FLA documents. Its Canvas renderer reads ZIP/XML XFL and part of the older binary FLA format, rendering shapes, symbols, tweens, masks and audio without the Adobe application.",
+    "description_zh": "FLA Viewer 为 Adobe Animate 与 Flash FLA 文档实现本地解析、时间线播放和导出。Canvas 渲染器读取 ZIP／XML XFL 与部分早期二进制 FLA 格式，在浏览器中呈现形状、符号、补间、遮罩和声音。",
+    "evidence_url": "https://github.com/lifeart/fla-viewer/blob/b14fa1d1e3e2d2b035e174bde472a7941d385b17/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds require Node.js 20+; video export needs browser WebCodecs support.",
+      "Flash CS5+ XFL documents have the broader viewer support; Flash 5–CS4 binary files have partial geometry and keyframe support.",
+      "ActionScript execution and interactive buttons are absent; embedded video is excluded from exports, and some filters are approximated.",
+      "Package metadata declares ISC."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "animation",
+    "additional_evidence_urls": [
+      "https://github.com/lifeart/fla-viewer/blob/b14fa1d1e3e2d2b035e174bde472a7941d385b17/package.json"
+    ]
+  },
+  {
+    "id": "clonepremiere-editor-case",
+    "name": "ClonePremiere: a browser reconstruction of Premiere-style multitrack editing",
+    "url": "https://github.com/thecloners21/adobe-Premiere-Pro-clone",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "ClonePremiere recreates Premiere-style multitrack video editing with a browser interface and PHP/SQLite backend. It combines timeline editing, WebGL preview, grading, masks, keyframes and project interchange, with FFmpeg server rendering and a browser recording fallback.",
+    "description_zh": "ClonePremiere 通过浏览器界面与 PHP／SQLite 后端重建 Premiere 风格的多轨视频编辑，整合时间线、WebGL 预览、调色、遮罩、关键帧和工程交换，提供 FFmpeg 服务端渲染与浏览器录制回退。",
+    "evidence_url": "https://github.com/thecloners21/adobe-Premiere-Pro-clone/blob/8995ed14947197b48863f00d0b205f37870aebb4/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Serve the ES modules over HTTP; the backend requires PHP 8.1+, SQLite and FFmpeg with shell_exec enabled for server rendering.",
+      "Documents multitrack trim/split, ripple/roll/slip/slide, color grading, masks, keyframes and .cpproj/FCPXML/EDL interchange.",
+      "Static hosting uses browser persistence and MediaRecorder export in place of PHP storage and FFmpeg server jobs.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "video",
+    "additional_evidence_urls": [
+      "https://github.com/thecloners21/adobe-Premiere-Pro-clone/blob/8995ed14947197b48863f00d0b205f37870aebb4/LICENSE"
+    ]
+  },
+  {
+    "id": "clipforge-capcut-editor-case",
+    "name": "ClipForge: a CapCut-inspired Electron timeline editor",
+    "url": "https://github.com/YibinLong/ClipForge",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "ClipForge reconstructs a subset of CapCut-style desktop editing in Electron and React: media import, timeline trim/split, overlays, preview and H.264/AAC MP4 export. The repository includes FFmpeg integration and Electron Forge packaging for desktop builds.",
+    "description_zh": "ClipForge 使用 Electron 与 React 重建部分 CapCut 风格桌面编辑流程，支持媒体导入、时间线修剪／分割、叠加轨、预览和 H.264／AAC MP4 导出；仓库包含 FFmpeg 接入与 Electron Forge 桌面打包配置。",
+    "evidence_url": "https://github.com/YibinLong/ClipForge/blob/96c902f90c02bc7e4eb62d021752aaa474c0aa28/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds require Node.js 18+ and npm; the desktop package bundles FFmpeg and FFprobe.",
+      "Imports MP4/MOV/WebM, keeps a media library, and documents MP4 export at 720p, 1080p or source resolution.",
+      "Version 1.0 lists undo/redo, transitions, audio-only tracks and project save/load as pending.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "video",
+    "additional_evidence_urls": [
+      "https://github.com/YibinLong/ClipForge/blob/96c902f90c02bc7e4eb62d021752aaa474c0aa28/LICENSE"
+    ]
+  },
+  {
+    "id": "tsf-reborn-launcher-case",
+    "name": "TSF Reborn: reconstructing the TSF Shell 3D Android launcher",
+    "url": "https://github.com/GlerschNersch/TSFReborn",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "TSF Reborn recreates the TSF Shell 3D Android launcher in Kotlin and OpenGL ES 3. Its replacement home screen implements animated pages, icon dragging, folders, a searchable app drawer, theme icon packs, widgets and accessibility navigation.",
+    "description_zh": "TSF Reborn 使用 Kotlin 与 OpenGL ES 3 重建 TSF Shell 3D Android 启动器，实现带动画的桌面分页、图标拖放、文件夹、可搜索应用抽屉、主题图标包、小组件和无障碍导航。",
+    "evidence_url": "https://github.com/GlerschNersch/TSFReborn/blob/647f622373999031c05ebd737785c184e07c2a96/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Android 10+; release APKs use a separate signing key from local debug builds.",
+      "Studies observable launcher behavior and theme formats, with ADW/Nova/GO/TSF appfilter.xml icon-pack support.",
+      "The repository documents JVM tests and an 18-scenario emulator-only end-to-end suite.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "mobile-app-dev",
+    "additional_evidence_urls": [
+      "https://github.com/GlerschNersch/TSFReborn/blob/647f622373999031c05ebd737785c184e07c2a96/LICENSE"
+    ]
+  },
+  {
+    "id": "translater-yandex-android-case",
+    "name": "Translater: rebuilding Yandex.Translate as an Android architecture sample",
+    "url": "https://github.com/sgrekov/Translater",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Translater is a Kotlin Android reimplementation of Yandex.Translate, published alongside a three-part Elm Architecture article series. Its source separates presentation, domain and data modules to demonstrate application state management.",
+    "description_zh": "Translater 是用 Kotlin 重建 Yandex.Translate 的 Android 示例，配套三篇 Elm Architecture 文章发布；源码分为 presentation、domain 和 data 模块，用于展示应用状态管理。",
+    "evidence_url": "https://github.com/sgrekov/Translater/blob/24a1a1955ca901d4bf5ff08ff2f8e3eb2719c825/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed Gradle configuration uses Kotlin 1.3.30 and Android Gradle Plugin 3.4.0.",
+      "An Android teaching implementation accompanying the published Elm Architecture series.",
+      "The README declares Apache-2.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "mobile-app-dev",
+    "additional_evidence_urls": [
+      "https://github.com/sgrekov/Translater/blob/24a1a1955ca901d4bf5ff08ff2f8e3eb2719c825/build.gradle",
+      "https://github.com/sgrekov/Translater/blob/24a1a1955ca901d4bf5ff08ff2f8e3eb2719c825/settings.gradle"
+    ]
+  },
+  {
+    "id": "aare-android-auto-phone-case",
+    "name": "AARE: reimplementing the Android Auto phone application",
+    "url": "https://github.com/prototux/AARE",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "AARE reimplements the phone side of Android Auto, projecting navigation, media, messages and voice-assistant controls to compatible car displays over USB or wireless links. It includes an Android application, an Android Auto protocol module and a desktop head-unit test implementation.",
+    "description_zh": "AARE 重建 Android Auto 手机端，通过 USB 或无线连接，将导航、媒体、消息与语音助手控制投射到兼容车载屏幕，并提供 Android 应用、Android Auto 协议模块与桌面车机测试实现。",
+    "evidence_url": "https://github.com/prototux/AARE/blob/37f8236b031e42e17220b347a203a3c2882490da/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Android 8+ and a compatible head unit; source builds use JDK 17–21 and the Android SDK.",
+      "Many factory head units require a valid Android Auto phone certificate; the README documents the certificate and head-unit compatibility requirements.",
+      "Optional audio and ordinary-app projection paths depend on Android version, Shizuku or root; the base app has its own navigation and media integration.",
+      "Code and the aasdk-derived protocol definitions use GPL-3.0-or-later, with separate notices for bundled fonts."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "kind": "case-study",
+    "class": "mobile-app-dev",
+    "additional_evidence_urls": [
+      "https://github.com/prototux/AARE/blob/37f8236b031e42e17220b347a203a3c2882490da/LICENSE"
+    ]
+  },
+  {
+    "id": "jsoneditoronline-site-case",
+    "name": "JSON Editor Online: a static reimplementation of jsoneditoronline.org",
+    "url": "https://github.com/djmattyg007/jsoneditoronline",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "JSON Editor Online rebuilds jsoneditoronline.org as a statically deployable website using the jsoneditor library. A repository build script installs the dependencies and produces a self-hostable dist directory.",
+    "description_zh": "JSON Editor Online 使用 jsoneditor 库将 jsoneditoronline.org 重建为可静态部署的网站；仓库构建脚本安装依赖并生成可自行托管的 dist 目录。",
+    "evidence_url": "https://github.com/djmattyg007/jsoneditoronline/blob/2090d3d71756cd00ef75b857e2b6fb46ab628f10/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Run the repository build.sh with Yarn/npm dependencies, then serve the generated dist directory.",
+      "Diff support, JSON Schema support and changing indentation are listed as future work.",
+      "Code is AGPL-3.0-only."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "website"
+    ],
+    "kind": "case-study",
+    "class": "website",
+    "additional_evidence_urls": [
+      "https://github.com/djmattyg007/jsoneditoronline/blob/2090d3d71756cd00ef75b857e2b6fb46ab628f10/LICENSE.txt"
+    ]
+  },
+  {
+    "id": "awwwards-zentry-site-case",
+    "name": "Awwwards: reconstructing Zentry's promotional website in React",
+    "url": "https://github.com/BlockLune/awwwards-zentry",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Awwwards recreates Zentry's promotional website in React and TypeScript, following the linked GSAP website tutorial. Its source assembles the hero, navigation, about, features, story, contact and footer sections into a scroll-driven page.",
+    "description_zh": "Awwwards 使用 React 与 TypeScript 重建 Zentry 宣传网站，依据其链接的 GSAP 网站教程实现；源码将首屏、导航、介绍、功能、故事、联系和页脚区组合成滚动页面。",
+    "evidence_url": "https://github.com/BlockLune/awwwards-zentry/blob/9780238a13ed050ff113a2abe6f09625d87e3e44/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A Vite 6, React 18 and TypeScript 5.6 project; build and preview scripts are in package.json.",
+      "A tutorial-based reconstruction of the promotional website and its page sections."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope"
+    ],
+    "targets": [
+      "website"
+    ],
+    "kind": "case-study",
+    "class": "website",
+    "additional_evidence_urls": [
+      "https://github.com/BlockLune/awwwards-zentry/blob/9780238a13ed050ff113a2abe6f09625d87e3e44/package.json",
+      "https://github.com/BlockLune/awwwards-zentry/blob/9780238a13ed050ff113a2abe6f09625d87e3e44/src/App.tsx"
+    ]
+  },
+  {
+    "id": "javascript-on-the-brain-site-case",
+    "name": "JavaScript on the Brain: rebuilding the Java on the Brain website",
+    "url": "https://github.com/Eggbertx/JavaScriptOnTheBrain",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "JavaScript on the Brain is an Astro-based reconstruction of the Java on the Brain website using modern web technologies. The repository publishes a work-in-progress replacement with local development, static build and preview commands.",
+    "description_zh": "JavaScript on the Brain 使用现代 Web 技术，以 Astro 重建 Java on the Brain 网站；仓库发布开发中的替代实现，提供本地开发、静态构建和预览命令。",
+    "evidence_url": "https://github.com/Eggbertx/JavaScriptOnTheBrain/blob/37a981dc363d20f383f13f14728a4c9e328b576f/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed package uses Astro 5; install with npm and use npm run dev/build/preview.",
+      "The README identifies the website reconstruction as work in progress.",
+      "Code is BSD-3-Clause-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "website"
+    ],
+    "kind": "case-study",
+    "class": "website",
+    "additional_evidence_urls": [
+      "https://github.com/Eggbertx/JavaScriptOnTheBrain/blob/37a981dc363d20f383f13f14728a4c9e328b576f/package.json",
+      "https://github.com/Eggbertx/JavaScriptOnTheBrain/blob/37a981dc363d20f383f13f14728a4c9e328b576f/LICENSE"
+    ]
   }
 ]

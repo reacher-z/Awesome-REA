@@ -2,17 +2,18 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-10T03:26:21+00:00",
-    "entry_count": 1112,
-    "class_entry_count": 1141,
+    "generated_at": "2026-11-20T14:00:47+00:00",
+    "entry_count": 1116,
+    "class_entry_count": 1146,
     "class_counts": {
-      "image": 1074,
+      "image": 1078,
       "video": 38
     },
-    "missing_count": 29,
+    "missing_count": 30,
     "missing": [
       "aotopsy",
       "appshark",
+      "autocaded-autocad-14-case",
       "bellpad-animal-crossing-port-case",
       "bumpys-arcade-fantasy-decomp-case",
       "corefw-launchpad-case",
@@ -115,6 +116,15 @@
       "source_url": "https://github.com/EstebanPdN/zelda-alttp-3ds",
       "revision": "c85d243923febf9930b254a937c399784dc977ff",
       "checked_at": "2026-11-09T07:55:54+00:00"
+    },
+    {
+      "id": "aare-android-auto-phone-case",
+      "image_url": "https://raw.githubusercontent.com/prototux/AARE/37f8236b031e42e17220b347a203a3c2882490da/docs/screenshots/main.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/prototux/AARE",
+      "revision": "37f8236b031e42e17220b347a203a3c2882490da",
+      "checked_at": "2026-11-20T14:00:47+00:00"
     },
     {
       "id": "abc-decompiler",
@@ -331,6 +341,15 @@
       "source_url": "https://github.com/Nalen98/AngryGhidra",
       "revision": "0e6dc9c695de654367fbc0d9cd123a86791bff4d",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "anm2ed-case",
+      "image_url": "https://shweetz.net/files/projects/anm2ed/preview2.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/ShweetsStuff/anm2ed",
+      "revision": "8ef089d306bb82108fcf27edf0375efbc5066faf",
+      "checked_at": "2026-11-20T14:00:35+00:00"
     },
     {
       "id": "another-life-w3-case",
@@ -1303,6 +1322,15 @@
       "source_url": "https://github.com/marchc1/CloneDash",
       "revision": "bf89e684812772d45037e94d812138220931a265",
       "checked_at": "2026-11-09T05:33:55+00:00"
+    },
+    {
+      "id": "cnccraft-vectric-spark-case",
+      "image_url": "https://raw.githubusercontent.com/freegroup/CncCraft/4b9debd4aff7b81f33a230e25dbe336c675de40e/docs/assets/img/oberflaeche.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/freegroup/CncCraft",
+      "revision": "4b9debd4aff7b81f33a230e25dbe336c675de40e",
+      "checked_at": "2026-11-20T14:00:38+00:00"
     },
     {
       "id": "cod3recomp",
@@ -8232,6 +8260,15 @@
       "source_url": "https://github.com/DrummingBird1/sonic06-recomp",
       "revision": "d670b199628d3e3b996b92d67f4119329de95f02",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "solidcraft-case",
+      "image_url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/aa809063d205e44e833bf43b80670d0e1712c490/docs/screenshots/demo.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/tangency-labs/solidcraft",
+      "revision": "aa809063d205e44e833bf43b80670d0e1712c490",
+      "checked_at": "2026-11-20T14:00:31+00:00"
     },
     {
       "id": "sonic-blast-gg-recomp-case",

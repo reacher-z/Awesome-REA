@@ -6,7 +6,7 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**350 case studies**
+**351 case studies**
 
 ## Engine reimplementations
 
@@ -53,6 +53,7 @@
 - [**alive-serv: reconstructing the SIF2 MIRACLE LIVE! server**](https://github.com/miraclealive/alive-serv) - alive-serv reconstructs part of the SIF2 MIRACLE LIVE! <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/alive-serv-case/)</sub>
 - [**Alley Cat: an annotated DOS executable disassembly**](https://github.com/gmegidish/alleycat-disassembly) - Alley Cat Disassembly is an in-progress effort to turn the DOS game's Ghidra disassembly into annotated NASM x86 assembly. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/alley-cat-disassembly-case/)</sub>
 - [**Alleyway: a checksum-matched Game Boy disassembly**](https://github.com/Wit-MKW/alleyway-gb) - Alleyway reconstructs the 1989 Game Boy game as assembly source organized by audio, display, input, physics, and stage code. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/alleyway-gb-case/)</sub>
+- [**Anm2Ed: reconstructing Isaac Rebirth's proprietary animation editor**](https://github.com/ShweetsStuff/anm2ed) - Anm2Ed is a modern replacement for the proprietary animation editor shipped with The Binding of Isaac: Rebirth. <sub>Case study · Independent reconstruction · Also: App · [Full entry](https://awesomerea.org/resources/anm2ed-case/)</sub>
 - [**Another Life: reconstructing The Witcher 3 save state**](https://github.com/awarebayes/another-life-w3) - Another Life reconstructs parts of The Witcher 3 Remastered save format and quest state to generate new saves from a player's story choices. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/another-life-w3-case/)</sub>
 - [**Arkanum: reconstructing Arcanum archives and map sectors**](https://github.com/vleon1/Arkanum) - Arkanum reconstructs Arcanum game data formats as part of a Python engine recreation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/arkanum-arcanum-formats-case/)</sub>
 - [**ArkWeb: a two-game movement and collision experiment**](https://github.com/luki-1/ArkWeb) - Runs Spider-Man Remastered and Arkham Knight together, streaming Gotham collision into Spider-Man’s physics world and compositing his rendered frame into Arkham. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/arkweb-two-game-case/)</sub>

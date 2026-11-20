@@ -43811,5 +43811,197 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "surfacecraft-case": {
+    "name": "SurfaceCraft：纯 Rust 净室扫描转 CAD 应用",
+    "requirements": [
+      "桌面版支持 Windows、macOS、Linux；浏览器版需要 PATH 中的 wasm-bindgen 与 Cargo.lock 固定的 nightly 工具链。",
+      "输入为扫描网格；应用对其进行对齐、抽取基本体、拟合 NURBS 曲面并重建参数化特征树，随后导出 STEP 或 IGES。",
+      "README 自述早期开发阶段，并用固定测试阈值报告精度，附有对照清单与内核说明。",
+      "代码可选择 MIT 或 Apache-2.0 许可证；第三方代码与素材另列许可条款。"
+    ]
+  },
+  "solidcraft-case": {
+    "name": "SolidCraft：纯 Rust 开源参数化 3D CAD 应用",
+    "requirements": [
+      "Windows 使用 MSI 安装包，macOS 使用 Intel 与 Apple 芯片的磁盘映像，Linux 使用 AppImage 或 Snap，Web 版无需安装。",
+      "工作流从草图与尺寸开始，再拉伸、倒角、抽壳与阵列特征，参数化时间线在尺寸变化后重建模型。",
+      "通过 MCP 提供面向智能体的建模自动化；README 记录了一个按电路板参数构建的树莓派 4 外壳案例。",
+      "代码许可为 Apache-2.0，品牌与素材条款另行列出。"
+    ]
+  },
+  "sketchup-skp-reverse-engineering-case": {
+    "name": "SketchUp .skp 分析：Trimble SDK、Wine 与 Blender 工具链",
+    "requirements": [
+      "工具链由 Trimble C SDK 的 Windows DLL、MinGW 交叉编译、Wine 9 与 Docker 镜像组成；首次构建会安装工具链。",
+      "输入是挂载进容器的用户 .skp 文件；ASCII 路径用于避开文档记录的 Wine 路径问题。",
+      "工作区包含基于 SDK 的转储程序，以及记录操作步骤、提取模型结构和测量衣柜尺寸的知识库。",
+      "仓库许可为 MIT；Trimble SDK 与 SketchUp 仍受各自条款约束。"
+    ]
+  },
+  "anm2ed-case": {
+    "name": "Anm2Ed：重建《以撒的结合：重生》的专有动画编辑器",
+    "requirements": [
+      "Windows 与 Linux 构建使用 CMake；测试通过 ctest 运行，渲染测试需要 OpenGL 显示环境。",
+      "输入为 .anm2 文件；精灵表可为 PNG 或 SVG，保存时写回游戏格式并内嵌编辑器的 SourceDocument，同时为游戏扁平化动画层。",
+      "README 披露大语言模型辅助，并列出自述支持的语言与编辑器功能。",
+      "代码许可为 GPL-3.0；游戏及其素材仍受各自条款约束。"
+    ]
+  },
+  "zapcut-case": {
+    "name": "ZapCut：面向 Windows 的 CapCut 风格净室视频编辑器",
+    "requirements": [
+      "官方构建是 Windows 桌面安装包；安装包未签名，Windows SmartScreen 会在安装前提示。",
+      "内置 FFmpeg；项目使用 .zapcut 格式并支持自动保存与恢复。",
+      "README 记录 25 种转场、31 种特效、43 种滤镜、关键帧变换、遮罩、抠像与 MCP 工具面。",
+      "ZapCut 源码采用 MIT 许可证；附带 FFmpeg 构建采用 GPLv3，附带字体采用 SIL OFL 1.1。"
+    ]
+  },
+  "palmier-win-case": {
+    "name": "Palmier Win：面向 Windows 的 Palmier Pro 独立重实现",
+    "requirements": [
+      "Windows 与 macOS 构建需要通过 winget 或 Homebrew 安装的 FFmpeg；源码构建需要 Node 20+、Rust 1.77+ 与平台 WebView 工具。",
+      "项目使用 .palmierwin JSON 文件，支持撤销/重做、多轨时间线、检查器变换、布局、不透明度与亮度控制。",
+      "MCP 服务在本地监听，供智能体驱动编辑；README 把转写、字幕与按词剪辑列为尚未实现。",
+      "核心许可为 GPLv3；README 对比 Windows 技术栈与 Palmier Pro 的 SwiftUI/AVFoundation 实现。"
+    ]
+  },
+  "icsee-android-reimplementation-case": {
+    "name": "iCSee Local Control：iCSee Android 应用的 FOSS 重实现",
+    "requirements": [
+      "Android 8.0+；发布 APK 由 CI 构建，并使用 Android debug key 签名以供侧载。",
+      "README 记录在目标摄像头上验证 DVRIP 登录与 RTSP 实时画面，并说明 Sofia mod-62 密码哈希路径。",
+      "应用只在本地连接摄像头，不使用云账号、云 SDK 或分析服务。",
+      "代码许可为 MIT；摄像头固件与厂商服务仍受各自条款约束。"
+    ]
+  },
+  "openstride-case": {
+    "name": "OpenStride：Strava Android 应用的净室重实现",
+    "requirements": [
+      "Android 应用使用 Gradle 与 Kotlin 构建；CI 在每次推送时运行构建、静态检查与测试。",
+      "分析文档覆盖容器格式、清单、72,470 个类定义、原生引擎、网络面与隐私姿态，共十份。",
+      "贡献者依据 spec/ 与 README 工作；仓库声明其代码与二进制产物不含 Strava 代码。",
+      "代码许可为 Apache-2.0；Strava 的服务与商标仍受各自条款约束。"
+    ]
+  },
+  "paperswithcode-rebuild-case": {
+    "name": "Papers with Code：保存并重实现已停运的站点",
+    "requirements": [
+      "重建版是服务端渲染的网站模板；本地查看使用 Live Server 扩展，而非直接打开 HTML。",
+      "它保存了存档站点数据中计算机视觉、自然语言处理与音频领域的任务信息。",
+      "README 链接 Wayback Machine 快照与若干独立部署的保存数据。",
+      "网站模板采用 CC BY-SA 4.0，并要求保留 World Snapshot Doc 署名。"
+    ]
+  },
+  "capcut-rea-analysis-case": {
+    "name": "CapCut 9.6：REA 架构与编辑器 API 盘点",
+    "requirements": [
+      "分析对象是 Windows x64 上的 CapCut 9.6.0.4097，并记录安装根目录 SHA-256 与观察到的组件大小。",
+      "报告覆盖启动器、C++/Qt 6 与 CEF 层、捆绑的 JavaScript 应用与内嵌 AI 智能体运行时。",
+      "结论绑定证据编号或标为推断；JavaScript 工具支持 dry run 与时间线版本。",
+      "仓库元数据未声明 SPDX 许可；仓库自带条款。"
+    ]
+  },
+  "cnccraft-vectric-spark-case": {
+    "name": "CncCraft：重建 Vectric Spark 的设计与铣削工作流",
+    "requirements": [
+      "桌面版本面向 Windows、macOS 和 Linux；源码构建使用稳定版 Rust。",
+      "支持 DXF 导入、DXF 与 SVG 导出，并为 GRBL 或自定义后处理器生成 G-Code。",
+      "轮廓、型腔、V 型雕刻与钻孔刀路和带刀具的 3D 仿真共用设计数据。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "autocaded-autocad-14-case": {
+    "name": "AutoCADED：重建 AutoCAD 1.4 绘图命令与 DWG 编解码器",
+    "requirements": [
+      "构建使用固定的 Rust 1.88.0；语料与 oracle 测试需要自行提供原始磁盘存档，oracle 路径还需要 QEMU。",
+      "面向 AutoCAD 1.4 二维命令以及 AC1.2／AC1.40 DWG 格式，提供原生与浏览器前端。",
+      "所审 README 报告 54 个软件命令中有 44 个具备差分测试，命令与 oracle 工作仍在推进。",
+      "项目代码采用 MIT 许可证；原版 AutoCAD 产物另行提供。"
+    ]
+  },
+  "minnamate-adobe-animate-case": {
+    "name": "minnamate：用 Rust 重建 Adobe Animate 编辑与发布流程",
+    "requirements": [
+      "文档中的编辑器构建面向 Windows，使用 Rust；输入为 FLA 文件或解包后的 XFL 目录。",
+      "命令行可渲染帧并导出 SWF、HTML5 Canvas、GIF 和图像序列；视频导出使用 FFmpeg。",
+      "所审版本将骨骼、3D、Asset Warp、输入文本与同时打开多个文档列为待实现。"
+    ]
+  },
+  "fla-viewer-animate-playback-case": {
+    "name": "FLA Viewer：在浏览器中重建 Adobe Animate 文档播放",
+    "requirements": [
+      "源码构建需要 Node.js 20+；视频导出需要浏览器支持 WebCodecs。",
+      "Flash CS5 及之后的 XFL 文档具有较完整的查看支持；Flash 5 至 CS4 二进制文件支持部分几何与关键帧。",
+      "未实现 ActionScript 执行与交互按钮；导出不包含嵌入视频，部分滤镜采用近似实现。",
+      "包元数据声明 ISC 许可证。"
+    ]
+  },
+  "clonepremiere-editor-case": {
+    "name": "ClonePremiere：在浏览器中重建 Premiere 风格的多轨编辑",
+    "requirements": [
+      "ES 模块需通过 HTTP 提供；后端需要 PHP 8.1+、SQLite，服务端渲染还需要 FFmpeg 与启用的 shell_exec。",
+      "文档列出多轨修剪／分割、波纹／滚动／滑移／滑动编辑、调色、遮罩、关键帧及 .cpproj／FCPXML／EDL 交换。",
+      "静态托管使用浏览器持久化与 MediaRecorder 导出，替代 PHP 存储和 FFmpeg 服务端任务。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "clipforge-capcut-editor-case": {
+    "name": "ClipForge：受 CapCut 启发的 Electron 时间线编辑器",
+    "requirements": [
+      "源码构建需要 Node.js 18+ 与 npm；桌面包包含 FFmpeg 与 FFprobe。",
+      "可导入 MP4／MOV／WebM 并保存媒体库，文档列出 720p、1080p 或原始分辨率 MP4 导出。",
+      "1.0 版将撤销／重做、转场、纯音频轨及工程保存／加载列为待实现。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "tsf-reborn-launcher-case": {
+    "name": "TSF Reborn：重建 TSF Shell 3D Android 启动器",
+    "requirements": [
+      "需要 Android 10+；发布 APK 与本地 debug 构建使用不同签名密钥。",
+      "依据可观察的启动器行为和主题格式实现，支持 ADW／Nova／GO／TSF appfilter.xml 图标包。",
+      "仓库记录 JVM 测试与仅在模拟器中运行的 18 场景端到端测试。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "translater-yandex-android-case": {
+    "name": "Translater：以 Android 架构示例重建 Yandex.Translate",
+    "requirements": [
+      "所审 Gradle 配置使用 Kotlin 1.3.30 与 Android Gradle Plugin 3.4.0。",
+      "这是配套已发布 Elm Architecture 系列文章的 Android 教学实现。",
+      "README 声明 Apache-2.0 许可证。"
+    ]
+  },
+  "aare-android-auto-phone-case": {
+    "name": "AARE：重建 Android Auto 手机端应用",
+    "requirements": [
+      "需要 Android 8+ 与兼容车机；源码构建使用 JDK 17–21 和 Android SDK。",
+      "许多原厂车机需要有效的 Android Auto 手机证书；README 记录证书要求与车机兼容情况。",
+      "可选音频与普通应用投射路径依赖 Android 版本、Shizuku 或 root；基础应用另有导航与媒体接入。",
+      "代码与源自 aasdk 的协议定义采用 GPL-3.0-or-later，附带字体另有许可说明。"
+    ]
+  },
+  "jsoneditoronline-site-case": {
+    "name": "JSON Editor Online：静态重建 jsoneditoronline.org",
+    "requirements": [
+      "使用 Yarn／npm 依赖运行仓库中的 build.sh，再提供生成的 dist 目录。",
+      "差异比较、JSON Schema 支持与缩进调整列为后续工作。",
+      "代码采用 AGPL-3.0-only 许可证。"
+    ]
+  },
+  "awwwards-zentry-site-case": {
+    "name": "Awwwards：用 React 重建 Zentry 宣传网站",
+    "requirements": [
+      "项目使用 Vite 6、React 18 与 TypeScript 5.6；package.json 提供构建和预览脚本。",
+      "这是依据教程实现的宣传网站及其页面分区重建。"
+    ]
+  },
+  "javascript-on-the-brain-site-case": {
+    "name": "JavaScript on the Brain：重建 Java on the Brain 网站",
+    "requirements": [
+      "所审软件包使用 Astro 5；通过 npm 安装依赖，并使用 npm run dev／build／preview。",
+      "README 将该网站重建标为开发中。",
+      "代码采用 BSD-3-Clause 许可证。"
+    ]
   }
 }
