@@ -2,9 +2,9 @@
 
 [English](platform-packages.md) · [文档索引](README.zh-CN.md)
 
-状态：Beta，依据公开 Release 元数据与 README 收集。口径版本：`platform-packages-v1`。采集脚本：[`scripts/collect_platform_packages.py`](../scripts/collect_platform_packages.py)。数据：[`data/platform-packages.json`](../data/platform-packages.json)。
+状态：Beta，依据公开 Release 元数据与 README 收集。口径版本：`platform-packages-v2`。采集脚本：[`scripts/collect_platform_packages.py`](../scripts/collect_platform_packages.py)。数据：[`data/platform-packages.json`](../data/platform-packages.json)。
 
-本快照记录每个**精选数据点**在哪些操作系统发布安装包。覆盖**软件**、**网站**、**移动应用**与**科学软件**四个数据大类；游戏与硬件大类保留原有目录字段，之后可用 `--classes` 扩展，数据结构不变。这些大类的卡片显示平台标签；详情页在“发行包”下列出收集到的产物。
+本快照记录每个**精选数据点**在哪些操作系统发布安装包。覆盖全部应用大类：**网站**、**游戏开发**、**移动应用开发**、**3D 设计**、**软件**、**动画**与**视频**。硬件大类保留原有证据分类字段，因为它记录的是固件与设备产物，不是应用安装包。这些大类的卡片显示平台标签；详情页在“发行包”下列出收集到的产物。
 
 ## 1. 平台键
 
@@ -25,6 +25,7 @@
 - 使用 GitHub REST：最新稳定版 Release；仅当最新预发布版比稳定版更新时，再纳入该预发布版。
 - Release 产物会过滤校验和、签名、符号、SBOM、`.zsync` 元数据、过小文件和自动生成的源码归档。
 - README 链接只在指向目标软件时计入；安装命令也必须匹配目标包名。
+- **游戏开发**只采集 Release：该类仓库数量多，构建产物多以 Release 资产发布，README 很少列出可安装包。其条目使用 `source: "github-releases"`，并在 `meta.release_only_classes` 中标注。
 - 非 GitHub 条目保留为 `source: "not-collected"`，让“未采集”和“没有包”保持可见的区别。
 - 本快照不采集自动扫描索引：扫描只保留 README 章节信号，没有 Release 产物。
 
@@ -67,10 +68,10 @@ PY
 ## 5. 重新生成
 
 ```bash
-python3 scripts/collect_platform_packages.py                     # 软件、网站、移动应用与科学软件，使用本地包缓存
+python3 scripts/collect_platform_packages.py                     # 全部应用大类，使用本地包缓存
 python3 scripts/collect_platform_packages.py --fresh             # 忽略缓存全部重抓
-python3 scripts/collect_platform_packages.py --classes software,website,apps
+python3 scripts/collect_platform_packages.py --classes website,software
 python3 scripts/build_site.py
 ```
 
-`build_site.py` 把 `platforms`、`platform_counts` 和 `platform_packages` 合并进生成的目录数据；`meta.scope_classes` 列出的数据大类缺少快照时直接报错。
+`build_site.py` 把 `platforms`、`platform_counts` 和 `platform_packages` 合并进生成的目录数据；`meta.scope_classes` 列出的数据大类缺少快照时直接报错。`meta.release_only_classes` 标注只采集 Release 的大类。

@@ -99,13 +99,22 @@ class PlatformDataTests(unittest.TestCase):
 
     def test_class_zero_entries_in_scope_have_a_package_or_source_signal(self):
         classes = json.loads((ROOT / "data" / "evidence-classes.json").read_text(encoding="utf-8"))
-        scope = set(self.document["meta"]["scope_classes"])
+        meta = self.document["meta"]
+        scope = set(meta["scope_classes"]) - set(meta["release_only_classes"])
         record_classes = {record["id"]: record.get("class") for record in self.records}
         c0 = {entry["id"] for entry in classes["entries"]
               if entry["evidence_class"] == 0 and record_classes.get(entry["id"]) in scope}
         packages = {entry["id"]: entry for entry in self.document["entries"]}
         for identifier in c0:
             self.assertTrue(packages[identifier]["platform_keys"], identifier)
+
+    def test_release_only_class_entries_name_their_source_or_unavailability(self):
+        meta = self.document["meta"]
+        release_only = set(meta["release_only_classes"])
+        self.assertTrue(release_only)
+        for entry in self.document["entries"]:
+            if entry["class"] in release_only:
+                self.assertIn(entry["source"], {"github-releases", "unavailable", "not-collected"}, entry["id"])
 
     def test_non_github_and_missing_evidence_are_explicit(self):
         for entry in self.document["entries"]:

@@ -37,12 +37,16 @@ from data_classes import DATA_CLASSES  # noqa: E402
 
 OUTPUT_PATH = ROOT / "data" / "platform-packages.json"
 CACHE_DIR = ROOT / ".cache" / "platform-packages"
-SPEC_VERSION = "platform-packages-v1"
-# Platform tags cover the classes whose entries are distributed as installable
-# packages: desktop software, websites, mobile apps and STEM software. Game and
-# hardware entries keep their evidence-class data and can be added later without
-# changing the schema.
-DEFAULT_CLASSES = ("software", "website", "apps", "science")
+SPEC_VERSION = "platform-packages-v2"
+# Platform tags cover every application class. Hardware entries record firmware and
+# device artifacts rather than application installers, so they keep their evidence-
+# class data and can be added later without changing the schema.
+DEFAULT_CLASSES = ("website", "game-dev", "mobile-app-dev", "3d-design", "software", "animation", "video")
+# Game repositories are numerous and their build artifacts are published as release
+# assets, while their READMEs rarely name installable packages. Collect releases only
+# for this class to keep the snapshot inside one GitHub API budget; the other classes
+# still read release assets and README download links/install commands.
+RELEASES_ONLY_CLASSES = frozenset({"game-dev"})
 MAX_WORKERS = 16
 PLATFORM_ORDER = ("windows", "macos", "linux", "android", "ios", "web", "freebsd", "source", "other")
 PLATFORMS = {
@@ -94,8 +98,9 @@ def usable_asset(asset: dict) -> bool:
                 and (not isinstance(size, int) or size >= 1000))
 
 
-def fetch_repo(client: HttpClient, slug: str) -> dict:
-    cached = read_cache(slug)
+def fetch_repo(client: HttpClient, slug: str, *, include_readme: bool = True) -> dict:
+    cache_key = slug if include_readme else slug + "#releases-only"
+    cached = read_cache(cache_key)
     if cached:
         return cached
     release_status, release_body, _ = client.get(f"https://api.github.com/repos/{slug}/releases?per_page=100")
@@ -117,11 +122,12 @@ def fetch_repo(client: HttpClient, slug: str) -> dict:
             and (prerelease_release.get("published_at") or "") <= (stable_release.get("published_at") or "")):
         prerelease_release = None
     selected = [release for release in (stable_release, prerelease_release) if release]
-    readme_status, readme_body, _ = client.get(f"https://api.github.com/repos/{slug}/readme")
     readme_text = ""
-    if readme_status == 200:
-        readme = json.loads(readme_body.decode("utf-8", "replace"))
-        readme_text = base64.b64decode(readme.get("content", "")).decode("utf-8", "replace")
+    if include_readme:
+        readme_status, readme_body, _ = client.get(f"https://api.github.com/repos/{slug}/readme")
+        if readme_status == 200:
+            readme = json.loads(readme_body.decode("utf-8", "replace"))
+            readme_text = base64.b64decode(readme.get("content", "")).decode("utf-8", "replace")
     payload = {
         "unavailable": False,
         "release_scope": "latest-stable+latest-prerelease",
@@ -146,7 +152,7 @@ def fetch_repo(client: HttpClient, slug: str) -> dict:
         "readme_text": readme_text[:SIGNAL_TEXT_LIMIT],
         "fetched_at": now_utc(),
     }
-    write_cache(slug, payload)
+    write_cache(cache_key, payload)
     return payload
 
 
@@ -214,7 +220,7 @@ def descriptor(platform: str, name: str, url: str | None, kind: str,
     return item
 
 
-def package_descriptors(record: dict, payload: dict) -> tuple[dict[str, list[dict]], str]:
+def package_descriptors(record: dict, payload: dict, *, include_readme: bool = True) -> tuple[dict[str, list[dict]], str]:
     topics = payload.get("topics") or []
     found: dict[str, list[dict]] = {key: [] for key in PLATFORM_ORDER}
 
@@ -234,7 +240,7 @@ def package_descriptors(record: dict, payload: dict) -> tuple[dict[str, list[dic
             add(descriptor(platform, name, url, "release-asset", release.get("tag_name"),
                            release.get("published_at"), release.get("prerelease", False)))
 
-    readme = payload.get("readme_text") or ""
+    readme = payload.get("readme_text") or "" if include_readme else ""
     if readme:
         plain = CODE_BLOCK.sub(" ", readme)
         links = [(href.strip(), text) for text, href in MARKDOWN_LINK.findall(plain)]
@@ -295,10 +301,16 @@ def main() -> int:
         slug = github_repo_slug(record["url"])
         if slug:
             slugs.setdefault(slug, record["id"])
+    # A repository read for an ordinary class keeps its README evidence even when
+    # the same slug also appears under a releases-only class.
+    record_classes = {record["id"]: record.get("class") for record in software}
+    readme_slugs = {slug for slug, identifier in slugs.items()
+                    if record_classes[identifier] not in RELEASES_ONLY_CLASSES}
     client = HttpClient(args.token or os_environ_token(), "awesome-rea-platform-packages")
     payloads: dict[str, dict] = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futures = {pool.submit(fetch_repo, client, slug): slug for slug in slugs}
+        futures = {pool.submit(fetch_repo, client, slug, include_readme=slug in readme_slugs): slug
+                   for slug in slugs}
         for done, future in enumerate(concurrent.futures.as_completed(futures), start=1):
             slug = futures[future]
             try:
@@ -337,7 +349,8 @@ def main() -> int:
                 "reason": "repository or release metadata was unavailable; not classified as no packages",
             })
             continue
-        platforms, reason = package_descriptors(record, payload)
+        include_readme = record.get("class") not in RELEASES_ONLY_CLASSES
+        platforms, reason = package_descriptors(record, payload, include_readme=include_readme)
         keys = [key for key in PLATFORM_ORDER if platforms.get(key)]
         if keys:
             collected += 1
@@ -346,7 +359,8 @@ def main() -> int:
                 platform_package_counts[key] += len(platforms[key])
         entries.append({
             "id": record["id"], "name": record["name"], "url": record["url"],
-            "class": record.get("class"), "repo": slug, "source": "github-releases+readme",
+            "class": record.get("class"), "repo": slug,
+            "source": "github-releases" if record.get("class") in RELEASES_ONLY_CLASSES else "github-releases+readme",
             "checked_at": payload.get("fetched_at") or now_utc(),
             "release_scope": payload.get("release_scope"),
             "platforms": platforms, "platform_keys": keys, "reason": reason,
@@ -358,6 +372,7 @@ def main() -> int:
             "spec_version": SPEC_VERSION,
             "generated_at": now_utc(),
             "scope_classes": classes,
+            "release_only_classes": sorted(RELEASES_ONLY_CLASSES & set(classes)),
             "entry_count": len(entries),
             "data_entry_count": len(software),
             "github_entry_count": len(software) - non_github,
@@ -368,14 +383,16 @@ def main() -> int:
             "platform_package_counts": platform_package_counts,
             "release_scope": "latest-stable+latest-prerelease",
             "method": ("GitHub REST assets from the latest stable release and the latest prerelease, plus README download "
-                       "links/install commands, for curated data points in the selected classes. Asset names and install "
-                       "managers map to the platform key. Non-GitHub entries are retained as not-collected; unavailable "
-                       "repositories are not treated as having no packages."),
+                       "links/install commands where the class is not releases-only, for curated data points in the "
+                       "selected application classes. Asset names and install managers map to the platform key. "
+                       "Non-GitHub entries are retained as not-collected; unavailable repositories are not treated as "
+                       "having no packages."),
             "limits": [
                 "A package name or install command does not prove that the package installs, runs or matches the target.",
                 "Release asset names can be ambiguous; .zip/.7z without an OS hint are recorded as other.",
                 "README links are only collected when they name the target software; unrelated links are ignored.",
                 "Non-GitHub pages and the automated scan index were not collected in this snapshot.",
+                "Game Dev entries read release assets only; their README install commands are not collected.",
                 "Collection date and per-entry checked_at describe the public metadata, not a runtime test.",
             ],
         },

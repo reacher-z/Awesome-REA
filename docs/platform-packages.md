@@ -2,9 +2,9 @@
 
 [简体中文](platform-packages.zh-CN.md) · [Documentation](README.md)
 
-Status: Beta, collected from public release metadata and READMEs. Spec version: `platform-packages-v1`. Collector: [`scripts/collect_platform_packages.py`](../scripts/collect_platform_packages.py). Data: [`data/platform-packages.json`](../data/platform-packages.json).
+Status: Beta, collected from public release metadata and READMEs. Spec version: `platform-packages-v2`. Collector: [`scripts/collect_platform_packages.py`](../scripts/collect_platform_packages.py). Data: [`data/platform-packages.json`](../data/platform-packages.json).
 
-This snapshot records **where each curated data point publishes packages**, by operating system. It covers the **Software**, **Website**, **Apps** and **Science** data classes; Game and Hardware entries keep their existing catalog fields and can be added with `--classes` without changing the schema. Cards in the covered classes carry the platform tags; entry pages list the collected assets under **Release packages**.
+This snapshot records **where each curated data point publishes packages**, by operating system. It covers every application class: **Website**, **Game Dev**, **Mobile App Dev**, **3D Design**, **Software**, **Animation** and **Video**. Hardware entries keep their evidence-class data because they record firmware and device artifacts rather than application installers. Cards in the covered classes carry the platform tags; entry pages list the collected assets under **Release packages**.
 
 ## 1. Platform keys
 
@@ -25,6 +25,7 @@ This snapshot records **where each curated data point publishes packages**, by o
 - GitHub REST: the newest stable release, plus the newest prerelease only when it is newer than that stable release.
 - Release assets are filtered for checksums, signatures, symbols, SBOMs, `.zsync` metadata, tiny files and generated source archives.
 - README links count only when they name the target software; install commands are matched to the target package too.
+- **Game Dev** is releases-only: its repositories are numerous and publish builds as release assets, while their READMEs rarely name installable packages. Its entries use `source: "github-releases"` and say so in `meta.release_only_classes`.
 - Non-GitHub entries are kept with `source: "not-collected"`; a missing source is visible rather than treated as “no packages”.
 - The automated scan index is not collected in this snapshot: it retains README section signals, not release assets.
 
@@ -67,10 +68,10 @@ PY
 ## 5. Regeneration
 
 ```bash
-python3 scripts/collect_platform_packages.py                     # Software, Website, Apps and Science, using the local cache
+python3 scripts/collect_platform_packages.py                     # every application class, using the local cache
 python3 scripts/collect_platform_packages.py --fresh             # refetch every repository
-python3 scripts/collect_platform_packages.py --classes software,website,apps
+python3 scripts/collect_platform_packages.py --classes website,software
 python3 scripts/build_site.py
 ```
 
-`build_site.py` merges `platforms`, `platform_counts` and `platform_packages` into the generated catalog. It fails when a data point in a class named by `meta.scope_classes` is missing from the snapshot.
+`build_site.py` merges `platforms`, `platform_counts` and `platform_packages` into the generated catalog. It fails when a data point in a class named by `meta.scope_classes` is missing from the snapshot. `meta.release_only_classes` names the classes whose entries use release assets only.
