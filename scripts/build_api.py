@@ -246,7 +246,7 @@ def schema_document(site_url: str) -> dict:
     resource = {
         'type': 'object', 'additionalProperties': False,
         'required': ['id', 'record_type', 'name', 'name_zh', 'url', 'kind', 'category', 'relationship', 'targets',
-                     'description_en', 'description_zh', 'requirements', 'requirements_zh', 'evidence_url', 'added_at',
+                     'description_en', 'description_zh', 'requirements', 'requirements_zh', 'evidence_url',
                      'verified_at', 'verification', *entry_urls],
         'properties': {
             'id': identifier, 'record_type': {'const': 'resource'}, 'name': string, 'name_zh': string, 'url': url,
@@ -271,7 +271,7 @@ def schema_document(site_url: str) -> dict:
         'type': 'object', 'additionalProperties': False,
         'required': ['id', 'record_type', 'title', 'title_zh', 'authors', 'year', 'venue', 'publication_status', 'url',
                      'pdf_url', 'targets', 'description_en', 'description_zh', 'scope_limitations_en',
-                     'scope_limitations_zh', 'why_fits_en', 'why_fits_zh', 'evidence_urls', 'added_at', 'verified_at',
+                     'scope_limitations_zh', 'why_fits_en', 'why_fits_zh', 'evidence_urls', 'verified_at',
                      'verification', 'runtime_tested', 'bibtex_url', *entry_urls],
         'properties': {
             'id': {'type': 'string', 'pattern': '^paper-[a-z0-9]+(?:-[a-z0-9]+)*$'}, 'record_type': {'const': 'paper'},
