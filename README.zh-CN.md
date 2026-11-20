@@ -164,7 +164,7 @@ REA 标签指向单独维护的上游 CLI 与 MCP 项目，详见“关于”。
 - [**go-mitmproxy HTTP 流量分析代理**](https://github.com/lqqyt2423/go-mitmproxy) - go-mitmproxy 是用 Go 编写的代理，可检查和修改 HTTP/HTTPS 流量。 <sub>工具 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/go-mitmproxy/)</sub>
 - [**子弹击穿水气球单文件 WebGL2 演示（fable-5.2-demos）**](https://github.com/az9713/fable-5.2-demos) - 由 Claude Fable 5.2 生成的单文件 HTML/JavaScript/WebGL2 光线追踪物理模拟，无外部依赖，再现子弹击穿水气球并破裂飞溅的过程。 <sub>项目 · [完整条目](https://awesomerea.org/zh/resources/fable-5-2-bullet-water-balloon-demo/)</sub>
 - [**Kaggle Landmark Arena**](https://www.kaggle.com/benchmarks/kaggle/landmark-arena) - Kaggle Benchmarks 推出的成对偏好竞技场，评测前沿模型使用 Three.js 将 20 座著名地标（含古代世界七大奇迹）生成为独立单页 Web 应用的能力。 <sub>项目 · [完整条目](https://awesomerea.org/zh/resources/kaggle-landmark-arena/)</sub>
-- [**Code Arena | WebDev（Arena.ai）**](https://arena.ai/leaderboard/code/webdev) - Arena.ai 推出的交互式 Web 应用生成实时众包对战基准，基于超过 102.7 万次社区成对投票采用 Bradley-Terry 模型排名，并展示单任务中位成本与帕累托前沿。 <sub>项目 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/arena-ai-code-webdev/)</sub>
+- [**Code Arena · WebDev（Arena.ai）**](https://arena.ai/leaderboard/code/webdev) - Arena.ai 推出的交互式 Web 应用生成实时众包对战基准，基于超过 102.7 万次社区成对投票采用 Bradley-Terry 模型排名，并展示单任务中位成本与帕累托前沿。 <sub>项目 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/arena-ai-code-webdev/)</sub>
 - [**DesignArena**](https://www.designarena.ai/) - 社区驱动的盲评锦标赛基准平台，评测 AI 模型在单轮 HTML 网页设计与多文件智能体应用构建中的表现，覆盖前端网页、全栈应用、游戏、3D 设计、数据可视化与 UI 组件。 <sub>项目 · [完整条目](https://awesomerea.org/zh/resources/design-arena-web-eval/)</sub>
 
 <a id="game"></a>
