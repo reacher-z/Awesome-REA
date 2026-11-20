@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-44771327642-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-20T16:38:05Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 425,
+    "selected_count": 1,
+    "selected_ids": [
+      "scan-1390880248"
+    ],
+    "record_sha256": {
+      "scan-1390880248": "9d8e5e93d9926068e0f2658aed708fc716f8fe0f017b1f4f1f1b2213f0b34924"
+    },
+    "skipped_counts": {
+      "already-listed": 12741,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 44771327642,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "640726560879492a439b0bb10cc3fdef7039d543",
+    "artifact_id": 14649546202,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:6e5d676427b71eb3612a623c9347a28ada286d6333cea32d81b6988cfe30a410",
+    "checkpoint_sha256": "f759cfaee6e088bf1681ee400e8a0bae3fe8fb916f526fe054f8118bef1c020b",
+    "receipt_sha256": "c3bdd61bd9e1fae7b5bc6342c7fe5536e181c1a4d2476cdbd4a1afa7022d4333",
+    "scan_started_at": "2026-11-20T16:14:34.483164+00:00",
+    "scan_completed_at": "2026-11-20T16:36:45.115066+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 126287,
+      "failed": 4876,
+      "attempted_readme_scans": 131163,
+      "unique_repos": 131226,
+      "unattempted_candidates": 63
+    },
+    "integrity_counts": {
+      "qualified": 123270,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1390880248",
+      "name": "rossi-nova/hapora",
+      "full_name": "rossi-nova/hapora",
+      "url": "https://github.com/rossi-nova/hapora",
+      "description_en": "针对 Typora 的逆向研究，以及在 Windows、macOS、Linux 上一条命令完成本地激活的工具。",
+      "description_zh": "针对 Typora 的逆向研究，以及在 Windows、macOS、Linux 上一条命令完成本地激活的工具。",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "activation",
+        "desktop-app",
+        "patching",
+        "reverse-engineering",
+        "typora"
+      ],
+      "stars": 71,
+      "license": null,
+      "archived": false,
+      "updated_at": "2026-11-20T04:41:37Z",
+      "pushed_at": "2026-11-15T09:46:45Z",
+      "metadata_observed_at": "2026-11-20T16:34:51.905202Z",
+      "observed_at": "2026-11-20T16:34:57.883661Z",
+      "readme_url": "https://github.com/rossi-nova/hapora/blob/847cd1dce6da24e632af3407882d98f77804acba/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "0ae19699d773cd84c6570650160270938d8b6b79",
+      "readme_content_git_sha": "0ae19699d773cd84c6570650160270938d8b6b79",
+      "readme_sha256": "99c229259e3996b0212bcfeb8298150d447b37e6fef270c4f75ea1447cc41a4e",
+      "readme_bytes": 7753,
+      "readme_lines": 112,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app"
+      ],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "逆向 in:readme is:public fork:false archived:false created:2026-09-09T02:12:38Z..2026-09-29T08:26:08Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "847cd1dce6da24e632af3407882d98f77804acba"
+    }
+  ]
+}
