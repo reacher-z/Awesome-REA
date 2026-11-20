@@ -154740,5 +154740,1579 @@
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/scripts/turokgame/components/weapons/turokWeaponChronoScepter.txt",
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/framework/system.cpp"
     ]
+  },
+  {
+    "id": "awesome-fable-5-2",
+    "name": "Awesome Fable 5.2",
+    "url": "https://github.com/fengyiqicoder/awesome-fable-5.2",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Multilingual index of Claude Fable 5.2 creations with GIF previews, creator credits, and daily updates: 207 live works across Games (97), 3D Worlds & Scenes (45), Web Pages & Tools (46), and Animation & Film with source (19), plus 145 video-only demos and a searchable companion site at fablelist.000ooo.ooo.",
+    "description_zh": "多语言 Claude Fable 5.2 作品目录，提供 GIF 预览、作者署名与每日更新：收录 207 个可直接打开的在线作品（游戏 97、3D 世界与场景 45、网页与工具 46、带源码动画与短片 19）以及 145 个仅视频演示，并配有可检索网页版 fablelist.000ooo.ooo。",
+    "evidence_url": "https://github.com/fengyiqicoder/awesome-fable-5.2/blob/4fe62403a5b3ddaf50951ec1bd20a2a92b22d40e/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/fengyiqicoder/awesome-fable-5.2/blob/4fe62403a5b3ddaf50951ec1bd20a2a92b22d40e/LICENSE",
+      "https://fablelist.000ooo.ooo/"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers 207 live web works and 145 video-only demos with README translations in 10 languages and links checked on 2026-11-19.",
+      "Hosts short low-resolution GIF previews and external links rather than full works or source videos; 145 video-only demos have no public interactive link.",
+      "List text is released under CC0-1.0; all linked works remain the property of their respective creators."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-fable-5-2-games",
+    "name": "Awesome Fable 5.2 & GPT-6.2 Astra Games",
+    "url": "https://github.com/ygx2378/awesome-fable-5-2-games",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Chinese-language catalog of 107 Claude Fable 5.2 and GPT-6.2 Astra games and interactive works across 72 repositories (84 Fable 5.2 solo, 10 GPT-6.2 Astra, 13 multi-model), 4 community collections, 77 browser play links, and an appendix of 21 aiarcade.games exclusives, with companion tech-stack, prompt, skill, and CSV files.",
+    "description_zh": "中文游戏清单，收录 72 个仓库中的 107 款 Claude Fable 5.2 与 GPT-6.2 Astra 游戏及交互作品（84 款 Fable 5.2 独立完成、10 款 GPT-6.2 Astra、13 款多模型协作）、4 份社区合集、77 个浏览器试玩链接及附录 21 款 aiarcade.games 站内作品，并附技术栈对比、提示词、游戏开发 Skill 与 CSV 数据。",
+    "evidence_url": "https://github.com/ygx2378/awesome-fable-5-2-games/blob/7641c1c2e57b465e4f5d6b874af71a0cba32f92e/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/ygx2378/awesome-fable-5-2-games/blob/7641c1c2e57b465e4f5d6b874af71a0cba32f92e/LICENSE"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Includes TECH_STACK.md, PROMPTS.md, GAME_DEV_SKILLS.md, and data/games.csv; requires a source repository and author-disclosed model attribution for main entries.",
+      "Thirty main-list entries lack browser play links and require local serving, building, or desktop downloads; hosted demo checks verify HTTP 200 reachability rather than full playthroughs.",
+      "MIT license covers the index and original repository text only; each listed game keeps its own copyright and repository license."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "ai-arcade-fable-5-2-games",
+    "name": "AI Arcade: Fable 5.2 Games",
+    "url": "https://aiarcade.games/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Community-run browser arcade indexing 91 playable games built primarily by Claude Fable 5.2, many shipped as self-contained single-file HTML builds with procedural WebGL graphics and Web Audio, alongside prompt inspection, source viewing, and .html downloads.",
+    "description_zh": "社区运营的浏览器游戏街机，收录 91 款主要以 Claude Fable 5.2 构建的可试玩网页游戏（多数为单文件 HTML，含程序化 WebGL 画面与 Web Audio 音效），支持即点即玩、查看提示词与源码以及下载 .html 文件。",
+    "evidence_url": "https://aiarcade.games/",
+    "additional_evidence_urls": [
+      "https://aiarcade.games/about"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a modern WebGL-capable browser; hosted games run in CSP- and iframe-sandboxed endpoints, while author-hosted titles embed or link to the creator's origin.",
+      "Catalogs 91 browser games with single-file .html downloads, source inspection, and a community submission queue supporting uploads up to 10 MB.",
+      "Device support varies between desktop-only and mobile-friendly titles, and prompt availability depends on creator disclosure.",
+      "Each game belongs to its creator and retains its original author's license terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "attribution"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-code-native-3d",
+    "name": "Awesome Code-Native 3D Worlds & Assets",
+    "url": "https://github.com/jiachengliu12345/awesome-code-native-3d",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Bilingual English/Chinese directory of 143 code-created 3D games, interactive worlds, films, and animations made with Claude Fable 5.2, separating 65 verified-code entries (as of 2026-11-12) from pending leads and adding UTC-dated X, GitHub, Bilibili, and YouTube popularity rankings plus a local Python preview app.",
+    "description_zh": "中英双语目录，收录 143 个使用 Claude Fable 5.2 编写的 3D 游戏、交互世界、短片与动画，区分 65 个已核验代码条目（截至 2026-11-12）与待核验线索，并提供带 UTC 时间戳的 X、GitHub、Bilibili、YouTube 热度榜及本地 Python 预览应用。",
+    "evidence_url": "https://github.com/jiachengliu12345/awesome-code-native-3d/blob/f47463d1ea66636de4cd2aece9ffdbdbe3bfaece/README.md",
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Includes CODE-AUDIT.md, CODE-NATIVE-3D.md, CODE-ASSETS.md, LIFECYCLE.md, RESOURCES.md, SEARCH-LOG.md, and a local ranking preview run with python3 scripts/local_app.py.",
+      "Popularity figures are cached UTC snapshots rather than live metrics; some works combine additional models or external assets, and many linked browser builds have unconfirmed reuse licenses.",
+      "No repository-wide LICENSE file is published at the reviewed commit; linked repositories and builds remain governed by their respective authors' terms."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "sandbase-awesome-fable-5-2",
+    "name": "Awesome Claude Fable 5.2 (SandBase Lab)",
+    "url": "https://github.com/sandbase-lab/awesome-fable-5-2",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Bilingual catalog synced daily from SandBase Lab indexing 400 Claude Fable 5.2 videos from 281 creators across 10 categories (119 3D scenes, 75 games, 65 motion graphics, 62 tests & comparisons, and more), 65 creator prompts, a 7-pattern prompt guide, a prompt-to-HTML-to-MP4 tutorial, and model comparisons.",
+    "description_zh": "每日从 SandBase Lab 同步的中英双语目录，收录 281 位创作者的 400 个 Claude Fable 5.2 视频（含 119 个 3D 场景、75 款游戏、65 个动态图形、62 个评测对比等 10 类）与 65 份作者提示词，并附 7 种模式提示词指南、HTML 转 MP4 教程与模型对比文档。",
+    "evidence_url": "https://github.com/sandbase-lab/awesome-fable-5-2/blob/547d9ef335fe37be5775ba3d0e283a028f4812f5/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/sandbase-lab/awesome-fable-5-2/blob/547d9ef335fe37be5775ba3d0e283a028f4812f5/LICENSE",
+      "https://www.sandbase.ai/lab/ai-videos/fable-5-2"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Running the documented API recreation workflow requires a SandBase API key, curl, and jq against the OpenAI-compatible chat completions endpoint.",
+      "Covers 400 credited X videos, 65 prompts, docs/prompt-guide.md, docs/tutorial.md, and docs/model-comparison.md, synced daily with SandBase Lab.",
+      "Only 65 of 400 videos include creator prompts; reasoning tokens share max_tokens, and third-party videos require creator permission for reuse.",
+      "MIT license applies only to repository scripts and curation structure; third-party videos, prompts, and posts belong to their creators (MEDIA-RIGHTS.md)."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "claude-fable-5-2-prompts",
+    "name": "Claude Fable 5.2 Prompts: 145 Creative Coding Cases",
+    "url": "https://github.com/apimodels/claude-fable-5-2-prompts",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website",
+      "app"
+    ],
+    "description_en": "Bilingual launch-week archive of 145 Claude Fable 5.2 creative coding cases (4–11 Nov 2026) curated by apimodels.app across 7 categories—Blender Python, Three.js, motion graphics, games, character action, music, and painting—with structured data/cases.json, brief-writing notes, and runnable Blender and Three.js starters.",
+    "description_zh": "由 apimodels.app 整理的中英双语首周案例库，收录 2026-11-04 至 11-11 发布的 145 个 Claude Fable 5.2 创意编程案例（覆盖 Blender Python、Three.js、动态图形、游戏、角色动作、代码音乐与代码绘画 7 类），附结构化 data/cases.json、提示词模式总结及可运行的 Blender 与 Three.js 起步模板。",
+    "evidence_url": "https://github.com/apimodels/claude-fable-5-2-prompts/blob/b630e7fa02ed2dd4356cf695491ff113a3565f1f/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/apimodels/claude-fable-5-2-prompts/blob/b630e7fa02ed2dd4356cf695491ff113a3565f1f/LICENSE",
+      "https://apimodels.app/claude-fable-5-2-prompts"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Running the included starters requires Node.js, Playwright, and FFmpeg for starter/threejs, or Blender 5.x for starter/blender, plus an agent/API setup for new generations.",
+      "Prompt status is explicit: 38 cases have published full prompts (9 long briefs excerpted with outlines), 20 have one-line requests only, and 87 are unpublished; view/like metrics reflect 2026-11-11 snapshots.",
+      "Curated by commercial API gateway apimodels.app; original case write-ups, outlines, starters, and data/cases.json are CC-BY-4.0, while linked creator works remain under their owners' rights."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-fable-5-2-video-prompts",
+    "name": "Awesome Fable 5.2 Video Prompts",
+    "url": "https://github.com/LeaddeOpenLab/awesome-fable-5.2-video-prompts",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Leadde Open Lab's catalog of 223 Claude Fable 5.2 video examples across 5 categories (180 imported from yihui-dev/awesome-fable5-2-videos plus 43 new discoveries), preserving creator-shared prompts, original X links, machine-readable JSON indexes, Python check scripts, and Git LFS video archives.",
+    "description_zh": "Leadde Open Lab 维护的 Claude Fable 5.2 视频与提示词库，按 5 个类别收录 223 个示例（含导入自 yihui-dev/awesome-fable5-2-videos 的 180 条与 43 条新发现），保留公开提示词、X 原帖链接、JSON 索引、Python 校验脚本与 Git LFS 视频归档。",
+    "evidence_url": "https://github.com/LeaddeOpenLab/awesome-fable-5.2-video-prompts/blob/0a566f296982274033dc9a4f312df578e2d735e2/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/LeaddeOpenLab/awesome-fable-5.2-video-prompts/blob/0a566f296982274033dc9a4f312df578e2d735e2/LICENSE"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Cloning archived case videos requires Git LFS (git lfs install and git lfs pull); running the media, catalog-build, and link-check scripts requires Python 3.",
+      "Covers 223 examples across Motion Graphics & Typography, Explainers & Education, 3D Worlds & Simulations, Games & Interactive Experiences, and Product & Brand Videos, with data/videos.json and data/local-media.json.",
+      "Entries without a disclosed prompt are labelled Prompt not published; upstream MIT license covers repository files while archived videos and images remain their creators' work."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-fable-5-2-videos",
+    "name": "Awesome Fable 5.2 Videos",
+    "url": "https://github.com/liang8989/awesome-fable5-2-videos",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Index of 173 Claude Fable 5.2 videos across 6 categories—Motion graphics (56), 3D scenes (45), Games (30), Launch films (15), Model comparisons (15), and Explainers (12)—with 17 verbatim prompts, per-video pages in prompts/, JSON data, and the companion Frontier Brief gallery at fable5.app.",
+    "description_zh": "收录 173 个 Claude Fable 5.2 视频的分类索引，覆盖动态图形（56）、3D 场景（45）、游戏（30）、发布短片（15）、模型对比（15）和科普解说（12），附 17 份逐字提示词、prompts/ 单条页面、JSON 数据及配套网站 fable5.app。",
+    "evidence_url": "https://github.com/liang8989/awesome-fable5-2-videos/blob/e1268bc920192b08c2f0895873360561eca4c6cd/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/liang8989/awesome-fable5-2-videos/blob/e1268bc920192b08c2f0895873360561eca4c6cd/LICENSE",
+      "https://fable5.app/fable-5-2/works/"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Provides data/videos.json and prompts/ markdown pages for 173 credited X videos, linked to a broader companion gallery on fable5.app that also compiles author-reported cost and runtime tables.",
+      "Only 17 of 173 videos include creator-published prompts, and model labels rely on what each creator reported on X.",
+      "MIT license applies to the repository code and list text only; videos and quoted posts remain owned by their original creators."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-claude-fable-games",
+    "name": "Awesome Claude Fable Games",
+    "url": "https://github.com/ummydev/awesome-claude-fable-games",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Curated list of 56 AI-built games (primarily Claude Fable 5.2, alongside select Opus 5.5 and Gemini 4 builds) maintained by the vibegamer.io team, with 45 browser play links, 5 verbatim prompts, editorial 10-point scores, source posts, and machine-readable data/games.json.",
+    "description_zh": "由 vibegamer.io 团队维护的 56 款 AI 构建游戏精选清单（以 Claude Fable 5.2 为主，亦含少量 Opus 5.5 与 Gemini 4 作品），提供 45 个浏览器试玩链接、5 份原始提示词、编辑 10 分制评分、原帖链接与结构化 data/games.json。",
+    "evidence_url": "https://github.com/ummydev/awesome-claude-fable-games/blob/9f6ab291d0c4b04240b229b0fc01946e61db7675/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/ummydev/awesome-claude-fable-games/blob/9f6ab291d0c4b04240b229b0fc01946e61db7675/LICENSE",
+      "https://vibegamer.io"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Lists 56 games with data/games.json, creator credits, check-dated engagement counts, and companion pages on vibegamer.io.",
+      "Eleven listed titles are video-only with no public playable build; scores reflect editorial ratings for visuals, polish, and ambition, and several entries use models other than Fable 5.2.",
+      "MIT license covers the list text and data in the repository only; listed games, videos, screenshots, and prompts belong to their makers."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "ai8games",
+    "name": "AI8Games",
+    "url": "https://ai8games.com/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Browser game portal featuring 62 playable AI-built browser games (mostly created with Claude Fable 5.2, including single-file HTML titles and AI8Games originals) plus 27 video-only showcases from X, with creator credits, weekly play rankings, and X-verified claim or removal controls.",
+    "description_zh": "AI 浏览器游戏合集站点，收录 62 款可直接在线游玩的 AI 生成游戏（多数使用 Claude Fable 5.2 构建，包含单文件 HTML 作品与站点原创作品）及 27 个 X 视频展示条目，提供作者署名、周游玩排行以及基于 X 账号验证的认领与下架流程。",
+    "evidence_url": "https://ai8games.com/",
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Playable games run directly in a desktop or mobile browser, with language support and keyboard or touch controls varying per title.",
+      "Lists 62 playable browser games and 27 video-only X showcases (site dated 2026-11-12), crediting each creator and linking back to the original X post.",
+      "The 27 showcase cards open external X posts rather than playable builds; creator edits or removals require posting a verification code on X, and no site-wide source license is published."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "fable-five-browser-projects",
+    "name": "fable-five",
+    "url": "https://github.com/preacherxp/fable-five",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "project",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Five zero-dependency, no-build browser engineering projects written by Claude Fable 5.2 in one Claude Code session: a Kerr black hole ray tracer, a C-to-WebAssembly compiler, a Web Worker GPT trainer, a 3D WebGL MLS-MPM physics solver, and an in-memory SQL engine with query plans.",
+    "description_zh": "Claude Fable 5.2 在单次 Claude Code 会话中编写的五个零依赖、免构建浏览器工程项目：克尔黑洞光线追踪器、C 到 WebAssembly 编译器、浏览器 Web Worker GPT 训练器、3D WebGL MLS-MPM 物理求解器以及带执行计划的内存 SQL 引擎。",
+    "evidence_url": "https://github.com/preacherxp/fable-five/blob/616a712a8714204ed3ed31fd882b0ff0746ba33c/README.md",
+    "additional_evidence_urls": [
+      "https://preacherxp.github.io/fable-five/"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs directly in a modern browser via GitHub Pages or python3 -m http.server 8000 with zero dependencies; running the five test suites requires Node.js.",
+      "Author-supplied Node test scripts check analytic Kerr shadow edges, 48 C-to-Wasm cases, 93 GPT finite-difference gradients, 4,000 matrix decompositions plus 3,000 MPM steps, and 84 SQL queries.",
+      "Documented limits include flat-space camera approximation (blackhole), omitted C constructs and a non-freeing 1 MiB arena (cc), small character-level training (gpt), a 32³ single-thread 24k-particle cap (mpm), and in-memory SQL without transactions or RIGHT/FULL joins.",
+      "No repository LICENSE file is published at the reviewed commit."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "bubblebrainbb-awesome-fable-5-2",
+    "name": "Awesome Fable 5.2 (BubbleBrainBB)",
+    "url": "https://github.com/BubbleBrainBB/awesome-fable-5.2",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Bilingual collection of five standalone works rendered from scratch in code written by claude-fable-5-2 in Claude Code—four 1080p Metal compute-shader films (Deep Dive, Cat Garden, Mountain Hike, Bee Documentary) with NumPy/SciPy synthesized audio and one 3840×2560 C++17 path-traced still (Afternoon Light)—using no external 3D models, textures, or off-the-shelf renderers.",
+    "description_zh": "中英双语纯代码渲染作品集，收录五部由 claude-fable-5-2 在 Claude Code 中从零编写代码生成的独立作品——四部 1080p Metal 计算着色器短片（Deep Dive、Cat Garden、Mountain Hike、Bee Documentary，配 NumPy/SciPy 合成音频）与一张 3840×2560 C++17 路径追踪静帧（Afternoon Light），不使用外部三维模型、贴图或现成渲染器。",
+    "evidence_url": "https://github.com/BubbleBrainBB/awesome-fable-5.2/blob/00688eb6aef1dacad5c7f3d726f8b642f911c131/README.md",
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Rendering the four Metal films requires macOS on Apple Silicon, clang++, Python 3 (numpy, scipy, Pillow), and ffmpeg, plus network access for edge-tts narration in Mountain Hike and Bee Documentary; Afternoon Light requires a C++17 compiler and Python 3.",
+      "Each work directory contains standalone source code, a render script, and a README reporting its QC results and known shortcomings; intermediate work/ render files are omitted and regenerated locally.",
+      "Finished MP4 films (129–384 MB) are hosted on GitHub Releases rather than tracked in git; no repository LICENSE file is published at the reviewed commit."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "ai-terrarium-catalog",
+    "name": "Terrarium",
+    "url": "https://github.com/AI-Terrarium/terrarium",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Cross-model directory of 1,034 AI-built 3D games, interactive worlds, tools, visualizations, videos and wallpapers across 324 creators, with trending rankings refreshed every 8 hours, links to 941 public code repositories and 425 archived open-source works.",
+    "description_zh": "跨模型 AI 3D 作品目录，收录来自 324 位创作者的 1,034 个 3D 游戏、交互世界、工具、可视化、视频和壁纸条目；热门榜单每 8 小时刷新一次，关联 941 个公开源码仓库与 425 份开源代码归档。",
+    "evidence_url": "https://github.com/AI-Terrarium/terrarium/blob/5fb8a4c0ff4ee6b33dc8d84dad31a1cdda9d17a6/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/AI-Terrarium/terrarium/blob/5fb8a4c0ff4ee6b33dc8d84dad31a1cdda9d17a6/LICENSE"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Browsing the README and companion web index requires only a web browser; cloning the companion Hugging Face source archive requires Git LFS for large files.",
+      "Catalog snapshot dated 2026-11-19 covers 1,034 entries in 6 categories (574 games, 211 worlds and scenes, 115 tools, 99 visualizations, 32 videos, 3 wallpapers), including 227 browser-runnable works and 346 Three.js entries.",
+      "Trending order aggregates public likes, stars and comments across 815 sources on 4 platforms (9 unmeasured), while catalog and popularity timestamps update separately; many non-archived entries list License unknown.",
+      "Directory text is released under CC0-1.0; listed works keep their own creators' licenses."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "terrarium-open-works-dataset",
+    "name": "Terrarium Open Works",
+    "url": "https://huggingface.co/datasets/AI-Terrarium/terrarium-open-works",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "A 13.7 GB Hugging Face dataset archiving 428 openly licensed code-based 3D games, scenes, tools, visualizations, videos and wallpapers as per-work source folders indexed by metadata.jsonl.",
+    "description_zh": "托管于 Hugging Face 的 13.7 GB 开源 3D 作品数据集，以独立文件夹归档 428 个基于代码构建的 3D 游戏、场景、工具、可视化、视频和壁纸源码，并通过 metadata.jsonl 索引。",
+    "evidence_url": "https://huggingface.co/datasets/AI-Terrarium/terrarium-open-works/blob/main/README.md",
+    "additional_evidence_urls": [
+      "https://huggingface.co/datasets/AI-Terrarium/terrarium-open-works/blob/main/metadata.jsonl",
+      "https://huggingface.co/datasets/AI-Terrarium/terrarium-open-works/blob/main/DATASET_DETAILS.md"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Selective folder downloads use Python with huggingface_hub snapshot_download and allow_patterns; full repository clones require Git LFS for large files, and maintainers advise reading archived code before running it.",
+      "At the 2026-11-19 snapshot, metadata.jsonl indexes 428 folders (191 games, 95 scenes, 75 tools, 49 visualizations, 15 videos, 3 wallpapers) with creator, source URL, commit hash, license, file count, byte size and path.",
+      "Each folder stores the latest creator files without Git commit history; DATASET_DETAILS.md preserves a 2026-11-14 snapshot of 321 entries, while metadata.jsonl tracks current records and omits works flagged by harmful-file checks.",
+      "Tagged per-work-licenses with no single dataset-wide license: metadata.jsonl records mostly MIT (381), Apache-2.0 (19), CC0-1.0 (7), GPL-3.0 (7) and AGPL-3.0 (7) plus Creative Commons and Unlicense terms; verify each work's license file and credit its creator before reuse."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "mia-ai-lab-100-html-files",
+    "name": "Mia's AI Lab — Experiments & 100 HTML Files",
+    "url": "https://mia-ai.net/lab/experiments",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "website",
+      "game"
+    ],
+    "description_en": "Cross-model creative coding showcase publishing full prompts alongside unedited single-file HTML outputs with inline CSS and JavaScript, anchored by the 100 HTML Files series (2,676 pages across 27 models) and head-to-head browser showdowns.",
+    "description_zh": "跨模型创意编程实验合集，完整公开提示词与未经删改的单文件 HTML 输出（内联 CSS 与 JavaScript，无外部库和外部资源），包含覆盖 27 个模型、2,676 个页面的 100 HTML Files 系列及多项同题对照展示。",
+    "evidence_url": "https://mia-ai.net/lab/experiments",
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Each experiment runs directly in a web browser as a self-contained HTML file with inline CSS and JavaScript, no installation, no backend and no external libraries or assets.",
+      "Covers the 100 HTML Files series (2,676 pages across 27 frontier and open-weight models since July 2026) plus multi-model showdowns including Gummy Bears (12 models), Jumpgate (3 models), Halden Meridian 38 (5 models), Retro Tetris (4 models) and Let There Be.",
+      "The experiments page publishes web galleries and exact prompts without a bulk download package or a stated site-wide reuse license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "claude-fable-5-2-html-files",
+    "name": "Claude Fable 5.2 HTML Files",
+    "url": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "website",
+      "game"
+    ],
+    "description_en": "Repository packaging 76 single-file HTML visual studies produced with Claude Fable 5.2 alongside their complete original prompts, a searchable gallery index and Playwright screenshot capture scripts.",
+    "description_zh": "收录 76 个由 Claude Fable 5.2 生成的单文件 HTML 视觉研究作品及其完整原始提示词的仓库，附带可搜索的画廊索引页面与 Playwright 截图自动化脚本。",
+    "evidence_url": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/369dae7fe4102988676f07f147c4bbaefee3ff3a/README.md",
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Open index.html directly or serve the directory over a static web server to browse studies; regenerating the gallery and screenshots requires Python 3, scripts/requirements.txt and Playwright Chromium.",
+      "Contains 76 HTML studies with expandable original prompts, screenshot previews and SHA-256 manifest verification in thumbs/manifest.json; source numbering omits slots 076–078, which are absent from the supplied set.",
+      "scripts/capture_screenshots.py checks gallery search, prompt expansion and mobile overflow during screenshot runs and blocks GitHub Pages deployment on check failures.",
+      "No LICENSE file is present in the reviewed commit, so repository reuse terms remain unspecified."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-astra-3d",
+    "name": "Awesome GPT-6 / 6.2 Astra & Claude Fable 5.2 3D",
+    "url": "https://github.com/carpentry-liu/awesome-astra-3d",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Bilingual 3D case index and static web atlas cataloging 502 GPT-6 / 6.2 Astra cases, 14 Claude Fable 5.2 3D cases and 18 GPT-Image-2.6 GIFs across Blender, Three.js, Unreal Engine and browser games, with source links, demo audits and archived full-length videos.",
+    "description_zh": "中英双语三维作品案例库与静态检索站，收录 502 条 GPT-6 / 6.2 Astra 案例、14 条 Claude Fable 5.2 三维案例和 18 件 GPT-Image-2.6 原生 GIF，涵盖 Blender、Three.js、Unreal Engine 与浏览器游戏，附源码入口、链接核查与完整录像归档。",
+    "evidence_url": "https://github.com/carpentry-liu/awesome-astra-3d/blob/5a6bbc5adee44a41351ec5b5826af6e9bb261dec/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/carpentry-liu/awesome-astra-3d/blob/5a6bbc5adee44a41351ec5b5826af6e9bb261dec/LICENSE",
+      "https://carpentry-liu.github.io/awesome-astra-3d/"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Browse online via GitHub Pages or public cases.json; running the static site locally requires Node.js 22.22.0+ with no API key, while author-hosted 3D demos may require desktop browsers, WebGL or WebGPU.",
+      "Updated 2026-11-19 with 502 Astra cases (124 source/project entries, 139 demos, 285 full videos), 14 Fable 5.2 cases, 18 native GIFs and 12 methodology references, tagging provenance per entry.",
+      "Maintains link and demo check logs in data/demo-audit.json and data/link-audit.json plus SHA-256 video manifests in data/videos.json for full-length clips archived in GitHub Releases.",
+      "Repository code and docs use MIT; LICENSE explicitly excludes third-party images, videos, prompts, models, trademarks and linked works, which keep their original owners' rights."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-gpt-6-astra-casebook",
+    "name": "Awesome GPT-6 Astra — Use Cases & Prompts",
+    "url": "https://github.com/zlxxlz1026/awesome-gpt-6-astra-casebook",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "website",
+      "game"
+    ],
+    "description_en": "Bilingual casebook of 61 curated GPT-6 Astra community demos across games, 3D creation, web apps, UI design, video, computer use and engineering, pairing each example with its creator post, workflow notes, tools and public prompt.",
+    "description_zh": "中英双语 GPT-6 Astra 实战案例与提示词合集，收录 61 条社区案例，覆盖游戏仿真、三维创作、网页应用、界面设计、视频、计算机操作与工程原型，并记录作者原帖、工作流说明、工具与公开提示词。",
+    "evidence_url": "https://github.com/zlxxlz1026/awesome-gpt-6-astra-casebook/blob/ada87b35d4adfedef21816cd2969d0ff88a9427e/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/zlxxlz1026/awesome-gpt-6-astra-casebook/blob/ada87b35d4adfedef21816cd2969d0ff88a9427e/LICENSE"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers 61 entries across 7 categories: 20 games and simulations, 13 3D and spatial works, 7 video projects, 6 apps and websites, 6 computer-use workflows, 5 engineering prototypes and 4 design studies, plus reading guides and case breakdowns.",
+      "Some entries include only a prompt excerpt while linking the creator's post for full text; model attribution follows creator statements or visible labels across individual projects.",
+      "Original repository code and editorial text are licensed under MIT; referenced prompts, linked works and preview images remain the property of their respective creators."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-gpt-6-2-astra-guide",
+    "name": "GPT-6.2 Astra · Demos & Use Cases",
+    "url": "https://github.com/cheercheung/awesome-gpt-6-2-astra-guide-and-use-cases",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Multilingual catalog of 74 GPT-6.2 Astra community demos and evaluations (116 visuals) spanning 3D scenes, front-end motion, browser games and SVG illustration, pairing mirrored previews with creator attribution and concise takeaways.",
+    "description_zh": "多语言 GPT-6.2 Astra 社区演示与评测案例合集，收录 74 个案例与 116 份演示媒体，涵盖三维动画、前端动效、浏览器游戏与矢量插画，每项附预览图或视频、作者署名与要点总结。",
+    "evidence_url": "https://github.com/cheercheung/awesome-gpt-6-2-astra-guide-and-use-cases/blob/a0a7975ab43f300d0df05cab77faf5b7d14fba9c/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/cheercheung/awesome-gpt-6-2-astra-guide-and-use-cases/blob/a0a7975ab43f300d0df05cab77faf5b7d14fba9c/LICENSE"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Indexes 74 entries across 4 task families (3D and animation, front-end and motion, games and scenes, illustration) tagged as Demo, Evaluation, Tutorial or Limit, with README translations in 11 languages.",
+      "Complete prompts are optional, and model labels, runtimes and cost figures follow linked creators; the README also includes promotional links to EvoLink.",
+      "Original editorial content is licensed under CC BY 4.0; third-party demonstrations and mirrored media retain their original owners' rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-gpt-6-2-videos",
+    "name": "Awesome GPT-6.2 Astra and Sol Videos",
+    "url": "https://github.com/hideewsj-maker/awesome-gpt-6-2-videos",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Bilingual credited index of 78 code-rendered videos made with OpenAI GPT-6.2 Astra and Sol shared on X since November 17, 2026, covering 3D scenes, browser games, motion graphics, music and cross-model comparisons with GIF previews and a companion web viewer.",
+    "description_zh": "中英双语署名的 GPT-6.2 Astra 与 Sol 代码渲染视频清单，收录 2026 年 11 月 17 日发布以来分享在 X 上的 78 个作品，涵盖 3D 场景、小游戏、动态图形、音乐和跨模型对比，附 GIF 预览与配套网页筛选站。",
+    "evidence_url": "https://github.com/hideewsj-maker/awesome-gpt-6-2-videos/blob/03a4a427fbd36f44ea5441ac0a9ea72ada816748/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/hideewsj-maker/awesome-gpt-6-2-videos/blob/03a4a427fbd36f44ea5441ac0a9ea72ada816748/LICENSE"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Lists 78 entries across 5 sections: 34 model comparisons, 31 3D scenes and games, 8 motion graphics, 4 music pieces and 1 explainer, backed by a filterable viewer at claude-motion.com/gpt-6-2-videos.",
+      "Entries record short titles, durations, creator-reported build time or cost notes and links to original X posts without hosting source repositories or reproducible builds.",
+      "The list text, categories and videos.json are licensed under CC BY 4.0; linked videos, X posts and prompts retain their creators' rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-claude-opus-5-5-demos",
+    "name": "Awesome Claude Opus 5.5 Demos",
+    "url": "https://github.com/magiccreator-ai/awesome-claude-opus-5-5-demos",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Community case directory of 24 Claude Opus 5.5 demos spanning browser games, Blender and 3D modeling, interactive HTML/Three.js websites, coded animations and music workflows, with creator credits, tool tags and provenance disclosures.",
+    "description_zh": "社区整理的 Claude Opus 5.5 演示目录，收录 24 个案例，涵盖浏览器游戏、Blender 与 3D 建模、交互网页、代码动画和音乐工作流，标注创作者署名、所用工具及来源披露。",
+    "evidence_url": "https://github.com/magiccreator-ai/awesome-claude-opus-5-5-demos/blob/7bd77b22c9e569d833254b5ffcefbddd2f94a5cc/README.md",
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Records 24 cases reviewed through 2026-09-25 across 6 sections: 8 coded videos and animations, 5 games, 5 websites and web apps, 4 Blender and 3D works, 1 music demo and 1 cross-model remix, with 7 creator-supplied live links.",
+      "Links external creator posts without hosting media or interactive builds; many entries show recorded video only, and entries flag vendor showcases and mixed-model or external-asset workflows.",
+      "No LICENSE file is present in the reviewed commit; all listed projects and preview media remain the property of their respective creators."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "sandbase-awesome-gemini4-argon",
+    "name": "Awesome Gemini 4 Argon",
+    "url": "https://github.com/sandbase-lab/awesome-gemini4-argon",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Bilingual awesome list synced daily from SandBase Lab indexing 400 code-generated Gemini 4 Argon videos from 244 creators (81 with prompts) across 3D scenes, motion graphics, games, UI demos and model comparisons, plus a prompt guide and API tutorial.",
+    "description_zh": "由 SandBase Lab 每日同步的中英双语 Gemini 4 Argon 案例清单，收录来自 244 位创作者的 400 个代码生成视频（81 个附原始提示词），覆盖 3D 场景、动态图形、游戏、产品界面与模型对比，附提示词指南与 API 教程。",
+    "evidence_url": "https://github.com/sandbase-lab/awesome-gemini4-argon/blob/a604269968a4c189d4c354b96347b66e231b507d/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/sandbase-lab/awesome-gemini4-argon/blob/a604269968a4c189d4c354b96347b66e231b507d/LICENSE",
+      "https://www.sandbase.ai/lab/ai-videos/gemini-4-argon"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Browsing the list is public; recreating examples with the documented OpenAI-compatible SandBase API (google/gemini-4-argon) requires a SandBase API key, curl, jq, 30K+ output token headroom and a browser or sandbox to run generated HTML.",
+      "Covers 400 videos across 10 categories (182 tests and comparisons, 83 3D scenes, 55 motion graphics, 31 games, 24 product UI demos, 14 explainers and 11 other demos), plus a prompt index, 7-pattern prompt guide and HTML-to-MP4 recording tutorial.",
+      "Listed videos are creator recordings of HTML, Three.js, WebGL, Canvas or SVG pages produced from prompts, and only 81 entries include the creator's prompt text.",
+      "MIT covers the repository's original tooling and curation structure only; third-party videos, prompts and post text remain with their creators as noted in MEDIA-RIGHTS.md."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "sandbase-awesome-deepseek-v4-1-flash",
+    "name": "Awesome DeepSeek V4.1 Flash 1017",
+    "url": "https://github.com/sandbase-lab/awesome-deepseek-v4.1-flash",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Bilingual awesome list synced daily from SandBase Lab indexing 324 code-generated DeepSeek V4.1 Flash 1017 videos from 198 creators (46 with prompts) across 3D scenes, motion graphics, games, UI demos and comparisons, with prompt guides and API examples.",
+    "description_zh": "由 SandBase Lab 每日同步的中英双语 DeepSeek V4.1 Flash 1017 案例清单，收录来自 198 位创作者的 324 个代码生成视频（46 个附原始提示词），覆盖 3D 场景、动态图形、游戏、产品界面与模型对比，附提示词指南与 API 示例。",
+    "evidence_url": "https://github.com/sandbase-lab/awesome-deepseek-v4.1-flash/blob/1ecb0969b09e80837444e7bf1cdc04c0c8aca9e9/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/sandbase-lab/awesome-deepseek-v4.1-flash/blob/1ecb0969b09e80837444e7bf1cdc04c0c8aca9e9/LICENSE",
+      "https://www.sandbase.ai/lab/ai-videos/deepseek-v4-1-flash-1017"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Browsing the list is public; recreating examples via the documented OpenAI-compatible SandBase API (deepseek/deepseek-v4.1-flash) requires a SandBase API key, curl, jq and a large max_tokens budget because hidden reasoning tokens count toward output.",
+      "Covers 324 videos across 9 categories (146 tests and comparisons, 86 3D scenes, 29 motion graphics, 28 games, 21 product UI demos and 14 other demos), plus a prompt index, prompt guide, API/CLI tutorial and model comparisons.",
+      "Entries showcase creator recordings of model-written HTML, Three.js, WebGL, Canvas, SVG or DeepSeek Harness Blender scenes, with 46 entries providing original prompts.",
+      "MIT covers the repository's original tooling and curation structure only; third-party videos, prompts and post text remain with their creators as noted in MEDIA-RIGHTS.md."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "openai-developers-showcase-games",
+    "name": "OpenAI Developers Showcase: Games",
+    "url": "https://developers.openai.com/showcase/games",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Official OpenAI Developers showcase collection presenting 29 browser games, mini-games, and interactive 3D worlds built with Codex and OpenAI models, paired with the featured 'Building games with Astra' walkthrough.",
+    "description_zh": "OpenAI Developers 官方展示合集，收录 29 个基于 Codex 与 OpenAI 模型构建的浏览器游戏、小游戏与交互式 3D 世界，并附带“Building games with Astra”专题开发案例。",
+    "evidence_url": "https://developers.openai.com/showcase/games",
+    "additional_evidence_urls": [
+      "https://developers.openai.com/showcase"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Lists 29 browser projects spanning 3D worlds and reconstructions (Escapement, Notre Damn, Paris Atlas, Clockwork Observatory, Living Cell) alongside action, RPG, puzzle, and simulation games (Void Explorer, Sunwake, Hollowflux, Codex Pet Arena, Phantasy Codex Adventure, Turn-based RPG on GPT-5.4, Neon FPS) within the broader OpenAI Developers Showcase.",
+      "A modern web browser with 3D/WebGL support is needed to open and play the hosted web demos.",
+      "Curated official gallery on developers.openai.com focused on OpenAI models and Codex builds; each card opens its dedicated showcase page with project-specific details."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-games-made-with-ai",
+    "name": "Awesome Games Made with AI",
+    "url": "https://github.com/evorjh/awesome-games-made-with-ai",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Curated GitHub list and companion Amusehall web directory cataloging 209 browser-playable games built with 23 AI models from 7 makers, with creator credits, model tags, and shared build prompts.",
+    "description_zh": "精选 GitHub 清单及其配套 Amusehall 网站目录，收录由 7 家厂商的 23 个 AI 模型制作的 209 款浏览器可玩游戏，附带创作者署名、模型标注及公开提示词。",
+    "evidence_url": "https://github.com/evorjh/awesome-games-made-with-ai/blob/21ecd30bdabc8cd1bd8d8944300015fdc3261b30/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/evorjh/awesome-games-made-with-ai/blob/21ecd30bdabc8cd1bd8d8944300015fdc3261b30/CONTRIBUTING.md",
+      "https://github.com/evorjh/awesome-games-made-with-ai/blob/21ecd30bdabc8cd1bd8d8944300015fdc3261b30/LICENSE",
+      "https://amusehall.com/games/"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Groups 209 browser games by maker—Claude (162), GPT and Codex (33), Gemini (5), and Other AIs (9)—with weekly edition updates and companion Amusehall pages filterable by AI model, genre, pricing, and mobile support.",
+      "Plays in desktop Chrome or mobile browsers; individual listings mark free games, free demos, paid titles, and in-game purchases.",
+      "GitHub issue submissions require creator-attributed AI code authorship, a standalone browser build working in desktop Chrome, and a creator post link; download-only releases, video-only demos, and mods requiring third-party game files stay outside the list.",
+      "MIT License covers the repository's own list text, data, and scripts; listed games, prompts, and images remain with their creators."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-ai-built-games",
+    "name": "Awesome AI-Built Games",
+    "url": "https://github.com/lappemic/awesome-ai-built-games",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Hand-curated Awesome list of 105 playable vibe-coded games built with AI coding agents such as Claude Code, Cursor, Codex, Gemini, Grok, and Lovable, paired with 12 game-dev agent tools/MCP frameworks and 14 directories.",
+    "description_zh": "人工精选的 Awesome 清单，收录 105 款由 Claude Code、Cursor、Codex、Gemini、Grok 与 Lovable 等 AI 编程智能体打造的可玩游戏，并附带 12 个游戏开发智能体工具／MCP 框架与 14 个游戏目录。",
+    "evidence_url": "https://github.com/lappemic/awesome-ai-built-games/blob/a0cc7cb5cfd45de0476e0a6d49f480f5c513e587/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/lappemic/awesome-ai-built-games/blob/a0cc7cb5cfd45de0476e0a6d49f480f5c513e587/CONTRIBUTING.md",
+      "https://github.com/lappemic/awesome-ai-built-games/blob/a0cc7cb5cfd45de0476e0a6d49f480f5c513e587/LICENSE"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Organizes 105 games across six genres (Action & Shooters 18, Racing & Vehicles 15, Adventure & Open Worlds 14, Simulation & Strategy 27, Puzzle, Word & Trivia 18, Arcade & Retro 13) with AI-tool and engine tags (Three.js, HTML5 Canvas, Godot, Phaser, Unity, PixiJS), plus 12 tools/frameworks, 14 directories, and 5 related lists.",
+      "Most titles play directly in a web browser, while selected entries provide desktop or mobile downloads (such as Windows, Android, or Godot release builds).",
+      "Submissions via GitHub issue form or pull request undergo manual review and require public proof of AI-written code plus a working playable release.",
+      "CC0-1.0 covers the curated list repository; linked games, frameworks, and external directories carry their own licenses."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-vibe-games",
+    "name": "Vibe Arcade (awesome-vibe-games)",
+    "url": "https://github.com/yldm-tech/awesome-vibe-games",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Open-source structured catalog and companion web arcade (vibe.wiz.games) indexing 39 AI-made browser games shared on X, with JSON schemas, 10-language metadata, creator-reported build notes, and daily automated link checks.",
+    "description_zh": "开源结构化游戏目录及配套网页街机站（vibe.wiz.games），收录 39 款分享于 X 的 AI 制作浏览器游戏，提供 JSON Schema 数据、10 种语言元数据、创作者披露的构建记录与每日自动死链检测。",
+    "evidence_url": "https://github.com/yldm-tech/awesome-vibe-games/blob/2adb28030fe3c8ab0ee950cfa53796cf1c464245/README.md",
+    "additional_evidence_urls": [
+      "https://vibe.wiz.games/",
+      "https://github.com/yldm-tech/awesome-vibe-games/blob/2adb28030fe3c8ab0ee950cfa53796cf1c464245/LICENSE"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Indexes 39 entries across 7 genres (Action, Exploration, Story & sim, Shooter, Racing, Sandbox, Puzzle & toys)—currently 37 Claude Fable 5.2, 1 GPT-6.2 Sol vs Fable, and 1 Gemini + ChatGPT—stored as schema-validated JSON with X post links, like snapshots, and optional build time, API cost, token count, and prompt notes.",
+      "Playing games on vibe.wiz.games needs only a web browser; developing or building the repository locally requires Node.js 24+ and pnpm (plus ffmpeg for clip generation).",
+      "Automated GitHub issue, X mention, or PR submissions accept any model shared on X with a creator-hosted link; video-only (watch) and repository-only (source) listings are marked separately, and like counts reflect dated snapshots.",
+      "MIT License covers the repository code; listed games, cover images, video clips, and creator avatars belong to their creators."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "awesome-claude-games",
+    "name": "Awesome Claude Games",
+    "url": "https://github.com/ZeroLu/awesome-claude-games",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Curated GitHub collection of 117 browser games, 2 local builds, and 3 interactive demos made with Claude, pairing each entry with editorial play notes, first-party AI attribution sources, and machine-readable catalog.json metadata.",
+    "description_zh": "精选 Claude 游戏 GitHub 合集，收录 117 款浏览器游戏、2 个本地构建作品和 3 个交互式演示，每条均附带试玩看点、创作者一手署名来源与可机读的 catalog.json 元数据。",
+    "evidence_url": "https://github.com/ZeroLu/awesome-claude-games/blob/3e94d7e97f2bd093a6cf8cebd500a52034ea22ed/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/ZeroLu/awesome-claude-games/blob/3e94d7e97f2bd093a6cf8cebd500a52034ea22ed/CONTRIBUTING.md"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Organizes 122 works across Editor's Pick, Action & adventure, Arcade, racing & sports, Puzzle & narrative, RPG & strategy, Simulation & sandbox, Local builds, and Interactive demos, accompanied by CATALOG.md, catalog.json export tooling, and a PlayForge companion link.",
+      "Browser games launch in a web browser (some 3D entries note WebGPU desktop support), while the 2 local builds require local download or source compilation (such as Rust for FableFlight).",
+      "GitHub issue or PR submissions require a playable build or local build instructions plus a first-party source documenting Claude's role; X view counts are dated popularity snapshots distinct from play counts.",
+      "The reviewed commit publishes no repository-level license file; linked games and repositories retain their respective creators' terms."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "vibegamedb",
+    "name": "VibeGameDB",
+    "url": "https://vibegamedb.com/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Independent multilingual database cataloging 1,125 games written primarily with AI coding tools across browser, Steam, itch.io, App Store, and GitHub, pairing each listing with primary-source provenance labels, engine stats, and platform ratings.",
+    "description_zh": "独立多语言 AI 编码游戏数据库，收录 1,125 款主要由 AI 编程工具编写的游戏，覆盖浏览器、Steam、itch.io、App Store 与 GitHub，并为每条记录标注一手来源、可信度标签、引擎统计与平台评分。",
+    "evidence_url": "https://vibegamedb.com/",
+    "additional_evidence_urls": [
+      "https://vibegamedb.com/en/tools/claude-code/web",
+      "https://vibegamedb.com/en/about"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Catalogs 1,125 games (756 free in the browser) in nine languages across Claude Code (489, including 272 browser games on /en/tools/claude-code/web), Claude (273), Codex (185), ChatGPT (63), Cursor (61), TapTap Maker (43), Gemini (29), GitHub Copilot (8), Gemini CLI (5), and Windsurf (1), with engine statistics and separate Steam and itch.io rating rankings.",
+      "Browsing the database and launching web builds requires a browser; external Steam, itch.io, App Store, and GitHub releases follow each platform's own client and pricing terms.",
+      "Includes games only when a primary source confirms AI wrote all or most of the code (excluding AI-art-only or runtime generative-AI titles) and labels every figure as official, developer reported, third-party estimate, observed, or unverified."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "player1ai-directory",
+    "name": "Player1AI",
+    "url": "https://player1ai.com/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Free web directory of 612 AI-made browser games built with tools such as Claude, Codex, ChatGPT, and Grok, filterable by genre, input device, multiplayer support, jam origin, and AI tool with direct links to creators' own sites.",
+    "description_zh": "免费 AI 浏览器游戏目录，收录 612 款使用 Claude、Codex、ChatGPT 与 Grok 等工具制作的作品，支持按类型、设备输入、多人联机、Game Jam 来源与 AI 工具筛选，并直链至创作者原站游玩。",
+    "evidence_url": "https://player1ai.com/browse/",
+    "additional_evidence_urls": [
+      "https://player1ai.com/about"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Indexes 612 free AI-made browser games with filters and tags for genre, phone, keyboard, gamepad, multiplayer, Vibe Jam 2025/2026 entries, and AI tools including Claude, Claude Opus 5.5, Claude Fable 5.2, GPT, Codex, and Grok.",
+      "Plays in desktop or phone web browsers with no download or signup; every Play link opens the game directly on its creator's own website.",
+      "Curated inclusion requires browser playability, real gameplay screenshots, and public proof of AI-written code (creator post or AI-code jam rules such as Vibe Jam 2026's 90%+ threshold); offline games are hidden during periodic checks until restored."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "aigameshare-vibe-coded-games",
+    "name": "AIGameShare: Vibe Coded Games",
+    "url": "https://www.aigameshare.com/vibe-coded-games",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Free HTML5 browser arcade and directory hosting 580+ vibe-coded games grouped by AI model and coding agent, complete with playtime rankings, controls, leaderboards, and agent-ready publishing via web UI, REST API, or hosted MCP server.",
+    "description_zh": "免费 HTML5 浏览器游戏平台与目录，收录 580+ 款按 AI 模型和编程智能体分组的 vibe-coded 游戏，提供游玩时长排行、操作说明与排行榜，并支持创作者或智能体通过网页、REST API 及托管 MCP 服务直接发布。",
+    "evidence_url": "https://www.aigameshare.com/vibe-coded-games",
+    "additional_evidence_urls": [
+      "https://www.aigameshare.com/"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Lists 580+ vibe-coded HTML5 games (589 live site-wide, 562 mobile-ready) grouped by specific model—Claude Fable (150), Claude Opus (76), GPT-6 Astra (76), other GPT models (197), and 88 other or untagged builds—and reports build-note agent counts for Claude Code (220), Codex (185), ChatGPT (40), and GitHub Copilot (1).",
+      "Runs free in desktop or mobile web browsers with no download; creators and agents can publish via the guided web flow, REST API, or hosted MCP server (publish_game, update_game, list_my_games) using an access token.",
+      "Model and coding-agent tags come from creator declarations at submission time, with each game placed under its most specific model group on the hub."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "vibecruiser-claude-games",
+    "name": "VibeCruiser",
+    "url": "https://vibecruiser.com/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Random-discovery browser directory indexing 8,987 live vibe-coded games, interactive toys, simulations, and web experiments—including 310 projects tagged under Claude Code—embedded directly from creators' hosts alongside GitHub source links.",
+    "description_zh": "随机漫游式浏览器项目目录，收录 8,987 个在线运行的 vibe-coded 游戏、交互玩具、模拟器与网页实验（含 310 个 Claude Code 标签项目），直接从创作者原站嵌入运行并关联 GitHub 源码链接。",
+    "evidence_url": "https://vibecruiser.com/",
+    "additional_evidence_urls": [
+      "https://vibecruiser.com/t/claude-code"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Indexes 8,987 live browser projects spanning games, physics toys, generative art, and interactive websites built with Claude, Cursor, Lovable, Bolt, v0, and similar tools, including a /t/claude-code view of 310 Claude-built projects with community voting and GitHub links.",
+      "Cruising is free and anonymous in any modern browser; an optional account adds a personal garage for saving discovered projects.",
+      "Populated by a continuous GitHub crawler plus direct URL/repo submissions requiring live HTTPS hosting and iframe embedding; AI-built tags reflect creator self-labelling, and offline external sites drop out of rotation."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "vibecode-game-directory",
+    "name": "Vibecode.game",
+    "url": "https://vibecode.game/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Community discovery hub launched by Yield Guild Games listing 100 vibe-coded games, 263 developer profiles, 9 AI coding and game-building tools, and game jam entries with engine, genre, and tool metadata.",
+    "description_zh": "由 Yield Guild Games 推出的 vibe-coded 游戏发现平台，收录 100 款游戏、263 个开发者主页、9 款 AI 编程与游戏创作工具以及 Game Jam 赛事作品，并展示引擎、类型与工具标签。",
+    "evidence_url": "https://vibecode.game/",
+    "additional_evidence_urls": [
+      "https://vibecode.game/vibe-coded-games",
+      "https://vibecode.game/ai-tools"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Combines a 100-game collection (/vibe-coded-games), 263 developer profiles, 1 global game jam powered by Minds by Animoca Brands, and an AI Tools Hub (/ai-tools) covering Minds, Verse8, Bolt, Claude, Cursor, Lovable, OpenAI, Replit, and Rosebud AI, with game cards also tagging engines (PixiJS, HTML5 Canvas, Godot, Phaser, React) and models such as Gemini and ChatGPT.",
+      "A web browser suffices to explore the directory and play free browser titles; publishing a developer bio or participating in community jams uses a platform account.",
+      "Engine, platform, and 'Built with' tool metadata is creator-provided on each game card, and featured game jams highlight partner ecosystems such as Minds."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "jungleyard-vibe-coded-games",
+    "name": "jungleyard",
+    "url": "https://www.jungleyard.com/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Community showcase and browser-game directory featuring 273 AI-made web games across Arcade, Puzzle, Cozy, Strategy, Sim, Physics, Minimal, and Multiplayer shelves, with daily reshuffled lineups and AI-tool browsing.",
+    "description_zh": "社区型 AI 网页游戏展示与目录站，收录 273 款免费浏览器游戏，按 Arcade、Puzzle、Cozy、Strategy、Sim、Physics、Minimal 与 Multiplayer 等分区组织，并提供每日轮换榜单与按 AI 工具浏览入口。",
+    "evidence_url": "https://www.jungleyard.com/",
+    "additional_evidence_urls": [
+      "https://www.jungleyard.com/browse",
+      "https://www.jungleyard.com/ai-games"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Catalogs 273 AI-made browser games (/ai-games) with a daily reshuffled homepage lineup, all-time Top 10, genre shelves, and browse sections for Claude Code, Cursor, Lovable, v0, Bolt, Replit, Windsurf, and ChatGPT.",
+      "Every game plays free in a web browser with no download or account required; signing in enables submitting a hosted web-game link, upvoting, and commenting.",
+      "Listings rely on maker-submitted external links and self-reported AI tool/model credits, combining independent creator submissions with a large set of games posted under the jungleyard account."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "zadely-vibe-jam-winners",
+    "name": "Zadely Vibe Jam Winners",
+    "url": "https://zadely.com/vibe-jam-winners/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Playable archive of 23 AI game jam winners and category awardees across Cursor Vibe Jam 2026, Vibe Jam 2025, itch.io's AI Browser Game Jams 3–5, and Vibe Summer Game Jam '26. Summarizes each entry's credited AI coding tools, web engine, build window, creator, and jam award.",
+    "description_zh": "收录 23 款 AI 游戏创作赛获奖与单项奖作品的在线可玩档案，涵盖 Cursor Vibe Jam 2026、Vibe Jam 2025、itch.io AI Browser Game Jam 第 3 至 5 届及 Vibe Summer Game Jam '26，整理每款作品署名的 AI 编程工具、网页引擎、开发时长、作者与奖项。",
+    "evidence_url": "https://zadely.com/vibe-jam-winners/",
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers 23 winners updated 2026-11-18: 16 from Cursor Vibe Jam 2026 (945 entries, $40,000+ prizes), 2 from Vibe Jam 2025 (1,000+ entries), 4 from Focaccai's AI Browser Game Jams 3–5, and 1 from Vibe Summer Game Jam '26. Three.js powers 13 of the 23 entries.",
+      "Requires a modern web browser; Vibe Jam rules mandate at least 90% AI-written code and instant browser play without downloads or sign-up. Several listed winners use WebGL/Three.js or real-time multiplayer servers.",
+      "Tool attributions rely on creator disclosures, in-game credits, jam pages, or community lists; several Vibe Jam entries list only the 90%+ AI-code jam rule without a named build write-up. Individual games remain hosted by their creators under their own terms."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "itch-ai-browser-game-jam",
+    "name": "AI Browser Game Jam 5 (itch.io)",
+    "url": "https://itch.io/jam/ai-jam-5",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Fifth edition of Focaccai's recurring itch.io game jam for browser-playable games built primarily with AI tools across code, art, music, and design. Publishes jam rules, links to results from editions 1–4, and full ranked voting tables for 312 entries.",
+    "description_zh": "Focaccai 在 itch.io 主办的第五届 AI 浏览器游戏创作赛，面向以 AI 工具完成大部分代码、美术、音乐与设计的网页游戏。页面公开参赛规则、前四届结果链接以及本届 312 件作品的完整排名评分表。",
+    "evidence_url": "https://itch.io/jam/ai-jam-5",
+    "additional_evidence_urls": [
+      "https://itch.io/jam/ai-jam-5/results"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Ran 2026-10-17 to 2026-10-31 on the optional theme TORCH, with voting through 2026-11-16. Results record 312 entries and 1,929 ratings across 267 games (median 6 ratings), with Coalheart and Lightkeeper tied 1st Overall (4.143); links prior editions (29, 47, 82, and 126 entries).",
+      "Entries are free and playable in a web browser with no download. Rules permit any AI workflow for code, art, audio, or design alongside human editing and post-submission updates during voting.",
+      "Sharing prompts, tools, or build pipelines is encouraged rather than required, and a locked voting-form typo labels the Audio category as a second Overall column on the results page. Each submitted game stays on its creator's itch.io page under its own license."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "vibepins-claude-artifacts",
+    "name": "Vibepins",
+    "url": "https://vibepins.ai/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "website",
+      "game"
+    ],
+    "description_en": "Searchable directory of Claude artifacts paired with the prompts behind them and one-click links to live builds. Aggregates interactive apps, tools, dashboards, games, 3D visuals, templates, and learning aids from Reddit, public galleries, and the web archive.",
+    "description_zh": "可检索的 Claude Artifacts 目录，为每件作品同时展示对应提示词与在线运行入口。站点聚合来自 Reddit、公开画廊和网页档案的交互式应用、工具、仪表板、游戏、三维视觉、模板与学习组件。",
+    "evidence_url": "https://vibepins.ai/",
+    "additional_evidence_urls": [
+      "https://vibepins.ai/about"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Organizes Claude artifacts across Tools, Games, Dashboards, Visuals, Templates, and Learning, with search across pins, makers, and boards plus Trending, Most viewed, and New sorting. Entries span WebGPU/WebGL dioramas, data charts, React dashboards, practice exams, and browser games.",
+      "Browsing pins, viewing prompts, and launching linked builds work in a desktop or mobile browser; WebGPU/WebGL artifacts require compatible browser graphics support. Saving pins or submitting a build uses sign-in.",
+      "Prompt coverage varies by pin because some listings record only a live link and view count. Aggregated artifacts and prompts remain third-party works hosted externally; the site provides a pin-removal form and states no ads or data selling."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "artifact-hall-of-fame",
+    "name": "Artifact Hall of Fame",
+    "url": "https://artifacthof.com/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "website",
+      "game"
+    ],
+    "description_en": "Weekly curated gallery and Hall of Fame showcasing Claude artifacts sourced from public X posts and builder submissions. Combines community voting, daily X impression rankings, and hand-picked weekly inductees with builder-written creation notes.",
+    "description_zh": "按周策展的 Claude Artifacts 展示库与名人堂，收录来自公开 X 帖子及作者提交的作品。站点结合社区投票、每日刷新的 X 浏览量榜单，以及附带作者制作说明的每周手工入选名人堂。",
+    "evidence_url": "https://artifacthof.com/",
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Lists 108 artifacts from 65 credited builders across Fun, Learning, Tools, and Design, alongside daily-refreshed X view rankings (2026-11-10 snapshot shown). Weekly Hall of Fame selections started in October 2026 and include seven inductees with builder notes on how each work was made.",
+      "Free to browse and submit via an X post URL and public artifact link; every submission passes a manual check that the link opens and matches the post. Hall of Fame eligibility requires an original builder's public link shared within the prior four weeks.",
+      "Ranking metrics come from public X impression snapshots and on-site votes, while Hall of Fame picks reflect editorial judgment of craft, originality, and usefulness. Builders retain control over their external artifact links and can request removal at any time."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "vibe-coding-showcase",
+    "name": "Vibe Coding Showcase",
+    "url": "https://vibecodingshowcase.com/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Community directory of web applications and websites built with AI coding tools such as Bolt, Cursor, Lovable, v0, Replit, and Claude, created by Karthik Puvvada (KP). Lists each project with its builder, AI coding stack, frameworks, website link, demo post, and kudos count.",
+    "description_zh": "由 Karthik Puvvada（KP）创建的社区目录，展示使用 Bolt、Cursor、Lovable、v0、Replit 和 Claude 等 AI 编程工具开发的网页应用与网站。每个条目列出作者、所用 AI 工具栈、开发框架、站点链接、演示链接与点赞数。",
+    "evidence_url": "https://vibecodingshowcase.com/",
+    "additional_evidence_urls": [
+      "https://kp.substack.com/p/officialvibecodingshowcase"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Displays 90 community projects (7 featured) filterable by popular AI coding tools (Bolt, Cursor, Lovable, v0, Replit) and keyword search across project names, builders, and technologies, in Gallery or List layouts. The showcase site itself was built with Bolt, Supabase, and Netlify.",
+      "Requires a JavaScript-enabled browser because project cards load dynamically client-side after initial page paint; linked websites and demo posts open on third-party hosts.",
+      "Tool stacks and frameworks are self-reported by submitters and vary in granularity across entries, with some projects omitting framework tags or live demo links. Site copyright is listed as Build In Public LLC; linked projects keep their own terms."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "fable-5-2-bullet-water-balloon-demo",
+    "name": "Bullet vs. Water Balloon (fable-5.2-demos)",
+    "url": "https://github.com/az9713/fable-5.2-demos",
+    "category": "web-analysis",
+    "relationship": "learning",
+    "kind": "project",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Single-file HTML/JavaScript/WebGL2 ray-traced physics simulation of a bullet piercing a water balloon, generated by Claude Fable 5.2 with zero external libraries. Includes the verbatim prompt, live GitHub Pages demo, interactive freeze/orbit/timeline controls, parameter sliders, and explicit notes on physical approximations.",
+    "description_zh": "由 Claude Fable 5.2 生成的单文件 HTML/JavaScript/WebGL2 光线追踪物理模拟，无外部依赖，再现子弹击穿水气球并破裂飞溅的过程。仓库附完整原始提示词、GitHub Pages 在线演示、冻结/旋转视角/时间轴与参数滑块，并逐项说明物理近似假设。",
+    "evidence_url": "https://github.com/az9713/fable-5.2-demos/blob/5b58af1a05eae1b68bb44acb0ff95526f8599148/README.md",
+    "additional_evidence_urls": [
+      "https://az9713.github.io/fable-5.2-demos/"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs locally by opening index.html in a desktop browser with WebGL2 and a real GPU, or directly on GitHub Pages. A full shot executes roughly 8,000 CPU SPH solver steps (20–40 seconds depending on CPU); lower Live resolution or the 2,400-particle preset eases frame-rate load.",
+      "Reproduces the water-balloon prompt from Matthew Berman's Claude Fable 5.2 video with ~4,500 weakly compressible SPH particles (7,700-particle option), 3D density-texture ray marching with Fresnel/Snell/Beer–Lambert optics, 96-sample frozen refinement, timeline scrubbing, and 17+ physics/lighting sliders.",
+      "The README documents six physical approximations: sub-resolution bullet coupling calibrated to energy rather than momentum, low effective drag (~0.16 vs ~0.3), marble-sized single-particle droplets, negative-pressure cohesion instead of surface tension, thickness-based shadow caustics, and an analytic kinematic tear front.",
+      "The pinned repository snapshot contains no LICENSE file and GitHub detects no license, leaving reuse terms unspecified."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "everygamemade-ai-games",
+    "name": "EveryGameMade AI Games",
+    "url": "https://everygamemade.com/ai/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "AI-built browser game hub combining 8 original Claude-coded games, 40+ AI-coded classics, a 47-game externally hosted directory with GPU load and frame-time measurements, and free human-reviewed single-file HTML hosting. Publishes engine verification checks and explicit AI limits for its original titles.",
+    "description_zh": "EveryGameMade 的 AI 游戏专区，集合 8 款 Claude 编写的原创网页游戏、40 余款 AI 编写的经典棋牌益智游戏、附带实测 GPU 加载与帧耗时数据的 47 款外链作品目录，以及人工试玩审核的免费单文件 HTML 托管服务，并公开原创引擎的校验方法与已知局限。",
+    "evidence_url": "https://everygamemade.com/ai/",
+    "additional_evidence_urls": [
+      "https://everygamemade.com/ai/claude-games.html"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Showcases 8 original Claude-built games (LEXEME, MOGUL, OVERRUN, CLASP, ANTE, HOLESHOT, QUINT, OUTPOST) and 40+ AI-coded classics alongside 47 externally hosted AI games measured on 2026-10-15 for load time, transfer size, and median GPU ms/frame, plus a community upload shelf.",
+      "Original games publish concrete engine checks and limits: MOGUL neural value net vs heuristic over 800 four-player games, OVERRUN 7,776-outcome dice table, CLASP depth-6 perft against Mzinga (12,219,480 positions), ANTE 4,000-hand Python cross-check, and NIST FIPS 180-4 SHA-256 provably-fair dice verification.",
+      "Free to play in a web browser with no account, ads, or install; multiplayer rooms use four-letter codes. Community uploads require one self-contained HTML file with no external server calls or player-data collection, pass human playtesting, and run in a sandboxed iframe.",
+      "Community submitters retain full rights to their games and grant EveryGameMade hosting permission with takedown on request; externally listed games remain hosted on their creators' domains."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "prerequisites",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "gamedaily-ai",
+    "name": "GameDaily.ai",
+    "url": "https://gamedaily.ai/",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Daily archive of browser games designed, coded, illustrated, and scored end-to-end by an automated AI generation pipeline since February 2026. Ships single-file HTML games browsable by date, genre, collection, or RSS, and documents its combinatorial brief, shared engine toolkit, and automated screening workflow.",
+    "description_zh": "自 2026 年 2 月起每日更新的 AI 全自动生成浏览器游戏档案库，创意、代码、美术与音效均由 AI 流水线完成。每个作品以单文件 HTML 发布，支持按日期、类型、合集或 RSS 浏览，并公开其组合式命题、共享引擎工具库与自动筛选流程。",
+    "evidence_url": "https://gamedaily.ai/",
+    "additional_evidence_urls": [
+      "https://gamedaily.ai/how-its-made/"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Publishes an ongoing daily archive started 2026-02-12, reaching 1,124 playable single-file HTML games as of 2026-11-20 (roughly 4 generated per day, with 1 featured as Game of the Day) across puzzle, word, arcade, strategy, and rhythm genres.",
+      "Games are built from combinatorial briefs (mechanic, form, input constraint, visual style) on a shared toolkit (procedural audio, seeded palettes, input/scene/camera modules), then screened by deterministic desktop and mobile viewport checks (boot, layout, input response, motion) plus an AI reviewer.",
+      "Free to play in desktop and mobile browsers with no account, payment, or download; also offers random-play and RSS feeds.",
+      "Exact generation prompts, model choices, and brief weightings remain private, and the operator notes that an AI reviewer is fallible so flawed or unfinished games can still appear in the archive."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "prerequisites",
+      "limits"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "artificial-analysis-aa-3d",
+    "name": "AA-3D: Interactive 3D Experience Benchmark",
+    "url": "https://artificialanalysis.ai/evaluations/aa-3d/",
+    "category": "game-analysis",
+    "relationship": "learning",
+    "kind": "project",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Artificial Analysis benchmark measuring how well AI agents build single-page Three.js interactive 3D experiences from 55 written briefs across 7 domains inside offline Stirrup sandboxes. Ranks 27 models via blind pairwise Elo ratings alongside cost per task, token usage, turn counts, tool calls, and agent-run replays.",
+    "description_zh": "Artificial Analysis 推出的交互式 3D 体验基准，让智能体在离线 Stirrup 沙箱中依据跨 7 个领域的 55 份书面任务简报构建单页 Three.js 场景。通过盲评成对投票计算 27 个模型的 Elo 排名，并公布单任务成本、token 消耗、轮次、工具调用及运行回放。",
+    "evidence_url": "https://artificialanalysis.ai/evaluations/aa-3d/",
+    "additional_evidence_urls": [
+      "https://artificialanalysis.ai/methodology/aa-3d"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers 55 interactive 3D briefs across 7 domains; each model runs 1 attempt in Artificial Analysis's offline Stirrup sandbox (4 CPU cores, 8 GB RAM, software WebGL, no network) for up to 250 turns or 3 hours using Three.js 0.186.0, optional Rapier 0.20.0, Blender 4.5, Python 3, Node.js 22, headless Chromium, and CC0 assets to emit an index.html bundle up to 200 MiB.",
+      "Scenes must pass a 60-second automated headless-browser render check plus manual screening before entering voting; Elo scores use Bradley-Terry MLE with 95% intervals from 20K+ recruited-panel blind votes (>=30s viewing per scene and ~25% consensus checks).",
+      "Public votes cast in AA-3D Voting stay separate from the official leaderboard Elo, and software-rendered headless evaluation reflects CPU WebGL constraints.",
+      "Leaderboard, explorer, and replays are hosted under Artificial Analysis platform terms; the Stirrup agent harness is released separately as open source."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "startrise-playable-3d-game-benchmark",
+    "name": "Startrise Playable 3D Game Benchmark",
+    "url": "https://www.startrise.io/benchmark/gallery/05-3d-game/",
+    "category": "game-analysis",
+    "relationship": "learning",
+    "kind": "project",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Task 05 of Startrise AI Labs' 12-brief LLM Frontend Benchmark, where 30 models from 9 labs build a complete playable 3D game in a single standalone HTML file single-shot. Publishes the verbatim brief, deterministic Chromium gate results, blind panel and human scores, screenshots, and live sandboxed builds.",
+    "description_zh": "Startrise AI Labs 12 题前端基准中的第 5 题，要求来自 9 家实验室的 30 个模型单轮一次性在单个独立 HTML 文件中构建完整可玩的 3D 游戏。站点公开原始任务简报、Chromium 自动化门禁结果、盲评模型评审团与人工评分、截图及可在线试玩的沙箱构建产物。",
+    "evidence_url": "https://www.startrise.io/benchmark/gallery/05-3d-game/",
+    "additional_evidence_urls": [
+      "https://www.startrise.io/benchmark/"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Evaluates 30 single-shot model builds (Jul–Oct 2026 runs) on one shared playable 3D game brief and self-contained HTML output contract using Three.js CDN or raw WebGL; every untouched build opens live in a sandboxed browser frame.",
+      "Blended score combines 25% headed Chromium gates (1440x900 GPU checks for loads, errors, luminance, wrapped rAF FPS, scripted input, and self-containment), 45% blind three-lab LLM panel (Claude Opus 5, GPT-5.6 Terra, Grok 4.5), and 30% blind human rating (30/30 builds rated; 2 split the judge panel).",
+      "Startrise notes that Claude Opus 5 serves as Craft judge while Opus 5 and 5.5 lead the board, cross-run gaps under 3 points lie within session noise, and publishing verbatim prompts exposes them to future training sets.",
+      "Gallery and scores are hosted on startrise.io; the benchmark harness is referenced on GitHub and reproducing generation or judging requires paid provider API keys."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "limits",
+      "prerequisites"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "worldbuild-bench",
+    "name": "WorldBuild Bench",
+    "url": "https://github.com/sebnado/worldbuild-bench",
+    "category": "game-analysis",
+    "relationship": "learning",
+    "kind": "project",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Open-source benchmark harness for AI-generated 3D browser games holding the prompt, skills, Three.js + Rapier scaffold, and Playwright playtest loop constant across models via direct fetch adapters. Ships three fixed game briefs (arena combat, physics puzzle, racing) with automated playability and world-coherence gates feeding a blind arena.",
+    "description_zh": "面向 AI 生成 3D 浏览器游戏的开源评测框架，通过直连 fetch 适配器在所有模型间固定提示词、技能、Three.js + Rapier 脚手架与 Playwright 试玩循环。内置竞技场战斗、物理解谜与赛车 3 份固定任务简报，提供自动化可玩性与世界一致性门禁并衔接盲评竞技场。",
+    "evidence_url": "https://github.com/sebnado/worldbuild-bench/blob/3489a096ce57e05f93bf24784d84ff1d04174fd0/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/sebnado/worldbuild-bench/blob/3489a096ce57e05f93bf24784d84ff1d04174fd0/docs/methodology.md",
+      "https://github.com/sebnado/worldbuild-bench/blob/3489a096ce57e05f93bf24784d84ff1d04174fd0/LICENSE"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Node.js >= 20, Playwright Chromium, bundled Three.js via npm run fetch-three, and provider API keys in .env (Anthropic, OpenAI, Gemini, Moonshot, OpenRouter, or compatible endpoints); models.json registers 16 entries and the July 2026 pilot ran 10 models across 3 briefs for 29 playable builds.",
+      "wb gate computes Playability (0–100) and World Coherence (0–100) in headless Chromium using the required window.__bench telemetry contract (missing telemetry caps Playability at 60 and sets Coherence to 0); public Bradley-Terry arena voting (>=20s play, 50-vote provisional threshold) runs on sandscape.app/worldbuild.",
+      "Workspace path checks and a sanitized bash environment serve as accidental-escape guardrails; running untrusted models requires container isolation, and full multi-model pilot runs incurred ~$2,370 in API spend.",
+      "MIT-licensed (LICENSE at pinned commit)."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "single-html-game-bench",
+    "name": "Single HTML Game Bench",
+    "url": "https://github.com/chojondocho/single-html-game-bench",
+    "category": "game-analysis",
+    "relationship": "learning",
+    "kind": "project",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Zero-shot, one-pass benchmark comparing AI coding clients and models on building a complete 3D horror RPG/roguelike game in a single standalone HTML file from one fixed prompt. Publishes 21 ranked builds plus appendix variants playable directly via GitHub Pages or a local static server.",
+    "description_zh": "零样本单轮基准仓库，使用同一固定提示词对比不同 AI 编程客户端与模型在单个独立 HTML 文件中生成完整 3D 恐怖 RPG/肉鸽游戏的首轮表现。公开 21 个排名构建及附录样本，支持通过 GitHub Pages 或本地静态服务器直接试玩。",
+    "evidence_url": "https://github.com/chojondocho/single-html-game-bench/blob/3a0ce9867e67e596d3f9d2ff6255845d2da12175/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/chojondocho/single-html-game-bench/blob/3a0ce9867e67e596d3f9d2ff6255845d2da12175/LICENSE"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Benchmarks first-pass single-HTML generation across 21 ranked client+model pairs (Claude Code, Codex, ChatGPT, Gemini Web, Antigravity, Grok Web) plus 7 appendix artifacts (Vowline, unranked Codex exposures, and custom system-prompt runs) with zero post-generation tuning.",
+      "Requires only a web browser or local static server (such as python3 -m http.server 8080) to inspect and play every archived HTML artifact.",
+      "Leaderboard order reflects the author's personal, subjective hands-on playtesting (as of Nov 18, 2026) and mixes client scaffolds with models; outputs vary by date, revision, system prompt, and runtime environment.",
+      "MIT-licensed (LICENSE at pinned commit); archived AI-generated builds are provided as-is."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "3d-space-dodge-benchmark",
+    "name": "3D Space Dodge LLM Benchmark",
+    "url": "https://github.com/driphtyio/3d-space-dodge",
+    "category": "game-analysis",
+    "relationship": "learning",
+    "kind": "project",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "Two-prompt Three.js r128 benchmark testing 18 cloud and local LLMs on building a 3D survival dodge game, then adding autonomous bot mode, player glow, and an arena boundary ring. Archives prompts, 27 run records, an evolved 6-weight bot experiment, and playable model variants verified in headless Chromium.",
+    "description_zh": "两轮提示词 Three.js r128 基准，测试 18 个云端与本地大模型从零构建 3D 生存躲避游戏，并在第二轮加入自动机器人模式、发光脉冲与场地边界环。仓库归档提示词、27 次运行数据、6 权重进化机器人实验及经无头 Chromium 校验的可玩变体。",
+    "evidence_url": "https://github.com/driphtyio/3d-space-dodge/blob/1c1971955e3633dd172939df51c2bb4be8a2942b/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/driphtyio/3d-space-dodge/blob/1c1971955e3633dd172939df51c2bb4be8a2942b/PROMPTS.md",
+      "https://aigamingdev.com/blog/3d-space-dodge-benchmark/"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Tests 18 models (10 API, 8 local) across two fixed prompts for a 680x480 Three.js r128 survival dodge game and includes benchmark-runs.json (27 2D+3D runs), evolution-results.json, and PROMPTS.md.",
+      "Author verification uses Playwright with headless Chromium and SwiftShader WebGL to check canvas rendering, WebGL context, zero JS errors, and animation loop execution, reporting 11 PASS, 1 DEGRADED (Qwen 3.5 9B), and 6 FAILED (all local).",
+      "Hosted builds received documented wrapper/UI post-processing (default display:none overlays, body text color, line-number cleanup, and a MeshStandardMaterial fix on poolside/laguna-m.1); README lists 10 inline PASS names while PROMPTS.md and the blog include DeepSeek V4 Flash as the 11th.",
+      "README states MIT license; the pinned commit contains no separate LICENSE file and GitHub detects no repository license."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "kaggle-landmark-arena",
+    "name": "Kaggle Landmark Arena",
+    "url": "https://www.kaggle.com/benchmarks/kaggle/landmark-arena",
+    "category": "web-analysis",
+    "relationship": "learning",
+    "kind": "project",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Kaggle Benchmarks pairwise preference arena evaluating frontier models on generating 20 famous landmarks, including the Seven Wonders of the Ancient World, as self-contained single-page Three.js web apps. Combines a rendering pass criterion with live side-by-side human voting and confidence-interval leaderboard rankings.",
+    "description_zh": "Kaggle Benchmarks 推出的成对偏好竞技场，评测前沿模型使用 Three.js 将 20 座著名地标（含古代世界七大奇迹）生成为独立单页 Web 应用的能力。以页面可独立渲染作为通过基线，结合在线并排人工投票与置信区间公布排行榜。",
+    "evidence_url": "https://www.kaggle.com/benchmarks/kaggle/landmark-arena",
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers 20 famous landmarks rendered in Three.js as single-page web apps (for example, the Lighthouse of Alexandria) with a pass baseline requiring a self-contained page that renders.",
+      "Ranks 10 frontier models via live pairwise A/B voting with Arena ratings, confidence intervals, and per-model vote counts (1,062 votes recorded as of Nov 19, 2026).",
+      "Public page provides interactive side-by-side voting and leaderboard scores without publishing a downloadable local harness or full prompt archive; current ratings reflect a modest vote pool.",
+      "Hosted on Kaggle Benchmarks under Kaggle platform terms and requires a modern WebGL-capable browser to inspect and vote on scenes."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "limits",
+      "prerequisites"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "arena-ai-code-webdev",
+    "name": "Code Arena · WebDev (Arena.ai)",
+    "url": "https://arena.ai/leaderboard/code/webdev",
+    "category": "web-analysis",
+    "relationship": "learning",
+    "kind": "project",
+    "targets": [
+      "website",
+      "game"
+    ],
+    "description_en": "Arena.ai's live crowdsourced head-to-head benchmark for interactive web application generation, ranking models via Bradley-Terry scores across over 1,027,000 community votes alongside median task cost and Pareto frontiers. Organizes prompts into 7 web development categories spanning reference-based design, dashboards, consumer apps, browser games, and simulations.",
+    "description_zh": "Arena.ai 推出的交互式 Web 应用生成实时众包对战基准，基于超过 102.7 万次社区成对投票采用 Bradley-Terry 模型排名，并展示单任务中位成本与帕累托前沿。将提示词划分为 7 类前端与 Web 任务，涵盖参考式设计、仪表盘、消费级应用、浏览器游戏与交互模拟。",
+    "evidence_url": "https://arena.ai/leaderboard/code/webdev",
+    "additional_evidence_urls": [
+      "https://arena.ai/blog/webdev-arena",
+      "https://arena.ai/blog/new-categories-code-arena"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Evaluates models on live user web-development prompts across 7 taxonomy categories derived from 250k+ prompts (Reference-Based Design, Brand/Marketing Sites, Data & Analytics, Consumer Products, Gaming, Simulations, and Content Creation Tools), evolving from single-file Next.js/React sandboxes (E2B Firecracker microVMs) to multi-file tool-using coding sessions.",
+      "Leaderboard reflects 1,027,059 votes as of Nov 18, 2026 with Bradley-Terry ratings, P50 cost per task, and cost-performance Pareto views.",
+      "49 leaderboard models lack sufficient cost data for Pareto plotting; earlier arena analysis also documented high prompt repetition on sample prompts and ~18% 'both bad' votes driven by dependency or compile failures.",
+      "Operated as a hosted web platform under Arena.ai terms; inspecting leaderboards and casting votes requires only a web browser."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "limits",
+      "prerequisites"
+    ],
+    "added_at": "2026-11-19"
+  },
+  {
+    "id": "design-arena-web-eval",
+    "name": "DesignArena",
+    "url": "https://www.designarena.ai/",
+    "category": "web-analysis",
+    "relationship": "learning",
+    "kind": "project",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Community-driven blind tournament arena evaluating AI models on single-turn HTML website design and multi-file agentic app building across frontend web apps, full-stack apps, games, 3D design, data visualization, and UI components. Runs 4-model 5-battle brackets to compute Bradley-Terry Elo ratings, win rates, and preference-vs-price Pareto charts.",
+    "description_zh": "社区驱动的盲评锦标赛基准平台，评测 AI 模型在单轮 HTML 网页设计与多文件智能体应用构建中的表现，覆盖前端网页、全栈应用、游戏、3D 设计、数据可视化与 UI 组件。通过 4 模型 5 场淘汰对决计算 Bradley-Terry Elo 评分、胜率及偏好-价格帕累托图。",
+    "evidence_url": "https://www.designarena.ai/",
+    "additional_evidence_urls": [
+      "https://www.designarena.ai/leaderboard",
+      "https://www.designarena.ai/about",
+      "https://www.designarena.ai/blog/how-glm-5-2-beat-fable-5-at-website-design"
+    ],
+    "verified_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers both single-turn non-agentic HTML Web Design (plus Game Dev, 3D Design, Data Visualization, and UI Components) and a composite agentic leaderboard (Frontend Web App, Full Stack, Agentic Game Dev, Godot, React Native, Android, Slides, Spreadsheet).",
+      "Each voting session samples 4 models (plus 1 backup) on the same prompt across 5 anonymous pairwise battles to fit iterative Bradley-Terry Elo ratings (base 1200, ±standard error), accompanied by empirical blog analyses of visual clustering, library usage, and generation speed.",
+      "Rankings reflect crowdsourced human aesthetic and functional preference; main charts filter models under 50 comparisons and mark entries preliminary until reaching ~200 pairwise comparisons.",
+      "Hosted web arena under DesignArena terms; companion open-source tooling such as AgentRunner is published separately."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "added_at": "2026-11-19"
   }
 ]
