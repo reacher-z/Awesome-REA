@@ -29,7 +29,8 @@ JSON_TYPE = 'application/json'
 RESOURCE_FIELDS = ('id', 'name', 'name_zh', 'url', 'kind', 'class', 'category', 'group', 'relationship', 'targets',
                    'description_en', 'description_zh', 'requirements', 'requirements_zh', 'requirement_facets',
                    'reconstruction_method', 'evidence_url', 'additional_evidence_urls', 'added_at', 'verified_at',
-                   'verification', 'source_unavailable', 'evidence_class', 'evidence_status', 'scope', 'preview_kind')
+                   'verification', 'source_unavailable', 'evidence_class', 'evidence_status', 'scope', 'preview_kind',
+                   'platforms', 'platform_counts', 'platform_packages')
 PAPER_FIELDS = ('id', 'title', 'title_zh', 'authors', 'authors_omitted', 'year', 'publication_date', 'date_precision',
                 'date_basis', 'date_basis_zh', 'venue', 'publication_status', 'arxiv_id', 'arxiv_version_reviewed',
                 'first_arxiv_date', 'doi', 'url', 'pdf_url', 'code_url', 'project_url', 'targets', 'kind', 'class',

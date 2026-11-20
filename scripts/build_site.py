@@ -59,9 +59,11 @@ LISTED_BADGE = "featured-by-awesome-rea-inline.svg"
 # Record fields the homepage needs for its first render; catalog.json keeps every field.
 CATALOG_INDEX_FIELDS = ("id", "name", "name_zh", "url", "evidence_url", "description_en", "description_zh", "kind",
                         "category", "group", "relationship", "targets", "verified_at", "evidence_class",
-                        "evidence_status", "scope", "runtime_status", "evidence_review", "preview", "preview_kind")
+                        "evidence_status", "scope", "runtime_status", "evidence_review", "preview", "preview_kind",
+                        "platforms", "platform_counts")
 EVIDENCE_CLASSES = (0, 1, 2, 3)
 EVIDENCE_CLASSES_PATH = ROOT / "data" / "evidence-classes.json"
+PLATFORM_PACKAGES_PATH = ROOT / "data" / "platform-packages.json"
 SCAN_CLASSES_PATH = ROOT / "data" / "scan-evidence-classes.json"
 PREVIEWS_PATH = ROOT / "data" / "evidence-previews.json"
 PREVIEW_CACHE = ROOT / ".cache" / "previews"
@@ -163,6 +165,33 @@ def write_scan_classes(output: Path, document: dict) -> Path:
     return path
 
 
+def platform_mapping(records: list[dict]) -> tuple[dict[str, dict], tuple[str, ...]]:
+    """Read the dated OS package snapshot for the classes it covers."""
+    if not PLATFORM_PACKAGES_PATH.is_file():
+        raise ValueError("Missing data/platform-packages.json. Run scripts/collect_platform_packages.py.")
+    document = json.loads(PLATFORM_PACKAGES_PATH.read_text(encoding="utf-8"))
+    meta = document.get("meta") or {}
+    scope = tuple(meta.get("scope_classes") or ())
+    if not scope:
+        raise ValueError("Platform package data needs meta.scope_classes")
+    entries = document.get("entries")
+    if not isinstance(entries, list):
+        raise ValueError("Platform package data must contain an entries list")
+    mapping = {}
+    for entry in entries:
+        identifier = entry.get("id")
+        if not isinstance(identifier, str) or identifier in mapping:
+            raise ValueError("Platform package data needs unique string IDs")
+        if entry.get("class") not in scope:
+            raise ValueError(f"Platform package data has an out-of-scope class for {identifier}")
+        mapping[identifier] = entry
+    expected = {record["id"] for record in records if record.get("class") in scope}
+    missing = sorted(expected - set(mapping))
+    if missing:
+        raise ValueError(f"Platform package data does not cover the scoped classes (missing {missing[:5]})")
+    return mapping, scope
+
+
 def build_site(output: Path) -> tuple[int, int, int]:
     """Render a complete site into a fresh, caller-owned staging directory."""
     translations = json.loads((SOURCE / "translations.zh-CN.json").read_text(encoding="utf-8"))
@@ -171,6 +200,10 @@ def build_site(output: Path) -> tuple[int, int, int]:
         raise ValueError("Missing data/evidence-classes.json. Run scripts/classify_evidence_classes.py.")
     evidence_document = json.loads(EVIDENCE_CLASSES_PATH.read_text(encoding="utf-8"))
     evidence_entries = {entry["id"]: entry for entry in evidence_document["entries"]}
+    platform_records = []
+    for filename in ("rea-resources.json", "tool-resources.json"):
+        platform_records.extend(json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")))
+    platform_entries, platform_scope = platform_mapping(platform_records)
     previews = {}
     if PREVIEWS_PATH.is_file():
         previews = {entry["id"]: entry for entry
@@ -197,6 +230,11 @@ def build_site(output: Path) -> tuple[int, int, int]:
             record["runtime_status"] = evidence_entry.get("runtime_status", "not-run")
             if evidence_entry.get("review"):
                 record["evidence_review"] = evidence_entry["review"]
+            platform_entry = platform_entries.get(record["id"]) if record.get("class") in platform_scope else None
+            record["platforms"] = platform_entry["platform_keys"] if platform_entry else []
+            record["platform_counts"] = ({key: len(items) for key, items in platform_entry["platforms"].items()}
+                                         if platform_entry else {})
+            record["platform_packages"] = platform_entry["platforms"] if platform_entry else {}
             if record["evidence_class"] in (0, 1):
                 preview = previews.get(record["id"])
                 if preview and not public_media_url(preview["image_url"]):
