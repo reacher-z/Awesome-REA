@@ -6,7 +6,7 @@
 
 [English](game-5.md)
 
-**350 个案例**
+**351 个案例**
 
 ## 引擎重实现
 
@@ -53,6 +53,7 @@
 - [**alive-serv：重建 SIF2 MIRACLE LIVE! 游戏服务器**](https://github.com/miraclealive/alive-serv) - alive-serv 根据 SIF2 MIRACLE LIVE! 国际服客户端的服务器协议，以 C 语言重建部分游戏服务。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/alive-serv-case/)</sub>
 - [**Alley Cat：DOS 游戏可执行文件的注释反汇编**](https://github.com/gmegidish/alleycat-disassembly) - Alley Cat Disassembly 正在将这款 DOS 游戏的 Ghidra 反汇编结果整理为带注释的 NASM x86 汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/alley-cat-disassembly-case/)</sub>
 - [**Alleyway：按校验值匹配的 Game Boy 反汇编**](https://github.com/Wit-MKW/alleyway-gb) - Alleyway 将 1989 年的 Game Boy 游戏整理为汇编源码，按音频、显示、输入、物理和关卡代码分文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/alleyway-gb-case/)</sub>
+- [**Anm2Ed：重建《以撒的结合：重生》的专有动画编辑器**](https://github.com/ShweetsStuff/anm2ed) - Anm2Ed 是《以撒的结合：重生》随游戏附带的专有动画编辑器的现代替代品。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/anm2ed-case/)</sub>
 - [**Another Life：重建 The Witcher 3 存档状态**](https://github.com/awarebayes/another-life-w3) - Another Life 重建 The Witcher 3 Remastered 的部分存档格式与任务状态，根据玩家选择生成新存档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/another-life-w3-case/)</sub>
 - [**Arkanum：重建《Arcanum》档案与地图扇区格式**](https://github.com/vleon1/Arkanum) - Arkanum 在 Python 引擎重建工作中解析《Arcanum》的游戏数据格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/arkanum-arcanum-formats-case/)</sub>
 - [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb) - 同时运行《漫威蜘蛛侠：重制版》与《蝙蝠侠：阿卡姆骑士》，将哥谭碰撞数据传入蜘蛛侠的物理世界，再将其渲染画面合成到阿卡姆中。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/arkweb-two-game-case/)</sub>

@@ -6,9 +6,12 @@
 
 [English](website.md)
 
-**77 个案例**
+**80 个案例**
 
-- [**Papers with Code：保存并重实现已停运的站点**](https://github.com/World-Snapshot/papers-with-code) - Papers with Code 于 2025 年 7 月停止运营后，该项目保存并分析站点的任务与论文核心数据，发布带交互式任务查看器的服务端渲染重建版，并链接同一数据的存档快照与替代部署。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/paperswithcode-rebuild-case/)</sub>
+- [**Awwwards：用 React 重建 Zentry 宣传网站**](https://github.com/BlockLune/awwwards-zentry) - Awwwards 使用 React 与 TypeScript 重建 Zentry 宣传网站，依据其链接的 GSAP 网站教程实现；源码将首屏、导航、介绍、功能、故事、联系和页脚区组合成滚动页面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/awwwards-zentry-site-case/)</sub>
+- [**JavaScript on the Brain：重建 Java on the Brain 网站**](https://github.com/Eggbertx/JavaScriptOnTheBrain) - JavaScript on the Brain 使用现代 Web 技术，以 Astro 重建 Java on the Brain 网站；仓库发布开发中的替代实现，提供本地开发、静态构建和预览命令。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/javascript-on-the-brain-site-case/)</sub>
+- [**JSON Editor Online：静态重建 jsoneditoronline.org**](https://github.com/djmattyg007/jsoneditoronline) - JSON Editor Online 使用 jsoneditor 库将 jsoneditoronline.org 重建为可静态部署的网站；仓库构建脚本安装依赖并生成可自行托管的 dist 目录。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jsoneditoronline-site-case/)</sub>
+- [**Papers with Code：保存并重实现已停运的站点**](https://github.com/World-Snapshot/papers-with-code) - 该项目在 Papers with Code 于 2025 年 7 月停止运营后保存其任务与论文数据，并提供交互式任务查看器；文档梳理存档导出、处理脚本与替代部署。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/paperswithcode-rebuild-case/)</sub>
 - [**canopy-dotmatrix：重建 davidluft.com 的点阵窗景**](https://github.com/isjiajia01/canopy-dotmatrix) - 项目依据 davidluft.com 的公开 JavaScript 文件和场景数据重建首页点阵窗景。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/canopy-dotmatrix-case/)</sub>
 - [**Dih Pinterest：重建 Pinterest 搜索站点的页面与数据流**](https://github.com/Ikyletwar/dih-pinterest-replica) - Dih Pinterest 将 searchpinterest.vercel.app 的搜索界面和数据流重建为静态网页，可选配 Vercel 代理。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dih-pinterest-case/)</sub>
 - [**Drama Live：分析 Android 与网页客户端并重建 API 客户端**](https://github.com/barhomus10/dramalive-analysis) - Drama Live analysis 记录这款 IPTV 播放器的 Android APK 与网页 PWA，包括组件栈、接口路径和内容来源流程。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/dramalive-analysis-case/)</sub>
