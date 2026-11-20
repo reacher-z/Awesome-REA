@@ -16,6 +16,7 @@ import discovery_classes
 import discovery_leads as leads
 import discovery_reviews
 from data_classes import DATA_CLASSES
+from scan_sources import SOURCE_CLASSES
 
 EXPORT_PATH = '/discoveries/leads.json'
 BATCH_EXPORT_DIRECTORY = '/discoveries/leads/'
@@ -102,7 +103,8 @@ def export_document(queue: dict, site_url: str, repository_url: str) -> dict:
                    'bytes': leads.MAX_TOTAL_BYTES},
         'sources': [{'id': source['id'], 'type': source['type'], 'why': source['why'],
                      **({'repository': source['repository']} if 'repository' in source else {}),
-                     **({'topic': source['topic']} if 'topic' in source else {})}
+                     **({'topic': source['topic']} if 'topic' in source else {}),
+                     **({'class': SOURCE_CLASSES[source['id']]} if source['id'] in SOURCE_CLASSES else {})}
                     for source in (queue['registry'] or {}).get('sources', [])],
         'registry_url': f'{repository_url}/blob/main/{leads.REGISTRY}',
         'batches': [{'batch_id': batch['batch_id'], 'collected_at': batch['collected_at'],
