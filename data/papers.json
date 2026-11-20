@@ -803,7 +803,7 @@
     "metadata_notes": "The official project page marks the work as under review. arXiv reports the v1 submission on 2026-09-15 and displays its arXiv DOI as pending registration. The project link is a showcase with demos; release of the full evaluation framework remains unverified.",
     "metadata_notes_zh": "官方项目页将该工作标注为审稿中。arXiv 记载 v1 于 2026-09-15 提交，并将其 arXiv DOI 标注为待注册。项目链接为含演示的展示页；完整评测框架的发布仍待核实。",
     "kind": "research",
-    "class": "game",
+    "class": "game-dev",
     "verified_at": "2026-10-16",
     "added_at": "2026-10-16",
     "verification": "source-reviewed",
@@ -3026,7 +3026,7 @@
       "https://gjyin.github.io/"
     ],
     "kind": "research",
-    "class": "apps",
+    "class": "mobile-app-dev",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -6249,7 +6249,7 @@
       "https://api.datacite.org/dois/10.48550/arxiv.2609.33678"
     ],
     "kind": "research",
-    "class": "game",
+    "class": "game-dev",
     "verified_at": "2026-10-20",
     "added_at": "2026-10-20",
     "verification": "source-reviewed",

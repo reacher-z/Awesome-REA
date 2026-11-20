@@ -25,7 +25,8 @@ def errors_for(record):
 
 class DataClassVocabularyTests(unittest.TestCase):
     def test_classes_keep_the_owner_order(self):
-        self.assertEqual(list(DATA_CLASSES), ['software', 'game', 'apps', 'website', 'science', 'hardware'])
+        self.assertEqual(list(DATA_CLASSES),
+                         ['website', 'game-dev', 'mobile-app-dev', '3d-design', 'software', 'animation', 'video', 'hardware', 'analysis'])
 
     def test_every_class_has_english_and_chinese_labels(self):
         for labels in DATA_CLASSES.values():
@@ -54,16 +55,17 @@ class DataClassValidationTests(unittest.TestCase):
         self.assertEqual(DATA_CLASS_KINDS, {'case-study', 'project'})
         for kind in ('tool', 'integration', 'collection', 'documentation', 'learning-resource', 'research'):
             with self.subTest(kind):
-                self.assertEqual(class_errors({'kind': kind, 'class': 'game'}),
+                self.assertEqual(class_errors({'kind': kind, 'class': 'game-dev'}),
                                  ['class: only case-study and project records take a class'])
         self.assertEqual(class_errors({'kind': 'project', 'class': 'website'}), [])
 
     def test_a_class_is_exactly_one_known_value(self):
-        for value in (['game'], ['game', 'hardware'], 'protocol', 'firmware', 'Game', '', None, 3):
+        for value in (['game-dev'], ['game-dev', 'hardware'], 'protocol', 'firmware', 'Game', '', None, 3):
             with self.subTest(value):
                 record = deepcopy(CASE) | {'class': value}
                 self.assertEqual(errors_for(record), ["resource 'field-fixture'.class: use exactly one of "
-                                                      'software, game, apps, website, science, hardware'])
+                                                      'website, game-dev, mobile-app-dev, 3d-design, software, '
+                                                      'animation, video, hardware, analysis'])
 
     def test_papers_share_the_vocabulary(self):
         self.assertEqual(class_value_errors({'class': 'website'}), [])
