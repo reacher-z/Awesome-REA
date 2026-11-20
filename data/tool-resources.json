@@ -154740,5 +154740,160 @@
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/scripts/turokgame/components/weapons/turokWeaponChronoScepter.txt",
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/framework/system.cpp"
     ]
+  },
+  {
+    "id": "dune-dynasty-open-dune-case",
+    "name": "Dune Dynasty: a Dune II remaster on OpenDUNE",
+    "url": "https://github.com/gameflorist/dunedynasty",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A remaster and enhancement of the classic Dune II real-time strategy game, built on the original reverse-engineered OpenDUNE engine. It aims to make Dune II playable on modern systems with bug fixes, quality-of-life changes and new features rather than as a remake.",
+    "description_zh": "基于逆向工程得到的 OpenDUNE 引擎，对经典即时战略游戏 Dune II 做重制与增强；目标是在现代系统上可玩，并加入缺陷修复、体验改进和新功能，而不是重做一款新游戏。",
+    "evidence_url": "https://github.com/gameflorist/dunedynasty/blob/755876a710c0b188075ebe89cb40c068490e08e2/README.md",
+    "verified_at": "2026-11-19",
+    "added_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes a remaster built on the reverse-engineered OpenDUNE engine, not a remake or a port of the original executable.",
+      "Running the game requires the original Dune II data files; the repository ships no game content.",
+      "The README lists release builds for Windows 32-bit, 64-bit and ARM64, macOS Intel and Apple Silicon, and Linux x86-64 and ARM64.",
+      "The repository is GPL-2.0; Dune II data and purchased editions keep their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "underworldgodot-ultima-underworld-case",
+    "name": "UnderworldGodot: Ultima Underworld I-II in Godot",
+    "url": "https://github.com/hankmorgan/UnderworldGodot",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An engine recreation of Ultima Underworld and Ultima Underworld II built in the Godot Engine. The README calls the current build pre-alpha and describes it as an interactive map viewer with substantial game logic implemented, not a finished playable game.",
+    "description_zh": "在 Godot Engine 中重建 Ultima Underworld 与 Ultima Underworld II 的引擎；README 称当前版本为 pre-alpha，是实现了大量游戏逻辑的交互式地图查看器。",
+    "evidence_url": "https://github.com/hankmorgan/UnderworldGodot/blob/1b88b9fcaad7c894f9b84abeb973ac168a9419a6/README.md",
+    "verified_at": "2026-11-19",
+    "added_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes an engine recreation of Ultima Underworld and Ultima Underworld II in Godot, not a port of the original executables.",
+      "The README labels the build pre-alpha, provides no support and warns that it should not be expected to be usable.",
+      "Running it requires game files for either Ultima Underworld I or II; development uses Godot 4.3 .NET, .NET 9 and Git LFS.",
+      "The repository is MIT; the games and their data keep their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "horizon-minecraft-java-rust-case",
+    "name": "Horizon: Minecraft: Java Edition rewritten in Rust",
+    "url": "https://github.com/horizon-rust/horizon",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Minecraft: Java Edition 26.3 rewritten from scratch in Rust. It opens the user's worlds, generates the same terrain and follows the same rules without a Java runtime, and the README reports 281 differential harnesses checked against vanilla.",
+    "description_zh": "用 Rust 从零重写 Minecraft: Java Edition 26.3；不依赖 Java 运行时即可打开用户存档、生成相同地形并遵循相同规则。README 称已有 281 个差分测试装置与原版对照。",
+    "evidence_url": "https://github.com/horizon-rust/horizon/blob/1e1e41d912059c0ec5b559e4f3df2217139f68a7/README.md",
+    "verified_at": "2026-11-19",
+    "added_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes a from-scratch Rust rewrite of Minecraft: Java Edition 26.3, not a port of Mojang code or assets.",
+      "It ships no Minecraft files: the user needs their own copy of Minecraft: Java Edition, must install version 26.3 and start it once.",
+      "The launcher supports Windows x64 and ARM64, macOS 12 or later, and Linux x86-64.",
+      "The repository is LGPL-3.0-or-later; code merged before the licence move remains available under MIT, and the game keeps its own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "openrealm-warcraft3-engine-case",
+    "name": "OpenRealm: an open Warcraft III engine and compatibility project",
+    "url": "https://github.com/corepunch/open-realm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A Quake-style engine and compatibility project for Blizzard-era game data. Warcraft III is the primary playable target, including the client/server runtime, JASS, SLK and profile data, FDF UI, campaign flow, maps, fog, units and networking, on Windows, Linux, macOS and iPad; World of Warcraft and StarCraft II are exploratory targets.",
+    "description_zh": "面向暴雪时代游戏数据的 Quake 风格引擎与兼容项目；Warcraft III 是主要可玩目标，包含客户端/服务端运行时、JASS、SLK 与 profile 数据、FDF 界面、战役流程、地图、迷雾、单位和网络，支持 Windows、Linux、macOS 与 iPad；World of Warcraft 与 StarCraft II 仍属探索目标。",
+    "evidence_url": "https://github.com/corepunch/open-realm/blob/c1dffe1eb6d361a7c47c5be0fc205cc3d9aab39f/README.md",
+    "verified_at": "2026-11-19",
+    "added_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes an open, Quake-style engine and compatibility project for Blizzard-era data, not a port of Blizzard code.",
+      "The project ships no retail game data; it must be used only with data the user legally owns.",
+      "The native build needs a C compiler, make, SDL2 and system OpenGL or GLES3; FFmpeg development libraries are optional for Warcraft III videos and music.",
+      "The repository is MIT; World of Warcraft and StarCraft II remain exploratory format and renderer targets."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "limits"
+    ]
+  },
+  {
+    "id": "openprototype-1995-rust-port-case",
+    "name": "OpenPrototype: a from-scratch port of Prototype (1995)",
+    "url": "https://github.com/openprototype-game/openprototype",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "class": "game",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A from-scratch Rust port of Prototype (1995), a DOS shoot-'em-up by NEO Software. The original source is lost, so the port is built by reverse engineering the shipped game files with format notes from the original programmer; it plays all seven levels, enemies, bosses and the front-end from the user's own disc image.",
+    "description_zh": "用 Rust 从零移植 NEO Software 1995 年的 DOS 射击游戏 Prototype。原源码已丢失，项目依靠逆向游戏文件并参考原程序员的格式说明重建；在用户自有的光盘镜像上可游玩全部七关、敌人、Boss 与前端界面。",
+    "evidence_url": "https://github.com/openprototype-game/openprototype/blob/9085d81a67612c8bd52f4863b7d4089377935be4/README.md",
+    "verified_at": "2026-11-19",
+    "added_at": "2026-11-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README describes a from-scratch Rust port built by reverse engineering the shipped game files, not recovered original source.",
+      "It requires the user's own copy of the Prototype disc image; the installer can fetch a ~270 MB image or use a supplied cue file.",
+      "The README reports all seven levels and the front-end playable on Linux, macOS and Windows; the macOS build is unsigned and needs a right-click Open.",
+      "The repository is GPL-3.0; the game and its data keep their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "scope",
+      "license"
+    ]
   }
 ]

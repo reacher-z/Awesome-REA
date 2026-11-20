@@ -6,7 +6,7 @@
 
 [English](game-4.md)
 
-**631 个案例**
+**630 个案例**
 
 ## 基于重建源码的移植
 
@@ -283,6 +283,7 @@
 - [**Dreerally：Death Rally 游戏引擎重实现**](https://github.com/enriquesomolinos/DreeRally) - Dreerally 重新实现 Windows 版 Death Rally，编译后的程序替代原有可执行文件，并读取玩家持有的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dreerally-case/)</sub>
 - [**DRIG：Race Driver: GRID 引擎重建**](https://github.com/PipeKnight/drig-race-driver) - DRIG 用 Rust 和 Bevy 重建 Race Driver: GRID，引擎从用户的 PC 安装目录读取赛道、车辆、纹理和声音等数据。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/drig-race-driver-grid-case/)</sub>
 - [**DSDS：黑暗之魂 1 地图查看器与引擎重实现**](https://gitlab.com/somobu/dantelion) - DSDS 重实现《黑暗之魂 1》的部分引擎功能，读取 Steam 版 Prepare to Die Edition 的数据并显示地图。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dsds-dark-souls-1-map-viewer-case/)</sub>
+- [**Dune Dynasty：基于 OpenDUNE 的 Dune II 重制**](https://github.com/gameflorist/dunedynasty) - 基于逆向工程得到的 OpenDUNE 引擎，对经典即时战略游戏 Dune II 做重制与增强；目标是在现代系统上可玩，并加入缺陷修复、体验改进和新功能，而不是重做一款新游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dune-dynasty-open-dune-case/)</sub>
 - [**Dungeon Keeper Remake：读取原版数据的 C++ 引擎**](https://github.com/Themperror/Dungeon-Keeper-Remake) - Dungeon Keeper Remake 是使用 C++、DirectX 11 和 XAudio2 开发的《Dungeon Keeper》重制项目，计划与原版游戏安装目录配合使用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dungeon-keeper-remake-case/)</sub>
 - [**DuperHex：从提取的游戏逻辑重建《Super Hexagon》引擎**](https://github.com/DavidBuchanan314/duperhex) - DuperHex 使用 Rust、SDL3 和 wgpu 重建《Super Hexagon》引擎。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/duperhex-case/)</sub>
 - [**DW3 Remake：重建 Digimon World 2003**](https://github.com/antharuu/dw3-remake) - DW3 Remake 用 Godot 4 和 C# 重建 PlayStation 游戏 Digimon World 2003。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dw3-remake-case/)</sub>
@@ -339,6 +340,7 @@
 - [**HMC47：重建《Hitman: Codename 47》**](https://github.com/americusmaximus/HMC47) - HMC47 根据《Hitman: Codename 47》原版二进制文件重建模块化 C++ 游戏实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hmc47-case/)</sub>
 - [**hode：Heart of Darkness 引擎重实现**](https://github.com/usineur/hode) - hode 重实现 Heart of Darkness 引擎，读取原版 Windows 演示版或光盘版的数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hode-case/)</sub>
 - [**Horizon：借助 REA 字节码查询的 Minecraft: Java Edition 26.3 Rust 重写**](https://github.com/ludovic111/horizon) - 以原生 Rust 客户端、专用服务器和启动器重写 Minecraft: Java Edition 26.3，资源均由使用者自有的游戏副本生成。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/horizon-minecraft-rust-rewrite-case/)</sub>
+- [**Horizon：用 Rust 重写 Minecraft: Java Edition**](https://github.com/horizon-rust/horizon) - 用 Rust 从零重写 Minecraft: Java Edition 26.3；不依赖 Java 运行时即可打开用户存档、生成相同地形并遵循相同规则。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/horizon-minecraft-java-rust-case/)</sub>
 - [**HotaSim：还原 Horn of the Abyss 战斗机制**](https://github.com/patrulek/hotasim) - HotaSim 用 C++ 重建《魔法门之英雄无敌 III：深渊号角》的部分战斗机制，并用于战斗模拟。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hotasim-case/)</sub>
 - [**Hulabee Sauce 引擎：重建游戏虚拟机与资源格式**](https://github.com/cyxx/hulabee) - hulabee 用 SDL2 重建 Hulabee 游戏所用的 Sauce 引擎虚拟机，提供操作码跟踪、.pan 与 .gg 资源提取转换工具，以及引擎语言和文件格式笔记。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hulabee-sauce-engine-case/)</sub>
 - [**I26：用 Godot 重实现《Interstate ’76》**](https://github.com/vahokif/I26) - I26 用 Godot 重实现 Interstate '76。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/i26-interstate/)</sub>
@@ -474,10 +476,12 @@
 - [**OpenPlatinum：以原生引擎重建 Pokémon Platinum**](https://github.com/shinzarou-eng/OpenPlatinum) - OpenPlatinum 用 C++17、SDL3 和 OpenGL 为 Windows 与 macOS 重建 Pokémon Platinum 的场景引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openplatinum-case/)</sub>
 - [**OpenPol：早期《Polanie》重建项目**](https://github.com/jstasiak/openpol) - OpenPol 用 Rust 重建波兰即时战略游戏《Polanie》，并提供读取、提取游戏数据格式的工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openpol-polanie-case/)</sub>
 - [**OpenPrivateer：重建《Wing Commander: Privateer》**](https://openprivateer.org/) - OpenPrivateer 使用玩家自有的原版文件，为现代系统重建《Wing Commander: Privateer》及资料片 Righteous Fire。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openprivateer-case/)</sub>
+- [**OpenPrototype：Prototype（1995）的 Rust 从零移植**](https://github.com/openprototype-game/openprototype) - 用 Rust 从零移植 NEO Software 1995 年的 DOS 射击游戏 Prototype。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openprototype-1995-rust-port-case/)</sub>
 - [**openQ4：重建 Quake 4 引擎与游戏模块**](https://github.com/themuffinator/openQ4) - openQ4 以 GPL 引擎和按 SDK 条款提供的游戏模块替换 Quake 4 的引擎与游戏二进制文件，并读取玩家零售版游戏资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openq4-quake-4-case/)</sub>
 - [**OpenRA：重新诠释早期 Westwood 即时战略游戏的引擎重新实现**](https://github.com/OpenRA/OpenRA) - 为早期 Westwood 即时战略游戏提供以 C# 编写的引擎，并以模组形式重新诠释 Command &amp; Conquer: Red Alert、Tiberian Dawn 和 Dune 2000。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openra-engine-case/)</sub>
 - [**OpenRaider：Tomb Raider 1 至 3 的引擎重写**](https://github.com/xythobuz/OpenRaider) - OpenRaider 以 C++ 重建 Tomb Raider 1、2、3 的引擎，读取用户提供的原版资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openraider-rewrite-case/)</sub>
 - [**OpenRCT2：RollerCoaster Tycoon 2 的开源重新实现**](https://github.com/OpenRCT2/OpenRCT2) - 以 C++ 引擎重新实现原本用 x86 汇编编写的 RollerCoaster Tycoon 2，并在原游戏数据上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openrct2-engine-case/)</sub>
+- [**OpenRealm：开源 Warcraft III 引擎与兼容项目**](https://github.com/corepunch/open-realm) - 面向暴雪时代游戏数据的 Quake 风格引擎与兼容项目；Warcraft III 是主要可玩目标，包含客户端/服务端运行时、JASS、SLK 与 profile 数据、FDF 界面、战役流程、地图、迷雾、单位和网络，支持 Windows、Linux、macOS 与 iPad；World of Warcraft 与 StarCraft II 仍属探索目标。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openrealm-warcraft3-engine-case/)</sub>
 - [**OpenRED：重建《罪恶装备 -奋战-》的战斗系统**](https://github.com/WistfulHopes/OpenRED) - OpenRED 在 Unreal Engine 项目中重建《罪恶装备 -奋战-》的战斗系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openred-case/)</sub>
 - [**OpenRedFaction：面向 PC 与初代 Xbox 的 Red Faction 重建**](https://github.com/GTTeancum/OpenRedFaction) - OpenRedFaction 以共享的 C/C++ 运行时重建 Red Faction 游戏行为，目标为 PC 和配备 64 MiB 内存的初代 Xbox。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-red-faction-case/)</sub>
 - [**OpenRedRacing：Big Red Racing 游戏引擎重建**](https://github.com/nynjardin/OpenRedRacing) - OpenRedRacing 使用 SDL2 和 OpenGL 3.3，以可移植的 C++ 引擎重新实现《Big Red Racing》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openredracing-big-red-racing-case/)</sub>
@@ -639,9 +643,4 @@
 - [**Un-Banished：用 Rust 重建 Banished 引擎**](https://github.com/tanepiper/unbanished) - Un-Banished 用 Rust 重建 Banished 1.0.7 引擎，读取玩家自有游戏数据，在桌面和浏览器中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/un-banished-case/)</sub>
 - [**Unciv：文明 V 玩法重制**](https://github.com/yairm210/Unciv) - Unciv 使用 LibGDX 在 Android 和桌面平台重制《文明 V》的玩法，并支持模组。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/unciv-civ-v-case/)</sub>
 - [**Underworld Adventures：重建《Ultima Underworld I》**](https://github.com/vividos/UnderworldAdventures) - Underworld Adventures 以 C++ 引擎在现代系统上重建《Ultima Underworld I》，读取用户自备的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/underworld-adventures-case/)</sub>
-- [**Underworld Revisited：用 Unity 重实现《创世纪地下世界》**](https://github.com/PQMarine/UnderworldRevisited) - Underworld Revisited 用 Unity 重新实现 1992 年的 Ultima Underworld: The Stygian Abyss。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/underworld-revisited/)</sub>
-- [**Untangle：基于 REA 与 Ghidra 证据的浏览器重建**](https://github.com/az9713/untangle-rebuild) - 作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/untangle-rea-evidence-rebuild-case/)</sub>
-- [**vakfu：重建 Wakfu 地图渲染**](https://github.com/jac3km4/vakfu) - vakfu 用 Rust 重建 Wakfu 的等距视角地图渲染，并从用户自己的游戏副本读取资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vakfu-case/)</sub>
-- [**Vange-rs：以 Rust 重做《Vangers》**](https://github.com/kvark/vange-rs) - vange-rs 使用 Rust 和 wgpu 重做《Vangers》，目标是借助原版游戏资源重现其世界、载具和单人游戏行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vange-rs-vangers-case/)</sub>
-- [**Vault Engine：以 Rust 重建 Fallout 与 Fallout 2**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine 以 Rust 重建 Fallout 和 Fallout 2，读取用户零售版的 DAT 归档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vault-engine-case/)</sub>
 <!-- END GENERATED CASES -->

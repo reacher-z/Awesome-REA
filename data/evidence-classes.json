@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-10T03:26:21+00:00",
-  "entry_count": 5191,
+  "generated_at": "2026-11-19T21:35:56+00:00",
+  "entry_count": 5196,
   "class_counts": {
    "0": 15,
-   "1": 1126,
-   "2": 3844,
+   "1": 1130,
+   "2": 3845,
    "3": 186
   },
   "unknown_count": 20,
@@ -145721,6 +145721,151 @@
    "checked_at": "2026-11-10T03:14:52+00:00",
    "evidence_status": "observed",
    "scope": "notes",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "dune-dynasty-open-dune-case",
+   "url": "https://github.com/gameflorist/dunedynasty",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 40266,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 5,
+    "release_asset_count": 26,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 7,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-19T21:35:54+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "underworldgodot-ultima-underworld-case",
+   "url": "https://github.com/hankmorgan/UnderworldGodot",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 16378,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 2,
+    "release_asset_count": 4,
+    "demo": [
+     "image"
+    ],
+    "media_count": 5,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-19T21:35:54+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "horizon-minecraft-java-rust-case",
+   "url": "https://github.com/horizon-rust/horizon",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 6162,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 100,
+    "release_asset_count": 959,
+    "demo": [
+     "image"
+    ],
+    "media_count": 10,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-19T21:35:55+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "openrealm-warcraft3-engine-case",
+   "url": "https://github.com/corepunch/open-realm",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 7362,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 11,
+    "release_asset_count": 39,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 5,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-19T21:35:54+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "openprototype-1995-rust-port-case",
+   "url": "https://github.com/openprototype-game/openprototype",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4788,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 2,
+    "release_asset_count": 8,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-19T21:35:54+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   }
