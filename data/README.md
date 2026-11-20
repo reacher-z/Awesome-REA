@@ -9,7 +9,7 @@
 | `url` | Canonical public destination |
 | `category` | Task or tool family; `python3 scripts/catalog.py --list-categories` prints the values in use |
 | `kind` | Resource type: project, tool, integration, case-study, collection, documentation, learning-resource, or research |
-| `class` | Data records only: exactly one of `software`, `game`, `apps`, `website`, `science`, `hardware`, as defined below |
+| `class` | Data records only: exactly one of `website`, `game-dev`, `mobile-app-dev`, `3d-design`, `software`, `animation`, `video`, `hardware`, `analysis`, as defined below |
 | `targets` | One or more browsing domains: `website`, `game`, `app`, `binary`, `firmware`, `protocol`; these describe task fit, not verified REA integration. `protocol` is the record's Protocol tag |
 | `relationship` | Connection to REA, or the independent role the evidence establishes; one of the values listed below |
 | `reconstruction_method` | Game case studies only, recommended: how the project reconstructs its game, one of the methods listed below |
@@ -67,16 +67,21 @@ Data is the catalog's first super-class. A record is a data point when its main 
 - a reconstructed protocol or format for that product;
 - a benchmark or dataset whose items are reproductions.
 
-A data point has one `class`, and only one, named for the original thing rather than the medium the reproduction runs on. A browser clone of Winamp is `software`, a browser game is `game`, and a client for a device's protocol is `hardware`. Decide from the record's own evidence, not its name.
+A data point has one `class`, and only one, named for the original application and its main domain rather than the medium the reproduction runs on. A browser clone of Winamp is `software`, a browser game is `game-dev`, a mobile-app reconstruction is `mobile-app-dev`, and a client for a device's protocol is `hardware`. Decide from the record's own evidence and the original application's primary work, not its name.
 
 | Class | Covers |
 | --- | --- |
-| `software` | Mac, Linux and Windows software |
-| `game` | All games, including retro consoles and mobile games |
-| `apps` | Android, iOS and iPadOS apps |
-| `website` | Websites and website data, such as [WebsiteBench](https://website-bench.com/) |
-| `science` | Specialist STEM software, such as MATLAB, CAD, EDA, bioinformatics and simulation |
+| `website` | Websites and website data, such as [WebsiteBench](https://website-bench.com/); reconstructed website interfaces and web clients |
+| `game-dev` | Games and game-development software: decompilations, recompilations, ports, engine reimplementations, mod tools, console runtimes and emulators |
+| `mobile-app-dev` | Android, iOS and iPadOS app bodies, including reconstructed app clients, app API reproductions and app-format investigations |
+| `3d-design` | 3D modelling, CAD, drafting and spatial-design applications |
+| `software` | Desktop software outside the other application domains: productivity, documents, media utilities, system and developer tools |
+| `animation` | Animation, motion-graphics, compositing and animation-runtime software |
+| `video` | Video editors, recorders, streamers and video-playback software |
 | `hardware` | Firmware, chips, IoT and embedded devices |
+| `analysis` | Analysis reports, malware studies, benchmarks, datasets and method essays with no reproduced application |
+
+Classes follow the original application's main domain, not the reproduction's platform. A 3D app running on a phone stays `mobile-app-dev`; a game engine or mod tool is `game-dev`; a desktop video editor is `video`. Specialist STEM software no longer has a separate class: CAD and spatial tools are `3d-design`, while statistics, audio, simulation and other domain tools are `software`. A record that spans domains takes the class of its primary work. A case study whose output is an analysis, a benchmark, a dataset, a malware report or a method essay rather than a reproduced application takes `analysis`.
 
 `class` is valid on `case-study` and `project` resources and on paper records; validation rejects it on every other kind, and rejects a list or a value outside this table. Tools that work on any target, integrations, collections, documentation, learning material and reports with nothing rebuilt take no class. A paper takes one only when it is a benchmark or dataset whose items are reproductions. Scan records keep their stored labels; a repository gets its class when it is curated.
 

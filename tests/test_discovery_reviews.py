@@ -150,7 +150,7 @@ class ValidationTest(unittest.TestCase):
     def test_machine_class_decisions(self):
         identifier = capture(1)['id']
         batch = make_batch([capture(1)], run_id=100, ingested='2026-11-05T17:00:00Z')
-        valid = {identifier: {'decision': 'data', 'class': 'game', 'reproduced': 'A game engine'},
+        valid = {identifier: {'decision': 'data', 'class': 'game-dev', 'reproduced': 'A game engine'},
                  'lead-' + 'a' * 24: {'decision': 'outside'},
                  'scan-9999999999': {'decision': 'outside'}}
         errors = []
@@ -160,11 +160,11 @@ class ValidationTest(unittest.TestCase):
             'bad ID': ({'wrong': {'decision': 'outside'}}, 'invalid discovery ID'),
             'bad decision': ({identifier: {'decision': 'maybe'}}, 'decision must be data or outside'),
             'missing class': ({identifier: {'decision': 'data', 'reproduced': 'A game'}}, 'class must be exactly one'),
-            'multiple classes': ({identifier: {'decision': 'data', 'class': ['game', 'apps'], 'reproduced': 'A game'}}, 'class must be exactly one'),
-            'empty reproduced': ({identifier: {'decision': 'data', 'class': 'game', 'reproduced': '  '}}, 'reproduced must be nonempty'),
-            'outside class': ({identifier: {'decision': 'outside', 'class': 'game'}}, 'unknown fields'),
+            'multiple classes': ({identifier: {'decision': 'data', 'class': ['game-dev', 'mobile-app-dev'], 'reproduced': 'A game'}}, 'class must be exactly one'),
+            'empty reproduced': ({identifier: {'decision': 'data', 'class': 'game-dev', 'reproduced': '  '}}, 'reproduced must be nonempty'),
+            'outside class': ({identifier: {'decision': 'outside', 'class': 'game-dev'}}, 'unknown fields'),
             'outside reproduced': ({identifier: {'decision': 'outside', 'reproduced': 'A game'}}, 'unknown fields'),
-            'extra': ({identifier: {'decision': 'data', 'class': 'game', 'reproduced': 'A game', 'extra': 1}}, 'unknown fields'),
+            'extra': ({identifier: {'decision': 'data', 'class': 'game-dev', 'reproduced': 'A game', 'extra': 1}}, 'unknown fields'),
         }
         for name, (rows, expected) in cases.items():
             with self.subTest(name):
