@@ -43811,5 +43811,50 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "redalert2-static-recomp-case": {
+    "name": "红警 2 重编译：在现代系统上运行 Westwood 的代码",
+    "requirements": [
+      "所审阅的 README 描述的是对 Win32 发行版二进制的静态重编译，游戏运行 Westwood 被重编译的代码。",
+      "用户需自有《红色警戒 2》与《尤里的复仇》，具体为 game.exe 1.006 与 gamemd.exe 1.001。",
+      "安装器支持 Windows、Linux 与 macOS；重制版增加 D3D11 呈现器、720p 到 4K 输出与高清体素单位。",
+      "仓库采用 MIT；游戏及其数据保留各自权利。"
+    ]
+  },
+  "gow-psp-static-recomp-case": {
+    "name": "战神 PSP：静态重编译的原生端口",
+    "requirements": [
+      "所审阅的 README 描述的是由原游戏代码静态重编译得到的 Windows 原生端口。",
+      "用户需自备 PSP 光盘；项目不分发游戏内容。",
+      "发布版提供免安装 ZIP 启动器（v1.6.0），增加 4K、MSAA、HDR 与高帧率。",
+      "仓库采用 GPL-3.0；游戏及其数据保留各自权利。"
+    ]
+  },
+  "downpour-static-recomp-case": {
+    "name": "《寂静岭：暴雨》Windows 重编译版",
+    "requirements": [
+      "所审阅的 README 描述的是由 Xbox 360 二进制静态重编译得到的 Windows 原生端口。",
+      "用户需自备 Xbox 360 镜像；项目不分发游戏内容，并在美国与欧洲版镜像上测试。",
+      "当前版本面向 Windows 10 与 11，以 1080p、60 FPS 运行，带独立启动器与 DualSense 自适应扳机。",
+      "仓库采用 BSD-3-Clause；游戏及其数据保留各自权利。"
+    ]
+  },
+  "cricket07-browser-static-recomp-case": {
+    "name": "Cricket 07 浏览器版：从 x86 到 WebAssembly",
+    "requirements": [
+      "所审阅的 README 描述的是把游戏的 x86 机器码静态翻译为 C、再编译为 WebAssembly，并由同一份 C 构建原生 Mac 版。",
+      "用户需自有 Cricket 07；仓库不含游戏文件或游戏代码。",
+      "浏览器版把游戏文件存入浏览器私有存储，并用 WebGPU 重建 Direct3D 8、用 Web Audio 重建 DirectSound、用浏览器输入重建 DirectInput。",
+      "仓库采用 MIT；游戏及其数据保留各自权利。"
+    ]
+  },
+  "simpsons-game-static-recomp-case": {
+    "name": "《辛普森一家游戏》现代平台重编译版",
+    "requirements": [
+      "所审阅的 README 描述的是把 Xbox 360 PowerPC 可执行文件静态重编译为 C++，再为 x86-64 或 ARM64 编译。",
+      "用户需自有 Xbox 360 游戏；项目不含游戏内容。",
+      "端口面向 Linux、Steam Deck 与 Windows，并提供 Android ARM64 开发预览；ReXGlue 在 Vulkan、Direct3D 12 或实验性 Direct3D 11 上提供运行时。",
+      "仓库采用 GPL-3.0；游戏及其数据保留各自权利。"
+    ]
   }
 }

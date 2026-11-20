@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**4025 case studies**, grouped by section.
+**4030 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (76)
-- [Game](#game) (2832)
+- [Game](#game) (2837)
 - [App](#app) (233)
 - [Native Binary](#native-binary) (64)
 - [Firmware and Hardware](#firmware) (175)
@@ -21,7 +21,7 @@
 - [Case studies](cases/website.md)
 
 <a id="game"></a>
-## Game (2,832)
+## Game (2,837)
 
 - [Case studies, part 1](cases/game-1.md)
 - [Case studies, part 2](cases/game-2.md)
@@ -34,7 +34,7 @@
 <a id="game-decompilation"></a>
 - [Non-matching decompilations](cases/game-1.md#game-decompilation) (343)
 <a id="game-static-recompilation"></a>
-- [Static recompilations](cases/game-2.md#game-static-recompilation) (761)
+- [Static recompilations](cases/game-2.md#game-static-recompilation) (766)
 <a id="game-port"></a>
 - [Ports of reconstructed source](cases/game-3.md#game-port) (357)
 <a id="game-engine-reimplementation"></a>

@@ -140,7 +140,11 @@ def fetch(url: str, entry_id: str = "", site: "SiteCopies | None" = None, site_o
 
 
 def download(url: str) -> str:
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "image/*"})
+    # README image paths may contain spaces or other characters that are legal in
+    # Markdown but not in an HTTP request line; encode them without touching the
+    # separators that make the URL addressable.
+    request = urllib.request.Request(
+        urllib.parse.quote(url, safe=":/?&=#%"), headers={"User-Agent": USER_AGENT, "Accept": "image/*"})
     try:
         with urllib.request.urlopen(request, timeout=TIMEOUT_SECONDS) as response:
             content_type = response.headers.get("Content-Type", "")
