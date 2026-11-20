@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-44646715991-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-20T00:56:12Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 428,
+    "selected_count": 4,
+    "selected_ids": [
+      "scan-1448612874",
+      "scan-1448604077",
+      "scan-1448613065",
+      "scan-1448615160"
+    ],
+    "record_sha256": {
+      "scan-1448612874": "621773a362f60dffb9effb9a010a1a7865af28c909949fabc583b53aaf37a539",
+      "scan-1448604077": "723c83102e244d7e0b3617175fb347e0ab6cbc4fe3e7513a368dda8fe6feee8d",
+      "scan-1448613065": "4084f7f2e8503d0ff27ae2fa75f30131cbb80bf4a24cd2562753bc8fe1b17f2e",
+      "scan-1448615160": "746ed12a3d61757bcff8c3f4d318b713651bc36a983a183f28cedec989841739"
+    },
+    "skipped_counts": {
+      "already-listed": 12734,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 44646715991,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "d56d8fc190e11ebf8b256f27beb54d5056e80cf8",
+    "artifact_id": 14589073547,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:d1e6252d0e58df1d1813293dbf110d934d3c2e26aa73332725e2a1351576d4a1",
+    "checkpoint_sha256": "e8c9f55906fcb550856d95c359c6635362ba14b4622930e13bcf0bd1f1fa34a1",
+    "receipt_sha256": "b0eb7a86f8d3979c03e1f9c39d979cca8e5487673166b74da682e6a6263f7210",
+    "scan_started_at": "2026-11-20T00:32:55.212279+00:00",
+    "scan_completed_at": "2026-11-20T00:49:04.080462+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 124429,
+      "failed": 4869,
+      "attempted_readme_scans": 129298,
+      "unique_repos": 129362,
+      "unattempted_candidates": 64
+    },
+    "integrity_counts": {
+      "qualified": 121412,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1448612874",
+      "name": "amryounis/uci-analyzer",
+      "full_name": "amryounis/uci-analyzer",
+      "url": "https://github.com/amryounis/uci-analyzer",
+      "description_en": "uci-analyzer",
+      "description_zh": "uci-analyzer",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "chess",
+        "chess-engine",
+        "chess-game",
+        "developer-tools",
+        "protocol",
+        "protocol-analysis",
+        "protocol-analyzer",
+        "rust",
+        "rust-lang",
+        "uci"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-06T18:45:42Z",
+      "pushed_at": "2026-11-06T18:39:04Z",
+      "metadata_observed_at": "2026-11-20T00:47:49.526103Z",
+      "observed_at": "2026-11-20T00:47:52.297919Z",
+      "readme_url": "https://github.com/amryounis/uci-analyzer/blob/d1356e424c986dce97d8f24c2a10622d617980b2/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "4261d9c01574ad39011ac3b37453d7553acd8d6d",
+      "readme_content_git_sha": "4261d9c01574ad39011ac3b37453d7553acd8d6d",
+      "readme_sha256": "5c6c3b52b04981986cf006d217c1dbaa62ee7a801724c46b2303cb1b867746e7",
+      "readme_bytes": 9491,
+      "readme_lines": 171,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "game",
+        "protocol"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:protocol-analysis is:public fork:false archived:false created:2026-11-06T18:16:05Z..2026-11-06T18:51:11Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "d1356e424c986dce97d8f24c2a10622d617980b2"
+    },
+    {
+      "id": "scan-1448604077",
+      "name": "LumiCorn/qqmusic-decryptor",
+      "full_name": "LumiCorn/qqmusic-decryptor",
+      "url": "https://github.com/LumiCorn/qqmusic-decryptor",
+      "description_en": "基于 FountainChan/qqmusic-decryptor 继续开发：QQ音乐加密文件批量解密工具（Frida），支持按专辑/歌手/平铺整理输出，附管理员可见版",
+      "description_zh": "基于 FountainChan/qqmusic-decryptor 继续开发：QQ音乐加密文件批量解密工具（Frida），支持按专辑/歌手/平铺整理输出，附管理员可见版",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "audio",
+        "decryption",
+        "frida",
+        "python",
+        "qqmusic",
+        "windows"
+      ],
+      "stars": 0,
+      "license": "NOASSERTION",
+      "archived": false,
+      "updated_at": "2026-11-06T18:29:32Z",
+      "pushed_at": "2026-11-06T18:29:28Z",
+      "metadata_observed_at": "2026-11-20T00:47:49.526103Z",
+      "observed_at": "2026-11-20T00:47:52.296875Z",
+      "readme_url": "https://github.com/LumiCorn/qqmusic-decryptor/blob/f59d8f42f471c3110659a48c805bfbb7f0084ddc/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "48c02ffc1cc4d37a6d863cb587df74defafc7e2a",
+      "readme_content_git_sha": "48c02ffc1cc4d37a6d863cb587df74defafc7e2a",
+      "readme_sha256": "6d8cce83ac9a807f2c5d953b4dc3e2d05ff82b30d05a9b8a3fe7212402ce383a",
+      "readme_bytes": 9979,
+      "readme_lines": 275,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "usage",
+        "requirements",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "binary"
+      ],
+      "category": "dynamic-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:frida is:public fork:false archived:false created:2026-11-06T18:16:05Z..2026-11-06T18:51:11Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "f59d8f42f471c3110659a48c805bfbb7f0084ddc"
+    },
+    {
+      "id": "scan-1448613065",
+      "name": "animeliodas/chicken-little-cltools",
+      "full_name": "animeliodas/chicken-little-cltools",
+      "url": "https://github.com/animeliodas/chicken-little-cltools",
+      "description_en": "Research & speedrun toolkit for Disney's Chicken Little (PC, 2005): FPS lock, time control, debug menu, collision/trigger view, free camera, map view, zipline glitch analysis",
+      "description_zh": "Research & speedrun toolkit for Disney's Chicken Little (PC, 2005): FPS lock, time control, debug menu, collision/trigger view, free camera, map view, zipline glitch analysis",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "chicken-little",
+        "directx8",
+        "game-modding",
+        "reverse-engineering",
+        "speedrun"
+      ],
+      "stars": 0,
+      "license": "NOASSERTION",
+      "archived": false,
+      "updated_at": "2026-11-06T18:32:03Z",
+      "pushed_at": "2026-11-06T18:31:50Z",
+      "metadata_observed_at": "2026-11-20T00:47:49.526103Z",
+      "observed_at": "2026-11-20T00:47:52.296024Z",
+      "readme_url": "https://github.com/animeliodas/chicken-little-cltools/blob/075ea8b1620281e87d6cfa4ce684f532c45c0ea5/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "4fbcd91dca899f4d3fd80a7f14b6e341c0d293a5",
+      "readme_content_git_sha": "4fbcd91dca899f4d3fd80a7f14b6e341c0d293a5",
+      "readme_sha256": "7f5c6564df67e4ec1d67b2c34e3c4832ebd29ee65c488619f00b31b696bcc4f3",
+      "readme_bytes": 6133,
+      "readme_lines": 105,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "game"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T18:16:05Z..2026-11-06T18:51:11Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "075ea8b1620281e87d6cfa4ce684f532c45c0ea5"
+    },
+    {
+      "id": "scan-1448615160",
+      "name": "rivit98/audi-MMI-tools",
+      "full_name": "rivit98/audi-MMI-tools",
+      "url": "https://github.com/rivit98/audi-MMI-tools",
+      "description_en": "Native C/C++ apps for Audi MMI 3G+ (QNX 6.3.2, SH-4A) built without the QNX SDK: OpenGL ES, DSP H.264 video, audio, USB (AOA) phone mirroring and an Android Auto PoC",
+      "description_zh": "Native C/C++ apps for Audi MMI 3G+ (QNX 6.3.2, SH-4A) built without the QNX SDK: OpenGL ES, DSP H.264 video, audio, USB (AOA) phone mirroring and an Android Auto PoC",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "android-auto",
+        "android-open-accessory",
+        "audi",
+        "car-hacking",
+        "cross-compilation",
+        "docker",
+        "embedded",
+        "h264",
+        "head-unit",
+        "infotainment",
+        "mmi",
+        "mmi3g",
+        "opengl-es",
+        "qnx",
+        "reverse-engineering",
+        "screen-mirroring",
+        "sh4",
+        "superh"
+      ],
+      "stars": 2,
+      "license": null,
+      "archived": false,
+      "updated_at": "2026-11-15T22:04:56Z",
+      "pushed_at": "2026-11-14T21:12:58Z",
+      "metadata_observed_at": "2026-11-20T00:47:49.526103Z",
+      "observed_at": "2026-11-20T00:47:52.295183Z",
+      "readme_url": "https://github.com/rivit98/audi-MMI-tools/blob/1899ba1abb082de65a32a496a5d21d4e8b59aa43/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "fa22dd585efda48ae792237e3bfb6f945637ee91",
+      "readme_content_git_sha": "fa22dd585efda48ae792237e3bfb6f945637ee91",
+      "readme_sha256": "036c7c9a9cbf14dfaaa007727ecca709459e95c9544a84a4c79dfd903f16e1a5",
+      "readme_bytes": 5707,
+      "readme_lines": 93,
+      "readme_heading_count": 5,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app",
+        "binary"
+      ],
+      "category": "android",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T18:16:05Z..2026-11-06T18:51:11Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "1899ba1abb082de65a32a496a5d21d4e8b59aa43"
+    }
+  ]
+}

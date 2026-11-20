@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-44701478610-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-20T08:39:11Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 427,
+    "selected_count": 3,
+    "selected_ids": [
+      "scan-1448659034",
+      "scan-1448656014",
+      "scan-1426049505"
+    ],
+    "record_sha256": {
+      "scan-1448659034": "8fa1990e73cb7ce23e21d56769f8cc3e1f54a6bc02b98a1a5269f1d7170e8992",
+      "scan-1448656014": "826b464c23433b10f21e7c2aac708f823f25526b291a58d67c8aff195a7cf6b3",
+      "scan-1426049505": "3d15ba86115b04f0b4cfc38e4663b3cf79bb1673e1ad8fb6697f6c04575dd27b"
+    },
+    "skipped_counts": {
+      "already-listed": 12738,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 44701478610,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "a32ba84ab8218659da99c8386294ccd60c3c4375",
+    "artifact_id": 14614655134,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:0f37384f75d06c2d048e177271e71b625796e4ba082bf156cd55b7a091a444f6",
+    "checkpoint_sha256": "cc06ef0d1594d882fb15f53b2c639b435e725a33b297c2642b80c74efe1b478b",
+    "receipt_sha256": "e7378e042300fae34aaaf2326db481c4b287f66979fc0cd04c57221588f917a2",
+    "scan_started_at": "2026-11-20T08:18:31.989136+00:00",
+    "scan_completed_at": "2026-11-20T08:37:52.800735+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 125215,
+      "failed": 4874,
+      "attempted_readme_scans": 130089,
+      "unique_repos": 130152,
+      "unattempted_candidates": 63
+    },
+    "integrity_counts": {
+      "qualified": 122198,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1448659034",
+      "name": "FernaandoJr/MiniKeyboardTool",
+      "full_name": "FernaandoJr/MiniKeyboardTool",
+      "url": "https://github.com/FernaandoJr/MiniKeyboardTool",
+      "description_en": "Faithful source reconstruction of the MINI KeyBoard (HIDTester) config tool for generic 3-key USB-HID macro keyboards - UI editable, HID protocol preserved. Reverse engineered with ILSpy + REA.",
+      "description_zh": "Faithful source reconstruction of the MINI KeyBoard (HIDTester) config tool for generic 3-key USB-HID macro keyboards - UI editable, HID protocol preserved. Reverse engineered with ILSpy + REA.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "csharp",
+        "decompilation",
+        "hid",
+        "ilspy",
+        "keyboard",
+        "reverse-engineering",
+        "winforms"
+      ],
+      "stars": 0,
+      "license": "NOASSERTION",
+      "archived": false,
+      "updated_at": "2026-11-06T21:09:36Z",
+      "pushed_at": "2026-11-06T22:00:01Z",
+      "metadata_observed_at": "2026-11-20T08:37:04.488213Z",
+      "observed_at": "2026-11-20T08:37:08.724632Z",
+      "readme_url": "https://github.com/FernaandoJr/MiniKeyboardTool/blob/c23b5aa2dd6ee814174f3c24b4cd78c9ed4f2892/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "cca3498996a40c4e61ccde3bd737f4f346d21116",
+      "readme_content_git_sha": "cca3498996a40c4e61ccde3bd737f4f346d21116",
+      "readme_sha256": "d3f53fc5a743953804e2251a763411f97390f4e20736146f00a8a79549d39ef8",
+      "readme_bytes": 2990,
+      "readme_lines": 48,
+      "readme_heading_count": 4,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app"
+      ],
+      "category": "managed-code",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T18:51:12Z..2026-11-06T19:23:31Z",
+        "topic:decompilation is:public fork:false archived:false created:2026-11-06T18:51:12Z..2026-11-06T19:23:31Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "c23b5aa2dd6ee814174f3c24b4cd78c9ed4f2892"
+    },
+    {
+      "id": "scan-1448656014",
+      "name": "manueligno78/esphome-therm-bus",
+      "full_name": "manueligno78/esphome-therm-bus",
+      "url": "https://github.com/manueligno78/esphome-therm-bus",
+      "description_en": "ESPHome gateway for Bosch Therm gas water heaters with a 2-wire wired remote: reads the bus into Home Assistant, incl. gas consumption",
+      "description_zh": "ESPHome gateway for Bosch Therm gas water heaters with a 2-wire wired remote: reads the bus into Home Assistant, incl. gas consumption",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "bosch",
+        "esp32",
+        "esphome",
+        "home-assistant",
+        "reverse-engineering",
+        "water-heater"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-06T20:47:02Z",
+      "pushed_at": "2026-11-06T20:46:58Z",
+      "metadata_observed_at": "2026-11-20T08:37:04.488213Z",
+      "observed_at": "2026-11-20T08:37:08.724344Z",
+      "readme_url": "https://github.com/manueligno78/esphome-therm-bus/blob/f72be7bb7a66704af62a5f3f6e0aa03889b23402/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "c81629d30928352abedc0c2a24abf537b293380f",
+      "readme_content_git_sha": "c81629d30928352abedc0c2a24abf537b293380f",
+      "readme_sha256": "ec35237c35b3de60bdb020610db470e0a5093f57653be78cd50fe4c608beb81a",
+      "readme_bytes": 9348,
+      "readme_lines": 228,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T18:51:12Z..2026-11-06T19:23:31Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "f72be7bb7a66704af62a5f3f6e0aa03889b23402"
+    },
+    {
+      "id": "scan-1426049505",
+      "name": "crmbz0r/BepInExUnityModKit",
+      "full_name": "crmbz0r/BepInExUnityModKit",
+      "url": "https://github.com/crmbz0r/BepInExUnityModKit",
+      "description_en": "Windows toolkit for modding Unity games with BepInEx: install BepInEx, UnityExplorer and UniTweak, manage plugins (zip drag & drop, disable, profiles), browse game code (dump.cs) with Harmony snippets, create plugin projects, back up BepInEx. Mono and IL2CPP.",
+      "description_zh": "Windows toolkit for modding Unity games with BepInEx: install BepInEx, UnityExplorer and UniTweak, manage plugins (zip drag & drop, disable, profiles), browse game code (dump.cs) with Harmony snippets, create plugin projects, back up BepInEx. Mono and IL2CPP.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "bepinex",
+        "bepinex-mod",
+        "bepinex-plugin",
+        "csharp",
+        "dotnet",
+        "game-modding-tool",
+        "harmony",
+        "il2cpp",
+        "il2cppdumper",
+        "mod",
+        "mod-manager",
+        "modding",
+        "modkit",
+        "mono",
+        "unity",
+        "unity-modding",
+        "unityexplorer",
+        "windows",
+        "wpf"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-10-19T19:50:07Z",
+      "pushed_at": "2026-10-19T19:37:10Z",
+      "metadata_observed_at": "2026-11-20T08:31:09.757991Z",
+      "observed_at": "2026-11-20T08:31:12.062688Z",
+      "readme_url": "https://github.com/crmbz0r/BepInExUnityModKit/blob/638bf40100b1921814d3cd05b0e6e749e9ced409/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "35260fe667ccd2308f7749a41c1ca8f12ceee716",
+      "readme_content_git_sha": "35260fe667ccd2308f7749a41c1ca8f12ceee716",
+      "readme_sha256": "0b51c490207d322d83f4009aaae55107066c7bd28d32cf45eec72827b957c5f1",
+      "readme_bytes": 7365,
+      "readme_lines": 95,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "usage",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app",
+        "game"
+      ],
+      "category": "managed-code",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:il2cpp is:public fork:false archived:false created:2026-10-19T14:39:39Z..2026-10-19T20:00:13Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "638bf40100b1921814d3cd05b0e6e749e9ced409"
+    }
+  ]
+}
