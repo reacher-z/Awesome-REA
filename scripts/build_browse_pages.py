@@ -19,6 +19,20 @@ import browse_guides
 from source_descriptions import description_fallback
 from source_scope import exclusion_counts, unavailable_clause
 
+# Query-facing names for category hubs. Navigation keeps the short CATEGORIES labels; the
+# page title and H1 use the phrase people search for.
+CATEGORY_SEO_TITLES = {
+    'web-analysis': ('Web Reverse Engineering Tools', '网站逆向工程工具'),
+    'game-analysis': ('Game Reverse Engineering Tools', '游戏逆向工程工具'),
+    'android': ('Android Reverse Engineering Tools', 'Android 逆向工程工具'),
+    'managed-code': ('.NET Reverse Engineering Tools', '.NET 逆向工程工具'),
+    'native-analysis': ('Native Binary Reverse Engineering Tools', '原生二进制逆向工具'),
+    'dynamic-analysis': ('Dynamic Analysis & Debugging Tools', '动态分析与调试工具'),
+    'firmware': ('Firmware Reverse Engineering Tools', '固件逆向工程工具'),
+    'protocol-analysis': ('Protocol Reverse Engineering Tools', '协议逆向工程工具'),
+    'reverse-engineering': ('Reverse Engineering Tools & Resources', '逆向工程工具与资源'),
+}
+
 CATEGORY_ICONS = {
     'web-analysis': 'globe', 'game-analysis': 'gamepad', 'android': 'phone',
     'managed-code': 'code', 'native-analysis': 'chip', 'dynamic-analysis': 'terminal',
@@ -220,11 +234,13 @@ def build_browse_pages(
             chinese_url = site_url + browse_path('zh', category)
             counterpart = browse_path('en' if zh else 'zh', category)
             label = CATEGORIES[category][language_index] if category else ('按分类浏览仓库' if zh else 'Browse repositories by category')
-            title = page_title(label, '逆向工程仓库' if zh else 'Reverse engineering repositories')
+            seo_label = CATEGORY_SEO_TITLES[category][language_index] if category else label
+            title = page_title(seo_label)
             if category:
                 count = len(groups[category])
-                description = (f'浏览 {count:,} 个{label}相关仓库，查看项目简介、原始链接与许可证信息。卡片保留采集时的星标快照与最近推送时间，并可通过分类导航切换到其他仓库分类继续浏览。'
-                               if zh else f'Browse {count:,} repositories with project descriptions, upstream links, and license information.')
+                seo_phrase = seo_label if seo_label.startswith('.NET') else seo_label.lower()
+                description = (f'浏览 {count:,} 个{seo_label}相关仓库，查看项目简介、原始链接与许可证信息，并可通过分类导航切换其他逆向领域。卡片保留采集时的星标与最近推送时间，方便比较维护活跃度。'
+                               if zh else f'Browse {count:,} {seo_phrase} with project descriptions, upstream links and license information.')
                 count_text = f'{count:,} 个仓库' if zh else f'{count:,} repositories'
             else:
                 description = (f'按网站、游戏、应用、二进制、固件与协议等分类浏览 {len(records):,} 个逆向工程仓库。每个分类页列出项目简介、原始链接、许可证信息、采集时的星标快照与最近推送时间。'
@@ -298,7 +314,7 @@ def build_browse_pages(
   <nav class="browse-breadcrumbs" aria-label="{('当前位置' if zh else 'Breadcrumb')}">{breadcrumbs}</nav>
   <section class="collection-intro browse-intro" aria-labelledby="browse-title">
     <p class="eyebrow">{('逆向工程仓库目录' if zh else 'THE REPOSITORY DIRECTORY')}</p>
-    <h1 id="browse-title">{escape(label)}<span class="title-dot" aria-hidden="true">.</span></h1>
+    <h1 id="browse-title">{escape(seo_label)}<span class="title-dot" aria-hidden="true">.</span></h1>
     {('<p class="browse-definition">' + escape(browse_guides.definition(category, zh)) + '</p>') if category else ''}
     <p>{escape(description)}</p>
     <p class="evidence-beta">{('扫描证据档位 C1–C3 来自 README 的安装与用法章节；C0 来自人工复核的精选条目。' if zh else 'Scan evidence classes C1–C3 come from README installation and usage sections; C0 comes from manually reviewed curated entries.')}</p>
