@@ -39,7 +39,6 @@ class PageDateTests(unittest.TestCase):
         self.assertEqual(value['/papers/'], '2026-10-18')
         self.assertEqual(value['/browse/'], '2026-10-20T10:49:31Z')
         self.assertEqual(value['/browse/firmware/'], value['/browse/'])
-        self.assertEqual(value['/discoveries/'], '2026-11-05T22:36:35Z')
         self.assertEqual(value['/survey/'], '2026-10-18')
         # Catalog-wide pages follow curated, paper and repository data, not the discovery queue.
         self.assertEqual(value['/'], '2026-11-03T08:15:00Z')
@@ -52,9 +51,11 @@ class PageDateTests(unittest.TestCase):
                                 lead_batches=[{'collected_at': '2026-11-05T23:01:00Z'}])
         self.assertEqual(with_leads['/api/'], '2026-11-05T23:01:00Z')
         self.assertEqual(with_leads['/'], value['/resources/'])
+        # The unreviewed discovery list and its class pages are noindex and stay out of the sitemap dates.
+        self.assertNotIn('/discoveries/', value)
         with_classes = page_dates(resources=RESOURCES, papers=PAPERS, discovery_batches=BATCHES,
                                   discovery_class_pages=['/discoveries/game/'])
-        self.assertEqual(with_classes['/discoveries/game/'], with_classes['/discoveries/'])
+        self.assertNotIn('/discoveries/game/', with_classes)
 
     def test_date_normalization_and_ordering(self):
         self.assertEqual(normalized_date('2026-10-16T11:55:19.172701Z'), '2026-10-16T11:55:19Z')

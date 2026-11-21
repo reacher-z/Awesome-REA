@@ -473,14 +473,17 @@ def build_site(output: Path) -> tuple[int, int, int]:
     (output / ".nojekyll").write_text("", encoding="utf-8")
     (output / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
     (output / "robots.txt").write_text(robots_txt(SITE_URL, f"{SITE_URL}/{SITEMAP_INDEX}"), encoding="utf-8")
-    sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls]
+    # The unreviewed discovery queue is noindex: it stays linked and crawlable but never enters the sitemap.
+    sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", *browse_urls,
+                    *(SITE_URL + path for path in discovery_paths if not english_path(path).startswith('/discoveries/')),
+                    *paper_urls, *survey_urls, *entry_urls]
     # Indexed pages without a builder-made Markdown twin get one converted from their <main>.
     write_page_twins(output, [url.removeprefix(SITE_URL) for url in sitemap_urls], SITE_URL)
     # lastmod comes from the records each page shows, never the build time (sitemaps.page_dates).
     dates = page_dates(resources=resources, papers=papers, repository_document=browse_document,
                        discovery_batches=(discovery_queue or {}).get("batches"), lead_batches=(lead_queue or {}).get("batches"),
                        survey_date=survey_document.get("date"),
-                       discovery_class_pages=[path for path in queue_paths if path.startswith('/discoveries/') and path != '/discoveries/'])
+                       discovery_class_pages=[])
     updated = max(value[:10] for value in dates.values())
     write_sitemaps(output, SITE_URL, [url.removeprefix(SITE_URL) for url in sitemap_urls], dates)
     # The agent guide and the front matter of every Markdown twin use the same counts and dates as the pages.
