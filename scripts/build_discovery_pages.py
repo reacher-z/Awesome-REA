@@ -125,6 +125,19 @@ def _url(value: str) -> str:
 
 # /about/ and the 404 pages list every footer section except /about/ and the contribution page, which has its own header link.
 ABOUT_EXCLUDED_SECTIONS = ('/about/', '/contribute/')
+# The /tools/ starting list: curated tool IDs grouped by the task they serve. Each link opens the
+# reviewed entry page; the page is intentionally short and links into the full catalog for depth.
+TOOL_HUB = (
+    ('Disassemblers and decompilers', '反汇编与反编译', (
+        'ghidra', 'radare2', 'hex-rays-ida-mcp', 'binary-ninja-official-mcp')),
+    ('Debugging and instrumentation', '调试与插桩', (
+        'frida', 'x64dbg', 'renderdoc')),
+    ('Android, managed code and games', 'Android、托管代码与游戏', (
+        'jadx', 'il2cppdumper', 'assetstudio')),
+    ('Firmware, web and protocols', '固件、网站与协议', (
+        'binwalk', 'unblob', 'mitmproxy', 'chrome-devtools-mcp')),
+)
+
 
 
 def file_size_label(size: int) -> str:
@@ -775,6 +788,42 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
              'about': website_reference(site_url), 'publisher': publisher_reference(site_url), 'mainEntity': {'@id': site_url + path + '#dataset'}},
             dataset_node(site_url, language, catalog_date)]}
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=schema, assets=assets, icon_stylesheet=icons.href, source_export=source_export)
+        paths.append(path)
+
+        path = prefix + '/tools/'
+        title = '逆向工程工具：实用起步清单' if zh else 'Reverse Engineering Tools: A Practical Starting List'
+        description = ('按任务分组的逆向工程工具起步清单，覆盖反汇编、调试、Android、游戏、固件、网站与协议；每个工具链接到带使用条件、一手来源和复核日期的精选条目。'
+                       if zh else 'A practical starting list of reverse-engineering tools grouped by task, each linking to the curated entry with requirements, primary source and review date.')
+        by_id = {record['id']: record for record in resources}
+        groups_html, schema_items = [], []
+        for heading_en, heading_zh, identifiers in TOOL_HUB:
+            rows = [by_id[identifier] for identifier in identifiers if identifier in by_id]
+            if not rows:
+                continue
+            cards = []
+            for record in rows:
+                name = (record.get('name_zh') or record['name']) if zh else record['name']
+                href = f"{prefix}/resources/{record['id']}/" if not zh else f"/zh/resources/{record['id']}/"
+                text = record.get(f'description_{language}') or ''
+                first = text.split('. ')[0].strip()
+                if zh:
+                    first = text.split('。')[0].strip() + '。'
+                cards.append(f'<li><a href="{escape(href, quote=True)}"><strong>{escape(name)}</strong></a> — {escape(first)}</li>')
+                schema_items.append({'name': name, 'url': site_url + href, 'description': first})
+            groups_html.append(f'<section class="source-card browse-repository"><h2>{escape(heading_zh if zh else heading_en)}</h2>'
+                               f'<ul class="card-description">{"".join(cards)}</ul></section>')
+        intro = ('这份清单按任务而不是按星标排列，目标是给第一次接触逆向工程的人一个可执行的起点。每个工具都链接到精选条目，条目里记录了平台、输入、许可和复核日期；完整目录按目标领域和证据等级组织。'
+                 if zh else 'This list is grouped by task, not ranked by stars. Each tool links to its curated entry with platforms, inputs, license and review date. The full catalog organizes the same material by target domain and evidence class.')
+        content = (f'<div class="source-results">{ "".join(groups_html) }</div>'
+                   f'<section class="about-links"><div class="browse-topline"><h2>{("继续浏览" if zh else "Where to go next")}</h2></div>'
+                   f'<p>{escape(intro)}</p><p><a href="{prefix}/browse/reverse-engineering/">{("通用工具与资源合集" if zh else "General tools and collections")}</a> · '
+                   f'<a href="{prefix}/resources/">{("完整精选目录" if zh else "Full curated catalog")}</a> · '
+                   f'<a href="{prefix}/papers/">{("研究论文" if zh else "Research papers")}</a> · '
+                   f'<a href="{prefix}/contribute/">{("提交工具" if zh else "Suggest a tool")}</a></p></section>')
+        schema = collection_page_schema(site_url + path, title, description, 'zh-CN' if zh else 'en', schema_items, site_url)
+        rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language,
+                                   title=title, description=description, content=content, schema=schema,
+                                   assets=assets, icon_stylesheet=icons.href, source_export=source_export)
         paths.append(path)
 
         path = prefix + '/contribute/'

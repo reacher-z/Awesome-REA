@@ -26,7 +26,7 @@ SITEMAP_NS = 'http://www.sitemaps.org/schemas/sitemap/0.9'
 XHTML_NS = 'http://www.w3.org/1999/xhtml'
 MAX_URLS = 50_000
 # Pages that summarize the whole catalog: their counts and dates change with any curated, paper or repository data.
-CATALOG_PAGES = ('/', '/about/', '/contribute/')
+CATALOG_PAGES = ('/', '/tools/', '/about/', '/contribute/')
 DATE = re.compile(r'\d{4}-\d{2}-\d{2}')
 DATETIME = re.compile(r'(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}:\d{2})(?:\.\d+)?(Z|[+-]\d{2}:\d{2})')
 

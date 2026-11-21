@@ -57,7 +57,7 @@ def validate_route_inventory(urls, resources, papers, *, include_browse=True, in
     routes = expected_entry_routes(resources, papers)
     expected = set(routes)
     for prefix in ("", "/zh"):
-        expected.update(prefix + path for path in ("/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/", "/api/"))
+        expected.update(prefix + path for path in ("/", "/tools/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/", "/api/"))
         # The later static pages of /resources/ and /cases/, each indexed with its own address.
         expected.update(page_path(page, "zh" if prefix else "en") for page in range(2, page_count(len(resources)) + 1))
         cases = len(case_order(resources))
