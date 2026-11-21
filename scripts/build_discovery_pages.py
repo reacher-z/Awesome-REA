@@ -747,7 +747,15 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
                  if zh else 'Automatic discovery and curation are kept apart. Scope exclusions are tied to recorded README hashes and include bilingual reasons. Categories derive from metadata.')
         licensing = ('本仓库原创说明和代码采用 MIT 许可。上游项目及其描述保留各自许可；许可证标识仅是采集时元数据。生成的双语索引保留 description_original 上游原文，翻译由 AI 辅助完成。'
                      if zh else 'Original editorial content and code in this repository use the MIT license. Upstream projects and their descriptions retain their own licenses; license identifiers are metadata snapshots. The generated bilingual index preserves upstream text as description_original, and translations are AI-assisted.')
-        facts = [('收录范围' if zh else 'What is collected', summary), ('来源与更新' if zh else 'Evidence and updates', evidence), ('范围与复核' if zh else 'Scope and review', scope), ('语言与许可' if zh else 'Languages and licenses', licensing)]
+        maintenance = ('合集在公开的 reacher-z/Awesome-REA 仓库中维护。每个条目都通过评审后的 pull request 进入目录；复核者会检查一手链接、描述、使用条件与日期，再决定合并。评审流程与投稿表单均公开。'
+                       if zh else 'The catalog is maintained in the public reacher-z/Awesome-REA repository. Every entry arrives through a reviewed pull request; reviewers check the primary link, description, requirements and dates before merge. The review process and contribution forms are public.')
+        selection = ('当一个条目记录逆向工程工具、重建项目、案例、论文或数据集，并附一手来源时，才会进入合集。本站不对项目做质量排名，不售卖展示位置，也不声称与被收录项目存在隶属关系。'
+                     if zh else 'An entry joins the catalog when it documents a reverse-engineering tool, reconstruction, case study, paper or dataset with a primary source. The site does not rank projects by quality, sell placement or claim affiliation with the projects it lists.')
+        cadence = ('自动 README 扫描按小时运行；精选新增与修正随评审通过的 pull request 合并。每次生产部署后都会重建 sitemap、Atom feed 和 IndexNow 通知，让搜索引擎看到变化页面。'
+                   if zh else 'Automated README scans run hourly; curated additions and corrections land through reviewed pull requests. Sitemaps, Atom feeds and IndexNow notifications are rebuilt after each production deployment, so search engines see changed pages without a manual submission.')
+        corrections = ('纠错、移除请求和新资源建议都通过 /contribute/ 链接的公开 GitHub 表单提交。修改条目会保留证据链接与复核日期；移除决定与目录分开记录。'
+                       if zh else 'Corrections, removal requests and new suggestions use the public GitHub forms linked from /contribute/. A correction keeps the record evidence link and review date; removal decisions are recorded separately from the catalog.')
+        facts = [('收录范围' if zh else 'What is collected', summary), ('来源与更新' if zh else 'Evidence and updates', evidence), ('范围与复核' if zh else 'Scope and review', scope), ('语言与许可' if zh else 'Languages and licenses', licensing), ('维护与评审' if zh else 'Maintenance and review', maintenance), ('收录标准与独立性' if zh else 'Selection and independence', selection), ('更新频率' if zh else 'Update cadence', cadence), ('纠错与联系' if zh else 'Corrections and contact', corrections)]
         # Same wording as the README About sections; the label comes from the shared relationship vocabulary.
         documentation_label = RELATIONSHIPS['official-documentation'][1 if zh else 0]
         rea_text = (f'是单独维护的上游 CLI 与 MCP 项目，本合集因其得名。条目标签及“{documentation_label}”等关系标注中的 REA 均指该项目。'
