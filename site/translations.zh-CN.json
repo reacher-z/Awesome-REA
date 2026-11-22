@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "oracles-disasm": {
+    "name": "Oracle of Ages and Seasons disassembly：美版 Game Boy Color 双作的 ROM 重建",
+    "requirements": [
+      "需要美版 ROM。需要 Python 3、python3-yaml 和 WLA-DX 10.6。Windows 构建使用 MSYS2。",
+      "审阅的 README 没有为反汇编写许可证。它写明 tools 里不含任天堂或卡普空代码的 Python 脚本，除非另有说明，可以视为公有领域。"
+    ]
   }
 }
