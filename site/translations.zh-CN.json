@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "openai-healthcare-computer-use": {
+    "name": "面向医疗团队的计算机操作智能体进展",
+    "requirements": [
+      "文章发表于 2026 年 11 月 16 日；MRI 授权演示使用合成患者数据。",
+      "文中工作流使用 OpenAI API、ChatGPT for Healthcare 或 ChatGPT for Clinicians，并需要相关临床系统的访问权限。"
+    ]
   }
 }
