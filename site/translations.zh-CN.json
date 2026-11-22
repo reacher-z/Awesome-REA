@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "fireemblem8u": {
+    "name": "Fire Emblem: The Sacred Stones disassembly：GBA 游戏的字节精确重建",
+    "requirements": [
+      "需要命名为 baserom.gba 的美版 ROM。需要 devkitPro 或 GNU Arm Embedded 工具链，以及给 gbagfx 用的 libpng。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
