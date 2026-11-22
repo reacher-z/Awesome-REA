@@ -6,7 +6,7 @@
 
 [简体中文](game-4.zh-CN.md)
 
-**631 case studies**
+**630 case studies**
 
 ## Ports of reconstructed source
 
@@ -624,6 +624,7 @@
 - [**The Hobbit: reconstructing its graphics engine**](https://github.com/richcarl/hobbitgfx) - hobbitgfx implements the graphics engine of Melbourne House's 1982 text adventure The Hobbit in JavaScript. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/hobbitgfx-case/)</sub>
 - [**Thirdeye: reimplementing the AESOP engine for Eye of the Beholder 3 and Dungeon Hack**](https://github.com/psi29a/thirdeye) - Thirdeye reimplements the AESOP/16 and AESOP/32 engine in C++ to run Eye of the Beholder 3 and Dungeon Hack from their original RES files and unchanged bytecode. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/thirdeye-aesop-engine-case/)</sub>
 - [**Thyme: Command &amp; Conquer Generals: Zero Hour reimplementation**](https://github.com/TheAssemblyArmada/Thyme) - Thyme is an open source reimplementation of Command &amp; Conquer Generals: Zero Hour. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/thyme/)</sub>
+- [**Tidewater: a from-scratch Rust reimplementation of the Warcraft II engine**](https://github.com/nlwstein/tidewater) - Tidewater is a from-scratch Rust reimplementation of the Warcraft II: Battle.net Edition engine, including the Beyond the Dark Portal expansion, that runs on the game files you already own: both campaigns, custom games, early LAN multiplayer, menus, briefings, saved games, sound, music and video are implemented, with the README documenting status as early but playable. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tidewater-warcraft2-case/)</sub>
 - [**TM2020-Sim: extending Trackmania physics simulation**](https://github.com/Speedstu/TM2020-Sim-V1) - TM2020-Sim extends Gearbox's Trackmania physics and asset loading into a headless simulator with a native C++ and Rust SDK. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tm2020-sim-trackmania-case/)</sub>
 - [**TOD Tools: reconstructing Total Overdose and Kapow Engine**](https://github.com/Michael0ne/TOD_tools) - TOD Tools reconstructs Total Overdose game and Kapow Engine code in C++. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tod-tools-case/)</sub>
 - [**Torchlight Rekindled: a portable engine following the Xbox 360 game**](https://github.com/GreenSwampDweller/torchlight-rekindled) - Torchlight Rekindled implements an engine for the 2009 game Torchlight, following the logic of its Xbox 360 release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/torchlight-rekindled-case/)</sub>
@@ -642,6 +643,4 @@
 - [**Underworld Revisited: reimplementing Ultima Underworld in Unity**](https://github.com/PQMarine/UnderworldRevisited) - Underworld Revisited reimplements Ultima Underworld: The Stygian Abyss (1992) in Unity. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/underworld-revisited/)</sub>
 - [**Untangle: a browser rebuild from REA and Ghidra evidence**](https://github.com/az9713/untangle-rebuild) - An author-documented REA/Ghidra investigation of the shipped Untangle Windows binary produces a single-page playable rebuild and a claim-by-claim grading receipt. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/untangle-rea-evidence-rebuild-case/)</sub>
 - [**vakfu: reconstructing Wakfu map rendering**](https://github.com/jac3km4/vakfu) - vakfu reconstructs Wakfu's isometric map rendering in a Rust application that loads assets from the user's game copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vakfu-case/)</sub>
-- [**Vange-rs: reimplementing Vangers in Rust**](https://github.com/kvark/vange-rs) - vange-rs reimplements Vangers in Rust with wgpu graphics, aiming to reproduce its worlds, vehicles and single-player behavior using original game resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vange-rs-vangers-case/)</sub>
-- [**Vault Engine: rebuilding Fallout and Fallout 2 in Rust**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine reimplements Fallout and Fallout 2 as a Rust engine that reads the user's retail DAT archives. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vault-engine-case/)</sub>
 <!-- END GENERATED CASES -->

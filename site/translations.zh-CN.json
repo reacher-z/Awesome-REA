@@ -44003,5 +44003,63 @@
       "README 将该网站重建标为开发中。",
       "代码采用 BSD-3-Clause 许可证。"
     ]
+  },
+  "persona-im-messaging-case": {
+    "name": "Persona IM：用 Compose UI 重建《女神异闻录 5》的游戏内即时通讯应用",
+    "requirements": [
+      "仅以 Compose UI 演示形式重建游戏内的即时通讯界面：模拟单段对话，不发送真实消息。",
+      "全部美术与角色设计版权归 ATLUS 与 SEGA 所有，素材仅作教学用途。",
+      "源自 DroidKaigi 2024 与 KotlinConf 2025 演讲，Speaker Deck 幻灯片记录其 UI 重建思路。"
+    ]
+  },
+  "termuxam-am-command-case": {
+    "name": "TermuxAm：兼容 Android Oreo 的 am 命令重新实现",
+    "requirements": [
+      "恢复应用进程内调用 am 命令的能力；Android Oreo 起系统命令仅限 adb shell 使用。",
+      "提供两个包装脚本：am-libexec-packaged 供 Termux 安装使用，am-apk-installed 面向已安装 APK 的开发场景。",
+      "代码采用 Apache-2.0 许可证。"
+    ]
+  },
+  "capcut-cli-projects-case": {
+    "name": "capcut-cli：在终端编辑真实的 CapCut／剪映草稿工程",
+    "requirements": [
+      "需要 Node 18 或更新版本，仅用内置模块；Whisper、FFmpeg 与 ffprobe 解锁 caption、render 与 metadata 命令，translate 命令需要环境中的 LLM 服务密钥。",
+      "直接读写本地 CapCut／剪映草稿库：JSON 进、JSON 出，不上传、无远程服务、无 MCP 服务或 HTTP 守护进程。",
+      "实验性的 caption --cloud 命令会把待转写的音频上传到 ByteDance。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "tidewater-warcraft2-case": {
+    "name": "Tidewater：从零用 Rust 重写《魔兽争霸 II》引擎",
+    "requirements": [
+      "自备游戏拷贝：引擎不含任何游戏数据，读取《魔兽争霸 II：战网版》的文件。",
+      "实现两个战役、自定义游戏、早期局域网对战与过场演示资产；README 记录的状态为早期但可玩。",
+      "代码采用 MPL-2.0 许可证，第三方声明见 THIRD_PARTY_NOTICES.md。"
+    ]
+  },
+  "siteforge-site-exporter-case": {
+    "name": "SiteForge：确定性克隆网页并导出 Next.js 与 WordPress 工程",
+    "requirements": [
+      "以未打包 Chrome 扩展形式纯客户端运行，无需服务密钥或云端服务。",
+      "导出可用 npm run dev 直接运行的 Next.js 14 App Router 工程（Tailwind CSS），或带 theme.json 支持的经典 PHP WordPress 主题。",
+      "图片、字体与 CSS 自动下载并重链。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "figma-clone-canvas-case": {
+    "name": "Minimalist Figma Clone：Fabric.js 与 Liveblocks 的协作画布",
+    "requirements": [
+      "实时协作由 Liveblocks 提供，画布由 Fabric.js 渲染，构建于 Next.js 与 TypeScript 技术栈。",
+      "README 提供通过 Vercel 部署自有实例的说明。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "lightspark-flash-player-case": {
+    "name": "Lightspark：开源 Flash Player 的 SWF 重新实现",
+    "requirements": [
+      "通过浏览器插件或独立播放器（lightspark file.swf）播放 SWF 文件。",
+      "现代浏览器已不再加载插件；项目 wiki 记录仍支持 Flash 插件的替代浏览器。",
+      "代码采用 LGPL-3.0 许可证，见 COPYING 与 COPYING.LESSER。"
+    ]
   }
 }

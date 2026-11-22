@@ -155443,5 +155443,227 @@
       "https://github.com/Eggbertx/JavaScriptOnTheBrain/blob/37a981dc363d20f383f13f14728a4c9e328b576f/package.json",
       "https://github.com/Eggbertx/JavaScriptOnTheBrain/blob/37a981dc363d20f383f13f14728a4c9e328b576f/LICENSE"
     ]
+  },
+  {
+    "id": "persona-im-messaging-case",
+    "name": "Persona IM: a Compose UI reconstruction of the Persona 5 in-game messenger",
+    "url": "https://github.com/chris-horner/Persona-IM",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Persona IM recreates the in-game instant messaging app from Persona 5 as an Android app built with Jetpack Compose. It simulates one stylized conversation to demonstrate how the game UI could work as a real app, and the talk-first project shares its DroidKaigi 2024 and KotlinConf 2025 slides as design documentation.",
+    "description_zh": "Persona IM 用 Jetpack Compose 把《女神异闻录 5》游戏内的即时通讯应用重建为 Android 应用，模拟一段风格化对话来展示这套游戏 UI 落地为真实应用的方式；该项目源于 DroidKaigi 2024 与 KotlinConf 2025 演讲，演讲幻灯片即其设计文档。",
+    "evidence_url": "https://github.com/chris-horner/Persona-IM/blob/c486c9d972b5197bf72d1f78b24d2838352f1424/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Rebuilds only the in-game messaging UI as a Compose UI demo: it simulates a single conversation and sends no real messages.",
+      "All art and character designs remain copyright ATLUS and SEGA; material is used for educational purposes only.",
+      "Presented at DroidKaigi 2024 and KotlinConf 2025; the Speaker Deck slides document the UI reconstruction approach."
+    ],
+    "requirement_facets": [
+      "scope",
+      "license",
+      "scope"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "mobile-app-dev",
+    "additional_evidence_urls": [
+      "https://github.com/chris-horner/Persona-IM/blob/c486c9d972b5197bf72d1f78b24d2838352f1424/LICENSE.txt"
+    ]
+  },
+  {
+    "id": "termuxam-am-command-case",
+    "name": "TermuxAm: an Oreo-compatible reimplementation of the Android am command",
+    "url": "https://github.com/termux/TermuxAm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "TermuxAm reimplements the Android am (Activity Manager) command so it works again from app processes: since Android Oreo the stock command runs only from adb shell, and this Termux-maintained reimplementation ships two wrapper scripts, one for use as an installed package and one against a separately installed APK.",
+    "description_zh": "TermuxAm 重新实现 Android 的 am（Activity Manager）命令，让应用进程内重新可用：Android Oreo 起系统自带命令只能从 adb shell 运行；该项目由 Termux 维护，提供打包安装与独立 APK 两种包装脚本。",
+    "evidence_url": "https://github.com/termux/TermuxAm/blob/fdc83ef1f3c70b04a19c04e5acd159609a7e5a1d/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Restores app-process access to the am command, which is restricted to adb shell since Android Oreo.",
+      "Two wrapper scripts: am-libexec-packaged for installed use in Termux and am-apk-installed for development against an installed APK.",
+      "Code is Apache-2.0."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "mobile-app-dev",
+    "additional_evidence_urls": [
+      "https://github.com/termux/TermuxAm/blob/fdc83ef1f3c70b04a19c04e5acd159609a7e5a1d/LICENSE"
+    ]
+  },
+  {
+    "id": "capcut-cli-projects-case",
+    "name": "capcut-cli: terminal editing of real CapCut and JianYing draft projects",
+    "url": "https://github.com/renezander030/capcut-cli",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "capcut-cli creates and edits real CapCut and JianYing draft projects from the terminal or an LLM agent: it reads and writes the local draft store as JSON with no upload, remote service, MCP server or HTTP daemon, so drafts opened in CapCut keep every track editable, and it adds silence-aware cutting, styled captions, FFmpeg rendering and optional cloud transcription.",
+    "description_zh": "capcut-cli 在终端或 LLM 代理中创建并编辑真实的 CapCut／剪映草稿工程：直接以 JSON 读写本地草稿库，不上传、不依赖远程服务、MCP 服务或 HTTP 守护进程，在 CapCut 中打开后所有轨道仍可编辑；另提供静音感知剪辑、样式化字幕、FFmpeg 渲染与可选的云端转写。",
+    "evidence_url": "https://github.com/renezander030/capcut-cli/blob/1c88efc54ba6532070228cbb09baad55156eecbb/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Node 18 or newer with built-in modules only; Whisper, FFmpeg and ffprobe unlock the caption, render and metadata commands, and the translate command expects an LLM provider key in the environment.",
+      "Works directly on the local CapCut/JianYing draft store: JSON in, JSON out, with no upload, remote service, MCP server or HTTP daemon.",
+      "The experimental caption --cloud command uploads the audio it transcribes to ByteDance.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "video",
+    "additional_evidence_urls": [
+      "https://github.com/renezander030/capcut-cli/blob/1c88efc54ba6532070228cbb09baad55156eecbb/LICENSE"
+    ]
+  },
+  {
+    "id": "tidewater-warcraft2-case",
+    "name": "Tidewater: a from-scratch Rust reimplementation of the Warcraft II engine",
+    "url": "https://github.com/nlwstein/tidewater",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Tidewater is a from-scratch Rust reimplementation of the Warcraft II: Battle.net Edition engine, including the Beyond the Dark Portal expansion, that runs on the game files you already own: both campaigns, custom games, early LAN multiplayer, menus, briefings, saved games, sound, music and video are implemented, with the README documenting status as early but playable.",
+    "description_zh": "Tidewater 从零用 Rust 重写《魔兽争霸 II：战网版》引擎（含《黑暗之门》资料片），运行在你已拥有的游戏文件上：两个战役、自定义游戏、早期局域网对战、菜单、简报、存档、音效、音乐与视频均已实现，README 将状态记录为早期但可玩。",
+    "evidence_url": "https://github.com/nlwstein/tidewater/blob/c64437ab376b992d545a0562e56510eba5181437/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Bring your own copy: the engine contains no game data and reads the files of Warcraft II: Battle.net Edition.",
+      "Implements both campaigns, custom games, early LAN multiplayer and presentation assets; documented status is early but playable.",
+      "Code is MPL-2.0, with bundled third-party notices recorded in THIRD_PARTY_NOTICES.md."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "class": "game-dev",
+    "additional_evidence_urls": [
+      "https://github.com/nlwstein/tidewater/blob/c64437ab376b992d545a0562e56510eba5181437/LICENSE"
+    ],
+    "reconstruction_method": "engine-reimplementation"
+  },
+  {
+    "id": "siteforge-site-exporter-case",
+    "name": "SiteForge: a deterministic Chrome-extension cloner exporting Next.js and WordPress",
+    "url": "https://github.com/bahaeddinmselmi/siteforge-chrome-extension",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "SiteForge is a client-side Chrome extension that clones live web pages into ready-to-run Next.js 14 projects or classic WordPress themes: it captures the visual state, styling and assets in the browser and reconstructs them deterministically without AI services, exporting a Tailwind App Router project or a PHP theme with theme.json support.",
+    "description_zh": "SiteForge 是纯客户端 Chrome 扩展，把在线网页克隆为可直接运行的 Next.js 14 工程或经典 WordPress 主题：在浏览器内捕获页面视觉状态、样式与资源并确定性重建，不依赖 AI 服务；可导出 Tailwind App Router 工程，或生成支持 theme.json 的 PHP 主题。",
+    "evidence_url": "https://github.com/bahaeddinmselmi/siteforge-chrome-extension/blob/814d3611ed56ea357e24ea5a40a0d7aef1327b77/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs entirely client-side as an unpacked Chrome extension, with no service keys or cloud services.",
+      "Exports an npm-run-dev ready Next.js 14 App Router project with Tailwind CSS, or a classic PHP WordPress theme with theme.json support.",
+      "Images, fonts and CSS are downloaded and relinked automatically.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "website",
+    "additional_evidence_urls": [
+      "https://github.com/bahaeddinmselmi/siteforge-chrome-extension/blob/814d3611ed56ea357e24ea5a40a0d7aef1327b77/LICENSE"
+    ]
+  },
+  {
+    "id": "figma-clone-canvas-case",
+    "name": "Minimalist Figma Clone: a Fabric.js and Liveblocks collaborative canvas on Next.js",
+    "url": "https://github.com/sanidhyy/figma-clone",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "This minimalist Figma clone rebuilds the collaborative design canvas on the web with Fabric.js and Liveblocks: real-time multiplayer editing on a Next.js and TypeScript stack styled with Tailwind CSS, deployable through Vercel from the repository.",
+    "description_zh": "该极简 Figma 克隆用 Fabric.js 与 Liveblocks 在网页上重建协作设计画布：基于 Next.js 与 TypeScript、以 Tailwind CSS 设计的实时多人编辑，可通过 Vercel 从仓库部署运行。",
+    "evidence_url": "https://github.com/sanidhyy/figma-clone/blob/387a533e87ffdeb5063b9e8101f997f9b505f10c/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Real-time collaboration runs through Liveblocks, with Fabric.js rendering the canvas on a Next.js and TypeScript stack.",
+      "The README documents deploying your own instance through Vercel.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "website",
+    "additional_evidence_urls": [
+      "https://github.com/sanidhyy/figma-clone/blob/387a533e87ffdeb5063b9e8101f997f9b505f10c/LICENSE"
+    ]
+  },
+  {
+    "id": "lightspark-flash-player-case",
+    "name": "Lightspark: an open source Flash Player implementation for SWF files",
+    "url": "https://github.com/lightspark/lightspark",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Lightspark is an open source Flash Player implementation that plays SWF files as a browser plugin or as a standalone command-line application: it supports SWF files written in all versions of the ActionScript language, registers itself as the application/x-shockwave-flash handler, and remains actively maintained after mainstream browsers dropped plugin support.",
+    "description_zh": "Lightspark 是开源的 Flash Player 重新实现，以浏览器插件或独立命令行程序播放 SWF 文件：支持所有 ActionScript 语言版本编写的 SWF，注册为 application/x-shockwave-flash 处理器；在主流浏览器放弃插件支持后仍在活跃维护。",
+    "evidence_url": "https://github.com/lightspark/lightspark/blob/670eaebeffd5436c08b0c4e693ab7f36fb4befed/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Plays SWF files through the browser plugin or the standalone player (lightspark file.swf).",
+      "Current browsers no longer load plugins; the project wiki documents alternative browsers that still support Flash plugins.",
+      "Code is LGPL-3.0, recorded in COPYING and COPYING.LESSER."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "animation",
+    "additional_evidence_urls": [
+      "https://github.com/lightspark/lightspark/blob/670eaebeffd5436c08b0c4e693ab7f36fb4befed/COPYING.LESSER"
+    ]
   }
 ]

@@ -6,8 +6,14 @@
 
 [English](app.md)
 
-**250 个案例**
+**256 个案例**
 
+- [**capcut-cli：在终端编辑真实的 CapCut／剪映草稿工程**](https://github.com/renezander030/capcut-cli) - capcut-cli 在终端或 LLM 代理中创建并编辑真实的 CapCut／剪映草稿工程：直接以 JSON 读写本地草稿库，不上传、不依赖远程服务、MCP 服务或 HTTP 守护进程，在 CapCut 中打开后所有轨道仍可编辑；另提供静音感知剪辑、样式化字幕、FFmpeg 渲染与可选的云端转写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/capcut-cli-projects-case/)</sub>
+- [**Lightspark：开源 Flash Player 的 SWF 重新实现**](https://github.com/lightspark/lightspark) - Lightspark 是开源的 Flash Player 重新实现，以浏览器插件或独立命令行程序播放 SWF 文件：支持所有 ActionScript 语言版本编写的 SWF，注册为 application/x-shockwave-flash 处理器；在主流浏览器放弃插件支持后仍在活跃维护。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lightspark-flash-player-case/)</sub>
+- [**Minimalist Figma Clone：Fabric.js 与 Liveblocks 的协作画布**](https://github.com/sanidhyy/figma-clone) - 该极简 Figma 克隆用 Fabric.js 与 Liveblocks 在网页上重建协作设计画布：基于 Next.js 与 TypeScript、以 Tailwind CSS 设计的实时多人编辑，可通过 Vercel 从仓库部署运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/figma-clone-canvas-case/)</sub>
+- [**Persona IM：用 Compose UI 重建《女神异闻录 5》的游戏内即时通讯应用**](https://github.com/chris-horner/Persona-IM) - Persona IM 用 Jetpack Compose 把《女神异闻录 5》游戏内的即时通讯应用重建为 Android 应用，模拟一段风格化对话来展示这套游戏 UI 落地为真实应用的方式；该项目源于 DroidKaigi 2024 与 KotlinConf 2025 演讲，演讲幻灯片即其设计文档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/persona-im-messaging-case/)</sub>
+- [**SiteForge：确定性克隆网页并导出 Next.js 与 WordPress 工程**](https://github.com/bahaeddinmselmi/siteforge-chrome-extension) - SiteForge 是纯客户端 Chrome 扩展，把在线网页克隆为可直接运行的 Next.js 14 工程或经典 WordPress 主题：在浏览器内捕获页面视觉状态、样式与资源并确定性重建，不依赖 AI 服务；可导出 Tailwind App Router 工程，或生成支持 theme.json 的 PHP 主题。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/siteforge-site-exporter-case/)</sub>
+- [**TermuxAm：兼容 Android Oreo 的 am 命令重新实现**](https://github.com/termux/TermuxAm) - TermuxAm 重新实现 Android 的 am（Activity Manager）命令，让应用进程内重新可用：Android Oreo 起系统自带命令只能从 adb shell 运行；该项目由 Termux 维护，提供打包安装与独立 APK 两种包装脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/termuxam-am-command-case/)</sub>
 - [**AARE：重建 Android Auto 手机端应用**](https://github.com/prototux/AARE) - AARE 重建 Android Auto 手机端，通过 USB 或无线连接，将导航、媒体、消息与语音助手控制投射到兼容车载屏幕，并提供 Android 应用、Android Auto 协议模块与桌面车机测试实现。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aare-android-auto-phone-case/)</sub>
 - [**AutoCADED：重建 AutoCAD 1.4 绘图命令与 DWG 编解码器**](https://github.com/dmytro-yemelianov/autocaded) - AutoCADED 将 1983 年 MS-DOS 版 AutoCAD 1.4 的绘图工作流重建为 Rust 原生应用，实现绘图命令与早期 DWG/DXF 编解码器，并通过 Ghidra 分析和原版可执行文件的差分测试检验兼容性。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/autocaded-autocad-14-case/)</sub>
 - [**CapCut 9.6：REA 架构与编辑器 API 盘点**](https://github.com/marcosp34bpm/capcut-rea) - 该报告使用 REA 工具链分析本机安装的 CapCut 9.6.0.4097 Windows x64 版本。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/capcut-rea-analysis-case/)</sub>
