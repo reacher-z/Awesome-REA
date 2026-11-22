@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "pokeswift": {
+    "name": "PokeSwift：用 Swift 重构《宝可梦 红》的 macOS 原生应用",
+    "requirements": [
+      "Swift 应用需要 macOS 26.0 或更高版本和 Tuist。原版 ROM 目标的 RGBDS 安装在 docs/INSTALL.md。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
