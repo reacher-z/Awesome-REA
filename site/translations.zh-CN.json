@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "retip": {
+    "name": "ReTiP：《洼特梦工厂：天堂癒倩》的重编译",
+    "requirements": [
+      "需要零售光盘 ISO。大约 15 GB 空闲空间。系统为 Windows、Linux 或 macOS，CPU、内存和显卡见上面的说明。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
