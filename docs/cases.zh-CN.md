@@ -4,15 +4,15 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**4054 个案例**，按分区列出。
+**4060 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (80)
 - [Game · 游戏](#game) (2834)
-- [App · 应用](#app) (256)
+- [App · 应用](#app) (261)
 - [Native Binary · 原生二进制](#native-binary) (64)
-- [Firmware and Hardware · 固件与硬件](#firmware) (175)
+- [Firmware and Hardware · 固件与硬件](#firmware) (176)
 - [Protocol · 协议](#protocol) (645)
 
 <a id="website"></a>
@@ -43,7 +43,7 @@
 - [其他方法与分析](cases/game-5.zh-CN.md#game-other) (322)
 
 <a id="app"></a>
-## App · 应用 (256)
+## App · 应用 (261)
 
 - [案例列表](cases/app.zh-CN.md)
 
@@ -53,7 +53,7 @@
 - [案例列表](cases/native-binary.zh-CN.md)
 
 <a id="firmware"></a>
-## Firmware and Hardware · 固件与硬件 (175)
+## Firmware and Hardware · 固件与硬件 (176)
 
 - [案例列表](cases/firmware.zh-CN.md)
 

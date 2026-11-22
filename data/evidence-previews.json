@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-22T06:41:06+00:00",
-    "entry_count": 1117,
-    "class_entry_count": 1147,
+    "generated_at": "2026-11-22T07:52:59+00:00",
+    "entry_count": 1118,
+    "class_entry_count": 1148,
     "class_counts": {
-      "image": 1079,
+      "image": 1080,
       "video": 38
     },
     "missing_count": 30,
@@ -4030,7 +4030,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-22T06:41:04+00:00"
+      "checked_at": "2026-11-22T07:49:38+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -4427,6 +4427,15 @@
       "source_url": "https://github.com/15Cyber/marvel-nemesis-recomp",
       "revision": "db4ecbadc9ef5db48e41305c2f86e6e007c3f2cd",
       "checked_at": "2026-11-09T07:55:40+00:00"
+    },
+    {
+      "id": "masm-notepad-win32-case",
+      "image_url": "https://raw.githubusercontent.com/wesmar/notepad/366c6cf84966e1f261334255dc72bf4d10efd16c/images/notepad.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/wesmar/notepad",
+      "revision": "366c6cf84966e1f261334255dc72bf4d10efd16c",
+      "checked_at": "2026-11-22T07:49:39+00:00"
     },
     {
       "id": "master-of-olympus-java-remake-case",

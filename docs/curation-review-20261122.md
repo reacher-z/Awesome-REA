@@ -47,3 +47,27 @@ Each row links the immutable README reviewed for the record. The digest matches 
 Each promoted record carries a bilingual title, Chinese requirement items in site/translations.zh-CN.json parallel to its requirement_facets, and an evidence-class entry; tidewater-warcraft2-case is grouped under `engine-reimplementation`. README.zh-CN.md already exceeded the 420,000-byte advisory budget at HEAD (436,202 bytes); this batch adds about 0.7 KB and the warning stays advisory with 75,075 bytes of headroom below the GitHub render limit.
 
 The two scan snapshots from 2026-11-20 remain the earlier discovery baseline; the snapshots above are bounded single-run scans kept in .cache and not committed.
+
+---
+
+# Class-scoped curation review, round two — 2026-11-22
+
+This round adds six source-reviewed records: three Software, two Mobile App Dev and one Hardware record — the first Hardware entry under the new taxonomy. Four bounded scans ran new query groups (Notepad, Paint and Windows reimplementations; landing-page and Hacker News clones; reverse-engineering reports and decompilation notes; iOS and iPhone reimplementations), discovering 526 candidate repositories and reading 32 READMEs at pinned commits.
+
+| Record | Data class | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `starstruck-wii-ios-case` | `hardware` | [DacoTaco/StarStruck](https://github.com/DacoTaco/StarStruck/blob/ec0508f1db187f97764e6c1ac4b0076c09ec77f4/README.md) | `03e7219cc0cfad889ae09ae2f4a0de4a8e944677c50411c28892394629d7db27` |
+| `giellakbd-ios-keyboard-case` | `mobile-app-dev` | [divvun/giellakbd-ios](https://github.com/divvun/giellakbd-ios/blob/e609ba112e05e522b836bf4d2925ad9cb4e7c51c/README.md) | `62dbbfaa32fd45794b9c32439c8979cdea8be3da3f9c1e5bf8361ad782faaf40` |
+| `janus-notepad-win16-case` | `software` | [osfree-project/notepad](https://github.com/osfree-project/notepad/blob/42ba3af9a2b00d3fcdab8a15c58eed350f9831f9/README.md) | `be3c3f66fb31bf18e8bf8b4e87fe0dca17fbb9a2bddcc8a94ebe4fec7618f58b` |
+| `moblink-rust-bonding-case` | `software` | [datagutt/moblink-rust](https://github.com/datagutt/moblink-rust/blob/10824ceafd94842031517945797b64c74a2dd2c0/README.md) | `dacea42419e365d4bf5d686b187ebd49380224f6dcf4966ceee0e94ac2b05906` |
+| `masm-notepad-win32-case` | `software` | [wesmar/notepad](https://github.com/wesmar/notepad/blob/366c6cf84966e1f261334255dc72bf4d10efd16c/README.md) | `94d491d09e6f8e4851d6ff42a83da31a9ad0e202c1bafff8a9dd96a518481b0a` |
+| `pkhud-ios-hud-case` | `mobile-app-dev` | [pkluz/PKHUD](https://github.com/pkluz/PKHUD/blob/8fd26f23057c6bebd6695524b1c3e05e93aba571/README.md) | `110d2dee55919441131d2b9672bdba7df01ab6cdba1ae1de2f0f6f722f7cf7cf` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| Susmita-Dey/Netflix-Clone | A tutorial-framed landing-page clone with screenshots and an MIT license, but thin scope; the website class waits for a substantive reconstruction. |
+| Denia-My-Luv/Malware-analysis | MIT-licensed personal analysis notes and reports; a learning-journey repository rather than a curated REA analysis. |
+| DnV1eX/LiquidGlassKit | No license file. |
+| TimOliver/TOActionSheet, Cocoanetics/DTLoupe, aaronps/enotepad, 59de44955ebd/Notepatch, thurrott/NotepadWF-CS, thurrott/NotepadWPF | Stale since 2018-2023 or tutorial-starter provenance; PKHUD recorded instead as the canonical HUD reimplementation. |

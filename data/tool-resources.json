@@ -155665,5 +155665,193 @@
     "additional_evidence_urls": [
       "https://github.com/lightspark/lightspark/blob/670eaebeffd5436c08b0c4e693ab7f36fb4befed/COPYING.LESSER"
     ]
+  },
+  {
+    "id": "starstruck-wii-ios-case",
+    "name": "StarStruck: a reimplementation of the Wii IOS system firmware",
+    "url": "https://github.com/DacoTaco/StarStruck",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "StarStruck reimplements the Wii IOS system firmware for studying IOS and Starlet: it builds on mini, the bare-bones IOS replacement by Team Twiizers, aims to grow into a full IOS replacement with modular and replaceable modules, and already gives the PowerPC side full access to the Wii hardware for low-level system work.",
+    "description_zh": "StarStruck 重新实现 Wii 的 IOS 系统固件，用于研究 IOS 与 Starlet：它以 Team Twiizers 的极简 IOS 替代固件 mini 为基础，目标是长成模块可替换的完整 IOS 替代品，目前已能让 PowerPC 侧完全访问 Wii 硬件，便于底层系统开发。",
+    "evidence_url": "https://github.com/DacoTaco/StarStruck/blob/ec0508f1db187f97764e6c1ac4b0076c09ec77f4/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Builds on mini, the bare-bones IOS replacement by Team Twiizers, with copyrights held by Team Twiizers (2008-2009) and DacoTaco (2021).",
+      "A full IOS replacement with modular, replaceable modules is the stated long-term goal, and the project is far from it; module contributions are welcome.",
+      "As shipped it is useful for low-level system access, giving the PPC full hardware access.",
+      "Code is GPL-2.0, recorded in COPYING."
+    ],
+    "requirement_facets": [
+      "attribution",
+      "scope",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "firmware"
+    ],
+    "kind": "case-study",
+    "class": "hardware",
+    "additional_evidence_urls": [
+      "https://github.com/DacoTaco/StarStruck/blob/ec0508f1db187f97764e6c1ac4b0076c09ec77f4/COPYING"
+    ]
+  },
+  {
+    "id": "giellakbd-ios-keyboard-case",
+    "name": "giellakbd-ios: an open source reimplementation of the iOS keyboard",
+    "url": "https://github.com/divvun/giellakbd-ios",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "giellakbd-ios reimplements the native iOS keyboard as an open source keyboard extension focused on localised layouts for minority and indigenous languages: it ships a CocoaPods-based Xcode workspace, installs as a system keyboard on device or simulator, and switches layouts through the globe key.",
+    "description_zh": "giellakbd-ios 把 iOS 原生键盘重新实现为开源键盘扩展，专注少数与原住民语言的本地化布局：提供基于 CocoaPods 的 Xcode workspace，可在真机或模拟器上作为系统键盘安装，经地球键切换布局。",
+    "evidence_url": "https://github.com/divvun/giellakbd-ios/blob/e609ba112e05e522b836bf4d2925ad9cb4e7c51c/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Build through CocoaPods and the GiellaKeyboard Xcode workspace, then enable the keyboard on device or simulator.",
+      "Focuses on localised keyboards for minority and indigenous languages.",
+      "The repository carries Apache-2.0 and MIT license files."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "mobile-app-dev",
+    "additional_evidence_urls": [
+      "https://github.com/divvun/giellakbd-ios/blob/e609ba112e05e522b836bf4d2925ad9cb4e7c51c/LICENSE-APACHE"
+    ]
+  },
+  {
+    "id": "janus-notepad-win16-case",
+    "name": "Janus Notepad: a Win16 re-creation of the classic Windows Notepad",
+    "url": "https://github.com/osfree-project/notepad",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Janus Notepad recreates the classic Windows Notepad on 16-bit Windows 3.x as a minimalistic C89 text editor: it is derived from the Wine Notepad source and adapted for the osFree Win16 Personality project, an open-source implementation of the 16-bit Windows environment, and is marked stable with a screenshot-documented interface.",
+    "description_zh": "Janus Notepad 在 16 位 Windows 3.x 上重现经典 Windows 记事本，是一个极简的 C89 文本编辑器：源码衍生自 Wine 记事本，适配 osFree Win16 Personality（开源的 16 位 Windows 环境实现），状态标记为稳定，界面有截图记录。",
+    "evidence_url": "https://github.com/osfree-project/notepad/blob/42ba3af9a2b00d3fcdab8a15c58eed350f9831f9/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Derived from the Wine Notepad source and adapted for the osFree Win16 Personality environment.",
+      "Targets 16-bit Windows 3.0/3.1 as C89 code, marked stable.",
+      "Code is LGPL-2.1, recorded in LICENSE."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "software",
+    "additional_evidence_urls": [
+      "https://github.com/osfree-project/notepad/blob/42ba3af9a2b00d3fcdab8a15c58eed350f9831f9/LICENSE"
+    ]
+  },
+  {
+    "id": "moblink-rust-bonding-case",
+    "name": "Moblink: a Rust reimplementation of the Moblin bonding client",
+    "url": "https://github.com/datagutt/moblink-rust",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Moblink reimplements the SRTLA bonding client from the Moblin iOS app as a standalone Rust service: spare devices join as extra bonding connections over WebSocket using the same challenge-response authentication as the Moblin client, relay UDP packets to a local destination, and discover nearby peers through mDNS, for example on Belabox.",
+    "description_zh": "Moblink 把 Moblin iOS 应用中的 SRTLA 聚合客户端重实现为独立 Rust 服务：备用设备经 WebSocket 以与 Moblin 客户端相同的质询-响应认证接入为额外聚合连接，向本地目的地转发 UDP 包，并通过 mDNS 自动发现附近设备，可运行在 Belabox 等环境。",
+    "evidence_url": "https://github.com/datagutt/moblink-rust/blob/10824ceafd94842031517945797b64c74a2dd2c0/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Rust 1.85 or newer and Cargo to build.",
+      "Implements the WebSocket connection to Moblin, its challenge-response authentication, UDP relay and mDNS discovery; inspired by the Moblink Kotlin/Android code.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "software",
+    "additional_evidence_urls": [
+      "https://github.com/datagutt/moblink-rust/blob/10824ceafd94842031517945797b64c74a2dd2c0/LICENSE"
+    ]
+  },
+  {
+    "id": "masm-notepad-win32-case",
+    "name": "MASM Notepad: a Win32 Notepad reimplementation in pure assembly",
+    "url": "https://github.com/wesmar/notepad",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "This Notepad reimplementation recreates Windows Notepad in pure MASM assembly calling the Win32 API directly, bypassing the C runtime: it ships x86, x64 and native ARM64 builds for Windows 11, documents editor, menu and window behaviour, and adds tray-hide on Shift+Minimise, with the interface shown in screenshots.",
+    "description_zh": "该记事本重实现以纯 MASM 汇编直呼 Win32 API 重建 Windows 记事本，绕过 C 运行时：提供面向 Windows 11 的 x86、x64 与原生 ARM64 三种构建，文档记录编辑、菜单与窗口行为，并新增 Shift+最小化隐藏到托盘，界面见截图。",
+    "evidence_url": "https://github.com/wesmar/notepad/blob/366c6cf84966e1f261334255dc72bf4d10efd16c/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Built with MASM (ml, ml64, armasm64) for x86, x64 and ARM64, calling the Win32 API directly with no C runtime.",
+      "Targets Windows 11; a native ARM64 build was added in August 2026.",
+      "Code is MIT-licensed, recorded in LICENSE.md."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "software",
+    "additional_evidence_urls": [
+      "https://github.com/wesmar/notepad/blob/366c6cf84966e1f261334255dc72bf4d10efd16c/LICENSE.md"
+    ]
+  },
+  {
+    "id": "pkhud-ios-hud-case",
+    "name": "PKHUD: a Swift reimplementation of the Apple HUD view",
+    "url": "https://github.com/pkluz/PKHUD",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "PKHUD reimplements the Apple HUD view (volume, ringer, rotation and progress indicators) in Swift for iOS: it presents the standard translucent HUD styles and integrates through CocoaPods, Swift Package Manager and Carthage.",
+    "description_zh": "PKHUD 用 Swift 重新实现 Apple 的 HUD 视图（音量、静音、旋转与进度指示器）：呈现标准半透明 HUD 样式，可通过 CocoaPods、Swift Package Manager 与 Carthage 集成。",
+    "evidence_url": "https://github.com/pkluz/PKHUD/blob/8fd26f23057c6bebd6695524b1c3e05e93aba571/README.md",
+    "verified_at": "2026-11-22",
+    "added_at": "2026-11-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Integrates through CocoaPods, Swift Package Manager or Carthage on iOS.",
+      "Reimplements the system HUD styles (volume, ringer, rotation, progress) in Swift.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "class": "mobile-app-dev",
+    "additional_evidence_urls": [
+      "https://github.com/pkluz/PKHUD/blob/8fd26f23057c6bebd6695524b1c3e05e93aba571/LICENSE"
+    ]
   }
 ]

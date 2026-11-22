@@ -6,8 +6,9 @@
 
 [English](firmware.md)
 
-**175 个案例**
+**176 个案例**
 
+- [**StarStruck：Wii IOS 系统固件的重新实现**](https://github.com/DacoTaco/StarStruck) - StarStruck 重新实现 Wii 的 IOS 系统固件，用于研究 IOS 与 Starlet：它以 Team Twiizers 的极简 IOS 替代固件 mini 为基础，目标是长成模块可替换的完整 IOS 替代品，目前已能让 PowerPC 侧完全访问 Wii 硬件，便于底层系统开发。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/starstruck-wii-ios-case/)</sub>
 - [**fdsboot：Famicom Disk System 启动 ROM 反汇编**](https://gitlab.com/segaloco/fdsboot) - fdsboot 是 Famicom Disk System 启动 ROM 的 6502 反汇编，按磁盘读写、PPU、手柄、计时器、声音、中断和随机数等例程拆分源码，并附带主机与 FDS 寄存器的定义文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fdsboot-case/)</sub>
 - [**gyx-decomp：Casio ES PLUS GYX 计算器固件反编译**](https://codeberg.org/gwetm/gyx-decomp) - gyx-decomp 是 Casio ES PLUS GYX 科学计算器固件的反编译项目，该固件运行在 ROHM nX-U8/100 微控制器上。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gyx-decomp-case/)</sub>
 - [**vmiv：View-Master Interactive Video 模拟器与格式笔记**](https://codeberg.org/Sprite_tm/vmiv) - vmiv 用 FFmpeg 解码录像带采集视频，从扫描线中提取按 UART 方式编码的数据字节和辅助音频，交给运行 VMI8802 ROM 的 8051 内核处理，同时模拟 TMS9128 显示芯片并用 SDL2 渲染，以此模拟 View-Master Interactive Video 系统。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/vmiv-case/)</sub>

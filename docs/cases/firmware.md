@@ -6,8 +6,9 @@
 
 [简体中文](firmware.zh-CN.md)
 
-**175 case studies**
+**176 case studies**
 
+- [**StarStruck: a reimplementation of the Wii IOS system firmware**](https://github.com/DacoTaco/StarStruck) - StarStruck reimplements the Wii IOS system firmware for studying IOS and Starlet: it builds on mini, the bare-bones IOS replacement by Team Twiizers, aims to grow into a full IOS replacement with modular and replaceable modules, and already gives the PowerPC side full access to the Wii hardware for low-level system work. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/starstruck-wii-ios-case/)</sub>
 - [**fdsboot: Famicom Disk System boot ROM disassembly**](https://gitlab.com/segaloco/fdsboot) - fdsboot is a 6502 disassembly of the Famicom Disk System boot ROM, split into disk I/O, PPU, joypad, timer, sound, interrupt and random-number routines with include files for the console and FDS registers. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/fdsboot-case/)</sub>
 - [**gyx-decomp: Casio ES PLUS GYX firmware decompilation**](https://codeberg.org/gwetm/gyx-decomp) - gyx-decomp is a decompilation of the Casio ES PLUS GYX scientific calculator firmware, which runs on ROHM nX-U8/100 microcontrollers. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/gyx-decomp-case/)</sub>
 - [**vmiv: View-Master Interactive Video emulator and format notes**](https://codeberg.org/Sprite_tm/vmiv) - vmiv emulates the View-Master Interactive Video system by decoding a captured tape video with FFmpeg, extracting the UART-style data bytes and auxiliary audio carried in the scanlines, and feeding them to an 8051 core that runs the VMI8802 ROM alongside a TMS9128 video chip model rendered with SDL2. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/vmiv-case/)</sub>

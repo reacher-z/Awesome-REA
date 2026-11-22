@@ -44061,5 +44061,54 @@
       "现代浏览器已不再加载插件；项目 wiki 记录仍支持 Flash 插件的替代浏览器。",
       "代码采用 LGPL-3.0 许可证，见 COPYING 与 COPYING.LESSER。"
     ]
+  },
+  "starstruck-wii-ios-case": {
+    "name": "StarStruck：Wii IOS 系统固件的重新实现",
+    "requirements": [
+      "基于 Team Twiizers 的极简 IOS 替代固件 mini 构建，版权归 Team Twiizers（2008-2009）与 DacoTaco（2021）所有。",
+      "模块可替换的完整 IOS 替代品是声明中的长期目标，目前距离尚远；欢迎模块贡献。",
+      "当前版本适用于底层系统访问，可让 PPC 完全访问硬件。",
+      "代码采用 GPL-2.0 许可证，见 COPYING。"
+    ]
+  },
+  "giellakbd-ios-keyboard-case": {
+    "name": "giellakbd-ios：iOS 键盘的开源重新实现",
+    "requirements": [
+      "通过 CocoaPods 与 GiellaKeyboard Xcode workspace 构建，然后在真机或模拟器上启用该键盘。",
+      "专注少数与原住民语言的本地化键盘。",
+      "仓库同时带有 Apache-2.0 与 MIT 许可证文件。"
+    ]
+  },
+  "janus-notepad-win16-case": {
+    "name": "Janus Notepad：经典 Windows 记事本的 Win16 重现",
+    "requirements": [
+      "源码衍生自 Wine 记事本，适配 osFree Win16 Personality 环境。",
+      "以 C89 代码面向 16 位 Windows 3.0/3.1，状态标记为稳定。",
+      "代码采用 LGPL-2.1 许可证，见 LICENSE。"
+    ]
+  },
+  "moblink-rust-bonding-case": {
+    "name": "Moblink：Moblin 聚合客户端的 Rust 重实现",
+    "requirements": [
+      "需要 Rust 1.85 或更新版本与 Cargo 构建。",
+      "实现与 Moblin 的 WebSocket 连接、其质询-响应认证、UDP 转发与 mDNS 发现；灵感来自 Moblink Kotlin/Android 代码。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "masm-notepad-win32-case": {
+    "name": "MASM Notepad：纯汇编的 Win32 记事本重实现",
+    "requirements": [
+      "以 MASM（ml、ml64、armasm64）构建 x86、x64 与 ARM64，直呼 Win32 API，不使用 C 运行时。",
+      "面向 Windows 11；原生 ARM64 构建于 2026 年 8 月加入。",
+      "代码采用 MIT 许可证，见 LICENSE.md。"
+    ]
+  },
+  "pkhud-ios-hud-case": {
+    "name": "PKHUD：Apple HUD 视图的 Swift 重实现",
+    "requirements": [
+      "在 iOS 上经 CocoaPods、Swift Package Manager 或 Carthage 集成。",
+      "以 Swift 重实现系统 HUD 样式（音量、静音、旋转、进度）。",
+      "代码采用 MIT 许可证。"
+    ]
   }
 }
