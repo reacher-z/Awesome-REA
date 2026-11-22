@@ -2,11 +2,11 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-10T03:26:21+00:00",
-  "entry_count": 5191,
+  "generated_at": "2026-11-22T22:03:25+00:00",
+  "entry_count": 5192,
   "class_counts": {
    "0": 15,
-   "1": 1126,
+   "1": 1127,
    "2": 3844,
    "3": 186
   },
@@ -145723,6 +145723,46 @@
    "scope": "notes",
    "runtime_status": "not-run",
    "c0_candidate": false
+  },
+  {
+   "id": "jazz2-resurrection",
+   "url": "https://github.com/deathkiller/jazz2",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 19493,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 66,
+    "release_asset_count": 248,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 2,
+    "download_links": [
+     "brew install deathkiller/jazz2/jazz2",
+     "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_Windows.zip",
+     "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_Linux.zip",
+     "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_MacOS.zip",
+     "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_Switch.zip",
+     "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_UWP.zip",
+     "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_PSP.zip",
+     "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_Vita.zip",
+     "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_Android.zip"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full reconstruction candidate: Class 0 requires manual scope review",
+   "checked_at": "2026-11-22T22:03:24+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": true
   }
  ]
 }
