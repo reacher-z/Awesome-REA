@@ -52,6 +52,11 @@
       "rule": "awesome-spell-check",
       "reason": "Text \"Postgres\" should be written as \"PostgreSQL\"",
       "why": "Postgres is the PostgreSQL project's own accepted short name for the database."
+    },
+    {
+      "rule": "awesome-spell-check",
+      "reason": "Text \"IOS\" should be written as \"iOS\"",
+      "why": "Wii IOS is the Nintendo Wii system firmware and the project name spelled that way; iOS is the Apple mobile OS, so the suggestion is wrong here."
     }
   ]
 }
