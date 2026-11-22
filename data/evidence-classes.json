@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-10T03:26:21+00:00",
-  "entry_count": 5191,
+  "generated_at": "2026-11-22T22:23:21+00:00",
+  "entry_count": 5192,
   "class_counts": {
    "0": 15,
    "1": 1126,
-   "2": 3844,
+   "2": 3845,
    "3": 186
   },
   "unknown_count": 20,
@@ -145721,6 +145721,33 @@
    "checked_at": "2026-11-10T03:14:52+00:00",
    "evidence_status": "observed",
    "scope": "notes",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "luigis-mansion-recompiled",
+   "url": "https://github.com/rob646464/luigis-mansion-recompiled",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2028,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 9,
+    "release_asset_count": 19,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-22T22:23:21+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   }

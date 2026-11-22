@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "luigis-mansion-recompiled": {
+    "name": "Luigi's Mansion Recompiled：《路易吉洋馆》的 PC 原生移植",
+    "requirements": [
+      "需要自己的美版和/或欧版《路易吉洋馆》光盘，格式为 ISO、RVZ 或已提取的文件夹。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
