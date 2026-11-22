@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "yfm-recompiled": {
+    "name": "Forbidden Memories recompiled：《游戏王 Forbidden Memories》PS1 游戏的原生构建",
+    "requirements": [
+      "需要美版光盘的 .bin。Linux 源码构建需要 gcc 和 Python 3。Apple Silicon 构建需要 Python 3 和 Xcode 命令行工具。",
+      "许可证：src/pc、tools/pc、tests/pc、mods、examples 以及构建和游玩脚本里的 PC 移植为 MIT。"
+    ]
   }
 }

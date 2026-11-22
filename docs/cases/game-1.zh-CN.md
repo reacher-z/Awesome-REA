@@ -6,7 +6,7 @@
 
 [English](game-1.md)
 
-**617 个案例**
+**616 个案例**
 
 <a id="game-matching-decompilation"></a>
 ## 匹配反编译与反汇编
@@ -183,6 +183,7 @@
 - [**Fire Emblem: Shadow Dragon：Nintendo DS 游戏反编译**](https://github.com/Eebit/fe11-us) - Fire Emblem: Shadow Dragon 使用 ds-decomp 重建美版 Nintendo DS 游戏代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fire-emblem-shadow-dragon-decomp-case/)</sub>
 - [**fireemblem7u：GBA 版 Fire Emblem 匹配反编译**](https://github.com/7ucina/fireemblem7u) - fireemblem7u 将美国及澳大利亚版 GBA 游戏 Fire Emblem 重建为 C 源码，并构建经 SHA-1 检查的 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fireemblem7u-decomp-case/)</sub>
 - [**Flicky：逐字节匹配的 Mega Drive 源码重建**](https://github.com/RetrolariumLab/flicky_src) - Flicky 将 Sega Mega Drive 游戏的 68000 代码和 Z80 声音驱动重建为带注释的汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/flicky-src-case/)</sub>
+- [**Forbidden Memories recompiled：《游戏王 Forbidden Memories》PS1 游戏的原生构建**](https://github.com/Unchiga/Yu-Gi-Oh-Forbidden-Memories-Recompiled) - 这个项目把美版 PlayStation 游戏《游戏王：禁忌的记忆》重建成原生 Windows 和 Linux 程序，并有 macOS ARM64 源码构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/yfm-recompiled/)</sub>
 - [**Fossil Fighters Champions：匹配重建 Nintendo DS 战斗覆盖模块**](https://github.com/arcnid/ffc-decomp) - 使用原版 mwccarm 工具链，将 Nintendo DS 游戏 Fossil Fighters Champions 的战斗覆盖模块重建为 C；未匹配函数保留汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fossil-fighters-champions-decomp-case/)</sub>
 - [**Four Swords Adventures：GameCube 逐字节匹配反编译**](https://github.com/sh1ftmaker/fsa) - fsa 以逐字节匹配方式还原 GameCube 游戏 The Legend of Zelda: Four Swords Adventures。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/four-swords-adventures-decomp-case/)</sub>
 - [**Freelancer：进行中的 1.1 补丁版反编译**](https://github.com/HaydnTrigg/Freelancer) - Freelancer 正在重建游戏 1.1 补丁版可执行文件与 DLL 的 C++ 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/freelancer-decomp-case/)</sub>
@@ -629,6 +630,4 @@
 - [**Blood Omen 2：面向 Switch 移植的功能性反编译**](https://github.com/felipesuarez-dev/BloodOmen2NX) - BloodOmen2NX 将《血兆 2》西班牙语 Windows PC 版进行功能性反编译，译成 C++17，目标是移植到 Nintendo Switch。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bloodomen2nx-case/)</sub>
 - [**Boku Doraemon：Dreamcast 可执行文件与模型结构重建**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon 解析日版 Dreamcast 游戏的 1ST\_READ.BIN，从用户光盘生成匹配的汇编基线，并在 SH-4 解释器中比较候选 C 函数的调用、内存写入与结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boku-doraemon-decomp-case/)</sub>
 - [**Bomberman 64: The Second Attack!：部分 N64 反编译**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa 正在反编译日版和美版 N64 游戏 Bomberman 64: The Second Attack!。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bm64tsa-case/)</sub>
-- [**Boom Street：进行中的 Wii 游戏反编译**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street 是进行中的 Wii 游戏反编译项目，目标为欧版 ST7P01 Rev 0。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boom-street-decomp-case/)</sub>
-- [**Bounce Tales：反编译 J2ME 游戏**](https://github.com/HelloOO7/BounceTales) - 该仓库是 Rovio 的 Bounce Tales（2008）的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bounce-tales-decomp/)</sub>
 <!-- END GENERATED CASES -->
