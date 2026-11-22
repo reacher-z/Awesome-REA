@@ -2,11 +2,11 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-10T03:26:21+00:00",
-  "entry_count": 5191,
+  "generated_at": "2026-11-22T22:29:02+00:00",
+  "entry_count": 5192,
   "class_counts": {
    "0": 15,
-   "1": 1126,
+   "1": 1127,
    "2": 3844,
    "3": 186
   },
@@ -145721,6 +145721,38 @@
    "checked_at": "2026-11-10T03:14:52+00:00",
    "evidence_status": "observed",
    "scope": "notes",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "flameox",
+   "url": "https://github.com/morluto/flameox",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5342,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 17,
+    "release_asset_count": 68,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [
+     "npx flameox@latest",
+     "uv run flameox"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "download and demo exist, but the described scope is a partial feature or patch",
+   "checked_at": "2026-11-22T22:29:02+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   }
