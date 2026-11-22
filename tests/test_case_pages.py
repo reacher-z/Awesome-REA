@@ -109,7 +109,7 @@ class CasePageTests(unittest.TestCase):
         paths = build_discovery_pages(output, catalog, None)
         self.assertEqual(catalog, original)
         self.assertEqual(set(paths), {'/resources/', '/zh/resources/', '/cases/', '/zh/cases/', '/about/', '/zh/about/',
-                                      '/contribute/', '/zh/contribute/'})
+                                      '/contribute/', '/zh/contribute/', '/tools/', '/zh/tools/'})
         return output
 
     def test_subset_grouping_localized_links_and_itemlist_order(self):
