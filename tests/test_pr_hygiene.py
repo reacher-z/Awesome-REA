@@ -111,7 +111,7 @@ class WorkflowTests(unittest.TestCase):
     def test_the_check_reads_the_pull_request_without_running_its_code(self):
         text = (ROOT / '.github/workflows/pr-hygiene.yml').read_text(encoding='utf-8')
         self.assertIn('  pull_request_target:\n    types: [opened, edited, synchronize, reopened, ready_for_review]\n', text)
-        self.assertIn('ref: ${{ github.event.pull_request.base.sha }}', text)
+        self.assertIn('ref: ${{ github.event.pull_request.base.ref }}', text)
         self.assertNotIn('head.sha', text)
         self.assertNotIn('github.event.pull_request.body', text)
         self.assertEqual(re.findall(r'^      ([a-z-]+): (read|write)$', text, re.M), [('contents', 'read'), ('pull-requests', 'read')])
