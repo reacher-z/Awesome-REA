@@ -338,6 +338,8 @@ def main() -> int:
             print(f"preview {done}/{len(targets)} {entry['id']}", file=sys.stderr)
 
     entries.sort(key=lambda item: item["id"])
+    for item in entries:
+        item["image_url"] = "".join(urllib.parse.quote(ch) if ch.isspace() or ord(ch) < 33 else ch for ch in item.get("image_url", ""))
     counts = {"image": sum(item["kind"] == "image" for item in entries),
               "video": sum(item["kind"] == "video" for item in entries)}
     output = {
