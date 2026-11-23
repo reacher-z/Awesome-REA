@@ -156134,7 +156134,7 @@
     "targets": [
       "binary"
     ],
-    "description_en": "binja_wasm implements WebAssembly as a Binary Ninja architecture, so WASM modules can be loaded, disassembled and analyzed with the platform's native views and APIs.",
+    "description_en": "binja_wasm implements WebAssembly as a Binary Ninja architecture, so WebAssembly modules can be loaded, disassembled and analyzed with the platform's native views and APIs.",
     "description_zh": "binja_wasm 为 Binary Ninja 实现 WebAssembly 架构，使 WASM 模块可以像原生目标一样被加载、反汇编与分析。",
     "evidence_url": "https://github.com/SecondNewtonLaw/binja_wasm/blob/ab4ac166dcbf0078158470e6382bf7e579bfbf4a/README.md",
     "verified_at": "2026-11-23",
@@ -156236,6 +156236,226 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/John-A0/GhidrAI/blob/274474a47e7db1aeb18c3bc0085d674444a5dc6f/LICENSE"
+    ]
+  },
+  {
+    "id": "rpcs3",
+    "name": "RPCS3",
+    "url": "https://github.com/RPCS3/rpcs3",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "The first free and open-source PlayStation 3 emulator and debugger, written in C++ for Windows, Linux, macOS and FreeBSD. It boots PS3 game executables and exposes debugging, patch management and per-game compatibility reporting for the emulated console.",
+    "description_zh": "RPCS3 是首个免费开源的 PlayStation 3 模拟器与调试器，使用 C++ 编写，支持 Windows、Linux、macOS 与 FreeBSD；可运行 PS3 游戏可执行文件，并提供调试、补丁管理与逐游戏兼容性报告。",
+    "evidence_url": "https://github.com/RPCS3/rpcs3/blob/3bfac607760d39dcdbe77eb137ab6dbb723b3b36/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows, Linux, macOS or FreeBSD on x86-64; PlayStation 3 firmware is installed separately and game dumps must be supplied.",
+      "Compatibility and performance vary by game, and a Vulkan-capable GPU with current drivers is required.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "shadps4",
+    "name": "shadPS4",
+    "url": "https://github.com/shadPS4-emu/shadPS4",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An open-source PlayStation 4 emulator for Windows, Linux, macOS and FreeBSD, written in C++. It runs PS4 executables and reports per-game compatibility, with a release build for each supported platform.",
+    "description_zh": "shadPS4 是面向 Windows、Linux、macOS 与 FreeBSD 的开源 PlayStation 4 模拟器，使用 C++ 编写；可运行 PS4 可执行文件并按游戏报告兼容性，并为各支持平台发布构建。",
+    "evidence_url": "https://github.com/shadPS4-emu/shadPS4/blob/bbc020e5d0fcc959a4fe5bd9cdaa0205b0edf405/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows, Linux, macOS or FreeBSD on x86-64; PS4 firmware dumps and game files must be supplied.",
+      "A Vulkan-capable GPU is required, and some games remain incompatible or run with graphical defects.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "v86",
+    "name": "v86",
+    "url": "https://github.com/copy/v86",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "binary",
+      "website"
+    ],
+    "description_en": "v86 emulates an x86-compatible CPU and PC hardware, translating machine code to WebAssembly modules at runtime so operating systems and boot images run in a browser or Node.js.",
+    "description_zh": "v86 模拟 x86 兼容 CPU 与 PC 硬件，在运行时把机器码转译为 WebAssembly 模块，使操作系统与启动镜像可在浏览器或 Node.js 中运行。",
+    "evidence_url": "https://github.com/copy/v86/blob/9457e7a2f6890f3133bb6ac0f749e588f63c4c36/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs in a browser or Node.js; bootable x86 disk or floppy images must be supplied.",
+      "The emulated CPU is roughly Pentium 4 level with SSE3, without 64-bit extensions, multicore, task gates, single stepping or some floating-point exceptions.",
+      "BSD-2-Clause-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "memprocfs",
+    "name": "MemProcFS",
+    "url": "https://github.com/ufrisk/MemProcFS",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "MemProcFS exposes physical memory as files in a virtual file system for point-and-click forensic analysis. It reads memory dumps, live memory through DumpIt or WinPMEM, virtual machines, PCILeech FPGA hardware and remote LeechAgent connections, and ships a C/C++/Python/.NET library.",
+    "description_zh": "MemProcFS 把物理内存映射为虚拟文件系统中的文件，便于直接点选分析；支持内存转储、经 DumpIt 或 WinPMEM 的实时内存、虚拟机、PCILeech FPGA 设备与远程 LeechAgent 连接，并提供 C/C++/Python/.NET 库。",
+    "evidence_url": "https://github.com/ufrisk/MemProcFS/blob/6d30b27bcf3295088b36e289aa111aff176e993e/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The virtual file system requires a Windows host; analysis needs a memory dump, live acquisition device or agent.",
+      "Live read-write access and several device paths depend on the corresponding hardware, driver or agent permissions.",
+      "AGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "xat",
+    "name": "XAT (XIV Animation Toolkit)",
+    "url": "https://github.com/Etheirys/XAT",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A standalone Windows tool for exporting, importing, compressing and binding animations and skeletons in Final Fantasy XIV, combining earlier XIV animation utilities into one toolkit that is still in early alpha.",
+    "description_zh": "独立的 Windows 工具，用于导出、导入、压缩与绑定《最终幻想 XIV》的动画和骨骼，整合此前分散的 XIV 动画工具；目前仍处于早期 alpha。",
+    "evidence_url": "https://github.com/Etheirys/XAT/blob/3955622dba651456efbd8ecfdaf045cb0f2423c4/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows with the Visual C++ 2012 x86 redistributable.",
+      "The project is early alpha and its documentation is still being written.",
+      "BSD-3-Clause-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "openjk",
+    "name": "OpenJK: community source port of Jedi Academy and Jedi Outcast",
+    "url": "https://github.com/JACoders/OpenJK",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A community-maintained source port that keeps the Jedi Academy and Jedi Outcast engine buildable and compatible with the retail games and mods, adding x86_64, Arm, Apple Silicon, Linux and macOS support while leaving core gameplay unchanged.",
+    "description_zh": "社区维护的《绝地学院》与《绝地放逐者》引擎源码移植：保持与零售版游戏和 mod 的完全兼容，新增 x86_64、Arm、Apple Silicon 以及 Linux、macOS 支持，核心玩法保持不变。",
+    "evidence_url": "https://github.com/JACoders/OpenJK/blob/260c59c2907187af555a676fe0cc798893bf7757/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Playing requires the retail Jedi Academy or Jedi Outcast game assets; the project builds the engine for x86_64, Arm, Linux and macOS.",
+      "The project keeps core gameplay unchanged and does not add major features or rebalance.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "librespot",
+    "name": "librespot",
+    "url": "https://github.com/librespot-org/librespot",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "An open-source Spotify client library written in Rust. It implements the Spotify client protocol and audio playback so applications can browse, play and control music, act as a Spotify Connect receiver and use a CLI client or C API.",
+    "description_zh": "用 Rust 编写的开源 Spotify 客户端库：实现 Spotify 客户端协议与音频播放，供应用浏览、播放和控制音乐、充当 Spotify Connect 接收端，并提供命令行客户端与 C API。",
+    "evidence_url": "https://github.com/librespot-org/librespot/blob/15e02e86c72d96dd39d548e3749f00abe39ffdde/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A Spotify Premium subscription is required; free subscriptions are not supported.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ]
+  },
+  {
+    "id": "satdump",
+    "name": "SatDump",
+    "url": "https://github.com/SatDump/SatDump",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A generic satellite data processing suite with a GUI and CLI. It records from SDR devices, demodulates baseband, frames and soft symbols through selectable pipelines, and decodes, processes and displays weather-satellite and other downlinks.",
+    "description_zh": "通用卫星数据处理套件，提供 GUI 与命令行：可从 SDR 设备录制，按可选 pipeline 解调基带、帧与软符号，并解码、处理与显示气象卫星等下行数据。",
+    "evidence_url": "https://github.com/SatDump/SatDump/blob/9fee0793c7d42bea2d401d330422e18c33c126fa/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Builds for Linux, macOS and Windows, with optional SDR device drivers; live recording needs a supported SDR device.",
+      "Processing needs recorded baseband, frame or soft-symbol files plus the pipeline that matches the signal and sample rate.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
     ]
   }
 ]

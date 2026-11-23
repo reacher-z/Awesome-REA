@@ -44211,5 +44211,68 @@
       "面向 Ghidra 11.x，使用 Streamlit 界面与本地 Ollama 模型。",
       "代码采用 MIT 许可证。"
     ]
+  },
+  "rpcs3": {
+    "name": "RPCS3",
+    "requirements": [
+      "需要 x86-64 平台的 Windows、Linux、macOS 或 FreeBSD；PlayStation 3 固件需另行安装，游戏转储需自备。",
+      "不同游戏的兼容性与性能差异较大；需要支持 Vulkan 的 GPU 与较新的驱动。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "shadps4": {
+    "name": "shadPS4",
+    "requirements": [
+      "需要 x86-64 平台的 Windows、Linux、macOS 或 FreeBSD；PS4 固件转储与游戏文件需自备。",
+      "需要支持 Vulkan 的 GPU；部分游戏仍不兼容或存在画面缺陷。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "v86": {
+    "name": "v86",
+    "requirements": [
+      "可在浏览器或 Node.js 中运行；需自备可启动的 x86 磁盘或软盘镜像。",
+      "模拟 CPU 约为 Pentium 4 级别并支持 SSE3，但不支持 64 位扩展、多核、任务门、单步与部分浮点异常。",
+      "采用 BSD-2-Clause 许可证。"
+    ]
+  },
+  "memprocfs": {
+    "name": "MemProcFS",
+    "requirements": [
+      "虚拟文件系统需要 Windows 主机；分析对象为内存转储或实时采集设备/代理。",
+      "实时读写与部分设备路径取决于相应硬件、驱动或代理权限。",
+      "采用 AGPL-3.0 许可证。"
+    ]
+  },
+  "xat": {
+    "name": "XAT（XIV 动画工具包）",
+    "requirements": [
+      "需要 Windows 与 Visual C++ 2012 x86 运行库。",
+      "项目仍处于早期 alpha，文档尚在补充。",
+      "采用 BSD-3-Clause 许可证。"
+    ]
+  },
+  "openjk": {
+    "name": "OpenJK：绝地学院与绝地放逐者的社区源码移植",
+    "requirements": [
+      "运行游戏需要零售版《绝地学院》或《绝地放逐者》的游戏资源；项目为 x86_64、Arm、Linux 与 macOS 构建引擎。",
+      "项目不以新增玩法或重平衡为目标，核心玩法保持不变。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "librespot": {
+    "name": "librespot",
+    "requirements": [
+      "需要 Spotify Premium 订阅；免费订阅不受支持。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "satdump": {
+    "name": "SatDump",
+    "requirements": [
+      "支持 Linux、macOS 与 Windows，可选 SDR 设备驱动；实时录制需要受支持的 SDR 设备。",
+      "处理需要已录制的基带、帧或软符号文件，以及与信号和采样率匹配的 pipeline。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

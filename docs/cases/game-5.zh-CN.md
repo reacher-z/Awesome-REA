@@ -6,10 +6,11 @@
 
 [English](game-5.md)
 
-**353 个案例**
+**354 个案例**
 
 ## 引擎重实现
 
+- [**vakfu：重建 Wakfu 地图渲染**](https://github.com/jac3km4/vakfu) - vakfu 用 Rust 重建 Wakfu 的等距视角地图渲染，并从用户自己的游戏副本读取资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vakfu-case/)</sub>
 - [**Vange-rs：以 Rust 重做《Vangers》**](https://github.com/kvark/vange-rs) - vange-rs 使用 Rust 和 wgpu 重做《Vangers》，目标是借助原版游戏资源重现其世界、载具和单人游戏行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vange-rs-vangers-case/)</sub>
 - [**Vault Engine：以 Rust 重建 Fallout 与 Fallout 2**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine 以 Rust 重建 Fallout 和 Fallout 2，读取用户零售版的 DAT 归档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vault-engine-case/)</sub>
 - [**Vault13：Rust 重建 Fallout 2 引擎**](https://github.com/pingw33n/vault13) - Vault13 用 Rust 重建《Fallout 2》引擎，并从本地游戏目录读取数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vault13-fallout-2-case/)</sub>

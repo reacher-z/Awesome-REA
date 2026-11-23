@@ -6,10 +6,11 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**353 case studies**
+**354 case studies**
 
 ## Engine reimplementations
 
+- [**vakfu: reconstructing Wakfu map rendering**](https://github.com/jac3km4/vakfu) - vakfu reconstructs Wakfu's isometric map rendering in a Rust application that loads assets from the user's game copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vakfu-case/)</sub>
 - [**Vange-rs: reimplementing Vangers in Rust**](https://github.com/kvark/vange-rs) - vange-rs reimplements Vangers in Rust with wgpu graphics, aiming to reproduce its worlds, vehicles and single-player behavior using original game resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vange-rs-vangers-case/)</sub>
 - [**Vault Engine: rebuilding Fallout and Fallout 2 in Rust**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine reimplements Fallout and Fallout 2 as a Rust engine that reads the user's retail DAT archives. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vault-engine-case/)</sub>
 - [**Vault13: a Rust reimplementation of the Fallout 2 engine**](https://github.com/pingw33n/vault13) - Vault13 reimplements the Fallout 2 engine in Rust using files from a local game directory. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vault13-fallout-2-case/)</sub>

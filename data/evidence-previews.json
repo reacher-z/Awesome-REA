@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T03:31:34+00:00",
-    "entry_count": 1121,
-    "class_entry_count": 1151,
+    "generated_at": "2026-11-23T06:35:06+00:00",
+    "entry_count": 1124,
+    "class_entry_count": 1154,
     "class_counts": {
-      "image": 1083,
+      "image": 1086,
       "video": 38
     },
     "missing_count": 30,
@@ -4663,6 +4663,15 @@
       "checked_at": "2026-11-08T22:27:09+00:00"
     },
     {
+      "id": "memprocfs",
+      "image_url": "https://github.com/ufrisk/MemProcFS/wiki/resources/proc_base3.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/ufrisk/MemProcFS",
+      "revision": "6d30b27bcf3295088b36e289aa111aff176e993e",
+      "checked_at": "2026-11-23T06:35:06+00:00"
+    },
+    {
       "id": "mergen",
       "image_url": "https://raw.githubusercontent.com/NaC-L/Mergen/199805706ac00e156cc7e2a53ccc647c380f1786/images/graph.png",
       "kind": "image",
@@ -7840,6 +7849,15 @@
       "checked_at": "2026-11-09T04:14:52+00:00"
     },
     {
+      "id": "satdump",
+      "image_url": "https://raw.githubusercontent.com/SatDump/SatDump/9fee0793c7d42bea2d401d330422e18c33c126fa/gui-menu.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/SatDump/SatDump",
+      "revision": "9fee0793c7d42bea2d401d330422e18c33c126fa",
+      "checked_at": "2026-11-23T06:35:06+00:00"
+    },
+    {
       "id": "sberboom-remote-case",
       "image_url": "https://raw.githubusercontent.com/matvey68568/sberboom-remote/d18027bb86b2a975b17cc91a8f378184675faca0/SberBoomRemote/docs/player.png",
       "kind": "image",
@@ -7999,6 +8017,15 @@
       "source_url": "https://github.com/AjncSystem/ShadowOfTheColossus-PC",
       "revision": "53fd02920061cb41453b2f10802fe532d9510daa",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "shadps4",
+      "image_url": "https://raw.githubusercontent.com/shadPS4-emu/shadPS4/bbc020e5d0fcc959a4fe5bd9cdaa0205b0edf405/documents/Screenshots/1.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/shadPS4-emu/shadPS4",
+      "revision": "bbc020e5d0fcc959a4fe5bd9cdaa0205b0edf405",
+      "checked_at": "2026-11-23T06:35:06+00:00"
     },
     {
       "id": "shaolin-monks-android-case",

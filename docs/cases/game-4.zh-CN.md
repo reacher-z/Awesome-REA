@@ -43,6 +43,7 @@
 - [**OpenCrown PC：运行自有主机镜像的 Dragon's Crown Pro 原生宿主**](https://github.com/Nezara/OpenCrown-PC) - OpenCrown PC 在 Windows 和 Linux 上运行用户自行提供的《Dragon's Crown Pro》PS4 或 PS5 解密镜像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencrown-pc-case/)</sub>
 - [**OpenDW：将 Dragon Wars 移植为 C 语言游戏引擎**](https://github.com/devinsmith/opendw) - OpenDW 尝试将 16 位 DOS 游戏 Dragon Wars 移植为面向现代环境的 C 语言引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendw-dragon-wars-case/)</sub>
 - [**OpenDW：将原版 Mac Deepworld 客户端移植到 Windows**](https://github.com/kuroppoi/opendw) - OpenDW 使用 C++ 和 Axmol 对原版 Mac 平台 Deepworld 客户端进行逆向，并移植到 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendw-case/)</sub>
+- [**OpenJK：绝地学院与绝地放逐者的社区源码移植**](https://github.com/JACoders/OpenJK) - 社区维护的《绝地学院》与《绝地放逐者》引擎源码移植：保持与零售版游戏和 mod 的完全兼容，新增 x86\_64、Arm、Apple Silicon 以及 Linux、macOS 支持，核心玩法保持不变。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openjk/)</sub>
 - [**OpenMTV：Mad TV 的反编译与现代系统移植**](https://github.com/openmtv/openmtv) - OpenMTV 从 1991 年 DOS 游戏 Mad TV 的可执行文件重建可读 C 源码，并移植到 Windows、macOS 和 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmtv-mad-tv-case/)</sub>
 - [**openmx：将 MX Unleashed 模拟逻辑移植为 Rust**](https://github.com/FIZL0/openmx) - openmx 将 PS2 游戏 MX Unleashed 的骑行模拟逻辑移植为 Rust，并提供桌面及浏览器界面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmx-case/)</sub>
 - [**OpenNox：Nox 引擎的跨平台重建**](https://github.com/noxworld-dev/opennox) - OpenNox 使用 Go 和 C 移植并扩展 Nox 游戏引擎，用于跨平台游玩、保存与模组制作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opennox-engine-reconstruction-case/)</sub>
@@ -642,5 +643,4 @@
 - [**Underworld Adventures：重建《Ultima Underworld I》**](https://github.com/vividos/UnderworldAdventures) - Underworld Adventures 以 C++ 引擎在现代系统上重建《Ultima Underworld I》，读取用户自备的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/underworld-adventures-case/)</sub>
 - [**Underworld Revisited：用 Unity 重实现《创世纪地下世界》**](https://github.com/PQMarine/UnderworldRevisited) - Underworld Revisited 用 Unity 重新实现 1992 年的 Ultima Underworld: The Stygian Abyss。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/underworld-revisited/)</sub>
 - [**Untangle：基于 REA 与 Ghidra 证据的浏览器重建**](https://github.com/az9713/untangle-rebuild) - 作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/untangle-rea-evidence-rebuild-case/)</sub>
-- [**vakfu：重建 Wakfu 地图渲染**](https://github.com/jac3km4/vakfu) - vakfu 用 Rust 重建 Wakfu 的等距视角地图渲染，并从用户自己的游戏副本读取资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vakfu-case/)</sub>
 <!-- END GENERATED CASES -->
