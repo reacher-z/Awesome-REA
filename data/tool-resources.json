@@ -158349,5 +158349,173 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "bochs",
+    "name": "Bochs",
+    "url": "https://github.com/bochs-emu/Bochs",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A portable IA-32 (x86) PC emulator written in C++ that emulates the CPU, common I/O devices and a custom BIOS, capable of running Linux, DOS and Windows inside the emulation.",
+    "description_zh": "用 C++ 编写的可移植 IA-32（x86）PC 模拟器，模拟 CPU、常见 I/O 设备与自定义 BIOS，可在模拟环境中运行 Linux、DOS 与 Windows。",
+    "evidence_url": "https://github.com/bochs-emu/Bochs/blob/d214bbf542c8b1f7e0fa3dab37eba2250e551f70/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires BIOS or ROM images and boot media for the emulated machine; it builds and runs on most popular platforms.",
+      "It can emulate x86 CPUs from 386 through x86-64, and performance is lower than hardware virtualization.",
+      "LGPL-2.1-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "gopher64",
+    "name": "gopher64",
+    "url": "https://github.com/gopher64/gopher64",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A cross-platform Nintendo 64 emulator written in Rust with rollback netplay, upscaling, CRT shaders, CPU overclocking, cheats and RetroAchievements.",
+    "description_zh": "用 Rust 编写的跨平台 Nintendo 64 模拟器，支持回滚联机、放大、CRT 着色、CPU 超频、金手指与 RetroAchievements。",
+    "evidence_url": "https://github.com/gopher64/gopher64/blob/8159147d65ba17767fd5ed77a3d1898d637bb151/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Nintendo 64 ROMs; standalone builds are published for Windows, macOS and Linux.",
+      "Compatibility varies by title, and some features depend on the graphics backend.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "projectpsx",
+    "name": "ProjectPSX",
+    "url": "https://github.com/BluestormDNA/ProjectPSX",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A C# PlayStation emulator with a MIPS R3000A CPU, GTE, software rasterizer, CD-ROM, DMA, timers and controller support, written as a learning project without external dependencies.",
+    "description_zh": "用 C# 编写的 PlayStation 模拟器，包含 MIPS R3000A CPU、GTE、软件光栅化器、CD-ROM、DMA、定时器与手柄支持，是没有外部依赖的学习项目。",
+    "evidence_url": "https://github.com/BluestormDNA/ProjectPSX/blob/f4dc13aea42d2b5bc096e2315ba2a6b7542cf744/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a PS1 BIOS and game images; it builds with the .NET toolchain.",
+      "The project is experimental and implements a subset of the console, so compatibility varies by title.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "heads",
+    "name": "Heads",
+    "url": "https://github.com/linuxboot/heads",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A firmware configuration for laptops and servers that keeps the boot path free software, moves the root of trust into hardware and measures and attests the firmware state.",
+    "description_zh": "面向笔记本与服务器的固件配置，使启动路径保持自由软件、把信任根移入硬件，并度量和证明固件状态。",
+    "evidence_url": "https://github.com/linuxboot/heads/blob/5f835ca4bcf34b91ec284a181ab389e8eb2a9075/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires supported laptop or server hardware, an external SPI flash programmer and disassembly of the device.",
+      "It is work in progress and not ready for non-technical users; flashing carries a risk of bricking the device.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "libewf",
+    "name": "libewf",
+    "url": "https://github.com/libyal/libewf",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A library and tool set for reading and writing the Expert Witness Compression Format used by forensic disk images, including SMART, EnCase E01/Ex01 and logical evidence files.",
+    "description_zh": "用于读写取证磁盘镜像所用 Expert Witness 压缩格式（EWF）的库与工具集，支持 SMART、EnCase E01/Ex01 与逻辑证据文件。",
+    "evidence_url": "https://github.com/libyal/libewf/blob/c709254af2634f20d27f5f2c3af18bd67067e0e0/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a C toolchain and the libyal build system; the tools read and write the supported EWF variants.",
+      "The project is experimental, and Ex01 bzip2 compression and encryption are not supported.",
+      "LGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "oracles-project",
+    "name": "The Oracles Project: a widescreen port of Oracle of Ages and Oracle of Seasons",
+    "url": "https://github.com/thibautbus/top",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "A faithful, moddable port of Oracle of Ages and Oracle of Seasons that runs an untouched ROM supplied by the player, with widescreen support, item hotkeys, Lua mods and RetroAchievements.",
+    "description_zh": "对《塞尔达传说：大地之章》与《时空之章》的忠实可 mod 移植：运行玩家自备的未修改 ROM，并支持宽屏、道具快捷键、Lua mod 与 RetroAchievements。",
+    "evidence_url": "https://github.com/thibautbus/top/blob/9f7475cefc0a38f86ea760743994c16373c17e48/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the Oracle of Ages or Oracle of Seasons ROM supplied by the player; builds target Windows, macOS, Linux and Android.",
+      "It runs the original ROM and adds widescreen and mod support, so compatibility depends on the ROM version.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

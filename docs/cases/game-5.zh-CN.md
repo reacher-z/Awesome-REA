@@ -6,10 +6,11 @@
 
 [English](game-5.md)
 
-**364 个案例**
+**365 个案例**
 
 ## 引擎重实现
 
+- [**TurokEX：在 Kex 引擎上重建 PC 版 Turok**](https://github.com/svkaiser/TurokEX) - TurokEX 在 Kex 引擎上重新实现 PC 版 Turok，游戏中的角色、敌人 AI、武器、拾取物、区域和 HUD 均以 AngelScript 类编写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/turokex-case/)</sub>
 - [**TwinEngine：《Little Big Adventure 1》引擎重写**](https://github.com/LBALab/twin-e) - TwinEngine 用 C 重写《Little Big Adventure 1》引擎，读取原版安装文件运行游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twinengine-lba1-case/)</sub>
 - [**Twisted Metal：2012 年 PS3 游戏的 Rust 重实现**](https://gitlab.com/goblindo/twisted-metal) - Twisted Metal 以 Rust 重实现 2012 年 PS3 游戏的引擎，面向 Linux 和 macOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twisted-metal-native-engine-case/)</sub>
 - [**UA\_source：Urban Assault 游戏引擎重实现**](https://github.com/Marisa-Chan/UA_source) - UA\_source 使用 C++ 重实现 Urban Assault 引擎，运行时读取用户自备的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ua-source-case/)</sub>

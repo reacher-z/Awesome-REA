@@ -632,6 +632,7 @@
 - [**The Force Engine：为《Dark Forces》重建 Jedi Engine**](https://github.com/TheForceEngine/TheForceEngine) - The Force Engine 重建 Jedi Engine，利用用户的原版游戏在现代系统上运行《Star Wars: Dark Forces》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/the-force-engine-case/)</sub>
 - [**The Forgotten Server：开源 Tibia 服务器模拟器**](https://github.com/otland/forgottenserver) - 用 C++ 编写的开源 Tibia MMORPG 服务器模拟器，源自 OpenTibia Server，支持脚本、数据库与 Docker 镜像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/forgottenserver/)</sub>
 - [**The Hobbit：重建游戏图形引擎**](https://github.com/richcarl/hobbitgfx) - hobbitgfx 用 JavaScript 实现 Melbourne House 于 1982 年推出的文字冒险游戏《The Hobbit》的图形引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hobbitgfx-case/)</sub>
+- [**The Oracles Project：大地之章与时空之章的宽屏移植**](https://github.com/thibautbus/top) - 对《塞尔达传说：大地之章》与《时空之章》的忠实可 mod 移植：运行玩家自备的未修改 ROM，并支持宽屏、道具快捷键、Lua mod 与 RetroAchievements。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oracles-project/)</sub>
 - [**Thirdeye：重实现 Eye of the Beholder 3 与 Dungeon Hack 的 AESOP 引擎**](https://github.com/psi29a/thirdeye) - Thirdeye 以 C++ 重实现 AESOP/16 与 AESOP/32 引擎，读取原版 RES 文件并运行未修改的字节码，以支持 Eye of the Beholder 3 和 Dungeon Hack。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thirdeye-aesop-engine-case/)</sub>
 - [**Thyme《将军》引擎重实现**](https://github.com/TheAssemblyArmada/Thyme) - Thyme 是《命令与征服：将军之绝命时刻》的开源重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thyme/)</sub>
 - [**Tidewater：从零用 Rust 重写《魔兽争霸 II》引擎**](https://github.com/nlwstein/tidewater) - Tidewater 从零用 Rust 重写《魔兽争霸 II：战网版》引擎（含《黑暗之门》资料片），运行在你已拥有的游戏文件上：两个战役、自定义游戏、早期局域网对战、菜单、简报、存档、音效、音乐与视频均已实现，README 将状态记录为早期但可玩。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tidewater-warcraft2-case/)</sub>
@@ -641,5 +642,4 @@
 - [**touhou-engine：用 Python 重实现东方游戏玩法**](https://github.com/SaigyoujYuyuko/touhou-engine) - touhou-engine 用 Python 重实现东方弹幕游戏玩法，以 TH07《东方妖妖梦》为参考作品。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/touhou-engine-case/)</sub>
 - [**Tower Toppler：重做 Nebulus**](https://gitlab.com/roever/toppler) - Tower Toppler 重做了以旋转高塔为特色的平台解谜游戏 Nebulus，并重新绘制画面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tower-toppler-case/)</sub>
 - [**tower-together：为多人游戏重构 SimTower 模拟逻辑**](https://github.com/phulin/tower-together) - tower-together 将 SimTower 的模拟逻辑重构为多人浏览器游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tower-together-case/)</sub>
-- [**TurokEX：在 Kex 引擎上重建 PC 版 Turok**](https://github.com/svkaiser/TurokEX) - TurokEX 在 Kex 引擎上重新实现 PC 版 Turok，游戏中的角色、敌人 AI、武器、拾取物、区域和 HUD 均以 AngelScript 类编写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/turokex-case/)</sub>
 <!-- END GENERATED CASES -->

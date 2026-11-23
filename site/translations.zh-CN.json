@@ -44818,5 +44818,53 @@
       "结果取决于所配置的服务及其覆盖范围；只有显式选项才会提交样本。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "bochs": {
+    "name": "Bochs",
+    "requirements": [
+      "需要所模拟机型的 BIOS 或 ROM 镜像与启动介质；可在多数常见平台上构建与运行。",
+      "可模拟 386 至 x86-64 的多代 x86 CPU，性能低于硬件虚拟化。",
+      "采用 LGPL-2.1 许可证。"
+    ]
+  },
+  "gopher64": {
+    "name": "gopher64",
+    "requirements": [
+      "需要 Nintendo 64 ROM；提供 Windows、macOS 与 Linux 独立构建。",
+      "兼容性因游戏而异，部分功能取决于图形后端。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "projectpsx": {
+    "name": "ProjectPSX",
+    "requirements": [
+      "需要 PS1 BIOS 与游戏镜像；使用 .NET 工具链构建。",
+      "项目仍属实验性，只实现主机的一部分，兼容性因游戏而异。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "heads": {
+    "name": "Heads",
+    "requirements": [
+      "需要受支持的笔记本或服务器硬件、外部 SPI 闪存编程器，并拆机操作。",
+      "项目仍在开发中，不适合非技术用户；刷写存在使设备变砖的风险。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "libewf": {
+    "name": "libewf",
+    "requirements": [
+      "需要 C 工具链与 libyal 构建系统；工具可读写受支持的 EWF 变体。",
+      "项目仍属实验性，暂不支持 Ex01 的 bzip2 压缩与加密。",
+      "采用 LGPL-3.0 许可证。"
+    ]
+  },
+  "oracles-project": {
+    "name": "The Oracles Project：大地之章与时空之章的宽屏移植",
+    "requirements": [
+      "需要玩家自备的《大地之章》或《时空之章》ROM；构建覆盖 Windows、macOS、Linux 与 Android。",
+      "它运行原版 ROM 并加入宽屏与 mod 支持，兼容性取决于 ROM 版本。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

@@ -340,3 +340,30 @@ This round adds six records from the stored lead queue: Eglantine, NooDS, SkyEmu
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Eglantine, SkyEmu, Clock Signal and Ymir received Class 1 previews. Previews, READMEs and the site were regenerated.
+
+---
+
+# Backlog curation review, thirteenth batch — 2026-11-23
+
+This round adds six records from the stored lead queue: Bochs and Heads as hardware/firmware projects, gopher64 and ProjectPSX as emulator projects, libewf as a forensic image library, and The Oracles Project as a reconstruction case.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `bochs` | `firmware` | [bochs-emu/Bochs](https://github.com/bochs-emu/Bochs/blob/d214bbf542c8b1f7e0fa3dab37eba2250e551f70/README.md) | `a022a14b6ccaecde4b70b9bd06e998346cf0a6892353a7d459d59c52899e0e03` |
+| `gopher64` | `game-analysis` | [gopher64/gopher64](https://github.com/gopher64/gopher64/blob/8159147d65ba17767fd5ed77a3d1898d637bb151/README.md) | `5e3207fe2d7ad242f93d54776184d238a9e1e72c146fa339e9ae2ef14d898725` |
+| `projectpsx` | `game-analysis` | [BluestormDNA/ProjectPSX](https://github.com/BluestormDNA/ProjectPSX/blob/f4dc13aea42d2b5bc096e2315ba2a6b7542cf744/README.md) | `c32d55400add7e65e1f0f64d4376c42502380b46d38d3ddc9bb8e72cf47761c1` |
+| `heads` | `firmware` | [linuxboot/heads](https://github.com/linuxboot/heads/blob/5f835ca4bcf34b91ec284a181ab389e8eb2a9075/README.md) | `23c50d915913da6ed04d73ba369a344ed440fa23888f63910df512bd2b0058c3` |
+| `libewf` | `binary-libraries` | [libyal/libewf](https://github.com/libyal/libewf/blob/c709254af2634f20d27f5f2c3af18bd67067e0e0/README.md) | `7334b2ba64accd892006e97f17faf08a0fee190fb57ee6ab0c45e4b1d2084cf9` |
+| `oracles-project` | `reconstruction-cases` | [thibautbus/top](https://github.com/thibautbus/top/blob/9f7475cefc0a38f86ea760743994c16373c17e48/README.md) | `4f54090b2f914b647b416cb62daa577693a0e74612730ce69323d9e745db86dc` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| dolphin-emu/dolphin, stenzek/duckstation, LIJI32/SameBoy | No license file recorded by the GitHub API. |
+| TASEmulators/freej2me-plus, libretro/REminiscence | No license file recorded by the GitHub API. |
+| dwc_network_server_emulator | Last activity is 2024 and the project is not actively maintained. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Heads and The Oracles Project received Class 1 previews. The new case study updates the game case indexes and README case sections.

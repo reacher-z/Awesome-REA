@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T20:19:20+00:00",
-    "entry_count": 1154,
-    "class_entry_count": 1185,
+    "generated_at": "2026-11-23T20:59:32+00:00",
+    "entry_count": 1156,
+    "class_entry_count": 1187,
     "class_counts": {
-      "image": 1115,
+      "image": 1117,
       "video": 39
     },
     "missing_count": 31,
@@ -3503,6 +3503,15 @@
       "checked_at": "2026-11-22T06:41:04+00:00"
     },
     {
+      "id": "heads",
+      "image_url": "https://user-images.githubusercontent.com/827570/156627927-7239a936-e7b1-4ffb-9329-1c422dc70266.jpeg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/linuxboot/heads",
+      "revision": "5f835ca4bcf34b91ec284a181ab389e8eb2a9075",
+      "checked_at": "2026-11-23T20:59:32+00:00"
+    },
+    {
       "id": "heimdall-rs",
       "image_url": "https://raw.githubusercontent.com/Jon-Becker/heimdall-rs/89e107f033f6e8fc037ba58757ac855e2a7049dd/preview.png?raw=true",
       "kind": "image",
@@ -6147,6 +6156,15 @@
       "source_url": "https://github.com/overyonder/openzt2",
       "revision": "8c6d3972848606e30b16fb1d5396c79e1f5da445",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "oracles-project",
+      "image_url": "https://raw.githubusercontent.com/thibautbus/top/9f7475cefc0a38f86ea760743994c16373c17e48/docs/assets/launcher-home.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/thibautbus/top",
+      "revision": "9f7475cefc0a38f86ea760743994c16373c17e48",
+      "checked_at": "2026-11-23T20:59:32+00:00"
     },
     {
       "id": "osiris-onkyo-receiver-case",
