@@ -154761,6 +154761,7 @@
     ],
     "evidence_url": "https://github.com/captainsouthbird/smb3/blob/09b1bd81a788de8ceec664a34094e84ddb463117/README.md",
     "verified_at": "2026-11-07",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "added_at": "2026-11-23"
   }
 ]
