@@ -44898,5 +44898,53 @@
       "项目仍属实验性，侧重已文档化的格式结构；损坏或较新的变体可能无法完整解析。",
       "采用 LGPL-3.0 许可证。"
     ]
+  },
+  "flipperzero-firmware": {
+    "name": "Flipper Zero 固件",
+    "requirements": [
+      "需要 Flipper Zero 硬件与 qFlipper 或更新工具；固件使用项目工具链构建。",
+      "固件功能与射频能力取决于设备硬件及当地法规。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "unleashed-firmware": {
+    "name": "Unleashed 固件",
+    "requirements": [
+      "需要 Flipper Zero 与项目的更新方式；该固件与官方固件无隶属关系。",
+      "功能集与稳定性不同于官方固件，更新可能改变行为。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "gearsystem": {
+    "name": "Gearsystem",
+    "requirements": [
+      "需要 Master System、Game Gear 或 SG-1000 ROM；提供桌面平台构建。",
+      "兼容性因游戏而异，调试服务需要兼容的 AI 客户端。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "ludo": {
+    "name": "Ludo",
+    "requirements": [
+      "需要 GLFW 3.3、OpenGL 2.1 或更高版本与 OpenAL；libretro 核心需另行提供。",
+      "它是前端，硬件渲染核心可能要求比前端更新的 OpenGL 版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "libvshadow": {
+    "name": "libvshadow",
+    "requirements": [
+      "需要 C 工具链与 libyal 构建系统，以及包含 VSS 存储的卷镜像。",
+      "项目仍属 alpha，Dokan 与多线程支持仍在开发中。",
+      "采用 LGPL-3.0 许可证。"
+    ]
+  },
+  "libolecf": {
+    "name": "libolecf",
+    "requirements": [
+      "需要 C 工具链与 libyal 构建系统，以及 OLE 2 复合文件。",
+      "项目仍属 alpha，多线程支持仍在计划中。",
+      "采用 LGPL-3.0 许可证。"
+    ]
   }
 }

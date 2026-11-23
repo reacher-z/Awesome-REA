@@ -391,3 +391,30 @@ This round adds four libyal format libraries from the stored lead queue: libesed
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. All are Class 2, so no previews were added; READMEs and the site were regenerated.
+
+---
+
+# Backlog curation review, fifteenth batch — 2026-11-23
+
+This round adds six records from the stored lead queue: the official Flipper Zero firmware and the Unleashed community firmware, Gearsystem and Ludo for emulation, and two more libyal format libraries (VSS and OLE 2).
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `flipperzero-firmware` | `firmware` | [flipperdevices/flipperzero-firmware](https://github.com/flipperdevices/flipperzero-firmware/blob/e459e2d939db7f292d7dcfe6935b8fb2641409e3/README.md) | `424edcdfed69e00beb9ee514e78c945f14c996e490d65bcf8cc163fc288a3e67` |
+| `unleashed-firmware` | `firmware` | [DarkFlippers/unleashed-firmware](https://github.com/DarkFlippers/unleashed-firmware/blob/a96dd64d3520d7643b58e633ab7a99758938c371/README.md) | `e09fab52d7beee2ab0132e7717b4564bcefcf8ec7a69e32cdfba858aeeb3c4fc` |
+| `gearsystem` | `game-analysis` | [drhelius/Gearsystem](https://github.com/drhelius/Gearsystem/blob/2fdd8f7c8ff3ae9523dafb7f1d8125776e96aae6/README.md) | `88e98dab415b3ebbd5d6290fcac5780eb0187dd924b292f832fe3dfbd3b3fb60` |
+| `ludo` | `game-analysis` | [libretro/ludo](https://github.com/libretro/ludo/blob/7a2dc452c72e43dc06b5ecc711c3d03c8aeeb261/README.md) | `7db79884aee333032ba5397160ee2da8ada192f5624b391081fabb13a01c8699` |
+| `libvshadow` | `binary-libraries` | [libyal/libvshadow](https://github.com/libyal/libvshadow/blob/0551f11ed32502063de7cd80767d52d4a070a516/README.md) | `681e0789488d85895863232c4d3dcfc8bfb88855f3569eccf101f5c9394edca3` |
+| `libolecf` | `binary-libraries` | [libyal/libolecf](https://github.com/libyal/libolecf/blob/148cef77c93f5597a05ed3d9ed0f6b8ca9247d24/README.md) | `2e10a77c6de4100c76f8b165542510beed88a42902f34e21b7b64b6284cdaafd` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| schellingb/dosbox-pure, libyal/libscca, libyal/libfwsi | READMEs are below the 400-byte documentation threshold. |
+| Next-Flip/Momentum-Firmware | Another Flipper Zero firmware; the official and Unleashed projects cover the base and community variants. |
+| dwc_network_server_emulator, mooneye-gb, GPCS4 | Last activity is 2022-2024 and the projects are not actively maintained. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Unleashed, Gearsystem and Ludo received Class 1 previews. Previews, READMEs and the site were regenerated.

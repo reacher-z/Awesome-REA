@@ -158625,5 +158625,170 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "flipperzero-firmware",
+    "name": "Flipper Zero Firmware",
+    "url": "https://github.com/flipperdevices/flipperzero-firmware",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "The official open-source firmware for the Flipper Zero multi-tool, providing the device operating system, radio stacks, applications and update tooling.",
+    "description_zh": "Flipper Zero 多功能工具的官方开源固件，提供设备操作系统、射频协议栈、应用与更新工具。",
+    "evidence_url": "https://github.com/flipperdevices/flipperzero-firmware/blob/e459e2d939db7f292d7dcfe6935b8fb2641409e3/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Flipper Zero hardware and the qFlipper or update tool; firmware is built with the project toolchain.",
+      "Firmware features and radio capabilities depend on the device hardware and on regional regulations.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "unleashed-firmware",
+    "name": "Unleashed Firmware",
+    "url": "https://github.com/DarkFlippers/unleashed-firmware",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A community custom firmware for the Flipper Zero that adds features and applications beyond the official firmware, with its own release and update channel.",
+    "description_zh": "面向 Flipper Zero 的社区自定义固件，在官方固件之外增加功能与应用，并使用独立的发布与更新渠道。",
+    "evidence_url": "https://github.com/DarkFlippers/unleashed-firmware/blob/a96dd64d3520d7643b58e633ab7a99758938c371/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Flipper Zero and the project update path; it is not affiliated with the official firmware.",
+      "Feature set and stability differ from the official firmware, and updates may change behavior.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "gearsystem",
+    "name": "Gearsystem",
+    "url": "https://github.com/drhelius/Gearsystem",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A Sega Master System, Game Gear and SG-1000 emulator and debugger with an embedded MCP server, written in C++.",
+    "description_zh": "用 C++ 编写的 Sega Master System、Game Gear 与 SG-1000 模拟器与调试器，内置 MCP 服务。",
+    "evidence_url": "https://github.com/drhelius/Gearsystem/blob/2fdd8f7c8ff3ae9523dafb7f1d8125776e96aae6/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Master System, Game Gear or SG-1000 ROMs; builds are published for desktop platforms.",
+      "Compatibility varies by title, and the debugging server needs a compatible AI client.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ludo",
+    "name": "Ludo",
+    "url": "https://github.com/libretro/ludo",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A work-in-progress libretro frontend written in Go that runs software-rendered and desktop OpenGL libretro cores on macOS, Linux, Linux ARM and Windows.",
+    "description_zh": "用 Go 编写的 libretro 前端（仍在开发中），可在 macOS、Linux、Linux ARM 与 Windows 上运行软件渲染及桌面 OpenGL libretro 核心。",
+    "evidence_url": "https://github.com/libretro/ludo/blob/7a2dc452c72e43dc06b5ecc711c3d03c8aeeb261/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires GLFW 3.3, OpenGL 2.1 or newer and OpenAL; libretro cores are supplied separately.",
+      "It is a frontend, and hardware-rendered cores may need a newer OpenGL version than the frontend provides.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "libvshadow",
+    "name": "libvshadow",
+    "url": "https://github.com/libyal/libvshadow",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A library and tools to access the Volume Shadow Snapshot format used by Windows to keep copies of volume data on storage media.",
+    "description_zh": "用于访问 Windows 在存储介质上保留卷数据副本所用 Volume Shadow Snapshot（VSS）格式的库与工具。",
+    "evidence_url": "https://github.com/libyal/libvshadow/blob/0551f11ed32502063de7cd80767d52d4a070a516/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a C toolchain and the libyal build system, plus a volume image containing VSS stores.",
+      "The project is alpha, and Dokan and multi-threading support remain work in progress.",
+      "LGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "libolecf",
+    "name": "libolecf",
+    "url": "https://github.com/libyal/libolecf",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A library and tools to access the OLE 2 Compound File format used by Microsoft Office documents, thumbs.db and other file formats.",
+    "description_zh": "用于访问 Microsoft Office 文档、thumbs.db 等文件所用 OLE 2 Compound File（OLECF）格式的库与工具。",
+    "evidence_url": "https://github.com/libyal/libolecf/blob/148cef77c93f5597a05ed3d9ed0f6b8ca9247d24/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a C toolchain and the libyal build system, plus an OLE 2 compound file.",
+      "The project is alpha, and multi-threading support is planned rather than implemented.",
+      "LGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

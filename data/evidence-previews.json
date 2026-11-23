@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T20:59:32+00:00",
-    "entry_count": 1156,
-    "class_entry_count": 1187,
+    "generated_at": "2026-11-23T22:18:05+00:00",
+    "entry_count": 1159,
+    "class_entry_count": 1190,
     "class_counts": {
-      "image": 1117,
+      "image": 1120,
       "video": 39
     },
     "missing_count": 31,
@@ -3080,6 +3080,15 @@
       "checked_at": "2026-11-23T19:36:56+00:00"
     },
     {
+      "id": "gearsystem",
+      "image_url": "http://www.geardome.com/files/gearsystem/01.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/drhelius/Gearsystem",
+      "revision": "2fdd8f7c8ff3ae9523dafb7f1d8125776e96aae6",
+      "checked_at": "2026-11-23T22:18:05+00:00"
+    },
+    {
       "id": "gef",
       "image_url": "https://raw.githubusercontent.com/hugsy/gef/8514ebc8f1710beb3acb8ae4d09643b00031ead9/docs/assets/images/gef-context.png",
       "kind": "image",
@@ -4482,6 +4491,15 @@
       "source_url": "https://github.com/gage-marshall/lp-engine",
       "revision": "0c73f43f4fea2fb722f479f05161ba90354da3f9",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "ludo",
+      "image_url": "https://raw.githubusercontent.com/kivutar/ludo-assets/master/illustration.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/libretro/ludo",
+      "revision": "7a2dc452c72e43dc06b5ecc711c3d03c8aeeb261",
+      "checked_at": "2026-11-23T22:18:05+00:00"
     },
     {
       "id": "lufia-ii-recompiled-case",
@@ -9674,6 +9692,15 @@
       "source_url": "https://github.com/jopohl/urh",
       "revision": "1403d92987cc3d01d41aff64250955ce455dabd2",
       "checked_at": "2026-11-01T10:07:02+00:00"
+    },
+    {
+      "id": "unleashed-firmware",
+      "image_url": "https://github.com/user-attachments/assets/da3a864d-d1c7-42cc-8a86-6fcaf26663ec",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/DarkFlippers/unleashed-firmware",
+      "revision": "a96dd64d3520d7643b58e633ab7a99758938c371",
+      "checked_at": "2026-11-23T22:18:05+00:00"
     },
     {
       "id": "unleashed-recomp-android",
