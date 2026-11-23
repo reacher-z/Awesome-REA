@@ -193,6 +193,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 #### 案例
 
+- [**COGBox**](https://github.com/Shagg88/COGBox) - COGBox 启动《战争机器》《战争机器2》《战争机器3》和《战争机器：审判》的本地移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cogbox/)</sub>
 - [**Atlantis Native：将 Atlantis 与 Atlantis II 引擎移植到 Rust**](https://github.com/ripleyXLR8/atlantis-native) - Atlantis Native 把经逆向重建的 CryOmni3D Atlantis 引擎移植到 Rust，支持 Atlantis: The Lost Tales 与 Atlantis II。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/atlantis-native-case/)</sub>
 - [**bf-private-server：《Brave Frontier》服务端重建**](https://github.com/joppe2001/bf-private-server) - bf-private-server 为《Brave Frontier》2.19.6 客户端重建可自行部署的服务端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/bf-private-server-case/)</sub>
 - [**Chariot《帝国时代》引擎重实现**](https://github.com/ChariotEngine/Chariot) - Chariot 是一个开源项目，旨在重新实现初代《帝国时代》（1997）的游戏引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/chariot/)</sub>
@@ -202,7 +203,6 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Devil May Cry：实验性的 PS2 静态重编译**](https://github.com/Gui-Tora/dmc-recomp) - dmc-recomp 借助 PS2Recomp 和项目运行时，将 PAL 欧版 PlayStation 2 游戏 Devil May Cry 转换为 PC 原生代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dmc-recomp-case/)</sub>
 - [**FH2MP：重建《Forza Horizon 2》在线服务**](https://github.com/Charelene/FH2MP) - FH2MP 根据 Xbox One 版《Forza Horizon 2》客户端中恢复的协议行为，搭建替代服务器以恢复多人游戏。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/fh2mp-case/)</sub>
 - [**FreeRS42：重实现《Ricochet Xtreme》**](https://github.com/NuVelocity/FRS42) - FreeRS42 是使用 NuVelocity 引擎、以 C++ 重现 PC 游戏《Ricochet Xtreme》的项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/freers42-ricochet-xtreme-case/)</sub>
-- [**GTA Mode：逆向 SimCity 3000 Unlimited 并开发原生插件**](https://github.com/DenisSergeevitch/simcity3000-gta-mode) - GTA Mode 是为《SimCity 3000 Unlimited》加入可操控行人和车辆的原生插件，这些行人和车辆由插件生成。 <sub>案例 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/simcity-3000-gta-mode-case/)</sub>
 
 #### 工具、项目与集成
 
