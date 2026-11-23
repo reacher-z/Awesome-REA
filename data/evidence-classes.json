@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-10T03:26:21+00:00",
-  "entry_count": 5191,
+  "generated_at": "2026-11-23T05:08:04+00:00",
+  "entry_count": 5207,
   "class_counts": {
    "0": 15,
-   "1": 1126,
-   "2": 3844,
+   "1": 1128,
+   "2": 3858,
    "3": 186
   },
   "unknown_count": 20,
@@ -145721,6 +145721,467 @@
    "checked_at": "2026-11-10T03:14:52+00:00",
    "evidence_status": "observed",
    "scope": "notes",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "pulp-daw-public",
+   "url": "https://github.com/AlexAtFF/pulp-daw-public",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 25222,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-23T05:08:01+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "godzilla-nights",
+   "url": "https://github.com/ChetasLua/godzilla-nights",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2967,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-23T05:08:01+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "the-last-good-pelican",
+   "url": "https://github.com/ChetasLua/the-last-good-pelican-fable-5.2",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4293,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-23T05:08:01+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "kagami",
+   "url": "https://github.com/Florencvv/kagami",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 8410,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 8,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-23T05:08:01+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "castle-cinematic",
+   "url": "https://github.com/Leonxlnx/castle-cinematic",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5014,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 6,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-23T05:08:01+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "ink-dragon",
+   "url": "https://github.com/Leonxlnx/ink-dragon",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3998,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-23T05:08:01+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "room-at-dawn",
+   "url": "https://github.com/Leonxlnx/room-at-dawn",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3715,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 2,
+    "release_asset_count": 6,
+    "demo": [
+     "image"
+    ],
+    "media_count": 7,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "checked_at": "2026-11-23T05:08:01+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "fly-in-kit",
+   "url": "https://github.com/amirmushichge/fly-in-kit",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5600,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image",
+     "demo-link"
+    ],
+    "media_count": 2,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-23T05:08:01+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "shred-kit",
+   "url": "https://github.com/amirmushichge/shred-kit",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4702,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image",
+     "demo-link"
+    ],
+    "media_count": 5,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-23T05:08:02+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "worm-rider",
+   "url": "https://github.com/amirmushichge/worm-rider",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4528,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 5,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-23T05:08:02+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "blackout",
+   "url": "https://github.com/anstapnever/blackout",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 6295,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 7,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-23T05:08:02+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "one-sweep",
+   "url": "https://github.com/anstapnever/one-sweep",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5689,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 7,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-23T05:08:02+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "ballpoint",
+   "url": "https://github.com/crossps/ballpoint",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2714,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-23T05:08:02+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "harappa",
+   "url": "https://github.com/kanaworksai-hue/harappa",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 35430,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 6,
+    "release_asset_count": 6,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 21,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "checked_at": "2026-11-23T05:08:03+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "ryu",
+   "url": "https://github.com/seeconever/ryu",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 10741,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 7,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-23T05:08:02+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "steel-webgpu",
+   "url": "https://github.com/skild-ai/steel-webgpu",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 1621,
+    "docs_full": false,
+    "download": "package",
+    "release_count": 1,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [
+     "bun add @skild-ai/steel-webgpu"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-23T05:08:03+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   }

@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-10T03:26:21+00:00",
-    "entry_count": 1112,
-    "class_entry_count": 1141,
+    "generated_at": "2026-11-23T05:08:55+00:00",
+    "entry_count": 1114,
+    "class_entry_count": 1143,
     "class_counts": {
-      "image": 1074,
+      "image": 1076,
       "video": 38
     },
     "missing_count": 29,
@@ -3265,6 +3265,15 @@
       "source_url": "https://github.com/MikeCoder96/HappyLighting-py",
       "revision": "82fdd49742486d27410fad2b526853c849d07207",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "harappa",
+      "image_url": "https://raw.githubusercontent.com/kanaworksai-hue/harappa/0a4fbe7d2155fc1125dc50406c7e7aaf1cb66ac1/docs/social_preview.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/kanaworksai-hue/harappa",
+      "revision": "0a4fbe7d2155fc1125dc50406c7e7aaf1cb66ac1",
+      "checked_at": "2026-11-23T05:08:55+00:00"
     },
     {
       "id": "harvest-moon-snes-c",
@@ -7630,6 +7639,15 @@
       "source_url": "https://github.com/sirbilliams/Rollerbot-Android",
       "revision": "a27d41a2a6cb116da8cb687fa17d34b24e64e822",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "room-at-dawn",
+      "image_url": "https://raw.githubusercontent.com/Leonxlnx/room-at-dawn/aab8be218aa051bbb2e22b82916962619c951747/docs/media/hero.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Leonxlnx/room-at-dawn",
+      "revision": "aab8be218aa051bbb2e22b82916962619c951747",
+      "checked_at": "2026-11-23T05:08:55+00:00"
     },
     {
       "id": "rpfm",
