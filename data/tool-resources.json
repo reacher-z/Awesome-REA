@@ -154761,6 +154761,7 @@
     ],
     "evidence_url": "https://github.com/deathkiller/jazz2/blob/80246b3617db61daa3ee9cb12224521f076ba724/README.md",
     "verified_at": "2026-11-07",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "added_at": "2026-11-23"
   }
 ]
