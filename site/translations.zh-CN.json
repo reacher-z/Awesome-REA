@@ -44530,5 +44530,69 @@
       "它是用于防御测试的技术清单，不是生产环境的检测器。",
       "采用 GPL-2.0 许可证。"
     ]
+  },
+  "cemu": {
+    "name": "Cemu",
+    "requirements": [
+      "需要 Wii U 游戏文件或光盘以及主机系统文件；支持 64 位 Windows、Linux 与 macOS。",
+      "兼容性与性能因游戏而异，在线服务未被复现。",
+      "采用 MPL-2.0 许可证。"
+    ]
+  },
+  "coreboot": {
+    "name": "coreboot",
+    "requirements": [
+      "需要受支持的主板硬件，以及该主板的构建与刷写方式。",
+      "支持的主板与 payload 按主板而定；刷写失败可能导致设备无法启动。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "hackrf": {
+    "name": "HackRF",
+    "requirements": [
+      "需要 HackRF 硬件与装有 HackRF 工具的主机；固件更新使用设备的 DFU 模式。",
+      "发射能力受硬件与当地无线电法规限制。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "fwupd": {
+    "name": "fwupd",
+    "requirements": [
+      "需要受支持的 Linux 发行版与带固件元数据的设备；守护进程以系统权限运行。",
+      "设备覆盖取决于已安装的插件与厂商元数据，部分设备只能通过厂商工具更新。",
+      "采用 LGPL-2.1 许可证。"
+    ]
+  },
+  "pywhat": {
+    "name": "pyWhat",
+    "requirements": [
+      "需要 Python 3 与 pip；安装 pywhat 后对文件或输入运行。",
+      "识别结果取决于其规则集，未知或混淆内容可能被误判。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "nvim-dap": {
+    "name": "nvim-dap",
+    "requirements": [
+      "需要 Neovim 与目标语言的调试适配器。",
+      "它是客户端；调试功能取决于适配器与目标运行时。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "globalprotect-openconnect": {
+    "name": "GlobalProtect-openconnect",
+    "requirements": [
+      "需要 OpenConnect 与可连接的 GlobalProtect 网关；桌面应用可在 Windows、macOS、Linux 或 BSD 运行。",
+      "网关配置与 SAML 或 SSO 流程决定可用的认证模式。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "greenlight": {
+    "name": "Greenlight",
+    "requirements": [
+      "需要有效的 Xbox 流媒体订阅与手柄；客户端连接 Microsoft 的流媒体服务。",
+      "串流可用性取决于服务区域与客户端构建。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

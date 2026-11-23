@@ -157340,5 +157340,224 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "cemu",
+    "name": "Cemu",
+    "url": "https://github.com/cemu-project/Cemu",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A Wii U emulator that runs most Wii U games and homebrew in a playable state, written in C/C++ and actively developed, with 64-bit Windows, Linux and macOS builds.",
+    "description_zh": "Wii U 模拟器，可运行大多数 Wii U 游戏与自制程序，使用 C/C++ 编写并持续开发，提供 64 位 Windows、Linux 与 macOS 构建。",
+    "evidence_url": "https://github.com/cemu-project/Cemu/blob/2f49c079da1d50b85cea0ed99aedda58846b3523/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Wii U game files or discs and the console system files; builds target 64-bit Windows, Linux and macOS.",
+      "Compatibility and performance vary by game, and online services are not reproduced.",
+      "MPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "coreboot",
+    "name": "coreboot",
+    "url": "https://github.com/coreboot/coreboot",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A free software project that replaces proprietary BIOS and UEFI firmware on supported computers, performs hardware initialization and passes control to a payload that boots the operating system.",
+    "description_zh": "用自由软件替代受支持计算机上专有 BIOS/UEFI 固件的项目：完成硬件初始化后，把控制权交给 payload 以启动操作系统。",
+    "evidence_url": "https://github.com/coreboot/coreboot/blob/41084423cd688dcd57e7ac59b71e41bf38a26b92/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires supported mainboard hardware and the build and flashing method for that board.",
+      "Supported boards and payloads are selected per mainboard, and a failed flash can leave a device unbootable.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "hackrf",
+    "name": "HackRF",
+    "url": "https://github.com/greatscottgadgets/hackrf",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Hardware designs and software for HackRF, a low-cost open-source software-defined radio platform, including firmware, host tools and documentation.",
+    "description_zh": "HackRF 这一低成本开源软件无线电平台的硬件设计与软件，包括固件、主机工具与文档。",
+    "evidence_url": "https://github.com/greatscottgadgets/hackrf/blob/8540a765590bf67cade4139f6fc9513c238c7235/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires HackRF hardware and a host with the HackRF tools; firmware updates use the device DFU mode.",
+      "Transmission is limited by the hardware and by local radio regulations.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "fwupd",
+    "name": "fwupd",
+    "url": "https://github.com/fwupd/fwupd",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A system daemon that lets session software update firmware on supported devices, with metadata distribution and a plugin architecture for device-specific update protocols.",
+    "description_zh": "系统守护进程，让会话软件更新受支持设备的固件，提供元数据分发与面向设备更新协议的插件架构。",
+    "evidence_url": "https://github.com/fwupd/fwupd/blob/cab5cd33cbd101bb500f2145557fe787d7d553aa/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported Linux distribution and a device with firmware metadata; the daemon runs with system privileges.",
+      "Device coverage depends on installed plugins and vendor metadata, and some devices expose updates only through vendor tools.",
+      "LGPL-2.1-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "pywhat",
+    "name": "pyWhat",
+    "url": "https://github.com/bee-san/pyWhat",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A Python tool that identifies what a file, string or stream is, recognizing file types, hashes, URLs, IP addresses and other artifacts, with a command line and a library API.",
+    "description_zh": "识别文件、字符串或数据流内容的 Python 工具，可辨认文件类型、哈希、URL、IP 地址等，并提供命令行与库 API。",
+    "evidence_url": "https://github.com/bee-san/pyWhat/blob/eeca660fac35f32ffe975ddc49fb6a38046d6d9a/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3 and pip; install pywhat and run it on a file or input.",
+      "Recognition depends on its rule set, and unknown or obfuscated content can be misidentified.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "nvim-dap",
+    "name": "nvim-dap",
+    "url": "https://github.com/mfussenegger/nvim-dap",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A Debug Adapter Protocol client for Neovim that launches or attaches to applications, sets breakpoints, steps through code and inspects application state.",
+    "description_zh": "Neovim 的调试适配器协议（DAP）客户端，可启动或附加到应用、设置断点、单步执行并检查应用状态。",
+    "evidence_url": "https://github.com/mfussenegger/nvim-dap/blob/cfa2d58f4537aca6ca83e2de1a0d9f1491121264/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Neovim and a debug adapter for the target language.",
+      "It is a client, so debugging features depend on the adapter and the target runtime.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "globalprotect-openconnect",
+    "name": "GlobalProtect-openconnect",
+    "url": "https://github.com/yuezk/GlobalProtect-openconnect",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A GlobalProtect VPN client built on OpenConnect, with a desktop app for Windows, macOS, Linux, FreeBSD and OpenBSD and the gpclient command-line client.",
+    "description_zh": "基于 OpenConnect 的 GlobalProtect VPN 客户端，提供 Windows、macOS、Linux、FreeBSD 与 OpenBSD 桌面应用及 gpclient 命令行客户端。",
+    "evidence_url": "https://github.com/yuezk/GlobalProtect-openconnect/blob/2160bd82f8432eb0f9b567f07e1e642a50c301e9/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires OpenConnect and a reachable GlobalProtect gateway; the desktop app runs on Windows, macOS, Linux or BSD.",
+      "Gateway configuration and SAML or SSO flows determine which authentication modes work.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "greenlight",
+    "name": "Greenlight",
+    "url": "https://github.com/unknownskl/greenlight",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "An open-source client for Xbox Cloud Gaming and Xbox home streaming, written in TypeScript and running as a desktop application.",
+    "description_zh": "面向 Xbox Cloud Gaming 与 Xbox 家庭串流的开源客户端，使用 TypeScript 编写并以桌面应用运行。",
+    "evidence_url": "https://github.com/unknownskl/greenlight/blob/baa4072cbe1583e76b6271a82e8eda7d46fcf9b9/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a valid Xbox streaming subscription and a controller; the client connects to the Microsoft streaming service.",
+      "Streaming availability depends on the service regions and on the client build.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

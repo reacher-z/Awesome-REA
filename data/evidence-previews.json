@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T10:02:47+00:00",
-    "entry_count": 1132,
-    "class_entry_count": 1163,
+    "generated_at": "2026-11-23T17:33:07+00:00",
+    "entry_count": 1136,
+    "class_entry_count": 1167,
     "class_counts": {
-      "image": 1093,
+      "image": 1097,
       "video": 39
     },
     "missing_count": 31,
@@ -3125,6 +3125,15 @@
       "checked_at": "2026-11-09T06:56:34+00:00"
     },
     {
+      "id": "globalprotect-openconnect",
+      "image_url": "https://raw.githubusercontent.com/yuezk/GlobalProtect-openconnect/69155d04b9d0f62101307fadde4f79100b523404/docs/images/gp-connect-showcase-light.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/yuezk/GlobalProtect-openconnect",
+      "revision": "69155d04b9d0f62101307fadde4f79100b523404",
+      "checked_at": "2026-11-23T17:33:07+00:00"
+    },
+    {
       "id": "glsmac",
       "image_url": "https://user-images.githubusercontent.com/7736265/227072592-0acc91e6-d3b4-46d2-98f6-0ba4e430328f.png",
       "kind": "image",
@@ -3251,6 +3260,15 @@
       "checked_at": "2026-11-09T07:55:54+00:00"
     },
     {
+      "id": "greenlight",
+      "image_url": "https://raw.githubusercontent.com/unknownskl/greenlight/ea0f9ec3fbc6657ad1396f40fb5274d0096a90b6/images/main.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/unknownskl/greenlight",
+      "revision": "ea0f9ec3fbc6657ad1396f40fb5274d0096a90b6",
+      "checked_at": "2026-11-23T17:33:07+00:00"
+    },
+    {
       "id": "gridcraft-case",
       "image_url": "https://raw.githubusercontent.com/storytold/gridcraft/7102429a9a2fd9f6fba8e06238a1cce5807fb1b0/docs/images/page-break.png",
       "kind": "image",
@@ -3303,6 +3321,15 @@
       "source_url": "https://github.com/ptx2/gymnasticon",
       "revision": "e142f539c518d6d4ced3abdd587a825b918a9367",
       "checked_at": "2026-11-04T06:53:59+00:00"
+    },
+    {
+      "id": "hackrf",
+      "image_url": "https://raw.github.com/mossmann/hackrf/master/docs/images/HackRF-One-fd0-0009.jpeg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/greatscottgadgets/hackrf",
+      "revision": "8540a765590bf67cade4139f6fc9513c238c7235",
+      "checked_at": "2026-11-23T17:33:07+00:00"
     },
     {
       "id": "halo-ce-rg35xx",
@@ -6759,6 +6786,15 @@
       "source_url": "https://github.com/quarkslab/pyrrha",
       "revision": "ca62056ad27e3b17299ece6bbbb63b510cba1225",
       "checked_at": "2026-11-04T06:53:53+00:00"
+    },
+    {
+      "id": "pywhat",
+      "image_url": "https://raw.githubusercontent.com/bee-san/pyWhat/eeca660fac35f32ffe975ddc49fb6a38046d6d9a/images/main_demo.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/bee-san/pyWhat",
+      "revision": "eeca660fac35f32ffe975ddc49fb6a38046d6d9a",
+      "checked_at": "2026-11-23T17:33:07+00:00"
     },
     {
       "id": "qemu-rtd2841",

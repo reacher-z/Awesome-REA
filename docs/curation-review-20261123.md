@@ -197,3 +197,32 @@ This round adds eight records from the stored lead queue: AnyPS5 (PS5 executable
 ## Validation notes
 
 All eight records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; AnyPS5 and PortaPack Mayhem received Class 1 previews. The two new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, eighth batch — 2026-11-23
+
+This round adds eight records from the stored lead queue: Cemu (Wii U emulator), coreboot and HackRF as hardware projects, fwupd as a firmware update daemon, pyWhat and nvim-dap as analysis tools, and GlobalProtect-openconnect and Greenlight as protocol clients.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `cemu` | `game-analysis` | [cemu-project/Cemu](https://github.com/cemu-project/Cemu/blob/2f49c079da1d50b85cea0ed99aedda58846b3523/README.md) | `ba008e510be40b711822b6aab1c161c96b080fa1921f38fa5fc26493f41bae70` |
+| `coreboot` | `firmware` | [coreboot/coreboot](https://github.com/coreboot/coreboot/blob/41084423cd688dcd57e7ac59b71e41bf38a26b92/README.md) | `e623ebfad2fef138c471c5712bbbf6c9243e8b6bab72136c0f148789b6899f3a` |
+| `hackrf` | `firmware` | [greatscottgadgets/hackrf](https://github.com/greatscottgadgets/hackrf/blob/8540a765590bf67cade4139f6fc9513c238c7235/README.md) | `dd72fde6951b106f4db029707a84bd317e9a417fb8d3ac93738952f8b996558d` |
+| `fwupd` | `firmware` | [fwupd/fwupd](https://github.com/fwupd/fwupd/blob/cab5cd33cbd101bb500f2145557fe787d7d553aa/README.md) | `6e0685b5d16c879d1942b16ac57dec7b847a863cebea43c4f1281cd907f61682` |
+| `pywhat` | `native-analysis` | [bee-san/pyWhat](https://github.com/bee-san/pyWhat/blob/eeca660fac35f32ffe975ddc49fb6a38046d6d9a/README.md) | `4403a9c4b0264e9b2068fb830c4a07bd944b990cda4a3faab795fb80c64e1ba1` |
+| `nvim-dap` | `dynamic-analysis` | [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap/blob/cfa2d58f4537aca6ca83e2de1a0d9f1491121264/README.md) | `d66b0182b783c961b3d3bb961daf2aead11ff8557fc86b287ce28ac93d235568` |
+| `globalprotect-openconnect` | `protocol-analysis` | [yuezk/GlobalProtect-openconnect](https://github.com/yuezk/GlobalProtect-openconnect/blob/2160bd82f8432eb0f9b567f07e1e642a50c301e9/README.md) | `49ff9d9b9f42726bdfe4f25ded464be9fd9105afb75592e533e29ace399cec07` |
+| `greenlight` | `protocol-analysis` | [unknownskl/greenlight](https://github.com/unknownskl/greenlight/blob/baa4072cbe1583e76b6271a82e8eda7d46fcf9b9/README.md) | `eb7ce65fc24b3f944cba6f31d86940d78b846dca4ca6a95fa7c2c21cdb1e3910` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| systemsecuritystorm/awesome-binary-similarity | No license file recorded by the GitHub API. |
+| melonDS, Vita3K, flycast, desmume, project64, jsnes, 86Box, visualboyadvance-m | More console emulators; deferred to keep this batch on firmware and analysis tooling. |
+| Playnite, unpoller, wolfssl | General software or infrastructure rather than reverse-engineering tools. |
+
+## Validation notes
+
+All eight records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; four Class 1 records received previews. Previews, READMEs and the site were regenerated.
