@@ -154761,6 +154761,7 @@
     ],
     "evidence_url": "https://github.com/AshfordFamily/recvx-decomp/blob/23bc6cb06c1b0e1093eeba0abca566dadec69a64/README.md",
     "verified_at": "2026-11-07",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "added_at": "2026-11-23"
   }
 ]
