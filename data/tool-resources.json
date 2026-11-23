@@ -154761,6 +154761,7 @@
     ],
     "evidence_url": "https://github.com/SwagSoftware/KisakBlack/blob/306bb14a8e052a6244bd1df4e4df7d8504c04ef4/README.md",
     "verified_at": "2026-11-07",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "added_at": "2026-11-23"
   }
 ]
