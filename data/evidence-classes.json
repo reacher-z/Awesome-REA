@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-23T18:17:13+00:00",
-  "entry_count": 5295,
+  "generated_at": "2026-11-23T18:56:20+00:00",
+  "entry_count": 5303,
   "class_counts": {
    "0": 15,
-   "1": 1159,
-   "2": 3909,
+   "1": 1163,
+   "2": 3913,
    "3": 186
   },
   "unknown_count": 26,
@@ -148668,6 +148668,235 @@
    "checked_at": "2026-11-23T18:20:00+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "project64",
+   "url": "https://github.com/project64/project64",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3594,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-23T19:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "visualboyadvance-m",
+   "url": "https://github.com/visualboyadvance-m/visualboyadvance-m",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 10270,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 18,
+    "release_asset_count": 151,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-23T19:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "flycast",
+   "url": "https://github.com/flyinghead/flycast",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4787,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 13,
+    "release_asset_count": 62,
+    "demo": [
+     "image"
+    ],
+    "media_count": 7,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "checked_at": "2026-11-23T19:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "jsnes",
+   "url": "https://github.com/bfirsh/jsnes",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 8367,
+    "docs_full": true,
+    "download": "package",
+    "release_count": 3,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [
+     "npm install jsnes"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-23T19:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "lemuroid",
+   "url": "https://github.com/Swordfish90/Lemuroid",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3662,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 33,
+    "release_asset_count": 34,
+    "demo": [
+     "image"
+    ],
+    "media_count": 3,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "checked_at": "2026-11-23T19:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "wolfssl",
+   "url": "https://github.com/wolfSSL/wolfssl",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 96164,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 49,
+    "release_asset_count": 94,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-23T19:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "chameleon-ultra",
+   "url": "https://github.com/RfidResearchGroup/ChameleonUltra",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2550,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 6,
+    "release_asset_count": 49,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 11,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "checked_at": "2026-11-23T19:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "espurna",
+   "url": "https://github.com/xoseperez/espurna",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 31860,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 28,
+    "release_asset_count": 3908,
+    "demo": [
+     "image"
+    ],
+    "media_count": 104,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "checked_at": "2026-11-23T19:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   }

@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T18:17:22+00:00",
-    "entry_count": 1143,
-    "class_entry_count": 1174,
+    "generated_at": "2026-11-23T18:56:27+00:00",
+    "entry_count": 1147,
+    "class_entry_count": 1178,
     "class_counts": {
-      "image": 1104,
+      "image": 1108,
       "video": 39
     },
     "missing_count": 31,
@@ -1215,6 +1215,15 @@
       "source_url": "https://github.com/sciaschi/CBFD-Recompiled",
       "revision": "d5818e0fcd23803ad0fac6a46e439c5da3255696",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "chameleon-ultra",
+      "image_url": "https://raw.githubusercontent.com/RfidResearchGroup/ChameleonUltra/6009a5fb8adbb92d3efb548eaac9e501bd179801/docs/images/ultra-overview.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/RfidResearchGroup/ChameleonUltra",
+      "revision": "6009a5fb8adbb92d3efb548eaac9e501bd179801",
+      "checked_at": "2026-11-23T18:56:27+00:00"
     },
     {
       "id": "chaves-kart-recompiled-case",
@@ -2486,6 +2495,15 @@
       "checked_at": "2026-11-22T06:41:04+00:00"
     },
     {
+      "id": "espurna",
+      "image_url": "https://raw.githubusercontent.com/xoseperez/espurna/bbadc15c8a520841c505333adb29ea33275dfc4a/images/devices/blitzwolf-bw-shp6.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/xoseperez/espurna",
+      "revision": "bbadc15c8a520841c505333adb29ea33275dfc4a",
+      "checked_at": "2026-11-23T18:56:27+00:00"
+    },
+    {
       "id": "eternal-darkness-recomp-case",
       "image_url": "https://raw.githubusercontent.com/griches/EternalDarknessRecomp/75b8603f18ca86513e1db2fcb0afaa2e2e6d58ca/res/ui/glyphs/ink/xbox/l3.png",
       "kind": "image",
@@ -2691,6 +2709,15 @@
       "source_url": "https://github.com/SegerEnd/Flipper-Zero-LD-Toypad-Emulator",
       "revision": "21d55389bb2c58efd31ed88911d793f0edebe27d",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "flycast",
+      "image_url": "https://flyinghead.github.io/flycast-builds/android.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/flyinghead/flycast",
+      "revision": "105342d53fc181493cd372c8f1ebf5c49621ed1a",
+      "checked_at": "2026-11-23T18:56:27+00:00"
     },
     {
       "id": "folklore-recompiled-case",
@@ -4275,6 +4302,15 @@
       "source_url": "https://github.com/tomsoftware/Lemmings.ts",
       "revision": "10c7c8b9167258503d02589cf048e2d83a43dd0a",
       "checked_at": "2026-11-09T05:33:55+00:00"
+    },
+    {
+      "id": "lemuroid",
+      "image_url": "https://raw.githubusercontent.com/Swordfish90/Lemuroid/3625bc121d5d79fd4b80ce930fb0f3236c9334e8/fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Swordfish90/Lemuroid",
+      "revision": "3625bc121d5d79fd4b80ce930fb0f3236c9334e8",
+      "checked_at": "2026-11-23T18:56:27+00:00"
     },
     {
       "id": "lets-go-recomp-case",

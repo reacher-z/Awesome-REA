@@ -255,3 +255,32 @@ This round returns to reconstruction cases and emulators: Augustus (Caesar III),
 ## Validation notes
 
 All eight records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; seven Class 1 records received previews. The four new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, tenth batch — 2026-11-23
+
+This round adds eight records from the stored lead queue: Project64, Visual Boy Advance - M, Flycast, JSNES and Lemuroid as emulator projects, wolfSSL as a protocol library, and Chameleon Ultra and ESPurna as firmware projects.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `project64` | `game-analysis` | [project64/project64](https://github.com/project64/project64/blob/c2c0dcbff292416457ec9151ee779e6556128c7f/README.md) | `4044e711cea590417eba9aefd79c072420d06081740c845a9de7eeb1dc4ae678` |
+| `visualboyadvance-m` | `game-analysis` | [visualboyadvance-m/visualboyadvance-m](https://github.com/visualboyadvance-m/visualboyadvance-m/blob/e4456a8d5e1f7d6d18aa147de950c5dbca4bfc0a/README.md) | `9143adae0bec3a175ce13ec5226c9bf61c5743decf131671a77f037b734e9d2c` |
+| `flycast` | `game-analysis` | [flyinghead/flycast](https://github.com/flyinghead/flycast/blob/105342d53fc181493cd372c8f1ebf5c49621ed1a/README.md) | `956b43a35c6f095dd046a0fe4bb6fb737eada2c331e78926fe8b321fb4f838ce` |
+| `jsnes` | `game-analysis` | [bfirsh/jsnes](https://github.com/bfirsh/jsnes/blob/1ead3bebca6c8eb6edb270a5b01561b1827814ee/README.md) | `1665012657c00dd79902eb283c6546dda1f100010386456984c46f51150ad5b8` |
+| `lemuroid` | `game-analysis` | [Swordfish90/Lemuroid](https://github.com/Swordfish90/Lemuroid/blob/3625bc121d5d79fd4b80ce930fb0f3236c9334e8/README.md) | `d877174fa604829fab43dc8a7b7ff1f2d408271877305f7cc043195524bad6f5` |
+| `wolfssl` | `protocol-analysis` | [wolfSSL/wolfssl](https://github.com/wolfSSL/wolfssl/blob/e92099e116662db6f8c2aa66ad6f75911e43717e/README.md) | `9a28dd418b12944e1c5528d63c3dc75b0ef0940fcf756af221b4ee1bcddba27c` |
+| `chameleon-ultra` | `firmware` | [RfidResearchGroup/ChameleonUltra](https://github.com/RfidResearchGroup/ChameleonUltra/blob/6009a5fb8adbb92d3efb548eaac9e501bd179801/README.md) | `2c20405a6f5f6edf85710f7eb9e41f02ef0580e0d04e196e62edddd422bbf270` |
+| `espurna` | `firmware` | [xoseperez/espurna](https://github.com/xoseperez/espurna/blob/bbadc15c8a520841c505333adb29ea33275dfc4a/README.md) | `909ec75e6acbdf1f1b95e7dbaeb0b7a606ee796917771f4bbad571263746492a` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| TASEmulators/desmume | The repository README is a 225-byte stub, below the documentation threshold for a catalog entry. |
+| Cemu, melonDS, Vita3K, 86Box, Azahar, PCSX2, mGBA, RPCS3, shadPS4 | Already added in earlier batches. |
+| BizHawk, dxx-rebirth, ECWolf, OpenBVE, OpenLieroX | No license file recorded by the GitHub API. |
+
+## Validation notes
+
+All eight records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; four Class 1 records received previews. Previews, READMEs and the site were regenerated.

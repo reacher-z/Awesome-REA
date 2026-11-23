@@ -44658,5 +44658,69 @@
       "合成支持限于基础像素图层、部分调整层、矢量蒙版与部分图层属性。",
       "采用 MIT 许可证。"
     ]
+  },
+  "project64": {
+    "name": "Project64",
+    "requirements": [
+      "需要 Nintendo 64 ROM 与主机启动文件；当前构建面向 Windows。",
+      "兼容性与性能因游戏而异，插件选择会影响渲染与音频。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "visualboyadvance-m": {
+    "name": "Visual Boy Advance - M",
+    "requirements": [
+      "需要 Game Boy 或 Game Boy Advance ROM；提供 Windows 与 macOS 构建。",
+      "兼容性因游戏而异，部分联机或外设功能取决于构建版本。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "flycast": {
+    "name": "Flycast",
+    "requirements": [
+      "需要 Dreamcast、Naomi 或 Atomiswave 游戏镜像与 BIOS 文件；构建覆盖 Windows、Linux、macOS、Android 等平台。",
+      "兼容性因游戏而异，在线或外设功能有限制。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "jsnes": {
+    "name": "JSNES",
+    "requirements": [
+      "需要 NES ROM 与浏览器或 Node.js 环境；可通过 npm 或脚本标签安装。",
+      "它是库，渲染、音频与输入由宿主页面提供。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "lemuroid": {
+    "name": "Lemuroid",
+    "requirements": [
+      "需要 Android 与游戏 ROM；应用内置 Libretro 核心，可在手机与平板上运行。",
+      "可用核心与性能取决于设备，部分系统可能需要 BIOS 文件。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "wolfssl": {
+    "name": "wolfSSL",
+    "requirements": [
+      "需要 C 工具链与库的构建配置；可运行于嵌入式与常规操作系统。",
+      "功能可用性取决于构建选项与平台的熵源。",
+      "采用 GPL-3.0 或商业许可证。"
+    ]
+  },
+  "chameleon-ultra": {
+    "name": "Chameleon Ultra",
+    "requirements": [
+      "需要 Chameleon Ultra 或 Lite 硬件与刷写或客户端环境；设备运行项目固件。",
+      "支持的标签类型取决于硬件版本与固件，发射需遵守当地无线电法规。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "espurna": {
+    "name": "ESPurna",
+    "requirements": [
+      "用于刷写 ESP8285 或 ESP8266 硬件；需要受支持的板卡与刷写方式。",
+      "板卡支持与传感器驱动取决于构建配置。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

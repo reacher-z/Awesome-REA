@@ -157786,5 +157786,230 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "project64",
+    "name": "Project64",
+    "url": "https://github.com/project64/project64",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A free and open-source Nintendo 64 and Nintendo 64 Disk Drive emulator written in C++, with debugging tools, save states, controller support and a Windows build.",
+    "description_zh": "免费开源的 Nintendo 64 与 Nintendo 64 Disk Drive 模拟器，使用 C++ 编写，提供调试工具、即时存档、手柄支持与 Windows 构建。",
+    "evidence_url": "https://github.com/project64/project64/blob/c2c0dcbff292416457ec9151ee779e6556128c7f/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Nintendo 64 ROMs and the console boot files; the current build targets Windows.",
+      "Compatibility and performance vary by game, and plugin choices affect rendering and audio.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "visualboyadvance-m",
+    "name": "Visual Boy Advance - M",
+    "url": "https://github.com/visualboyadvance-m/visualboyadvance-m",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A Game Boy and Game Boy Advance emulator maintained as Visual Boy Advance - M, with Windows and macOS builds, save states, link support and controller input.",
+    "description_zh": "以 Visual Boy Advance - M 维护的 Game Boy 与 Game Boy Advance 模拟器，提供 Windows 与 macOS 构建、即时存档、联机与手柄输入。",
+    "evidence_url": "https://github.com/visualboyadvance-m/visualboyadvance-m/blob/e4456a8d5e1f7d6d18aa147de950c5dbca4bfc0a/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Game Boy or Game Boy Advance ROMs; Windows and macOS builds are published.",
+      "Compatibility varies by title, and some link or peripheral features depend on the build.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "flycast",
+    "name": "Flycast",
+    "url": "https://github.com/flyinghead/flycast",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A multiplatform Sega Dreamcast, Naomi, Naomi 2 and Atomiswave emulator with desktop, Android and console builds.",
+    "description_zh": "跨平台的 Sega Dreamcast、Naomi、Naomi 2 与 Atomiswave 模拟器，提供桌面、Android 与主机平台构建。",
+    "evidence_url": "https://github.com/flyinghead/flycast/blob/105342d53fc181493cd372c8f1ebf5c49621ed1a/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Dreamcast, Naomi or Atomiswave game images and BIOS files; builds target Windows, Linux, macOS, Android and other platforms.",
+      "Compatibility varies by title, and online or peripheral features have limits.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "jsnes",
+    "name": "JSNES",
+    "url": "https://github.com/bfirsh/jsnes",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "A JavaScript NES emulator library for the browser and Node.js that emulates the CPU, PPU and APU cycle by cycle and passes the bundled AccuracyCoin tests.",
+    "description_zh": "面向浏览器与 Node.js 的 JavaScript NES 模拟器库，按周期模拟 CPU、PPU 与 APU，并通过内置的 AccuracyCoin 测试。",
+    "evidence_url": "https://github.com/bfirsh/jsnes/blob/1ead3bebca6c8eb6edb270a5b01561b1827814ee/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an NES ROM and a browser or Node.js environment; install it with npm or a script tag.",
+      "It is a library, so the host page supplies rendering, audio and input.",
+      "Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "lemuroid",
+    "name": "Lemuroid",
+    "url": "https://github.com/Swordfish90/Lemuroid",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "mobile-app-dev",
+    "targets": [
+      "app",
+      "game"
+    ],
+    "description_en": "An open-source Android emulation front end based on Libretro that packages multiple cores with an easy-to-use interface and Android integration.",
+    "description_zh": "基于 Libretro 的开源 Android 模拟前端，整合多个核心，提供易用界面与 Android 集成。",
+    "evidence_url": "https://github.com/Swordfish90/Lemuroid/blob/3625bc121d5d79fd4b80ce930fb0f3236c9334e8/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Android and game ROMs; the app bundles Libretro cores and runs on phones and tablets.",
+      "Available cores and performance depend on the device, and some systems may need BIOS files.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "wolfssl",
+    "name": "wolfSSL",
+    "url": "https://github.com/wolfSSL/wolfssl",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A lightweight ANSI C SSL/TLS library for embedded, RTOS and resource-constrained environments, supporting TLS 1.3, DTLS 1.3 and post-quantum groups.",
+    "description_zh": "面向嵌入式、RTOS 与资源受限环境的轻量 ANSI C SSL/TLS 库，支持 TLS 1.3、DTLS 1.3 与后量子组。",
+    "evidence_url": "https://github.com/wolfSSL/wolfssl/blob/e92099e116662db6f8c2aa66ad6f75911e43717e/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a C toolchain and the library build configuration; it runs on embedded and standard operating environments.",
+      "Feature availability depends on the build options and the platform entropy source.",
+      "GPL-3.0 or commercial licensing."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "chameleon-ultra",
+    "name": "Chameleon Ultra",
+    "url": "https://github.com/RfidResearchGroup/ChameleonUltra",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "description_en": "Open firmware and client tools for the Chameleon Ultra and Chameleon Lite RFID devices, which read and manage multiple tag types through a documented command set.",
+    "description_zh": "Chameleon Ultra 与 Chameleon Lite RFID 设备的开源固件与客户端工具，可通过文档化命令集读取并管理多种标签类型。",
+    "evidence_url": "https://github.com/RfidResearchGroup/ChameleonUltra/blob/6009a5fb8adbb92d3efb548eaac9e501bd179801/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Chameleon Ultra or Lite hardware and a flashing or client setup; the device runs the project firmware.",
+      "Supported tag types depend on the hardware revision and firmware, and transmissions are subject to local radio regulations.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "espurna",
+    "name": "ESPurna",
+    "url": "https://github.com/xoseperez/espurna",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A custom firmware for ESP8285 and ESP8266 smart switches, lights and sensors built on the Arduino Core, with a web interface, MQTT, HTTP API and OTA updates.",
+    "description_zh": "基于 Arduino Core 的 ESP8285/ESP8266 智能开关、灯具与传感器自定义固件，提供 Web 界面、MQTT、HTTP API 与 OTA 更新。",
+    "evidence_url": "https://github.com/xoseperez/espurna/blob/bbadc15c8a520841c505333adb29ea33275dfc4a/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Flashes ESP8285 or ESP8266 hardware; a supported board and flashing method are required.",
+      "Board support and sensor drivers depend on the build configuration.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]
