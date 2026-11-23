@@ -155853,5 +155853,185 @@
     "additional_evidence_urls": [
       "https://github.com/pkluz/PKHUD/blob/8fd26f23057c6bebd6695524b1c3e05e93aba571/LICENSE"
     ]
+  },
+  {
+    "id": "ida-arsenal",
+    "name": "IDA Arsenal",
+    "url": "https://github.com/khalilammarr/ida-arsenal",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA Arsenal adds a symbolic path solver, input discovery and native crypto recognition to IDA Pro 9.1, driving angr in a separate Python process: mark find and avoid addresses in the disassembler and the plugin solves for inputs that reach one and not the other, with entry modes for stdin, argv and arguments.",
+    "description_zh": "IDA Arsenal 为 IDA Pro 9.1 增加符号路径求解、输入发现与原生加密算法识别，由独立 Python 进程驱动 angr：在反汇编器中标记 find 与 avoid 地址，插件即可解出到达其一而绕开其余的输入，支持 stdin、argv 等入口模式。",
+    "evidence_url": "https://github.com/khalilammarr/ida-arsenal/blob/c36a4abc8473c5b393db5fef91f346ca64b3c96e/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Targets IDA Pro 9.1; angr runs in a separate Python process alongside the disassembler.",
+      "Mark find/avoid addresses and entry modes (stdin, argv, arguments) from the disassembler UI; the plugin reports the solved input.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/khalilammarr/ida-arsenal/blob/c36a4abc8473c5b393db5fef91f346ca64b3c96e/LICENSE"
+    ]
+  },
+  {
+    "id": "binja-agent-mcp",
+    "name": "binja-agent-mcp",
+    "url": "https://github.com/y637F9QQ2x/binja-agent-mcp",
+    "category": "agent-mcp",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "binja-agent-mcp is an MCP server that lets LLM agents work with the binaries open in a local Binary Ninja: find functions, read decompiled code, follow cross-references and calls, query data flow, and add names, types and comments. The release is a preview tested against an offline suite so far.",
+    "description_zh": "binja-agent-mcp 是一个 MCP 服务器，让 LLM 代理操作本地 Binary Ninja 中打开的二进制：查找函数、阅读反编译代码、跟踪交叉引用与调用、查询数据流，并可添加名称、类型与注释；当前为预览版，仅通过离线测试套件验证。",
+    "evidence_url": "https://github.com/y637F9QQ2x/binja-agent-mcp/blob/1b954eba368897760844c6308de433ffc563a567/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Preview status: tested with the offline suite against a fake binaryninja module, not yet inside Binary Ninja.",
+      "Connects MCP clients such as Claude Code, Claude Desktop or Cursor to a Binary Ninja running on the same machine.",
+      "Code is GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "limits",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/y637F9QQ2x/binja-agent-mcp/blob/1b954eba368897760844c6308de433ffc563a567/LICENSE"
+    ]
+  },
+  {
+    "id": "binja-diff-view",
+    "name": "Binja Diff View",
+    "url": "https://github.com/meerkatone/binja_diff_view",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Binja Diff View compares analyzed binaries inside Binary Ninja: it matches functions across two builds or a larger corpus, highlights code changes in synchronized native graph and linear views, and bundles the Rust diffing engine that superseded the standalone rust_diff plugin.",
+    "description_zh": "Binja Diff View 在 Binary Ninja 内比较已分析的二进制：跨两个构建或更大语料匹配函数，在同步的原生图形与线性视图中高亮代码变化，并内置了取代独立 rust_diff 插件的 Rust 差分引擎。",
+    "evidence_url": "https://github.com/meerkatone/binja_diff_view/blob/551f3f687fdf1217a3e8153c60aaa8565f611706/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs inside Binary Ninja with synchronized native graph and linear diff panes.",
+      "Bundles the Rust diffing engine that superseded the standalone rust_diff plugin.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/meerkatone/binja_diff_view/blob/551f3f687fdf1217a3e8153c60aaa8565f611706/LICENSE"
+    ]
+  },
+  {
+    "id": "threatray-binja",
+    "name": "Threatray Binary Ninja Plugin",
+    "url": "https://github.com/cod3nym/threatray-binja",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Threatray Binary Ninja Plugin is a community port of Threatray AG's official IDA plugin, integrating Threatray binary-similarity lookups into Binary Ninja; it is maintained independently, not affiliated with or endorsed by Threatray AG, and handles issues in its own repository.",
+    "description_zh": "Threatray Binary Ninja Plugin 是 Threatray AG 官方 IDA 插件的社区移植版，把 Threatray 的二进制相似度查询能力整合进 Binary Ninja；由社区独立维护，与 Threatray AG 无隶属或背书关系，问题请在本仓库反馈。",
+    "evidence_url": "https://github.com/cod3nym/threatray-binja/blob/0b0780547b97b155dd807e0e0d93f837a14a8ce7/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A community port of Threatray AG's official Threatray IDA plugin, independently maintained and not affiliated with or endorsed by Threatray AG.",
+      "Requires Python 3.10 or newer.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "attribution",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cod3nym/threatray-binja/blob/0b0780547b97b155dd807e0e0d93f837a14a8ce7/LICENSE"
+    ]
+  },
+  {
+    "id": "x64dbg-automate",
+    "name": "x64dbg Automate",
+    "url": "https://github.com/dariushoule/x64dbg-automate",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "x64dbg Automate is the ZeroMQ and MessagePack RPC server plugin for x64dbg: it brokers concurrent debug control and event notification between the debugger and client automation software, powering the x64dbg Automate Python client for scripted debugging sessions.",
+    "description_zh": "x64dbg Automate 是 x64dbg 的 ZeroMQ 与 MessagePack RPC 服务器插件：在调试器与客户端自动化软件之间建立并发调试控制与事件通知，为 x64dbg Automate Python 客户端的脚本化调试提供支撑。",
+    "evidence_url": "https://github.com/dariushoule/x64dbg-automate/blob/76421a901499fb22846127b0cba6b7c4de0ab850/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Ships the RPC server plugin; the companion x64dbg Automate Python client drives it over ZeroMQ with MessagePack serialization.",
+      "Supports concurrent debug control and event notification for scripted debugging sessions.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dariushoule/x64dbg-automate/blob/76421a901499fb22846127b0cba6b7c4de0ab850/LICENSE"
+    ]
+  },
+  {
+    "id": "x64dbg-skills",
+    "name": "x64dbg-skills",
+    "url": "https://github.com/dariushoule/x64dbg-skills",
+    "category": "agent-workflows",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "x64dbg-skills is a Claude Code plugin providing debugger-automation skills for x64dbg: /state-snapshot captures the full debuggee state (committed memory regions and complete registers) to disk, and /state-diff compares two snapshots to report register and memory changes between two points in time.",
+    "description_zh": "x64dbg-skills 是为 x64dbg 调试自动化提供技能的 Claude Code 插件：/state-snapshot 把被调试进程的完整状态（全部已提交内存区域与寄存器）转储到磁盘，/state-diff 对比两个快照，报告两个时间点之间的寄存器与内存变化。",
+    "evidence_url": "https://github.com/dariushoule/x64dbg-skills/blob/0409f535af6f29389676f1d7f60f25cc83801cb8/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Installs as a Claude Code plugin exposing /state-snapshot and /state-diff skills.",
+      "Captures committed memory regions and full register state, and diffs two snapshots for register and memory changes.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dariushoule/x64dbg-skills/blob/0409f535af6f29389676f1d7f60f25cc83801cb8/LICENSE"
+    ]
   }
 ]

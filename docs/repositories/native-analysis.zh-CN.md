@@ -785,7 +785,7 @@
 - [keremmisik/freertos-ghidra](https://github.com/keremmisik/freertos-ghidra) — 上游仓库未提供项目简介。 **[1 星标]**
 - [KernFerm/Binwalk-FZ](https://github.com/KernFerm/Binwalk-FZ) — Binwalk FZ 扫描 Flipper microSD 上的固件／二进制文件，识别经校验的特征与偏移。新增使用上游 Binwalk 的 Linux／Raspberry Pi 模式，由 Flipper 充当 UART 控制器和结果显示器。 **[1 星标]**
 - [Luvvydev/reassist](https://github.com/Luvvydev/reassist) — 逆向工程助手，支持字符串、失陷指标（IOC）、导入项及 Ghidra 辅助分析。 **[1 星标]**
-- [meerkatone/binja\_diff\_view](https://github.com/meerkatone/binja_diff_view) — 在 Binary Ninja 中比较二进制文件，提供同步图形与线性差异视图、语料库比较和符号迁移。 **[1 星标]**
+- [meerkatone/binja\_diff\_view](https://github.com/meerkatone/binja_diff_view) — 在 Binary Ninja 中比较二进制文件，提供同步图形与线性差异视图、语料库比较和符号迁移。 **[1 星标]** · 精选：[Binja Diff View](https://awesomerea.org/zh/resources/binja-diff-view/)
 - [mosfaqur/firmware-extract](https://github.com/mosfaqur/firmware-extract) — 面向嵌入式 Linux 固件的自动化静态分析流程，系统地提取并审计凭据、加密密钥、密码哈希、ELF 二进制加固、不安全 C 函数和调试接口。 **[1 星标]**
 - [mustafajaved304/VulnX](https://github.com/mustafajaved304/VulnX) — 自动化漏洞评估与风险分析平台，提供 Nmap 扫描、CVE 情报、二进制分析、YARA 威胁检测和 PDF 安全报告。 **[1 星标]**
 - [neuralsun/rea-deep-dive](https://github.com/neuralsun/rea-deep-dive) — REA 深度技术调查：源码机制、原始论文、可复现实验与证据驱动的行为重建。 **[1 星标]**

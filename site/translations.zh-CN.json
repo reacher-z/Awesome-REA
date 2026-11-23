@@ -44110,5 +44110,53 @@
       "以 Swift 重实现系统 HUD 样式（音量、静音、旋转、进度）。",
       "代码采用 MIT 许可证。"
     ]
+  },
+  "ida-arsenal": {
+    "name": "IDA Arsenal",
+    "requirements": [
+      "面向 IDA Pro 9.1；angr 在反汇编器旁的独立 Python 进程中运行。",
+      "在反汇编器界面标记 find/avoid 地址与入口模式（stdin、argv、参数），插件给出求解出的输入。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "binja-agent-mcp": {
+    "name": "binja-agent-mcp",
+    "requirements": [
+      "预览状态：仅针对模拟 binaryninja 模块的离线测试套件验证，尚未在 Binary Ninja 内实测。",
+      "将 Claude Code、Claude Desktop、Cursor 等 MCP 客户端连接到同一台机器上运行的 Binary Ninja。",
+      "代码采用 GPL-3.0 许可证。"
+    ]
+  },
+  "binja-diff-view": {
+    "name": "Binja Diff View",
+    "requirements": [
+      "在 Binary Ninja 内运行，提供同步的原生图形与线性差分视图。",
+      "内置取代独立 rust_diff 插件的 Rust 差分引擎。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "threatray-binja": {
+    "name": "Threatray Binary Ninja Plugin",
+    "requirements": [
+      "Threatray AG 官方 IDA 插件的社区移植版，独立维护，与 Threatray AG 无隶属或背书关系。",
+      "需要 Python 3.10 或更新版本。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "x64dbg-automate": {
+    "name": "x64dbg Automate",
+    "requirements": [
+      "提供 RPC 服务器插件；配套的 x64dbg Automate Python 客户端经 ZeroMQ 以 MessagePack 序列化驱动它。",
+      "支持脚本化调试会话的并发调试控制与事件通知。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "x64dbg-skills": {
+    "name": "x64dbg-skills",
+    "requirements": [
+      "以 Claude Code 插件形式安装，提供 /state-snapshot 与 /state-diff 技能。",
+      "转储已提交内存区域与完整寄存器状态，并对比两个快照的寄存器与内存变化。",
+      "代码采用 MIT 许可证。"
+    ]
   }
 }
