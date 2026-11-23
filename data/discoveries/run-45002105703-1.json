@@ -1,0 +1,372 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-45002105703-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-22T08:35:22Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 429,
+    "selected_count": 5,
+    "selected_ids": [
+      "scan-1448781840",
+      "scan-1448773448",
+      "scan-1448758955",
+      "scan-1448774070",
+      "scan-1041741401"
+    ],
+    "record_sha256": {
+      "scan-1448781840": "8818703eda7a1801a90e2ab5b396cb661918d9bec832112c28fb1bb43cea3352",
+      "scan-1448773448": "610907cc3b9a0d2e6c0ae0a05b128adee096be6504c98af40e313a02ac86679f",
+      "scan-1448758955": "0629a35515c7c2cc7a61df220b55efafca5b8fd5b7cf04ed90cfe78075deb6a0",
+      "scan-1448774070": "28dd5614d75ba0faad21c011457744ec774a68ffb153f23ff7c412e1aed7ab66",
+      "scan-1041741401": "c99c4b7557d20c4c73b12703c97a24df198c0af31bed9f745983214e6457d7ba"
+    },
+    "skipped_counts": {
+      "already-listed": 12747,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 45002105703,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "8a925d9f67519394eb51daa329d7d6a0a222c402",
+    "artifact_id": 14747021007,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:42b2be9f90123b02c21a3a49f924acf1085df7455daff7e9d34aa4aed3ab158e",
+    "checkpoint_sha256": "0ac69ec56ba3cb8fd23a2799a014b371886f7b2bab66a5b55e68a5bd98039128",
+    "receipt_sha256": "9eda2833ff244306e71910e60200439b7cc9386942f7b209ce4cf074a9507f0a",
+    "scan_started_at": "2026-11-22T08:17:34.266321+00:00",
+    "scan_completed_at": "2026-11-22T08:34:13.363200+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 128895,
+      "failed": 4878,
+      "attempted_readme_scans": 133773,
+      "unique_repos": 133836,
+      "unattempted_candidates": 63
+    },
+    "integrity_counts": {
+      "qualified": 125878,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1448781840",
+      "name": "aStubbyMonkey/Jurassic-World-Aftermath-Mods",
+      "full_name": "aStubbyMonkey/Jurassic-World-Aftermath-Mods",
+      "url": "https://github.com/aStubbyMonkey/Jurassic-World-Aftermath-Mods",
+      "description_en": "Downloadable Mods for Jurassic World Aftermath on Meta Quest.",
+      "description_zh": "Downloadable Mods for Jurassic World Aftermath on Meta Quest.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "android",
+        "game-modding-tool",
+        "il2cpp",
+        "il2cpp-modding",
+        "jurassic-world-aftermath",
+        "meta-quest",
+        "questpatcher",
+        "unity",
+        "vr-mods"
+      ],
+      "stars": 1,
+      "license": null,
+      "archived": false,
+      "updated_at": "2026-11-10T17:25:49Z",
+      "pushed_at": "2026-11-08T23:43:00Z",
+      "metadata_observed_at": "2026-11-22T08:32:47.713574Z",
+      "observed_at": "2026-11-22T08:32:53.121519Z",
+      "readme_url": "https://github.com/aStubbyMonkey/Jurassic-World-Aftermath-Mods/blob/70dcf04c2b90bb9ecf2916501aa08b5a204df480/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "0df4d9ba086e4b58c294cd686d044ca8bcdde498",
+      "readme_content_git_sha": "0df4d9ba086e4b58c294cd686d044ca8bcdde498",
+      "readme_sha256": "f5b9db4d963e73f62218b43ee6e5560831ca675671ddf22d357720ba180b31f6",
+      "readme_bytes": 2603,
+      "readme_lines": 72,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "requirements"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app",
+        "game"
+      ],
+      "category": "android",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:il2cpp is:public fork:false archived:false created:2026-11-06T21:11:53Z..2026-11-06T22:13:18Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "70dcf04c2b90bb9ecf2916501aa08b5a204df480"
+    },
+    {
+      "id": "scan-1448773448",
+      "name": "M4rkWilhelm/yolink-meshtastic",
+      "full_name": "M4rkWilhelm/yolink-meshtastic",
+      "url": "https://github.com/M4rkWilhelm/yolink-meshtastic",
+      "description_en": "Meshtastic detection-sensor firmware for the YoLink YS7805 outdoor motion sensor (YL09 chip)",
+      "description_zh": "Meshtastic detection-sensor firmware for the YoLink YS7805 outdoor motion sensor (YL09 chip)",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "firmware",
+        "lora",
+        "meshtastic",
+        "reverse-engineering",
+        "stm32",
+        "yolink"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-09T15:19:52Z",
+      "pushed_at": "2026-11-06T22:16:21Z",
+      "metadata_observed_at": "2026-11-22T08:32:47.713574Z",
+      "observed_at": "2026-11-22T08:32:53.121127Z",
+      "readme_url": "https://github.com/M4rkWilhelm/yolink-meshtastic/blob/83378412e889f3396a8f5d3c12a8e778ee8c04e8/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "4424f7a891d677d32efd89a9829ef203b441dc89",
+      "readme_content_git_sha": "4424f7a891d677d32efd89a9829ef203b441dc89",
+      "readme_sha256": "9291592b9107d41164091a38e28138696dbf74f6c094718bd2f4c6a04fc6b588",
+      "readme_bytes": 19997,
+      "readme_lines": 329,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "firmware"
+      ],
+      "category": "firmware",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T21:11:53Z..2026-11-06T22:13:18Z",
+        "\"reverse engineering\" in:readme is:public fork:false archived:false created:2026-11-06T21:11:53Z..2026-11-06T22:13:18Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "83378412e889f3396a8f5d3c12a8e778ee8c04e8"
+    },
+    {
+      "id": "scan-1448758955",
+      "name": "vs-sr-dev/bpc-emu",
+      "full_name": "vs-sr-dev/bpc-emu",
+      "url": "https://github.com/vs-sr-dev/bpc-emu",
+      "description_en": "Emulator for the Benesse Pocket Challenge V2 (2000s), the WonderSwan-based study handheld of the Shinkenzemi courses: drop a cartridge and play. All 13 dumped cartridges reach their drills and questions, cycle-identical to a WonderSwan reference interpreter. Bring your own dumps.",
+      "description_zh": "Emulator for the Benesse Pocket Challenge V2 (2000s), the WonderSwan-based study handheld of the Shinkenzemi courses: drop a cartridge and play. All 13 dumped cartridges reach their drills and questions, cycle-identical to a WonderSwan reference interpreter. Bring your own dumps.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "benesse",
+        "byoa",
+        "c99",
+        "console-emulator",
+        "educational",
+        "emulator",
+        "game-preservation",
+        "japanese",
+        "pocket-challenge-v2",
+        "reverse-engineering",
+        "sdl2",
+        "v30mz",
+        "wonderswan"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-11T22:39:11Z",
+      "pushed_at": "2026-11-06T21:21:38Z",
+      "metadata_observed_at": "2026-11-22T08:32:47.713574Z",
+      "observed_at": "2026-11-22T08:32:53.120442Z",
+      "readme_url": "https://github.com/vs-sr-dev/bpc-emu/blob/274546d4f4dbe293c087aeb79e4a19f2c291c9b9/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "f37d72c1cb2e7f382453c8c1a309dc0a3499a5ea",
+      "readme_content_git_sha": "f37d72c1cb2e7f382453c8c1a309dc0a3499a5ea",
+      "readme_sha256": "5922befa0b085bfc26d02c13991d71c92b5969fbef352cf6adcbeddfef57e504",
+      "readme_bytes": 3842,
+      "readme_lines": 93,
+      "readme_heading_count": 6,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "game"
+      ],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T21:11:53Z..2026-11-06T22:13:18Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "274546d4f4dbe293c087aeb79e4a19f2c291c9b9"
+    },
+    {
+      "id": "scan-1448774070",
+      "name": "gmaxpwnage/mappy-rust",
+      "full_name": "gmaxpwnage/mappy-rust",
+      "url": "https://github.com/gmaxpwnage/mappy-rust",
+      "description_en": "Mappy (Japan) (En) recompiled from 6502 to Rust: a static 6502-to-Rust translator, a NES hardware model, and a playable game for Linux/macOS/Windows",
+      "description_zh": "Mappy (Japan) (En) recompiled from 6502 to Rust: a static 6502-to-Rust translator, a NES hardware model, and a playable game for Linux/macOS/Windows",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "6502",
+        "decompilation",
+        "emulator",
+        "namco",
+        "nes",
+        "reverse-engineering",
+        "rust"
+      ],
+      "stars": 1,
+      "license": "Apache-2.0",
+      "archived": false,
+      "updated_at": "2026-11-10T12:56:51Z",
+      "pushed_at": "2026-11-09T14:30:28Z",
+      "metadata_observed_at": "2026-11-22T08:32:47.713574Z",
+      "observed_at": "2026-11-22T08:32:53.119948Z",
+      "readme_url": "https://github.com/gmaxpwnage/mappy-rust/blob/71882c8ba8abb2c8c8e06b9adb57f6094bdd0cff/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "71e5e046306f303830a3d7d93b7c6caacd0d8e73",
+      "readme_content_git_sha": "71e5e046306f303830a3d7d93b7c6caacd0d8e73",
+      "readme_sha256": "3f205392a1dea38d558a30a29ed5d928f9656af8ee483e9e147b1ddc2bf1088a",
+      "readme_bytes": 12375,
+      "readme_lines": 291,
+      "readme_heading_count": 6,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "game"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T21:11:53Z..2026-11-06T22:13:18Z",
+        "topic:decompilation is:public fork:false archived:false created:2026-11-06T21:11:53Z..2026-11-06T22:13:18Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "71882c8ba8abb2c8c8e06b9adb57f6094bdd0cff"
+    },
+    {
+      "id": "scan-1041741401",
+      "name": "DQIX/BattleEmulator",
+      "full_name": "DQIX/BattleEmulator",
+      "url": "https://github.com/DQIX/BattleEmulator",
+      "description_en": "Dragon Quest IX solo-only RTA battle emulator — finds the fastest path to victory · C++ · Open Source",
+      "description_zh": "Dragon Quest IX solo-only RTA battle emulator — finds the fastest path to victory · C++ · Open Source",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "armv5t",
+        "astar-algorithm",
+        "brute-force",
+        "cpp",
+        "dq9",
+        "reverseengineering",
+        "speedrun",
+        "webassembly",
+        "website"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-10-12T10:00:36Z",
+      "pushed_at": "2026-10-12T10:00:31Z",
+      "metadata_observed_at": "2026-11-22T08:32:38.396175Z",
+      "observed_at": "2026-11-22T08:32:43.092563Z",
+      "readme_url": "https://github.com/DQIX/BattleEmulator/blob/6c4ad874d1c84579690c22c16efc58c945a6b218/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "d526393ba7467cad60ca89a5e4cd3bf8495cb3a4",
+      "readme_content_git_sha": "d526393ba7467cad60ca89a5e4cd3bf8495cb3a4",
+      "readme_sha256": "2f4aee038cf88f96888404b79586711d6c779bbfe3ba3e37183009713b3860a2",
+      "readme_bytes": 32116,
+      "readme_lines": 622,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "usage"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "website"
+      ],
+      "category": "web-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"game\" \"reimplementation\" in:readme is:public fork:false archived:false created:2025-06-20T09:15:18Z..2025-11-29T11:03:24Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "6c4ad874d1c84579690c22c16efc58c945a6b218"
+    }
+  ]
+}

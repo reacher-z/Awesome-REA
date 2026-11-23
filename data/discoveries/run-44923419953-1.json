@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-44923419953-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-21T16:35:35Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 425,
+    "selected_count": 1,
+    "selected_ids": [
+      "scan-1448720264"
+    ],
+    "record_sha256": {
+      "scan-1448720264": "d3fd7eeca12c4bbf144de7f8911b8a941111d2c78672018a4a6d19b41d277af7"
+    },
+    "skipped_counts": {
+      "already-listed": 12746,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 44923419953,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "892f96b2b3cc1b7e91e6f6db2e543e33220417c5",
+    "artifact_id": 14715561136,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:abaf675f204ec4b680ac3efe5fa78a518088bda2c00a2474eb2c594a30047d47",
+    "checkpoint_sha256": "e416ccd852e0ff89c473675d1e1d1a0542664d320d4550647d6f1f484252aadf",
+    "receipt_sha256": "29a56cf975d5a086a83ffd17104fa7d8918ce40f45a609bfa5560373c93f0730",
+    "scan_started_at": "2026-11-21T16:14:02.408384+00:00",
+    "scan_completed_at": "2026-11-21T16:32:19.692956+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 128056,
+      "failed": 4876,
+      "attempted_readme_scans": 132932,
+      "unique_repos": 132995,
+      "unattempted_candidates": 63
+    },
+    "integrity_counts": {
+      "qualified": 125039,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1448720264",
+      "name": "raghavkhandal72-coder/apex",
+      "full_name": "raghavkhandal72-coder/apex",
+      "url": "https://github.com/raghavkhandal72-coder/apex",
+      "description_en": "⚡ Autonomous Self-Healing Code Engine (pip=0, <400KB): CEGIS 1-token synthesis, Weiser AST slicing, multi-LLM consensus court & REA reverse engineering.",
+      "description_zh": "⚡ Autonomous Self-Healing Code Engine (pip=0, <400KB): CEGIS 1-token synthesis, Weiser AST slicing, multi-LLM consensus court & REA reverse engineering.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "ast-slicing",
+        "autonomous-agent",
+        "cegis",
+        "code-review",
+        "developer-tools",
+        "dify",
+        "fault-localization",
+        "llm",
+        "mutation-testing",
+        "program-repair",
+        "program-synthesis",
+        "python",
+        "reverse-engineering",
+        "self-healing",
+        "spark",
+        "terminal-ui",
+        "zero-dependencies"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-09T23:56:38Z",
+      "pushed_at": "2026-11-09T23:56:33Z",
+      "metadata_observed_at": "2026-11-21T16:30:55.918561Z",
+      "observed_at": "2026-11-21T16:31:01.021308Z",
+      "readme_url": "https://github.com/raghavkhandal72-coder/apex/blob/a6d58684c9b3c0990de73c72cc09cad135b32b80/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "61f4aa5fcc6fd49446008f60da766044beda18e3",
+      "readme_content_git_sha": "61f4aa5fcc6fd49446008f60da766044beda18e3",
+      "readme_sha256": "33466bafb8a8e12d1875ec8e044a0d9d2db245a7ac40e8d22cb2ecf333109326",
+      "readme_bytes": 31506,
+      "readme_lines": 583,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "requirements",
+        "examples",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"reverse engineering\" in:name,description is:public fork:false archived:false created:2026-11-06T20:14:58Z..2026-11-06T21:11:52Z",
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T20:14:58Z..2026-11-06T21:11:52Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "a6d58684c9b3c0990de73c72cc09cad135b32b80"
+    }
+  ]
+}
