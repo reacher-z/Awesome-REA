@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-45089894495-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-23T01:00:18Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 426,
+    "selected_count": 2,
+    "selected_ids": [
+      "scan-1419887115",
+      "scan-1267751232"
+    ],
+    "record_sha256": {
+      "scan-1419887115": "8075c8ae67d8e3ca705b4c2cadc4cfdc1563a8ac5f72c78db5d2e7bea23a9507",
+      "scan-1267751232": "31f011e2c18d2ead92949de2dc5bb27d456bc46fb16641c75abd1ea4b4b16604"
+    },
+    "skipped_counts": {
+      "already-listed": 12758,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 45089894495,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "8248a7b21e2284d39f1c2d71e417906c3378f9e7",
+    "artifact_id": 14782005068,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:ceaf721c3cea7d7411e67d17e8bad04c5fa69620a93be218e4ce6d928c53fd9d",
+    "checkpoint_sha256": "a404f691d775db0337e76faf417cf57adf9475e5da3db5ecbaeed213051857d3",
+    "receipt_sha256": "29e101933bf6de77815d7328eb990a0133b081088bee596cb6f95211cba51337",
+    "scan_started_at": "2026-11-23T00:38:03.921229+00:00",
+    "scan_completed_at": "2026-11-23T00:58:27.768868+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 130492,
+      "failed": 4883,
+      "attempted_readme_scans": 135375,
+      "unique_repos": 135438,
+      "unattempted_candidates": 63
+    },
+    "integrity_counts": {
+      "qualified": 127475,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1419887115",
+      "name": "Binbin-miao/yunji-win",
+      "full_name": "Binbin-miao/yunji-win",
+      "url": "https://github.com/Binbin-miao/yunji-win",
+      "description_en": "云姬电脑版（非官方 Windows 移植）：让云姬小尾巴/解码耳放在电脑上调音。8 段参数均衡器 ProEQ、简易均衡器 EZEQ、DAC 音量、麦克风增益、声道平衡、滤波器切换，TTGK 免驱即插即用，MIT 开源。",
+      "description_zh": "云姬电脑版（非官方 Windows 移植）：让云姬小尾巴/解码耳放在电脑上调音。8 段参数均衡器 ProEQ、简易均衡器 EZEQ、DAC 音量、麦克风增益、声道平衡、滤波器切换，TTGK 免驱即插即用，MIT 开源。",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "audio",
+        "dac",
+        "desktop-app",
+        "dsp",
+        "equalizer",
+        "headphone-amplifier",
+        "parametric-eq",
+        "peq",
+        "pyside6",
+        "python",
+        "reverse-engineering",
+        "ttgk",
+        "type-c",
+        "usb-dac",
+        "usb-hid",
+        "windows",
+        "yunji",
+        "yunji-desktop",
+        "yunji-pc",
+        "yunji-win"
+      ],
+      "stars": 3,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-05T04:59:59Z",
+      "pushed_at": "2026-11-03T04:30:12Z",
+      "metadata_observed_at": "2026-11-23T00:55:45.583560Z",
+      "observed_at": "2026-11-23T00:55:53.683842Z",
+      "readme_url": "https://github.com/Binbin-miao/yunji-win/blob/031ce446a75218bd5f2e9becc1113f802ac5c234/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "b95c0c4db297f35d3c9e98bb9f993485738f616f",
+      "readme_content_git_sha": "b95c0c4db297f35d3c9e98bb9f993485738f616f",
+      "readme_sha256": "058a4cc82d124bf60284cdd2df21066e0ea4cb24a76ba431c6605e7f9f36a2c3",
+      "readme_bytes": 16230,
+      "readme_lines": 282,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "requirements",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app"
+      ],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"游戏\" \"复刻\" in:readme is:public fork:false archived:false created:2026-09-29T08:26:09Z..2026-10-19T14:39:38Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "031ce446a75218bd5f2e9becc1113f802ac5c234"
+    },
+    {
+      "id": "scan-1267751232",
+      "name": "momowangOUO/eternal-return-lumia-island-level-design-study",
+      "full_name": "momowangOUO/eternal-return-lumia-island-level-design-study",
+      "url": "https://github.com/momowangOUO/eternal-return-lumia-island-level-design-study",
+      "description_en": "Eternal Return Lumia Island level design study: DAK route samples, Kiosks, Wickeline, restricted zones and spatial pressure.",
+      "description_zh": "Eternal Return Lumia Island level design study: DAK route samples, Kiosks, Wickeline, restricted zones and spatial pressure.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "bilingual",
+        "eternal-return",
+        "game-design",
+        "level-design",
+        "lumia-island",
+        "map-design",
+        "moba",
+        "pvpve",
+        "reverse-engineering"
+      ],
+      "stars": 1,
+      "license": null,
+      "archived": false,
+      "updated_at": "2026-06-13T18:02:32Z",
+      "pushed_at": "2026-06-13T18:58:10Z",
+      "metadata_observed_at": "2026-11-23T00:53:05.232978Z",
+      "observed_at": "2026-11-23T00:53:12.193101Z",
+      "readme_url": "https://github.com/momowangOUO/eternal-return-lumia-island-level-design-study/blob/6e2014afd914f181a7ce5b716aeba5e42e77807e/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "a6c718eb60379239dfc310a7800ac783d9cd98aa",
+      "readme_content_git_sha": "a6c718eb60379239dfc310a7800ac783d9cd98aa",
+      "readme_sha256": "40e77500957656ce2acdf2aacb47e27eba72693be0c9f05d5f76dadfcdfbdc39",
+      "readme_bytes": 175532,
+      "readme_lines": 1360,
+      "readme_heading_count": 6,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "game"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"游戏\" \"复刻\" in:readme is:public fork:false archived:false created:2026-05-10T12:51:32Z..2026-06-20T01:18:33Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "6e2014afd914f181a7ce5b716aeba5e42e77807e"
+    }
+  ]
+}
