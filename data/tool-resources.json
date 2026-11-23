@@ -156457,5 +156457,225 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "azahar",
+    "name": "Azahar",
+    "url": "https://github.com/azahar-emu/azahar",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A free and open-source high-level Nintendo 3DS emulator for PC and mobile devices, built on Citra and Lime3DS, with desktop releases and Android builds for running 3DS software.",
+    "description_zh": "免费开源的高层 Nintendo 3DS 模拟器，面向 PC 与移动设备，基于 Citra 与 Lime3DS，提供桌面版与 Android 版用于运行 3DS 软件。",
+    "evidence_url": "https://github.com/azahar-emu/azahar/blob/6f293a24daa292bd02b4ffee1a2adb5435e1ae00/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires 3DS game dumps and system files; desktop builds target Windows, Linux and macOS, with an Android build.",
+      "High-level emulation improves speed but does not reproduce 3DS hardware cycle-exactly, and some titles remain unsupported.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "pcsx2",
+    "name": "PCSX2",
+    "url": "https://github.com/PCSX2/pcsx2",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A free and open-source PlayStation 2 emulator with a Qt interface, memory-card management and a broad compatibility list, aimed at preserving the original console experience on modern PCs.",
+    "description_zh": "免费开源的 PlayStation 2 模拟器，提供 Qt 界面与记忆卡管理，兼容大量 PS2 游戏，致力于在现代 PC 上保留原主机体验。",
+    "evidence_url": "https://github.com/PCSX2/pcsx2/blob/61d75c21bf007bd7214521a794f39051b301d699/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a PS2 BIOS image and game discs or images; Windows, Linux and macOS builds are provided.",
+      "Compatibility varies by title, some games need per-game fixes, and hardware rendering depends on the GPU driver.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "mgba",
+    "name": "mGBA",
+    "url": "https://github.com/mgba-emu/mgba",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "mGBA emulates Game Boy Advance, Game Boy and Game Boy Color hardware with a focus on accuracy and speed, offering Qt and SDL frontends plus local link-cable support.",
+    "description_zh": "mGBA 模拟 Game Boy Advance、Game Boy 与 Game Boy Color 硬件，注重准确性与速度，提供 Qt 与 SDL 前端并支持本地联机线。",
+    "evidence_url": "https://github.com/mgba-emu/mgba/blob/feeea8f5c2f53f3fc10e534b54c1b4f7366a42f2/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Game Boy, Game Boy Color or Game Boy Advance ROMs; builds target Windows, macOS, Linux and other platforms.",
+      "Some hardware edge cases remain approximate, and features the README marks as missing are not emulated.",
+      "MPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "tasmota",
+    "name": "Tasmota",
+    "url": "https://github.com/arendst/Tasmota",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Alternative open-source firmware for ESP8266 and ESP32 devices, configured through a web UI with OTA updates, timers, rules and entirely local control over MQTT, HTTP, Serial or KNX.",
+    "description_zh": "面向 ESP8266 与 ESP32 设备的开源替代固件，通过 Web UI 配置，支持 OTA 更新、定时器、规则，以及 MQTT、HTTP、串口或 KNX 的完全本地控制。",
+    "evidence_url": "https://github.com/arendst/Tasmota/blob/016be6317eb963777ae1879b9f59a76cca9e83e9/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Flashes ESP8266 or ESP32 hardware; a supported device and a flashing method are required.",
+      "The supported ESP board and sensor list is limited; some devices need a custom build to fit flash size.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "dump1090",
+    "name": "dump1090",
+    "url": "https://github.com/antirez/dump1090",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A Mode S decoder for RTLSDR devices. It robustly decodes weak messages, corrects single-bit errors with the 24-bit CRC, serves raw and MSG5 TCP streams plus an embedded HTTP map, and can decode raw IQ samples from a file.",
+    "description_zh": "面向 RTLSDR 设备的 Mode S 解码器：可稳健解码弱信号，利用 24 位 CRC 纠正单比特错误，提供原始与 MSG5 TCP 流及内置 HTTP 地图，并可从文件解码原始 IQ 采样。",
+    "evidence_url": "https://github.com/antirez/dump1090/blob/efe64db3c6ba1520291331628a33c1e208e851a6/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an RTLSDR receiver and its driver, or recorded raw IQ samples for offline decoding.",
+      "Mode S coverage depends on antenna, location and receiver gain, and the decoder only reports aircraft present in received messages.",
+      "BSD-3-Clause-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "whatsmeow",
+    "name": "whatsmeow",
+    "url": "https://github.com/tulir/whatsmeow",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A Go library for the WhatsApp web multidevice API. It sends and receives messages and media, manages groups and receives group changes, and exposes the protocol through documented Go types.",
+    "description_zh": "面向 WhatsApp Web 多设备 API 的 Go 库：可收发消息与媒体、管理群组并接收群组变更，并通过有文档的 Go 类型暴露协议。",
+    "evidence_url": "https://github.com/tulir/whatsmeow/blob/19d61352436f3aeb21ad2cf93c2e3599ac409415/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Go and a paired WhatsApp device; the library implements the web multidevice API.",
+      "It is an unofficial client library, so protocol changes can break features, and using it may conflict with the service terms.",
+      "MPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "easyeda2kicad",
+    "name": "easyeda2kicad",
+    "url": "https://github.com/uPesy/easyeda2kicad.py",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A Python tool that converts EasyEDA and LCSC electronic components into KiCad symbol, footprint and 3D-model libraries, including colored 3D models.",
+    "description_zh": "把 EasyEDA 与 LCSC 的电子元件转换为 KiCad 符号、封装与 3D 模型库的 Python 工具，并包含彩色 3D 模型。",
+    "evidence_url": "https://github.com/uPesy/easyeda2kicad.py/blob/fff10a38619963d7cb1c57d779655a9ea4572e95/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3 and pip; install the package and run the CLI to fetch component data from EasyEDA or LCSC.",
+      "The converted library depends on upstream component data and 3D-model availability, so some parts may lack models or metadata.",
+      "AGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "freerdp",
+    "name": "FreeRDP",
+    "url": "https://github.com/FreeRDP/FreeRDP",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A free implementation of the Remote Desktop Protocol with libraries, clients and a server, supporting multiple backends and platforms for interoperating with RDP services.",
+    "description_zh": "远程桌面协议（RDP）的自由实现，包含库、客户端与服务端，支持多种后端与平台，用于与 RDP 服务互操作。",
+    "evidence_url": "https://github.com/FreeRDP/FreeRDP/blob/5379388d4fc4bc3554a61343407be3cf5c9ee3ca/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Builds for Windows, Linux, macOS and other platforms; a reachable RDP server and valid session details are required.",
+      "Server and client features vary by backend, and the implemented RDP extension set is limited.",
+      "Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

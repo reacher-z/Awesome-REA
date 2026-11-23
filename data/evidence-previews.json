@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T06:35:06+00:00",
-    "entry_count": 1124,
-    "class_entry_count": 1154,
+    "generated_at": "2026-11-23T07:28:38+00:00",
+    "entry_count": 1126,
+    "class_entry_count": 1156,
     "class_counts": {
-      "image": 1086,
+      "image": 1088,
       "video": 38
     },
     "missing_count": 30,
@@ -2240,6 +2240,15 @@
       "source_url": "https://github.com/rages4calm/earthbound-companion",
       "revision": "a43af117185261217530205a95656c8f5a1885a0",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "easyeda2kicad",
+      "image_url": "https://raw.githubusercontent.com/uPesy/easyeda2kicad.py/master/ressources/demo_symbol.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/uPesy/easyeda2kicad.py",
+      "revision": "fff10a38619963d7cb1c57d779655a9ea4572e95",
+      "checked_at": "2026-11-23T07:28:38+00:00"
     },
     {
       "id": "easyrazer-keyboard-case",
@@ -8854,6 +8863,15 @@
       "source_url": "https://github.com/mateusrezendeps19/taskly",
       "revision": "a8a676260ee5495c9cea6d2dd85228d4fca8a03f",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "tasmota",
+      "image_url": "https://user-images.githubusercontent.com/5904370/68332933-e6e5a600-00d7-11ea-885d-50395f7239a1.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/arendst/Tasmota",
+      "revision": "016be6317eb963777ae1879b9f59a76cca9e83e9",
+      "checked_at": "2026-11-23T07:28:38+00:00"
     },
     {
       "id": "tclimate-cloud-controls-case",

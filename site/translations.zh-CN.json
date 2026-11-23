@@ -44274,5 +44274,69 @@
       "处理需要已录制的基带、帧或软符号文件，以及与信号和采样率匹配的 pipeline。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "azahar": {
+    "name": "Azahar",
+    "requirements": [
+      "需要 3DS 游戏转储与系统文件；桌面版面向 Windows、Linux 与 macOS，另有 Android 版。",
+      "高层模拟提升了速度，但不能逐周期精确复现 3DS 硬件，部分游戏仍不受支持。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "pcsx2": {
+    "name": "PCSX2",
+    "requirements": [
+      "需要 PS2 BIOS 镜像与游戏光盘或镜像；提供 Windows、Linux 与 macOS 构建。",
+      "不同游戏兼容性不同，部分游戏需要逐游戏修正，硬件渲染依赖 GPU 驱动。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "mgba": {
+    "name": "mGBA",
+    "requirements": [
+      "需要 Game Boy、Game Boy Color 或 Game Boy Advance ROM；构建覆盖 Windows、macOS、Linux 及其他平台。",
+      "部分硬件边界情况仍为近似实现；README 标注缺失的功能未模拟。",
+      "采用 MPL-2.0 许可证。"
+    ]
+  },
+  "tasmota": {
+    "name": "Tasmota",
+    "requirements": [
+      "用于刷写 ESP8266 或 ESP32 硬件；需要受支持的设备与刷写方式。",
+      "受支持的 ESP 板卡与传感器列表有限；部分设备需要自定义构建以适配闪存容量。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "dump1090": {
+    "name": "dump1090",
+    "requirements": [
+      "需要 RTLSDR 接收机及其驱动，或用于离线解码的原始 IQ 采样文件。",
+      "Mode S 覆盖范围取决于天线、位置与接收增益；解码器只报告接收消息中出现的飞机。",
+      "采用 BSD-3-Clause 许可证。"
+    ]
+  },
+  "whatsmeow": {
+    "name": "whatsmeow",
+    "requirements": [
+      "需要 Go 与已配对的 WhatsApp 设备；该库实现 Web 多设备 API。",
+      "这是非官方客户端库，协议变化可能使功能失效，使用它也可能与服务条款冲突。",
+      "采用 MPL-2.0 许可证。"
+    ]
+  },
+  "easyeda2kicad": {
+    "name": "easyeda2kicad",
+    "requirements": [
+      "需要 Python 3 与 pip；安装后运行 CLI 从 EasyEDA 或 LCSC 获取元件数据。",
+      "转换后的库依赖上游元件数据与 3D 模型可用性，部分元件可能缺少模型或元数据。",
+      "采用 AGPL-3.0 许可证。"
+    ]
+  },
+  "freerdp": {
+    "name": "FreeRDP",
+    "requirements": [
+      "支持 Windows、Linux、macOS 及其他平台；需要可连接的 RDP 服务端与有效的会话信息。",
+      "服务端与客户端功能因后端而异，已实现的 RDP 扩展范围有限。",
+      "采用 Apache-2.0 许可证。"
+    ]
   }
 }

@@ -80,3 +80,32 @@ This round adds eight more records from the stored lead queue: two PlayStation e
 ## Validation notes
 
 All eight records carry pinned README evidence, Chinese requirements parallel to their facets where facets are present, and evidence-class entries. The batch also fixes the `WASM` spell-check finding in the previous batch by writing `WebAssembly` in the binja_wasm description, then regenerates previews, READMEs, case indexes and the site.
+
+---
+
+# Backlog curation review, fourth batch — 2026-11-23
+
+This round adds eight more records from the stored lead queue: three console emulators (Azahar, PCSX2 and mGBA), Tasmota alternative ESP firmware, the dump1090 Mode S decoder, the whatsmeow WhatsApp protocol library, the easyeda2kicad CAD conversion tool, and FreeRDP. No qualified 3D, animation, video or analysis-class reconstruction surfaced in this slice of the queue.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `azahar` | `game-analysis` | [azahar-emu/azahar](https://github.com/azahar-emu/azahar/blob/6f293a24daa292bd02b4ffee1a2adb5435e1ae00/README.md) | `9d325b7e75be361b51968a69da02b1f1f11d23eac6875a969d61e1afab045d7f` |
+| `pcsx2` | `game-analysis` | [PCSX2/pcsx2](https://github.com/PCSX2/pcsx2/blob/61d75c21bf007bd7214521a794f39051b301d699/README.md) | `739358ce872c24806fbd74445a3ad633894495e05677c86aed753760a0a4a80c` |
+| `mgba` | `game-analysis` | [mgba-emu/mgba](https://github.com/mgba-emu/mgba/blob/feeea8f5c2f53f3fc10e534b54c1b4f7366a42f2/README.md) | `0becd59a16337833fdf57f8d346662624e561b1356ad53f87db7d7914091f18e` |
+| `tasmota` | `firmware` | [arendst/Tasmota](https://github.com/arendst/Tasmota/blob/016be6317eb963777ae1879b9f59a76cca9e83e9/README.md) | `18f13cdd4f10bf93c41db9f37d5f79f1ef82cc49ef177be5f7671c547c4ad64f` |
+| `dump1090` | `protocol-analysis` | [antirez/dump1090](https://github.com/antirez/dump1090/blob/efe64db3c6ba1520291331628a33c1e208e851a6/README.md) | `6255f70a10b18112bfe3c45a38d1f8b7cab22b7aa0f7d3b05955efb7f21d8ec2` |
+| `whatsmeow` | `protocol-analysis` | [tulir/whatsmeow](https://github.com/tulir/whatsmeow/blob/19d61352436f3aeb21ad2cf93c2e3599ac409415/README.md) | `027b3da3b6d4d914ace426715b3cda7cf3365c27b704b400fb58a34e74864d99` |
+| `easyeda2kicad` | `native-analysis` | [uPesy/easyeda2kicad.py](https://github.com/uPesy/easyeda2kicad.py/blob/fff10a38619963d7cb1c57d779655a9ea4572e95/README.md) | `508c1917927f382837d9fb80e818391dbd2e99de3fd5556b421c0620312693ae` |
+| `freerdp` | `protocol-analysis` | [FreeRDP/FreeRDP](https://github.com/FreeRDP/FreeRDP/blob/5379388d4fc4bc3554a61343407be3cf5c9ee3ca/README.md) | `bff17fb39c0bb72fc286e9c799d3be11631bbd609cd65fba6a9002e6829af7c6` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| ferrumc-rs/ferrumc | The README states the Minecraft server rewrite is not actively maintained and its rework is on hold. |
+| valentderah/totk-pc-recomp, deadinside28/bloodborne_pc, scarsty/kys-cpp, yairm210/Unciv | Already curated under existing case ids; the lead queue still listed them as pending. |
+| openvideodev/react-video-editor, itsjwill/vanta | Custom or missing license terms; not a standard open-source license. |
+
+## Validation notes
+
+All eight records carry pinned README evidence, parallel Chinese requirements, and evidence-class entries; the two Class 1 records (Tasmota and easyeda2kicad) received previews. Previews, READMEs, case indexes and the site were regenerated.
