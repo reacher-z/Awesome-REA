@@ -79,7 +79,7 @@ class EntryDiscoveryValidationTests(unittest.TestCase):
 
     def test_sitemap_inventory_is_derived_and_rejects_missing_extra_duplicate_pages(self):
         base = [ORIGIN + prefix + path for prefix in ('', '/zh')
-                for path in ('/', '/resources/', '/cases/', '/papers/', '/survey/', '/about/', '/contribute/', '/api/', '/browse/',
+                for path in ('/', '/resources/', '/cases/', '/papers/', '/survey/', '/about/', '/contribute/', '/tools/', '/api/', '/browse/',
                              *(f'/browse/{category}/' for category in CATEGORIES))]
         urls = base + self.detail_urls
         validate_route_inventory(urls, self.resources, self.papers)
@@ -90,7 +90,7 @@ class EntryDiscoveryValidationTests(unittest.TestCase):
 
     def test_discovery_pages_stay_out_of_the_sitemap_inventory(self):
         base = [ORIGIN + prefix + path for prefix in ('', '/zh')
-                for path in ('/', '/resources/', '/cases/', '/papers/', '/survey/', '/about/', '/contribute/', '/api/')]
+                for path in ('/', '/resources/', '/cases/', '/papers/', '/survey/', '/about/', '/contribute/', '/tools/', '/api/')]
         urls = base + self.detail_urls
         validate_route_inventory(urls, self.resources, self.papers, include_browse=False, include_discoveries=False)
         classes = [ORIGIN + prefix + '/discoveries/game/' for prefix in ('', '/zh')]
