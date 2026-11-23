@@ -154761,6 +154761,7 @@
     ],
     "evidence_url": "https://github.com/Stewmath/oracles-disasm/blob/21c924afdc8a13225e849214479d5113da2ec226/README.md",
     "verified_at": "2026-11-07",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "added_at": "2026-11-23"
   }
 ]
