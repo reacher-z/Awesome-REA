@@ -71,7 +71,7 @@ OVERVIEW_MIN_SHARE = 0.45
 OVERVIEW_SECTOR_GAP = 0.012
 COPY = {
     'en': {
-        'h1': 'Reverse engineer <em>anything</em>',
+        'h1': 'Reverse Engineering <em>Anything</em>',
         'lede': 'Awesome REA (Awesome Reverse Engineering Anything) is a bilingual catalog of {res} source-reviewed tools, projects and case studies and {pap} research papers for taking apart binaries, games, apps, firmware, protocols and websites{stars}. Every entry links the primary source it was checked against.',
         'search_label': 'Search the catalogue', 'placeholder': 'Try Ghidra, IL2CPP or BLE', 'clear': 'Clear search', 'focus': 'Press / to focus',
         'stats': '<span class="s-lg"><strong>{res}</strong> curated resources and <strong>{pap}</strong> papers, each reviewed against its source. Plus <a href="/discoveries/"><strong>{idx}</strong> unreviewed discoveries</a> from the scans.</span><span class="s-sm"><strong>{res}</strong> resources, <strong>{pap}</strong> papers, <a href="/discoveries/"><strong>{idx}</strong> unreviewed</a></span>',
@@ -92,7 +92,7 @@ COPY = {
         'demo_note': 'Demo available · no screenshot',
     },
     'zh': {
-        'h1': '逆向<em>一切</em>',
+        'h1': '逆向<em>工程</em>',
         'lede': 'Awesome REA（Awesome Reverse Engineering Anything）是中英双语目录，收录 {res} 项经来源复核的工具、项目与案例，以及 {pap} 篇研究论文，涵盖二进制、游戏、应用、固件、协议与网站的逆向{stars}。每个条目都链接其核查所依据的一手来源。',
         'search_label': '搜索目录', 'placeholder': '试试 Ghidra、IL2CPP 或 BLE', 'clear': '清除搜索', 'focus': '按 / 键聚焦',
         'stats': '<span class="s-lg"><strong>{res}</strong> 项精选资源与 <strong>{pap}</strong> 篇论文，均已对照来源复核。另有 <a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核发现</a>来自自动扫描。</span><span class="s-sm"><strong>{res}</strong> 项资源、<strong>{pap}</strong> 篇论文、<a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核</a></span>',
@@ -371,7 +371,8 @@ OLD_TITLES = {'en': ('Awesome Reverse Engineering Anything · Tools, Cases &amp;
 def home_title(resources: list[dict], papers: list[dict], language: str) -> str:
     """The homepage title: the brand, then the real counts (at most 60 characters)."""
     res, pap = _count(len(resources)), _count(len(papers))
-    return f'Awesome REA（逆向一切）是资源目录：{res} 项资源与 {pap} 篇论文' if language == 'zh' else f'Awesome REA: Reverse Engineering Anything, {res} Resources'
+    return (f'逆向工程资源大全：{res} 项工具、案例与论文' if language == 'zh'
+            else f'Awesome Reverse Engineering: {res} Tools, Cases & Papers')
 
 
 def _masthead(resources, papers, discovery_count, last_scan, language, prefix, repository_url) -> str:
