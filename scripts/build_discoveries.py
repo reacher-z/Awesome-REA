@@ -398,7 +398,8 @@ def write_discoveries(site_dir: Path, catalog: dict, papers: list[dict], publish
         document = _document(site_url=site_url, repository_url=repository_url, path=path, language=language,
                              title=title, description=description,
                              content=page_content(queue, language, icons.href is not None, site_url, repository_url),
-                             schema=schema, assets=assets, icon_stylesheet=icons.href, source_export=source_export)
+                             schema=schema, assets=assets, icon_stylesheet=icons.href, source_export=source_export,
+                             noindex=True)
         feed_link = (f'<link rel="alternate" type="application/atom+xml" title="{escape(FEED_TITLES[int(zh)], quote=True)}" '
                      f'href="{FEED_PATHS[language]}">')
         if document.count('</head>') != 1:
@@ -424,7 +425,8 @@ def write_discoveries(site_dir: Path, catalog: dict, papers: list[dict], publish
             document = _document(site_url=site_url, repository_url=repository_url, path=path, language=language,
                                  title=title, description=description,
                                  content=class_page_content(queue, name, labels, records, language, icons.href is not None),
-                                 schema=schema, assets=assets, icon_stylesheet=icons.href, source_export=source_export)
+                                 schema=schema, assets=assets, icon_stylesheet=icons.href, source_export=source_export,
+                             noindex=True)
             destination = site_dir / path.lstrip('/') / 'index.html'
             destination.parent.mkdir(parents=True, exist_ok=True)
             destination.write_text(document, encoding='utf-8')

@@ -1344,7 +1344,8 @@ def validate_feeds(output, pages, resources, papers, discovery_batches=None):
                 route = DISCOVERY_PATHS[language]
                 title, summary = discovery_summary(record, language)
                 category = entry.find(atom + 'category')
-                assert route in pages, f'Discovery feed entries need the discovery list: {route}'
+                # The discovery list is noindex and outside the sitemap; the feed still links it for readers.
+                assert (output / route.lstrip('/') / 'index.html').is_file(), f'Discovery feed entries need a discovery list page: {route}'
                 assert (entry.findtext(atom + 'id') == f"tag:awesomerea.org,2026:discovery-batch:{record['batch_id']}:{language}"
                         and entry.findtext(atom + 'title') == title
                         and [link.get('href') for link in entry.findall(atom + 'link')] == [ORIGIN + route]
@@ -1416,15 +1417,15 @@ def validate_discovery_outputs(output, pages, queue):
         assert headers.get(path, {}).get('cache-control') == 'no-cache, must-revalidate', f'Discovery data must revalidate: {path}'
     for language, route in build_discoveries.PAGE_PATHS.items():
         zh = language == 'zh'
-        assert route in pages, f'Discovery list missing from the sitemap: {route}'
         text = (output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')
+        assert '<meta name="robots" content="noindex' in text, f'Discovery list must be noindex: {route}'
         shown = re.findall(r'<article class="source-card browse-repository" id="(scan-[0-9]+)"', text)
         expected_page = [record['id'] for _, _, records, _ in build_discoveries.page_groups(queue) for record in records]
         assert shown == expected_page, f'Discovery data points differ from the class groups: {route}'
         # A class the list page shortens links its own page, which lists every record of that class.
         for name, _, records in build_discoveries.class_pages(queue):
             path = build_discoveries.class_page_path(name, language)
-            assert path in pages, f'Discovery class page missing from the sitemap: {path}'
+            assert '<meta name="robots" content="noindex' in (output / path.lstrip('/') / 'index.html').read_text(encoding='utf-8'), f'Discovery class page must be noindex: {path}'
             assert f'href="{path}" data-discovery-more="{name}"' in text, f'Discovery list must link its class page: {path}'
             listed_here = re.findall(r'<article class="source-card browse-repository" id="(scan-[0-9]+)"',
                                      (output / path.lstrip('/') / 'index.html').read_text(encoding='utf-8'))
@@ -1792,7 +1793,7 @@ def main():
     resources = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['resources']
     papers = json.loads((OUTPUT / 'papers.json').read_text(encoding='utf-8'))
     validate_route_inventory(urls, resources, papers, include_browse=(OUTPUT / 'source-index.json').is_file(),
-                             include_discoveries=(OUTPUT / 'discoveries.json').is_file(),
+                             include_discoveries=False,
                              discovery_classes=discovery_class_pages(OUTPUT))
     try:
         _validate_pages(urls, resources, papers)

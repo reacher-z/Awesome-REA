@@ -7,9 +7,12 @@ without pages, such as categories when the repository index is absent, is left o
 Every URL lists its English, Chinese and x-default alternates, as the page's own hreflang links do. Its
 ``lastmod`` comes from the records the page shows, never from the build time, so rebuilding a commit gives
 the same files: an entry page uses the later of its record's ``added_at`` and ``verified_at``, a listing the
-newest of its records, the repository pages the selection's publication time, the discovery list its latest
-ingest, the survey its version date, the catalog-wide pages (home, about, contribute) the newest of all of those, and
+newest of its records, the repository pages the selection's publication time, the survey its version date,
+the catalog-wide pages (home, about, contribute) the newest of all of those, and
 the API guide the newest of those and both unreviewed queues, like the API's own generated_at.
+
+The unreviewed discovery queue is deliberately absent from the sitemaps: its list and class pages carry
+``noindex,follow`` so Google spends its crawl and quality budget on the curated catalog instead.
 """
 from __future__ import annotations
 
@@ -26,7 +29,7 @@ SITEMAP_NS = 'http://www.sitemaps.org/schemas/sitemap/0.9'
 XHTML_NS = 'http://www.w3.org/1999/xhtml'
 MAX_URLS = 50_000
 # Pages that summarize the whole catalog: their counts and dates change with any curated, paper or repository data.
-CATALOG_PAGES = ('/', '/about/', '/contribute/')
+CATALOG_PAGES = ('/', '/tools/', '/about/', '/contribute/')
 DATE = re.compile(r'\d{4}-\d{2}-\d{2}')
 DATETIME = re.compile(r'(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}:\d{2})(?:\.\d+)?(Z|[+-]\d{2}:\d{2})')
 
@@ -113,17 +116,13 @@ def page_dates(*, resources: list[dict], papers: list[dict], repository_document
         dates['/browse/'] = repositories
         from build_browse_pages import CATEGORIES
         dates.update({f'/browse/{category}/': repositories for category in CATEGORIES})
-    discoveries = latest(batch.get('ingested_at') for batch in discovery_batches or [])
-    if discoveries:
-        dates['/discoveries/'] = discoveries
-        # A class page lists records of the same batches as the list page.
-        dates.update(dict.fromkeys(discovery_class_pages, discoveries))
     if normalized_date(survey_date):
         dates['/survey/'] = normalized_date(survey_date)
     catalog = latest((curated, research, repositories))
     if catalog:
         for path in CATALOG_PAGES:
             dates[path] = catalog
+    discoveries = latest(batch.get('ingested_at') for batch in discovery_batches or [])
     # The API guide shows the API's generated_at: the newest of the catalog and both unreviewed queues.
     api = latest((catalog, discoveries, latest(batch.get('collected_at') for batch in lead_batches or [])))
     if api:

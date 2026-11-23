@@ -57,7 +57,7 @@ def validate_route_inventory(urls, resources, papers, *, include_browse=True, in
     routes = expected_entry_routes(resources, papers)
     expected = set(routes)
     for prefix in ("", "/zh"):
-        expected.update(prefix + path for path in ("/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/", "/api/"))
+        expected.update(prefix + path for path in ("/", "/tools/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/", "/api/"))
         # The later static pages of /resources/ and /cases/, each indexed with its own address.
         expected.update(page_path(page, "zh" if prefix else "en") for page in range(2, page_count(len(resources)) + 1))
         cases = len(case_order(resources))
@@ -188,7 +188,7 @@ def main():
     papers = json.loads((OUTPUT / "papers.json").read_text(encoding="utf-8"))
     urls = validate_sitemaps(OUTPUT, records, papers)
     entries = validate_route_inventory(urls, records, papers, include_browse=(OUTPUT / "source-index.json").is_file(),
-                                       include_discoveries=(OUTPUT / "discoveries.json").is_file(),
+                                       include_discoveries=False,
                                        discovery_classes=discovery_class_pages(OUTPUT))
     documents = {}
     for url, page in zip(urls, forked_checks.ordered_map(_read_document, urls)):
@@ -245,7 +245,15 @@ def main():
     assert (OUTPUT / "llms.txt").is_file(), "Missing optional catalog index"
     # The transitional explorer pages are noindex, so they stay out of the sitemap.
     explorer = {OUTPUT / "explore/index.html", OUTPUT / "zh/explore/index.html"}
-    assert len(urls) == len([page for page in OUTPUT.rglob("index.html") if page not in explorer]), "A generated page is absent from the sitemap"
+    # Noindex pages (the unreviewed discovery queue and transitional explorer) stay out of the sitemap.
+    noindex_pages = [page for page in OUTPUT.rglob("index.html")
+                     if page not in explorer and "<meta name=\"robots\" content=\"noindex" in page.read_text(encoding="utf-8")]
+    def route_of(page):
+        relative = page.parent.relative_to(OUTPUT).as_posix()
+        return ORIGIN + "/" + ("" if relative == "." else relative + "/")
+    missing = [page for page in OUTPUT.rglob("index.html")
+               if page not in explorer and page not in noindex_pages and route_of(page) not in urls]
+    assert not missing, f"A canonical generated page is absent from the sitemap: {missing[:3]}"
     print(f"Discovery checks passed: {len(urls)} canonical pages in the sitemap index with data-dated lastmod and hreflang alternates, {len(entries)} localized detail pages, reciprocal languages, {len(records)} static curated entries per language, JSON-LD, and permissions for {len(CRAWLERS)} named crawlers.")
 
 
