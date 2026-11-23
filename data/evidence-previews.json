@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T18:56:27+00:00",
-    "entry_count": 1147,
-    "class_entry_count": 1178,
+    "generated_at": "2026-11-23T19:36:56+00:00",
+    "entry_count": 1150,
+    "class_entry_count": 1181,
     "class_counts": {
-      "image": 1108,
+      "image": 1111,
       "video": 39
     },
     "missing_count": 31,
@@ -2387,6 +2387,15 @@
       "checked_at": "2026-11-08T23:42:11+00:00"
     },
     {
+      "id": "eka2l1",
+      "image_url": "https://raw.githubusercontent.com/EKA2L1/EKA2L1/e6d454d1caa826affef1784a6097a178a841e598/screenshots/0.0.8/screenshot_008_calculator.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/EKA2L1/EKA2L1",
+      "revision": "e6d454d1caa826affef1784a6097a178a841e598",
+      "checked_at": "2026-11-23T19:36:56+00:00"
+    },
+    {
       "id": "eleven-agent-re-workbench",
       "image_url": "https://raw.githubusercontent.com/Zfinix/eleven/9fb1042696a0e0a3387e3c3317b6e697013ae835/docs/images/home.png",
       "kind": "image",
@@ -2819,6 +2828,15 @@
       "checked_at": "2026-11-09T04:14:52+00:00"
     },
     {
+      "id": "freso",
+      "image_url": "http://freeso.org/wp-content/uploads/2017/05/band.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/riperiperi/FreeSO",
+      "revision": "4c6b3e8f5835b228723caea3c9f683c62f244f73",
+      "checked_at": "2026-11-23T19:36:56+00:00"
+    },
+    {
       "id": "fretwire-case",
       "image_url": "https://raw.githubusercontent.com/john-baxter-dev/fretwire/4e09a14769c0616244efcaabda6a746c21473408/docs/screenshots/editor.png",
       "kind": "image",
@@ -3033,6 +3051,15 @@
       "source_url": "https://github.com/dennisonbertram/gearvr-controller",
       "revision": "fa799373ad94449d56a3fcdf5dd43c28827984f2",
       "checked_at": "2026-11-08T23:42:11+00:00"
+    },
+    {
+      "id": "gearboy",
+      "image_url": "http://www.geardome.com/files/gearboy/gearboy_004.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/drhelius/Gearboy",
+      "revision": "340964cb57a63432fb56d9ca2a2965457d9275d5",
+      "checked_at": "2026-11-23T19:36:56+00:00"
     },
     {
       "id": "gef",

@@ -6,10 +6,14 @@
 
 [English](game-5.md)
 
-**360 个案例**
+**364 个案例**
 
 ## 引擎重实现
 
+- [**TwinEngine：《Little Big Adventure 1》引擎重写**](https://github.com/LBALab/twin-e) - TwinEngine 用 C 重写《Little Big Adventure 1》引擎，读取原版安装文件运行游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twinengine-lba1-case/)</sub>
+- [**Twisted Metal：2012 年 PS3 游戏的 Rust 重实现**](https://gitlab.com/goblindo/twisted-metal) - Twisted Metal 以 Rust 重实现 2012 年 PS3 游戏的引擎，面向 Linux 和 macOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twisted-metal-native-engine-case/)</sub>
+- [**UA\_source：Urban Assault 游戏引擎重实现**](https://github.com/Marisa-Chan/UA_source) - UA\_source 使用 C++ 重实现 Urban Assault 引擎，运行时读取用户自备的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ua-source-case/)</sub>
+- [**UAlbion：1995 年 RPG《Albion》重建**](https://github.com/csinkers/ualbion) - UAlbion 使用原版《Albion》游戏数据，以 C# 重建这款 1995 年的角色扮演游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ualbion-case/)</sub>
 - [**Ultima V Redux：使用原版游戏数据重建《Ultima V》**](https://github.com/bradhannah/UltimaVRedux) - Ultima V Redux 使用玩家自备的 MS-DOS PC 版文件，以 Go 重建《Ultima V: Warriors of Destiny》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ultima-v-redux-case/)</sub>
 - [**Un-Banished：用 Rust 重建 Banished 引擎**](https://github.com/tanepiper/unbanished) - Un-Banished 用 Rust 重建 Banished 1.0.7 引擎，读取玩家自有游戏数据，在桌面和浏览器中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/un-banished-case/)</sub>
 - [**Unciv：文明 V 玩法重制**](https://github.com/yairm210/Unciv) - Unciv 使用 LibGDX 在 Android 和桌面平台重制《文明 V》的玩法，并支持模组。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/unciv-civ-v-case/)</sub>

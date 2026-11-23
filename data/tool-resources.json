@@ -158011,5 +158011,176 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "sdlpop",
+    "name": "SDLPoP: an open-source port of Prince of Persia from its DOS disassembly",
+    "url": "https://github.com/NagyD/SDLPoP",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "An open-source port of Prince of Persia based on the disassembly of the DOS version, with SDL2 support and new features such as improved gamepad handling and replay files.",
+    "description_zh": "基于 DOS 版反汇编的开源《波斯王子》移植版，支持 SDL2，并加入改进的手柄支持与回放文件等新功能。",
+    "evidence_url": "https://github.com/NagyD/SDLPoP/blob/f7be2e939375d369d26e1d10bcdd5ca74d3002a2/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Prince of Persia DOS game data; builds target Windows, Linux and macOS.",
+      "It is based on the DOS disassembly and adds features, so behavior can differ from the original release.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "freso",
+    "name": "FreeSO: a full reimplementation of The Sims Online",
+    "url": "https://github.com/riperiperi/FreeSO",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "A full reimplementation of The Sims Online built on MonoGame, with hardware rendering, dynamic lighting, high-resolution output and multi-floor houses while preserving the original game.",
+    "description_zh": "基于 MonoGame 的《The Sims Online》完整重实现，提供硬件渲染、动态光照、高分辨率输出与多层房屋，并保留原版游戏内容。",
+    "evidence_url": "https://github.com/riperiperi/FreeSO/blob/4c6b3e8f5835b228723caea3c9f683c62f244f73/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original The Sims Online game files for objects, avatars and UI; the client runs on Windows with MonoGame.",
+      "It is a game engine and does not include the original assets.",
+      "MPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "forgottenserver",
+    "name": "The Forgotten Server: an open-source Tibia server emulator",
+    "url": "https://github.com/otland/forgottenserver",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "A free and open-source MMORPG server emulator written in C++ for Tibia, forked from OpenTibia Server, with scripting, database support and a Docker image.",
+    "description_zh": "用 C++ 编写的开源 Tibia MMORPG 服务器模拟器，源自 OpenTibia Server，支持脚本、数据库与 Docker 镜像。",
+    "evidence_url": "https://github.com/otland/forgottenserver/blob/1561fa91d0a0a879dd90792a87f82ea31083de03/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Tibia client data and a database; the server builds with CMake and vcpkg and ships a Docker image.",
+      "It emulates the game server, and compatibility depends on the client version and data pack.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "eka2l1",
+    "name": "EKA2L1",
+    "url": "https://github.com/EKA2L1/EKA2L1",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "mobile-app-dev",
+    "targets": [
+      "app",
+      "game"
+    ],
+    "description_en": "A Symbian OS and N-Gage emulator written in C++17 that emulates the OS kernel and reimplements critical app servers and libraries so early smartphone apps and games run on modern platforms.",
+    "description_zh": "使用 C++17 编写的 Symbian OS 与 N-Gage 模拟器，模拟操作系统内核并重实现关键应用服务与库，使早期智能手机应用与游戏可在现代平台运行。",
+    "evidence_url": "https://github.com/EKA2L1/EKA2L1/blob/e6d454d1caa826affef1784a6097a178a841e598/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Symbian or N-Gage app and game files plus the appropriate device firmware; builds target desktop platforms.",
+      "The emulator is work in progress, and compatibility varies by app and device model.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "gearboy",
+    "name": "Gearboy",
+    "url": "https://github.com/drhelius/Gearboy",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An accurate cross-platform Game Boy, Game Boy Color and Super Game Boy emulator written in C++ for Windows, macOS, Linux, BSD and RetroArch, with an embedded MCP server for AI debugging.",
+    "description_zh": "准确的跨平台 Game Boy、Game Boy Color 与 Super Game Boy 模拟器，使用 C++ 编写，支持 Windows、macOS、Linux、BSD 与 RetroArch，并内置供 AI 调试使用的 MCP 服务。",
+    "evidence_url": "https://github.com/drhelius/Gearboy/blob/340964cb57a63432fb56d9ca2a2965457d9275d5/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Game Boy or Game Boy Color ROMs; builds target Windows, macOS, Linux, BSD and RetroArch.",
+      "Compatibility varies by title, and the embedded debugging server needs a compatible AI client.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "rt64",
+    "name": "RT64",
+    "url": "https://github.com/rt64/rt64",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An N64 graphics renderer for playing games with enhancements in emulators and native ports, built on D3D12, Vulkan and Metal with ubershaders and no game-specific workarounds.",
+    "description_zh": "面向模拟器与原生移植的 N64 图形渲染器，基于 D3D12、Vulkan 与 Metal，使用 ubershader 且不依赖逐游戏 workaround，可在运行游戏时提供增强效果。",
+    "evidence_url": "https://github.com/rt64/rt64/blob/d9817c68ffd7328cd0af383af124971489366e18/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an N64 emulator or native port that integrates it, a supported graphics API and the game data.",
+      "Emulator plugin support and ray tracing are not yet available in the public repository.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

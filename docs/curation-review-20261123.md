@@ -284,3 +284,31 @@ This round adds eight records from the stored lead queue: Project64, Visual Boy 
 ## Validation notes
 
 All eight records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; four Class 1 records received previews. Previews, READMEs and the site were regenerated.
+
+---
+
+# Backlog curation review, eleventh batch — 2026-11-23
+
+This round adds six records from the stored lead queue, weighted toward reconstruction cases: SDLPoP (Prince of Persia), FreeSO (The Sims Online) and The Forgotten Server (Tibia server), plus EKA2L1 (Symbian/N-Gage emulator), Gearboy and RT64. A smaller batch keeps the bilingual README growth in check.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `sdlpop` | `reconstruction-cases` | [NagyD/SDLPoP](https://github.com/NagyD/SDLPoP/blob/f7be2e939375d369d26e1d10bcdd5ca74d3002a2/README.md) | `c08a42a7c6afd1bea84e7729697cf846ef0e5b95027914636bb2f95ec689a3b8` |
+| `freso` | `reconstruction-cases` | [riperiperi/FreeSO](https://github.com/riperiperi/FreeSO/blob/4c6b3e8f5835b228723caea3c9f683c62f244f73/README.md) | `347febfa03e066e2001d218ff58ff70e77fd33a2007ce795dd924446a5bf57e8` |
+| `forgottenserver` | `reconstruction-cases` | [otland/forgottenserver](https://github.com/otland/forgottenserver/blob/1561fa91d0a0a879dd90792a87f82ea31083de03/README.md) | `c6542cbaf3d00fd59282219488ddd25167aefcbe778fc341c77f5a5027003c1a` |
+| `eka2l1` | `game-analysis` | [EKA2L1/EKA2L1](https://github.com/EKA2L1/EKA2L1/blob/e6d454d1caa826affef1784a6097a178a841e598/README.md) | `c9e76a45090cb11e6637ced0bb468a29060c4316fefe51201e245842c3935a8b` |
+| `gearboy` | `game-analysis` | [drhelius/Gearboy](https://github.com/drhelius/Gearboy/blob/340964cb57a63432fb56d9ca2a2965457d9275d5/README.md) | `6ea5de9913a11f9032c5a2ffd82d624524006cd9afa6940c3b81f536a6e13dc3` |
+| `rt64` | `game-analysis` | [rt64/rt64](https://github.com/rt64/rt64/blob/d9817c68ffd7328cd0af383af124971489366e18/README.md) | `63d619fe018adcc0971a74b03eff4575fea4edbd793e7bfb925e607ab58e3a11` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| amhndu/SimpleNES | README declares the project archived and no longer maintained. |
+| TASEmulators/desmume | README is a 225-byte stub below the documentation threshold. |
+| dxx-rebirth, ECWolf, OpenBVE, OpenLieroX, BizHawk | No license file recorded by the GitHub API. |
+| OpenRA/ra2, OpenKrush, Yuris-Revenge, CAmod | OpenRA game mods rather than standalone reconstructions. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; FreeSO, EKA2L1 and Gearboy received Class 1 previews. The three new case studies update the game case indexes and README case sections.

@@ -44722,5 +44722,53 @@
       "板卡支持与传感器驱动取决于构建配置。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "sdlpop": {
+    "name": "SDLPoP：基于 DOS 反汇编的《波斯王子》开源移植",
+    "requirements": [
+      "需要原版 DOS《波斯王子》游戏数据；构建覆盖 Windows、Linux 与 macOS。",
+      "它基于 DOS 反汇编并加入新功能，行为可能与原版发行版不同。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "freso": {
+    "name": "FreeSO：《The Sims Online》的完整重实现",
+    "requirements": [
+      "需要原版《The Sims Online》的对象、角色与 UI 资源；客户端在 Windows 上使用 MonoGame 运行。",
+      "它是游戏引擎，不包含原版资源。",
+      "采用 MPL-2.0 许可证。"
+    ]
+  },
+  "forgottenserver": {
+    "name": "The Forgotten Server：开源 Tibia 服务器模拟器",
+    "requirements": [
+      "需要 Tibia 客户端数据与数据库；服务器使用 CMake 与 vcpkg 构建，并提供 Docker 镜像。",
+      "它模拟游戏服务器，兼容性取决于客户端版本与数据包。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "eka2l1": {
+    "name": "EKA2L1",
+    "requirements": [
+      "需要 Symbian 或 N-Gage 应用/游戏文件及相应设备固件；构建面向桌面平台。",
+      "模拟器仍在开发中，兼容性因应用与设备型号而异。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "gearboy": {
+    "name": "Gearboy",
+    "requirements": [
+      "需要 Game Boy 或 Game Boy Color ROM；构建覆盖 Windows、macOS、Linux、BSD 与 RetroArch。",
+      "兼容性因游戏而异，内置调试服务需要兼容的 AI 客户端。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "rt64": {
+    "name": "RT64",
+    "requirements": [
+      "需要集成它的 N64 模拟器或原生移植、受支持的图形 API 与游戏数据。",
+      "公开仓库尚未提供模拟器插件支持与光线追踪。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

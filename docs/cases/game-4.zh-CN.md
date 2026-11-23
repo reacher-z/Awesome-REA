@@ -6,7 +6,7 @@
 
 [English](game-4.md)
 
-**630 个案例**
+**629 个案例**
 
 ## 基于重建源码的移植
 
@@ -103,6 +103,7 @@
 - [**rr-pc-port：在 PC 上重建可玩的 Ridge Racer 比赛**](https://github.com/kazuyette/rr-pc-port) - rr-pc-port 将 1994 年 PlayStation 版 Ridge Racer 的游戏逻辑改写为可移植 C 代码，在 PC 上重建可玩的比赛片段。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rr-pc-port-case/)</sub>
 - [**Salamander UEFI：《沙罗曼蛇》的反汇编驱动 UEFI 移植**](https://github.com/MikeWuPing/UEFI_Salamander) - Salamander UEFI 将红白机游戏《沙罗曼蛇》的 6502 反汇编翻译成平台无关的 C 核心，移植为原生 UEFI Shell 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/salamander-uefi-case/)</sub>
 - [**Scooby-Doo! Mystery Mayhem：Rust 与 Bevy 实现的 PS2 游戏移植**](https://github.com/Campfirecrucifix/scooby-doo-mystery-mayhem-pc) - 该项目用 Rust 和 Bevy 将 PS2《Scooby-Doo! Mystery Mayhem》移植到 PC，重写经逆向分析的引擎和游戏逻辑模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scooby-doo-mystery-mayhem-pc-case/)</sub>
+- [**SDLPoP：基于 DOS 反汇编的《波斯王子》开源移植**](https://github.com/NagyD/SDLPoP) - 基于 DOS 版反汇编的开源《波斯王子》移植版，支持 SDL2，并加入改进的手柄支持与回放文件等新功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sdlpop/)</sub>
 - [**SF33RDSXBRecompo：Xbox 版 3rd Strike 原生移植**](https://github.com/Manya3084/SF33RDSXBRecompo) - SF33RDSXBRecompo 使用 3s-decomp-ogxb 恢复的 C 游戏逻辑，将 Xbox 版 Street Fighter III: 3rd Strike 移植到 Windows、Linux 和 Android。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sf33rdsxbrecompo-case/)</sub>
 - [**Shadow of the Colossus：PS4 版游戏的原生 Windows 移植**](https://github.com/Oussama268/ShadowOfTheColossus-PC) - Shadow of the Colossus 将 PS4 游戏的 x86-64 代码直接运行于 Windows 10/11，并把图形处理转换为 Vulkan。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shadow-of-the-colossus-oussama-pc-case/)</sub>
 - [**Shadow of the Colossus：在 Windows 上原生运行 PS4 版游戏**](https://github.com/AjncSystem/ShadowOfTheColossus-PC) - Shadow of the Colossus-PC 使用玩家自己的 PS4 游戏转储，在 Windows 10 和 11 上运行《Shadow of the Colossus》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shadow-of-the-colossus-pc-case/)</sub>
@@ -315,6 +316,7 @@
 - [**Freenukum：Duke Nukem 1 游戏复刻**](https://gitlab.com/silwol/freenukum) - Freenukum 使用 Rust 复刻 1991 年的 DOS 游戏 Duke Nukem 1，运行时需要原版图像数据，并提供数据安装工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/freenukum-case/)</sub>
 - [**FreeRS42：重实现《Ricochet Xtreme》**](https://github.com/NuVelocity/FRS42) - FreeRS42 是使用 NuVelocity 引擎、以 C++ 重现 PC 游戏《Ricochet Xtreme》的项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/freers42-ricochet-xtreme-case/)</sub>
 - [**FreeSims：重建《模拟人生 1》引擎**](https://github.com/francot514/FreeSims) - FreeSims 用 C# 重建《模拟人生 1》引擎，读取用户原版游戏安装文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/freesims-case/)</sub>
+- [**FreeSO：《The Sims Online》的完整重实现**](https://github.com/riperiperi/FreeSO) - 基于 MonoGame 的《The Sims Online》完整重实现，提供硬件渲染、动态光照、高分辨率输出与多层房屋，并保留原版游戏内容。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/freso/)</sub>
 - [**FreeSynd：Syndicate 游戏引擎重实现**](https://sourceforge.net/projects/freesynd/) - FreeSynd 重实现 Bullfrog《Syndicate》的游戏引擎，运行时读取原版游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/freesynd-case/)</sub>
 - [**FreeTFC：重建《军团要塞经典版》**](https://github.com/eukara/freetfc) - FreeTFC 是用 QuakeC 对《军团要塞经典》做的净室重新实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/freetfc/)</sub>
 - [**G-Engine：基于原始数据重建《Gabriel Knight 3》**](https://github.com/kromenak/gengine) - G-Engine 用 C++ 重建《Gabriel Knight 3: Blood of the Sacred, Blood of the Damned》的游戏引擎，在 Windows、macOS 和 Linux 上读取原版数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/g-engine-gabriel-knight-3-case/)</sub>
@@ -628,6 +630,7 @@
 - [**th10：面向浏览器重建《东方风神录》1.00a**](https://github.com/Ritosa2333/th10) - th10 以 C++ 重实现《东方风神录》1.00a，并构建可移植的浏览器运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/th10-mountain-of-faith-case/)</sub>
 - [**The Crystal Scrolls：基于 Crystal Space 的《The Elder Scrolls III: Morrowind》引擎**](https://sourceforge.net/projects/crystalscrolls/) - 在 Crystal Space 3D 引擎上重写《The Elder Scrolls III: Morrowind》的引擎，读取已安装的 Morrowind 及 Tribunal、Bloodmoon 的 BSA 与 ESM 文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crystal-scrolls-case/)</sub>
 - [**The Force Engine：为《Dark Forces》重建 Jedi Engine**](https://github.com/TheForceEngine/TheForceEngine) - The Force Engine 重建 Jedi Engine，利用用户的原版游戏在现代系统上运行《Star Wars: Dark Forces》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/the-force-engine-case/)</sub>
+- [**The Forgotten Server：开源 Tibia 服务器模拟器**](https://github.com/otland/forgottenserver) - 用 C++ 编写的开源 Tibia MMORPG 服务器模拟器，源自 OpenTibia Server，支持脚本、数据库与 Docker 镜像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/forgottenserver/)</sub>
 - [**The Hobbit：重建游戏图形引擎**](https://github.com/richcarl/hobbitgfx) - hobbitgfx 用 JavaScript 实现 Melbourne House 于 1982 年推出的文字冒险游戏《The Hobbit》的图形引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hobbitgfx-case/)</sub>
 - [**Thirdeye：重实现 Eye of the Beholder 3 与 Dungeon Hack 的 AESOP 引擎**](https://github.com/psi29a/thirdeye) - Thirdeye 以 C++ 重实现 AESOP/16 与 AESOP/32 引擎，读取原版 RES 文件并运行未修改的字节码，以支持 Eye of the Beholder 3 和 Dungeon Hack。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thirdeye-aesop-engine-case/)</sub>
 - [**Thyme《将军》引擎重实现**](https://github.com/TheAssemblyArmada/Thyme) - Thyme 是《命令与征服：将军之绝命时刻》的开源重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thyme/)</sub>
@@ -639,8 +642,4 @@
 - [**Tower Toppler：重做 Nebulus**](https://gitlab.com/roever/toppler) - Tower Toppler 重做了以旋转高塔为特色的平台解谜游戏 Nebulus，并重新绘制画面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tower-toppler-case/)</sub>
 - [**tower-together：为多人游戏重构 SimTower 模拟逻辑**](https://github.com/phulin/tower-together) - tower-together 将 SimTower 的模拟逻辑重构为多人浏览器游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tower-together-case/)</sub>
 - [**TurokEX：在 Kex 引擎上重建 PC 版 Turok**](https://github.com/svkaiser/TurokEX) - TurokEX 在 Kex 引擎上重新实现 PC 版 Turok，游戏中的角色、敌人 AI、武器、拾取物、区域和 HUD 均以 AngelScript 类编写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/turokex-case/)</sub>
-- [**TwinEngine：《Little Big Adventure 1》引擎重写**](https://github.com/LBALab/twin-e) - TwinEngine 用 C 重写《Little Big Adventure 1》引擎，读取原版安装文件运行游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twinengine-lba1-case/)</sub>
-- [**Twisted Metal：2012 年 PS3 游戏的 Rust 重实现**](https://gitlab.com/goblindo/twisted-metal) - Twisted Metal 以 Rust 重实现 2012 年 PS3 游戏的引擎，面向 Linux 和 macOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twisted-metal-native-engine-case/)</sub>
-- [**UA\_source：Urban Assault 游戏引擎重实现**](https://github.com/Marisa-Chan/UA_source) - UA\_source 使用 C++ 重实现 Urban Assault 引擎，运行时读取用户自备的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ua-source-case/)</sub>
-- [**UAlbion：1995 年 RPG《Albion》重建**](https://github.com/csinkers/ualbion) - UAlbion 使用原版《Albion》游戏数据，以 C# 重建这款 1995 年的角色扮演游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ualbion-case/)</sub>
 <!-- END GENERATED CASES -->

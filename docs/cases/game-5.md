@@ -6,10 +6,14 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**360 case studies**
+**364 case studies**
 
 ## Engine reimplementations
 
+- [**TwinEngine: a Little Big Adventure 1 engine rewrite**](https://github.com/LBALab/twin-e) - TwinEngine rewrites the Little Big Adventure 1 engine in C to run the original game from its installation files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/twinengine-lba1-case/)</sub>
+- [**Twisted Metal: Rust reimplementation of the 2012 PS3 game**](https://gitlab.com/goblindo/twisted-metal) - Twisted Metal reimplements the 2012 PS3 game's engine in Rust for Linux and macOS. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/twisted-metal-native-engine-case/)</sub>
+- [**UA\_source: a reimplementation of the Urban Assault engine**](https://github.com/Marisa-Chan/UA_source) - UA\_source reimplements the Urban Assault engine in C++ and plays using files from the user's original game copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ua-source-case/)</sub>
+- [**UAlbion: a remake of the 1995 RPG Albion**](https://github.com/csinkers/ualbion) - UAlbion reimplements the 1995 RPG Albion in C# using data from an original game installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ualbion-case/)</sub>
 - [**Ultima V Redux: recreating Ultima V from original game data**](https://github.com/bradhannah/UltimaVRedux) - Ultima V Redux recreates Ultima V: Warriors of Destiny in Go using files from the player's MS-DOS PC copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ultima-v-redux-case/)</sub>
 - [**Un-Banished: reconstructing the Banished engine in Rust**](https://github.com/tanepiper/unbanished) - Un-Banished rebuilds the Banished 1.0.7 engine in Rust for desktop and browser play using data from the user's own game copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/un-banished-case/)</sub>
 - [**Unciv: a Civilization V gameplay remake**](https://github.com/yairm210/Unciv) - Unciv recreates Civilization V gameplay as a moddable Android and desktop game built with LibGDX. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/unciv-civ-v-case/)</sub>
