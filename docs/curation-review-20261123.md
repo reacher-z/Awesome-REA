@@ -367,3 +367,27 @@ This round adds six records from the stored lead queue: Bochs and Heads as hardw
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Heads and The Oracles Project received Class 1 previews. The new case study updates the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, fourteenth batch — 2026-11-23
+
+This round adds four libyal format libraries from the stored lead queue: libesedb (ESE databases), libpff (Outlook mail stores), libbde (BitLocker volumes) and libfsntfs (NTFS). The batch stays small because all four are Class 2 without previews and the bilingual README is close to its rendering budget.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `libesedb` | `binary-libraries` | [libyal/libesedb](https://github.com/libyal/libesedb/blob/bd12fbe75d31005a4180688f0b49400445b321fb/README.md) | `1892f529d6a96cac014c929abaa84ee70063974030965127d54d41be2e489164` |
+| `libpff` | `binary-libraries` | [libyal/libpff](https://github.com/libyal/libpff/blob/d233208f12ebbaeef0b0a9196e010d0ccca93caa/README.md) | `a014a522f956c1fb503137e6726bb4c42e12af4dee6601b1abac34f6a4c650cf` |
+| `libbde` | `binary-libraries` | [libyal/libbde](https://github.com/libyal/libbde/blob/4343f149fd37dbae30a832fac5571a97f471d579/README.md) | `3cb7b8a17bc292555296bb794898fb7e4281557181dcf8c41378e36258b20afe` |
+| `libfsntfs` | `binary-libraries` | [libyal/libfsntfs](https://github.com/libyal/libfsntfs/blob/2d22e7fe338bf7cc1718e1c94a8b44769dbb1aaa/README.md) | `b47adc507213ee4ec0b3feb9159664dfefe047e166073bee396f17895858cd02` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| libyal/libevtx, libyal/libregf | READMEs are below the 400-byte documentation threshold used by the evidence rubric. |
+| libyal/libvshadow, libyal/libolecf | Lower-star siblings deferred to keep the batch focused on the highest-use formats. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. All are Class 2, so no previews were added; READMEs and the site were regenerated.

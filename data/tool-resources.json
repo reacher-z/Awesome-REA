@@ -158517,5 +158517,113 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "libesedb",
+    "name": "libesedb",
+    "url": "https://github.com/libyal/libesedb",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A library and tools to access the Extensible Storage Engine database file format used by Windows Search, Exchange and Active Directory, with parsing, export and recovery support.",
+    "description_zh": "用于访问 Windows Search、Exchange 与 Active Directory 所用 Extensible Storage Engine（ESE）数据库文件格式的库与工具，支持解析、导出与恢复。",
+    "evidence_url": "https://github.com/libyal/libesedb/blob/bd12fbe75d31005a4180688f0b49400445b321fb/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a C toolchain and the libyal build system; the tools read the supported ESE database variants and can export parsed data.",
+      "The project is experimental and covers the documented format subset; malformed or newer variants may not parse.",
+      "LGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "libpff",
+    "name": "libpff",
+    "url": "https://github.com/libyal/libpff",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A library and tools to access the Personal Folder File and Offline Folder File formats used by Outlook mail stores, with message and attachment export.",
+    "description_zh": "用于访问 Outlook 邮件存储所用 Personal Folder File（PFF）与 Offline Folder File（OFF）格式的库与工具，可导出邮件与附件。",
+    "evidence_url": "https://github.com/libyal/libpff/blob/d233208f12ebbaeef0b0a9196e010d0ccca93caa/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a C toolchain and the libyal build system; the tools read PST and OST mail stores and can export messages and attachments.",
+      "The project is experimental and covers the documented format subset; damaged or newer store variants may not parse.",
+      "LGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "libbde",
+    "name": "libbde",
+    "url": "https://github.com/libyal/libbde",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A library and tools to access BitLocker Drive Encryption encrypted volumes, including recovery and key handling.",
+    "description_zh": "用于访问 BitLocker 驱动器加密卷的库与工具，包含恢复与密钥处理功能。",
+    "evidence_url": "https://github.com/libyal/libbde/blob/4343f149fd37dbae30a832fac5571a97f471d579/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a C toolchain and the libyal build system, plus the encrypted volume image and the applicable recovery material.",
+      "The project is experimental, and newer BitLocker variants or TPM-bound volumes may not be supported.",
+      "LGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "libfsntfs",
+    "name": "libfsntfs",
+    "url": "https://github.com/libyal/libfsntfs",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A library and tools to access the Windows New Technology File System, including file records, attributes and metadata.",
+    "description_zh": "用于访问 Windows NTFS 文件系统的库与工具，包含文件记录、属性与元数据解析。",
+    "evidence_url": "https://github.com/libyal/libfsntfs/blob/2d22e7fe338bf7cc1718e1c94a8b44769dbb1aaa/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a C toolchain and the libyal build system, plus a disk image or volume containing NTFS.",
+      "The project is experimental and focuses on the documented format structures; damaged or newer variants may not parse completely.",
+      "LGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]
