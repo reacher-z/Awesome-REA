@@ -154761,6 +154761,7 @@
     ],
     "evidence_url": "https://github.com/akarnokd/open-ig/blob/9891378f2f00ba83d51ad92773f8cb2dd9744b12/README.md",
     "verified_at": "2026-11-07",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "added_at": "2026-11-23"
   }
 ]
