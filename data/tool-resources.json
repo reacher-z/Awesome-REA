@@ -157117,5 +157117,228 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "anyps5",
+    "name": "AnyPS5",
+    "url": "https://github.com/boykopovar/AnyPS5",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A tool that automatically ports PlayStation 5 executables to Linux and Windows by relinking them, with a desktop build, a relinker-only build for macOS including Apple silicon, and a browser converter that processes files locally.",
+    "description_zh": "把 PlayStation 5 可执行文件自动重链接移植到 Linux 与 Windows 的工具，提供桌面版、可在 Apple Silicon 上运行的仅重链接版，以及本地处理文件的浏览器转换器。",
+    "evidence_url": "https://github.com/boykopovar/AnyPS5/blob/7482424113477a71f7a259b2b4b75607858e25c5/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a PS5 executable and its dependent libraries; the relinker-only build runs on macOS, including Apple silicon.",
+      "It relinks executables rather than whole games, so compatibility depends on the binary, its libraries and the target platform.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "touchhle",
+    "name": "touchHLE",
+    "url": "https://github.com/touchHLE/touchHLE",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "mobile-app-dev",
+    "targets": [
+      "app",
+      "game"
+    ],
+    "description_en": "A high-level emulator for early iOS apps that takes the place of iOS itself, implementing Foundation, UIKit, OpenGL ES and OpenAL rather than simulating iPhone hardware, with desktop and Android builds written in Rust.",
+    "description_zh": "面向早期 iOS 应用的高层模拟器：它代替 iOS 系统本身，实现 Foundation、UIKit、OpenGL ES 与 OpenAL，而不直接模拟 iPhone 硬件；使用 Rust 编写，提供桌面与 Android 版。",
+    "evidence_url": "https://github.com/touchHLE/touchHLE/blob/ca1de89c578e79746f33c1332e28efd106c334ba/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an early iOS app binary (iPhone OS 2.x to iOS 4.0.x); builds target desktop operating systems and Android.",
+      "High-level emulation covers the system frameworks the app uses, so unsupported APIs and newer apps do not run.",
+      "MPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "impostor",
+    "name": "Impostor: an open-source reimplementation of the Among Us server",
+    "url": "https://github.com/Impostor/Impostor",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "A private server for Among Us that implements the game protocol and its features as a full replacement for the official server, with plugin support and server-side anti-cheat.",
+    "description_zh": "《Among Us》的私人服务器实现：完整实现游戏协议与功能，可作为官方服务器的替代，并支持插件与服务端反作弊。",
+    "evidence_url": "https://github.com/Impostor/Impostor/blob/7686635e6653f6e90a1b11061991117bdd0639c3/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the Among Us client and a server deployment; older releases support older game versions.",
+      "It replaces the official server, so the client must be pointed at the private server.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "vkquake",
+    "name": "vkQuake: a Vulkan renderer port of Quake",
+    "url": "https://github.com/Novum/vkQuake",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A port of Quake built on QuakeSpasm that replaces the software renderer with a Vulkan renderer, with Windows, Linux and macOS builds.",
+    "description_zh": "基于 QuakeSpasm 的 Quake 移植版，用 Vulkan 渲染器替代软件渲染器，提供 Windows、Linux 与 macOS 构建。",
+    "evidence_url": "https://github.com/Novum/vkQuake/blob/1e573d7490147fef33fb1aaccc1425df186869e7/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Quake game data and a Vulkan-capable GPU with a current driver.",
+      "Game data is not included, and rendering features depend on the GPU, driver and platform build.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "mayhem-firmware",
+    "name": "PortaPack Mayhem",
+    "url": "https://github.com/portapack-mayhem/mayhem-firmware",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Alternative firmware for the HackRF PortaPack H1/H2/H4/H4M that adds a wide range of radio applications, a touch interface and standalone operation to the HackRF software-defined radio.",
+    "description_zh": "面向 HackRF PortaPack H1/H2/H4/H4M 的替代固件，为 HackRF 软件无线电增加大量射频应用、触摸界面与独立运行能力。",
+    "evidence_url": "https://github.com/portapack-mayhem/mayhem-firmware/blob/4e204cd5d4f042a78de3eef04004001cb31992ac/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a HackRF with a PortaPack and a flashing method; builds target the device microcontroller.",
+      "Feature availability depends on the hardware revision and the installed baseband firmware.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "openfortivpn",
+    "name": "openfortivpn",
+    "url": "https://github.com/adrienverge/openfortivpn",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A client for PPP+TLS VPN tunnel services compatible with Fortinet VPNs; it runs pppd and carries the tunnel communication between the gateway and pppd.",
+    "description_zh": "兼容 Fortinet VPN 的 PPP+TLS VPN 隧道客户端；它启动 pppd，并在网关与 pppd 之间承载隧道通信。",
+    "evidence_url": "https://github.com/adrienverge/openfortivpn/blob/866c0eab271cc84f6b743b6fef037e95dd8c9013/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires pppd and a reachable Fortinet VPN gateway; the client runs on Linux, macOS and other Unix-like systems.",
+      "Compatibility depends on the gateway configuration, and SAML or certificate modes need their own setup.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "boofuzz",
+    "name": "boofuzz",
+    "url": "https://github.com/jtpereyda/boofuzz",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A network protocol fuzzing framework and successor to Sulley, with a Python API, session management, test-case generation and result tracking.",
+    "description_zh": "网络协议 fuzzing 框架，Sulley 的后继项目，提供 Python API、会话管理、测试用例生成与结果跟踪。",
+    "evidence_url": "https://github.com/jtpereyda/boofuzz/blob/41a808ef6bdb19ba64d811dc5d882b66a1033316/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3 and a target protocol implementation or endpoint.",
+      "Fuzzing needs a test harness and a protocol model, and results depend on both.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "al-khaser",
+    "name": "al-khaser",
+    "url": "https://github.com/ayoubfaouzi/al-khaser",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A proof-of-concept test application that exercises common detection-resistance techniques, including debugger, virtual-machine, timing, dump and disassembly checks, so defenders can test whether their analysis systems notice them.",
+    "description_zh": "概念验证测试程序，执行常见的检测规避手法，包括调试器、虚拟机、时序、转储与反汇编检查，供防御方检验分析系统能否发现这些行为。",
+    "evidence_url": "https://github.com/ayoubfaouzi/al-khaser/blob/a14ba9f014ecba3659e5f939109259ca8c3a04fa/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs as a Windows executable; several checks activate only in debugger, virtual-machine or instrumented environments.",
+      "It is a technique checklist for defensive testing rather than a production detector.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

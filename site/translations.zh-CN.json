@@ -44466,5 +44466,69 @@
       "结果取决于所配置的工具与样本，项目面向受控研究环境。",
       "采用 MIT 许可证。"
     ]
+  },
+  "anyps5": {
+    "name": "AnyPS5",
+    "requirements": [
+      "需要 PS5 可执行文件及其依赖库；仅重链接版可在 macOS（含 Apple Silicon）上运行。",
+      "它重链接可执行文件而非整个游戏，兼容性取决于二进制、依赖库与目标平台。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "touchhle": {
+    "name": "touchHLE",
+    "requirements": [
+      "需要早期 iOS 应用二进制（iPhone OS 2.x 至 iOS 4.0.x）；构建面向桌面系统与 Android。",
+      "高层模拟只覆盖应用使用的系统框架，未实现的 API 与较新的应用无法运行。",
+      "采用 MPL-2.0 许可证。"
+    ]
+  },
+  "impostor": {
+    "name": "Impostor：Among Us 服务器的开源重实现",
+    "requirements": [
+      "需要《Among Us》客户端与服务端部署；旧版本发布支持较旧的游戏版本。",
+      "它替代官方服务器，客户端需指向该私人服务器。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "vkquake": {
+    "name": "vkQuake：Quake 的 Vulkan 渲染移植",
+    "requirements": [
+      "需要原版 Quake 游戏数据，以及支持 Vulkan 的 GPU 与较新的驱动。",
+      "不包含游戏数据；渲染特性取决于 GPU、驱动与平台构建。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "mayhem-firmware": {
+    "name": "PortaPack Mayhem",
+    "requirements": [
+      "需要带 PortaPack 的 HackRF 与刷写方式；构建面向设备微控制器。",
+      "功能可用性取决于硬件版本与已安装的基带固件。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "openfortivpn": {
+    "name": "openfortivpn",
+    "requirements": [
+      "需要 pppd 与可连接的 Fortinet VPN 网关；客户端可在 Linux、macOS 及其他类 Unix 系统运行。",
+      "兼容性取决于网关配置；SAML 或证书模式需要各自的设置。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "boofuzz": {
+    "name": "boofuzz",
+    "requirements": [
+      "需要 Python 3 与目标协议实现或端点。",
+      "fuzzing 需要测试 harness 与协议模型，结果取决于两者。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "al-khaser": {
+    "name": "al-khaser",
+    "requirements": [
+      "以 Windows 可执行文件运行；部分检查只在调试器、虚拟机或插桩环境中触发。",
+      "它是用于防御测试的技术清单，不是生产环境的检测器。",
+      "采用 GPL-2.0 许可证。"
+    ]
   }
 }

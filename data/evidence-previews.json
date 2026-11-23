@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T09:10:48+00:00",
-    "entry_count": 1130,
-    "class_entry_count": 1161,
+    "generated_at": "2026-11-23T10:02:47+00:00",
+    "entry_count": 1132,
+    "class_entry_count": 1163,
     "class_counts": {
-      "image": 1091,
+      "image": 1093,
       "video": 39
     },
     "missing_count": 31,
@@ -378,6 +378,15 @@
       "source_url": "https://github.com/cosmicr/anotherx16",
       "revision": "f15c671f4f1dbf8e4280c25923f48fb5a8e3784e",
       "checked_at": "2026-11-09T04:14:52+00:00"
+    },
+    {
+      "id": "anyps5",
+      "image_url": "https://github.com/user-attachments/assets/ed2f0b2d-33d3-46d7-ab88-767ca872fc99",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/boykopovar/AnyPS5",
+      "revision": "7482424113477a71f7a259b2b4b75607858e25c5",
+      "checked_at": "2026-11-23T10:02:47+00:00"
     },
     {
       "id": "apk-dependency-graph",
@@ -4491,6 +4500,15 @@
       "source_url": "https://github.com/Exiro1/Master-Of-Olympus-Java-Remake",
       "revision": "bfeb1c8be6c3518d74cae28e7e557ab7f192eae8",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "mayhem-firmware",
+      "image_url": "https://img.youtube.com/vi/IoURGzIMhzo/maxresdefault.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/portapack-mayhem/mayhem-firmware",
+      "revision": "4e204cd5d4f042a78de3eef04004001cb31992ac",
+      "checked_at": "2026-11-23T10:02:47+00:00"
     },
     {
       "id": "mbbsdasm",

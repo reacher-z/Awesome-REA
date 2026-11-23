@@ -168,3 +168,32 @@ This round adds eight records from the stored lead queue: MiSTer main binary (FP
 ## Validation notes
 
 All eight records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. nexmon and PortEx received Class 1 previews; WidescreenFixesPack is Class 1 without usable media. Previews, READMEs and the site were regenerated.
+
+---
+
+# Backlog curation review, seventh batch — 2026-11-23
+
+This round adds eight records from the stored lead queue: AnyPS5 (PS5 executable relinking), touchHLE (early iOS app emulator), Impostor and vkQuake as reconstruction cases, PortaPack Mayhem firmware, openfortivpn and boofuzz as protocol tools, and al-khaser as a defensive technique test harness.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `anyps5` | `game-analysis` | [boykopovar/AnyPS5](https://github.com/boykopovar/AnyPS5/blob/7482424113477a71f7a259b2b4b75607858e25c5/README.md) | `619a53aac824a31f7995222e490a8b37c41c5ecffafc63780aae1f84c6f4e4c7` |
+| `touchhle` | `game-analysis` | [touchHLE/touchHLE](https://github.com/touchHLE/touchHLE/blob/ca1de89c578e79746f33c1332e28efd106c334ba/README.md) | `d9aad10f305e47440680ad4768f27d04bed362c2ffaa58c5f068708a3aa330df` |
+| `impostor` | `reconstruction-cases` | [Impostor/Impostor](https://github.com/Impostor/Impostor/blob/7686635e6653f6e90a1b11061991117bdd0639c3/README.md) | `560104cfdd29540e31054e689dd98d5b7c2b266917999ef21a4894183e5f47e2` |
+| `vkquake` | `reconstruction-cases` | [Novum/vkQuake](https://github.com/Novum/vkQuake/blob/1e573d7490147fef33fb1aaccc1425df186869e7/README.md) | `2b4c0674a11b6600322f15d4931222a2765f1befa2f2856f8c9d6ddaf83c0cba` |
+| `mayhem-firmware` | `firmware` | [portapack-mayhem/mayhem-firmware](https://github.com/portapack-mayhem/mayhem-firmware/blob/4e204cd5d4f042a78de3eef04004001cb31992ac/README.md) | `03c44f5dd1e962d75fc5c2641cfaeaf6866d2f9d33d119100f9c3a42ccb8f093` |
+| `openfortivpn` | `protocol-analysis` | [adrienverge/openfortivpn](https://github.com/adrienverge/openfortivpn/blob/866c0eab271cc84f6b743b6fef037e95dd8c9013/README.md) | `a67014eb66b89facc8e59bd72f9099f81f2d1b5340db4ebe6cb42d92b1555465` |
+| `boofuzz` | `dynamic-analysis` | [jtpereyda/boofuzz](https://github.com/jtpereyda/boofuzz/blob/41a808ef6bdb19ba64d811dc5d882b66a1033316/README.md) | `a669aa4adbfeceaba8960e68cd2494385a640247bfbb95a6e488710024153a24` |
+| `al-khaser` | `dynamic-analysis` | [ayoubfaouzi/al-khaser](https://github.com/ayoubfaouzi/al-khaser/blob/a14ba9f014ecba3659e5f939109259ca8c3a04fa/README.md) | `e1784832094efb23223eba26353254983866ccea80f21a5cbd70e00fbca3a648` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| Cemu, melonDS, Vita3K, flycast, desmume, project64, jsnes, 86Box, visualboyadvance-m | More console and computer emulators; this batch instead covers iOS apps and reconstruction cases. |
+| ferrumc-rs/ferrumc | README states the Minecraft server rewrite is not actively maintained. |
+| openvideodev/react-video-editor, itsjwill/vanta | Custom or missing license terms. |
+
+## Validation notes
+
+All eight records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; AnyPS5 and PortaPack Mayhem received Class 1 previews. The two new case studies update the game case indexes and README case sections.
