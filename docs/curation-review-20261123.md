@@ -139,3 +139,32 @@ This round adds eight records from the stored lead queue: Atmosphère and Luma3D
 ## Validation notes
 
 All eight records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; the two Class 1 records (Atmosphère and Luma3DS) received previews. Previews, READMEs and the site were regenerated.
+
+---
+
+# Backlog curation review, sixth batch — 2026-11-23
+
+This round adds eight records from the stored lead queue: MiSTer main binary (FPGA hardware reimplementation platform), edl (Qualcomm Sahara/Firehose client), nexmon (Wi-Fi firmware patching), PortEx (PE analysis library), Assemblyline 4 (malware analysis framework), RuneLite (OldSchool RuneScape client), WidescreenFixesPack and DeepZero.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `mister-main` | `firmware` | [MiSTer-devel/Main_MiSTer](https://github.com/MiSTer-devel/Main_MiSTer/blob/ac2e102990fd4e3df83809565873db2d25037ecf/README.md) | `848b447ea7cf8c1b87f69ada695b76285ebf94b4b886f7cda8aabd65d9d1c6d0` |
+| `edl` | `firmware` | [bkerler/edl](https://github.com/bkerler/edl/blob/1cda1a616748d608667b2d13b73a28d3197ceb45/README.md) | `58f122811cefc2030a20fd2a526d631165d08f2e6e5398698742e40e3014f13b` |
+| `nexmon` | `firmware` | [seemoo-lab/nexmon](https://github.com/seemoo-lab/nexmon/blob/68720406f54ff16cad28fd3c51f2392aefad9fb7/README.md) | `f0014cecdb05ed8c9a02c8fcedd71b94195f1b1188f0c665698731f234e49b27` |
+| `portex` | `binary-libraries` | [struppigel/PortEx](https://github.com/struppigel/PortEx/blob/bbcb1e452ae54dd7e211ca701dcaee5abb7bc28f/README.md) | `4b118fdb297d07cf58051fac9de04c01e1009723573edc645f05b3af6daea514` |
+| `assemblyline` | `dynamic-analysis` | [CybercentreCanada/assemblyline](https://github.com/CybercentreCanada/assemblyline/blob/9ddae776f91f9767cacd81fd9478a904121cd096/README.md) | `faa85ba22ebffa93a59cec5700a4f37a5e1c670ecba2f3efd0803acb1c6278a6` |
+| `runelite` | `game-analysis` | [runelite/runelite](https://github.com/runelite/runelite/blob/0fa3b8489e929a47410c7214ffcb710e67c7bb46/README.md) | `2764d23f1f83bb1a0d2ef700300e5b03240fab66059560709d1f6c0e928dfbc8` |
+| `widescreen-fixes-pack` | `game-analysis` | [ThirteenAG/WidescreenFixesPack](https://github.com/ThirteenAG/WidescreenFixesPack/blob/f26357ecb727e6e8e8856a74ce7f2b20d0d28097/README.md) | `2859518259cda36e5a65d6a1cc8ea6afefbcfed397f466b55f2c4108ed386181` |
+| `deepzero` | `dynamic-analysis` | [416rehman/DeepZero](https://github.com/416rehman/DeepZero/blob/b26865ba5eed25a6eceabb930f04f86bf8243ae3/README.md) | `5a2213892f056b9384d4a01f490210f94c0b6fc61b3c6caf6bee4cc060d08f99` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| Cemu, melonDS, Vita3K, flycast, jsnes, 86Box | More console emulators; coverage already grew in the previous batches. |
+| al-khaser, malwoverview, pyWhat, assemblyline-lab variants | Malware-hunting tools whose catalog overlap needs a separate review pass. |
+| openvideodev/react-video-editor, itsjwill/vanta | Custom or missing license terms. |
+
+## Validation notes
+
+All eight records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. nexmon and PortEx received Class 1 previews; WidescreenFixesPack is Class 1 without usable media. Previews, READMEs and the site were regenerated.

@@ -44402,5 +44402,69 @@
       "VR 模式需要 SteamVR 或 OpenXR 及受支持的头显；兼容性因游戏与构建而异。",
       "采用 MIT 许可证。"
     ]
+  },
+  "mister-main": {
+    "name": "Main_MiSTer",
+    "requirements": [
+      "需要 MiSTer FPGA 硬件与装有 MiSTer 框架的 SD 卡；各系统核心单独分发。",
+      "支持的平台与核心取决于所加载的 FPGA 核心；本仓库只包含主程序与 Wiki。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "edl": {
+    "name": "edl",
+    "requirements": [
+      "需要 Python 3 与 pyusb，以及处于相应启动模式的 Qualcomm 设备。",
+      "支持的芯片与 loader 因机型而异；写入分区可能对设备造成风险。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "nexmon": {
+    "name": "nexmon",
+    "requirements": [
+      "需要受支持的 Broadcom/Cypress Wi-Fi 芯片与交叉编译工具链；补丁按设备与固件分别构建。",
+      "芯片与固件支持因设备而异，修改后的固件不在厂商支持范围内。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "portex": {
+    "name": "PortEx",
+    "requirements": [
+      "需要 Java/Scala 运行环境；输入为 PE 文件。",
+      "侧重静态结构与异常检测，不执行代码或做行为分析。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "assemblyline": {
+    "name": "Assemblyline 4",
+    "requirements": [
+      "部署使用 Docker 与 Kubernetes；各服务需要持久化存储与计算资源。",
+      "分析结果取决于启用的服务与签名，部分服务需要额外组件。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "runelite": {
+    "name": "RuneLite",
+    "requirements": [
+      "需要 Java 11+ 与 OldSchool RuneScape 游戏。",
+      "插件在客户端内运行，未获游戏运营方背书；游戏更新可能影响客户端与插件可用性。",
+      "采用 BSD-2-Clause 许可证。"
+    ]
+  },
+  "widescreen-fixes-pack": {
+    "name": "WidescreenFixesPack",
+    "requirements": [
+      "需要 Windows 与受支持的游戏；每个修复以对应游戏的插件或 DLL 形式发布。",
+      "覆盖范围按游戏与版本而定，部分修复依赖游戏的渲染 API。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "deepzero": {
+    "name": "DeepZero",
+    "requirements": [
+      "需要 Python 3.11+ 与 pipeline 所需工具；pipeline 以 YAML 配置。",
+      "结果取决于所配置的工具与样本，项目面向受控研究环境。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

@@ -156899,5 +156899,223 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "mister-main",
+    "name": "Main_MiSTer",
+    "url": "https://github.com/MiSTer-devel/Main_MiSTer",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "The main binary and wiki repository for the MiSTer FPGA platform, which reimplements classic computers, consoles and arcade boards in FPGA logic and loads a separate core for each system.",
+    "description_zh": "MiSTer FPGA 平台的主程序与 Wiki 仓库；该平台用 FPGA 逻辑重实现经典计算机、游戏机与街机基板，并为每个系统加载独立核心。",
+    "evidence_url": "https://github.com/MiSTer-devel/Main_MiSTer/blob/ac2e102990fd4e3df83809565873db2d25037ecf/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires MiSTer FPGA hardware and an SD card with the MiSTer framework; each system core is distributed separately.",
+      "Supported systems and cores depend on the loaded FPGA core, and this repository holds the main program and wiki rather than the cores.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "edl",
+    "name": "edl",
+    "url": "https://github.com/bkerler/edl",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A Python client for Qualcomm Sahara, Firehose and diagnostic protocols, used to dump, read and write partitions on Qualcomm-based devices.",
+    "description_zh": "面向 Qualcomm Sahara、Firehose 与诊断协议的 Python 客户端，用于在 Qualcomm 设备上转储、读取与写入分区。",
+    "evidence_url": "https://github.com/bkerler/edl/blob/1cda1a616748d608667b2d13b73a28d3197ceb45/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3 and pyusb; a Qualcomm device in the appropriate boot mode.",
+      "Supported chipsets and loaders vary by device model, and writing partitions can put the device at risk.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "nexmon",
+    "name": "nexmon",
+    "url": "https://github.com/seemoo-lab/nexmon",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A C-based firmware patching framework for Broadcom and Cypress Wi-Fi chips that builds custom firmware patches, including monitor mode and frame injection for supported chips.",
+    "description_zh": "面向 Broadcom 与 Cypress Wi-Fi 芯片的 C 固件补丁框架，可为受支持的芯片构建自定义固件补丁，包括监听模式与帧注入。",
+    "evidence_url": "https://github.com/seemoo-lab/nexmon/blob/68720406f54ff16cad28fd3c51f2392aefad9fb7/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported Broadcom or Cypress Wi-Fi chip and a cross-compilation toolchain; patches are built per device and firmware.",
+      "Chip and firmware support is device-specific, and modified firmware falls outside vendor support.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "portex",
+    "name": "PortEx",
+    "url": "https://github.com/struppigel/PortEx",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A Java and Scala library for static analysis of Portable Executable files, focused on malformation robustness and anomaly detection, with header, import/export, resource and overlay parsing plus structure visualization.",
+    "description_zh": "用于 Portable Executable 文件静态分析的 Java/Scala 库，侧重畸形文件鲁棒性与异常检测，可解析头、导入导出、资源与 overlay，并可视化文件结构。",
+    "evidence_url": "https://github.com/struppigel/PortEx/blob/bbcb1e452ae54dd7e211ca701dcaee5abb7bc28f/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A Java and Scala application environment; PE files are supplied as input.",
+      "The focus is static structure and anomaly detection rather than code execution or behavior analysis.",
+      "Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "assemblyline",
+    "name": "Assemblyline 4",
+    "url": "https://github.com/CybercentreCanada/assemblyline",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "An open-source malware analysis framework that uses Kubernetes and Docker to triage and analyze files at scale, from a single appliance to enterprise deployments with service integrations.",
+    "description_zh": "开源恶意软件分析框架，使用 Kubernetes 与 Docker 在单机设备到企业级部署中按需扩展，对文件进行分类与分析，并可接入多种服务。",
+    "evidence_url": "https://github.com/CybercentreCanada/assemblyline/blob/9ddae776f91f9767cacd81fd9478a904121cd096/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Deployment uses Docker and Kubernetes; the framework services need persistent storage and compute resources.",
+      "Analysis results depend on the enabled services and signatures, and several services require additional components.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "runelite",
+    "name": "RuneLite",
+    "url": "https://github.com/runelite/runelite",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A free, open-source OldSchool RuneScape client built on a deobfuscated gamepack, with cache libraries, a client API and an active plugin ecosystem.",
+    "description_zh": "免费开源的 OldSchool RuneScape 客户端，基于去混淆的 gamepack，包含缓存库、客户端 API 与活跃的插件生态。",
+    "evidence_url": "https://github.com/runelite/runelite/blob/0fa3b8489e929a47410c7214ffcb710e67c7bb46/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Java 11 or newer and the OldSchool RuneScape game.",
+      "Plugins run inside the client and are not endorsed by the game operator; game updates can affect client and plugin availability.",
+      "BSD-2-Clause-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "widescreen-fixes-pack",
+    "name": "WidescreenFixesPack",
+    "url": "https://github.com/ThirteenAG/WidescreenFixesPack",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A collection of plugins that add or improve widescreen resolution support, fix aspect-ratio issues and add related display features to many PC games.",
+    "description_zh": "为大量 PC 游戏新增或改进宽屏分辨率支持、修正画面比例问题并补充相关显示功能的插件合集。",
+    "evidence_url": "https://github.com/ThirteenAG/WidescreenFixesPack/blob/f26357ecb727e6e8e8856a74ce7f2b20d0d28097/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Windows and the supported game; each fix ships as a plugin or DLL for its target.",
+      "Coverage is per game and per version, and some fixes depend on the game rendering API.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "deepzero",
+    "name": "DeepZero",
+    "url": "https://github.com/416rehman/DeepZero",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "An automated vulnerability research pipeline engine that defines pipelines in YAML, processes samples in parallel and resumes interrupted runs.",
+    "description_zh": "自动化漏洞研究流水线引擎，使用 YAML 定义流水线，并行处理样本，并可从被中断的运行继续。",
+    "evidence_url": "https://github.com/416rehman/DeepZero/blob/b26865ba5eed25a6eceabb930f04f86bf8243ae3/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.11 or newer and the tools each pipeline calls; pipelines are configured in YAML.",
+      "Results depend on the configured tools and samples, and the project targets controlled research environments.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]
