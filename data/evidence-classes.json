@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-23T17:32:09+00:00",
-  "entry_count": 5287,
+  "generated_at": "2026-11-23T18:17:13+00:00",
+  "entry_count": 5295,
   "class_counts": {
    "0": 15,
-   "1": 1152,
-   "2": 3908,
+   "1": 1159,
+   "2": 3909,
    "3": 186
   },
   "unknown_count": 26,
@@ -148435,6 +148435,239 @@
    "checked_at": "2026-11-23T11:20:00+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "augustus",
+   "url": "https://github.com/Keriew/augustus",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 6227,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 9,
+    "release_asset_count": 37,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study demo is documented but docs do not cover the full feature set",
+   "checked_at": "2026-11-23T18:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "openloco",
+   "url": "https://github.com/OpenLoco/OpenLoco",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 7430,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 83,
+    "release_asset_count": 157,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full reconstruction candidate: Class 0 requires manual scope review",
+   "checked_at": "2026-11-23T18:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": true
+  },
+  {
+   "id": "openmohaa",
+   "url": "https://github.com/openmoh/openmohaa",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5598,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 32,
+    "release_asset_count": 201,
+    "demo": [
+     "image"
+    ],
+    "media_count": 6,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-23T18:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "idtech4a",
+   "url": "https://github.com/glKarin/com.n0n3m4.diii4a",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 24498,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 60,
+    "release_asset_count": 94,
+    "demo": [
+     "image"
+    ],
+    "media_count": 24,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-23T18:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "melonds",
+   "url": "https://github.com/melonDS-emu/melonDS",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3883,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 25,
+    "release_asset_count": 81,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
+   "checked_at": "2026-11-23T18:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "vita3k",
+   "url": "https://github.com/Vita3K/Vita3K",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5048,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 1,
+    "release_asset_count": 11,
+    "demo": [
+     "image"
+    ],
+    "media_count": 6,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
+   "checked_at": "2026-11-23T18:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "86box",
+   "url": "https://github.com/86Box/86Box",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5371,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 31,
+    "release_asset_count": 230,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 2,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "checked_at": "2026-11-23T18:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "psd-tools",
+   "url": "https://github.com/psd-tools/psd-tools",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2815,
+    "docs_full": true,
+    "download": "package",
+    "release_count": 100,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [
+     "pip install psd-tools"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-23T18:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   }

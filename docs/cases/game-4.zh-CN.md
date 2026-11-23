@@ -10,6 +10,7 @@
 
 ## 基于重建源码的移植
 
+- [**Mega Man 64：重编译版本的 Android 与 iOS 移植**](https://github.com/DevZer0D4Y/MegaMan64Recompiled-Mobile) - Mega Man 64 Recompiled Mobile 基于 N64ModernRuntime 和 RT64，将 MegaMan64Recompiled 移植到 Android 与 iOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mega-man-64-mobile-port-case/)</sub>
 - [**Megarocket：在 Godot 中重建七款 Commander Keen 游戏**](https://github.com/CrossplayGaming/megarocket) - Megarocket 依据 DOS 游戏的逐函数重建成果，将 Commander Keen 1–6 和 Keen Dreams 合并移植到一个 Godot 4 程序中。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/megarocket-commander-keen-case/)</sub>
 - [**Melee-X：《任天堂明星大乱斗 DX》的初代 Xbox 原生移植**](https://github.com/TechProGabe/Melee-X) - Melee-X 将《任天堂明星大乱斗 DX》的反编译代码移植到初代 Xbox，为其 Pentium III 编译游戏代码，并把 GameCube 图形调用映射到 NV2A GPU。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/melee-x-case/)</sub>
 - [**MELEE360：将 Super Smash Bros. Melee 移植到 Xbox 360**](https://github.com/codepdbh/melee360) - MELEE360 将重建的 Super Smash Bros. Melee 代码编译为 Xbox 360 原生 XEX，适配 PowerPC、D3D9/Xenos 和 XInput，并从用户提供的 NTSC-U 1.02 光盘镜像读取原始资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/melee360-case/)</sub>
@@ -218,6 +219,7 @@
 - [**Another World Suite：WebAssembly 引擎与调试器**](https://github.com/malandrin/another-world-suite) - Another World Suite 用 Rust 实现 Another World 游戏引擎，并编译为 WebAssembly 在浏览器中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/another-world-suite-case/)</sub>
 - [**Arcanum：读取原版数据的 Unity 引擎重建项目**](https://github.com/Suvitruf/unity-arcanum) - Arcanum — Unity Reimplementation 用 Unity 6 重建 Arcanum: Of Steamworks and Magick Obscura 的引擎，并从用户的游戏安装目录读取数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/arcanum-unity-reimplementation-case/)</sub>
 - [**ash：为 PSP 重建《Dark Souls》游戏片段**](https://github.com/meshoklv/ash) - ash 用 C99 引擎为 Sony PSP 重建《Dark Souls: Remastered》的部分游戏内容。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ash-dark-souls-case/)</sub>
+- [**Augustus：凯撒大帝 III 的开源重实现**](https://github.com/Keriew/augustus) - 在 Julius 基础上重实现《凯撒大帝 III》的项目，在保留原版玩法的同时加入便利功能、新场景与战役支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/augustus/)</sub>
 - [**Azel：将 Panzer Dragoon Saga 逆向为原生 C++**](https://github.com/yaz0r/Azel) - 将 Sega Saturn 角色扮演游戏 Panzer Dragoon Saga 重建为原生 C++，重写了游戏内核、野外、城镇、战斗、菜单和音频系统的 SH-2 例程。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/azel-panzer-dragoon-saga-reimplementation-case/)</sub>
 - [**BaK GL：重建《叛变克朗多》的游戏机制**](https://github.com/xavieran/BaKGL) - BaKGL 以 C++ 和 OpenGL 引擎重建《克朗多的背叛》，读取原版游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bakgl-case/)</sub>
 - [**BaK-Again：重建《Betrayal at Krondor》**](https://github.com/stellargames/bakagain) - BaK-Again 用 Unity 重建《Betrayal at Krondor》，从玩家安装的原版游戏读取剧情、世界、规则和美术资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bak-again-case/)</sub>
@@ -459,11 +461,13 @@
 - [**OpenKingdoms：重建 Total Annihilation: Kingdoms 引擎**](https://github.com/OpenKingdoms/OpenKingdoms) - OpenKingdoms 根据原游戏行为以 C11 重写 Total Annihilation: Kingdoms 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openkingdoms-case/)</sub>
 - [**OpenLara《古墓丽影》开源引擎**](https://github.com/XProger/OpenLara) - 经典《古墓丽影》的开源引擎，提供 WebGL 版本和独立版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openlara/)</sub>
 - [**OpenLF2：Little Fighter 2 引擎重实现**](https://github.com/OpenLF2/OpenLF2) - OpenLF2 用 C++ 和 Lua 重实现了可玩的《Little Fighter 2》v2.0a 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openlf2-case/)</sub>
+- [**OpenLoco：Chris Sawyer Locomotion 的开源重实现**](https://github.com/OpenLoco/OpenLoco) - 《Chris Sawyer Locomotion》的开源重实现，可运行原版游戏数据，并为这款运输管理模拟游戏加入改进。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openloco/)</sub>
 - [**OpenLRR：逐步重建《乐高石头掠夺者》**](https://github.com/trigger-segfault/OpenLRR) - OpenLRR 通过逐步实现并替换游戏及引擎函数，重建 PC 版《乐高石头掠夺者》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openlrr-rock-raiders-case/)</sub>
 - [**OpenMadoola：重实现《The Wing of Madoola》**](https://github.com/nfroggy/openmadoola) - OpenMadoola 重新实现《The Wing of Madoola》，并从 ROM 读取图形和关卡数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmadoola/)</sub>
 - [**OpenMCM2：《摩托越野狂飙 2》引擎重实现**](https://github.com/crspytopgn/openmcm2) - OpenMCM2 用 Rust 重实现《摩托越野狂飙 2》，在 macOS、Windows 和 Linux 上读取用户自己的游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmcm2-case/)</sub>
 - [**OpenMCM2：Motocross Madness 2 的 Rust 引擎重建**](https://github.com/xshxdex98/openmcm2) - OpenMCM2 根据原版《Motocross Madness 2》重建 Rust 引擎，读取玩家自备的 RS2 归档、地形、场景、模型及界面数据，并实现比赛、摩托车物理、菜单和 OpenMCM2 实例之间的联机比赛。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xshxdex98-openmcm2-case/)</sub>
 - [**OpenMM2：Midtown Madness 2 自底向上重建**](https://github.com/0x1F9F1/OpenMM2) - OpenMM2 以 C++ 自底向上重写 Midtown Madness 2；尚未重建的函数由用户安装的原版游戏二进制文件提供。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmm2-case/)</sub>
+- [**OpenMoHAA — 《荣誉勋章：联合袭击》的开源重实现**](https://github.com/openmoh/openmohaa) - 开源项目，保留并增强《荣誉勋章：联合袭击》及其 Spearhead、Breakthrough 资料片，跨平台提供错误修复与新功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmohaa/)</sub>
 - [**OpenMoM：重建 Master of Magic**](https://github.com/Jakz/openmom) - OpenMoM 使用 C++14 和 SDL2 重建 Master of Magic，并读取原版 LBX 数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmom-case/)</sub>
 - [**OpenMoonstone：利用原版游戏文件重实现 Moonstone**](https://github.com/joetsoi/OpenMoonstone) - OpenMoonstone 使用 Rust 和 SDL2 重实现 Amiga 与 DOS 游戏 Moonstone，读取用户自备 DOS 版本的资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmoonstone-case/)</sub>
 - [**OpenMU：MU Online 服务器重建与数据包参考**](https://github.com/MUnique/OpenMU) - OpenMU 从零重建 MU Online 服务器，重点支持 Season 6 Episode 3 客户端使用的英文协议。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/openmu-case/)</sub>
@@ -639,8 +643,4 @@
 - [**Twisted Metal：2012 年 PS3 游戏的 Rust 重实现**](https://gitlab.com/goblindo/twisted-metal) - Twisted Metal 以 Rust 重实现 2012 年 PS3 游戏的引擎，面向 Linux 和 macOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twisted-metal-native-engine-case/)</sub>
 - [**UA\_source：Urban Assault 游戏引擎重实现**](https://github.com/Marisa-Chan/UA_source) - UA\_source 使用 C++ 重实现 Urban Assault 引擎，运行时读取用户自备的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ua-source-case/)</sub>
 - [**UAlbion：1995 年 RPG《Albion》重建**](https://github.com/csinkers/ualbion) - UAlbion 使用原版《Albion》游戏数据，以 C# 重建这款 1995 年的角色扮演游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ualbion-case/)</sub>
-- [**Ultima V Redux：使用原版游戏数据重建《Ultima V》**](https://github.com/bradhannah/UltimaVRedux) - Ultima V Redux 使用玩家自备的 MS-DOS PC 版文件，以 Go 重建《Ultima V: Warriors of Destiny》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ultima-v-redux-case/)</sub>
-- [**Un-Banished：用 Rust 重建 Banished 引擎**](https://github.com/tanepiper/unbanished) - Un-Banished 用 Rust 重建 Banished 1.0.7 引擎，读取玩家自有游戏数据，在桌面和浏览器中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/un-banished-case/)</sub>
-- [**Unciv：文明 V 玩法重制**](https://github.com/yairm210/Unciv) - Unciv 使用 LibGDX 在 Android 和桌面平台重制《文明 V》的玩法，并支持模组。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/unciv-civ-v-case/)</sub>
-- [**Underworld Adventures：重建《Ultima Underworld I》**](https://github.com/vividos/UnderworldAdventures) - Underworld Adventures 以 C++ 引擎在现代系统上重建《Ultima Underworld I》，读取用户自备的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/underworld-adventures-case/)</sub>
 <!-- END GENERATED CASES -->

@@ -44594,5 +44594,69 @@
       "串流可用性取决于服务区域与客户端构建。",
       "采用 MIT 许可证。"
     ]
+  },
+  "augustus": {
+    "name": "Augustus：凯撒大帝 III 的开源重实现",
+    "requirements": [
+      "需要原版《凯撒大帝 III》游戏数据；提供 Windows、Linux 与 macOS 构建。",
+      "它重实现原版引擎并保持存档兼容，因此仍需自备原版游戏数据。",
+      "采用 AGPL-3.0 许可证。"
+    ]
+  },
+  "openloco": {
+    "name": "OpenLoco：Chris Sawyer Locomotion 的开源重实现",
+    "requirements": [
+      "需要原版 Locomotion 游戏数据；提供 Windows、Linux 与 macOS 预构建版本。",
+      "它复现原版数据格式，项目无法提供缺失的原版资源。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "openmohaa": {
+    "name": "OpenMoHAA — 《荣誉勋章：联合袭击》的开源重实现",
+    "requirements": [
+      "需要原版游戏资源；构建覆盖 Windows、Linux 与 macOS。",
+      "它保留原版游戏并加入新功能，兼容性取决于游戏版本。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "idtech4a": {
+    "name": "idTech4A++：移植到 Android 与桌面 GLES 的 id Tech 4 游戏",
+    "requirements": [
+      "需要各支持作品的原版游戏数据；项目为 Android、Windows 与 Linux 构建。",
+      "不包含游戏数据与资源，渲染特性取决于设备的 GLES 支持。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "melonds": {
+    "name": "melonDS",
+    "requirements": [
+      "需要 Nintendo DS ROM 以及 BIOS 或固件文件；构建覆盖 Windows、Linux、macOS 及其他平台。",
+      "兼容性因游戏而异，部分无线或外设功能有限制。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "vita3k": {
+    "name": "Vita3K",
+    "requirements": [
+      "需要 PS Vita 固件与游戏文件；构建覆盖 Windows、Linux、macOS 与 Android。",
+      "模拟器仍属实验性，兼容性因游戏而异。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "86box": {
+    "name": "86Box",
+    "requirements": [
+      "需要所模拟机型的 ROM 与启动介质；构建覆盖 Windows、Linux 与 macOS。",
+      "模拟器针对特定主板与设备建模，可用硬件取决于配置。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "psd-tools": {
+    "name": "psd-tools",
+    "requirements": [
+      "需要 Python 3 与 pip；安装 psd-tools 后打开 PSD 或 PSB 文件。",
+      "合成支持限于基础像素图层、部分调整层、矢量蒙版与部分图层属性。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

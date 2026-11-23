@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T17:33:07+00:00",
-    "entry_count": 1136,
-    "class_entry_count": 1167,
+    "generated_at": "2026-11-23T18:17:22+00:00",
+    "entry_count": 1143,
+    "class_entry_count": 1174,
     "class_counts": {
-      "image": 1097,
+      "image": 1104,
       "video": 39
     },
     "missing_count": 31,
@@ -99,6 +99,15 @@
       "source_url": "https://github.com/headshot2017/3dpinball-nds",
       "revision": "2ec56be1a9553e4b0ad6280ce4271bc5c057ee29",
       "checked_at": "2026-11-09T02:41:36+00:00"
+    },
+    {
+      "id": "86box",
+      "image_url": "https://kiwiirc.com/buttons/irc.ringoflightning.net/86Box.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/86Box/86Box",
+      "revision": "bd6ccce8a035fab9cf0d6d7c33ee9acb146286a1",
+      "checked_at": "2026-11-23T18:17:22+00:00"
     },
     {
       "id": "8bitdo-controller-hid-case",
@@ -585,6 +594,15 @@
       "source_url": "https://github.com/brunoalbertdf-oss/attack-shark-k86",
       "revision": "29d9cf5354ce178cccaea28e60cdb93c0d36c842",
       "checked_at": "2026-11-08T23:42:11+00:00"
+    },
+    {
+      "id": "augustus",
+      "image_url": "https://raw.githubusercontent.com/Keriew/augustus/4ec115e75651ded84fb56b43abbf118bcda34f72/res/julius_48.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Keriew/augustus",
+      "revision": "4ec115e75651ded84fb56b43abbf118bcda34f72",
+      "checked_at": "2026-11-23T18:17:22+00:00"
     },
     {
       "id": "aula-hub-f99-protocol-case",
@@ -3647,6 +3665,15 @@
       "checked_at": "2026-11-01T10:06:35+00:00"
     },
     {
+      "id": "idtech4a",
+      "image_url": "https://github.com/glKarin/com.n0n3m4.diii4a/raw/package/screenshot/Screenshot_doom3_bathroom.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/glKarin/com.n0n3m4.diii4a",
+      "revision": "4a14e1ab186160394ed37dc8c204104bc725b218",
+      "checked_at": "2026-11-23T18:17:22+00:00"
+    },
+    {
       "id": "ignition-port-case",
       "image_url": "https://raw.githubusercontent.com/xesf/ignition/190c2704ef773126ce0342c228ab28b72bb717da/docs/images/race.png",
       "kind": "image",
@@ -4727,6 +4754,15 @@
       "checked_at": "2026-11-22T06:41:04+00:00"
     },
     {
+      "id": "melonds",
+      "image_url": "https://www.gnu.org/graphics/gplv3-127x51.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/melonDS-emu/melonDS",
+      "revision": "ff972523f8a70e877dd054439876c3c8c6b79197",
+      "checked_at": "2026-11-23T18:17:22+00:00"
+    },
+    {
       "id": "melonloader",
       "image_url": "https://raw.githubusercontent.com/LavaGang/MelonLoader.Installer/master/Resources/ML_Text.png",
       "kind": "image",
@@ -5735,6 +5771,15 @@
       "checked_at": "2026-11-07T03:50:12+00:00"
     },
     {
+      "id": "openloco",
+      "image_url": "https://user-images.githubusercontent.com/604665/55420349-1a2aea00-5577-11e9-87da-78fe5cdb09e1.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/OpenLoco/OpenLoco",
+      "revision": "da1a3459725157eb26380bebee894ce18d2ba354",
+      "checked_at": "2026-11-23T18:17:22+00:00"
+    },
+    {
       "id": "openmadoola",
       "image_url": "https://raw.githubusercontent.com/nfroggy/openmadoola/1d1b8189c960675e570f89b16eac84588c992ee1/screenshot.png",
       "kind": "image",
@@ -5751,6 +5796,15 @@
       "source_url": "https://github.com/crspytopgn/openmcm2",
       "revision": "cef20a5b3c7a6ac00ae1048f4b226ae7db591871",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "openmohaa",
+      "image_url": "https://raw.githubusercontent.com/openmoh/openmohaa/a2f340195975f4f042e28a60b62561dd9a0b2700/docs/assets/images/v0.60.0-x86_64/mohdm1_1.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/openmoh/openmohaa",
+      "revision": "a2f340195975f4f042e28a60b62561dd9a0b2700",
+      "checked_at": "2026-11-23T18:17:22+00:00"
     },
     {
       "id": "openmoonstone-case",
@@ -9710,6 +9764,15 @@
       "source_url": "https://github.com/android-hacker/VirtualXposed",
       "revision": "122beb371519cb2d221ce06756361aaa30e2674f",
       "checked_at": "2026-11-07T03:50:13+00:00"
+    },
+    {
+      "id": "vita3k",
+      "image_url": "https://raw.githubusercontent.com/Vita3K/Vita3K/a631dd35d46747fdb27d7715a0524ea67b0b1a89/_readme/screenshots/P4G.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Vita3K/Vita3K",
+      "revision": "a631dd35d46747fdb27d7715a0524ea67b0b1a89",
+      "checked_at": "2026-11-23T18:17:22+00:00"
     },
     {
       "id": "vmlinux-to-elf",

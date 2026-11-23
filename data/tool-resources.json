@@ -157559,5 +157559,232 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "augustus",
+    "name": "Augustus: an open-source reimplementation of Caesar III",
+    "url": "https://github.com/Keriew/augustus",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "A reimplementation of Caesar III built on Julius that preserves the original game while adding quality-of-life features, new scenarios and campaign support.",
+    "description_zh": "在 Julius 基础上重实现《凯撒大帝 III》的项目，在保留原版玩法的同时加入便利功能、新场景与战役支持。",
+    "evidence_url": "https://github.com/Keriew/augustus/blob/4ec115e75651ded84fb56b43abbf118bcda34f72/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Caesar III game data files; Windows, Linux and macOS builds are available.",
+      "It reimplements the original engine and keeps save compatibility, so the original game data must still be supplied.",
+      "AGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "openloco",
+    "name": "OpenLoco: an open-source reimplementation of Chris Sawyer Locomotion",
+    "url": "https://github.com/OpenLoco/OpenLoco",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "An open-source reimplementation of Chris Sawyer Locomotion that runs the original game data and adds improvements to the transport management simulation.",
+    "description_zh": "《Chris Sawyer Locomotion》的开源重实现，可运行原版游戏数据，并为这款运输管理模拟游戏加入改进。",
+    "evidence_url": "https://github.com/OpenLoco/OpenLoco/blob/da1a3459725157eb26380bebee894ce18d2ba354/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Locomotion game data; prebuilt Windows, Linux and macOS builds are provided.",
+      "It reproduces the original game data formats, and the project cannot supply missing original assets.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "openmohaa",
+    "name": "OpenMoHAA — an open-source reimplementation of Medal of Honor: Allied Assault",
+    "url": "https://github.com/openmoh/openmohaa",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "An open-source project that preserves and enhances Medal of Honor: Allied Assault and its Spearhead and Breakthrough expansions with bug fixes and new features across platforms.",
+    "description_zh": "开源项目，保留并增强《荣誉勋章：联合袭击》及其 Spearhead、Breakthrough 资料片，跨平台提供错误修复与新功能。",
+    "evidence_url": "https://github.com/openmoh/openmohaa/blob/a2f340195975f4f042e28a60b62561dd9a0b2700/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game assets; builds target Windows, Linux and macOS.",
+      "It preserves the original game while adding features, and compatibility depends on the game version.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "idtech4a",
+    "name": "idTech4A++: id Tech 4 games ported to Android and desktop GLES",
+    "url": "https://github.com/glKarin/com.n0n3m4.diii4a",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A port of id Tech 4 games including DOOM 3, Quake 4, Prey (2006) and DOOM 3 BFG to Android, Windows and Linux with OpenGL ES rendering.",
+    "description_zh": "把 DOOM 3、Quake 4、Prey（2006）与 DOOM 3 BFG 等 id Tech 4 游戏移植到 Android、Windows 与 Linux，并使用 OpenGL ES 渲染。",
+    "evidence_url": "https://github.com/glKarin/com.n0n3m4.diii4a/blob/4a14e1ab186160394ed37dc8c204104bc725b218/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game data for each supported title; the project builds for Android, Windows and Linux.",
+      "Game data and assets are not included, and rendering features depend on the device GLES support.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "melonds",
+    "name": "melonDS",
+    "url": "https://github.com/melonDS-emu/melonDS",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A Nintendo DS emulator focused on accuracy and speed, with local multiplayer, save-state support and builds for desktop and other platforms.",
+    "description_zh": "注重准确性与速度的 Nintendo DS 模拟器，支持本地多人、即时存档，并提供桌面等平台构建。",
+    "evidence_url": "https://github.com/melonDS-emu/melonDS/blob/ff972523f8a70e877dd054439876c3c8c6b79197/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Nintendo DS ROMs and BIOS or firmware files; builds target Windows, Linux, macOS and other platforms.",
+      "Compatibility varies by title, and some wireless or peripheral features have limits.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "vita3k",
+    "name": "Vita3K",
+    "url": "https://github.com/Vita3K/Vita3K",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An experimental PlayStation Vita emulator for Windows, Linux, macOS and Android that runs most homebrew programs and commercial games.",
+    "description_zh": "实验性的 PlayStation Vita 模拟器，支持 Windows、Linux、macOS 与 Android，可运行大多数自制程序与商业游戏。",
+    "evidence_url": "https://github.com/Vita3K/Vita3K/blob/a631dd35d46747fdb27d7715a0524ea67b0b1a89/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires PS Vita firmware and game files; builds target Windows, Linux, macOS and Android.",
+      "The emulator is experimental, and compatibility varies by title.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "86box",
+    "name": "86Box",
+    "url": "https://github.com/86Box/86Box",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A low-level x86 emulator that runs older operating systems and software for IBM PC systems and compatibles from 1981 through PCI-era designs, with a configurable machine and device model.",
+    "description_zh": "低层 x86 模拟器，可运行 1981 年至 PCI 时代 IBM PC 及兼容机的旧操作系统与软件，并提供可配置的整机与设备模型。",
+    "evidence_url": "https://github.com/86Box/86Box/blob/bd6ccce8a035fab9cf0d6d7c33ee9acb146286a1/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires ROM images and boot media for the emulated machine; builds target Windows, Linux and macOS.",
+      "The emulator models specific boards and devices, so available hardware depends on the configuration.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "psd-tools",
+    "name": "psd-tools",
+    "url": "https://github.com/psd-tools/psd-tools",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A Python package for reading and writing Adobe Photoshop PSD and PSB files, with raw layer export, layer composition and support for many adjustment and mask types.",
+    "description_zh": "读写 Adobe Photoshop PSD 与 PSB 文件的 Python 包，支持原始图层导出、图层合成以及多种调整层与蒙版类型。",
+    "evidence_url": "https://github.com/psd-tools/psd-tools/blob/6a827c19543106cd83a50fd830b07312df950531/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3 and pip; install psd-tools and open a PSD or PSB file.",
+      "Composition support is limited to basic pixel layers, some adjustment layers, vector masks and selected layer attributes.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

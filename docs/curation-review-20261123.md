@@ -226,3 +226,32 @@ This round adds eight records from the stored lead queue: Cemu (Wii U emulator),
 ## Validation notes
 
 All eight records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; four Class 1 records received previews. Previews, READMEs and the site were regenerated.
+
+---
+
+# Backlog curation review, ninth batch — 2026-11-23
+
+This round returns to reconstruction cases and emulators: Augustus (Caesar III), OpenLoco (Locomotion), OpenMoHAA (Medal of Honor: Allied Assault) and idTech4A++ (id Tech 4 games) as case studies, plus melonDS, Vita3K, 86Box and psd-tools.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `augustus` | `reconstruction-cases` | [Keriew/augustus](https://github.com/Keriew/augustus/blob/4ec115e75651ded84fb56b43abbf118bcda34f72/README.md) | `0afdbee507bf115ac9a4f08332349e84692a0762f86c92d9fb4400dd4e2b23e0` |
+| `openloco` | `reconstruction-cases` | [OpenLoco/OpenLoco](https://github.com/OpenLoco/OpenLoco/blob/da1a3459725157eb26380bebee894ce18d2ba354/README.md) | `7a230ca1cb0ced72bc55ac54975a9095e6869ff1a6d90c3f6f4d5875033d511d` |
+| `openmohaa` | `reconstruction-cases` | [openmoh/openmohaa](https://github.com/openmoh/openmohaa/blob/a2f340195975f4f042e28a60b62561dd9a0b2700/README.md) | `e90afc893e6cb54715cd905ece00e71eaa88de60a303cfaa2168fd14bb9c1244` |
+| `idtech4a` | `reconstruction-cases` | [glKarin/com.n0n3m4.diii4a](https://github.com/glKarin/com.n0n3m4.diii4a/blob/4a14e1ab186160394ed37dc8c204104bc725b218/README.md) | `1613fd1b5744175ec0417f308abd971d83106a147bd7efca9435511cd7b8ab5f` |
+| `melonds` | `game-analysis` | [melonDS-emu/melonDS](https://github.com/melonDS-emu/melonDS/blob/ff972523f8a70e877dd054439876c3c8c6b79197/README.md) | `6deb041b19a7dbfdc24963a97df94e5ab39cc4e6958d5f868620249f74697390` |
+| `vita3k` | `game-analysis` | [Vita3K/Vita3K](https://github.com/Vita3K/Vita3K/blob/a631dd35d46747fdb27d7715a0524ea67b0b1a89/README.md) | `83448ab0be9dbe292d2211081753afc8036c9213a88f7095a9483ff292f978de` |
+| `86box` | `firmware` | [86Box/86Box](https://github.com/86Box/86Box/blob/bd6ccce8a035fab9cf0d6d7c33ee9acb146286a1/README.md) | `c9d3ae5c0ba608a6d0086e8f5a790b9c04654619a49b04a4e83295009a5fa039` |
+| `psd-tools` | `native-analysis` | [psd-tools/psd-tools](https://github.com/psd-tools/psd-tools/blob/6a827c19543106cd83a50fd830b07312df950531/README.md) | `6b22e011eb0689a21f521b6a554701b919c6f070b6bc33ed23c9625011d6e90b` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| ZDoom/Raze, dxx-rebirth, ECWolf, OpenBVE, OpenLieroX | No license file recorded by the GitHub API. |
+| chrissotraidis/caesarpad, chrissotraidis/deviltouch | Derivatives of Augustus and DevilutionX already in the catalog. |
+| OpenRA/ra2, cookgreen/Yuris-Revenge, Inq8/CAmod | OpenRA game mods rather than standalone reconstructions. |
+
+## Validation notes
+
+All eight records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; seven Class 1 records received previews. The four new case studies update the game case indexes and README case sections.

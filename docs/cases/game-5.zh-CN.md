@@ -6,10 +6,14 @@
 
 [English](game-5.md)
 
-**356 个案例**
+**360 个案例**
 
 ## 引擎重实现
 
+- [**Ultima V Redux：使用原版游戏数据重建《Ultima V》**](https://github.com/bradhannah/UltimaVRedux) - Ultima V Redux 使用玩家自备的 MS-DOS PC 版文件，以 Go 重建《Ultima V: Warriors of Destiny》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ultima-v-redux-case/)</sub>
+- [**Un-Banished：用 Rust 重建 Banished 引擎**](https://github.com/tanepiper/unbanished) - Un-Banished 用 Rust 重建 Banished 1.0.7 引擎，读取玩家自有游戏数据，在桌面和浏览器中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/un-banished-case/)</sub>
+- [**Unciv：文明 V 玩法重制**](https://github.com/yairm210/Unciv) - Unciv 使用 LibGDX 在 Android 和桌面平台重制《文明 V》的玩法，并支持模组。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/unciv-civ-v-case/)</sub>
+- [**Underworld Adventures：重建《Ultima Underworld I》**](https://github.com/vividos/UnderworldAdventures) - Underworld Adventures 以 C++ 引擎在现代系统上重建《Ultima Underworld I》，读取用户自备的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/underworld-adventures-case/)</sub>
 - [**Underworld Revisited：用 Unity 重实现《创世纪地下世界》**](https://github.com/PQMarine/UnderworldRevisited) - Underworld Revisited 用 Unity 重新实现 1992 年的 Ultima Underworld: The Stygian Abyss。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/underworld-revisited/)</sub>
 - [**Untangle：基于 REA 与 Ghidra 证据的浏览器重建**](https://github.com/az9713/untangle-rebuild) - 作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/untangle-rea-evidence-rebuild-case/)</sub>
 - [**vakfu：重建 Wakfu 地图渲染**](https://github.com/jac3km4/vakfu) - vakfu 用 Rust 重建 Wakfu 的等距视角地图渲染，并从用户自己的游戏副本读取资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vakfu-case/)</sub>

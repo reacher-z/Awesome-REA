@@ -6,10 +6,14 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**356 case studies**
+**360 case studies**
 
 ## Engine reimplementations
 
+- [**Ultima V Redux: recreating Ultima V from original game data**](https://github.com/bradhannah/UltimaVRedux) - Ultima V Redux recreates Ultima V: Warriors of Destiny in Go using files from the player's MS-DOS PC copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ultima-v-redux-case/)</sub>
+- [**Un-Banished: reconstructing the Banished engine in Rust**](https://github.com/tanepiper/unbanished) - Un-Banished rebuilds the Banished 1.0.7 engine in Rust for desktop and browser play using data from the user's own game copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/un-banished-case/)</sub>
+- [**Unciv: a Civilization V gameplay remake**](https://github.com/yairm210/Unciv) - Unciv recreates Civilization V gameplay as a moddable Android and desktop game built with LibGDX. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/unciv-civ-v-case/)</sub>
+- [**Underworld Adventures: recreating Ultima Underworld I**](https://github.com/vividos/UnderworldAdventures) - Underworld Adventures recreates Ultima Underworld I as a C++ engine for modern systems, loading the user's original game files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/underworld-adventures-case/)</sub>
 - [**Underworld Revisited: reimplementing Ultima Underworld in Unity**](https://github.com/PQMarine/UnderworldRevisited) - Underworld Revisited reimplements Ultima Underworld: The Stygian Abyss (1992) in Unity. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/underworld-revisited/)</sub>
 - [**Untangle: a browser rebuild from REA and Ghidra evidence**](https://github.com/az9713/untangle-rebuild) - An author-documented REA/Ghidra investigation of the shipped Untangle Windows binary produces a single-page playable rebuild and a claim-by-claim grading receipt. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/untangle-rea-evidence-rebuild-case/)</sub>
 - [**vakfu: reconstructing Wakfu map rendering**](https://github.com/jac3km4/vakfu) - vakfu reconstructs Wakfu's isometric map rendering in a Rust application that loads assets from the user's game copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vakfu-case/)</sub>
