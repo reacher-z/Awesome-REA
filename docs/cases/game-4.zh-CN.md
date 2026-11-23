@@ -395,6 +395,7 @@
 - [**Open Annihilation：Total Annihilation 引擎重实现**](https://github.com/open-annihilation/open-annihilation) - Open Annihilation 用 C++20 重实现 Total Annihilation 游戏引擎，读取玩家自备的原版游戏数据运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-annihilation-case/)</sub>
 - [**Open Greedy：从零重写 Greedy XP**](https://github.com/atroel/open-greedy) - Open Greedy 使用 C 从零重写 Greedy XP。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-greedy-case/)</sub>
 - [**Open Horizon：重建《皇牌空战：突击地平线》的渲染与物理系统**](https://github.com/undefined-darkness/open-horizon) - Open Horizon 使用原版游戏资源，以 C++ 重实现《皇牌空战：突击地平线》的渲染与物理系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-horizon-ace-combat-case/)</sub>
+- [**Open Imperium Galactica**](https://github.com/akarnokd/open-ig) - Open Imperium Galactica 是 1996 年游戏 Imperium Galactica 的 Java 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-ig/)</sub>
 - [**Open KF：Rust 与 Bevy 重建 Killing Floor**](https://github.com/Scronkfinkle/open-kf) - Open KF 使用 Rust 和 Bevy 重建 2009 年《Killing Floor》的引擎与玩法，从用户安装的原版读取地图、贴图、音频等资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-kf-killing-floor-case/)</sub>
 - [**Open Northland：重建《Cultures - 8th Wonder of the World》**](https://github.com/s-nems/open-northland) - Open Northland 以确定性的 TypeScript 模拟、PixiJS 等距渲染器及离线资源流水线重建《Cultures - 8th Wonder of the World》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-northland-case/)</sub>
 - [**Open RCT3：早期 RollerCoaster Tycoon 3 引擎重建**](https://github.com/open-rct3/open-rct3) - Open RCT3 是 RollerCoaster Tycoon 3 的早期重建项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-rct3-case/)</sub>
@@ -643,5 +644,4 @@
 - [**Untangle：基于 REA 与 Ghidra 证据的浏览器重建**](https://github.com/az9713/untangle-rebuild) - 作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/untangle-rea-evidence-rebuild-case/)</sub>
 - [**vakfu：重建 Wakfu 地图渲染**](https://github.com/jac3km4/vakfu) - vakfu 用 Rust 重建 Wakfu 的等距视角地图渲染，并从用户自己的游戏副本读取资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vakfu-case/)</sub>
 - [**Vange-rs：以 Rust 重做《Vangers》**](https://github.com/kvark/vange-rs) - vange-rs 使用 Rust 和 wgpu 重做《Vangers》，目标是借助原版游戏资源重现其世界、载具和单人游戏行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vange-rs-vangers-case/)</sub>
-- [**Vault Engine：以 Rust 重建 Fallout 与 Fallout 2**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine 以 Rust 重建 Fallout 和 Fallout 2，读取用户零售版的 DAT 归档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vault-engine-case/)</sub>
 <!-- END GENERATED CASES -->
