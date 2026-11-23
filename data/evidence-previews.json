@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T02:07:10+00:00",
-    "entry_count": 1118,
-    "class_entry_count": 1148,
+    "generated_at": "2026-11-23T03:31:34+00:00",
+    "entry_count": 1121,
+    "class_entry_count": 1151,
     "class_counts": {
-      "image": 1080,
+      "image": 1083,
       "video": 38
     },
     "missing_count": 30,
@@ -1630,6 +1630,15 @@
       "checked_at": "2026-11-09T07:55:40+00:00"
     },
     {
+      "id": "dataexplorer",
+      "image_url": "https://raw.githubusercontent.com/x64dbg/DataExplorer/904b75dc41d8b5c40d89594599e11c81bc008ef5/.github/screenshot.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/x64dbg/DataExplorer",
+      "revision": "904b75dc41d8b5c40d89594599e11c81bc008ef5",
+      "checked_at": "2026-11-23T03:31:34+00:00"
+    },
+    {
       "id": "dbz-budokai-3-hd-recomp",
       "image_url": "https://i.ytimg.com/vi/zcW-9RK046Q/hqdefault.jpg",
       "kind": "video",
@@ -1673,6 +1682,15 @@
       "source_url": "https://github.com/Rinnegatamante/Death-Road-to-Canada-Lite",
       "revision": "d2aa044fc6b8112f5920bf47c2e49f403e8b49e8",
       "checked_at": "2026-11-09T07:55:40+00:00"
+    },
+    {
+      "id": "debugmcp",
+      "image_url": "https://raw.githubusercontent.com/microsoft/DebugMCP/d0b4a334a6a3d8d600c5aa75ec60d9de272af3c4/assets/architecture.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/microsoft/DebugMCP",
+      "revision": "d0b4a334a6a3d8d600c5aa75ec60d9de272af3c4",
+      "checked_at": "2026-11-23T03:31:34+00:00"
     },
     {
       "id": "decbench",
@@ -4030,7 +4048,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-23T02:07:10+00:00"
+      "checked_at": "2026-11-23T03:31:32+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -9322,6 +9340,15 @@
       "source_url": "https://github.com/PQMarine/UnderworldRevisited",
       "revision": "2d28322645f1325664cb79a854ebc34c41a96a7f",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "unidbg",
+      "image_url": "https://raw.githubusercontent.com/zhkl0228/unidbg/30911d7ecf44ee8aeed2ae5e6c91bb683c8afdd4/assets/TTEncrypt.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/zhkl0228/unidbg",
+      "revision": "30911d7ecf44ee8aeed2ae5e6c91bb683c8afdd4",
+      "checked_at": "2026-11-23T03:31:34+00:00"
     },
     {
       "id": "universal-gba-pokedex",

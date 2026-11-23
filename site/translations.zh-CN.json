@@ -44158,5 +44158,58 @@
       "转储已提交内存区域与完整寄存器状态，并对比两个快照的寄存器与内存变化。",
       "代码采用 MIT 许可证。"
     ]
+  },
+  "unidbg": {
+    "name": "unidbg",
+    "requirements": [
+      "在 JVM 上运行 Android 原生库；iOS 模拟为实验性功能，项目要求使用者自担风险。",
+      "实现 JNI 调用 API（JavaVM、JNI_OnLoad），并支持 MCP 供 AI 辅助调试。",
+      "代码采用 Apache-2.0 许可证。"
+    ]
+  },
+  "debugmcp": {
+    "name": "DebugMCP",
+    "requirements": [
+      "经调试适配器栈支持任意 VS Code 兼容语言。",
+      "兼容 Codex、GitHub Copilot、Claude Code、Cline、Cursor、Windsurf 及其他 MCP 客户端。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "dataexplorer": {
+    "name": "DataExplorer",
+    "requirements": [
+      "从最新发布版安装到 x64dbg 插件目录。",
+      "将 ImHex 模式语言描述渲染到实时被调试内存上。",
+      "代码采用 LGPL-2.1 许可证。"
+    ]
+  },
+  "binja-wasm": {
+    "name": "binja_wasm",
+    "requirements": [
+      "为 Binary Ninja 增加 WebAssembly 架构以加载并分析 WASM 模块。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "bninja-ps3": {
+    "name": "bninja-ps3",
+    "requirements": [
+      "仅加载已解密的 PS3 可执行 ELF（EBOOT.BIN）。",
+      "在 Binary Ninja 4.1、4.2 与 5.0 stable 上测试通过。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "binja-blocks": {
+    "name": "binja-blocks",
+    "requirements": [
+      "在 Binary Ninja 中为栈与全局 block、block 描述符及被捕获变量提供类型标注。",
+      "代码采用 MIT 许可证。"
+    ]
+  },
+  "ghidrai": {
+    "name": "GhidrAI",
+    "requirements": [
+      "面向 Ghidra 11.x，使用 Streamlit 界面与本地 Ollama 模型。",
+      "代码采用 MIT 许可证。"
+    ]
   }
 }

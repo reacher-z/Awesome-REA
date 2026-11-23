@@ -156033,5 +156033,209 @@
     "additional_evidence_urls": [
       "https://github.com/dariushoule/x64dbg-skills/blob/0409f535af6f29389676f1d7f60f25cc83801cb8/LICENSE"
     ]
+  },
+  {
+    "id": "unidbg",
+    "name": "unidbg",
+    "url": "https://github.com/zhkl0228/unidbg",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "unidbg emulates Android native libraries on the JVM, with experimental iOS emulation: it implements the JNI invocation API so JNI_OnLoad and native calls run without a device, supports MCP for AI-assisted debugging with Cursor and other tools, and serves as an educational project for the ELF and MachO file formats and ARM assembly.",
+    "description_zh": "unidbg 在 JVM 上模拟 Android 原生库（并实验性支持 iOS）：实现 JNI 调用 API，使 JNI_OnLoad 与原生函数无需真机即可运行，支持 MCP 供 Cursor 等 AI 工具辅助调试，也可作为学习 ELF/MachO 文件格式与 ARM 汇编的教学项目。",
+    "evidence_url": "https://github.com/zhkl0228/unidbg/blob/30911d7ecf44ee8aeed2ae5e6c91bb683c8afdd4/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs Android native libraries on the JVM; iOS emulation is experimental, and the project asks users to proceed at their own risk.",
+      "Implements the JNI invocation API (JavaVM, JNI_OnLoad) and supports MCP for AI-assisted debugging.",
+      "Code is Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zhkl0228/unidbg/blob/30911d7ecf44ee8aeed2ae5e6c91bb683c8afdd4/LICENSE"
+    ]
+  },
+  {
+    "id": "debugmcp",
+    "name": "DebugMCP",
+    "url": "https://github.com/microsoft/DebugMCP",
+    "category": "agent-mcp",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "DebugMCP is an MCP server that hands VS Code debugging capabilities to AI agents: agents can set breakpoints, step through execution, inspect variables and evaluate expressions in any VS Code-supported language, from clients including Codex, GitHub Copilot, Claude Code, Cline, Cursor and Windsurf.",
+    "description_zh": "DebugMCP 是一个把 VS Code 调试能力交给 AI 代理的 MCP 服务器：代理可在任意 VS Code 支持的语言里设置断点、单步执行、查看变量、求值表达式；兼容 Codex、GitHub Copilot、Claude Code、Cline、Cursor、Windsurf 等 MCP 客户端。",
+    "evidence_url": "https://github.com/microsoft/DebugMCP/blob/d0b4a334a6a3d8d600c5aa75ec60d9de272af3c4/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Works with any VS Code-supported language through the debug adapter stack.",
+      "Compatible with Codex, GitHub Copilot, Claude Code, Cline, Cursor, Windsurf and other MCP clients.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/microsoft/DebugMCP/blob/d0b4a334a6a3d8d600c5aa75ec60d9de272af3c4/LICENSE.txt"
+    ]
+  },
+  {
+    "id": "dataexplorer",
+    "name": "DataExplorer",
+    "url": "https://github.com/x64dbg/DataExplorer",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "DataExplorer is an x64dbg plugin that integrates the ImHex pattern language into the debugger, letting analysts describe binary structures once as pattern files and visualize them against live debuggee memory during debugging sessions.",
+    "description_zh": "DataExplorer 是 x64dbg 插件，把 ImHex 的模式语言整合进调试器：分析者只需把二进制结构写成模式文件，即可在调试会话中对实时被调试内存进行可视化解析。",
+    "evidence_url": "https://github.com/x64dbg/DataExplorer/blob/904b75dc41d8b5c40d89594599e11c81bc008ef5/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Installs into the x64dbg plugins directory from the latest release.",
+      "Renders ImHex pattern-language descriptions against live debuggee memory.",
+      "Code is LGPL-2.1-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/x64dbg/DataExplorer/blob/904b75dc41d8b5c40d89594599e11c81bc008ef5/LICENSE"
+    ]
+  },
+  {
+    "id": "binja-wasm",
+    "name": "binja_wasm",
+    "url": "https://github.com/SecondNewtonLaw/binja_wasm",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "binja_wasm implements WebAssembly as a Binary Ninja architecture, so WASM modules can be loaded, disassembled and analyzed with the platform's native views and APIs.",
+    "description_zh": "binja_wasm 为 Binary Ninja 实现 WebAssembly 架构，使 WASM 模块可以像原生目标一样被加载、反汇编与分析。",
+    "evidence_url": "https://github.com/SecondNewtonLaw/binja_wasm/blob/ab4ac166dcbf0078158470e6382bf7e579bfbf4a/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Adds WebAssembly as a Binary Ninja architecture for loading and analyzing WASM modules.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SecondNewtonLaw/binja_wasm/blob/ab4ac166dcbf0078158470e6382bf7e579bfbf4a/LICENSE"
+    ]
+  },
+  {
+    "id": "bninja-ps3",
+    "name": "bninja-ps3",
+    "url": "https://github.com/valters-tomsons/bninja-ps3",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "bninja-ps3 is a work-in-progress Cell PPU (PlayStation 3) ELF loader for Binary Ninja 4.x and 5.x: it loads decrypted PS3 executables (EBOOT.BIN) so their PowerPC code can be analyzed with the platform views.",
+    "description_zh": "bninja-ps3 是面向 Binary Ninja 4.x/5.x 的 Cell PPU（PlayStation 3）ELF 加载器（开发中）：加载已解密的 PS3 可执行文件（EBOOT.BIN），使其 PowerPC 代码可在平台内分析。",
+    "evidence_url": "https://github.com/valters-tomsons/bninja-ps3/blob/5e53df569359b0132f949e018d2aef74df75f71e/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Loads decrypted PS3 executable ELFs (EBOOT.BIN) only.",
+      "Tested with Binary Ninja 4.1, 4.2 and 5.0 stable.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/valters-tomsons/bninja-ps3/blob/5e53df569359b0132f949e018d2aef74df75f71e/LICENSE"
+    ]
+  },
+  {
+    "id": "binja-blocks",
+    "name": "binja-blocks",
+    "url": "https://github.com/droe/binja-blocks",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "binja-blocks annotates Apple libclosure blocks in Binary Ninja: it types stack and global blocks, block descriptors and variables closed over by blocks, so Objective-C and C code using the Blocks language extension reads cleanly in the platform.",
+    "description_zh": "binja-blocks 在 Binary Ninja 中标注 Apple libclosure 的 block：为栈与全局 block、block 描述符以及被 block 捕获的变量提供类型标注，让使用 Blocks 语法的 Objective-C 与 C 代码在平台内清晰可读。",
+    "evidence_url": "https://github.com/droe/binja-blocks/blob/75c8c29fcec719274ebf59cc1e29b2a759730805/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Types stack and global blocks, block descriptors and closed-over variables in Binary Ninja.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/droe/binja-blocks/blob/75c8c29fcec719274ebf59cc1e29b2a759730805/LICENSE"
+    ]
+  },
+  {
+    "id": "ghidrai",
+    "name": "GhidrAI",
+    "url": "https://github.com/John-A0/GhidrAI",
+    "category": "agent-workflows",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "GhidrAI is a hybrid AI-assisted malware reverse-engineering pipeline for Ghidra 11.x: a Streamlit interface drives local Ollama models over Ghidra analysis to assist malware triage and annotation workflows.",
+    "description_zh": "GhidrAI 是面向 Ghidra 11.x 的混合式 AI 辅助恶意软件逆向流水线：通过 Streamlit 界面以本地 Ollama 模型驱动 Ghidra 分析，辅助恶意软件分诊与标注工作流。",
+    "evidence_url": "https://github.com/John-A0/GhidrAI/blob/274474a47e7db1aeb18c3bc0085d674444a5dc6f/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Targets Ghidra 11.x with a Streamlit UI and local Ollama models.",
+      "Code is MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/John-A0/GhidrAI/blob/274474a47e7db1aeb18c3bc0085d674444a5dc6f/LICENSE"
+    ]
   }
 ]
