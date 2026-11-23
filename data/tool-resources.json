@@ -154759,6 +154759,7 @@
     ],
     "evidence_url": "https://github.com/sysprog21/jitboy/blob/418d1c5f10ac25d6a7a4bc693ec4fcef014a65e4/README.md",
     "verified_at": "2026-11-07",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "added_at": "2026-11-23"
   }
 ]
