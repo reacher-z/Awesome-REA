@@ -190,9 +190,18 @@ class QueueTest(unittest.TestCase):
                     '/zh/discoveries/feed.xml\n  Content-Type: application/atom+xml; charset=utf-8\n',
                     encoding='utf-8')
                 validate_discovery_outputs(output, dict.fromkeys(routes), queue)
+                language_targets = {
+                    '/discoveries/': '/zh/discoveries/',
+                    '/zh/discoveries/': '/discoveries/',
+                    '/discoveries/game/': '/zh/discoveries/game/',
+                    '/zh/discoveries/game/': '/discoveries/game/',
+                }
                 for route in routes:
-                    page = Page((output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8'))
+                    html = (output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')
+                    page = Page(html)
                     self.assertIsNone(description_problem(page.meta['description']))
+                    self.assertEqual(page.meta['robots'], 'noindex')
+                    self.assertIn(f'class="browse-language" href="{language_targets[route]}"', html)
                 # Game has two data points and the list page shows one, so Game gets a page with both.
                 self.assertEqual(routes, ['/discoveries/', '/zh/discoveries/', '/discoveries/game/', '/zh/discoveries/game/'])
                 export = json.loads((output / 'discoveries.json').read_text(encoding='utf-8'))

@@ -554,7 +554,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
     github_icon = ('<span class="icon fa-symbol fa-github" aria-hidden="true"></span>' if icon_stylesheet
                    else '<span class="icon browse-github-fallback" aria-hidden="true">GH</span>')
     # A 404 page answers any missing path, so its language link opens the other homepage.
-    counterpart = ('/' if zh else '/zh/') if noindex else counterpart
+    counterpart = ('/' if zh else '/zh/') if english_path == '/404.html' else counterpart
     language_link = f'<a class="browse-language" href="{counterpart}" lang="{("en" if zh else "zh-CN")}" hreflang="{("en" if zh else "zh-CN")}">{globe_icon}<span>{("English" if zh else "简体中文")}</span></a>'
     prefix = '/zh' if zh else ''
     # The 404 templates have no canonical address or language counterpart.
