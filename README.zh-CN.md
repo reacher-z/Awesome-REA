@@ -172,6 +172,7 @@ REA 标签指向单独维护的上游 CLI 与 MCP 项目，详见“关于”。
 
 #### 案例
 
+- [**Pokémon TCG disassembly：Game Boy Color 卡牌游戏的字节精确重建**](https://github.com/pret/poketcg) - 该项目反汇编《宝可梦集换式卡牌游戏》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/poketcg/)</sub>
 - [**2ooM：为重制解码《Master of Orion II》的 LBX 数据**](https://sourceforge.net/projects/toom/) - 2ooM 的目标是重制《Master of Orion II》，运行时使用原版游戏的数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/2oom-master-of-orion-ii-case/)</sub>
 - [**A-Team：带 PAL 转换的 Atari 2600 反汇编**](https://www.qotile.net/minidig/disassembly/a-team.asm) - 这份 Atari 2600 游戏 A-Team 的双 bank 6502 反汇编可用 DASM 汇编，也是其 PAL 转换的基础。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/a-team-atari-2600-disassembly-case/)</sub>
 - [**ACEmulator：《Asheron's Call》服务端模拟器**](https://emulator.ac) - ACEmulator 用 C# 重建了 MMORPG《Asheron's Call》的服务端，目标是还原 2017 年 1 月官方服务器关闭时的游戏世界。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/acemulator-case/)</sub>
@@ -181,7 +182,6 @@ REA 标签指向单独维护的上游 CLI 与 MCP 项目，详见“关于”。
 - [**Combat：Atari 2600 游戏注释反汇编**](https://www.qotile.net/minidig/disassembly/dicombat.asm) - 这份带注释的 6502 汇编清单重建了 Atari 2600 坦克、双翼机与喷气机对战游戏 Combat，目标是讲清每条指令、每个内存地址和每张表的用途。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/combat-atari-2600-disassembly-case/)</sub>
 - [**Cosmic Ark：带注释和 PAL 转换的 Atari 2600 反汇编**](https://www.qotile.net/minidig/disassembly/CosmicArk.asm) - 将 Imagic 1982 年的 Atari 2600 游戏 Cosmic Ark 整理为经过分析、带标签和注释的 6502 汇编清单，可构建 NTSC 和 PAL 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cosmic-ark-atari-2600-disassembly-case/)</sub>
 - [**dataeast\_snddrv：《High Seas Havoc》声音驱动反汇编**](https://codeberg.org/techmetx11/dataeast_snddrv) - dataeast\_snddrv 是 Data East 在《High Seas Havoc》中所用声音驱动的反汇编，分为 68000 驱动代码、Z80 DAC 采样播放程序和频率表，使用 vasm 汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dataeast-snddrv-case/)</sub>
-- [**Donkey Kong 64：N64 匹配反编译**](https://gitlab.com/dk64_decomp/dk64) - 这是任天堂 64 游戏《Donkey Kong 64》美版的匹配反编译，按启动段、全局代码以及 arcade、jetpac、bonus、boss、menu、minecart、multiplayer、race、critter 等 overlay 组织 C 源码并重建 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dk64-decomp-case/)</sub>
 
 #### 工具、项目与集成
 
