@@ -154761,6 +154761,7 @@
     ],
     "evidence_url": "https://github.com/pret/poketcg/blob/3054a4465938cfd744bab6f976c090884561d433/README.md",
     "verified_at": "2026-11-07",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "added_at": "2026-11-23"
   }
 ]
