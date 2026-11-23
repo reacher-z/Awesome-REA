@@ -154761,6 +154761,7 @@
     ],
     "evidence_url": "https://github.com/OpenSmash-Ultimate/WindowSmash/blob/598d05240fc146f7184b3450653e2eec2ee97312/README.md",
     "verified_at": "2026-11-07",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "added_at": "2026-11-23"
   }
 ]
