@@ -154761,6 +154761,7 @@
     ],
     "evidence_url": "https://github.com/swfans/syndwarsfx/blob/5c4b0d562bd3ab465ce3016a25c2932d290ea634/README.md",
     "verified_at": "2026-11-07",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "added_at": "2026-11-23"
   }
 ]
