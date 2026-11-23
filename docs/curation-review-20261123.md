@@ -418,3 +418,31 @@ This round adds six records from the stored lead queue: the official Flipper Zer
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Unleashed, Gearsystem and Ludo received Class 1 previews. Previews, READMEs and the site were regenerated.
+
+---
+
+# Backlog curation review, sixteenth batch — 2026-11-23
+
+This round returns to the core of the catalog with six reconstruction cases from the stored lead queue: Shockolate (System Shock), DOOM Retro, Open Fodder (Cannon Fodder), OpenTyrian, the Banjo-Kazooie matching decompilation and ServUO (Ultima Online server).
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `shockolate` | `reconstruction-cases` | [Interrupt/systemshock](https://github.com/Interrupt/systemshock/blob/f622c304f844d988782fb6029928ea97e5ef580f/README.md) | `e1fa41d227f34b06357bc285ff8102e1bae457b5a2753c123d0199e73dd20c8f` |
+| `doomretro` | `reconstruction-cases` | [bradharding/doomretro](https://github.com/bradharding/doomretro/blob/865bf0b874ee2e5f44147fe573a82b5bae95055c/README.md) | `e3dd77dbdbef21c8edf770df36698665e4801e89ad851886cf6f3b6fd17af172` |
+| `openfodder` | `reconstruction-cases` | [OpenFodder/openfodder](https://github.com/OpenFodder/openfodder/blob/ad15d39fafd9c65d7c9a02ecd7c48939cff3a4ce/README.md) | `e3c285d6bbd00d8f8639733cd99fedbf4b548ca5c5e283ad96d8dacb5b0f1071` |
+| `opentyrian` | `reconstruction-cases` | [opentyrian/opentyrian](https://github.com/opentyrian/opentyrian/blob/26e40a2012903812f16aae5dd6af2be50b96b5cb/README.md) | `28455843e37ffbc219a53dd4a1448e881defd382751e76f03b07bc810c217b20` |
+| `banjo-kazooie` | `reconstruction-cases` | [n64decomp/banjo-kazooie](https://github.com/n64decomp/banjo-kazooie/blob/7b6a4c44a1a5bf80977adcf48d822ea9d6bdf899/README.md) | `ffbd7d5ed79bb5306a9e2f3bf81acc796c762c62f90a2ae0739c211f4167a727` |
+| `servuo` | `reconstruction-cases` | [ServUO/ServUO](https://github.com/ServUO/ServUO/blob/d76bf4443cf76d081ddaf8f57c87ff33749256af/README.md) | `af199759316c2fb10f226d419b20bca1a9b0490c5765dce95f23dcb9122f3758` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| TASEmulators/desmume | README is a 225-byte stub below the documentation threshold. |
+| ferrumc-rs/ferrumc | README declares the project is not actively maintained. |
+| zortos293/Lichii, Eglantine | Very experimental Switch 2 emulators; Eglantine is already curated. |
+| n64js, boytacean, binjgb | More emulators deferred to keep this batch focused on reconstruction cases. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Shockolate, DOOM Retro and Open Fodder received Class 1 previews. All six are case studies, so the game case indexes and README case sections were regenerated.

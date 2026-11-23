@@ -158790,5 +158790,179 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "shockolate",
+    "name": "Shockolate: a cross-platform source port of System Shock",
+    "url": "https://github.com/Interrupt/systemshock",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A cross-platform source port of System Shock built on the PowerPC source code released by Night Dive Studios, using SDL2 with an OpenGL renderer and mod support in progress.",
+    "description_zh": "基于 Night Dive Studios 发布的 PowerPC 源码实现的《System Shock》跨平台源码移植，使用 SDL2，并正在加入 OpenGL 渲染与 mod 支持。",
+    "evidence_url": "https://github.com/Interrupt/systemshock/blob/f622c304f844d988782fb6029928ea97e5ef580f/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original System Shock game data; builds target Windows and Linux.",
+      "Some features are missing because they were not included in the released source, and the port is still in development.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "doomretro",
+    "name": "DOOM Retro: a refined DOOM source port for Windows",
+    "url": "https://github.com/bradharding/doomretro",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A classic DOOM source port that keeps the original experience while adding a cohesive set of visual and quality-of-life features.",
+    "description_zh": "经典的 DOOM 源码移植，在保留原版体验的同时加入一整套视觉与便利性改进。",
+    "evidence_url": "https://github.com/bradharding/doomretro/blob/865bf0b874ee2e5f44147fe573a82b5bae95055c/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original DOOM or DOOM II game data; the current build targets Windows.",
+      "It preserves the original game while adding features, so behavior can differ from the original release.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "openfodder",
+    "name": "Open Fodder: an open-source port of Cannon Fodder",
+    "url": "https://github.com/OpenFodder/openfodder",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "An open-source port of the Sensible Software action-strategy game Cannon Fodder, with Windows and Linux builds.",
+    "description_zh": "Sensible Software 动作策略游戏《Cannon Fodder》的开源移植，提供 Windows 与 Linux 构建。",
+    "evidence_url": "https://github.com/OpenFodder/openfodder/blob/ad15d39fafd9c65d7c9a02ecd7c48939cff3a4ce/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Cannon Fodder game data; Windows and Linux builds are provided.",
+      "It recreates the original game engine and behavior, and compatibility depends on the game data version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "opentyrian",
+    "name": "OpenTyrian: an open-source port of Tyrian",
+    "url": "https://github.com/opentyrian/opentyrian",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "An open-source port of the DOS vertical shooter Tyrian, with story, arcade and networked multiplayer modes and builds for Windows, macOS and Linux.",
+    "description_zh": "DOS 纵向射击游戏 Tyrian 的开源移植，包含剧情、街机与联机多人模式，提供 Windows、macOS 与 Linux 构建。",
+    "evidence_url": "https://github.com/opentyrian/opentyrian/blob/26e40a2012903812f16aae5dd6af2be50b96b5cb/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Tyrian game data; builds for Windows, macOS and Linux are published.",
+      "It is a source port that keeps the original gameplay, and network play depends on the build and setup.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "banjo-kazooie",
+    "name": "Banjo-Kazooie: a matching decompilation of the Nintendo 64 game",
+    "url": "https://github.com/n64decomp/banjo-kazooie",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A matching decompilation of Banjo-Kazooie that rebuilds the original ROM byte-for-byte when given the supported base ROMs, with build instructions for Linux, macOS and Docker.",
+    "description_zh": "《Banjo-Kazooie》的匹配式反编译项目：在提供受支持的基础 ROM 时可逐字节重建原始 ROM，并提供 Linux、macOS 与 Docker 构建说明。",
+    "evidence_url": "https://github.com/n64decomp/banjo-kazooie/blob/7b6a4c44a1a5bf80977adcf48d822ea9d6bdf899/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported base ROM (US v1.0, US v1.1, Japanese or PAL) to verify the build; the project does not distribute ROMs.",
+      "The decompilation targets byte-matching builds, and the original assets remain in the base ROM.",
+      "CC0-1.0-licensed code."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "servuo",
+    "name": "ServUO: an open-source Ultima Online server emulator",
+    "url": "https://github.com/ServUO/ServUO",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "An Ultima Online server emulator written in C# .NET that recreates the game server and supports custom shards, scripts and client compatibility.",
+    "description_zh": "用 C# .NET 编写的《网络创世纪》服务器模拟器，重实现游戏服务器，并支持自定义 shard、脚本与客户端兼容性。",
+    "evidence_url": "https://github.com/ServUO/ServUO/blob/d76bf4443cf76d081ddaf8f57c87ff33749256af/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the .NET runtime and Ultima Online client data; the server runs on Windows or through .NET on other platforms.",
+      "It emulates the game server, and compatibility depends on the client version and shard configuration.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

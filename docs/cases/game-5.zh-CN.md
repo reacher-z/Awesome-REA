@@ -6,10 +6,16 @@
 
 [English](game-5.md)
 
-**365 个案例**
+**371 个案例**
 
 ## 引擎重实现
 
+- [**TM2020-Sim：扩展 Trackmania 物理模拟**](https://github.com/Speedstu/TM2020-Sim-V1) - TM2020-Sim 在 Gearbox 的 Trackmania 物理与资源加载代码上构建无界面模拟器和 C++、Rust SDK，增加并行环境、回放分析、驾驶控制研究及本地游戏对照工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tm2020-sim-trackmania-case/)</sub>
+- [**TOD Tools：重建 Total Overdose 与 Kapow Engine**](https://github.com/Michael0ne/TOD_tools) - TOD Tools 用 C++ 重建 Total Overdose 及 Kapow Engine 的代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tod-tools-case/)</sub>
+- [**Torchlight Rekindled：重建 Xbox 360 版逻辑的跨平台引擎**](https://github.com/GreenSwampDweller/torchlight-rekindled) - Torchlight Rekindled 为 2009 年游戏《火炬之光》实现新引擎，游戏逻辑参照 Xbox 360 版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/torchlight-rekindled-case/)</sub>
+- [**touhou-engine：用 Python 重实现东方游戏玩法**](https://github.com/SaigyoujYuyuko/touhou-engine) - touhou-engine 用 Python 重实现东方弹幕游戏玩法，以 TH07《东方妖妖梦》为参考作品。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/touhou-engine-case/)</sub>
+- [**Tower Toppler：重做 Nebulus**](https://gitlab.com/roever/toppler) - Tower Toppler 重做了以旋转高塔为特色的平台解谜游戏 Nebulus，并重新绘制画面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tower-toppler-case/)</sub>
+- [**tower-together：为多人游戏重构 SimTower 模拟逻辑**](https://github.com/phulin/tower-together) - tower-together 将 SimTower 的模拟逻辑重构为多人浏览器游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tower-together-case/)</sub>
 - [**TurokEX：在 Kex 引擎上重建 PC 版 Turok**](https://github.com/svkaiser/TurokEX) - TurokEX 在 Kex 引擎上重新实现 PC 版 Turok，游戏中的角色、敌人 AI、武器、拾取物、区域和 HUD 均以 AngelScript 类编写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/turokex-case/)</sub>
 - [**TwinEngine：《Little Big Adventure 1》引擎重写**](https://github.com/LBALab/twin-e) - TwinEngine 用 C 重写《Little Big Adventure 1》引擎，读取原版安装文件运行游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twinengine-lba1-case/)</sub>
 - [**Twisted Metal：2012 年 PS3 游戏的 Rust 重实现**](https://gitlab.com/goblindo/twisted-metal) - Twisted Metal 以 Rust 重实现 2012 年 PS3 游戏的引擎，面向 Linux 和 macOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twisted-metal-native-engine-case/)</sub>

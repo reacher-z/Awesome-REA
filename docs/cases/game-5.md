@@ -6,10 +6,16 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**365 case studies**
+**371 case studies**
 
 ## Engine reimplementations
 
+- [**TM2020-Sim: extending Trackmania physics simulation**](https://github.com/Speedstu/TM2020-Sim-V1) - TM2020-Sim extends Gearbox's Trackmania physics and asset loading into a headless simulator with a native C++ and Rust SDK. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tm2020-sim-trackmania-case/)</sub>
+- [**TOD Tools: reconstructing Total Overdose and Kapow Engine**](https://github.com/Michael0ne/TOD_tools) - TOD Tools reconstructs Total Overdose game and Kapow Engine code in C++. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tod-tools-case/)</sub>
+- [**Torchlight Rekindled: a portable engine following the Xbox 360 game**](https://github.com/GreenSwampDweller/torchlight-rekindled) - Torchlight Rekindled implements an engine for the 2009 game Torchlight, following the logic of its Xbox 360 release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/torchlight-rekindled-case/)</sub>
+- [**touhou-engine: a Python reimplementation of Touhou gameplay**](https://github.com/SaigyoujYuyuko/touhou-engine) - touhou-engine reimplements Touhou danmaku gameplay in Python, with TH07: Perfect Cherry Blossom as its reference game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/touhou-engine-case/)</sub>
+- [**Tower Toppler: reimplementing Nebulus**](https://gitlab.com/roever/toppler) - Tower Toppler reimplements the rotating-tower puzzle platformer Nebulus with newly drawn graphics. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tower-toppler-case/)</sub>
+- [**tower-together: reconstructing SimTower's simulation for multiplayer**](https://github.com/phulin/tower-together) - tower-together reconstructs SimTower's simulation as a multiplayer browser game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tower-together-case/)</sub>
 - [**TurokEX: rebuilding PC Turok on the Kex engine**](https://github.com/svkaiser/TurokEX) - TurokEX reimplements the PC version of Turok on the Kex engine, with the game's actors, enemy AI, weapons, pickups, areas and HUD written as AngelScript classes. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/turokex-case/)</sub>
 - [**TwinEngine: a Little Big Adventure 1 engine rewrite**](https://github.com/LBALab/twin-e) - TwinEngine rewrites the Little Big Adventure 1 engine in C to run the original game from its installation files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/twinengine-lba1-case/)</sub>
 - [**Twisted Metal: Rust reimplementation of the 2012 PS3 game**](https://gitlab.com/goblindo/twisted-metal) - Twisted Metal reimplements the 2012 PS3 game's engine in Rust for Linux and macOS. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/twisted-metal-native-engine-case/)</sub>

@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T22:18:05+00:00",
-    "entry_count": 1159,
-    "class_entry_count": 1190,
+    "generated_at": "2026-11-23T23:00:07+00:00",
+    "entry_count": 1162,
+    "class_entry_count": 1193,
     "class_counts": {
-      "image": 1120,
+      "image": 1123,
       "video": 39
     },
     "missing_count": 31,
@@ -2124,6 +2124,15 @@
       "source_url": "https://github.com/Erick194/DoomIIRPG-RE",
       "revision": "ba6227d82c4f70ec46453c803ce2ded1b519b1fc",
       "checked_at": "2026-11-09T05:33:55+00:00"
+    },
+    {
+      "id": "doomretro",
+      "image_url": "https://github.com/bradharding/www.doomretro.com/raw/master/readme.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/bradharding/doomretro",
+      "revision": "865bf0b874ee2e5f44147fe573a82b5bae95055c",
+      "checked_at": "2026-11-23T23:00:06+00:00"
     },
     {
       "id": "doomrpg-re-case",
@@ -5780,6 +5789,15 @@
       "checked_at": "2026-11-22T06:41:04+00:00"
     },
     {
+      "id": "openfodder",
+      "image_url": "https://user-images.githubusercontent.com/1327406/49718991-f1bd6e00-fcaf-11e8-88e3-68136828c2d1.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/OpenFodder/openfodder",
+      "revision": "ad15d39fafd9c65d7c9a02ecd7c48939cff3a4ce",
+      "checked_at": "2026-11-23T23:00:07+00:00"
+    },
+    {
       "id": "opengoal-jak-case",
       "image_url": "https://raw.githubusercontent.com/open-goal/jak-project/21d27233d2f06ae5b59b6d61be390084aad89bc7/docs/img/promosmall1.png",
       "kind": "image",
@@ -8333,6 +8351,15 @@
       "source_url": "https://github.com/tommy-xr/shock2quest",
       "revision": "d965836402971c04dd881a5f11ddc0c65a0bb6a4",
       "checked_at": "2026-11-09T07:55:54+00:00"
+    },
+    {
+      "id": "shockolate",
+      "image_url": "https://i.imgur.com/kbVWQj4.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Interrupt/systemshock",
+      "revision": "f622c304f844d988782fb6029928ea97e5ef580f",
+      "checked_at": "2026-11-23T23:00:06+00:00"
     },
     {
       "id": "sigdigger",

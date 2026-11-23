@@ -10,6 +10,7 @@
 
 ## 静态重编译
 
+- [**Juiced 2 Recompiled：Xbox 360 游戏的 Windows 静态重编译**](https://github.com/anishchandra24/Juiced2-Recompiled) - Juiced 2 Recompiled 使用 ReXGlue 静态转换用户自有的 Xbox 360 版 Juiced 2: Hot Import Nights 可执行文件，构建原生 Windows 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/juiced-2-recompiled-case/)</sub>
 - [**Juiced：Windows 游戏可执行文件的静态重编译**](https://github.com/mafph/juiced-recomp) - Juiced 项目用 pcrecomp 将 2005 年 Windows 游戏的 x86-32 可执行文件静态重编译为可移植 C。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/juiced-recomp-case/)</sub>
 - [**JUS Decomp：NDS 游戏 JUS 的原生移植**](https://github.com/piuzera/JUSDecomp) - JUS Decomp 使用 ndsrecomp 和玩家自备的 ROM，将 NDS 游戏 JUS 静态重编译为可在 Windows 和 Linux 上原生运行的版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jus-decomp-case/)</sub>
 - [**KameoRecomp：Kameo 的 Windows 静态重编译移植版**](https://github.com/ElGuslml/KameoRecomp) - KameoRecomp 将 Xbox 360 游戏《Kameo: Elements of Power》的代码静态转换为 C++，借助 ReXGlue SDK 编译为 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kameorecomp-case/)</sub>
@@ -539,6 +540,7 @@
 - [**DK64: Recompiled：Android 版《大金刚 64》移植**](https://github.com/deivid22srk/dk64-recomp-android) - 该项目把 Donkey Kong 64: Recompiled 移植到原生 Android，使用 NDK、N64ModernRuntime、Vulkan 上的 RT64、RmlUi 和 SDL2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dk64-android/)</sub>
 - [**DKR-GC：Diddy Kong Racing 原生 GameCube 移植**](https://github.com/RyoSaeba89/DKR-GC) - DKR-GC 将 N64 游戏 Diddy Kong Racing 的反编译代码编译为原生 GameCube PowerPC 程序，借助 libogc2 和 GX 实现调度、存储、图形与音频服务，并读取用户提供的 ROM 数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dkr-gc-diddy-kong-racing-case/)</sub>
 - [**DOAX3 Fortune PC：将《死或生 沙滩排球 3 Fortune》移植到 Windows**](https://github.com/negroISO/doax3-fortune-pc) - DOAX3 Fortune PC 将《死或生 沙滩排球 3 Fortune》01.19 版适配到 Windows x64。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doax3-fortune-pc-case/)</sub>
+- [**DOOM Retro：面向 Windows 的精炼 DOOM 源码移植**](https://github.com/bradharding/doomretro) - 经典的 DOOM 源码移植，在保留原版体验的同时加入一整套视觉与便利性改进。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doomretro/)</sub>
 - [**dRally：Death Rally 的 Linux 与 BSD 原生移植**](https://github.com/urxp/dRally) - dRally 是以 C 和 SDL2 将 1996 年的《Death Rally》移植到 Linux 和 BSD 的项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/drally-case/)</sub>
 - [**Drift City Rebuild：基于游戏分析的 Unity 客户端与服务器**](https://github.com/MagicIbrar/driftcity-unity) - Drift City Rebuild 将这款在线竞速游戏重建为 Unity 客户端，并配有支持离线或自托管游玩的新 Node.js 服务器；客户端读取用户安装目录中的原版数据。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/driftcity-unity-case/)</sub>
 - [**ds2-nx：将《Dead Space 2》移植到 Nintendo Switch**](https://github.com/VasilkovND/ds2-nx) - ds2-nx 将基于 ReXGlue 静态重编译的《Dead Space 2》移植为 Nintendo Switch 自制软件 NRO。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ds2-nx-case/)</sub>
@@ -623,6 +625,4 @@
 - [**MDK in C# and SDL3：重建 1997 年游戏**](https://github.com/nautilusbits/mdk-sdl) - MDK in C# and SDL3 根据 MDKD3D.EXE 及原游戏数据重建 1997 年 MDK 的格式和行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mdk-sdl-case/)</sub>
 - [**MDK in Godot：基于游戏数据与可执行文件分析的移植**](https://github.com/nautilusbits/mdk-godot) - MDK in Godot 依据原版数据文件及 MDKD3D.EXE 的分析，将 1997 年游戏 MDK 移植到 Godot 4.7。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mdk-godot-case/)</sub>
 - [**MechWarrior SDL port：以 C17 重建 1989 年游戏**](https://github.com/Elthial/Mechwarrior-sdl-port) - MechWarrior SDL port 用 C17 和 SDL3 为 Windows x64 重建 1989 年游戏的战役与战斗系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mechwarrior-sdl-port-case/)</sub>
-- [**MedalOfHonor-xport：Medal Of Honor PlayStation 反编译移植工程**](https://github.com/psxports/MedalOfHonor-xport) - MedalOfHonor-xport 移植 PlayStation 游戏 Medal Of Honor 的重建例程。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/medalofhonor-xport-case/)</sub>
-- [**MediEvil：2019 年 PS4 游戏的原生 PC 移植**](https://github.com/bc160201983/medievil_2019_pc_port) - MediEvil for PC 在 Windows 上运行 2019 年 PS4 游戏原有的 x86-64 可执行文件，以替代系统库提供运行环境，并使用基于 shadPS4 的 Vulkan 图形核心。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/medievil-2019-pc-port-case/)</sub>
 <!-- END GENERATED CASES -->

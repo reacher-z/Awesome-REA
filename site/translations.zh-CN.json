@@ -44946,5 +44946,53 @@
       "项目仍属 alpha，多线程支持仍在计划中。",
       "采用 LGPL-3.0 许可证。"
     ]
+  },
+  "shockolate": {
+    "name": "Shockolate：System Shock 跨平台源码移植",
+    "requirements": [
+      "需要原版《System Shock》游戏数据；构建覆盖 Windows 与 Linux。",
+      "部分功能因未包含在发布的源码中而缺失，项目仍在开发。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "doomretro": {
+    "name": "DOOM Retro：面向 Windows 的精炼 DOOM 源码移植",
+    "requirements": [
+      "需要原版 DOOM 或 DOOM II 游戏数据；当前构建面向 Windows。",
+      "它保留原版并加入新功能，行为可能与原版发行版不同。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "openfodder": {
+    "name": "Open Fodder：Cannon Fodder 开源移植",
+    "requirements": [
+      "需要原版《Cannon Fodder》游戏数据；提供 Windows 与 Linux 构建。",
+      "它重实现原版引擎与行为，兼容性取决于游戏数据版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "opentyrian": {
+    "name": "OpenTyrian：Tyrian 开源移植",
+    "requirements": [
+      "需要原版 Tyrian 游戏数据；提供 Windows、macOS 与 Linux 构建。",
+      "它是保留原版玩法的源码移植，联机取决于构建与配置。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "banjo-kazooie": {
+    "name": "Banjo-Kazooie：Nintendo 64 游戏的匹配式反编译",
+    "requirements": [
+      "需要受支持的基础 ROM（美版 v1.0、v1.1、日版或 PAL）来验证构建；项目不分发 ROM。",
+      "反编译目标是逐字节匹配构建，原始资源仍位于基础 ROM 中。",
+      "代码采用 CC0-1.0 许可证。"
+    ]
+  },
+  "servuo": {
+    "name": "ServUO：开源《网络创世纪》服务器模拟器",
+    "requirements": [
+      "需要 .NET 运行时与《网络创世纪》客户端数据；服务器可在 Windows 或通过 .NET 在其他平台运行。",
+      "它模拟游戏服务器，兼容性取决于客户端版本与 shard 配置。",
+      "采用 GPL-2.0 许可证。"
+    ]
   }
 }
