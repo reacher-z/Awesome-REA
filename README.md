@@ -192,6 +192,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 #### Case studies
 
+- [**Let's Go Recomp**](https://github.com/raulzrrs/letsgo-recomp) - Let's Go Recomp is a native Windows port of Pokémon: Let's Go, Eevee! <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/letsgo-recomp/)</sub>
 - [**Atlantis Native: porting the Atlantis and Atlantis II engines to Rust**](https://github.com/ripleyXLR8/atlantis-native) - Atlantis Native ports the reverse-engineered CryOmni3D Atlantis engine to Rust for Atlantis: The Lost Tales and Atlantis II. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/atlantis-native-case/)</sub>
 - [**bf-private-server: a Brave Frontier revival server**](https://github.com/joppe2001/bf-private-server) - bf-private-server recreates a self-hosted server for Brave Frontier client version 2.19.6. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/bf-private-server-case/)</sub>
 - [**Chariot: Age of Empires engine reimplementation**](https://github.com/ChariotEngine/Chariot) - Chariot is an open-source effort to reimplement the engine of the original Age of Empires (1997). <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/chariot/)</sub>
@@ -201,7 +202,6 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Devil May Cry: an experimental PS2 static recompilation**](https://github.com/Gui-Tora/dmc-recomp) - dmc-recomp translates the PlayStation 2 PAL release of Devil May Cry into native PC code through PS2Recomp and a project runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dmc-recomp-case/)</sub>
 - [**FH2MP: reconstructed Forza Horizon 2 online services**](https://github.com/Charelene/FH2MP) - FH2MP restores Forza Horizon 2 multiplayer with a replacement server based on protocol behavior recovered from the Xbox One game client. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/fh2mp-case/)</sub>
 - [**FreeRS42: reimplementing Ricochet Xtreme**](https://github.com/NuVelocity/FRS42) - FreeRS42 is a C++ project to reimplement the PC game Ricochet Xtreme using the NuVelocity engine. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/freers42-ricochet-xtreme-case/)</sub>
-- [**GTA Mode: reverse-engineering SimCity 3000 Unlimited for a native plugin**](https://github.com/DenisSergeevitch/simcity3000-gta-mode) - GTA Mode is a native plugin that adds direct control of spawned citizens and cars to SimCity 3000 Unlimited. <sub>Case study · Also: Binary · [Full entry](https://awesomerea.org/resources/simcity-3000-gta-mode-case/)</sub>
 
 #### Tools, projects and integrations
 
