@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-45214343727-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-23T16:36:26Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 427,
+    "selected_count": 3,
+    "selected_ids": [
+      "scan-1448900485",
+      "scan-236896323",
+      "scan-239431364"
+    ],
+    "record_sha256": {
+      "scan-1448900485": "b35fa8bf1cd2bf6db03d5cb35fce51ebcfd5b74888cc195b493e6741e2a74706",
+      "scan-236896323": "b72def213d313a900e858a864c15fbe1455c3718307d2c9fd79e04ea1b67fd1c",
+      "scan-239431364": "3dc9ca7ee9a05a8b5aad60fc85913c5a824a84e2d14776f8dc7817f9483678a1"
+    },
+    "skipped_counts": {
+      "already-listed": 12765,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 45214343727,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "c76f90bece37d60b3fa5432ab7c65d9c10b41253",
+    "artifact_id": 14839472693,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:644c20f63c3ba5d0634f9abd8babcfe38b7f709dc1b987b74eae846957b5b185",
+    "checkpoint_sha256": "8a50de007059b1a37f52ee30702d23db058bec8bbf331b2c2b0e60df96e3ac65",
+    "receipt_sha256": "2fec31098380f0725ef300f6b15969216c52744bdf41a7ec66d8ff97c1837810",
+    "scan_started_at": "2026-11-23T16:15:10.052506+00:00",
+    "scan_completed_at": "2026-11-23T16:34:48.300871+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 131489,
+      "failed": 4889,
+      "attempted_readme_scans": 136378,
+      "unique_repos": 136441,
+      "unattempted_candidates": 63
+    },
+    "integrity_counts": {
+      "qualified": 128472,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1448900485",
+      "name": "user6811992/LocalAI",
+      "full_name": "user6811992/LocalAI",
+      "url": "https://github.com/user6811992/LocalAI",
+      "description_en": "Local AI web UI : This project has been rebuilt and moved to AegisAI (next)",
+      "description_zh": "Local AI web UI : This project has been rebuilt and moved to AegisAI (next)",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "local-ai",
+        "no-telemetry",
+        "ollama",
+        "privacy",
+        "reverse-engineering",
+        "uncensored-models",
+        "web-ui"
+      ],
+      "stars": 3,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-21T13:33:42Z",
+      "pushed_at": "2026-11-20T01:51:14Z",
+      "metadata_observed_at": "2026-11-23T16:33:44.071446Z",
+      "observed_at": "2026-11-23T16:33:46.443007Z",
+      "readme_url": "https://github.com/user6811992/LocalAI/blob/6a9c97ca1358d858182d42baedf7006e3e8521d0/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "c1da49249485360bf7db00d369eebc2a78866bd9",
+      "readme_content_git_sha": "c1da49249485360bf7db00d369eebc2a78866bd9",
+      "readme_sha256": "dc4715589eb5bbf99c79683523af024718b5a659a168741f0bc17e0a1417cf5a",
+      "readme_bytes": 34348,
+      "readme_lines": 534,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "usage",
+        "requirements",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "website"
+      ],
+      "category": "web-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-07T00:30:58Z..2026-11-07T01:00:48Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "6a9c97ca1358d858182d42baedf7006e3e8521d0"
+    },
+    {
+      "id": "scan-236896323",
+      "name": "mayday5000/IOTrace",
+      "full_name": "mayday5000/IOTrace",
+      "url": "https://github.com/mayday5000/IOTrace",
+      "description_en": "Intel Pin tool for Linux x86-64 that traces stdio file I/O (fopen, fread, fwrite, fgets, fseek, fclose) in a binary and its shared libraries: entry/RET addresses, instruction counts and return type, thread-safe.",
+      "description_zh": "Intel Pin tool for Linux x86-64 that traces stdio file I/O (fopen, fread, fwrite, fgets, fseek, fclose) in a binary and its shared libraries: entry/RET addresses, instruction counts and return type, thread-safe.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "binary-instrumentation",
+        "cpp",
+        "cpp11",
+        "dynamic-analysis",
+        "file-io",
+        "instrumentation",
+        "intel-pin",
+        "linux",
+        "pintool",
+        "reverse-engineering",
+        "tracing",
+        "x86-64"
+      ],
+      "stars": 1,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-16T17:11:42Z",
+      "pushed_at": "2026-11-16T16:53:50Z",
+      "metadata_observed_at": "2026-11-23T16:32:50.886819Z",
+      "observed_at": "2026-11-23T16:32:58.024739Z",
+      "readme_url": "https://github.com/mayday5000/IOTrace/blob/5533453a0d4958d468adbb2fed4b08919c3ebb14/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "a27d0e2884a80ec56b2eb53822d3f9d6c4986b47",
+      "readme_content_git_sha": "a27d0e2884a80ec56b2eb53822d3f9d6c4986b47",
+      "readme_sha256": "087b2b0f8922fa299be3a42afb501d097c4944b9aa7c75d623d3b1b664bfbce3",
+      "readme_bytes": 8471,
+      "readme_lines": 159,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "usage",
+        "requirements",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "binary"
+      ],
+      "category": "native-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"reverse engineering\" in:readme is:public fork:false archived:false created:2020-01-12T01:56:41Z..2020-02-21T14:20:52Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "5533453a0d4958d468adbb2fed4b08919c3ebb14"
+    },
+    {
+      "id": "scan-239431364",
+      "name": "KMU-Dev/iKMU",
+      "full_name": "KMU-Dev/iKMU",
+      "url": "https://github.com/KMU-Dev/iKMU",
+      "description_en": "The mod version of i高醫(iKMU).",
+      "description_zh": "The mod version of i高醫(iKMU).",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "android",
+        "apktool",
+        "ikmu",
+        "mod"
+      ],
+      "stars": 1,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2022-05-19T10:14:33Z",
+      "pushed_at": "2024-09-03T20:56:44Z",
+      "metadata_observed_at": "2026-11-23T16:32:50.886819Z",
+      "observed_at": "2026-11-23T16:32:58.021241Z",
+      "readme_url": "https://github.com/KMU-Dev/iKMU/blob/bdf996ed98d920d8697406ec4708168e5fb25b36/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "773784b0d00b7bda52e94d2dcc33dac13f02d17c",
+      "readme_content_git_sha": "773784b0d00b7bda52e94d2dcc33dac13f02d17c",
+      "readme_sha256": "7bda513bc4b28154ee07f1e6cd6a3d207093c60ccc73ca8b24d3baecc592a1b7",
+      "readme_bytes": 5459,
+      "readme_lines": 137,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "requirements",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app"
+      ],
+      "category": "android",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"reverse engineering\" in:readme is:public fork:false archived:false created:2020-01-12T01:56:41Z..2020-02-21T14:20:52Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "bdf996ed98d920d8697406ec4708168e5fb25b36"
+    }
+  ]
+}
