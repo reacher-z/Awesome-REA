@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-45137912584-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-23T08:41:01Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 429,
+    "selected_count": 5,
+    "selected_ids": [
+      "scan-1448853608",
+      "scan-1448870935",
+      "scan-1448882105",
+      "scan-1448868315",
+      "scan-1448840143"
+    ],
+    "record_sha256": {
+      "scan-1448853608": "28ddf13738e3cc30da4fe854b7c6378ca6c51e9c1176a854ce617caf465d2b8e",
+      "scan-1448870935": "a10349c97c00170d0df65f23da3ae9a1223d0dd37f591d2beb8a045b303acd91",
+      "scan-1448882105": "11bb8cf11d5aa8ab3661a32279241e7e2ecb16c2bc2d137b0b5f4b5217c0a974",
+      "scan-1448868315": "17a8c32c45782c3d4d9a6f52c79cc782e4ecce9c25a92d7ca0b0b19a3d84c4c7",
+      "scan-1448840143": "e2811b76b180caade2ced615e6a6faa2b572d5dc8c03be9e352bb90f6de3e769"
+    },
+    "skipped_counts": {
+      "already-listed": 12760,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 45137912584,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "6a7409e2a78370e4609a4c539714919d37dfd673",
+    "artifact_id": 14801801466,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:ea8878769e151e979b2d0ed3a27013b30fbaaf950d00d09b87856cbe0c1d40fc",
+    "checkpoint_sha256": "d437aba995a50c35821e14ab9d599257086247dcae8256b403fe5c9f38fbc6d6",
+    "receipt_sha256": "0353a47371825e7d2ec5960f31ff483c98a4a1b3a349f7722e4205bce61e87a6",
+    "scan_started_at": "2026-11-23T08:21:20.008570+00:00",
+    "scan_completed_at": "2026-11-23T08:37:32.536490+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 130854,
+      "failed": 4883,
+      "attempted_readme_scans": 135737,
+      "unique_repos": 135800,
+      "unattempted_candidates": 63
+    },
+    "integrity_counts": {
+      "qualified": 127837,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1448853608",
+      "name": "shicharp/nascar-re-rumble",
+      "full_name": "shicharp/nascar-re-rumble",
+      "url": "https://github.com/shicharp/nascar-re-rumble",
+      "description_en": "Port nativo para PC de NASCAR Rumble",
+      "description_zh": "Port nativo para PC de NASCAR Rumble",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "decompilation",
+        "multiplayer",
+        "port",
+        "ps1"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-07T02:23:17Z",
+      "pushed_at": "2026-11-07T17:16:25Z",
+      "metadata_observed_at": "2026-11-23T08:35:24.136245Z",
+      "observed_at": "2026-11-23T08:35:28.700495Z",
+      "readme_url": "https://github.com/shicharp/nascar-re-rumble/blob/b03d33f50b64c531d5c2b629b98d6ae9cb7b6b0b/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "55ce85e7357996daabdb4947849f4acdf13dca88",
+      "readme_content_git_sha": "55ce85e7357996daabdb4947849f4acdf13dca88",
+      "readme_sha256": "7a76b2d20d269286f2e83ef7a5e3c5cf4fe9fd03626257ecffc436c06c5c256d",
+      "readme_bytes": 6432,
+      "readme_lines": 116,
+      "readme_heading_count": 6,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:decompilation is:public fork:false archived:false created:2026-11-06T23:12:20Z..2026-11-07T00:30:57Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "b03d33f50b64c531d5c2b629b98d6ae9cb7b6b0b"
+    },
+    {
+      "id": "scan-1448870935",
+      "name": "witoldwitkowski/ha-schwinn-bike",
+      "full_name": "witoldwitkowski/ha-schwinn-bike",
+      "url": "https://github.com/witoldwitkowski/ha-schwinn-bike",
+      "description_en": "Home Assistant integration for Schwinn 170/270 exercise bikes over Bluetooth: live speed, cadence, power, heart rate, ride log, multi-user support and ride-finished events. Local push, works with ESPHome Bluetooth proxies. Includes the reverse-engineered protocol.",
+      "description_zh": "Home Assistant integration for Schwinn 170/270 exercise bikes over Bluetooth: live speed, cadence, power, heart rate, ride log, multi-user support and ride-finished events. Local push, works with ESPHome Bluetooth proxies. Includes the reverse-engineered protocol.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "ble",
+        "bluetooth",
+        "esphome",
+        "exercise-bike",
+        "fitness",
+        "hacs",
+        "home-assistant",
+        "home-assistant-custom-component",
+        "reverse-engineering",
+        "schwinn"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-11T21:19:28Z",
+      "pushed_at": "2026-11-07T00:04:39Z",
+      "metadata_observed_at": "2026-11-23T08:35:24.136245Z",
+      "observed_at": "2026-11-23T08:35:28.700028Z",
+      "readme_url": "https://github.com/witoldwitkowski/ha-schwinn-bike/blob/7ed2b9aba1c4ec9c0d66004636b2e8b2667a2fbf/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "d62c3752e62017b478e59258d840557c3598b811",
+      "readme_content_git_sha": "d62c3752e62017b478e59258d840557c3598b811",
+      "readme_sha256": "7f9b7b67d6eebf96bc716a6e75f42fe6a8a70cb38c3e7fed1469c7b8bbd035bf",
+      "readme_bytes": 9659,
+      "readme_lines": 129,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T23:12:20Z..2026-11-07T00:30:57Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "7ed2b9aba1c4ec9c0d66004636b2e8b2667a2fbf"
+    },
+    {
+      "id": "scan-1448882105",
+      "name": "notcatnine/restrafe",
+      "full_name": "notcatnine/restrafe",
+      "url": "https://github.com/notcatnine/restrafe",
+      "description_en": "Single-player Rust/Bevy reconstruction of STRAFTAT that reads your own installed copy in place. Contains no game files.",
+      "description_zh": "Single-player Rust/Bevy reconstruction of STRAFTAT that reads your own installed copy in place. Contains no game files.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "bevy",
+        "game-preservation",
+        "reverse-engineering",
+        "rust",
+        "rust-rewrite",
+        "straftat",
+        "unity"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-10T12:45:49Z",
+      "pushed_at": "2026-11-10T12:45:56Z",
+      "metadata_observed_at": "2026-11-23T08:35:24.136245Z",
+      "observed_at": "2026-11-23T08:35:28.699394Z",
+      "readme_url": "https://github.com/notcatnine/restrafe/blob/ce3f29c7865fa14ec5f5a49907dbd093ccadf14e/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "e83628e80cb083fdf144272e82ae1e8f88b0d7cb",
+      "readme_content_git_sha": "e83628e80cb083fdf144272e82ae1e8f88b0d7cb",
+      "readme_sha256": "5aa702237def37879bce7d27c6e676b2899ddaadbcdccfec1c7a7ab56fa6876c",
+      "readme_bytes": 9646,
+      "readme_lines": 168,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "game"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T23:12:20Z..2026-11-07T00:30:57Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "ce3f29c7865fa14ec5f5a49907dbd093ccadf14e"
+    },
+    {
+      "id": "scan-1448868315",
+      "name": "Oakman-Industries/contax-n-digital-firmware-dump",
+      "full_name": "Oakman-Industries/contax-n-digital-firmware-dump",
+      "url": "https://github.com/Oakman-Industries/contax-n-digital-firmware-dump",
+      "description_en": "NDDUMP: custom firmware that dumps a Contax N Digital's flash (firmware + settings) to CF for backup and preservation.",
+      "description_zh": "NDDUMP: custom firmware that dumps a Contax N Digital's flash (firmware + settings) to CF for backup and preservation.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "contax",
+        "contax-n-digital",
+        "custom-firmware",
+        "firmware",
+        "firmware-dump",
+        "preservation",
+        "reverse-engineering"
+      ],
+      "stars": 0,
+      "license": "NOASSERTION",
+      "archived": false,
+      "updated_at": "2026-11-07T00:41:27Z",
+      "pushed_at": "2026-11-07T00:41:23Z",
+      "metadata_observed_at": "2026-11-23T08:35:24.136245Z",
+      "observed_at": "2026-11-23T08:35:28.698757Z",
+      "readme_url": "https://github.com/Oakman-Industries/contax-n-digital-firmware-dump/blob/0a1fd4b719891aa40fc09eb4816cae082b2950a9/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "c969ad0ce29ebb496c1a87ccda09f2a561096bc9",
+      "readme_content_git_sha": "c969ad0ce29ebb496c1a87ccda09f2a561096bc9",
+      "readme_sha256": "ebf06fd1fd140e61c6d08cd062368a1c947553b2564134f0954c923f4214e616",
+      "readme_bytes": 17710,
+      "readme_lines": 303,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "requirements",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "firmware"
+      ],
+      "category": "firmware",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T23:12:20Z..2026-11-07T00:30:57Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "0a1fd4b719891aa40fc09eb4816cae082b2950a9"
+    },
+    {
+      "id": "scan-1448840143",
+      "name": "trak3r/rt2wide",
+      "full_name": "trak3r/rt2wide",
+      "url": "https://github.com/trak3r/rt2wide",
+      "description_en": "Widescreen and ultrawide support for Railroad Tycoon II Platinum (GOG): a drop-in DirectDraw wrapper that shows more of the map, not a stretched picture",
+      "description_zh": "Widescreen and ultrawide support for Railroad Tycoon II Platinum (GOG): a drop-in DirectDraw wrapper that shows more of the map, not a stretched picture",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "cpp",
+        "ddraw",
+        "ddraw-wrapper",
+        "directdraw",
+        "game-mod",
+        "gog",
+        "modding",
+        "opengl",
+        "pc-gaming",
+        "railroad-tycoon",
+        "railroad-tycoon-2",
+        "retro-gaming",
+        "reverse-engineering",
+        "ultrawide",
+        "widescreen",
+        "widescreen-fix",
+        "windows"
+      ],
+      "stars": 1,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-07T20:04:06Z",
+      "pushed_at": "2026-11-07T13:24:03Z",
+      "metadata_observed_at": "2026-11-23T08:35:24.136245Z",
+      "observed_at": "2026-11-23T08:35:28.697973Z",
+      "readme_url": "https://github.com/trak3r/rt2wide/blob/5d54211b05b85cf80d7f3c90b46d522f86f402e7/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "db0a9a0d1a629c340aee9a8c5fdb6e603079d959",
+      "readme_content_git_sha": "db0a9a0d1a629c340aee9a8c5fdb6e603079d959",
+      "readme_sha256": "e84beba025f717b1be4b5b0c0a215ff0012d885576f24d92b50baca07a89c105",
+      "readme_bytes": 5318,
+      "readme_lines": 84,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "requirements",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "game"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-06T23:12:20Z..2026-11-07T00:30:57Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "5d54211b05b85cf80d7f3c90b46d522f86f402e7"
+    }
+  ]
+}
