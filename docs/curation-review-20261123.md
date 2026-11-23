@@ -109,3 +109,33 @@ This round adds eight more records from the stored lead queue: three console emu
 ## Validation notes
 
 All eight records carry pinned README evidence, parallel Chinese requirements, and evidence-class entries; the two Class 1 records (Tasmota and easyeda2kicad) received previews. Previews, READMEs, case indexes and the site were regenerated.
+
+---
+
+# Backlog curation review, fifth batch — 2026-11-23
+
+This round adds eight records from the stored lead queue: Atmosphère and Luma3DS custom firmware, esptool and the Proxmark3 Iceman client, IronRDP and Geyser protocol tools, the REA Investigation Prompts collection and REFramework. The batch shifts away from console emulators toward firmware, protocol and agent-workflow material.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `atmosphere` | `firmware` | [Atmosphere-NX/Atmosphere](https://github.com/Atmosphere-NX/Atmosphere/blob/3e8915011e1de89f595462d929c1cc3294470896/README.md) | `368ea957dbf80cc2f3982199f4d67e797240071f497fc219910111ad5032bc12` |
+| `luma3ds` | `firmware` | [LumaTeam/Luma3DS](https://github.com/LumaTeam/Luma3DS/blob/c7790ee1d79574471f948e1078bb6f2c5c620e9b/README.md) | `0c1e1512218f0ea62fc7c8d98655d90fc94d32efcf2539cb4937c40d378a256f` |
+| `esptool` | `firmware` | [espressif/esptool](https://github.com/espressif/esptool/blob/6ec584a39e046c63f507d8022cb0b7df25e2d4de/README.md) | `fcff74336b1463a7da838cae3b21b31bd4f4af87e46d07474973ca603b1b6ab3` |
+| `proxmark3` | `firmware` | [RfidResearchGroup/proxmark3](https://github.com/RfidResearchGroup/proxmark3/blob/da929f9c52500abecef6a33258e0bcc08f16931f/README.md) | `798bd799564eec8c3feaf00a268b906b3b4593954a646bc2ff4a3c7f08f988d4` |
+| `ironrdp` | `protocol-analysis` | [Devolutions/IronRDP](https://github.com/Devolutions/IronRDP/blob/79e763a04dc9b22962559d33bdce074d08cf4c84/README.md) | `d86bedceeb85cbb12dde46e7ff7536b92630cd64a7644108f26c82c7ad8def12` |
+| `geyser` | `protocol-analysis` | [GeyserMC/Geyser](https://github.com/GeyserMC/Geyser/blob/2a2f5afd3cc092a86b622bb1429d3b5750a02293/README.md) | `0c1ec96051059059dbcbb8f940f99233b33f670451cf002fb6e1e1f483aea6a0` |
+| `rea-prompts` | `learning` | [JoasASantos/REA-Prompts](https://github.com/JoasASantos/REA-Prompts/blob/9756618f25af1920c8965f8969820eed22247936/README.md) | `926cf21e5b21b4ab8776f187159cfbacf4e37d4288d2d4ec18dac3c9f3b6a308` |
+| `reframework` | `game-analysis` | [praydog/REFramework](https://github.com/praydog/REFramework/blob/22c713cef9372b918c08d3c0550fcec0ea6714e4/README.md) | `6bdb249061ecd17c154f48390a814a33f2d7d317b54017dbc6211cd890642902` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| Cemu, melonDS, Vita3K, flycast, desmume, project64 | More console emulators; deferred to keep this batch focused on firmware and protocol material. |
+| godotengine/godot, assimp/assimp, luanti-org/luanti | General-purpose engines and asset libraries, not reconstructions or analysis tools. |
+| openvideodev/react-video-editor, itsjwill/vanta | Custom or missing license terms; not a standard open-source license. |
+| valentderah/totk-pc-recomp, deadinside28/bloodborne_pc, scarsty/kys-cpp, yairm210/Unciv | Already curated under existing case ids. |
+
+## Validation notes
+
+All eight records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; the two Class 1 records (Atmosphère and Luma3DS) received previews. Previews, READMEs and the site were regenerated.

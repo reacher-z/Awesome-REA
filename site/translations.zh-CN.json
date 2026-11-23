@@ -44338,5 +44338,69 @@
       "服务端与客户端功能因后端而异，已实现的 RDP 扩展范围有限。",
       "采用 Apache-2.0 许可证。"
     ]
+  },
+  "atmosphere": {
+    "name": "Atmosphère",
+    "requirements": [
+      "需要兼容的 Nintendo Switch 与自定义固件启动方式；启动文件因主机版本而异。",
+      "项目仍在开发中，组件会随系统更新变化，且该固件路径不在厂商支持范围内。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "luma3ds": {
+    "name": "Luma3DS",
+    "requirements": [
+      "需要 Nintendo 3DS 系列主机与兼容的启动方式；固件文件放在 SD 卡上。",
+      "项目面向已停止支持的硬件，可用功能取决于已安装的系统版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "esptool": {
+    "name": "esptool",
+    "requirements": [
+      "需要 Python 3 与 pyserial，以及与 Espressif 芯片的 USB 串口连接。",
+      "支持的指令与闪存容量因芯片系列而异，部分操作需要芯片处于 bootloader 模式。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "proxmark3": {
+    "name": "Proxmark3（Iceman 分支）",
+    "requirements": [
+      "需要 Proxmark3 设备与匹配的固件；客户端可在 Linux、macOS 与 Windows 上构建。",
+      "支持的标签类型取决于硬件版本与天线，发射需遵守当地无线电法规。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "ironrdp": {
+    "name": "IronRDP",
+    "requirements": [
+      "需要 Rust 工具链；客户端会话需要可连接的 RDP 服务端与有效的会话信息。",
+      "实现覆盖文档化的 RDP 功能集，部分专有扩展与服务端功能不在范围内。",
+      "采用 MIT 或 Apache-2.0 许可证。"
+    ]
+  },
+  "geyser": {
+    "name": "Geyser",
+    "requirements": [
+      "需要 Java 17+ 与 Java 版服务器或受支持的服务器平台；安装代理插件或独立版本。",
+      "协议转换覆盖常见功能，部分基岩版或 Java 版专有功能未映射。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "rea-prompts": {
+    "name": "REA 调查提示词（REAP）",
+    "requirements": [
+      "提示词粘贴到连接 REA 的 AI 编程智能体中使用，无需安装。",
+      "提示词是模板，回答取决于智能体、REA 配置与目标可获得的证据。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "reframework": {
+    "name": "REFramework",
+    "requirements": [
+      "需要在 Windows 上运行受支持的 RE Engine 游戏；稳定版以 dinput8.dll 放入游戏目录。",
+      "VR 模式需要 SteamVR 或 OpenXR 及受支持的头显；兼容性因游戏与构建而异。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

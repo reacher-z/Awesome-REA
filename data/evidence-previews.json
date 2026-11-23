@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T07:28:38+00:00",
-    "entry_count": 1126,
-    "class_entry_count": 1156,
+    "generated_at": "2026-11-23T08:20:47+00:00",
+    "entry_count": 1128,
+    "class_entry_count": 1158,
     "class_counts": {
-      "image": 1088,
+      "image": 1090,
       "video": 38
     },
     "missing_count": 30,
@@ -539,6 +539,15 @@
       "source_url": "https://github.com/ripleyXLR8/atlantis-native",
       "revision": "161df5ba47cca652ca5b665882f8ff7e3b494220",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "atmosphere",
+      "image_url": "https://raw.githubusercontent.com/Atmosphere-NX/Atmosphere/3e8915011e1de89f595462d929c1cc3294470896/img/np++.png?raw=true",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Atmosphere-NX/Atmosphere",
+      "revision": "3e8915011e1de89f595462d929c1cc3294470896",
+      "checked_at": "2026-11-23T08:20:47+00:00"
     },
     {
       "id": "atomberg-bldc-ir-remote-case",
@@ -4337,6 +4346,15 @@
       "source_url": "https://github.com/leafyjerk/PS5_LuigisMansion",
       "revision": "c9cc13e293f2c483438a946b4bb02e41f7bc7fa1",
       "checked_at": "2026-11-09T07:55:54+00:00"
+    },
+    {
+      "id": "luma3ds",
+      "image_url": "https://raw.githubusercontent.com/LumaTeam/Luma3DS/c7790ee1d79574471f948e1078bb6f2c5c620e9b/img/boot_menu_v135.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/LumaTeam/Luma3DS",
+      "revision": "c7790ee1d79574471f948e1078bb6f2c5c620e9b",
+      "checked_at": "2026-11-23T08:20:47+00:00"
     },
     {
       "id": "luxon-server",

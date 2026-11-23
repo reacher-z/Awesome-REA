@@ -156677,5 +156677,227 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "atmosphere",
+    "name": "Atmosphère",
+    "url": "https://github.com/Atmosphere-NX/Atmosphere",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A work-in-progress custom firmware for the Nintendo Switch that replaces or patches the bootloader, TrustZone, kernel and system modules, adding emuNAND and a homebrew environment.",
+    "description_zh": "面向 Nintendo Switch 的在研自定义固件，替换或修改引导程序、TrustZone、内核与系统模块，加入 emuNAND 与自制程序环境。",
+    "evidence_url": "https://github.com/Atmosphere-NX/Atmosphere/blob/3e8915011e1de89f595462d929c1cc3294470896/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a compatible Nintendo Switch and a launch method for custom firmware; boot files depend on the console version.",
+      "The project is work in progress, components change with system updates, and the console firmware path is outside the vendor supported configuration.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "luma3ds",
+    "name": "Luma3DS",
+    "url": "https://github.com/LumaTeam/Luma3DS",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Patches and reimplements significant parts of the Nintendo 3DS system software on all models of the family, adding homebrew support, the Rosalina overlay menu, screen filters and input redirection.",
+    "description_zh": "修改并重实现 Nintendo 3DS 全系列机型的系统软件，加入自制程序支持、Rosalina 悬浮菜单、屏幕滤镜与输入重定向。",
+    "evidence_url": "https://github.com/LumaTeam/Luma3DS/blob/c7790ee1d79574471f948e1078bb6f2c5c620e9b/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Nintendo 3DS-family console and a compatible boot method; the firmware files are placed on the SD card.",
+      "The project targets end-of-life hardware, and available features depend on the installed system version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "esptool",
+    "name": "esptool",
+    "url": "https://github.com/espressif/esptool",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A Python-based, platform-independent serial utility for flashing, provisioning and interacting with Espressif SoCs, writing firmware images and reading chip information over UART or USB.",
+    "description_zh": "基于 Python、跨平台的串口工具，用于刷写、配置和与 Espressif SoC 交互，可通过 UART 或 USB 写入固件镜像并读取芯片信息。",
+    "evidence_url": "https://github.com/espressif/esptool/blob/6ec584a39e046c63f507d8022cb0b7df25e2d4de/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3 and pyserial; a USB serial connection to an Espressif chip.",
+      "Supported commands and flash sizes depend on the chip family, and some operations require bootloader mode.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "proxmark3",
+    "name": "Proxmark3 (Iceman fork)",
+    "url": "https://github.com/RfidResearchGroup/proxmark3",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "description_en": "The Iceman fork of the Proxmark3 client and firmware, an open toolset for inspecting and interacting with RFID tags, with a large command set and Python/Lua scripting.",
+    "description_zh": "Proxmark3 的 Iceman 分支客户端与固件，用于检查和与 RFID 标签交互的开源工具集，提供大量命令及 Python/Lua 脚本。",
+    "evidence_url": "https://github.com/RfidResearchGroup/proxmark3/blob/da929f9c52500abecef6a33258e0bcc08f16931f/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Proxmark3 device and matching firmware; the client builds for Linux, macOS and Windows.",
+      "Supported tag families depend on the hardware revision and antenna, and local radio regulations apply to transmissions.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ironrdp",
+    "name": "IronRDP",
+    "url": "https://github.com/Devolutions/IronRDP",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A Rust implementation of the Microsoft Remote Desktop Protocol focused on security, providing protocol crates, a client and tooling for interoperating with RDP services.",
+    "description_zh": "以安全为重点的 Microsoft 远程桌面协议 Rust 实现，提供协议 crate、客户端与工具，用于与 RDP 服务互操作。",
+    "evidence_url": "https://github.com/Devolutions/IronRDP/blob/79e763a04dc9b22962559d33bdce074d08cf4c84/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Rust toolchain; a client session needs a reachable RDP server and valid session details.",
+      "The implementation covers the documented RDP feature set, and some proprietary extensions and server-side features are outside its scope.",
+      "MIT or Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "geyser",
+    "name": "Geyser",
+    "url": "https://github.com/GeyserMC/Geyser",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A proxy that bridges Minecraft: Bedrock Edition and Minecraft: Java Edition, translating the two protocols so Bedrock players can join Java servers and vice versa.",
+    "description_zh": "在 Minecraft 基岩版与 Java 版之间搭桥的代理，转换两套协议，使基岩版玩家可以加入 Java 服务器，反之亦然。",
+    "evidence_url": "https://github.com/GeyserMC/Geyser/blob/2a2f5afd3cc092a86b622bb1429d3b5750a02293/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Java 17+ and a Java Edition server or supported server platform; install the proxy plugin or standalone build.",
+      "Protocol translation covers the common feature set, and some Bedrock- or Java-specific features are not mapped.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "rea-prompts",
+    "name": "REA Investigation Prompts (REAP)",
+    "url": "https://github.com/JoasASantos/REA-Prompts",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary",
+      "firmware",
+      "game",
+      "website"
+    ],
+    "description_en": "A curated collection of ready-to-paste prompts for REA (Reverse Engineer Anything), covering native binaries, firmware and kernels, games, Electron apps, APKs and websites, with guidance to keep each request on one feature.",
+    "description_zh": "面向 REA（Reverse Engineer Anything）的提示词合集，覆盖原生二进制、固件与内核、游戏、Electron 应用、APK 与网站，并建议每次只聚焦一个功能。",
+    "evidence_url": "https://github.com/JoasASantos/REA-Prompts/blob/9756618f25af1920c8965f8969820eed22247936/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Prompts are pasted into an AI coding agent connected to REA; no installation is required.",
+      "The prompts are templates, and answers depend on the agent, the REA setup and the evidence available for the target.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "reframework",
+    "name": "REFramework",
+    "url": "https://github.com/praydog/REFramework",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A mod framework, scripting platform and modding tool for RE Engine games, providing Lua scripting, VR support and runtime hooks for titles such as Resident Evil and Monster Hunter.",
+    "description_zh": "面向 RE Engine 游戏的 mod 框架、脚本平台与 mod 工具，提供 Lua 脚本、VR 支持与运行时 hook，适用于《生化危机》《怪物猎人》等作品。",
+    "evidence_url": "https://github.com/praydog/REFramework/blob/22c713cef9372b918c08d3c0550fcec0ea6714e4/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported RE Engine game on Windows; the stable build ships as a dinput8.dll placed in the game folder.",
+      "VR mode requires SteamVR or OpenXR and a supported headset, and compatibility varies by game and build.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]
