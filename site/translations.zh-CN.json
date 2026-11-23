@@ -44770,5 +44770,53 @@
       "公开仓库尚未提供模拟器插件支持与光线追踪。",
       "采用 MIT 许可证。"
     ]
+  },
+  "eglantine": {
+    "name": "Eglantine",
+    "requirements": [
+      "需要 Switch 2 游戏转储与主机系统文件；项目仍属高度实验性。",
+      "兼容性有限，模拟器仍在积极开发中。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "noods": {
+    "name": "NooDS",
+    "requirements": [
+      "需要 DS 或 GBA ROM 及相应 BIOS 或固件文件；构建覆盖桌面、移动与主机平台。",
+      "兼容性因游戏而异，部分功能取决于平台构建。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "skyemu": {
+    "name": "SkyEmu",
+    "requirements": [
+      "需要 GB、GBC、GBA 或 DS ROM 与 BIOS 文件；构建覆盖 Windows、macOS、Linux、FreeBSD、iOS、Android 与网页。",
+      "DS 支持为 beta 质量，兼容性因游戏而异。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "clk": {
+    "name": "Clock Signal（CLK）",
+    "requirements": [
+      "需要所模拟系统的原始介质；提供 macOS 与源码发行版，以及 Linux Qt Snap 构建。",
+      "支持 Acorn、Amstrad、Apple II、Atari、BBC Micro、MSX、Oric、Sinclair 等机型，准确性因平台而异。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "ymir": {
+    "name": "Ymir",
+    "requirements": [
+      "需要 Saturn 游戏镜像与 BIOS 文件；提供稳定版与每日构建。",
+      "模拟器仍在开发中，兼容性因游戏而异。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "malwoverview": {
+    "name": "Malwoverview",
+    "requirements": [
+      "需要 Python 3 与受支持情报服务的访问配置；默认不上传样本。",
+      "结果取决于所配置的服务及其覆盖范围；只有显式选项才会提交样本。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

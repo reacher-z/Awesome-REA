@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T19:36:56+00:00",
-    "entry_count": 1150,
-    "class_entry_count": 1181,
+    "generated_at": "2026-11-23T20:19:20+00:00",
+    "entry_count": 1154,
+    "class_entry_count": 1185,
     "class_counts": {
-      "image": 1111,
+      "image": 1115,
       "video": 39
     },
     "missing_count": 31,
@@ -1370,6 +1370,15 @@
       "checked_at": "2026-11-22T06:41:04+00:00"
     },
     {
+      "id": "clk",
+      "image_url": "https://raw.githubusercontent.com/TomHarte/CLK/922ad314ce88b576306cb0a914f2c4bf223ab67f/READMEImages/AppleIIPrinceOfPersia.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/TomHarte/CLK",
+      "revision": "922ad314ce88b576306cb0a914f2c4bf223ab67f",
+      "checked_at": "2026-11-23T20:19:20+00:00"
+    },
+    {
       "id": "clone-dash-case",
       "image_url": "https://img.youtube.com/vi/3hFUoRz_uuk/0.jpg",
       "kind": "image",
@@ -2376,6 +2385,15 @@
       "source_url": "https://github.com/REhints/efiXplorer",
       "revision": "110a8d9086848da3c3798a3bff3c4c101a79986a",
       "checked_at": "2026-11-01T10:07:56+00:00"
+    },
+    {
+      "id": "eglantine",
+      "image_url": "https://github.com/user-attachments/assets/35031845-4bfa-4916-8bf5-bc3bce67d5e2",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Eglantine-Community/Eglantine",
+      "revision": "835019fec5548748034a1449575cc7d37a4cfa16",
+      "checked_at": "2026-11-23T20:19:20+00:00"
     },
     {
       "id": "ejay-static-recompilation-case",
@@ -8407,6 +8425,15 @@
       "checked_at": "2026-11-09T02:41:36+00:00"
     },
     {
+      "id": "skyemu",
+      "image_url": "https://github.com/skylersaleh/SkyEmu/assets/7118296/03d74d15-070c-4353-8f37-263847bc0750",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/skylersaleh/SkyEmu",
+      "revision": "b64903f0fde8104d0796546b96859e9f682311b7",
+      "checked_at": "2026-11-23T20:19:20+00:00"
+    },
+    {
       "id": "skynet-godot-case",
       "image_url": "https://raw.githubusercontent.com/nautilusbits/skynet-godot/38dafc1ef9051c5975204cbfb9056d025605b10e/screenshots/map210.png",
       "kind": "image",
@@ -10268,6 +10295,15 @@
       "source_url": "https://github.com/iteratequickly/ygo3-research",
       "revision": "cf644bf56e0a7d68b3ac40ae9909c439a09f7ca2",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "ymir",
+      "image_url": "https://raw.githubusercontent.com/ymir-emu/Ymir/0fdabbdd41f17fd7fda58195130c3b43f7fd00e5/docs/images/cd-player.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/ymir-emu/Ymir",
+      "revision": "0fdabbdd41f17fd7fda58195130c3b43f7fd00e5",
+      "checked_at": "2026-11-23T20:19:20+00:00"
     },
     {
       "id": "yodastoriesng-case",

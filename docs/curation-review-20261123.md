@@ -312,3 +312,31 @@ This round adds six records from the stored lead queue, weighted toward reconstr
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; FreeSO, EKA2L1 and Gearboy received Class 1 previews. The three new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, twelfth batch — 2026-11-23
+
+This round adds six records from the stored lead queue: Eglantine, NooDS, SkyEmu, Clock Signal and Ymir as emulator projects, and Malwoverview as a threat-hunting CLI. The batch stays at six records to keep the bilingual README under its rendering budget.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `eglantine` | `game-analysis` | [Eglantine-Community/Eglantine](https://github.com/Eglantine-Community/Eglantine/blob/835019fec5548748034a1449575cc7d37a4cfa16/README.md) | `69fc9c69a74c145e3546b9be36ad8414cf7ac86abcec38421d041321e962db31` |
+| `noods` | `game-analysis` | [Hydr8gon/NooDS](https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/README.md) | `52efb9b893036761f80cfba09ae8a40c3d091b5968ac5d059c8d9f23d8260232` |
+| `skyemu` | `game-analysis` | [skylersaleh/SkyEmu](https://github.com/skylersaleh/SkyEmu/blob/b64903f0fde8104d0796546b96859e9f682311b7/README.md) | `9ae0f6e7aae16e7f635eba53308598a18259cd13b95a4cd62368597982ec331d` |
+| `clk` | `firmware` | [TomHarte/CLK](https://github.com/TomHarte/CLK/blob/922ad314ce88b576306cb0a914f2c4bf223ab67f/README.md) | `3b46b96b441cf901ad35b9ad75a3a636c74f864ded11a55334c21193a60ad4d7` |
+| `ymir` | `game-analysis` | [ymir-emu/Ymir](https://github.com/ymir-emu/Ymir/blob/0fdabbdd41f17fd7fda58195130c3b43f7fd00e5/README.md) | `1e2d4aa5766313f8f15058a886f68573da5495fe8af47babf75b92324c574095` |
+| `malwoverview` | `dynamic-analysis` | [alexandreborges/malwoverview](https://github.com/alexandreborges/malwoverview/blob/439f3b79e1e8e95a26e2e196d68c5c81d74e682b/README.md) | `692befb09e7919af3de5beabe386e8fcf384231f5402e498abddbfba962a9b81` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| amhndu/SimpleNES | README declares the project archived and no longer maintained. |
+| TASEmulators/desmume | README is a 225-byte stub below the documentation threshold. |
+| GPCS4, mooneye-gb, OpenRakis | Last activity is 2022-2023 and the projects are not actively maintained. |
+| dxx-rebirth, ECWolf, OpenBVE, OpenLieroX, BizHawk | No license file recorded by the GitHub API. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Eglantine, SkyEmu, Clock Signal and Ymir received Class 1 previews. Previews, READMEs and the site were regenerated.

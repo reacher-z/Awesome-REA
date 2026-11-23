@@ -158182,5 +158182,172 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "eglantine",
+    "name": "Eglantine",
+    "url": "https://github.com/Eglantine-Community/Eglantine",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A free and open-source Switch 2 emulator derived from Eden, Yuzu and Sudachi, written in C++ with builds for Windows, Linux and other platforms.",
+    "description_zh": "免费开源、基于 Eden、Yuzu 与 Sudachi 的 Switch 2 模拟器，使用 C++ 编写，提供 Windows、Linux 及其他平台构建。",
+    "evidence_url": "https://github.com/Eglantine-Community/Eglantine/blob/835019fec5548748034a1449575cc7d37a4cfa16/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Switch 2 game dumps and console system files; the project is very experimental.",
+      "Compatibility is limited and the emulator is under active development.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "noods",
+    "name": "NooDS",
+    "url": "https://github.com/Hydr8gon/NooDS",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A fast and portable Nintendo DS and Game Boy Advance emulator with accurate software rendering, upscaling and multicore support, available for Windows, macOS, Linux, Android, iOS, Switch, Wii U and Vita.",
+    "description_zh": "快速便携的 Nintendo DS 与 Game Boy Advance 模拟器，提供准确的软件渲染、放大与多核支持，覆盖 Windows、macOS、Linux、Android、iOS、Switch、Wii U 与 Vita。",
+    "evidence_url": "https://github.com/Hydr8gon/NooDS/blob/4cb1439c330248b26cdf5f8dbcfa4e5ac53dcda0/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires DS or GBA ROMs and the corresponding BIOS or firmware files; builds cover desktop, mobile and console platforms.",
+      "Compatibility varies by title, and some features depend on the platform build.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "skyemu",
+    "name": "SkyEmu",
+    "url": "https://github.com/skylersaleh/SkyEmu",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A low-level Game Boy, Game Boy Color, Game Boy Advance and DS emulator focused on accuracy, performance and usability, with upscaling shaders, rewind and cross-platform builds.",
+    "description_zh": "注重准确性、性能与易用性的低层 Game Boy、Game Boy Color、Game Boy Advance 与 DS 模拟器，提供放大着色、回退与跨平台构建。",
+    "evidence_url": "https://github.com/skylersaleh/SkyEmu/blob/b64903f0fde8104d0796546b96859e9f682311b7/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires GB, GBC, GBA or DS ROMs and BIOS files; builds cover Windows, macOS, Linux, FreeBSD, iOS, Android and the web.",
+      "DS support is beta quality, and compatibility varies by title.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "clk",
+    "name": "Clock Signal (CLK)",
+    "url": "https://github.com/TomHarte/CLK",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "An emulator of classic computers and consoles that aims to be invisible, loading source media directly and reproducing original outputs with heavy signal processing.",
+    "description_zh": "面向经典计算机与游戏机的模拟器，目标是让模拟过程“不可见”：直接加载原始介质，并以重度信号处理复现原始输出。",
+    "evidence_url": "https://github.com/TomHarte/CLK/blob/922ad314ce88b576306cb0a914f2c4bf223ab67f/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires source media for the emulated systems; macOS and source releases are published, with a Qt Linux Snap build.",
+      "Supported systems include Acorn, Amstrad, Apple II, Atari, BBC Micro, MSX, Oric and Sinclair machines, and accuracy varies by platform.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ymir",
+    "name": "Ymir",
+    "url": "https://github.com/ymir-emu/Ymir",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A work-in-progress Sega Saturn emulator with published stable and nightly builds.",
+    "description_zh": "仍在开发中的 Sega Saturn 模拟器，提供稳定版与每日构建。",
+    "evidence_url": "https://github.com/ymir-emu/Ymir/blob/0fdabbdd41f17fd7fda58195130c3b43f7fd00e5/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Saturn game images and BIOS files; stable and nightly builds are published.",
+      "The emulator is work in progress, and compatibility varies by title.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "malwoverview",
+    "name": "Malwoverview",
+    "url": "https://github.com/alexandreborges/malwoverview",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A first-response threat-hunting CLI that queries VirusTotal, Hybrid Analysis, URLHaus, MISP and other services and summarizes malware and file intelligence without submitting samples by default.",
+    "description_zh": "面向威胁狩猎的应急响应命令行工具：查询 VirusTotal、Hybrid Analysis、URLHaus、MISP 等服务并汇总恶意软件与文件情报，默认不上传样本。",
+    "evidence_url": "https://github.com/alexandreborges/malwoverview/blob/439f3b79e1e8e95a26e2e196d68c5c81d74e682b/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3 and configured access to the supported intelligence services; the tool does not submit samples by default.",
+      "Results depend on the configured services and their coverage; explicit options are required to submit a sample.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]
