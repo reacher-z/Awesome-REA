@@ -801,3 +801,30 @@ This round adds one recompilation list and five reconstruction cases: awesome-re
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; four Class 1 records received previews. The five new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, thirtieth batch — 2026-11-24
+
+This round adds one port catalog, two port cases and three emulators: Native Ports, JSRF Unleashed NX, King’s Field Enhanced, Nestopia, Stella and WinUAE.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `native-ports-list` | `related-lists` | [matheusbrauna/native-ports](https://github.com/matheusbrauna/native-ports/blob/e182e7b07ef048c282dee9fb53b71263c07ad6ff/README.md) | `4d1f0c572a16d8a12ce53a3bb43464361c24b3001bba0fd4c2cb98318a79b79b` |
+| `jsrf-unleashed-nx` | `reconstruction-cases` | [Eladerino/JetSetRadioFuture-Unleashed-NX](https://github.com/Eladerino/JetSetRadioFuture-Unleashed-NX/blob/bdda28e1702d476c32b29d76bf3e34628575f9f4/README.md) | `6004246a5b759b9be6d1618715d591892d31342c7aaa5de1cb9e98fd71796543` |
+| `kf1-enhanced` | `reconstruction-cases` | [Acranon/kf1-enhanced](https://github.com/Acranon/kf1-enhanced/blob/ac147450249c95b8d7683300292a2761796cb611/README.md) | `23232b97d59834c0c80d0eb1a79d060330a80d5847edaef9a2654b9f9269885f` |
+| `nestopia` | `game-analysis` | [0ldsk00l/nestopia](https://github.com/0ldsk00l/nestopia/blob/7b5c87d8dc3c817211545449683d1fcd897324ca/README.md) | `9091f47998564306d3bb69c8c8e098fee3cb29f9baaacb814b00a19662f80efe` |
+| `stella` | `game-analysis` | [stella-emu/stella](https://github.com/stella-emu/stella/blob/8dd560091d22f9867cd9192880aa28570ed4d6db/README.md) | `26a62ea7113e3cc6d4c55d238c7c70107160db3a80bac6c0aedb4b4fa3032aca` |
+| `winuae` | `firmware` | [tonioni/WinUAE](https://github.com/tonioni/WinUAE/blob/ee784914c8d61bb503d137e358b22fcc4758a294/README.md) | `a41a464952e30bf0bfb359deb766617605c6408d8b2490b2b206184478d25ff1` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| mstan/PokemonStadiumRecomp | README declares the project no longer maintained as of August 2026. |
+| MegaMan64Recomp/MegaMan64Recompiled | README is a 52-byte stub below the documentation threshold. |
+| codepdbh/nfsu2-recompiled, soyjxck/dod3-recomp, rigaz29/Ascension-R | No license file recorded by the GitHub API. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; JSRF Unleashed NX received a Class 1 preview. The two new case studies update the game case indexes and README case sections.

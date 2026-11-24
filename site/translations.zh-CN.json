@@ -45618,5 +45618,53 @@
       "该分支完全由 AI 制作，依赖上游 Petari 与 GalaxyQuest。",
       "采用 Unlicense。"
     ]
+  },
+  "native-ports-list": {
+    "name": "Native Ports",
+    "requirements": [
+      "它是移植项目目录；每个链接项目自行提供构建步骤与游戏数据要求。",
+      "目录覆盖静态重编译与原生执行两类工具链。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "jsrf-unleashed-nx": {
+    "name": "JSRF Unleashed NX：Jet Set Radio Future 的 Switch 移植",
+    "requirements": [
+      "需要装有 Atmosphère 的已修改 Switch，以及自备美版独立光盘文件；不包含游戏数据。",
+      "它是基于 JuMatt PC 项目的 Switch 移植。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "kf1-enhanced": {
+    "name": "King’s Field Enhanced：1994 年原版游戏的 Windows PC 版",
+    "requirements": [
+      "需要自备游戏副本；不包含任何游戏内容。",
+      "它基于上游源码移植并加入现代改进。",
+      "采用 CC0-1.0 许可证。"
+    ]
+  },
+  "nestopia": {
+    "name": "Nestopia",
+    "requirements": [
+      "需要 NES ROM；经典版面向 win32，当前构建使用 Jolly Good Emulation 核心与 QTea 前端。",
+      "核心与前端是独立仓库，兼容性因游戏而异。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "stella": {
+    "name": "Stella",
+    "requirements": [
+      "需要 Atari 2600 ROM；构建覆盖 PC 与 RetroN 77，Libretro 构建由其他项目维护。",
+      "兼容性因游戏而异；其他平台的问题归属各自项目。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "winuae": {
+    "name": "WinUAE",
+    "requirements": [
+      "需要 Amiga ROM 与软件；Windows 构建需要 Visual Studio 2017 与 Windows Driver Kit。",
+      "它模拟 Amiga 硬件，兼容性取决于机型与配置。",
+      "采用 GPL-2.0 许可证。"
+    ]
   }
 }

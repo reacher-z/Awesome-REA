@@ -161183,5 +161183,175 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "native-ports-list",
+    "name": "Native Ports",
+    "url": "https://github.com/matheusbrauna/native-ports",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "A curated catalog of unofficial native ports of console games that run the game own code as an ordinary program on PC, Mac, Linux, Steam Deck, mobile or Switch instead of inside an emulator, covering static recompilation and native execution.",
+    "description_zh": "非官方主机游戏原生移植的精选目录：这些项目让游戏自身代码作为普通程序运行在 PC、Mac、Linux、Steam Deck、移动设备或 Switch 上，而不是运行在模拟器中；覆盖静态重编译与原生执行两类技术。",
+    "evidence_url": "https://github.com/matheusbrauna/native-ports/blob/e182e7b07ef048c282dee9fb53b71263c07ad6ff/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "It is a catalog of ports; each linked project supplies its own build steps and game data requirements.",
+      "The catalog covers static recompilation and native execution toolchains.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "jsrf-unleashed-nx",
+    "name": "JSRF Unleashed NX: Jet Set Radio Future for Nintendo Switch",
+    "url": "https://github.com/Eladerino/JetSetRadioFuture-Unleashed-NX",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A Nintendo Switch homebrew port of JSRF Unleashed by JuMatt that runs as an NRO on a modded Switch with Atmosphère via title takeover, using the player own US disc.",
+    "description_zh": "JuMatt 的 JSRF Unleashed 的 Nintendo Switch 自制移植：以 NRO 形式在装有 Atmosphère 的已修改 Switch 上通过 title takeover 运行，使用玩家自备的美版光盘。",
+    "evidence_url": "https://github.com/Eladerino/JetSetRadioFuture-Unleashed-NX/blob/bdda28e1702d476c32b29d76bf3e34628575f9f4/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a modded Switch with Atmosphère and files from your own standalone US disc; no game data is included.",
+      "It is a Switch port built on the JuMatt PC project.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "kf1-enhanced",
+    "name": "King’s Field Enhanced: a Windows PC version of the original 1994 game",
+    "url": "https://github.com/Acranon/kf1-enhanced",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A Windows PC version of the original King’s Field (Japan, 1994, SLPS-00017) with an English fan translation or the original Japanese, plus optional widescreen, high resolutions, high frame rates, mouse look, dynamic lighting, automap, quick saves and Lua mods, built on sushi-shi source port.",
+    "description_zh": "原版《King’s Field》（日本，1994，SLPS-00017）的 Windows PC 版本，可使用英文民间翻译或原版日文，并可选宽屏、高分辨率、高帧率、鼠标视角、动态光照、自动地图、快速存档与 Lua mod；基于 sushi-shi 的源码移植。",
+    "evidence_url": "https://github.com/Acranon/kf1-enhanced/blob/ac147450249c95b8d7683300292a2761796cb611/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the game; nothing from the game is included.",
+      "It is built on an upstream source port and adds modern improvements.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "nestopia",
+    "name": "Nestopia",
+    "url": "https://github.com/0ldsk00l/nestopia",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A Nintendo Entertainment System emulator core with a legacy win32 build, now maintained through the cross-platform Jolly Good Emulation project and its QTea frontend.",
+    "description_zh": "Nintendo Entertainment System 模拟器核心，保留旧版 win32 构建，现通过跨平台的 Jolly Good Emulation 项目及其 QTea 前端维护。",
+    "evidence_url": "https://github.com/0ldsk00l/nestopia/blob/7b5c87d8dc3c817211545449683d1fcd897324ca/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires NES ROMs; the classic release targets win32, and the current build uses the Jolly Good Emulation core and QTea frontend.",
+      "The core and frontend are separate repositories, and compatibility varies by title.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "stella",
+    "name": "Stella",
+    "url": "https://github.com/stella-emu/stella",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A multi-platform Atari 2600 VCS emulator for playing Atari 2600 games on PC, with a user manual and support for the RetroN 77.",
+    "description_zh": "跨平台 Atari 2600 VCS 模拟器，可在 PC 上运行 Atari 2600 游戏，提供用户手册并支持 RetroN 77。",
+    "evidence_url": "https://github.com/stella-emu/stella/blob/8dd560091d22f9867cd9192880aa28570ed4d6db/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Atari 2600 ROMs; builds target PC and RetroN 77, with Libretro builds maintained elsewhere.",
+      "Compatibility varies by title, and issues on other platforms belong to their respective projects.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "winuae",
+    "name": "WinUAE",
+    "url": "https://github.com/tonioni/WinUAE",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "The Windows version of the UAE Amiga emulator, supporting classic Amiga software with optional GDB debugging and a Windows build toolchain.",
+    "description_zh": "UAE Amiga 模拟器的 Windows 版本，可运行经典 Amiga 软件，支持可选的 GDB 调试以及 Windows 构建工具链。",
+    "evidence_url": "https://github.com/tonioni/WinUAE/blob/ee784914c8d61bb503d137e358b22fcc4758a294/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Amiga ROMs and software; the Windows build needs Visual Studio 2017 and the Windows Driver Kit.",
+      "It emulates Amiga hardware, and compatibility depends on the model and configuration.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

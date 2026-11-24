@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-24T21:08:28+00:00",
-    "entry_count": 1188,
-    "class_entry_count": 1219,
+    "generated_at": "2026-11-24T21:51:30+00:00",
+    "entry_count": 1189,
+    "class_entry_count": 1220,
     "class_counts": {
-      "image": 1148,
+      "image": 1149,
       "video": 40
     },
     "missing_count": 31,
@@ -4131,6 +4131,15 @@
       "source_url": "https://github.com/paulwedeck/settlers-remake/blob/6ad8c4230a4aa4cd21840f8cb59a38344e41c3e0/docs/wiki/manual/JSettlers_Game.png",
       "revision": "6ad8c4230a4aa4cd21840f8cb59a38344e41c3e0",
       "checked_at": "2026-11-10T05:20:10+00:00"
+    },
+    {
+      "id": "jsrf-unleashed-nx",
+      "image_url": "https://raw.githubusercontent.com/Eladerino/JetSetRadioFuture-Unleashed-NX/bdda28e1702d476c32b29d76bf3e34628575f9f4/docs/images/gameplay-fps.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Eladerino/JetSetRadioFuture-Unleashed-NX",
+      "revision": "bdda28e1702d476c32b29d76bf3e34628575f9f4",
+      "checked_at": "2026-11-24T21:51:30+00:00"
     },
     {
       "id": "jsxer",

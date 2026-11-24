@@ -6,10 +6,12 @@
 
 [English](game-5.md)
 
-**432 个案例**
+**434 个案例**
 
 ## 引擎重实现
 
+- [**Robot War Engine：《横扫千军》兼容引擎重建**](https://github.com/MHeasell/rwe) - Robot War Engine 重建兼容《横扫千军》的即时战略引擎，运行时读取玩家自备的原版数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/robot-war-engine-case/)</sub>
+- [**roBrowser：Ragnarok Online 浏览器客户端重建**](https://github.com/vthibault/roBrowser) - roBrowser 使用 JavaScript、HTML5 和 WebGL 在浏览器中重建 Ragnarok Online 客户端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/robrowser-case/)</sub>
 - [**Rockport Native：在 macOS 重建 Need for Speed: Most Wanted**](https://github.com/pablonolascoo/nfs-mw-2005-ps2-port) - Rockport Native 将 PlayStation 2 版 Need for Speed: Most Wanted 重建为 macOS 游戏，以 Swift 和 Metal 引擎读取玩家 ISO 转换出的数据。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/rockport-native-nfs-mw-case/)</sub>
 - [**RodLegacy：重建《Street Rod》与《Street Rod 2》**](https://github.com/grovdata/RodLegacy) - RodLegacy 用 C++ 为现代系统重建《Street Rod》和《Street Rod 2》，从用户提供的 Amiga 磁盘镜像读取游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rodlegacy-case/)</sub>
 - [**Rollerbot：面向 Android 与 Linux 的游戏运行环境重建**](https://github.com/sirbilliams/Rollerbot-Android) - Rollerbot-Android 根据原版脚本和用户提供的资源，为 2000 年游戏 Rollerbot: A Time Journey 重建 Android 与 Linux 运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rollerbot-android-case/)</sub>

@@ -6,10 +6,12 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**432 case studies**
+**434 case studies**
 
 ## Engine reimplementations
 
+- [**Robot War Engine: a Total Annihilation-compatible engine reconstruction**](https://github.com/MHeasell/rwe) - Robot War Engine rebuilds a Total Annihilation-compatible strategy-game engine that runs on the player's original data files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/robot-war-engine-case/)</sub>
+- [**roBrowser: a browser reconstruction of Ragnarok Online**](https://github.com/vthibault/roBrowser) - roBrowser recreates a Ragnarok Online client for web browsers using JavaScript, HTML5 and WebGL. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/robrowser-case/)</sub>
 - [**Rockport Native: reconstructing Need for Speed: Most Wanted on macOS**](https://github.com/pablonolascoo/nfs-mw-2005-ps2-port) - Rockport Native reconstructs the PlayStation 2 release of Need for Speed: Most Wanted as a macOS game using a Swift and Metal engine and data converted from the player's ISO. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/rockport-native-nfs-mw-case/)</sub>
 - [**RodLegacy: reimplementing Street Rod and Street Rod 2**](https://github.com/grovdata/RodLegacy) - RodLegacy reimplements Street Rod and Street Rod 2 in C++ for modern systems, reading game data from user-supplied Amiga disk images. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rodlegacy-case/)</sub>
 - [**Rollerbot: a reconstructed Android and Linux runtime**](https://github.com/sirbilliams/Rollerbot-Android) - Rollerbot-Android reconstructs the 2000 game Rollerbot: A Time Journey for Android and Linux from its original scripts and user-supplied assets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rollerbot-android-case/)</sub>
