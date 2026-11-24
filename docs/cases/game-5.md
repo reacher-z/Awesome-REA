@@ -6,10 +6,15 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**398 case studies**
+**403 case studies**
 
 ## Engine reimplementations
 
+- [**SiegeFX: a Dungeon Siege engine reimplementation in alpha**](https://github.com/codingncaffeine/SiegeFX) - A C#/.NET 10 engine loads Dungeon Siege's original archives, scripts and models, with published alpha builds and an audit/parity ledger. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/siegefx-dungeon-siege-engine-case/)</sub>
+- [**siglus\_rs: reimplementing four visual game engines in Rust**](https://github.com/xmoezzz/siglus_rs) - siglus\_rs reimplements the UK2, AVG32, RealLive and SiglusEngine game engines in Rust, with its main focus on SiglusEngine. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/siglus-rs-case/)</sub>
+- [**Sims 3 in Bevy: a Rust reimplementation of The Sims 3**](https://github.com/Eamo5/sims-3-bevy) - Sims 3 in Bevy reimplements The Sims 3 in Rust using Bevy and data from the player's installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sims-3-bevy-case/)</sub>
+- [**SimUnity2: a partial Unity reconstruction of The Sims 2**](https://github.com/LazyDuchess/SimUnity2) - SimUnity2 partially reconstructs The Sims 2 in Unity using files from a user's game installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/simunity2-case/)</sub>
+- [**Skate 3 Rust Engine: a Bevy rewrite built on Skate 3 reverse-engineering research**](https://github.com/SK8-ENGINE/skate-3-rust-engine) - Reimplements Skate 3’s skating, tricks, grinds and offboard movement in a new Rust and Bevy engine that runs on assets converted from the user’s own Xbox 360 copy, adding difficulty settings and a .skate custom-map format. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/skate-3-rust-engine-case/)</sub>
 - [**SkyRoads: a DOS game engine reconstructed in portable C11**](https://github.com/ammaarreshi/skyroads-port) - skyroads-port reconstructs the DOS game SkyRoads as a portable C11 engine after disassembling SKYROADS.EXE and documenting its file formats and algorithms. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/skyroads-port-case/)</sub>
 - [**smw: a Super Mario World engine reimplementation**](https://github.com/snesrev/smw) - smw reimplements Super Mario World's game logic as a native program using levels and images extracted from the user's ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/smw-case/)</sub>
 - [**Snowball War: a bounded REA-assisted minigame reconstruction**](https://github.com/tuunanet/rea-ski-or-die-reconstruction) - The author uses REA’s Ghidra workflow to investigate the DOS Ski or Die binary, document Snowball War rules and rebuild that one minigame in Rust with SDL2. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/snowball-war-rea-case/)</sub>

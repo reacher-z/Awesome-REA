@@ -6,7 +6,7 @@
 
 [English](game-1.md)
 
-**616 个案例**
+**617 个案例**
 
 <a id="game-matching-decompilation"></a>
 ## 匹配反编译与反汇编
@@ -29,6 +29,7 @@
 - [**Alien Soldier：逐字节重建 Mega Drive 卡带**](https://github.com/RetrolariumLab/alien_soldier_src) - Alien Soldier source reconstruction 使用共用的 68000 汇编源码和独立的 Z80 音效程序源码重建日版、欧版 Mega Drive 卡带。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/alien-soldier-src-case/)</sub>
 - [**Alien Trilogy：逐字节匹配的 PS1 源码重建**](https://github.com/lemiur/alien-trilogy-decomp) - Alien Trilogy 使用原版 GCC 2.5.7 工具链重建美版 PlayStation 游戏可执行文件 SLUS\_000.07 的 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/alien-trilogy-ps1-decomp-case/)</sub>
 - [**Alien vs Predator：重建 Atari Jaguar 游戏卡带**](https://github.com/Joshua-1248/Alien-V.S.-Predator-Atari-Jaguar-Decompilation) - Alien vs Predator 项目重建 1994 年 Atari Jaguar 版游戏的 Motorola 68000 代码和卡带构建流程。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/alien-vs-predator-jaguar-case/)</sub>
+- [**动物森友会：城市人 — 在研匹配式反编译**](https://github.com/ACreTeam/cf-decomp) - 《动物森友会：城市人》的在研匹配式反编译项目（RUUE01），按代码、DOL 与 REL 组件跟踪进度。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cf-decomp/)</sub>
 - [**Animal Crossing：生成一致产物的 GameCube 反编译重建**](https://github.com/ACreTeam/ac-decomp) - 将 Animal Crossing 的 GameCube 代码重建为 C 与 C++ 源码，可重新构建美版的主可执行文件及 foresta.rel 模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/animal-crossing-gamecube-decomp-case/)</sub>
 - [**Animal Crossing: Wild World：附差分运行检查的韩版 DS 一致性反编译重建**](https://github.com/banatic/acww-decomp) - 将 Animal Crossing: Wild World 韩版 DS 游戏的 ARM9 游戏代码重建为每个函数一个 C 或 C++ 源文件，并用原版 Metrowerks 编译器和链接器对照使用者自己的 ROM 校验。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/animal-crossing-wild-world-decomp-case/)</sub>
 - [**《动物之森》：进行中的 N64 一致性反编译**](https://github.com/zeldaret/af) - 将从 ROM 逆向得到的 C 代码与从使用者自备 ROM 中提取的素材和汇编结合，重建日版 Nintendo 64《动物之森》（どうぶつの森）。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/animal-forest-n64-decomp-case/)</sub>
@@ -527,6 +528,7 @@
 - [**《缩小帽》：面向五个 ROM 的 GBA 反编译重建**](https://github.com/zeldaret/tmc) - 依据游戏内信息和静态或动态分析，为《塞尔达传说：缩小帽》重建 C 源码库，可构建美版、欧版、日版及两个演示版共五个 Game Boy Advance ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda-tmc-decomp-case/)</sub>
 - [**The New Tetris：Nintendo 64 逐字节匹配反编译**](https://github.com/KiritoDv/tnt) - The New Tetris 项目通过静态和动态分析重建美版 1.0 Nintendo 64 游戏源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/the-new-tetris-decomp-case/)</sub>
 - [**The Oregon Trail：Win32 可执行文件与 DLL 的逐函数匹配重建**](https://github.com/emoluvjd2/oregontrail-win32-decomp) - 该项目重建 1996 年 Windows 版《The Oregon Trail》中 Oregon32.exe 和 OREGON32.DLL 的 C++ 函数，并进行逐函数匹配。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oregon-trail-win32-decomp-case/)</sub>
+- [**模拟人生 2：Castaway — 在研匹配式反编译**](https://github.com/HaydnTrigg/Castaway) - 《模拟人生 2：Castaway》的在研匹配式反编译项目，代码与数据进度由 decomp.dev 跟踪。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sims2-castaway-decomp/)</sub>
 - [**The Sims: Bustin' Out：GameCube 匹配式反编译**](https://github.com/daftblazer/bustin-out-decomp) - 该项目以 C 和 C++ 重建美版 G4ME69 GameCube《The Sims: Bustin' Out》可执行文件的部分代码，游戏代码使用 SN Systems ProDG 编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bustin-out-gamecube-decomp-case/)</sub>
 - [**The Sims: Bustin' Out：AI 驱动的部分 GBA 一致性反编译重建**](https://github.com/DaBrown95/tsbodp) - 逐字节重建 The Sims: Bustin' Out 的 Game Boy Advance 美欧版，并逐步用 agbcc 编译、结果一致的 C 代码替换 ROM 区域。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sims-bustin-out-gba-decomp-case/)</sub>
 - [**The Urbz: Sims in the City：GameCube 匹配反编译**](https://github.com/samtaylorr/urbz-sims-decomp-gc) - The Urbz: Sims in the City 的 GameCube 反编译针对 GUBE69 版本重建游戏代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/urbz-sims-in-the-city-gamecube-case/)</sub>
@@ -629,5 +631,4 @@
 - [**Blast Corps：任天堂 64 反编译**](https://github.com/retroplastic/blastcorps) - 该仓库是任天堂 64 游戏 Blast Corps 的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/blastcorps-decomp/)</sub>
 - [**Blitz\_MasterVer22-Decomp：《Splatoon 2》3.1.0 版反编译**](https://github.com/YoshiCrystal9/Blitz_MasterVer22-Decomp) - Blitz\_MasterVer22-Decomp 重建 Nintendo Switch 游戏《Splatoon 2》3.1.0 版的代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/splatoon-2-310-decomp-case/)</sub>
 - [**Blood Omen 2：面向 Switch 移植的功能性反编译**](https://github.com/felipesuarez-dev/BloodOmen2NX) - BloodOmen2NX 将《血兆 2》西班牙语 Windows PC 版进行功能性反编译，译成 C++17，目标是移植到 Nintendo Switch。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bloodomen2nx-case/)</sub>
-- [**Boku Doraemon：Dreamcast 可执行文件与模型结构重建**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon 解析日版 Dreamcast 游戏的 1ST\_READ.BIN，从用户光盘生成匹配的汇编基线，并在 SH-4 解释器中比较候选 C 函数的调用、内存写入与结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boku-doraemon-decomp-case/)</sub>
 <!-- END GENERATED CASES -->

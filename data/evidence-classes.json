@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-24T02:27:12+00:00",
-  "entry_count": 5367,
+  "generated_at": "2026-11-24T03:05:26+00:00",
+  "entry_count": 5373,
   "class_counts": {
    "0": 15,
-   "1": 1190,
-   "2": 3950,
+   "1": 1192,
+   "2": 3954,
    "3": 186
   },
   "unknown_count": 26,
@@ -150724,6 +150724,176 @@
    "checked_at": "2026-11-24T06:20:00+00:00",
    "evidence_status": "observed",
    "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "re-outbreak-recomp",
+   "url": "https://github.com/RaccoonRecomp/ResidentEvilOutbreakRecompiled",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 11689,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 2,
+    "release_asset_count": 2,
+    "demo": [
+     "image"
+    ],
+    "media_count": 4,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-24T07:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "wwe2k14-recomp",
+   "url": "https://github.com/Jarrodfeng/wwe2k14-recomp",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4417,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 60,
+    "release_asset_count": 98,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-24T07:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "cf-decomp",
+   "url": "https://github.com/ACreTeam/cf-decomp",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3593,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-24T07:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "sims2-castaway-decomp",
+   "url": "https://github.com/HaydnTrigg/Castaway",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3227,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-24T07:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "magicmida-rs",
+   "url": "https://github.com/guoxing2024/magicmida-rs",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 37206,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 4,
+    "release_asset_count": 16,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
+   "checked_at": "2026-11-24T07:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "sh4vita",
+   "url": "https://github.com/vallfrr/sh4vita",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 15617,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 2,
+    "release_asset_count": 12,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-24T07:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   }

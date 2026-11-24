@@ -159822,5 +159822,177 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "re-outbreak-recomp",
+    "name": "Resident Evil Outbreak Recompiled: a native PC port of the PlayStation 2 game",
+    "url": "https://github.com/RaccoonRecomp/ResidentEvilOutbreakRecompiled",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An unofficial Windows port of Resident Evil Outbreak (File #1, USA) that statically recompiles the PlayStation 2 game code into native x64 and runs it on a PC runtime rather than an emulator.",
+    "description_zh": "《生化危机：爆发》（File #1 美版）的非官方 Windows 移植：把 PS2 游戏代码静态重编译为原生 x64，并运行在专用 PC 运行时而非模拟器上。",
+    "evidence_url": "https://github.com/RaccoonRecomp/ResidentEvilOutbreakRecompiled/blob/e0fcc5fb6e7e1011a6876824fa772ec5354a4534/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the game data; nothing from the game is included in the download.",
+      "It is a static recompilation and depends on the specific game version.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "wwe2k14-recomp",
+    "name": "WWE 2K14: a native PC recompilation of the Xbox 360 version",
+    "url": "https://github.com/Jarrodfeng/wwe2k14-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of the Xbox 360 version of WWE 2K14 into native Windows x64, built with the ReXGlue SDK as a preservation project and creative toolkit.",
+    "description_zh": "把 Xbox 360 版《WWE 2K14》静态重编译为原生 Windows x64 的项目，使用 ReXGlue SDK 构建，兼具保存与创作工具用途。",
+    "evidence_url": "https://github.com/Jarrodfeng/wwe2k14-recomp/blob/de26df28d477c73ee58a258163f01dd666daba3d/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own dumped Xbox 360 disc; no game files are included.",
+      "It is a preservation project, and compatibility depends on the specific game version.",
+      "BSD-3-Clause-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "cf-decomp",
+    "name": "Animal Crossing: City Folk — a work-in-progress matching decompilation",
+    "url": "https://github.com/ACreTeam/cf-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A work-in-progress matching decompilation of Animal Crossing: City Folk (RUUE01) with progress tracked for code, DOL and REL components.",
+    "description_zh": "《动物森友会：城市人》的在研匹配式反编译项目（RUUE01），按代码、DOL 与 REL 组件跟踪进度。",
+    "evidence_url": "https://github.com/ACreTeam/cf-decomp/blob/ecef279ab1d55d74c40b0ad86c0964951495a9ca/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported game disc or ROM to verify the build; the project does not distribute the game.",
+      "It is a work-in-progress decompilation, and matching progress is tracked per component.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "sims2-castaway-decomp",
+    "name": "The Sims 2: Castaway — a work-in-progress matching decompilation",
+    "url": "https://github.com/HaydnTrigg/Castaway",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A work-in-progress matching decompilation of The Sims 2: Castaway, with code and data progress tracked by decomp.dev.",
+    "description_zh": "《模拟人生 2：Castaway》的在研匹配式反编译项目，代码与数据进度由 decomp.dev 跟踪。",
+    "evidence_url": "https://github.com/HaydnTrigg/Castaway/blob/f5c5dbcf2b4a20eb797b1aa6eb03f6cf09a4dbbe/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the supported game to verify the build; the repository does not include game data.",
+      "It is a work-in-progress decompilation.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "magicmida-rs",
+    "name": "Magicmida-RS",
+    "url": "https://github.com/guoxing2024/magicmida-rs",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A Rust reimplementation of the Magicmida tool for analyzing binaries protected by the Themida packer, rewriting the recovery pipeline for safer memory management, better error handling and a modular architecture, with gated byte-level and behavior verification.",
+    "description_zh": "Magicmida 的 Rust 重实现，用于分析受 Themida 打包器保护的二进制文件；重写恢复流程以获得更安全的内存管理、更好的错误处理与模块化架构，并用门禁做逐字节与行为验证。",
+    "evidence_url": "https://github.com/guoxing2024/magicmida-rs/blob/cc10f642e0d29ce68763f7b0e292ff751453df0b/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a protected binary to analyze; the project is an experimental sandbox forked from upstream.",
+      "It does not track upstream, and its verified capability is narrower than the original Magicmida.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "sh4vita",
+    "name": "Silent Hill 4: The Room for PS Vita — a native port",
+    "url": "https://github.com/vallfrr/sh4vita",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A port of the GOG PC version of Silent Hill 4: The Room to the PS Vita, with a VPK release and a data preparer for Windows, macOS and Linux.",
+    "description_zh": "把 GOG PC 版《寂静岭 4：密室》移植到 PS Vita 的项目，提供 VPK 发布包以及 Windows、macOS 与 Linux 的数据准备工具。",
+    "evidence_url": "https://github.com/vallfrr/sh4vita/blob/386541b726538a50f2e3cdf48d5ac24b553d6239/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a hacked PS Vita with HENkaku/Enso and at least 4 GB free, plus your own GOG copy of version 1.0 gog v5.",
+      "It is a port of the PC version and depends on the specific GOG build.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

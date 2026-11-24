@@ -10,6 +10,10 @@
 
 ## 基于重建源码的移植
 
+- [**Kye for C64：用 6502 汇编重建益智游戏规则**](https://github.com/cobbpg/kye-c64) - Kye for C64 用 6502 汇编将 1992 年的益智游戏移植到 Commodore 64。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kye-c64-case/)</sub>
+- [**Lantern Engine：面向 Windows 和 Linux 的 Bloodborne 运行时**](https://github.com/Awakenchan/LanternEngine) - Lantern Engine 在 Windows 和 Linux 上使用玩家自行转储的 Bloodborne CUSA03173 1.09 版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lantern-engine-case/)</sub>
+- [**LEGO Dimensions PC：PS4 游戏至 Windows 的原生移植**](https://github.com/vascon-es/lego-dimensions-pc) - LEGO Dimensions PC 将 PS4 版 LEGO Dimensions 01.24 移植到 Windows x64，改造游戏可执行文件并重写 PS4 系统库行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lego-dimensions-pc-case/)</sub>
+- [**LEGO Island 可移植版：反编译源码的多平台移植**](https://github.com/isledecomp/isle-portable) - 将 LEGO Island 反编译源码改造为可在桌面、移动设备、游戏主机、DOS 及 Web 上构建的移植版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lego-island-portable-case/)</sub>
 - [**LEGO Racers, portable：将反编译游戏移植到多平台**](https://github.com/isledecomp/racers-portable) - LEGO Racers, portable 将 1999 年《LEGO Racers》的反编译源码移植到 Windows、macOS 和 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lego-racers-portable-case/)</sub>
 - [**LEGOLAND, portable：基于匹配反编译源码的跨平台移植版**](https://github.com/facundosterzerforino/legoland-port) - LEGOLAND, portable 将 1999 年游戏的匹配反编译源码移植到 Windows、Linux、Android 和浏览器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/legoland-port-case/)</sub>
 - [**Lighthouse：基于反编译项目的《Banjo-Kazooie》PC 移植**](https://github.com/HarbourMasters/Lighthouse) - 一个面向 Windows、Linux 和 macOS 的《Banjo-Kazooie》原生移植，将游戏 C 源码（其中许多标注了《Banjo-Kazooie》反编译项目中的文件路径）与重新实现 N64 SDK 的 libultraship 一起编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lighthouse-banjo-kazooie-port-case/)</sub>
@@ -135,6 +139,7 @@
 - [**Shockolate：System Shock 跨平台源码移植**](https://github.com/Interrupt/systemshock) - 基于 Night Dive Studios 发布的 PowerPC 源码实现的《System Shock》跨平台源码移植，使用 SDL2，并正在加入 OpenGL 渲染与 mod 支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shockolate/)</sub>
 - [**Sightline：《GoldenEye 007》原生引擎移植版**](https://github.com/mscrnt/Sightline) - Sightline 将 Nintendo 64《GoldenEye 007》的反编译代码移植为 Windows 原生程序，配有平台适配层和 OpenGL 渲染器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sightline-goldeneye-port-case/)</sub>
 - [**Silent Engine：基于反编译代码移植初代《Silent Hill》**](https://github.com/Sezzary/SilentEngine) - Silent Engine 将初代《Silent Hill》的反编译逻辑移植到跨平台 C++ 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/silent-engine-case/)</sub>
+- [**Silent Hill 4：密室 PS Vita 原生移植**](https://github.com/vallfrr/sh4vita) - 把 GOG PC 版《寂静岭 4：密室》移植到 PS Vita 的项目，提供 VPK 发布包以及 Windows、macOS 与 Linux 的数据准备工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sh4vita/)</sub>
 - [**Skate 3 Port：《滑板 3》的 Android ARM64 静态重编译移植**](https://github.com/darchap/Skate3-Port) - Skate 3 Port 将 Xbox 360《滑板 3》的静态重编译成果移植到 Android ARM64，并将转换后的 PowerPC 游戏代码与 Vulkan 运行时链接。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skate-3-port-android-case/)</sub>
 - [**SkiFree SDL：SkiFree 反编译源码的 SDL2 移植**](https://github.com/jeff-1amstudios/skifree_sdl) - SkiFree SDL 将 Microsoft Entertainment Pack 游戏 SkiFree 的现有反编译源码改造为跨平台 SDL2 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skifree-sdl-case/)</sub>
 - [**skynet-godot：将《SkyNET》和《Future Shock》移植到 Godot**](https://github.com/nautilusbits/skynet-godot) - skynet-godot 将 1996 年的 XnGine 射击游戏《SkyNET》和《Future Shock》移植到重写的 Godot 4 引擎。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/skynet-godot-case/)</sub>
@@ -637,9 +642,4 @@
 - [**shin：Entergram 视觉游戏引擎重实现**](https://github.com/DCNick3/shin) - shin 重实现 Entergram 视觉游戏使用的引擎，起初以 Switch 版 Umineko no Naku Koro ni Saku 为目标，并读取原版游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shin-engine-case/)</sub>
 - [**shock2quest：为 System Shock 2 VR 重建 Dark 引擎**](https://github.com/tommy-xr/shock2quest) - shock2quest 为 Meta Quest 上的 System Shock 2 虚拟现实体验重建 Dark 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shock2quest-case/)</sub>
 - [**si78c：用 C 语言重实现《太空侵略者》**](https://github.com/loadzero/si78c) - si78c 是 1978 年街机游戏《太空侵略者》的 C 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/si78c/)</sub>
-- [**SiegeFX：处于 alpha 阶段的 Dungeon Siege 引擎重实现**](https://github.com/codingncaffeine/SiegeFX) - C#/.NET 10 引擎加载 Dungeon Siege 原始归档、脚本与模型，提供 alpha 构建和审计/一致性清单，并附带 SiegeSmith 模组工具；项目仍记录保真度和通关行为风险。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/siegefx-dungeon-siege-engine-case/)</sub>
-- [**siglus\_rs：以 Rust 重实现四种视觉游戏引擎**](https://github.com/xmoezzz/siglus_rs) - siglus\_rs 使用 Rust 重新实现 UK2、AVG32、RealLive 和 SiglusEngine 四款游戏引擎，重点是 SiglusEngine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/siglus-rs-case/)</sub>
-- [**Sims 3 in Bevy：用 Rust 重建《模拟人生 3》**](https://github.com/Eamo5/sims-3-bevy) - Sims 3 in Bevy 使用 Rust 和 Bevy 重建《模拟人生 3》，读取玩家安装的游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sims-3-bevy-case/)</sub>
-- [**SimUnity2：The Sims 2 的部分 Unity 重建**](https://github.com/LazyDuchess/SimUnity2) - SimUnity2 在 Unity 中使用用户安装的 The Sims 2 文件重建部分游戏功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/simunity2-case/)</sub>
-- [**Skate 3 Rust Engine：基于《Skate 3》逆向研究的 Bevy 重写**](https://github.com/SK8-ENGINE/skate-3-rust-engine) - 在新的 Rust 与 Bevy 引擎中重新实现《Skate 3》的滑行、技巧、擦边滑行和下板移动，运行时使用从使用者自有 Xbox 360 版游戏转换得到的素材，并加入难度设置和 .skate 自定义地图格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skate-3-rust-engine-case/)</sub>
 <!-- END GENERATED CASES -->

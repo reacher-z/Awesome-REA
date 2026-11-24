@@ -6,10 +6,11 @@
 
 [简体中文](game-2.zh-CN.md)
 
-**622 case studies**
+**621 case studies**
 
 ## Non-matching decompilations
 
+- [**Boku Doraemon: Dreamcast executable and model reconstruction**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon maps the Japanese Dreamcast game's 1ST\_READ.BIN, generates a matching assembly baseline from an owner's disc, and tests C function candidates for equivalent calls, memory writes and results in an SH-4 interpreter. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/boku-doraemon-decomp-case/)</sub>
 - [**Bomberman 64: The Second Attack!: partial N64 decompilation**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa is an in-progress decompilation of the Japanese and US Nintendo 64 releases of Bomberman 64: The Second Attack!. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bm64tsa-case/)</sub>
 - [**Boom Street: a Wii decompilation in progress**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street is a work-in-progress Wii game decompilation targeting the ST7P01 Rev 0 European release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/boom-street-decomp-case/)</sub>
 - [**Bounce Tales: decompiling the J2ME game**](https://github.com/HelloOO7/BounceTales) - This repository is a decompilation of Rovio's Bounce Tales (2008), a J2ME game that shipped on Nokia Series 40 phones. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bounce-tales-decomp/)</sub>
@@ -633,6 +634,4 @@
 - [**inFamous PC: a PlayStation 3 static recompilation for Windows**](https://github.com/whompay/inFAMOUSreborn) - inFamous PC builds a native Windows port of the European PlayStation 3 release of inFamous by statically recompiling its PPU and SPU code with ps3recomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/infamous-pc-case/)</sub>
 - [**Infinite Undiscovery Recomp: native Xbox 360 game recompilation**](https://github.com/doc-haz/infinite-undiscovery-recomp) - Infinite Undiscovery Recomp is a native Windows x64 recompilation of Infinite Undiscovery for Xbox 360 (2008), built with ReXGlue and XenonRecomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/infinite-undiscovery-recomp-case/)</sub>
 - [**Initial D Arcade Stage 3: experimental NAOMI 2 static recompilation**](https://github.com/distilledorion-sketch/Initial-D-Arcade-Stage-3-Native-SH-4-Recompilation-WIP-) - This is an experimental static recompilation of Initial D Arcade Stage 3 for NAOMI 2, disc GDS-0033, aimed at 64-bit Windows. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/initial-d-arcade-stage-3/)</sub>
-- [**International Rally Championship: an x86-to-C native recompilation**](https://github.com/ericodeoliveira/international-rally-championship-recomp) - ircrecomp statically translates International Rally Championship's RAL.EXE x86 functions into C and compiles a native 64-bit Windows game from the user's CD image. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/international-rally-championship-recomp-case/)</sub>
-- [**iPod Click Wheel Recomps: statically recompiling six iPod games**](https://github.com/DogParty/iPodClickWheelRecomps) - iPod Click Wheel Recomps translates six iPod click-wheel games from their ARM code into C++ that builds on current hardware. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ipod-clickwheel-recomps/)</sub>
 <!-- END GENERATED CASES -->

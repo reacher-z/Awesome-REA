@@ -45234,5 +45234,53 @@
       "它不是独立重制，原版街机逻辑与引擎来自上游。",
       "采用 MIT 许可证。"
     ]
+  },
+  "re-outbreak-recomp": {
+    "name": "Resident Evil Outbreak Recompiled：PS2 游戏原生 PC 移植",
+    "requirements": [
+      "需要自备游戏数据；下载中不包含任何游戏内容。",
+      "它是静态重编译，兼容性取决于具体游戏版本。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "wwe2k14-recomp": {
+    "name": "WWE 2K14：Xbox 360 版原生 PC 重编译",
+    "requirements": [
+      "需要自备 Xbox 360 光盘转储；不包含游戏文件。",
+      "它是保存性质的项目，兼容性取决于具体游戏版本。",
+      "采用 BSD-3-Clause 许可证。"
+    ]
+  },
+  "cf-decomp": {
+    "name": "动物森友会：城市人 — 在研匹配式反编译",
+    "requirements": [
+      "需要受支持的游戏光盘或 ROM 来验证构建；项目不分发游戏。",
+      "它是在研反编译项目，匹配进度按组件跟踪。",
+      "采用 CC0-1.0 许可证。"
+    ]
+  },
+  "sims2-castaway-decomp": {
+    "name": "模拟人生 2：Castaway — 在研匹配式反编译",
+    "requirements": [
+      "需要受支持的游戏来验证构建；仓库不包含游戏数据。",
+      "它是在研反编译项目。",
+      "采用 CC0-1.0 许可证。"
+    ]
+  },
+  "magicmida-rs": {
+    "name": "Magicmida-RS",
+    "requirements": [
+      "需要待分析的受保护二进制文件；项目是源自上游的实验性沙盒。",
+      "它不跟踪上游，已验证能力范围比原版 Magicmida 窄。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "sh4vita": {
+    "name": "Silent Hill 4：密室 PS Vita 原生移植",
+    "requirements": [
+      "需要已破解并装有 HENkaku/Enso 的 PS Vita、至少 4 GB 空间，以及自备的 GOG 版 1.0 gog v5。",
+      "它是 PC 版的移植，兼容性取决于具体 GOG 构建。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

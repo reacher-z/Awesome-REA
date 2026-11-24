@@ -6,10 +6,15 @@
 
 [English](game-5.md)
 
-**398 个案例**
+**403 个案例**
 
 ## 引擎重实现
 
+- [**SiegeFX：处于 alpha 阶段的 Dungeon Siege 引擎重实现**](https://github.com/codingncaffeine/SiegeFX) - C#/.NET 10 引擎加载 Dungeon Siege 原始归档、脚本与模型，提供 alpha 构建和审计/一致性清单，并附带 SiegeSmith 模组工具；项目仍记录保真度和通关行为风险。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/siegefx-dungeon-siege-engine-case/)</sub>
+- [**siglus\_rs：以 Rust 重实现四种视觉游戏引擎**](https://github.com/xmoezzz/siglus_rs) - siglus\_rs 使用 Rust 重新实现 UK2、AVG32、RealLive 和 SiglusEngine 四款游戏引擎，重点是 SiglusEngine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/siglus-rs-case/)</sub>
+- [**Sims 3 in Bevy：用 Rust 重建《模拟人生 3》**](https://github.com/Eamo5/sims-3-bevy) - Sims 3 in Bevy 使用 Rust 和 Bevy 重建《模拟人生 3》，读取玩家安装的游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sims-3-bevy-case/)</sub>
+- [**SimUnity2：The Sims 2 的部分 Unity 重建**](https://github.com/LazyDuchess/SimUnity2) - SimUnity2 在 Unity 中使用用户安装的 The Sims 2 文件重建部分游戏功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/simunity2-case/)</sub>
+- [**Skate 3 Rust Engine：基于《Skate 3》逆向研究的 Bevy 重写**](https://github.com/SK8-ENGINE/skate-3-rust-engine) - 在新的 Rust 与 Bevy 引擎中重新实现《Skate 3》的滑行、技巧、擦边滑行和下板移动，运行时使用从使用者自有 Xbox 360 版游戏转换得到的素材，并加入难度设置和 .skate 自定义地图格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skate-3-rust-engine-case/)</sub>
 - [**SkyRoads：以可移植 C11 重建 DOS 游戏引擎**](https://github.com/ammaarreshi/skyroads-port) - skyroads-port 通过反汇编 SKYROADS.EXE 并整理其文件格式和算法，以可移植的 C11 重建 DOS 游戏 SkyRoads 的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skyroads-port-case/)</sub>
 - [**smw：Super Mario World 引擎重实现**](https://github.com/snesrev/smw) - smw 将《Super Mario World》的游戏逻辑重实现为原生程序，关卡和图像从用户的 ROM 提取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/smw-case/)</sub>
 - [**Snowball War：范围明确的 REA 辅助小游戏重建**](https://github.com/tuunanet/rea-ski-or-die-reconstruction) - 作者通过 REA 的 Ghidra 工作流调查 DOS 版 Ski or Die 二进制，记录 Snowball War 的规则，再用 Rust 与 SDL2 重建这一小游戏。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/snowball-war-rea-case/)</sub>

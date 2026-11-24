@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-24T02:27:20+00:00",
-    "entry_count": 1174,
-    "class_entry_count": 1205,
+    "generated_at": "2026-11-24T03:05:33+00:00",
+    "entry_count": 1176,
+    "class_entry_count": 1207,
     "class_counts": {
-      "image": 1134,
+      "image": 1136,
       "video": 40
     },
     "missing_count": 31,
@@ -4610,6 +4610,15 @@
       "checked_at": "2026-11-22T06:41:04+00:00"
     },
     {
+      "id": "magicmida-rs",
+      "image_url": "https://raw.githubusercontent.com/guoxing2024/magicmida-rs/cc10f642e0d29ce68763f7b0e292ff751453df0b/docs/img/gui_options.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/guoxing2024/magicmida-rs",
+      "revision": "cc10f642e0d29ce68763f7b0e292ff751453df0b",
+      "checked_at": "2026-11-24T03:05:33+00:00"
+    },
+    {
       "id": "malimite",
       "image_url": "https://raw.githubusercontent.com/LaurieWired/Malimite/f25b0a6267a2ae069cfac758362cd18b2072a276/media/malimite_features_github.png",
       "kind": "image",
@@ -7272,6 +7281,15 @@
       "source_url": "https://github.com/thecodeofnotch/rd-131655",
       "revision": "1e0391ccafcfcc1d97c344505f01233beb0da135",
       "checked_at": "2026-11-09T02:41:36+00:00"
+    },
+    {
+      "id": "re-outbreak-recomp",
+      "image_url": "https://raw.githubusercontent.com/RaccoonRecomp/ResidentEvilOutbreakRecompiled/e0fcc5fb6e7e1011a6876824fa772ec5354a4534/docs/screenshots/main-menu.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/RaccoonRecomp/ResidentEvilOutbreakRecompiled",
+      "revision": "e0fcc5fb6e7e1011a6876824fa772ec5354a4534",
+      "checked_at": "2026-11-24T03:05:33+00:00"
     },
     {
       "id": "re-sonic06demo-case",

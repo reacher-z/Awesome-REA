@@ -6,10 +6,11 @@
 
 [English](game-2.md)
 
-**622 个案例**
+**621 个案例**
 
 ## 非匹配反编译
 
+- [**Boku Doraemon：Dreamcast 可执行文件与模型结构重建**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon 解析日版 Dreamcast 游戏的 1ST\_READ.BIN，从用户光盘生成匹配的汇编基线，并在 SH-4 解释器中比较候选 C 函数的调用、内存写入与结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boku-doraemon-decomp-case/)</sub>
 - [**Bomberman 64: The Second Attack!：部分 N64 反编译**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa 正在反编译日版和美版 N64 游戏 Bomberman 64: The Second Attack!。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bm64tsa-case/)</sub>
 - [**Boom Street：进行中的 Wii 游戏反编译**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street 是进行中的 Wii 游戏反编译项目，目标为欧版 ST7P01 Rev 0。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boom-street-decomp-case/)</sub>
 - [**Bounce Tales：反编译 J2ME 游戏**](https://github.com/HelloOO7/BounceTales) - 该仓库是 Rovio 的 Bounce Tales（2008）的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bounce-tales-decomp/)</sub>
@@ -633,6 +634,4 @@
 - [**inFamous PC：面向 Windows 的 PlayStation 3 静态重编译移植版**](https://github.com/whompay/inFAMOUSreborn) - inFamous PC 使用 ps3recomp 静态重编译《inFamous》欧洲版 PlayStation 3 游戏的 PPU 和 SPU 代码，构建 Windows 原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous-pc-case/)</sub>
 - [**Infinite Undiscovery Recomp：Xbox 360 游戏的原生重编译**](https://github.com/doc-haz/infinite-undiscovery-recomp) - Infinite Undiscovery Recomp 是 Xbox 360 版 Infinite Undiscovery（2008）的 Windows x64 原生重编译，用 ReXGlue 和 XenonRecomp 构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infinite-undiscovery-recomp-case/)</sub>
 - [**Initial D Arcade Stage 3：NAOMI 2 游戏的实验性静态重编译**](https://github.com/distilledorion-sketch/Initial-D-Arcade-Stage-3-Native-SH-4-Recompilation-WIP-) - 这是 NAOMI 2 游戏《头文字 D 街机舞台 3》的实验性静态重编译，光盘编号 GDS-0033，面向 64 位 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/initial-d-arcade-stage-3/)</sub>
-- [**International Rally Championship：x86 转 C 原生重编译**](https://github.com/ericodeoliveira/international-rally-championship-recomp) - ircrecomp 将《International Rally Championship》的 RAL.EXE x86 函数静态转换为 C，再利用用户的 CD 镜像构建 64 位 Windows 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/international-rally-championship-recomp-case/)</sub>
-- [**iPod Click Wheel Recomps：静态重编译六款 iPod 游戏**](https://github.com/DogParty/iPodClickWheelRecomps) - iPod Click Wheel Recomps 把六款 iPod 点击轮游戏的 ARM 代码翻译成可以在当前硬件上构建的 C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ipod-clickwheel-recomps/)</sub>
 <!-- END GENERATED CASES -->

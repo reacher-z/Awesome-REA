@@ -585,3 +585,30 @@ This round adds five reconstruction cases and one decompilation tool: Ace Combat
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; OpenTower, Naruto, Porytiles and Time Crisis VR received Class 1 previews. The five new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, twenty-second batch — 2026-11-23
+
+This round adds five reconstruction cases and one packer-analysis tool: Resident Evil Outbreak Recompiled, WWE 2K14, Animal Crossing: City Folk, The Sims 2: Castaway, Silent Hill 4 for PS Vita and Magicmida-RS.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `re-outbreak-recomp` | `reconstruction-cases` | [RaccoonRecomp/ResidentEvilOutbreakRecompiled](https://github.com/RaccoonRecomp/ResidentEvilOutbreakRecompiled/blob/e0fcc5fb6e7e1011a6876824fa772ec5354a4534/README.md) | `fa7965021a5dcaa147d96483998b18280b5d4cdf2d8b8e6fc54d6e8427fcd4e9` |
+| `wwe2k14-recomp` | `reconstruction-cases` | [Jarrodfeng/wwe2k14-recomp](https://github.com/Jarrodfeng/wwe2k14-recomp/blob/de26df28d477c73ee58a258163f01dd666daba3d/README.md) | `95ff8874603b729f04cdfe7c2ee9407c310abfe06e19116ac9621ad9899436a4` |
+| `cf-decomp` | `reconstruction-cases` | [ACreTeam/cf-decomp](https://github.com/ACreTeam/cf-decomp/blob/ecef279ab1d55d74c40b0ad86c0964951495a9ca/README.md) | `591f200ac4c448155ee18b562f3a2e2de5bfc8990f13bca5762708aed9f5dea6` |
+| `sims2-castaway-decomp` | `reconstruction-cases` | [HaydnTrigg/Castaway](https://github.com/HaydnTrigg/Castaway/blob/f5c5dbcf2b4a20eb797b1aa6eb03f6cf09a4dbbe/README.md) | `13e10bb9ca631fce9e039dec0f3d9eb1c3ba7cd783c1e50bd95f14aecad7ceca` |
+| `magicmida-rs` | `native-analysis` | [guoxing2024/magicmida-rs](https://github.com/guoxing2024/magicmida-rs/blob/cc10f642e0d29ce68763f7b0e292ff751453df0b/README.md) | `d2b03c89585bcc76fa0ea46d3a4d7e7d7d4234da679d1967239ce03fab876de9` |
+| `sh4vita` | `reconstruction-cases` | [vallfrr/sh4vita](https://github.com/vallfrr/sh4vita/blob/386541b726538a50f2e3cdf48d5ac24b553d6239/README.md) | `0eabce9e2aa48aaaa4fd64513b46b3efab3392efccf53a21201e034e6dc6ef38` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| sp00nznet/snesrecomp | Record id already used by the stacked catalog; a new id would be needed before adding it. |
+| Vidanox/BanjoTooieRecompiled, hamishakl/LibertyRecomp | Near-duplicates of records already carried by other open PRs. |
+| Russian-Doom, EDGE-classic, chocolate-quake, woof | More Doom/Quake source ports deferred to avoid near-duplicate cases. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Resident Evil Outbreak Recompiled and Magicmida-RS received Class 1 previews. The five new case studies update the game case indexes and README case sections.
