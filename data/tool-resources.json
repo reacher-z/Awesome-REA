@@ -158964,5 +158964,179 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "space-station-14",
+    "name": "Space Station 14: a remake of Space Station 13 on the Robust Toolbox engine",
+    "url": "https://github.com/space-wizards/space-station-14",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "A remake of Space Station 13 running on Robust Toolbox, a homegrown C# engine, with a content pack plus client and server for hosting and extending the game.",
+    "description_zh": "在自研 C# 引擎 Robust Toolbox 上运行的《Space Station 13》重制版，包含内容包以及用于托管与扩展游戏的客户端与服务端。",
+    "evidence_url": "https://github.com/space-wizards/space-station-14/blob/6726d80a26a5e83bacc24b67561d16a2f5d7e000/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires .NET and the game content pack; the client and server run on Windows, Linux and macOS.",
+      "It is a remake of SS13 and does not reuse the original BYOND game, so content and rules differ.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "marathon-recomp",
+    "name": "Marathon Recompiled: a static recompilation of Sonic the Hedgehog (2006) for Xbox 360",
+    "url": "https://github.com/sonicnext-dev/MarathonRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An unofficial PC port of the Xbox 360 version of Sonic the Hedgehog (2006), created through static recompilation with XenonRecomp and XenosRecomp and supporting Windows, Linux and macOS.",
+    "description_zh": "《Sonic the Hedgehog（2006）》Xbox 360 版本的民间 PC 移植，通过 XenonRecomp 与 XenosRecomp 静态重编译，支持 Windows、Linux 与 macOS。",
+    "evidence_url": "https://github.com/sonicnext-dev/MarathonRecomp/blob/42831cdc572efe04fe30f8d86585fc9a61b7171f/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires files from a legally acquired copy of the game; the project ships no game assets.",
+      "It statically recompiles the original PowerPC and Xenos code, so compatibility depends on the game version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "nocturne-recomp",
+    "name": "NocturneRecomp: a static recompilation of Castlevania: Symphony of the Night",
+    "url": "https://github.com/birabittoh/NocturneRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of the Xbox Live Arcade version of Castlevania: Symphony of the Night for Windows, Linux, macOS and Android, built on the ReXGlue SDK with a host runtime for overlays and hooks.",
+    "description_zh": "《恶魔城：月下夜想曲》Xbox Live Arcade 版本的静态重编译，面向 Windows、Linux、macOS 与 Android，基于 ReXGlue SDK 并提供覆盖层与 hook 的宿主运行时。",
+    "evidence_url": "https://github.com/birabittoh/NocturneRecomp/blob/d409a67c6be29592e96524de038a03593c199e4b/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a legally dumped copy of the game; the project ships no copyrighted code or assets.",
+      "It converts the PowerPC default.xex to native code at build time, so compatibility depends on the game version.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "omnispeak",
+    "name": "Omnispeak: a reimplementation of Commander Keen 4, 5 and 6",
+    "url": "https://github.com/sulix/omnispeak",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "A pixel-perfect, bug-for-bug reimplementation of Commander Keen episodes 4, 5 and 6, compatible with DOS savegames and requiring files from the original games.",
+    "description_zh": "《Commander Keen》第 4、5、6 章的像素级、逐 bug 重实现，兼容 DOS 存档并要求原版游戏文件。",
+    "evidence_url": "https://github.com/sulix/omnispeak/blob/46cefb33b5f604448da9b81d67368aed82b4c3da/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires files from the original Keen 4, 5 or 6 EGA versions; binary downloads are linked from the project page.",
+      "Supported versions are Keen 4 v1.4, Keen 5 v1.4 and Keen 6 v1.4 or v1.5 EGA, and the project targets pixel-perfect behavior.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "heretic2r",
+    "name": "Heretic2R: a reverse-engineered source port of Heretic II",
+    "url": "https://github.com/m-x-d/Heretic2R",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A reverse-engineered source port of Heretic II with widescreen support, decoupled rendering, OGG music and bug fixes while preserving the original feel.",
+    "description_zh": "《Heretic II》的逆向源码移植，加入宽屏支持、渲染与网络包发送解耦、OGG 音乐与错误修复，同时保留原版手感。",
+    "evidence_url": "https://github.com/m-x-d/Heretic2R/blob/4d677156a458cfe03a5d5ddceb2e9a445bc39744/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Heretic II game data; the port can replace the original binaries or use the base game folder.",
+      "It is a reverse-engineered port and needs the original game data to run.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "open-realm",
+    "name": "OpenRealm: a Quake-style engine for Warcraft III and other Blizzard-era data",
+    "url": "https://github.com/corepunch/open-realm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "An open-source Quake-style engine and compatibility project for Blizzard-era game data, with Warcraft III as the primary playable target and StarCraft II and World of Warcraft as additional format and renderer targets.",
+    "description_zh": "面向暴雪时代游戏数据的开源 Quake 风格引擎与兼容项目：以《魔兽争霸 III》为主要可玩目标，并以《星际争霸 II》和《魔兽世界》作为额外的格式与渲染目标。",
+    "evidence_url": "https://github.com/corepunch/open-realm/blob/e357d117c949da41a7e81b664b23b4172f16bff9/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Blizzard game data; builds target Windows, Linux, macOS and iPad.",
+      "It is a compatibility project for game data formats and does not ship Blizzard assets.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

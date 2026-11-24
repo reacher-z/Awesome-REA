@@ -446,3 +446,31 @@ This round returns to the core of the catalog with six reconstruction cases from
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Shockolate, DOOM Retro and Open Fodder received Class 1 previews. All six are case studies, so the game case indexes and README case sections were regenerated.
+
+---
+
+# Backlog curation review, seventeenth batch — 2026-11-23
+
+This round adds six more reconstruction cases from the stored lead queue: Space Station 14, Marathon Recompiled (Sonic 2006), NocturneRecomp (Symphony of the Night), Omnispeak (Commander Keen), Heretic2R and OpenRealm (Warcraft III data).
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `space-station-14` | `reconstruction-cases` | [space-wizards/space-station-14](https://github.com/space-wizards/space-station-14/blob/6726d80a26a5e83bacc24b67561d16a2f5d7e000/README.md) | `bef20443fcf421b4a3179a9cb23afb3175e47a36f8b1b445cd5cad6528f0341a` |
+| `marathon-recomp` | `reconstruction-cases` | [sonicnext-dev/MarathonRecomp](https://github.com/sonicnext-dev/MarathonRecomp/blob/42831cdc572efe04fe30f8d86585fc9a61b7171f/README.md) | `8390b7bf1696853e5c2f872e1ae1a55339385b2652d6bde44477f2148f69c76a` |
+| `nocturne-recomp` | `reconstruction-cases` | [birabittoh/NocturneRecomp](https://github.com/birabittoh/NocturneRecomp/blob/d409a67c6be29592e96524de038a03593c199e4b/README.md) | `d4cd48fe34890b917df2aa6254801a2593ab96e1f53a11a53d39d3c4e9c99b75` |
+| `omnispeak` | `reconstruction-cases` | [sulix/omnispeak](https://github.com/sulix/omnispeak/blob/46cefb33b5f604448da9b81d67368aed82b4c3da/README.md) | `1b72590a42ef5990fe33eb6ca96dd4b73adf00c9e352ba6723b71952401aea45` |
+| `heretic2r` | `reconstruction-cases` | [m-x-d/Heretic2R](https://github.com/m-x-d/Heretic2R/blob/4d677156a458cfe03a5d5ddceb2e9a445bc39744/README.md) | `cd9ffd7ce75fdb15d16d2dc1c95da3a52f4db7c3bbfd153f5bbdbd266a3de535` |
+| `open-realm` | `reconstruction-cases` | [corepunch/open-realm](https://github.com/corepunch/open-realm/blob/e357d117c949da41a7e81b664b23b4172f16bff9/README.md) | `d943945aad3bd608b16e5c6c49150004dbcd21f0aaeb6a9470de27d769b86f0c` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| akarnokd/open-ig, AshfordFamily/recvx-decomp | Already covered by main-branch PRs #4253 and #4265; not duplicated in the stacked branch. |
+| ferrumc-rs/ferrumc | README declares the project is not actively maintained. |
+| zortos293/Lichii, sacrapy/HeyListen | Very experimental Switch 2 emulators/recomps; deferred. |
+| n64js, boytacean, binjgb, nestopia, stella, punes | More emulators deferred to keep this batch on reconstruction cases. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Marathon Recompiled and OpenRealm received Class 1 previews. All six are case studies, so the game case indexes and README case sections were regenerated.

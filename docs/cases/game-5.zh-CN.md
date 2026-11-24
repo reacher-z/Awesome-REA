@@ -6,10 +6,17 @@
 
 [English](game-5.md)
 
-**371 个案例**
+**378 个案例**
 
 ## 引擎重实现
 
+- [**The Force Engine：为《Dark Forces》重建 Jedi Engine**](https://github.com/TheForceEngine/TheForceEngine) - The Force Engine 重建 Jedi Engine，利用用户的原版游戏在现代系统上运行《Star Wars: Dark Forces》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/the-force-engine-case/)</sub>
+- [**The Forgotten Server：开源 Tibia 服务器模拟器**](https://github.com/otland/forgottenserver) - 用 C++ 编写的开源 Tibia MMORPG 服务器模拟器，源自 OpenTibia Server，支持脚本、数据库与 Docker 镜像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/forgottenserver/)</sub>
+- [**The Hobbit：重建游戏图形引擎**](https://github.com/richcarl/hobbitgfx) - hobbitgfx 用 JavaScript 实现 Melbourne House 于 1982 年推出的文字冒险游戏《The Hobbit》的图形引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hobbitgfx-case/)</sub>
+- [**The Oracles Project：大地之章与时空之章的宽屏移植**](https://github.com/thibautbus/top) - 对《塞尔达传说：大地之章》与《时空之章》的忠实可 mod 移植：运行玩家自备的未修改 ROM，并支持宽屏、道具快捷键、Lua mod 与 RetroAchievements。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oracles-project/)</sub>
+- [**Thirdeye：重实现 Eye of the Beholder 3 与 Dungeon Hack 的 AESOP 引擎**](https://github.com/psi29a/thirdeye) - Thirdeye 以 C++ 重实现 AESOP/16 与 AESOP/32 引擎，读取原版 RES 文件并运行未修改的字节码，以支持 Eye of the Beholder 3 和 Dungeon Hack。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thirdeye-aesop-engine-case/)</sub>
+- [**Thyme《将军》引擎重实现**](https://github.com/TheAssemblyArmada/Thyme) - Thyme 是《命令与征服：将军之绝命时刻》的开源重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thyme/)</sub>
+- [**Tidewater：从零用 Rust 重写《魔兽争霸 II》引擎**](https://github.com/nlwstein/tidewater) - Tidewater 从零用 Rust 重写《魔兽争霸 II：战网版》引擎（含《黑暗之门》资料片），运行在你已拥有的游戏文件上：两个战役、自定义游戏、早期局域网对战、菜单、简报、存档、音效、音乐与视频均已实现，README 将状态记录为早期但可玩。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tidewater-warcraft2-case/)</sub>
 - [**TM2020-Sim：扩展 Trackmania 物理模拟**](https://github.com/Speedstu/TM2020-Sim-V1) - TM2020-Sim 在 Gearbox 的 Trackmania 物理与资源加载代码上构建无界面模拟器和 C++、Rust SDK，增加并行环境、回放分析、驾驶控制研究及本地游戏对照工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tm2020-sim-trackmania-case/)</sub>
 - [**TOD Tools：重建 Total Overdose 与 Kapow Engine**](https://github.com/Michael0ne/TOD_tools) - TOD Tools 用 C++ 重建 Total Overdose 及 Kapow Engine 的代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tod-tools-case/)</sub>
 - [**Torchlight Rekindled：重建 Xbox 360 版逻辑的跨平台引擎**](https://github.com/GreenSwampDweller/torchlight-rekindled) - Torchlight Rekindled 为 2009 年游戏《火炬之光》实现新引擎，游戏逻辑参照 Xbox 360 版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/torchlight-rekindled-case/)</sub>

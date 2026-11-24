@@ -44994,5 +44994,53 @@
       "它模拟游戏服务器，兼容性取决于客户端版本与 shard 配置。",
       "采用 GPL-2.0 许可证。"
     ]
+  },
+  "space-station-14": {
+    "name": "Space Station 14：基于 Robust Toolbox 的 SS13 重制版",
+    "requirements": [
+      "需要 .NET 与游戏内容包；客户端与服务端可在 Windows、Linux 与 macOS 运行。",
+      "它是 SS13 的重制版，不复用原版 BYOND 游戏，因此内容与规则不同。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "marathon-recomp": {
+    "name": "Marathon Recompiled：Sonic the Hedgehog（2006）Xbox 360 静态重编译",
+    "requirements": [
+      "需要合法取得的游戏文件；项目不分发游戏资源。",
+      "它静态重编译原版 PowerPC 与 Xenos 代码，兼容性取决于游戏版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "nocturne-recomp": {
+    "name": "NocturneRecomp：恶魔城月下夜想曲静态重编译",
+    "requirements": [
+      "需要合法转储的游戏副本；项目不分发受版权保护的代码或资源。",
+      "它在构建时把 PowerPC default.xex 转换为原生代码，兼容性取决于游戏版本。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "omnispeak": {
+    "name": "Omnispeak：Commander Keen 4、5、6 的重实现",
+    "requirements": [
+      "需要原版 Keen 4、5 或 6 EGA 版本的文件；项目页面提供二进制下载。",
+      "支持 Keen 4 v1.4、Keen 5 v1.4 与 Keen 6 v1.4/v1.5 EGA，目标为像素级一致行为。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "heretic2r": {
+    "name": "Heretic2R：Heretic II 逆向源码移植",
+    "requirements": [
+      "需要 Heretic II 游戏数据；移植版可替换原版二进制或使用游戏 base 目录。",
+      "它是逆向工程移植，运行需要原版游戏数据。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "open-realm": {
+    "name": "OpenRealm：面向魔兽争霸 III 等暴雪数据的 Quake 风格引擎",
+    "requirements": [
+      "需要原版暴雪游戏数据；构建覆盖 Windows、Linux、macOS 与 iPad。",
+      "它是游戏数据格式兼容项目，不分发暴雪资源。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

@@ -6,7 +6,7 @@
 
 [English](game-3.md)
 
-**612 个案例**
+**611 个案例**
 
 ## 静态重编译
 
@@ -40,6 +40,7 @@
 - [**Luigi's Mansion：《Luigi’s Mansion》GameCube 静态重编译与启动分析**](https://github.com/sp00nznet/luigismansion) - Luigi's Mansion 项目使用 gcrecomp 将 GameCube 游戏的 PowerPC DOL 转换为 C++，并提供具备 DOL 加载、符号导入和 GameCube OS 替代实现的 Windows 运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/luigis-mansion-recomp-case/)</sub>
 - [**Luigi's Mansion：静态重编译版本的 PS5 移植**](https://github.com/leafyjerk/PS5_LuigisMansion) - Luigi's Mansion for the PlayStation 5 将 GameCube 游戏已有的静态重编译版本移植到 PS5 自制软件环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/luigis-mansion-ps5-port-case/)</sub>
 - [**Mabecs International Superstar Soccer 2000：支持三个版本的 N64 静态重编译**](https://github.com/Mabec-games/iss2000-recomp) - Mabecs International Superstar Soccer 2000 使用 N64Recomp、N64ModernRuntime 和 RT64，将三个 N64 版本转换为 Windows 与 Linux 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/iss2000-recomp-case/)</sub>
+- [**Marathon Recompiled：Sonic the Hedgehog（2006）Xbox 360 静态重编译**](https://github.com/sonicnext-dev/MarathonRecomp) - 《Sonic the Hedgehog（2006）》Xbox 360 版本的民间 PC 移植，通过 XenonRecomp 与 XenosRecomp 静态重编译，支持 Windows、Linux 与 macOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/marathon-recomp/)</sub>
 - [**Marble Knights Recompiled：《Marble Knights》iOS 版的静态重编译移植**](https://github.com/YuutaTsubasa/MarbleKnightsRecompiled) - Marble Knights Recompiled 将《Marble Knights》iOS 版 UnityFramework 中的 ARM64 函数预先转成 C，再编译为供 Unity 2019.4.17f1 Windows 播放器加载的 GameAssembly.dll。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/marble-knights-recompiled-case/)</sub>
 - [**Marchwind 64：静态重编译《超级机器人大战 64》**](https://github.com/dyzz/srw64-recomp) - Marchwind 64 是 1999 年任天堂 64 游戏《超级机器人大战64》的原生重编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/srw64-recomp/)</sub>
 - [**Mario Kart 64：通过 N64 静态重编译实现原生移植**](https://github.com/arefdsg/MK64Recomp) - Mario Kart 64: Recompiled 使用 N64: Recompiled 将 Mario Kart 64 制作成原生移植版，并由 RT64 提供渲染及图形增强。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-kart-64-recompiled-case/)</sub>
@@ -120,6 +121,7 @@
 - [**Nightmare Creatures II：PlayStation 游戏本地重编译套件**](https://github.com/alexbeavs-ps1-ports/nightmare-creatures-ii-recomp) - Nightmare Creatures II 为美版 PlayStation 游戏提供专用 psxrecomp 构建套件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nightmare-creatures-ii-recomp-case/)</sub>
 - [**Ninja Gaiden II Recompiled：《忍者龙剑传 II》Xbox 360 版的原生移植**](https://github.com/gamboozino/ng2recomp) - Ninja Gaiden II Recompiled 是 Xbox 360 版《忍者龙剑传 II》（2008）的 Linux 和 Windows 原生构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ng2recomp-case/)</sub>
 - [**Noble Archimedes：将《恶魔城 暗黑诅咒》重编译至 PC**](https://github.com/sergiomanzur/noble-archimedes) - Noble Archimedes 重编译《Castlevania: Curse of Darkness》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/noble-archimedes/)</sub>
+- [**NocturneRecomp：恶魔城月下夜想曲静态重编译**](https://github.com/birabittoh/NocturneRecomp) - 《恶魔城：月下夜想曲》Xbox Live Arcade 版本的静态重编译，面向 Windows、Linux、macOS 与 Android，基于 ReXGlue SDK 并提供覆盖层与 hook 的宿主运行时。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nocturne-recomp/)</sub>
 - [**NosCore.ClientLab：将 NosTale 客户端静态重编译用于浏览器测试**](https://github.com/NosCoreIO/NosCore.ClientLab) - NosCore.ClientLab 将用户自行提供的 NosTale Windows 客户端由 x86 静态重编译为 C 和 WebAssembly，以便在浏览器中对 NosCore 服务器进行自动化测试。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/noscore-clientlab-case/)</sub>
 - [**NSMB Wii Multiplayer Recompilation：《新超级马力欧兄弟 Wii》原生移植**](https://github.com/WitherBlitz/NSMB-Wii-Multiplayer-Recompilation) - NSMB Wii Multiplayer Recompilation 是用 WiiCompiled 静态重编译做成的《新超级马力欧兄弟 Wii》原生移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nsmb-wii-multiplayer-recomp-case/)</sub>
 - [**NSMBWiicompiled：New Super Mario Bros. Wii 的 Windows 静态重编译**](https://github.com/ral1009/NSMBWiicompiled) - NSMBWiicompiled 通过静态重编译将 New Super Mario Bros. Wii 的 PAL Rev 1 版本转换为 Windows 原生游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nsmbwiicompiled-case/)</sub>
@@ -587,6 +589,7 @@
 - [**HarkinianPad：基于 Ship of Harkinian 的《塞尔达传说：时之笛》iOS 移植版**](https://github.com/chrissotraidis/harkinianpad) - HarkinianPad 将《塞尔达传说：时之笛》的 Ship of Harkinian 源代码移植版适配到 iPhone 和 iPad，加入 Metal 渲染、触屏操作及手柄支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harkinianpad-case/)</sub>
 - [**Harvest：反编译并移植 Massive Encounter**](https://github.com/banteg/harvest) - Harvest 重建 Harvest: Massive Encounter Linux amd64 1.18 版的 C++ 源码，并将恢复的游戏及引擎代码移植到桌面和网页平台。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harvest-massive-encounter-case/)</sub>
 - [**Heretic2：将重建的游戏代码适配到 Yamagi Quake II**](https://github.com/0lvin/heretic2) - Heretic2 将早期重建项目中的《Heretic 2》游戏代码适配到定制的 Yamagi Quake II Remaster 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heretic2-yamagi-reconstruction-case/)</sub>
+- [**Heretic2R：Heretic II 逆向源码移植**](https://github.com/m-x-d/Heretic2R) - 《Heretic II》的逆向源码移植，加入宽屏支持、渲染与网络包发送解耦、OGG 音乐与错误修复，同时保留原版手感。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heretic2r/)</sub>
 - [**HK: Dual Souls：《Hollow Knight》的 AYN Thor 双屏移植**](https://github.com/igawa6/dualsouls) - HK: Dual Souls 用用户自有的 GOG 或 Steam 版《Hollow Knight》v1.5.12620 数据，在 AYN Thor Android 掌机上重建同版本 Unity 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dual-souls-case/)</sub>
 - [**Hunters Recomp：双屏 Android《Metroid Prime Hunters》移植版**](https://github.com/aabrole/HuntersRecomp) - Hunters Recomp 将《Metroid Prime Hunters》的静态重编译版本适配到 AYN Thor 双屏 Android 设备。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hunters-recomp-case/)</sub>
 - [**Ice Rage：面向 Linux ARM 掌机的 Android 原生库移植版**](https://github.com/EapRules/icerage-native-arm) - Ice Rage 通过 bionic ELF 加载器在 Linux ARM 掌机上运行：加载器映射游戏的 Android armeabi-v7a 库，并补齐所需的 Android 接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ice-rage-arm-port-case/)</sub>
@@ -621,8 +624,4 @@
 - [**Mario Kart Wii 3DS：从玩家光盘构建的原生移植版**](https://github.com/MiniBandit/MKW-3DS) - Mario Kart Wii 3DS 延续该游戏的 Nintendo 3DS 原生移植项目，从玩家的美版光盘镜像构建可安装的 CIA。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mkw-3ds-case/)</sub>
 - [**MaskPad：移植至 iPhone 和 iPad 的《Majora's Mask》**](https://github.com/chrissotraidis/maskpad) - MaskPad 将 2 Ship 2 Harkinian 的《Majora's Mask》源码移植版改造成 iPhone 和 iPad 原生应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/maskpad-case/)</sub>
 - [**Max Payne Mobile：Android 二进制程序移植至 Switch**](https://github.com/fgsfdsfgs/max_nx) - 该项目通过加载并修补原版 AArch64 共享库，使 Android 版《Max Payne Mobile》在 Nintendo Switch 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/max-payne-mobile-switch-port-case/)</sub>
-- [**max\_vita：将《Max Payne Mobile》Android 二进制文件移植到 PS Vita**](https://github.com/fgsfdsfgs/max_vita) - max\_vita 将 Android 版《Max Payne Mobile》移植到 PS Vita：加载并修补用户提供的原始游戏二进制文件，通过精简的 Android 兼容环境，以及图形、音频和游戏行为兼容钩子运行游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/max-vita-case/)</sub>
-- [**MDK in C# and SDL3：重建 1997 年游戏**](https://github.com/nautilusbits/mdk-sdl) - MDK in C# and SDL3 根据 MDKD3D.EXE 及原游戏数据重建 1997 年 MDK 的格式和行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mdk-sdl-case/)</sub>
-- [**MDK in Godot：基于游戏数据与可执行文件分析的移植**](https://github.com/nautilusbits/mdk-godot) - MDK in Godot 依据原版数据文件及 MDKD3D.EXE 的分析，将 1997 年游戏 MDK 移植到 Godot 4.7。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mdk-godot-case/)</sub>
-- [**MechWarrior SDL port：以 C17 重建 1989 年游戏**](https://github.com/Elthial/Mechwarrior-sdl-port) - MechWarrior SDL port 用 C17 和 SDL3 为 Windows x64 重建 1989 年游戏的战役与战斗系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mechwarrior-sdl-port-case/)</sub>
 <!-- END GENERATED CASES -->
