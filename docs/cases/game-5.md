@@ -6,10 +6,16 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**421 case studies**
+**427 case studies**
 
 ## Engine reimplementations
 
+- [**RTAGlass: a Windows reimplementation of Road Trip**](https://github.com/RTAGlass/RTAGlass) - RTAGlass reimplements the PS2 game Road Trip as a C++ Windows port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rtaglass-case/)</sub>
+- [**Rugrats: Search for Reptar: a Rust reconstruction of the PlayStation game**](https://github.com/Toyz/rugrats) - rugrats reconstructs the North American PlayStation game Rugrats: Search for Reptar as a native Rust PC game using data read from the player's own disc. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rugrats-search-for-reptar-case/)</sub>
+- [**rust-theft-auto: reimplementing the original Grand Theft Auto engine**](https://github.com/gaudecker/rust-theft-auto) - rust-theft-auto reimplements the original Grand Theft Auto engine in Rust using map and style files from a player's installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rust-theft-auto-case/)</sub>
+- [**Rusty MCLA: rebuilding Midnight Club: Los Angeles in Rust**](https://github.com/holdmysocks/rusty-mcla) - Rusty MCLA rebuilds Midnight Club: Los Angeles Complete Edition as a Rust game engine for Windows using data prepared from the user's Xbox 360 disc image. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/rusty-mcla-midnight-club-los-angeles-case/)</sub>
+- [**RustyWorld: a Rust reimplementation of the Another World engine**](https://github.com/EdMcBane/rustyworld) - RustyWorld reimplements the Another World game engine in Rust and runs on the user's original data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rustyworld-case/)</sub>
+- [**sacengine: reimplementing the Sacrifice game engine**](https://github.com/tg-2/sacengine) - sacengine reimplements the engine of Sacrifice, the game by Shiny Entertainment. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sacengine/)</sub>
 - [**San Andreas Unity: a GTA San Andreas engine reimplementation in Unity**](https://github.com/in0finite/SanAndreasUnity) - Reimplements the Grand Theft Auto: San Andreas engine in Unity (C#), loading the archives, RenderWare models and textures, collision, animations, audio, text and item definitions from the user’s own PC installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/san-andreas-unity-engine-case/)</sub>
 - [**Sarien: a portable reimplementation of Sierra's AGI interpreter**](https://sourceforge.net/projects/sarien/) - Sarien reimplements Sierra On-Line's Adventure Game Interpreter (AGI) in C so that AGI games such as Leisure Suit Larry, King's Quest II and Mixed-Up Mother Goose run across many platforms. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sarien-agi-interpreter-case/)</sub>
 - [**Scion: reimplementing the SimCity 4 Gonzo/Rizzo framework**](https://github.com/nsgomez/scion) - Scion is a reference implementation of the Gonzo/Rizzo framework used by Maxis. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/scion-maxis/)</sub>

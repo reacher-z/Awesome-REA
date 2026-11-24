@@ -6,10 +6,15 @@
 
 [English](game-4.md)
 
-**629 个案例**
+**628 个案例**
 
 ## 基于重建源码的移植
 
+- [**Halo CE on RG35XX H：将《光环：战斗进化》移植到 H700 掌机**](https://github.com/kirklandsig/halo-ce-anbernic-rg35xx) - 这是《光环：战斗进化》反编译 OpenCE 到 Anbernic RG35XX H 和其他带 Mali-G31 的全志 H700 掌机的原生 ARM64 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo-ce-rg35xx/)</sub>
+- [**Halo: Combat Evolved：基于反编译代码的 PS Vita 移植**](https://github.com/BirchWoodGod/halo-ce-vita) - Halo CE Vita 将重建的 Xbox《Halo: Combat Evolved》游戏代码编译至 PS Vita 的 ARM 处理器，并把 Direct3D 渲染适配至 Vita GPU。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo-ce-vita-case/)</sub>
+- [**HarkinianPad：基于 Ship of Harkinian 的《塞尔达传说：时之笛》iOS 移植版**](https://github.com/chrissotraidis/harkinianpad) - HarkinianPad 将《塞尔达传说：时之笛》的 Ship of Harkinian 源代码移植版适配到 iPhone 和 iPad，加入 Metal 渲染、触屏操作及手柄支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harkinianpad-case/)</sub>
+- [**Harvest：反编译并移植 Massive Encounter**](https://github.com/banteg/harvest) - Harvest 重建 Harvest: Massive Encounter Linux amd64 1.18 版的 C++ 源码，并将恢复的游戏及引擎代码移植到桌面和网页平台。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harvest-massive-encounter-case/)</sub>
+- [**Heretic2：将重建的游戏代码适配到 Yamagi Quake II**](https://github.com/0lvin/heretic2) - Heretic2 将早期重建项目中的《Heretic 2》游戏代码适配到定制的 Yamagi Quake II Remaster 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heretic2-yamagi-reconstruction-case/)</sub>
 - [**Heretic2R：Heretic II 逆向源码移植**](https://github.com/m-x-d/Heretic2R) - 《Heretic II》的逆向源码移植，加入宽屏支持、渲染与网络包发送解耦、OGG 音乐与错误修复，同时保留原版手感。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heretic2r/)</sub>
 - [**HK: Dual Souls：《Hollow Knight》的 AYN Thor 双屏移植**](https://github.com/igawa6/dualsouls) - HK: Dual Souls 用用户自有的 GOG 或 Steam 版《Hollow Knight》v1.5.12620 数据，在 AYN Thor Android 掌机上重建同版本 Unity 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dual-souls-case/)</sub>
 - [**Hunters Recomp：双屏 Android《Metroid Prime Hunters》移植版**](https://github.com/aabrole/HuntersRecomp) - Hunters Recomp 将《Metroid Prime Hunters》的静态重编译版本适配到 AYN Thor 双屏 Android 设备。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hunters-recomp-case/)</sub>
@@ -636,10 +641,4 @@
 - [**Rollerbot：面向 Android 与 Linux 的游戏运行环境重建**](https://github.com/sirbilliams/Rollerbot-Android) - Rollerbot-Android 根据原版脚本和用户提供的资源，为 2000 年游戏 Rollerbot: A Time Journey 重建 Android 与 Linux 运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rollerbot-android-case/)</sub>
 - [**Rook：重建 Roblox 引擎**](https://github.com/AsyncFinn/rook) - Rook 用 Rust 重建兼容 Roblox 的引擎，让用户提供的 place 文件可在 Roblox 之外运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rook-roblox-engine-case/)</sub>
 - [**rrt2-decomp：《Railroad Tycoon II》的 Rust 重实现**](https://github.com/pedryvo/rrt2-decomp) - rrt2-decomp 研究《Railroad Tycoon II Platinum》的可执行文件、游戏数据和模拟规则，并用 Rust 重实现游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rrt2-decomp-case/)</sub>
-- [**RTAGlass：Road Trip 的 Windows 重实现**](https://github.com/RTAGlass/RTAGlass) - RTAGlass 将 PS2 游戏 Road Trip 重实现为 C++ Windows 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rtaglass-case/)</sub>
-- [**Rugrats: Search for Reptar：PS 游戏的 Rust 重建**](https://github.com/Toyz/rugrats) - rugrats 将美版 PS 游戏《淘气小兵兵：寻找雷普塔》重建为原生 Rust PC 游戏，从玩家自己的光盘读取数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rugrats-search-for-reptar-case/)</sub>
-- [**rust-theft-auto：重建初代 Grand Theft Auto 引擎**](https://github.com/gaudecker/rust-theft-auto) - rust-theft-auto 使用玩家安装目录中的地图和样式文件，以 Rust 重建初代 Grand Theft Auto 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rust-theft-auto-case/)</sub>
-- [**Rusty MCLA：以 Rust 重建《Midnight Club: Los Angeles》**](https://github.com/holdmysocks/rusty-mcla) - Rusty MCLA 以 Rust 重建《Midnight Club: Los Angeles Complete Edition》的 Windows 游戏引擎，数据由用户的 Xbox 360 光盘镜像生成。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/rusty-mcla-midnight-club-los-angeles-case/)</sub>
-- [**RustyWorld：用 Rust 重建 Another World 引擎**](https://github.com/EdMcBane/rustyworld) - RustyWorld 用 Rust 重建 Another World 游戏引擎，读取用户提供的原版数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rustyworld-case/)</sub>
-- [**sacengine：重实现《Sacrifice》游戏引擎**](https://github.com/tg-2/sacengine) - sacengine 重实现 Shiny Entertainment 的游戏 Sacrifice 的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sacengine/)</sub>
 <!-- END GENERATED CASES -->

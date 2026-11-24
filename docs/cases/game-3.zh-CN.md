@@ -6,10 +6,12 @@
 
 [English](game-3.md)
 
-**610 个案例**
+**609 个案例**
 
 ## 静态重编译
 
+- [**Hybrid Heaven：通过 N64 静态重编译实现原生移植**](https://github.com/ogdanimal/HybridHeaven-Recomp) - Hybrid Heaven: Recompiled 使用 N64: Recompiled 静态重编译游戏代码，将 N64 游戏移植到 Windows、Linux 和 Android，并通过 N64ModernRuntime 与 RT64 运行和渲染；游戏数据由用户自备的美版零售 ROM 提供。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hybrid-heaven-recompiled-case/)</sub>
+- [**Hybrid Heaven: Recompiled：N64 游戏原生移植**](https://github.com/danielgomesvieira2000/hybrid-heaven-recomp) - Hybrid Heaven: Recompiled 使用 N64Recomp 将美版 Hybrid Heaven 静态重编译为 Windows 和 Linux 程序，加入针对该游戏的代码加载、宽屏显示和控制器支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hybrid-heaven-n64-port-case/)</sub>
 - [**HydroThunderPORT：将《Hydro Thunder Hurricane》重编译到 PC**](https://github.com/monscriser/HydroThunderPORT) - 这是《Hydro Thunder Hurricane》的 Windows 和 Linux 移植，发布版 BETA 1.1（1.1.0），有 Standard 和 PGO 两种构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hydro-thunder-port/)</sub>
 - [**I COULD HAVE GIVEN YOU THE WORLD：《007：黑日危机》N64 游戏本机移植**](https://github.com/riseio/TWIPE_00Sheven) - I COULD HAVE GIVEN YOU THE WORLD 将 N64《007：黑日危机》移植到 PC 和 Steam Deck。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/i-could-have-given-you-the-world-case/)</sub>
 - [**Imabikisō：实验性 PS3 至 PC 静态重编译**](https://github.com/yasindevs/imabikisou-pc) - Imabikisō 使用 ps3recomp 将本地生成的 PS3 游戏代码作为 Windows 程序运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/imabikiso-pc-recompilation-case/)</sub>
@@ -343,6 +345,7 @@
 - [**Splinter Cell: Double Agent：为 Windows 静态重编译 Xbox 游戏**](https://github.com/TGP482/SCDA-XBERecomp) - 这是原版 Xbox 游戏《细胞分裂：双重间谍》的 Windows 本地移植，使用 Xbox XBE Recomp 制作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scda-xbe-recomp/)</sub>
 - [**split2-recomp：将《TimeSplitters 2》静态重编译至 PC**](https://github.com/phobos665/split2-recomp) - split2-recomp 把初代 Xbox 的《时空分裂者 2》重建为 Windows、macOS 和 Linux（包括 SteamOS 和 Steam Deck）上的原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/split2-recomp-case/)</sub>
 - [**SPR Recomp：Splatoon Raiders 的 Windows 静态重编译**](https://github.com/Elie-0066/SPR-Recomp-Project) - 把 Nintendo Switch 2 游戏《Splatoon Raiders》静态重编译为原生 Windows x86-64 可执行文件并使用 Vulkan 渲染的民间项目，源自 DKB Recomp 与 TotK Recomp。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/spr-recomp/)</sub>
+- [**SSARecomp：小龙斯派罗：斯派罗的冒险原生 Windows 移植**](https://github.com/tsapZ/SSARecomp) - 通过静态重编译把 Xbox 360 版《小龙斯派罗：斯派罗的冒险》（2011）移植为原生 Windows 游戏，支持真实传送门与手办或完全不使用、手柄及其他选项。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssa-recomp/)</sub>
 - [**ssbu-recomp：明确玩法边界的静态重编译**](https://github.com/Denkishi/ssbu-recomp) - 将 Super Smash Bros. Ultimate 13.0.4 的 AArch64 代码提前转换，并提供带 Vulkan/OpenGL 渲染的 Windows 运行时。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssbu-recomp-case/)</sub>
 - [**ssrecomp：《宝可梦：魂银》的单屏静态重编译**](https://github.com/ClickingMaster/ssrecomp) - ssrecomp 将《宝可梦：魂银》的 ARM9 代码静态翻译为 C++，并以修改后的 melonDS 核心提供 Nintendo DS 硬件功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssrecomp-pokemon-soulsilver-case/)</sub>
 - [**SSX 3：将 PS2 游戏静态重编译为 Rust**](https://github.com/andersfischernielsen/ssx3-decomp) - 这是 PlayStation 2 美版 SSX 3（SLUS\_207.72）的 Rust 原生移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssx3-decomp/)</sub>
@@ -433,6 +436,7 @@
 - [**Unleashed Recompiled for Android：《索尼克 世界冒险》移植**](https://github.com/SansNope/UnleashedRecomp-Android) - 这是《索尼克 世界冒险》Xbox 360 版 Unleashed Recompiled 的 Android 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/unleashed-recomp-android/)</sub>
 - [**Unleashed Recompiled：转换 Xbox 360 游戏代码与着色器**](https://github.com/hedge-dev/UnleashedRecomp) - 使用 XenonRecomp 静态重编译 Xbox 360 PowerPC 代码，并用 XenosRecomp 转换 Xenos 着色器，构建非官方 Sonic Unleashed PC 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/unleashed-recompiled-case/)</sub>
 - [**Unreal Championship 2：Xbox 游戏的 Windows 静态重编译**](https://github.com/ClydeyEXE/uc2-recomp) - Unreal Championship 2 项目使用 xboxrecomp，将用户自己的 Xbox 游戏 ISO 镜像中的代码静态重编译为 Windows 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/unreal-championship-2-recomp-case/)</sub>
+- [**Unwiished Recomp：索尼克释放（Wii）原生 PC 移植**](https://github.com/K-r0zen/Unwiished-Recomp) - 通过静态重编译把 Wii 版《索尼克：释放》移植为原生 PC 游戏的民间项目，支持键盘与手柄、稳定 60 fps 与高分辨率。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/unwiished-recomp/)</sub>
 - [**Urban Reign PC Port：PS2 游戏静态重编译移植**](https://github.com/thiagordsfx/urban-reign-recomp) - Urban Reign PC Port 将美版 PS2 游戏代码转换为 C++，构建 Windows 和 Linux 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/urban-reign-pc-port-case/)</sub>
 - [**Vagrant Story Recompiled：从用户光盘本地构建的 PSXRecomp 移植版**](https://github.com/riotashley81-jpg/vagrantstory_recomp) - Vagrant Story Recompiled 使用 psxrecomp 为美版 PlayStation《放浪冒险谭》构建原生 PC 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vagrant-story-recompiled-case/)</sub>
 - [**ValkyrieRecomp：《Valkyrie Profile》PlayStation 版静态重编译**](https://github.com/Ed1z19/ValkyrieRecomp) - ValkyrieRecomp 配置 PSXRecomp，从用户提供的《Valkyrie Profile》美版 PlayStation 光盘生成 PC 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/valkyrie-profile-recomp-case/)</sub>
@@ -618,9 +622,4 @@
 - [**HALBERD：《Kirby 64》的 PC 移植版**](https://github.com/JR3DFUL/HALBERD) - HALBERD 将《Kirby 64: The Crystal Shards》的反编译代码移植到 PC，使用 libultraship 处理渲染和输入、Torch 从用户的 N64 ROM 提取资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halberd-kirby-64-port-case/)</sub>
 - [**Halo 2：Xbox 游戏机制重建与原生移植**](https://github.com/TheRunaway5/Halo-2-Decompiled) - 这个 C++20 原生移植项目以原版 Xbox《Halo 2》TU1.5 的游戏机制和画面为目标，结合可执行文件研究、源码比对和本地资源导入开展开发。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo-2-native-port-case/)</sub>
 - [**Halo CE Decomp Remix：VR、PC 与 Android 移植**](https://github.com/moistman42069/HaloCE-DecompRemix-VR-PC-Android) - 基于 Xbox 版《Halo: Combat Evolved》的反编译成果，制作独立 VR 头显、Windows PC 和 Android 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo-ce-decomp-remix-vr-case/)</sub>
-- [**Halo CE on RG35XX H：将《光环：战斗进化》移植到 H700 掌机**](https://github.com/kirklandsig/halo-ce-anbernic-rg35xx) - 这是《光环：战斗进化》反编译 OpenCE 到 Anbernic RG35XX H 和其他带 Mali-G31 的全志 H700 掌机的原生 ARM64 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo-ce-rg35xx/)</sub>
-- [**Halo: Combat Evolved：基于反编译代码的 PS Vita 移植**](https://github.com/BirchWoodGod/halo-ce-vita) - Halo CE Vita 将重建的 Xbox《Halo: Combat Evolved》游戏代码编译至 PS Vita 的 ARM 处理器，并把 Direct3D 渲染适配至 Vita GPU。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo-ce-vita-case/)</sub>
-- [**HarkinianPad：基于 Ship of Harkinian 的《塞尔达传说：时之笛》iOS 移植版**](https://github.com/chrissotraidis/harkinianpad) - HarkinianPad 将《塞尔达传说：时之笛》的 Ship of Harkinian 源代码移植版适配到 iPhone 和 iPad，加入 Metal 渲染、触屏操作及手柄支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harkinianpad-case/)</sub>
-- [**Harvest：反编译并移植 Massive Encounter**](https://github.com/banteg/harvest) - Harvest 重建 Harvest: Massive Encounter Linux amd64 1.18 版的 C++ 源码，并将恢复的游戏及引擎代码移植到桌面和网页平台。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harvest-massive-encounter-case/)</sub>
-- [**Heretic2：将重建的游戏代码适配到 Yamagi Quake II**](https://github.com/0lvin/heretic2) - Heretic2 将早期重建项目中的《Heretic 2》游戏代码适配到定制的 Yamagi Quake II Remaster 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heretic2-yamagi-reconstruction-case/)</sub>
 <!-- END GENERATED CASES -->

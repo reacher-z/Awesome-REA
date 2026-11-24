@@ -747,3 +747,30 @@ This round adds one toolchain decompilation and five reconstruction cases: mwepp
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Stunt Race FX, Time Crisis II VR and GTA Stories Recompiled received Class 1 previews. The five new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, twenty-eighth batch — 2026-11-24
+
+This round adds two recompilation libraries and four reconstruction cases: pcrecomp, snesrecomp, Castlevania: Legacy of Darkness, Link’s Awakening (Switch), Skylanders: Spyro’s Adventure and Sonic Unleashed (Wii).
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `pcrecomp` | `native-analysis` | [sp00nznet/pcrecomp](https://github.com/sp00nznet/pcrecomp/blob/7c07a0b42059b6dc4313d9b4ebded6f7a72db8f3/README.md) | `b2e0a6c91db082fe6246358f5d368d34798bbada0b5b4702cc60b3aea8824b8c` |
+| `sp00nznet-snesrecomp` | `game-analysis` | [sp00nznet/snesrecomp](https://github.com/sp00nznet/snesrecomp/blob/03bf6178ed0569d76fe7cd1e456bc3b3974b2533/README.md) | `73b425f9195bd9ce550a31e3d5df19b78434e4b261d121ac11ed11b0f5ae5eb2` |
+| `cvlod-recomp` | `reconstruction-cases` | [fliperama86/cvlod_recomp](https://github.com/fliperama86/cvlod_recomp/blob/60b40b5561c73389d4e5c317749deab601f32644/README.md) | `adc5ad49e6b6fe9dc55452a5f01265a1b4712fac3f87c26edc654b65413ac531` |
+| `las-decomp` | `reconstruction-cases` | [Owen-Splat/las-decomp](https://github.com/Owen-Splat/las-decomp/blob/72cbe70e1319a369a5a5cb06fc864913e44fe069/README.md) | `f165d30e49bf2c6180e0f424bcb0696ae02b7cb18d4dc48f154595bb600d3eb6` |
+| `ssa-recomp` | `reconstruction-cases` | [tsapZ/SSARecomp](https://github.com/tsapZ/SSARecomp/blob/35dfceb782b5e7716ff99530ff77b5be953b0f59/README.md) | `fceb2b4c9ed1c7969701bdb81f3b7c23b8a67525bd1cf8593ca2ed971a58926c` |
+| `unwiished-recomp` | `reconstruction-cases` | [K-r0zen/Unwiished-Recomp](https://github.com/K-r0zen/Unwiished-Recomp/blob/1cb8f9531f0c4e60b5a4221081198cabb21a74af/README.md) | `61496aea6fd7af67d657908a096e8fac7473f86b42c4118ccb18baf467992ba4` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| mstan/PokemonStadiumRecomp | README declares the project no longer maintained as of August 2026. |
+| MegaMan64Recomp/MegaMan64Recompiled | README is a 52-byte stub below the documentation threshold. |
+| codepdbh/nfsu2-recompiled, soyjxck/dod3-recomp, rigaz29/Ascension-R | No license file recorded by the GitHub API. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; SSARecomp received a Class 1 preview. The four new case studies update the game case indexes and README case sections.

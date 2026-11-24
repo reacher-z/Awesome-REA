@@ -45522,5 +45522,53 @@
       "它是静态重编译，兼容性取决于光盘版本。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "pcrecomp": {
+    "name": "pcrecomp",
+    "requirements": [
+      "需要待分析的原始 PC 可执行文件；工具覆盖 PE 头、导入表以及分析与转换。",
+      "该工具箱提供项目基础设施，按组件方式支撑移植工作。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "sp00nznet-snesrecomp": {
+    "name": "snesrecomp",
+    "requirements": [
+      "需要重编译后的游戏代码链接该库；库提供硬件模拟，不提供游戏代码。",
+      "生成代码与游戏数据不进入仓库。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "cvlod-recomp": {
+    "name": "恶魔城：暗影遗产 — 在研重编译",
+    "requirements": [
+      "需要原版游戏数据，以及固定提交的仓库与子模块递归检出。",
+      "它是在研重编译项目，仍存在崩溃问题。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "las-decomp": {
+    "name": "织梦岛（Switch 重制版）— Ghidra 反编译项目",
+    "requirements": [
+      "需要自备未修改的 main 文件，以及 Ghidra 10.4 与 SwitchLoader 1.6.0；其他版本可能不兼容。",
+      "它是 Ghidra 数据库与 XML 项目，而非可重建的源码树。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "ssa-recomp": {
+    "name": "SSARecomp：小龙斯派罗：斯派罗的冒险原生 Windows 移植",
+    "requirements": [
+      "需要原版 Xbox 360 光盘；移植版不附带游戏数据。",
+      "它是静态重编译，兼容性取决于光盘版本。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "unwiished-recomp": {
+    "name": "Unwiished Recomp：索尼克释放（Wii）原生 PC 移植",
+    "requirements": [
+      "需要原版 Wii 游戏数据；不使用模拟器。",
+      "它是民间静态重编译，兼容性取决于游戏版本。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

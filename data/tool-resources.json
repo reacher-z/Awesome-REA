@@ -160841,5 +160841,175 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "pcrecomp",
+    "name": "pcrecomp",
+    "url": "https://github.com/sp00nznet/pcrecomp",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A unified toolbox for statically recompiling old PC software, collecting analysis and transformation tools, PE handling, runtimes and tricks from PC recompilation projects so old Windows executables can run natively on modern Windows or Linux without Wine or an emulator.",
+    "description_zh": "用于静态重编译旧 PC 软件的统一工具箱：汇集 PC 重编译项目中的分析/转换工具、PE 处理、运行时与经验，使旧 Windows 可执行文件可在现代 Windows 或 Linux 上原生运行，无需 Wine 或模拟器。",
+    "evidence_url": "https://github.com/sp00nznet/pcrecomp/blob/7c07a0b42059b6dc4313d9b4ebded6f7a72db8f3/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an original PC executable to analyze; the tools cover PE headers, imports and analysis and transformation.",
+      "The toolbox provides project infrastructure and is used component by component to support a port.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "sp00nznet-snesrecomp",
+    "name": "snesrecomp",
+    "url": "https://github.com/sp00nznet/snesrecomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A drop-in SNES hardware library for static recompilation projects, providing real PPU rendering, SPC700 audio, DMA, Mode 7 and other SNES hardware as a linkable C library backed by LakeSnes and SDL2.",
+    "description_zh": "供静态重编译项目使用的 SNES 硬件库：以可链接 C 库的形式提供真实 PPU 渲染、SPC700 音频、DMA、Mode 7 等 SNES 硬件，底层使用 LakeSnes 与 SDL2。",
+    "evidence_url": "https://github.com/sp00nznet/snesrecomp/blob/03bf6178ed0569d76fe7cd1e456bc3b3974b2533/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires recompiled game code to link against the library; it supplies hardware emulation, not game code.",
+      "Generated code and game data are not committed.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "cvlod-recomp",
+    "name": "Castlevania: Legacy of Darkness — a work-in-progress recompilation",
+    "url": "https://github.com/fliperama86/cvlod_recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An in-progress recompilation and recovery project for Castlevania: Legacy of Darkness that aims to reach and stabilize real gameplay while preserving telemetry for diagnosing crashes.",
+    "description_zh": "《恶魔城：暗影遗产》的在研重编译与恢复项目，目标是进入并稳定实际游戏流程，同时保留用于诊断崩溃的遥测。",
+    "evidence_url": "https://github.com/fliperama86/cvlod_recomp/blob/60b40b5561c73389d4e5c317749deab601f32644/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game data and a pinned recursive checkout of the repository and submodules.",
+      "It is a work-in-progress recompilation with remaining crashes.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "las-decomp",
+    "name": "Link’s Awakening (Switch remake) — a Ghidra decompilation project",
+    "url": "https://github.com/Owen-Splat/las-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "description_en": "A decompilation of the 2019 Link’s Awakening remake for Nintendo Switch using Ghidra 10.4 and SwitchLoader 1.6.0, distributed as a Ghidra XML with import instructions.",
+    "description_zh": "使用 Ghidra 10.4 与 SwitchLoader 1.6.0 对 2019 年 Switch《塞尔达传说：织梦岛》重制版进行的反编译项目，以 Ghidra XML 形式发布并附导入说明。",
+    "evidence_url": "https://github.com/Owen-Splat/las-decomp/blob/72cbe70e1319a369a5a5cb06fc864913e44fe069/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own unaltered main file and Ghidra 10.4 with SwitchLoader 1.6.0; other versions may not be compatible.",
+      "It is a Ghidra database and XML project rather than a rebuildable source tree.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ssa-recomp",
+    "name": "SSARecomp: a native Windows port of Skylanders: Spyro’s Adventure",
+    "url": "https://github.com/tsapZ/SSARecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native Windows port of Skylanders: Spyro’s Adventure (Xbox 360, 2011) built by static recompilation, supporting a real portal and figures or none at all, a controller and other options.",
+    "description_zh": "通过静态重编译把 Xbox 360 版《小龙斯派罗：斯派罗的冒险》（2011）移植为原生 Windows 游戏，支持真实传送门与手办或完全不使用、手柄及其他选项。",
+    "evidence_url": "https://github.com/tsapZ/SSARecomp/blob/35dfceb782b5e7716ff99530ff77b5be953b0f59/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Xbox 360 disc; the port ships no game data.",
+      "It is a static recompilation and depends on the disc version.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "unwiished-recomp",
+    "name": "Unwiished Recomp: a native PC port of Sonic Unleashed (Wii)",
+    "url": "https://github.com/K-r0zen/Unwiished-Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An unofficial native PC port of the Wii version of Sonic Unleashed created through static recompilation, with keyboard and controller support, 60 fps and high-resolution support.",
+    "description_zh": "通过静态重编译把 Wii 版《索尼克：释放》移植为原生 PC 游戏的民间项目，支持键盘与手柄、稳定 60 fps 与高分辨率。",
+    "evidence_url": "https://github.com/K-r0zen/Unwiished-Recomp/blob/1cb8f9531f0c4e60b5a4221081198cabb21a74af/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Wii game data; no emulation is used.",
+      "It is a fan-made static recompilation, and compatibility depends on the game version.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

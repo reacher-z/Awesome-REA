@@ -6,10 +6,16 @@
 
 [English](game-5.md)
 
-**421 个案例**
+**427 个案例**
 
 ## 引擎重实现
 
+- [**RTAGlass：Road Trip 的 Windows 重实现**](https://github.com/RTAGlass/RTAGlass) - RTAGlass 将 PS2 游戏 Road Trip 重实现为 C++ Windows 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rtaglass-case/)</sub>
+- [**Rugrats: Search for Reptar：PS 游戏的 Rust 重建**](https://github.com/Toyz/rugrats) - rugrats 将美版 PS 游戏《淘气小兵兵：寻找雷普塔》重建为原生 Rust PC 游戏，从玩家自己的光盘读取数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rugrats-search-for-reptar-case/)</sub>
+- [**rust-theft-auto：重建初代 Grand Theft Auto 引擎**](https://github.com/gaudecker/rust-theft-auto) - rust-theft-auto 使用玩家安装目录中的地图和样式文件，以 Rust 重建初代 Grand Theft Auto 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rust-theft-auto-case/)</sub>
+- [**Rusty MCLA：以 Rust 重建《Midnight Club: Los Angeles》**](https://github.com/holdmysocks/rusty-mcla) - Rusty MCLA 以 Rust 重建《Midnight Club: Los Angeles Complete Edition》的 Windows 游戏引擎，数据由用户的 Xbox 360 光盘镜像生成。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/rusty-mcla-midnight-club-los-angeles-case/)</sub>
+- [**RustyWorld：用 Rust 重建 Another World 引擎**](https://github.com/EdMcBane/rustyworld) - RustyWorld 用 Rust 重建 Another World 游戏引擎，读取用户提供的原版数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rustyworld-case/)</sub>
+- [**sacengine：重实现《Sacrifice》游戏引擎**](https://github.com/tg-2/sacengine) - sacengine 重实现 Shiny Entertainment 的游戏 Sacrifice 的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sacengine/)</sub>
 - [**San Andreas Unity：在 Unity 中重新实现的《侠盗猎车手：圣安地列斯》引擎**](https://github.com/in0finite/SanAndreasUnity) - 在 Unity（C#）中重新实现《侠盗猎车手：圣安地列斯》的引擎，从使用者自有的 PC 版安装中读取归档、RenderWare 模型与纹理、碰撞、动画、音频、文本和物品定义。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/san-andreas-unity-engine-case/)</sub>
 - [**Sarien：Sierra AGI 解释器的可移植重实现**](https://sourceforge.net/projects/sarien/) - Sarien 用 C 重新实现了 Sierra On-Line 的 Adventure Game Interpreter（AGI），可以运行《Leisure Suit Larry》《King's Quest II》《Mixed-Up Mother Goose》等 AGI 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sarien-agi-interpreter-case/)</sub>
 - [**Scion：重实现《模拟城市 4》的 Gonzo/Rizzo 框架**](https://github.com/nsgomez/scion) - Scion 是 Maxis 所用 Gonzo/Rizzo 框架的参考实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scion-maxis/)</sub>
