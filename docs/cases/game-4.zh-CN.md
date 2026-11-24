@@ -10,6 +10,8 @@
 
 ## 基于重建源码的移植
 
+- [**Mario 64 for PlayStation 5：Ghostship 的 PS5 移植**](https://github.com/griches/PS5_Ghostship) - Mario 64 for PlayStation 5 将 Ghostship 基于反编译成果构建的《Super Mario 64》应用移植到 PS5。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ps5-ghostship-case/)</sub>
+- [**Mario Kart 64 3DS：将《马力欧卡丁车 64》移植到 Nintendo 3DS**](https://github.com/EstebanPdN/mario-kart-64-3ds) - Mario Kart 64 3DS 是基于 SpaghettiKart 的《Mario Kart 64》任天堂 3DS 原生移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-kart-64-3ds-case/)</sub>
 - [**Mario Kart 64 for Dreamcast：将任天堂 64 游戏移植到 Dreamcast**](https://github.com/jnmartin84/mk64-dc) - Mario Kart 64 for Dreamcast 是 n64decomp/mk64 反编译的世嘉 Dreamcast 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mk64-dc-case/)</sub>
 - [**Mario Kart Wii 3DS：从玩家光盘构建的原生移植版**](https://github.com/MiniBandit/MKW-3DS) - Mario Kart Wii 3DS 延续该游戏的 Nintendo 3DS 原生移植项目，从玩家的美版光盘镜像构建可安装的 CIA。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mkw-3ds-case/)</sub>
 - [**MaskPad：移植至 iPhone 和 iPad 的《Majora's Mask》**](https://github.com/chrissotraidis/maskpad) - MaskPad 将 2 Ship 2 Harkinian 的《Majora's Mask》源码移植版改造成 iPhone 和 iPad 原生应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/maskpad-case/)</sub>
@@ -263,6 +265,7 @@
 - [**Chronoshift：逐步重建 Command &amp; Conquer: Red Alert**](https://github.com/TheAssemblyArmada/Chronoshift) - Chronoshift 用 C++ 逐步重建《Command &amp; Conquer: Red Alert》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/chronoshift-red-alert-case/)</sub>
 - [**ChronoStorm：重实现《红色警戒 2》及《尤里的复仇》引擎**](https://github.com/cookgreen/ChronoStorm) - ChronoStorm 用 Python 和 Pygame 重实现《命令与征服：红色警戒2》和《尤里的复仇》的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/chronostorm/)</sub>
 - [**Chuckie Egg：BBC 游戏逻辑重建**](https://github.com/pbrook/Chuckie-Egg) - 该项目用 C 重建 Chuckie Egg 的关卡加载、角色移动、鸭子、升降台、计分及渲染后端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/chuckie-egg-bbc-recreation-case/)</sub>
+- [**Civ2-clone：文明 II 的开源重实现**](https://github.com/axx0/Civ2-clone) - 用 .NET 8、C# 与 Raylib 重实现《文明 II》（多人黄金版与 Test of Time）的项目，包含引擎、各版本游戏逻辑接口与图形界面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/civ2-clone/)</sub>
 - [**ClassiCube：Minecraft Classic 客户端的净室重建**](https://github.com/ClassiCube/ClassiCube) - ClassiCube 以净室逆向工程方法，用 C 语言重建 2009 年的 Minecraft Classic 客户端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/classicube-case/)</sub>
 - [**Clone Dash：重建 Muse Dash 游戏玩法**](https://github.com/marchc1/CloneDash) - Clone Dash 以跨平台 C# 游戏引擎重建《Muse Dash》的节奏玩法，从玩家的 Steam 安装目录读取关卡。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/clone-dash-case/)</sub>
 - [**CoD4 Rewrite：Rust/Bevy 游戏重建**](https://github.com/Nilbong/COD4-Rewrite) - 以 Rust/Bevy 重建《使命召唤4》的多人游戏系统，使用本地游戏安装中的素材。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/cod4-rewrite-reconstruction-case/)</sub>
@@ -540,6 +543,7 @@
 - [**OpenZT2：Rust 重建《动物园大亨 2》引擎**](https://github.com/overyonder/openzt2) - OpenZT2 使用 Rust 和 Bevy 重建《动物园大亨 2》引擎，运行时读取玩家自己的游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openzt2-engine-case/)</sub>
 - [**Oracles：使用 Godot 重建两款塞尔达传说 Oracle 游戏**](https://github.com/SHOEGAZEssb/ooa-godot) - Oracles 在 Godot 中以共用 C# 引擎重建《The Legend of Zelda: Oracle of Ages》和《Oracle of Seasons》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda-oracles-godot-reconstruction-case/)</sub>
 - [**Ordoor：重建四款游戏使用的 Strategy Engine**](https://code.ur.gs/lupine/ordoor) - Ordoor 重建 Warhammer 40,000: Chaos Gate、Soldiers At War、Squad Leader 和 Wages of War 使用的 Strategy Engine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ordoor-strategy-engine-case/)</sub>
+- [**Oxide：用 Rust 从零实现的 Minecraft 服务器**](https://github.com/T-x-T/oxide) - 完全用 Rust 从零实现的 Minecraft 服务器，目标是完整可用并兼容最新版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oxide/)</sub>
 - [**Ozymandias (Julius)：为《法老》改造城市建造游戏引擎**](https://github.com/Banderi/Ozymandias_Julius) - Ozymandias (Julius) 改造 Julius/Augustus 城市建造引擎，使用玩家自备的原版资源运行《法老》及《埃及艳后》资料片。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ozymandias-julius-case/)</sub>
 - [**Ozymandias：以 Godot 重建 Pharaoh 与 Zeus 游戏引擎**](https://github.com/Banderi/Ozymandias) - Ozymandias 使用 Godot 3.6 Mono 重建《Pharaoh》《Zeus》等城市建设游戏的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ozymandias-pharaoh-engine-case/)</sub>
 - [**P.T. PC 版：基于行为重新实现、读取 PS4 数据的引擎**](https://github.com/LoreanXavier/pt-pc) - 在新的 Vulkan 引擎上用 C++ 重新实现 P.T. 的游戏逻辑，运行时从使用者自有的 PS4 版本读取关卡、模型、贴图、声音、脚本和过场动画。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pt-pc-port-case/)</sub>
@@ -639,8 +643,4 @@
 - [**Surreal Engine：重新实现 Unreal Engine 1**](https://github.com/dpjudas/SurrealEngine) - Surreal Engine 重实现虚幻引擎 1，目前针对《虚幻》金版和《虚幻竞技场》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/surrealengine/)</sub>
 - [**SWBF2 Browser Reconstruction：在浏览器中重建 Battlefront II 地图**](https://github.com/luckeyfaraday/swbf2-browser-reconstruction) - SWBF2 Browser Reconstruction 从用户安装的 Star Wars Battlefront II（2017）提取数据，在 three.js 浏览器运行时中重建部分游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/swbf2-browser-reconstruction-case/)</sub>
 - [**T.O.R.E-Fighters：以 Rust 重建《Jane's Fighters Anthology》**](https://github.com/john-overton/T.O.R.E-Fighters) - T.O.R.E-Fighters 根据玩家可见行为，以 Rust 重建《Jane's Fighters Anthology》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tore-fighters-case/)</sub>
-- [**TA3D：以 3D 引擎重建 Total Annihilation**](https://github.com/zuzuf/TA3D) - TA3D 以 OpenGL 3D 引擎重建 Total Annihilation 玩法，从单独提供的资源文件加载原版地图、单位及动画脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ta3d-total-annihilation-case/)</sub>
-- [**Tapir：重建 RGSS 游戏运行时**](https://github.com/qnighy/tapir) - Tapir 重建 RPG Maker XP、VX 和 VX Ace 游戏使用的 RGSS、RGSS2 与 RGSS3 运行时，源码包含图形、音频和输入模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tapir-rgss-case/)</sub>
-- [**TempleRun-RL：重建 Temple Run 机制用于模拟训练**](https://github.com/matthieucs/TempleRun-RL) - TempleRun-RL 将 Temple Run 的赛道生成、障碍与角色运动机制重建为无界面训练模拟器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/templerun-rl-case/)</sub>
-- [**Test Drive II Enhanced：《试驾 II》EGA 版的 C 语言重实现**](https://github.com/kylofon/testdrive2-enhanced) - Test Drive II Enhanced 以 C 语言重实现 EGA 版《试驾 II：对决》程序，并通过 SDL3 读取玩家自备的游戏文件运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/test-drive-ii-enhanced-case/)</sub>
 <!-- END GENERATED CASES -->

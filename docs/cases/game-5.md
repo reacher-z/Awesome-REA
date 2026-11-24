@@ -6,10 +6,14 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**382 case studies**
+**386 case studies**
 
 ## Engine reimplementations
 
+- [**TA3D: rebuilding Total Annihilation in a 3D engine**](https://github.com/zuzuf/TA3D) - TA3D rebuilds Total Annihilation gameplay in an OpenGL 3D engine that loads original game maps, units and animation scripts from separate resource files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ta3d-total-annihilation-case/)</sub>
+- [**Tapir: reimplementing the RGSS game runtimes**](https://github.com/qnighy/tapir) - Tapir reimplements the RGSS, RGSS2 and RGSS3 runtimes used by RPG Maker XP, VX and VX Ace games. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tapir-rgss-case/)</sub>
+- [**TempleRun-RL: reconstructing Temple Run mechanics for simulator training**](https://github.com/matthieucs/TempleRun-RL) - TempleRun-RL reconstructs Temple Run's track generation, hazards, and runner physics in a headless training simulator. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/templerun-rl-case/)</sub>
+- [**Test Drive II Enhanced: a C reimplementation of the EGA game**](https://github.com/kylofon/testdrive2-enhanced) - Test Drive II Enhanced reimplements the EGA Test Drive II: The Duel executable in C and runs it through SDL3 with the player's original game files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/test-drive-ii-enhanced-case/)</sub>
 - [**Test Drive II: The Duel: an SDL3 reconstruction of the DOS EGA game**](https://github.com/kylofon/test-drive-2-sdl3) - Test Drive II: The Duel is reimplemented in C for SDL3 from analysis of the DOS EGA game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/test-drive-2-sdl3-case/)</sub>
 - [**th10: reconstructing Mountain of Faith 1.00a for the browser**](https://github.com/Ritosa2333/th10) - th10 reimplements Mountain of Faith 1.00a in C++ for a portable browser runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/th10-mountain-of-faith-case/)</sub>
 - [**The Crystal Scrolls: a Crystal Space engine for The Elder Scrolls III: Morrowind**](https://sourceforge.net/projects/crystalscrolls/) - Reimplements the engine of The Elder Scrolls III: Morrowind on the Crystal Space 3D engine, loading the BSA and ESM files of an installed Morrowind with Tribunal and Bloodmoon. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/crystal-scrolls-case/)</sub>

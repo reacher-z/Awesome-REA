@@ -502,3 +502,31 @@ This round adds five more reconstruction cases and one forensics parser: Type PA
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Type PAL, bo2-mac and Project ReLink received Class 1 previews. The five new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, nineteenth batch — 2026-11-23
+
+This round adds four reconstruction cases and two analysis tools from the stored lead queue: Civ2-clone, SpaceAnimalsRecomp (Star Fox), ssx3-recomp, Oxide (Minecraft server), HlslDecompiler and spimdisasm.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `civ2-clone` | `reconstruction-cases` | [axx0/Civ2-clone](https://github.com/axx0/Civ2-clone/blob/d3677ab6c586c87cfba73b3c5e69ad7c9f13259e/README.md) | `7bd50a5863eb24158163edb782f83b59b33e76d02195530333b2fdc3070d2064` |
+| `spaceanimalsrecomp` | `reconstruction-cases` | [SerenityG4K/SpaceAnimalsRecomp](https://github.com/SerenityG4K/SpaceAnimalsRecomp/blob/6c34c495975986875b2dffb3710408752c0c3f87/README.md) | `772d36e4d81d3a7cc8f67ad0858107d7ef63380c9f3eb74bff38ef1b0dc080d2` |
+| `ssx3-recomp` | `reconstruction-cases` | [koenhendriks/SSX3-recomp](https://github.com/koenhendriks/SSX3-recomp/blob/bdb5110ec1cb3ac73c84de7aded73852f7656fa8/README.md) | `d34c0b49f6476516b7b592e7feab9732b629eaf720f99954e672c00ef0a12e45` |
+| `oxide` | `reconstruction-cases` | [T-x-T/oxide](https://github.com/T-x-T/oxide/blob/8e0770ea9fb13f585134a7aa376682e514cd2ff6/README.md) | `2ade32b94fcf36f002bf5e9ce1c96344ddd6fdc6c19dbad76a65d1ffe75809cc` |
+| `hlsldecompiler` | `native-analysis` | [AndresTraks/HlslDecompiler](https://github.com/AndresTraks/HlslDecompiler/blob/1ea80d55173d024a209cc33c7569b1663e8cc99e/README.md) | `0ed44a80708c1bc684ddaa229e411ae7ad681a9840feddc2ca63dc107eca0950` |
+| `spimdisasm` | `native-analysis` | [Decompollaborate/spimdisasm](https://github.com/Decompollaborate/spimdisasm/blob/4b5d4c68eeb9f9eae14b3bb713971433ae2c3c43/README.md) | `c659b932d9e98e0b3acf04555ca0d0f7934207d0c8269cad5d6932a0578222cd` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| ZeusAFK/LibreKO | GitHub returned HTTP 404 for the repository during review. |
+| MegaMan64Recomp/MegaMan64Recompiled | README is a 52-byte stub below the documentation threshold. |
+| SwagSoftware/KisakCOD | GitHub returned HTTP 451 for the repository during review. |
+| fuddlesworth/pokebw2, OpenCrystalCaves, jaenster/redivivus | Near-duplicates of records already carried by other open PRs or pending library coverage. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; ssx3-recomp received a Class 1 preview. The four new case studies update the game case indexes and README case sections.

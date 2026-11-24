@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-24T00:25:16+00:00",
-    "entry_count": 1167,
-    "class_entry_count": 1198,
+    "generated_at": "2026-11-24T01:04:57+00:00",
+    "entry_count": 1168,
+    "class_entry_count": 1199,
     "class_counts": {
-      "image": 1127,
+      "image": 1128,
       "video": 40
     },
     "missing_count": 31,
@@ -8963,6 +8963,15 @@
       "source_url": "https://github.com/MatiasRiveraC/SSX-Tricky-PC",
       "revision": "569353b50db976fcd4b7c5046978a6cac46da257",
       "checked_at": "2026-11-09T04:14:52+00:00"
+    },
+    {
+      "id": "ssx3-recomp",
+      "image_url": "https://raw.githubusercontent.com/koenhendriks/SSX3-recomp/bdb5110ec1cb3ac73c84de7aded73852f7656fa8/docs/screenshots/01-black-window-no-draws.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/koenhendriks/SSX3-recomp",
+      "revision": "bdb5110ec1cb3ac73c84de7aded73852f7656fa8",
+      "checked_at": "2026-11-24T01:04:57+00:00"
     },
     {
       "id": "star-wars-episode-i-racer-recomp-case",

@@ -45090,5 +45090,53 @@
       "部分解析器仍不完整，项目面向取证检查而非实时应用使用。",
       "采用 MIT 许可证。"
     ]
+  },
+  "civ2-clone": {
+    "name": "Civ2-clone：文明 II 的开源重实现",
+    "requirements": [
+      "需要原版《文明 II》的声音、图像与文本资源；安装所需版本后让克隆指向其文件。",
+      "它重实现多人黄金版与 Test of Time 的游戏逻辑，兼容性取决于原版版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "spaceanimalsrecomp": {
+    "name": "SpaceAnimalsRecomp：Star Fox Switch 2 重制版静态重编译",
+    "requirements": [
+      "需要用户的 Switch 2 游戏文件；项目转译游戏代码并以原生方式运行。",
+      "项目几乎完全由 AI 编写且为非官方项目，兼容性取决于游戏更新版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "ssx3-recomp": {
+    "name": "ssx3-recomp：SSX 3 Xbox 版静态重编译",
+    "requirements": [
+      "需要原版 Xbox PAL 游戏数据；重编译后的游戏运行原代码，并用 Vulkan 模拟 Xbox GPU。",
+      "项目面向 PAL 版，兼容性取决于原版游戏数据。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "oxide": {
+    "name": "Oxide：用 Rust 从零实现的 Minecraft 服务器",
+    "requirements": [
+      "需要 Rust 工具链与 Minecraft 客户端连接；服务器从零实现协议。",
+      "项目是学习性质，不建议在生产环境运行。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "hlsldecompiler": {
+    "name": "HlslDecompiler",
+    "requirements": [
+      "需要着色器字节码文件；反编译结果以 HLSL 输出到标准输出或文件。",
+      "不支持 Shader Model 6 及之后的 DXIL。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "spimdisasm": {
+    "name": "spimdisasm",
+    "requirements": [
+      "需要 Python 3 与 MIPS 二进制或符号表；库提供 API 与命令行前端。",
+      "它是反汇编器，不会把代码反编译为源码。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

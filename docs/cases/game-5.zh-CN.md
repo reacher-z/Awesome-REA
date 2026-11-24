@@ -6,10 +6,14 @@
 
 [English](game-5.md)
 
-**382 个案例**
+**386 个案例**
 
 ## 引擎重实现
 
+- [**TA3D：以 3D 引擎重建 Total Annihilation**](https://github.com/zuzuf/TA3D) - TA3D 以 OpenGL 3D 引擎重建 Total Annihilation 玩法，从单独提供的资源文件加载原版地图、单位及动画脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ta3d-total-annihilation-case/)</sub>
+- [**Tapir：重建 RGSS 游戏运行时**](https://github.com/qnighy/tapir) - Tapir 重建 RPG Maker XP、VX 和 VX Ace 游戏使用的 RGSS、RGSS2 与 RGSS3 运行时，源码包含图形、音频和输入模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tapir-rgss-case/)</sub>
+- [**TempleRun-RL：重建 Temple Run 机制用于模拟训练**](https://github.com/matthieucs/TempleRun-RL) - TempleRun-RL 将 Temple Run 的赛道生成、障碍与角色运动机制重建为无界面训练模拟器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/templerun-rl-case/)</sub>
+- [**Test Drive II Enhanced：《试驾 II》EGA 版的 C 语言重实现**](https://github.com/kylofon/testdrive2-enhanced) - Test Drive II Enhanced 以 C 语言重实现 EGA 版《试驾 II：对决》程序，并通过 SDL3 读取玩家自备的游戏文件运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/test-drive-ii-enhanced-case/)</sub>
 - [**Test Drive II: The Duel：DOS EGA 游戏的 SDL3 重构版**](https://github.com/kylofon/test-drive-2-sdl3) - Test Drive II: The Duel 项目依据 DOS EGA 版本的分析结果，以 C 和 SDL3 重构游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/test-drive-2-sdl3-case/)</sub>
 - [**th10：面向浏览器重建《东方风神录》1.00a**](https://github.com/Ritosa2333/th10) - th10 以 C++ 重实现《东方风神录》1.00a，并构建可移植的浏览器运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/th10-mountain-of-faith-case/)</sub>
 - [**The Crystal Scrolls：基于 Crystal Space 的《The Elder Scrolls III: Morrowind》引擎**](https://sourceforge.net/projects/crystalscrolls/) - 在 Crystal Space 3D 引擎上重写《The Elder Scrolls III: Morrowind》的引擎，读取已安装的 Morrowind 及 Tribunal、Bloodmoon 的 BSA 与 ESM 文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crystal-scrolls-case/)</sub>

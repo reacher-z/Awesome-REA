@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-24T00:25:08+00:00",
-  "entry_count": 5349,
+  "generated_at": "2026-11-24T01:04:50+00:00",
+  "entry_count": 5355,
   "class_counts": {
    "0": 15,
-   "1": 1183,
-   "2": 3939,
+   "1": 1184,
+   "2": 3944,
    "3": 186
   },
   "unknown_count": 26,
@@ -150207,6 +150207,178 @@
    },
    "reason": "code and docs only: no download method and no demo",
    "checked_at": "2026-11-24T03:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "civ2-clone",
+   "url": "https://github.com/axx0/Civ2-clone",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2246,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-24T04:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "spaceanimalsrecomp",
+   "url": "https://github.com/SerenityG4K/SpaceAnimalsRecomp",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 23635,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 6,
+    "release_asset_count": 20,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [
+     "apt install ./spaceanimalsrecomp_1.2.0_amd64.deb"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-24T04:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "ssx3-recomp",
+   "url": "https://github.com/koenhendriks/SSX3-recomp",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 19998,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 9,
+    "release_asset_count": 9,
+    "demo": [
+     "image"
+    ],
+    "media_count": 22,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-24T04:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "oxide",
+   "url": "https://github.com/T-x-T/oxide",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5095,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "video"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-24T04:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "hlsldecompiler",
+   "url": "https://github.com/AndresTraks/HlslDecompiler",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 1562,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-24T04:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "spimdisasm",
+   "url": "https://github.com/Decompollaborate/spimdisasm",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5620,
+    "docs_full": true,
+    "download": "package",
+    "release_count": 100,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [
+     "pip install git+https://github.com/Decompollaborate/spimdisasm.git@1.x"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-24T04:20:00+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",
