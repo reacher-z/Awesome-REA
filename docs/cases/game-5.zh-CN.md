@@ -6,10 +6,11 @@
 
 [English](game-5.md)
 
-**407 个案例**
+**408 个案例**
 
 ## 引擎重实现
 
+- [**sh3redux：C++ 重建 Silent Hill 3 引擎**](https://github.com/Palm-Studios/sh3redux) - sh3redux 用 C++ 和 OpenGL 重建《Silent Hill 3》引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sh3redux-case/)</sub>
 - [**Shiloh：重实现《The X-Files Game》引擎**](https://github.com/Asterber/shiloh) - Shiloh 是 1998 年游戏《X档案》的 Rust 引擎，带 SDL2 窗口和 WebAssembly 浏览器构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shiloh/)</sub>
 - [**shin：Entergram 视觉游戏引擎重实现**](https://github.com/DCNick3/shin) - shin 重实现 Entergram 视觉游戏使用的引擎，起初以 Switch 版 Umineko no Naku Koro ni Saku 为目标，并读取原版游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shin-engine-case/)</sub>
 - [**shock2quest：为 System Shock 2 VR 重建 Dark 引擎**](https://github.com/tommy-xr/shock2quest) - shock2quest 为 Meta Quest 上的 System Shock 2 虚拟现实体验重建 Dark 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shock2quest-case/)</sub>

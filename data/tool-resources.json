@@ -160166,5 +160166,169 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "ida-mcp-server",
+    "name": "IDA MCP Server",
+    "url": "https://github.com/coleleavitt/ida-mcp-server",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A native C++ plugin for IDA Pro that exposes 249 tools to MCP clients such as Claude Code, Claude Desktop, Cursor and Codex, covering disassembly, Hex-Rays decompilation, microcode, types, xrefs, patching, the debugger and IDAPython scripting.",
+    "description_zh": "IDA Pro 的原生 C++ 插件，向 Claude Code、Claude Desktop、Cursor、Codex 等 MCP 客户端暴露 249 个工具，覆盖反汇编、Hex-Rays 反编译、微码、类型、交叉引用、补丁、调试器与 IDAPython 脚本。",
+    "evidence_url": "https://github.com/coleleavitt/ida-mcp-server/blob/893675eae72c6a04bda095b24ada67f56fbaf3ab/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires IDA Pro and a supported MCP client; the plugin runs inside the open IDA database and serves MCP over HTTP on localhost.",
+      "141 of the 249 tools are enabled by default, and the client must use one of the advertised protocol versions.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "c64-re-mcp",
+    "name": "C64RE - C64 Reverse Engineering MCP",
+    "url": "https://github.com/Jondalar/C64ReverseEngineeringMCP",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A reverse-engineering workbench for Commodore 64 software over MCP that turns disks, cartridges and PRGs into explained, named source and keeps project knowledge, with a sibling C64 runtime for validation.",
+    "description_zh": "通过 MCP 面向 Commodore 64 软件的逆向工程工作台：把磁盘、卡带与 PRG 转成有解释、有命名的源码并保留项目知识，配合姊妹项目 C64 运行时做验证。",
+    "evidence_url": "https://github.com/Jondalar/C64ReverseEngineeringMCP/blob/c26d09a5dffcd847a0791a3ec55be9f2c216bdb6/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an MCP-capable LLM client and the sibling TRX64 C64 runtime; the workbench itself carries no emulator.",
+      "It is a client and depends on TRX64 for cycle-accurate execution and validation.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "exhume",
+    "name": "Exhume",
+    "url": "https://github.com/abedegno/Exhume",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A toolkit and set of Claude Code skills for byte-matching decompilation, producing C and assembly that the original toolchain rebuilds byte for byte, with profiles for Borland 16-bit DOS, Keil armcc, TI cl2000 and Watcom C32.",
+    "description_zh": "用于逐字节匹配反编译的工具包与 Claude Code 技能集：生成能被原始工具链逐字节重建的 C 与汇编，并提供 Borland 16 位 DOS、Keil armcc、TI cl2000 与 Watcom C32 配置。",
+    "evidence_url": "https://github.com/abedegno/Exhume/blob/ff95127148f753b87f45d47b7b0dbd76d8fbe81f/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original executable and its matching toolchain; each toolchain is a profile with a project-owned exact-link gate.",
+      "It targets preservation and byte matching rather than general-purpose decompilation.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "dcrecomp",
+    "name": "dcrecomp",
+    "url": "https://github.com/sp00nznet/dcrecomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A framework for statically recompiling Sega Dreamcast and Naomi arcade games from SH-4 binary code to native C, with Crazy Taxi and Mushiking running on SDL2 and OpenGL.",
+    "description_zh": "把 Sega Dreamcast 与 Naomi 街机游戏的 SH-4 二进制代码静态重编译为原生 C 的框架，Crazy Taxi 与 Mushiking 已可在 SDL2 与 OpenGL 上运行。",
+    "evidence_url": "https://github.com/sp00nznet/dcrecomp/blob/3c60e6f03cbbaaabeaa1f3165247ed3120f23c3e/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own disc or ROM; generated source is not distributed and lands in the game repository.",
+      "The project is alpha, most hardware past the CPU is partial, and there is no conformance harness yet.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "nxrecomp",
+    "name": "nxrecomp",
+    "url": "https://github.com/drakolordx7/nxrecomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A static recompilation toolkit that ports Nintendo Switch games to native Windows and Linux x86-64 programs, with Metroid Prime Remastered and Hyrule Warriors: Age of Calamity integrations.",
+    "description_zh": "把 Nintendo Switch 游戏重编译为原生 Windows 与 Linux x86-64 程序的工具包，包含《密特罗德 Prime 重制版》与《塞尔达无双：灾厄启示录》的集成。",
+    "evidence_url": "https://github.com/drakolordx7/nxrecomp/blob/0a9fe4653648cab485864524a30997b75589df9d/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own game dump and Switch keys; no game files are included.",
+      "The toolkit is in progress, and compatibility depends on the game integration.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "scarface-decomp",
+    "name": "Scarface: The World Is Yours — a matching decompilation",
+    "url": "https://github.com/scarface-decomp/scarface_decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A matching decompilation of Scarface: The World Is Yours (Radical Entertainment, 2006) that rebuilds C++ source with MSVC 7.1 for the Xbox, PC 1.00.2 and PS2 targets.",
+    "description_zh": "《疤面煞星：掌握世界》（Radical Entertainment，2006）的匹配式反编译项目，使用 MSVC 7.1 重建 C++ 源码，覆盖 Xbox、PC 1.00.2 与 PS2 目标。",
+    "evidence_url": "https://github.com/scarface-decomp/scarface_decomp/blob/dd4e326dd376302886660a6f8c96e2127fe32e6b/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the supported game versions and the MSVC 7.1 toolchain to verify byte-matching builds.",
+      "It is a work-in-progress matching decompilation.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

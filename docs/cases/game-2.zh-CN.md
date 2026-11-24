@@ -10,6 +10,7 @@
 
 ## 非匹配反编译
 
+- [**Blitz\_MasterVer22-Decomp：《Splatoon 2》3.1.0 版反编译**](https://github.com/YoshiCrystal9/Blitz_MasterVer22-Decomp) - Blitz\_MasterVer22-Decomp 重建 Nintendo Switch 游戏《Splatoon 2》3.1.0 版的代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/splatoon-2-310-decomp-case/)</sub>
 - [**Blood Omen 2：面向 Switch 移植的功能性反编译**](https://github.com/felipesuarez-dev/BloodOmen2NX) - BloodOmen2NX 将《血兆 2》西班牙语 Windows PC 版进行功能性反编译，译成 C++17，目标是移植到 Nintendo Switch。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bloodomen2nx-case/)</sub>
 - [**Boku Doraemon：Dreamcast 可执行文件与模型结构重建**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon 解析日版 Dreamcast 游戏的 1ST\_READ.BIN，从用户光盘生成匹配的汇编基线，并在 SH-4 解释器中比较候选 C 函数的调用、内存写入与结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boku-doraemon-decomp-case/)</sub>
 - [**Bomberman 64: The Second Attack!：部分 N64 反编译**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa 正在反编译日版和美版 N64 游戏 Bomberman 64: The Second Attack!。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bm64tsa-case/)</sub>
@@ -634,5 +635,4 @@
 - [**声名狼藉 2：将 PS3 游戏重编译到 Linux**](https://github.com/ThiagoFraga761/infamous2-pc) - 该项目用 ps3recomp 把 PlayStation 3 版《恶名昭彰 2》（BCUS98125，版本 01.00）重编译到原生 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous2-pc/)</sub>
 - [**inFamous PC：面向 Windows 的 PlayStation 3 静态重编译移植版**](https://github.com/whompay/inFAMOUSreborn) - inFamous PC 使用 ps3recomp 静态重编译《inFamous》欧洲版 PlayStation 3 游戏的 PPU 和 SPU 代码，构建 Windows 原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous-pc-case/)</sub>
 - [**Infinite Undiscovery Recomp：Xbox 360 游戏的原生重编译**](https://github.com/doc-haz/infinite-undiscovery-recomp) - Infinite Undiscovery Recomp 是 Xbox 360 版 Infinite Undiscovery（2008）的 Windows x64 原生重编译，用 ReXGlue 和 XenonRecomp 构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infinite-undiscovery-recomp-case/)</sub>
-- [**Initial D Arcade Stage 3：NAOMI 2 游戏的实验性静态重编译**](https://github.com/distilledorion-sketch/Initial-D-Arcade-Stage-3-Native-SH-4-Recompilation-WIP-) - 这是 NAOMI 2 游戏《头文字 D 街机舞台 3》的实验性静态重编译，光盘编号 GDS-0033，面向 64 位 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/initial-d-arcade-stage-3/)</sub>
 <!-- END GENERATED CASES -->

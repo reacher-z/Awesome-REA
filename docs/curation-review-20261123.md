@@ -639,3 +639,30 @@ This round adds five reconstruction cases and one recompilation toolkit: SPR Rec
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Wild 9 Recompiled and neogeorecomp received Class 1 previews. The five new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, twenty-fourth batch — 2026-11-23
+
+This round focuses on recompilation and agent tooling: IDA MCP Server, C64RE, Exhume, dcrecomp, nxrecomp, plus the Scarface matching decompilation.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `ida-mcp-server` | `agent-mcp` | [coleleavitt/ida-mcp-server](https://github.com/coleleavitt/ida-mcp-server/blob/893675eae72c6a04bda095b24ada67f56fbaf3ab/README.md) | `166bd8e1e86c178897d5aff5fa1ca1dd5d8015a393fb03b46bf7a58fdae29f79` |
+| `c64-re-mcp` | `agent-mcp` | [Jondalar/C64ReverseEngineeringMCP](https://github.com/Jondalar/C64ReverseEngineeringMCP/blob/c26d09a5dffcd847a0791a3ec55be9f2c216bdb6/README.md) | `bf0e0932bd882aa50db7555e7a74be0ed340fc2b11a1e52094d773c7feaa0f32` |
+| `exhume` | `native-analysis` | [abedegno/Exhume](https://github.com/abedegno/Exhume/blob/ff95127148f753b87f45d47b7b0dbd76d8fbe81f/README.md) | `3e4d45b01485e2c5dfea50e5510ed31b1351ce07fb4e96eac4ca1c19277bd998` |
+| `dcrecomp` | `game-analysis` | [sp00nznet/dcrecomp](https://github.com/sp00nznet/dcrecomp/blob/3c60e6f03cbbaaabeaa1f3165247ed3120f23c3e/README.md) | `faab99a16eddd7eca19bbc04c50c3e26e8f6b4b326578c81c3dc6d59b5f8e4f4` |
+| `nxrecomp` | `game-analysis` | [drakolordx7/nxrecomp](https://github.com/drakolordx7/nxrecomp/blob/0a9fe4653648cab485864524a30997b75589df9d/README.md) | `43eab373485e6a41871685e37308a4d8580ed903275b868dbbcfc5ab8e3826af` |
+| `scarface-decomp` | `reconstruction-cases` | [scarface-decomp/scarface_decomp](https://github.com/scarface-decomp/scarface_decomp/blob/dd4e326dd376302886660a6f8c96e2127fe32e6b/README.md) | `6bd6589c850646c7a4f2854c8527698e6eb840f89d26ad50b7aeee1c367e4979` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| sp00nznet/snesrecomp, sp00nznet/gbarecomp | Sibling recompilation toolkits deferred; the Neo Geo and Dreamcast toolkits are already represented. |
+| batinium/gta-stories-recompiled, Vidanox/BanjoTooieRecompiled | Near-duplicates of records already carried by other open PRs. |
+| R-drg siblings, YesterMester/TheSimpsonsGameRecomp | Upstream projects behind the already-curated Switch port. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. All are Class 2, so no previews were added; READMEs and the site were regenerated.

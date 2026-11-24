@@ -10,6 +10,7 @@
 
 ## 基于重建源码的移植
 
+- [**KH\_COM\_VITA：将 Kingdom Hearts: Chain of Memories 移植至 PS Vita**](https://github.com/ggdrn/KH_COM_VITA) - KH\_COM\_VITA 将 GBA《Kingdom Hearts: Chain of Memories》的反编译 C 代码编译为 PS Vita ARM 程序，并用 Vita 平台层替换 GBA 的视频、DMA、中断、音频、BIOS 和存档服务。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kh-com-vita-case/)</sub>
 - [**khdays-vita：《Kingdom Hearts 358/2 Days》的 PS Vita 移植版**](https://github.com/ggdrn/KH-DAYS-VITA) - khdays-vita 将《Kingdom Hearts 358/2 Days》的反编译源码编译为原生 PS Vita 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/khdays-vita-case/)</sub>
 - [**Killzone Shadow Fall：采用 Vulkan 图形转换的 Windows 原生移植**](https://github.com/lesca-191204/killzone-shadowfall-pc) - Killzone Shadow Fall for PC 在 Windows CPU 上直接运行 PS4 版游戏代码，并在运行时将图形转换为 Vulkan。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/killzone-shadow-fall-pc-case/)</sub>
 - [**Kingdom Hearts 358/2 Days：基于一致性反编译的原生 PC 移植**](https://github.com/Yokimitsuro/khdays-port) - 将 khdays-decomp 一致性反编译的 C 代码编译为 Windows x64 程序，并以原生平台层替代 Nintendo DS 硬件、SDK 服务及声音驱动。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/khdays-native-pc-port-case/)</sub>
@@ -641,5 +642,4 @@
 - [**ServUO：开源《网络创世纪》服务器模拟器**](https://github.com/ServUO/ServUO) - 用 C# .NET 编写的《网络创世纪》服务器模拟器，重实现游戏服务器，并支持自定义 shard、脚本与客户端兼容性。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/servuo/)</sub>
 - [**Settlers.ts：解析 Settlers 4 数据并重建浏览器版游戏**](https://github.com/tomsoftware/Settlers.ts) - Settlers.ts 用 TypeScript 和用户自己的 Settlers 4 文件开发浏览器版重制项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/settlers-ts-case/)</sub>
 - [**sh23ds：《寂静岭 2》的 3DS 原生重建**](https://github.com/ankushKun/sh23ds) - sh23ds 以 C 为 Nintendo 3DS 重建《寂静岭 2：导演剪辑版》的原生引擎，游戏数据由玩家自己的 PC 版本转换。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/sh23ds-case/)</sub>
-- [**sh3redux：C++ 重建 Silent Hill 3 引擎**](https://github.com/Palm-Studios/sh3redux) - sh3redux 用 C++ 和 OpenGL 重建《Silent Hill 3》引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sh3redux-case/)</sub>
 <!-- END GENERATED CASES -->

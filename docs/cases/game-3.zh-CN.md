@@ -10,6 +10,7 @@
 
 ## 静态重编译
 
+- [**Initial D Arcade Stage 3：NAOMI 2 游戏的实验性静态重编译**](https://github.com/distilledorion-sketch/Initial-D-Arcade-Stage-3-Native-SH-4-Recompilation-WIP-) - 这是 NAOMI 2 游戏《头文字 D 街机舞台 3》的实验性静态重编译，光盘编号 GDS-0033，面向 64 位 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/initial-d-arcade-stage-3/)</sub>
 - [**International Rally Championship：x86 转 C 原生重编译**](https://github.com/ericodeoliveira/international-rally-championship-recomp) - ircrecomp 将《International Rally Championship》的 RAL.EXE x86 函数静态转换为 C，再利用用户的 CD 镜像构建 64 位 Windows 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/international-rally-championship-recomp-case/)</sub>
 - [**iPod Click Wheel Recomps：静态重编译六款 iPod 游戏**](https://github.com/DogParty/iPodClickWheelRecomps) - iPod Click Wheel Recomps 把六款 iPod 点击轮游戏的 ARM 代码翻译成可以在当前硬件上构建的 C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ipod-clickwheel-recomps/)</sub>
 - [**IsaacRecomp：将 Flash 游戏字节码转换为原生 C++**](https://github.com/whylurking/IsaacRecomp) - 将 The Binding of Isaac 的 Flash AVM1 字节码转换为 C++ 函数，并提供原生渲染与输入运行时。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/isaacrecomp-case/)</sub>
@@ -622,5 +623,4 @@
 - [**Infernal Runner JS：重建 CPC 游戏的字节码引擎**](https://github.com/cyxx/infernal_js) - Infernal Runner JS 根据 CPC 磁盘镜像和 Z80 代码分析，将 Infernal Runner 移植到 JavaScript。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infernal-runner-js-case/)</sub>
 - [**Jackal UEFI：基于反汇编的 NES 游戏 UEFI 移植版**](https://github.com/MikeWuPing/UEFI_Jackal) - Jackal UEFI 将 NES 游戏《赤色要塞》的 6502 反汇编逐行翻译为 C 核心，移植成可在 UEFI Shell 中原生运行的程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jackal-uefi-port-case/)</sub>
 - [**jgalbs cod4：将 Call of Duty 4 多人客户端移植到 Apple silicon**](https://github.com/JGalbss/cod4-macos) - jgalbs cod4 将 KisakCOD 的 Call of Duty 4 多人客户端移植到 Apple silicon macOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jgalbs-cod4-case/)</sub>
-- [**KH\_COM\_VITA：将 Kingdom Hearts: Chain of Memories 移植至 PS Vita**](https://github.com/ggdrn/KH_COM_VITA) - KH\_COM\_VITA 将 GBA《Kingdom Hearts: Chain of Memories》的反编译 C 代码编译为 PS Vita ARM 程序，并用 Vita 平台层替换 GBA 的视频、DMA、中断、音频、BIOS 和存档服务。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kh-com-vita-case/)</sub>
 <!-- END GENERATED CASES -->

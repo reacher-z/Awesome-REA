@@ -6,10 +6,11 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**407 case studies**
+**408 case studies**
 
 ## Engine reimplementations
 
+- [**sh3redux: a Silent Hill 3 engine remake in C++**](https://github.com/Palm-Studios/sh3redux) - sh3redux rebuilds the Silent Hill 3 engine in C++ with OpenGL rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sh3redux-case/)</sub>
 - [**Shiloh: reimplementing The X-Files Game engine**](https://github.com/Asterber/shiloh) - Shiloh is a Rust engine for The X-Files Game (1998), with an SDL2 window and a WebAssembly browser build. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shiloh/)</sub>
 - [**shin: reimplementing the engine of Entergram visual games**](https://github.com/DCNick3/shin) - shin reimplements a game engine used by Entergram visual games, initially targeting the Switch release of Umineko no Naku Koro ni Saku. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shin-engine-case/)</sub>
 - [**shock2quest: recreating the Dark engine for System Shock 2 VR**](https://github.com/tommy-xr/shock2quest) - shock2quest recreates the Dark engine for a virtual-reality version of System Shock 2 on Meta Quest. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shock2quest-case/)</sub>
