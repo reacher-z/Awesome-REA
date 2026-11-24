@@ -160566,7 +160566,7 @@
     "targets": [
       "game"
     ],
-    "description_en": "A launcher for Konami BEMANI arcade games on Linux and Windows, from DJ Main (1997) to the first BEMANI PC cabinets (2010), restoring e-AMUSEMENT cards, scores, rankings, events and pop’n music NET TAISEN battles.",
+    "description_en": "A launcher for Konami BEMANI arcade games on Linux and Windows, from DJ Main (1997) to the first BEMANI PC cabinets (2010), restoring e-AMUSEMENT cards, scores, rankings, events and pop’n music online battles.",
     "description_zh": "在 Linux 与 Windows 上运行 Konami BEMANI 街机游戏的启动器，覆盖 DJ Main（1997）至早期 BEMANI PC 机台（2010），并恢复 e-AMUSEMENT 卡片、分数、排名、活动与 pop’n music 的 NET TAISEN 对战。",
     "evidence_url": "https://github.com/Roganis/HIRAKU/blob/a43eee67ecb68de78b02aa0760013359b1c1c869/README.md",
     "verified_at": "2026-11-24",
