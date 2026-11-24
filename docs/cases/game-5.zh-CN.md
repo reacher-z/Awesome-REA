@@ -6,10 +6,15 @@
 
 [English](game-5.md)
 
-**427 个案例**
+**432 个案例**
 
 ## 引擎重实现
 
+- [**Rockport Native：在 macOS 重建 Need for Speed: Most Wanted**](https://github.com/pablonolascoo/nfs-mw-2005-ps2-port) - Rockport Native 将 PlayStation 2 版 Need for Speed: Most Wanted 重建为 macOS 游戏，以 Swift 和 Metal 引擎读取玩家 ISO 转换出的数据。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/rockport-native-nfs-mw-case/)</sub>
+- [**RodLegacy：重建《Street Rod》与《Street Rod 2》**](https://github.com/grovdata/RodLegacy) - RodLegacy 用 C++ 为现代系统重建《Street Rod》和《Street Rod 2》，从用户提供的 Amiga 磁盘镜像读取游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rodlegacy-case/)</sub>
+- [**Rollerbot：面向 Android 与 Linux 的游戏运行环境重建**](https://github.com/sirbilliams/Rollerbot-Android) - Rollerbot-Android 根据原版脚本和用户提供的资源，为 2000 年游戏 Rollerbot: A Time Journey 重建 Android 与 Linux 运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rollerbot-android-case/)</sub>
+- [**Rook：重建 Roblox 引擎**](https://github.com/AsyncFinn/rook) - Rook 用 Rust 重建兼容 Roblox 的引擎，让用户提供的 place 文件可在 Roblox 之外运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rook-roblox-engine-case/)</sub>
+- [**rrt2-decomp：《Railroad Tycoon II》的 Rust 重实现**](https://github.com/pedryvo/rrt2-decomp) - rrt2-decomp 研究《Railroad Tycoon II Platinum》的可执行文件、游戏数据和模拟规则，并用 Rust 重实现游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rrt2-decomp-case/)</sub>
 - [**RTAGlass：Road Trip 的 Windows 重实现**](https://github.com/RTAGlass/RTAGlass) - RTAGlass 将 PS2 游戏 Road Trip 重实现为 C++ Windows 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rtaglass-case/)</sub>
 - [**Rugrats: Search for Reptar：PS 游戏的 Rust 重建**](https://github.com/Toyz/rugrats) - rugrats 将美版 PS 游戏《淘气小兵兵：寻找雷普塔》重建为原生 Rust PC 游戏，从玩家自己的光盘读取数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rugrats-search-for-reptar-case/)</sub>
 - [**rust-theft-auto：重建初代 Grand Theft Auto 引擎**](https://github.com/gaudecker/rust-theft-auto) - rust-theft-auto 使用玩家安装目录中的地图和样式文件，以 Rust 重建初代 Grand Theft Auto 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rust-theft-auto-case/)</sub>

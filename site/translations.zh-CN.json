@@ -45570,5 +45570,53 @@
       "它是民间静态重编译，兼容性取决于游戏版本。",
       "采用 MIT 许可证。"
     ]
+  },
+  "awesome-recompilations": {
+    "name": "awesome-recompilations",
+    "requirements": [
+      "它是重编译项目列表；每个链接项目自行提供构建步骤与游戏数据要求。",
+      "列表覆盖 Nintendo 64 与 Xbox 360 重编译及相关 mod。",
+      "采用 CC0-1.0 许可证。"
+    ]
+  },
+  "shadow-of-rome-recompiled": {
+    "name": "Shadow of Rome Recompiled：PS2 游戏非官方 PC 版",
+    "requirements": [
+      "需要自备游戏副本；不附带游戏数据。",
+      "它是静态重编译，兼容性取决于游戏版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "qwarks-awakening": {
+    "name": "Qwark’s Awakening：瑞奇与叮当（PS3）民间 PC 移植",
+    "requirements": [
+      "需要自备 PlayStation 3 游戏副本；移植版不附带游戏数据。",
+      "它是静态重编译，兼容性取决于游戏版本。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "strikers-recomp": {
+    "name": "strikers-recomp：马力欧强力足球战斗联赛静态重编译",
+    "requirements": [
+      "需要 Switch 游戏文件；把 AArch64 代码转译为 C，并由宿主运行时替代系统服务、Vulkan 上的 NVN、音频与输入。",
+      "它是静态重编译，兼容性取决于游戏更新版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "spm-nx": {
+    "name": "spm-nx：New Super Paper Bros 的 Switch 移植",
+    "requirements": [
+      "需要已修改并运行 Horizon 的 Switch，以及自备美版光盘（R8PE01 revision 0）文件，放在 /switch/spm-nx/game。",
+      "不包含游戏数据，移植版跟随上游发布更新。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "galaxy-frame": {
+    "name": "GalaxyFrame：GalaxyQuest 的 Steam Frame 移植",
+    "requirements": [
+      "需要自备游戏数据与 Steam Frame 或受支持的 ARM64 SteamOS 设备。",
+      "该分支完全由 AI 制作，依赖上游 Petari 与 GalaxyQuest。",
+      "采用 Unlicense。"
+    ]
   }
 }

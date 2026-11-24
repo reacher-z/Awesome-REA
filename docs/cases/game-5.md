@@ -6,10 +6,15 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**427 case studies**
+**432 case studies**
 
 ## Engine reimplementations
 
+- [**Rockport Native: reconstructing Need for Speed: Most Wanted on macOS**](https://github.com/pablonolascoo/nfs-mw-2005-ps2-port) - Rockport Native reconstructs the PlayStation 2 release of Need for Speed: Most Wanted as a macOS game using a Swift and Metal engine and data converted from the player's ISO. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/rockport-native-nfs-mw-case/)</sub>
+- [**RodLegacy: reimplementing Street Rod and Street Rod 2**](https://github.com/grovdata/RodLegacy) - RodLegacy reimplements Street Rod and Street Rod 2 in C++ for modern systems, reading game data from user-supplied Amiga disk images. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rodlegacy-case/)</sub>
+- [**Rollerbot: a reconstructed Android and Linux runtime**](https://github.com/sirbilliams/Rollerbot-Android) - Rollerbot-Android reconstructs the 2000 game Rollerbot: A Time Journey for Android and Linux from its original scripts and user-supplied assets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rollerbot-android-case/)</sub>
+- [**Rook: reconstructing the Roblox engine**](https://github.com/AsyncFinn/rook) - Rook reconstructs a Roblox-compatible engine in Rust so user-supplied places can run outside Roblox. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rook-roblox-engine-case/)</sub>
+- [**rrt2-decomp: a Rust reimplementation of Railroad Tycoon II**](https://github.com/pedryvo/rrt2-decomp) - rrt2-decomp reimplements Railroad Tycoon II in Rust after studying the Platinum executable, game data and simulation rules. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rrt2-decomp-case/)</sub>
 - [**RTAGlass: a Windows reimplementation of Road Trip**](https://github.com/RTAGlass/RTAGlass) - RTAGlass reimplements the PS2 game Road Trip as a C++ Windows port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rtaglass-case/)</sub>
 - [**Rugrats: Search for Reptar: a Rust reconstruction of the PlayStation game**](https://github.com/Toyz/rugrats) - rugrats reconstructs the North American PlayStation game Rugrats: Search for Reptar as a native Rust PC game using data read from the player's own disc. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rugrats-search-for-reptar-case/)</sub>
 - [**rust-theft-auto: reimplementing the original Grand Theft Auto engine**](https://github.com/gaudecker/rust-theft-auto) - rust-theft-auto reimplements the original Grand Theft Auto engine in Rust using map and style files from a player's installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rust-theft-auto-case/)</sub>

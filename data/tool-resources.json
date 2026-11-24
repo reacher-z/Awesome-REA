@@ -161011,5 +161011,177 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "awesome-recompilations",
+    "name": "awesome-recompilations",
+    "url": "https://github.com/BlueInterlude/awesome-recompilations",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A curated list of Nintendo 64 and Xbox 360 games recompiled with N64Recomp and XenonRecomp, organized by title with AI, key and template sections plus related mods.",
+    "description_zh": "用 N64Recomp 与 XenonRecomp 重编译的 Nintendo 64 与 Xbox 360 游戏精选列表，按游戏标题组织，并包含 AI、按键、模板说明及相关 mod。",
+    "evidence_url": "https://github.com/BlueInterlude/awesome-recompilations/blob/c75b7006dceae9ec492742476a9c61a1dcb35530/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "It is a list of recompilation projects; each linked project supplies its own build steps and game data requirements.",
+      "The list covers Nintendo 64 and Xbox 360 recompilations and related mods.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "shadow-of-rome-recompiled",
+    "name": "Shadow of Rome Recompiled: an unofficial PC version of the PlayStation 2 game",
+    "url": "https://github.com/Korvonordico/shadow-of-rome-recompiled",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An unofficial PC version of Shadow of Rome (PlayStation 2) that translates the game code into a Windows program, rendering up to 8 times the PS2 resolution at 60 fps with 4:3, 16:9 or 21:9 and mouse and keyboard support.",
+    "description_zh": "《Shadow of Rome》（PS2）的非官方 PC 版本，把游戏代码转译为 Windows 程序，支持最高 8 倍 PS2 分辨率、60 fps、4:3/16:9/21:9 以及鼠标键盘操作。",
+    "evidence_url": "https://github.com/Korvonordico/shadow-of-rome-recompiled/blob/18eb0226a3d7f2531860f0a64147e9074af1cb0d/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the game; no game data is included.",
+      "It is a static recompilation and depends on the game version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "qwarks-awakening",
+    "name": "Qwark’s Awakening: an unofficial PC port of Ratchet & Clank (PS3)",
+    "url": "https://github.com/undecuple/qwarks-awakening",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An unofficial fan port that turns the PlayStation 3 Ratchet & Clank games into native Windows programs through static recompilation, built from your own copy.",
+    "description_zh": "通过静态重编译把 PlayStation 3 的《瑞奇与叮当》游戏转为原生 Windows 程序的民间移植，使用自备游戏副本构建。",
+    "evidence_url": "https://github.com/undecuple/qwarks-awakening/blob/e52809e64307b27134d83cc3893dccc38ca77538/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own PlayStation 3 game copy; the port ships no game data.",
+      "It is a static recompilation, and compatibility depends on the game version.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "strikers-recomp",
+    "name": "strikers-recomp: a static recompilation of Mario Strikers: Battle League",
+    "url": "https://github.com/MTG9T4/strikers-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of Mario Strikers: Battle League (Switch, 1.3.2) into a native Windows x64 program, with resolution scaling, FSR upscaling, ultrawide support and HDR10.",
+    "description_zh": "把 Switch 版《马力欧强力足球：战斗联赛》（1.3.2）静态重编译为原生 Windows x64 程序，支持分辨率缩放、FSR 放大、超宽屏与 HDR10。",
+    "evidence_url": "https://github.com/MTG9T4/strikers-recomp/blob/54aa14f8646ae38c9d9b2c326fdc51556057ada8/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the Switch game files; the AArch64 code is translated to C and a host runtime replaces system services, NVN on Vulkan, audio and input.",
+      "It is a static recompilation and depends on the game update version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "spm-nx",
+    "name": "spm-nx: a Nintendo Switch port of New Super Paper Bros",
+    "url": "https://github.com/Eladerino/spm-nx",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A homebrew Nintendo Switch port of the New Super Paper Bros recompilation by JosiahG, rendered through its deko3d backend and running on modded Switch hardware.",
+    "description_zh": "JosiahG 的 New Super Paper Bros 重编译项目的 Nintendo Switch 自制移植，使用 deko3d 后端渲染，可在已修改的 Switch 硬件上运行。",
+    "evidence_url": "https://github.com/Eladerino/spm-nx/blob/64405352c35b433e932fe11cec206f55eadd5040/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a modded Switch with Horizon and files from your own USA disc (R8PE01 revision 0) placed in /switch/spm-nx/game.",
+      "No game data is included, and the port tracks upstream releases.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "galaxy-frame",
+    "name": "GalaxyFrame: a Steam Frame port of the GalaxyQuest Super Mario Galaxy recompilation",
+    "url": "https://github.com/PodeCaradox/GalaxyFrame",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A fork of GalaxyQuest that also runs natively on Valve Steam Frame (SteamOS, arm64), built on the Petari Super Mario Galaxy decompilation with controls and settings documented.",
+    "description_zh": "GalaxyQuest 的分支，额外支持在 Valve Steam Frame（SteamOS，arm64）上原生运行，基于 Petari 的《超级马力欧银河》反编译项目，并附控制与设置文档。",
+    "evidence_url": "https://github.com/PodeCaradox/GalaxyFrame/blob/fa5766398b7dec88ecffa80302bd016e667a9d22/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user game data and a Steam Frame or supported ARM64 SteamOS device.",
+      "The fork is made entirely with AI and depends on upstream Petari and GalaxyQuest.",
+      "Unlicense."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

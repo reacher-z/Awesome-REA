@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-24T20:28:30+00:00",
-    "entry_count": 1184,
-    "class_entry_count": 1215,
+    "generated_at": "2026-11-24T21:08:28+00:00",
+    "entry_count": 1188,
+    "class_entry_count": 1219,
     "class_counts": {
-      "image": 1144,
+      "image": 1148,
       "video": 40
     },
     "missing_count": 31,
@@ -3015,6 +3015,15 @@
       "source_url": "https://github.com/timschneeb/GalaxyBudsClient",
       "revision": "9fc33678b029d30e4e735b21f07ae80abab90f6e",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "galaxy-frame",
+      "image_url": "https://raw.githubusercontent.com/PodeCaradox/GalaxyFrame/fa5766398b7dec88ecffa80302bd016e667a9d22/docs/images/cover.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/PodeCaradox/GalaxyFrame",
+      "revision": "fa5766398b7dec88ecffa80302bd016e667a9d22",
+      "checked_at": "2026-11-24T21:08:27+00:00"
     },
     {
       "id": "game-and-watch-fpga-case",
@@ -7184,6 +7193,15 @@
       "checked_at": "2026-11-22T06:41:04+00:00"
     },
     {
+      "id": "qwarks-awakening",
+      "image_url": "https://raw.githubusercontent.com/undecuple/qwarks-awakening/e52809e64307b27134d83cc3893dccc38ca77538/assets/divider-plate.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/undecuple/qwarks-awakening",
+      "revision": "e52809e64307b27134d83cc3893dccc38ca77538",
+      "checked_at": "2026-11-24T21:08:28+00:00"
+    },
+    {
       "id": "r2dec",
       "image_url": "https://raw.githubusercontent.com/wargio/r2dec-js/image/r2dec200.png",
       "kind": "image",
@@ -8407,6 +8425,15 @@
       "checked_at": "2026-11-07T03:49:14+00:00"
     },
     {
+      "id": "shadow-of-rome-recompiled",
+      "image_url": "https://img.youtube.com/vi/2GsRxUH3Ctk/maxresdefault.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Korvonordico/shadow-of-rome-recompiled",
+      "revision": "18eb0226a3d7f2531860f0a64147e9074af1cb0d",
+      "checked_at": "2026-11-24T21:08:27+00:00"
+    },
+    {
       "id": "shadow-of-the-colossus-oussama-pc-case",
       "image_url": "https://raw.githubusercontent.com/Oussama268/ShadowOfTheColossus-PC/195312728bd688f5efe39be0c403b843750c752f/docs/images/sotc-menu-f1-en.png",
       "kind": "image",
@@ -8990,6 +9017,15 @@
       "source_url": "https://github.com/phobos665/split2-recomp",
       "revision": "7a3345f3f038bf17ff268a35ed0f77148d49b891",
       "checked_at": "2026-11-09T04:31:25+00:00"
+    },
+    {
+      "id": "spm-nx",
+      "image_url": "https://raw.githubusercontent.com/Eladerino/spm-nx/64405352c35b433e932fe11cec206f55eadd5040/screenshots/mac_02_cinematic.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Eladerino/spm-nx",
+      "revision": "64405352c35b433e932fe11cec206f55eadd5040",
+      "checked_at": "2026-11-24T21:08:27+00:00"
     },
     {
       "id": "spy-debugger",

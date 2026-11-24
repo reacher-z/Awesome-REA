@@ -774,3 +774,30 @@ This round adds two recompilation libraries and four reconstruction cases: pcrec
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; SSARecomp received a Class 1 preview. The four new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, twenty-ninth batch — 2026-11-24
+
+This round adds one recompilation list and five reconstruction cases: awesome-recompilations, Shadow of Rome Recompiled, Qwark’s Awakening, strikers-recomp, spm-nx and GalaxyFrame.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `awesome-recompilations` | `related-lists` | [BlueInterlude/awesome-recompilations](https://github.com/BlueInterlude/awesome-recompilations/blob/c75b7006dceae9ec492742476a9c61a1dcb35530/README.md) | `46ec2a29b49d83a67a567d30fc507b085142b239c33f9ff612391742c4fd2c61` |
+| `shadow-of-rome-recompiled` | `reconstruction-cases` | [Korvonordico/shadow-of-rome-recompiled](https://github.com/Korvonordico/shadow-of-rome-recompiled/blob/18eb0226a3d7f2531860f0a64147e9074af1cb0d/README.md) | `6d7ca7aa559df3b8b6cb97c02588ed1fc3dbd1a2994da13423888c965df444bb` |
+| `qwarks-awakening` | `reconstruction-cases` | [undecuple/qwarks-awakening](https://github.com/undecuple/qwarks-awakening/blob/e52809e64307b27134d83cc3893dccc38ca77538/README.md) | `a4220aa551f637515757407bf3d0eb9159e7a8dd8e1b1cc637b1a0425548ce66` |
+| `strikers-recomp` | `reconstruction-cases` | [MTG9T4/strikers-recomp](https://github.com/MTG9T4/strikers-recomp/blob/54aa14f8646ae38c9d9b2c326fdc51556057ada8/README.md) | `225f486ccdce71804128f845365cef614cdd4d7068ebaba564340b7adb9f61b1` |
+| `spm-nx` | `reconstruction-cases` | [Eladerino/spm-nx](https://github.com/Eladerino/spm-nx/blob/64405352c35b433e932fe11cec206f55eadd5040/README.md) | `c6bc9728e2a32749aee59fb16aee44a9201531b10d1369f80294cca8f79e00f9` |
+| `galaxy-frame` | `reconstruction-cases` | [PodeCaradox/GalaxyFrame](https://github.com/PodeCaradox/GalaxyFrame/blob/fa5766398b7dec88ecffa80302bd016e667a9d22/README.md) | `7d29e739619e59243a1813d57e814a5ff7ca0ea105cdecc776a4bd6b397071a8` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| mstan/PokemonStadiumRecomp | README declares the project no longer maintained as of August 2026. |
+| MegaMan64Recomp/MegaMan64Recompiled | README is a 52-byte stub below the documentation threshold. |
+| codepdbh/nfsu2-recompiled, soyjxck/dod3-recomp, rigaz29/Ascension-R | No license file recorded by the GitHub API. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; four Class 1 records received previews. The five new case studies update the game case indexes and README case sections.
