@@ -6,10 +6,12 @@
 
 [简体中文](game-4.zh-CN.md)
 
-**629 case studies**
+**628 case studies**
 
 ## Ports of reconstructed source
 
+- [**Ice Rage: an Android native-library port for Linux ARM handhelds**](https://github.com/EapRules/icerage-native-arm) - Ice Rage runs on Linux ARM handhelds through a bionic ELF loader that maps the game's Android armeabi-v7a library and supplies required Android interfaces. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ice-rage-arm-port-case/)</sub>
+- [**ico-pc: a native ICO port compiled from the PS2 decompilation**](https://github.com/nathanialf/ico-pc) - Compiles the decompiled C of the PlayStation 2 game ICO natively for Windows, Linux, Android, iPhone and Apple-silicon Macs, with host code standing in for the PS2 hardware and Sony libraries. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ico-pc-port-case/)</sub>
 - [**idTech4A++: id Tech 4 games ported to Android and desktop GLES**](https://github.com/glKarin/com.n0n3m4.diii4a) - A port of id Tech 4 games including DOOM 3, Quake 4, Prey (2006) and DOOM 3 BFG to Android, Windows and Linux with OpenGL ES rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/idtech4a/)</sub>
 - [**Ignition: porting the 1997 racing game from executable analysis**](https://github.com/xesf/ignition) - Ignition ports the 1997 racing game by reading routines in its Windows executable with IDA and rewriting their behaviour in portable C99. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ignition-port-case/)</sub>
 - [**inFAMOUS First Light: rehosting the PS4 game on Windows**](https://github.com/VantageEX/infamous-first-light-pc) - inFAMOUS First Light is rehosted on Windows by running the PlayStation 4 game's x86-64 code directly on the PC processor. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/infamous-first-light-pc-case/)</sub>
@@ -639,7 +641,4 @@
 - [**Sarien: a portable reimplementation of Sierra's AGI interpreter**](https://sourceforge.net/projects/sarien/) - Sarien reimplements Sierra On-Line's Adventure Game Interpreter (AGI) in C so that AGI games such as Leisure Suit Larry, King's Quest II and Mixed-Up Mother Goose run across many platforms. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sarien-agi-interpreter-case/)</sub>
 - [**Scion: reimplementing the SimCity 4 Gonzo/Rizzo framework**](https://github.com/nsgomez/scion) - Scion is a reference implementation of the Gonzo/Rizzo framework used by Maxis. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/scion-maxis/)</sub>
 - [**Scooby-Doo Mystery: a reconstructed Sega Genesis engine**](https://github.com/janezkranjc/scooby-doo-mistery-mouse-version) - The Scooby-Doo Mystery port reimplements the Sega Genesis game's engine in C++ with SFML 3, porting routines from 68000 code and reading graphics, text and scripts from a user ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/scooby-doo-mystery-genesis-case/)</sub>
-- [**ScummVM: replacement executables for classic adventure games**](https://github.com/scummvm/scummvm) - Replaces the executables of classic adventure games and RPGs with one program that runs the user's original data files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/scummvm-engine-case/)</sub>
-- [**SDLPAL: reimplementing Legend of Sword and Fairy with SDL**](https://github.com/sdlpal/sdlpal) - SDLPAL is an SDL reimplementation of the Chinese RPG Legend of Sword and Fairy, also called PAL. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sdlpal/)</sub>
-- [**SDLPoP2: rebuilding the Prince of Persia 2 DOS engine**](https://github.com/ToolAssisted-run/SDLPoP2) - SDLPoP2 rebuilds the engine of Prince of Persia 2: The Shadow and the Flame from its DOS program as C for Linux and Windows. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sdlpop2-prince-of-persia-2-case/)</sub>
 <!-- END GENERATED CASES -->

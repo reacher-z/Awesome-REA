@@ -160500,5 +160500,174 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "genrecomp",
+    "name": "genrecomp",
+    "url": "https://github.com/sp00nznet/genrecomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A toolkit for statically recompiling Sega Genesis and Mega Drive games to native code: a per-title generator turns 68000 machine code into C, while genrecomp supplies the video and sound chips, Z80, controllers and a window or headless recorder.",
+    "description_zh": "把 Sega Genesis/Mega Drive 游戏静态重编译为原生代码的工具包：按游戏生成的代码把 68000 机器码转成 C，genrecomp 负责视频与音效芯片、Z80、手柄以及窗口或无头录制。",
+    "evidence_url": "https://github.com/sp00nznet/genrecomp/blob/b3900079c4ebb9d7f383bef3cd6d05e496667599/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Genesis or Mega Drive ROM; the 68000 is never emulated, and game data and generated code stay out of the repository.",
+      "The project is alpha and unversioned, with two titles playable.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "psprism",
+    "name": "psprism",
+    "url": "https://github.com/anthonyhfm/psprism",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A static recompilation engine for PlayStation Portable executables that translates Allegrex MIPS binaries, including VFPU operations, relocations and imports, into portable C++20 projects.",
+    "description_zh": "面向 PlayStation Portable 可执行文件的静态重编译引擎：把 Allegrex MIPS 二进制（含 VFPU 向量操作、重定位与导入）转译为可移植的 C++20 项目。",
+    "evidence_url": "https://github.com/anthonyhfm/psprism/blob/8764f39bb6ee0d10a9c07d8ca2934ce38a5ecb83/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a legally obtained PSP dump (ISO, ELF or PRX); the recompiled project can use the refract compatibility layer.",
+      "The project is a static recompiler, and compatibility depends on the executable.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "hiraku",
+    "name": "HIRAKU",
+    "url": "https://github.com/Roganis/HIRAKU",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A launcher for Konami BEMANI arcade games on Linux and Windows, from DJ Main (1997) to the first BEMANI PC cabinets (2010), restoring e-AMUSEMENT cards, scores, rankings, events and pop’n music NET TAISEN battles.",
+    "description_zh": "在 Linux 与 Windows 上运行 Konami BEMANI 街机游戏的启动器，覆盖 DJ Main（1997）至早期 BEMANI PC 机台（2010），并恢复 e-AMUSEMENT 卡片、分数、排名、活动与 pop’n music 的 NET TAISEN 对战。",
+    "evidence_url": "https://github.com/Roganis/HIRAKU/blob/a43eee67ecb68de78b02aa0760013359b1c1c869/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Ships no game data; you bring your own dumps.",
+      "It restores arcade services and events, and compatibility depends on the board and game version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "crystal-cut",
+    "name": "Crystal Cut: a restored native PC port of TimeSplitters 2",
+    "url": "https://github.com/Destinity13/TimeSplitters-2-Native-Linux-Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of TimeSplitters 2 (PlayStation 2) into a native PC game for Windows, Linux and Steam Deck, with cut content recovered from the player own disc.",
+    "description_zh": "把 PlayStation 2 游戏《TimeSplitters 2》静态重编译为 Windows、Linux 与 Steam Deck 原生 PC 游戏，并从玩家自备光盘中恢复被删减内容。",
+    "evidence_url": "https://github.com/Destinity13/TimeSplitters-2-Native-Linux-Recomp/blob/e1d714b43b04c7209d2671fd97492b857cb32dd5/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own USA or PAL disc; the port ships no game data.",
+      "It is a static recompilation and depends on the disc version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "tbuddies-decomp",
+    "name": "Team Buddies — a matching decompilation",
+    "url": "https://github.com/hcbt/tbuddies-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A matching decompilation of Team Buddies (SLUS-008.69) with matching C sources, committed Splat assembly and linker inputs, and byte-verified builds of all eight binaries.",
+    "description_zh": "《Team Buddies》（SLUS-008.69）的匹配式反编译：匹配的 C 源码、提交的 Splat 汇编与链接输入，并对全部八个二进制做逐字节验证构建。",
+    "evidence_url": "https://github.com/hcbt/tbuddies-decomp/blob/d2ca1dce934263d553cfd8f835c81438c0df906f/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Builds use committed generated assembly and do not need a private disc dump; Meson and Ninja compile changed objects and verify hashes.",
+      "It is a matching decompilation, and progress is tracked with objdiff and decomp.dev.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "demech2",
+    "name": "MechWarrior 2 — a work-in-progress decompilation",
+    "url": "https://github.com/anpage/demech2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A work-in-progress decompilation of the Windows 95 releases of MechWarrior 2 and Ghost Bear Legacy that aims to match the original machine code instruction for instruction.",
+    "description_zh": "《MechWarrior 2》与《Ghost Bear’s Legacy》Windows 95 版的在研反编译项目，目标是逐指令匹配原始机器码。",
+    "evidence_url": "https://github.com/anpage/demech2/blob/07c629aecaf694ea803c8ebc45333ba7c9bd428a/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Recreates the original binaries and compiles only for 32-bit Windows 9x; the decompiled code was written with AI assistance.",
+      "A modern portable adaptation is in progress as a separate project, ReMech2.",
+      "LGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

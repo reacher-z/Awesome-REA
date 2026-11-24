@@ -693,3 +693,30 @@ This round adds two recompilation toolkits and four reconstruction cases: gbarec
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; XRecomp received a Class 1 preview. The four new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, twenty-sixth batch — 2026-11-24
+
+This round adds two recompilation tools, one arcade launcher and three reconstruction cases: genrecomp, psprism, HIRAKU, Crystal Cut (TimeSplitters 2), Team Buddies and MechWarrior 2.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `genrecomp` | `game-analysis` | [sp00nznet/genrecomp](https://github.com/sp00nznet/genrecomp/blob/b3900079c4ebb9d7f383bef3cd6d05e496667599/README.md) | `5338365c94a0301cfd9194d7844bb452394cb5508640d461878805588ae53607` |
+| `psprism` | `game-analysis` | [anthonyhfm/psprism](https://github.com/anthonyhfm/psprism/blob/8764f39bb6ee0d10a9c07d8ca2934ce38a5ecb83/README.md) | `f42e4f6b54f508ebc278d39d67399363faf69348c3ceca6c595da091378eb5d2` |
+| `hiraku` | `game-analysis` | [Roganis/HIRAKU](https://github.com/Roganis/HIRAKU/blob/a43eee67ecb68de78b02aa0760013359b1c1c869/README.md) | `f63ca04f3102072ac1ab5ded92433ecc795f7eee4f80ece44ccc434c5f956ef7` |
+| `crystal-cut` | `reconstruction-cases` | [Destinity13/TimeSplitters-2-Native-Linux-Recomp](https://github.com/Destinity13/TimeSplitters-2-Native-Linux-Recomp/blob/e1d714b43b04c7209d2671fd97492b857cb32dd5/README.md) | `6688f70918adadc8f2b8c72c8caeac33bea0b999f817e8cd5eca3f9e949a048a` |
+| `tbuddies-decomp` | `reconstruction-cases` | [hcbt/tbuddies-decomp](https://github.com/hcbt/tbuddies-decomp/blob/d2ca1dce934263d553cfd8f835c81438c0df906f/README.md) | `c80266ab3415f18dac275d87abcabc9e6a2f3ab5dec3d7c176e473ea5d39dbcc` |
+| `demech2` | `reconstruction-cases` | [anpage/demech2](https://github.com/anpage/demech2/blob/07c629aecaf694ea803c8ebc45333ba7c9bd428a/README.md) | `6efe5613281d457d8fdcaca68efbadf204c9f0785d8940b87fac9e607114abe2` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| sp00nznet/snesrecomp | Record id already used by the stacked catalog; a new id would be needed before adding it. |
+| SuperRecomp, abandoned projects | READMEs declare the projects abandoned or no longer maintained. |
+| batinium/gta-stories-recompiled, Vidanox/BanjoTooieRecompiled | Near-duplicates of records already carried by other open PRs. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Crystal Cut received a Class 1 preview. The three new case studies update the game case indexes and README case sections.

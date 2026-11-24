@@ -10,6 +10,7 @@
 
 ## 非匹配反编译
 
+- [**Black &amp; White：从 x86 程序重建游戏**](https://github.com/sp00nznet/bw) - Black &amp; White 通过分析 2001 年原版游戏的 x86 可执行文件，以 C++ 重建游戏系统。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/black-and-white-reconstruction-case/)</sub>
 - [**blackhack：runblack.exe 界面控件类反编译**](https://gitlab.com/bwrsandman/blackhack) - blackhack 用手工反编译的 C 代码重建 runblack.exe 的 SetupControl 界面控件类，涵盖按钮、大按钮与标签按钮、复选框、列表、滑块、输入框、取色器、图片和图表控件，并重建了部分 Lionhead lhlib 库。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/blackhack-case/)</sub>
 - [**Blast Corps：任天堂 64 反编译**](https://github.com/retroplastic/blastcorps) - 该仓库是任天堂 64 游戏 Blast Corps 的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/blastcorps-decomp/)</sub>
 - [**Blitz\_MasterVer22-Decomp：《Splatoon 2》3.1.0 版反编译**](https://github.com/YoshiCrystal9/Blitz_MasterVer22-Decomp) - Blitz\_MasterVer22-Decomp 重建 Nintendo Switch 游戏《Splatoon 2》3.1.0 版的代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/splatoon-2-310-decomp-case/)</sub>
@@ -473,6 +474,7 @@
 - [**crazytaxi：静态重编译 Dreamcast 游戏**](https://github.com/sp00nznet/crazytaxi) - crazytaxi 使用 dcrecomp 和用户的光盘镜像，将 Dreamcast《Crazy Taxi》的 SH-4 机器码静态转为原生 x86-64 C 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crazy-taxi-static-recomp-case/)</sub>
 - [**Crimson Skies：《Crimson Skies》静态重编译与运行环境启动**](https://github.com/sp00nznet/crimsonskies) - Crimson Skies 项目将游戏的 x86 Win32 可执行文件静态转换为 C，并通过导入桥接和回调接入原生 MFC 与 DirectX 库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crimson-skies-recomp-case/)</sub>
 - [**Cristalis：静态重编译 Crystal Defenders 以移植到 Windows**](https://github.com/Claudio5702/Cristalis) - Cristalis 使用 XenonRecomp 将 Xbox 360 游戏 Crystal Defenders 的 PowerPC 代码预先翻译为 C++，再由专用运行时在 Windows 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cristalis-crystal-defenders-case/)</sub>
+- [**Crystal Cut：TimeSplitters 2 原生 PC 移植**](https://github.com/Destinity13/TimeSplitters-2-Native-Linux-Recomp) - 把 PlayStation 2 游戏《TimeSplitters 2》静态重编译为 Windows、Linux 与 Steam Deck 原生 PC 游戏，并从玩家自备光盘中恢复被删减内容。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crystal-cut/)</sub>
 - [**ct-recomp：静态重编译《Chrono Trigger》**](https://github.com/ThisIsAkill/ct-recomp) - ct-recomp 将《Chrono Trigger》美国版 1.0 的 65816 例程静态转换为 C，配合 C 运行时、解释器回退和 SDL2 前端运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ct-recomp-case/)</sub>
 - [**dantes-inferno-nx：《但丁地狱》Nintendo Switch 移植**](https://github.com/VasilkovND/dantes-inferno-nx) - dantes-inferno-nx 将 Xbox 360 版《但丁地狱》的 PowerPC 代码静态重编译为 C++，构建 Nintendo Switch 自制程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dantes-inferno-nx-case/)</sub>
 - [**Daytona USA：Xbox Live Arcade 版静态重编译**](https://github.com/Subarasheese/daytona-xbla-recomp) - 该项目用 ReXGlue 静态重编译 2011 年 Xbox 360 Arcade 版《代托纳 USA》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/daytona-xbla-recomp/)</sub>
@@ -633,6 +635,4 @@
 - [**I COULD HAVE GIVEN YOU THE WORLD：《007：黑日危机》N64 游戏本机移植**](https://github.com/riseio/TWIPE_00Sheven) - I COULD HAVE GIVEN YOU THE WORLD 将 N64《007：黑日危机》移植到 PC 和 Steam Deck。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/i-could-have-given-you-the-world-case/)</sub>
 - [**Imabikisō：实验性 PS3 至 PC 静态重编译**](https://github.com/yasindevs/imabikisou-pc) - Imabikisō 使用 ps3recomp 将本地生成的 PS3 游戏代码作为 Windows 程序运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/imabikiso-pc-recompilation-case/)</sub>
 - [**In Cold Blood Recompiled：PlayStation 游戏重编译安装程序**](https://github.com/alexbeavs-ps1-ports/in-cold-blood-recomp) - In Cold Blood Recompiled 配置 PSXRecomp 与 recomp-ui，从用户的 PlayStation 光盘生成原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/in-cold-blood-recompiled-case/)</sub>
-- [**inFAMOUS 2：面向 Apple 芯片 macOS 的静态重编译**](https://github.com/erikomis/infamous2-recomp) - inFAMOUS 2 将 PS3 数字版 NPUA80638 的 PowerPC 与 SPU 代码转为 C/C++，编译成使用 Metal 图形的 Apple 芯片 macOS 原生游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous2-macos-recomp-case/)</sub>
-- [**声名狼藉 2：将 PS3 游戏重编译到 Linux**](https://github.com/ThiagoFraga761/infamous2-pc) - 该项目用 ps3recomp 把 PlayStation 3 版《恶名昭彰 2》（BCUS98125，版本 01.00）重编译到原生 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous2-pc/)</sub>
 <!-- END GENERATED CASES -->

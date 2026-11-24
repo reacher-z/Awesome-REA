@@ -6,7 +6,7 @@
 
 [English](game-1.md)
 
-**616 个案例**
+**617 个案例**
 
 <a id="game-matching-decompilation"></a>
 ## 匹配反编译与反汇编
@@ -302,6 +302,7 @@
 - [**Marvel Nemesis: Rise of the Imperfects：GameCube 版反编译**](https://github.com/Esoteric-Engineer/mnroi) - mnroi 为美版 GameCube 游戏 Marvel Nemesis: Rise of the Imperfects 重建 C/C++ 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/marvel-nemesis-gamecube-decomp-case/)</sub>
 - [**Marvel vs. Capcom 2：Dreamcast 版早期精确反编译**](https://github.com/devin-thomas/mvc2-dc) - 面向《Marvel vs. Capcom 2: New Age of Heroes》北美 Dreamcast 版开展精确反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mvc2-dreamcast-decomp-case/)</sub>
 - [**Marvel vs. Capcom 2：PS2 匹配反编译与浏览器移植**](https://github.com/g-guthrie/mvc2-ps2-decomp) - Marvel vs. Capcom 2 将美版 PS2 游戏代码重建为 C，并与零售版可执行文件逐字节比对，再编译为 WebAssembly 和 WebGL2 浏览器移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mvc2-ps2-decomp-case/)</sub>
+- [**MechWarrior 2 — 在研反编译**](https://github.com/anpage/demech2) - 《MechWarrior 2》与《Ghost Bear’s Legacy》Windows 95 版的在研反编译项目，目标是逐指令匹配原始机器码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/demech2/)</sub>
 - [**Medabots: Rokusho Version：逐字节匹配的 GBA 游戏反编译**](https://github.com/rommerhacks/medabots-rokusho) - Medabots: Rokusho Version 使用 agbcc 将美版 GBA 游戏的函数重建为 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/medabots-rokusho-decomp-case/)</sub>
 - [**Medarot Parts Collection：Game Boy 反汇编与翻译工作区**](https://github.com/Medabots/medarot1-pc) - medarot1-pc 对 Game Boy 游戏《Medarot Parts Collection》的部分内容进行反汇编，并维护文字、地图块和图块提取工具，供翻译工作使用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/medarot-parts-collection-disassembly-case/)</sub>
 - [**medarot：《Medarot Kabuto》部分匹配反汇编**](https://github.com/Sanqui/medarot) - medarot 用汇编重建 Game Boy 游戏《Medarot Kabuto》的部分代码，其余区段从 baserom.gbc 导入。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/medarot-kabuto-disassembly-case/)</sub>
@@ -506,6 +507,7 @@
 - [**TA: Byte Tactics：Total Annihilation 匹配反编译**](https://github.com/ozgb/byte-tactics) - TA: Byte Tactics 使用 Visual C++ 5.0 SP3 编译重建的 C++ 函数，并与《Total Annihilation》v3.1 的 TotalA.exe 逐函数比较，处理链接器填充的字节。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ta-byte-tactics-case/)</sub>
 - [**tactical-decomp：逐字节匹配地恢复《Final Fantasy Tactics》**](https://github.com/Kyagara/tactical-decomp) - tactical-decomp 将美版 PlayStation 游戏《Final Fantasy Tactics》重建为与原可执行文件及光盘模块逐字节匹配的 C89。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tactical-decomp-case/)</sub>
 - [**Tag Force 5 Decompilation：匹配重建 PSP 游戏代码**](https://github.com/angelof-exe/ygo-tf-5-decomp) - Tag Force 5 Decompilation 重建 PSP 游戏《Yu-Gi-Oh! 5D's Tag Force 5》ULES-01474 版本的 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tag-force-5-decomp-case/)</sub>
+- [**Team Buddies — 匹配式反编译**](https://github.com/hcbt/tbuddies-decomp) - 《Team Buddies》（SLUS-008.69）的匹配式反编译：匹配的 C 源码、提交的 Splat 汇编与链接输入，并对全部八个二进制做逐字节验证构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tbuddies-decomp/)</sub>
 - [**Tecmo Super Bowl：逐字节一致的 NES 反汇编**](https://github.com/bruddog/Tecmo_Super_Bowl_NES_Disassembly) - 这是 NES《Tecmo Super Bowl》的反汇编，6502 源码可以逐字节重建原版游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tecmo-super-bowl-nes-case/)</sub>
 - [**Tenchu 1：《Shinobi Gaisen》PlayStation 反编译项目**](https://github.com/Fuuzetsu/tenchu-decomp) - Tenchu 1 项目通过拆分、C 编译和重新汇编流程重建 PlayStation 游戏《Shinobi Gaisen》的代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tenchu-shinobi-gaisen-decomp-case/)</sub>
 - [**Tetris Plus：早期 Game Boy 反汇编**](https://github.com/VinceIP/tetris-plus-disassembly) - 项目将美欧版 Game Boy《Tetris Plus》按 ROM 存储体重建为 RGBDS 汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tetris-plus-game-boy-disassembly-case/)</sub>
@@ -629,5 +631,4 @@
 - [**Battlestations Pacific：逐步重建 Win32 C++ 程序**](https://github.com/sqz269/battlestations-pacific-decompile) - 依据 Ghidra 分析，将 Battlestations Pacific 的 Win32 可执行文件逐例程重建为可编译的 MSVC C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/battlestations-pacific-reconstruction-case/)</sub>
 - [**Batty：ZX Spectrum 游戏的 SkoolKit 反汇编**](https://github.com/pobtastic/batty) - batty 提供 ZX Spectrum 游戏《Batty》的 SkoolKit 反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/batty-disassembly-case/)</sub>
 - [**BIT.TRIP COMPLETE：Wii 游戏反编译**](https://github.com/Fatih120/bittrip) - BIT.TRIP COMPLETE 是针对 Wii 游戏编号 SVTEXS 的进行中反编译工程。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bit-trip-complete-case/)</sub>
-- [**Black &amp; White：从 x86 程序重建游戏**](https://github.com/sp00nznet/bw) - Black &amp; White 通过分析 2001 年原版游戏的 x86 可执行文件，以 C++ 重建游戏系统。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/black-and-white-reconstruction-case/)</sub>
 <!-- END GENERATED CASES -->

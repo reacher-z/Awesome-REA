@@ -10,6 +10,8 @@
 
 ## 静态重编译
 
+- [**inFAMOUS 2：面向 Apple 芯片 macOS 的静态重编译**](https://github.com/erikomis/infamous2-recomp) - inFAMOUS 2 将 PS3 数字版 NPUA80638 的 PowerPC 与 SPU 代码转为 C/C++，编译成使用 Metal 图形的 Apple 芯片 macOS 原生游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous2-macos-recomp-case/)</sub>
+- [**声名狼藉 2：将 PS3 游戏重编译到 Linux**](https://github.com/ThiagoFraga761/infamous2-pc) - 该项目用 ps3recomp 把 PlayStation 3 版《恶名昭彰 2》（BCUS98125，版本 01.00）重编译到原生 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous2-pc/)</sub>
 - [**inFamous PC：面向 Windows 的 PlayStation 3 静态重编译移植版**](https://github.com/whompay/inFAMOUSreborn) - inFamous PC 使用 ps3recomp 静态重编译《inFamous》欧洲版 PlayStation 3 游戏的 PPU 和 SPU 代码，构建 Windows 原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous-pc-case/)</sub>
 - [**Infinite Undiscovery Recomp：Xbox 360 游戏的原生重编译**](https://github.com/doc-haz/infinite-undiscovery-recomp) - Infinite Undiscovery Recomp 是 Xbox 360 版 Infinite Undiscovery（2008）的 Windows x64 原生重编译，用 ReXGlue 和 XenonRecomp 构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infinite-undiscovery-recomp-case/)</sub>
 - [**Initial D Arcade Stage 3：NAOMI 2 游戏的实验性静态重编译**](https://github.com/distilledorion-sketch/Initial-D-Arcade-Stage-3-Native-SH-4-Recompilation-WIP-) - 这是 NAOMI 2 游戏《头文字 D 街机舞台 3》的实验性静态重编译，光盘编号 GDS-0033，面向 64 位 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/initial-d-arcade-stage-3/)</sub>
@@ -620,6 +622,4 @@
 - [**Heretic2R：Heretic II 逆向源码移植**](https://github.com/m-x-d/Heretic2R) - 《Heretic II》的逆向源码移植，加入宽屏支持、渲染与网络包发送解耦、OGG 音乐与错误修复，同时保留原版手感。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heretic2r/)</sub>
 - [**HK: Dual Souls：《Hollow Knight》的 AYN Thor 双屏移植**](https://github.com/igawa6/dualsouls) - HK: Dual Souls 用用户自有的 GOG 或 Steam 版《Hollow Knight》v1.5.12620 数据，在 AYN Thor Android 掌机上重建同版本 Unity 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dual-souls-case/)</sub>
 - [**Hunters Recomp：双屏 Android《Metroid Prime Hunters》移植版**](https://github.com/aabrole/HuntersRecomp) - Hunters Recomp 将《Metroid Prime Hunters》的静态重编译版本适配到 AYN Thor 双屏 Android 设备。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hunters-recomp-case/)</sub>
-- [**Ice Rage：面向 Linux ARM 掌机的 Android 原生库移植版**](https://github.com/EapRules/icerage-native-arm) - Ice Rage 通过 bionic ELF 加载器在 Linux ARM 掌机上运行：加载器映射游戏的 Android armeabi-v7a 库，并补齐所需的 Android 接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ice-rage-arm-port-case/)</sub>
-- [**ico-pc：由 PS2 反编译源码编译而成的《ICO》原生移植**](https://github.com/nathanialf/ico-pc) - 将 PlayStation 2 游戏《ICO》的反编译 C 源码原生编译到 Windows、Linux、Android、iPhone 及 Apple 芯片 Mac 上，并以宿主代码替代 PS2 硬件和 Sony 函数库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ico-pc-port-case/)</sub>
 <!-- END GENERATED CASES -->

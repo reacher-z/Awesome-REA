@@ -6,10 +6,13 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**414 case studies**
+**417 case studies**
 
 ## Engine reimplementations
 
+- [**ScummVM: replacement executables for classic adventure games**](https://github.com/scummvm/scummvm) - Replaces the executables of classic adventure games and RPGs with one program that runs the user's original data files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/scummvm-engine-case/)</sub>
+- [**SDLPAL: reimplementing Legend of Sword and Fairy with SDL**](https://github.com/sdlpal/sdlpal) - SDLPAL is an SDL reimplementation of the Chinese RPG Legend of Sword and Fairy, also called PAL. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sdlpal/)</sub>
+- [**SDLPoP2: rebuilding the Prince of Persia 2 DOS engine**](https://github.com/ToolAssisted-run/SDLPoP2) - SDLPoP2 rebuilds the engine of Prince of Persia 2: The Shadow and the Flame from its DOS program as C for Linux and Windows. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sdlpop2-prince-of-persia-2-case/)</sub>
 - [**Seedra: reimplementing Minecraft Legacy Console Edition world generation**](https://github.com/UtterEvergreen1/Seedra) - Seedra reimplements Minecraft Legacy Console Edition world generation in a C++ library. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/seedra-case/)</sub>
 - [**sekiro-rs: a Rust and Bevy reconstruction of Sekiro**](https://github.com/AKJama/sekiro-rs) - sekiro-rs rebuilds parts of Sekiro: Shadows Die Twice in Rust and Bevy using data extracted from a user's Steam installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sekiro-rs-case/)</sub>
 - [**sena-rs: reimplementing SoftPAL for Koikake**](https://github.com/xmoezzz/sena-rs) - sena-rs reimplements the SoftPAL engine in Rust for Koikake, with a PAL virtual machine, asset handling, script disassembly and decompiler components. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sena-rs-case/)</sub>

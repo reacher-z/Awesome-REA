@@ -6,10 +6,13 @@
 
 [English](game-5.md)
 
-**414 个案例**
+**417 个案例**
 
 ## 引擎重实现
 
+- [**ScummVM：经典冒险游戏的替代可执行文件**](https://github.com/scummvm/scummvm) - 用一个程序替换经典冒险游戏和 RPG 的可执行文件，运行用户自备的原始数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scummvm-engine-case/)</sub>
+- [**SDLPAL：用 SDL 重实现《仙剑奇侠传》**](https://github.com/sdlpal/sdlpal) - SDLPAL 是基于 SDL 的《仙剑奇侠传》重实现，英文也称为 PAL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sdlpal/)</sub>
+- [**SDLPoP2：重建 Prince of Persia 2 DOS 引擎**](https://github.com/ToolAssisted-run/SDLPoP2) - SDLPoP2 根据 DOS 原程序，以 C 语言重建 Prince of Persia 2: The Shadow and the Flame 的引擎，面向 Linux 和 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sdlpop2-prince-of-persia-2-case/)</sub>
 - [**Seedra：重建《Minecraft》Legacy Console Edition 世界生成逻辑**](https://github.com/UtterEvergreen1/Seedra) - Seedra 用 C++ 库重建《Minecraft》Legacy Console Edition 的世界生成逻辑。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/seedra-case/)</sub>
 - [**sekiro-rs：用 Rust 与 Bevy 重建 Sekiro**](https://github.com/AKJama/sekiro-rs) - sekiro-rs 使用 Rust 与 Bevy，从用户安装的 Steam 版 Sekiro: Shadows Die Twice 提取数据并重建部分游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sekiro-rs-case/)</sub>
 - [**sena-rs：为 Koikake 重建 SoftPAL 引擎**](https://github.com/xmoezzz/sena-rs) - sena-rs 用 Rust 为 Koikake 重建 SoftPAL 引擎，包含 PAL 虚拟机、资源处理、脚本反汇编和反编译组件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sena-rs-case/)</sub>

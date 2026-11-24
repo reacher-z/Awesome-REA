@@ -45426,5 +45426,53 @@
       "它是民间静态重编译，兼容性取决于具体游戏版本。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "genrecomp": {
+    "name": "genrecomp",
+    "requirements": [
+      "需要 Genesis 或 Mega Drive ROM；68000 不被模拟，游戏数据与生成代码不进入仓库。",
+      "项目处于 alpha 且未版本化，目前有两款游戏可玩。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "psprism": {
+    "name": "psprism",
+    "requirements": [
+      "需要合法取得的 PSP 转储（ISO、ELF 或 PRX）；重编译项目可使用 refract 兼容层。",
+      "它是静态重编译器，兼容性取决于可执行文件。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "hiraku": {
+    "name": "HIRAKU",
+    "requirements": [
+      "不附带游戏数据；需要自备转储。",
+      "它恢复街机服务与活动，兼容性取决于基板与游戏版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "crystal-cut": {
+    "name": "Crystal Cut：TimeSplitters 2 原生 PC 移植",
+    "requirements": [
+      "需要自备美版或欧版光盘；移植版不附带游戏数据。",
+      "它是静态重编译，兼容性取决于光盘版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "tbuddies-decomp": {
+    "name": "Team Buddies — 匹配式反编译",
+    "requirements": [
+      "构建使用已提交的生成汇编，无需私有光盘转储；Meson 与 Ninja 编译变更对象并校验哈希。",
+      "它是匹配式反编译，进度由 objdiff 与 decomp.dev 跟踪。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "demech2": {
+    "name": "MechWarrior 2 — 在研反编译",
+    "requirements": [
+      "重建原始二进制，仅编译到 32 位 Windows 9x；反编译代码在 AI 协助下编写。",
+      "可移植的现代版本作为独立项目 ReMech2 进行中。",
+      "采用 LGPL-3.0 许可证。"
+    ]
   }
 }

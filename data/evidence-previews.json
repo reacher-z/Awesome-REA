@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-24T05:16:57+00:00",
-    "entry_count": 1179,
-    "class_entry_count": 1210,
+    "generated_at": "2026-11-24T18:58:43+00:00",
+    "entry_count": 1180,
+    "class_entry_count": 1211,
     "class_counts": {
-      "image": 1139,
+      "image": 1140,
       "video": 40
     },
     "missing_count": 31,
@@ -1575,6 +1575,15 @@
       "source_url": "https://github.com/OpenRakis/Cryogenic",
       "revision": "113bd4922aa7d38ec1bcdc6bd7c0c47473dc63f2",
       "checked_at": "2026-11-09T06:56:34+00:00"
+    },
+    {
+      "id": "crystal-cut",
+      "image_url": "https://raw.githubusercontent.com/Destinity13/TimeSplitters-2-Native-Linux-Recomp/e1d714b43b04c7209d2671fd97492b857cb32dd5/docs/screenshots/cc/koop1.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Destinity13/TimeSplitters-2-Native-Linux-Recomp",
+      "revision": "e1d714b43b04c7209d2671fd97492b857cb32dd5",
+      "checked_at": "2026-11-24T18:58:43+00:00"
     },
     {
       "id": "cursed-lands-case",

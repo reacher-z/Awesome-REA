@@ -6,10 +6,12 @@
 
 [English](game-4.md)
 
-**629 个案例**
+**628 个案例**
 
 ## 基于重建源码的移植
 
+- [**Ice Rage：面向 Linux ARM 掌机的 Android 原生库移植版**](https://github.com/EapRules/icerage-native-arm) - Ice Rage 通过 bionic ELF 加载器在 Linux ARM 掌机上运行：加载器映射游戏的 Android armeabi-v7a 库，并补齐所需的 Android 接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ice-rage-arm-port-case/)</sub>
+- [**ico-pc：由 PS2 反编译源码编译而成的《ICO》原生移植**](https://github.com/nathanialf/ico-pc) - 将 PlayStation 2 游戏《ICO》的反编译 C 源码原生编译到 Windows、Linux、Android、iPhone 及 Apple 芯片 Mac 上，并以宿主代码替代 PS2 硬件和 Sony 函数库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ico-pc-port-case/)</sub>
 - [**idTech4A++：移植到 Android 与桌面 GLES 的 id Tech 4 游戏**](https://github.com/glKarin/com.n0n3m4.diii4a) - 把 DOOM 3、Quake 4、Prey（2006）与 DOOM 3 BFG 等 id Tech 4 游戏移植到 Android、Windows 与 Linux，并使用 OpenGL ES 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/idtech4a/)</sub>
 - [**Ignition：分析原版程序并移植 1997 年赛车游戏**](https://github.com/xesf/ignition) - Ignition 使用 IDA 阅读 1997 年同名赛车游戏的 Windows 程序，并以可移植 C99 改写各例程的行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ignition-port-case/)</sub>
 - [**inFAMOUS First Light：在 Windows 上重建 PS4 游戏运行环境**](https://github.com/VantageEX/infamous-first-light-pc) - 项目在 Windows 上直接运行 PlayStation 4 版 inFAMOUS First Light 的 x86-64 游戏代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous-first-light-pc-case/)</sub>
@@ -639,7 +641,4 @@
 - [**Sarien：Sierra AGI 解释器的可移植重实现**](https://sourceforge.net/projects/sarien/) - Sarien 用 C 重新实现了 Sierra On-Line 的 Adventure Game Interpreter（AGI），可以运行《Leisure Suit Larry》《King's Quest II》《Mixed-Up Mother Goose》等 AGI 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sarien-agi-interpreter-case/)</sub>
 - [**Scion：重实现《模拟城市 4》的 Gonzo/Rizzo 框架**](https://github.com/nsgomez/scion) - Scion 是 Maxis 所用 Gonzo/Rizzo 框架的参考实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scion-maxis/)</sub>
 - [**Scooby-Doo Mystery：重建 Sega Genesis 游戏引擎**](https://github.com/janezkranjc/scooby-doo-mistery-mouse-version) - Scooby-Doo Mystery 移植项目使用 C++ 和 SFML 3 重建 Sega Genesis 游戏引擎，依据 68000 代码逐个移植例程，并从用户 ROM 读取图像、文本和脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scooby-doo-mystery-genesis-case/)</sub>
-- [**ScummVM：经典冒险游戏的替代可执行文件**](https://github.com/scummvm/scummvm) - 用一个程序替换经典冒险游戏和 RPG 的可执行文件，运行用户自备的原始数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scummvm-engine-case/)</sub>
-- [**SDLPAL：用 SDL 重实现《仙剑奇侠传》**](https://github.com/sdlpal/sdlpal) - SDLPAL 是基于 SDL 的《仙剑奇侠传》重实现，英文也称为 PAL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sdlpal/)</sub>
-- [**SDLPoP2：重建 Prince of Persia 2 DOS 引擎**](https://github.com/ToolAssisted-run/SDLPoP2) - SDLPoP2 根据 DOS 原程序，以 C 语言重建 Prince of Persia 2: The Shadow and the Flame 的引擎，面向 Linux 和 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sdlpop2-prince-of-persia-2-case/)</sub>
 <!-- END GENERATED CASES -->
