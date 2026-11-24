@@ -6,10 +6,16 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**408 case studies**
+**414 case studies**
 
 ## Engine reimplementations
 
+- [**Seedra: reimplementing Minecraft Legacy Console Edition world generation**](https://github.com/UtterEvergreen1/Seedra) - Seedra reimplements Minecraft Legacy Console Edition world generation in a C++ library. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/seedra-case/)</sub>
+- [**sekiro-rs: a Rust and Bevy reconstruction of Sekiro**](https://github.com/AKJama/sekiro-rs) - sekiro-rs rebuilds parts of Sekiro: Shadows Die Twice in Rust and Bevy using data extracted from a user's Steam installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sekiro-rs-case/)</sub>
+- [**sena-rs: reimplementing SoftPAL for Koikake**](https://github.com/xmoezzz/sena-rs) - sena-rs reimplements the SoftPAL engine in Rust for Koikake, with a PAL virtual machine, asset handling, script disassembly and decompiler components. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sena-rs-case/)</sub>
+- [**ServUO: an open-source Ultima Online server emulator**](https://github.com/ServUO/ServUO) - An Ultima Online server emulator written in C# .NET that recreates the game server and supports custom shards, scripts and client compatibility. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/servuo/)</sub>
+- [**Settlers.ts: decoding Settlers 4 data for a browser remake**](https://github.com/tomsoftware/Settlers.ts) - Settlers.ts builds a browser-based Settlers 4 remake in TypeScript using files from the user's game installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/settlers-ts-case/)</sub>
+- [**sh23ds: a native 3DS reconstruction of Silent Hill 2**](https://github.com/ankushKun/sh23ds) - sh23ds rebuilds Silent Hill 2: Director's Cut as a native C engine for Nintendo 3DS using the player's PC game data. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/sh23ds-case/)</sub>
 - [**sh3redux: a Silent Hill 3 engine remake in C++**](https://github.com/Palm-Studios/sh3redux) - sh3redux rebuilds the Silent Hill 3 engine in C++ with OpenGL rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sh3redux-case/)</sub>
 - [**Shiloh: reimplementing The X-Files Game engine**](https://github.com/Asterber/shiloh) - Shiloh is a Rust engine for The X-Files Game (1998), with an SDL2 window and a WebAssembly browser build. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shiloh/)</sub>
 - [**shin: reimplementing the engine of Entergram visual games**](https://github.com/DCNick3/shin) - shin reimplements a game engine used by Entergram visual games, initially targeting the Switch release of Umineko no Naku Koro ni Saku. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shin-engine-case/)</sub>

@@ -10,6 +10,8 @@
 
 ## 非匹配反编译
 
+- [**blackhack：runblack.exe 界面控件类反编译**](https://gitlab.com/bwrsandman/blackhack) - blackhack 用手工反编译的 C 代码重建 runblack.exe 的 SetupControl 界面控件类，涵盖按钮、大按钮与标签按钮、复选框、列表、滑块、输入框、取色器、图片和图表控件，并重建了部分 Lionhead lhlib 库。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/blackhack-case/)</sub>
+- [**Blast Corps：任天堂 64 反编译**](https://github.com/retroplastic/blastcorps) - 该仓库是任天堂 64 游戏 Blast Corps 的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/blastcorps-decomp/)</sub>
 - [**Blitz\_MasterVer22-Decomp：《Splatoon 2》3.1.0 版反编译**](https://github.com/YoshiCrystal9/Blitz_MasterVer22-Decomp) - Blitz\_MasterVer22-Decomp 重建 Nintendo Switch 游戏《Splatoon 2》3.1.0 版的代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/splatoon-2-310-decomp-case/)</sub>
 - [**Blood Omen 2：面向 Switch 移植的功能性反编译**](https://github.com/felipesuarez-dev/BloodOmen2NX) - BloodOmen2NX 将《血兆 2》西班牙语 Windows PC 版进行功能性反编译，译成 C++17，目标是移植到 Nintendo Switch。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bloodomen2nx-case/)</sub>
 - [**Boku Doraemon：Dreamcast 可执行文件与模型结构重建**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon 解析日版 Dreamcast 游戏的 1ST\_READ.BIN，从用户光盘生成匹配的汇编基线，并在 SH-4 解释器中比较候选 C 函数的调用、内存写入与结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boku-doraemon-decomp-case/)</sub>
@@ -633,6 +635,4 @@
 - [**In Cold Blood Recompiled：PlayStation 游戏重编译安装程序**](https://github.com/alexbeavs-ps1-ports/in-cold-blood-recomp) - In Cold Blood Recompiled 配置 PSXRecomp 与 recomp-ui，从用户的 PlayStation 光盘生成原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/in-cold-blood-recompiled-case/)</sub>
 - [**inFAMOUS 2：面向 Apple 芯片 macOS 的静态重编译**](https://github.com/erikomis/infamous2-recomp) - inFAMOUS 2 将 PS3 数字版 NPUA80638 的 PowerPC 与 SPU 代码转为 C/C++，编译成使用 Metal 图形的 Apple 芯片 macOS 原生游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous2-macos-recomp-case/)</sub>
 - [**声名狼藉 2：将 PS3 游戏重编译到 Linux**](https://github.com/ThiagoFraga761/infamous2-pc) - 该项目用 ps3recomp 把 PlayStation 3 版《恶名昭彰 2》（BCUS98125，版本 01.00）重编译到原生 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous2-pc/)</sub>
-- [**inFamous PC：面向 Windows 的 PlayStation 3 静态重编译移植版**](https://github.com/whompay/inFAMOUSreborn) - inFamous PC 使用 ps3recomp 静态重编译《inFamous》欧洲版 PlayStation 3 游戏的 PPU 和 SPU 代码，构建 Windows 原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous-pc-case/)</sub>
-- [**Infinite Undiscovery Recomp：Xbox 360 游戏的原生重编译**](https://github.com/doc-haz/infinite-undiscovery-recomp) - Infinite Undiscovery Recomp 是 Xbox 360 版 Infinite Undiscovery（2008）的 Windows x64 原生重编译，用 ReXGlue 和 XenonRecomp 构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infinite-undiscovery-recomp-case/)</sub>
 <!-- END GENERATED CASES -->

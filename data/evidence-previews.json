@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-24T03:43:39+00:00",
-    "entry_count": 1178,
-    "class_entry_count": 1209,
+    "generated_at": "2026-11-24T05:16:57+00:00",
+    "entry_count": 1179,
+    "class_entry_count": 1210,
     "class_counts": {
-      "image": 1138,
+      "image": 1139,
       "video": 40
     },
     "missing_count": 31,
@@ -10484,6 +10484,15 @@
       "source_url": "https://github.com/horsicq/XPEViewer",
       "revision": "f8736330043c5e2d3ec76f3660a1f6122845f3c1",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "xrecomp",
+      "image_url": "https://raw.githubusercontent.com/MisterAlex95/Xrecomp/6bb0ebabf20d28a8240a8902fedf9a5f6f0ad6f7/docs/images/screens/xbox-kotor.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/MisterAlex95/Xrecomp",
+      "revision": "6bb0ebabf20d28a8240a8902fedf9a5f6f0ad6f7",
+      "checked_at": "2026-11-24T05:16:57+00:00"
     },
     {
       "id": "yagi-ghidra-decompiler-for-ida",

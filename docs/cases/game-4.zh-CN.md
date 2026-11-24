@@ -10,6 +10,12 @@
 
 ## 基于重建源码的移植
 
+- [**idTech4A++：移植到 Android 与桌面 GLES 的 id Tech 4 游戏**](https://github.com/glKarin/com.n0n3m4.diii4a) - 把 DOOM 3、Quake 4、Prey（2006）与 DOOM 3 BFG 等 id Tech 4 游戏移植到 Android、Windows 与 Linux，并使用 OpenGL ES 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/idtech4a/)</sub>
+- [**Ignition：分析原版程序并移植 1997 年赛车游戏**](https://github.com/xesf/ignition) - Ignition 使用 IDA 阅读 1997 年同名赛车游戏的 Windows 程序，并以可移植 C99 改写各例程的行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ignition-port-case/)</sub>
+- [**inFAMOUS First Light：在 Windows 上重建 PS4 游戏运行环境**](https://github.com/VantageEX/infamous-first-light-pc) - 项目在 Windows 上直接运行 PlayStation 4 版 inFAMOUS First Light 的 x86-64 游戏代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous-first-light-pc-case/)</sub>
+- [**Infernal Runner JS：重建 CPC 游戏的字节码引擎**](https://github.com/cyxx/infernal_js) - Infernal Runner JS 根据 CPC 磁盘镜像和 Z80 代码分析，将 Infernal Runner 移植到 JavaScript。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infernal-runner-js-case/)</sub>
+- [**Jackal UEFI：基于反汇编的 NES 游戏 UEFI 移植版**](https://github.com/MikeWuPing/UEFI_Jackal) - Jackal UEFI 将 NES 游戏《赤色要塞》的 6502 反汇编逐行翻译为 C 核心，移植成可在 UEFI Shell 中原生运行的程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jackal-uefi-port-case/)</sub>
+- [**jgalbs cod4：将 Call of Duty 4 多人客户端移植到 Apple silicon**](https://github.com/JGalbss/cod4-macos) - jgalbs cod4 将 KisakCOD 的 Call of Duty 4 多人客户端移植到 Apple silicon macOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jgalbs-cod4-case/)</sub>
 - [**KH\_COM\_VITA：将 Kingdom Hearts: Chain of Memories 移植至 PS Vita**](https://github.com/ggdrn/KH_COM_VITA) - KH\_COM\_VITA 将 GBA《Kingdom Hearts: Chain of Memories》的反编译 C 代码编译为 PS Vita ARM 程序，并用 Vita 平台层替换 GBA 的视频、DMA、中断、音频、BIOS 和存档服务。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kh-com-vita-case/)</sub>
 - [**khdays-vita：《Kingdom Hearts 358/2 Days》的 PS Vita 移植版**](https://github.com/ggdrn/KH-DAYS-VITA) - khdays-vita 将《Kingdom Hearts 358/2 Days》的反编译源码编译为原生 PS Vita 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/khdays-vita-case/)</sub>
 - [**Killzone Shadow Fall：采用 Vulkan 图形转换的 Windows 原生移植**](https://github.com/lesca-191204/killzone-shadowfall-pc) - Killzone Shadow Fall for PC 在 Windows CPU 上直接运行 PS4 版游戏代码，并在运行时将图形转换为 Vulkan。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/killzone-shadow-fall-pc-case/)</sub>
@@ -636,10 +642,4 @@
 - [**ScummVM：经典冒险游戏的替代可执行文件**](https://github.com/scummvm/scummvm) - 用一个程序替换经典冒险游戏和 RPG 的可执行文件，运行用户自备的原始数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scummvm-engine-case/)</sub>
 - [**SDLPAL：用 SDL 重实现《仙剑奇侠传》**](https://github.com/sdlpal/sdlpal) - SDLPAL 是基于 SDL 的《仙剑奇侠传》重实现，英文也称为 PAL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sdlpal/)</sub>
 - [**SDLPoP2：重建 Prince of Persia 2 DOS 引擎**](https://github.com/ToolAssisted-run/SDLPoP2) - SDLPoP2 根据 DOS 原程序，以 C 语言重建 Prince of Persia 2: The Shadow and the Flame 的引擎，面向 Linux 和 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sdlpop2-prince-of-persia-2-case/)</sub>
-- [**Seedra：重建《Minecraft》Legacy Console Edition 世界生成逻辑**](https://github.com/UtterEvergreen1/Seedra) - Seedra 用 C++ 库重建《Minecraft》Legacy Console Edition 的世界生成逻辑。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/seedra-case/)</sub>
-- [**sekiro-rs：用 Rust 与 Bevy 重建 Sekiro**](https://github.com/AKJama/sekiro-rs) - sekiro-rs 使用 Rust 与 Bevy，从用户安装的 Steam 版 Sekiro: Shadows Die Twice 提取数据并重建部分游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sekiro-rs-case/)</sub>
-- [**sena-rs：为 Koikake 重建 SoftPAL 引擎**](https://github.com/xmoezzz/sena-rs) - sena-rs 用 Rust 为 Koikake 重建 SoftPAL 引擎，包含 PAL 虚拟机、资源处理、脚本反汇编和反编译组件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sena-rs-case/)</sub>
-- [**ServUO：开源《网络创世纪》服务器模拟器**](https://github.com/ServUO/ServUO) - 用 C# .NET 编写的《网络创世纪》服务器模拟器，重实现游戏服务器，并支持自定义 shard、脚本与客户端兼容性。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/servuo/)</sub>
-- [**Settlers.ts：解析 Settlers 4 数据并重建浏览器版游戏**](https://github.com/tomsoftware/Settlers.ts) - Settlers.ts 用 TypeScript 和用户自己的 Settlers 4 文件开发浏览器版重制项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/settlers-ts-case/)</sub>
-- [**sh23ds：《寂静岭 2》的 3DS 原生重建**](https://github.com/ankushKun/sh23ds) - sh23ds 以 C 为 Nintendo 3DS 重建《寂静岭 2：导演剪辑版》的原生引擎，游戏数据由玩家自己的 PC 版本转换。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/sh23ds-case/)</sub>
 <!-- END GENERATED CASES -->

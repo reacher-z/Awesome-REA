@@ -45378,5 +45378,53 @@
       "它是在研的匹配式反编译项目。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "sp00nznet-gbarecomp": {
+    "name": "gbarecomp",
+    "requirements": [
+      "需要 GBA ROM；重编译器生成 C 与 CMake 工程，且不提交生成代码。",
+      "项目处于 alpha，目前有一款游戏（Advance Wars）在推进。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "xrecomp": {
+    "name": "XRecomp",
+    "requirements": [
+      "需要受支持的主机游戏 ROM 与目标平台的构建环境。",
+      "它是工具包，兼容性取决于游戏与目标平台。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "open-gp": {
+    "name": "OpenGP：马里奥赛车街机 GP 与 GP 2 的原生 PC 移植",
+    "requirements": [
+      "需要原版街机游戏数据；项目预先转译 Gekko 机器码。",
+      "它是静态重编译，兼容性取决于具体游戏版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "slingshot-animals-recomp": {
+    "name": "slingshot-animals-recomp：旧版愤怒的小鸟静态重编译",
+    "requirements": [
+      "需要自备游戏副本；不包含游戏资源。",
+      "它是静态重编译，兼容性取决于具体游戏构建。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "lsw1-decomp": {
+    "name": "LEGO 星球大战：电子游戏 — 在研匹配式反编译",
+    "requirements": [
+      "需要受支持的 GameCube 版本来验证构建；项目不分发游戏。",
+      "它是在研匹配式反编译，进度由 objdiff 跟踪。",
+      "采用 CC0-1.0 许可证。"
+    ]
+  },
+  "b2h-wii-android": {
+    "name": "战国 Basara 2 英雄传 — Android 与 Windows 移植",
+    "requirements": [
+      "需要自备游戏文件；手机上不运行模拟器。",
+      "它是民间静态重编译，兼容性取决于具体游戏版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

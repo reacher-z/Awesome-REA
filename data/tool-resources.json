@@ -160330,5 +160330,175 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "sp00nznet-gbarecomp",
+    "name": "gbarecomp",
+    "url": "https://github.com/sp00nznet/gbarecomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A static recompiler for Game Boy Advance ROMs that finds ARM and Thumb code, translates it to C and writes a CMake project building a native executable against a small GBA runtime with SDL2.",
+    "description_zh": "面向 Game Boy Advance ROM 的静态重编译器：识别 ARM 与 Thumb 代码、转译为 C，并生成 CMake 工程，配合小型 GBA 运行时与 SDL2 构建原生可执行文件。",
+    "evidence_url": "https://github.com/sp00nznet/gbarecomp/blob/ac1176f467cbb708f58785e65f36b4f091a8ab20/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a GBA ROM; the recompiler generates C and a CMake project, and generated code is not committed.",
+      "The project is alpha, with one title (Advance Wars) in progress.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "xrecomp",
+    "name": "XRecomp",
+    "url": "https://github.com/MisterAlex95/Xrecomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A static recompilation toolkit that rebuilds console games as native apps for phones and computers, turning machine code into C and then a real executable without an emulator or JIT.",
+    "description_zh": "把主机游戏重编译为手机与电脑原生应用的工具包：将机器码转换为 C，再构建为真正的可执行文件，不使用模拟器或 JIT。",
+    "evidence_url": "https://github.com/MisterAlex95/Xrecomp/blob/6bb0ebabf20d28a8240a8902fedf9a5f6f0ad6f7/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported console game ROM and a build environment for the target platform.",
+      "It is a toolkit, and compatibility depends on the game and target.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "open-gp",
+    "name": "OpenGP: a native PC port of Mario Kart Arcade GP and GP 2",
+    "url": "https://github.com/OpenGP-dev/OpenGP",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native PC port of Mario Kart Arcade GP and Mario Kart Arcade GP 2 (Namco, 2005 and 2007, Triforce arcade hardware), built by static recompilation of the Gekko PowerPC code into C++.",
+    "description_zh": "《马里奥赛车街机 GP》与《GP 2》（Namco，2005/2007，Triforce 街机硬件）的原生 PC 移植，通过把 Gekko PowerPC 代码静态重编译为 C++ 实现。",
+    "evidence_url": "https://github.com/OpenGP-dev/OpenGP/blob/cad7929717fc65f7f338c1f3997d1e413b491ffa/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original arcade game data; the project translates the Gekko machine code ahead of time.",
+      "It is a static recompilation and depends on the specific game version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "slingshot-animals-recomp",
+    "name": "slingshot-animals-recomp: a static recompilation of the old Angry Birds games",
+    "url": "https://github.com/Berny23/slingshot-animals-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An unofficial static recompilation of Rovio old Android Angry Birds games that translates each native ARM library to C++ and runs natively on Linux, Windows, macOS, 64-bit Android and Switch homebrew.",
+    "description_zh": "Rovio 旧版 Android《愤怒的小鸟》游戏的民间静态重编译：把各游戏的原生 ARM 库转译为 C++，并在 Linux、Windows、macOS、64 位 Android 与 Switch 自制系统上原生运行。",
+    "evidence_url": "https://github.com/Berny23/slingshot-animals-recomp/blob/1c29eb1bd33e41fc83dc5140b3346bdb7a0f636b/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copies of the games; no game assets are included.",
+      "It is a static recompilation and depends on the specific game builds.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "lsw1-decomp",
+    "name": "LEGO Star Wars: The Video Game — a work-in-progress matching decompilation",
+    "url": "https://github.com/ellierocks/lsw1-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A work-in-progress matching decompilation of LEGO Star Wars: The Video Game for the Nintendo GameCube (GL5E4F, USA), with matched code bytes and functions tracked by objdiff.",
+    "description_zh": "《LEGO 星球大战：电子游戏》Nintendo GameCube 版（GL5E4F，美版）的在研匹配式反编译，使用 objdiff 跟踪匹配代码字节与函数。",
+    "evidence_url": "https://github.com/ellierocks/lsw1-decomp/blob/e61bfd5345e5499be0d88a70573dc0a3665321ee/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the supported GameCube version to verify the build; the project does not distribute the game.",
+      "It is a work-in-progress matching decompilation, and progress is tracked by objdiff.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "b2h-wii-android",
+    "name": "Sengoku Basara 2 Heroes — an Android and Windows port",
+    "url": "https://github.com/PotatoRecomp/B2HWii-Android",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An unofficial port of Sengoku Basara 2 Heroes (Wii, NTSC-J RBSJ08) to Android arm64 and Windows, recompiling the PowerPC code to C++ with a runtime for Wii system software and a GX renderer on Vulkan.",
+    "description_zh": "《战国 Basara 2 英雄传》（Wii 日版 RBSJ08）到 Android arm64 与 Windows 的民间移植：把 PowerPC 代码重编译为 C++，配合 Wii 系统软件运行时与 Vulkan 上的 GX 渲染器。",
+    "evidence_url": "https://github.com/PotatoRecomp/B2HWii-Android/blob/0e531a2257e5dae28d063c80e455a1f6ea36ff59/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own game files; nothing is emulated on the phone.",
+      "It is an unofficial static recompilation and depends on the specific game version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

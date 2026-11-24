@@ -6,7 +6,7 @@
 
 [简体中文](game-1.zh-CN.md)
 
-**617 case studies**
+**616 case studies**
 
 <a id="game-matching-decompilation"></a>
 ## Matching decompilations and disassemblies
@@ -266,6 +266,7 @@
 - [**LEGO Island: source reconstruction with separately reported exact rebuilds**](https://github.com/isledecomp/isle) - Reconstructs the English LEGO Island 1.1 source for its original 32-bit Windows target. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lego-island-decomp-case/)</sub>
 - [**LEGO Racers: a function-matched decompilation of the 1999 Windows game**](https://github.com/isledecomp/racers) - LEGO Racers reconstructs the 1999 game's 32-bit Windows executable and GolDP.dll as C++ source, comparing rebuilt functions with the retail machine code through reccmp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lego-racers-decomp-case/)</sub>
 - [**Lego Star Wars III: an in-progress Wii decompilation**](https://github.com/ThePlayerRolo/LegoCloneWarsWii) - LegoCloneWarsWii reconstructs code for the Wii release of Lego Star Wars III: The Clone Wars, targeting USA and EU Rev 0 debug builds. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lego-clone-wars-wii-case/)</sub>
+- [**LEGO Star Wars: The Video Game — a work-in-progress matching decompilation**](https://github.com/ellierocks/lsw1-decomp) - A work-in-progress matching decompilation of LEGO Star Wars: The Video Game for the Nintendo GameCube (GL5E4F, USA), with matched code bytes and functions tracked by objdiff. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lsw1-decomp/)</sub>
 - [**Link: The Faces of Evil: matching CD-i program decompilation**](https://github.com/ByteDecompiler/link-faces-of-evil) - Link: The Faces of Evil Decompilation reconstructs the Philips CD-i game's cdi\_link main program as C source. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/link-faces-of-evil-decomp-case/)</sub>
 - [**LittleBigPlanet PSP: a matching decompilation of EBOOT.BIN**](https://github.com/Jstar269/LBP-PSP-Decomp) - LittleBigPlanet PSP reconstructs code from the game's UCUS98744 disc version 2.00 executable as C and C++. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lbp-psp-decomp-case/)</sub>
 - [**Lode Runner: a byte-exact ZX Spectrum disassembly**](https://github.com/Bedazzle/Lode-runner) - Lode Runner is mapped as named, documented ZX Spectrum 48K assembly covering the loader, play loop, actor states, editor, and data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lode-runner-spectrum-disassembly-case/)</sub>
@@ -629,6 +630,4 @@
 - [**Batty: a SkoolKit disassembly of the ZX Spectrum game**](https://github.com/pobtastic/batty) - batty provides a SkoolKit disassembly of the ZX Spectrum game Batty. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/batty-disassembly-case/)</sub>
 - [**BIT.TRIP COMPLETE: a Wii decompilation**](https://github.com/Fatih120/bittrip) - BIT.TRIP COMPLETE is an in-progress Wii decompilation of game ID SVTEXS. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bit-trip-complete-case/)</sub>
 - [**Black &amp; White: reconstructing the game from its x86 binary**](https://github.com/sp00nznet/bw) - Black &amp; White reconstructs the 2001 game's systems in portable C++ using analysis of its original x86 executable. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/black-and-white-reconstruction-case/)</sub>
-- [**blackhack: runblack.exe UI widget decompilation**](https://gitlab.com/bwrsandman/blackhack) - blackhack rebuilds the SetupControl UI widget classes of runblack.exe as hand-decompiled C, covering buttons, big and tab buttons, check boxes, lists, sliders, edit fields, colour pickers, pictures and graph widgets, along with parts of Lionhead's lhlib. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/blackhack-case/)</sub>
-- [**Blast Corps: Nintendo 64 decompilation**](https://github.com/retroplastic/blastcorps) - This repository is a decompilation of Blast Corps for the Nintendo 64. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/blastcorps-decomp/)</sub>
 <!-- END GENERATED CASES -->

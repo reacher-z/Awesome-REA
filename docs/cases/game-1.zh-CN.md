@@ -6,7 +6,7 @@
 
 [English](game-1.md)
 
-**617 个案例**
+**616 个案例**
 
 <a id="game-matching-decompilation"></a>
 ## 匹配反编译与反汇编
@@ -266,6 +266,7 @@
 - [**LEGO Island：源码重建与单独记录的精确重构建**](https://github.com/isledecomp/isle) - 针对英文版 LEGO Island 1.1 的原始 32 位 Windows 目标重建源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lego-island-decomp-case/)</sub>
 - [**LEGO Racers：1999 年 Windows 游戏的逐函数匹配反编译**](https://github.com/isledecomp/racers) - LEGO Racers 将 1999 年游戏的 32 位 Windows 程序及 GolDP.dll 重建为 C++ 源码，并用 reccmp 逐函数对照零售版机器码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lego-racers-decomp-case/)</sub>
 - [**Lego Star Wars III：进行中的 Wii 游戏反编译**](https://github.com/ThePlayerRolo/LegoCloneWarsWii) - LegoCloneWarsWii 重建 Wii 版 Lego Star Wars III: The Clone Wars 的代码，目标为美版和欧版 Rev 0 调试版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lego-clone-wars-wii-case/)</sub>
+- [**LEGO 星球大战：电子游戏 — 在研匹配式反编译**](https://github.com/ellierocks/lsw1-decomp) - 《LEGO 星球大战：电子游戏》Nintendo GameCube 版（GL5E4F，美版）的在研匹配式反编译，使用 objdiff 跟踪匹配代码字节与函数。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lsw1-decomp/)</sub>
 - [**Link: The Faces of Evil：CD-i 程序的匹配反编译**](https://github.com/ByteDecompiler/link-faces-of-evil) - Link: The Faces of Evil Decompilation 将 Philips CD-i 游戏的 cdi\_link 主程序重建为 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/link-faces-of-evil-decomp-case/)</sub>
 - [**LittleBigPlanet PSP：EBOOT.BIN 匹配反编译**](https://github.com/Jstar269/LBP-PSP-Decomp) - LittleBigPlanet PSP 将 UCUS98744 光盘 2.00 版可执行文件重建为 C 和 C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lbp-psp-decomp-case/)</sub>
 - [**Lode Runner：逐字节匹配的 ZX Spectrum 反汇编**](https://github.com/Bedazzle/Lode-runner) - 该项目将 ZX Spectrum 48K 版《Lode Runner》的加载器、游戏循环、角色状态、编辑器和数据整理为带名称与注释的汇编代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lode-runner-spectrum-disassembly-case/)</sub>
@@ -629,6 +630,4 @@
 - [**Batty：ZX Spectrum 游戏的 SkoolKit 反汇编**](https://github.com/pobtastic/batty) - batty 提供 ZX Spectrum 游戏《Batty》的 SkoolKit 反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/batty-disassembly-case/)</sub>
 - [**BIT.TRIP COMPLETE：Wii 游戏反编译**](https://github.com/Fatih120/bittrip) - BIT.TRIP COMPLETE 是针对 Wii 游戏编号 SVTEXS 的进行中反编译工程。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bit-trip-complete-case/)</sub>
 - [**Black &amp; White：从 x86 程序重建游戏**](https://github.com/sp00nznet/bw) - Black &amp; White 通过分析 2001 年原版游戏的 x86 可执行文件，以 C++ 重建游戏系统。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/black-and-white-reconstruction-case/)</sub>
-- [**blackhack：runblack.exe 界面控件类反编译**](https://gitlab.com/bwrsandman/blackhack) - blackhack 用手工反编译的 C 代码重建 runblack.exe 的 SetupControl 界面控件类，涵盖按钮、大按钮与标签按钮、复选框、列表、滑块、输入框、取色器、图片和图表控件，并重建了部分 Lionhead lhlib 库。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/blackhack-case/)</sub>
-- [**Blast Corps：任天堂 64 反编译**](https://github.com/retroplastic/blastcorps) - 该仓库是任天堂 64 游戏 Blast Corps 的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/blastcorps-decomp/)</sub>
 <!-- END GENERATED CASES -->

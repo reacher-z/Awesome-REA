@@ -6,10 +6,16 @@
 
 [English](game-5.md)
 
-**408 个案例**
+**414 个案例**
 
 ## 引擎重实现
 
+- [**Seedra：重建《Minecraft》Legacy Console Edition 世界生成逻辑**](https://github.com/UtterEvergreen1/Seedra) - Seedra 用 C++ 库重建《Minecraft》Legacy Console Edition 的世界生成逻辑。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/seedra-case/)</sub>
+- [**sekiro-rs：用 Rust 与 Bevy 重建 Sekiro**](https://github.com/AKJama/sekiro-rs) - sekiro-rs 使用 Rust 与 Bevy，从用户安装的 Steam 版 Sekiro: Shadows Die Twice 提取数据并重建部分游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sekiro-rs-case/)</sub>
+- [**sena-rs：为 Koikake 重建 SoftPAL 引擎**](https://github.com/xmoezzz/sena-rs) - sena-rs 用 Rust 为 Koikake 重建 SoftPAL 引擎，包含 PAL 虚拟机、资源处理、脚本反汇编和反编译组件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sena-rs-case/)</sub>
+- [**ServUO：开源《网络创世纪》服务器模拟器**](https://github.com/ServUO/ServUO) - 用 C# .NET 编写的《网络创世纪》服务器模拟器，重实现游戏服务器，并支持自定义 shard、脚本与客户端兼容性。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/servuo/)</sub>
+- [**Settlers.ts：解析 Settlers 4 数据并重建浏览器版游戏**](https://github.com/tomsoftware/Settlers.ts) - Settlers.ts 用 TypeScript 和用户自己的 Settlers 4 文件开发浏览器版重制项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/settlers-ts-case/)</sub>
+- [**sh23ds：《寂静岭 2》的 3DS 原生重建**](https://github.com/ankushKun/sh23ds) - sh23ds 以 C 为 Nintendo 3DS 重建《寂静岭 2：导演剪辑版》的原生引擎，游戏数据由玩家自己的 PC 版本转换。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/sh23ds-case/)</sub>
 - [**sh3redux：C++ 重建 Silent Hill 3 引擎**](https://github.com/Palm-Studios/sh3redux) - sh3redux 用 C++ 和 OpenGL 重建《Silent Hill 3》引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sh3redux-case/)</sub>
 - [**Shiloh：重实现《The X-Files Game》引擎**](https://github.com/Asterber/shiloh) - Shiloh 是 1998 年游戏《X档案》的 Rust 引擎，带 SDL2 窗口和 WebAssembly 浏览器构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shiloh/)</sub>
 - [**shin：Entergram 视觉游戏引擎重实现**](https://github.com/DCNick3/shin) - shin 重实现 Entergram 视觉游戏使用的引擎，起初以 Switch 版 Umineko no Naku Koro ni Saku 为目标，并读取原版游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shin-engine-case/)</sub>

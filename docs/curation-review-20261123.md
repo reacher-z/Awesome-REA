@@ -666,3 +666,30 @@ This round focuses on recompilation and agent tooling: IDA MCP Server, C64RE, Ex
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. All are Class 2, so no previews were added; READMEs and the site were regenerated.
+
+---
+
+# Backlog curation review, twenty-fifth batch — 2026-11-23
+
+This round adds two recompilation toolkits and four reconstruction cases: gbarecomp and XRecomp, plus OpenGP, slingshot-animals-recomp, LEGO Star Wars and Sengoku Basara 2 Heroes.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `sp00nznet-gbarecomp` | `game-analysis` | [sp00nznet/gbarecomp](https://github.com/sp00nznet/gbarecomp/blob/ac1176f467cbb708f58785e65f36b4f091a8ab20/README.md) | `58be8aff6deaf59f5dcf144564bd09c774bc6ca5609362abfc4e435ecdc4c50d` |
+| `xrecomp` | `game-analysis` | [MisterAlex95/Xrecomp](https://github.com/MisterAlex95/Xrecomp/blob/6bb0ebabf20d28a8240a8902fedf9a5f6f0ad6f7/README.md) | `58f4cfc872a6806552a1abaf7392043f6e164812eb965fce10f2fd6ec679d1af` |
+| `open-gp` | `reconstruction-cases` | [OpenGP-dev/OpenGP](https://github.com/OpenGP-dev/OpenGP/blob/cad7929717fc65f7f338c1f3997d1e413b491ffa/README.md) | `537a2bd93075b73ad34678e52d07e680c994393f20abad37af3915daedadcf62` |
+| `slingshot-animals-recomp` | `reconstruction-cases` | [Berny23/slingshot-animals-recomp](https://github.com/Berny23/slingshot-animals-recomp/blob/1c29eb1bd33e41fc83dc5140b3346bdb7a0f636b/README.md) | `fc5dc556051913cbe5531ed0ce5f6e31795d91810a589bff562a30c62f391cf7` |
+| `lsw1-decomp` | `reconstruction-cases` | [ellierocks/lsw1-decomp](https://github.com/ellierocks/lsw1-decomp/blob/e61bfd5345e5499be0d88a70573dc0a3665321ee/README.md) | `6e9ce7713b94ba1b3b44f41b171d6e96bc18db8b939212cea56852937fda2d06` |
+| `b2h-wii-android` | `reconstruction-cases` | [PotatoRecomp/B2HWii-Android](https://github.com/PotatoRecomp/B2HWii-Android/blob/0e531a2257e5dae28d063c80e455a1f6ea36ff59/README.md) | `ccb6a47cdadbfe43a7ec57d156de38afc2379b7a2db476c4e6bc4a686f71f6e4` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| dreamsailing59-ops/SuperRecomp | README declares the project abandoned and no longer updated. |
+| sp00nznet/snesrecomp | Record id already used by the stacked catalog; a new id would be needed before adding it. |
+| batinium/gta-stories-recompiled, Vidanox/BanjoTooieRecompiled | Near-duplicates of records already carried by other open PRs. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; XRecomp received a Class 1 preview. The four new case studies update the game case indexes and README case sections.
