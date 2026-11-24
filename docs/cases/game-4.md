@@ -6,10 +6,14 @@
 
 [简体中文](game-4.zh-CN.md)
 
-**629 case studies**
+**630 case studies**
 
 ## Ports of reconstructed source
 
+- [**Mario Kart 64 for Dreamcast: porting the Nintendo 64 game to Dreamcast**](https://github.com/jnmartin84/mk64-dc) - Mario Kart 64 for Dreamcast is a Sega Dreamcast port of the n64decomp/mk64 decompilation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mk64-dc-case/)</sub>
+- [**Mario Kart Wii 3DS: a native port built from the player's disc**](https://github.com/MiniBandit/MKW-3DS) - Mario Kart Wii 3DS continues a native Nintendo 3DS port of Mario Kart Wii, building an installable CIA from the player's USA disc image. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mkw-3ds-case/)</sub>
+- [**MaskPad: an iPhone and iPad port of Majora's Mask**](https://github.com/chrissotraidis/maskpad) - MaskPad adapts the 2 Ship 2 Harkinian Majora's Mask source port into a native iPhone and iPad app. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/maskpad-case/)</sub>
+- [**Max Payne Mobile: Android binary rehosting on Switch**](https://github.com/fgsfdsfgs/max_nx) - Rehosts the Android release of Max Payne Mobile on Nintendo Switch by loading and patching its original AArch64 shared library. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/max-payne-mobile-switch-port-case/)</sub>
 - [**max\_vita: porting Max Payne Mobile's Android binary to PS Vita**](https://github.com/fgsfdsfgs/max_vita) - max\_vita ports the Android release of Max Payne Mobile to PS Vita by loading and patching the user's original game binary. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/max-vita-case/)</sub>
 - [**MDK in C# and SDL3: reconstructing the 1997 game**](https://github.com/nautilusbits/mdk-sdl) - MDK in C# and SDL3 ports the 1997 game using reconstructed data formats and behavior from MDKD3D.EXE. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mdk-sdl-case/)</sub>
 - [**MDK in Godot: a port from game data and executable analysis**](https://github.com/nautilusbits/mdk-godot) - MDK in Godot ports the 1997 game MDK to Godot 4.7 using analysis of its data files and MDKD3D.EXE. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mdk-godot-case/)</sub>
@@ -639,7 +643,4 @@
 - [**Tapir: reimplementing the RGSS game runtimes**](https://github.com/qnighy/tapir) - Tapir reimplements the RGSS, RGSS2 and RGSS3 runtimes used by RPG Maker XP, VX and VX Ace games. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tapir-rgss-case/)</sub>
 - [**TempleRun-RL: reconstructing Temple Run mechanics for simulator training**](https://github.com/matthieucs/TempleRun-RL) - TempleRun-RL reconstructs Temple Run's track generation, hazards, and runner physics in a headless training simulator. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/templerun-rl-case/)</sub>
 - [**Test Drive II Enhanced: a C reimplementation of the EGA game**](https://github.com/kylofon/testdrive2-enhanced) - Test Drive II Enhanced reimplements the EGA Test Drive II: The Duel executable in C and runs it through SDL3 with the player's original game files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/test-drive-ii-enhanced-case/)</sub>
-- [**Test Drive II: The Duel: an SDL3 reconstruction of the DOS EGA game**](https://github.com/kylofon/test-drive-2-sdl3) - Test Drive II: The Duel is reimplemented in C for SDL3 from analysis of the DOS EGA game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/test-drive-2-sdl3-case/)</sub>
-- [**th10: reconstructing Mountain of Faith 1.00a for the browser**](https://github.com/Ritosa2333/th10) - th10 reimplements Mountain of Faith 1.00a in C++ for a portable browser runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/th10-mountain-of-faith-case/)</sub>
-- [**The Crystal Scrolls: a Crystal Space engine for The Elder Scrolls III: Morrowind**](https://sourceforge.net/projects/crystalscrolls/) - Reimplements the engine of The Elder Scrolls III: Morrowind on the Crystal Space 3D engine, loading the BSA and ESM files of an installed Morrowind with Tribunal and Bloodmoon. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/crystal-scrolls-case/)</sub>
 <!-- END GENERATED CASES -->

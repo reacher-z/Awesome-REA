@@ -6,10 +6,13 @@
 
 [English](game-5.md)
 
-**378 个案例**
+**382 个案例**
 
 ## 引擎重实现
 
+- [**Test Drive II: The Duel：DOS EGA 游戏的 SDL3 重构版**](https://github.com/kylofon/test-drive-2-sdl3) - Test Drive II: The Duel 项目依据 DOS EGA 版本的分析结果，以 C 和 SDL3 重构游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/test-drive-2-sdl3-case/)</sub>
+- [**th10：面向浏览器重建《东方风神录》1.00a**](https://github.com/Ritosa2333/th10) - th10 以 C++ 重实现《东方风神录》1.00a，并构建可移植的浏览器运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/th10-mountain-of-faith-case/)</sub>
+- [**The Crystal Scrolls：基于 Crystal Space 的《The Elder Scrolls III: Morrowind》引擎**](https://sourceforge.net/projects/crystalscrolls/) - 在 Crystal Space 3D 引擎上重写《The Elder Scrolls III: Morrowind》的引擎，读取已安装的 Morrowind 及 Tribunal、Bloodmoon 的 BSA 与 ESM 文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crystal-scrolls-case/)</sub>
 - [**The Force Engine：为《Dark Forces》重建 Jedi Engine**](https://github.com/TheForceEngine/TheForceEngine) - The Force Engine 重建 Jedi Engine，利用用户的原版游戏在现代系统上运行《Star Wars: Dark Forces》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/the-force-engine-case/)</sub>
 - [**The Forgotten Server：开源 Tibia 服务器模拟器**](https://github.com/otland/forgottenserver) - 用 C++ 编写的开源 Tibia MMORPG 服务器模拟器，源自 OpenTibia Server，支持脚本、数据库与 Docker 镜像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/forgottenserver/)</sub>
 - [**The Hobbit：重建游戏图形引擎**](https://github.com/richcarl/hobbitgfx) - hobbitgfx 用 JavaScript 实现 Melbourne House 于 1982 年推出的文字冒险游戏《The Hobbit》的图形引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hobbitgfx-case/)</sub>
@@ -26,6 +29,7 @@
 - [**TurokEX：在 Kex 引擎上重建 PC 版 Turok**](https://github.com/svkaiser/TurokEX) - TurokEX 在 Kex 引擎上重新实现 PC 版 Turok，游戏中的角色、敌人 AI、武器、拾取物、区域和 HUD 均以 AngelScript 类编写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/turokex-case/)</sub>
 - [**TwinEngine：《Little Big Adventure 1》引擎重写**](https://github.com/LBALab/twin-e) - TwinEngine 用 C 重写《Little Big Adventure 1》引擎，读取原版安装文件运行游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twinengine-lba1-case/)</sub>
 - [**Twisted Metal：2012 年 PS3 游戏的 Rust 重实现**](https://gitlab.com/goblindo/twisted-metal) - Twisted Metal 以 Rust 重实现 2012 年 PS3 游戏的引擎，面向 Linux 和 macOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twisted-metal-native-engine-case/)</sub>
+- [**Type PAL：1995 年《仙剑奇侠传》的 TypeScript 重制**](https://github.com/IllegalCreed/type-pal) - 用 TypeScript 从零重写 1995 年中文角色扮演游戏《仙剑奇侠传》的项目：可在浏览器中游玩，并附带可视化编辑器与中英双语界面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/type-pal/)</sub>
 - [**UA\_source：Urban Assault 游戏引擎重实现**](https://github.com/Marisa-Chan/UA_source) - UA\_source 使用 C++ 重实现 Urban Assault 引擎，运行时读取用户自备的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ua-source-case/)</sub>
 - [**UAlbion：1995 年 RPG《Albion》重建**](https://github.com/csinkers/ualbion) - UAlbion 使用原版《Albion》游戏数据，以 C# 重建这款 1995 年的角色扮演游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ualbion-case/)</sub>
 - [**Ultima V Redux：使用原版游戏数据重建《Ultima V》**](https://github.com/bradhannah/UltimaVRedux) - Ultima V Redux 使用玩家自备的 MS-DOS PC 版文件，以 Go 重建《Ultima V: Warriors of Destiny》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ultima-v-redux-case/)</sub>

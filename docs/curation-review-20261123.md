@@ -474,3 +474,31 @@ This round adds six more reconstruction cases from the stored lead queue: Space 
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Marathon Recompiled and OpenRealm received Class 1 previews. All six are case studies, so the game case indexes and README case sections were regenerated.
+
+---
+
+# Backlog curation review, eighteenth batch — 2026-11-23
+
+This round adds five more reconstruction cases and one forensics parser: Type PAL, bo2-mac, Mercenaries Recompiled, CatacombGL, Project ReLink and ccl_chromium_reader.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `type-pal` | `reconstruction-cases` | [IllegalCreed/type-pal](https://github.com/IllegalCreed/type-pal/blob/0443a023ce59e8c18910244c54ed34e5d392870d/README.md) | `a05b65fd98d1f880578144c5f4aedb4ed7f2f7ee554c6b21b997417a4ce36af2` |
+| `bo2-mac` | `reconstruction-cases` | [adrbn/bo2-mac](https://github.com/adrbn/bo2-mac/blob/e360a0f447957f5b579bd63d9140c9496ede3cfb/README.md) | `078c982f693cacc478282bec34fc07c0047a0c79f7affc9a6af51286310fd2cb` |
+| `mercenaries-recompiled` | `reconstruction-cases` | [KraftMacAndChee/Mercenaries-Recompiled](https://github.com/KraftMacAndChee/Mercenaries-Recompiled/blob/f513ae4e041401b7b032410016940971488d523b/README.md) | `a440b163a42d4814384cbde2db736c90ca3b49a6b7dbd4e0c0ee5dc32d02c201` |
+| `catacombgl` | `reconstruction-cases` | [ArnoAnsems/CatacombGL](https://github.com/ArnoAnsems/CatacombGL/blob/d00d480f65edaaf75f087e6bcf55b0e0737f24c6/README.md) | `84c8784365fe67681bfb163f9babdf49143b956a3636d67a07a1d3eb490a4110` |
+| `project-relink` | `reconstruction-cases` | [pixl27/ProjectReLink](https://github.com/pixl27/ProjectReLink/blob/54af18cda249233a9a9aafcddf5dc317cb3fad42/README.md) | `68cf175a554476be104f359df12b6522d20ed6ec3d4e6cae2a87527e20dc166d` |
+| `ccl-chromium-reader` | `native-analysis` | [cclgroupltd/ccl_chromium_reader](https://github.com/cclgroupltd/ccl_chromium_reader/blob/7a01b07dc5205a9c12004f2c9eabce0bb4697860/README.md) | `3318cb254ad5de43ade6ac08e8f09907f99f3f71e76ea46203928dd7b9e2ecef` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| MegaMan64Recomp/MegaMan64Recompiled | README is a 52-byte stub below the documentation threshold. |
+| SwagSoftware/KisakCOD | GitHub returned HTTP 451 for the repository during review. |
+| ferrumc-rs/ferrumc | README declares the project is not actively maintained. |
+| Awis13/liberty-pro-max, Sacrappy/HeyListen | More Ocarina of Time / GTA recompilation variants deferred to avoid near-duplicate cases. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Type PAL, bo2-mac and Project ReLink received Class 1 previews. The five new case studies update the game case indexes and README case sections.

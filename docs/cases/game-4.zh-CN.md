@@ -6,10 +6,14 @@
 
 [English](game-4.md)
 
-**629 个案例**
+**630 个案例**
 
 ## 基于重建源码的移植
 
+- [**Mario Kart 64 for Dreamcast：将任天堂 64 游戏移植到 Dreamcast**](https://github.com/jnmartin84/mk64-dc) - Mario Kart 64 for Dreamcast 是 n64decomp/mk64 反编译的世嘉 Dreamcast 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mk64-dc-case/)</sub>
+- [**Mario Kart Wii 3DS：从玩家光盘构建的原生移植版**](https://github.com/MiniBandit/MKW-3DS) - Mario Kart Wii 3DS 延续该游戏的 Nintendo 3DS 原生移植项目，从玩家的美版光盘镜像构建可安装的 CIA。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mkw-3ds-case/)</sub>
+- [**MaskPad：移植至 iPhone 和 iPad 的《Majora's Mask》**](https://github.com/chrissotraidis/maskpad) - MaskPad 将 2 Ship 2 Harkinian 的《Majora's Mask》源码移植版改造成 iPhone 和 iPad 原生应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/maskpad-case/)</sub>
+- [**Max Payne Mobile：Android 二进制程序移植至 Switch**](https://github.com/fgsfdsfgs/max_nx) - 该项目通过加载并修补原版 AArch64 共享库，使 Android 版《Max Payne Mobile》在 Nintendo Switch 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/max-payne-mobile-switch-port-case/)</sub>
 - [**max\_vita：将《Max Payne Mobile》Android 二进制文件移植到 PS Vita**](https://github.com/fgsfdsfgs/max_vita) - max\_vita 将 Android 版《Max Payne Mobile》移植到 PS Vita：加载并修补用户提供的原始游戏二进制文件，通过精简的 Android 兼容环境，以及图形、音频和游戏行为兼容钩子运行游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/max-vita-case/)</sub>
 - [**MDK in C# and SDL3：重建 1997 年游戏**](https://github.com/nautilusbits/mdk-sdl) - MDK in C# and SDL3 根据 MDKD3D.EXE 及原游戏数据重建 1997 年 MDK 的格式和行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mdk-sdl-case/)</sub>
 - [**MDK in Godot：基于游戏数据与可执行文件分析的移植**](https://github.com/nautilusbits/mdk-godot) - MDK in Godot 依据原版数据文件及 MDKD3D.EXE 的分析，将 1997 年游戏 MDK 移植到 Godot 4.7。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mdk-godot-case/)</sub>
@@ -639,7 +643,4 @@
 - [**Tapir：重建 RGSS 游戏运行时**](https://github.com/qnighy/tapir) - Tapir 重建 RPG Maker XP、VX 和 VX Ace 游戏使用的 RGSS、RGSS2 与 RGSS3 运行时，源码包含图形、音频和输入模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tapir-rgss-case/)</sub>
 - [**TempleRun-RL：重建 Temple Run 机制用于模拟训练**](https://github.com/matthieucs/TempleRun-RL) - TempleRun-RL 将 Temple Run 的赛道生成、障碍与角色运动机制重建为无界面训练模拟器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/templerun-rl-case/)</sub>
 - [**Test Drive II Enhanced：《试驾 II》EGA 版的 C 语言重实现**](https://github.com/kylofon/testdrive2-enhanced) - Test Drive II Enhanced 以 C 语言重实现 EGA 版《试驾 II：对决》程序，并通过 SDL3 读取玩家自备的游戏文件运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/test-drive-ii-enhanced-case/)</sub>
-- [**Test Drive II: The Duel：DOS EGA 游戏的 SDL3 重构版**](https://github.com/kylofon/test-drive-2-sdl3) - Test Drive II: The Duel 项目依据 DOS EGA 版本的分析结果，以 C 和 SDL3 重构游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/test-drive-2-sdl3-case/)</sub>
-- [**th10：面向浏览器重建《东方风神录》1.00a**](https://github.com/Ritosa2333/th10) - th10 以 C++ 重实现《东方风神录》1.00a，并构建可移植的浏览器运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/th10-mountain-of-faith-case/)</sub>
-- [**The Crystal Scrolls：基于 Crystal Space 的《The Elder Scrolls III: Morrowind》引擎**](https://sourceforge.net/projects/crystalscrolls/) - 在 Crystal Space 3D 引擎上重写《The Elder Scrolls III: Morrowind》的引擎，读取已安装的 Morrowind 及 Tribunal、Bloodmoon 的 BSA 与 ESM 文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crystal-scrolls-case/)</sub>
 <!-- END GENERATED CASES -->

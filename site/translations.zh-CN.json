@@ -45042,5 +45042,53 @@
       "它是游戏数据格式兼容项目，不分发暴雪资源。",
       "采用 MIT 许可证。"
     ]
+  },
+  "type-pal": {
+    "name": "Type PAL：1995 年《仙剑奇侠传》的 TypeScript 重制",
+    "requirements": [
+      "在现代浏览器中运行；项目包含游玩与编辑地图所需的内容。",
+      "它是从零重制，行为与内容可能与 1995 年原版不同。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "bo2-mac": {
+    "name": "bo2-mac：黑色行动 II 的 ARM64 macOS 静态重编译",
+    "requirements": [
+      "需要 Steam 版游戏；项目在本机构建且不分发资源。",
+      "它面向 ARM64 macOS 并通过兼容层运行，性能取决于 Mac。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "mercenaries-recompiled": {
+    "name": "Mercenaries Recompiled：Mercenaries 原生移植",
+    "requirements": [
+      "需要受支持的零售 Xbox 版游戏；仓库不包含光盘镜像或游戏数据。",
+      "混合流程转译原版可执行文件，兼容性取决于具体游戏构建。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "catacombgl": {
+    "name": "CatacombGL：Catacomb 3D 与 Adventure 系列的 OpenGL 源码移植",
+    "requirements": [
+      "需要原版 Catacomb 游戏数据；构建覆盖 Windows 与 Linux。",
+      "它是带 OpenGL 图形的源码移植，行为取决于原版游戏数据。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "project-relink": {
+    "name": "Project ReLink：时之笛 Switch 2 重制版静态重编译",
+    "requirements": [
+      "需要用户的游戏文件；项目在用户机器上编译转译后的代码。",
+      "它是非官方项目，兼容性取决于具体重制版版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "ccl-chromium-reader": {
+    "name": "ccl_chromium_reader",
+    "requirements": [
+      "需要 Python 3 与待读取的 Chromium 数据存储副本。",
+      "部分解析器仍不完整，项目面向取证检查而非实时应用使用。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-23T23:45:53+00:00",
-    "entry_count": 1164,
-    "class_entry_count": 1195,
+    "generated_at": "2026-11-24T00:25:16+00:00",
+    "entry_count": 1167,
+    "class_entry_count": 1198,
     "class_counts": {
-      "image": 1124,
+      "image": 1127,
       "video": 40
     },
     "missing_count": 31,
@@ -927,6 +927,15 @@
       "source_url": "https://github.com/minimalice92/bloodwake-recomp",
       "revision": "6292340705d9b863351a45ba160174a346a81688",
       "checked_at": "2026-11-09T07:55:40+00:00"
+    },
+    {
+      "id": "bo2-mac",
+      "image_url": "https://raw.githubusercontent.com/adrbn/bo2-mac/e360a0f447957f5b579bd63d9140c9496ede3cfb/docs/assets/preview.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/adrbn/bo2-mac",
+      "revision": "e360a0f447957f5b579bd63d9140c9496ede3cfb",
+      "checked_at": "2026-11-24T00:25:15+00:00"
     },
     {
       "id": "bosectl-bose-bmap-protocol-case",
@@ -6797,6 +6806,15 @@
       "checked_at": "2026-11-22T06:41:04+00:00"
     },
     {
+      "id": "project-relink",
+      "image_url": "https://raw.githubusercontent.com/pixl27/ProjectReLink/54af18cda249233a9a9aafcddf5dc317cb3fad42/docs/launcher.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/pixl27/ProjectReLink",
+      "revision": "54af18cda249233a9a9aafcddf5dc317cb3fad42",
+      "checked_at": "2026-11-24T00:25:15+00:00"
+    },
+    {
       "id": "project-vekta-case",
       "image_url": "https://raw.githubusercontent.com/gustavomorinaga/project-vekta/55bd3b4e99fb86a6b3cfd94c546ac97f7887eb98/docs/screenshots/20261030_level1-helghast-advance.png",
       "kind": "image",
@@ -9584,6 +9602,15 @@
       "source_url": "https://github.com/dojoe/Twonkie",
       "revision": "64a9e85c5df983bccf23925ed278b657612f3767",
       "checked_at": "2026-11-09T15:42:23+00:00"
+    },
+    {
+      "id": "type-pal",
+      "image_url": "https://raw.githubusercontent.com/IllegalCreed/type-pal/0443a023ce59e8c18910244c54ed34e5d392870d/docs/screenshots/editor-to-play.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/IllegalCreed/type-pal",
+      "revision": "0443a023ce59e8c18910244c54ed34e5d392870d",
+      "checked_at": "2026-11-24T00:25:16+00:00"
     },
     {
       "id": "ue-explorer",
