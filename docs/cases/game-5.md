@@ -6,10 +6,14 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**417 case studies**
+**421 case studies**
 
 ## Engine reimplementations
 
+- [**San Andreas Unity: a GTA San Andreas engine reimplementation in Unity**](https://github.com/in0finite/SanAndreasUnity) - Reimplements the Grand Theft Auto: San Andreas engine in Unity (C#), loading the archives, RenderWare models and textures, collision, animations, audio, text and item definitions from the user’s own PC installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/san-andreas-unity-engine-case/)</sub>
+- [**Sarien: a portable reimplementation of Sierra's AGI interpreter**](https://sourceforge.net/projects/sarien/) - Sarien reimplements Sierra On-Line's Adventure Game Interpreter (AGI) in C so that AGI games such as Leisure Suit Larry, King's Quest II and Mixed-Up Mother Goose run across many platforms. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sarien-agi-interpreter-case/)</sub>
+- [**Scion: reimplementing the SimCity 4 Gonzo/Rizzo framework**](https://github.com/nsgomez/scion) - Scion is a reference implementation of the Gonzo/Rizzo framework used by Maxis. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/scion-maxis/)</sub>
+- [**Scooby-Doo Mystery: a reconstructed Sega Genesis engine**](https://github.com/janezkranjc/scooby-doo-mistery-mouse-version) - The Scooby-Doo Mystery port reimplements the Sega Genesis game's engine in C++ with SFML 3, porting routines from 68000 code and reading graphics, text and scripts from a user ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/scooby-doo-mystery-genesis-case/)</sub>
 - [**ScummVM: replacement executables for classic adventure games**](https://github.com/scummvm/scummvm) - Replaces the executables of classic adventure games and RPGs with one program that runs the user's original data files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/scummvm-engine-case/)</sub>
 - [**SDLPAL: reimplementing Legend of Sword and Fairy with SDL**](https://github.com/sdlpal/sdlpal) - SDLPAL is an SDL reimplementation of the Chinese RPG Legend of Sword and Fairy, also called PAL. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sdlpal/)</sub>
 - [**SDLPoP2: rebuilding the Prince of Persia 2 DOS engine**](https://github.com/ToolAssisted-run/SDLPoP2) - SDLPoP2 rebuilds the engine of Prince of Persia 2: The Shadow and the Flame from its DOS program as C for Linux and Windows. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sdlpop2-prince-of-persia-2-case/)</sub>

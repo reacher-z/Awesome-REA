@@ -45474,5 +45474,53 @@
       "可移植的现代版本作为独立项目 ReMech2 进行中。",
       "采用 LGPL-3.0 许可证。"
     ]
+  },
+  "mweppc": {
+    "name": "mweppc",
+    "requirements": [
+      "需要相应的 CodeWarrior 版本与匹配式反编译项目；项目按版本公布精确匹配与链接函数匹配率。",
+      "它是在研工具链反编译项目，匹配率因编译器版本而异。",
+      "采用 CC0-1.0 许可证。"
+    ]
+  },
+  "stuntracefx": {
+    "name": "Stunt Race FX：逐位精确反编译",
+    "requirements": [
+      "需要受支持的 Stunt Race FX 卡带来验证构建；仓库不分发 ROM。",
+      "它是逐位精确反编译，原生构建覆盖 macOS、Windows、Linux、iPhone、iPad 与 Android。",
+      "采用 CC0-1.0 许可证。"
+    ]
+  },
+  "pik1wii": {
+    "name": "New Play Control! Pikmin — 在研匹配式反编译",
+    "requirements": [
+      "需要受支持的 Wii 游戏来验证构建；项目不分发游戏。",
+      "它是在研匹配式反编译。",
+      "采用 CC0-1.0 许可证。"
+    ]
+  },
+  "lionheart-remake": {
+    "name": "Lionheart Remake：Amiga 游戏的 Java 重制",
+    "requirements": [
+      "需要 Java；重制版以可运行发行包提供。",
+      "它是对 Amiga 游戏的重制，内容与行为可能与原版不同。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "time-crisis-2-vr": {
+    "name": "Time Crisis II VR：Meta Quest 3 与 PCVR 街机移植",
+    "requirements": [
+      "需要街机美版 TSS3 Ver. B 游戏数据与 Quest 3 或 OpenXR 头显；不是 PS2 版本。",
+      "它基于上游重建成果，兼容性取决于具体街机版本。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "gta-stories-recompiled": {
+    "name": "GTA Stories Recompiled：自由城故事与罪恶都市故事 PC 移植",
+    "requirements": [
+      "需要自备 PS2 光盘；不包含游戏数据。",
+      "它是静态重编译，兼容性取决于光盘版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

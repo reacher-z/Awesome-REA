@@ -6,7 +6,7 @@
 
 [English](game-1.md)
 
-**617 个案例**
+**616 个案例**
 
 <a id="game-matching-decompilation"></a>
 ## 匹配反编译与反汇编
@@ -341,6 +341,7 @@
 - [**My Teacher is an Alien：Windows 95 游戏源码重建**](https://github.com/neuromancer/my-teacher-is-an-alien-re) - My Teacher is an Alien 根据 Ghidra 反汇编重建这款 1997 年 Windows 95 冒险游戏的 C++ 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/my-teacher-is-an-alien-case/)</sub>
 - [**Nagano Winter Olympics '98：Nintendo 64 匹配反编译**](https://github.com/TheGh0stShip/Nagano-Winter-Olympics-98-N64) - Nagano Winter Olympics '98 反编译项目重建美国版 Nintendo 64 游戏的源码，并整理 ROM 数据区域。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nagano-winter-olympics-98-decomp-case/)</sub>
 - [**NASCAR Heat 2002：匹配 GBA 反编译与 SDL2 移植**](https://github.com/shohamc1/heat2002) - 将美版 Game Boy Advance 游戏 NASCAR Heat 2002 重建为逐字节匹配的源码构建，并把同一套游戏代码编译成 SDL2 桌面移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nascar-heat-2002-gba-decomp-case/)</sub>
+- [**New Play Control! Pikmin — 在研匹配式反编译**](https://github.com/projectPiki/pik1wii) - 《New Play Control! Pikmin》Wii 版的在研匹配式反编译，代码、数据与链接代码进度由 decomp.dev 跟踪。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pik1wii/)</sub>
 - [**New Super Mario Bros. Wii：PAL 版游戏的匹配反编译**](https://github.com/NSMBW-Community/NSMBW-Decomp) - 该项目从 PALv1 二进制反编译《新超级马里奥兄弟 Wii》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nsmbw-decomp/)</sub>
 - [**New Super Mario Bros.：早期 Nintendo DS 匹配反编译**](https://github.com/NSMB-Decomp/nsmb) - nsmb 重建 Nintendo DS《新超级马力欧兄弟》的源码，目前对美版 A2DE 开展代码匹配。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nsmb-ds-decomp-case/)</sub>
 - [**NFL Street 2：记录证据的 GameCube 匹配反编译**](https://github.com/mitsevox/nflstreet2) - NFL Street 2 为美国版 GameCube 游戏重建 C/C++ 源码，以生成逐字节一致的可执行文件为目标。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nfl-street-2-decomp-case/)</sub>
@@ -482,6 +483,7 @@
 - [**StarTropics：逐字节匹配的 NES 反汇编**](https://github.com/jogalleciez/StarTropics-decomp) - 项目将 NES 游戏 StarTropics（美国版）的 32 个 PRG bank 重建为带标签的 ca65 汇编，并逐字节比较构建结果与用户的 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/startropics-disassembly-case/)</sub>
 - [**Street Fighter III 2nd Impact：CPS3 程序匹配反编译**](https://github.com/gibletto/sfIII2-cps3-decomp) - Street Fighter III 2nd Impact 将 CPS3 街机程序重建为 C 与 SH-2 汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sfiii2-cps3-decomp-case/)</sub>
 - [**Stretch Panic：三个 PlayStation 2 版本的匹配反编译**](https://github.com/Harskov/stretch-panic-usa) - Stretch Panic 用同一套 C/C++ 源码重建三个 PlayStation 2 发行版本，并逐字节比较生成程序的加载映像与原版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/stretch-panic-decomp-case/)</sub>
+- [**Stunt Race FX：逐位精确反编译**](https://github.com/jeff-strutb/stuntracefx) - 《Stunt Race FX》的逐位精确反编译：可逐字节重建原始 ROM 并验证每个例程，随后以 60 fps、宽屏与全分辨率 3D 原生运行源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/stuntracefx/)</sub>
 - [**Summoner 2：PlayStation 2 精确反编译**](https://github.com/mikegoforth/summoner-2-decomp) - 将 PlayStation 2 版《Summoner 2》重建为 C++ 源码并与原版程序比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/summoner-2-ps2-decomp-case/)</sub>
 - [**Summoner: A Goddess Reborn：进行中的 GameCube 游戏反编译**](https://github.com/Charlese2/sgr) - sgr 重建《Summoner: A Goddess Reborn》GameCube 美版的源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/summoner-goddess-reborn-decomp-case/)</sub>
 - [**Super Mario 64 DS：带重定位核对的匹配反编译**](https://github.com/tangosdev/sm64ds-decomp) - 将 Super Mario 64 DS 函数重建为 C/C++ 和规则允许的汇编原语，并将编译结果与用户提供的卡带转储对比。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sm64ds-decomp-case/)</sub>
@@ -628,7 +630,4 @@
 - [**Back to Skool：基于 SkoolKit 的 ZX Spectrum 反汇编**](https://github.com/skoolkid/backtoskool) - Back to Skool 项目发布 ZX Spectrum 版游戏的 SkoolKit 反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/back-to-skool-disassembly-case/)</sub>
 - [**Balloon Fight：NES 游戏反汇编**](https://github.com/LuigiBlood/balloonfight_dis) - 这是 NES 美版 Balloon Fight 的反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/balloonfight-disasm/)</sub>
 - [**Banjo-Kazooie：Xbox Live Arcade 版反编译**](https://github.com/banjo360/bk360) - 该项目反编译 Xbox Live Arcade 版 Banjo-Kazooie。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bk360/)</sub>
-- [**Battlestations Pacific：逐步重建 Win32 C++ 程序**](https://github.com/sqz269/battlestations-pacific-decompile) - 依据 Ghidra 分析，将 Battlestations Pacific 的 Win32 可执行文件逐例程重建为可编译的 MSVC C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/battlestations-pacific-reconstruction-case/)</sub>
-- [**Batty：ZX Spectrum 游戏的 SkoolKit 反汇编**](https://github.com/pobtastic/batty) - batty 提供 ZX Spectrum 游戏《Batty》的 SkoolKit 反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/batty-disassembly-case/)</sub>
-- [**BIT.TRIP COMPLETE：Wii 游戏反编译**](https://github.com/Fatih120/bittrip) - BIT.TRIP COMPLETE 是针对 Wii 游戏编号 SVTEXS 的进行中反编译工程。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bit-trip-complete-case/)</sub>
 <!-- END GENERATED CASES -->

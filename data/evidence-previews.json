@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-24T18:58:43+00:00",
-    "entry_count": 1180,
-    "class_entry_count": 1211,
+    "generated_at": "2026-11-24T19:48:29+00:00",
+    "entry_count": 1183,
+    "class_entry_count": 1214,
     "class_counts": {
-      "image": 1140,
+      "image": 1143,
       "video": 40
     },
     "missing_count": 31,
@@ -3411,6 +3411,15 @@
       "source_url": "https://github.com/storytold/gridcraft",
       "revision": "7102429a9a2fd9f6fba8e06238a1cce5807fb1b0",
       "checked_at": "2026-11-10T02:57:21+00:00"
+    },
+    {
+      "id": "gta-stories-recompiled",
+      "image_url": "https://raw.githubusercontent.com/batinium/gta-stories-recompiled/8a895d2e3c71cc9aeab83c6a27049c4ee75111e5/docs/media/widescreen.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/batinium/gta-stories-recompiled",
+      "revision": "8a895d2e3c71cc9aeab83c6a27049c4ee75111e5",
+      "checked_at": "2026-11-24T19:48:29+00:00"
     },
     {
       "id": "guitar-hero-iii-recomp-case",
@@ -9136,6 +9145,15 @@
       "checked_at": "2026-11-08T22:27:09+00:00"
     },
     {
+      "id": "stuntracefx",
+      "image_url": "https://raw.githubusercontent.com/jeff-strutb/stuntracefx/61b46e8065c49650e03ce7a1bc2532e56192907a/docs/stuntracefx/img/original-race.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/jeff-strutb/stuntracefx",
+      "revision": "61b46e8065c49650e03ce7a1bc2532e56192907a",
+      "checked_at": "2026-11-24T19:48:29+00:00"
+    },
+    {
       "id": "stunts-hd",
       "image_url": "https://stunts-recomp.pages.dev/stunts/media/readme/montage.jpg",
       "kind": "image",
@@ -9476,6 +9494,15 @@
       "source_url": "https://github.com/KHiyowa/Tika-JTD",
       "revision": "045ef005f7e45202650d5601b46ef6f4915d8190",
       "checked_at": "2026-11-09T15:42:23+00:00"
+    },
+    {
+      "id": "time-crisis-2-vr",
+      "image_url": "https://raw.githubusercontent.com/DR-89/time-crisis-2-vr/41c057a4c6943f466fb64062e91b9fa5e987bdd0/docs/images/tc2-gameplay.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/DR-89/time-crisis-2-vr",
+      "revision": "41c057a4c6943f466fb64062e91b9fa5e987bdd0",
+      "checked_at": "2026-11-24T19:48:29+00:00"
     },
     {
       "id": "time-crisis-vr",

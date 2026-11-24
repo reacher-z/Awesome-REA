@@ -6,10 +6,14 @@
 
 [English](game-5.md)
 
-**417 个案例**
+**421 个案例**
 
 ## 引擎重实现
 
+- [**San Andreas Unity：在 Unity 中重新实现的《侠盗猎车手：圣安地列斯》引擎**](https://github.com/in0finite/SanAndreasUnity) - 在 Unity（C#）中重新实现《侠盗猎车手：圣安地列斯》的引擎，从使用者自有的 PC 版安装中读取归档、RenderWare 模型与纹理、碰撞、动画、音频、文本和物品定义。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/san-andreas-unity-engine-case/)</sub>
+- [**Sarien：Sierra AGI 解释器的可移植重实现**](https://sourceforge.net/projects/sarien/) - Sarien 用 C 重新实现了 Sierra On-Line 的 Adventure Game Interpreter（AGI），可以运行《Leisure Suit Larry》《King's Quest II》《Mixed-Up Mother Goose》等 AGI 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sarien-agi-interpreter-case/)</sub>
+- [**Scion：重实现《模拟城市 4》的 Gonzo/Rizzo 框架**](https://github.com/nsgomez/scion) - Scion 是 Maxis 所用 Gonzo/Rizzo 框架的参考实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scion-maxis/)</sub>
+- [**Scooby-Doo Mystery：重建 Sega Genesis 游戏引擎**](https://github.com/janezkranjc/scooby-doo-mistery-mouse-version) - Scooby-Doo Mystery 移植项目使用 C++ 和 SFML 3 重建 Sega Genesis 游戏引擎，依据 68000 代码逐个移植例程，并从用户 ROM 读取图像、文本和脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scooby-doo-mystery-genesis-case/)</sub>
 - [**ScummVM：经典冒险游戏的替代可执行文件**](https://github.com/scummvm/scummvm) - 用一个程序替换经典冒险游戏和 RPG 的可执行文件，运行用户自备的原始数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scummvm-engine-case/)</sub>
 - [**SDLPAL：用 SDL 重实现《仙剑奇侠传》**](https://github.com/sdlpal/sdlpal) - SDLPAL 是基于 SDL 的《仙剑奇侠传》重实现，英文也称为 PAL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sdlpal/)</sub>
 - [**SDLPoP2：重建 Prince of Persia 2 DOS 引擎**](https://github.com/ToolAssisted-run/SDLPoP2) - SDLPoP2 根据 DOS 原程序，以 C 语言重建 Prince of Persia 2: The Shadow and the Flame 的引擎，面向 Linux 和 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sdlpop2-prince-of-persia-2-case/)</sub>

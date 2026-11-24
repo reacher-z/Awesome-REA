@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-24T18:58:35+00:00",
-  "entry_count": 5397,
+  "generated_at": "2026-11-24T19:48:20+00:00",
+  "entry_count": 5403,
   "class_counts": {
    "0": 15,
-   "1": 1196,
-   "2": 3974,
+   "1": 1199,
+   "2": 3977,
    "3": 186
   },
   "unknown_count": 26,
@@ -151558,6 +151558,180 @@
    "checked_at": "2026-11-24T18:20:00+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "mweppc",
+   "url": "https://github.com/doldecomp/mweppc",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 12041,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 2,
+    "release_asset_count": 2,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-24T20:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "stuntracefx",
+   "url": "https://github.com/jeff-strutb/stuntracefx",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 28712,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 7,
+    "release_asset_count": 22,
+    "demo": [
+     "image"
+    ],
+    "media_count": 3,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-24T20:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "pik1wii",
+   "url": "https://github.com/projectPiki/pik1wii",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3771,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-24T20:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "lionheart-remake",
+   "url": "https://github.com/b3dgs/lionheart-remake",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 1604,
+    "docs_full": false,
+    "download": null,
+    "release_count": 4,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-24T20:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "time-crisis-2-vr",
+   "url": "https://github.com/DR-89/time-crisis-2-vr",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 19389,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 5,
+    "release_asset_count": 15,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [
+     "https://github.com/DR-89/time-crisis-2-vr/releases/download/v0.4.1/TimeCrisis2VR-v0.4.1-quest3.apk",
+     "https://github.com/DR-89/time-crisis-2-vr/releases/download/v0.4.1/TimeCrisis2VR-v0.4.1-windows-x64.zip"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-24T20:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "gta-stories-recompiled",
+   "url": "https://github.com/batinium/gta-stories-recompiled",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 20695,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 3,
+    "release_asset_count": 16,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 26,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-24T20:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   }

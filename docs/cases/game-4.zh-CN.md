@@ -6,10 +6,13 @@
 
 [English](game-4.md)
 
-**628 个案例**
+**629 个案例**
 
 ## 基于重建源码的移植
 
+- [**Heretic2R：Heretic II 逆向源码移植**](https://github.com/m-x-d/Heretic2R) - 《Heretic II》的逆向源码移植，加入宽屏支持、渲染与网络包发送解耦、OGG 音乐与错误修复，同时保留原版手感。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heretic2r/)</sub>
+- [**HK: Dual Souls：《Hollow Knight》的 AYN Thor 双屏移植**](https://github.com/igawa6/dualsouls) - HK: Dual Souls 用用户自有的 GOG 或 Steam 版《Hollow Knight》v1.5.12620 数据，在 AYN Thor Android 掌机上重建同版本 Unity 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dual-souls-case/)</sub>
+- [**Hunters Recomp：双屏 Android《Metroid Prime Hunters》移植版**](https://github.com/aabrole/HuntersRecomp) - Hunters Recomp 将《Metroid Prime Hunters》的静态重编译版本适配到 AYN Thor 双屏 Android 设备。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hunters-recomp-case/)</sub>
 - [**Ice Rage：面向 Linux ARM 掌机的 Android 原生库移植版**](https://github.com/EapRules/icerage-native-arm) - Ice Rage 通过 bionic ELF 加载器在 Linux ARM 掌机上运行：加载器映射游戏的 Android armeabi-v7a 库，并补齐所需的 Android 接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ice-rage-arm-port-case/)</sub>
 - [**ico-pc：由 PS2 反编译源码编译而成的《ICO》原生移植**](https://github.com/nathanialf/ico-pc) - 将 PlayStation 2 游戏《ICO》的反编译 C 源码原生编译到 Windows、Linux、Android、iPhone 及 Apple 芯片 Mac 上，并以宿主代码替代 PS2 硬件和 Sony 函数库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ico-pc-port-case/)</sub>
 - [**idTech4A++：移植到 Android 与桌面 GLES 的 id Tech 4 游戏**](https://github.com/glKarin/com.n0n3m4.diii4a) - 把 DOOM 3、Quake 4、Prey（2006）与 DOOM 3 BFG 等 id Tech 4 游戏移植到 Android、Windows 与 Linux，并使用 OpenGL ES 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/idtech4a/)</sub>
@@ -219,6 +222,7 @@
 - [**The Simpsons: Hit &amp; Run：加入原生触控的 Android 移植版**](https://github.com/Carlox33/The-Simpsons-Hit-and-Run-Android) - The Simpsons: Hit &amp; Run Android 以先前的 Switch 和 PS Vita 移植版为基础，适配 Android，加入原生触控和游戏内按键布局编辑器，并支持外接手柄。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/simpsons-hit-and-run-android-case/)</sub>
 - [**The Witcher 3：面向 ARM64 的部分原生函数恢复研究**](https://github.com/slavich33/witcher-3-native-research) - 该研究为《The Witcher 3: Wild Hunt》的 ARM64 移植实验恢复部分向量、VM 与解码函数。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/witcher-3-native-research-case/)</sub>
 - [**Thimbleweed Park Vita：Android 可执行文件的 PS Vita 移植**](https://github.com/Rinnegatamante/thimbleweed-vita) - Thimbleweed Park Vita 在 PS Vita 上加载《Thimbleweed Park》的 Android ARMv7 可执行文件，将其导入映射到本机函数，并应用运行时补丁。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thimbleweed-park-vita-case/)</sub>
+- [**Time Crisis II VR：Meta Quest 3 与 PCVR 街机移植**](https://github.com/DR-89/time-crisis-2-vr) - 街机版《Time Crisis II》在 Meta Quest 3 与 OpenXR PCVR 上的 VR 移植，包含追踪手柄瞄准、掩体机制与带动画的机枪拾取，基于 namco22-decompile 的重建成果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/time-crisis-2-vr/)</sub>
 - [**Time Crisis VR：街机游戏的 Meta Quest/PCVR 移植**](https://github.com/DR-89/time-crisis-vr) - 面向 Meta Quest 与 Windows PCVR 的实验性《Time Crisis》VR 移植，包含追踪 3D 手枪、立体渲染、原版街机玩法与音效、物理下蹲或握持掩体控制，基于 namco22-decompile 的重建成果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/time-crisis-vr/)</sub>
 - [**TMNF Android native port：重建 TrackMania Nations Forever 的 Android 移植版**](https://github.com/rockenrooster/TMNationsDecomp) - TMNF 根据 TrackMania Nations Forever 2.11.11 的 Windows 可执行文件恢复行为与数据，将部分游戏移植到 Android 15。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/tmnationsdecomp-case/)</sub>
 - [**tmnt-recomp：将 NES 版 Teenage Mutant Ninja Turtles 移植为 C 程序**](https://github.com/naparuba-retro/tmnt-recomp) - tmnt-recomp 根据 6502 代码分析，将 1989 年 NES 版 Teenage Mutant Ninja Turtles 移植为 C 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tmnt-recomp-case/)</sub>
@@ -419,6 +423,7 @@
 - [**librw：RenderWare Graphics 引擎的重新实现**](https://github.com/aap/librw) - 以可移植的 C++ 库重新实现 RenderWare Graphics 中间件 API 的大部分内容，可读写其 PS2、D3D8、D3D9 和 Xbox 平台的 DFF 模型与 TXD 纹理文件，并旨在于各平台格式之间转换。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/librw-renderware-reimplementation-case/)</sub>
 - [**Lilium Salvation：重建《Dark Salvation》引擎支持**](https://github.com/clover-moe/lilium-salvation) - Lilium Salvation 基于 Lilium Arena 重建《Dark Salvation》的引擎支持，运行用户提供的游戏数据文件中的 QVM，并加入多种显示模式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lilium-salvation-case/)</sub>
 - [**linyaga：适用于 Pajama Sam 与 Putt-Putt 的 Yaga 游戏运行环境**](https://github.com/cyxx/linyaga) - linyaga 为两款 Humongous Entertainment 的 Yaga 游戏提供替代运行环境：《Pajama Sam: Life is Rough When You Lose Your Stuff》和《Putt-Putt: Pep's Birthday Surprise》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/linyaga-yaga-engine-case/)</sub>
+- [**Lionheart Remake：Amiga 游戏的 Java 重制**](https://github.com/b3dgs/lionheart-remake) - Amiga 游戏《Lionheart》的 Java 重制版，加入现代扩展并可在当代平台运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lionheart-remake/)</sub>
 - [**Looking Glass：以 Rust 重建《American McGee's Alice》**](https://github.com/looking-glass-project/LookingGlass) - Looking Glass 用 Rust 重建《American McGee's Alice》的引擎和玩法，读取玩家自备的 2011 版游戏数据，不依赖原版可执行文件或玩法 DLL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/looking-glass-alice-case/)</sub>
 - [**lp-engine：重建 LovePlus+ 运行时**](https://github.com/gage-marshall/lp-engine) - lp-engine 使用玩家自备的日版 LovePlus+ 游戏镜像，在桌面系统上运行这款 Nintendo DS 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lp-engine-case/)</sub>
 - [**Luna Purpura：重建 Purple Moon 游戏格式与播放引擎**](https://github.com/dressupgeekout/lunapurpura) - Luna Purpura 以用户原版 CD-ROM 文件为输入，尝试为包括 Rockett's New School 在内的 1990 年代 Purple Moon 游戏编写可移植解释器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/luna-purpura-case/)</sub>
@@ -637,8 +642,4 @@
 - [**Rusty MCLA：以 Rust 重建《Midnight Club: Los Angeles》**](https://github.com/holdmysocks/rusty-mcla) - Rusty MCLA 以 Rust 重建《Midnight Club: Los Angeles Complete Edition》的 Windows 游戏引擎，数据由用户的 Xbox 360 光盘镜像生成。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/rusty-mcla-midnight-club-los-angeles-case/)</sub>
 - [**RustyWorld：用 Rust 重建 Another World 引擎**](https://github.com/EdMcBane/rustyworld) - RustyWorld 用 Rust 重建 Another World 游戏引擎，读取用户提供的原版数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rustyworld-case/)</sub>
 - [**sacengine：重实现《Sacrifice》游戏引擎**](https://github.com/tg-2/sacengine) - sacengine 重实现 Shiny Entertainment 的游戏 Sacrifice 的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sacengine/)</sub>
-- [**San Andreas Unity：在 Unity 中重新实现的《侠盗猎车手：圣安地列斯》引擎**](https://github.com/in0finite/SanAndreasUnity) - 在 Unity（C#）中重新实现《侠盗猎车手：圣安地列斯》的引擎，从使用者自有的 PC 版安装中读取归档、RenderWare 模型与纹理、碰撞、动画、音频、文本和物品定义。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/san-andreas-unity-engine-case/)</sub>
-- [**Sarien：Sierra AGI 解释器的可移植重实现**](https://sourceforge.net/projects/sarien/) - Sarien 用 C 重新实现了 Sierra On-Line 的 Adventure Game Interpreter（AGI），可以运行《Leisure Suit Larry》《King's Quest II》《Mixed-Up Mother Goose》等 AGI 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sarien-agi-interpreter-case/)</sub>
-- [**Scion：重实现《模拟城市 4》的 Gonzo/Rizzo 框架**](https://github.com/nsgomez/scion) - Scion 是 Maxis 所用 Gonzo/Rizzo 框架的参考实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scion-maxis/)</sub>
-- [**Scooby-Doo Mystery：重建 Sega Genesis 游戏引擎**](https://github.com/janezkranjc/scooby-doo-mistery-mouse-version) - Scooby-Doo Mystery 移植项目使用 C++ 和 SFML 3 重建 Sega Genesis 游戏引擎，依据 68000 代码逐个移植例程，并从用户 ROM 读取图像、文本和脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scooby-doo-mystery-genesis-case/)</sub>
 <!-- END GENERATED CASES -->

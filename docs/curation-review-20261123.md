@@ -720,3 +720,30 @@ This round adds two recompilation tools, one arcade launcher and three reconstru
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Crystal Cut received a Class 1 preview. The three new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, twenty-seventh batch — 2026-11-24
+
+This round adds one toolchain decompilation and five reconstruction cases: mweppc (Metrowerks CodeWarrior), Stunt Race FX, New Play Control! Pikmin, Lionheart Remake, Time Crisis II VR and GTA Stories Recompiled.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `mweppc` | `native-analysis` | [doldecomp/mweppc](https://github.com/doldecomp/mweppc/blob/919828d97d33d236da675824d43c5d57332afe74/README.md) | `48de95ae2a66fc7dffbfe99da5f3e587ffe05141de35ad6b9b15380a4109dc7f` |
+| `stuntracefx` | `reconstruction-cases` | [jeff-strutb/stuntracefx](https://github.com/jeff-strutb/stuntracefx/blob/61b46e8065c49650e03ce7a1bc2532e56192907a/README.md) | `9f1a56dd71d4b80db294e86bbb6ffaa04f264ac492c855a46ce2c4d25b3f721e` |
+| `pik1wii` | `reconstruction-cases` | [projectPiki/pik1wii](https://github.com/projectPiki/pik1wii/blob/0450613e9e29a5ff63ef3bf677f62078cbe66f86/README.md) | `9942ef7d21676814c011abc8bc265df42591ad77339960f952c00a32582c7b50` |
+| `lionheart-remake` | `reconstruction-cases` | [b3dgs/lionheart-remake](https://github.com/b3dgs/lionheart-remake/blob/46c2eeb75421c33903a24bff993c856ef9c85a8f/README.md) | `026a1258034cd09294223ac81d1dbae90abb3a84ea73d28531d721dbb9b395a4` |
+| `time-crisis-2-vr` | `reconstruction-cases` | [DR-89/time-crisis-2-vr](https://github.com/DR-89/time-crisis-2-vr/blob/41c057a4c6943f466fb64062e91b9fa5e987bdd0/README.md) | `79708cd2aa37b43bab859ed8538c34a11b19b798a0836cbd94acd15f9fd2108f` |
+| `gta-stories-recompiled` | `reconstruction-cases` | [batinium/gta-stories-recompiled](https://github.com/batinium/gta-stories-recompiled/blob/8a895d2e3c71cc9aeab83c6a27049c4ee75111e5/README.md) | `c068b7f43108dbf6d732718b8a88ebdeb87eaa3c59ebdadbddb6a498da61d636` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| sp00nznet/snesrecomp | Record id already used by the stacked catalog; a new id would be needed before adding it. |
+| SuperRecomp, abandoned projects | READMEs declare the projects abandoned or no longer maintained. |
+| Vidanox/BanjoTooieRecompiled, hamishakl/LibertyRecomp | Near-duplicates of records already carried by other open PRs. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Stunt Race FX, Time Crisis II VR and GTA Stories Recompiled received Class 1 previews. The five new case studies update the game case indexes and README case sections.

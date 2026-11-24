@@ -160669,5 +160669,177 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "mweppc",
+    "name": "mweppc",
+    "url": "https://github.com/doldecomp/mweppc",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A decompilation of the Metrowerks CodeWarrior toolchain for GameCube that aims to reproduce the compiler so matching decompilation projects can rebuild original binaries with the same toolchain.",
+    "description_zh": "面向 GameCube 的 Metrowerks CodeWarrior 工具链反编译项目，目标是复现该编译器，使匹配式反编译项目能用同一工具链重建原始二进制。",
+    "evidence_url": "https://github.com/doldecomp/mweppc/blob/919828d97d33d236da675824d43c5d57332afe74/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the relevant CodeWarrior version and a matching decompilation project; the project reports exact and linked function match rates per version.",
+      "It is a work-in-progress toolchain decompilation, and match rates vary by compiler version.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "stuntracefx",
+    "name": "Stunt Race FX: a bit-exact decompilation",
+    "url": "https://github.com/jeff-strutb/stuntracefx",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A bit-exact decompilation of Stunt Race FX that rebuilds the original ROM byte for byte and verifies every routine, then runs the source natively with 60 fps, widescreen and full-resolution 3D.",
+    "description_zh": "《Stunt Race FX》的逐位精确反编译：可逐字节重建原始 ROM 并验证每个例程，随后以 60 fps、宽屏与全分辨率 3D 原生运行源码。",
+    "evidence_url": "https://github.com/jeff-strutb/stuntracefx/blob/61b46e8065c49650e03ce7a1bc2532e56192907a/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported Stunt Race FX cartridge to verify the build; the repository does not distribute the ROM.",
+      "It is a bit-exact decompilation, and native builds target macOS, Windows, Linux, iPhone, iPad and Android.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "pik1wii",
+    "name": "New Play Control! Pikmin — a work-in-progress matching decompilation",
+    "url": "https://github.com/projectPiki/pik1wii",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A work-in-progress matching decompilation of New Play Control! Pikmin on the Wii, with code, data and linked-code progress tracked by decomp.dev.",
+    "description_zh": "《New Play Control! Pikmin》Wii 版的在研匹配式反编译，代码、数据与链接代码进度由 decomp.dev 跟踪。",
+    "evidence_url": "https://github.com/projectPiki/pik1wii/blob/0450613e9e29a5ff63ef3bf677f62078cbe66f86/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the supported Wii game to verify the build; the project does not distribute the game.",
+      "It is a work-in-progress matching decompilation.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "lionheart-remake",
+    "name": "Lionheart Remake: a Java remake of the Amiga game Lionheart",
+    "url": "https://github.com/b3dgs/lionheart-remake",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "A Java remake of the Amiga game Lionheart with modern extensions, rebuilt to run on current platforms.",
+    "description_zh": "Amiga 游戏《Lionheart》的 Java 重制版，加入现代扩展并可在当代平台运行。",
+    "evidence_url": "https://github.com/b3dgs/lionheart-remake/blob/46c2eeb75421c33903a24bff993c856ef9c85a8f/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Java; the remake is distributed as a runnable release.",
+      "It is a from-scratch remake of the Amiga game, so content and behavior may differ from the original.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "time-crisis-2-vr",
+    "name": "Time Crisis II VR: an arcade VR port for Meta Quest 3 and PCVR",
+    "url": "https://github.com/DR-89/time-crisis-2-vr",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A VR port of the arcade version of Time Crisis II for Meta Quest 3 and OpenXR PCVR, with tracked-controller aiming, cover mechanics and animated machine-gun pickups, built on the namco22-decompile reconstruction.",
+    "description_zh": "街机版《Time Crisis II》在 Meta Quest 3 与 OpenXR PCVR 上的 VR 移植，包含追踪手柄瞄准、掩体机制与带动画的机枪拾取，基于 namco22-decompile 的重建成果。",
+    "evidence_url": "https://github.com/DR-89/time-crisis-2-vr/blob/41c057a4c6943f466fb64062e91b9fa5e987bdd0/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the arcade US TSS3 Ver. B game data and a Quest 3 or OpenXR headset; it is not the PlayStation 2 version.",
+      "It is built on an upstream reconstruction and depends on the specific arcade version.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "gta-stories-recompiled",
+    "name": "GTA Stories Recompiled: Liberty City Stories and Vice City Stories PC port",
+    "url": "https://github.com/batinium/gta-stories-recompiled",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A PC port of the PlayStation 2 versions of GTA Liberty City Stories and Vice City Stories by static recompilation, joining both cities into one world with a mod loader and an Android app.",
+    "description_zh": "通过静态重编译把 PS2 版《GTA 自由城故事》与《罪恶都市故事》移植到 PC，两个城市合并在同一世界，并提供 mod 加载器与 Android 应用。",
+    "evidence_url": "https://github.com/batinium/gta-stories-recompiled/blob/8a895d2e3c71cc9aeab83c6a27049c4ee75111e5/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own PlayStation 2 discs; no game data is included.",
+      "It is a static recompilation, and compatibility depends on the disc versions.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

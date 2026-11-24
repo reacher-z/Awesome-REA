@@ -6,10 +6,14 @@
 
 [English](game-3.md)
 
-**609 个案例**
+**610 个案例**
 
 ## 静态重编译
 
+- [**HydroThunderPORT：将《Hydro Thunder Hurricane》重编译到 PC**](https://github.com/monscriser/HydroThunderPORT) - 这是《Hydro Thunder Hurricane》的 Windows 和 Linux 移植，发布版 BETA 1.1（1.1.0），有 Standard 和 PGO 两种构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hydro-thunder-port/)</sub>
+- [**I COULD HAVE GIVEN YOU THE WORLD：《007：黑日危机》N64 游戏本机移植**](https://github.com/riseio/TWIPE_00Sheven) - I COULD HAVE GIVEN YOU THE WORLD 将 N64《007：黑日危机》移植到 PC 和 Steam Deck。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/i-could-have-given-you-the-world-case/)</sub>
+- [**Imabikisō：实验性 PS3 至 PC 静态重编译**](https://github.com/yasindevs/imabikisou-pc) - Imabikisō 使用 ps3recomp 将本地生成的 PS3 游戏代码作为 Windows 程序运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/imabikiso-pc-recompilation-case/)</sub>
+- [**In Cold Blood Recompiled：PlayStation 游戏重编译安装程序**](https://github.com/alexbeavs-ps1-ports/in-cold-blood-recomp) - In Cold Blood Recompiled 配置 PSXRecomp 与 recomp-ui，从用户的 PlayStation 光盘生成原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/in-cold-blood-recompiled-case/)</sub>
 - [**inFAMOUS 2：面向 Apple 芯片 macOS 的静态重编译**](https://github.com/erikomis/infamous2-recomp) - inFAMOUS 2 将 PS3 数字版 NPUA80638 的 PowerPC 与 SPU 代码转为 C/C++，编译成使用 Metal 图形的 Apple 芯片 macOS 原生游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous2-macos-recomp-case/)</sub>
 - [**声名狼藉 2：将 PS3 游戏重编译到 Linux**](https://github.com/ThiagoFraga761/infamous2-pc) - 该项目用 ps3recomp 把 PlayStation 3 版《恶名昭彰 2》（BCUS98125，版本 01.00）重编译到原生 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous2-pc/)</sub>
 - [**inFamous PC：面向 Windows 的 PlayStation 3 静态重编译移植版**](https://github.com/whompay/inFAMOUSreborn) - inFamous PC 使用 ps3recomp 静态重编译《inFamous》欧洲版 PlayStation 3 游戏的 PPU 和 SPU 代码，构建 Windows 原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous-pc-case/)</sub>
@@ -619,7 +623,4 @@
 - [**HarkinianPad：基于 Ship of Harkinian 的《塞尔达传说：时之笛》iOS 移植版**](https://github.com/chrissotraidis/harkinianpad) - HarkinianPad 将《塞尔达传说：时之笛》的 Ship of Harkinian 源代码移植版适配到 iPhone 和 iPad，加入 Metal 渲染、触屏操作及手柄支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harkinianpad-case/)</sub>
 - [**Harvest：反编译并移植 Massive Encounter**](https://github.com/banteg/harvest) - Harvest 重建 Harvest: Massive Encounter Linux amd64 1.18 版的 C++ 源码，并将恢复的游戏及引擎代码移植到桌面和网页平台。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harvest-massive-encounter-case/)</sub>
 - [**Heretic2：将重建的游戏代码适配到 Yamagi Quake II**](https://github.com/0lvin/heretic2) - Heretic2 将早期重建项目中的《Heretic 2》游戏代码适配到定制的 Yamagi Quake II Remaster 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heretic2-yamagi-reconstruction-case/)</sub>
-- [**Heretic2R：Heretic II 逆向源码移植**](https://github.com/m-x-d/Heretic2R) - 《Heretic II》的逆向源码移植，加入宽屏支持、渲染与网络包发送解耦、OGG 音乐与错误修复，同时保留原版手感。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heretic2r/)</sub>
-- [**HK: Dual Souls：《Hollow Knight》的 AYN Thor 双屏移植**](https://github.com/igawa6/dualsouls) - HK: Dual Souls 用用户自有的 GOG 或 Steam 版《Hollow Knight》v1.5.12620 数据，在 AYN Thor Android 掌机上重建同版本 Unity 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dual-souls-case/)</sub>
-- [**Hunters Recomp：双屏 Android《Metroid Prime Hunters》移植版**](https://github.com/aabrole/HuntersRecomp) - Hunters Recomp 将《Metroid Prime Hunters》的静态重编译版本适配到 AYN Thor 双屏 Android 设备。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hunters-recomp-case/)</sub>
 <!-- END GENERATED CASES -->
