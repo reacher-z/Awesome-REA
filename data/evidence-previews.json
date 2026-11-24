@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-24T01:41:39+00:00",
-    "entry_count": 1170,
-    "class_entry_count": 1201,
+    "generated_at": "2026-11-24T02:27:20+00:00",
+    "entry_count": 1174,
+    "class_entry_count": 1205,
     "class_counts": {
-      "image": 1130,
+      "image": 1134,
       "video": 40
     },
     "missing_count": 31,
@@ -5249,6 +5249,15 @@
       "checked_at": "2026-11-08T22:27:09+00:00"
     },
     {
+      "id": "naruto-broken-bond-port",
+      "image_url": "https://raw.githubusercontent.com/Auremana666/Naruto-The-Broken-Bond-PC-Port/570142f98b7f852fce944776bee2dd3369d1cd10/docs/images/gameplay-16-9.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Auremana666/Naruto-The-Broken-Bond-PC-Port",
+      "revision": "570142f98b7f852fce944776bee2dd3369d1cd10",
+      "checked_at": "2026-11-24T02:27:20+00:00"
+    },
+    {
       "id": "naruto-rise-of-a-ninja-nx-case",
       "image_url": "https://raw.githubusercontent.com/malinkin-s/naruto-rise-of-a-ninja-nx/bc33c8f67e4380d5c6c008303056a3d6679c2c08/docs/media/switch_konoha_plaza.jpg",
       "kind": "image",
@@ -5616,6 +5625,15 @@
       "source_url": "https://github.com/fedepaj/open-smc-pad",
       "revision": "21cc306a10fe1c5c53e6828100d84b32396cae44",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "open-tower",
+      "image_url": "https://raw.githubusercontent.com/femloy/OpenTower/51060bc52e98c26ea5f857b6a0f6028e7a21b96b/github/guide1.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/femloy/OpenTower",
+      "revision": "51060bc52e98c26ea5f857b6a0f6028e7a21b96b",
+      "checked_at": "2026-11-24T02:27:20+00:00"
     },
     {
       "id": "open-trofeo-lcd-case",
@@ -6687,6 +6705,15 @@
       "source_url": "https://github.com/struppigel/PortEx",
       "revision": "bbcb1e452ae54dd7e211ca701dcaee5abb7bc28f",
       "checked_at": "2026-11-23T09:10:48+00:00"
+    },
+    {
+      "id": "porytiles",
+      "image_url": "https://raw.githubusercontent.com/grunt-lucas/porytiles/4c244d587c3daf16447366d0d8398b84a28370fe/resources/readme/PokemonHearth.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/grunt-lucas/porytiles",
+      "revision": "4c244d587c3daf16447366d0d8398b84a28370fe",
+      "checked_at": "2026-11-24T02:27:20+00:00"
     },
     {
       "id": "powar-pokewalker-case",
@@ -9413,6 +9440,15 @@
       "source_url": "https://github.com/KHiyowa/Tika-JTD",
       "revision": "045ef005f7e45202650d5601b46ef6f4915d8190",
       "checked_at": "2026-11-09T15:42:23+00:00"
+    },
+    {
+      "id": "time-crisis-vr",
+      "image_url": "https://raw.githubusercontent.com/DR-89/time-crisis-vr/a92faadc4e8c2042b1f6baccc77d4785863ceb7c/docs/images/gameplay.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/DR-89/time-crisis-vr",
+      "revision": "a92faadc4e8c2042b1f6baccc77d4785863ceb7c",
+      "checked_at": "2026-11-24T02:27:20+00:00"
     },
     {
       "id": "timesplitters-future-perfect-pc-rebuild-case",

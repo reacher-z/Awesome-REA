@@ -6,10 +6,14 @@
 
 [English](game-4.md)
 
-**630 个案例**
+**629 个案例**
 
 ## 基于重建源码的移植
 
+- [**LEGO Racers, portable：将反编译游戏移植到多平台**](https://github.com/isledecomp/racers-portable) - LEGO Racers, portable 将 1999 年《LEGO Racers》的反编译源码移植到 Windows、macOS 和 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lego-racers-portable-case/)</sub>
+- [**LEGOLAND, portable：基于匹配反编译源码的跨平台移植版**](https://github.com/facundosterzerforino/legoland-port) - LEGOLAND, portable 将 1999 年游戏的匹配反编译源码移植到 Windows、Linux、Android 和浏览器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/legoland-port-case/)</sub>
+- [**Lighthouse：基于反编译项目的《Banjo-Kazooie》PC 移植**](https://github.com/HarbourMasters/Lighthouse) - 一个面向 Windows、Linux 和 macOS 的《Banjo-Kazooie》原生移植，将游戏 C 源码（其中许多标注了《Banjo-Kazooie》反编译项目中的文件路径）与重新实现 N64 SDK 的 libultraship 一起编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lighthouse-banjo-kazooie-port-case/)</sub>
+- [**LineWars II：可移植的 SDL3 重建版**](https://github.com/fredangstadt-lang/LineWarsII-SDL) - 为 1994 年 DOS 游戏的可移植 C 重建提供 SDL3 后端。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/linewars-ii-sdl-case/)</sub>
 - [**Link: The Faces of Evil：CD-i 反编译代码的原生 PC 移植**](https://github.com/ByteDecompiler/link-faces-of-evil-pc) - 该项目把 Philips CD-i 游戏《Link: The Faces of Evil》的反编译 C 代码移植到 Windows，以 SDL3 实现视频、音频、光盘和输入接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/link-faces-of-evil-pc-case/)</sub>
 - [**Lordran Native：在 Apple 设备上运行《黑暗之魂：重制版》**](https://github.com/Nishikori-Yui/lordran-native) - Lordran Native 将 Switch 版《黑暗之魂：重制版》移植到 Apple 设备，直接运行游戏的 ARM64 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lordran-native-case/)</sub>
 - [**MacioGalaxy：将 Super Mario Galaxy 移植到 Apple Silicon**](https://github.com/classicrob/MacioGalaxy) - MacioGalaxy 将 Petari 的 Super Mario Galaxy 反编译代码移植到 Apple Silicon Mac。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/maciogalaxy-case/)</sub>
@@ -197,6 +201,7 @@
 - [**The Simpsons: Hit &amp; Run：加入原生触控的 Android 移植版**](https://github.com/Carlox33/The-Simpsons-Hit-and-Run-Android) - The Simpsons: Hit &amp; Run Android 以先前的 Switch 和 PS Vita 移植版为基础，适配 Android，加入原生触控和游戏内按键布局编辑器，并支持外接手柄。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/simpsons-hit-and-run-android-case/)</sub>
 - [**The Witcher 3：面向 ARM64 的部分原生函数恢复研究**](https://github.com/slavich33/witcher-3-native-research) - 该研究为《The Witcher 3: Wild Hunt》的 ARM64 移植实验恢复部分向量、VM 与解码函数。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/witcher-3-native-research-case/)</sub>
 - [**Thimbleweed Park Vita：Android 可执行文件的 PS Vita 移植**](https://github.com/Rinnegatamante/thimbleweed-vita) - Thimbleweed Park Vita 在 PS Vita 上加载《Thimbleweed Park》的 Android ARMv7 可执行文件，将其导入映射到本机函数，并应用运行时补丁。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thimbleweed-park-vita-case/)</sub>
+- [**Time Crisis VR：街机游戏的 Meta Quest/PCVR 移植**](https://github.com/DR-89/time-crisis-vr) - 面向 Meta Quest 与 Windows PCVR 的实验性《Time Crisis》VR 移植，包含追踪 3D 手枪、立体渲染、原版街机玩法与音效、物理下蹲或握持掩体控制，基于 namco22-decompile 的重建成果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/time-crisis-vr/)</sub>
 - [**TMNF Android native port：重建 TrackMania Nations Forever 的 Android 移植版**](https://github.com/rockenrooster/TMNationsDecomp) - TMNF 根据 TrackMania Nations Forever 2.11.11 的 Windows 可执行文件恢复行为与数据，将部分游戏移植到 Android 15。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/tmnationsdecomp-case/)</sub>
 - [**tmnt-recomp：将 NES 版 Teenage Mutant Ninja Turtles 移植为 C 程序**](https://github.com/naparuba-retro/tmnt-recomp) - tmnt-recomp 根据 6502 代码分析，将 1989 年 NES 版 Teenage Mutant Ninja Turtles 移植为 C 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tmnt-recomp-case/)</sub>
 - [**Tomodachi Native：在 Apple Silicon 上运行 Tomodachi Life**](https://github.com/kuosuko/tomodachi-native) - Tomodachi Native 将 nxnative 扩展到 Switch 游戏 Tomodachi Life: Living the Dream，使其在 Apple Silicon Mac 和 iPad 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tomodachi-native-case/)</sub>
@@ -637,10 +642,4 @@
 - [**Sims 3 in Bevy：用 Rust 重建《模拟人生 3》**](https://github.com/Eamo5/sims-3-bevy) - Sims 3 in Bevy 使用 Rust 和 Bevy 重建《模拟人生 3》，读取玩家安装的游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sims-3-bevy-case/)</sub>
 - [**SimUnity2：The Sims 2 的部分 Unity 重建**](https://github.com/LazyDuchess/SimUnity2) - SimUnity2 在 Unity 中使用用户安装的 The Sims 2 文件重建部分游戏功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/simunity2-case/)</sub>
 - [**Skate 3 Rust Engine：基于《Skate 3》逆向研究的 Bevy 重写**](https://github.com/SK8-ENGINE/skate-3-rust-engine) - 在新的 Rust 与 Bevy 引擎中重新实现《Skate 3》的滑行、技巧、擦边滑行和下板移动，运行时使用从使用者自有 Xbox 360 版游戏转换得到的素材，并加入难度设置和 .skate 自定义地图格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skate-3-rust-engine-case/)</sub>
-- [**SkyRoads：以可移植 C11 重建 DOS 游戏引擎**](https://github.com/ammaarreshi/skyroads-port) - skyroads-port 通过反汇编 SKYROADS.EXE 并整理其文件格式和算法，以可移植的 C11 重建 DOS 游戏 SkyRoads 的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skyroads-port-case/)</sub>
-- [**smw：Super Mario World 引擎重实现**](https://github.com/snesrev/smw) - smw 将《Super Mario World》的游戏逻辑重实现为原生程序，关卡和图像从用户的 ROM 提取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/smw-case/)</sub>
-- [**Snowball War：范围明确的 REA 辅助小游戏重建**](https://github.com/tuunanet/rea-ski-or-die-reconstruction) - 作者通过 REA 的 Ghidra 工作流调查 DOS 版 Ski or Die 二进制，记录 Snowball War 的规则，再用 Rust 与 SDL2 重建这一小游戏。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/snowball-war-rea-case/)</sub>
-- [**Sourcehold：重实现《Stronghold》游戏引擎**](https://github.com/sourcehold/Sourcehold) - Sourcehold 是 Firefly Studios 2001 年城堡游戏《要塞》的早期开源引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sourcehold/)</sub>
-- [**Space Station 14：基于 Robust Toolbox 的 SS13 重制版**](https://github.com/space-wizards/space-station-14) - 在自研 C# 引擎 Robust Toolbox 上运行的《Space Station 13》重制版，包含内容包以及用于托管与扩展游戏的客户端与服务端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/space-station-14/)</sub>
-- [**steins-gate：重新实现《命运石之门》视觉小说**](https://github.com/FGRE/steins-gate) - steins-gate 是《Steins;Gate》视觉小说的 GPL 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/steins-gate-case/)</sub>
 <!-- END GENERATED CASES -->

@@ -558,3 +558,30 @@ This round adds four reconstruction cases and two decompilation toolkits from th
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; femto8 and Shadows of the Empire: Recompiled received Class 1 previews. The four new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, twenty-first batch — 2026-11-23
+
+This round adds five reconstruction cases and one decompilation tool: Ace Combat X, OpenTower (Pizza Tower), Naruto: The Broken Bond, Haunting Ground, Time Crisis VR and Porytiles.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `ace-combat-x-recomp` | `reconstruction-cases` | [sal063/Ace-Combat-X-Recompilation](https://github.com/sal063/Ace-Combat-X-Recompilation/blob/f6268e959cac75481989077a94305b22e55ec8ad/README.md) | `16b98300ccb84f9fb2585e2ea07d2195db4f07852ad0625f73b7268f1ca52737` |
+| `open-tower` | `reconstruction-cases` | [femloy/OpenTower](https://github.com/femloy/OpenTower/blob/51060bc52e98c26ea5f857b6a0f6028e7a21b96b/README.md) | `990eb77c21f3ac87035ebfbd774d1c6d2ae5b670be83593b6a9db47897acccb6` |
+| `naruto-broken-bond-port` | `reconstruction-cases` | [Auremana666/Naruto-The-Broken-Bond-PC-Port](https://github.com/Auremana666/Naruto-The-Broken-Bond-PC-Port/blob/570142f98b7f852fce944776bee2dd3369d1cd10/README.md) | `cff61e061e6f8f33a4c769a08399014fe5599f4add728490d19707cac922dbde` |
+| `haunting-ground-recomp` | `reconstruction-cases` | [N900x4/HauntingGround-Recomp-Project](https://github.com/N900x4/HauntingGround-Recomp-Project/blob/1db0f0ce71850e15b86faa16b7532212aedf0a02/README.md) | `fa721ab7d82cc2011efaca965c2cdf78ef63fca26c51357037d6c6c09fa051af` |
+| `porytiles` | `native-analysis` | [grunt-lucas/porytiles](https://github.com/grunt-lucas/porytiles/blob/4c244d587c3daf16447366d0d8398b84a28370fe/README.md) | `db86ad678ec0f7308465ede2d7086b42a0abe3b97149c66e5bb9456cbcc3e41b` |
+| `time-crisis-vr` | `reconstruction-cases` | [DR-89/time-crisis-vr](https://github.com/DR-89/time-crisis-vr/blob/a92faadc4e8c2042b1f6baccc77d4785863ceb7c/README.md) | `4fea267877998ef4937c5dfa6b2e9cc48364d0ba14aa20250faee0340926617d` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| CMUSTRUDEL/DIRE | README is a 46-byte stub below the documentation threshold. |
+| fuddlesworth/pokebw2 siblings, OpenCrystalCaves | Deferred where another open PR already carries the same game or list. |
+| Russian-Doom, EDGE-classic, chocolate-quake, woof | More Doom/Quake source ports deferred to avoid near-duplicate cases. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; OpenTower, Naruto, Porytiles and Time Crisis VR received Class 1 previews. The five new case studies update the game case indexes and README case sections.

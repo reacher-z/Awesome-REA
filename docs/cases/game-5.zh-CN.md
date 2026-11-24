@@ -6,10 +6,16 @@
 
 [English](game-5.md)
 
-**392 个案例**
+**398 个案例**
 
 ## 引擎重实现
 
+- [**SkyRoads：以可移植 C11 重建 DOS 游戏引擎**](https://github.com/ammaarreshi/skyroads-port) - skyroads-port 通过反汇编 SKYROADS.EXE 并整理其文件格式和算法，以可移植的 C11 重建 DOS 游戏 SkyRoads 的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skyroads-port-case/)</sub>
+- [**smw：Super Mario World 引擎重实现**](https://github.com/snesrev/smw) - smw 将《Super Mario World》的游戏逻辑重实现为原生程序，关卡和图像从用户的 ROM 提取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/smw-case/)</sub>
+- [**Snowball War：范围明确的 REA 辅助小游戏重建**](https://github.com/tuunanet/rea-ski-or-die-reconstruction) - 作者通过 REA 的 Ghidra 工作流调查 DOS 版 Ski or Die 二进制，记录 Snowball War 的规则，再用 Rust 与 SDL2 重建这一小游戏。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/snowball-war-rea-case/)</sub>
+- [**Sourcehold：重实现《Stronghold》游戏引擎**](https://github.com/sourcehold/Sourcehold) - Sourcehold 是 Firefly Studios 2001 年城堡游戏《要塞》的早期开源引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sourcehold/)</sub>
+- [**Space Station 14：基于 Robust Toolbox 的 SS13 重制版**](https://github.com/space-wizards/space-station-14) - 在自研 C# 引擎 Robust Toolbox 上运行的《Space Station 13》重制版，包含内容包以及用于托管与扩展游戏的客户端与服务端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/space-station-14/)</sub>
+- [**steins-gate：重新实现《命运石之门》视觉小说**](https://github.com/FGRE/steins-gate) - steins-gate 是《Steins;Gate》视觉小说的 GPL 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/steins-gate-case/)</sub>
 - [**Street Rod：以 C 和 SDL3 重建的 DOS 游戏**](https://github.com/kylofon/street-rod-sdl3) - Street Rod SDL3 用 C 重建 1989 年 DOS 游戏的行为，通过 SDL3 读取玩家自备的原版文件运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/street-rod-sdl3-case/)</sub>
 - [**Subway Runner 3D：重建 Subway Surfers 运动规则**](https://github.com/ahmedrazakhann/rea-subway-surfers) - Subway Runner 3D 是以 Subway Surfers 的运动与画面为参照、用 Three.js 制作的程序化无尽跑酷游戏。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/subway-runner-3d-case/)</sub>
 - [**Super Mario Bros Remastered：四款马里奥游戏的 Godot 重制版**](https://github.com/JHDev2006/Super-Mario-Bros.-Remastered-Public) - Super Mario Bros Remastered 使用 Godot 重制四款《超级马里奥兄弟》游戏，加入调整后的物理效果、新关卡与角色，以及自定义关卡编辑器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-mario-bros-remastered-case/)</sub>

@@ -45186,5 +45186,53 @@
       "它是静态重编译项目，依赖原版游戏资源与版本。",
       "采用 MIT 许可证。"
     ]
+  },
+  "ace-combat-x-recomp": {
+    "name": "Ace Combat X：PSP 游戏静态重编译",
+    "requirements": [
+      "需要自备光盘中的游戏数据；项目不分发 ISO、游戏数据或存档。",
+      "它是编译管线加小型 OS 重实现运行时，不是模拟器也不是游戏拷贝。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "open-tower": {
+    "name": "OpenTower：Pizza Tower 近乎完整反编译",
+    "requirements": [
+      "需要 Steam 版《Pizza Tower》（Switch 版编译方式不同）以及 GameMaker 2023.1.1.62 或带 2022.0.1.30 补丁的 LTS 2022。",
+      "它是面向 mod 的反编译项目，需要原版游戏文件。",
+      "采用 CC-BY-4.0 许可证。"
+    ]
+  },
+  "naruto-broken-bond-port": {
+    "name": "Naruto: The Broken Bond — 民间 PC 移植",
+    "requirements": [
+      "需要原版游戏数据；该移植增加了无障碍与控制选项。",
+      "它是民间 PC 移植，兼容性取决于游戏版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "haunting-ground-recomp": {
+    "name": "Haunting Ground Recomp：PS2 游戏原生移植",
+    "requirements": [
+      "需要自备光盘的 ISO；项目把游戏编译为原生程序，不是模拟器。",
+      "0.1 版为早期测试版，游戏的大部分内容尚未测试。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "porytiles": {
+    "name": "Porytiles",
+    "requirements": [
+      "需要《宝可梦》第三世代反编译项目与图块集输入。",
+      "它为 pret 项目编译地图图块集，并兼容 pokeemerald-expansion。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "time-crisis-vr": {
+    "name": "Time Crisis VR：街机游戏的 Meta Quest/PCVR 移植",
+    "requirements": [
+      "需要原版街机游戏数据与 Quest 或 PCVR 头显；项目基于上游 namco22-decompile 的重建。",
+      "它不是独立重制，原版街机逻辑与引擎来自上游。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

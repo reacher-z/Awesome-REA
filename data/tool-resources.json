@@ -159650,5 +159650,177 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "ace-combat-x-recomp",
+    "name": "Ace Combat X: Skies of Deception — a static recompilation of the PSP game",
+    "url": "https://github.com/sal063/Ace-Combat-X-Recompilation",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of the PSP game Ace Combat X: Skies of Deception that translates MIPS code into native C, reimplements PSP kernel calls in a runtime and wires them to a window, GPU and audio backend.",
+    "description_zh": "把 PSP 游戏《Ace Combat X: Skies of Deception》的 MIPS 代码静态重编译为原生 C，并在运行时重实现 PSP 内核调用、接入窗口、GPU 与音频后端。",
+    "evidence_url": "https://github.com/sal063/Ace-Combat-X-Recompilation/blob/f6268e959cac75481989077a94305b22e55ec8ad/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires game data from a disc you own; the project ships no ISO, game data or save files.",
+      "It is a compiler pipeline plus a small OS-reimplementation runtime, not an emulator or a copy of the game.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "open-tower",
+    "name": "OpenTower: an almost fully accurate Pizza Tower decompilation",
+    "url": "https://github.com/femloy/OpenTower",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "description_en": "An almost fully accurate decompilation of Pizza Tower without optimizations or unused-code removal, intended for experienced modders.",
+    "description_zh": "《Pizza Tower》近乎完整的反编译项目，保留未优化的代码且不移除未使用内容，面向有经验的 mod 制作者。",
+    "evidence_url": "https://github.com/femloy/OpenTower/blob/51060bc52e98c26ea5f857b6a0f6028e7a21b96b/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Pizza Tower on Steam (the Switch version is compiled differently) and GameMaker 2023.1.1.62 or LTS 2022 with the 2022.0.1.30 patch.",
+      "It is a decompilation intended for modding and requires the original game files.",
+      "CC-BY-4.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "naruto-broken-bond-port",
+    "name": "Naruto: The Broken Bond — a fan-made PC port",
+    "url": "https://github.com/Auremana666/Naruto-The-Broken-Bond-PC-Port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A PC port of Naruto: The Broken Bond with remappable controls, toggle and turbo control modes and auto-jutsu options, built on a port by jorjbarbosa for accessibility.",
+    "description_zh": "《Naruto: The Broken Bond》的 PC 移植，提供可重映射按键、切换/连发控制模式与自动忍术选项，基于 jorjbarbosa 的移植并面向无障碍需求。",
+    "evidence_url": "https://github.com/Auremana666/Naruto-The-Broken-Bond-PC-Port/blob/570142f98b7f852fce944776bee2dd3369d1cd10/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game data; the port adds accessibility and control options.",
+      "It is a fan-made PC port, and compatibility depends on the game version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "haunting-ground-recomp",
+    "name": "Haunting Ground Recomp: a native port of the PlayStation 2 game",
+    "url": "https://github.com/N900x4/HauntingGround-Recomp-Project",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native Windows and Linux version of Haunting Ground (PlayStation 2, USA) built from an ISO of your own disc by translating the PS2 program into C and compiling it with a hand-written runtime, supporting 4K, 60 fps interpolation and HD textures.",
+    "description_zh": "《Haunting Ground》（PS2 美版）的原生 Windows/Linux 版本：从自备光盘 ISO 把 PS2 程序转译为 C 并配合手写运行时编译，支持 4K、60 fps 插帧与高清贴图。",
+    "evidence_url": "https://github.com/N900x4/HauntingGround-Recomp-Project/blob/1db0f0ce71850e15b86faa16b7532212aedf0a02/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an ISO of your own disc; the project compiles the game into a native program and is not an emulator.",
+      "Version 0.1 is an early test release, and most of the game is untested.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "porytiles",
+    "name": "Porytiles",
+    "url": "https://github.com/grunt-lucas/porytiles",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "An overwworld tileset compiler for the Pokemon Generation III decompilation projects pokeemerald, pokefirered and pokeruby, with support for pokeemerald-expansion.",
+    "description_zh": "面向《宝可梦》第三世代反编译项目 pokeemerald、pokefirered 与 pokeruby 的地图图块集编译器，并支持 pokeemerald-expansion。",
+    "evidence_url": "https://github.com/grunt-lucas/porytiles/blob/4c244d587c3daf16447366d0d8398b84a28370fe/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Pokemon Generation III decompilation project and tileset inputs.",
+      "It compiles overworld tilesets for the pret projects and is compatible with pokeemerald-expansion.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "time-crisis-vr",
+    "name": "Time Crisis VR: a VR port of the arcade game for Meta Quest and PCVR",
+    "url": "https://github.com/DR-89/time-crisis-vr",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "An experimental VR port of Time Crisis for Meta Quest and Windows PCVR with a tracked 3D pistol, stereo rendering, original arcade gameplay and sound, and physical ducking or grip-controlled cover, built on the namco22-decompile reconstruction.",
+    "description_zh": "面向 Meta Quest 与 Windows PCVR 的实验性《Time Crisis》VR 移植，包含追踪 3D 手枪、立体渲染、原版街机玩法与音效、物理下蹲或握持掩体控制，基于 namco22-decompile 的重建成果。",
+    "evidence_url": "https://github.com/DR-89/time-crisis-vr/blob/a92faadc4e8c2042b1f6baccc77d4785863ceb7c/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original arcade game data and a Quest or PCVR headset; the project builds on the upstream namco22-decompile reconstruction.",
+      "It is not an independent recreation, and the original arcade logic and engine come from upstream.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

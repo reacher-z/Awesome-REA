@@ -6,10 +6,16 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**392 case studies**
+**398 case studies**
 
 ## Engine reimplementations
 
+- [**SkyRoads: a DOS game engine reconstructed in portable C11**](https://github.com/ammaarreshi/skyroads-port) - skyroads-port reconstructs the DOS game SkyRoads as a portable C11 engine after disassembling SKYROADS.EXE and documenting its file formats and algorithms. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/skyroads-port-case/)</sub>
+- [**smw: a Super Mario World engine reimplementation**](https://github.com/snesrev/smw) - smw reimplements Super Mario World's game logic as a native program using levels and images extracted from the user's ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/smw-case/)</sub>
+- [**Snowball War: a bounded REA-assisted minigame reconstruction**](https://github.com/tuunanet/rea-ski-or-die-reconstruction) - The author uses REA’s Ghidra workflow to investigate the DOS Ski or Die binary, document Snowball War rules and rebuild that one minigame in Rust with SDL2. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/snowball-war-rea-case/)</sub>
+- [**Sourcehold: reimplementing the Stronghold game engine**](https://github.com/sourcehold/Sourcehold) - Sourcehold is an early open-source engine for Stronghold, the 2001 castle game by Firefly Studios. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sourcehold/)</sub>
+- [**Space Station 14: a remake of Space Station 13 on the Robust Toolbox engine**](https://github.com/space-wizards/space-station-14) - A remake of Space Station 13 running on Robust Toolbox, a homegrown C# engine, with a content pack plus client and server for hosting and extending the game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/space-station-14/)</sub>
+- [**steins-gate: reimplementing the Steins;Gate visual novel**](https://github.com/FGRE/steins-gate) - steins-gate is a GPL-licensed reimplementation of the Steins;Gate visual novel. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/steins-gate-case/)</sub>
 - [**Street Rod: a DOS game reconstructed in C for SDL3**](https://github.com/kylofon/street-rod-sdl3) - Street Rod SDL3 reconstructs the 1989 DOS game's behavior in C and runs it through SDL3 using the player's original files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/street-rod-sdl3-case/)</sub>
 - [**Subway Runner 3D: rebuilding Subway Surfers movement rules**](https://github.com/ahmedrazakhann/rea-subway-surfers) - Subway Runner 3D is a procedural Three.js endless runner modeled on Subway Surfers movement and presentation. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/subway-runner-3d-case/)</sub>
 - [**Super Mario Bros Remastered: Godot recreations of four Mario games**](https://github.com/JHDev2006/Super-Mario-Bros.-Remastered-Public) - Super Mario Bros Remastered recreates four Super Mario Bros. games in Godot, with revised physics, new levels and characters, and a custom level editor. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/super-mario-bros-remastered-case/)</sub>

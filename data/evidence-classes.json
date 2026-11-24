@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-24T01:41:31+00:00",
-  "entry_count": 5361,
+  "generated_at": "2026-11-24T02:27:12+00:00",
+  "entry_count": 5367,
   "class_counts": {
    "0": 15,
-   "1": 1186,
-   "2": 3948,
+   "1": 1190,
+   "2": 3950,
    "3": 186
   },
   "unknown_count": 26,
@@ -150547,6 +150547,181 @@
    },
    "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-24T05:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "ace-combat-x-recomp",
+   "url": "https://github.com/sal063/Ace-Combat-X-Recompilation",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 8757,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 7,
+    "release_asset_count": 7,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-24T06:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "open-tower",
+   "url": "https://github.com/femloy/OpenTower",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4705,
+    "docs_full": true,
+    "download": "file-links",
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 3,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-24T06:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "naruto-broken-bond-port",
+   "url": "https://github.com/Auremana666/Naruto-The-Broken-Bond-PC-Port",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 18932,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 6,
+    "release_asset_count": 6,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 18,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-24T06:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "haunting-ground-recomp",
+   "url": "https://github.com/N900x4/HauntingGround-Recomp-Project",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 11679,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 2,
+    "release_asset_count": 8,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-24T06:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "porytiles",
+   "url": "https://github.com/grunt-lucas/porytiles",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5431,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 3,
+    "release_asset_count": 9,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 2,
+    "download_links": [
+     "brew install grunt-lucas/porytiles/porytiles",
+     "brew install grunt-lucas/porytiles/porytiles-snapshot"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
+   "checked_at": "2026-11-24T06:20:00+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "time-crisis-vr",
+   "url": "https://github.com/DR-89/time-crisis-vr",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 23565,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 12,
+    "release_asset_count": 41,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-24T06:20:00+00:00",
    "evidence_status": "observed",
    "scope": "partial",
    "runtime_status": "not-run",
