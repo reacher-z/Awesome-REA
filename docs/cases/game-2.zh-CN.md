@@ -10,6 +10,8 @@
 
 ## 非匹配反编译
 
+- [**Bomberman 64: The Second Attack!：部分 N64 反编译**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa 正在反编译日版和美版 N64 游戏 Bomberman 64: The Second Attack!。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bm64tsa-case/)</sub>
+- [**Boom Street：进行中的 Wii 游戏反编译**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street 是进行中的 Wii 游戏反编译项目，目标为欧版 ST7P01 Rev 0。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boom-street-decomp-case/)</sub>
 - [**Bounce Tales：反编译 J2ME 游戏**](https://github.com/HelloOO7/BounceTales) - 该仓库是 Rovio 的 Bounce Tales（2008）的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bounce-tales-decomp/)</sub>
 - [**BS Zelda no Densetsu：支持两个版本的 SNES 反汇编**](https://github.com/Yoshifanatic1/BS-Zelda-no-Densetsu-Disassembly) - BS Zelda no Densetsu 反汇编支持 SNES 播出版本 Map 1 Week 2 与 Week 3，以 Week 2 为基础。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bs-zelda-no-densetsu-disassembly-case/)</sub>
 - [**BTD5-Decomp：《Bloons TD 5》手工反编译**](https://github.com/NKHook/BTD5-Decomp) - BTD5-Decomp 以 C++ 手工还原《Bloons TD 5》的源码，并在可用时利用遗留调试信息命名文件和类。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/btd5-decomp-case/)</sub>
@@ -195,6 +197,7 @@
 - [**Re47：《杀手：代号 47》部分反编译**](https://github.com/0danny/re47) - Re47 使用 IDA Pro 分析《杀手：代号 47》的可执行文件和 DLL，以 GOG 版为参照重建源码。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/re47-hitman-codename-47-case/)</sub>
 - [**Real War：逐函数重建 PC 游戏源码**](https://github.com/Francessco121/real-war-decomp) - Real War 项目将 2001 年的同名 PC 游戏逐步反编译为 C 源码，并把文件和符号映射到可执行文件地址。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/real-war-decomp-case/)</sub>
 - [**Red vs. Blue：Atari 2600 多精灵演示程序注释反汇编**](https://www.qotile.net/minidig/disassembly/redblue.asm) - 这份带标签和注释的 6502 汇编清单重建了 1981 年的 Atari 2600 多精灵演示程序 Red vs. Blue，该程序后来发展为 RealSports Football。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/red-vs-blue-atari-2600-disassembly-case/)</sub>
+- [**Redivivus：暗黑破坏神 II 1.14d 逆向为 C++**](https://github.com/jaenster/redivivus) - 把《暗黑破坏神 II：毁灭之王》1.14d 逆向为可构建、可运行的 C++ 源码，并按函数、代码字节与数据字节跟踪逐字节匹配进度。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/redivivus/)</sub>
 - [**reDM2：以 C 语言重建《Dungeon Master II》**](https://codeberg.org/CyCl0ne/reDM2) - reDM2 从发行版 SKULL.EXE 重建 DOS 版《Dungeon Master II》的 C 代码。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/redm2-case/)</sub>
 - [**REDPRO2：New Super Mario Bros. U 部分反编译**](https://github.com/aboood40091/red-pro2) - REDPRO2 是 New Super Mario Bros. U 美版 v1.3.0 的部分 C++ 反编译项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/redpro2-case/)</sub>
 - [**REDRIVER2：借助 PlayStation 兼容层重建 Driver 2**](https://github.com/OpenDriver2/REDRIVER2) - 将逆向分析的 Driver 2 MIPS 例程转为 C/C++，并用 Psy-X/Psy-Cross 将 PlayStation 接口适配到桌面系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/redriver2-case/)</sub>
@@ -632,7 +635,4 @@
 - [**IsaacRecomp：将 Flash 游戏字节码转换为原生 C++**](https://github.com/whylurking/IsaacRecomp) - 将 The Binding of Isaac 的 Flash AVM1 字节码转换为 C++ 函数，并提供原生渲染与输入运行时。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/isaacrecomp-case/)</sub>
 - [**ISSD Native：重编译《国际超级明星足球豪华版》**](https://github.com/sergiomanzur/issd-native) - ISSD Native 把超级任天堂美版《International Superstar Soccer Deluxe》重编译成 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/issd-native/)</sub>
 - [**Jade Empire：通过 x86 到 Odin 静态重编译实现原生移植**](https://github.com/plaught-armor/jade-empire-recomp) - 该原生移植版将用户自有的 Jade Empire: Special Edition x86 可执行文件静态转换为 Odin，以 SDL3、OpenGL 和 FFmpeg 替代 Windows、Direct3D 9、DirectSound 与 Bink 层，并加入手柄及双人合作功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jade-empire-recomp-case/)</sub>
-- [**James Pond 2: Codename RoboCod：Amiga 版静态重编译**](https://github.com/griches/JamesPond2RobocodRecomp) - James Pond 2: Codename RoboCod — Recompiled 从使用者提供的 Amiga 游戏盘将 68000 指令转换为原生 C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/james-pond-2-robocod-recomp-case/)</sub>
-- [**Jet Force Gemini Recomp：Windows 原生重编译版本**](https://github.com/TK22-26/JetForceGemini-Recomp) - Jet Force Gemini Recomp 提供《Jet Force Gemini》的 Windows x64 原生重编译版本，从用户导入的北美版 ROM 读取游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jet-force-gemini-recomp-case/)</sub>
-- [**Jet Force Gemini: Recompiled：N64 游戏静态重编译移植**](https://github.com/VibinToast/JetForceGemini-Recompiled) - Jet Force Gemini: Recompiled 使用 N64Recomp 将用户自备的美版 N64 ROM 代码转换为 C，并通过 N64ModernRuntime 和 RT64 运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jet-force-gemini-recompiled-case/)</sub>
 <!-- END GENERATED CASES -->

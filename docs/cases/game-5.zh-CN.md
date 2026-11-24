@@ -6,10 +6,16 @@
 
 [English](game-5.md)
 
-**386 个案例**
+**392 个案例**
 
 ## 引擎重实现
 
+- [**Street Rod：以 C 和 SDL3 重建的 DOS 游戏**](https://github.com/kylofon/street-rod-sdl3) - Street Rod SDL3 用 C 重建 1989 年 DOS 游戏的行为，通过 SDL3 读取玩家自备的原版文件运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/street-rod-sdl3-case/)</sub>
+- [**Subway Runner 3D：重建 Subway Surfers 运动规则**](https://github.com/ahmedrazakhann/rea-subway-surfers) - Subway Runner 3D 是以 Subway Surfers 的运动与画面为参照、用 Three.js 制作的程序化无尽跑酷游戏。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/subway-runner-3d-case/)</sub>
+- [**Super Mario Bros Remastered：四款马里奥游戏的 Godot 重制版**](https://github.com/JHDev2006/Super-Mario-Bros.-Remastered-Public) - Super Mario Bros Remastered 使用 Godot 重制四款《超级马里奥兄弟》游戏，加入调整后的物理效果、新关卡与角色，以及自定义关卡编辑器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-mario-bros-remastered-case/)</sub>
+- [**Surreal Engine：重新实现 Unreal Engine 1**](https://github.com/dpjudas/SurrealEngine) - Surreal Engine 重实现虚幻引擎 1，目前针对《虚幻》金版和《虚幻竞技场》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/surrealengine/)</sub>
+- [**SWBF2 Browser Reconstruction：在浏览器中重建 Battlefront II 地图**](https://github.com/luckeyfaraday/swbf2-browser-reconstruction) - SWBF2 Browser Reconstruction 从用户安装的 Star Wars Battlefront II（2017）提取数据，在 three.js 浏览器运行时中重建部分游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/swbf2-browser-reconstruction-case/)</sub>
+- [**T.O.R.E-Fighters：以 Rust 重建《Jane's Fighters Anthology》**](https://github.com/john-overton/T.O.R.E-Fighters) - T.O.R.E-Fighters 根据玩家可见行为，以 Rust 重建《Jane's Fighters Anthology》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tore-fighters-case/)</sub>
 - [**TA3D：以 3D 引擎重建 Total Annihilation**](https://github.com/zuzuf/TA3D) - TA3D 以 OpenGL 3D 引擎重建 Total Annihilation 玩法，从单独提供的资源文件加载原版地图、单位及动画脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ta3d-total-annihilation-case/)</sub>
 - [**Tapir：重建 RGSS 游戏运行时**](https://github.com/qnighy/tapir) - Tapir 重建 RPG Maker XP、VX 和 VX Ace 游戏使用的 RGSS、RGSS2 与 RGSS3 运行时，源码包含图形、音频和输入模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tapir-rgss-case/)</sub>
 - [**TempleRun-RL：重建 Temple Run 机制用于模拟训练**](https://github.com/matthieucs/TempleRun-RL) - TempleRun-RL 将 Temple Run 的赛道生成、障碍与角色运动机制重建为无界面训练模拟器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/templerun-rl-case/)</sub>

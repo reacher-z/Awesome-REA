@@ -6,10 +6,16 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**386 case studies**
+**392 case studies**
 
 ## Engine reimplementations
 
+- [**Street Rod: a DOS game reconstructed in C for SDL3**](https://github.com/kylofon/street-rod-sdl3) - Street Rod SDL3 reconstructs the 1989 DOS game's behavior in C and runs it through SDL3 using the player's original files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/street-rod-sdl3-case/)</sub>
+- [**Subway Runner 3D: rebuilding Subway Surfers movement rules**](https://github.com/ahmedrazakhann/rea-subway-surfers) - Subway Runner 3D is a procedural Three.js endless runner modeled on Subway Surfers movement and presentation. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/subway-runner-3d-case/)</sub>
+- [**Super Mario Bros Remastered: Godot recreations of four Mario games**](https://github.com/JHDev2006/Super-Mario-Bros.-Remastered-Public) - Super Mario Bros Remastered recreates four Super Mario Bros. games in Godot, with revised physics, new levels and characters, and a custom level editor. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/super-mario-bros-remastered-case/)</sub>
+- [**Surreal Engine: reimplementing Unreal Engine 1**](https://github.com/dpjudas/SurrealEngine) - Surreal Engine reimplements Unreal Engine 1, currently for Unreal Gold and Unreal Tournament. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/surrealengine/)</sub>
+- [**SWBF2 Browser Reconstruction: rebuilding Battlefront II maps in a browser**](https://github.com/luckeyfaraday/swbf2-browser-reconstruction) - SWBF2 Browser Reconstruction rebuilds parts of Star Wars Battlefront II (2017) in a three.js browser runtime using data extracted from the user's installed game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/swbf2-browser-reconstruction-case/)</sub>
+- [**T.O.R.E-Fighters: rebuilding Jane's Fighters Anthology in Rust**](https://github.com/john-overton/T.O.R.E-Fighters) - T.O.R.E-Fighters rebuilds Jane's Fighters Anthology in Rust around observed player-visible behavior. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tore-fighters-case/)</sub>
 - [**TA3D: rebuilding Total Annihilation in a 3D engine**](https://github.com/zuzuf/TA3D) - TA3D rebuilds Total Annihilation gameplay in an OpenGL 3D engine that loads original game maps, units and animation scripts from separate resource files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ta3d-total-annihilation-case/)</sub>
 - [**Tapir: reimplementing the RGSS game runtimes**](https://github.com/qnighy/tapir) - Tapir reimplements the RGSS, RGSS2 and RGSS3 runtimes used by RPG Maker XP, VX and VX Ace games. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tapir-rgss-case/)</sub>
 - [**TempleRun-RL: reconstructing Temple Run mechanics for simulator training**](https://github.com/matthieucs/TempleRun-RL) - TempleRun-RL reconstructs Temple Run's track generation, hazards, and runner physics in a headless training simulator. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/templerun-rl-case/)</sub>

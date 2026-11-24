@@ -6,7 +6,7 @@
 
 [简体中文](game-1.zh-CN.md)
 
-**617 case studies**
+**616 case studies**
 
 <a id="game-matching-decompilation"></a>
 ## Matching decompilations and disassemblies
@@ -374,6 +374,7 @@
 - [**pokerevo: PAL Wii game decompilation**](https://github.com/pret/pokerevo) - pokerevo is a decompilation of the PAL Wii release of Pokémon Battle Revolution that builds a main.dol identified by a published SHA-1 hash. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokerevo-pal-decomp-case/)</sub>
 - [**pokeruby: a matching Pokémon Ruby and Sapphire decompilation**](https://github.com/pret/pokeruby) - Reconstructs the Game Boy Advance games Pokémon Ruby and Sapphire as C source built with pret's agbcc compiler, alongside assembly data scripts and editable graphics. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokeruby-decomp-case/)</sub>
 - [**Pokémon Battle Revolution: matching decompilation of the Wii game**](https://github.com/pbr-ret/pbr-decomp) - This is a matching decompilation of Pokémon Battle Revolution for the Wii, PAL RPBP01 revision 0. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pbr-decomp/)</sub>
+- [**Pokémon Black 2 and White 2: a work-in-progress matching decompilation**](https://github.com/fuddlesworth/pokebw2) - A work-in-progress matching decompilation of Pokémon Black 2 and White 2 whose USA and Europe ROMs rebuild byte for byte from the same source tree. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokebw2/)</sub>
 - [**Pokémon Black: Nintendo DS decompilation**](https://github.com/squiddonaut/pokeblack) - This repository is a decompilation of Pokémon Black for the Nintendo DS. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokeblack-case/)</sub>
 - [**Pokémon Colosseum: continued GameCube matching decompilation**](https://github.com/grant-might/Colosseum_Decomp) - Pokémon Colosseum continues a GameCube matching decompilation with additional C and data reconstruction, a measured progress ledger, and native Windows build support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokemon-colosseum-continued-decomp-case/)</sub>
 - [**Pokémon Dash: a byte-matched Nintendo DS decompilation**](https://github.com/liolu/pokemon-dash-decomp) - pokemon-dash-decomp reconstructs source for the USA Nintendo DS release of Pokémon Dash and checks functions against exact compiled bytes while rebuilding the ROM byte for byte. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokemon-dash-decomp-case/)</sub>
@@ -629,6 +630,4 @@
 - [**Blitz\_MasterVer22-Decomp: a Splatoon 2 version 3.1.0 decompilation**](https://github.com/YoshiCrystal9/Blitz_MasterVer22-Decomp) - Blitz\_MasterVer22-Decomp reconstructs code from Splatoon 2 version 3.1.0 for Nintendo Switch. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/splatoon-2-310-decomp-case/)</sub>
 - [**Blood Omen 2: functional decompilation toward a Switch port**](https://github.com/felipesuarez-dev/BloodOmen2NX) - BloodOmen2NX functionally decompiles the Spanish Windows PC release of Blood Omen 2 into C++17 for a planned Nintendo Switch port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bloodomen2nx-case/)</sub>
 - [**Boku Doraemon: Dreamcast executable and model reconstruction**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon maps the Japanese Dreamcast game's 1ST\_READ.BIN, generates a matching assembly baseline from an owner's disc, and tests C function candidates for equivalent calls, memory writes and results in an SH-4 interpreter. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/boku-doraemon-decomp-case/)</sub>
-- [**Bomberman 64: The Second Attack!: partial N64 decompilation**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa is an in-progress decompilation of the Japanese and US Nintendo 64 releases of Bomberman 64: The Second Attack!. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bm64tsa-case/)</sub>
-- [**Boom Street: a Wii decompilation in progress**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street is a work-in-progress Wii game decompilation targeting the ST7P01 Rev 0 European release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/boom-street-decomp-case/)</sub>
 <!-- END GENERATED CASES -->

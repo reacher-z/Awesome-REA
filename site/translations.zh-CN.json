@@ -45138,5 +45138,53 @@
       "它是反汇编器，不会把代码反编译为源码。",
       "采用 MIT 许可证。"
     ]
+  },
+  "ds-decomp": {
+    "name": "ds-decomp",
+    "requirements": [
+      "需要 Rust 与待处理的 Nintendo DS ROM；工具包自动完成项目初始化与 delink。",
+      "它是项目工具包，本身不产出匹配式反编译。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "ps2-native-recomp": {
+    "name": "ps2-native-recomp",
+    "requirements": [
+      "需要自备的 PS2 游戏光盘；项目转译主 CPU 代码并模拟主机其余部分。",
+      "项目仍处早期阶段，兼容性因游戏而异。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "pokebw2": {
+    "name": "Pokémon 黑 2／白 2：在研匹配式反编译",
+    "requirements": [
+      "需要受支持的美版或欧版 ROM 来验证构建；项目不分发 ROM。",
+      "它是在研反编译项目，匹配代码与函数进度由 ByteMatch 跟踪。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "redivivus": {
+    "name": "Redivivus：暗黑破坏神 II 1.14d 逆向为 C++",
+    "requirements": [
+      "需要原版 1.14d 游戏文件；项目用 C++ 重建游戏代码。",
+      "它是仍在进行的逆向工程，逐字节匹配尚不完整。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "femto8": {
+    "name": "femto8：PICO-8 幻想主机的开源重实现",
+    "requirements": [
+      "运行于 CPU 与内存受限的嵌入式系统；PICO-8 游戏卡带需另行提供。",
+      "它面向资源受限硬件，部分游戏或功能可能超出其能力。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "sote-recomp": {
+    "name": "Shadows of the Empire: Recompiled：N64 游戏静态重编译",
+    "requirements": [
+      "需要原版 Nintendo 64 游戏数据；下载包含 Windows 与实验性 Linux 构建。",
+      "它是静态重编译项目，依赖原版游戏资源与版本。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

@@ -6,10 +6,13 @@
 
 [English](game-3.md)
 
-**611 个案例**
+**610 个案例**
 
 ## 静态重编译
 
+- [**James Pond 2: Codename RoboCod：Amiga 版静态重编译**](https://github.com/griches/JamesPond2RobocodRecomp) - James Pond 2: Codename RoboCod — Recompiled 从使用者提供的 Amiga 游戏盘将 68000 指令转换为原生 C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/james-pond-2-robocod-recomp-case/)</sub>
+- [**Jet Force Gemini Recomp：Windows 原生重编译版本**](https://github.com/TK22-26/JetForceGemini-Recomp) - Jet Force Gemini Recomp 提供《Jet Force Gemini》的 Windows x64 原生重编译版本，从用户导入的北美版 ROM 读取游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jet-force-gemini-recomp-case/)</sub>
+- [**Jet Force Gemini: Recompiled：N64 游戏静态重编译移植**](https://github.com/VibinToast/JetForceGemini-Recompiled) - Jet Force Gemini: Recompiled 使用 N64Recomp 将用户自备的美版 N64 ROM 代码转换为 C，并通过 N64ModernRuntime 和 RT64 运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jet-force-gemini-recompiled-case/)</sub>
 - [**Jet Moto 2 Recompiled：PlayStation 游戏静态重编译 PC 版**](https://github.com/goodshepherd23/JetMoto2-Recomp) - Jet Moto 2 Recompiled 使用 RecompOne 从用户的 PlayStation 光盘将《Jet Moto 2: Championship Edition》的 MIPS 代码转为原生 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jet-moto-2-recompiled-case/)</sub>
 - [**Juiced 2 Recompiled：Xbox 360 游戏的 Windows 静态重编译**](https://github.com/anishchandra24/Juiced2-Recompiled) - Juiced 2 Recompiled 使用 ReXGlue 静态转换用户自有的 Xbox 360 版 Juiced 2: Hot Import Nights 可执行文件，构建原生 Windows 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/juiced-2-recompiled-case/)</sub>
 - [**Juiced：Windows 游戏可执行文件的静态重编译**](https://github.com/mafph/juiced-recomp) - Juiced 项目用 pcrecomp 将 2005 年 Windows 游戏的 x86-32 可执行文件静态重编译为可移植 C。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/juiced-recomp-case/)</sub>
@@ -262,6 +265,7 @@
 - [**sh4-nx：Silent Hill 4 的 Nintendo Switch 重编译移植**](https://github.com/72ak/sh4-nx) - sh4-nx 将《Silent Hill 4: The Room》的 GOG Windows 可执行文件静态转换为 C，并编译至 Nintendo Switch ARM64。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sh4-nx-case/)</sub>
 - [**Shadow of the Colossus：运行至翻帧循环的 PS3 静态重编译项目**](https://github.com/sp00nznet/shadowofthecolossus) - Shadow of the Colossus 使用 ps3recomp 将 PS3 高清版的 EBOOT 和八个 SPU 镜像提升为原生 Windows 构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shadow-of-the-colossus-ps3-recomp-case/)</sub>
 - [**Shadow the Hedgehog：PS2 静态重编译进展**](https://github.com/nicolasserpa/shadow-the-hedgehog-recomp) - Shadow the Hedgehog Recomp 使用 PS2Recomp 将 PS2 游戏的 MIPS 与 VU 代码转为原生 C++，并连接 ps2xRuntime。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shadow-the-hedgehog-ps2-recomp-case/)</sub>
+- [**Shadows of the Empire: Recompiled：N64 游戏静态重编译**](https://github.com/GTTeancum/SotE-Recomp) - 《星球大战：帝国阴影》Nintendo 64 版本的可玩 Windows 静态重编译，使用 N64Recomp 构建，并提供实验性 Linux 版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sote-recomp/)</sub>
 - [**Shantae Recomp：Game Boy Color 游戏静态重编译**](https://github.com/vibecodekun/shantaerecomp) - Shantae Recomp 使用 gbrecompiled 将美版 Game Boy Color《Shantae》ROM 转换为 Windows 和 Linux 原生代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shantae-recomp-case/)</sub>
 - [**Shining Force III Recomp：Sega Saturn 游戏的 PC 静态重编译**](https://github.com/mattkuhnQAAI/sfiii-native) - Shining Force III Recomp 从受支持的 Sega Saturn 光盘提取 SH-2 代码并生成 C++，再结合图形、音频和存储服务编译为 PC 原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shining-force-iii-recomp-case/)</sub>
 - [**Silent Hill 3：原生 Nintendo Switch 移植**](https://github.com/cutarev/sh3-nx) - sh3-nx 是 PC 版《寂静岭3》的任天堂 Switch 原生移植，发布版本是 v0.06。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sh3-nx/)</sub>
@@ -619,9 +623,4 @@
 - [**LEGOLAND, portable：基于匹配反编译源码的跨平台移植版**](https://github.com/facundosterzerforino/legoland-port) - LEGOLAND, portable 将 1999 年游戏的匹配反编译源码移植到 Windows、Linux、Android 和浏览器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/legoland-port-case/)</sub>
 - [**Lighthouse：基于反编译项目的《Banjo-Kazooie》PC 移植**](https://github.com/HarbourMasters/Lighthouse) - 一个面向 Windows、Linux 和 macOS 的《Banjo-Kazooie》原生移植，将游戏 C 源码（其中许多标注了《Banjo-Kazooie》反编译项目中的文件路径）与重新实现 N64 SDK 的 libultraship 一起编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lighthouse-banjo-kazooie-port-case/)</sub>
 - [**LineWars II：可移植的 SDL3 重建版**](https://github.com/fredangstadt-lang/LineWarsII-SDL) - 为 1994 年 DOS 游戏的可移植 C 重建提供 SDL3 后端。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/linewars-ii-sdl-case/)</sub>
-- [**Link: The Faces of Evil：CD-i 反编译代码的原生 PC 移植**](https://github.com/ByteDecompiler/link-faces-of-evil-pc) - 该项目把 Philips CD-i 游戏《Link: The Faces of Evil》的反编译 C 代码移植到 Windows，以 SDL3 实现视频、音频、光盘和输入接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/link-faces-of-evil-pc-case/)</sub>
-- [**Lordran Native：在 Apple 设备上运行《黑暗之魂：重制版》**](https://github.com/Nishikori-Yui/lordran-native) - Lordran Native 将 Switch 版《黑暗之魂：重制版》移植到 Apple 设备，直接运行游戏的 ARM64 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lordran-native-case/)</sub>
-- [**MacioGalaxy：将 Super Mario Galaxy 移植到 Apple Silicon**](https://github.com/classicrob/MacioGalaxy) - MacioGalaxy 将 Petari 的 Super Mario Galaxy 反编译代码移植到 Apple Silicon Mac。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/maciogalaxy-case/)</sub>
-- [**Magic Carpet：DOS 游戏重建与 Windows 移植**](https://github.com/jessperler88/Magic-Carpet-port) - Magic Carpet 根据 carpet.exe 的分析结果，将 Bullfrog 的 1994 年 DOS 游戏重建为 Windows x64 的 C++17/SDL2 移植版。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/magic-carpet-native-port-case/)</sub>
-- [**Marble Love：Marble Madness 的差异测试 TypeScript 移植版**](https://github.com/magno73/marble-love) - Marble Love 根据 Marble Madness 街机版的 68010 反汇编，将例程移植为 TypeScript 引擎和浏览器前端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/marble-love-case/)</sub>
 <!-- END GENERATED CASES -->

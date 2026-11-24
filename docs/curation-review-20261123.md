@@ -530,3 +530,31 @@ This round adds four reconstruction cases and two analysis tools from the stored
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; ssx3-recomp received a Class 1 preview. The four new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, twentieth batch — 2026-11-23
+
+This round adds four reconstruction cases and two decompilation toolkits from the stored lead queue: Pokémon Black 2/White 2, Redivivus (Diablo II), femto8 (PICO-8) and Shadows of the Empire: Recompiled, plus ds-decomp and ps2-native-recomp.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `ds-decomp` | `native-analysis` | [AetiasHax/ds-decomp](https://github.com/AetiasHax/ds-decomp/blob/3b2df91c530ad144cbda0031abb7ce0eec3b1d83/README.md) | `b2c182a8fc1f5e731c216ca0f2015f9889bed80ff180f524b488aa87f7accd5e` |
+| `ps2-native-recomp` | `game-analysis` | [exoteric33/ps2-native-recomp](https://github.com/exoteric33/ps2-native-recomp/blob/66528c8a7f5457caaeec76566d9e43d57e5bbb92/README.md) | `71643bf145e385b15316184f9baeeba2c2884133f5870b8589d58a850bb44686` |
+| `pokebw2` | `reconstruction-cases` | [fuddlesworth/pokebw2](https://github.com/fuddlesworth/pokebw2/blob/345b790e6000869b481b79838bb5727309f832fb/README.md) | `d0a6eaa0398225433b8dd2cb3533fb4aec743c843d25841dc484c23c4b1bb5a2` |
+| `redivivus` | `reconstruction-cases` | [jaenster/redivivus](https://github.com/jaenster/redivivus/blob/17c86009cc63656842f5315bb32b3bf5838efe5c/README.md) | `b7474e76245da12abe46e17f9a70203e1fdba854061ba94e44955e9078a88dd6` |
+| `femto8` | `reconstruction-cases` | [benbaker76/femto8](https://github.com/benbaker76/femto8/blob/d83bab199a8dafb6c00aa8ecd16d2b50e7d5c562/README.md) | `029fa62d63ff7605e7a002906036ef8daa364b10c22399e0317ae6616061f135` |
+| `sote-recomp` | `reconstruction-cases` | [GTTeancum/SotE-Recomp](https://github.com/GTTeancum/SotE-Recomp/blob/457832809a4bed9bf82f0b4b4431e23422be3392/README.md) | `ab815f05c0df95350100ede3bc6caccd77f38644e5305443ba20be74e664b938` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| ZeusAFK/LibreKO | GitHub returned HTTP 404 for the repository during review. |
+| MegaMan64Recomp/MegaMan64Recompiled | README is a 52-byte stub below the documentation threshold. |
+| fuddlesworth/pokebw2 siblings, OpenCrystalCaves | Deferred where another open PR already carries the same game or list. |
+| Russian-Doom, EDGE-classic, chocolate-quake, woof | More Doom/Quake source ports deferred to avoid near-duplicate cases. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; femto8 and Shadows of the Empire: Recompiled received Class 1 previews. The four new case studies update the game case indexes and README case sections.

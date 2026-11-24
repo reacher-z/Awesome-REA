@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-24T01:04:57+00:00",
-    "entry_count": 1168,
-    "class_entry_count": 1199,
+    "generated_at": "2026-11-24T01:41:39+00:00",
+    "entry_count": 1170,
+    "class_entry_count": 1201,
     "class_counts": {
-      "image": 1128,
+      "image": 1130,
       "video": 40
     },
     "missing_count": 31,
@@ -2592,6 +2592,15 @@
       "source_url": "https://github.com/w1ne/fb200-tools",
       "revision": "2e6cbb36adf60db74fd2d7bb9d4c9cb8df9c993c",
       "checked_at": "2026-11-08T23:42:11+00:00"
+    },
+    {
+      "id": "femto8",
+      "image_url": "https://raw.githubusercontent.com/benbaker76/femto8/d83bab199a8dafb6c00aa8ecd16d2b50e7d5c562/images/screenshot1.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/benbaker76/femto8",
+      "revision": "d83bab199a8dafb6c00aa8ecd16d2b50e7d5c562",
+      "checked_at": "2026-11-24T01:41:39+00:00"
     },
     {
       "id": "fermion",
@@ -8747,6 +8756,15 @@
       "source_url": "https://github.com/AmitRajput-Dev/SonyBridge",
       "revision": "d0ecd561ebf6f1cb87ffbf29528107b2221724d5",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "sote-recomp",
+      "image_url": "https://raw.githubusercontent.com/GTTeancum/SotE-Recomp/457832809a4bed9bf82f0b4b4431e23422be3392/docs/screenshots/on_foot_echo_base.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/GTTeancum/SotE-Recomp",
+      "revision": "457832809a4bed9bf82f0b4b4431e23422be3392",
+      "checked_at": "2026-11-24T01:41:39+00:00"
     },
     {
       "id": "soulcalibur-ii-recomp-case",

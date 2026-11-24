@@ -159480,5 +159480,175 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "ds-decomp",
+    "name": "ds-decomp",
+    "url": "https://github.com/AetiasHax/ds-decomp",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A toolkit for setting up and maintaining Nintendo DS decompilation projects, with commands for ROM extraction and building, delinking, disassembly, object diffing and symbol checks.",
+    "description_zh": "用于建立与维护 Nintendo DS 反编译项目的工具包，提供 ROM 提取与构建、delink、反汇编、目标文件对比与符号检查等命令。",
+    "evidence_url": "https://github.com/AetiasHax/ds-decomp/blob/3b2df91c530ad144cbda0031abb7ce0eec3b1d83/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Rust and a Nintendo DS ROM to work from; the toolkit automates project setup and delinking.",
+      "It is a project toolkit and does not itself produce a matching decompilation.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ps2-native-recomp",
+    "name": "ps2-native-recomp",
+    "url": "https://github.com/exoteric33/ps2-native-recomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Turns a PlayStation 2 game disc into a native Windows or Linux program by static recompilation, translating the main processor code to C++ and emulating the rest of the console, with 55 tested games and no game-specific code.",
+    "description_zh": "把 PlayStation 2 游戏光盘通过静态重编译转换为原生 Windows 或 Linux 程序：将主处理器代码转译为 C++，并模拟主机其余部分；已测试 55 款游戏且不含逐游戏代码。",
+    "evidence_url": "https://github.com/exoteric33/ps2-native-recomp/blob/66528c8a7f5457caaeec76566d9e43d57e5bbb92/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a PS2 game disc you own; the project translates the main CPU code and emulates the rest of the console.",
+      "The project is at an early stage, and compatibility varies by game.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "pokebw2",
+    "name": "Pokémon Black 2 and White 2: a work-in-progress matching decompilation",
+    "url": "https://github.com/fuddlesworth/pokebw2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A work-in-progress matching decompilation of Pokémon Black 2 and White 2 whose USA and Europe ROMs rebuild byte for byte from the same source tree.",
+    "description_zh": "《宝可梦 黑 2／白 2》的在研匹配式反编译项目：美版与欧版 ROM 可由同一源码树逐字节重建。",
+    "evidence_url": "https://github.com/fuddlesworth/pokebw2/blob/345b790e6000869b481b79838bb5727309f832fb/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the supported USA or Europe ROMs to verify the build; the project does not distribute ROMs.",
+      "It is a work-in-progress decompilation, and matched code and functions are tracked by ByteMatch.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "redivivus",
+    "name": "Redivivus: Diablo II 1.14d reverse-engineered into C++",
+    "url": "https://github.com/jaenster/redivivus",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "description_en": "A reverse engineering of Diablo II: Lord of Destruction 1.14d into C++ that builds and runs, with byte-matching progress tracked for functions, code bytes and data bytes.",
+    "description_zh": "把《暗黑破坏神 II：毁灭之王》1.14d 逆向为可构建、可运行的 C++ 源码，并按函数、代码字节与数据字节跟踪逐字节匹配进度。",
+    "evidence_url": "https://github.com/jaenster/redivivus/blob/17c86009cc63656842f5315bb32b3bf5838efe5c/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original 1.14d game files; the project reconstructs the game code in C++.",
+      "It is a work-in-progress reverse engineering, with partial byte matching.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "femto8",
+    "name": "femto8: an open-source reimplementation of the PICO-8 fantasy console",
+    "url": "https://github.com/benbaker76/femto8",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "A reimplementation of the PICO-8 fantasy console written in C for embedded systems with small CPUs and limited memory, providing a platform to play PICO-8 games on constrained devices.",
+    "description_zh": "用 C 编写、面向小 CPU 与有限内存嵌入式系统的 PICO-8 幻想主机重实现，为资源受限设备提供运行 PICO-8 游戏的平台。",
+    "evidence_url": "https://github.com/benbaker76/femto8/blob/d83bab199a8dafb6c00aa8ecd16d2b50e7d5c562/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs on embedded systems with limited CPU and memory; PICO-8 game carts are supplied separately.",
+      "It targets resource-constrained hardware, so some games or features may exceed its limits.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "sote-recomp",
+    "name": "Shadows of the Empire: Recompiled — a static recompilation of the Nintendo 64 game",
+    "url": "https://github.com/GTTeancum/SotE-Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A playable Windows static recompilation of the Nintendo 64 version of Star Wars: Shadows of the Empire, built with N64Recomp, with an experimental Linux build.",
+    "description_zh": "《星球大战：帝国阴影》Nintendo 64 版本的可玩 Windows 静态重编译，使用 N64Recomp 构建，并提供实验性 Linux 版。",
+    "evidence_url": "https://github.com/GTTeancum/SotE-Recomp/blob/457832809a4bed9bf82f0b4b4431e23422be3392/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Nintendo 64 game data; downloads include Windows and experimental Linux builds.",
+      "It is a static recompilation and depends on the original game assets and version.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

@@ -6,7 +6,7 @@
 
 [English](game-1.md)
 
-**617 个案例**
+**616 个案例**
 
 <a id="game-matching-decompilation"></a>
 ## 匹配反编译与反汇编
@@ -374,6 +374,7 @@
 - [**pokerevo：PAL 版 Wii 游戏反编译**](https://github.com/pret/pokerevo) - pokerevo 是《Pokémon Battle Revolution》PAL 版 Wii 游戏的反编译项目，构建出的 main.dol 有公布的 SHA-1 哈希。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokerevo-pal-decomp-case/)</sub>
 - [**pokeruby：一致构建的《精灵宝可梦 红宝石／蓝宝石》反编译**](https://github.com/pret/pokeruby) - 以 C 源码重建 Game Boy Advance 游戏《精灵宝可梦 红宝石／蓝宝石》，使用 pret 的 agbcc 编译器构建，并附有汇编数据脚本和可编辑图像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokeruby-decomp-case/)</sub>
 - [**宝可梦 战斗革命：Wii 游戏的逐字节匹配反编译**](https://github.com/pbr-ret/pbr-decomp) - 这是 Wii 版《宝可梦 战斗革命》PAL RPBP01 修订 0 的匹配反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pbr-decomp/)</sub>
+- [**Pokémon 黑 2／白 2：在研匹配式反编译**](https://github.com/fuddlesworth/pokebw2) - 《宝可梦 黑 2／白 2》的在研匹配式反编译项目：美版与欧版 ROM 可由同一源码树逐字节重建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokebw2/)</sub>
 - [**Pokémon Black：任天堂 DS 版反编译**](https://github.com/squiddonaut/pokeblack) - 该仓库是任天堂 DS《Pokémon Black》的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokeblack-case/)</sub>
 - [**Pokémon Colosseum：持续推进的 GameCube 匹配反编译**](https://github.com/grant-might/Colosseum_Decomp) - Pokémon Colosseum 延续 GameCube 版 GC6E01 的匹配反编译，新增 C 代码和数据重建、进度台账及 Windows 原生构建支持，范围涵盖 DOL 与 25 个 REL 模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-colosseum-continued-decomp-case/)</sub>
 - [**Pokémon Dash：逐字节匹配的 Nintendo DS 反编译项目**](https://github.com/liolu/pokemon-dash-decomp) - pokemon-dash-decomp 重建美版 Nintendo DS 游戏 Pokémon Dash 的源码，以编译后的精确字节核对函数，并以整包逐字节一致为目标重建 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-dash-decomp-case/)</sub>
@@ -629,6 +630,4 @@
 - [**Blitz\_MasterVer22-Decomp：《Splatoon 2》3.1.0 版反编译**](https://github.com/YoshiCrystal9/Blitz_MasterVer22-Decomp) - Blitz\_MasterVer22-Decomp 重建 Nintendo Switch 游戏《Splatoon 2》3.1.0 版的代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/splatoon-2-310-decomp-case/)</sub>
 - [**Blood Omen 2：面向 Switch 移植的功能性反编译**](https://github.com/felipesuarez-dev/BloodOmen2NX) - BloodOmen2NX 将《血兆 2》西班牙语 Windows PC 版进行功能性反编译，译成 C++17，目标是移植到 Nintendo Switch。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bloodomen2nx-case/)</sub>
 - [**Boku Doraemon：Dreamcast 可执行文件与模型结构重建**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon 解析日版 Dreamcast 游戏的 1ST\_READ.BIN，从用户光盘生成匹配的汇编基线，并在 SH-4 解释器中比较候选 C 函数的调用、内存写入与结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boku-doraemon-decomp-case/)</sub>
-- [**Bomberman 64: The Second Attack!：部分 N64 反编译**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa 正在反编译日版和美版 N64 游戏 Bomberman 64: The Second Attack!。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bm64tsa-case/)</sub>
-- [**Boom Street：进行中的 Wii 游戏反编译**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street 是进行中的 Wii 游戏反编译项目，目标为欧版 ST7P01 Rev 0。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boom-street-decomp-case/)</sub>
 <!-- END GENERATED CASES -->
