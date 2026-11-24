@@ -6,10 +6,13 @@
 
 [English](game-5.md)
 
-**437 个案例**
+**440 个案例**
 
 ## 引擎重实现
 
+- [**Return To The Roots：重写 The Settlers 2 以适配现代系统**](https://github.com/Return-To-The-Roots/s25client) - Return To The Roots 重写 The Settlers 2，以便在现代操作系统上运行，并使用玩家自备的 Gold Edition 原版图像和音效。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/return-to-the-roots-case/)</sub>
+- [**ReverseSanta：《Santa Claus in Trouble》重建项目**](https://github.com/igor725/ReverseSanta) - ReverseSanta 是对 Joymania《Santa Claus in Trouble》的 C++ 重新实现，作者称研究原作时没有使用反汇编工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reversesanta-case/)</sub>
+- [**reWoodpecker：面向 PSP 的《Woody Woodpecker》重建项目**](https://github.com/wendersondiazx/reWoodpecker) - reWoodpecker 使用 C++ 引擎和 Qt 转换器，将用户 PS2 光盘中的《Woody Woodpecker: Escape from Buzz Buzzard Park》内容带到 PSP。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rewoodpecker-case/)</sub>
 - [**Rigel Engine：Duke Nukem II 引擎重新实现**](https://github.com/lethal-guitar/RigelEngine) - Rigel Engine 根据原版二进制文件的反汇编结果，以 C++ 重新实现 Duke Nukem II。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rigel-engine-case/)</sub>
 - [**Riiablo：使用 Java 重建《暗黑破坏神 II》**](https://github.com/collinsmith/riiablo) - Riiablo 使用 Java、LibGDX、OpenGL、FlatBuffers 和 Netty 重建《暗黑破坏神 II》，从用户自有安装中读取游戏资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/riiablo-case/)</sub>
 - [**rlvm：RealLive 解释器重实现**](https://github.com/eglaysher/rlvm) - rlvm 重实现 RealLive 解释器，让 VisualArts 游戏使用原有的 SEEN.TXT 游戏目录在 Linux 和 macOS 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rlvm-case/)</sub>

@@ -161524,5 +161524,177 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "daedalusx64",
+    "name": "DaedalusX64",
+    "url": "https://github.com/DaedalusX64/daedalus",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A Nintendo 64 emulator for PSP, 3DS, Vita, Linux, macOS and Windows with fast emulation and high compatibility.",
+    "description_zh": "面向 PSP、3DS、Vita、Linux、macOS 与 Windows 的 Nintendo 64 模拟器，强调快速模拟与高兼容性。",
+    "evidence_url": "https://github.com/DaedalusX64/daedalus/blob/580c0c409358db332149fc2903c610449434f8fc/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Nintendo 64 ROMs; builds target PSP, 3DS, Vita, Linux, macOS and Windows.",
+      "PowerPC and big-endian builds are not supported at this time.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "n64js",
+    "name": "n64js",
+    "url": "https://github.com/hulkholden/n64js",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "A Nintendo 64 emulator written in modern JavaScript that runs directly in the browser, with keyboard and gamepad support and local ROM loading.",
+    "description_zh": "用现代 JavaScript 编写的 Nintendo 64 模拟器，可直接在浏览器中运行，支持键盘、手柄与本地 ROM 加载。",
+    "evidence_url": "https://github.com/hulkholden/n64js/blob/3240cfd322460a7097080cba7a4e3d4eeb8bd56b/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a browser and Nintendo 64 ROMs; ROMs and save data stay local.",
+      "It runs many ROMs at full framerate, and compatibility varies by title.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "binjgb",
+    "name": "binjgb",
+    "url": "https://github.com/binji/binjgb",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "A simple Game Boy and Game Boy Color emulator that runs in the browser via WebAssembly, with cycle-accurate timing, MBC support, rewind, audio channel controls and a debugger.",
+    "description_zh": "简洁的 Game Boy 与 Game Boy Color 模拟器，可通过 WebAssembly 在浏览器中运行，支持周期精确时序、MBC、回退、音频通道控制与调试器。",
+    "evidence_url": "https://github.com/binji/binjgb/blob/6c04827f63d272f32afd86138a8e7262b3800344/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires GB or GBC ROMs; native and WebAssembly browser builds are available.",
+      "CGB and Super GB support are partial, and compatibility varies by title.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "lichii",
+    "name": "Lichii",
+    "url": "https://github.com/zortos293/Lichii",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An experimental Nintendo Switch 2 emulator with a compatibility reporting site, distributed only through its GitHub releases.",
+    "description_zh": "实验性的 Nintendo Switch 2 模拟器，附带兼容性报告站点，仅通过其 GitHub Releases 分发。",
+    "evidence_url": "https://github.com/zortos293/Lichii/blob/11021b0604c1c6462eff14147930481556014998/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Switch 2 game files and system files; download only from the project GitHub releases page.",
+      "The emulator is experimental, and compatibility varies by title.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "pgr4-regpu",
+    "name": "PGR4:ReGPU: a native PC port of Project Gotham Racing 4",
+    "url": "https://github.com/zer0ducksgiven/PGR4-ReGPU",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native PC port of Project Gotham Racing 4 (Bizarre Creations, 2007, Xbox 360) that translates the PowerPC code with ReXenon ahead of time into C++ and renders GPU commands through ReGPU on Direct3D 12.",
+    "description_zh": "《Project Gotham Racing 4》（Bizarre Creations，2007，Xbox 360）的原生 PC 移植：用 ReXenon 预先转译 PowerPC 代码为 C++，并通过 ReGPU 在 Direct3D 12 上渲染。",
+    "evidence_url": "https://github.com/zer0ducksgiven/PGR4-ReGPU/blob/591e5730d0d95221b30d33586640a99e59ee3ec5/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the game; no game data is included.",
+      "It is a static recompilation, and compatibility depends on the game version.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "pommy-recomp",
+    "name": "Bomberman 64: The Second Attack! Recompiled",
+    "url": "https://github.com/bdragoncore/pommy-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of Bomberman 64: The Second Attack! using N64Recomp, with widescreen support, launcher cheats, mod support and RT64 rendering.",
+    "description_zh": "使用 N64Recomp 对《Bomberman 64: The Second Attack!》进行的静态重编译，支持宽屏、启动器金手指、mod 与 RT64 渲染。",
+    "evidence_url": "https://github.com/bdragoncore/pommy-recomp/blob/0ba26ac1658130f750c2ed3a04ab632df1e2a79e/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game; the repository and releases contain no game assets.",
+      "It is an unofficial fan project, and compatibility depends on the game version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

@@ -45714,5 +45714,53 @@
       "它是实验性的静态重编译分支，兼容性取决于游戏版本。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "daedalusx64": {
+    "name": "DaedalusX64",
+    "requirements": [
+      "需要 Nintendo 64 ROM；构建覆盖 PSP、3DS、Vita、Linux、macOS 与 Windows。",
+      "目前不支持 PowerPC 与大端构建。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "n64js": {
+    "name": "n64js",
+    "requirements": [
+      "需要浏览器与 Nintendo 64 ROM；ROM 与存档保存在本地。",
+      "许多 ROM 可满帧运行，兼容性因游戏而异。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "binjgb": {
+    "name": "binjgb",
+    "requirements": [
+      "需要 GB 或 GBC ROM；提供原生与 WebAssembly 浏览器构建。",
+      "CGB 与 Super GB 支持不完整，兼容性因游戏而异。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "lichii": {
+    "name": "Lichii",
+    "requirements": [
+      "需要 Switch 2 游戏文件与系统文件；仅从项目 GitHub Releases 下载。",
+      "模拟器仍属实验性，兼容性因游戏而异。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "pgr4-regpu": {
+    "name": "PGR4:ReGPU：Project Gotham Racing 4 原生 PC 移植",
+    "requirements": [
+      "需要自备游戏副本；不包含游戏数据。",
+      "它是静态重编译，兼容性取决于游戏版本。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "pommy-recomp": {
+    "name": "Bomberman 64: The Second Attack! Recompiled",
+    "requirements": [
+      "需要原版游戏；仓库与发布不包含游戏资源。",
+      "它是民间项目，兼容性取决于游戏版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

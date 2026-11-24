@@ -856,3 +856,31 @@ This round adds three emulators and three reconstruction cases: Firebird Emu, pu
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; five Class 1 records received previews. The three new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, thirty-second batch — 2026-11-24
+
+This round adds four emulators and two reconstruction cases: DaedalusX64, n64js, binjgb, Lichii, PGR4:ReGPU and Bomberman 64: The Second Attack! Recompiled.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `daedalusx64` | `game-analysis` | [DaedalusX64/daedalus](https://github.com/DaedalusX64/daedalus/blob/580c0c409358db332149fc2903c610449434f8fc/README.md) | `ef793f65fb4151c5fbb7afea96cbccc0f06c1af47bafc2c5127d8f6e9c270825` |
+| `n64js` | `game-analysis` | [hulkholden/n64js](https://github.com/hulkholden/n64js/blob/3240cfd322460a7097080cba7a4e3d4eeb8bd56b/README.md) | `5a41efc1f772d89e64ac9016d794d68c6a4770a65f2e11235cf8e98d8ad0ae4a` |
+| `binjgb` | `game-analysis` | [binji/binjgb](https://github.com/binji/binjgb/blob/6c04827f63d272f32afd86138a8e7262b3800344/README.md) | `0748ae75beac9018b69275702f04388edd2a43c285a785462c27303b2f733b73` |
+| `lichii` | `game-analysis` | [zortos293/Lichii](https://github.com/zortos293/Lichii/blob/11021b0604c1c6462eff14147930481556014998/README.md) | `905a992363f5b8b06080713e5d8110f4cc30c91850e7f1e33a40e80920625165` |
+| `pgr4-regpu` | `reconstruction-cases` | [zer0ducksgiven/PGR4-ReGPU](https://github.com/zer0ducksgiven/PGR4-ReGPU/blob/591e5730d0d95221b30d33586640a99e59ee3ec5/README.md) | `c1a132cc3213d851cf3ca3cccb6f8d427807b58dd46929182fbe67520fc9f283` |
+| `pommy-recomp` | `reconstruction-cases` | [bdragoncore/pommy-recomp](https://github.com/bdragoncore/pommy-recomp/blob/0ba26ac1658130f750c2ed3a04ab632df1e2a79e/README.md) | `1533aa40e4c691a8c6aca3b9d9e2a49bb9b4b50b5f9bddd077316c3bbd1784cb` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| mstan/PokemonStadiumRecomp | README declares the project no longer maintained as of August 2026. |
+| MegaMan64Recomp/MegaMan64Recompiled | README is a 52-byte stub below the documentation threshold. |
+| mstan/*Recomp (PSX/NES), TechnicallyComputers/*Recomp | No license file recorded by the GitHub API. |
+| SamiEnazi/infamous2-port, rigaz29/Ascension-R | No license file recorded by the GitHub API. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; binjgb received a Class 1 preview. The two new case studies update the game case indexes and README case sections.

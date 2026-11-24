@@ -6,10 +6,13 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**437 case studies**
+**440 case studies**
 
 ## Engine reimplementations
 
+- [**Return To The Roots: rewriting The Settlers 2 for modern systems**](https://github.com/Return-To-The-Roots/s25client) - Return To The Roots rewrites The Settlers 2 for modern operating systems while using graphics and sounds from the player's original Gold Edition copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/return-to-the-roots-case/)</sub>
+- [**ReverseSanta: a reconstruction of Santa Claus in Trouble**](https://github.com/igor725/ReverseSanta) - ReverseSanta is a C++ reimplementation of Joymania's Santa Claus in Trouble built from study of the original without disassembly tools. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reversesanta-case/)</sub>
+- [**reWoodpecker: a PSP reconstruction of Woody Woodpecker**](https://github.com/wendersondiazx/reWoodpecker) - reWoodpecker rebuilds Woody Woodpecker: Escape from Buzz Buzzard Park for PSP with a C++ engine and a Qt converter for the user's PS2 disc. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rewoodpecker-case/)</sub>
 - [**Rigel Engine: a Duke Nukem II engine reimplementation**](https://github.com/lethal-guitar/RigelEngine) - Rigel Engine reimplements Duke Nukem II in C++ using findings from disassembly of the original game binaries. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rigel-engine-case/)</sub>
 - [**Riiablo: rebuilding Diablo II in Java**](https://github.com/collinsmith/riiablo) - Riiablo rebuilds Diablo II in Java with LibGDX, OpenGL, FlatBuffers, and Netty, loading game assets from the user's own installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/riiablo-case/)</sub>
 - [**rlvm: a RealLive interpreter reimplementation**](https://github.com/eglaysher/rlvm) - rlvm reimplements the RealLive interpreter so VisualArts games can run on Linux and macOS using their own SEEN.TXT game directories. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rlvm-case/)</sub>

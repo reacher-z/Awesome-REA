@@ -6,10 +6,12 @@
 
 [English](game-4.md)
 
-**628 个案例**
+**627 个案例**
 
 ## 基于重建源码的移植
 
+- [**GoldenEye 007：基于反编译成果的智能体辅助原生移植**](https://github.com/jkdansereau/goldeneye-pc-port) - 在已有 GoldenEye 007 反编译成果之上构建原生 PC 移植，提供宿主平台适配层，并从用户自己的 ROM 提取资产。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goldeneye-pc-port-case/)</sub>
+- [**Gran Turismo 2 PC, VR &amp; Browser：原生多平台移植《跑车浪漫旅 2》**](https://github.com/dubrovskiy-yevhen-stakelogic/gt-2-pc) - Gran Turismo 2 PC, VR &amp; Browser 以共享 C++ 游戏代码移植《跑车浪漫旅 2》的街机和模拟模式，支持桌面、Quest、PCVR 及浏览器；浏览器版使用 WebAssembly 和 WebGL2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gran-turismo-2-pc-vr-browser-case/)</sub>
 - [**Gravity Rush 2：PS4 游戏运行时 PC 移植**](https://github.com/HayatoG/gr2_pc) - Gravity Rush 2 PC 移植项目让 PS4 游戏的原始 x86-64 代码在主机处理器上运行，以替代层提供 PS4 系统服务，并将 GPU 工作转换为 Vulkan。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gravity-rush-2-pc-case/)</sub>
 - [**Gravity Rush Remastered：PS4 游戏的 PC 原生移植**](https://github.com/LucaPazienza/gravityrush_pc) - Gravity Rush Remastered 的 PC 移植版在 Windows 上运行 PS4 游戏原有的 x86-64 可执行文件，并以替代库实现 PS4 系统功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gravity-rush-remastered-pc-case/)</sub>
 - [**GTA IV for PS5：将 Xbox 360 重编译成果移植到 PlayStation 5**](https://github.com/elripalda/gta4-ps5) - GTA IV for PS5 将 Grand Theft Auto IV 及两个篇章的 Xbox 360 静态重编译成果移植到已破解的 PlayStation 5。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gta-iv-ps5-port-case/)</sub>
@@ -638,7 +640,4 @@
 - [**REminiscence：Flashback 游戏引擎重建**](https://github.com/cyxx/REminiscence) - REminiscence 重新实现 1992 年游戏 Flashback 的引擎，读取用户持有的 DOS、Amiga、Macintosh 或 PC-98 版本数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reminiscence-flashback-case/)</sub>
 - [**reone：重建《旧共和国武士》引擎**](https://github.com/seedhartha/reone) - reone 用 C++ 重建《星球大战：旧共和国武士》及《西斯领主》的引擎，依据公开文件格式资料和对游戏及资源的观察。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reone-kotor-engine-case/)</sub>
 - [**reRBR：重建 Richard Burns Rally 1.02**](https://github.com/JodusNodus/rerbr) - reRBR 用 Rust 重建 Richard Burns Rally 1.02，面向 Linux、macOS 和 Windows，读取玩家自备的游戏文件并使用 NGP 7.4.778 物理系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rerbr-case/)</sub>
-- [**Return To The Roots：重写 The Settlers 2 以适配现代系统**](https://github.com/Return-To-The-Roots/s25client) - Return To The Roots 重写 The Settlers 2，以便在现代操作系统上运行，并使用玩家自备的 Gold Edition 原版图像和音效。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/return-to-the-roots-case/)</sub>
-- [**ReverseSanta：《Santa Claus in Trouble》重建项目**](https://github.com/igor725/ReverseSanta) - ReverseSanta 是对 Joymania《Santa Claus in Trouble》的 C++ 重新实现，作者称研究原作时没有使用反汇编工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reversesanta-case/)</sub>
-- [**reWoodpecker：面向 PSP 的《Woody Woodpecker》重建项目**](https://github.com/wendersondiazx/reWoodpecker) - reWoodpecker 使用 C++ 引擎和 Qt 转换器，将用户 PS2 光盘中的《Woody Woodpecker: Escape from Buzz Buzzard Park》内容带到 PSP。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rewoodpecker-case/)</sub>
 <!-- END GENERATED CASES -->

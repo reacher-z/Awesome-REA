@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-24T22:31:44+00:00",
-    "entry_count": 1194,
-    "class_entry_count": 1225,
+    "generated_at": "2026-11-24T23:13:40+00:00",
+    "entry_count": 1195,
+    "class_entry_count": 1226,
     "class_counts": {
-      "image": 1154,
+      "image": 1155,
       "video": 40
     },
     "missing_count": 31,
@@ -837,6 +837,15 @@
       "source_url": "https://github.com/m4b/bingrep",
       "revision": "99d10541c7d442c50f732e62c507f1d62001413e",
       "checked_at": "2026-11-07T03:50:13+00:00"
+    },
+    {
+      "id": "binjgb",
+      "image_url": "https://raw.githubusercontent.com/binji/binjgb/6c04827f63d272f32afd86138a8e7262b3800344/images/pocket.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/binji/binjgb",
+      "revision": "6c04827f63d272f32afd86138a8e7262b3800344",
+      "checked_at": "2026-11-24T23:13:40+00:00"
     },
     {
       "id": "binny-agent-harness",
