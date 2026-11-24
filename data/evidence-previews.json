@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-24T03:05:33+00:00",
-    "entry_count": 1176,
-    "class_entry_count": 1207,
+    "generated_at": "2026-11-24T03:43:39+00:00",
+    "entry_count": 1178,
+    "class_entry_count": 1209,
     "class_counts": {
-      "image": 1136,
+      "image": 1138,
       "video": 40
     },
     "missing_count": 31,
@@ -5303,6 +5303,15 @@
       "checked_at": "2026-11-22T06:41:04+00:00"
     },
     {
+      "id": "neogeorecomp",
+      "image_url": "https://raw.githubusercontent.com/sp00nznet/neogeorecomp/af96b2b4b39b42b392b17bcaa6a74a5f27088202/docs/screenshots/mslug-tank.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/sp00nznet/neogeorecomp",
+      "revision": "af96b2b4b39b42b392b17bcaa6a74a5f27088202",
+      "checked_at": "2026-11-24T03:43:39+00:00"
+    },
+    {
       "id": "neots2-case",
       "image_url": "https://raw.githubusercontent.com/Asli-s/NeoTS2/7af51fa35431dfab1916899ce6278d889812ad74/assets/screenshots/neighborhood.webp",
       "kind": "image",
@@ -10178,6 +10187,15 @@
       "source_url": "https://github.com/j4k0xb/webcrack",
       "revision": "c80eec5f00622b86cea871d68349750ce950201f",
       "checked_at": "2026-11-08T23:42:11+00:00"
+    },
+    {
+      "id": "wild9-recomp",
+      "image_url": "https://raw.githubusercontent.com/plinkr/Wild9Recomp/6bff4d1acfd44e8fe34349fe2dd4965b7526c679/launcher_assets/img/boxart.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/plinkr/Wild9Recomp",
+      "revision": "6bff4d1acfd44e8fe34349fe2dd4965b7526c679",
+      "checked_at": "2026-11-24T03:43:39+00:00"
     },
     {
       "id": "winbond-keyboard-colour-case",

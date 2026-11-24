@@ -6,10 +6,14 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**403 case studies**
+**407 case studies**
 
 ## Engine reimplementations
 
+- [**Shiloh: reimplementing The X-Files Game engine**](https://github.com/Asterber/shiloh) - Shiloh is a Rust engine for The X-Files Game (1998), with an SDL2 window and a WebAssembly browser build. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shiloh/)</sub>
+- [**shin: reimplementing the engine of Entergram visual games**](https://github.com/DCNick3/shin) - shin reimplements a game engine used by Entergram visual games, initially targeting the Switch release of Umineko no Naku Koro ni Saku. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shin-engine-case/)</sub>
+- [**shock2quest: recreating the Dark engine for System Shock 2 VR**](https://github.com/tommy-xr/shock2quest) - shock2quest recreates the Dark engine for a virtual-reality version of System Shock 2 on Meta Quest. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shock2quest-case/)</sub>
+- [**si78c: reimplementing Space Invaders in C**](https://github.com/loadzero/si78c) - si78c is a C reimplementation of the 1978 arcade game Space Invaders. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/si78c/)</sub>
 - [**SiegeFX: a Dungeon Siege engine reimplementation in alpha**](https://github.com/codingncaffeine/SiegeFX) - A C#/.NET 10 engine loads Dungeon Siege's original archives, scripts and models, with published alpha builds and an audit/parity ledger. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/siegefx-dungeon-siege-engine-case/)</sub>
 - [**siglus\_rs: reimplementing four visual game engines in Rust**](https://github.com/xmoezzz/siglus_rs) - siglus\_rs reimplements the UK2, AVG32, RealLive and SiglusEngine game engines in Rust, with its main focus on SiglusEngine. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/siglus-rs-case/)</sub>
 - [**Sims 3 in Bevy: a Rust reimplementation of The Sims 3**](https://github.com/Eamo5/sims-3-bevy) - Sims 3 in Bevy reimplements The Sims 3 in Rust using Bevy and data from the player's installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sims-3-bevy-case/)</sub>

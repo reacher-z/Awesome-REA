@@ -612,3 +612,30 @@ This round adds five reconstruction cases and one packer-analysis tool: Resident
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Resident Evil Outbreak Recompiled and Magicmida-RS received Class 1 previews. The five new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, twenty-third batch — 2026-11-23
+
+This round adds five reconstruction cases and one recompilation toolkit: SPR Recomp (Splatoon Raiders), Klonoa: Empire of Dreams, Sonic Advance, Wild 9, The Simpsons Game for Switch and neogeorecomp.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `spr-recomp` | `reconstruction-cases` | [Elie-0066/SPR-Recomp-Project](https://github.com/Elie-0066/SPR-Recomp-Project/blob/a4bc49a85bfba986def112114e40b1da458adfa5/README.md) | `35d30e1bd4a51d3fb28d80d4ead81e9f64fd9f1531ab2470c5f294f9c3693e4e` |
+| `kleod` | `reconstruction-cases` | [testyourmine/kleod](https://github.com/testyourmine/kleod/blob/18e6e1d8017da139ff0f712793aa6fdca75268bb/README.md) | `00dcc3b23b158937a2d0de993c78027c620dde17758ca816a59fd339510e3a43` |
+| `sonic-advance-recomp` | `reconstruction-cases` | [smiluredev/SonicAdvanceRecomp](https://github.com/smiluredev/SonicAdvanceRecomp/blob/e637fc89861b66b291ce3a1b02cdb151ca53bc22/README.md) | `99b1dd1c3c0317c05835b51e42d147e4cae2754874549fd9c359cd4bff47e019` |
+| `wild9-recomp` | `reconstruction-cases` | [plinkr/Wild9Recomp](https://github.com/plinkr/Wild9Recomp/blob/6bff4d1acfd44e8fe34349fe2dd4965b7526c679/README.md) | `e4c4efad6bbfffdf0ba14e56717d5baf11c2a8ec22f539d309fb5e10d4e8367a` |
+| `simpsons-game-nx` | `reconstruction-cases` | [R-drg/the-simpsons-game-nx](https://github.com/R-drg/the-simpsons-game-nx/blob/3cb2cdf7fa1665a1f2d653aa7502fe4baa03680f/README.md) | `f93a493c7c9cef0b04657ac70109db7fddb74892bc33d95178984026e47a8d50` |
+| `neogeorecomp` | `game-analysis` | [sp00nznet/neogeorecomp](https://github.com/sp00nznet/neogeorecomp/blob/af96b2b4b39b42b392b17bcaa6a74a5f27088202/README.md) | `2f38dbe88c2a883845fceacead22db868c7c2972669567c73175a2225842da11` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| sp00nznet/snesrecomp | Record id already used by the stacked catalog; a new id would be needed before adding it. |
+| Vidanox/BanjoTooieRecompiled, hamishakl/LibertyRecomp | Near-duplicates of records already carried by other open PRs. |
+| Russian-Doom, EDGE-classic, chocolate-quake, woof | More Doom/Quake source ports deferred to avoid near-duplicate cases. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; Wild 9 Recompiled and neogeorecomp received Class 1 previews. The five new case studies update the game case indexes and README case sections.

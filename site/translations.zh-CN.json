@@ -45282,5 +45282,53 @@
       "它是 PC 版的移植，兼容性取决于具体 GOG 构建。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "spr-recomp": {
+    "name": "SPR Recomp：Splatoon Raiders 的 Windows 静态重编译",
+    "requirements": [
+      "需要 Switch 2 游戏文件；项目提供转译后的可执行文件与 Vulkan 渲染器。",
+      "它是从另一款游戏改目标的 fork 且为非官方项目，兼容性取决于游戏版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "kleod": {
+    "name": "Klonoa: Empire of Dreams — 匹配式反编译",
+    "requirements": [
+      "需要《风之少年：梦见帝国》美版 ROM 来验证构建；项目不分发 ROM。",
+      "它是匹配式反编译，代码与数据进度分别跟踪。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "sonic-advance-recomp": {
+    "name": "Sonic Advance — 静态重编译项目",
+    "requirements": [
+      "需要原版 Sonic Advance ROM；项目重编译 GBA 机器码而非模拟 CPU。",
+      "目标平台为 x86-64 与 ARM64，兼容性取决于具体 ROM。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "wild9-recomp": {
+    "name": "Wild 9 Recompiled：静态重编译与原生 PC 移植",
+    "requirements": [
+      "需要原版 PlayStation 游戏数据；发布版提供原生移植。",
+      "它是静态重编译，兼容性取决于具体游戏版本。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "simpsons-game-nx": {
+    "name": "The Simpsons Game — Switch 原生移植",
+    "requirements": [
+      "需要原版游戏数据；移植版在 Switch 上锁定 30 FPS。",
+      "它由 PC 重编译与 Switch 层组成，兼容性取决于游戏版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "neogeorecomp": {
+    "name": "neogeorecomp",
+    "requirements": [
+      "需要 Neo Geo 游戏 ROM 与使用该工具包的游戏仓库；运行时会模拟视频芯片、I/O、Z80 音效 CPU 与 MVS 系统 ROM。",
+      "它是工具包而非完整移植，每款游戏需自行提供集成。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

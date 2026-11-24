@@ -10,6 +10,10 @@
 
 ## 基于重建源码的移植
 
+- [**khdays-vita：《Kingdom Hearts 358/2 Days》的 PS Vita 移植版**](https://github.com/ggdrn/KH-DAYS-VITA) - khdays-vita 将《Kingdom Hearts 358/2 Days》的反编译源码编译为原生 PS Vita 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/khdays-vita-case/)</sub>
+- [**Killzone Shadow Fall：采用 Vulkan 图形转换的 Windows 原生移植**](https://github.com/lesca-191204/killzone-shadowfall-pc) - Killzone Shadow Fall for PC 在 Windows CPU 上直接运行 PS4 版游戏代码，并在运行时将图形转换为 Vulkan。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/killzone-shadow-fall-pc-case/)</sub>
+- [**Kingdom Hearts 358/2 Days：基于一致性反编译的原生 PC 移植**](https://github.com/Yokimitsuro/khdays-port) - 将 khdays-decomp 一致性反编译的 C 代码编译为 Windows x64 程序，并以原生平台层替代 Nintendo DS 硬件、SDK 服务及声音驱动。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/khdays-native-pc-port-case/)</sub>
+- [**Knack for PC：以替代运行时运行 PS4 游戏**](https://github.com/AbdelmoumenDeghbouche/knack_pc) - Knack for PC 通过替代 PS4 系统库和 Vulkan 图形核心，使 Knack 原有的 x86-64 代码在 Windows 与 Linux 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/knack-pc-case/)</sub>
 - [**Kye for C64：用 6502 汇编重建益智游戏规则**](https://github.com/cobbpg/kye-c64) - Kye for C64 用 6502 汇编将 1992 年的益智游戏移植到 Commodore 64。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kye-c64-case/)</sub>
 - [**Lantern Engine：面向 Windows 和 Linux 的 Bloodborne 运行时**](https://github.com/Awakenchan/LanternEngine) - Lantern Engine 在 Windows 和 Linux 上使用玩家自行转储的 Bloodborne CUSA03173 1.09 版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lantern-engine-case/)</sub>
 - [**LEGO Dimensions PC：PS4 游戏至 Windows 的原生移植**](https://github.com/vascon-es/lego-dimensions-pc) - LEGO Dimensions PC 将 PS4 版 LEGO Dimensions 01.24 移植到 Windows x64，改造游戏可执行文件并重写 PS4 系统库行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lego-dimensions-pc-case/)</sub>
@@ -638,8 +642,4 @@
 - [**Settlers.ts：解析 Settlers 4 数据并重建浏览器版游戏**](https://github.com/tomsoftware/Settlers.ts) - Settlers.ts 用 TypeScript 和用户自己的 Settlers 4 文件开发浏览器版重制项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/settlers-ts-case/)</sub>
 - [**sh23ds：《寂静岭 2》的 3DS 原生重建**](https://github.com/ankushKun/sh23ds) - sh23ds 以 C 为 Nintendo 3DS 重建《寂静岭 2：导演剪辑版》的原生引擎，游戏数据由玩家自己的 PC 版本转换。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/sh23ds-case/)</sub>
 - [**sh3redux：C++ 重建 Silent Hill 3 引擎**](https://github.com/Palm-Studios/sh3redux) - sh3redux 用 C++ 和 OpenGL 重建《Silent Hill 3》引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sh3redux-case/)</sub>
-- [**Shiloh：重实现《The X-Files Game》引擎**](https://github.com/Asterber/shiloh) - Shiloh 是 1998 年游戏《X档案》的 Rust 引擎，带 SDL2 窗口和 WebAssembly 浏览器构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shiloh/)</sub>
-- [**shin：Entergram 视觉游戏引擎重实现**](https://github.com/DCNick3/shin) - shin 重实现 Entergram 视觉游戏使用的引擎，起初以 Switch 版 Umineko no Naku Koro ni Saku 为目标，并读取原版游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shin-engine-case/)</sub>
-- [**shock2quest：为 System Shock 2 VR 重建 Dark 引擎**](https://github.com/tommy-xr/shock2quest) - shock2quest 为 Meta Quest 上的 System Shock 2 虚拟现实体验重建 Dark 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shock2quest-case/)</sub>
-- [**si78c：用 C 语言重实现《太空侵略者》**](https://github.com/loadzero/si78c) - si78c 是 1978 年街机游戏《太空侵略者》的 C 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/si78c/)</sub>
 <!-- END GENERATED CASES -->

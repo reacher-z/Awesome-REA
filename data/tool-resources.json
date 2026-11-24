@@ -159994,5 +159994,177 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "spr-recomp",
+    "name": "SPR Recomp: a static recompilation of Splatoon Raiders for Windows",
+    "url": "https://github.com/Elie-0066/SPR-Recomp-Project",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An unofficial static recompilation of Splatoon Raiders (Nintendo Switch 2) into a native Windows x86-64 executable with a Vulkan renderer, forked from DKB Recomp and TotK Recomp.",
+    "description_zh": "把 Nintendo Switch 2 游戏《Splatoon Raiders》静态重编译为原生 Windows x86-64 可执行文件并使用 Vulkan 渲染的民间项目，源自 DKB Recomp 与 TotK Recomp。",
+    "evidence_url": "https://github.com/Elie-0066/SPR-Recomp-Project/blob/a4bc49a85bfba986def112114e40b1da458adfa5/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the Switch 2 game files; the project provides the translated executable and a Vulkan renderer.",
+      "It is a fork retargeted from another game and is unofficial, so compatibility depends on the game version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "kleod",
+    "name": "Klonoa: Empire of Dreams — a matching decompilation",
+    "url": "https://github.com/testyourmine/kleod",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A decompilation of Klonoa: Empire of Dreams (USA) that builds a byte-matching ROM, with code and data progress tracked by decomp.dev.",
+    "description_zh": "《风之少年：梦见帝国》（美版）的反编译项目，可构建逐字节匹配的 ROM，代码与数据进度由 decomp.dev 跟踪。",
+    "evidence_url": "https://github.com/testyourmine/kleod/blob/18e6e1d8017da139ff0f712793aa6fdca75268bb/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Klonoa: Empire of Dreams (USA) ROM to verify the build; the project does not distribute the ROM.",
+      "It is a matching decompilation, and progress is tracked separately for code and data.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "sonic-advance-recomp",
+    "name": "Sonic Advance — a static recompilation project",
+    "url": "https://github.com/smiluredev/SonicAdvanceRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native C/C++ port of Sonic Advance (Game Boy Advance) created with GBARecomp, translating the original machine code into platform-agnostic code with SDL2 input, CRT shaders and enhanced audio.",
+    "description_zh": "用 GBARecomp 把 Game Boy Advance 游戏《Sonic Advance》的机器码转译为平台无关 C/C++ 的原生移植，提供 SDL2 输入、CRT 着色与增强音频。",
+    "evidence_url": "https://github.com/smiluredev/SonicAdvanceRecomp/blob/e637fc89861b66b291ce3a1b02cdb151ca53bc22/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Sonic Advance ROM; the project recompiles the GBA machine code rather than emulating the CPU.",
+      "It targets x86-64 and ARM64, and compatibility depends on the specific ROM.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "wild9-recomp",
+    "name": "Wild 9 Recompiled: a static recompilation and native PC port",
+    "url": "https://github.com/plinkr/Wild9Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation and native PC port of Wild 9 (PlayStation 1, NTSC-U SLUS-00425).",
+    "description_zh": "《Wild 9》（PlayStation 1，NTSC-U SLUS-00425）的静态重编译与原生 PC 移植。",
+    "evidence_url": "https://github.com/plinkr/Wild9Recomp/blob/6bff4d1acfd44e8fe34349fe2dd4965b7526c679/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original PlayStation game data; releases provide the native port.",
+      "It is a static recompilation and depends on the specific game version.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "simpsons-game-nx",
+    "name": "The Simpsons Game — a native Nintendo Switch port",
+    "url": "https://github.com/R-drg/the-simpsons-game-nx",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native Nintendo Switch port of the Xbox 360 version of The Simpsons Game (2007), statically recompiling the PowerPC default.xex to C++ with ReXGlue and rendering through a native Vulkan renderer on NVK.",
+    "description_zh": "《辛普森一家》游戏（2007）Xbox 360 版的 Nintendo Switch 原生移植：用 ReXGlue 把 PowerPC default.xex 静态重编译为 C++，并通过 NVK 上的原生 Vulkan 渲染器绘制。",
+    "evidence_url": "https://github.com/R-drg/the-simpsons-game-nx/blob/3cb2cdf7fa1665a1f2d653aa7502fe4baa03680f/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game data; the port targets a locked 30 FPS on Switch.",
+      "It is built from a PC recompilation and a Switch layer, so compatibility depends on the game version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "neogeorecomp",
+    "name": "neogeorecomp",
+    "url": "https://github.com/sp00nznet/neogeorecomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A static-recompilation toolkit for SNK Neo Geo MVS/AES games that translates the 68000 program into C and runs it natively against a model of the Neo Geo board, with game repositories pulling it in as a submodule.",
+    "description_zh": "面向 SNK Neo Geo MVS/AES 游戏的静态重编译工具包：把 68000 程序转译为 C，并针对 Neo Geo 主板模型原生运行；各游戏仓库以 submodule 方式引用它。",
+    "evidence_url": "https://github.com/sp00nznet/neogeorecomp/blob/af96b2b4b39b42b392b17bcaa6a74a5f27088202/README.md",
+    "verified_at": "2026-11-23",
+    "added_at": "2026-11-23",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Neo Geo game ROM and a game repository using the toolkit; the runtime models the video chip, I/O, Z80 sound CPU and MVS system ROM.",
+      "It is a toolkit rather than a complete port, and each game must supply its own integration.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

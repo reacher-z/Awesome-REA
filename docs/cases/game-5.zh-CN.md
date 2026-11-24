@@ -6,10 +6,14 @@
 
 [English](game-5.md)
 
-**403 个案例**
+**407 个案例**
 
 ## 引擎重实现
 
+- [**Shiloh：重实现《The X-Files Game》引擎**](https://github.com/Asterber/shiloh) - Shiloh 是 1998 年游戏《X档案》的 Rust 引擎，带 SDL2 窗口和 WebAssembly 浏览器构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shiloh/)</sub>
+- [**shin：Entergram 视觉游戏引擎重实现**](https://github.com/DCNick3/shin) - shin 重实现 Entergram 视觉游戏使用的引擎，起初以 Switch 版 Umineko no Naku Koro ni Saku 为目标，并读取原版游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shin-engine-case/)</sub>
+- [**shock2quest：为 System Shock 2 VR 重建 Dark 引擎**](https://github.com/tommy-xr/shock2quest) - shock2quest 为 Meta Quest 上的 System Shock 2 虚拟现实体验重建 Dark 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shock2quest-case/)</sub>
+- [**si78c：用 C 语言重实现《太空侵略者》**](https://github.com/loadzero/si78c) - si78c 是 1978 年街机游戏《太空侵略者》的 C 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/si78c/)</sub>
 - [**SiegeFX：处于 alpha 阶段的 Dungeon Siege 引擎重实现**](https://github.com/codingncaffeine/SiegeFX) - C#/.NET 10 引擎加载 Dungeon Siege 原始归档、脚本与模型，提供 alpha 构建和审计/一致性清单，并附带 SiegeSmith 模组工具；项目仍记录保真度和通关行为风险。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/siegefx-dungeon-siege-engine-case/)</sub>
 - [**siglus\_rs：以 Rust 重实现四种视觉游戏引擎**](https://github.com/xmoezzz/siglus_rs) - siglus\_rs 使用 Rust 重新实现 UK2、AVG32、RealLive 和 SiglusEngine 四款游戏引擎，重点是 SiglusEngine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/siglus-rs-case/)</sub>
 - [**Sims 3 in Bevy：用 Rust 重建《模拟人生 3》**](https://github.com/Eamo5/sims-3-bevy) - Sims 3 in Bevy 使用 Rust 和 Bevy 重建《模拟人生 3》，读取玩家安装的游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sims-3-bevy-case/)</sub>

@@ -6,10 +6,11 @@
 
 [English](game-2.md)
 
-**621 个案例**
+**622 个案例**
 
 ## 非匹配反编译
 
+- [**Blood Omen 2：面向 Switch 移植的功能性反编译**](https://github.com/felipesuarez-dev/BloodOmen2NX) - BloodOmen2NX 将《血兆 2》西班牙语 Windows PC 版进行功能性反编译，译成 C++17，目标是移植到 Nintendo Switch。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bloodomen2nx-case/)</sub>
 - [**Boku Doraemon：Dreamcast 可执行文件与模型结构重建**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon 解析日版 Dreamcast 游戏的 1ST\_READ.BIN，从用户光盘生成匹配的汇编基线，并在 SH-4 解释器中比较候选 C 函数的调用、内存写入与结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boku-doraemon-decomp-case/)</sub>
 - [**Bomberman 64: The Second Attack!：部分 N64 反编译**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa 正在反编译日版和美版 N64 游戏 Bomberman 64: The Second Attack!。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bm64tsa-case/)</sub>
 - [**Boom Street：进行中的 Wii 游戏反编译**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street 是进行中的 Wii 游戏反编译项目，目标为欧版 ST7P01 Rev 0。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boom-street-decomp-case/)</sub>

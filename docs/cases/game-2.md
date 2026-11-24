@@ -6,10 +6,11 @@
 
 [简体中文](game-2.zh-CN.md)
 
-**621 case studies**
+**622 case studies**
 
 ## Non-matching decompilations
 
+- [**Blood Omen 2: functional decompilation toward a Switch port**](https://github.com/felipesuarez-dev/BloodOmen2NX) - BloodOmen2NX functionally decompiles the Spanish Windows PC release of Blood Omen 2 into C++17 for a planned Nintendo Switch port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bloodomen2nx-case/)</sub>
 - [**Boku Doraemon: Dreamcast executable and model reconstruction**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon maps the Japanese Dreamcast game's 1ST\_READ.BIN, generates a matching assembly baseline from an owner's disc, and tests C function candidates for equivalent calls, memory writes and results in an SH-4 interpreter. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/boku-doraemon-decomp-case/)</sub>
 - [**Bomberman 64: The Second Attack!: partial N64 decompilation**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa is an in-progress decompilation of the Japanese and US Nintendo 64 releases of Bomberman 64: The Second Attack!. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bm64tsa-case/)</sub>
 - [**Boom Street: a Wii decompilation in progress**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street is a work-in-progress Wii game decompilation targeting the ST7P01 Rev 0 European release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/boom-street-decomp-case/)</sub>
