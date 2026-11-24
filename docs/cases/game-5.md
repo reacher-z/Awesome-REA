@@ -6,10 +6,13 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**434 case studies**
+**437 case studies**
 
 ## Engine reimplementations
 
+- [**Rigel Engine: a Duke Nukem II engine reimplementation**](https://github.com/lethal-guitar/RigelEngine) - Rigel Engine reimplements Duke Nukem II in C++ using findings from disassembly of the original game binaries. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rigel-engine-case/)</sub>
+- [**Riiablo: rebuilding Diablo II in Java**](https://github.com/collinsmith/riiablo) - Riiablo rebuilds Diablo II in Java with LibGDX, OpenGL, FlatBuffers, and Netty, loading game assets from the user's own installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/riiablo-case/)</sub>
+- [**rlvm: a RealLive interpreter reimplementation**](https://github.com/eglaysher/rlvm) - rlvm reimplements the RealLive interpreter so VisualArts games can run on Linux and macOS using their own SEEN.TXT game directories. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rlvm-case/)</sub>
 - [**Robot War Engine: a Total Annihilation-compatible engine reconstruction**](https://github.com/MHeasell/rwe) - Robot War Engine rebuilds a Total Annihilation-compatible strategy-game engine that runs on the player's original data files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/robot-war-engine-case/)</sub>
 - [**roBrowser: a browser reconstruction of Ragnarok Online**](https://github.com/vthibault/roBrowser) - roBrowser recreates a Ragnarok Online client for web browsers using JavaScript, HTML5 and WebGL. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/robrowser-case/)</sub>
 - [**Rockport Native: reconstructing Need for Speed: Most Wanted on macOS**](https://github.com/pablonolascoo/nfs-mw-2005-ps2-port) - Rockport Native reconstructs the PlayStation 2 release of Need for Speed: Most Wanted as a macOS game using a Swift and Metal engine and data converted from the player's ISO. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/rockport-native-nfs-mw-case/)</sub>

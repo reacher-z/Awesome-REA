@@ -828,3 +828,31 @@ This round adds one port catalog, two port cases and three emulators: Native Por
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; JSRF Unleashed NX received a Class 1 preview. The two new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, thirty-first batch — 2026-11-24
+
+This round adds three emulators and three reconstruction cases: Firebird Emu, puNES, Boytacean, F-Zero Forever, GT5 Recomp and the Silent Hill Origins/GTA Vice City Stories recompiler fork.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `firebird` | `firmware` | [nspire-emus/firebird](https://github.com/nspire-emus/firebird/blob/f75e590fd43365654ea2bbe6683f15b54e57abfb/README.md) | `1905a848a73e0083c4e5a46e480e6b2b9d74874672cbc6f6064eb7ee2f75402b` |
+| `punes` | `game-analysis` | [punesemu/puNES](https://github.com/punesemu/puNES/blob/b1758ec26a3d6da10abf50dc184fa837236c5f61/README.md) | `54b845b9d80b5d085df1812b70d0340904ad38096cd25848f1bab9a21b84c6f0` |
+| `boytacean` | `game-analysis` | [joamag/boytacean](https://github.com/joamag/boytacean/blob/29b98dec9248d0ee2b9a155a625fa45467c038d8/README.md) | `702bcfda339026fd8041d4a7354be2fd88411cbe6791a830099714e9d375fce1` |
+| `fzero-forever` | `reconstruction-cases` | [RetroPortingToolKit/FZeroSNESRecomp](https://github.com/RetroPortingToolKit/FZeroSNESRecomp/blob/de360149ff0758dafe4eda346e4bfa2179ff9ad1/README.md) | `dd6bc5a729663aaa00edbe6fa48cf57e17280f3573c062e93cc8ea6f671aa4d4` |
+| `gt5-recomp` | `reconstruction-cases` | [MormonFTP-hub/gt5-recomp](https://github.com/MormonFTP-hub/gt5-recomp/blob/656133a97052a29abfaee8730d80f2fe73e688a6/README.md) | `606b7fd86710592325e70504d5d28d7e8c066787354493bf50eeaaf6af4a4ed2` |
+| `sho-gta-vcs-recomp` | `reconstruction-cases` | [BlackLineInteractive/SHO-GTA-VCS-PS2Recomp](https://github.com/BlackLineInteractive/SHO-GTA-VCS-PS2Recomp/blob/659a2b0db11a14e818001f57331e216f5c604000/README.md) | `02a1f0063892d91217fea51adba9ccab767d28e9a27a94b9d4fc60db18ca8d56` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| mstan/PokemonStadiumRecomp | README declares the project no longer maintained as of August 2026. |
+| MegaMan64Recomp/MegaMan64Recompiled | README is a 52-byte stub below the documentation threshold. |
+| codepdbh/nfsu2-recompiled, soyjxck/dod3-recomp, rigaz29/Ascension-R | No license file recorded by the GitHub API. |
+| hulkholden/n64js, binji/binjgb, DaedalusX64 | More emulators deferred to keep this batch balanced. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; five Class 1 records received previews. The three new case studies update the game case indexes and README case sections.

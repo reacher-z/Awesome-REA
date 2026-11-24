@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-24T21:51:30+00:00",
-    "entry_count": 1189,
-    "class_entry_count": 1220,
+    "generated_at": "2026-11-24T22:31:44+00:00",
+    "entry_count": 1194,
+    "class_entry_count": 1225,
     "class_counts": {
-      "image": 1149,
+      "image": 1154,
       "video": 40
     },
     "missing_count": 31,
@@ -972,6 +972,15 @@
       "source_url": "https://github.com/vasist15-source/BOTWRecomp",
       "revision": "37a3be53c37f8494c0c9801673ddc9d63b450cc3",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "boytacean",
+      "image_url": "https://github.com/joamag/boytacean/raw/master/res/videos/002-mario.low.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/joamag/boytacean",
+      "revision": "29b98dec9248d0ee2b9a155a625fa45467c038d8",
+      "checked_at": "2026-11-24T22:31:44+00:00"
     },
     {
       "id": "brawl-recompiled",
@@ -2720,6 +2729,15 @@
       "checked_at": "2026-11-04T06:53:52+00:00"
     },
     {
+      "id": "firebird",
+      "image_url": "http://i.imgur.com/eGJOMsSl.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/nspire-emus/firebird",
+      "revision": "f75e590fd43365654ea2bbe6683f15b54e57abfb",
+      "checked_at": "2026-11-24T22:31:42+00:00"
+    },
+    {
       "id": "firered-leafgreen-recomp",
       "image_url": "https://raw.githubusercontent.com/mstan/FireRedLeafGreenRecomp/03ab83043b0695987c943cdf8f0eccb95b4f9dab/docs/screenshots/firered.png",
       "kind": "image",
@@ -2952,6 +2970,15 @@
       "source_url": "https://github.com/cruise-automation/fwanalyzer",
       "revision": "a0db45054642f89a5f855b0dcc0730ebd01c8c9e",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "fzero-forever",
+      "image_url": "https://raw.githubusercontent.com/RetroPortingToolKit/FZeroSNESRecomp/de360149ff0758dafe4eda346e4bfa2179ff9ad1/docs/screenshots/11-Bower-Red-Canyon-III.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/RetroPortingToolKit/FZeroSNESRecomp",
+      "revision": "de360149ff0758dafe4eda346e4bfa2179ff9ad1",
+      "checked_at": "2026-11-24T22:31:43+00:00"
     },
     {
       "id": "fzero-recomp-case",
@@ -3420,6 +3447,15 @@
       "source_url": "https://github.com/storytold/gridcraft",
       "revision": "7102429a9a2fd9f6fba8e06238a1cce5807fb1b0",
       "checked_at": "2026-11-10T02:57:21+00:00"
+    },
+    {
+      "id": "gt5-recomp",
+      "image_url": "https://raw.githubusercontent.com/MormonFTP-hub/gt5-recomp/656133a97052a29abfaee8730d80f2fe73e688a6/docs/launcher.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/MormonFTP-hub/gt5-recomp",
+      "revision": "656133a97052a29abfaee8730d80f2fe73e688a6",
+      "checked_at": "2026-11-24T22:31:42+00:00"
     },
     {
       "id": "gta-stories-recompiled",
@@ -7011,6 +7047,15 @@
       "source_url": "https://github.com/Layen-lang/PTCGP-Private-Server",
       "revision": "455cdc0ebdedbc02225e6847d8a4f7c0235025b8",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "punes",
+      "image_url": "https://github.com/user-attachments/assets/4da61eb7-349c-43ab-bc88-85f993e86cca",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/punesemu/puNES",
+      "revision": "b1758ec26a3d6da10abf50dc184fa837236c5f61",
+      "checked_at": "2026-11-24T22:31:43+00:00"
     },
     {
       "id": "pureikyubu",

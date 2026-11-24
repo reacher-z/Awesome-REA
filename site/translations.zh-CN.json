@@ -45666,5 +45666,53 @@
       "它模拟 Amiga 硬件，兼容性取决于机型与配置。",
       "采用 GPL-2.0 许可证。"
     ]
+  },
+  "firebird": {
+    "name": "Firebird Emu",
+    "requirements": [
+      "需要 TI-Nspire OS 文件；构建覆盖 Android、macOS 与 Windows。",
+      "它模拟计算器硬件，兼容性取决于机型与 OS 版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "punes": {
+    "name": "puNES",
+    "requirements": [
+      "需要 NES ROM 或 NSF 音乐文件；Qt 前端面向桌面平台构建。",
+      "兼容性因游戏与 mapper 而异。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "boytacean": {
+    "name": "Boytacean",
+    "requirements": [
+      "需要 GB、GBC 或 GBA ROM；构建覆盖网页、SDL 与 Libretro 前端。",
+      "该模拟器以教学为目的，兼容性因游戏而异。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "fzero-forever": {
+    "name": "F-Zero Forever：SNES F-Zero 的现代 PC 移植",
+    "requirements": [
+      "需要原版游戏数据；发布包含 Android 与 Linux 构建。",
+      "它加入了新内容的现代化移植，行为可能与 SNES 原版不同。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "gt5-recomp": {
+    "name": "GT5 Recomp：Gran Turismo 5（PS3）静态重编译",
+    "requirements": [
+      "需要自备 PS3 光盘与固件文件；不包含游戏数据。",
+      "它是静态重编译，兼容性取决于光盘版本。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "sho-gta-vcs-recomp": {
+    "name": "PS2Recomp：寂静岭起源与 GTA 罪恶都市传奇静态重编译",
+    "requirements": [
+      "需要自备 PS2 游戏数据；两款游戏的配置与函数表存放在仓库中。",
+      "它是实验性的静态重编译分支，兼容性取决于游戏版本。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

@@ -161353,5 +161353,176 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "firebird",
+    "name": "Firebird Emu",
+    "url": "https://github.com/nspire-emus/firebird",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "The community TI-Nspire emulator, originally created by Goplat, supporting Nspire Touchpad, CX and CX II models with Android, macOS and Windows builds.",
+    "description_zh": "社区维护的 TI-Nspire 计算器模拟器，最初由 Goplat 创建，支持 Nspire Touchpad、CX 与 CX II 机型，并提供 Android、macOS 与 Windows 构建。",
+    "evidence_url": "https://github.com/nspire-emus/firebird/blob/f75e590fd43365654ea2bbe6683f15b54e57abfb/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires TI-Nspire OS files; builds target Android, macOS and Windows.",
+      "It emulates the calculator hardware, and compatibility depends on the model and OS version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "punes",
+    "name": "puNES",
+    "url": "https://github.com/punesemu/puNES",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A Qt-based Nintendo Entertainment System emulator and NSF/NSF2/NSFe music player.",
+    "description_zh": "基于 Qt 的 Nintendo Entertainment System 模拟器与 NSF/NSF2/NSFe 音乐播放器。",
+    "evidence_url": "https://github.com/punesemu/puNES/blob/b1758ec26a3d6da10abf50dc184fa837236c5f61/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires NES ROMs or NSF music files; the Qt frontend builds for desktop platforms.",
+      "Compatibility varies by title and mapper.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "boytacean",
+    "name": "Boytacean",
+    "url": "https://github.com/joamag/boytacean",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A Game Boy, Game Boy Color and Game Boy Advance emulator written in Rust, with web, SDL and Libretro frontends and audio filtering options.",
+    "description_zh": "用 Rust 编写的 Game Boy、Game Boy Color 与 Game Boy Advance 模拟器，提供网页、SDL 与 Libretro 前端以及音频滤波选项。",
+    "evidence_url": "https://github.com/joamag/boytacean/blob/29b98dec9248d0ee2b9a155a625fa45467c038d8/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires GB, GBC or GBA ROMs; builds target the web, SDL and Libretro frontends.",
+      "The emulator is written for educational purposes, and compatibility varies by game.",
+      "Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "fzero-forever",
+    "name": "F-Zero Forever: a modern PC conversion of the SNES F-Zero",
+    "url": "https://github.com/RetroPortingToolKit/FZeroSNESRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A modern PC conversion of the original SNES F-Zero with more tracks, cups, split-screen up to 4 players and HD Mode 7, built by the RetroPortingToolkit team and F-Zero modders.",
+    "description_zh": "把 SNES 原版《F-Zero》现代化移植到 PC 的项目：增加赛道、杯赛、最多 4 人分屏与高清 Mode 7，由 RetroPortingToolkit 团队与 F-Zero mod 制作者合作完成。",
+    "evidence_url": "https://github.com/RetroPortingToolKit/FZeroSNESRecomp/blob/de360149ff0758dafe4eda346e4bfa2179ff9ad1/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game data; releases include Android and Linux builds.",
+      "It is a modern conversion with added content, so behavior can differ from the SNES original.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "gt5-recomp",
+    "name": "GT5 Recomp: a static recompilation of Gran Turismo 5 (PS3)",
+    "url": "https://github.com/MormonFTP-hub/gt5-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of Gran Turismo 5 (PlayStation 3) to PC, tested on the Europe BCES00569 release and working for players on US BCUS98114, with a Windows x64 Direct3D 12 build.",
+    "description_zh": "把 PlayStation 3《Gran Turismo 5》静态重编译到 PC 的项目：欧版 BCES00569 已测试，美版 BCUS98114 也可由玩家运行，提供 Windows x64 Direct3D 12 构建。",
+    "evidence_url": "https://github.com/MormonFTP-hub/gt5-recomp/blob/656133a97052a29abfaee8730d80f2fe73e688a6/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own PS3 disc and firmware files; no game data is included.",
+      "It is a static recompilation, and compatibility depends on the disc version.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "sho-gta-vcs-recomp",
+    "name": "PS2Recomp: Silent Hill Origins and GTA Vice City Stories static recompilation",
+    "url": "https://github.com/BlackLineInteractive/SHO-GTA-VCS-PS2Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A PS2 static recompiler fork tailored for Silent Hill Origins and GTA Vice City Stories, translating PS2 ELF binaries into C++ with a runtime for the generated code.",
+    "description_zh": "为《寂静岭：起源》与《GTA：罪恶都市传奇》定制的 PS2 静态重编译分支：把 PS2 ELF 二进制转译为 C++，并提供运行生成代码的运行时。",
+    "evidence_url": "https://github.com/BlackLineInteractive/SHO-GTA-VCS-PS2Recomp/blob/659a2b0db11a14e818001f57331e216f5c604000/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own PS2 game data; configurations and function maps for both games live in the repository.",
+      "It is an experimental static recompiler fork, and compatibility depends on the game version.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]
