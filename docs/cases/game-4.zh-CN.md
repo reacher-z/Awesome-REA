@@ -6,10 +6,15 @@
 
 [English](game-4.md)
 
-**627 个案例**
+**626 个案例**
 
 ## 基于重建源码的移植
 
+- [**G-Diffuser：F-Zero X 及其 64DD 扩展包的 PC 移植**](https://github.com/Zorkats/G-Diffuser) - G-Diffuser 是带 64DD 扩展包的《F-Zero X》PC 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/g-diffuser/)</sub>
+- [**G1R Deluxe：十一款宝可梦游戏的 LÖVE2D 移植**](https://github.com/bryanthaboi/gen1recomp) - G1R Deluxe 将《宝可梦 红／蓝》至《绿宝石》等十一款游戏移植到 LÖVE2D 的 Lua 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/g1r-deluxe-pokemon-port-case/)</sub>
+- [**GalaxyFrame：GalaxyQuest 的 Steam Frame 移植**](https://github.com/PodeCaradox/GalaxyFrame) - GalaxyQuest 的分支，额外支持在 Valve Steam Frame（SteamOS，arm64）上原生运行，基于 Petari 的《超级马力欧银河》反编译项目，并附控制与设置文档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/galaxy-frame/)</sub>
+- [**GalaxyPad：将 Super Mario Galaxy 移植至 iPhone 和 iPad**](https://github.com/chrissotraidis/galaxypad) - GalaxyPad 基于 MacioGalaxy 和 Petari 衍生的原生游戏代码，将《Super Mario Galaxy》移植至 iPhone、iPad。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/galaxypad-super-mario-galaxy-case/)</sub>
+- [**GD's Melee：基于《任天堂明星大乱斗 DX》匹配反编译成果的 PC 移植版**](https://github.com/GurekamDhillon/gd-melee-workspace) - GD's Melee 基于《任天堂明星大乱斗 DX》NTSC 1.02 的匹配反编译成果构建 Windows 和 Linux 原生移植版，加入原生渲染、回滚联机、m-ex 模组与 Lua 脚本，并从用户自己的光盘镜像读取游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gds-melee-case/)</sub>
 - [**geow2：Geometry Wars: Retro Evolved 2 原生移植**](https://github.com/techknight/geow2) - geow2 根据 Xbox 360 原版可执行文件的分析，将 Geometry Wars: Retro Evolved 2 重建为 Windows、macOS 和 Linux 原生游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/geow2-case/)</sub>
 - [**Ghostship：基于 libultraship 的 Super Mario 64 原生移植**](https://github.com/HarbourMasters/Ghostship) - 将反编译风格的游戏源码编译到 libultraship 平台库上，把 Super Mario 64 构建为原生 PC、Switch 和 Android 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ghostship-sm64-port-case/)</sub>
 - [**Glassline：Mirror's Edge iPad 版移植**](https://github.com/MoonCellar-Team/Glassline) - Glassline 将 2010 年 iPad 版 Mirror's Edge 移植到 Linux、Windows、Steam Deck、Android 和浏览器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/glassline-mirrors-edge-ipad-port-case/)</sub>
@@ -506,6 +511,7 @@
 - [**OpenCloud：《暗黑编年史》重建项目**](https://github.com/Gundorada-Workshop/OpenCloud) - OpenCloud 是《暗黑编年史》的 C++ 重建项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencloud-dark-cloud-case/)</sub>
 - [**OpenCoD1：《使命召唤》多人模式重建**](https://github.com/opencod1/opencod1) - OpenCoD1 以源码重建《使命召唤》1.1 版多人模式的引擎、客户端、专用服务器及游戏模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencod1-call-of-duty-case/)</sub>
 - [**OpenCross：重建《穿越时空》游戏引擎**](https://github.com/sp-hy/OpenCross) - OpenCross 用 C++20 重建《穿越时空》原生引擎，读取玩家自有的《Radical Dreamers Edition》安装文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencross-case/)</sub>
+- [**OpenCrystalCaves：Crystal Caves 三部曲的引擎重实现**](https://github.com/OpenCrystalCaves/OpenCrystalCaves) - Crystal Caves 三部曲的非官方开源引擎重实现，附带共享版章节并可读取零售版数据文件；目前第一章可玩。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-crystal-caves-case/)</sub>
 - [**OpenD2：重建 Diablo II 游戏引擎**](https://github.com/eezstreet/OpenD2) - OpenD2 用 C++ 重写 Diablo II 游戏引擎，使用原版游戏数据和存档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opend2-diablo-ii-case/)</sub>
 - [**OpenDaed：重建 The Daedalus Encounter**](https://github.com/AMDmi3/opendaed) - OpenDaed 以 C++ 重建互动电影解谜游戏 The Daedalus Encounter，并读取原版光盘数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendaed-case/)</sub>
 - [**OpenDana：《Solomon's Key 2》的 C11 重建**](https://github.com/dvilelaf/opendana) - OpenDana 以确定性的 C11 核心和 SDL2 前端重建 NES 益智游戏《Solomon's Key 2 / Fire 'n Ice》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendana-case/)</sub>
@@ -633,11 +639,4 @@
 - [**RAD：重建 Radix: Beyond the Void 游戏引擎**](https://github.com/jval1972/Rad-X) - RAD 重建 1995 年 DOS 游戏《Radix: Beyond the Void》的引擎，读取原版 v2 remix 的 radix.dat。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rad-x-case/)</sub>
 - [**Rails：用 OCaml 重建《Railroad Tycoon》**](https://github.com/bluddy/rails) - Rails 使用 OCaml 重建 1990 年的《Railroad Tycoon》，实现铁路建设、列车管理、AI 对手及经济系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rails-railroad-tycoon-case/)</sub>
 - [**RappelzCore &amp; RappelzRust：重建 Rappelz NoLimits 客户端与服务端**](https://github.com/BlaMacfly/RappelzCore) - RappelzCore 与 RappelzRust 根据定制版 SFrame.exe 客户端的分析结果，用 Rust 重建 Rappelz NoLimits 服务端和游戏客户端。 <sub>案例 · 混合工具流程 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/rappelzcore-rappelzrust-case/)</sub>
-- [**raw(gl)：Another World 引擎重建**](https://github.com/cyxx/rawgl) - raw(gl) 重建 Another World 引擎，并读取原版游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rawgl-another-world-case/)</sub>
-- [**rawpsx：《异世界》引擎的 PlayStation 重实现**](https://github.com/fgsfdsfgs/rawpsx) - rawpsx 借助 PSn00bSDK，以 C 语言把早期 rawgl 实现改写为初代 PlayStation 上运行的《异世界》引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rawpsx-another-world-case/)</sub>
-- [**Re-Comprehend：重建 Penguin Software 冒险游戏引擎**](https://github.com/RyanMallon/recomprehend) - Re-Comprehend 重新实现了用于 Transylvania、Crimson Crown 和 OO-Topos 等作品的 Comprehend 与 Graphics Magician 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/re-comprehend-case/)</sub>
-- [**re2ds：Resident Evil 2 的原生 Nintendo DS 引擎**](https://github.com/eray1605/re2ds) - 在原生 Nintendo DS 引擎中重新实现 Resident Evil 2 PS1 版的游戏规则，并用转换工具把使用者自有光盘中的数据转为 DS 格式。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/re2ds-nds-engine-case/)</sub>
-- [**rea-doom-term：DOOM 纯文本终端重建**](https://github.com/schererstefan/rea-doom-term) - rea-doom-term 将 DOOM（1993）重建为可玩的 Rust 终端游戏，包含 WAD 解析、定点运算、移动、战斗和文本光线投射。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/rea-doom-term-case/)</sub>
-- [**reB3：从 Xbox 程序与光盘数据重建《火爆狂飙 3》**](https://github.com/lolz0r/reb3) - reB3 以 C 语言重建 Xbox 版《火爆狂飙 3》的运行系统，依据 default.xbe 恢复物理、碰撞、计分与 AI 逻辑，并从用户的光盘读取赛道和车辆数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reb3-case/)</sub>
-- [**Rebellion 2：Star Wars: Rebellion 的 Unity 重制版**](https://github.com/davidadas/rebellion2) - Rebellion 2 用 Unity 重制 1998 年的策略游戏 Star Wars: Rebellion。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rebellion-2-case/)</sub>
 <!-- END GENERATED CASES -->

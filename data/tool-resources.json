@@ -162205,5 +162205,179 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "restreet-fifa-street-case",
+    "name": "ReStreet: FIFA Street 2012 recompiled for Windows with online play",
+    "url": "https://github.com/samuelit0davila/fifa-street-pc-port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of FIFA Street (2012) for Windows with online play and a launcher that adds friends, chat and rooms; players bring their own copy of the game.",
+    "description_zh": "把《FIFA Street》(2012) 静态重编译到 Windows，并加入在线对战与带好友、聊天和房间的启动器；玩家需自备游戏副本。",
+    "evidence_url": "https://github.com/samuelit0davila/fifa-street-pc-port/blob/0b554e377ef565a23641e5fe98dad4b569836ca4/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of FIFA Street; no game files are included.",
+      "It targets Windows 10 and 11 and ships through GitHub releases.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "mkw-thwomp-case",
+    "name": "MKW-THWOMP: Mario Kart World running natively on Windows",
+    "url": "https://github.com/STS78721/MKW-THWOMP",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of the Nintendo Switch 2 Mario Kart World onto Windows, built on mkw-recomp, rendering through Vulkan at 60 fps with a Switch-2-style settings menu.",
+    "description_zh": "把 Nintendo Switch 2 的《马力欧卡丁车世界》静态重编译到 Windows，基于 mkw-recomp，通过 Vulkan 渲染并以 60 fps 运行，自带类似 Switch 2 的设置菜单。",
+    "evidence_url": "https://github.com/STS78721/MKW-THWOMP/blob/d456e6b613b3f689b2655fc39e0971a030ce352d/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a legally dumped copy of Mario Kart World 1.0.0 or the 1.8.0 update; no game files are included.",
+      "It targets Windows 10/11 with Vulkan 1.3 and is built on mkw-recomp.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "mp4-recomp-case",
+    "name": "MP4 Recomp: Metroid Prime 4 Beyond as a native Linux build",
+    "url": "https://github.com/linuxopt/mp4-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native Linux build of your own copy of Metroid Prime 4: Beyond, packaged as one AppImage: the Switch code is recompiled ahead of time with the SwitchRecomp runtime and the GPU work translated to OpenGL 4.6.",
+    "description_zh": "把自备的《密特罗德 4 Beyond》做成原生 Linux 构建，以单个 AppImage 分发：用 SwitchRecomp 运行时提前重编译 Switch 代码，并把 GPU 工作转换为 OpenGL 4.6。",
+    "evidence_url": "https://github.com/linuxopt/mp4-recomp/blob/74c0832150b7bb2731069744e0b400d3dba13fd2/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a legally dumped copy of the game; the AppImage compiles it from your files on first run.",
+      "It targets Linux with OpenGL 4.6 and is built on the SwitchRecomp runtime.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "liberty-pro-max-case",
+    "name": "Liberty Pro Max: GTA IV recompiled for Apple silicon",
+    "url": "https://github.com/Awis13/liberty-pro-max",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "GTA IV (PC 1.0.8.0) statically recompiled to run natively on Apple silicon Macs and iPads with a Metal renderer, the episodes, roughly 100 fixes and iCloud saves; the Builder app compiles it from your own copy.",
+    "description_zh": "把 GTA IV（PC 1.0.8.0）静态重编译为在 Apple 芯片 Mac 与 iPad 上原生运行，使用 Metal 渲染，包含资料片、约 100 项修复与 iCloud 存档；用 Builder 应用从自备副本编译。",
+    "evidence_url": "https://github.com/Awis13/liberty-pro-max/blob/d825c4a40e096f8b327702ae6950c49b7320bd47/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own GTA IV copy; no game data is included.",
+      "It targets Apple silicon Macs and iPads, with Apple TV support described as experimental.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "open-crystal-caves-case",
+    "name": "OpenCrystalCaves: an engine reimplementation of the Crystal Caves trilogy",
+    "url": "https://github.com/OpenCrystalCaves/OpenCrystalCaves",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "An unofficial open source engine reimplementation of the Crystal Caves trilogy that ships the shareware episode and reads retail data files; episode one is playable so far.",
+    "description_zh": "Crystal Caves 三部曲的非官方开源引擎重实现，附带共享版章节并可读取零售版数据文件；目前第一章可玩。",
+    "evidence_url": "https://github.com/OpenCrystalCaves/OpenCrystalCaves/blob/bb049b80d8abc9e032fb204eb4e29667a8f61240/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The shareware episode is bundled; the full retail data must be copied from a copy you own.",
+      "Episode one is playable, with saving, high scores and later episodes still missing.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "kart-ps5-mkwii-case",
+    "name": "Kart PS5: Mario Kart Wii PAL running natively on PlayStation 5",
+    "url": "https://github.com/Phi1ow/mkwii-ps5",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native PlayStation 5 port of Mario Kart Wii PAL (RMCP01) based on WiiCompiled: it statically recompiles the Wii game, renders through the PS5 GPU with AGC and maps the DualSense to a GameCube controller.",
+    "description_zh": "基于 WiiCompiled 的《马力欧卡丁车 Wii》PAL (RMCP01) 原生 PlayStation 5 移植：静态重编译 Wii 游戏，用 AGC 在 PS5 GPU 上渲染，并把 DualSense 映射为 GameCube 手柄。",
+    "evidence_url": "https://github.com/Phi1ow/mkwii-ps5/blob/5715a133f253f42dc2a0b43c45aaa0a4aeabcacc/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Mario Kart Wii PAL disc data; other regions are not supported.",
+      "It runs on jailbroken PS5 and PS5 Pro consoles and is based on WiiCompiled.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

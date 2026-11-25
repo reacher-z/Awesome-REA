@@ -963,3 +963,29 @@ Five reconstruction cases and a browser disassembler: Play Stunts, arcade-js, Da
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; all six classify as Class 2 (code and docs, no demo or download). The three browser ports record game as their only target so the game method sections render.
+
+## Batch 36 — 2026-11-25
+
+Six reconstruction cases: ReStreet, MKW-THWOMP, MP4 Recomp, Liberty Pro Max, OpenCrystalCaves and Kart PS5.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| restreet-fifa-street-case | reconstruction-cases | [samuelit0davila/fifa-street-pc-port](https://github.com/samuelit0davila/fifa-street-pc-port/blob/0b554e377ef565a23641e5fe98dad4b569836ca4/README.md) | a8f03a63f82231b70c0375279ba90fe2eed588603f17931e0fb92e17e59ebb56 |
+| mkw-thwomp-case | reconstruction-cases | [STS78721/MKW-THWOMP](https://github.com/STS78721/MKW-THWOMP/blob/d456e6b613b3f689b2655fc39e0971a030ce352d/README.md) | 68f3c66f6e34a475a0c85483615220eeafd906f5085ef06f0d30b8398633d635 |
+| mp4-recomp-case | reconstruction-cases | [linuxopt/mp4-recomp](https://github.com/linuxopt/mp4-recomp/blob/74c0832150b7bb2731069744e0b400d3dba13fd2/README.md) | 4f80b84fccb048fd41bacbdb8f589d535fdbd45f79b422ca9938aa7366193aa0 |
+| liberty-pro-max-case | reconstruction-cases | [Awis13/liberty-pro-max](https://github.com/Awis13/liberty-pro-max/blob/d825c4a40e096f8b327702ae6950c49b7320bd47/README.md) | 99a3e252ea928dc18a91cb42fdd528232abb913ffd36c8d5b845c080b7109ece |
+| open-crystal-caves-case | reconstruction-cases | [OpenCrystalCaves/OpenCrystalCaves](https://github.com/OpenCrystalCaves/OpenCrystalCaves/blob/bb049b80d8abc9e032fb204eb4e29667a8f61240/README.md) | 73e4b84415c5cc0b0bb6b51fe70dc4f59c79684a3d106d8aa91247c131e159b1 |
+| kart-ps5-mkwii-case | reconstruction-cases | [Phi1ow/mkwii-ps5](https://github.com/Phi1ow/mkwii-ps5/blob/5715a133f253f42dc2a0b43c45aaa0a4aeabcacc/README.md) | ae0a4c30b42d82078936190029baa6b4ed3f87ce80e62f58be17586e3a87ec45 |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| AshfordFamily/recvx-decomp | Code: Veronica X GameCube and Dreamcast decompilations are already curated. |
+| Mabec-games/Conker-Recomped-and-Reloaded | The catalog already carries the Conker Live and Reloaded Xbox recompilation. |
+| FoxWorkshop/ShadowRecomp | Three Shadow the Hedgehog decompilation and recompilation records already exist. |
+| whovian64/pocket-native | A fork of the curated Zakuro project without a distinct reconstruction scope. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; OpenCrystalCaves is Class 1 with a README demo image and the other five are Class 2.

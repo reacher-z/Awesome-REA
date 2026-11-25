@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-25T00:28:20+00:00",
-    "entry_count": 1197,
-    "class_entry_count": 1228,
+    "generated_at": "2026-11-25T02:26:55+00:00",
+    "entry_count": 1198,
+    "class_entry_count": 1229,
     "class_counts": {
-      "image": 1157,
+      "image": 1158,
       "video": 40
     },
     "missing_count": 31,
@@ -4346,7 +4346,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-23T03:31:32+00:00"
+      "checked_at": "2026-11-25T02:26:53+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -5688,6 +5688,15 @@
       "source_url": "https://github.com/harshmandan/open-cardi",
       "revision": "d8eaf5b116abe306fa5041bfe45989752b5e57f5",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "open-crystal-caves-case",
+      "image_url": "https://raw.githubusercontent.com/OpenCrystalCaves/OpenCrystalCaves/bb049b80d8abc9e032fb204eb4e29667a8f61240/screenshots/animation.gif?raw=true",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/OpenCrystalCaves/OpenCrystalCaves",
+      "revision": "bb049b80d8abc9e032fb204eb4e29667a8f61240",
+      "checked_at": "2026-11-25T02:26:54+00:00"
     },
     {
       "id": "open-horizon-ace-combat-case",

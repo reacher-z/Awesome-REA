@@ -45906,5 +45906,53 @@
       "必须使用原版 SHC 5.0、asmsh 4.0、lnk 6.0 与 rof2bin 2.51 工具链构建。",
       "采用 AGPL-3.0 许可证。"
     ]
+  },
+  "restreet-fifa-street-case": {
+    "name": "ReStreet：FIFA Street 2012 的 Windows 重编译在线版",
+    "requirements": [
+      "需要自备《FIFA Street》游戏副本；不包含任何游戏文件。",
+      "面向 Windows 10/11，通过 GitHub Releases 分发。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "mkw-thwomp-case": {
+    "name": "MKW-THWOMP：马力欧卡丁车世界原生 Windows 版",
+    "requirements": [
+      "需要合法导出的《马力欧卡丁车世界》1.0.0 或 1.8.0 更新数据；不包含游戏文件。",
+      "面向 Windows 10/11 + Vulkan 1.3，基于 mkw-recomp。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "mp4-recomp-case": {
+    "name": "MP4 Recomp：密特罗德 4 Beyond 的原生 Linux 构建",
+    "requirements": [
+      "需要合法导出的游戏副本；AppImage 首次运行时从你的文件编译。",
+      "面向 Linux + OpenGL 4.6，基于 SwitchRecomp 运行时。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "liberty-pro-max-case": {
+    "name": "Liberty Pro Max：面向 Apple 芯片的 GTA IV 重编译",
+    "requirements": [
+      "需要自备 GTA IV 副本；不包含游戏数据。",
+      "面向 Apple 芯片 Mac 与 iPad，Apple TV 支持仍属实验性。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "open-crystal-caves-case": {
+    "name": "OpenCrystalCaves：Crystal Caves 三部曲的引擎重实现",
+    "requirements": [
+      "附带共享版章节；完整零售数据需从自备副本复制。",
+      "目前仅第一章可玩，存档、高分榜与后续章节尚未完成。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "kart-ps5-mkwii-case": {
+    "name": "Kart PS5：马力欧卡丁车 Wii PAL 原生 PS5 版",
+    "requirements": [
+      "需要自备《马力欧卡丁车 Wii》PAL 光盘数据；不支持其他区域。",
+      "运行于已越狱的 PS5 与 PS5 Pro，基于 WiiCompiled。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

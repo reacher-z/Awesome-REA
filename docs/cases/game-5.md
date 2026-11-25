@@ -6,10 +6,17 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**451 case studies**
+**458 case studies**
 
 ## Engine reimplementations
 
+- [**raw(gl): Another World engine reimplementation**](https://github.com/cyxx/rawgl) - raw(gl) reimplements the Another World engine while reading data from the original game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rawgl-another-world-case/)</sub>
+- [**rawpsx: an Another World engine reimplementation for PlayStation**](https://github.com/fgsfdsfgs/rawpsx) - rawpsx rewrites the Another World engine in C for the original PlayStation, adapting the earlier rawgl implementation with PSn00bSDK. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rawpsx-another-world-case/)</sub>
+- [**Re-Comprehend: rebuilding Penguin Software adventure engines**](https://github.com/RyanMallon/recomprehend) - Re-Comprehend reimplements the Comprehend and Graphics Magician engines for Penguin Software adventures including Transylvania, Crimson Crown and OO-Topos. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/re-comprehend-case/)</sub>
+- [**re2ds: a native Nintendo DS engine for Resident Evil 2**](https://github.com/eray1605/re2ds) - Reimplements Resident Evil 2’s PS1 game rules in a native Nintendo DS engine, with converters that turn data from the user’s own disc into DS formats. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/re2ds-nds-engine-case/)</sub>
+- [**rea-doom-term: a text-only reconstruction of DOOM**](https://github.com/schererstefan/rea-doom-term) - rea-doom-term rebuilds DOOM (1993) as a playable Rust terminal game with WAD parsing, fixed-point math, movement, combat, and text raycasting. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/rea-doom-term-case/)</sub>
+- [**reB3: reconstructing Burnout 3 from Xbox code and disc data**](https://github.com/lolz0r/reb3) - reB3 reconstructs Xbox Burnout 3: Takedown as a C runtime using equations and behavior recovered from default.xbe and formats read from the user's disc. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reb3-case/)</sub>
+- [**Rebellion 2: a Unity remake of Star Wars: Rebellion**](https://github.com/davidadas/rebellion2) - Rebellion 2 recreates the 1998 strategy game Star Wars: Rebellion in Unity. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rebellion-2-case/)</sub>
 - [**Reburn 3: reimplementation of Burnout 3 Takedown**](https://github.com/reburndev/reburn3) - Reburn 3 is a work-in-progress open-source reimplementation of Burnout 3: Takedown. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reburn3-case/)</sub>
 - [**ReChan: reimplementing Jackie Chan Stuntmaster for PC**](https://github.com/SilverwireGames/ReChan) - ReChan reimplements Jackie Chan Stuntmaster's PlayStation game logic and systems in C++ for x86\_64 Windows and Linux. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rechan-case/)</sub>
 - [**ReFlood: reconstructing the Amiga game Flood in C and SDL2**](https://github.com/VonKossa/ReFlood) - ReFlood reconstructs the Amiga game Flood as a C99 program with an SDL2 host, using assets extracted from the player's own disk image. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reflood-case/)</sub>

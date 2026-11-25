@@ -6,10 +6,17 @@
 
 [English](game-5.md)
 
-**451 个案例**
+**458 个案例**
 
 ## 引擎重实现
 
+- [**raw(gl)：Another World 引擎重建**](https://github.com/cyxx/rawgl) - raw(gl) 重建 Another World 引擎，并读取原版游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rawgl-another-world-case/)</sub>
+- [**rawpsx：《异世界》引擎的 PlayStation 重实现**](https://github.com/fgsfdsfgs/rawpsx) - rawpsx 借助 PSn00bSDK，以 C 语言把早期 rawgl 实现改写为初代 PlayStation 上运行的《异世界》引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rawpsx-another-world-case/)</sub>
+- [**Re-Comprehend：重建 Penguin Software 冒险游戏引擎**](https://github.com/RyanMallon/recomprehend) - Re-Comprehend 重新实现了用于 Transylvania、Crimson Crown 和 OO-Topos 等作品的 Comprehend 与 Graphics Magician 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/re-comprehend-case/)</sub>
+- [**re2ds：Resident Evil 2 的原生 Nintendo DS 引擎**](https://github.com/eray1605/re2ds) - 在原生 Nintendo DS 引擎中重新实现 Resident Evil 2 PS1 版的游戏规则，并用转换工具把使用者自有光盘中的数据转为 DS 格式。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/re2ds-nds-engine-case/)</sub>
+- [**rea-doom-term：DOOM 纯文本终端重建**](https://github.com/schererstefan/rea-doom-term) - rea-doom-term 将 DOOM（1993）重建为可玩的 Rust 终端游戏，包含 WAD 解析、定点运算、移动、战斗和文本光线投射。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/rea-doom-term-case/)</sub>
+- [**reB3：从 Xbox 程序与光盘数据重建《火爆狂飙 3》**](https://github.com/lolz0r/reb3) - reB3 以 C 语言重建 Xbox 版《火爆狂飙 3》的运行系统，依据 default.xbe 恢复物理、碰撞、计分与 AI 逻辑，并从用户的光盘读取赛道和车辆数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reb3-case/)</sub>
+- [**Rebellion 2：Star Wars: Rebellion 的 Unity 重制版**](https://github.com/davidadas/rebellion2) - Rebellion 2 用 Unity 重制 1998 年的策略游戏 Star Wars: Rebellion。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rebellion-2-case/)</sub>
 - [**Reburn 3：《Burnout 3 Takedown》重实现**](https://github.com/reburndev/reburn3) - Reburn 3 是《Burnout 3: Takedown》进行中的开源重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reburn3-case/)</sub>
 - [**ReChan：面向 PC 重建 Jackie Chan Stuntmaster**](https://github.com/SilverwireGames/ReChan) - ReChan 将 PlayStation 游戏 Jackie Chan Stuntmaster 的逻辑和系统以 C++ 重建，运行于 x86\_64 Windows 与 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rechan-case/)</sub>
 - [**ReFlood：用 C 与 SDL2 重建 Amiga 游戏 Flood**](https://github.com/VonKossa/ReFlood) - ReFlood 将 Amiga 游戏 Flood 重建为 C99 程序，并用 SDL2 提供图形界面；素材从玩家自己的磁盘镜像提取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reflood-case/)</sub>
