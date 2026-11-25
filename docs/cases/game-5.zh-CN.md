@@ -6,10 +6,13 @@
 
 [English](game-5.md)
 
-**488 个案例**
+**491 个案例**
 
 ## 引擎重实现
 
+- [**Oracles：使用 Godot 重建两款塞尔达传说 Oracle 游戏**](https://github.com/SHOEGAZEssb/ooa-godot) - Oracles 在 Godot 中以共用 C# 引擎重建《The Legend of Zelda: Oracle of Ages》和《Oracle of Seasons》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda-oracles-godot-reconstruction-case/)</sub>
+- [**Ordoor：重建四款游戏使用的 Strategy Engine**](https://code.ur.gs/lupine/ordoor) - Ordoor 重建 Warhammer 40,000: Chaos Gate、Soldiers At War、Squad Leader 和 Wages of War 使用的 Strategy Engine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ordoor-strategy-engine-case/)</sub>
+- [**Oxide：用 Rust 从零实现的 Minecraft 服务器**](https://github.com/T-x-T/oxide) - 完全用 Rust 从零实现的 Minecraft 服务器，目标是完整可用并兼容最新版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oxide/)</sub>
 - [**Ozymandias (Julius)：为《法老》改造城市建造游戏引擎**](https://github.com/Banderi/Ozymandias_Julius) - Ozymandias (Julius) 改造 Julius/Augustus 城市建造引擎，使用玩家自备的原版资源运行《法老》及《埃及艳后》资料片。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ozymandias-julius-case/)</sub>
 - [**Ozymandias：以 Godot 重建 Pharaoh 与 Zeus 游戏引擎**](https://github.com/Banderi/Ozymandias) - Ozymandias 使用 Godot 3.6 Mono 重建《Pharaoh》《Zeus》等城市建设游戏的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ozymandias-pharaoh-engine-case/)</sub>
 - [**P.T. PC 版：基于行为重新实现、读取 PS4 数据的引擎**](https://github.com/LoreanXavier/pt-pc) - 在新的 Vulkan 引擎上用 C++ 重新实现 P.T. 的游戏逻辑，运行时从使用者自有的 PS4 版本读取关卡、模型、贴图、声音、脚本和过场动画。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pt-pc-port-case/)</sub>

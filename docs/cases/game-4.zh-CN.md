@@ -10,6 +10,8 @@
 
 ## 基于重建源码的移植
 
+- [**ds2-nx：将《Dead Space 2》移植到 Nintendo Switch**](https://github.com/VasilkovND/ds2-nx) - ds2-nx 将基于 ReXGlue 静态重编译的《Dead Space 2》移植为 Nintendo Switch 自制软件 NRO。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ds2-nx-case/)</sub>
+- [**Durak NX：让 Android 游戏 Durak 在 Nintendo Switch 上运行**](https://github.com/Oleksa126/durak_nx) - Durak NX 通过针对游戏编写的图形、音频、文件和输入兼容层，让 Android ARM64 Unity 游戏 Durak 25.0 在 Nintendo Switch 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/durak-nx-case/)</sub>
 - [**Dusklight for PS4：《Twilight Princess》原生 PS4 移植**](https://github.com/BgbrhrWatchinOVO/dusklight-ps4) - Dusklight for PS4 将基于《Twilight Princess》反编译成果的 PC 移植版改为原生 PS4 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dusklight-ps4-case/)</sub>
 - [**Dusklight：基于反编译的《黄昏公主》原生移植**](https://github.com/TwilitRealm/dusklight) - 以 zeldaret/tp 反编译项目和 Aurora GameCube／Wii 兼容层为基础，将《塞尔达传说 黄昏公主》重新实现为桌面与移动平台的原生应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dusklight-twilight-princess-port-case/)</sub>
 - [**EA SPORTS UFC 3：面向 Linux 与 Windows 的 PS4 游戏移植**](https://github.com/GNSB/UFC-3-PS4-PORT-LINUX-WINDOWS) - EA SPORTS UFC 3 移植版在 Linux 和 Windows 上直接运行 PS4 游戏原有的 x86-64 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ufc-3-ps4-port-case/)</sub>
@@ -163,6 +165,7 @@
 - [**Party Board：《Mario Party 4》多平台移植**](https://github.com/mariopartyrd/partyboard) - Party Board 将《Mario Party 4》移植到 Windows、Linux、macOS、Android 和 iOS，游戏数据由用户自己的副本提供。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/party-board-case/)</sub>
 - [**PE2PC：基于反编译 C 代码的《寄生前夜 II》原生 PC 移植**](https://github.com/Snaity-CORE/pe2-pc-port) - PE2PC 将美国版 PlayStation《寄生前夜 II》的反编译 C 代码编译为原生 PC 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pe2pc-parasite-eve-ii-port-case/)</sub>
 - [**Perfect Dark on Android：将反编译版游戏移植到 Android**](https://github.com/Mr4xd3mn/perfect-dark-android) - 项目在现有桌面移植版基础上，为反编译版 Perfect Dark 加入 Android 平台层、屏幕触控和 Gradle 构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/perfect-dark-android-case/)</sub>
+- [**PlayStation 3 版皮克敏：基于反编译的原生移植**](https://github.com/MattyKen619/Pikmin-PS3-Port) - 把 GameCube《皮克敏》移植为 PlayStation 3 homebrew：基于 projectPiki 的匹配反编译，在 RSX 上重建图形、用 SPU 处理声音，并在 PS3 硬件上重建光盘、记忆卡与手柄。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pikmin-ps3-port-case/)</sub>
 - [**piney\_apples：以 Rust 重建四部 .hack PS2 游戏**](https://github.com/Toyz/piney_apples) - piney\_apples 将 .hack//Infection、Mutation、Outbreak 和 Quarantine 的引擎重建为原生 Rust 程序，涵盖游戏循环、脚本、战斗、画面和音频。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/piney-apples-case/)</sub>
 - [**Play Stunts：Stunts / 4D Sports Driving 的浏览器重建**](https://github.com/ACatWithEbola/playstunts) - 把《Stunts / 4D Sports Driving》重建为原生浏览器版本，运行原始模拟并校验提交的回放，同时加入共享排行榜与社区赛道。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/play-stunts-web/)</sub>
 - [**Playcard Cosmic：基于可执行文件分析的原生移植**](https://github.com/SiirGustav/playcard-cosmic-port) - Playcard Cosmic 使用 C++20 和 SDL3 将这款 2000 年的 Windows 射击游戏移植到 Windows、Linux 和 macOS。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/playcard-cosmic-port-case/)</sub>
@@ -635,7 +638,4 @@
 - [**OpenYR：重建《尤里的复仇》游戏引擎**](https://github.com/Sovietianqi/OpenYR) - OpenYR 根据游戏行为观察、反汇编研究和公开文档，以 C++ 重建《命令与征服：尤里的复仇》的引擎行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openyr-engine-case/)</sub>
 - [**OpenZ：将 Z 重建为 3D 策略游戏**](https://github.com/playopenz/OpenZ) - OpenZ 使用 Unity 6 将 1996 年策略游戏 Z 重建为具有 3D 战场、单位及新制作素材的游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openz-z-remake-case/)</sub>
 - [**OpenZT2：Rust 重建《动物园大亨 2》引擎**](https://github.com/overyonder/openzt2) - OpenZT2 使用 Rust 和 Bevy 重建《动物园大亨 2》引擎，运行时读取玩家自己的游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openzt2-engine-case/)</sub>
-- [**Oracles：使用 Godot 重建两款塞尔达传说 Oracle 游戏**](https://github.com/SHOEGAZEssb/ooa-godot) - Oracles 在 Godot 中以共用 C# 引擎重建《The Legend of Zelda: Oracle of Ages》和《Oracle of Seasons》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda-oracles-godot-reconstruction-case/)</sub>
-- [**Ordoor：重建四款游戏使用的 Strategy Engine**](https://code.ur.gs/lupine/ordoor) - Ordoor 重建 Warhammer 40,000: Chaos Gate、Soldiers At War、Squad Leader 和 Wages of War 使用的 Strategy Engine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ordoor-strategy-engine-case/)</sub>
-- [**Oxide：用 Rust 从零实现的 Minecraft 服务器**](https://github.com/T-x-T/oxide) - 完全用 Rust 从零实现的 Minecraft 服务器，目标是完整可用并兼容最新版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oxide/)</sub>
 <!-- END GENERATED CASES -->

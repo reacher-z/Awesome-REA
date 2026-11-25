@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-25T11:49:09+00:00",
-    "entry_count": 1218,
-    "class_entry_count": 1249,
+    "generated_at": "2026-11-25T18:00:52+00:00",
+    "entry_count": 1221,
+    "class_entry_count": 1252,
     "class_counts": {
-      "image": 1178,
+      "image": 1181,
       "video": 40
     },
     "missing_count": 31,
@@ -1514,6 +1514,15 @@
       "checked_at": "2026-11-09T07:55:54+00:00"
     },
     {
+      "id": "corruption-3-pc-case",
+      "image_url": "https://img.youtube.com/vi/51MaZggHUSE/maxresdefault.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/bonllavier/Corruption_3-PC",
+      "revision": "c1e74661a7e100f793ee4f5163bdd527b6f2814f",
+      "checked_at": "2026-11-25T18:00:51+00:00"
+    },
+    {
       "id": "corsixth-engine-case",
       "image_url": "https://github.com/CorsixTH/CorsixTH/assets/20030128/923883d1-cd2b-48a9-8506-6ee03e2745dc",
       "kind": "image",
@@ -2178,6 +2187,15 @@
       "source_url": "https://github.com/negroISO/doax3-fortune-pc",
       "revision": "2d2307d35828d58b9eb8a47a1f3430632a670d76",
       "checked_at": "2026-11-09T04:14:52+00:00"
+    },
+    {
+      "id": "doax3-scarlet-pc-case",
+      "image_url": "https://raw.githubusercontent.com/negroISO/doax3-scarlet-pc/6c9798e5c26ea238b01f6b873a4e454ba2eeadca/docs/screenshots/title.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/negroISO/doax3-scarlet-pc",
+      "revision": "6c9798e5c26ea238b01f6b873a4e454ba2eeadca",
+      "checked_at": "2026-11-25T18:00:52+00:00"
     },
     {
       "id": "dod13-client-case",
@@ -4436,7 +4454,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-25T11:49:08+00:00"
+      "checked_at": "2026-11-25T18:00:50+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -5562,6 +5580,15 @@
       "source_url": "https://github.com/seemoo-lab/nexmon",
       "revision": "68720406f54ff16cad28fd3c51f2392aefad9fb7",
       "checked_at": "2026-11-23T09:10:48+00:00"
+    },
+    {
+      "id": "nfc-apdu-spy",
+      "image_url": "https://raw.githubusercontent.com/Menrix/NFC_Apdu_Spy/6f9f187a531c481b05d1a2d51ea45712779df06f/docs/screenshots/home_gray.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Menrix/NFC_Apdu_Spy",
+      "revision": "6f9f187a531c481b05d1a2d51ea45712779df06f",
+      "checked_at": "2026-11-25T18:00:52+00:00"
     },
     {
       "id": "nfs-carbon-mac-case",

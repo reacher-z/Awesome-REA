@@ -6,10 +6,13 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**488 case studies**
+**491 case studies**
 
 ## Engine reimplementations
 
+- [**Oracles: reconstructing the Zelda Oracle games in Godot**](https://github.com/SHOEGAZEssb/ooa-godot) - Oracles reconstructs The Legend of Zelda: Oracle of Ages and Oracle of Seasons with a shared C# engine in Godot. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda-oracles-godot-reconstruction-case/)</sub>
+- [**Ordoor: reimplementing the Strategy Engine for four games**](https://code.ur.gs/lupine/ordoor) - Ordoor rebuilds the Strategy Engine used by Warhammer 40,000: Chaos Gate, Soldiers At War, Squad Leader, and Wages of War. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ordoor-strategy-engine-case/)</sub>
+- [**Oxide: a from-scratch Minecraft server implementation in Rust**](https://github.com/T-x-T/oxide) - A from-scratch Minecraft server written entirely in Rust that aims to be fully functional and compatible with the latest version. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/oxide/)</sub>
 - [**Ozymandias (Julius): adapting a city-building engine to Pharaoh**](https://github.com/Banderi/Ozymandias_Julius) - Ozymandias (Julius) adapts the Julius/Augustus city-building engine to run Pharaoh and its Cleopatra expansion using the player's original assets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ozymandias-julius-case/)</sub>
 - [**Ozymandias: a Godot engine reconstruction for Pharaoh and Zeus**](https://github.com/Banderi/Ozymandias) - Ozymandias recreates the engine of the city-building games Pharaoh, Zeus and related titles in Godot 3.6 Mono. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ozymandias-pharaoh-engine-case/)</sub>
 - [**P.T. for PC: a behavior-based engine reimplementation that reads the PS4 data**](https://github.com/LoreanXavier/pt-pc) - Reimplements P.T.’s game logic in C++ on a new Vulkan engine that reads levels, models, textures, sounds, scripts and cutscenes from the user’s own PS4 copy at run time. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pt-pc-port-case/)</sub>

@@ -163631,5 +163631,119 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "pikmin-ps3-port-case",
+    "name": "Pikmin on PlayStation 3: a native port from the decompilation",
+    "url": "https://github.com/MattyKen619/Pikmin-PS3-Port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A native PlayStation 3 homebrew port of the GameCube Pikmin built from projectPiki matching decompilation, rebuilding graphics on the RSX, sound on an SPU and the disc, memory card and controller on PS3 hardware.",
+    "description_zh": "把 GameCube《皮克敏》移植为 PlayStation 3 homebrew：基于 projectPiki 的匹配反编译，在 RSX 上重建图形、用 SPU 处理声音，并在 PS3 硬件上重建光盘、记忆卡与手柄。",
+    "evidence_url": "https://github.com/MattyKen619/Pikmin-PS3-Port/blob/1fa76ea2c846304d5ff41ef11ee93242bbdeacde/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a homebrew PS3 and your own copy of the GameCube game; no game data is included.",
+      "It builds against PSL1GHT and reuses the decompilation game code almost untouched.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "corruption-3-pc-case",
+    "name": "Corruption_3 PC: Metroid Prime 3 statically recompiled",
+    "url": "https://github.com/bonllavier/Corruption_3-PC",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native Windows and Linux port of Metroid Prime 3: Corruption built with static recompilation, also running the Trilogy USA release through an optional add-on, with keyboard, mouse or gamepad support and RetroAchievements.",
+    "description_zh": "用静态重编译构建的《密特罗德 Prime 3：堕落》Windows/Linux 原生移植，可通过可选附加包运行 Trilogy 美版，支持键鼠/手柄与 RetroAchievements。",
+    "evidence_url": "https://github.com/bonllavier/Corruption_3-PC/blob/c1e74661a7e100f793ee4f5163bdd527b6f2814f/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Wii disc; no emulator or virtual machine is involved and no game data ships.",
+      "It targets Windows and Linux and optionally runs the Metroid Prime Trilogy USA release.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "doax3-scarlet-pc-case",
+    "name": "DOAX3 Scarlet PC: an experimental Windows/Vulkan source port",
+    "url": "https://github.com/negroISO/doax3-scarlet-pc",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "An experimental Windows x64 and Vulkan source port of Dead or Alive Xtreme 3 Scarlet for CUSA14173 version 01.08, running original guest code through a native runtime and translating GPU commands and shaders with the shadPS4 graphics core.",
+    "description_zh": "面向 CUSA14173 1.08 版的《死或生 沙滩排球 3 Scarlet》实验性 Windows x64/Vulkan 源码移植：原始 x86-64 客户代码走继承的原生运行时，GPU 命令与着色器由 shadPS4 图形核心翻译为 Vulkan。",
+    "evidence_url": "https://github.com/negroISO/doax3-scarlet-pc/blob/6c9798e5c26ea238b01f6b873a4e454ba2eeadca/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own game packages, data, firmware and saves; the repository ships source and tooling only.",
+      "It is experimental, targets CUSA14173 version 01.08, and supports no frame generation.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "nfc-apdu-spy",
+    "name": "NFC APDU Spy: logging both sides of an NFC exchange on a Flipper Zero",
+    "url": "https://github.com/Menrix/NFC_Apdu_Spy",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A Flipper Zero app that emulates an NFC tag and logs every APDU a phone or reader sends along with the tag response, capturing both directions to reverse-engineer your own NFC devices.",
+    "description_zh": "Flipper Zero 应用，可模拟 NFC 标签并记录手机或读卡器发来的每条 APDU 及标签回复，双向捕获以逆向自己的 NFC 设备。",
+    "evidence_url": "https://github.com/Menrix/NFC_Apdu_Spy/blob/6f9f187a531c481b05d1a2d51ea45712779df06f/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Flipper Zero running the app as an NFC tag emulator.",
+      "It captures APDU traffic on both sides, not the RF layer itself.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

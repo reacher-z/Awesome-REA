@@ -10,6 +10,7 @@
 
 ## 静态重编译
 
+- [**HaloPad：通过反编译移植与 x86 重编译在 Apple 设备上运行 Halo**](https://github.com/chrissotraidis/projectreach) - 通过两套引擎将 Halo: Combat Evolved 带到 iPhone、iPad 和 Apple 芯片 Mac。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halopad-project-reach-case/)</sub>
 - [**Harvest Moon 64 PC Port / Recomp：开发中的原生构建版**](https://github.com/ai-tdd-labs/harvest-moon-64-recompiled) - Harvest Moon 64 PC Port / Recomp 使用 N64Recomp 和 RT64，从用户本地提供的 ROM 与 ELF 文件构建 Harvest Moon 64 原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aitdd-harvest-moon-64-recomp-case/)</sub>
 - [**Harvest Moon 64: Recompiled：原生移植**](https://github.com/HarvestMoon64Recomp/HarvestMoon64Recomp) - Harvest Moon 64: Recompiled 使用 N64: Recompiled 把《牧场物语 64》静态重编译为原生移植，并用 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harvest-moon-64-recomp-case/)</sub>
 - [**Haunting Ground Recomp：PS2 游戏原生移植**](https://github.com/N900x4/HauntingGround-Recomp-Project) - 《Haunting Ground》（PS2 美版）的原生 Windows/Linux 版本：从自备光盘 ISO 把 PS2 程序转译为 C 并配合手写运行时编译，支持 4K、60 fps 插帧与高清贴图。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/haunting-ground-recomp/)</sub>
@@ -615,9 +616,8 @@
 - [**DK64: Recompiled：Android 版《大金刚 64》移植**](https://github.com/deivid22srk/dk64-recomp-android) - 该项目把 Donkey Kong 64: Recompiled 移植到原生 Android，使用 NDK、N64ModernRuntime、Vulkan 上的 RT64、RmlUi 和 SDL2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dk64-android/)</sub>
 - [**DKR-GC：Diddy Kong Racing 原生 GameCube 移植**](https://github.com/RyoSaeba89/DKR-GC) - DKR-GC 将 N64 游戏 Diddy Kong Racing 的反编译代码编译为原生 GameCube PowerPC 程序，借助 libogc2 和 GX 实现调度、存储、图形与音频服务，并读取用户提供的 ROM 数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dkr-gc-diddy-kong-racing-case/)</sub>
 - [**DOAX3 Fortune PC：将《死或生 沙滩排球 3 Fortune》移植到 Windows**](https://github.com/negroISO/doax3-fortune-pc) - DOAX3 Fortune PC 将《死或生 沙滩排球 3 Fortune》01.19 版适配到 Windows x64。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doax3-fortune-pc-case/)</sub>
+- [**DOAX3 Scarlet PC：实验性 Windows/Vulkan 源码移植**](https://github.com/negroISO/doax3-scarlet-pc) - 面向 CUSA14173 1.08 版的《死或生 沙滩排球 3 Scarlet》实验性 Windows x64/Vulkan 源码移植：原始 x86-64 客户代码走继承的原生运行时，GPU 命令与着色器由 shadPS4 图形核心翻译为 Vulkan。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doax3-scarlet-pc-case/)</sub>
 - [**DOOM Retro：面向 Windows 的精炼 DOOM 源码移植**](https://github.com/bradharding/doomretro) - 经典的 DOOM 源码移植，在保留原版体验的同时加入一整套视觉与便利性改进。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doomretro/)</sub>
 - [**dRally：Death Rally 的 Linux 与 BSD 原生移植**](https://github.com/urxp/dRally) - dRally 是以 C 和 SDL2 将 1996 年的《Death Rally》移植到 Linux 和 BSD 的项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/drally-case/)</sub>
 - [**Drift City Rebuild：基于游戏分析的 Unity 客户端与服务器**](https://github.com/MagicIbrar/driftcity-unity) - Drift City Rebuild 将这款在线竞速游戏重建为 Unity 客户端，并配有支持离线或自托管游玩的新 Node.js 服务器；客户端读取用户安装目录中的原版数据。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/driftcity-unity-case/)</sub>
-- [**ds2-nx：将《Dead Space 2》移植到 Nintendo Switch**](https://github.com/VasilkovND/ds2-nx) - ds2-nx 将基于 ReXGlue 静态重编译的《Dead Space 2》移植为 Nintendo Switch 自制软件 NRO。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ds2-nx-case/)</sub>
-- [**Durak NX：让 Android 游戏 Durak 在 Nintendo Switch 上运行**](https://github.com/Oleksa126/durak_nx) - Durak NX 通过针对游戏编写的图形、音频、文件和输入兼容层，让 Android ARM64 Unity 游戏 Durak 25.0 在 Nintendo Switch 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/durak-nx-case/)</sub>
 <!-- END GENERATED CASES -->

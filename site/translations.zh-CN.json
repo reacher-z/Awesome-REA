@@ -46306,5 +46306,37 @@
       "它覆盖该游戏的任务与脚本编辑，以及反汇编分析。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "pikmin-ps3-port-case": {
+    "name": "PlayStation 3 版皮克敏：基于反编译的原生移植",
+    "requirements": [
+      "需要已破解的 PS3 主机与自备 GameCube 游戏副本；不包含游戏数据。",
+      "基于 PSL1GHT 构建，并几乎原样复用反编译出的游戏代码。",
+      "采用 CC0-1.0 许可证。"
+    ]
+  },
+  "corruption-3-pc-case": {
+    "name": "Corruption_3 PC：静态重编译的密特罗德 Prime 3",
+    "requirements": [
+      "需要自备 Wii 光盘；不使用模拟器或虚拟机，也不附带游戏数据。",
+      "面向 Windows 与 Linux，并可通过可选附加包运行 Trilogy 美版。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "doax3-scarlet-pc-case": {
+    "name": "DOAX3 Scarlet PC：实验性 Windows/Vulkan 源码移植",
+    "requirements": [
+      "需要自备游戏包、数据、固件与存档；仓库只提供源码与工具。",
+      "仍属实验性，针对 CUSA14173 1.08 版，且不支持帧生成。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "nfc-apdu-spy": {
+    "name": "NFC APDU Spy：在 Flipper Zero 上记录 NFC 双向报文",
+    "requirements": [
+      "需要一台 Flipper Zero 并以标签模拟模式运行该应用。",
+      "它捕获双向 APDU 报文，而非射频层本身。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

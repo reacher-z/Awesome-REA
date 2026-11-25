@@ -1204,3 +1204,26 @@ Two recompilations, a server-authoritative reimplementation and a mission-editin
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Gradius ReBirth and BBTools are Class 1 with merged previews; the other two are Class 2.
+
+## Batch 46 — 2026-11-25
+
+A PS3 Pikmin port, a Metroid Prime 3 recompilation, a DOAX3 Scarlet port and an NFC APDU logger: Pikmin PS3, Corruption_3 PC, DOAX3 Scarlet PC and NFC APDU Spy.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| pikmin-ps3-port-case | reconstruction-cases | [MattyKen619/Pikmin-PS3-Port](https://github.com/MattyKen619/Pikmin-PS3-Port/blob/1fa76ea2c846304d5ff41ef11ee93242bbdeacde/README.md) | f1428e9531a1c7ab92a482992858991fd5a507da584fb0926ca50207fc7783f9 |
+| corruption-3-pc-case | reconstruction-cases | [bonllavier/Corruption_3-PC](https://github.com/bonllavier/Corruption_3-PC/blob/c1e74661a7e100f793ee4f5163bdd527b6f2814f/README.md) | 99fa66cd73a0cd7ab9c3f9fe51cfbe1f60887b782810d7c39a710669320a881e |
+| doax3-scarlet-pc-case | reconstruction-cases | [negroISO/doax3-scarlet-pc](https://github.com/negroISO/doax3-scarlet-pc/blob/6c9798e5c26ea238b01f6b873a4e454ba2eeadca/README.md) | 878a42ddd6a644d47c78bd3f9e80b2897f4a8bbf232b9c0ec57238838790874d |
+| nfc-apdu-spy | protocol-analysis | [Menrix/NFC_Apdu_Spy](https://github.com/Menrix/NFC_Apdu_Spy/blob/6f9f187a531c481b05d1a2d51ea45712779df06f/README.md) | 821cedbe91627ae48c1120a10c1646b665156e50fa25dac1d3d72caea88821bd |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| fabiangreffrath/woof | Two Doom source ports already exist; EDGE-Classic was curated in batch 39. |
+| Kandada/rea-python, tanepiper/game-frame | Agent bridges without a distinct reconstruction scope. |
+| Asphaltian/pmd-green | Curated in the previous batch. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Corruption_3 PC, DOAX3 Scarlet and NFC APDU Spy are Class 1 with merged previews; Pikmin PS3 is Class 2.
