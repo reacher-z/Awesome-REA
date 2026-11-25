@@ -1089,3 +1089,26 @@ Two analysis tools, two hardware cases, a CAN toolkit and an Android Souls port:
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. pmdsky-debug, canair and the Dark Souls II Android port are Class 1 with merged previews; the other three are Class 2.
+
+## Batch 41 — 2026-11-25
+
+Two analysis toolkits, an Android instrumentation toolkit and a Monster Hunter portable port: Renef, AutomatiQ, Cobol-REKT and Project Cuga.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| renef | android | [Byterialab/renef](https://github.com/Byterialab/renef/blob/37e4f1ecc3f8a180b1ea78a543d9ce1206a2ab7d/README.md) | 175c500f1f1aab39fecce36a50e416f87813c4087b89fc82e7a932f1d01dd75a |
+| automatiq | web-analysis | [StoneSteel27/AutomatiQ](https://github.com/StoneSteel27/AutomatiQ/blob/af16de4923d07416ea9afb6edfca18172af2dc50/README.md) | ee578ce4fdd45367ed80d62d2facf383815e395aa375b475a2e43accf61ac07e |
+| cobol-rekt | native-analysis | [avishek-sen-gupta/cobol-rekt](https://github.com/avishek-sen-gupta/cobol-rekt/blob/fec519468bec8299ac85530095a0115ccbe93d30/README.md) | efa2b1aa15defba26beb304a0ae06b41e60e6066490362af7726d19cd9ebee4e |
+| project-cuga | reconstruction-cases | [SirNubs/Project-Cuga](https://github.com/SirNubs/Project-Cuga/blob/065b302889a49298c3f50bce91c4b81e1f185166/README.md) | 100a4054d192d36fc1f2fc5ebb83deee2e22690d444930c9e7a7a0f51e18fd16 |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| tclamb/mhp2g-decomp | No README; Project Cuga covers the same game family with documentation. |
+| Fanqi89/dsh-rea, Wholiver/metis-reverse | Agent bridges without reconstruction scope; the catalog already carries agent tooling records. |
+| fabiangreffrath/woof | Doom source ports are already represented by DOOM Retro and EDGE-Classic. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Batch size was reduced from six to four to slow README.zh-CN.md growth, which is about 30 KB below the 512 KiB rendering limit. Cobol-REKT is Class 1 with a merged preview; the rest are Class 2.

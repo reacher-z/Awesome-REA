@@ -6,10 +6,11 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**476 case studies**
+**477 case studies**
 
 ## Engine reimplementations
 
+- [**Pizza Legacy: reimplementing Pizza Tycoon**](https://codeberg.org/cowomaly/pizzalegacy) - Pizza Legacy rebuilds the 1994 DOS game Pizza Tycoon, also released as Pizza Connection, in a C++20 engine that loads the original game's assets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pizza-legacy-case/)</sub>
 - [**pokerecomp: reimplementing the Game Boy Pokémon games**](https://github.com/Decryptu/pokerecomp) - pokerecomp is a Godot 4 reimplementation, written in GDScript, of the Game Boy Pokémon games. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokerecomp/)</sub>
 - [**Portémon Nitro: a HeartGold and SoulSilver engine port**](https://github.com/portemon-nitro/portemon) - Portémon Nitro reimplements the Pokémon HeartGold and SoulSilver engine in LÖVE for PCs and mobile devices. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/portemon-nitro-hgss-case/)</sub>
 - [**Powerslave EX: rebuilding the PlayStation game on Kex Engine**](https://github.com/svkaiser/PowerslaveEX) - Powerslave EX reconstructs the PlayStation Powerslave game on Kex Engine 3.0, combining recovered game logic with new collision and AI systems. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/powerslave-ex-case/)</sub>

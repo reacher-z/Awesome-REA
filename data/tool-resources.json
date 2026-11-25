@@ -163065,5 +163065,115 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "renef",
+    "name": "Renef: dynamic instrumentation for Android ARM64",
+    "url": "https://github.com/Byterialab/renef",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A dynamic instrumentation toolkit for Android ARM64 that hooks and inspects running applications, distributed with releases and documentation for mobile reverse engineering.",
+    "description_zh": "面向 Android ARM64 的动态插桩工具包，可 hook 与检查运行中的应用，提供发布产物与文档，用于移动端逆向工程。",
+    "evidence_url": "https://github.com/Byterialab/renef/blob/37e4f1ecc3f8a180b1ea78a543d9ce1206a2ab7d/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an Android ARM64 device or emulator and the matching release build.",
+      "It instruments running applications dynamically rather than analysing files statically.",
+      "Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "automatiq",
+    "name": "AutomatiQ: web reverse engineering automated for AI agents",
+    "url": "https://github.com/StoneSteel27/AutomatiQ",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "A Python toolkit that streamlines web reverse engineering for AI agents, turning browser activity into reusable automation recipes for inspecting and driving web services.",
+    "description_zh": "为 AI 智能体简化 Web 逆向的 Python 工具包，把浏览器活动转换为可复用的自动化配方，用于检查与驱动 Web 服务。",
+    "evidence_url": "https://github.com/StoneSteel27/AutomatiQ/blob/af16de4923d07416ea9afb6edfca18172af2dc50/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Python 3.11 or newer and a browser it can drive.",
+      "It automates web traffic inspection for agents rather than replacing manual analysis.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "cobol-rekt",
+    "name": "Cobol-REKT: a reverse engineering kit for legacy COBOL",
+    "url": "https://github.com/avishek-sen-gupta/cobol-rekt",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "An evolving Java toolkit of capabilities for reverse engineering legacy COBOL code, covering static analysis and tooling for programs most modern reverse-engineering suites ignore.",
+    "description_zh": "持续演进的 Java 工具包，用于逆向遗留 COBOL 代码，提供多数现代逆向工具不覆盖的静态分析能力。",
+    "evidence_url": "https://github.com/avishek-sen-gupta/cobol-rekt/blob/fec519468bec8299ac85530095a0115ccbe93d30/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Java 21 or newer and a set of COBOL sources to analyse.",
+      "It targets COBOL with CICS and JCL tooling moving to the companion RedDragonForge project.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "project-cuga",
+    "name": "Project Cuga: an experimental native port of Monster Hunter Portable 2nd G",
+    "url": "https://github.com/SirNubs/Project-Cuga",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "An experimental native port of Monster Hunter Portable 2nd G and FUComplete with Windows and Android builds and quality-of-life additions, forked from francl35 Project Poke and TeamGDB Yakumo.",
+    "description_zh": "《怪物猎人 便携版 2nd G》与 FUComplete 的实验性原生移植，提供 Windows 与 Android 构建及便利性改动，fork 自 francl35 的 Project Poke 与 TeamGDB 的 Yakumo。",
+    "evidence_url": "https://github.com/SirNubs/Project-Cuga/blob/065b302889a49298c3f50bce91c4b81e1f185166/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own game files; the repository ships source only.",
+      "Loadouts are experimental and not fully functional in this fork.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

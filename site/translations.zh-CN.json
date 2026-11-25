@@ -46146,5 +46146,37 @@
       "仍处 beta，可在 Android arm64 设备上运行并正在招募测试者。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "renef": {
+    "name": "Renef：Android ARM64 动态插桩",
+    "requirements": [
+      "需要 Android ARM64 设备或模拟器以及对应的发布构建。",
+      "它以动态方式对运行中的应用插桩，而非静态分析文件。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "automatiq": {
+    "name": "AutomatiQ：面向 AI 智能体的 Web 逆向自动化",
+    "requirements": [
+      "需要 Python 3.11 或更新版本以及可供驱动的浏览器。",
+      "它为智能体自动化 Web 流量检查，并不取代人工分析。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "cobol-rekt": {
+    "name": "Cobol-REKT：遗留 COBOL 的逆向工具包",
+    "requirements": [
+      "需要 Java 21 或更新版本以及待分析的 COBOL 源码。",
+      "面向 COBOL，CICS 与 JCL 相关工具正迁往配套的 RedDragonForge 项目。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "project-cuga": {
+    "name": "Project Cuga：怪物猎人便携版 2nd G 的实验性原生移植",
+    "requirements": [
+      "需要自备游戏文件；仓库只提供源码。",
+      "该分支的装备配置功能仍属实验性、尚不完整。",
+      "采用 MIT 许可证。"
+    ]
   }
 }
