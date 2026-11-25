@@ -265,7 +265,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .ov-sw-unclassified { background: none; box-shadow: inset 0 0 0 1.5px var(--ov-text-3); }
 .ov-main { display: grid; grid-template-columns: minmax(0, 64fr) minmax(280px, 36fr); gap: 32px; align-items: start; }
 .ov-rows { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
-.ov-row { display: grid; grid-template-columns: 140px 64px 56px minmax(0, 1fr); align-items: center; gap: 12px;
+.ov-row { display: grid; grid-template-columns: 140px minmax(64px, auto) 56px minmax(0, 1fr); align-items: center; gap: 12px;
   min-height: 48px; padding: 4px 12px 4px 9px; border-radius: 8px; cursor: pointer; }
 .ov-row:hover { background: var(--ov-surface-2); }
 .ov-row[aria-selected="true"] { background: var(--ov-accent-subtle); box-shadow: inset 3px 0 0 var(--ov-accent); }
@@ -304,7 +304,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .ov-table { color: var(--ov-text-2); }
 .ov-table summary { min-height: 32px; width: max-content; cursor: pointer; font-size: 13px; line-height: 18px; color: var(--ov-text-3); }
 .ov-table summary:hover { color: var(--ov-text-1); }
-.ov-table table { margin-top: 12px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.ov-table table { display: block; max-width: 100%; margin-top: 12px; border-collapse: collapse; font-variant-numeric: tabular-nums; overflow-x: auto; }
 .ov-table th, .ov-table td { padding: 6px 14px 6px 0; border-bottom: 1px solid var(--ov-border); font-size: 14px; line-height: 20px; text-align: right; }
 .ov-table thead th { font: 500 12px/16px var(--font-mono); color: var(--ov-text-2); }
 .ov-table th[scope="row"], .ov-table thead th:first-child, .ov-table td:nth-child(2) { text-align: left; }
@@ -330,16 +330,17 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
   .overview { padding: 24px; }
   .ov-main { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .ov-detail { position: static; }
-  .ov-row { grid-template-columns: 112px 64px 56px minmax(0, 1fr); }
+  .ov-row { grid-template-columns: 112px minmax(64px, auto) 56px minmax(0, 1fr); }
 }
 @media (max-width: 767px) {
   .overview { padding: 16px; }
   .ov-toolbar { flex-direction: column; align-items: stretch; }
   .ov-tools { flex-wrap: wrap; }
-  .ov-row { grid-template-columns: minmax(0, 1fr) 64px 56px; row-gap: 8px; padding: 8px 12px; }
+  .ov-row { grid-template-columns: minmax(0, 1fr) minmax(64px, auto) 56px; row-gap: 8px; padding: 8px 12px; }
   .ov-cell-name { grid-column: 1; }
   .ov-track { grid-column: 1 / -1; }
   .ovd-total { font-size: 28px; line-height: 36px; }
+  .ov-table th, .ov-table td { padding-right: 8px; font-size: 13px; }
 }
 /* Signature: the corner folds back on hover/focus and the evidence slip slides out from under it. */
 .card:hover .card-face, .card:focus-within .card-face { border-color: var(--border-input); }
