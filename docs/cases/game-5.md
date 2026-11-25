@@ -6,10 +6,14 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**442 case studies**
+**446 case studies**
 
 ## Engine reimplementations
 
+- [**REGoth: reimplementing the Gothic and Gothic II engine**](https://github.com/REGoth-project/REGoth) - REGoth reimplements the zEngine used by Gothic and Gothic II. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/regoth/)</sub>
+- [**REinforced: extending the Flashback engine reimplementation**](https://github.com/chermenin/REminiscence) - REinforced extends the REminiscence reimplementation of the 1992 Flashback game engine. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reinforced-flashback-case/)</sub>
+- [**ReksioEngine: reimplementing the Przygody Reksia game engines**](https://github.com/ReksioEngine/ReksioEngine) - ReksioEngine reimplements the BlooMoo and Piklib engines used by the Przygody Reksia games. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reksio-engine/)</sub>
+- [**REminiscence: a Flashback engine reimplementation**](https://github.com/cyxx/REminiscence) - REminiscence reimplements the engine of the 1992 game Flashback and runs on data files from the user's DOS, Amiga, Macintosh or PC-98 release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reminiscence-flashback-case/)</sub>
 - [**reone: reconstructing the Knights of the Old Republic engine**](https://github.com/seedhartha/reone) - reone reconstructs an engine for Star Wars: Knights of the Old Republic and The Sith Lords in C++ using public file-format information and observations of the games and their resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reone-kotor-engine-case/)</sub>
 - [**reRBR: reimplementing Richard Burns Rally 1.02**](https://github.com/JodusNodus/rerbr) - reRBR reimplements Richard Burns Rally 1.02 for Linux, macOS and Windows, using the player's game files and NGP 7.4.778 physics. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rerbr-case/)</sub>
 - [**Return To The Roots: rewriting The Settlers 2 for modern systems**](https://github.com/Return-To-The-Roots/s25client) - Return To The Roots rewrites The Settlers 2 for modern operating systems while using graphics and sounds from the player's original Gold Edition copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/return-to-the-roots-case/)</sub>

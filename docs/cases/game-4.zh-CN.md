@@ -10,6 +10,9 @@
 
 ## 基于重建源码的移植
 
+- [**Glassline：Mirror's Edge iPad 版移植**](https://github.com/MoonCellar-Team/Glassline) - Glassline 将 2010 年 iPad 版 Mirror's Edge 移植到 Linux、Windows、Steam Deck、Android 和浏览器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/glassline-mirrors-edge-ipad-port-case/)</sub>
+- [**Goemon 64 Recompiled — Android：附游戏代码分析的移动端移植**](https://github.com/ogdanimal/Goemon64Recomp-Android) - Goemon 64 Recompiled — Android 将 Mystical Ninja Starring Goemon 的重编译版本移植到 Android，提供 RT64 Vulkan 渲染、触控操作和 ROM 选择。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goemon64-recompiled-android-case/)</sub>
+- [**Golden Balloon：《迪迪克刚赛车》的原生与浏览器移植**](https://github.com/akratch/goldenballoon) - Golden Balloon 是 1997 年那款任天堂 64 卡丁车游戏的原生和浏览器移植，建立在《迪迪克刚赛车》反编译之上。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goldenballoon-case/)</sub>
 - [**Golden Sun Recompiled for Android：设备端重编译移植版**](https://github.com/wootbeer/gsrandroid) - Golden Sun Recompiled for Android 将 Golden Sun 重编译流程移植到 Android，并在设备上从玩家的 ROM 构建游戏代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/golden-sun-recompiled-android-case/)</sub>
 - [**GoldenEye 007：基于反编译源码的 Nintendo 3DS 移植**](https://github.com/kylebrussell/goldeneye-3ds) - GoldenEye 007 的 3DS 移植项目以现有 Nintendo 64 反编译源码为基础，适配渲染、输入、音频、存储和计时接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goldeneye-3ds-port-case/)</sub>
 - [**GoldenEye 007：基于反编译成果的智能体辅助原生移植**](https://github.com/jkdansereau/goldeneye-pc-port) - 在已有 GoldenEye 007 反编译成果之上构建原生 PC 移植，提供宿主平台适配层，并从用户自己的 ROM 提取资产。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goldeneye-pc-port-case/)</sub>
@@ -20,6 +23,7 @@
 - [**Gunboat：DOS 游戏逐函数 C++ 移植**](https://github.com/PlasticCog/Gunboat) - Gunboat 将 1990 年 DOS 游戏 Gunboat: River Combat Simulation 从 GB.EXE 逐函数移植到 C++ 和 SDL3，运行时读取玩家的原版数据。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/gunboat-port-case/)</sub>
 - [**HALBERD：《Kirby 64》的 PC 移植版**](https://github.com/JR3DFUL/HALBERD) - HALBERD 将《Kirby 64: The Crystal Shards》的反编译代码移植到 PC，使用 libultraship 处理渲染和输入、Torch 从用户的 N64 ROM 提取资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halberd-kirby-64-port-case/)</sub>
 - [**Halo 2：Xbox 游戏机制重建与原生移植**](https://github.com/TheRunaway5/Halo-2-Decompiled) - 这个 C++20 原生移植项目以原版 Xbox《Halo 2》TU1.5 的游戏机制和画面为目标，结合可执行文件研究、源码比对和本地资源导入开展开发。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo-2-native-port-case/)</sub>
+- [**Halo 64：光环战斗进化多人模式的 N64 移植**](https://github.com/JackTulli/halo-64) - 把《光环：战斗进化》多人模式移植到带 Expansion Pak 的 Nintendo 64，支持最多 4 人分屏、机器人与 Firefight，使用 Halo 反编译游戏代码为 VR4300 编译，并基于 libdragon 与 tiny3d 实现渲染、菜单、HUD 与声音。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo-64/)</sub>
 - [**Halo CE Decomp Remix：VR、PC 与 Android 移植**](https://github.com/moistman42069/HaloCE-DecompRemix-VR-PC-Android) - 基于 Xbox 版《Halo: Combat Evolved》的反编译成果，制作独立 VR 头显、Windows PC 和 Android 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo-ce-decomp-remix-vr-case/)</sub>
 - [**Halo CE on RG35XX H：将《光环：战斗进化》移植到 H700 掌机**](https://github.com/kirklandsig/halo-ce-anbernic-rg35xx) - 这是《光环：战斗进化》反编译 OpenCE 到 Anbernic RG35XX H 和其他带 Mali-G31 的全志 H700 掌机的原生 ARM64 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo-ce-rg35xx/)</sub>
 - [**Halo: Combat Evolved：基于反编译代码的 PS Vita 移植**](https://github.com/BirchWoodGod/halo-ce-vita) - Halo CE Vita 将重建的 Xbox《Halo: Combat Evolved》游戏代码编译至 PS Vita 的 ARM 处理器，并把 Direct3D 渲染适配至 Vita GPU。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo-ce-vita-case/)</sub>
@@ -636,8 +640,4 @@
 - [**ReChan：面向 PC 重建 Jackie Chan Stuntmaster**](https://github.com/SilverwireGames/ReChan) - ReChan 将 PlayStation 游戏 Jackie Chan Stuntmaster 的逻辑和系统以 C++ 重建，运行于 x86\_64 Windows 与 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rechan-case/)</sub>
 - [**ReFlood：用 C 与 SDL2 重建 Amiga 游戏 Flood**](https://github.com/VonKossa/ReFlood) - ReFlood 将 Amiga 游戏 Flood 重建为 C99 程序，并用 SDL2 提供图形界面；素材从玩家自己的磁盘镜像提取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reflood-case/)</sub>
 - [**REGoth-bs：重实现《哥特王朝》及《哥特王朝 II》引擎**](https://github.com/REGoth-project/REGoth-bs) - REGoth-bs 重实现《哥特王朝》和《哥特王朝2》使用的 zEngine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/regoth-bs/)</sub>
-- [**REGoth：重实现《哥特王朝》及《哥特王朝 II》引擎**](https://github.com/REGoth-project/REGoth) - REGoth 重实现《哥特王朝》和《哥特王朝2》使用的 zEngine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/regoth/)</sub>
-- [**REinforced：扩展《Flashback》引擎重实现**](https://github.com/chermenin/REminiscence) - REinforced 扩展了 1992 年游戏《Flashback》的 REminiscence 引擎重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reinforced-flashback-case/)</sub>
-- [**ReksioEngine：重实现《Przygody Reksia》游戏引擎**](https://github.com/ReksioEngine/ReksioEngine) - ReksioEngine 重实现《Przygody Reksia》系列使用的 BlooMoo 和 Piklib 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reksio-engine/)</sub>
-- [**REminiscence：Flashback 游戏引擎重建**](https://github.com/cyxx/REminiscence) - REminiscence 重新实现 1992 年游戏 Flashback 的引擎，读取用户持有的 DOS、Amiga、Macintosh 或 PC-98 版本数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reminiscence-flashback-case/)</sub>
 <!-- END GENERATED CASES -->

@@ -475,6 +475,7 @@
 - [**SpongeBob SquarePants: Battle for Bikini Bottom：GameCube 反编译**](https://github.com/bfbbdecomp/bfbb) - 这是《海绵宝宝：比奇堡的冒险》进行中的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bfbb-decomp-case/)</sub>
 - [**Spyro 2: Gateway to Glimmer：PlayStation 匹配反编译**](https://github.com/marcovoc/spyro2-decomp) - Spyro 2: Gateway to Glimmer 针对欧洲版 PlayStation 游戏 SCES-021.04 重建匹配的 C 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/spyro-2-gateway-to-glimmer-case/)</sub>
 - [**Spyro 2: Ripto's Rage!：进行中的 PlayStation 反编译**](https://github.com/TheMobyCollective/spyro-2) - Spyro 2: Ripto's Rage! 以 C 源码及汇编重构美版修订版 0 的 PlayStation 主程序和覆盖模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/spyro-2-riptos-rage-decomp-case/)</sub>
+- [**Spyro the Dragon — 匹配式反编译**](https://github.com/TheMobyCollective/spyro-1) - 《Spyro the Dragon》的反编译项目，目标是生成逐字节匹配的游戏可执行文件，仓库包含源码、头文件、资源与反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/spyro-1-decomp/)</sub>
 - [**ssgdecomp：重建《Super Solvers: Gizmos &amp; Gadgets!》**](https://codeberg.org/shuppy/ssgdecomp) - ssgdecomp 以生成逐位相同的 Windows 可执行文件为目标，重建《Super Solvers: Gizmos &amp; Gadgets!》。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/ssgdecomp-case/)</sub>
 - [**SSX 3：进行中的 PS2 匹配反编译**](https://github.com/ssxdecomp/ssx3) - SSX 3 项目重建美版 PS2 游戏源码，目标是与原可执行文件匹配。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssx3-decomp-case/)</sub>
 - [**SSX Tricky：进行中的 PlayStation 2 匹配式反编译**](https://github.com/ssxdecomp/ssxtricky) - SSX Tricky 重构美版 PlayStation 2 游戏的源码，以用户提供的 SLUS\_203.26 可执行文件为对照构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssx-tricky-decomp-case/)</sub>
@@ -629,5 +630,4 @@
 - [**AZHS：重建《Need for Speed: High Stakes》4.50**](https://github.com/americusmaximus/AZHS) - AZHS 根据《Need for Speed: High Stakes》4.50 的原版二进制文件重建源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/azhs-case/)</sub>
 - [**Babil Decompilation Project：Final Fantasy IV 3D Remake 源码重建**](https://github.com/GlitchedDeveloper/Babil-Decompilation-Project) - Babil Decompilation Project 为 Final Fantasy IV 3D Remake 的 Steam 2020 年 11 月更新版重建 C++ 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/babil-decompilation-project-case/)</sub>
 - [**Back to Skool：基于 SkoolKit 的 ZX Spectrum 反汇编**](https://github.com/skoolkid/backtoskool) - Back to Skool 项目发布 ZX Spectrum 版游戏的 SkoolKit 反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/back-to-skool-disassembly-case/)</sub>
-- [**Balloon Fight：NES 游戏反汇编**](https://github.com/LuigiBlood/balloonfight_dis) - 这是 NES 美版 Balloon Fight 的反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/balloonfight-disasm/)</sub>
 <!-- END GENERATED CASES -->

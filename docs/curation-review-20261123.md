@@ -911,3 +911,30 @@ This round adds four toolchain/workbench tools and two reconstruction cases: Pat
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. All are Class 2, so no previews were added; READMEs, case indexes and the site were regenerated.
+
+---
+
+# Backlog curation review, thirty-fourth batch — 2026-11-24
+
+This round adds four reconstruction cases and two tools: BT4decomp, Halo 64, Carmageddon 2 rec2, Spyro the Dragon, Fulton and Levo.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `bt4-decomp` | `reconstruction-cases` | [NauTaro/DBZ-BT4-Tag-Team-Decomp](https://github.com/NauTaro/DBZ-BT4-Tag-Team-Decomp/blob/a822ed987b41fb60ea53cfc211fa977c8d0d3be5/README.md) | `1047a556cff33943fdf28287fa574b1584fb92234f3254a67a967343f4eb5cd5` |
+| `halo-64` | `reconstruction-cases` | [JackTulli/halo-64](https://github.com/JackTulli/halo-64/blob/0cabf11440d9bb63ee0fdce32b92e81774365865/README.md) | `e7d85d852d31bc0081f09852c6fda9182dc0aaeb2b0eb55536de8bf6ca409ee1` |
+| `carmageddon2-rec2` | `reconstruction-cases` | [dethrace-labs/rec2](https://github.com/dethrace-labs/rec2/blob/73a125e85b6ff961b42070c1640e9a1ea6b6c72e/README.md) | `00286da22c55450f7c75319d95da617a00201b1e6433183411d6f4b35db9f772` |
+| `fulton` | `game-analysis` | [TriwindBryan/fulton](https://github.com/TriwindBryan/fulton/blob/0d569b3a151018cf290560cfba34696595ebb078/README.md) | `5ffebf26f856a705919440b1670eb676ad62cf9d881b052a8a404cec337ba4b1` |
+| `levo` | `native-analysis` | [momo5502/levo](https://github.com/momo5502/levo/blob/a6ff30cecb560feefd4f25add55831c7750239a3/README.md) | `7c18216bc6f14e3b9d15e123b688fbcc2b1f309701b5cc16ce6d0afe689621e2` |
+| `spyro-1-decomp` | `reconstruction-cases` | [TheMobyCollective/spyro-1](https://github.com/TheMobyCollective/spyro-1/blob/8e1eabc1c8cf171ed4e4349ad70e7451b7ca0da7/README.md) | `1886b9ca11a9bd692f051bd759ae15186fe59011c3ec8fe39fa1e5a6d5792bda` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| ruslan831/PlantsVsZombies-decompilation | README is 327 bytes below the documentation threshold. |
+| mstan/*Recomp, TechnicallyComputers/*Recomp | No license file recorded by the GitHub API. |
+| mstan/PokemonStadiumRecomp | README declares the project no longer maintained as of August 2026. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; BT4decomp and Halo 64 received Class 1 previews. The four new case studies update the game case indexes and README case sections.

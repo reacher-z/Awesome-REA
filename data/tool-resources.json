@@ -161862,5 +161862,175 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "bt4-decomp",
+    "name": "BT4decomp: a native runtime for Dragon Ball Z Budokai Tenkaichi 4",
+    "url": "https://github.com/NauTaro/DBZ-BT4-Tag-Team-Decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "description_en": "A native desktop runtime for Dragon Ball Z Budokai Tenkaichi 4 (B14 Rev2) built on Tenkaichi3Decomp, with simultaneous team battles, online Tag Team, tournaments, spectator rooms and proximity voice.",
+    "description_zh": "基于 Tenkaichi3Decomp 的《龙珠 Z 电光火石 4》（B14 Rev2）原生桌面运行时，支持同时团队战、在线 Tag Team、锦标赛、观战房间与邻近语音。",
+    "evidence_url": "https://github.com/NauTaro/DBZ-BT4-Tag-Team-Decomp/blob/a822ed987b41fb60ea53cfc211fa977c8d0d3be5/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game data; the project provides a native desktop runtime.",
+      "It is built on Tenkaichi3Decomp and depends on the specific game revision.",
+      "AGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "halo-64",
+    "name": "Halo 64: Halo CE multiplayer on the Nintendo 64",
+    "url": "https://github.com/JackTulli/halo-64",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "Halo: Combat Evolved multiplayer on the Nintendo 64 with the Expansion Pak, split screen for up to four players, bots and Firefight, using the Halo decompiled game code compiled for the VR4300 with libdragon and tiny3d.",
+    "description_zh": "把《光环：战斗进化》多人模式移植到带 Expansion Pak 的 Nintendo 64，支持最多 4 人分屏、机器人与 Firefight，使用 Halo 反编译游戏代码为 VR4300 编译，并基于 libdragon 与 tiny3d 实现渲染、菜单、HUD 与声音。",
+    "evidence_url": "https://github.com/JackTulli/halo-64/blob/0cabf11440d9bb63ee0fdce32b92e81774365865/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Xbox game copy; the build converts its maps and the ROM contains converted data.",
+      "It is a fan port built on halo-ce-universal, libdragon and tiny3d.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "carmageddon2-rec2",
+    "name": "Carmageddon 2, revisited — an equivalent C implementation",
+    "url": "https://github.com/dethrace-labs/rec2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "description_en": "A project documenting 1998 Carmageddon 2 by writing equivalent C code, first matching the original executables as closely as possible and then adding support for other platforms.",
+    "description_zh": "通过编写等价 C 代码来记录 1998 年《Carmageddon 2》的项目：先尽可能还原原版可执行文件（包括 bug），再为桌面、移动与主机平台增加支持。",
+    "evidence_url": "https://github.com/dethrace-labs/rec2/blob/73a125e85b6ff961b42070c1640e9a1ea6b6c72e/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game data; the project recreates the executables in C.",
+      "It is work in progress and aims to match the original before expanding to other platforms.",
+      "MPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "fulton",
+    "name": "Fulton: a launcher for decompiled and recompiled retro game ports",
+    "url": "https://github.com/TriwindBryan/fulton",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A launcher for decompiled and recompiled retro game ports that finds official GitHub releases, installs them, places the user ROM where each game expects it and launches them, with Windows and macOS support.",
+    "description_zh": "面向反编译/重编译复古游戏移植的启动器：查找官方 GitHub Releases、安装、把用户 ROM 放到各游戏期望的位置并启动，支持 Windows 与 macOS。",
+    "evidence_url": "https://github.com/TriwindBryan/fulton/blob/0d569b3a151018cf290560cfba34696595ebb078/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Windows 10/11 or macOS (Apple Silicon or Intel) and your own ROMs; Linux is not supported yet.",
+      "It comes with no games and depends on each port official releases.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "levo",
+    "name": "Levo: an ahead-of-time binary translation toolchain",
+    "url": "https://github.com/momo5502/levo",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "An ahead-of-time binary translation toolchain that recovers control flow with Ghidra, lifts the binary and re-emits native code, still extremely experimental.",
+    "description_zh": "提前编译式二进制翻译工具链：用 Ghidra 恢复控制流、提升二进制并重新生成原生代码，目前仍非常实验性。",
+    "evidence_url": "https://github.com/momo5502/levo/blob/a6ff30cecb560feefd4f25add55831c7750239a3/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a target binary and the Ghidra-based lifting pipeline.",
+      "It is extremely experimental and supports very little.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "spyro-1-decomp",
+    "name": "Spyro the Dragon — a matching decompilation",
+    "url": "https://github.com/TheMobyCollective/spyro-1",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A decompilation of Spyro the Dragon that aims for a byte-for-byte matching game executable, with source, headers, assets and disassembly committed.",
+    "description_zh": "《Spyro the Dragon》的反编译项目，目标是生成逐字节匹配的游戏可执行文件，仓库包含源码、头文件、资源与反汇编。",
+    "evidence_url": "https://github.com/TheMobyCollective/spyro-1/blob/8e1eabc1c8cf171ed4e4349ad70e7451b7ca0da7/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the supported game to verify the build; the project does not distribute the game.",
+      "It is a matching decompilation, and naming and structure are still evolving.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

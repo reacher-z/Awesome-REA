@@ -45810,5 +45810,53 @@
       "它是在研反编译项目。",
       "采用 CC0-1.0 许可证。"
     ]
+  },
+  "bt4-decomp": {
+    "name": "BT4decomp：龙珠 Z 电光火石 4 原生运行时",
+    "requirements": [
+      "需要原版游戏数据；项目提供原生桌面运行时。",
+      "它基于 Tenkaichi3Decomp，兼容性取决于具体游戏版本。",
+      "采用 AGPL-3.0 许可证。"
+    ]
+  },
+  "halo-64": {
+    "name": "Halo 64：光环战斗进化多人模式的 N64 移植",
+    "requirements": [
+      "需要自备 Xbox 游戏副本；构建会转换其地图，ROM 中包含转换后的数据。",
+      "它是基于 halo-ce-universal、libdragon 与 tiny3d 的民间移植。",
+      "采用 CC0-1.0 许可证。"
+    ]
+  },
+  "carmageddon2-rec2": {
+    "name": "Carmageddon 2, revisited — 等价 C 实现",
+    "requirements": [
+      "需要原版游戏数据；项目用 C 代码重建可执行文件。",
+      "项目仍在进行中，目标是先匹配原版再扩展到其他平台。",
+      "采用 MPL-2.0 许可证。"
+    ]
+  },
+  "fulton": {
+    "name": "Fulton：反编译/重编译复古游戏移植启动器",
+    "requirements": [
+      "需要 Windows 10/11 或 macOS（Apple Silicon 或 Intel）以及自备 ROM；尚不支持 Linux。",
+      "它不附带游戏，依赖各移植项目的官方发布。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "levo": {
+    "name": "Levo：提前编译式二进制翻译工具链",
+    "requirements": [
+      "需要目标二进制与基于 Ghidra 的提升管线。",
+      "它仍非常实验性，支持范围很小。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "spyro-1-decomp": {
+    "name": "Spyro the Dragon — 匹配式反编译",
+    "requirements": [
+      "需要受支持的游戏来验证构建；项目不分发游戏。",
+      "它是匹配式反编译，命名与结构仍在演进。",
+      "采用 CC0-1.0 许可证。"
+    ]
   }
 }

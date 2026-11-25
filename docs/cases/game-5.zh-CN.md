@@ -6,10 +6,14 @@
 
 [English](game-5.md)
 
-**442 个案例**
+**446 个案例**
 
 ## 引擎重实现
 
+- [**REGoth：重实现《哥特王朝》及《哥特王朝 II》引擎**](https://github.com/REGoth-project/REGoth) - REGoth 重实现《哥特王朝》和《哥特王朝2》使用的 zEngine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/regoth/)</sub>
+- [**REinforced：扩展《Flashback》引擎重实现**](https://github.com/chermenin/REminiscence) - REinforced 扩展了 1992 年游戏《Flashback》的 REminiscence 引擎重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reinforced-flashback-case/)</sub>
+- [**ReksioEngine：重实现《Przygody Reksia》游戏引擎**](https://github.com/ReksioEngine/ReksioEngine) - ReksioEngine 重实现《Przygody Reksia》系列使用的 BlooMoo 和 Piklib 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reksio-engine/)</sub>
+- [**REminiscence：Flashback 游戏引擎重建**](https://github.com/cyxx/REminiscence) - REminiscence 重新实现 1992 年游戏 Flashback 的引擎，读取用户持有的 DOS、Amiga、Macintosh 或 PC-98 版本数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reminiscence-flashback-case/)</sub>
 - [**reone：重建《旧共和国武士》引擎**](https://github.com/seedhartha/reone) - reone 用 C++ 重建《星球大战：旧共和国武士》及《西斯领主》的引擎，依据公开文件格式资料和对游戏及资源的观察。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reone-kotor-engine-case/)</sub>
 - [**reRBR：重建 Richard Burns Rally 1.02**](https://github.com/JodusNodus/rerbr) - reRBR 用 Rust 重建 Richard Burns Rally 1.02，面向 Linux、macOS 和 Windows，读取玩家自备的游戏文件并使用 NGP 7.4.778 物理系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rerbr-case/)</sub>
 - [**Return To The Roots：重写 The Settlers 2 以适配现代系统**](https://github.com/Return-To-The-Roots/s25client) - Return To The Roots 重写 The Settlers 2，以便在现代操作系统上运行，并使用玩家自备的 Gold Edition 原版图像和音效。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/return-to-the-roots-case/)</sub>

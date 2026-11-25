@@ -10,6 +10,7 @@
 
 ## 非匹配反编译
 
+- [**Balloon Fight：NES 游戏反汇编**](https://github.com/LuigiBlood/balloonfight_dis) - 这是 NES 美版 Balloon Fight 的反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/balloonfight-disasm/)</sub>
 - [**Banjo-Kazooie：Xbox Live Arcade 版反编译**](https://github.com/banjo360/bk360) - 该项目反编译 Xbox Live Arcade 版 Banjo-Kazooie。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bk360/)</sub>
 - [**Battlestations Pacific：逐步重建 Win32 C++ 程序**](https://github.com/sqz269/battlestations-pacific-decompile) - 依据 Ghidra 分析，将 Battlestations Pacific 的 Win32 可执行文件逐例程重建为可编译的 MSVC C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/battlestations-pacific-reconstruction-case/)</sub>
 - [**Batty：ZX Spectrum 游戏的 SkoolKit 反汇编**](https://github.com/pobtastic/batty) - batty 提供 ZX Spectrum 游戏《Batty》的 SkoolKit 反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/batty-disassembly-case/)</sub>
@@ -24,11 +25,13 @@
 - [**Boom Street：进行中的 Wii 游戏反编译**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street 是进行中的 Wii 游戏反编译项目，目标为欧版 ST7P01 Rev 0。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boom-street-decomp-case/)</sub>
 - [**Bounce Tales：反编译 J2ME 游戏**](https://github.com/HelloOO7/BounceTales) - 该仓库是 Rovio 的 Bounce Tales（2008）的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bounce-tales-decomp/)</sub>
 - [**BS Zelda no Densetsu：支持两个版本的 SNES 反汇编**](https://github.com/Yoshifanatic1/BS-Zelda-no-Densetsu-Disassembly) - BS Zelda no Densetsu 反汇编支持 SNES 播出版本 Map 1 Week 2 与 Week 3，以 Week 2 为基础。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bs-zelda-no-densetsu-disassembly-case/)</sub>
+- [**BT4decomp：龙珠 Z 电光火石 4 原生运行时**](https://github.com/NauTaro/DBZ-BT4-Tag-Team-Decomp) - 基于 Tenkaichi3Decomp 的《龙珠 Z 电光火石 4》（B14 Rev2）原生桌面运行时，支持同时团队战、在线 Tag Team、锦标赛、观战房间与邻近语音。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bt4-decomp/)</sub>
 - [**BTD5-Decomp：《Bloons TD 5》手工反编译**](https://github.com/NKHook/BTD5-Decomp) - BTD5-Decomp 以 C++ 手工还原《Bloons TD 5》的源码，并在可用时利用遗留调试信息命名文件和类。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/btd5-decomp-case/)</sub>
 - [**BugsDecomp：PC 版《Bugs Bunny: Lost in Time》反编译**](https://github.com/quantumdude836/BugsDecomp) - BugsDecomp 重建 PC 版《Bugs Bunny: Lost in Time》1.0 和 1.6 的部分函数。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bugsdecomp-case/)</sub>
 - [**Bumpy's Arcade Fantasy：以 C 重建 DOS 游戏**](https://github.com/GeReV/bumpy-reverse) - Bumpy's Arcade Fantasy 依据 Ghidra 分析，将 1992 年 DOS 游戏引擎重建为 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bumpys-arcade-fantasy-decomp-case/)</sub>
 - [**c1：PlayStation 版《古惑狼》的 C 语言移植**](https://github.com/wurlyfox/c1) - 将 PlayStation 版《古惑狼》的原始游戏代码逐函数移植为 C 语言；其编码规范要求为函数标注原实现的地址。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash-bandicoot-c1-port-case/)</sub>
 - [**Call of Duty 2: Big Red One：以 C++ 重建 Xbox 游戏代码**](https://github.com/SmokeDoggy044/CoD2-BRO-Decomp) - Call of Duty 2: Big Red One 将原版 Xbox 游戏代码重建为 C++，目标是在 Linux 和 Windows 上原生构建。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/cod2-big-red-one-decomp-case/)</sub>
+- [**Carmageddon 2, revisited — 等价 C 实现**](https://github.com/dethrace-labs/rec2) - 通过编写等价 C 代码来记录 1998 年《Carmageddon 2》的项目：先尽可能还原原版可执行文件（包括 bug），再为桌面、移动与主机平台增加支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/carmageddon2-rec2/)</sub>
 - [**Castlevania: Order of Ecclesia：反编译 Nintendo DS 游戏**](https://github.com/LagoLunatic/ooe) - 这是任天堂 DS 游戏《恶魔城 被夺走的刻印》的进行中反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ooe-decomp/)</sub>
 - [**ChameleonTwist2v1.0-JP：重建日版 Nintendo 64 游戏**](https://github.com/chameleonTwistRet/chameleonTwist2v1.0-JP) - ChameleonTwist2v1.0-JP 为 Nintendo 64 日版 v1.0《Chameleon Twist 2》重建可构建源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/chameleon-twist-2-jp-case/)</sub>
 - [**Club Penguin Game Day：进行中的 DOL 重建**](https://github.com/iRodNCP/gameday-decomp) - 项目以可构建的汇编文件和 PowerPC 链接配置重建美版修订 0 的 Club Penguin Game Day DOL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/club-penguin-game-day-decomp-case/)</sub>
@@ -632,7 +635,4 @@
 - [**Haze Recomp：实验性 PlayStation 3 游戏静态重编译**](https://github.com/zdiemer/haze-recomp) - Haze Recomp 使用 ps3recomp 从用户自备光盘镜像提升 PS3 游戏 Haze 及相关固件代码，构建 Windows 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/haze-recomp-case/)</sub>
 - [**Heavy Metal: FAKK2：x86 到 C 的静态重编译**](https://github.com/sp00nznet/heavymetal) - Heavy Metal: FAKK2 将原版 Windows 游戏可执行文件的 x86 指令转译为可编译的 C，构建 32 位 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heavy-metal-fakk2-recomp-case/)</sub>
 - [**Hell Night: Dark Messiah Recompiled：PlayStation 游戏 PC 静态重编译**](https://github.com/goodshepherd23/Hellnight-Recompiled) - Hell Night: Dark Messiah Recompiled 使用 PSXRecomp 从用户的欧版 PlayStation《Hellnight》光盘在本地生成游戏代码，构建原生 PC 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hellnight-recompiled-case/)</sub>
-- [**Hell's Gate：但丁的地狱的静态重编译**](https://github.com/florinp93/hells-gate-recomp) - 把 Xbox 360 版《但丁的地狱》移植到 PC，使用 ReXGlue SDK。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hells-gate-recomp/)</sub>
-- [**hl2-recomp：Xbox 版 Half-Life 2 的静态重编译**](https://github.com/sp00nznet/hl2-recomp) - hl2-recomp 使用 xboxrecomp 将 Xbox 版 Half-Life 2 的 XBE 转为 C，并链接到 Windows 原生运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/half-life-2-xbox-recomp-case/)</sub>
-- [**Hobbit Recompiled：LEGO The Hobbit 的 Apple Silicon 重编译移植**](https://github.com/itsdunintime104/HobbitRecompiled) - Hobbit Recompiled 将《LEGO The Hobbit》的 32 位 Intel Mac 程序转换为 C，并构建 Apple 芯片 Mac 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hobbit-recompiled-case/)</sub>
 <!-- END GENERATED CASES -->
