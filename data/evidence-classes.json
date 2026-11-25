@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-25T21:49:58+00:00",
-  "entry_count": 5517,
+  "generated_at": "2026-11-25T23:06:58+00:00",
+  "entry_count": 5521,
   "class_counts": {
    "0": 15,
-   "1": 1240,
-   "2": 4050,
+   "1": 1243,
+   "2": 4051,
    "3": 186
   },
   "unknown_count": 26,
@@ -154942,6 +154942,126 @@
    },
    "reason": "code and docs only: no download method and no demo",
    "checked_at": "2026-11-25T21:49:58+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "zandatsu-case",
+   "url": "https://github.com/dfdx047/Zandatsu",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 18987,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 6,
+    "release_asset_count": 6,
+    "demo": [
+     "image"
+    ],
+    "media_count": 8,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-25T23:06:57+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "nightjar-re4-case",
+   "url": "https://github.com/st4rwhx/Resident-Evil-4-Native-Port",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 29642,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 1,
+    "release_asset_count": 5,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 29,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-25T23:06:57+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "aitd-classic-reborn-case",
+   "url": "https://github.com/nayo186/AloneInTheDarkClassicReborn",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 67727,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 49,
+    "release_asset_count": 134,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 12,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-25T23:06:57+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "decompile-mcp",
+   "url": "https://github.com/1llu50ry/Decompile",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 33457,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 1,
+    "release_asset_count": 39,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [
+     "npx -y decompile@latest",
+     "npx -y https://github.com/1llu50ry/Decompile/releases/latest/download/decompile.tgz",
+     "npm install -g https://github.com/1llu50ry/Decompile/releases/latest/download/decompile.tgz"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-25T23:06:57+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",

@@ -10,6 +10,8 @@
 
 ## 基于重建源码的移植
 
+- [**DKR-GC：Diddy Kong Racing 原生 GameCube 移植**](https://github.com/RyoSaeba89/DKR-GC) - DKR-GC 将 N64 游戏 Diddy Kong Racing 的反编译代码编译为原生 GameCube PowerPC 程序，借助 libogc2 和 GX 实现调度、存储、图形与音频服务，并读取用户提供的 ROM 数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dkr-gc-diddy-kong-racing-case/)</sub>
+- [**DOAX3 Fortune PC：将《死或生 沙滩排球 3 Fortune》移植到 Windows**](https://github.com/negroISO/doax3-fortune-pc) - DOAX3 Fortune PC 将《死或生 沙滩排球 3 Fortune》01.19 版适配到 Windows x64。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doax3-fortune-pc-case/)</sub>
 - [**DOAX3 Scarlet PC：实验性 Windows/Vulkan 源码移植**](https://github.com/negroISO/doax3-scarlet-pc) - 面向 CUSA14173 1.08 版的《死或生 沙滩排球 3 Scarlet》实验性 Windows x64/Vulkan 源码移植：原始 x86-64 客户代码走继承的原生运行时，GPU 命令与着色器由 shadPS4 图形核心翻译为 Vulkan。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doax3-scarlet-pc-case/)</sub>
 - [**DOOM Retro：面向 Windows 的精炼 DOOM 源码移植**](https://github.com/bradharding/doomretro) - 经典的 DOOM 源码移植，在保留原版体验的同时加入一整套视觉与便利性改进。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doomretro/)</sub>
 - [**dRally：Death Rally 的 Linux 与 BSD 原生移植**](https://github.com/urxp/dRally) - dRally 是以 C 和 SDL2 将 1996 年的《Death Rally》移植到 Linux 和 BSD 的项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/drally-case/)</sub>
@@ -126,6 +128,7 @@
 - [**NES Tetris：对照原版构建的 Rust 重建项目**](https://github.com/sanghoonio/nes-tetris) - NES Tetris 用 Rust 重建 1989 年 NES 游戏，支持桌面和浏览器运行，并从用户提供的 ROM 读取图像、音乐和数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nes-tetris-rust-case/)</sub>
 - [**NFS Most Wanted (2005)：基于 speed.exe 分析的 Unity 重建**](https://github.com/MagicIbrar/nfsmw-unity) - NFS Most Wanted (2005) 项目逐函数分析 speed.exe，在 Unity 中重建游戏系统，并从用户安装目录读取车辆、世界和音频等内容。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/nfsmw-unity-case/)</sub>
 - [**NHL24 PC：通过专用 PS4 运行环境在 Windows 上运行《NHL 24》**](https://github.com/HajDEO/nhl24pc) - NHL24 PC 基于针对《NHL 24》调整的 shadPS4 分支，在 Windows 上运行其 PS4 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nhl24-pc-case/)</sub>
+- [**Nightjar：GameCube 版生化危机 4 的原生源码移植**](https://github.com/st4rwhx/Resident-Evil-4-Native-Port) - 基于逐字节匹配反编译与独立引擎运行时，把 GameCube 版《生化危机 4》做成原生源码移植，覆盖 Android 32/64 位、iOS（Metal）、Windows 与 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nightjar-re4-case/)</sub>
 - [**Nightmare Creatures：PlayStation 程序分析与原生 PC 移植**](https://github.com/kirby-letsgo/nightmare-creatures-decomp) - Nightmare Creatures 使用用户提供的美国版 PlayStation CHD 镜像，将游戏带到 macOS、Windows 和 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nightmare-creatures-pc-port-case/)</sub>
 - [**Ninja Gaiden Black：在原生 Windows 运行时上执行 Xbox 游戏代码**](https://github.com/angeldev07/ninja-gaiden-black-port) - Ninja Gaiden Black 原生 PC 移植版在 32 位 Windows 进程中执行原版 Xbox 游戏的 x86 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ninja-gaiden-black-port-case/)</sub>
 - [**Ninja Master：Shinobi III 原生重建**](https://github.com/krazyjakee/ninja-master) - Ninja Master 将 Shinobi III: Return of the Ninja Master 的玩法重建为桌面原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ninja-master-shinobi-iii-case/)</sub>
@@ -634,7 +637,4 @@
 - [**OpenUG2：《极品飞车：地下狂飙 2》引擎重建**](https://github.com/whoismept/OpenUG2) - OpenUG2 以玩家自备的《极品飞车：地下狂飙 2》数据重建原生赛车引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openug2-case/)</sub>
 - [**OpenUT2k4：用 Unreal Engine 5.8 重建《Unreal Tournament 2004》**](https://github.com/GloriousEggroll/OpenUT2k4) - OpenUT2k4 使用 C++ 和 Unreal Engine 5.8 重建《Unreal Tournament 2004》，在本地转换玩家安装目录中的地图、角色和音频，并在运行时构建地图。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/openut2k4-case/)</sub>
 - [**OpenVIII：《Final Fantasy VIII》的 C# 引擎重建**](https://github.com/MaKiPL/OpenVIII-monogame) - OpenVIII 以 C# 和 MonoGame 重写《Final Fantasy VIII》游戏引擎，面向 Windows 和 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openviii-monogame-case/)</sub>
-- [**OpenXcom：X-COM: UFO Defense 与 Terror from the Deep 的开源克隆**](https://github.com/OpenXcom/OpenXcom) - 以 C++/SDL 引擎重新实现 MicroProse 的 UFO: Enemy Unknown（X-COM: UFO Defense）与 X-COM: Terror from the Deep，并在使用者自己的原游戏资源上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxcom-engine-case/)</sub>
-- [**OpenXeen：用 Java 重建 World of Xeen 引擎**](https://github.com/busyDuckman/OpenXeen) - OpenXeen 用 Java 重写 Might and Magic IV、V 的 World of Xeen 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxeen-case/)</sub>
-- [**OpenXvT：《X-Wing vs. TIE Fighter》重实现**](https://github.com/elyosh/OpenXvT) - OpenXvT 使用玩家持有的原版数据，为 Windows、macOS 和 Linux 重实现《Star Wars: X-Wing vs. TIE Fighter》及《Balance of Power》资料片。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxvt-case/)</sub>
 <!-- END GENERATED CASES -->

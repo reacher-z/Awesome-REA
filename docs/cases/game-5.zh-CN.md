@@ -6,10 +6,13 @@
 
 [English](game-5.md)
 
-**496 个案例**
+**499 个案例**
 
 ## 引擎重实现
 
+- [**OpenXcom：X-COM: UFO Defense 与 Terror from the Deep 的开源克隆**](https://github.com/OpenXcom/OpenXcom) - 以 C++/SDL 引擎重新实现 MicroProse 的 UFO: Enemy Unknown（X-COM: UFO Defense）与 X-COM: Terror from the Deep，并在使用者自己的原游戏资源上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxcom-engine-case/)</sub>
+- [**OpenXeen：用 Java 重建 World of Xeen 引擎**](https://github.com/busyDuckman/OpenXeen) - OpenXeen 用 Java 重写 Might and Magic IV、V 的 World of Xeen 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxeen-case/)</sub>
+- [**OpenXvT：《X-Wing vs. TIE Fighter》重实现**](https://github.com/elyosh/OpenXvT) - OpenXvT 使用玩家持有的原版数据，为 Windows、macOS 和 Linux 重实现《Star Wars: X-Wing vs. TIE Fighter》及《Balance of Power》资料片。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxvt-case/)</sub>
 - [**OpenXW：面向现代系统重实现 Star Wars: X-Wing**](https://github.com/elyosh/OpenXW) - OpenXW 将 Star Wars: X-Wing 重实现为桌面程序，读取玩家安装的 1994 或 1998 年版本数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxw-case/)</sub>
 - [**OpenXWA：重实现《星球大战：X 翼联盟》**](https://github.com/elyosh/OpenXWA) - OpenXWA 将 1999 年游戏《星球大战：X 翼联盟》重实现为 Windows、macOS 和 Linux 原生程序，读取用户的原版安装文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxwa-case/)</sub>
 - [**OpenYR：重建《尤里的复仇》游戏引擎**](https://github.com/Sovietianqi/OpenYR) - OpenYR 根据游戏行为观察、反汇编研究和公开文档，以 C++ 重建《命令与征服：尤里的复仇》的引擎行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openyr-engine-case/)</sub>

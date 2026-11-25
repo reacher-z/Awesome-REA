@@ -6,10 +6,13 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**496 case studies**
+**499 case studies**
 
 ## Engine reimplementations
 
+- [**OpenXcom: an open-source clone of X-COM: UFO Defense and Terror from the Deep**](https://github.com/OpenXcom/OpenXcom) - Reimplements MicroProse’s UFO: Enemy Unknown (X-COM: UFO Defense) and X-COM: Terror from the Deep as a C++/SDL engine that runs on the user’s original game resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openxcom-engine-case/)</sub>
+- [**OpenXeen: rebuilding the World of Xeen engine in Java**](https://github.com/busyDuckman/OpenXeen) - OpenXeen is a Java engine rewrite for Might and Magic IV and V: World of Xeen. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openxeen-case/)</sub>
+- [**OpenXvT: X-Wing vs. TIE Fighter reimplementation**](https://github.com/elyosh/OpenXvT) - OpenXvT reimplements Star Wars: X-Wing vs. TIE Fighter and its Balance of Power expansion for Windows, macOS and Linux using the player's original game data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openxvt-case/)</sub>
 - [**OpenXW: reimplementing Star Wars: X-Wing for modern systems**](https://github.com/elyosh/OpenXW) - OpenXW rebuilds Star Wars: X-Wing as a desktop program that reads data from installed 1994 or 1998 editions. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openxw-case/)</sub>
 - [**OpenXWA: reimplementing Star Wars: X-Wing Alliance**](https://github.com/elyosh/OpenXWA) - OpenXWA reimplements the 1999 game Star Wars: X-Wing Alliance as a native Windows, macOS and Linux program that reads an original installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openxwa-case/)</sub>
 - [**OpenYR: reconstructing the Yuri's Revenge engine**](https://github.com/Sovietianqi/OpenYR) - OpenYR reimplements the engine behavior of Command &amp; Conquer: Yuri's Revenge in C++ from observed gameplay, disassembly research and documentation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openyr-engine-case/)</sub>

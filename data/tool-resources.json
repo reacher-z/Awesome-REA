@@ -164076,5 +164076,119 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "zandatsu-case",
+    "name": "Zandatsu: Metal Gear Rising Revengeance on Android",
+    "url": "https://github.com/dfdx047/Zandatsu",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native Android port of Metal Gear Rising: Revengeance from the Xbox 360 release, built on static recompilation.",
+    "description_zh": "基于静态重编译把 Xbox 360 版《合金装备崛起：复仇》移植为 Android 原生游戏。",
+    "evidence_url": "https://github.com/dfdx047/Zandatsu/blob/0fab7978531eb639067332ffe0a7043ba3c2a7a0/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Xbox 360 copy of the game; no game data is included.",
+      "It targets Android and is distributed through GitHub releases.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "nightjar-re4-case",
+    "name": "Nightjar: Resident Evil 4 GameCube as a native source port",
+    "url": "https://github.com/st4rwhx/Resident-Evil-4-Native-Port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A native source port of the GameCube Resident Evil 4 built on its byte-matching decompilation and a standalone engine runtime, covering Android 32/64-bit, iOS with Metal, Windows and Linux.",
+    "description_zh": "基于逐字节匹配反编译与独立引擎运行时，把 GameCube 版《生化危机 4》做成原生源码移植，覆盖 Android 32/64 位、iOS（Metal）、Windows 与 Linux。",
+    "evidence_url": "https://github.com/st4rwhx/Resident-Evil-4-Native-Port/blob/477282f25f6e4fbe19b2d236b9a3223bb35a0c6e/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own GameCube disc; the port contains no emulator or JIT and ships no game data.",
+      "It combines a decompilation-based source port with a standalone engine runtime across several platforms.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "aitd-classic-reborn-case",
+    "name": "Alone in the Dark Classic Reborn: the 1992 trilogy on modern PCs",
+    "url": "https://github.com/nayo186/AloneInTheDarkClassicReborn",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A source port of the original Alone in the Dark, Jack in the Dark, Alone in the Dark 2 and 3 for modern Windows, Linux, macOS and Android, with careful fixes, HD options and its own launcher, built on FITD by yaz0r.",
+    "description_zh": "把 1992 年《鬼屋魔影》初代、Jack in the Dark 以及二、三代移植到现代 Windows、Linux、macOS 与 Android，附细致修复、高清选项与自带启动器，基于 yaz0r 的 FITD。",
+    "evidence_url": "https://github.com/nayo186/AloneInTheDarkClassicReborn/blob/182d622e4cda74b14833a5af6734228142c3e55e/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a GOG or Steam copy of each game selected in the launcher.",
+      "It builds on the FITD reimplementation and includes parts of Re-Haunted.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "decompile-mcp",
+    "name": "decompile: an MCP server and skill base for game hacking",
+    "url": "https://github.com/1llu50ry/Decompile",
+    "category": "agent-mcp",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "An MCP server for game hacking and reverse engineering that bundles hundreds of tools and RE/debug backends, thousands of skills, agents and prompts, and native x86-64 and ARM64 emulators for assistants such as Claude, Codex and Cursor.",
+    "description_zh": "面向游戏破解与逆向的 MCP 服务器，打包数百个工具与逆向/调试后端、数千个技能、智能体与提示词，以及 x86-64 与 ARM64 原生模拟器，可接入 Claude、Codex、Cursor 等客户端。",
+    "evidence_url": "https://github.com/1llu50ry/Decompile/blob/e40f12bd97f1ec062f46a052167c4549dc050a22/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an MCP-capable client such as Claude, Codex or Cursor.",
+      "It bundles tools, skills and emulators for assistants rather than performing analysis on its own.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

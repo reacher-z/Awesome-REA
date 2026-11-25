@@ -1297,3 +1297,26 @@ Three recompilations and a TV firmware toolkit: Xbox2Windows, Mario Kart 7 Recom
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Brothership Recomp is Class 1 with a merged preview; the other three are Class 2. This batch drew from the merged class-scan pool, whose hourly scan itself returned noop.
+
+## Batch 50 — 2026-11-25
+
+Three ports and an MCP tool: Zandatsu, Nightjar Resident Evil 4, Alone in the Dark Classic Reborn and decompile.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| zandatsu-case | reconstruction-cases | [dfdx047/Zandatsu](https://github.com/dfdx047/Zandatsu/blob/0fab7978531eb639067332ffe0a7043ba3c2a7a0/README.md) | 7e4e815123c21a48266f7acfdc14e2c230c6c0229257d67a30a2c8ddf5c886c1 |
+| nightjar-re4-case | reconstruction-cases | [st4rwhx/Resident-Evil-4-Native-Port](https://github.com/st4rwhx/Resident-Evil-4-Native-Port/blob/477282f25f6e4fbe19b2d236b9a3223bb35a0c6e/README.md) | db98db580a30cf0488af64b1605c75a42eb8ff45a748dba89f790c07e3e959ea |
+| aitd-classic-reborn-case | reconstruction-cases | [nayo186/AloneInTheDarkClassicReborn](https://github.com/nayo186/AloneInTheDarkClassicReborn/blob/182d622e4cda74b14833a5af6734228142c3e55e/README.md) | f297b9d7d5801f3e70afc29067bd39b74e3bbf24c97e0e281a29a05098ced29c |
+| decompile-mcp | agent-mcp | [1llu50ry/Decompile](https://github.com/1llu50ry/Decompile/blob/e40f12bd97f1ec062f46a052167c4549dc050a22/README.md) | 23f476a858df079bb33028239d89975b873485397d82f0c1dae9dd1689406a7f |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| robongrui/derp, JNechaevsky/international-doom | Doom source ports are already represented by DOOM Retro, EDGE-Classic and Woof. |
+| metrist38/fefw-recomp | Already curated. |
+| GenissonEmilio/ShadowOfTheColossusPC | Four Shadow of the Colossus records already exist. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Zandatsu, Nightjar and Alone in the Dark Classic Reborn are Class 1 with merged previews; decompile is Class 2. The hourly class scan again returned noop.

@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-25T21:50:05+00:00",
-    "entry_count": 1224,
-    "class_entry_count": 1255,
+    "generated_at": "2026-11-25T23:07:04+00:00",
+    "entry_count": 1227,
+    "class_entry_count": 1258,
     "class_counts": {
-      "image": 1184,
+      "image": 1187,
       "video": 40
     },
     "missing_count": 31,
@@ -252,6 +252,15 @@
       "source_url": "https://github.com/JoseAlexandreMeloPacheco/airtray",
       "revision": "6072aed8c12a2c99651992f47df8539b06f05099",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "aitd-classic-reborn-case",
+      "image_url": "https://raw.githubusercontent.com/nayo186/AloneInTheDarkClassicReborn/182d622e4cda74b14833a5af6734228142c3e55e/docs/images/aitd1-compare-widescreen.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/nayo186/AloneInTheDarkClassicReborn",
+      "revision": "182d622e4cda74b14833a5af6734228142c3e55e",
+      "checked_at": "2026-11-25T23:07:04+00:00"
     },
     {
       "id": "ak820-center-case",
@@ -4472,7 +4481,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-25T21:50:04+00:00"
+      "checked_at": "2026-11-25T23:07:03+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -5679,6 +5688,15 @@
       "source_url": "https://github.com/hk21x/nightfire-recomp",
       "revision": "ad748b532e5d7a0b4ad127cedf5b73bc31185699",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "nightjar-re4-case",
+      "image_url": "https://raw.githubusercontent.com/st4rwhx/Resident-Evil-4-Native-Port/477282f25f6e4fbe19b2d236b9a3223bb35a0c6e/images/mobile_gameplay_fog.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/st4rwhx/Resident-Evil-4-Native-Port",
+      "revision": "477282f25f6e4fbe19b2d236b9a3223bb35a0c6e",
+      "checked_at": "2026-11-25T23:07:04+00:00"
     },
     {
       "id": "nightmare-creatures-ii-recomp-case",
@@ -10970,6 +10988,15 @@
       "source_url": "https://github.com/fearkov/zakuro",
       "revision": "fdf67b29b6398a7ad0dc2309b09ea4c03c45e9d8",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "zandatsu-case",
+      "image_url": "https://raw.githubusercontent.com/dfdx047/Zandatsu/0fab7978531eb639067332ffe0a7043ba3c2a7a0/docs/assets/screens/luta-ceu.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/dfdx047/Zandatsu",
+      "revision": "0fab7978531eb639067332ffe0a7043ba3c2a7a0",
+      "checked_at": "2026-11-25T23:07:04+00:00"
     },
     {
       "id": "zcode-android-case",

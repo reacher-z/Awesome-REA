@@ -46434,5 +46434,37 @@
       "它会改动电视固件并附带还原流程，请只在自有设备上操作。",
       "采用 MIT 许可证。"
     ]
+  },
+  "zandatsu-case": {
+    "name": "Zandatsu：Android 上的合金装备崛起 复仇",
+    "requirements": [
+      "需要自备 Xbox 360 版游戏副本；不包含游戏数据。",
+      "面向 Android，通过 GitHub Releases 分发。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "nightjar-re4-case": {
+    "name": "Nightjar：GameCube 版生化危机 4 的原生源码移植",
+    "requirements": [
+      "需要自备 GameCube 光盘；移植不含模拟器或 JIT，也不附带游戏数据。",
+      "它结合基于反编译的源码移植与独立引擎运行时，覆盖多个平台。",
+      "采用 CC0-1.0 许可证。"
+    ]
+  },
+  "aitd-classic-reborn-case": {
+    "name": "Alone in the Dark Classic Reborn：1992 年三部曲的现代 PC 移植",
+    "requirements": [
+      "需要在启动器中选择自备的 GOG 或 Steam 游戏副本。",
+      "它基于 FITD 重实现，并包含 Re-Haunted 的部分成果。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "decompile-mcp": {
+    "name": "decompile：面向游戏破解的 MCP 服务器与技能库",
+    "requirements": [
+      "需要 Claude、Codex 或 Cursor 等支持 MCP 的客户端。",
+      "它把工具、技能与模拟器打包给助手使用，本身不执行分析。",
+      "采用 MIT 许可证。"
+    ]
   }
 }
