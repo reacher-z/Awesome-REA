@@ -30,6 +30,7 @@
     remove: (l) => `移除筛选：${l}`, page: (a, b) => `第 ${a}/${b} 页`, shelf: (a, n) => `${fmt(a)} / ${fmt(n)} 个案例`,
     classLabel: '证据档位', classDetail: ['完整软件复现', '部分范围或分析条目', '有代码和文档，缺演示或下载', '仅笔记'],
     unknownTitle: '复核时来源不可达或不可读', previewAlt: '项目公开文档中的演示截图', previewVideoAlt: '项目公开文档中演示视频的封面', previewFull: (name) => `完整演示截图：${name}`, demoNote: '有 demo · 暂无截图',
+    ovTipLine2: (n, p) => `${fmt(n)} 条 · 占该类 ${p}%`,
   } : {
     featured: 'Featured', theme: 'Colour theme', system: 'system', light: 'light', dark: 'dark', reviewed: 'Reviewed', targets: 'Targets', copied: 'Copied',
     showing: (a, n) => `Showing <strong>${fmt(a)}</strong> of <strong>${fmt(n)}</strong>`, range: (a, b, n) => `Showing <strong>${fmt(a)}–${fmt(b)}</strong> of <strong>${fmt(n)}</strong>`,
@@ -39,6 +40,7 @@
     remove: (l) => `Remove filter: ${l}`, page: (a, b) => `Page ${a} of ${b}`, shelf: (a, n) => `${fmt(a)} of ${fmt(n)} cases`,
     classLabel: 'Evidence class', classDetail: ['full software reconstruction', 'partial scope or analysis entry', 'code & docs, no demo or download', 'notes only'],
     unknownTitle: 'Source unavailable or unreadable at review time', previewAlt: "Demo screenshot from the project's public documentation", previewVideoAlt: "Demo video thumbnail from the project's public documentation", previewFull: (name) => `Full-size demo screenshot: ${name}`, demoNote: 'Demo available · no screenshot',
+    ovTipLine2: (n, p) => `${fmt(n)} entries · ${p}% of the class`,
   };
   const ISSUE = 'https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml';
   const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
@@ -194,14 +196,14 @@
     r.nAlias = norm(`${r.alias} ${r.repo}`); r.aw = words(r.nAlias);
   }
   async function prep(raw) {
-    const res = await chunked(raw.r, ([idc, name, k, tg, c, label, feat, al, conn, cls, st, sec, rev, added]) => {
+    const res = await chunked(raw.r, ([idc, name, k, tg, c, label, feat, al, conn, cls, st, sec, rev, added, dc]) => {
       const targets = [...tg].map(Number);
       const base = label.split('/').pop();
       const id = typeof idc === 'string' ? idc : slug(base) + (idc === 1 ? '-case' : '');
       const alias = al === 1 ? base : al;
       const tags = [raw.kindLabels[k], raw.kindPlural[k], raw.kinds[k], raw.categoryLabels[c], ...targets.map((i) => `${raw.targetLabels[i]} ${raw.targets[i]}`)].join(' ');
       const r = { type: 'r', id, name, k, kind: raw.kinds[k], targets, c, lead: '', label, repo: label, sha: '', ev: '', rev, added, feat, alias, conn,
-        sec, pin: raw.pinned.includes(id), cls, st, prev: '', prevKind: '',
+        sec, pin: raw.pinned.includes(id), cls, st, dc: typeof dc === 'number' ? dc : -1, dcName: typeof dc === 'number' && dc >= 0 ? raw.classes[dc] : '', prev: '', prevKind: '',
         nName: norm(name), nAlias: norm(`${alias} ${label}`), nTags: norm(tags), nDesc: '' };
       r.nw = words(r.nName); r.aw = words(r.nAlias); r.tw = words(r.nTags); r.dw = [];
       return r;
@@ -660,7 +662,7 @@
     const sort = $('[data-sort]', drawer);
     const kindSel = $('[data-kind-select]', drawer);
     const classSel = $('[data-class-select]', drawer);
-    const info = $('.info-btn', drawer);
+    const infos = $$('.info-btn', drawer);
     const init = { list: list.innerHTML, meta: meta.innerHTML, all: showAll.innerHTML, tabs: tabs.map((t) => $('.count', t).textContent), chips: chips.map((c) => $('.count', c).textContent) };
     const more = Object.assign(document.createElement('button'), { type: 'button', className: 'btn', hidden: true });
     list.after(more);
@@ -670,30 +672,169 @@
     more.after(papersBox);
     const u = new URL(location.href);
     const wantedClass = u.searchParams.get('class');
+    const wantedDcls = u.searchParams.get('dcls');
     const st = { q: u.searchParams.get('q') || '', target: u.searchParams.get('target') || 'all', kinds: new Set((u.searchParams.get('kind') || '').split(',').filter(Boolean)),
-      cls: ['0', '1', '2', '3', 'unknown'].includes(wantedClass) ? wantedClass : '', sort: u.searchParams.get('sort') || 'featured', shown: 10 };
+      cls: ['0', '1', '2', '3', 'unknown'].includes(wantedClass) ? wantedClass : '',
+      dcls: ['software', 'game', 'apps', 'website', 'science', 'hardware'].includes(wantedDcls) ? wantedDcls : '',
+      sort: u.searchParams.get('sort') || 'featured', shown: 10 };
     input.value = st.q;
     sort.value = st.sort;
     classSel.value = st.cls;
-    const pristine = () => !st.q && st.target === 'all' && !st.kinds.size && !st.cls && st.sort === 'featured';
+    // A kind tab keeps the overview open with that kind's data; a search, evidence filter or sort brings the rows back.
+    const pristine = () => !st.q && st.target === 'all' && !st.cls && st.sort === 'featured' && !st.dcls;
     const foot = $('.drawer-foot', drawer);
-    // The All view opens on the class × evidence donut; any search or filter brings the rows back.
+    // The All view opens on the class × evidence overview; a search or filter brings the rows back.
     const overview = $('[data-overview]', drawer);
-    const overviewTiles = overview ? $$('[data-overview-tile]', overview) : [];
-    const overviewSectors = overview ? $$('[data-overview-sector]', overview) : [];
-    const overviewDetails = overview ? $$('[data-overview-detail]', overview) : [];
-    const chooseClass = (key) => {
-      overviewTiles.forEach((tile) => tile.setAttribute('aria-pressed', String(tile.dataset.overviewTile === key)));
-      overviewSectors.forEach((sector) => sector.setAttribute('aria-pressed', String(sector.dataset.overviewSector === key)));
-      overviewDetails.forEach((detail) => { detail.hidden = detail.dataset.overviewDetail !== key; });
-    };
-    overviewTiles.forEach((tile) => tile.addEventListener('click', () => chooseClass(tile.dataset.overviewTile)));
-    overviewSectors.forEach((sector) => {
-      sector.addEventListener('click', () => chooseClass(sector.dataset.overviewSector));
-      sector.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chooseClass(sector.dataset.overviewSector); }
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const ovFilter = new Set();
+    let ovSort = 'count';
+    let syncBody = () => {};
+    if (overview) {
+      const bodies = $$('.ov-body', overview);
+      const ovTabs = $$('.ov-tab', overview);
+      const tools = $('.ov-tools', overview);
+      const bodyFor = () => bodies.find((b) => b.dataset.ovBody === (st.kinds.size === 1 ? [...st.kinds][0] : ''));
+      const parseN = (el) => Number(String(el.textContent).replace(/[^\d]/g, '')) || 0;
+      const countUp = (el, from, to) => {
+        if (reducedMotion.matches || from === to) { el.textContent = fmt(to); return; }
+        const t0 = performance.now();
+        const tick = (t) => {
+          const k = Math.min(1, (t - t0) / 300);
+          el.textContent = fmt(Math.round(from + (to - from) * (1 - (1 - k) * (1 - k))));
+          if (k < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const selectRow = (row, { focus = false } = {}) => {
+        const body = bodyFor();
+        if (!body || !row) return;
+        const prev = $('.ov-panel:not([hidden])', body);
+        $$('.ov-row', body).forEach((r) => { const on = r === row; r.setAttribute('aria-selected', String(on)); r.tabIndex = on ? 0 : -1; });
+        const next = $$('.ov-panel', body).find((p) => p.dataset.ovPanel === row.dataset.ovRow);
+        $$('.ov-panel', body).forEach((p) => { p.hidden = p !== next; });
+        // The panel's numbers roll from the previous class's values, so the change reads as one object moving.
+        if (prev && next && prev !== next) {
+          const from = $$('.ovd-total, .ovd-count', prev).map(parseN);
+          $$('.ovd-total, .ovd-count', next).forEach((el, i) => countUp(el, from[i] || 0, parseN(el)));
+        }
+        if (focus) row.focus();
+      };
+      const applyFilter = () => {
+        const body = bodyFor();
+        overview.classList.toggle('ov-filtered', ovFilter.size > 0);
+        if (!body || body.hasAttribute('data-ov-empty')) return;
+        $$('.ov-legend-item', body).forEach((item) => item.setAttribute('aria-pressed', String(ovFilter.has(item.dataset.ovLegend))));
+        $$('.ov-row', body).forEach((row) => {
+          const segs = $$('.ov-seg', row);
+          segs.forEach((seg) => seg.classList.toggle('ov-on', ovFilter.has(seg.dataset.bucket)));
+          $('[data-ov-count]', row).textContent = ovFilter.size
+            ? `${fmt(segs.filter((s) => ovFilter.has(s.dataset.bucket)).reduce((n, s) => n + Number(s.dataset.n), 0))} / ${fmt(row.dataset.total)}`
+            : fmt(Number(row.dataset.total));
+        });
+      };
+      const applySort = () => {
+        const box = $('.ov-rows', bodyFor());
+        if (!box) return;
+        const rows = $$('.ov-row', box);
+        const cmp = ovSort === 'name' ? (a, b) => a.dataset.name.localeCompare(b.dataset.name, zh ? 'zh' : 'en')
+          : ovSort === 'strong' ? (a, b) => b.dataset.strong - a.dataset.strong
+          : (a, b) => b.dataset.total - a.dataset.total;
+        const sorted = [...rows].sort(cmp);
+        if (sorted.every((r, i) => r === rows[i])) return;
+        const before = new Map(sorted.map((r) => [r, r.getBoundingClientRect().top]));
+        sorted.forEach((r) => box.appendChild(r));
+        if (reducedMotion.matches) return;
+        sorted.forEach((r) => {
+          r.style.transition = 'none';
+          r.style.transform = `translateY(${before.get(r) - r.getBoundingClientRect().top}px)`;
+        });
+        requestAnimationFrame(() => requestAnimationFrame(() => sorted.forEach((r) => {
+          r.style.transition = 'transform 250ms cubic-bezier(.2, .8, .2, 1)';
+          r.style.transform = '';
+          r.addEventListener('transitionend', () => { r.style.transition = ''; }, { once: true });
+        })));
+      };
+      syncBody = () => {
+        const wanted = st.kinds.size === 1 ? [...st.kinds][0] : '';
+        ovTabs.forEach((tab) => { const on = tab.dataset.ovTab === wanted; tab.setAttribute('aria-selected', String(on)); tab.tabIndex = on ? 0 : -1; });
+        bodies.forEach((b) => { b.hidden = b.dataset.ovBody !== wanted; });
+        const body = bodyFor();
+        const empty = body && body.hasAttribute('data-ov-empty');
+        if (tools) tools.hidden = !!empty;
+        if (!empty) {
+          // The CSP forbids inline widths in the HTML, so the build ships them as data attributes.
+          $$('.ov-bar[data-bar]', body).forEach((el) => el.style.setProperty('--ov-bar', `${el.dataset.bar}%`));
+          $$('[data-w]', body).forEach((el) => el.style.setProperty('--w', `${el.dataset.w}%`));
+          applySort();
+          selectRow($('.ov-row', body));
+        }
+        applyFilter();
+      };
+      ovTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          st.kinds = tab.dataset.ovTab ? new Set([tab.dataset.ovTab]) : new Set();
+          st.shown = 10;
+          render();
+        });
+        tab.addEventListener('keydown', (e) => {
+          if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+          e.preventDefault();
+          const next = ovTabs[(ovTabs.indexOf(tab) + (e.key === 'ArrowRight' ? 1 : -1) + ovTabs.length) % ovTabs.length];
+          next.focus();
+          next.click();
+        });
       });
-    });
+      overview.addEventListener('click', (e) => {
+        const row = e.target.closest('.ov-row');
+        if (row) { selectRow(row); return; }
+        const item = e.target.closest('.ov-legend-item');
+        if (item && !item.disabled) {
+          const bucket = item.dataset.ovLegend;
+          if (ovFilter.has(bucket)) ovFilter.delete(bucket); else ovFilter.add(bucket);
+          applyFilter();
+          return;
+        }
+        const link = e.target.closest('[data-ov-view-all]');
+        if (link) { e.preventDefault(); st.dcls = link.dataset.ovViewAll; st.shown = 10; render(); }
+      });
+      overview.addEventListener('keydown', (e) => {
+        const row = e.target.closest('.ov-row');
+        if (!row || !['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(e.key)) return;
+        e.preventDefault();
+        const rows = $$('.ov-row', bodyFor());
+        const i = rows.indexOf(row);
+        const next = e.key === 'ArrowDown' ? rows[i + 1] : e.key === 'ArrowUp' ? rows[i - 1] : e.key === 'Home' ? rows[0] : rows[rows.length - 1];
+        selectRow(next, { focus: true });
+      });
+      $$('.ov-mode-btn', overview).forEach((btn) => btn.addEventListener('click', () => {
+        overview.classList.toggle('ov-mode-share', btn.dataset.ovMode === 'share');
+        $$('.ov-mode-btn', overview).forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      }));
+      $('[data-ov-sort]', overview).addEventListener('change', (e) => { ovSort = e.target.value; applySort(); });
+      // The segment tooltip repeats what the row label and the table say, for mouse users mid-scan.
+      const tip = document.createElement('div');
+      tip.className = 'ov-tip';
+      tip.hidden = true;
+      overview.appendChild(tip);
+      const bucketCode = { '0': 'C0', '1': 'C1', '2': 'C2', '3': 'C3', unknown: '?', unclassified: '–' };
+      const showTip = (seg) => {
+        const body = bodyFor();
+        const row = seg.closest('.ov-row');
+        const nameNode = row ? $('.ov-cell-name', row) : $('.ov-summary-title', body);
+        const legend = $$('.ov-legend-item', body).find((l) => l.dataset.ovLegend === seg.dataset.bucket);
+        const name = nameNode ? nameNode.textContent : '';
+        const label = legend ? $('.ov-legend-label', legend).textContent : '';
+        tip.replaceChildren(document.createTextNode(`${name} · ${bucketCode[seg.dataset.bucket] || ''} ${label}`.trim()),
+          Object.assign(document.createElement('span'), { className: 'ov-tip-line2', textContent: T.ovTipLine2(Number(seg.dataset.n), seg.dataset.pct) }));
+        tip.hidden = false;
+        const r = seg.getBoundingClientRect();
+        tip.style.left = `${Math.max(8, Math.min(window.innerWidth - tip.offsetWidth - 8, r.left + r.width / 2 - tip.offsetWidth / 2))}px`;
+        tip.style.top = `${Math.max(8, r.top - tip.offsetHeight - 8)}px`;
+      };
+      overview.addEventListener('mouseover', (e) => { const seg = e.target.closest('[data-ov-seg]'); if (seg) showTip(seg); });
+      overview.addEventListener('mouseout', (e) => { if (e.target.closest('[data-ov-seg]')) tip.hidden = true; });
+      overview.addEventListener('mouseleave', () => { tip.hidden = true; });
+    }
     $('.hs-side', form).insertAdjacentHTML('afterbegin', `<span class="hs-keys" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> ${T.keyMove} <kbd>↵</kbd> ${T.keyOpen} <kbd>Esc</kbd> ${T.keyClear}</span>`);
     let selected = -1;
     const select = (index, reveal) => {
@@ -711,6 +852,7 @@
       if (st.q) p.set('q', st.q);
       if (st.kinds.size) p.set('kind', [...st.kinds].join(','));
       if (st.cls) p.set('class', st.cls);
+      if (st.dcls) p.set('dcls', st.dcls);
       if (st.sort !== 'featured') p.set('sort', st.sort);
       return p;
     };
@@ -723,7 +865,7 @@
       // The opening All view is the overview; every other state shows entries under the filter bar.
       const opening = pristine();
       drawer.classList.toggle('is-overview', opening);
-      if (overview) overview.hidden = !opening;
+      if (overview) { overview.hidden = !opening; if (opening) syncBody(); }
       tabs.forEach((t) => { if (t.dataset.target === st.target) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current'); });
       chips.forEach((c) => c.setAttribute('aria-pressed', String(st.kinds.has(c.dataset.kind))));
       kindSel.value = st.kinds.size === 1 ? [...st.kinds][0] : '';
@@ -740,6 +882,7 @@
       if (st.target !== 'all') ex.set('target', st.target);
       if (st.kinds.size) ex.set('kind', [...st.kinds].join(','));
       if (st.cls) ex.set('class', st.cls);
+      if (st.dcls) ex.set('dcls', st.dcls);
       if (st.sort !== 'featured') ex.set('sort', st.sort);
       if (langLink) langLink.href = langBase + (hp.toString() ? `?${hp}` : '');
       showAll.href = `${P}/resources/${ex.toString() ? `?${ex}` : ''}`;
@@ -763,13 +906,14 @@
       const base = search(X.res, st.q);
       const kindOK = (h) => !st.kinds.size || st.kinds.has(h.r.kind);
       const classOK = (h) => !st.cls || (st.cls === 'unknown' ? h.r.st === 'unknown' : String(h.r.cls) === st.cls);
+      const dcOK = (h) => !st.dcls || h.r.dcName === st.dcls;
       const targetOK = (h) => st.target === 'all' || h.r.targets.includes(ti);
       // One pass counts every tab and chip.
       const perTarget = new Array(X.raw.targets.length).fill(0);
       const perKind = {};
       let inAll = 0;
       for (const h of base) {
-        if (!classOK(h)) continue;
+        if (!classOK(h) || !dcOK(h)) continue;
         if (kindOK(h)) { inAll += 1; for (const i of new Set(h.r.targets)) perTarget[i] += 1; }
         if (targetOK(h)) perKind[h.r.kind] = (perKind[h.r.kind] || 0) + 1;
       }
@@ -783,7 +927,7 @@
         $('.count', c).textContent = fmt(n);
         c.disabled = !n && !st.kinds.has(c.dataset.kind);
       });
-      const hits = inTarget.filter((h) => kindOK(h) && classOK(h));
+      const hits = inTarget.filter((h) => kindOK(h) && classOK(h) && dcOK(h));
       const shown = topHits(hits, st.sort, st.q, st.shown);
       put(list, hits.length ? shown.map((h) => cardHTML(h.r, toks)).join('') : emptyHTML(st.q, X.res, 'li', true));
       select(st.q && hits.length ? 0 : -1);
@@ -815,7 +959,7 @@
     const keep = () => { flushURL(); if (st.q && $('.card', list)) remember(st.q); };
     input.addEventListener('blur', flushURL);
     input.addEventListener('focus', () => { if (pristine() && recent().length) render(); });
-    const clearSearch = () => { input.value = ''; st.q = ''; st.shown = 10; render(); };
+    const clearSearch = () => { input.value = ''; st.q = ''; st.dcls = ''; st.shown = 10; render(); };
     // The first character brings the search box up under the header, so the results fill the screen.
     const raiseSearch = () => {
       const bar = $('.site-header');
@@ -853,7 +997,7 @@
     });
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        if (input.value) { e.preventDefault(); clearSearch(); } else input.blur();
+        if (input.value) { e.preventDefault(); clearSearch(); } else if (st.dcls) { e.preventDefault(); st.dcls = ''; render(); } else input.blur();
       } else if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && selected >= 0) {
         e.preventDefault();
         select(Math.max(0, Math.min($$('.card', list).length - 1, selected + (e.key === 'ArrowDown' ? 1 : -1))), true);
@@ -871,11 +1015,16 @@
     sort.addEventListener('change', () => { st.sort = sort.value; render(); });
     kindSel.addEventListener('change', () => { st.kinds = new Set(kindSel.value ? [kindSel.value] : []); st.shown = 10; render(); });
     classSel.addEventListener('change', () => { st.cls = classSel.value; st.shown = 10; render(); });
-    if (info) {
-      const setInfo = (open) => info.setAttribute('aria-expanded', String(open));
-      info.addEventListener('click', () => setInfo(info.getAttribute('aria-expanded') !== 'true'));
-      document.addEventListener('click', (e) => { if (!e.target.closest('.info-wrap')) setInfo(false); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setInfo(false); });
+    if (infos.length) {
+      infos.forEach((btn) => btn.addEventListener('click', () => {
+        btn.setAttribute('aria-expanded', String(btn.getAttribute('aria-expanded') !== 'true'));
+      }));
+      document.addEventListener('click', (e) => {
+        $$('.info-btn', drawer).forEach((btn) => { if (!e.target.closest('.info-wrap')) btn.setAttribute('aria-expanded', 'false'); });
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') $$('.info-btn', drawer).forEach((btn) => btn.setAttribute('aria-expanded', 'false'));
+      });
     }
     more.addEventListener('click', () => { st.shown += 10; render(); });
     // Always run once: the pristine All view has to show the overview in place of the rows.

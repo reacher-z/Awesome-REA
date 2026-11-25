@@ -242,6 +242,33 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   assert.equal(await count(page, '[data-cards] > .card.is-active'), 0, `${label}: Escape clears the selection`);
   await page.waitForFunction(() => document.querySelector('[data-drawer]').classList.contains('is-overview'));
   assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), false, `${label}: clearing the search returns to the overview`);
+  // The overview module: one row per class, drawn to scale, the largest class pre-selected.
+  assert.equal(await count(page, '[data-overview] [data-ov-body=""] .ov-row'), 6, `${label}: one row per data class`);
+  assert.equal(await text(page, '[data-overview] [data-ov-row="game"] .ov-cell-name'), language === 'zh' ? '游戏' : 'Game', `${label}: the largest class leads`);
+  assert.equal(await page.$eval('[data-overview] [data-ov-row="game"]', row => row.getAttribute('aria-selected')), 'true', `${label}: the largest class starts selected`);
+  const gameWidth = await page.$eval('[data-overview] [data-ov-row="game"] .ov-bar', bar => bar.getBoundingClientRect().width);
+  const siteWidth = await page.$eval('[data-overview] [data-ov-row="website"] .ov-bar', bar => bar.getBoundingClientRect().width);
+  assert(Math.abs(siteWidth / (gameWidth || 1) - 77 / 2830) < 0.005, `${label}: bar lengths stay linear`);
+  await page.click('[data-ov-row="software"]');
+  await page.waitForFunction(() => document.querySelector('[data-ov-body=""] [data-ov-panel="software"]').hidden === false);
+  await page.click('[data-ov-mode="share"]');
+  assert(await page.$eval('[data-overview]', node => node.classList.contains('ov-mode-share')), `${label}: share mode switches`);
+  await page.click('[data-ov-legend="0"]');
+  assert(await page.$eval('[data-overview]', node => node.classList.contains('ov-filtered')), `${label}: the legend filters the bars`);
+  await page.click('[data-ov-legend="0"]');
+  await page.click('[data-ov-tab="case-study"]');
+  await page.waitForFunction(() => !document.querySelector('[data-ov-body="case-study"]').hidden);
+  assert.equal(await page.$eval('[data-overview]', node => node.hidden), false, `${label}: a kind tab keeps the overview open`);
+  await page.click('[data-ov-tab=""]');
+  await page.waitForFunction(() => !document.querySelector('[data-ov-body=""]').hidden);
+  await page.click('[data-ov-row="software"]');
+  await page.waitForFunction(() => document.querySelector('[data-ov-body=""] [data-ov-panel="software"]').hidden === false);
+  await page.click('[data-ov-body=""] [data-ov-panel="software"] [data-ov-view-all]');
+  await page.waitForFunction(() => new URL(location.href).searchParams.get('dcls') === 'software');
+  assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), true, `${label}: view-all brings the filtered rows back`);
+  await page.click('[data-search-input]');
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => !new URL(location.href).searchParams.get('dcls') && document.querySelector('[data-drawer]').classList.contains('is-overview'));
   await page.type('[data-search-input]', 'zzzzqqqq');
   // The empty state can appear after the first few letters; wait until it describes the whole query.
   await page.waitForSelector('[data-cards] > .empty a[href*="sourceq=zzzzqqqq"]');
@@ -713,7 +740,9 @@ async function staticPage(page, route, viewport) {
   const site = server(headerRules(fs.readFileSync(path.join(dist, '_headers'), 'utf8')));
   await new Promise(resolve => site.listen(0, '127.0.0.1', resolve));
   const origin = `http://127.0.0.1:${site.address().port}`;
-  const browser = await puppeteer.launch({executablePath: chrome, headless: true, args: ['--lang=en-US']});
+  // CHROME_ARGS carries container flags such as --no-sandbox for a root-owned CI runner; CI leaves it unset.
+  const extraArgs = (process.env.CHROME_ARGS || '').split(' ').filter(Boolean);
+  const browser = await puppeteer.launch({executablePath: chrome, headless: true, args: ['--lang=en-US', ...extraArgs]});
   const failures = [];
   const check = async (label, run) => {
     try { await run(); console.log(`ok   ${label}`); } catch (error) { failures.push(label); console.error(`FAIL ${label}\n     ${error.message}`); }

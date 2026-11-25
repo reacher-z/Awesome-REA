@@ -10,7 +10,6 @@ from collections import Counter, defaultdict
 from html import escape
 import hashlib
 import json
-from math import cos, pi, sin, sqrt
 from pathlib import Path
 import re
 from urllib.parse import urlsplit
@@ -67,8 +66,11 @@ OVERVIEW_EVIDENCE = {
     'unclassified': ('–', 'benchmark & dataset papers', '基准与数据集论文', 'card-class-none'),
 }
 OVERVIEW_ORDER = tuple(OVERVIEW_EVIDENCE)
-OVERVIEW_MIN_SHARE = 0.45
-OVERVIEW_SECTOR_GAP = 0.012
+# Short aria names for the two buckets that have no C code; the order matches OVERVIEW_EVIDENCE's.
+OVERVIEW_ARIA = {'0': ('C0', 'C0'), '1': ('C1', 'C1'), '2': ('C2', 'C2'), '3': ('C3', 'C3'),
+                 'unknown': ('unknown', '未知'), 'unclassified': ('benchmark papers', '基准论文')}
+# Search-index rows carry the data class as this order's index, so the drawer can filter by it.
+DATA_CLASS_ORDER = tuple(DATA_CLASSES)
 COPY = {
     'en': {
         'h1': 'Reverse Engineering <em>Anything</em>',
@@ -77,7 +79,7 @@ COPY = {
         'stats': '<span class="s-lg"><strong>{res}</strong> curated resources and <strong>{pap}</strong> papers, each reviewed against its source. Plus <a href="/discoveries/"><strong>{idx}</strong> unreviewed discoveries</a> from the scans.</span><span class="s-sm"><strong>{res}</strong> resources, <strong>{pap}</strong> papers, <a href="/discoveries/"><strong>{idx}</strong> unreviewed</a></span>',
         'updated': 'Last scan', 'all': 'All', 'domains': 'Target domains', 'catalogue': 'Catalogue',
         'kind': 'Kind', 'all_kinds': 'All kinds', 'sort': 'Sort', 'featured': 'Featured', 'recent': 'Recently reviewed', 'az': 'Name A–Z',
-        'showing': 'Showing <strong>{n}</strong> of <strong>{total}</strong>', 'show_all': 'Show all {n} resources',
+        'showing': 'Showing <strong>{n}</strong> featured of <strong>{total}</strong>', 'show_all': 'Show all {n} resources',
         'drawer_note': 'Each card links to its entry: description, requirements and the primary source it was reviewed against.',
         'reviewed': 'Reviewed', 'targets': 'Targets', 'licence': 'Original content: MIT. Linked projects keep their own licenses.',
         'class_label': 'Evidence class', 'class_unknown': 'Unknown · source unavailable',
@@ -86,6 +88,14 @@ COPY = {
         'unknown_title': 'Source unavailable or unreadable at review time',
         'overview_label': 'Data classes by evidence class', 'overview_total': 'data points',
         'overview_note': 'C0 needs a manual full-reconstruction review. C1–C3 follow the public repository evidence.',
+        'overview_scope': 'Classified <strong>{cls}</strong> of <strong>{total}</strong> entries',
+        'overview_summary': 'Evidence mix', 'overview_rows_label': 'Data classes',
+        'overview_aria_unit': 'entries', 'overview_aria_unit_one': 'entry', 'overview_of_classified': '{pct}% of classified',
+        'overview_mode': 'Bar length', 'overview_mode_count': 'Count', 'overview_mode_share': 'Share',
+        'overview_sort': 'Sort', 'overview_sort_count': 'Count', 'overview_sort_strong': 'C0+C1 share', 'overview_sort_name': 'Name A–Z',
+        'overview_empty': 'No classified entries in this type yet.', 'overview_table': 'View as table',
+        'overview_table_class': 'Data class', 'overview_table_total': 'Total',
+        'overview_view_all': 'View all {n}',
         'preview_image_alt': "Demo screenshot from the project's public documentation",
         'preview_video_alt': "Demo video thumbnail from the project's public documentation",
         'preview_full_label': 'Full-size demo screenshot: {name}',
@@ -98,7 +108,7 @@ COPY = {
         'stats': '<span class="s-lg"><strong>{res}</strong> 项精选资源与 <strong>{pap}</strong> 篇论文，均已对照来源复核。另有 <a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核发现</a>来自自动扫描。</span><span class="s-sm"><strong>{res}</strong> 项资源、<strong>{pap}</strong> 篇论文、<a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核</a></span>',
         'updated': '最近扫描', 'all': '全部', 'domains': '目标领域', 'catalogue': '目录',
         'kind': '类型', 'all_kinds': '全部类型', 'sort': '排序', 'featured': '精选', 'recent': '最近复核', 'az': '名称 A–Z',
-        'showing': '显示 <strong>{n}</strong> / <strong>{total}</strong>', 'show_all': '查看全部 {n} 项资源',
+        'showing': '显示 <strong>{n}</strong> 条精选 / 共 <strong>{total}</strong> 条', 'show_all': '查看全部 {n} 项资源',
         'drawer_note': '每张卡片都链接到完整条目：说明、使用条件，以及复核所依据的原始来源。',
         'reviewed': '已复核', 'targets': '目标', 'licence': '原创内容采用 MIT 许可。链接项目保留各自的许可。',
         'class_label': '证据档位', 'class_unknown': '未知 · 来源不可读',
@@ -107,6 +117,14 @@ COPY = {
         'unknown_title': '复核时来源不可达或不可读',
         'overview_label': '数据类别与证据档位', 'overview_total': '数据点',
         'overview_note': 'C0 需人工复核完整复现。C1–C3 依据公开仓库证据。',
+        'overview_scope': '已分类 <strong>{cls}</strong> 条 · 共 <strong>{total}</strong> 条',
+        'overview_summary': '证据等级分布', 'overview_rows_label': '数据类别',
+        'overview_aria_unit': '条', 'overview_aria_unit_one': '条', 'overview_of_classified': '占已分类 {pct}%',
+        'overview_mode': '条形长度', 'overview_mode_count': '数量', 'overview_mode_share': '占比',
+        'overview_sort': '排序', 'overview_sort_count': '数量', 'overview_sort_strong': 'C0+C1 占比', 'overview_sort_name': '名称 A–Z',
+        'overview_empty': '该类型还没有分类数据', 'overview_table': '以表格查看',
+        'overview_table_class': '类别', 'overview_table_total': '总数',
+        'overview_view_all': '查看全部 {n} 条',
         'preview_image_alt': '项目公开文档中的演示截图',
         'preview_video_alt': '项目公开文档中演示视频的封面',
         'preview_full_label': '完整演示截图：{name}',
@@ -199,102 +217,191 @@ def evidence_bucket(record: dict) -> str:
     return 'unclassified' if value is None else str(int(value))
 
 
-def _overview_polar(radius: float, angle: float) -> tuple[float, float]:
-    return 320 + radius * sin(angle), 320 - radius * cos(angle)
+def _shares(values, keys) -> dict[str, str]:
+    """Percentages of the group's total, one decimal, largest-remainder so the labels sum to 100.0.
 
-
-def _overview_arc(inner: float, outer: float, start: float, end: float) -> str:
-    """A ring segment from the top, clockwise."""
-    large = 1 if end - start > pi else 0
-    outer_start, outer_end = _overview_polar(outer, start), _overview_polar(outer, end)
-    inner_end, inner_start = _overview_polar(inner, end), _overview_polar(inner, start)
-    return (f'M {outer_start[0]:.2f} {outer_start[1]:.2f} A {outer:.2f} {outer:.2f} 0 {large} 1 {outer_end[0]:.2f} {outer_end[1]:.2f} '
-            f'L {inner_end[0]:.2f} {inner_end[1]:.2f} A {inner:.2f} {inner:.2f} 0 {large} 0 {inner_start[0]:.2f} {inner_start[1]:.2f} Z')
-
-
-def _overview_breakdown(key: str, label: str, counts: Counter, language: str) -> str:
-    """The detail panel of one data class, counted by evidence bucket."""
-    zh = language == 'zh'
-    total = counts.total()
-    rows = ''.join(f'<li><span class="card-class {OVERVIEW_EVIDENCE[bucket][3]}">{OVERVIEW_EVIDENCE[bucket][0]}</span>'
-                   f'<span class="od-label">{_e(OVERVIEW_EVIDENCE[bucket][2 if zh else 1])}</span>'
-                   f'<span class="od-count">{_count(counts[bucket])}</span></li>' for bucket in OVERVIEW_ORDER)
-    return (f'<div class="overview-detail" id="overview-detail-{_e(key)}" data-overview-detail="{_e(key)}" hidden>'
-            f'<p class="od-head"><strong>{_e(label)}</strong><span class="od-total">{_count(total)}</span></p>'
-            f'<ul class="od-list">{rows}</ul></div>')
-
-
-def _overview(resources: list[dict], papers: list[dict], language: str) -> str:
-    """The All view's opening overview: class counts above a donut split by evidence class.
-
-    Sector angles keep a minimum width and scale by the square root of the class count, so a
-    small class stays selectable beside the largest. site.js shows this in place of the opening
-    cards and toggles the detail panel.
+    The remainders stay integers (count × 1000 mod total), so ties resolve by the given order.
+    A count that rounds to zero shows '<0.1' instead of 0; a true zero shows '0'.
     """
+    total = sum(values.get(key, 0) for key in keys)
+    if not total:
+        return {key: '0' for key in keys}
+    floors = {key: values.get(key, 0) * 1000 // total for key in keys}
+    short = 1000 - sum(floors.values())
+    for key in sorted(keys, key=lambda k: values.get(k, 0) * 1000 % total, reverse=True)[:short]:
+        floors[key] += 1
+    return {key: f'{floors[key] / 10:.1f}' if floors[key] else ('<0.1' if values.get(key, 0) else '0') for key in keys}
+
+
+def _bucket_aria(bucket: str, counts: Counter, language: str) -> str:
+    zh = language == 'zh'
+    return f'{OVERVIEW_ARIA[bucket][zh]} {_count(counts[bucket])}'
+
+
+def _overview_segments(counts: Counter, language: str) -> str:
+    """The evidence bands of one class, widest-order fixed C0 → –; each carries its own count and share."""
+    total = counts.total()
+    shares = _shares(dict(counts), OVERVIEW_ORDER)
+    return ''.join(f'<span class="ov-seg ov-seg-{bucket}" data-ov-seg data-bucket="{bucket}" data-n="{counts[bucket]}" '
+                   f'data-pct="{shares[bucket]}" data-w="{counts[bucket] / total * 100:.2f}" aria-hidden="true"></span>'
+                   for bucket in OVERVIEW_ORDER if counts[bucket])
+
+
+def _overview_row(body: str, key: str, label: str, counts: Counter, total: int, max_total: int, share: str,
+                  language: str, selected: bool) -> str:
+    """One category row: name, count, share and the linear bar; aria-label carries every number."""
+    zh = language == 'zh'
+    unit = COPY[language]['overview_aria_unit_one' if total == 1 else 'overview_aria_unit']
+    aria = (f'{label}{"，" if zh else ", "}{_count(total)} {unit}{"，" if zh else ", "}{"占 " if zh else ""}{share}%'
+            + ('。' if zh else '. ')
+            + ('，'.join(_bucket_aria(bucket, counts, language) for bucket in OVERVIEW_ORDER) + '。' if zh
+               else ', '.join(_bucket_aria(bucket, counts, language) for bucket in OVERVIEW_ORDER) + '.'))
+    strong = (counts['0'] + counts['1']) / total * 100
+    return (f'<li class="ov-row" role="option" id="ov-row-{_e(body)}-{_e(key)}" data-ov-row="{_e(key)}" '
+            f'aria-selected="{str(selected).lower()}" tabindex="{0 if selected else -1}" aria-label="{_e(aria)}" '
+            f'data-total="{total}" data-strong="{strong:.4f}" data-name="{_e(label)}">'
+            f'<span class="ov-cell ov-cell-name">{_e(label)}</span>'
+            f'<span class="ov-cell ov-cell-count" data-ov-count>{_count(total)}</span>'
+            f'<span class="ov-cell ov-cell-share">{share}%</span>'
+            f'<span class="ov-track"><span class="ov-bar" data-bar="{total / max_total * 100:.2f}">'
+            f'{_overview_segments(counts, language)}</span></span></li>')
+
+
+def _overview_panel(body: str, key: str, label: str, counts: Counter, share: str, href: str,
+                    language: str, selected: bool) -> str:
+    """The detail panel of one class: total, share of classified, every bucket with a mini bar, and the view-all link."""
+    zh = language == 'zh'
+    text = COPY[language]
+    total = counts.total()
+    shares = _shares(dict(counts), OVERVIEW_ORDER)
+    rows = ''.join(f'<li class="ovd-row{"" if counts[bucket] else " ovd-zero"}">'
+                   f'<span class="card-class {OVERVIEW_EVIDENCE[bucket][3]}">{OVERVIEW_EVIDENCE[bucket][0]}</span>'
+                   f'<span class="ovd-label">{_e(OVERVIEW_EVIDENCE[bucket][2 if zh else 1])}</span>'
+                   f'<span class="ovd-count">{_count(counts[bucket])}</span><span class="ovd-pct">{shares[bucket]}%</span>'
+                   + (f'<span class="ovd-mini" aria-hidden="true"><span data-w="{counts[bucket] / total * 100:.2f}"></span></span>'
+                      if counts[bucket] else '')
+                   + '</li>' for bucket in OVERVIEW_ORDER)
+    return (f'<div class="ov-panel" data-ov-panel="{_e(key)}" id="ov-panel-{_e(body)}-{_e(key)}" role="group" '
+            f'aria-label="{_e(label)}"{" hidden" if not selected else ""}>'
+            f'<p class="ovd-head"><span class="ovd-name">{_e(label)}</span><span class="ovd-total">{_count(total)}</span></p>'
+            f'<p class="ovd-share">{_e(text["overview_of_classified"].format(pct=share))}</p>'
+            f'<ul class="ovd-list">{rows}</ul>'
+            f'<a class="ovd-link" data-ov-view-all="{_e(key)}" href="{_e(href)}">{_e(text["overview_view_all"].format(n=_count(total)))}'
+            f'<span aria-hidden="true"> →</span></a></div>')
+
+
+def _overview_table(present, totals, mixes, language: str) -> str:
+    """The plain table behind the chart: one row per class, one column per bucket."""
     text, zh = COPY[language], language == 'zh'
-    records = list(resources) + [paper for paper in papers if 'class' in paper]
-    totals = Counter()
-    mixes = defaultdict(Counter)
+    head = ''.join(f'<th scope="col">{OVERVIEW_EVIDENCE[bucket][0]}</th>' for bucket in OVERVIEW_ORDER)
+    body = ''.join(f'<tr><th scope="row">{_e(DATA_CLASSES[key][zh])}</th><td>{_count(totals[key])}</td>'
+                   + ''.join(f'<td>{_count(mixes[key][bucket])}</td>' for bucket in OVERVIEW_ORDER) + '</tr>' for key in present)
+    return (f'<details class="ov-table"><summary>{_e(text["overview_table"])}</summary>'
+            f'<table><thead><tr><th scope="col">{_e(text["overview_table_class"])}</th>'
+            f'<th scope="col">{_e(text["overview_table_total"])}</th>{head}</tr></thead><tbody>{body}</tbody></table></details>')
+
+
+def _overview_body(key: str, records: list[dict], total_entries: int, language: str, prefix: str, *, active: bool) -> str:
+    """One tab's panel: scope line, evidence bar with its filter legend, class rows and detail panels."""
+    text, zh = COPY[language], language == 'zh'
+    totals, mixes = Counter(), defaultdict(Counter)
+    kinds_by_class = defaultdict(set)
     for record in records:
         data_class = record.get('class')
         if not data_class:
             continue
         totals[data_class] += 1
         mixes[data_class][evidence_bucket(record)] += 1
-    present = [key for key in DATA_CLASSES if totals[key]]
-    if not present:
-        return ''
-    weights = [sqrt(totals[key]) for key in present]
-    weight_sum = sum(weights)
-    tiles, sectors, details = [], [], []
-    angle = 0.0
-    for index, key in enumerate(present):
-        share = OVERVIEW_MIN_SHARE / len(present) + (1 - OVERVIEW_MIN_SHARE) * weights[index] / weight_sum
-        start, turn = angle, share * 2 * pi
-        end = angle + turn - OVERVIEW_SECTOR_GAP
-        middle = (start + end) / 2
-        angle += turn
-        label, total, counts = DATA_CLASSES[key][zh], totals[key], mixes[key]
+        if record.get('kind') and record.get('category'):
+            kinds_by_class[data_class].add(record['kind'])
+    if not totals:
+        return (f'<div class="ov-body" data-ov-body="{_e(key)}" data-ov-empty role="tabpanel" '
+                f'aria-labelledby="ov-tab-{_e(key) or "all"}"{" hidden" if not active else ""}>'
+                f'<p class="ov-empty">{_e(text["overview_empty"])}</p></div>')
+    # Rows read best largest first; ties keep the DATA_CLASSES order.
+    present = sorted(totals, key=lambda k: (-totals[k], list(DATA_CLASSES).index(k)))
+    max_total = totals[present[0]]
+    classified = sum(totals.values())
+    row_shares = _shares(totals, present)
+    rows, panels = [], []
+    for index, class_key in enumerate(present):
+        label = DATA_CLASSES[class_key][zh]
         selected = index == 0
-        segments, cursor = '', start
-        for bucket in OVERVIEW_ORDER:
-            if not counts[bucket]:
-                continue
-            stop = cursor + (end - start) * counts[bucket] / total
-            segments += f'<path class="overview-band overview-{bucket}" d="{_overview_arc(201, 282, cursor, stop)}"/>'
-            cursor = stop
-        aria = (f'{label}: {_count(total)} {text["overview_total"]}. '
-                + ', '.join(f'{OVERVIEW_EVIDENCE[bucket][0]} {_count(counts[bucket])}' for bucket in OVERVIEW_ORDER))
-        text_x, text_y = _overview_polar(141, middle)
-        rotation = middle * 180 / pi - 90 + (180 if middle * 180 / pi > 180 else 0)
-        sectors.append(f'<g class="overview-sector" data-overview-sector="{key}" role="button" tabindex="0" '
-                       f'aria-pressed="{str(selected).lower()}" aria-label="{_e(aria)}">'
-                       f'<path class="overview-track" d="{_overview_arc(85, 197, start, end)}"/>'
-                       f'<path class="overview-outline" d="{_overview_arc(197, 286, start, end)}"/>{segments}'
-                       f'<text class="overview-name" x="{text_x:.1f}" y="{text_y:.1f}" text-anchor="middle" '
-                       f'transform="rotate({rotation:.1f},{text_x:.1f},{text_y:.1f})">{_e(label)}</text></g>')
-        tiles.append(f'<li><button type="button" class="class-tile" data-overview-tile="{key}" '
-                     f'aria-controls="overview-detail-{key}" aria-pressed="{str(selected).lower()}">'
-                     f'<span class="ct-name">{_e(label)}</span><span class="ct-count">{_count(total)}</span></button></li>')
-        detail = _overview_breakdown(key, label, counts, language)
-        if index == 0:
-            detail = detail.replace(' hidden>', '>', 1)
-        details.append(detail)
-    legend = ''.join(f'<li><span class="card-class {OVERVIEW_EVIDENCE[bucket][3]}">{OVERVIEW_EVIDENCE[bucket][0]}</span>'
-                     f'{_e(OVERVIEW_EVIDENCE[bucket][2 if zh else 1])}</li>' for bucket in OVERVIEW_ORDER)
-    total = sum(totals.values())
-    svg = (f'<svg viewBox="0 0 640 640" role="group" aria-label="{_e(text["overview_label"])}">'
-           f'<text class="overview-total" x="320" y="314" text-anchor="middle">{_count(total)}</text>'
-           f'<text class="overview-total-label" x="320" y="342" text-anchor="middle">{_e(text["overview_total"])}</text>'
-           f'{"".join(sectors)}</svg>')
+        kinds = ','.join(sorted(kinds_by_class[class_key]))
+        rows.append(_overview_row(key, class_key, label, mixes[class_key], totals[class_key], max_total,
+                                  row_shares[class_key], language, selected))
+        panels.append(_overview_panel(key, class_key, label, mixes[class_key], row_shares[class_key],
+                                      f'{prefix}/resources/?kind={kinds}', language, selected))
+    summary_counts = Counter()
+    for class_key in present:
+        summary_counts.update(mixes[class_key])
+    summary_shares = _shares(dict(summary_counts), OVERVIEW_ORDER)
+    summary_aria = (f'{_count(classified)} {text["overview_total"]}' + ('，' if zh else ', ')
+                    + ('，'.join(_bucket_aria(b, summary_counts, language) for b in OVERVIEW_ORDER) + '。' if zh
+                       else ', '.join(_bucket_aria(b, summary_counts, language) for b in OVERVIEW_ORDER) + '.'))
+    summary_segs = ''.join(f'<span class="ov-seg ov-seg-{bucket}" data-ov-seg data-bucket="{bucket}" data-n="{summary_counts[bucket]}" '
+                           f'data-pct="{summary_shares[bucket]}" data-w="{summary_counts[bucket] / classified * 100:.2f}" aria-hidden="true"></span>'
+                           for bucket in OVERVIEW_ORDER if summary_counts[bucket])
+    legend = ''.join(f'<li><button type="button" class="ov-legend-item" data-ov-legend="{bucket}" aria-pressed="false" '
+                     f'aria-label="{_e(OVERVIEW_ARIA[bucket][zh])} {_e(OVERVIEW_EVIDENCE[bucket][2 if zh else 1])}'
+                     f'{"，" if zh else ", "}{_count(summary_counts[bucket])}"'
+                     + (' disabled' if not summary_counts[bucket] else '')
+                     + f'><span class="ov-swatch ov-sw-{bucket}" aria-hidden="true"></span>'
+                     f'<span class="ov-legend-code">{OVERVIEW_EVIDENCE[bucket][0]}</span>'
+                     f'<span class="ov-legend-label">{_e(OVERVIEW_EVIDENCE[bucket][2 if zh else 1])}</span>'
+                     f'<span class="ov-legend-n">{_count(summary_counts[bucket])}</span>'
+                     f'<span class="ov-legend-pct">{summary_shares[bucket]}%</span></button></li>'
+                     for bucket in OVERVIEW_ORDER)
+    return (f'<div class="ov-body" data-ov-body="{_e(key)}" role="tabpanel" aria-labelledby="ov-tab-{_e(key) or "all"}"{" hidden" if not active else ""}>'
+            f'<p class="ov-scope">{text["overview_scope"].format(cls=_count(classified), total=_count(total_entries))}</p>'
+            f'<div class="ov-summary"><h3 class="ov-summary-title">{_e(text["overview_summary"])}</h3>'
+            f'<div class="ov-bar ov-summary-bar" role="img" aria-label="{_e(summary_aria)}">{summary_segs}</div>'
+            f'<ul class="ov-legend">{legend}</ul></div>'
+            f'<div class="ov-main"><ul class="ov-rows" role="listbox" aria-label="{_e(text["overview_rows_label"])}">{"".join(rows)}</ul>'
+            f'<div class="ov-detail">{"".join(panels)}</div></div>'
+            f'{_overview_table(present, totals, mixes, language)}</div>')
+
+
+def _overview(resources: list[dict], papers: list[dict], language: str, prefix: str = '') -> str:
+    """The All view's opening module: kind tabs, then per-kind panels of class rows × evidence bands.
+
+    Every bar maps its length to the real count, so the eye can compare classes. The evidence mix bar and
+    its legend double as a level filter. site.js switches tabs, rows, mode, sort and filter; without
+    scripts the section stays hidden and the featured cards show.
+    """
+    text, zh = COPY[language], language == 'zh'
+    records = list(resources) + [paper for paper in papers if 'class' in paper]
+    if not any(record.get('class') for record in records):
+        return ''
+    kinds = Counter(record['kind'] for record in resources)
+    present = [kind for kind in KIND_ORDER if kinds[kind]]
+    tabs = [f'<button type="button" class="ov-tab" role="tab" id="ov-tab-all" data-ov-tab="" aria-selected="true" tabindex="0">'
+            f'{_e(text["all"])}<span class="ov-tab-count">{_count(len(resources))}</span></button>']
+    tabs += [f'<button type="button" class="ov-tab" role="tab" id="ov-tab-{_e(kind)}" data-ov-tab="{_e(kind)}" '
+             f'aria-selected="false" tabindex="-1">{_e(KIND_PLURAL[kind][zh])}<span class="ov-tab-count">{_count(kinds[kind])}</span></button>'
+             for kind in present]
+    bodies = [_overview_body('', records, len(resources), language, prefix, active=True)]
+    bodies += [_overview_body(kind, [record for record in resources if record['kind'] == kind], kinds[kind], language, prefix, active=False)
+               for kind in present]
+    info_rows = ''.join(f'<li><span class="card-class {OVERVIEW_EVIDENCE[bucket][3]}">{OVERVIEW_EVIDENCE[bucket][0]}</span>'
+                        f'{_e(OVERVIEW_EVIDENCE[bucket][2 if zh else 1])}</li>' for bucket in OVERVIEW_ORDER)
+    info = (f'<span class="info-wrap"><button type="button" class="info-btn" aria-expanded="false" aria-controls="ov-class-info" '
+            f'aria-label="{text["class_info_label"]}">i</button><span class="info-pop" id="ov-class-info" role="tooltip">'
+            f'<strong>{_e(text["class_label"])}</strong><ul>{info_rows}</ul>'
+            f'<span class="info-note">{_e(text["overview_note"])}</span></span></span>')
     return (f'<section class="overview" data-overview hidden aria-label="{_e(text["overview_label"])}">'
-            f'<ul class="class-tiles" aria-label="{_e(text["domains"])}">{"".join(tiles)}</ul>'
-            f'<div class="overview-grid"><div class="overview-chart">{svg}</div>'
-            f'<div class="overview-details">{"".join(details)}</div></div>'
-            f'<div class="overview-legend"><p><strong>{_e(text["class_info_label"])}</strong> · {_e(text["overview_note"])}</p>'
-            f'<ul>{legend}</ul></div></section>')
-
-
+            f'<div class="ov-tabs" role="tablist" aria-label="{_e(text["kind"])}">{"".join(tabs)}</div>'
+            f'<div class="ov-toolbar"><div class="ov-tools">'
+            f'<div class="ov-mode" role="group" aria-label="{_e(text["overview_mode"])}">'
+            f'<button type="button" class="ov-mode-btn" data-ov-mode="count" aria-pressed="true">{_e(text["overview_mode_count"])}</button>'
+            f'<button type="button" class="ov-mode-btn" data-ov-mode="share" aria-pressed="false">{_e(text["overview_mode_share"])}</button></div>'
+            f'<label class="select ov-sort"><span class="vh">{_e(text["overview_sort"])}</span>'
+            f'<select data-ov-sort aria-label="{_e(text["overview_sort"])}">'
+            f'<option value="count">{_e(text["overview_sort_count"])}</option>'
+            f'<option value="strong">{_e(text["overview_sort_strong"])}</option>'
+            f'<option value="name">{_e(text["overview_sort_name"])}</option></select>{icon("chevron")}</label>'
+            f'{info}</div></div>'
+            f'{"".join(bodies)}</section>')
 def preview_figure(record: dict, language: str, *, thumb: bool = False) -> str:
     """A documented demo preview for Class 0/1 entries; a demo without a screenshot gets a placeholder."""
     text = COPY[language]
@@ -427,7 +534,7 @@ def _drawer(resources, papers, order, language, prefix) -> str:
             f'<label class="select"><span class="select-label">{text["sort"]}</span><select data-sort aria-label="{text["sort"]}">'
             f'<option value="featured">{text["featured"]}</option><option value="reviewed">{text["recent"]}</option><option value="name">{text["az"]}</option></select>{icon("chevron")}</label>'
             f'<p class="drawer-meta" data-drawer-meta aria-live="polite">{text["showing"].format(n=len(featured), total=_count(total))}</p></div>'
-            f'{_overview(resources, papers, language)}'
+            f'{_overview(resources, papers, language, prefix=prefix)}'
             f'<ul class="cards" data-cards>{cards}</ul><div class="drawer-foot">'
             f'<a class="btn btn-primary" href="{prefix}/resources/" data-show-all>{text["show_all"].format(n=_count(total))}{icon("arrow")}</a>'
             f'<p class="note">{text["drawer_note"]}</p></div></div></section>')
@@ -562,7 +669,7 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
     """The lazy index behind the palette and the home drawer: compact arrays, one file per language.
 
     It holds what ranking and filtering read. Row:
-    [id, name, kind, targets, category, repository, featured rank, alias, connection, class, status, section, reviewed, added].
+    [id, name, kind, targets, category, repository, featured rank, alias, connection, class, status, section, reviewed, added, data class].
     "repository" is the GitHub repository name, or the host label for other evidence. id is 0 when it is the slug of that
     repository name and 1 when it is that slug plus "-case"; alias is 1 when it is the repository name.
     Descriptions, owners, evidence paths and previews follow in search_text(), row for row; "b" pairs the two files.
@@ -592,7 +699,8 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
                      -1 if record.get('evidence_class') is None else int(record['evidence_class']),
                      'unknown' if record.get('evidence_status') == 'unknown' else '',
                      sections.index(collection_section(record)),
-                     str(record['verified_at'])[:10], record.get('added_at') or ''])
+                     str(record['verified_at'])[:10], record.get('added_at') or '',
+                     DATA_CLASS_ORDER.index(record['class']) if record.get('class') in DATA_CLASS_ORDER else -1])
     paper_rows = []
     for paper in papers_newest_first(papers):
         paper_rows.append([paper['id'], paper['title_zh'] if zh else paper['title'], paper['year'], paper['venue'],
@@ -600,6 +708,7 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
     return {
         'v': 2, 'lang': language, 'kinds': kinds, 'kindLabels': [KIND_LABELS[kind][zh] for kind in kinds],
         'kindPlural': [KIND_PLURAL[kind][zh] for kind in kinds], 'kindCodes': [KIND_CODES[kind] for kind in kinds],
+        'classes': list(DATA_CLASS_ORDER),
         'targets': list(DOMAIN_ORDER), 'targetLabels': [_target_label(target, language) for target in DOMAIN_ORDER],
         'targetCodes': [DOMAIN_CODES[target] for target in DOMAIN_ORDER],
         'categories': categories, 'categoryLabels': [CATEGORIES[category][zh] for category in categories],

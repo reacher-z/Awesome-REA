@@ -1,4 +1,4 @@
-"""The All-view overview: class totals, evidence splits and the selectable donut."""
+"""The All-view overview: kind tabs, class rows drawn to scale, evidence filter and detail panels."""
 import re
 import sys
 from pathlib import Path
@@ -7,7 +7,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(ROOT / 'tests'))
-from build_home import _overview, evidence_bucket
+from build_home import _overview, _shares, evidence_bucket
 from test_case_pages import resource
 
 
@@ -19,6 +19,7 @@ class OverviewTests(unittest.TestCase):
             resource('game-notes', **{'class': 'game'}, evidence_class=3, evidence_status='observed'),
             resource('website-docs', targets=['website'], **{'class': 'website'}, evidence_class=2, evidence_status='observed'),
             resource('software-gone', **{'class': 'software'}, evidence_class=None, evidence_status='unknown'),
+            resource('utility', kind='tool', targets=['binary']),
         ]
         # A benchmark paper is a classed record that is not a catalog resource.
         self.papers = [
@@ -26,37 +27,124 @@ class OverviewTests(unittest.TestCase):
              'targets': ['game'], 'url': 'https://example.org/benchmark', 'verified_at': '2026-10-17'},
         ]
 
+    def overview(self, language='en'):
+        return _overview(self.records, self.papers, language)
+
+    def body(self, html, key=''):
+        parts = html.split(f'data-ov-body="{key}"')
+        return parts[1].split('<div class="ov-body"')[0]
+
     def test_evidence_bucket_separates_unreadable_and_unclassified_records(self):
         self.assertEqual(evidence_bucket(self.records[0]), '0')
         self.assertEqual(evidence_bucket(self.records[3]), '2')
         self.assertEqual(evidence_bucket(self.records[4]), 'unknown')
         self.assertEqual(evidence_bucket(self.papers[0]), 'unclassified')
 
-    def test_overview_counts_classes_and_evidence_splits(self):
-        html = _overview(self.records, self.papers, 'en')
-        tiles = dict(re.findall(r'<span class="ct-name">(.*?)</span><span class="ct-count">(\d+)</span>', html))
-        self.assertEqual(tiles, {'Software': '1', 'Game': '4', 'Website': '1'})
-        self.assertIn('class="overview-total" x="320" y="314" text-anchor="middle">6</text>', html)
-        self.assertEqual(re.findall(r'class="overview-band overview-(\w+)"', html),
-                         ['unknown', '0', '1', '3', 'unclassified', '2'])
-        self.assertIn('aria-label="Game: 4 data points. C0 1, C1 1, C2 0, C3 1, ? 0, – 1"', html)
+    def test_shares_sum_to_one_hundred(self):
+        values = {'0': 4, '1': 22, '2': 108, '3': 4, 'unknown': 0, 'unclassified': 5}
+        shares = _shares(values, ('0', '1', '2', '3', 'unknown', 'unclassified'))
+        self.assertEqual([shares[key] for key in ('0', '1', '2', '3', 'unclassified')],
+                         ['2.8', '15.4', '75.5', '2.8', '3.5'])
+        self.assertEqual(sum(float(share) for share in shares.values()), 100.0)
+        # A count that rounds to zero stays visible as <0.1; a true zero shows 0.
+        rounding = _shares({'0': 1, '1': 1, '2': 2000, '3': 0}, ('0', '1', '2', '3'))
+        self.assertEqual(rounding['2'], '99.9')
+        # The two 0.05% counts split the last tenth: one rounds up, the other stays visible as <0.1.
+        self.assertEqual(rounding['0'], '0.1')
+        self.assertTrue(rounding['1'].startswith('<'))
+        self.assertEqual(rounding['3'], '0')
 
-    def test_details_show_every_evidence_bucket(self):
-        html = _overview(self.records, self.papers, 'en')
-        self.assertEqual(html.count('data-overview-detail='), 3)
-        self.assertRegex(html, r'data-overview-detail="software">')
-        for label in ('full software reconstruction', 'partial scope or analysis entry', 'code &amp; docs, no demo or download',
-                      'notes only', 'source unavailable or unreadable', 'benchmark &amp; dataset papers'):
-            self.assertIn(f'<span class="od-label">{label}</span>', html)
-        self.assertIn('class="card-class card-class-none">–</span>', html)
+    def test_module_opens_hidden_with_label_and_kind_tabs(self):
+        html = self.overview()
+        self.assertTrue(html.startswith('<section class="overview" data-overview hidden '
+                                        'aria-label="Data classes by evidence class">'))
+        tabs = re.findall(r'data-ov-tab="([\w-]*)"[^>]*aria-selected="(\w+)"[^>]*>([^<]+)<span class="ov-tab-count">([\d,]+)', html)
+        self.assertEqual(tabs, [('', 'true', 'All', '6'), ('tool', 'false', 'Tools', '1'),
+                                ('case-study', 'false', 'Case studies', '5')])
 
-    def test_first_class_is_selected_and_chinese_copy_is_localized(self):
-        html = _overview(self.records, self.papers, 'en')
-        self.assertEqual(re.findall(r'data-overview-tile="(\w+)" aria-controls="overview-detail-\w+" aria-pressed="(true|false)"', html),
-                         [('software', 'true'), ('game', 'false'), ('website', 'false')])
-        html = _overview(self.records, self.papers, 'zh')
-        self.assertIn('数据点', html)
-        self.assertIn('基准与数据集论文', html)
+    def test_rows_rank_by_count_and_bar_lengths_stay_linear(self):
+        all_body = self.body(self.overview())
+        rows = re.findall(r'data-ov-row="(\w+)"[^>]*data-total="(\d+)"[^>]*data-strong="([\d.]+)"', all_body)
+        self.assertEqual([row[0] for row in rows], ['game', 'software', 'website'])
+        self.assertEqual([int(row[1]) for row in rows], [4, 1, 1])
+        # Game holds two C0+C1 of its four classed records.
+        self.assertEqual(rows[0][2], '50.0000')
+        widths = re.findall(r'data-bar="([\d.]+)"', all_body)
+        self.assertEqual(widths, ['100.00', '25.00', '25.00'])
+        game_segs = re.findall(r'data-bucket="(\w+)" data-n="(\d+)" data-pct="([\d.<>]+)" data-w="([\d.]+)"',
+                               all_body.split('data-ov-row="game"')[1].split('data-ov-row=')[0])
+        self.assertEqual(game_segs, [('0', '1', '25.0', '25.00'), ('1', '1', '25.0', '25.00'),
+                                     ('3', '1', '25.0', '25.00'), ('unclassified', '1', '25.0', '25.00')])
+        # The evidence mix bar sums the body; its aria label reads every bucket.
+        mix = re.findall(r'class="ov-bar ov-summary-bar"[^>]*aria-label="([^"]+)">', all_body)
+        self.assertEqual(mix, ['6 data points, C0 1, C1 1, C2 1, C3 1, unknown 1, benchmark papers 1.'])
+
+    def test_row_aria_labels_carry_counts(self):
+        all_body = self.body(self.overview())
+        aria = re.search(r'data-ov-row="game"[^>]*aria-label="([^"]+)"', all_body)
+        self.assertEqual(aria.group(1),
+                         'Game, 4 entries, 66.7%. C0 1, C1 1, C2 0, C3 1, unknown 0, benchmark papers 1.')
+        single = re.search(r'data-ov-row="software"[^>]*aria-label="([^"]+)"', all_body)
+        self.assertIn('Software, 1 entry, 16.7%.', single.group(1))
+
+    def test_default_selection_is_the_largest_class_with_its_panel_open(self):
+        all_body = self.body(self.overview())
+        self.assertIn('data-ov-row="game" aria-selected="true" tabindex="0"', all_body)
+        self.assertIn('data-ov-row="website" aria-selected="false" tabindex="-1"', all_body)
+        self.assertNotIn('id="ov-panel--game" role="group" aria-label="Game" hidden', all_body)
+        self.assertIn('id="ov-panel--website" role="group" aria-label="Website" hidden', all_body)
+
+    def test_panels_list_every_bucket_and_zero_rows_stay_visible(self):
+        all_body = self.body(self.overview())
+        software = all_body.split('data-ov-panel="software"')[1].split('data-ov-panel=')[0]
+        for code in ('C0', 'C1', 'C2', 'C3', '?', '–'):
+            badge = re.search(f'card-class[^>]*>{re.escape(code)}</span>.*?ovd-count', software, re.S)
+            self.assertIsNotNone(badge, f'{code} row missing')
+        self.assertEqual(software.count('ovd-zero'), 5)
+        self.assertIn('benchmark &amp; dataset papers', software)
+        link = re.search(r'data-ov-view-all="software" href="([^"]+)"', software)
+        self.assertEqual(link.group(1), '/resources/?kind=case-study')
+
+    def test_scope_line_states_both_totals(self):
+        all_body = self.body(self.overview())
+        self.assertIn('Classified <strong>6</strong> of <strong>6</strong> entries', all_body)
+        tool_body = self.body(self.overview(), 'tool')
+        self.assertIn('data-ov-empty', tool_body)
+        self.assertIn('No classified entries in this type yet.', tool_body)
+
+    def test_legend_items_double_as_filters_and_zero_levels_are_disabled(self):
+        all_body = self.body(self.overview())
+        items = re.findall(r'data-ov-legend="(\w+)" aria-pressed="false"( disabled)? aria-label', all_body)
+        self.assertEqual([key for key, _ in items], ['0', '1', '2', '3', 'unknown', 'unclassified'])
+        self.assertFalse(any(flag for _, flag in items))
+        tool_body = self.body(self.overview(), 'tool')
+        # A body without classed records renders no legend at all.
+        self.assertNotIn('data-ov-legend', tool_body)
+
+    def test_table_lists_every_class_and_bucket(self):
+        all_body = self.body(self.overview())
+        table = all_body.split('<details class="ov-table">')[1]
+        self.assertEqual(re.findall(r'<th scope="col">([^<]+)</th>', table)[:8],
+                         ['Data class', 'Total', 'C0', 'C1', 'C2', 'C3', '?', '–'])
+        self.assertIn('<th scope="row">Game</th><td>4</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>', table)
+
+    def test_chinese_copy_is_localized(self):
+        html = _overview(self.records, self.papers, 'zh', prefix='/zh')
+        self.assertIn('已分类 <strong>6</strong> 条 · 共 <strong>6</strong> 条', html)
+        self.assertIn('证据等级分布', html)
+        self.assertIn('查看全部 4 条', html)
+        self.assertIn('View as table', self.overview())
+        aria = re.search(r'data-ov-row="game"[^>]*aria-label="([^"]+)"', html)
+        self.assertEqual(aria.group(1), '游戏，4 条，占 66.7%。C0 1，C1 1，C2 0，C3 1，未知 0，基准论文 1。')
+        link = re.search(r'data-ov-view-all="game" href="([^"]+)"', html)
+        self.assertEqual(link.group(1), '/zh/resources/?kind=case-study')
+
+    def test_no_donut_remains(self):
+        html = self.overview()
+        self.assertNotIn('viewBox="0 0 640', html)
+        self.assertNotIn('overview-sector', html)
+        self.assertNotIn('overview-band', html)
+        self.assertNotIn('class-tile', html)
 
     def test_no_classed_records_render_nothing(self):
         self.assertEqual(_overview([], [], 'en'), '')
