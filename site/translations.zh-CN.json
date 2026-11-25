@@ -46242,5 +46242,37 @@
       "它只提供浏览器前端；游戏移植与资源来自上游项目。",
       "采用 MIT 许可证。"
     ]
+  },
+  "tekken-tag-decomp-case": {
+    "name": "铁拳 TT：匹配反编译与 PC 原生移植",
+    "requirements": [
+      "需要自备 PS2 游戏副本；仓库不含游戏数据。",
+      "它是匹配反编译加原生移植层，不是模拟器。",
+      "采用 AGPL-3.0 许可证。"
+    ]
+  },
+  "ff13-lr-android-case": {
+    "name": "Android 版最终幻想 XIII：雷霆归来",
+    "requirements": [
+      "需要自备 Xbox 360 版游戏；不包含游戏文件。",
+      "主要在 AYN Thor 掌机上开发测试，并支持第二块屏幕；不是模拟器。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "majistic-recomp-case": {
+    "name": "Majistic Recomp：Windows 上的 Majin and the Forsaken Kingdom",
+    "requirements": [
+      "需要自备 Xbox 360 版游戏；不包含游戏数据。",
+      "它面向 Windows x64 平台，以 C++23 编写。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "wonders-beyond-recomp-case": {
+    "name": "WondersBeyondRecomp：PC/Mac/Steam Deck/Android 上的宝可梦乐园 2",
+    "requirements": [
+      "需要自备 Wii 游戏副本；仓库不含游戏数据。",
+      "它属于静态重编译而非模拟器，并提供多平台发布包。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

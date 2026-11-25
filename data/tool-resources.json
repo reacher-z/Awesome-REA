@@ -163401,5 +163401,121 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "tekken-tag-decomp-case",
+    "name": "Tekken Tag Tournament: a matching decompilation with a native PC port",
+    "url": "https://github.com/adanft/TekkenTagDecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A matching decompilation of the PlayStation 2 Tekken Tag Tournament executable that rebuilds SLUS_200.01 byte for byte and compiles the game own code for PC on a new platform layer with an OpenGL renderer, software sound and disc access.",
+    "description_zh": "PS2 版《铁拳 TT》可执行文件的匹配反编译，逐字节重建 SLUS_200.01，并在新的平台层上把游戏自身代码编译成 PC 原生版本，带 OpenGL 渲染、软件音源与光盘读取。",
+    "evidence_url": "https://github.com/adanft/TekkenTagDecomp/blob/5fa74a08be50ce45b0f262e23805b25782374043/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the PlayStation 2 game; the repository holds no game data.",
+      "It is a matching decompilation plus a native port layer, not an emulator.",
+      "AGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ff13-lr-android-case",
+    "name": "Lightning Returns: Final Fantasy XIII natively on Android",
+    "url": "https://github.com/Lazaer-YZY/ff13-lr-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native Android arm64 port of the Xbox 360 Lightning Returns: Final Fantasy XIII, statically recompiling the PowerPC code to C++ with the ReXGlue SDK and drawing through a mobile-tuned Vulkan renderer derived from Xenia.",
+    "description_zh": "把 Xbox 360 版《最终幻想 XIII：雷霆归来》移植为 Android arm64 原生版，用 ReXGlue SDK 将 PowerPC 代码静态重编译为 C++，并借由源自 Xenia 的 Vulkan 渲染器在移动 GPU 上绘制。",
+    "evidence_url": "https://github.com/Lazaer-YZY/ff13-lr-recomp/blob/da49f1be711f8436dba95424450f45035c275fcc/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Xbox 360 copy of the game; no game files are included.",
+      "Developed and tested on an AYN Thor handheld with a live second screen; it is not an emulator.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "majistic-recomp-case",
+    "name": "Majistic Recomp: Majin and the Forsaken Kingdom on Windows",
+    "url": "https://github.com/kelvynzucco/majistic-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native Windows x64 port and static recompilation of the Xbox 360 Majin and the Forsaken Kingdom aimed at game preservation, with Vulkan and Direct3D 12 paths, a locked 60 fps and 4K support.",
+    "description_zh": "面向游戏保存的 Xbox 360《Majin and the Forsaken Kingdom》Windows x64 原生移植与静态重编译，提供 Vulkan 与 Direct3D 12 路径，锁定 60 帧并支持 4K。",
+    "evidence_url": "https://github.com/kelvynzucco/majistic-recomp/blob/48ecd2a0db3b58235497d3580f9ff72f962d4dd4/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Xbox 360 copy of the game; no game data is included.",
+      "It targets Windows x64 and is written in C++23.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "wonders-beyond-recomp-case",
+    "name": "WondersBeyondRecomp: PokePark 2 on PC, Mac, Steam Deck and Android",
+    "url": "https://github.com/eliasm4r/WondersBeyondRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of the Wii PokePark 2: Wonders Beyond that translates the game code to C++ ahead of time and runs natively on PC, Mac, Steam Deck and Android with up to 240 fps, wide screens and HD textures.",
+    "description_zh": "把 Wii 版《宝可梦乐园 2：奇迹彼岸》静态重编译，提前将游戏代码翻译为 C++，在 PC、Mac、Steam Deck 与 Android 上原生运行，支持最高 240 帧、宽屏与高清贴图。",
+    "evidence_url": "https://github.com/eliasm4r/WondersBeyondRecomp/blob/c0e5b386e908df04590679e6bf59c7b702c306d8/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the Wii game; the repository holds no game data.",
+      "It is a static recompilation rather than an emulator and ships releases for several platforms.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

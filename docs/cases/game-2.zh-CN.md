@@ -10,6 +10,7 @@
 
 ## 非匹配反编译
 
+- [**AZHS：重建《Need for Speed: High Stakes》4.50**](https://github.com/americusmaximus/AZHS) - AZHS 根据《Need for Speed: High Stakes》4.50 的原版二进制文件重建源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/azhs-case/)</sub>
 - [**Babil Decompilation Project：Final Fantasy IV 3D Remake 源码重建**](https://github.com/GlitchedDeveloper/Babil-Decompilation-Project) - Babil Decompilation Project 为 Final Fantasy IV 3D Remake 的 Steam 2020 年 11 月更新版重建 C++ 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/babil-decompilation-project-case/)</sub>
 - [**Back to Skool：基于 SkoolKit 的 ZX Spectrum 反汇编**](https://github.com/skoolkid/backtoskool) - Back to Skool 项目发布 ZX Spectrum 版游戏的 SkoolKit 反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/back-to-skool-disassembly-case/)</sub>
 - [**Balloon Fight：NES 游戏反汇编**](https://github.com/LuigiBlood/balloonfight_dis) - 这是 NES 美版 Balloon Fight 的反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/balloonfight-disasm/)</sub>
@@ -634,5 +635,4 @@
 - [**Halo 3 Delta：重建 halo3\_cache\_release.xex**](https://github.com/twist84/halo3_cache_release_recomp) - Halo 3 Delta 项目以 08172.07.03.08.2240.delta 版本的 halo3\_cache\_release.xex 为 ReXGlue 重编译目标。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo3-cache-release-recomp-case/)</sub>
 - [**HaloPad：通过反编译移植与 x86 重编译在 Apple 设备上运行 Halo**](https://github.com/chrissotraidis/projectreach) - 通过两套引擎将 Halo: Combat Evolved 带到 iPhone、iPad 和 Apple 芯片 Mac。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halopad-project-reach-case/)</sub>
 - [**Harvest Moon 64 PC Port / Recomp：开发中的原生构建版**](https://github.com/ai-tdd-labs/harvest-moon-64-recompiled) - Harvest Moon 64 PC Port / Recomp 使用 N64Recomp 和 RT64，从用户本地提供的 ROM 与 ELF 文件构建 Harvest Moon 64 原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aitdd-harvest-moon-64-recomp-case/)</sub>
-- [**Harvest Moon 64: Recompiled：原生移植**](https://github.com/HarvestMoon64Recomp/HarvestMoon64Recomp) - Harvest Moon 64: Recompiled 使用 N64: Recompiled 把《牧场物语 64》静态重编译为原生移植，并用 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harvest-moon-64-recomp-case/)</sub>
 <!-- END GENERATED CASES -->

@@ -6,10 +6,14 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**481 case studies**
+**485 case studies**
 
 ## Engine reimplementations
 
+- [**Pal3.Unity: reconstructing Sword and Fairy 3 and Wenqing Pian in Unity**](https://github.com/0x7c13/Pal3.Unity) - Pal3.Unity reimplements The Legend of Sword and Fairy 3 and its Wenqing Pian expansion in C# and Unity. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pal3-unity-case/)</sub>
+- [**PanzerChasm: recreating Chasm: The Rift with original game data**](https://github.com/Panzerschrek/Chasm-Reverse) - PanzerChasm recreates Chasm: The Rift in C++ as an SDL2 game that loads the player's original CSM.BIN data file. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/panzerchasm-chasm-the-rift-case/)</sub>
+- [**PanzerMortyr: a Mortyr 2093-1944 engine reimplementation**](https://github.com/Panzerschrek/PanzerMortyr) - PanzerMortyr reimplements the Mortyr 2093-1944 engine as a replacement executable that loads original game data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/panzermortyr-case/)</sub>
+- [**Pentagram: reimplementing the Ultima 8 engine**](https://github.com/pentagram-u8/pentagram) - Pentagram reimplements the Ultima 8 engine. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pentagram-u8/)</sub>
 - [**Phoenix: a Java remake of Emperor of the Fading Suns**](https://github.com/joulupunikki/Phoenix) - Phoenix rebuilds Emperor of the Fading Suns as a Java game using data from the user's EFS 1.4 installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/phoenix-efs-case/)</sub>
 - [**physics\_RT: reconstructing Ballance physics behavior**](https://github.com/doyaGu/physics_RT) - physics\_RT reconstructs Ballance physics behavior as a Win32 Virtools DLL using IVP numerical kernels. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/physics-rt-ballance-case/)</sub>
 - [**Pinball Fantasies Reassembled: recreating the DOS game engine**](https://github.com/wanda-phi/pfr) - Pinball Fantasies Reassembled recreates the 1993 DOS game engine in Rust using files from an original copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pinball-fantasies-reassembled-case/)</sub>

@@ -1158,3 +1158,26 @@ A Visio core, a Keenetic UX layer, a Wii loader replacement and a LEGO Island we
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Three are Class 1 with merged previews and isle.pizza is Class 2. The batch adds software, hardware and website class cases, thinning three sparse classes.
+
+## Batch 44 — 2026-11-25
+
+Four native ports: Tekken Tag decompilation and port, Lightning Returns on Android, Majistic Recomp and PokePark 2.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| tekken-tag-decomp-case | reconstruction-cases | [adanft/TekkenTagDecomp](https://github.com/adanft/TekkenTagDecomp/blob/5fa74a08be50ce45b0f262e23805b25782374043/README.md) | 6484afb81320bbbd6ba943a798fd20513178b6dccf2e29f2fc219352e53fc394 |
+| ff13-lr-android-case | reconstruction-cases | [Lazaer-YZY/ff13-lr-recomp](https://github.com/Lazaer-YZY/ff13-lr-recomp/blob/da49f1be711f8436dba95424450f45035c275fcc/README.md) | 9848a178b672df3bbfee3ceccbbcb2819e0677249a6a234f2a29db400572169b |
+| majistic-recomp-case | reconstruction-cases | [kelvynzucco/majistic-recomp](https://github.com/kelvynzucco/majistic-recomp/blob/48ecd2a0db3b58235497d3580f9ff72f962d4dd4/README.md) | 6ee3d042fafc3fa1e09c0e29c1f8ac647404511dbf0cbd1c8006b22f766ea935 |
+| wonders-beyond-recomp-case | reconstruction-cases | [eliasm4r/WondersBeyondRecomp](https://github.com/eliasm4r/WondersBeyondRecomp/blob/c0e5b386e908df04590679e6bf59c7b702c306d8/README.md) | f691bc54f5c734a1fe6a11209be140bd6e57ccf4c2f802d171db226feb9c03e9 |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| ZuanCrisp/NX2Navi-Zelda-OOT-Port | Same Switch 2 Ocarina of Time recompilation lineage as the curated HeyListen. |
+| schuler-ph/nsmbw-switch | Two New Super Mario Bros. Wii recompilations already exist. |
+| navasemanuel-lab/TSFP-XBE | Four TimeSplitters records already cover the Xbox and PC ports. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Lightning Returns is Class 1 with a merged preview; the other three are Class 2. The Chinese Majistic requirement was reworded to avoid a denial-style disclaimers, which validate.py rejects.

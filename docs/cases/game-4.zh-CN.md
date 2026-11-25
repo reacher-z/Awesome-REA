@@ -10,6 +10,10 @@
 
 ## 基于重建源码的移植
 
+- [**EA SPORTS UFC 3：面向 Linux 与 Windows 的 PS4 游戏移植**](https://github.com/GNSB/UFC-3-PS4-PORT-LINUX-WINDOWS) - EA SPORTS UFC 3 移植版在 Linux 和 Windows 上直接运行 PS4 游戏原有的 x86-64 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ufc-3-ps4-port-case/)</sub>
+- [**EarthBound Companion：《地球冒险》的原生版本**](https://github.com/rages4calm/earthbound-companion) - EarthBound Companion 是 EarthBound 的原生构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/earthbound-companion/)</sub>
+- [**Eden：《Project Eden》部分重建**](https://github.com/mercat0r/Eden) - Eden 着手以 DirectX 9 重建 2001 年游戏《Project Eden》的 Windows 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/eden-project-eden-case/)</sub>
+- [**EDGE-Classic：EDGE Doom 源代码移植的复兴**](https://github.com/edge-classic/EDGE-classic) - 把 EDGE 1.35 代码库在现代系统上复兴的跨平台 Doom 源代码移植，在保持低硬件要求的同时增强 mod 能力与画面效果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/edge-classic-case/)</sub>
 - [**Android 版精英部队单人战役：移动端的星际迷航航海家号**](https://github.com/imjustadudegamer/VoyagerSP-Android) - 把 2000 年的《星际迷航：航海家号 精英部队》单人战役移植到 Android，基于 lilium-voyager 引擎与 Quake3e 的 Vulkan 渲染器，支持触控与手柄操作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/voyager-sp-android-case/)</sub>
 - [**Emerald 3DS：《Pokémon Emerald》的 Nintendo 3DS 原生移植**](https://github.com/ZallaxDev/emerald-3ds) - Emerald 3DS 将《Pokémon Emerald》的反编译代码移植为 Nintendo 3DS 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/emerald-3ds-case/)</sub>
 - [**F-15 Strike Eagle 2 source port：重建版 DOS 游戏的现代平台移植**](https://github.com/neuviemeporte/f15se2-ex) - F-15 Strike Eagle 2 source port 将这款 1991 年 DOS 游戏的重建源码移植到现代架构，使用 SDL3 处理输入和界面、OpenGL 渲染，并模拟 AdLib 音频。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f15-strike-eagle-2-source-port-case/)</sub>
@@ -634,8 +638,4 @@
 - [**Ozymandias (Julius)：为《法老》改造城市建造游戏引擎**](https://github.com/Banderi/Ozymandias_Julius) - Ozymandias (Julius) 改造 Julius/Augustus 城市建造引擎，使用玩家自备的原版资源运行《法老》及《埃及艳后》资料片。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ozymandias-julius-case/)</sub>
 - [**Ozymandias：以 Godot 重建 Pharaoh 与 Zeus 游戏引擎**](https://github.com/Banderi/Ozymandias) - Ozymandias 使用 Godot 3.6 Mono 重建《Pharaoh》《Zeus》等城市建设游戏的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ozymandias-pharaoh-engine-case/)</sub>
 - [**P.T. PC 版：基于行为重新实现、读取 PS4 数据的引擎**](https://github.com/LoreanXavier/pt-pc) - 在新的 Vulkan 引擎上用 C++ 重新实现 P.T. 的游戏逻辑，运行时从使用者自有的 PS4 版本读取关卡、模型、贴图、声音、脚本和过场动画。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pt-pc-port-case/)</sub>
-- [**Pal3.Unity：用 Unity 重建《仙剑奇侠传三》及《问情篇》**](https://github.com/0x7c13/Pal3.Unity) - Pal3.Unity 使用 C# 和 Unity 重建《仙剑奇侠传三》及外传《问情篇》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pal3-unity-case/)</sub>
-- [**PanzerChasm：使用原版数据重建 Chasm: The Rift**](https://github.com/Panzerschrek/Chasm-Reverse) - PanzerChasm 用 C++ 和 SDL2 重建 Chasm: The Rift，运行时读取玩家原版游戏的 CSM.BIN 数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/panzerchasm-chasm-the-rift-case/)</sub>
-- [**PanzerMortyr：《Mortyr 2093-1944》引擎重实现**](https://github.com/Panzerschrek/PanzerMortyr) - PanzerMortyr 重新实现《Mortyr 2093-1944》的引擎，作为读取原版游戏数据的替代程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/panzermortyr-case/)</sub>
-- [**Pentagram：重建《创世纪 8》引擎**](https://github.com/pentagram-u8/pentagram) - Pentagram 重实现 Ultima 8 的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pentagram-u8/)</sub>
 <!-- END GENERATED CASES -->

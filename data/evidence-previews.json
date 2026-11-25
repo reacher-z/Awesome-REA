@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-25T09:42:00+00:00",
-    "entry_count": 1215,
-    "class_entry_count": 1246,
+    "generated_at": "2026-11-25T10:46:56+00:00",
+    "entry_count": 1216,
+    "class_entry_count": 1247,
     "class_counts": {
-      "image": 1175,
+      "image": 1176,
       "video": 40
     },
     "missing_count": 31,
@@ -2693,6 +2693,15 @@
       "checked_at": "2026-11-07T03:50:04+00:00"
     },
     {
+      "id": "ff13-lr-android-case",
+      "image_url": "https://raw.githubusercontent.com/Lazaer-YZY/ff13-lr-recomp/da49f1be711f8436dba95424450f45035c275fcc/docs/images/yusnaan.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Lazaer-YZY/ff13-lr-recomp",
+      "revision": "da49f1be711f8436dba95424450f45035c275fcc",
+      "checked_at": "2026-11-25T10:46:56+00:00"
+    },
+    {
       "id": "fh2mp-case",
       "image_url": "https://raw.githubusercontent.com/Charelene/FH2MP/9ea44e5ebec59aac09c2254db7bdcd0959386060/assets/demo-free-roam.jpg",
       "kind": "image",
@@ -4409,7 +4418,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-25T09:41:59+00:00"
+      "checked_at": "2026-11-25T10:46:55+00:00"
     },
     {
       "id": "konami-viper-recomp-case",

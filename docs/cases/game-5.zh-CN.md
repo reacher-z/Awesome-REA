@@ -6,10 +6,14 @@
 
 [English](game-5.md)
 
-**481 个案例**
+**485 个案例**
 
 ## 引擎重实现
 
+- [**Pal3.Unity：用 Unity 重建《仙剑奇侠传三》及《问情篇》**](https://github.com/0x7c13/Pal3.Unity) - Pal3.Unity 使用 C# 和 Unity 重建《仙剑奇侠传三》及外传《问情篇》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pal3-unity-case/)</sub>
+- [**PanzerChasm：使用原版数据重建 Chasm: The Rift**](https://github.com/Panzerschrek/Chasm-Reverse) - PanzerChasm 用 C++ 和 SDL2 重建 Chasm: The Rift，运行时读取玩家原版游戏的 CSM.BIN 数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/panzerchasm-chasm-the-rift-case/)</sub>
+- [**PanzerMortyr：《Mortyr 2093-1944》引擎重实现**](https://github.com/Panzerschrek/PanzerMortyr) - PanzerMortyr 重新实现《Mortyr 2093-1944》的引擎，作为读取原版游戏数据的替代程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/panzermortyr-case/)</sub>
+- [**Pentagram：重建《创世纪 8》引擎**](https://github.com/pentagram-u8/pentagram) - Pentagram 重实现 Ultima 8 的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pentagram-u8/)</sub>
 - [**Phoenix：Emperor of the Fading Suns 的 Java 重制版**](https://github.com/joulupunikki/Phoenix) - Phoenix 用 Java 重建 Emperor of the Fading Suns，运行时读取用户安装的 EFS 1.4 数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/phoenix-efs-case/)</sub>
 - [**physics\_RT：重建 Ballance 物理行为**](https://github.com/doyaGu/physics_RT) - physics\_RT 使用 IVP 数值核心，将 Ballance 的物理行为重建为 Win32 Virtools DLL，涉及碰撞几何、作用力处理和模拟时序，并记录了原始 DLL 差分测试与游戏运行对照。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/physics-rt-ballance-case/)</sub>
 - [**Pinball Fantasies Reassembled：重建 DOS 游戏引擎**](https://github.com/wanda-phi/pfr) - Pinball Fantasies Reassembled 用 Rust 和原版游戏文件重建 1993 年的 DOS 游戏引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pinball-fantasies-reassembled-case/)</sub>
