@@ -162032,5 +162032,178 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "play-stunts-web",
+    "name": "Play Stunts: a browser reconstruction of Stunts / 4D Sports Driving",
+    "url": "https://github.com/ACatWithEbola/playstunts",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A native browser reconstruction of Stunts / 4D Sports Driving that runs the original simulation, verifies submitted replays and adds shared leaderboards and community tracks.",
+    "description_zh": "把《Stunts / 4D Sports Driving》重建为原生浏览器版本，运行原始模拟并校验提交的回放，同时加入共享排行榜与社区赛道。",
+    "evidence_url": "https://github.com/ACatWithEbola/playstunts/blob/4d59314c41ba834a96050101492de97c043a0c85/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the original game files; the project does not distribute them.",
+      "The hosted version adds online leaderboards and community tracks that a local checkout lacks.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "arcade-js",
+    "name": "arcade-js: arcade machine code translated to JavaScript and validated against MAME",
+    "url": "https://github.com/qarl/arcade-js",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "description_en": "An experiment in agent-driven porting: each arcade ROM is disassembled and translated instruction by instruction into JavaScript, checked frame by frame against MAME, then decompiled again into readable routines.",
+    "description_zh": "一项由智能体驱动的移植实验：逐条反汇编街机 ROM 并翻译为 JavaScript，逐帧对照 MAME 校验像素输出，再重新反编译成可读的函数。",
+    "evidence_url": "https://github.com/qarl/arcade-js/blob/174d526f2e66301e5e466ce5d68230ebbe6b6f95/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original arcade ROMs; the project does not distribute them.",
+      "MAME supplies the reference output the translation is checked against.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "daytona-usa-web",
+    "name": "Daytona USA Web: a WebAssembly port of the arcade recompilation",
+    "url": "https://github.com/johannruiz/Daytona-USA-Web",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A browser port of Daytona USA built on the daytona-arcade-recomp static recompilation, running through WebAssembly and WebGPU with an arcade-focused interface.",
+    "description_zh": "基于 daytona-arcade-recomp 静态重编译成果的 Daytona USA 浏览器移植，通过 WebAssembly 与 WebGPU 运行，并以还原街机体验为目标设计界面。",
+    "evidence_url": "https://github.com/johannruiz/Daytona-USA-Web/blob/1c05247ab0ae08821629ca1f751dbc38851200ba/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the arcade ROM; the project does not distribute game data.",
+      "It depends on the daytona-arcade-recomp recompilation and a WebGPU-capable browser.",
+      "BSD-3-Clause-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "binkeep",
+    "name": "binkeep: reverse engineering in the browser",
+    "url": "https://github.com/kano92-dir/binkeep",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A free, local-first binary analysis tool for PE, ELF, Mach-O, .NET and Android apps with disassembly, functions, cross-references, strings, imports, YARA, packer detection and an ATT&CK capability list; files never leave the browser.",
+    "description_zh": "免费的本地优先二进制分析工具，支持 PE、ELF、Mach-O、.NET 与 Android 应用，提供反汇编、函数、交叉引用、字符串、导入表、YARA、壳检测与 ATT&CK 能力清单；文件不会离开浏览器。",
+    "evidence_url": "https://github.com/kano92-dir/binkeep/blob/a0084a8f146672a2ee0b219a3a5dd695f9b7ac96/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "It runs in the browser and works offline after the first visit; files are processed locally.",
+      "It covers first-pass triage and is explicitly not a Ghidra replacement.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "lambda1vr",
+    "name": "Lambda1VR: Half-Life on the Oculus Quest",
+    "url": "https://github.com/Team-Beef-Studios/Lambda1VR",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game",
+      "app"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A port of the Xash3D-FWGS Half-Life engine to the Oculus Quest, adding 6DoF weapon handling and OpenGL ES 2.0 rendering on standalone Android headsets.",
+    "description_zh": "将 Xash3D-FWGS 的《半条命》引擎移植到 Oculus Quest，在独立 Android 头显上加入 6DoF 武器操控与 OpenGL ES 2.0 渲染。",
+    "evidence_url": "https://github.com/Team-Beef-Studios/Lambda1VR/blob/99a0d62ebb051151929c9655a2fdab3977ee8a33/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires game assets from a legally owned copy of Half-Life; no game data is bundled.",
+      "It is an engine port for Oculus Quest and Oculus Go class standalone headsets and is sideloaded as an APK.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "sfiii3-arcade-decomp",
+    "name": "Street Fighter III 3rd Strike: a byte-for-byte CPS3 program decompilation",
+    "url": "https://github.com/gibletto/sfIII3-cps3-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "The CPS3 arcade program of Street Fighter III 3rd Strike rewritten as C and SH-2 assembly that rebuilds to the arcade bytes with the original Hitachi toolchain, building in part on the hand-made 3S decompilation.",
+    "description_zh": "把《街头霸王 III 3rd Strike》的 CPS3 街机程序改写为 C 与 SH-2 汇编，用原版日立工具链重建出与街机完全一致的字节，部分基于手工完成的 3S 反编译。",
+    "evidence_url": "https://github.com/gibletto/sfIII3-cps3-decomp/blob/d440837003292a6521f85f0c57752c7b5f30255b/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original arcade program ROM to verify the build; the project does not distribute it.",
+      "It must be built with the original SHC 5.0, asmsh 4.0, lnk 6.0 and rof2bin 2.51 toolchain.",
+      "AGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

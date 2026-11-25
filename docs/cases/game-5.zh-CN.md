@@ -6,10 +6,14 @@
 
 [English](game-5.md)
 
-**446 个案例**
+**451 个案例**
 
 ## 引擎重实现
 
+- [**Reburn 3：《Burnout 3 Takedown》重实现**](https://github.com/reburndev/reburn3) - Reburn 3 是《Burnout 3: Takedown》进行中的开源重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reburn3-case/)</sub>
+- [**ReChan：面向 PC 重建 Jackie Chan Stuntmaster**](https://github.com/SilverwireGames/ReChan) - ReChan 将 PlayStation 游戏 Jackie Chan Stuntmaster 的逻辑和系统以 C++ 重建，运行于 x86\_64 Windows 与 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rechan-case/)</sub>
+- [**ReFlood：用 C 与 SDL2 重建 Amiga 游戏 Flood**](https://github.com/VonKossa/ReFlood) - ReFlood 将 Amiga 游戏 Flood 重建为 C99 程序，并用 SDL2 提供图形界面；素材从玩家自己的磁盘镜像提取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reflood-case/)</sub>
+- [**REGoth-bs：重实现《哥特王朝》及《哥特王朝 II》引擎**](https://github.com/REGoth-project/REGoth-bs) - REGoth-bs 重实现《哥特王朝》和《哥特王朝2》使用的 zEngine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/regoth-bs/)</sub>
 - [**REGoth：重实现《哥特王朝》及《哥特王朝 II》引擎**](https://github.com/REGoth-project/REGoth) - REGoth 重实现《哥特王朝》和《哥特王朝2》使用的 zEngine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/regoth/)</sub>
 - [**REinforced：扩展《Flashback》引擎重实现**](https://github.com/chermenin/REminiscence) - REinforced 扩展了 1992 年游戏《Flashback》的 REminiscence 引擎重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reinforced-flashback-case/)</sub>
 - [**ReksioEngine：重实现《Przygody Reksia》游戏引擎**](https://github.com/ReksioEngine/ReksioEngine) - ReksioEngine 重实现《Przygody Reksia》系列使用的 BlooMoo 和 Piklib 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reksio-engine/)</sub>
@@ -150,6 +154,7 @@
 - [**Alleyway：按校验值匹配的 Game Boy 反汇编**](https://github.com/Wit-MKW/alleyway-gb) - Alleyway 将 1989 年的 Game Boy 游戏整理为汇编源码，按音频、显示、输入、物理和关卡代码分文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/alleyway-gb-case/)</sub>
 - [**Anm2Ed：重建《以撒的结合：重生》的专有动画编辑器**](https://github.com/ShweetsStuff/anm2ed) - Anm2Ed 是《以撒的结合：重生》随游戏附带的专有动画编辑器的现代替代品。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/anm2ed-case/)</sub>
 - [**Another Life：重建 The Witcher 3 存档状态**](https://github.com/awarebayes/another-life-w3) - Another Life 重建 The Witcher 3 Remastered 的部分存档格式与任务状态，根据玩家选择生成新存档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/another-life-w3-case/)</sub>
+- [**arcade-js：把街机机器码翻译成 JavaScript 并用 MAME 校验**](https://github.com/qarl/arcade-js) - 一项由智能体驱动的移植实验：逐条反汇编街机 ROM 并翻译为 JavaScript，逐帧对照 MAME 校验像素输出，再重新反编译成可读的函数。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/arcade-js/)</sub>
 - [**Arkanum：重建《Arcanum》档案与地图扇区格式**](https://github.com/vleon1/Arkanum) - Arkanum 在 Python 引擎重建工作中解析《Arcanum》的游戏数据格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/arkanum-arcanum-formats-case/)</sub>
 - [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb) - 同时运行《漫威蜘蛛侠：重制版》与《蝙蝠侠：阿卡姆骑士》，将哥谭碰撞数据传入蜘蛛侠的物理世界，再将其渲染画面合成到阿卡姆中。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/arkweb-two-game-case/)</sub>
 - [**AscNet：重建《战双帕弥什》服务器**](https://github.com/rafi1212122/AscNet) - AscNet 为《战双帕弥什》重建服务器。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ascnet-punishing-gray-raven-case/)</sub>

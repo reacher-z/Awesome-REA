@@ -938,3 +938,28 @@ This round adds four reconstruction cases and two tools: BT4decomp, Halo 64, Car
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; BT4decomp and Halo 64 received Class 1 previews. The four new case studies update the game case indexes and README case sections.
+
+## Batch 35 — 2026-11-24
+
+Five reconstruction cases and a browser disassembler: Play Stunts, arcade-js, Daytona USA Web, Lambda1VR, the Street Fighter III 3rd Strike CPS3 decompilation and binkeep.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| play-stunts-web | reconstruction-cases | [ACatWithEbola/playstunts](https://github.com/ACatWithEbola/playstunts/blob/4d59314c41ba834a96050101492de97c043a0c85/README.md) | cdfebec5d41ba39b75b882de28ed956bf58fa02d829acae44027b10a8d14412f |
+| arcade-js | reconstruction-cases | [qarl/arcade-js](https://github.com/qarl/arcade-js/blob/174d526f2e66301e5e466ce5d68230ebbe6b6f95/README.md) | b12350d73bf85609ae251c932d9553d8ca1e89fc846c121ade9fa121d038e1fc |
+| daytona-usa-web | reconstruction-cases | [johannruiz/Daytona-USA-Web](https://github.com/johannruiz/Daytona-USA-Web/blob/1c05247ab0ae08821629ca1f751dbc38851200ba/README.md) | 06e2a4782dce0147aa6a26ac36e72cea5102798523c7f82f85081489a92f7b55 |
+| lambda1vr | reconstruction-cases | [Team-Beef-Studios/Lambda1VR](https://github.com/Team-Beef-Studios/Lambda1VR/blob/99a0d62ebb051151929c9655a2fdab3977ee8a33/README.md) | 087ca9ae7fb9aaf5b251a1fbd9d5245d7337e6af54cb8fb58a127c83432efffd |
+| sfiii3-arcade-decomp | reconstruction-cases | [gibletto/sfIII3-cps3-decomp](https://github.com/gibletto/sfIII3-cps3-decomp/blob/d440837003292a6521f85f0c57752c7b5f30255b/README.md) | 1f259af293c7214ce90790ea1ea33a934b71321c33b389c631e60cee07350861 |
+| binkeep | native-analysis | [kano92-dir/binkeep](https://github.com/kano92-dir/binkeep/blob/a0084a8f146672a2ee0b219a3a5dd695f9b7ac96/README.md) | 5cb848f5a2469d5973e518e4ccd7bc14990964ef630dc227aeb34dc3e50b1344 |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| deathkiller/jazz2 | The Jazz Jackrabbit 2 reimplementation source moved to jazz2-native, which the catalog already carries. |
+| benstone/3DMMEx, foone/3DMMForever | Modernised ports of Microsoft released 3D Movie Maker source, not reverse-engineering work. |
+| headshot2017/3dpinball-dc | Last pushed 2024-07-19, too stale for an active entry. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; all six classify as Class 2 (code and docs, no demo or download). The three browser ports record game as their only target so the game method sections render.

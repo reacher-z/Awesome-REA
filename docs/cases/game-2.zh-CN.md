@@ -10,6 +10,7 @@
 
 ## 非匹配反编译
 
+- [**Back to Skool：基于 SkoolKit 的 ZX Spectrum 反汇编**](https://github.com/skoolkid/backtoskool) - Back to Skool 项目发布 ZX Spectrum 版游戏的 SkoolKit 反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/back-to-skool-disassembly-case/)</sub>
 - [**Balloon Fight：NES 游戏反汇编**](https://github.com/LuigiBlood/balloonfight_dis) - 这是 NES 美版 Balloon Fight 的反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/balloonfight-disasm/)</sub>
 - [**Banjo-Kazooie：Xbox Live Arcade 版反编译**](https://github.com/banjo360/bk360) - 该项目反编译 Xbox Live Arcade 版 Banjo-Kazooie。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bk360/)</sub>
 - [**Battlestations Pacific：逐步重建 Win32 C++ 程序**](https://github.com/sqz269/battlestations-pacific-decompile) - 依据 Ghidra 分析，将 Battlestations Pacific 的 Win32 可执行文件逐例程重建为可编译的 MSVC C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/battlestations-pacific-reconstruction-case/)</sub>
@@ -634,5 +635,4 @@
 - [**Haunting Ground Recomp：PS2 游戏原生移植**](https://github.com/N900x4/HauntingGround-Recomp-Project) - 《Haunting Ground》（PS2 美版）的原生 Windows/Linux 版本：从自备光盘 ISO 把 PS2 程序转译为 C 并配合手写运行时编译，支持 4K、60 fps 插帧与高清贴图。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/haunting-ground-recomp/)</sub>
 - [**Haze Recomp：实验性 PlayStation 3 游戏静态重编译**](https://github.com/zdiemer/haze-recomp) - Haze Recomp 使用 ps3recomp 从用户自备光盘镜像提升 PS3 游戏 Haze 及相关固件代码，构建 Windows 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/haze-recomp-case/)</sub>
 - [**Heavy Metal: FAKK2：x86 到 C 的静态重编译**](https://github.com/sp00nznet/heavymetal) - Heavy Metal: FAKK2 将原版 Windows 游戏可执行文件的 x86 指令转译为可编译的 C，构建 32 位 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heavy-metal-fakk2-recomp-case/)</sub>
-- [**Hell Night: Dark Messiah Recompiled：PlayStation 游戏 PC 静态重编译**](https://github.com/goodshepherd23/Hellnight-Recompiled) - Hell Night: Dark Messiah Recompiled 使用 PSXRecomp 从用户的欧版 PlayStation《Hellnight》光盘在本地生成游戏代码，构建原生 PC 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hellnight-recompiled-case/)</sub>
 <!-- END GENERATED CASES -->

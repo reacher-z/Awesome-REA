@@ -45858,5 +45858,53 @@
       "它是匹配式反编译，命名与结构仍在演进。",
       "采用 CC0-1.0 许可证。"
     ]
+  },
+  "play-stunts-web": {
+    "name": "Play Stunts：Stunts / 4D Sports Driving 的浏览器重建",
+    "requirements": [
+      "需要自备原版游戏文件；项目不分发游戏数据。",
+      "线上版本额外提供在线排行榜与社区赛道，本地版本没有这些功能。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "arcade-js": {
+    "name": "arcade-js：把街机机器码翻译成 JavaScript 并用 MAME 校验",
+    "requirements": [
+      "需要自备原版街机 ROM；项目不分发 ROM。",
+      "以 MAME 的输出作为逐帧校对的参照实现。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "daytona-usa-web": {
+    "name": "Daytona USA Web：街机重编译成果的 WebAssembly 移植",
+    "requirements": [
+      "需要自备街机 ROM；项目不分发游戏数据。",
+      "依赖 daytona-arcade-recomp 的重编译成果以及支持 WebGPU 的浏览器。",
+      "采用 BSD-3-Clause 许可证。"
+    ]
+  },
+  "binkeep": {
+    "name": "binkeep：浏览器里的逆向工程",
+    "requirements": [
+      "在浏览器中运行，首次访问后可离线使用，文件全程在本地处理。",
+      "面向初步筛查，明确不是 Ghidra 的替代品。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "lambda1vr": {
+    "name": "Lambda1VR：Oculus Quest 上的半条命",
+    "requirements": [
+      "需要合法的《半条命》游戏资源；不附带任何游戏数据。",
+      "面向 Oculus Quest/Oculus Go 一类独立 Android 头显，以 APK 方式旁加载。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "sfiii3-arcade-decomp": {
+    "name": "街头霸王 III 3rd Strike：CPS3 程序的逐字节反编译",
+    "requirements": [
+      "需要原版街机程序 ROM 来验证构建；项目不分发 ROM。",
+      "必须使用原版 SHC 5.0、asmsh 4.0、lnk 6.0 与 rof2bin 2.51 工具链构建。",
+      "采用 AGPL-3.0 许可证。"
+    ]
   }
 }
