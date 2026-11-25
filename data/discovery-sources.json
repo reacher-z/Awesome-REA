@@ -2732,7 +2732,7 @@
       "type": "github-topic",
       "topic": "cad",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic cad, screened for reverse-engineering, parser and reimplementation wording; CAD/DWG/STEP reconstruction is otherwise missed by binary-centric queries.",
       "scope": {
         "exclusion_sets": [
@@ -2747,7 +2747,7 @@
       "type": "github-topic",
       "topic": "3d-modeling",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic 3d-modeling, screened for format, importer and reconstruction work.",
       "scope": {
         "exclusion_sets": [
@@ -2762,7 +2762,7 @@
       "type": "github-topic",
       "topic": "blender-addon",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic blender-addon, screened for importers, format parsers and engine-asset reconstruction.",
       "scope": {
         "exclusion_sets": [
@@ -2777,7 +2777,7 @@
       "type": "github-topic",
       "topic": "gltf",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic gltf, screened for format recovery, extraction and conversion of shipped 3D assets.",
       "scope": {
         "exclusion_sets": [
@@ -2792,7 +2792,7 @@
       "type": "github-topic",
       "topic": "animation-tools",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic animation-tools, screened for runtimes, format recovery, reimplementation and asset extractors; the broad animation topic was too noisy.",
       "scope": {
         "exclusion_sets": [
@@ -2808,7 +2808,7 @@
       "type": "github-topic",
       "topic": "flash",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic flash, screened for SWF analysis, decompilation and Flash runtime reimplementation.",
       "scope": {
         "exclusion_sets": [
@@ -2823,7 +2823,7 @@
       "type": "github-topic",
       "topic": "lottie",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic lottie, screened for parsers, renderers and format extractors.",
       "scope": {
         "exclusion_sets": [
@@ -2838,7 +2838,7 @@
       "type": "github-topic",
       "topic": "live2d",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic live2d, screened for runtime and file-format reconstruction.",
       "scope": {
         "exclusion_sets": [
@@ -2853,7 +2853,7 @@
       "type": "github-topic",
       "topic": "video-editing",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic video-editing, screened for project-format recovery, reverse engineering and reimplementation.",
       "scope": {
         "exclusion_sets": [
@@ -2868,7 +2868,7 @@
       "type": "github-topic",
       "topic": "video-processing",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic video-processing, screened for format, codec and project-file recovery.",
       "scope": {
         "exclusion_sets": [
@@ -2883,7 +2883,7 @@
       "type": "github-topic",
       "topic": "ffmpeg",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic ffmpeg, screened for reverse engineering, format extraction and project reconstruction.",
       "scope": {
         "exclusion_sets": [
@@ -2898,7 +2898,7 @@
       "type": "github-topic",
       "topic": "website-clone",
       "limit": 200,
-      "every_hours": 12,
+      "every_hours": 1,
       "why": "GitHub topic website-clone: direct evidence of website reconstruction projects.",
       "scope": {
         "exclusion_sets": [
@@ -2912,7 +2912,7 @@
       "type": "github-topic",
       "topic": "screenshot-to-code",
       "limit": 200,
-      "every_hours": 12,
+      "every_hours": 1,
       "why": "GitHub topic screenshot-to-code: screenshot-driven front-end reconstruction.",
       "scope": {
         "exclusion_sets": [
@@ -2926,7 +2926,7 @@
       "type": "github-topic",
       "topic": "ios-reverse-engineering",
       "limit": 200,
-      "every_hours": 12,
+      "every_hours": 1,
       "why": "GitHub topic ios-reverse-engineering: iOS app analysis and reconstruction.",
       "scope": {
         "exclusion_sets": [
@@ -2940,7 +2940,7 @@
       "type": "github-topic",
       "topic": "flutter",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic flutter, screened for app decompilation, extraction and runtime analysis.",
       "scope": {
         "exclusion_sets": [
@@ -2955,7 +2955,7 @@
       "type": "github-topic",
       "topic": "source-port",
       "limit": 200,
-      "every_hours": 12,
+      "every_hours": 1,
       "why": "GitHub topic source-port: native rebuilds and ports of existing applications and games.",
       "scope": {
         "exclusion_sets": [
@@ -2969,7 +2969,7 @@
       "type": "github-topic",
       "topic": "game-recompilation",
       "limit": 200,
-      "every_hours": 12,
+      "every_hours": 1,
       "why": "GitHub topic game-recompilation: static and source recompilation projects.",
       "scope": {
         "exclusion_sets": [
@@ -2983,7 +2983,7 @@
       "type": "github-topic",
       "topic": "electron",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic electron, screened for unpacking, deobfuscation and desktop-shell reconstruction.",
       "scope": {
         "exclusion_sets": [
@@ -2998,7 +2998,7 @@
       "type": "github-topic",
       "topic": "win32",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic win32, screened for reverse engineering, reimplementation and hooking of Windows applications.",
       "scope": {
         "exclusion_sets": [
@@ -3013,7 +3013,7 @@
       "type": "github-topic",
       "topic": "firmware-analysis",
       "limit": 200,
-      "every_hours": 12,
+      "every_hours": 1,
       "why": "GitHub topic firmware-analysis: firmware extraction, emulation and device protocol research.",
       "scope": {
         "exclusion_sets": [
@@ -3027,7 +3027,7 @@
       "type": "github-topic",
       "topic": "capcut",
       "limit": 100,
-      "every_hours": 12,
+      "every_hours": 1,
       "why": "GitHub topic capcut: draft/project format tooling, CLI editors and API reconstruction for CapCut and Jianying.",
       "scope": {
         "require": "reverse|reimplement|project|draft|format|parser|extract|api|template",
@@ -3042,7 +3042,7 @@
       "type": "github-topic",
       "topic": "malware-analysis",
       "limit": 100,
-      "every_hours": 24,
+      "every_hours": 1,
       "why": "GitHub topic malware-analysis, screened for reports, decompilation and sandbox tooling that produce analysis records.",
       "scope": {
         "require": "reverse|decompil|analysis|report|sandbox|unpack|extract",
