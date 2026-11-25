@@ -46210,5 +46210,37 @@
       "它把逆向操作暴露给支持 MCP 的助手，本身不执行分析。",
       "采用 MIT 许可证。"
     ]
+  },
+  "misterdiagram-case": {
+    "name": "MisterDiagram：净室 Visio .vsdx 核心与 MCP 服务器",
+    "requirements": [
+      "需要支持 MCP 的客户端或通过 CLI 驱动的脚本；没有图形界面。",
+      "输出面向 Visio .vsdx 格式与 ShapeSheet 语义，而非 Visio 应用本身。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "freenetic-case": {
+    "name": "Freenetic：原生 OpenWrt 上的净室 Keenetic 界面层",
+    "requirements": [
+      "需要运行原生 OpenWrt 的路由器；与专有 KeeneticOS/NDM 不二进制兼容。",
+      "它是独立的界面与 CLI 层，与 NDM Systems 或 Keenetic 无关联。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "riftwii-case": {
+    "name": "RiftWii：Wii 的 USB 加载器与 Riivolution 替代品",
+    "requirements": [
+      "需要 Wii 主机以及自备的游戏光盘或镜像；加载器以 homebrew 形式分发。",
+      "它重实现 Riivolution 风格的光盘补丁与存档重定向，而非使用任天堂软件。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "isle-pizza-case": {
+    "name": "isle.pizza：乐高岛 Emscripten 移植的浏览器前端",
+    "requirements": [
+      "需要 Node.js 20 或更新版本，以及用自备游戏数据从 isle-portable 构建出的 isle.js 与 isle.wasm。",
+      "它只提供浏览器前端；游戏移植与资源来自上游项目。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

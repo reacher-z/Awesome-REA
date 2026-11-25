@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-25T08:41:18+00:00",
-  "entry_count": 5489,
+  "generated_at": "2026-11-25T09:41:21+00:00",
+  "entry_count": 5493,
   "class_counts": {
    "0": 15,
-   "1": 1228,
-   "2": 4034,
+   "1": 1231,
+   "2": 4035,
    "3": 186
   },
   "unknown_count": 26,
@@ -154153,6 +154153,122 @@
    },
    "reason": "code and docs only: no download method",
    "checked_at": "2026-11-25T08:41:17+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "misterdiagram-case",
+   "url": "https://github.com/MisterDiagram/MisterDiagram",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 19107,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 33,
+    "release_asset_count": 198,
+    "demo": [
+     "image"
+    ],
+    "media_count": 3,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-25T09:41:20+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "freenetic-case",
+   "url": "https://github.com/unisequence/freenetic",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 7755,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 35,
+    "release_asset_count": 716,
+    "demo": [
+     "image"
+    ],
+    "media_count": 7,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study demo is documented but docs do not cover the full feature set",
+   "checked_at": "2026-11-25T09:41:21+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "riftwii-case",
+   "url": "https://github.com/KakarottoCake/Riftwii",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 15658,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 100,
+    "release_asset_count": 345,
+    "demo": [
+     "image"
+    ],
+    "media_count": 11,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-25T09:41:20+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "isle-pizza-case",
+   "url": "https://github.com/isledecomp/isle.pizza",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 8466,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-25T09:41:20+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",

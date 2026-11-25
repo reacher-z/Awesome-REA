@@ -6,8 +6,9 @@
 
 [English](website.md)
 
-**80 个案例**
+**81 个案例**
 
+- [**isle.pizza：乐高岛 Emscripten 移植的浏览器前端**](https://github.com/isledecomp/isle.pizza) - 为 isle-portable 的 Emscripten 构建定制的网页前端，让重建的《乐高岛》可以直接在现代浏览器中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/isle-pizza-case/)</sub>
 - [**Awwwards：用 React 重建 Zentry 宣传网站**](https://github.com/BlockLune/awwwards-zentry) - Awwwards 使用 React 与 TypeScript 重建 Zentry 宣传网站，依据其链接的 GSAP 网站教程实现；源码将首屏、导航、介绍、功能、故事、联系和页脚区组合成滚动页面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/awwwards-zentry-site-case/)</sub>
 - [**JavaScript on the Brain：重建 Java on the Brain 网站**](https://github.com/Eggbertx/JavaScriptOnTheBrain) - JavaScript on the Brain 使用现代 Web 技术，以 Astro 重建 Java on the Brain 网站；仓库发布开发中的替代实现，提供本地开发、静态构建和预览命令。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/javascript-on-the-brain-site-case/)</sub>
 - [**JSON Editor Online：静态重建 jsoneditoronline.org**](https://github.com/djmattyg007/jsoneditoronline) - JSON Editor Online 使用 jsoneditor 库将 jsoneditoronline.org 重建为可静态部署的网站；仓库构建脚本安装依赖并生成可自行托管的 dist 目录。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jsoneditoronline-site-case/)</sub>

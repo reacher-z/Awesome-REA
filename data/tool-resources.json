@@ -163287,5 +163287,119 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "misterdiagram-case",
+    "name": "MisterDiagram: a clean-room Visio .vsdx core with an MCP server",
+    "url": "https://github.com/MisterDiagram/MisterDiagram",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "software",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A clean-room headless Rust core for Visio .vsdx files and ShapeSheet, driven by an MCP server and CLI that let an assistant draw real Visio documents without Visio installed.",
+    "description_zh": "面向 Visio .vsdx 与 ShapeSheet 的净室无界面 Rust 核心，通过 MCP 服务器与 CLI 让助手在没有安装 Visio 的情况下生成可正常打开的 Visio 文档。",
+    "evidence_url": "https://github.com/MisterDiagram/MisterDiagram/blob/c2bef21fdc9a3299253ecbb6e85f53746cf4f9c7/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an MCP-capable client or scripts driving the CLI; there is no graphical interface.",
+      "Output targets the Visio .vsdx format and ShapeSheet semantics rather than the Visio application itself.",
+      "Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "freenetic-case",
+    "name": "Freenetic: a clean-room Keenetic UX layer on vanilla OpenWrt",
+    "url": "https://github.com/unisequence/freenetic",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A clean-room reimplementation of Keenetic router UX and CLI on vanilla OpenWrt that reproduces the familiar look and command syntax over UCI, ubus and rpcd without forking OpenWrt.",
+    "description_zh": "在原生 OpenWrt 上净室重实现 Keenetic 路由器的界面与 CLI，借助 UCI、ubus 与 rpcd 还原熟悉的观感与命令语法，且不是 OpenWrt 分支。",
+    "evidence_url": "https://github.com/unisequence/freenetic/blob/d7a2a7e047e67f6d169885dcbe7d48a89252654f/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a router running vanilla OpenWrt; it is not binary-compatible with proprietary KeeneticOS/NDM.",
+      "It is a separate UX and CLI layer and has no affiliation with NDM Systems or Keenetic.",
+      "Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "riftwii-case",
+    "name": "RiftWii: a USB loader and Riivolution replacement for the Wii",
+    "url": "https://github.com/KakarottoCake/Riftwii",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "hardware",
+    "targets": [
+      "game",
+      "firmware"
+    ],
+    "description_en": "A clean-room Wii USB loader and Riivolution replacement that runs games from USB, SD or disc with or without Riivolution-format mods, patching at runtime and redirecting saves.",
+    "description_zh": "面向 Wii 的净室 USB 加载器与 Riivolution 替代品，可从 USB、SD 卡或光盘运行游戏，支持 Riivolution 格式 mod、运行时打补丁与存档重定向。",
+    "evidence_url": "https://github.com/KakarottoCake/Riftwii/blob/0ccc2e28934a6de905cba5981a995c69af59e213/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Wii console and your own game discs or rips; the loader ships as homebrew.",
+      "It reimplements Riivolution-style disc patching and save redirection rather than using Nintendo software.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "reconstruction_method": "other"
+  },
+  {
+    "id": "isle-pizza-case",
+    "name": "isle.pizza: a browser frontend for the LEGO Island Emscripten port",
+    "url": "https://github.com/isledecomp/isle.pizza",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "website",
+    "targets": [
+      "website"
+    ],
+    "description_en": "A custom web frontend for the Emscripten build of isle-portable that lets the reconstructed LEGO Island run directly in modern browsers.",
+    "description_zh": "为 isle-portable 的 Emscripten 构建定制的网页前端，让重建的《乐高岛》可以直接在现代浏览器中运行。",
+    "evidence_url": "https://github.com/isledecomp/isle.pizza/blob/7527593711e2a530a40e8ef1c4eb77df2f5d000e/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Node.js 20 or newer and the isle.js and isle.wasm files built from isle-portable with your own game data.",
+      "It supplies the browser frontend only; the game port and assets come from the upstream project.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

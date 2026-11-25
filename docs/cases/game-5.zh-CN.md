@@ -6,7 +6,7 @@
 
 [English](game-5.md)
 
-**480 个案例**
+**481 个案例**
 
 ## 引擎重实现
 
@@ -403,6 +403,7 @@
 - [**retruxx：《Hard Truck Apocalypse》逆向工程**](https://github.com/mindflower/retruxx) - retruxx 是《Hard Truck Apocalypse》的逆向工程项目，可构建游戏可执行文件以及独立的渲染、输入和声音 DLL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/retruxx/)</sub>
 - [**Reverse Engineering Scorcher：提取《Scorcher》的资源档案与图像**](https://github.com/carlmartus/reverse-engineering-scorcher) - Reverse Engineering Scorcher 通过 Python 提取脚本研究 1996 年游戏《Scorcher》的资源格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reverse-engineering-scorcher-case/)</sub>
 - [**Rex：ZX Spectrum 游戏双面 SkoolKit 反汇编**](https://github.com/ultrabolido/skRex) - skRex 收录 ZX Spectrum 游戏 Rex 的 Side A 与 Side B 反汇编，仓库保存 SkoolKit 源文件及参考文件，并说明如何用 skool2html.py 将开发版本生成 HTML。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skrex-case/)</sub>
+- [**RiftWii：Wii 的 USB 加载器与 Riivolution 替代品**](https://github.com/KakarottoCake/Riftwii) - 面向 Wii 的净室 USB 加载器与 Riivolution 替代品，可从 USB、SD 卡或光盘运行游戏，支持 Riivolution 格式 mod、运行时打补丁与存档重定向。 <sub>案例 · 独立重建 · 也适用：固件 · [完整条目](https://awesomerea.org/zh/resources/riftwii-case/)</sub>
 - [**Rise of the Robots：美版 SNES 反汇编**](https://github.com/Yoshifanatic1/Rise-Of-The-Robots-SNES-Disassembly) - Rise of the Robots 项目将美版 SNES 游戏整理为汇编、ROM 映射和提取脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rise-of-the-robots-snes-disassembly-case/)</sub>
 - [**rlapi：重建《火箭联盟》内部接口**](https://github.com/dank/rlapi) - rlapi 重建《火箭联盟》的内部 HTTP 与 WebSocket 接口，并提供 Go SDK。 <sub>案例 · 独立重建 · 也适用：二进制、协议 · [完整条目](https://awesomerea.org/zh/resources/rlapi-rocket-league-case/)</sub>
 - [**RO3Emu：重建 Ragnarok Online 3 服务器**](https://github.com/aethai/ro3emu-server) - RO3Emu 为 Ragnarok Online 3: Genesis 客户端重建服务器。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ro3emu-server-case/)</sub>

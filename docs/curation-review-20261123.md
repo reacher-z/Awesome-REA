@@ -1135,3 +1135,26 @@ A Dune II remaster, a malware-analysis viewer, the merged Smash Ultimate recompi
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Dune Dynasty and Qiew are Class 1 with merged previews; the other two are Class 2. Batch size remains four to slow README.zh-CN.md growth.
+
+## Batch 43 — 2026-11-25
+
+A Visio core, a Keenetic UX layer, a Wii loader replacement and a LEGO Island web frontend: MisterDiagram, Freenetic, RiftWii and isle.pizza.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| misterdiagram-case | reconstruction-cases | [MisterDiagram/MisterDiagram](https://github.com/MisterDiagram/MisterDiagram/blob/c2bef21fdc9a3299253ecbb6e85f53746cf4f9c7/README.md) | 994a902ea997eb3c535363c5e5783c8874fe11964985f3e067db923ac8e98d36 |
+| freenetic-case | reconstruction-cases | [unisequence/freenetic](https://github.com/unisequence/freenetic/blob/d7a2a7e047e67f6d169885dcbe7d48a89252654f/README.md) | bb429ff611eaf4c316912361dc922487ffe181c341c397eaba54e32c572c3f29 |
+| riftwii-case | reconstruction-cases | [KakarottoCake/Riftwii](https://github.com/KakarottoCake/Riftwii/blob/0ccc2e28934a6de905cba5981a995c69af59e213/README.md) | 0f7709adebba89e51bc450179d8003077ceebb13612af90d00c398bcc7f3b5f1 |
+| isle-pizza-case | reconstruction-cases | [isledecomp/isle.pizza](https://github.com/isledecomp/isle.pizza/blob/7527593711e2a530a40e8ef1c4eb77df2f5d000e/README.md) | 956b49b0195a988d03fdd4a6d54ab12d035bee3eda43bf665a563e07aa491fa0 |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| wwylele/mhrice | A game-information website, not a reconstruction case for the website class. |
+| samwhosung/benilla-re | Companion notes for the already curated benilla client. |
+| tech4bot/rk3562deb | A Debian port for a tablet, outside the reverse-engineering scope. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Three are Class 1 with merged previews and isle.pizza is Class 2. The batch adds software, hardware and website class cases, thinning three sparse classes.

@@ -6,8 +6,9 @@
 
 [简体中文](firmware.zh-CN.md)
 
-**178 case studies**
+**179 case studies**
 
+- [**Freenetic: a clean-room Keenetic UX layer on vanilla OpenWrt**](https://github.com/unisequence/freenetic) - A clean-room reimplementation of Keenetic router UX and CLI on vanilla OpenWrt that reproduces the familiar look and command syntax over UCI, ubus and rpcd without forking OpenWrt. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/freenetic-case/)</sub>
 - [**Mistral: compiling and decompiling Cyclone V bitstreams**](https://github.com/Ravenslofty/mistral) - A library and command-line utility that compiles and decompiles Cyclone V bitstreams, the configuration format behind DE10-Nano boards used in MiSTer and the Analogue Pocket. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mistral-cyclone-v-case/)</sub>
 - [**Samsung Odyssey G5 G55C: firmware reverse engineering and a visible factory menu**](https://github.com/c8dhjp4tyv-bit/odyssey-g5-firmware-research) - Package-wide reverse engineering notes and reproducible tooling for the Samsung Odyssey G5 G55C monitor firmware, covering its 8051 roles, SPARC applications and update subsystems, plus a small modification that reveals the hidden factory-calibration page. <sub>Case study · [Full entry](https://awesomerea.org/resources/odyssey-g5-firmware-case/)</sub>
 - [**StarStruck: a reimplementation of the Wii IOS system firmware**](https://github.com/DacoTaco/StarStruck) - StarStruck reimplements the Wii IOS system firmware for studying IOS and Starlet: it builds on mini, the bare-bones IOS replacement by Team Twiizers, aims to grow into a full IOS replacement with modular and replaceable modules, and already gives the PowerPC side full access to the Wii hardware for low-level system work. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/starstruck-wii-ios-case/)</sub>

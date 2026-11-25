@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-25T08:41:58+00:00",
-    "entry_count": 1212,
-    "class_entry_count": 1243,
+    "generated_at": "2026-11-25T09:42:00+00:00",
+    "entry_count": 1215,
+    "class_entry_count": 1246,
     "class_counts": {
-      "image": 1172,
+      "image": 1175,
       "video": 40
     },
     "missing_count": 31,
@@ -2945,6 +2945,15 @@
       "checked_at": "2026-11-08T23:42:11+00:00"
     },
     {
+      "id": "freenetic-case",
+      "image_url": "https://raw.githubusercontent.com/unisequence/freenetic/d7a2a7e047e67f6d169885dcbe7d48a89252654f/web/docs/screenshots/other-connections.webp",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/unisequence/freenetic",
+      "revision": "d7a2a7e047e67f6d169885dcbe7d48a89252654f",
+      "checked_at": "2026-11-25T09:42:00+00:00"
+    },
+    {
       "id": "freeserf-net-settlers-case",
       "image_url": "https://github.com/Pyrdacor/freeserf.net/raw/master/images/Settlers_1.png",
       "kind": "image",
@@ -4400,7 +4409,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-25T08:41:57+00:00"
+      "checked_at": "2026-11-25T09:41:59+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -5238,6 +5247,15 @@
       "source_url": "https://github.com/JackWPP/MiPods",
       "revision": "eb1376e397fe557b9dcf94a260641d81b65f02d8",
       "checked_at": "2026-11-09T01:38:42+00:00"
+    },
+    {
+      "id": "misterdiagram-case",
+      "image_url": "https://raw.githubusercontent.com/MisterDiagram/MisterDiagram/c2bef21fdc9a3299253ecbb6e85f53746cf4f9c7/docs/images/misterdiagram-renders.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/MisterDiagram/MisterDiagram",
+      "revision": "c2bef21fdc9a3299253ecbb6e85f53746cf4f9c7",
+      "checked_at": "2026-11-25T09:42:00+00:00"
     },
     {
       "id": "mitmproxy2swagger",
@@ -8190,6 +8208,15 @@
       "source_url": "https://github.com/aiyu-ayaan/RideLink",
       "revision": "a4e4d49595e96be997a7857ee4babfcdae086c5b",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "riftwii-case",
+      "image_url": "https://raw.githubusercontent.com/KakarottoCake/Riftwii/0ccc2e28934a6de905cba5981a995c69af59e213/docs/images/midnight.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/KakarottoCake/Riftwii",
+      "revision": "0ccc2e28934a6de905cba5981a995c69af59e213",
+      "checked_at": "2026-11-25T09:42:00+00:00"
     },
     {
       "id": "rigel-engine-case",

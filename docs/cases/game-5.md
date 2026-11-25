@@ -6,7 +6,7 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**480 case studies**
+**481 case studies**
 
 ## Engine reimplementations
 
@@ -403,6 +403,7 @@
 - [**retruxx: reverse-engineered Hard Truck Apocalypse**](https://github.com/mindflower/retruxx) - retruxx is a reverse-engineered Hard Truck Apocalypse project that builds the game executable and separate renderer, input, and sound DLLs. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/retruxx/)</sub>
 - [**Reverse Engineering Scorcher: extracting its resource archive and images**](https://github.com/carlmartus/reverse-engineering-scorcher) - Reverse Engineering Scorcher investigates the 1996 game's asset formats through a Python extractor. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reverse-engineering-scorcher-case/)</sub>
 - [**Rex: SkoolKit disassembly of both ZX Spectrum game sides**](https://github.com/ultrabolido/skRex) - skRex presents disassemblies of both sides of the ZX Spectrum game Rex. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/skrex-case/)</sub>
+- [**RiftWii: a USB loader and Riivolution replacement for the Wii**](https://github.com/KakarottoCake/Riftwii) - A clean-room Wii USB loader and Riivolution replacement that runs games from USB, SD or disc with or without Riivolution-format mods, patching at runtime and redirecting saves. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/riftwii-case/)</sub>
 - [**Rise of the Robots: a USA SNES disassembly**](https://github.com/Yoshifanatic1/Rise-Of-The-Robots-SNES-Disassembly) - The Rise of the Robots project disassembles the USA SNES release into assembly, ROM maps and extraction scripts. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rise-of-the-robots-snes-disassembly-case/)</sub>
 - [**rlapi: reconstructing Rocket League’s internal APIs**](https://github.com/dank/rlapi) - rlapi reconstructs Rocket League’s internal HTTP and WebSocket APIs and supplies a Go SDK for them. <sub>Case study · Independent reconstruction · Also: Binary, Protocol · [Full entry](https://awesomerea.org/resources/rlapi-rocket-league-case/)</sub>
 - [**RO3Emu: reconstructing a Ragnarok Online 3 server**](https://github.com/aethai/ro3emu-server) - RO3Emu reconstructs a server for the Ragnarok Online 3: Genesis game client. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/ro3emu-server-case/)</sub>

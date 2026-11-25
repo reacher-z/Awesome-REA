@@ -6,8 +6,9 @@
 
 [简体中文](website.zh-CN.md)
 
-**80 case studies**
+**81 case studies**
 
+- [**isle.pizza: a browser frontend for the LEGO Island Emscripten port**](https://github.com/isledecomp/isle.pizza) - A custom web frontend for the Emscripten build of isle-portable that lets the reconstructed LEGO Island run directly in modern browsers. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/isle-pizza-case/)</sub>
 - [**Awwwards: reconstructing Zentry's promotional website in React**](https://github.com/BlockLune/awwwards-zentry) - Awwwards recreates Zentry's promotional website in React and TypeScript, following the linked GSAP website tutorial. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/awwwards-zentry-site-case/)</sub>
 - [**JavaScript on the Brain: rebuilding the Java on the Brain website**](https://github.com/Eggbertx/JavaScriptOnTheBrain) - JavaScript on the Brain is an Astro-based reconstruction of the Java on the Brain website using modern web technologies. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/javascript-on-the-brain-site-case/)</sub>
 - [**JSON Editor Online: a static reimplementation of jsoneditoronline.org**](https://github.com/djmattyg007/jsoneditoronline) - JSON Editor Online rebuilds jsoneditoronline.org as a statically deployable website using the jsoneditor library. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/jsoneditoronline-site-case/)</sub>
