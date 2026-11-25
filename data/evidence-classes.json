@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-25T05:29:40+00:00",
-  "entry_count": 5475,
+  "generated_at": "2026-11-25T06:34:19+00:00",
+  "entry_count": 5481,
   "class_counts": {
    "0": 15,
-   "1": 1222,
-   "2": 4026,
+   "1": 1225,
+   "2": 4029,
    "3": 186
   },
   "unknown_count": 26,
@@ -153752,6 +153752,179 @@
    "checked_at": "2026-11-25T05:29:34+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "ffxiv-client-structs",
+   "url": "https://github.com/aers/FFXIVClientStructs",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 20751,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-25T06:34:18+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "pmdsky-debug",
+   "url": "https://github.com/UsernameFodder/pmdsky-debug",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 7780,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 100,
+    "release_asset_count": 600,
+    "demo": [
+     "image"
+    ],
+    "media_count": 3,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
+   "checked_at": "2026-11-25T06:34:19+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "mistral-cyclone-v-case",
+   "url": "https://github.com/Ravenslofty/mistral",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2376,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-25T06:34:18+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "odyssey-g5-firmware-case",
+   "url": "https://github.com/c8dhjp4tyv-bit/odyssey-g5-firmware-research",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 8936,
+    "docs_full": true,
+    "download": null,
+    "release_count": 1,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-25T06:34:18+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "canair",
+   "url": "https://github.com/philipkocanda/canair",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 17775,
+    "docs_full": true,
+    "download": "artifact-links",
+    "release_count": 65,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 4,
+    "download_links": [
+     "uv run canair",
+     "uv   run   canair"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "download and demo exist, but the described scope is a partial feature or patch",
+   "checked_at": "2026-11-25T06:34:18+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "ds2-sotfs-android-case",
+   "url": "https://github.com/Lazaer-YZY/ds2-sotfs-recomp",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 11907,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 15,
+    "release_asset_count": 17,
+    "demo": [
+     "image"
+    ],
+    "media_count": 14,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-25T06:34:18+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   }

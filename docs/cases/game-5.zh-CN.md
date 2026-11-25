@@ -6,10 +6,11 @@
 
 [English](game-5.md)
 
-**475 个案例**
+**476 个案例**
 
 ## 引擎重实现
 
+- [**pokerecomp：重实现 Game Boy 宝可梦游戏**](https://github.com/Decryptu/pokerecomp) - pokerecomp 用 GDScript 在 Godot 4 里重实现 Game Boy 的宝可梦游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokerecomp/)</sub>
 - [**Portémon Nitro：HeartGold 与 SoulSilver 游戏引擎移植**](https://github.com/portemon-nitro/portemon) - Portémon Nitro 使用 LÖVE 重建 Pokémon HeartGold 与 SoulSilver 的游戏引擎，面向电脑和移动设备。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/portemon-nitro-hgss-case/)</sub>
 - [**Powerslave EX：在 Kex Engine 上重建 PlayStation 版 Powerslave**](https://github.com/svkaiser/PowerslaveEX) - Powerslave EX 在 Kex Engine 3.0 上重建 PlayStation 版《Powerslave》，结合逆向还原的游戏逻辑与重新编写的碰撞、AI 系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powerslave-ex-case/)</sub>
 - [**Powerslide Remake：基于原版游戏数据重建街机赛车游戏**](https://github.com/dm999/powerslideremake) - Powerslide Remake 使用 Ogre 构建跨平台 C++ 程序，重建 Powerslide 赛车游戏的主要玩法。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powerslide-remake-case/)</sub>

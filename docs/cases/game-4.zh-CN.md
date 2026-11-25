@@ -10,6 +10,7 @@
 
 ## 基于重建源码的移植
 
+- [**F-15 Strike Eagle 2 source port：重建版 DOS 游戏的现代平台移植**](https://github.com/neuviemeporte/f15se2-ex) - F-15 Strike Eagle 2 source port 将这款 1991 年 DOS 游戏的重建源码移植到现代架构，使用 SDL3 处理输入和界面、OpenGL 渲染，并模拟 AdLib 音频。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f15-strike-eagle-2-source-port-case/)</sub>
 - [**F-Zero Forever：SNES F-Zero 的现代 PC 移植**](https://github.com/RetroPortingToolKit/FZeroSNESRecomp) - 把 SNES 原版《F-Zero》现代化移植到 PC 的项目：增加赛道、杯赛、最多 4 人分屏与高清 Mode 7，由 RetroPortingToolkit 团队与 F-Zero mod 制作者合作完成。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fzero-forever/)</sub>
 - [**F0X：F-Zero X 的 Apple 平台移植**](https://github.com/chrissotraidis/f0x) - F0X 将 G-Diffuser 反编译的 F-Zero X 游戏逻辑移植到 Apple Silicon macOS、iPhone 和 iPad。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f0x-f-zero-x-case/)</sub>
 - [**FIFA 96：重建 DOS 加载器、数据格式及游戏系统**](https://github.com/felipe-dos-santos81/fifa-96-re) - FIFA 96 重建 DOS 游戏的实模式加载器、附加保护模式程序行为，以及 QFS、POG、TGV、VIV 和 EACS 等格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fifa-96-re-case/)</sub>
@@ -637,5 +638,4 @@
 - [**physics\_RT：重建 Ballance 物理行为**](https://github.com/doyaGu/physics_RT) - physics\_RT 使用 IVP 数值核心，将 Ballance 的物理行为重建为 Win32 Virtools DLL，涉及碰撞几何、作用力处理和模拟时序，并记录了原始 DLL 差分测试与游戏运行对照。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/physics-rt-ballance-case/)</sub>
 - [**Pinball Fantasies Reassembled：重建 DOS 游戏引擎**](https://github.com/wanda-phi/pfr) - Pinball Fantasies Reassembled 用 Rust 和原版游戏文件重建 1993 年的 DOS 游戏引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pinball-fantasies-reassembled-case/)</sub>
 - [**Pizza Legacy：重建 Pizza Tycoon**](https://codeberg.org/cowomaly/pizzalegacy) - Pizza Legacy 以 C++20 引擎重建 1994 年 DOS 游戏 Pizza Tycoon，也就是德语发行的 Pizza Connection，并读取原版资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pizza-legacy-case/)</sub>
-- [**pokerecomp：重实现 Game Boy 宝可梦游戏**](https://github.com/Decryptu/pokerecomp) - pokerecomp 用 GDScript 在 Godot 4 里重实现 Game Boy 的宝可梦游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokerecomp/)</sub>
 <!-- END GENERATED CASES -->

@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-25T05:30:08+00:00",
-    "entry_count": 1206,
-    "class_entry_count": 1237,
+    "generated_at": "2026-11-25T06:34:57+00:00",
+    "entry_count": 1209,
+    "class_entry_count": 1240,
     "class_counts": {
-      "image": 1166,
+      "image": 1169,
       "video": 40
     },
     "missing_count": 31,
@@ -1143,6 +1143,15 @@
       "source_url": "https://github.com/enjoy-digital/camlink_4k",
       "revision": "55bfabaa7b91cf3711f4d1e3da575b1039ead907",
       "checked_at": "2026-11-09T04:14:52+00:00"
+    },
+    {
+      "id": "canair",
+      "image_url": "https://raw.githubusercontent.com/philipkocanda/canair/583a944b18bca0747ab59ffa4e8540823fae9556/docs/screenshots/monitor-tour.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/philipkocanda/canair",
+      "revision": "583a944b18bca0747ab59ffa4e8540823fae9556",
+      "checked_at": "2026-11-25T06:34:57+00:00"
     },
     {
       "id": "canlab",
@@ -2295,6 +2304,15 @@
       "source_url": "https://github.com/droidsaw/droidsaw",
       "revision": "50eb045b5672431ea787c2696100baed44163918",
       "checked_at": "2026-11-09T08:49:32+00:00"
+    },
+    {
+      "id": "ds2-sotfs-android-case",
+      "image_url": "https://raw.githubusercontent.com/Lazaer-YZY/ds2-sotfs-recomp/7cbf304de0dc550152080166921aa6826551ef8c/docs/media/screens/first_scene.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Lazaer-YZY/ds2-sotfs-recomp",
+      "revision": "7cbf304de0dc550152080166921aa6826551ef8c",
+      "checked_at": "2026-11-25T06:34:57+00:00"
     },
     {
       "id": "dshba",
@@ -4364,7 +4382,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-25T05:30:06+00:00"
+      "checked_at": "2026-11-25T06:34:56+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -6741,6 +6759,15 @@
       "source_url": "https://github.com/masterflai/pmca-re-reloaded",
       "revision": "53ebd6fe122eb464a4cec72cc5203e0b26817bc6",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "pmdsky-debug",
+      "image_url": "https://raw.githubusercontent.com/UsernameFodder/pmdsky-debug/80f28e0cac1c1b446f7c0d10454e072b87807c2c/docs/images/top-readme-tech-docs.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/UsernameFodder/pmdsky-debug",
+      "revision": "80f28e0cac1c1b446f7c0d10454e072b87807c2c",
+      "checked_at": "2026-11-25T06:34:57+00:00"
     },
     {
       "id": "pocket-wormhole-ftl-android-case",

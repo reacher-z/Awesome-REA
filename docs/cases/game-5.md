@@ -6,10 +6,11 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**475 case studies**
+**476 case studies**
 
 ## Engine reimplementations
 
+- [**pokerecomp: reimplementing the Game Boy Pokémon games**](https://github.com/Decryptu/pokerecomp) - pokerecomp is a Godot 4 reimplementation, written in GDScript, of the Game Boy Pokémon games. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokerecomp/)</sub>
 - [**Portémon Nitro: a HeartGold and SoulSilver engine port**](https://github.com/portemon-nitro/portemon) - Portémon Nitro reimplements the Pokémon HeartGold and SoulSilver engine in LÖVE for PCs and mobile devices. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/portemon-nitro-hgss-case/)</sub>
 - [**Powerslave EX: rebuilding the PlayStation game on Kex Engine**](https://github.com/svkaiser/PowerslaveEX) - Powerslave EX reconstructs the PlayStation Powerslave game on Kex Engine 3.0, combining recovered game logic with new collision and AI systems. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/powerslave-ex-case/)</sub>
 - [**Powerslide Remake: rebuilding the arcade racer on original game data**](https://github.com/dm999/powerslideremake) - Powerslide Remake reconstructs the arcade racer's main features in a cross-platform C++ application built on Ogre. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/powerslide-remake-case/)</sub>

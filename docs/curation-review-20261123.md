@@ -1064,3 +1064,28 @@ Six records: HeyListen, Mario Party Recompiled, EDGE-Classic, Belfast, Sonic Rid
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. HeyListen, EDGE-Classic and Sonic Riders Recomp are Class 1 with merged previews; the other three are Class 2. The 3D Home Architect record is the first 3d-design case in several batches.
+
+## Batch 40 — 2026-11-25
+
+Two analysis tools, two hardware cases, a CAN toolkit and an Android Souls port: FFXIVClientStructs, pmdsky-debug, Mistral, the Odyssey G5 firmware research, canair and Dark Souls II on Android.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| ffxiv-client-structs | game-analysis | [aers/FFXIVClientStructs](https://github.com/aers/FFXIVClientStructs/blob/f76f33bdc572d69992ef771ea5a4cd26a8035a6a/README.md) | c2093a91e958e1b49ec67f6fb7a1a3abb8239eb601638cf83794b38f1d6f44bc |
+| pmdsky-debug | game-analysis | [UsernameFodder/pmdsky-debug](https://github.com/UsernameFodder/pmdsky-debug/blob/80f28e0cac1c1b446f7c0d10454e072b87807c2c/README.md) | 9eb6ca647b24e1156f6757cc06acf3e21bd84dd59b75e37bf0533db13ef0d72d |
+| mistral-cyclone-v-case | reconstruction-cases | [Ravenslofty/mistral](https://github.com/Ravenslofty/mistral/blob/de01f8ed2fc654c8035c9c36c4672fe071ed0045/README.md) | 55209c8c1857f14e54c998d4d3cc898fa3f39c87cc7c7e2a474d13d0ab89b521 |
+| odyssey-g5-firmware-case | firmware | [c8dhjp4tyv-bit/odyssey-g5-firmware-research](https://github.com/c8dhjp4tyv-bit/odyssey-g5-firmware-research/blob/10e4c65057042b238b0a6ba79199ffeafe06a820/README.md) | d2b3bc7781a3618c9d8f64e1e9228c534a4a6f38346e2b4e3560eca7ec484390 |
+| canair | protocol-analysis | [philipkocanda/canair](https://github.com/philipkocanda/canair/blob/583a944b18bca0747ab59ffa4e8540823fae9556/README.md) | 07cabf2d4ebc56541b4f3a995e45251a39f15694c0ca84a045de03694ad0431a |
+| ds2-sotfs-android-case | reconstruction-cases | [Lazaer-YZY/ds2-sotfs-recomp](https://github.com/Lazaer-YZY/ds2-sotfs-recomp/blob/7cbf304de0dc550152080166921aa6826551ef8c/README.md) | 840f2a7850eda6cf23c1d7f94d4b9bb81cc6c5a3a3c3085e7f4d8ed53b9fe5e2 |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| MontagueM/Charm | README is marked outdated and points at a fork; skipped for the fresher canair toolkit. |
+| richardpenman/civ2 | Seven Civilization records exist, including a Civilization II matching decompilation. |
+| khasinski/parasite-eve-ii-pc | Three Parasite Eve II records already cover ports and the matching decompilation. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. pmdsky-debug, canair and the Dark Souls II Android port are Class 1 with merged previews; the other three are Class 2.

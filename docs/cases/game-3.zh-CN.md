@@ -10,6 +10,7 @@
 
 ## 静态重编译
 
+- [**Haunting Ground Recomp：PS2 游戏原生移植**](https://github.com/N900x4/HauntingGround-Recomp-Project) - 《Haunting Ground》（PS2 美版）的原生 Windows/Linux 版本：从自备光盘 ISO 把 PS2 程序转译为 C 并配合手写运行时编译，支持 4K、60 fps 插帧与高清贴图。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/haunting-ground-recomp/)</sub>
 - [**Haze Recomp：实验性 PlayStation 3 游戏静态重编译**](https://github.com/zdiemer/haze-recomp) - Haze Recomp 使用 ps3recomp 从用户自备光盘镜像提升 PS3 游戏 Haze 及相关固件代码，构建 Windows 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/haze-recomp-case/)</sub>
 - [**Heavy Metal: FAKK2：x86 到 C 的静态重编译**](https://github.com/sp00nznet/heavymetal) - Heavy Metal: FAKK2 将原版 Windows 游戏可执行文件的 x86 指令转译为可编译的 C，构建 32 位 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heavy-metal-fakk2-recomp-case/)</sub>
 - [**Hell Night: Dark Messiah Recompiled：PlayStation 游戏 PC 静态重编译**](https://github.com/goodshepherd23/Hellnight-Recompiled) - Hell Night: Dark Messiah Recompiled 使用 PSXRecomp 从用户的欧版 PlayStation《Hellnight》光盘在本地生成游戏代码，构建原生 PC 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hellnight-recompiled-case/)</sub>
@@ -620,5 +621,4 @@
 - [**EDGE-Classic：EDGE Doom 源代码移植的复兴**](https://github.com/edge-classic/EDGE-classic) - 把 EDGE 1.35 代码库在现代系统上复兴的跨平台 Doom 源代码移植，在保持低硬件要求的同时增强 mod 能力与画面效果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/edge-classic-case/)</sub>
 - [**Android 版精英部队单人战役：移动端的星际迷航航海家号**](https://github.com/imjustadudegamer/VoyagerSP-Android) - 把 2000 年的《星际迷航：航海家号 精英部队》单人战役移植到 Android，基于 lilium-voyager 引擎与 Quake3e 的 Vulkan 渲染器，支持触控与手柄操作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/voyager-sp-android-case/)</sub>
 - [**Emerald 3DS：《Pokémon Emerald》的 Nintendo 3DS 原生移植**](https://github.com/ZallaxDev/emerald-3ds) - Emerald 3DS 将《Pokémon Emerald》的反编译代码移植为 Nintendo 3DS 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/emerald-3ds-case/)</sub>
-- [**F-15 Strike Eagle 2 source port：重建版 DOS 游戏的现代平台移植**](https://github.com/neuviemeporte/f15se2-ex) - F-15 Strike Eagle 2 source port 将这款 1991 年 DOS 游戏的重建源码移植到现代架构，使用 SDL3 处理输入和界面、OpenGL 渲染，并模拟 AdLib 音频。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f15-strike-eagle-2-source-port-case/)</sub>
 <!-- END GENERATED CASES -->

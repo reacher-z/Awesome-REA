@@ -162899,5 +162899,171 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "ffxiv-client-structs",
+    "name": "FFXIVClientStructs: reverse-engineered native classes of the FINAL FANTASY XIV client",
+    "url": "https://github.com/aers/FFXIVClientStructs",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A C# library that records the community reverse engineering of the FINAL FANTASY XIV client native class layouts and provides explicit-layout structs for interoperating with the running game, mainly for Dalamud plug-ins.",
+    "description_zh": "用 C# 收录社区对《最终幻想 XIV》客户端原生类布局的逆向成果，提供与运行中游戏对象一一对应的显式布局结构体，主要供 Dalamud 插件使用。",
+    "evidence_url": "https://github.com/aers/FFXIVClientStructs/blob/f76f33bdc572d69992ef771ea5a4cd26a8035a6a/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Targets the live FINAL FANTASY XIV client and the Dalamud plug-in loader for C#.",
+      "The structs map directly onto native memory, so callers must handle unsafe access themselves.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "pmdsky-debug",
+    "name": "pmdsky-debug: symbol and debug data for Pokemon Mystery Dungeon: Explorers of Sky",
+    "url": "https://github.com/UsernameFodder/pmdsky-debug",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Symbol tables and debug documentation for reverse engineering the Pokemon Mystery Dungeon: Explorers of Sky binaries, packaged for reuse by decompilation and tooling projects.",
+    "description_zh": "面向《宝可梦不可思议迷宫：探险队之空》二进制的符号表与调试文档，供反编译与工具项目复用。",
+    "evidence_url": "https://github.com/UsernameFodder/pmdsky-debug/blob/80f28e0cac1c1b446f7c0d10454e072b87807c2c/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the game to apply the symbols and documentation.",
+      "It supplies debug information only and ships no game data.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "mistral-cyclone-v-case",
+    "name": "Mistral: compiling and decompiling Cyclone V bitstreams",
+    "url": "https://github.com/Ravenslofty/mistral",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A library and command-line utility that compiles and decompiles Cyclone V bitstreams, the configuration format behind DE10-Nano boards used in MiSTer and the Analogue Pocket.",
+    "description_zh": "编译与反编译 Cyclone V 比特流的库和命令行工具，对应 MiSTer 所用 DE10-Nano 与 Analogue Pocket 背后的配置格式。",
+    "evidence_url": "https://github.com/Ravenslofty/mistral/blob/de01f8ed2fc654c8035c9c36c4672fe071ed0045/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Cyclone V bitstream and a CMake toolchain with liblzma to build the tool.",
+      "It is an early library still focused on the bitstream structure rather than full place-and-route.",
+      "BSD-3-Clause-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "odyssey-g5-firmware-case",
+    "name": "Samsung Odyssey G5 G55C: firmware reverse engineering and a visible factory menu",
+    "url": "https://github.com/c8dhjp4tyv-bit/odyssey-g5-firmware-research",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "case-study",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Package-wide reverse engineering notes and reproducible tooling for the Samsung Odyssey G5 G55C monitor firmware, covering its 8051 roles, SPARC applications and update subsystems, plus a small modification that reveals the hidden factory-calibration page.",
+    "description_zh": "针对三星 Odyssey G5 G55C 显示器固件的整体逆向笔记与可复现工具，覆盖 8051 角色、SPARC 应用与更新子系统，并给出一个让隐藏工厂校准页显示的小改动。",
+    "evidence_url": "https://github.com/c8dhjp4tyv-bit/odyssey-g5-firmware-research/blob/10e4c65057042b238b0a6ba79199ffeafe06a820/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Targets the exact LS32CG552EUXUF model with firmware M-C5500GGZA-1010.0 and is not a general monitor tool.",
+      "Firmware modifications require bypassing the signature check and flashing over USB, with the documented safety tests.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "canair",
+    "name": "canair: reverse engineering CAN diagnostics over WiCAN",
+    "url": "https://github.com/philipkocanda/canair",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A command-line tool for reverse engineering CAN and OBD diagnostics over the air with a WiCAN OBD-II WiFi/BLE adapter, monitoring live signals and highlighting the payload bytes that change.",
+    "description_zh": "配合 WiCAN OBD-II WiFi/BLE 适配器无线逆向 CAN 与 OBD 诊断的命令行工具，可实时监视信号并高亮发生变化的负载字节。",
+    "evidence_url": "https://github.com/philipkocanda/canair/blob/583a944b18bca0747ab59ffa4e8540823fae9556/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a WiCAN OBD-II WiFi dongle connected to the vehicle and network access to it.",
+      "It focuses on CAN and OBD diagnostics over the air rather than direct wired sniffing.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ds2-sotfs-android-case",
+    "name": "Dark Souls II: Scholar of the First Sin native on Android",
+    "url": "https://github.com/Lazaer-YZY/ds2-sotfs-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An unofficial Android arm64 port of the Xbox 360 Dark Souls II: Scholar of the First Sin made by static recompilation, with second-screen HUD support on dual-screen handhelds.",
+    "description_zh": "把 Xbox 360 版《黑暗之魂 II：原罪学者》静态重编译为 Android arm64 原生移植，并在双屏掌机上支持把 HUD 放到第二块屏幕。",
+    "evidence_url": "https://github.com/Lazaer-YZY/ds2-sotfs-recomp/blob/7cbf304de0dc550152080166921aa6826551ef8c/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Xbox 360 copy of the game; no game files are included.",
+      "It is in beta, playable on Android arm64 devices and looking for testers.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

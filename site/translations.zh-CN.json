@@ -46098,5 +46098,53 @@
       "说明两字节补丁只修复部分 Windows 10/11 系统上的打印问题，同一目录在其他机器上可能正常。",
       "采用 MIT 许可证。"
     ]
+  },
+  "ffxiv-client-structs": {
+    "name": "FFXIVClientStructs：逆向出的最终幻想 XIV 客户端原生类",
+    "requirements": [
+      "面向在线运行的 FINAL FANTASY XIV 客户端与 C# 的 Dalamud 插件加载器。",
+      "结构体直接映射原生内存，调用方必须自行处理 unsafe 访问。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "pmdsky-debug": {
+    "name": "pmdsky-debug：宝可梦不可思议迷宫 探险队之空的符号与调试数据",
+    "requirements": [
+      "需要自备游戏副本才能套用符号与文档。",
+      "只提供调试信息，不分发游戏数据。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "mistral-cyclone-v-case": {
+    "name": "Mistral：Cyclone V 比特流的编译与反编译",
+    "requirements": [
+      "需要 Cyclone V 比特流以及带 liblzma 的 CMake 工具链。",
+      "目前仍是关注比特流结构的早期库，尚未覆盖完整布局布线。",
+      "采用 BSD-3-Clause 许可证。"
+    ]
+  },
+  "odyssey-g5-firmware-case": {
+    "name": "三星 Odyssey G5 G55C：固件逆向与显示的工厂菜单",
+    "requirements": [
+      "仅针对 LS32CG552EUXUF 型号与 M-C5500GGZA-1010.0 固件，不是通用显示器工具。",
+      "修改固件需绕过签名校验并通过 USB 刷写，仓库附有安全测试说明。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "canair": {
+    "name": "canair：借助 WiCAN 无线逆向 CAN 诊断",
+    "requirements": [
+      "需要连接到车辆的 WiCAN OBD-II WiFi 适配器及对其的网络访问。",
+      "聚焦无线 CAN 与 OBD 诊断，而非有线直接抓包。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "ds2-sotfs-android-case": {
+    "name": "Android 版黑暗之魂 II：原罪学者",
+    "requirements": [
+      "需要自备 Xbox 360 版游戏；不包含游戏文件。",
+      "仍处 beta，可在 Android arm64 设备上运行并正在招募测试者。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

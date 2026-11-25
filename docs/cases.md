@@ -4,15 +4,15 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**4173 case studies**, grouped by section.
+**4176 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (80)
-- [Game](#game) (2946)
+- [Game](#game) (2947)
 - [App](#app) (262)
 - [Native Binary](#native-binary) (64)
-- [Firmware and Hardware](#firmware) (176)
+- [Firmware and Hardware](#firmware) (178)
 - [Protocol](#protocol) (645)
 
 <a id="website"></a>
@@ -21,7 +21,7 @@
 - [Case studies](cases/website.md)
 
 <a id="game"></a>
-## Game (2,946)
+## Game (2,947)
 
 - [Case studies, part 1](cases/game-1.md)
 - [Case studies, part 2](cases/game-2.md)
@@ -34,7 +34,7 @@
 <a id="game-decompilation"></a>
 - [Non-matching decompilations](cases/game-1.md#game-decompilation) (349)
 <a id="game-static-recompilation"></a>
-- [Static recompilations](cases/game-2.md#game-static-recompilation) (805)
+- [Static recompilations](cases/game-2.md#game-static-recompilation) (806)
 <a id="game-port"></a>
 - [Ports of reconstructed source](cases/game-3.md#game-port) (384)
 <a id="game-engine-reimplementation"></a>
@@ -53,7 +53,7 @@
 - [Case studies](cases/native-binary.md)
 
 <a id="firmware"></a>
-## Firmware and Hardware (176)
+## Firmware and Hardware (178)
 
 - [Case studies](cases/firmware.md)
 
