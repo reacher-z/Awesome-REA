@@ -46274,5 +46274,37 @@
       "它属于静态重编译而非模拟器，并提供多平台发布包。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "pmd-green-recomp-case": {
+    "name": "宝可梦不可思议迷宫：绿之救助队 — 赤之救助队 PC 重编译",
+    "requirements": [
+      "需要自备美版/澳版游戏副本；不包含游戏数据。",
+      "它是用于测试 GBAModernRuntime 与 GBARecomp 的进行中项目。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "gradius-rebirth-recomp-case": {
+    "name": "宇宙巡航机 ReBirth：WiiWare 游戏的原生重编译",
+    "requirements": [
+      "需要自备 NTSC-U 版的 WiiWare WAD；不包含游戏数据。",
+      "面向 Windows 与 Linux，并提供发布压缩包。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "etervale-case": {
+    "name": "Etervale：带权威服务器的 Priston Tale C# 重实现",
+    "requirements": [
+      "需要 .NET 10 SDK 以及 Priston Tale 的游戏数据存档。",
+      "它采用在线模式与服务器权威的玩法，通信走端口 10009 的专有协议。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "bbtools": {
+    "name": "BBTools：Beasts and Bumpkins 的任务编辑与反汇编工具",
+    "requirements": [
+      "需要自备原版游戏文件；工具从你的游戏目录读取数据。",
+      "它覆盖该游戏的任务与脚本编辑，以及反汇编分析。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

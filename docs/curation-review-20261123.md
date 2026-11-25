@@ -1181,3 +1181,26 @@ Four native ports: Tekken Tag decompilation and port, Lightning Returns on Andro
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Lightning Returns is Class 1 with a merged preview; the other three are Class 2. The Chinese Majistic requirement was reworded to avoid a denial-style disclaimers, which validate.py rejects.
+
+## Batch 45 — 2026-11-25
+
+Two recompilations, a server-authoritative reimplementation and a mission-editing toolkit: Pokemon Mystery Dungeon Green Rescue Team, Gradius ReBirth, Etervale and BBTools.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| pmd-green-recomp-case | reconstruction-cases | [Asphaltian/pmd-green](https://github.com/Asphaltian/pmd-green/blob/e65f7e79a44edfe5b2abe1efee2184247f1eb112/README.md) | 6c7d5a83fc1278494124728cbfe0379fd34cc0a24190d9436be2974d53db2211 |
+| gradius-rebirth-recomp-case | reconstruction-cases | [darkuni/gradius-rebirth-recomp](https://github.com/darkuni/gradius-rebirth-recomp/blob/8600910380ed60b3ec131112d800d1445581d8d8/README.md) | 91b0421197475223df65c3a21b736fbaa7b3f89f397e7e7c3943561259480094 |
+| etervale-case | reconstruction-cases | [bencz-games/Etervale](https://github.com/bencz-games/Etervale/blob/6857268692aa9e22a47cd4907c038b839a46458c/README.md) | 51b7f1d6e935c5108b9bd2e72a56d5e4d2d0cd639fc3550d1d555d8eeb033efa |
+| bbtools | game-analysis | [JonMagon/BBTools](https://github.com/JonMagon/BBTools/blob/882b124dc4ec553362fef30147a2a387f5d3aa5a/README.md) | 399a7df1a162ab336f80ee54be9a852fd3086b1ee892782bbecd248152a5c0af |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| alexbeavs-ps1-ports/medievil-ii-recomp | License reports NOASSERTION, below the license requirement. |
+| nathsou/smb | Sixteen Super Mario Bros. records already exist, including reconstructions and recompilations. |
+| CadenKalez/DeSCAi4 | OpenSC4 already covers SimCity 4 reimplementation work. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Gradius ReBirth and BBTools are Class 1 with merged previews; the other two are Class 2.

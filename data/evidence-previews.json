@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-25T10:46:56+00:00",
-    "entry_count": 1216,
-    "class_entry_count": 1247,
+    "generated_at": "2026-11-25T11:49:09+00:00",
+    "entry_count": 1218,
+    "class_entry_count": 1249,
     "class_counts": {
-      "image": 1176,
+      "image": 1178,
       "video": 40
     },
     "missing_count": 31,
@@ -729,6 +729,15 @@
       "source_url": "https://github.com/wootbeer/btgarecomp",
       "revision": "bcda2f71ee1f1f05988a88833cc004073e522ee8",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "bbtools",
+      "image_url": "https://raw.githubusercontent.com/JonMagon/BBTools/882b124dc4ec553362fef30147a2a387f5d3aa5a/screenshots/bbmissioneditor.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/JonMagon/BBTools",
+      "revision": "882b124dc4ec553362fef30147a2a387f5d3aa5a",
+      "checked_at": "2026-11-25T11:49:09+00:00"
     },
     {
       "id": "bearbirdpad-banjo-kazooie-ios-case",
@@ -3485,6 +3494,15 @@
       "checked_at": "2026-11-22T06:41:04+00:00"
     },
     {
+      "id": "gradius-rebirth-recomp-case",
+      "image_url": "https://raw.githubusercontent.com/darkuni/gradius-rebirth-recomp/8600910380ed60b3ec131112d800d1445581d8d8/docs/boot-sequence.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/darkuni/gradius-rebirth-recomp",
+      "revision": "8600910380ed60b3ec131112d800d1445581d8d8",
+      "checked_at": "2026-11-25T11:49:09+00:00"
+    },
+    {
       "id": "gran-turismo-2-pc-vr-browser-case",
       "image_url": "https://raw.githubusercontent.com/dubrovskiy-yevhen-stakelogic/gt-2-pc/7881d7b85f413c0cd096c2a3cfd3e1e066ffec98/docs/images/cockpit-0.5.0.png",
       "kind": "image",
@@ -4418,7 +4436,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-25T10:46:55+00:00"
+      "checked_at": "2026-11-25T11:49:08+00:00"
     },
     {
       "id": "konami-viper-recomp-case",

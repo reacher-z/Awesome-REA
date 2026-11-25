@@ -10,6 +10,7 @@
 
 ## 静态重编译
 
+- [**Harvest Moon 64 PC Port / Recomp：开发中的原生构建版**](https://github.com/ai-tdd-labs/harvest-moon-64-recompiled) - Harvest Moon 64 PC Port / Recomp 使用 N64Recomp 和 RT64，从用户本地提供的 ROM 与 ELF 文件构建 Harvest Moon 64 原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aitdd-harvest-moon-64-recomp-case/)</sub>
 - [**Harvest Moon 64: Recompiled：原生移植**](https://github.com/HarvestMoon64Recomp/HarvestMoon64Recomp) - Harvest Moon 64: Recompiled 使用 N64: Recompiled 把《牧场物语 64》静态重编译为原生移植，并用 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harvest-moon-64-recomp-case/)</sub>
 - [**Haunting Ground Recomp：PS2 游戏原生移植**](https://github.com/N900x4/HauntingGround-Recomp-Project) - 《Haunting Ground》（PS2 美版）的原生 Windows/Linux 版本：从自备光盘 ISO 把 PS2 程序转译为 C 并配合手写运行时编译，支持 4K、60 fps 插帧与高清贴图。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/haunting-ground-recomp/)</sub>
 - [**Haze Recomp：实验性 PlayStation 3 游戏静态重编译**](https://github.com/zdiemer/haze-recomp) - Haze Recomp 使用 ps3recomp 从用户自备光盘镜像提升 PS3 游戏 Haze 及相关固件代码，构建 Windows 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/haze-recomp-case/)</sub>
@@ -215,6 +216,7 @@
 - [**Pinyon Shift：将《极限竞速：地平线》静态重编译到 Windows**](https://github.com/deivid22srk/pinyon-shift-android) - Pinyon Shift 把 Xbox 360 版《极限竞速：地平线》静态重编译到 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pinyon-shift/)</sub>
 - [**PiratesAtWorldsEndRecomp：重编译《加勒比海盗：世界的尽头》**](https://github.com/ElGuslml/PiratesAtWorldsEndRecomp) - 该项目把 Xbox 360 美版《加勒比海盗：世界的尽头》重编译到 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pirates-awe-recomp/)</sub>
 - [**Plants vs. Zombies：Xbox 360 版静态重编译 Windows 移植**](https://github.com/ITSeniy/pvz-console-edition) - pvz-console-edition 使用 ReXGlue 将 Xbox 360 版 Plants vs. Zombies 的 PowerPC 代码静态翻译为 x86-64，生成原生 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pvz-console-edition-case/)</sub>
+- [**宝可梦不可思议迷宫：绿之救助队 — 赤之救助队 PC 重编译**](https://github.com/Asphaltian/pmd-green) - 把《宝可梦不可思议迷宫：赤之救助队》静态重编译到 PC，加入增强与 mod 支持，同时用作 GBAModernRuntime 与 GBARecomp 项目的试验台。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pmd-green-recomp-case/)</sub>
 - [**PokemonRedAndBlueRecomp：Pokémon Red 与 Blue 静态重编译**](https://github.com/mstan/PokemonRedAndBlueRecomp) - PokemonRedAndBlueRecomp 使用 gb-recompiled 分支将《Pokémon Red》和《Pokémon Blue》的 Game Boy 代码转换为 C，再编译为 x64 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-red-blue-recomp-case/)</sub>
 - [**Pokopia Native：从用户转储构建《Pokémon Pokopia》原生版本**](https://github.com/xFractals/pokopia-native) - Pokopia Native 使用用户自己的 Switch 2《Pokémon Pokopia》转储，构建 Mac、iPhone 和 Windows 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokopia-native-case/)</sub>
 - [**Pokopia Recomp：将《Pokémon Pokopia》重编译至 Windows**](https://github.com/drakolordx7/switch2-recomp) - Pokopia Recomp 把 Nintendo Switch 2 游戏《Pokémon Pokopia》2.0.1a 重建成原生 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokopia-recomp/)</sub>
@@ -618,6 +620,4 @@
 - [**Drift City Rebuild：基于游戏分析的 Unity 客户端与服务器**](https://github.com/MagicIbrar/driftcity-unity) - Drift City Rebuild 将这款在线竞速游戏重建为 Unity 客户端，并配有支持离线或自托管游玩的新 Node.js 服务器；客户端读取用户安装目录中的原版数据。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/driftcity-unity-case/)</sub>
 - [**ds2-nx：将《Dead Space 2》移植到 Nintendo Switch**](https://github.com/VasilkovND/ds2-nx) - ds2-nx 将基于 ReXGlue 静态重编译的《Dead Space 2》移植为 Nintendo Switch 自制软件 NRO。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ds2-nx-case/)</sub>
 - [**Durak NX：让 Android 游戏 Durak 在 Nintendo Switch 上运行**](https://github.com/Oleksa126/durak_nx) - Durak NX 通过针对游戏编写的图形、音频、文件和输入兼容层，让 Android ARM64 Unity 游戏 Durak 25.0 在 Nintendo Switch 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/durak-nx-case/)</sub>
-- [**Dusklight for PS4：《Twilight Princess》原生 PS4 移植**](https://github.com/BgbrhrWatchinOVO/dusklight-ps4) - Dusklight for PS4 将基于《Twilight Princess》反编译成果的 PC 移植版改为原生 PS4 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dusklight-ps4-case/)</sub>
-- [**Dusklight：基于反编译的《黄昏公主》原生移植**](https://github.com/TwilitRealm/dusklight) - 以 zeldaret/tp 反编译项目和 Aurora GameCube／Wii 兼容层为基础，将《塞尔达传说 黄昏公主》重新实现为桌面与移动平台的原生应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dusklight-twilight-princess-port-case/)</sub>
 <!-- END GENERATED CASES -->

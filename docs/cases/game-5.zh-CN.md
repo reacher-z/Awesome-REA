@@ -6,10 +6,13 @@
 
 [English](game-5.md)
 
-**485 个案例**
+**488 个案例**
 
 ## 引擎重实现
 
+- [**Ozymandias (Julius)：为《法老》改造城市建造游戏引擎**](https://github.com/Banderi/Ozymandias_Julius) - Ozymandias (Julius) 改造 Julius/Augustus 城市建造引擎，使用玩家自备的原版资源运行《法老》及《埃及艳后》资料片。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ozymandias-julius-case/)</sub>
+- [**Ozymandias：以 Godot 重建 Pharaoh 与 Zeus 游戏引擎**](https://github.com/Banderi/Ozymandias) - Ozymandias 使用 Godot 3.6 Mono 重建《Pharaoh》《Zeus》等城市建设游戏的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ozymandias-pharaoh-engine-case/)</sub>
+- [**P.T. PC 版：基于行为重新实现、读取 PS4 数据的引擎**](https://github.com/LoreanXavier/pt-pc) - 在新的 Vulkan 引擎上用 C++ 重新实现 P.T. 的游戏逻辑，运行时从使用者自有的 PS4 版本读取关卡、模型、贴图、声音、脚本和过场动画。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pt-pc-port-case/)</sub>
 - [**Pal3.Unity：用 Unity 重建《仙剑奇侠传三》及《问情篇》**](https://github.com/0x7c13/Pal3.Unity) - Pal3.Unity 使用 C# 和 Unity 重建《仙剑奇侠传三》及外传《问情篇》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pal3-unity-case/)</sub>
 - [**PanzerChasm：使用原版数据重建 Chasm: The Rift**](https://github.com/Panzerschrek/Chasm-Reverse) - PanzerChasm 用 C++ 和 SDL2 重建 Chasm: The Rift，运行时读取玩家原版游戏的 CSM.BIN 数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/panzerchasm-chasm-the-rift-case/)</sub>
 - [**PanzerMortyr：《Mortyr 2093-1944》引擎重实现**](https://github.com/Panzerschrek/PanzerMortyr) - PanzerMortyr 重新实现《Mortyr 2093-1944》的引擎，作为读取原版游戏数据的替代程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/panzermortyr-case/)</sub>

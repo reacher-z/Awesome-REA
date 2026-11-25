@@ -163517,5 +163517,119 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "pmd-green-recomp-case",
+    "name": "Pokemon Mystery Dungeon: Green Rescue Team — Red Rescue Team recompiled for PC",
+    "url": "https://github.com/Asphaltian/pmd-green",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of Pokemon Mystery Dungeon: Red Rescue Team for PC with enhancements and mod support, built as a test bed for the GBAModernRuntime and GBARecomp projects.",
+    "description_zh": "把《宝可梦不可思议迷宫：赤之救助队》静态重编译到 PC，加入增强与 mod 支持，同时用作 GBAModernRuntime 与 GBARecomp 项目的试验台。",
+    "evidence_url": "https://github.com/Asphaltian/pmd-green/blob/e65f7e79a44edfe5b2abe1efee2184247f1eb112/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own USA/Australia copy of the game; no game data is included.",
+      "It is a work in progress used to test the GBAModernRuntime and GBARecomp projects.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "gradius-rebirth-recomp-case",
+    "name": "Gradius ReBirth: a WiiWare recompilation running natively",
+    "url": "https://github.com/darkuni/gradius-rebirth-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of Gradius ReBirth (Updated, v257) for WiiWare that translates the PowerPC executable to C++ and runs it on Windows and Linux with a small runtime replacing Wii hardware, IOS and the DSP.",
+    "description_zh": "把 WiiWare 版《宇宙巡航机 ReBirth》（Updated, v257）静态重编译：把 PowerPC 可执行文件翻译为 C++，在 Windows 与 Linux 上运行，并用小型运行时替代 Wii 硬件、IOS 与 DSP。",
+    "evidence_url": "https://github.com/darkuni/gradius-rebirth-recomp/blob/8600910380ed60b3ec131112d800d1445581d8d8/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own WiiWare WAD copy of the NTSC-U game; no game data is included.",
+      "It targets Windows and Linux and ships release zips.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "etervale-case",
+    "name": "Etervale: a C# reimplementation of Priston Tale with an authoritative server",
+    "url": "https://github.com/bencz-games/Etervale",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "An independent C# and MonoGame reimplementation of Priston Tale with an authoritative server over its own TLS protocol, SQLite or PostgreSQL storage and world-data import tools.",
+    "description_zh": "用 C# 与 MonoGame 独立重实现《Priston Tale》，带权威服务器、自有 TLS 协议、SQLite/PostgreSQL 存储与世界数据导入工具。",
+    "evidence_url": "https://github.com/bencz-games/Etervale/blob/6857268692aa9e22a47cd4907c038b839a46458c/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the .NET 10 SDK and a Priston Tale game data archive.",
+      "It is online-only with server-authoritative gameplay and its own protocol on port 10009.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "bbtools",
+    "name": "BBTools: mission editing and disassembly tooling for Beasts and Bumpkins",
+    "url": "https://github.com/JonMagon/BBTools",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A collection of tools for the 1997 game Beasts and Bumpkins, including a Qt mission and savegame editor with a visual script editor and an optional MCP server for editing maps with an LLM.",
+    "description_zh": "面向 1997 年《Beasts and Bumpkins》的工具集，包含 Qt 任务与存档编辑器、可视化脚本编辑器，以及可用 LLM 编辑地图的可选 MCP 服务器。",
+    "evidence_url": "https://github.com/JonMagon/BBTools/blob/882b124dc4ec553362fef30147a2a387f5d3aa5a/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the original game files; tools read them from your game folder.",
+      "It covers mission and script editing plus disassembly analysis for this one title.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

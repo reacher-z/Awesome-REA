@@ -10,6 +10,8 @@
 
 ## 基于重建源码的移植
 
+- [**Dusklight for PS4：《Twilight Princess》原生 PS4 移植**](https://github.com/BgbrhrWatchinOVO/dusklight-ps4) - Dusklight for PS4 将基于《Twilight Princess》反编译成果的 PC 移植版改为原生 PS4 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dusklight-ps4-case/)</sub>
+- [**Dusklight：基于反编译的《黄昏公主》原生移植**](https://github.com/TwilitRealm/dusklight) - 以 zeldaret/tp 反编译项目和 Aurora GameCube／Wii 兼容层为基础，将《塞尔达传说 黄昏公主》重新实现为桌面与移动平台的原生应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dusklight-twilight-princess-port-case/)</sub>
 - [**EA SPORTS UFC 3：面向 Linux 与 Windows 的 PS4 游戏移植**](https://github.com/GNSB/UFC-3-PS4-PORT-LINUX-WINDOWS) - EA SPORTS UFC 3 移植版在 Linux 和 Windows 上直接运行 PS4 游戏原有的 x86-64 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ufc-3-ps4-port-case/)</sub>
 - [**EarthBound Companion：《地球冒险》的原生版本**](https://github.com/rages4calm/earthbound-companion) - EarthBound Companion 是 EarthBound 的原生构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/earthbound-companion/)</sub>
 - [**Eden：《Project Eden》部分重建**](https://github.com/mercat0r/Eden) - Eden 着手以 DirectX 9 重建 2001 年游戏《Project Eden》的 Windows 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/eden-project-eden-case/)</sub>
@@ -400,6 +402,7 @@
 - [**engge：Thimbleweed Park 引擎重制版**](https://github.com/scemino/engge) - engge 以 C++ 重实现 Thimbleweed Park 冒险游戏引擎，运行时读取用户安装目录中的 ThimbleweedPark.ggpack1 和 ggpack2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/engge-case/)</sub>
 - [**Epic Pinball HD：在 macOS 上重建 DOS 弹珠台引擎**](https://github.com/tmm22/epic-pinball-hd) - Epic Pinball HD 将 DOS 游戏 Epic Pinball 的引擎重建为原生 macOS 应用，提供经典与增强模式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/epic-pinball-hd-case/)</sub>
 - [**Escape Velocity Nova：基于反编译研究的引擎重建**](https://github.com/wraitii/evnova-decomp) - evnova-decomp 使用 C++23 和 SDL3 重建《Escape Velocity Nova》引擎，读取用户本地安装的 Windows Community Edition 数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/escape-velocity-nova-reimplementation-case/)</sub>
+- [**Etervale：带权威服务器的 Priston Tale C# 重实现**](https://github.com/bencz-games/Etervale) - 用 C# 与 MonoGame 独立重实现《Priston Tale》，带权威服务器、自有 TLS 协议、SQLite/PostgreSQL 存储与世界数据导入工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/etervale-case/)</sub>
 - [**eZeus：使用原版文件重建 Zeus: Master of Olympus**](https://github.com/MaurycyLiebner/eZeus) - eZeus 用 C++ 重建《Zeus: Master of Olympus》及 Poseidon 资料片，运行时需要玩家的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ezeus-case/)</sub>
 - [**F.LF：面向网页重建 Little Fighter 2**](https://github.com/Project-F/F.LF) - F.LF 用 JavaScript 和 HTML5 重建 Little Fighter 2，面向桌面及移动浏览器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f-lf-case/)</sub>
 - [**f2bgl：重实现 Fade To Black 引擎**](https://github.com/cyxx/f2bgl) - f2bgl 以 C++ 重实现 1995 年游戏 Fade To Black 的引擎，读取原版 PC 游戏或试玩版文件，并通过基于 SDL2 的程序处理画面、输入、音频和存档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f2bgl-case/)</sub>
@@ -635,7 +638,4 @@
 - [**Oracles：使用 Godot 重建两款塞尔达传说 Oracle 游戏**](https://github.com/SHOEGAZEssb/ooa-godot) - Oracles 在 Godot 中以共用 C# 引擎重建《The Legend of Zelda: Oracle of Ages》和《Oracle of Seasons》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda-oracles-godot-reconstruction-case/)</sub>
 - [**Ordoor：重建四款游戏使用的 Strategy Engine**](https://code.ur.gs/lupine/ordoor) - Ordoor 重建 Warhammer 40,000: Chaos Gate、Soldiers At War、Squad Leader 和 Wages of War 使用的 Strategy Engine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ordoor-strategy-engine-case/)</sub>
 - [**Oxide：用 Rust 从零实现的 Minecraft 服务器**](https://github.com/T-x-T/oxide) - 完全用 Rust 从零实现的 Minecraft 服务器，目标是完整可用并兼容最新版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oxide/)</sub>
-- [**Ozymandias (Julius)：为《法老》改造城市建造游戏引擎**](https://github.com/Banderi/Ozymandias_Julius) - Ozymandias (Julius) 改造 Julius/Augustus 城市建造引擎，使用玩家自备的原版资源运行《法老》及《埃及艳后》资料片。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ozymandias-julius-case/)</sub>
-- [**Ozymandias：以 Godot 重建 Pharaoh 与 Zeus 游戏引擎**](https://github.com/Banderi/Ozymandias) - Ozymandias 使用 Godot 3.6 Mono 重建《Pharaoh》《Zeus》等城市建设游戏的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ozymandias-pharaoh-engine-case/)</sub>
-- [**P.T. PC 版：基于行为重新实现、读取 PS4 数据的引擎**](https://github.com/LoreanXavier/pt-pc) - 在新的 Vulkan 引擎上用 C++ 重新实现 P.T. 的游戏逻辑，运行时从使用者自有的 PS4 版本读取关卡、模型、贴图、声音、脚本和过场动画。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pt-pc-port-case/)</sub>
 <!-- END GENERATED CASES -->

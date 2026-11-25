@@ -6,10 +6,13 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**485 case studies**
+**488 case studies**
 
 ## Engine reimplementations
 
+- [**Ozymandias (Julius): adapting a city-building engine to Pharaoh**](https://github.com/Banderi/Ozymandias_Julius) - Ozymandias (Julius) adapts the Julius/Augustus city-building engine to run Pharaoh and its Cleopatra expansion using the player's original assets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ozymandias-julius-case/)</sub>
+- [**Ozymandias: a Godot engine reconstruction for Pharaoh and Zeus**](https://github.com/Banderi/Ozymandias) - Ozymandias recreates the engine of the city-building games Pharaoh, Zeus and related titles in Godot 3.6 Mono. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ozymandias-pharaoh-engine-case/)</sub>
+- [**P.T. for PC: a behavior-based engine reimplementation that reads the PS4 data**](https://github.com/LoreanXavier/pt-pc) - Reimplements P.T.’s game logic in C++ on a new Vulkan engine that reads levels, models, textures, sounds, scripts and cutscenes from the user’s own PS4 copy at run time. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pt-pc-port-case/)</sub>
 - [**Pal3.Unity: reconstructing Sword and Fairy 3 and Wenqing Pian in Unity**](https://github.com/0x7c13/Pal3.Unity) - Pal3.Unity reimplements The Legend of Sword and Fairy 3 and its Wenqing Pian expansion in C# and Unity. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pal3-unity-case/)</sub>
 - [**PanzerChasm: recreating Chasm: The Rift with original game data**](https://github.com/Panzerschrek/Chasm-Reverse) - PanzerChasm recreates Chasm: The Rift in C++ as an SDL2 game that loads the player's original CSM.BIN data file. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/panzerchasm-chasm-the-rift-case/)</sub>
 - [**PanzerMortyr: a Mortyr 2093-1944 engine reimplementation**](https://github.com/Panzerschrek/PanzerMortyr) - PanzerMortyr reimplements the Mortyr 2093-1944 engine as a replacement executable that loads original game data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/panzermortyr-case/)</sub>
