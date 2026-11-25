@@ -45762,5 +45762,53 @@
       "它是民间项目，兼容性取决于游戏版本。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "patchelf": {
+    "name": "PatchELF",
+    "requirements": [
+      "需要 ELF 可执行文件或库；工具就地或输出到新文件修改头与路径。",
+      "它面向 ELF 二进制，不重写非 ELF 格式。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "ce-toolchain": {
+    "name": "CE C/C++ 工具链",
+    "requirements": [
+      "需要 CE 工具链以及 TI-84 Plus CE 硬件或模拟器来运行构建产物。",
+      "它面向基于 eZ80 的 TI-84 Plus CE 系列。",
+      "采用 LGPL-3.0 许可证。"
+    ]
+  },
+  "psx-modding-toolchain": {
+    "name": "PSX Modding Toolchain",
+    "requirements": [
+      "需要 PSX 游戏镜像与现代非专有构建工具；工具链编译代码并重建 ISO。",
+      "它支持文档化的 PSX 工作流，并依赖游戏镜像。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "decomp-anything": {
+    "name": "decomp.anything",
+    "requirements": [
+      "逐字节匹配需要自有目标二进制及原工具链；没有原始构建时用 REA 打开二进制分析。",
+      "它是智能体工作台，依赖所配置的 REA 与工具链。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "rich4": {
+    "name": "大富翁4 逆向工程",
+    "requirements": [
+      "需要原版《大富翁4》v3.11 可执行文件（SHA-256 固定）进行对照与重建。",
+      "项目整理了数据解压与存档格式，并提供带注释的汇编与 C 源码。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "sfa-decomp": {
+    "name": "Star Fox Adventures — 在研反编译",
+    "requirements": [
+      "需要受支持的 GameCube 版本来验证构建；项目不分发游戏。",
+      "它是在研反编译项目。",
+      "采用 CC0-1.0 许可证。"
+    ]
   }
 }

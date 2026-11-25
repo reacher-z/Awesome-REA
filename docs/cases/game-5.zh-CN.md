@@ -6,10 +6,12 @@
 
 [English](game-5.md)
 
-**440 个案例**
+**442 个案例**
 
 ## 引擎重实现
 
+- [**reone：重建《旧共和国武士》引擎**](https://github.com/seedhartha/reone) - reone 用 C++ 重建《星球大战：旧共和国武士》及《西斯领主》的引擎，依据公开文件格式资料和对游戏及资源的观察。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reone-kotor-engine-case/)</sub>
+- [**reRBR：重建 Richard Burns Rally 1.02**](https://github.com/JodusNodus/rerbr) - reRBR 用 Rust 重建 Richard Burns Rally 1.02，面向 Linux、macOS 和 Windows，读取玩家自备的游戏文件并使用 NGP 7.4.778 物理系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rerbr-case/)</sub>
 - [**Return To The Roots：重写 The Settlers 2 以适配现代系统**](https://github.com/Return-To-The-Roots/s25client) - Return To The Roots 重写 The Settlers 2，以便在现代操作系统上运行，并使用玩家自备的 Gold Edition 原版图像和音效。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/return-to-the-roots-case/)</sub>
 - [**ReverseSanta：《Santa Claus in Trouble》重建项目**](https://github.com/igor725/ReverseSanta) - ReverseSanta 是对 Joymania《Santa Claus in Trouble》的 C++ 重新实现，作者称研究原作时没有使用反汇编工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reversesanta-case/)</sub>
 - [**reWoodpecker：面向 PSP 的《Woody Woodpecker》重建项目**](https://github.com/wendersondiazx/reWoodpecker) - reWoodpecker 使用 C++ 引擎和 Qt 转换器，将用户 PS2 光盘中的《Woody Woodpecker: Escape from Buzz Buzzard Park》内容带到 PSP。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rewoodpecker-case/)</sub>

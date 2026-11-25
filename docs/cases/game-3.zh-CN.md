@@ -10,6 +10,8 @@
 
 ## 静态重编译
 
+- [**Hookshot：Switch 2 版《塞尔达传说：时之笛》的静态重编译**](https://github.com/NotRexed/Hookshot) - Hookshot 使用用户自己的游戏文件，将 Switch 2 重制版《塞尔达传说：时之笛》静态重编译为 Windows 或 Linux 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hookshot-oot-switch2-case/)</sub>
+- [**HotelMarioRecomp：早期 Philips CD-i 静态重编译工程**](https://github.com/mstan/HotelMarioRecomp) - HotelMarioRecomp 基于 cdirecomp 静态重编译引擎，使用用户提供的 CD-i BIOS 和游戏光盘镜像构建原生运行的 Hotel Mario。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hotel-mario-cdi-recomp-case/)</sub>
 - [**Hover!：将 Windows 95 游戏静态重编译为原生 C 程序**](https://github.com/sp00nznet/hover) - Hover! 将用户自有的 Windows 95 游戏 Microsoft Hover! 的 HOVER.EXE 静态重编译为 C，并构建 32 位原生宿主程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hover-static-recompilation-case/)</sub>
 - [**HPCOS GC：Harry Potter and the Chamber of Secrets 的 PC 重编译移植**](https://github.com/ant0-blase/HPCOS-GC-RECOMP) - HPCOS GC 使用 DolRecomp 转换 GameCube 版《Harry Potter and the Chamber of Secrets》的 PowerPC 代码，并以 ModernGekko 构建 PC 原生运行时。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hpcos-gc-recomp-case/)</sub>
 - [**Hybrid Heaven：通过 N64 静态重编译实现原生移植**](https://github.com/ogdanimal/HybridHeaven-Recomp) - Hybrid Heaven: Recompiled 使用 N64: Recompiled 静态重编译游戏代码，将 N64 游戏移植到 Windows、Linux 和 Android，并通过 N64ModernRuntime 与 RT64 运行和渲染；游戏数据由用户自备的美版零售 ROM 提供。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hybrid-heaven-recompiled-case/)</sub>
@@ -620,6 +622,4 @@
 - [**Glassline：Mirror's Edge iPad 版移植**](https://github.com/MoonCellar-Team/Glassline) - Glassline 将 2010 年 iPad 版 Mirror's Edge 移植到 Linux、Windows、Steam Deck、Android 和浏览器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/glassline-mirrors-edge-ipad-port-case/)</sub>
 - [**Goemon 64 Recompiled — Android：附游戏代码分析的移动端移植**](https://github.com/ogdanimal/Goemon64Recomp-Android) - Goemon 64 Recompiled — Android 将 Mystical Ninja Starring Goemon 的重编译版本移植到 Android，提供 RT64 Vulkan 渲染、触控操作和 ROM 选择。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goemon64-recompiled-android-case/)</sub>
 - [**Golden Balloon：《迪迪克刚赛车》的原生与浏览器移植**](https://github.com/akratch/goldenballoon) - Golden Balloon 是 1997 年那款任天堂 64 卡丁车游戏的原生和浏览器移植，建立在《迪迪克刚赛车》反编译之上。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goldenballoon-case/)</sub>
-- [**Golden Sun Recompiled for Android：设备端重编译移植版**](https://github.com/wootbeer/gsrandroid) - Golden Sun Recompiled for Android 将 Golden Sun 重编译流程移植到 Android，并在设备上从玩家的 ROM 构建游戏代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/golden-sun-recompiled-android-case/)</sub>
-- [**GoldenEye 007：基于反编译源码的 Nintendo 3DS 移植**](https://github.com/kylebrussell/goldeneye-3ds) - GoldenEye 007 的 3DS 移植项目以现有 Nintendo 64 反编译源码为基础，适配渲染、输入、音频、存储和计时接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goldeneye-3ds-port-case/)</sub>
 <!-- END GENERATED CASES -->

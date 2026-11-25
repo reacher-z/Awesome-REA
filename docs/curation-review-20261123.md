@@ -884,3 +884,30 @@ This round adds four emulators and two reconstruction cases: DaedalusX64, n64js,
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; binjgb received a Class 1 preview. The two new case studies update the game case indexes and README case sections.
+
+---
+
+# Backlog curation review, thirty-third batch — 2026-11-24
+
+This round adds four toolchain/workbench tools and two reconstruction cases: PatchELF, CE C/C++ Toolchain, PSX Modding Toolchain, decomp.anything, Rich4 reverse engineering and Star Fox Adventures decompilation.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| `patchelf` | `native-analysis` | [NixOS/patchelf](https://github.com/NixOS/patchelf/blob/2b4b49d36b62690860414dd127f567be4f1f3208/README.md) | `65ea71d8063cba43f1a5e90bea028be91ed701fe0a4c8ede1d0f9aadbbc5ef4a` |
+| `ce-toolchain` | `firmware` | [CE-Programming/toolchain](https://github.com/CE-Programming/toolchain/blob/7643f1a71e0d669f67dda22e8a4c38041812ce8a/README.md) | `f38aefbb152fa87b366236e1b0eed0b1fbe63255854d24931ae30b0835686e28` |
+| `psx-modding-toolchain` | `game-analysis` | [mateusfavarin/psx-modding-toolchain](https://github.com/mateusfavarin/psx-modding-toolchain/blob/9332a8d43943c513502e92a7b8b03d9950fff5bb/README.md) | `561da067e1cd56a5ccc8291a1900b636c47453ad69daa46e42d55d7fc8788368` |
+| `decomp-anything` | `native-analysis` | [giveen/decomp.anything](https://github.com/giveen/decomp.anything/blob/a37f31b9d77cfa800963e4fcdb66f4201a2adc37/README.md) | `98eb637f5290743676640cc25f4be5b4a5cc250b588362a6d451c5c14248304e` |
+| `rich4` | `reconstruction-cases` | [mytbk/rich4](https://github.com/mytbk/rich4/blob/f4a1e13b7507f649c467802c7501ea214957a85c/README.md) | `bfc65f5f6df2b6bc69237e2ad494d59b4181d3a89a285866416d261c60581d47` |
+| `sfa-decomp` | `reconstruction-cases` | [zcanann/SFA-Decomp](https://github.com/zcanann/SFA-Decomp/blob/ccd4d9aa413fbb4d715aaf5715764012cb4d93c1/README.md) | `da8f0c4783cdc6741f85b6ba310d543651060d4677f5eb2baccbb498d6c9880d` |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| mstan/*Recomp, TechnicallyComputers/*Recomp | No license file recorded by the GitHub API. |
+| MegaMan64Recomp/MegaMan64Recompiled | README is a 52-byte stub below the documentation threshold. |
+| mstan/PokemonStadiumRecomp | README declares the project no longer maintained as of August 2026. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. All are Class 2, so no previews were added; READMEs, case indexes and the site were regenerated.

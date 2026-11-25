@@ -161696,5 +161696,171 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "patchelf",
+    "name": "PatchELF",
+    "url": "https://github.com/NixOS/patchelf",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A utility for modifying existing ELF executables and libraries, including changing the dynamic loader, setting or shrinking RPATH and RUNPATH, and adjusting other ELF fields.",
+    "description_zh": "用于修改现有 ELF 可执行文件与库的工具，可更换动态加载器、设置或收缩 RPATH/RUNPATH，并调整其他 ELF 字段。",
+    "evidence_url": "https://github.com/NixOS/patchelf/blob/2b4b49d36b62690860414dd127f567be4f1f3208/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an ELF executable or library; it edits headers and paths in place or to a new file.",
+      "It targets ELF binaries and does not rewrite non-ELF formats.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ce-toolchain",
+    "name": "CE C/C++ Toolchain",
+    "url": "https://github.com/CE-Programming/toolchain",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A C/C++ toolchain for building programs natively for the TI-84 Plus CE calculator series, bundling the compiler, libraries and build tools.",
+    "description_zh": "用于为 TI-84 Plus CE 计算器系列原生构建程序的 C/C++ 工具链，整合编译器、库与构建工具。",
+    "evidence_url": "https://github.com/CE-Programming/toolchain/blob/7643f1a71e0d669f67dda22e8a4c38041812ce8a/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the CE toolchain and TI-84 Plus CE hardware or an emulator to run builds.",
+      "It targets the eZ80-based TI-84 Plus CE series.",
+      "LGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "psx-modding-toolchain",
+    "name": "PSX Modding Toolchain",
+    "url": "https://github.com/mateusfavarin/psx-modding-toolchain",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A toolset for PSX developers that compiles C into overlays, playtests and rebuilds ISOs, replaces textures, and generates xdelta patches for mods and reverse engineering.",
+    "description_zh": "面向 PSX 开发者的工具集：把 C 代码编译为多个 overlay、在游戏中试玩与重建 ISO、替换贴图，并为 mod 与逆向工程生成 xdelta 补丁。",
+    "evidence_url": "https://github.com/mateusfavarin/psx-modding-toolchain/blob/9332a8d43943c513502e92a7b8b03d9950fff5bb/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a PSX game image and modern non-proprietary build tools; the toolchain compiles code and rebuilds the ISO.",
+      "It supports the documented PSX workflows and depends on the game image.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "decomp-anything",
+    "name": "decomp.anything",
+    "url": "https://github.com/giveen/decomp.anything",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A matching-decompilation and reverse-engineering workbench for games, Windows and Linux programs, apps, web pages, firmware and files, where agents write C or C++ against the real binary, the original compiler builds it and results are checked byte for byte, or REA opens the binary for analysis when no build exists.",
+    "description_zh": "面向游戏、Windows/Linux 程序、应用、网页、固件与文件的匹配式反编译与逆向工作台：智能体针对真实二进制编写 C/C++，用原编译器构建并逐字节校验；没有原始构建时则用 REA 打开二进制进行分析。",
+    "evidence_url": "https://github.com/giveen/decomp.anything/blob/a37f31b9d77cfa800963e4fcdb66f4201a2adc37/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an owned target binary and its original toolchain for byte matching; REA opens the binary for analysis when no build exists.",
+      "It is an agent workbench and depends on the configured REA and toolchains.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "rich4",
+    "name": "Rich4 reverse engineering — 大富翁4 逆向工程",
+    "url": "https://github.com/mytbk/rich4",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "description_en": "A reverse-engineering project for the PC game Rich4 (大富翁4) v3.11, recovering C code and annotated disassembly, data decompression algorithms, save formats and a rebuildable executable linked with MinGW.",
+    "description_zh": "PC 游戏《大富翁4》v3.11 的逆向工程项目：恢复 C 代码与带注释的反汇编，整理数据解压算法与存档格式，并生成可用 MinGW 链接重建的可执行文件。",
+    "evidence_url": "https://github.com/mytbk/rich4/blob/f4a1e13b7507f649c467802c7501ea214957a85c/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Rich4 v3.11 executable (SHA-256 pinned) to compare and rebuild.",
+      "The project documents decompression and save formats and provides annotated assembly and C sources.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "sfa-decomp",
+    "name": "Star Fox Adventures — a work-in-progress decompilation",
+    "url": "https://github.com/zcanann/SFA-Decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A work-in-progress decompilation of Star Fox Adventures for the Nintendo GameCube, covering JP, EN and PAL versions with code and DOL progress tracked by decomp.dev.",
+    "description_zh": "《Star Fox Adventures》Nintendo GameCube 版的在研反编译项目，覆盖日版、英文版与 PAL 版，代码与 DOL 进度由 decomp.dev 跟踪。",
+    "evidence_url": "https://github.com/zcanann/SFA-Decomp/blob/ccd4d9aa413fbb4d715aaf5715764012cb4d93c1/README.md",
+    "verified_at": "2026-11-24",
+    "added_at": "2026-11-24",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the supported GameCube versions to verify builds; the project does not distribute the game.",
+      "It is a work-in-progress decompilation.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

@@ -6,10 +6,12 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**440 case studies**
+**442 case studies**
 
 ## Engine reimplementations
 
+- [**reone: reconstructing the Knights of the Old Republic engine**](https://github.com/seedhartha/reone) - reone reconstructs an engine for Star Wars: Knights of the Old Republic and The Sith Lords in C++ using public file-format information and observations of the games and their resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reone-kotor-engine-case/)</sub>
+- [**reRBR: reimplementing Richard Burns Rally 1.02**](https://github.com/JodusNodus/rerbr) - reRBR reimplements Richard Burns Rally 1.02 for Linux, macOS and Windows, using the player's game files and NGP 7.4.778 physics. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rerbr-case/)</sub>
 - [**Return To The Roots: rewriting The Settlers 2 for modern systems**](https://github.com/Return-To-The-Roots/s25client) - Return To The Roots rewrites The Settlers 2 for modern operating systems while using graphics and sounds from the player's original Gold Edition copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/return-to-the-roots-case/)</sub>
 - [**ReverseSanta: a reconstruction of Santa Claus in Trouble**](https://github.com/igor725/ReverseSanta) - ReverseSanta is a C++ reimplementation of Joymania's Santa Claus in Trouble built from study of the original without disassembly tools. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reversesanta-case/)</sub>
 - [**reWoodpecker: a PSP reconstruction of Woody Woodpecker**](https://github.com/wendersondiazx/reWoodpecker) - reWoodpecker rebuilds Woody Woodpecker: Escape from Buzz Buzzard Park for PSP with a C++ engine and a Qt converter for the user's PS2 disc. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rewoodpecker-case/)</sub>

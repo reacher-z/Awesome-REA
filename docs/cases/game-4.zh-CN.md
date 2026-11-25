@@ -10,6 +10,8 @@
 
 ## 基于重建源码的移植
 
+- [**Golden Sun Recompiled for Android：设备端重编译移植版**](https://github.com/wootbeer/gsrandroid) - Golden Sun Recompiled for Android 将 Golden Sun 重编译流程移植到 Android，并在设备上从玩家的 ROM 构建游戏代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/golden-sun-recompiled-android-case/)</sub>
+- [**GoldenEye 007：基于反编译源码的 Nintendo 3DS 移植**](https://github.com/kylebrussell/goldeneye-3ds) - GoldenEye 007 的 3DS 移植项目以现有 Nintendo 64 反编译源码为基础，适配渲染、输入、音频、存储和计时接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goldeneye-3ds-port-case/)</sub>
 - [**GoldenEye 007：基于反编译成果的智能体辅助原生移植**](https://github.com/jkdansereau/goldeneye-pc-port) - 在已有 GoldenEye 007 反编译成果之上构建原生 PC 移植，提供宿主平台适配层，并从用户自己的 ROM 提取资产。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goldeneye-pc-port-case/)</sub>
 - [**Gran Turismo 2 PC, VR &amp; Browser：原生多平台移植《跑车浪漫旅 2》**](https://github.com/dubrovskiy-yevhen-stakelogic/gt-2-pc) - Gran Turismo 2 PC, VR &amp; Browser 以共享 C++ 游戏代码移植《跑车浪漫旅 2》的街机和模拟模式，支持桌面、Quest、PCVR 及浏览器；浏览器版使用 WebAssembly 和 WebGL2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gran-turismo-2-pc-vr-browser-case/)</sub>
 - [**Gravity Rush 2：PS4 游戏运行时 PC 移植**](https://github.com/HayatoG/gr2_pc) - Gravity Rush 2 PC 移植项目让 PS4 游戏的原始 x86-64 代码在主机处理器上运行，以替代层提供 PS4 系统服务，并将 GPU 工作转换为 Vulkan。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gravity-rush-2-pc-case/)</sub>
@@ -638,6 +640,4 @@
 - [**REinforced：扩展《Flashback》引擎重实现**](https://github.com/chermenin/REminiscence) - REinforced 扩展了 1992 年游戏《Flashback》的 REminiscence 引擎重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reinforced-flashback-case/)</sub>
 - [**ReksioEngine：重实现《Przygody Reksia》游戏引擎**](https://github.com/ReksioEngine/ReksioEngine) - ReksioEngine 重实现《Przygody Reksia》系列使用的 BlooMoo 和 Piklib 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reksio-engine/)</sub>
 - [**REminiscence：Flashback 游戏引擎重建**](https://github.com/cyxx/REminiscence) - REminiscence 重新实现 1992 年游戏 Flashback 的引擎，读取用户持有的 DOS、Amiga、Macintosh 或 PC-98 版本数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reminiscence-flashback-case/)</sub>
-- [**reone：重建《旧共和国武士》引擎**](https://github.com/seedhartha/reone) - reone 用 C++ 重建《星球大战：旧共和国武士》及《西斯领主》的引擎，依据公开文件格式资料和对游戏及资源的观察。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reone-kotor-engine-case/)</sub>
-- [**reRBR：重建 Richard Burns Rally 1.02**](https://github.com/JodusNodus/rerbr) - reRBR 用 Rust 重建 Richard Burns Rally 1.02，面向 Linux、macOS 和 Windows，读取玩家自备的游戏文件并使用 NGP 7.4.778 物理系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rerbr-case/)</sub>
 <!-- END GENERATED CASES -->

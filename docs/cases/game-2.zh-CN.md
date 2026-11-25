@@ -10,6 +10,7 @@
 
 ## 非匹配反编译
 
+- [**Banjo-Kazooie：Xbox Live Arcade 版反编译**](https://github.com/banjo360/bk360) - 该项目反编译 Xbox Live Arcade 版 Banjo-Kazooie。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bk360/)</sub>
 - [**Battlestations Pacific：逐步重建 Win32 C++ 程序**](https://github.com/sqz269/battlestations-pacific-decompile) - 依据 Ghidra 分析，将 Battlestations Pacific 的 Win32 可执行文件逐例程重建为可编译的 MSVC C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/battlestations-pacific-reconstruction-case/)</sub>
 - [**Batty：ZX Spectrum 游戏的 SkoolKit 反汇编**](https://github.com/pobtastic/batty) - batty 提供 ZX Spectrum 游戏《Batty》的 SkoolKit 反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/batty-disassembly-case/)</sub>
 - [**BIT.TRIP COMPLETE：Wii 游戏反编译**](https://github.com/Fatih120/bittrip) - BIT.TRIP COMPLETE 是针对 Wii 游戏编号 SVTEXS 的进行中反编译工程。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bit-trip-complete-case/)</sub>
@@ -223,6 +224,7 @@
 - [**Rewritten：Minecraft Xbox 360 Title Update 2 功能性重建**](https://github.com/LCERD/Minecraft-Xbox-360-Decompilation) - Rewritten 是针对 Xbox 360 版《Minecraft》旧主机版 Title Update 2 的 C++ 功能性反编译项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/minecraft-xbox-360-rewritten-case/)</sub>
 - [**Rhythm Heaven Fever：Wii 版反编译**](https://github.com/conhlee/rhf) - 这是《Rhythm Heaven Fever》的进行中反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rhythm-heaven-fever-decomp/)</sub>
 - [**Rhythm Heaven：任天堂 DS 版《节奏天国》的反编译**](https://github.com/patataofcourse/rhgold) - 该仓库是任天堂 DS 版《节奏天国》的进行中反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rhgold/)</sub>
+- [**大富翁4 逆向工程**](https://github.com/mytbk/rich4) - PC 游戏《大富翁4》v3.11 的逆向工程项目：恢复 C 代码与带注释的反汇编，整理数据解压算法与存档格式，并生成可用 MinGW 链接重建的可执行文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rich4/)</sub>
 - [**Ridge Racer 64：ROM 拆分与反编译尝试**](https://github.com/jvicu2001/rr64-decomp) - Ridge Racer 64 反编译项目记录美版 Nintendo 64 ROM 的拆分、符号和链接配置。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ridge-racer-64-decomp-case/)</sub>
 - [**River Raid：Atari VCS 版注释反汇编，解析河道生成与显示内核**](https://www.qotile.net/minidig/disassembly/RiverRaid.asm) - Activision 1982 年的 Atari VCS 游戏 River Raid 被反汇编为带标签和注释的 6502 汇编（v0.9）。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/river-raid-atari-vcs-disassembly-case/)</sub>
 - [**Road Rash for 3DO：功能性 C 源码重建**](https://github.com/trapexit/3do-decomp-road-rash) - Road Rash for 3DO 将美版游戏功能性地重建为面向 3DO DevKit 的 C 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/road-rash-3do-decomp-case/)</sub>
@@ -633,6 +635,4 @@
 - [**Hell's Gate：但丁的地狱的静态重编译**](https://github.com/florinp93/hells-gate-recomp) - 把 Xbox 360 版《但丁的地狱》移植到 PC，使用 ReXGlue SDK。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hells-gate-recomp/)</sub>
 - [**hl2-recomp：Xbox 版 Half-Life 2 的静态重编译**](https://github.com/sp00nznet/hl2-recomp) - hl2-recomp 使用 xboxrecomp 将 Xbox 版 Half-Life 2 的 XBE 转为 C，并链接到 Windows 原生运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/half-life-2-xbox-recomp-case/)</sub>
 - [**Hobbit Recompiled：LEGO The Hobbit 的 Apple Silicon 重编译移植**](https://github.com/itsdunintime104/HobbitRecompiled) - Hobbit Recompiled 将《LEGO The Hobbit》的 32 位 Intel Mac 程序转换为 C，并构建 Apple 芯片 Mac 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hobbit-recompiled-case/)</sub>
-- [**Hookshot：Switch 2 版《塞尔达传说：时之笛》的静态重编译**](https://github.com/NotRexed/Hookshot) - Hookshot 使用用户自己的游戏文件，将 Switch 2 重制版《塞尔达传说：时之笛》静态重编译为 Windows 或 Linux 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hookshot-oot-switch2-case/)</sub>
-- [**HotelMarioRecomp：早期 Philips CD-i 静态重编译工程**](https://github.com/mstan/HotelMarioRecomp) - HotelMarioRecomp 基于 cdirecomp 静态重编译引擎，使用用户提供的 CD-i BIOS 和游戏光盘镜像构建原生运行的 Hotel Mario。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hotel-mario-cdi-recomp-case/)</sub>
 <!-- END GENERATED CASES -->
