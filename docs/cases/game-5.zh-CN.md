@@ -6,10 +6,14 @@
 
 [English](game-5.md)
 
-**470 个案例**
+**475 个案例**
 
 ## 引擎重实现
 
+- [**Portémon Nitro：HeartGold 与 SoulSilver 游戏引擎移植**](https://github.com/portemon-nitro/portemon) - Portémon Nitro 使用 LÖVE 重建 Pokémon HeartGold 与 SoulSilver 的游戏引擎，面向电脑和移动设备。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/portemon-nitro-hgss-case/)</sub>
+- [**Powerslave EX：在 Kex Engine 上重建 PlayStation 版 Powerslave**](https://github.com/svkaiser/PowerslaveEX) - Powerslave EX 在 Kex Engine 3.0 上重建 PlayStation 版《Powerslave》，结合逆向还原的游戏逻辑与重新编写的碰撞、AI 系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powerslave-ex-case/)</sub>
+- [**Powerslide Remake：基于原版游戏数据重建街机赛车游戏**](https://github.com/dm999/powerslideremake) - Powerslide Remake 使用 Ogre 构建跨平台 C++ 程序，重建 Powerslide 赛车游戏的主要玩法。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powerslide-remake-case/)</sub>
+- [**ppengine：基于街机 ROM 分析重制《Pole Position》**](https://github.com/jonathanopalise/ppengine) - ppengine 利用从街机 ROM 逆向得到的逻辑，将 Atari《Pole Position》重建为 3D 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ppengine-case/)</sub>
 - [**Primal Rage：DOS 引擎重建与 SDL3 移植**](https://github.com/felipe-dos-santos81/primal-rage-re) - Primal Rage RE 以 C 语言按 PRAGE.EXE 的原始内存布局重建 DOS 游戏引擎，并用 SDL3 读取用户的游戏数据运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/primal-rage-reconstruction-case/)</sub>
 - [**Project ANISE：AI5V 与 SILV 脚本引擎解释器**](https://github.com/tomyun/anise) - Project ANISE 是面向采用 AI5V 或 SILV 脚本引擎的日本冒险游戏的 C++ 解释器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-anise-ai5v-case/)</sub>
 - [**Project Carrot：重建 Jazz Jackrabbit 2 风格引擎**](https://github.com/soulweaver91/project-carrot) - Project Carrot 使用 C++ 和用户从 Jazz Jackrabbit 2 转换出的资源开发同类游戏引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-carrot-case/)</sub>
@@ -185,6 +189,7 @@
 - [**Battlefield Heroes：主服务器协议重建**](https://github.com/M0THERB0ARD/BFH-Master-Protocol) - BFH-Master-Protocol 记录《Battlefield Heroes》的专有主服务器通信，涵盖客户端、游戏服务器，以及负责认证的 FESL、提供账户信息的 Magma HTTPS 服务和管理游戏会话的 Theater 服务。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/bfh-master-protocol-case/)</sub>
 - [**battlepod：还原 BattleTech 街机座舱**](https://github.com/sp00nznet/battlepod) - battlepod 将 Virtual World Entertainment 的 BattleTech 座舱重建为启动研究工具和可玩的模拟程序。 <sub>案例 · 独立重建 · 也适用：固件、协议 · [完整条目](https://awesomerea.org/zh/resources/battlepod-case/)</sub>
 - [**Battlezone：ZX Spectrum 游戏的 SkoolKit 反汇编**](https://github.com/pobtastic/battlezone) - Battlezone 记录 ZX Spectrum 版游戏的 SkoolKit 反汇编，并提供生成可浏览 HTML 清单的脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/battlezone-spectrum-disassembly-case/)</sub>
+- [**Belfast：碧蓝航线的私服重实现**](https://github.com/catgirl-systems/belfast) - 用 Go 重实现的《碧蓝航线》私服，可在不越狱、不 root 的情况下与官方手机客户端通信。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/belfast-case/)</sub>
 - [**Betrock++：重建 Minecraft Beta 1.7.x 服务器**](https://github.com/OpenBetaGroup/BetrockPlusPlus) - Betrock++ 以 C++ 重建 Minecraft Beta 1.7.x 服务器，目标是兼容原版 Java 服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/betrockplusplus-case/)</sub>
 - [**Between Us：基于 Action ou Vérité APK 分析的离线重制版**](https://github.com/rockyanyan/between-us) - Between Us 是在分析 Action ou Vérité Android APK 后重制的离线情侣游戏。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/between-us-android-remake-case/)</sub>
 - [**bf-private-server：《Brave Frontier》服务端重建**](https://github.com/joppe2001/bf-private-server) - bf-private-server 为《Brave Frontier》2.19.6 客户端重建可自行部署的服务端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/bf-private-server-case/)</sub>

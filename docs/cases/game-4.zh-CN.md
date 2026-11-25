@@ -10,6 +10,10 @@
 
 ## 基于重建源码的移植
 
+- [**F-Zero Forever：SNES F-Zero 的现代 PC 移植**](https://github.com/RetroPortingToolKit/FZeroSNESRecomp) - 把 SNES 原版《F-Zero》现代化移植到 PC 的项目：增加赛道、杯赛、最多 4 人分屏与高清 Mode 7，由 RetroPortingToolkit 团队与 F-Zero mod 制作者合作完成。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fzero-forever/)</sub>
+- [**F0X：F-Zero X 的 Apple 平台移植**](https://github.com/chrissotraidis/f0x) - F0X 将 G-Diffuser 反编译的 F-Zero X 游戏逻辑移植到 Apple Silicon macOS、iPhone 和 iPad。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f0x-f-zero-x-case/)</sub>
+- [**FIFA 96：重建 DOS 加载器、数据格式及游戏系统**](https://github.com/felipe-dos-santos81/fifa-96-re) - FIFA 96 重建 DOS 游戏的实模式加载器、附加保护模式程序行为，以及 QFS、POG、TGV、VIV 和 EACS 等格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fifa-96-re-case/)</sub>
+- [**Final Fantasy 4 Vita：在 PS Vita 运行 Android 游戏**](https://github.com/Rinnegatamante/ff4_vita) - Final Fantasy 4 Vita 将 Android 版《Final Fantasy 4》移植到 PS Vita：把 ARMv7 可执行文件加载到内存中，以原生函数解析 Android 导入，并应用运行时补丁。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/final-fantasy-4-vita-case/)</sub>
 - [**Final Fantasy 4: The After Years Vita：在 PS Vita 上重宿主 Android 程序**](https://github.com/Rinnegatamante/ff4a_vita) - Final Fantasy 4: The After Years Vita 使用原生加载器在 PS Vita 上运行 Android 版游戏程序。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/final-fantasy-after-years-vita-case/)</sub>
 - [**Final Fantasy Dimensions Vita：Android 游戏的 PS Vita 移植**](https://github.com/Rinnegatamante/ffd-vita) - Final Fantasy Dimensions Vita 在 PS Vita 内存中装载《Final Fantasy Dimensions》Android 版的 ARMv6 程序，以原生函数处理导入项并应用补丁。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/final-fantasy-dimensions-vita-case/)</sub>
 - [**Forest：《Animal Crossing》GameCube 版 PC 移植**](https://github.com/ACreTeam/forest) - Forest 基于匹配反编译成果将 GameCube 版《Animal Crossing》移植到 PC。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/forest-animal-crossing-port-case/)</sub>
@@ -634,8 +638,4 @@
 - [**Pinball Fantasies Reassembled：重建 DOS 游戏引擎**](https://github.com/wanda-phi/pfr) - Pinball Fantasies Reassembled 用 Rust 和原版游戏文件重建 1993 年的 DOS 游戏引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pinball-fantasies-reassembled-case/)</sub>
 - [**Pizza Legacy：重建 Pizza Tycoon**](https://codeberg.org/cowomaly/pizzalegacy) - Pizza Legacy 以 C++20 引擎重建 1994 年 DOS 游戏 Pizza Tycoon，也就是德语发行的 Pizza Connection，并读取原版资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pizza-legacy-case/)</sub>
 - [**pokerecomp：重实现 Game Boy 宝可梦游戏**](https://github.com/Decryptu/pokerecomp) - pokerecomp 用 GDScript 在 Godot 4 里重实现 Game Boy 的宝可梦游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokerecomp/)</sub>
-- [**Portémon Nitro：HeartGold 与 SoulSilver 游戏引擎移植**](https://github.com/portemon-nitro/portemon) - Portémon Nitro 使用 LÖVE 重建 Pokémon HeartGold 与 SoulSilver 的游戏引擎，面向电脑和移动设备。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/portemon-nitro-hgss-case/)</sub>
-- [**Powerslave EX：在 Kex Engine 上重建 PlayStation 版 Powerslave**](https://github.com/svkaiser/PowerslaveEX) - Powerslave EX 在 Kex Engine 3.0 上重建 PlayStation 版《Powerslave》，结合逆向还原的游戏逻辑与重新编写的碰撞、AI 系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powerslave-ex-case/)</sub>
-- [**Powerslide Remake：基于原版游戏数据重建街机赛车游戏**](https://github.com/dm999/powerslideremake) - Powerslide Remake 使用 Ogre 构建跨平台 C++ 程序，重建 Powerslide 赛车游戏的主要玩法。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powerslide-remake-case/)</sub>
-- [**ppengine：基于街机 ROM 分析重制《Pole Position》**](https://github.com/jonathanopalise/ppengine) - ppengine 利用从街机 ROM 逆向得到的逻辑，将 Atari《Pole Position》重建为 3D 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ppengine-case/)</sub>
 <!-- END GENERATED CASES -->

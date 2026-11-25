@@ -46050,5 +46050,53 @@
       "仍是实验性项目，覆盖 Android ARM64 与 Windows，并基于 PSPRecomp。",
       "采用 MIT 许可证。"
     ]
+  },
+  "hey-listen-case": {
+    "name": "HeyListen：Switch 2 版时之笛在 PC 上原生运行",
+    "requirements": [
+      "需要自备 Switch 2 版游戏副本；不包含游戏数据。",
+      "它是基于 Hookshot 的 Windows/Linux 重编译，不是模拟器。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "mario-party-recomp-case": {
+    "name": "Mario Party: Recompiled — N64 原作原生登陆 PC 与网页",
+    "requirements": [
+      "需要自备 N64 ROM；仓库不含 ROM、素材或提取数据。",
+      "几乎全部代码、文档与测试由 AI 代理编写，并由人工试玩验证。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "edge-classic-case": {
+    "name": "EDGE-Classic：EDGE Doom 源代码移植的复兴",
+    "requirements": [
+      "需要自备 Doom WAD 文件；移植不附带游戏数据。",
+      "它是 EDGE 1.35 的复兴版本，使用 OpenGL 渲染并配套更新的 mod 工具集。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "belfast-case": {
+    "name": "Belfast：碧蓝航线的私服重实现",
+    "requirements": [
+      "需要官方《碧蓝航线》手机客户端连接；项目不分发客户端数据。",
+      "它是非官方私服，README 提供报文实现进度图。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "sonic-riders-recomp-case": {
+    "name": "Sonic Riders Recomp：GameCube 竞速游戏的原生重编译",
+    "requirements": [
+      "需要自备 GameCube 光盘；不包含游戏数据。",
+      "移植完成度约 77%，可在包括 Switch 2 在内的多个平台运行。",
+      "采用 MPL-2.0 许可证。"
+    ]
+  },
+  "3dhad3-print-image-case": {
+    "name": "3D Home Architect Deluxe 3.0：逆向修复失效的 Print Image 命令",
+    "requirements": [
+      "需要自备《3D Home Architect Deluxe 3.0》副本；补丁不含程序文件。",
+      "说明两字节补丁只修复部分 Windows 10/11 系统上的打印问题，同一目录在其他机器上可能正常。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

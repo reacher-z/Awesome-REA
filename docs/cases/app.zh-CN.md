@@ -6,8 +6,9 @@
 
 [English](app.md)
 
-**261 个案例**
+**262 个案例**
 
+- [**3D Home Architect Deluxe 3.0：逆向修复失效的 Print Image 命令**](https://github.com/jake-378/3dhad3-print-image-fix) - 针对 Broderbund《3D Home Architect Deluxe 3.0》在 Windows 10/11 上失效的“3D 视图→打印图像”功能的逆向分析、两字节二进制补丁与 Python 修补脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/3dhad3-print-image-case/)</sub>
 - [**capcut-cli：在终端编辑真实的 CapCut／剪映草稿工程**](https://github.com/renezander030/capcut-cli) - capcut-cli 在终端或 LLM 代理中创建并编辑真实的 CapCut／剪映草稿工程：直接以 JSON 读写本地草稿库，不上传、不依赖远程服务、MCP 服务或 HTTP 守护进程，在 CapCut 中打开后所有轨道仍可编辑；另提供静音感知剪辑、样式化字幕、FFmpeg 渲染与可选的云端转写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/capcut-cli-projects-case/)</sub>
 - [**giellakbd-ios：iOS 键盘的开源重新实现**](https://github.com/divvun/giellakbd-ios) - giellakbd-ios 把 iOS 原生键盘重新实现为开源键盘扩展，专注少数与原住民语言的本地化布局：提供基于 CocoaPods 的 Xcode workspace，可在真机或模拟器上作为系统键盘安装，经地球键切换布局。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/giellakbd-ios-keyboard-case/)</sub>
 - [**Janus Notepad：经典 Windows 记事本的 Win16 重现**](https://github.com/osfree-project/notepad) - Janus Notepad 在 16 位 Windows 3.x 上重现经典 Windows 记事本，是一个极简的 C89 文本编辑器：源码衍生自 Wine 记事本，适配 osFree Win16 Personality（开源的 16 位 Windows 环境实现），状态标记为稳定，界面有截图记录。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/janus-notepad-win16-case/)</sub>

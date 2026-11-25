@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-25T04:25:17+00:00",
-    "entry_count": 1203,
-    "class_entry_count": 1234,
+    "generated_at": "2026-11-25T05:30:08+00:00",
+    "entry_count": 1206,
+    "class_entry_count": 1237,
     "class_counts": {
-      "image": 1163,
+      "image": 1166,
       "video": 40
     },
     "missing_count": 31,
@@ -2387,6 +2387,15 @@
       "checked_at": "2026-11-22T06:41:04+00:00"
     },
     {
+      "id": "edge-classic-case",
+      "image_url": "https://user-images.githubusercontent.com/58537100/187059072-dd93b206-d3cd-4c2f-bf3e-3200684d33f6.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/edge-classic/EDGE-classic",
+      "revision": "d4fe222e18453c5bce84845ae4cd93c0a99ff831",
+      "checked_at": "2026-11-25T05:30:08+00:00"
+    },
+    {
       "id": "edge-of-time-recomp",
       "image_url": "https://raw.githubusercontent.com/goliathret/EdgeOfTimeRecomp/ebf7bb904d88062a3bd5b1d59ea642cdc2c1b780/docs/image.png",
       "kind": "image",
@@ -3728,6 +3737,15 @@
       "checked_at": "2026-11-07T03:50:08+00:00"
     },
     {
+      "id": "hey-listen-case",
+      "image_url": "https://raw.githubusercontent.com/Sacrappy/HeyListen/752e305b8050f3882c12999dd509638f1271a644/engine/assets/heylisten.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Sacrappy/HeyListen",
+      "revision": "752e305b8050f3882c12999dd509638f1271a644",
+      "checked_at": "2026-11-25T05:30:08+00:00"
+    },
+    {
       "id": "hl360-forza3-case",
       "image_url": "https://raw.githubusercontent.com/0herculabs/hl360-forza3/861213069ae88042b573db099d9a5b42dcc78dd6/doc/media/launcher-profiles.png",
       "kind": "image",
@@ -4346,7 +4364,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-25T04:25:15+00:00"
+      "checked_at": "2026-11-25T05:30:06+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -8909,6 +8927,15 @@
       "source_url": "https://github.com/faghy/SONIC_CORE_SCOPE_PCI_x64-Linux-driver",
       "revision": "d593f7ad96211ff48236a466290aba5dc730e234",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "sonic-riders-recomp-case",
+      "image_url": "https://raw.githubusercontent.com/teclilla18/sonic-riders-recomp/2f1d028d187361e9994d3b94676a4f3af2fbe1fe/docs/images/switch2-poster.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/teclilla18/sonic-riders-recomp",
+      "revision": "2f1d028d187361e9994d3b94676a4f3af2fbe1fe",
+      "checked_at": "2026-11-25T05:30:08+00:00"
     },
     {
       "id": "sonic-the-hedgehog-recompiled-runner-case",

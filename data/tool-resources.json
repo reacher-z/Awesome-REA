@@ -162725,5 +162725,179 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "hey-listen-case",
+    "name": "HeyListen: Ocarina of Time for Switch 2 running natively on PC",
+    "url": "https://github.com/Sacrappy/HeyListen",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native Windows and Linux port of the Switch 2 release of The Legend of Zelda: Ocarina of Time, recompiled on the player PC from their own copy of the game and built on Hookshot.",
+    "description_zh": "把 Switch 2 版《塞尔达传说：时之笛》移植为原生 Windows 与 Linux 版本，在玩家自己的电脑上从自备游戏副本重编译，基于 Hookshot。",
+    "evidence_url": "https://github.com/Sacrappy/HeyListen/blob/752e305b8050f3882c12999dd509638f1271a644/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the Switch 2 game; no game data is included.",
+      "It is a Windows and Linux recompilation built on Hookshot rather than an emulator.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "mario-party-recomp-case",
+    "name": "Mario Party: Recompiled — the N64 game natively on PC and the web",
+    "url": "https://github.com/n64hub/mario-party-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of the USA N64 Mario Party for PC and the web using N64Recomp, N64ModernRuntime and RT64, with symbols taken from the mariopartyrd decompilation and widescreen board views.",
+    "description_zh": "用 N64Recomp、N64ModernRuntime 与 RT64 把美版 N64《马力欧派对》静态重编译到 PC 与网页，符号取自 mariopartyrd 的反编译成果，并支持宽屏棋盘视图。",
+    "evidence_url": "https://github.com/n64hub/mario-party-recomp/blob/6e330af2ba306d3e6fc207a1158c586cb6cf510d/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own N64 ROM; the repository holds no ROM, assets or extracted data.",
+      "Almost all code, documentation and tests were written by AI agents and play-tested by a person.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "edge-classic-case",
+    "name": "EDGE-Classic: a revival of the EDGE Doom source port",
+    "url": "https://github.com/edge-classic/EDGE-classic",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A cross-platform Doom source port that revives the EDGE 1.35 codebase for modern systems, adding modding features and visuals while keeping hardware requirements modest.",
+    "description_zh": "把 EDGE 1.35 代码库在现代系统上复兴的跨平台 Doom 源代码移植，在保持低硬件要求的同时增强 mod 能力与画面效果。",
+    "evidence_url": "https://github.com/edge-classic/EDGE-classic/blob/d4fe222e18453c5bce84845ae4cd93c0a99ff831/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Doom WAD files; the port does not ship game data.",
+      "It is a revival of EDGE 1.35 with OpenGL rendering and an updated modding utility suite.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "belfast-case",
+    "name": "Belfast: a private-server reimplementation of Azur Lane",
+    "url": "https://github.com/catgirl-systems/belfast",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "reconstruction_method": "other",
+    "description_en": "A private-server reimplementation of Azur Lane written in Go that works with the official mobile clients without jailbreak or root.",
+    "description_zh": "用 Go 重实现的《碧蓝航线》私服，可在不越狱、不 root 的情况下与官方手机客户端通信。",
+    "evidence_url": "https://github.com/catgirl-systems/belfast/blob/8eaa50b841b5996bd7c87016338bbd631e6b2639/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the official Azur Lane mobile client to connect; the project does not distribute client data.",
+      "It is an unofficial private server and exposes a packet-implementation progress chart in the README.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "sonic-riders-recomp-case",
+    "name": "Sonic Riders Recomp: the GameCube racer running natively",
+    "url": "https://github.com/teclilla18/sonic-riders-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native static recompilation of the GameCube Sonic Riders for Nintendo Switch 2, Switch, Windows, Android, Linux and iPhone, one of the first homebrew games playable on Switch 2.",
+    "description_zh": "把 GameCube 版《索尼克竞速》静态重编译为原生游戏，覆盖 Nintendo Switch 2、Switch、Windows、Android、Linux 与 iPhone，是首批可在 Switch 2 上运行的同人游戏之一。",
+    "evidence_url": "https://github.com/teclilla18/sonic-riders-recomp/blob/2f1d028d187361e9994d3b94676a4f3af2fbe1fe/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own GameCube disc; no game data is included.",
+      "The port is around 77 percent complete and runs on several platforms including Switch 2.",
+      "MPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "3dhad3-print-image-case",
+    "name": "3D Home Architect Deluxe 3.0: reverse-engineering the broken Print Image command",
+    "url": "https://github.com/jake-378/3dhad3-print-image-fix",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "3d-design",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A reverse-engineering write-up, a two-byte binary patch and a Python patcher that restore the 3D View to Print Image command in Broderbund 3D Home Architect Deluxe 3.0 on Windows 10 and 11.",
+    "description_zh": "针对 Broderbund《3D Home Architect Deluxe 3.0》在 Windows 10/11 上失效的“3D 视图→打印图像”功能的逆向分析、两字节二进制补丁与 Python 修补脚本。",
+    "evidence_url": "https://github.com/jake-378/3dhad3-print-image-fix/blob/147c0b06bf151739658007ee43a854c1c2fae8ce/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of 3D Home Architect Deluxe 3.0; the patch ships no program files.",
+      "It documents a two-byte patch that fixes printing on some Windows 10 and 11 systems, where the same folder may work elsewhere.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

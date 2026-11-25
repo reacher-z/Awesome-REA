@@ -1039,3 +1039,28 @@ Six records: the LBA2 classic source port, OpenAdhoc, the Spyro 3 decompilation,
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Transformers Armada is Class 1 with a merged preview; the other five are Class 2.
+
+## Batch 39 — 2026-11-25
+
+Six records: HeyListen, Mario Party Recompiled, EDGE-Classic, Belfast, Sonic Riders Recomp and the 3D Home Architect print fix.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| hey-listen-case | reconstruction-cases | [Sacrappy/HeyListen](https://github.com/Sacrappy/HeyListen/blob/752e305b8050f3882c12999dd509638f1271a644/README.md) | 5e0e6f9c3ce10f6f3a0c51c619e32794d623830f1c86bc579abc5052d9a2d841 |
+| mario-party-recomp-case | reconstruction-cases | [n64hub/mario-party-recomp](https://github.com/n64hub/mario-party-recomp/blob/6e330af2ba306d3e6fc207a1158c586cb6cf510d/README.md) | 1fceade918ad6f1cff85a05ea829e9a5ab75cd9455e4d102e9b719044dfbf1f6 |
+| edge-classic-case | reconstruction-cases | [edge-classic/EDGE-classic](https://github.com/edge-classic/EDGE-classic/blob/d4fe222e18453c5bce84845ae4cd93c0a99ff831/README.md) | 772ef8f2770207b1046a8d30c20bb8e87f5ad56ec5f4540b5c3726253dd28737 |
+| belfast-case | reconstruction-cases | [catgirl-systems/belfast](https://github.com/catgirl-systems/belfast/blob/8eaa50b841b5996bd7c87016338bbd631e6b2639/README.md) | 4b0d8398422c7b13b72dfea668a1f830b1dd772884f1ee3247155f6b83b85285 |
+| sonic-riders-recomp-case | reconstruction-cases | [teclilla18/sonic-riders-recomp](https://github.com/teclilla18/sonic-riders-recomp/blob/2f1d028d187361e9994d3b94676a4f3af2fbe1fe/README.md) | c105257014528b0f002744165124a37a3d2110cb2ffc19192134f3bcfc83fb47 |
+| 3dhad3-print-image-case | reconstruction-cases | [jake-378/3dhad3-print-image-fix](https://github.com/jake-378/3dhad3-print-image-fix/blob/147c0b06bf151739658007ee43a854c1c2fae8ce/README.md) | 8e1f8ad59335bbce664a606c34ab318038a92fe84a4d9dad657736eb8920600a |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| shad0w77-code/MC_LA_Recompiled | A Midnight Club L.A. recompilation fork with PT-BR and FSR extras; four MCLA recompilation records already exist. |
+| Glitxhhh/XenobladeChroniclesRecompiled | Series-wide work in development without releases, overlapping the curated Xenoblade recompilations. |
+| dougchansan/pkmn-colosseum | The catalog already carries the continued Pokemon Colosseum matching decompilation. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. HeyListen, EDGE-Classic and Sonic Riders Recomp are Class 1 with merged previews; the other three are Class 2. The 3D Home Architect record is the first 3d-design case in several batches.
