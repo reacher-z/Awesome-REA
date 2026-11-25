@@ -163854,5 +163854,113 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "wedecode",
+    "name": "Wedecode: automated decompilation of WeChat mini-program wxapkg packages",
+    "url": "https://github.com/biggerstar/wedecode",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "An automated WeChat mini-program decompiler that unpacks wxapkg packages back to source code for security auditing, published on npm and supporting Windows, macOS and Linux.",
+    "description_zh": "自动化解包微信小程序 wxapkg 并还原源码的逆向工具，用于线上代码安全审计，发布在 npm，支持 Windows、macOS 与 Linux。",
+    "evidence_url": "https://github.com/biggerstar/wedecode/blob/13d08f86be07b56fcc2cef1d3333b9d806c038c6/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a wxapkg package obtained from a mini-program and Node.js for the npm CLI.",
+      "It targets WeChat mini-programs from the 2018 client versions onward.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "android-hidden-api",
+    "name": "Android Hidden APIs: calling the classes Google keeps out of the public SDK",
+    "url": "https://github.com/anggrayudi/android-hidden-api",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Downloadable Android SDK jars with the hidden classes, methods and internal resources restored, so reverse engineers and app developers can call the APIs Google hides behind the @hide attribute.",
+    "description_zh": "去掉 @hide 标记、恢复隐藏类与内部资源的 Android SDK jar 包，方便逆向与应用开发调用 Google 未公开的 API。",
+    "evidence_url": "https://github.com/anggrayudi/android-hidden-api/blob/98ceeb4251e310fd4dd436ffd2f603f02962078f/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an Android SDK and the jar matching your target API level.",
+      "The hidden APIs can change between Android versions and are not covered by Google compatibility guarantees.",
+      "Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "android-boot-image-editor",
+    "name": "Android_boot_image_editor: unpacking and repacking Android ROM images",
+    "url": "https://github.com/cfig/Android_boot_image_editor",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A tool for reverse engineering Android ROM images: parsing and repacking boot.img, vbmeta.img and payload.bin, with support through Android 16.",
+    "description_zh": "逆向 Android ROM 镜像的工具：解析与重打包 boot.img、vbmeta.img 与 payload.bin，支持到 Android 16。",
+    "evidence_url": "https://github.com/cfig/Android_boot_image_editor/blob/f692aff2e0b4059859eb0f4a3d75d7b0ae5f1406/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires JDK 17 or newer and Python 3 alongside Gradle.",
+      "It repacks boot, vbmeta and payload images rather than whole filesystems.",
+      "Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "android-http-capture",
+    "name": "AndroidHttpCapture: on-device HTTP capture and network diagnostics",
+    "url": "https://github.com/JZ-Darkal/AndroidHttpCapture",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "An Android app for capturing HTTP traffic on the phone with PING, DNS and TraceRoute diagnostics and HAR export, described by its author as a Fiddler for Android.",
+    "description_zh": "在手机上抓取 HTTP 流量的 Android 应用，附 PING、DNS 与 TraceRoute 诊断以及 HAR 导出，作者称其为 Android 版 Fiddler。",
+    "evidence_url": "https://github.com/JZ-Darkal/AndroidHttpCapture/blob/6935cbb0790af02ff96dde03a225f4170c359422/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an Android device and traffic the app is permitted to capture.",
+      "It captures HTTP traffic and diagnostics rather than HTTPS payload contents without additional setup.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

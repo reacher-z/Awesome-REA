@@ -46370,5 +46370,37 @@
       "在移植 EA Sports Cricket 07 与 Rugby 06 时开发，自动化的是重编译而非素材重建。",
       "采用 MIT 许可证。"
     ]
+  },
+  "wedecode": {
+    "name": "Wedecode：微信小程序 wxapkg 的自动反编译",
+    "requirements": [
+      "需要从小程序取得的 wxapkg 包以及 Node.js 运行 npm CLI。",
+      "面向 2018 年之后客户端版本的小程序。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "android-hidden-api": {
+    "name": "Android Hidden APIs：调用 Google 未公开的 SDK 类",
+    "requirements": [
+      "需要 Android SDK 以及与你目标 API 级别对应的 jar。",
+      "隐藏 API 会随 Android 版本变化，且不在 Google 兼容性承诺范围内。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "android-boot-image-editor": {
+    "name": "Android_boot_image_editor：解包与重打包 Android ROM 镜像",
+    "requirements": [
+      "需要 JDK 17 或更新版本、Python 3 以及 Gradle。",
+      "它重打包 boot、vbmeta 与 payload 镜像，而非完整文件系统。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "android-http-capture": {
+    "name": "AndroidHttpCapture：手机端 HTTP 抓包与网络诊断",
+    "requirements": [
+      "需要 Android 设备以及允许抓取的流量。",
+      "它抓取 HTTP 流量与诊断信息，不额外配置时并不包含 HTTPS 明文内容。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

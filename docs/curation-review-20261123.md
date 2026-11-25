@@ -1250,3 +1250,26 @@ Four analysis and agent tools: mmo-chip, StarBreaker, Siege Studio and retro-por
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; all four classify as Class 2, so no previews were merged.
+
+## Batch 48 — 2026-11-25
+
+Four Android reverse-engineering tools: Wedecode, Android Hidden APIs, Android_boot_image_editor and AndroidHttpCapture.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| wedecode | android | [biggerstar/wedecode](https://github.com/biggerstar/wedecode/blob/13d08f86be07b56fcc2cef1d3333b9d806c038c6/README.md) | ff589b99d4c54a76508d885e1ec4cb3e707517465a17263e97d09f50f740d105 |
+| android-hidden-api | android | [anggrayudi/android-hidden-api](https://github.com/anggrayudi/android-hidden-api/blob/98ceeb4251e310fd4dd436ffd2f603f02962078f/README.md) | 4697a741e5d7cf11b63e6dd73fbf0a5d58ba7cf319dabd8bf7c7d185a57de0cb |
+| android-boot-image-editor | android | [cfig/Android_boot_image_editor](https://github.com/cfig/Android_boot_image_editor/blob/f692aff2e0b4059859eb0f4a3d75d7b0ae5f1406/README.md) | 167c8859a99d1b887e89a55250a2662ea554c5c6f77c032e8168fc41150700d2 |
+| android-http-capture | android | [JZ-Darkal/AndroidHttpCapture](https://github.com/JZ-Darkal/AndroidHttpCapture/blob/6935cbb0790af02ff96dde03a225f4170c359422/README.md) | 0b8e556ee9c630a45cdd81c923b28ae49de740bb328aafcf9212c0a625c18aec |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| huangkaoya/ts-redalert2 | README leads with disclaimers about unrelated projects, which the review rules discourage. |
+| TeamFlos/phira | An original rhythm game, not a reconstruction case. |
+| dnglab, exiftool and video-editing topic leads | General media tools rather than reverse-engineering entries. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Wedecode and Android_boot_image_editor are Class 1 with merged previews; the other two are Class 2. The scan pool batch leads-202611251903-1 stays untracked in the workspace and is not part of this commit.
