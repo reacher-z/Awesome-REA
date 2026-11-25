@@ -44,14 +44,10 @@ GLOBAL_TARGET = 160000
 SCAN_SECONDS = 24 * 60
 # Searching stops this long before the scan budget ends. Each verified README comes from the read phase.
 READ_RESERVE_SECONDS = 12 * 60
-APPROVED_QUERIES = [*QUERY_BASES,
-                    'topic:screenshot-to-code', 'topic:website-clone',
-                    '"website" "reconstruction" in:description', '"pixel-perfect" "clone" in:description',
-                    'topic:game-recreation', 'topic:game-reimplementation',
-                    '"game" "reimplementation" in:description', '"UI" "reconstruction" in:description',
-                    'topic:app-clone', '"reverse engineering" in:readme', '"pixel perfect" "clone" in:readme',
-                    '逆向 in:readme', '"clean room" in:readme', '"game" "reimplementation" in:readme',
-                    '"网页" "复刻" in:readme', '"游戏" "复刻" in:readme']
+APPROVED_QUERIES = list(dict.fromkeys([*QUERY_BASES,
+                    '"pixel-perfect" "clone" in:description', '"UI" "reconstruction" in:description',
+                    '"reverse engineering" in:readme', '"pixel perfect" "clone" in:readme',
+                    '逆向 in:readme', '"clean room" in:readme', '"game" "reimplementation" in:readme']))
 RECORD_FIELDS = set('archived category classification_origin classification_reference_ids classification_engine_version '
                     'description_capture_policy description_en description_language description_omission description_origin '
                     'description_zh description_zh_status discovery_methods full_name id license matched_queries '

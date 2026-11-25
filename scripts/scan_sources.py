@@ -77,6 +77,109 @@ DATA_ASSET_QUERY_BASES = [
         'port of', 'matching decomp', 're-implementation')
 ]
 QUERY_BASES.extend(DATA_ASSET_QUERY_BASES)
+# Class-scoped search bases. The original list is binary- and tool-centric, so a
+# project that reconstructs a creative application is often found only through the
+# file formats, toolchains and vocabulary of its own domain. Each profile adds
+# queries for one Data class; duplicates with the shared bases are dropped below.
+CLASS_QUERY_BASES = {
+    'website': (
+        'topic:website-clone',
+        'topic:screenshot-to-code',
+        '"website" "reconstruction" in:description',
+        '"web app" "reverse engineering" in:description',
+        '"网页" "复刻" in:readme',
+    ),
+    'game-dev': (
+        'topic:game-decompilation',
+        'topic:game-recompilation',
+        'topic:source-port',
+        'topic:game-recreation',
+        'topic:game-reimplementation',
+        '"game engine" reimplementation in:description',
+        '"game" "decompilation" in:description',
+        '"游戏" "复刻" in:readme',
+    ),
+    'mobile-app-dev': (
+        'topic:android-reverse-engineering',
+        'topic:apk-analysis',
+        'topic:ios-reverse-engineering',
+        'topic:app-clone',
+        '"iOS" "reverse engineering" in:description',
+        '"Flutter" "reverse engineering" in:description',
+        '"APK" "reverse engineering" in:description',
+    ),
+    '3d-design': (
+        'topic:cad "reverse engineering"',
+        'topic:3d-modeling "reverse engineering"',
+        '"CAD" "reverse engineering" in:description',
+        '"DWG" "file format" in:description',
+        '"DWG" "reverse engineering" in:description',
+        '"STEP file" parser in:description',
+        '"IGES" parser in:description',
+        '"3D file format" parser in:description',
+    ),
+    'animation': (
+        'topic:flash "reverse engineering"',
+        'topic:animation "reverse engineering"',
+        '"SWF" decompiler in:description',
+        '"Lottie" parser in:description',
+        '"Live2D" reverse in:description',
+    ),
+    'video': (
+        'topic:video-editing "reverse engineering"',
+        '"CapCut" reverse in:description',
+        '"CapCut" "project" in:description',
+        '"video editor" clone in:description',
+        '"剪映" 逆向 in:readme',
+    ),
+    'software': (
+        'topic:electron "reverse engineering"',
+        '"desktop app" "reverse engineering" in:description',
+        'topic:win32 "reverse engineering"',
+        '"Electron" deobfuscation in:description',
+    ),
+    'hardware': (
+        'topic:firmware-analysis',
+        'topic:embedded "reverse engineering"',
+        '"固件" 逆向 in:readme',
+    ),
+    'analysis': (
+        '"malware analysis" "reverse engineering" in:description',
+        '"decompiler" benchmark in:description',
+        '"reverse engineering" survey in:description',
+    ),
+}
+# Class-scoped followed sources. The registry keeps its base schema, so the class
+# of a topic source lives here by source ID instead of in the data file.
+SOURCE_CLASSES = {
+    'github-topic-cad': '3d-design',
+    'github-topic-3d-modeling': '3d-design',
+    'github-topic-blender-addon': '3d-design',
+    'github-topic-gltf': '3d-design',
+    'github-topic-animation-tools': 'animation',
+    'github-topic-capcut': 'video',
+    'github-topic-flash': 'animation',
+    'github-topic-lottie': 'animation',
+    'github-topic-live2d': 'animation',
+    'github-topic-video-editing': 'video',
+    'github-topic-video-processing': 'video',
+    'github-topic-ffmpeg': 'video',
+    'github-topic-website-clone': 'website',
+    'github-topic-screenshot-to-code': 'website',
+    'github-topic-ios-reverse-engineering': 'mobile-app-dev',
+    'github-topic-flutter': 'mobile-app-dev',
+    'github-topic-source-port': 'game-dev',
+    'github-topic-game-recompilation': 'game-dev',
+    'github-topic-electron': 'software',
+    'github-topic-win32': 'software',
+    'github-topic-firmware-analysis': 'hardware',
+    'github-topic-malware-analysis': 'analysis',
+}
+
+QUERY_BASES = list(dict.fromkeys([
+    *QUERY_BASES,
+    *(query for queries in CLASS_QUERY_BASES.values() for query in queries),
+]))
 QUERIES = [query + ' is:public fork:false archived:false' for query in QUERY_BASES]
 MAX_README_BYTES = 8 * 1024 * 1024
 MAX_API_BYTES = 12 * 1024 * 1024
