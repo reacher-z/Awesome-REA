@@ -1227,3 +1227,26 @@ A PS3 Pikmin port, a Metroid Prime 3 recompilation, a DOAX3 Scarlet port and an 
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Corruption_3 PC, DOAX3 Scarlet and NFC APDU Spy are Class 1 with merged previews; Pikmin PS3 is Class 2.
+
+## Batch 47 — 2026-11-25
+
+Four analysis and agent tools: mmo-chip, StarBreaker, Siege Studio and retro-port.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| mmo-chip | firmware | [giulioz/mmo-chip](https://github.com/giulioz/mmo-chip/blob/cc89b2a1dd1515b30a43f121c541493643169a83/README.md) | 5729580ec69a37294317f858161a6b5b70f6515d346ee5c980a8092ba5be4e5f |
+| starbreaker | game-analysis | [diogotr7/StarBreaker](https://github.com/diogotr7/StarBreaker/blob/041e559215e18e1b13b124cab0e3ecb0f3aa50d4/README.md) | 0b10ff26d59eea85caf5a3baee92f36188633fe22e723105af536b03c9c78aa8 |
+| siege-studio | game-analysis | [open-siege/siege-studio](https://github.com/open-siege/siege-studio/blob/4dc5e31441fc33cfdcdac68f18f6e7fc5541ed3e/README.md) | 7d45017029d4b5829e0626241cdf6527ded45d3fd84ecd8112c8426ee5168235 |
+| retro-port | agent-workflows | [Dhaiwat10/retro-port](https://github.com/Dhaiwat10/retro-port/blob/ecea26bcaa5e3bf4aa1d2171ff038d4cce5e37bf/README.md) | c8c5474dff4c2914ff76433d829ba1df075c72f263d6ac4bf75de6805a57d393 |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| tmcleroy/sfa2-recomp | Repository states it moved to cps2recomp, which is already curated. |
+| Fanqi89/dsh-rea, Kandada/rea-python | Extra assistant bridges without a distinct analysis scope. |
+| fabiangreffrath/woof | Two Doom source ports already exist. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; all four classify as Class 2, so no previews were merged.

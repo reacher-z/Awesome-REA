@@ -163745,5 +163745,114 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "mmo-chip",
+    "name": "mmo-chip: reverse engineering CMOS standard cell chips from die photographs",
+    "url": "https://github.com/giulioz/mmo-chip",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A tool for reverse engineering integrated circuits from die photographs, focused on CMOS gate array and standard cell chips: it tiles gigapixel die shots, annotates vias, traces and cells, and extracts per-cell transistor schematics and a die-level Verilog netlist.",
+    "description_zh": "从芯片裸片照片逆向集成电路的工具，聚焦 CMOS 门阵列与标准单元芯片：可拼接数十亿像素的裸片图、标注过孔/走线/单元，并导出单元级晶体管原理图与整片 Verilog 网表。",
+    "evidence_url": "https://github.com/giulioz/mmo-chip/blob/cc89b2a1dd1515b30a43f121c541493643169a83/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires gigapixel die photographs as input; the tool does not ship chip imagery.",
+      "It targets CMOS gate array and standard cell layouts and produces Verilog rather than restored silicon.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "starbreaker",
+    "name": "StarBreaker: reading and extracting Star Citizen game files",
+    "url": "https://github.com/diogotr7/StarBreaker",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A Rust toolkit for reading and extracting Star Citizen game files, covering the P4k archive, DataCore database, CryEngine assets, Wwise audio and character files, with a C# version on the legacy branch.",
+    "description_zh": "用 Rust 读取与提取《星际公民》游戏文件的工具包，覆盖 P4k 归档、DataCore 数据库、CryEngine 资源、Wwise 音频与角色文件，旧分支另有 C# 版本。",
+    "evidence_url": "https://github.com/diogotr7/StarBreaker/blob/041e559215e18e1b13b124cab0e3ecb0f3aa50d4/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Star Citizen installation data; the toolkit ships no game content.",
+      "It exposes the P4k, DataCore, CryEngine and Wwise formats through libraries and releases.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "siege-studio",
+    "name": "Siege Studio: previewing and converting reverse-engineered 90s game files",
+    "url": "https://github.com/open-siege/siege-studio",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A desktop application for previewing, modifying and converting reverse-engineered file formats from Earthsiege, Starsiege and related 1990s games, with extension modules for compatibility fixes and controller setup.",
+    "description_zh": "用于预览、修改与转换《Earthsiege》《Starsiege》等九十年代游戏逆向文件格式的桌面应用，并提供兼容性修复与手柄配置扩展模块。",
+    "evidence_url": "https://github.com/open-siege/siege-studio/blob/4dc5e31441fc33cfdcdac68f18f6e7fc5541ed3e/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copies of the supported games; the studio ships no game assets.",
+      "Format editing is still in progress while preview and conversion work.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "retro-port",
+    "name": "retro-port: an assistant skill that recompiles old Windows games for the browser",
+    "url": "https://github.com/Dhaiwat10/retro-port",
+    "category": "agent-workflows",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "website"
+    ],
+    "description_en": "A Claude Code skill that ports old Windows PC games you own to the browser, checking portability, setting up tooling, recompiling the executable to WebAssembly and converting Direct3D 8 to WebGPU, optionally adding online 1v1 play.",
+    "description_zh": "Claude Code 技能：把你拥有的老 Windows PC 游戏移植到浏览器，自动评估可行性、准备工具、把可执行文件重编译为 WebAssembly 并把 Direct3D 8 转到 WebGPU，还可加入在线 1v1 对战。",
+    "evidence_url": "https://github.com/Dhaiwat10/retro-port/blob/ecea26bcaa5e3bf4aa1d2171ff038d4cce5e37bf/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Claude Code session and a copy of the Windows game you own.",
+      "It was built while porting EA Sports Cricket 07 and Rugby 06 and automates recompilation rather than recreating assets.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

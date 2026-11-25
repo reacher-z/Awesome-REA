@@ -46338,5 +46338,37 @@
       "它捕获双向 APDU 报文，而非射频层本身。",
       "采用 MIT 许可证。"
     ]
+  },
+  "mmo-chip": {
+    "name": "mmo-chip：从裸片照片逆向 CMOS 标准单元芯片",
+    "requirements": [
+      "需要数十亿像素的芯片裸片照片作为输入；工具不附带芯片图像。",
+      "面向 CMOS 门阵列与标准单元布局，输出 Verilog 而非还原的硅片。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "starbreaker": {
+    "name": "StarBreaker：读取与提取星际公民游戏文件",
+    "requirements": [
+      "需要自备星际公民安装数据；工具包不附带游戏内容。",
+      "通过库与发布包开放 P4k、DataCore、CryEngine 与 Wwise 格式。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "siege-studio": {
+    "name": "Siege Studio：预览与转换九十年代游戏的逆向文件格式",
+    "requirements": [
+      "需要自备受支持游戏的副本；工作室不附带游戏资源。",
+      "预览与转换已可用，格式编辑仍在进行中。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "retro-port": {
+    "name": "retro-port：把老 Windows 游戏重编译到浏览器的助手技能",
+    "requirements": [
+      "需要 Claude Code 会话以及你拥有的 Windows 游戏副本。",
+      "在移植 EA Sports Cricket 07 与 Rugby 06 时开发，自动化的是重编译而非素材重建。",
+      "采用 MIT 许可证。"
+    ]
   }
 }
