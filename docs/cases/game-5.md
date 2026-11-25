@@ -6,10 +6,15 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**491 case studies**
+**496 case studies**
 
 ## Engine reimplementations
 
+- [**OpenXW: reimplementing Star Wars: X-Wing for modern systems**](https://github.com/elyosh/OpenXW) - OpenXW rebuilds Star Wars: X-Wing as a desktop program that reads data from installed 1994 or 1998 editions. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openxw-case/)</sub>
+- [**OpenXWA: reimplementing Star Wars: X-Wing Alliance**](https://github.com/elyosh/OpenXWA) - OpenXWA reimplements the 1999 game Star Wars: X-Wing Alliance as a native Windows, macOS and Linux program that reads an original installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openxwa-case/)</sub>
+- [**OpenYR: reconstructing the Yuri's Revenge engine**](https://github.com/Sovietianqi/OpenYR) - OpenYR reimplements the engine behavior of Command &amp; Conquer: Yuri's Revenge in C++ from observed gameplay, disassembly research and documentation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openyr-engine-case/)</sub>
+- [**OpenZ: reconstructing Z as a 3D strategy game**](https://github.com/playopenz/OpenZ) - OpenZ recreates the 1996 strategy game Z as a Unity 6 game with 3D battlefields, units, and newly produced media. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openz-z-remake-case/)</sub>
+- [**OpenZT2: a Rust engine reimplementation of Zoo Tycoon 2**](https://github.com/overyonder/openzt2) - OpenZT2 reimplements the Zoo Tycoon 2 engine in Rust and Bevy for use with the player's own game files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openzt2-engine-case/)</sub>
 - [**Oracles: reconstructing the Zelda Oracle games in Godot**](https://github.com/SHOEGAZEssb/ooa-godot) - Oracles reconstructs The Legend of Zelda: Oracle of Ages and Oracle of Seasons with a shared C# engine in Godot. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda-oracles-godot-reconstruction-case/)</sub>
 - [**Ordoor: reimplementing the Strategy Engine for four games**](https://code.ur.gs/lupine/ordoor) - Ordoor rebuilds the Strategy Engine used by Warhammer 40,000: Chaos Gate, Soldiers At War, Squad Leader, and Wages of War. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ordoor-strategy-engine-case/)</sub>
 - [**Oxide: a from-scratch Minecraft server implementation in Rust**](https://github.com/T-x-T/oxide) - A from-scratch Minecraft server written entirely in Rust that aims to be fully functional and compatible with the latest version. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/oxide/)</sub>

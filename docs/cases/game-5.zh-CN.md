@@ -6,10 +6,15 @@
 
 [English](game-5.md)
 
-**491 个案例**
+**496 个案例**
 
 ## 引擎重实现
 
+- [**OpenXW：面向现代系统重实现 Star Wars: X-Wing**](https://github.com/elyosh/OpenXW) - OpenXW 将 Star Wars: X-Wing 重实现为桌面程序，读取玩家安装的 1994 或 1998 年版本数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxw-case/)</sub>
+- [**OpenXWA：重实现《星球大战：X 翼联盟》**](https://github.com/elyosh/OpenXWA) - OpenXWA 将 1999 年游戏《星球大战：X 翼联盟》重实现为 Windows、macOS 和 Linux 原生程序，读取用户的原版安装文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxwa-case/)</sub>
+- [**OpenYR：重建《尤里的复仇》游戏引擎**](https://github.com/Sovietianqi/OpenYR) - OpenYR 根据游戏行为观察、反汇编研究和公开文档，以 C++ 重建《命令与征服：尤里的复仇》的引擎行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openyr-engine-case/)</sub>
+- [**OpenZ：将 Z 重建为 3D 策略游戏**](https://github.com/playopenz/OpenZ) - OpenZ 使用 Unity 6 将 1996 年策略游戏 Z 重建为具有 3D 战场、单位及新制作素材的游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openz-z-remake-case/)</sub>
+- [**OpenZT2：Rust 重建《动物园大亨 2》引擎**](https://github.com/overyonder/openzt2) - OpenZT2 使用 Rust 和 Bevy 重建《动物园大亨 2》引擎，运行时读取玩家自己的游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openzt2-engine-case/)</sub>
 - [**Oracles：使用 Godot 重建两款塞尔达传说 Oracle 游戏**](https://github.com/SHOEGAZEssb/ooa-godot) - Oracles 在 Godot 中以共用 C# 引擎重建《The Legend of Zelda: Oracle of Ages》和《Oracle of Seasons》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda-oracles-godot-reconstruction-case/)</sub>
 - [**Ordoor：重建四款游戏使用的 Strategy Engine**](https://code.ur.gs/lupine/ordoor) - Ordoor 重建 Warhammer 40,000: Chaos Gate、Soldiers At War、Squad Leader 和 Wages of War 使用的 Strategy Engine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ordoor-strategy-engine-case/)</sub>
 - [**Oxide：用 Rust 从零实现的 Minecraft 服务器**](https://github.com/T-x-T/oxide) - 完全用 Rust 从零实现的 Minecraft 服务器，目标是完整可用并兼容最新版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oxide/)</sub>

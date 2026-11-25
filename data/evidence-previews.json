@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-25T20:17:15+00:00",
-    "entry_count": 1223,
-    "class_entry_count": 1254,
+    "generated_at": "2026-11-25T21:50:05+00:00",
+    "entry_count": 1224,
+    "class_entry_count": 1255,
     "class_counts": {
-      "image": 1183,
+      "image": 1184,
       "video": 40
     },
     "missing_count": 31,
@@ -1044,6 +1044,15 @@
       "source_url": "https://github.com/federicodotta/Brida",
       "revision": "f3350346c10713a0bb558b9bc018a0c0e250479d",
       "checked_at": "2026-11-07T03:50:06+00:00"
+    },
+    {
+      "id": "brothership-recomp-case",
+      "image_url": "https://raw.githubusercontent.com/Coaltergeist/Brothership-Recomp/129894dfdd8ec19c9362c69e3d3af43ab68140ec/brothership-recomp.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Coaltergeist/Brothership-Recomp",
+      "revision": "129894dfdd8ec19c9362c69e3d3af43ab68140ec",
+      "checked_at": "2026-11-25T21:50:05+00:00"
     },
     {
       "id": "bt4-decomp",
@@ -4463,7 +4472,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-25T20:17:13+00:00"
+      "checked_at": "2026-11-25T21:50:04+00:00"
     },
     {
       "id": "konami-viper-recomp-case",

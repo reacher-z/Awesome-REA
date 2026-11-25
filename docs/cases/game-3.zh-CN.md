@@ -6,10 +6,11 @@
 
 [English](game-3.md)
 
-**607 个案例**
+**606 个案例**
 
 ## 静态重编译
 
+- [**Halo 3 Delta：重建 halo3\_cache\_release.xex**](https://github.com/twist84/halo3_cache_release_recomp) - Halo 3 Delta 项目以 08172.07.03.08.2240.delta 版本的 halo3\_cache\_release.xex 为 ReXGlue 重编译目标。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo3-cache-release-recomp-case/)</sub>
 - [**HaloPad：通过反编译移植与 x86 重编译在 Apple 设备上运行 Halo**](https://github.com/chrissotraidis/projectreach) - 通过两套引擎将 Halo: Combat Evolved 带到 iPhone、iPad 和 Apple 芯片 Mac。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halopad-project-reach-case/)</sub>
 - [**Harvest Moon 64 PC Port / Recomp：开发中的原生构建版**](https://github.com/ai-tdd-labs/harvest-moon-64-recompiled) - Harvest Moon 64 PC Port / Recomp 使用 N64Recomp 和 RT64，从用户本地提供的 ROM 与 ELF 文件构建 Harvest Moon 64 原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aitdd-harvest-moon-64-recomp-case/)</sub>
 - [**Harvest Moon 64: Recompiled：原生移植**](https://github.com/HarvestMoon64Recomp/HarvestMoon64Recomp) - Harvest Moon 64: Recompiled 使用 N64: Recompiled 把《牧场物语 64》静态重编译为原生移植，并用 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harvest-moon-64-recomp-case/)</sub>
@@ -84,6 +85,7 @@
 - [**Marble Knights Recompiled：《Marble Knights》iOS 版的静态重编译移植**](https://github.com/YuutaTsubasa/MarbleKnightsRecompiled) - Marble Knights Recompiled 将《Marble Knights》iOS 版 UnityFramework 中的 ARM64 函数预先转成 C，再编译为供 Unity 2019.4.17f1 Windows 播放器加载的 GameAssembly.dll。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/marble-knights-recompiled-case/)</sub>
 - [**Marchwind 64：静态重编译《超级机器人大战 64》**](https://github.com/dyzz/srw64-recomp) - Marchwind 64 是 1999 年任天堂 64 游戏《超级机器人大战64》的原生重编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/srw64-recomp/)</sub>
 - [**Mario Kart 64：通过 N64 静态重编译实现原生移植**](https://github.com/arefdsg/MK64Recomp) - Mario Kart 64: Recompiled 使用 N64: Recompiled 将 Mario Kart 64 制作成原生移植版，并由 RT64 提供渲染及图形增强。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-kart-64-recompiled-case/)</sub>
+- [**Mario Kart 7 Recompiled：3DS 赛车游戏的原生版本**](https://github.com/nvd123-YT/MK7Recomp) - 基于 Zakuro 3DS 运行时与 3dsrecomp 提前 ARM 重编译构建的《马力欧卡丁车 7》桌面版，支持 mod。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mk7-recomp-case/)</sub>
 - [**Mario Kart Wii PC Builder：静态重编译《马力欧卡丁车 Wii》**](https://github.com/MarcPique/mario-kart-wii-pc-builder) - 1.2.0 版从 PAL《马里奥卡丁车 Wii》光盘 RMCP01 构建原生 Windows 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mkwii-pc-builder/)</sub>
 - [**Mario Kart: Double Dash!!：GameCube 静态重编译移植版**](https://github.com/ethannicholas/mariokartdd-recomp) - Mario Kart: Double Dash!! 通过预先将 GameCube PowerPC 代码转换为 C，再连接 gcn-recomp 的图形、音频、光盘和手柄运行时来移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-kart-double-dash-recomp-case/)</sub>
 - [**Mario Paint Recomp：Mario Paint 的静态重编译**](https://github.com/sp00nznet/mariopaint) - Mario Paint Recomp 将 SNES 游戏 Mario Paint 的 65816 例程转成 C，在 PC 上借助 snesrecomp 提供硬件模拟和解释器回退。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-paint-recomp-case/)</sub>
@@ -521,6 +523,7 @@
 - [**X-Wing Alliance：1999 年 PC 游戏的 Windows 静态重编译**](https://github.com/sp00nznet/xwa) - xwa 将 Star Wars: X-Wing Alliance 的 x86 代码转为 C，再与 Win32/DirectX 兼容层及 Direct3D 11 渲染器链接，构建静态重编译版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xwa-wing-alliance-case/)</sub>
 - [**Xbox 360 Native Ports：Xbox 360 游戏的静态重编译**](https://github.com/CrownParkComputing/Xbox360-Native-Ports) - 这个仓库提供 Linux 和 Windows 启动器，把 Xbox 360 游戏静态重编译到 x86-64，并用 Vulkan 绘制。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xbox360-native-ports/)</sub>
 - [**Xbox 360 Quake 4 decomp：静态重编译与原生渲染器**](https://github.com/cyberheater/Xbox-360-Quake4-decomp) - Xbox 360 Quake 4 decomp 使用 ReXGlue 翻译用户自备的 Xbox 360《Quake 4》可执行文件，并接入游戏专用钩子，构建 Windows 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xbox-360-quake4-decomp-case/)</sub>
+- [**Xbox2Windows：面向 Xbox Series X|S 的静态重编译研究**](https://github.com/R0Y00/Xbox2Windows) - 研究将 Xbox Series X|S 软件静态重编译到 x64 Windows：把选定的 x64 机器码翻译为 C++、把 gfx1013 着色器翻译为桌面 DXIL，并提供无需安装游戏即可运行的 CPU 与 GPU 公共测试。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xbox2windows-case/)</sub>
 - [**XC2 Recomp：静态重编译 Xenoblade Chronicles 2**](https://github.com/AksharDP/xc2-recomp) - XC2 Recomp 将 Nintendo Switch 游戏《Xenoblade Chronicles 2》的 ARM64 代码静态转译为可在 Windows 和 Linux 上运行的原生 x86-64 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xc2-recomp-case/)</sub>
 - [**XCX Recomp：静态重编译《异度神剑 X 决定版》**](https://github.com/jmars125/xcx-recomp) - XCX Recomp 把任天堂 Switch 游戏《异度神剑 X 决定版》静态重编译成带 Vulkan 渲染器的 Windows x86-64 可执行文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xcx-recomp/)</sub>
 - [**Xena: Warrior Princess Recompiled：《Xena: Warrior Princess》PlayStation 构建宿主**](https://github.com/alexbeavs-ps1-ports/xena-warrior-princess-recomp) - Xena: Warrior Princess Recompiled 配置 PSXRecomp 和 recomp-ui，使用用户的光盘及 BIOS 为美版 PlayStation 游戏生成原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xena-warrior-princess-recompiled-case/)</sub>
@@ -616,8 +619,4 @@
 - [**DK64: Recompiled：Android 版《大金刚 64》移植**](https://github.com/deivid22srk/dk64-recomp-android) - 该项目把 Donkey Kong 64: Recompiled 移植到原生 Android，使用 NDK、N64ModernRuntime、Vulkan 上的 RT64、RmlUi 和 SDL2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dk64-android/)</sub>
 - [**DKR-GC：Diddy Kong Racing 原生 GameCube 移植**](https://github.com/RyoSaeba89/DKR-GC) - DKR-GC 将 N64 游戏 Diddy Kong Racing 的反编译代码编译为原生 GameCube PowerPC 程序，借助 libogc2 和 GX 实现调度、存储、图形与音频服务，并读取用户提供的 ROM 数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dkr-gc-diddy-kong-racing-case/)</sub>
 - [**DOAX3 Fortune PC：将《死或生 沙滩排球 3 Fortune》移植到 Windows**](https://github.com/negroISO/doax3-fortune-pc) - DOAX3 Fortune PC 将《死或生 沙滩排球 3 Fortune》01.19 版适配到 Windows x64。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doax3-fortune-pc-case/)</sub>
-- [**DOAX3 Scarlet PC：实验性 Windows/Vulkan 源码移植**](https://github.com/negroISO/doax3-scarlet-pc) - 面向 CUSA14173 1.08 版的《死或生 沙滩排球 3 Scarlet》实验性 Windows x64/Vulkan 源码移植：原始 x86-64 客户代码走继承的原生运行时，GPU 命令与着色器由 shadPS4 图形核心翻译为 Vulkan。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doax3-scarlet-pc-case/)</sub>
-- [**DOOM Retro：面向 Windows 的精炼 DOOM 源码移植**](https://github.com/bradharding/doomretro) - 经典的 DOOM 源码移植，在保留原版体验的同时加入一整套视觉与便利性改进。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doomretro/)</sub>
-- [**dRally：Death Rally 的 Linux 与 BSD 原生移植**](https://github.com/urxp/dRally) - dRally 是以 C 和 SDL2 将 1996 年的《Death Rally》移植到 Linux 和 BSD 的项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/drally-case/)</sub>
-- [**Drift City Rebuild：基于游戏分析的 Unity 客户端与服务器**](https://github.com/MagicIbrar/driftcity-unity) - Drift City Rebuild 将这款在线竞速游戏重建为 Unity 客户端，并配有支持离线或自托管游玩的新 Node.js 服务器；客户端读取用户安装目录中的原版数据。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/driftcity-unity-case/)</sub>
 <!-- END GENERATED CASES -->

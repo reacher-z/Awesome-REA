@@ -46402,5 +46402,37 @@
       "它抓取 HTTP 流量与诊断信息，不额外配置时并不包含 HTTPS 明文内容。",
       "采用 MIT 许可证。"
     ]
+  },
+  "xbox2windows-case": {
+    "name": "Xbox2Windows：面向 Xbox Series X|S 的静态重编译研究",
+    "requirements": [
+      "需要 x64 Windows 进行构建与运行；公共测试无需安装游戏。",
+      "整机游戏启动尚未验证，项目定位为研究。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "mk7-recomp-case": {
+    "name": "Mario Kart 7 Recompiled：3DS 赛车游戏的原生版本",
+    "requirements": [
+      "需要自备 3DS 游戏副本；不包含游戏数据。",
+      "CTGP 7 支持尚未确认，基于 Zakuro 与 3dsrecomp。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "brothership-recomp-case": {
+    "name": "Brothership Recomp：马力欧与路易吉 兄弟齐航的原生 PC 程序",
+    "requirements": [
+      "需要自备 Switch 1.0.1 版游戏副本；不包含游戏数据。",
+      "它属于静态重编译而非模拟器，并通过 RecompLauncher 分发。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "philips-titanos-tools": {
+    "name": "飞利浦 Titan OS 工具包：NT72690 电视的 root 与逆向",
+    "requirements": [
+      "需要基于 Novatek NT72690 平台的飞利浦电视；已在 55PUS8000/12 上测试，欢迎补充其他机型。",
+      "它会改动电视固件并附带还原流程，请只在自有设备上操作。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

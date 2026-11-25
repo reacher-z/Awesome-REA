@@ -6,10 +6,14 @@
 
 [English](game-4.md)
 
-**625 个案例**
+**624 个案例**
 
 ## 基于重建源码的移植
 
+- [**DOAX3 Scarlet PC：实验性 Windows/Vulkan 源码移植**](https://github.com/negroISO/doax3-scarlet-pc) - 面向 CUSA14173 1.08 版的《死或生 沙滩排球 3 Scarlet》实验性 Windows x64/Vulkan 源码移植：原始 x86-64 客户代码走继承的原生运行时，GPU 命令与着色器由 shadPS4 图形核心翻译为 Vulkan。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doax3-scarlet-pc-case/)</sub>
+- [**DOOM Retro：面向 Windows 的精炼 DOOM 源码移植**](https://github.com/bradharding/doomretro) - 经典的 DOOM 源码移植，在保留原版体验的同时加入一整套视觉与便利性改进。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doomretro/)</sub>
+- [**dRally：Death Rally 的 Linux 与 BSD 原生移植**](https://github.com/urxp/dRally) - dRally 是以 C 和 SDL2 将 1996 年的《Death Rally》移植到 Linux 和 BSD 的项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/drally-case/)</sub>
+- [**Drift City Rebuild：基于游戏分析的 Unity 客户端与服务器**](https://github.com/MagicIbrar/driftcity-unity) - Drift City Rebuild 将这款在线竞速游戏重建为 Unity 客户端，并配有支持离线或自托管游玩的新 Node.js 服务器；客户端读取用户安装目录中的原版数据。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/driftcity-unity-case/)</sub>
 - [**ds2-nx：将《Dead Space 2》移植到 Nintendo Switch**](https://github.com/VasilkovND/ds2-nx) - ds2-nx 将基于 ReXGlue 静态重编译的《Dead Space 2》移植为 Nintendo Switch 自制软件 NRO。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ds2-nx-case/)</sub>
 - [**Durak NX：让 Android 游戏 Durak 在 Nintendo Switch 上运行**](https://github.com/Oleksa126/durak_nx) - Durak NX 通过针对游戏编写的图形、音频、文件和输入兼容层，让 Android ARM64 Unity 游戏 Durak 25.0 在 Nintendo Switch 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/durak-nx-case/)</sub>
 - [**Dusklight for PS4：《Twilight Princess》原生 PS4 移植**](https://github.com/BgbrhrWatchinOVO/dusklight-ps4) - Dusklight for PS4 将基于《Twilight Princess》反编译成果的 PC 移植版改为原生 PS4 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dusklight-ps4-case/)</sub>
@@ -633,9 +637,4 @@
 - [**OpenXcom：X-COM: UFO Defense 与 Terror from the Deep 的开源克隆**](https://github.com/OpenXcom/OpenXcom) - 以 C++/SDL 引擎重新实现 MicroProse 的 UFO: Enemy Unknown（X-COM: UFO Defense）与 X-COM: Terror from the Deep，并在使用者自己的原游戏资源上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxcom-engine-case/)</sub>
 - [**OpenXeen：用 Java 重建 World of Xeen 引擎**](https://github.com/busyDuckman/OpenXeen) - OpenXeen 用 Java 重写 Might and Magic IV、V 的 World of Xeen 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxeen-case/)</sub>
 - [**OpenXvT：《X-Wing vs. TIE Fighter》重实现**](https://github.com/elyosh/OpenXvT) - OpenXvT 使用玩家持有的原版数据，为 Windows、macOS 和 Linux 重实现《Star Wars: X-Wing vs. TIE Fighter》及《Balance of Power》资料片。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxvt-case/)</sub>
-- [**OpenXW：面向现代系统重实现 Star Wars: X-Wing**](https://github.com/elyosh/OpenXW) - OpenXW 将 Star Wars: X-Wing 重实现为桌面程序，读取玩家安装的 1994 或 1998 年版本数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxw-case/)</sub>
-- [**OpenXWA：重实现《星球大战：X 翼联盟》**](https://github.com/elyosh/OpenXWA) - OpenXWA 将 1999 年游戏《星球大战：X 翼联盟》重实现为 Windows、macOS 和 Linux 原生程序，读取用户的原版安装文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxwa-case/)</sub>
-- [**OpenYR：重建《尤里的复仇》游戏引擎**](https://github.com/Sovietianqi/OpenYR) - OpenYR 根据游戏行为观察、反汇编研究和公开文档，以 C++ 重建《命令与征服：尤里的复仇》的引擎行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openyr-engine-case/)</sub>
-- [**OpenZ：将 Z 重建为 3D 策略游戏**](https://github.com/playopenz/OpenZ) - OpenZ 使用 Unity 6 将 1996 年策略游戏 Z 重建为具有 3D 战场、单位及新制作素材的游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openz-z-remake-case/)</sub>
-- [**OpenZT2：Rust 重建《动物园大亨 2》引擎**](https://github.com/overyonder/openzt2) - OpenZT2 使用 Rust 和 Bevy 重建《动物园大亨 2》引擎，运行时读取玩家自己的游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openzt2-engine-case/)</sub>
 <!-- END GENERATED CASES -->

@@ -163962,5 +163962,119 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "xbox2windows-case",
+    "name": "Xbox2Windows: static recompilation research for Xbox Series X|S",
+    "url": "https://github.com/R0Y00/Xbox2Windows",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Research on statically recompiling Xbox Series X|S software to x64 Windows: selected x64 machine code is translated into C++ and selected gfx1013 shaders into desktop DXIL, with public CPU and GPU tests runnable without a game installation.",
+    "description_zh": "研究将 Xbox Series X|S 软件静态重编译到 x64 Windows：把选定的 x64 机器码翻译为 C++、把 gfx1013 着色器翻译为桌面 DXIL，并提供无需安装游戏即可运行的 CPU 与 GPU 公共测试。",
+    "evidence_url": "https://github.com/R0Y00/Xbox2Windows/blob/3fb0c77bd1250d28e98c1d70128f16611e591ff1/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires x64 Windows for building and running; no game installation is needed for the public tests.",
+      "Full-game startup remains unverified and the project is framed as research.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "mk7-recomp-case",
+    "name": "Mario Kart 7 Recompiled: the 3DS racer running natively",
+    "url": "https://github.com/nvd123-YT/MK7Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A game-specific desktop build of Mario Kart 7 based on the Zakuro 3DS runtime and 3dsrecomp ahead-of-time ARM recompilation, with mod support.",
+    "description_zh": "基于 Zakuro 3DS 运行时与 3dsrecomp 提前 ARM 重编译构建的《马力欧卡丁车 7》桌面版，支持 mod。",
+    "evidence_url": "https://github.com/nvd123-YT/MK7Recomp/blob/2dd96beb0d1faf445b1a1456e585c45a52dde722/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own 3DS copy of the game; no game data is included.",
+      "CTGP 7 support is not confirmed and it builds on Zakuro and 3dsrecomp.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "brothership-recomp-case",
+    "name": "Brothership Recomp: Mario & Luigi Brothership as a native PC program",
+    "url": "https://github.com/Coaltergeist/Brothership-Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of the Nintendo Switch Mario & Luigi: Brothership version 1.0.1 into a native PC program, in the spirit of XenonRecomp.",
+    "description_zh": "参照 XenonRecomp 思路，把 Nintendo Switch《马力欧与路易吉：兄弟齐航》1.0.1 版静态重编译为原生 PC 程序。",
+    "evidence_url": "https://github.com/Coaltergeist/Brothership-Recomp/blob/129894dfdd8ec19c9362c69e3d3af43ab68140ec/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Switch copy of the game, version 1.0.1; no game data is included.",
+      "It is a static recompilation rather than an emulator and ships through RecompLauncher.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "philips-titanos-tools",
+    "name": "Philips Titan OS Toolkit: rooting and reverse engineering NT72690 TVs",
+    "url": "https://github.com/abbguslof/philips-titanos-tools",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A jailbreak, root and reverse-engineering toolkit for Philips TVs running Titan OS on the Novatek NT72690 platform, covering USB autoroot, persistent root, firmware extraction, NVM/SAM and channel maps, JointSpace and Ambilight, plus a documented restore.",
+    "description_zh": "面向运行 Titan OS、基于 Novatek NT72690 平台的飞利浦电视的越狱、root 与逆向工具包，涵盖 USB 自动 root、持久 root、固件提取、NVM/SAM 与频道表、JointSpace 与 Ambiglow，并提供有据可查的还原流程。",
+    "evidence_url": "https://github.com/abbguslof/philips-titanos-tools/blob/4d8bc31e4a798ab431c45e3bb8c1502f92439df2/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Philips TV on the Novatek NT72690 platform; tested on the 55PUS8000/12 and other models are welcome.",
+      "It modifies the TV firmware and documents a restore path, so proceed only on hardware you own.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

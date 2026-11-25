@@ -1273,3 +1273,27 @@ Four Android reverse-engineering tools: Wedecode, Android Hidden APIs, Android_b
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Wedecode and Android_boot_image_editor are Class 1 with merged previews; the other two are Class 2. The scan pool batch leads-202611251903-1 stays untracked in the workspace and is not part of this commit.
+
+## Batch 49 — 2026-11-25
+
+Three recompilations and a TV firmware toolkit: Xbox2Windows, Mario Kart 7 Recompiled, Brothership Recomp and the Philips Titan OS Toolkit.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| xbox2windows-case | reconstruction-cases | [R0Y00/Xbox2Windows](https://github.com/R0Y00/Xbox2Windows/blob/3fb0c77bd1250d28e98c1d70128f16611e591ff1/README.md) | b87cccd7d34dac387b6bd0f5eaf2e9295d98f4d5751d844fd50b54f524621449 |
+| mk7-recomp-case | reconstruction-cases | [nvd123-YT/MK7Recomp](https://github.com/nvd123-YT/MK7Recomp/blob/2dd96beb0d1faf445b1a1456e585c45a52dde722/README.md) | 327d1cf8b007974dbd82d81360b2ec868ab5f407f98a0cec0962831d2a064e91 |
+| brothership-recomp-case | reconstruction-cases | [Coaltergeist/Brothership-Recomp](https://github.com/Coaltergeist/Brothership-Recomp/blob/129894dfdd8ec19c9362c69e3d3af43ab68140ec/README.md) | ff5f2d79d1b17d2040a27dc0616a51d36b3f85a90fb970db2be9c0059355bd64 |
+| philips-titanos-tools | firmware | [abbguslof/philips-titanos-tools](https://github.com/abbguslof/philips-titanos-tools/blob/4d8bc31e4a798ab431c45e3bb8c1502f92439df2/README.md) | b895ef343ae0b0bc95cdbe56f9075ff56912bb5b28604ad787cba7772d0054a3 |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| metrist38/fefw-recomp | Fire Emblem Fortune Weave recompilation is already curated. |
+| aoxzh/bayo3-recomp | Three Bayonetta recompilation records already exist. |
+| otavix010/gow-ascension-pc | Two God of War Ascension recompilations already exist. |
+| GenissonEmilio/ShadowOfTheColossusPC | Four Shadow of the Colossus records already exist. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Brothership Recomp is Class 1 with a merged preview; the other three are Class 2. This batch drew from the merged class-scan pool, whose hourly scan itself returned noop.
