@@ -58,7 +58,7 @@ python3 scripts/catalog.py --source-index nowsecure/r2frida
 | `targets` | `app` 和 `binary`，因为 README 涵盖桌面与移动进程。 |
 | `description_en` / `description_zh` | 用自己的话写出读者能用它做什么，不照搬宣传文字。 |
 | `requirements` | 复核文档中写明的安装与平台条件，必要时注明复核时的版本。 |
-| `added_at` | 记录首次进入 `main` 的 UTC 日期，此处为 2026-10-16。填写你的 pull request 合并当天；它决定 Atom 订阅的排序，不是复核日期。 |
+| `added_at` | 记录首次进入 `main` 的 UTC 日期，此处为 2026-10-16。提交新条目时可省略此字段。合并后记录的日期用于 Atom 订阅排序。 |
 
 如何选择 `kind`、`relationship`、`category` 和 `targets`，见[中文贡献指南](../CONTRIBUTING.zh-CN.md#kindrelationshipcategory-与-targets)；全部字段和取值见[目录格式（英文）](../data/README.md)。
 

@@ -58,7 +58,7 @@ Records connected to REA by their evidence (the official, community and companio
 | `targets` | `app` and `binary`, because the README covers desktop and mobile processes. |
 | `description_en` / `description_zh` | Original sentences on what a reader can do with it, not copied marketing text. |
 | `requirements` | Installation and platform conditions the reviewed documentation states, with the reviewed version where it matters. |
-| `added_at` | The UTC date the record first reached `main`, here 2026-10-16. Set it to the day your pull request is merged; it orders the Atom feeds and is not a review date. |
+| `added_at` | The UTC date the record first reached `main`, here 2026-10-16. Omit this optional field when proposing a new record. Once recorded after merge, it orders the Atom feeds. |
 
 The [contribution guide](../CONTRIBUTING.md#choose-kind-relationship-category-and-targets) explains how to choose `kind`, `relationship`, `category` and `targets`, and the [catalog format](../data/README.md) lists every field and allowed value.
 
