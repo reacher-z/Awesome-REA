@@ -1014,3 +1014,28 @@ Six mobile and multi-platform reconstruction cases: MBHaxe, melonDS for Android,
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. MBHaxe, melonDS for Android, the TMNT arcade port and Elite Force Single Player are Class 1 with merged previews; HommaRe and the Super Mario Odyssey Android port are Class 2.
+
+## Batch 38 — 2026-11-25
+
+Six records: the LBA2 classic source port, OpenAdhoc, the Spyro 3 decompilation, Transformers Armada recompiled, CafeRecomp and Vice City Stories on Android.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| lba2-classic-community | reconstruction-cases | [LBALab/lba2-classic-community](https://github.com/LBALab/lba2-classic-community/blob/36076270ba608747f865e081c33d425ea5d68e93/README.md) | 14956e396b4f62c311cda81454cf9a6b1c2411843d12386e511fd539de135d4f |
+| openadhoc | game-analysis | [Nenkai/OpenAdhoc](https://github.com/Nenkai/OpenAdhoc/blob/66e749b382702732908ac62e15e699ed62f95827/README.md) | 9b2b53e24a7ff00c473afa15807b2796e351280c74673a0addfc2a8db27240a2 |
+| spyro-3-decomp | reconstruction-cases | [TheMobyCollective/spyro-3](https://github.com/TheMobyCollective/spyro-3/blob/0b03dad822902ca54c8e6298e9b37ad0b9eaf722/README.md) | cadb07e720a562507fe942e4246911148107dcaa454163c92338162af4bb146c |
+| transformers-armada-recomp | reconstruction-cases | [kayliox/transformers-armada-recomp](https://github.com/kayliox/transformers-armada-recomp/blob/97bb7cf6de562238f82417227b0e2ed66dea30cf/README.md) | 7ef26d6fb82f2a336695db6ddd0cdc152768079e49f0aa7b671f50302a9cad4d |
+| cafe-recomp-case | reconstruction-cases | [hardkiller2565123123/CafeRecomp](https://github.com/hardkiller2565123123/CafeRecomp/blob/6285e85423283b39f4acbe744b2cca69a863ccb5/README.md) | b4c887ae94e6beff71b5b9d5ed5a9964abaef4f038a2d54b11ca9283070f8387 |
+| psprecomp-vcs-android-case | reconstruction-cases | [codepdbh/PSPRecomp-VCS-Android](https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/9fd696f8d85f11ba36292c0c0fbe5403e8067359/README.md) | 95a61e199fcfdba24f034793b3a5b89386ad31f65ba0bb269859c8d965608659 |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| tclamb/mhp2g-decomp | Repository has no README, below the documentation threshold. |
+| Brandon04Gonzalez/nier-android | README declares maintenance stopped. |
+| YesterMester/TheSimpsonsGameRecomp, noahbaxter/GHClassic | The catalog already carries a Simpsons Game recompilation and two Guitar Hero II projects. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Transformers Armada is Class 1 with a merged preview; the other five are Class 2.

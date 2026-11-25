@@ -6,10 +6,16 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**464 case studies**
+**470 case studies**
 
 ## Engine reimplementations
 
+- [**Primal Rage: DOS engine reconstruction and SDL3 port**](https://github.com/felipe-dos-santos81/primal-rage-re) - Primal Rage RE reconstructs the DOS game's engine in C over a memory layout matching PRAGE.EXE and runs it with SDL3 using the user's game data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/primal-rage-reconstruction-case/)</sub>
+- [**Project ANISE: an AI5V and SILV scripting engine interpreter**](https://github.com/tomyun/anise) - Project ANISE is a C++ interpreter for Japanese adventure games built on the AI5V or SILV scripting engines. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/project-anise-ai5v-case/)</sub>
+- [**Project Carrot: rebuilding a Jazz Jackrabbit 2-style engine**](https://github.com/soulweaver91/project-carrot) - Project Carrot develops a C++ engine modeled on Jazz Jackrabbit 2 using converted resources from a user's copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/project-carrot-case/)</sub>
+- [**Project Dollhouse: reconstructing The Sims Online in C#**](https://github.com/Afr0Games/Project-Dollhouse) - Project Dollhouse reconstructs The Sims Online in C# with client and server components that use an installed copy of the game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/project-dollhouse-case/)</sub>
+- [**PvZ-Portable: a reimplementation of Plants vs. Zombies GOTY**](https://github.com/wszqkzqk/PvZ-Portable) - Cross-platform reimplementation of Plants vs. Zombies: Game of the Year Edition. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pvz-portable/)</sub>
+- [**Pyskool: reimplementing Skool Daze and Back to Skool**](https://github.com/skoolkid/pyskool) - Pyskool reimplements the ZX Spectrum games Skool Daze and Back to Skool in Python and Pygame. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pyskool-case/)</sub>
 - [**R.E.L.I.V.E.: replacing the engines for Abe’s Oddysee and Abe’s Exoddus**](https://aliveteam.github.io) - R.E.L.I.V.E. develops a cross-platform engine intended to replace the original PC executables for Abe’s Oddysee and Abe’s Exoddus. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/relive-engine-case/)</sub>
 - [**RA2 Engine: reconstructing Red Alert 2 and Yuri's Revenge**](https://github.com/omarelarab/ra2-engine) - RA2 Engine rebuilds Command &amp; Conquer: Red Alert 2 with Yuri's Revenge as a C++17 and SDL2 engine for Windows and Android. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ra2-engine-case/)</sub>
 - [**Rad-Therapy: recreating Half-Life in QuakeC**](https://github.com/eukara/freehl) - Rad-Therapy is a QuakeC game for the FTE engine that plays the 1998 Half-Life campaign and deathmatch. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rad-therapy/)</sub>

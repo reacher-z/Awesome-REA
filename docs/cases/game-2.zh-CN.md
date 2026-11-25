@@ -10,6 +10,7 @@
 
 ## 非匹配反编译
 
+- [**Babil Decompilation Project：Final Fantasy IV 3D Remake 源码重建**](https://github.com/GlitchedDeveloper/Babil-Decompilation-Project) - Babil Decompilation Project 为 Final Fantasy IV 3D Remake 的 Steam 2020 年 11 月更新版重建 C++ 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/babil-decompilation-project-case/)</sub>
 - [**Back to Skool：基于 SkoolKit 的 ZX Spectrum 反汇编**](https://github.com/skoolkid/backtoskool) - Back to Skool 项目发布 ZX Spectrum 版游戏的 SkoolKit 反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/back-to-skool-disassembly-case/)</sub>
 - [**Balloon Fight：NES 游戏反汇编**](https://github.com/LuigiBlood/balloonfight_dis) - 这是 NES 美版 Balloon Fight 的反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/balloonfight-disasm/)</sub>
 - [**Banjo-Kazooie：Xbox Live Arcade 版反编译**](https://github.com/banjo360/bk360) - 该项目反编译 Xbox Live Arcade 版 Banjo-Kazooie。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bk360/)</sub>
@@ -444,6 +445,7 @@
 - [**Burnout Revenge：静态重编译 Xbox 360 游戏**](https://github.com/secretpray/burnout-revenge) - Burnout Revenge 移植项目使用 XenonRecomp 和专用运行时，将美版 Xbox 360 游戏静态重编译为 macOS、Linux 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/burnout-revenge-recomp-case/)</sub>
 - [**Bushido Blade 2：从本地光盘构建的 PlayStation 静态重编译**](https://github.com/alexbeavs-ps1-ports/bushido-blade-2-recomp) - Bushido Blade 2 Recomp 配置 psxrecomp，从玩家提供的 SLUS-00663 美版光盘镜像和 SCPH-1001 BIOS 生成、编译游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bushido-blade-2-recomp-case/)</sub>
 - [**C2C：《古惑狼 2》的混合重编译与手工反编译**](https://github.com/ughman/c2c) - 一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
+- [**CafeRecomp：可复用的 Wii U 静态重编译框架**](https://github.com/hardkiller2565123123/CafeRecomp) - 开源的 Wii U 重编译框架，带自定义运行时与渲染器，当前以《塞尔达传说：旷野之息》跑在现代 PC 为目标，并可复用于其他 Wii U 作品。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cafe-recomp-case/)</sub>
 - [**Call of Duty 3：多人模式 ReXGlue 重编译进展**](https://github.com/zombiedestroyer29/Call-of-Duty-3-Recompilation) - Call of Duty 3 Recompilation 使用 ReXGlue 处理游戏的多人模式程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/call-of-duty-3-multiplayer-recomp-case/)</sub>
 - [**Call of Duty: Modern Warfare 2 (2009)：静态重编译 Xbox 360 游戏**](https://github.com/PaulCombal/mw2-recompiled) - 该仓库把 Xbox 360 上的《使命召唤：现代战争 2》（2009）的可执行文件提前重编译，从而在 Linux 和 Windows 上原生运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mw2-recompiled-case/)</sub>
 - [**Captain America Super Soldier Recompiled：可进入标题画面的重编译版本**](https://github.com/m1ndcrap/Captain-America-Super-Soldier-Recompiled) - Captain America Super Soldier Recompiled 配置 ReXGlue v0.4，将 Xbox 360 版游戏构建为原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/captain-america-super-soldier-recompiled-case/)</sub>
@@ -633,6 +635,4 @@
 - [**Harvest Moon 64 PC Port / Recomp：开发中的原生构建版**](https://github.com/ai-tdd-labs/harvest-moon-64-recompiled) - Harvest Moon 64 PC Port / Recomp 使用 N64Recomp 和 RT64，从用户本地提供的 ROM 与 ELF 文件构建 Harvest Moon 64 原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aitdd-harvest-moon-64-recomp-case/)</sub>
 - [**Harvest Moon 64: Recompiled：原生移植**](https://github.com/HarvestMoon64Recomp/HarvestMoon64Recomp) - Harvest Moon 64: Recompiled 使用 N64: Recompiled 把《牧场物语 64》静态重编译为原生移植，并用 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/harvest-moon-64-recomp-case/)</sub>
 - [**Haunting Ground Recomp：PS2 游戏原生移植**](https://github.com/N900x4/HauntingGround-Recomp-Project) - 《Haunting Ground》（PS2 美版）的原生 Windows/Linux 版本：从自备光盘 ISO 把 PS2 程序转译为 C 并配合手写运行时编译，支持 4K、60 fps 插帧与高清贴图。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/haunting-ground-recomp/)</sub>
-- [**Haze Recomp：实验性 PlayStation 3 游戏静态重编译**](https://github.com/zdiemer/haze-recomp) - Haze Recomp 使用 ps3recomp 从用户自备光盘镜像提升 PS3 游戏 Haze 及相关固件代码，构建 Windows 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/haze-recomp-case/)</sub>
-- [**Heavy Metal: FAKK2：x86 到 C 的静态重编译**](https://github.com/sp00nznet/heavymetal) - Heavy Metal: FAKK2 将原版 Windows 游戏可执行文件的 x86 指令转译为可编译的 C，构建 32 位 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/heavy-metal-fakk2-recomp-case/)</sub>
 <!-- END GENERATED CASES -->

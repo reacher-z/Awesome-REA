@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-25T03:22:15+00:00",
-    "entry_count": 1202,
-    "class_entry_count": 1233,
+    "generated_at": "2026-11-25T04:25:17+00:00",
+    "entry_count": 1203,
+    "class_entry_count": 1234,
     "class_counts": {
-      "image": 1162,
+      "image": 1163,
       "video": 40
     },
     "missing_count": 31,
@@ -4346,7 +4346,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-25T03:22:14+00:00"
+      "checked_at": "2026-11-25T04:25:15+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -9809,6 +9809,15 @@
       "source_url": "https://gitlab.com/roever/toppler",
       "revision": "c8bf02b0f8bf8875a454758227bf2bfc029487c3",
       "checked_at": "2026-11-10T05:20:10+00:00"
+    },
+    {
+      "id": "transformers-armada-recomp",
+      "image_url": "https://raw.githubusercontent.com/kayliox/transformers-armada-recomp/97bb7cf6de562238f82417227b0e2ed66dea30cf/docs/images/hero.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/kayliox/transformers-armada-recomp",
+      "revision": "97bb7cf6de562238f82417227b0e2ed66dea30cf",
+      "checked_at": "2026-11-25T04:25:17+00:00"
     },
     {
       "id": "triaevum",

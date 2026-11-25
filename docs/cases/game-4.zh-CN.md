@@ -6,10 +6,13 @@
 
 [English](game-4.md)
 
-**626 个案例**
+**625 个案例**
 
 ## 基于重建源码的移植
 
+- [**Final Fantasy 4: The After Years Vita：在 PS Vita 上重宿主 Android 程序**](https://github.com/Rinnegatamante/ff4a_vita) - Final Fantasy 4: The After Years Vita 使用原生加载器在 PS Vita 上运行 Android 版游戏程序。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/final-fantasy-after-years-vita-case/)</sub>
+- [**Final Fantasy Dimensions Vita：Android 游戏的 PS Vita 移植**](https://github.com/Rinnegatamante/ffd-vita) - Final Fantasy Dimensions Vita 在 PS Vita 内存中装载《Final Fantasy Dimensions》Android 版的 ARMv6 程序，以原生函数处理导入项并应用补丁。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/final-fantasy-dimensions-vita-case/)</sub>
+- [**Forest：《Animal Crossing》GameCube 版 PC 移植**](https://github.com/ACreTeam/forest) - Forest 基于匹配反编译成果将 GameCube 版《Animal Crossing》移植到 PC。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/forest-animal-crossing-port-case/)</sub>
 - [**Foxhollow：《Star Fox Adventures》原生移植**](https://github.com/JackPriceBurns/foxhollow) - Foxhollow 基于 SFA 反编译成果和 Aurora 兼容层构建《Star Fox Adventures》的原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/foxhollow-star-fox-adventures-case/)</sub>
 - [**Freeserf.net：将《工人物语》初代重建版移植为 C#**](https://github.com/Pyrdacor/freeserf.net) - Freeserf.net 用 C# 移植并扩展 freeserf 对《工人物语》初代的重建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/freeserf-net-settlers-case/)</sub>
 - [**Frontier Elite II Intro Player：重建游戏片头渲染与音频**](https://github.com/watsonmw/fe2-intro) - Frontier Elite II Intro Player 用 C 重建《Frontier: Elite II》片头的 3D 渲染和音频播放，支持 Amiga 与 SDL 平台。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/frontier-elite-ii-intro-player-case/)</sub>
@@ -69,6 +72,7 @@
 - [**Lighthouse：基于反编译项目的《Banjo-Kazooie》PC 移植**](https://github.com/HarbourMasters/Lighthouse) - 一个面向 Windows、Linux 和 macOS 的《Banjo-Kazooie》原生移植，将游戏 C 源码（其中许多标注了《Banjo-Kazooie》反编译项目中的文件路径）与重新实现 N64 SDK 的 libultraship 一起编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lighthouse-banjo-kazooie-port-case/)</sub>
 - [**LineWars II：可移植的 SDL3 重建版**](https://github.com/fredangstadt-lang/LineWarsII-SDL) - 为 1994 年 DOS 游戏的可移植 C 重建提供 SDL3 后端。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/linewars-ii-sdl-case/)</sub>
 - [**Link: The Faces of Evil：CD-i 反编译代码的原生 PC 移植**](https://github.com/ByteDecompiler/link-faces-of-evil-pc) - 该项目把 Philips CD-i 游戏《Link: The Faces of Evil》的反编译 C 代码移植到 Windows，以 SDL3 实现视频、音频、光盘和输入接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/link-faces-of-evil-pc-case/)</sub>
+- [**Little Big Adventure 2 Classic Community：在现代系统上保留的 1997 引擎**](https://github.com/LBALab/lba2-classic-community) - 经典《Little Big Adventure 2》源码发布版的社区分支，移植到 64 位与现代编译器，提供 Linux、macOS、Windows、Android 原生构建以及实验性的 Switch 构建，支持宽屏并可直接读取光盘镜像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lba2-classic-community/)</sub>
 - [**Lordran Native：在 Apple 设备上运行《黑暗之魂：重制版》**](https://github.com/Nishikori-Yui/lordran-native) - Lordran Native 将 Switch 版《黑暗之魂：重制版》移植到 Apple 设备，直接运行游戏的 ARM64 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lordran-native-case/)</sub>
 - [**MacioGalaxy：将 Super Mario Galaxy 移植到 Apple Silicon**](https://github.com/classicrob/MacioGalaxy) - MacioGalaxy 将 Petari 的 Super Mario Galaxy 反编译代码移植到 Apple Silicon Mac。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/maciogalaxy-case/)</sub>
 - [**Magic Carpet：DOS 游戏重建与 Windows 移植**](https://github.com/jessperler88/Magic-Carpet-port) - Magic Carpet 根据 carpet.exe 的分析结果，将 Bullfrog 的 1994 年 DOS 游戏重建为 Windows x64 的 C++17/SDL2 移植版。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/magic-carpet-native-port-case/)</sub>
@@ -279,6 +283,7 @@
 - [**Valiant Hearts Vita：在 PS Vita 上运行 Android 版《勇敢的心》**](https://github.com/Rinnegatamante/valiant-vita) - Valiant Hearts Vita 在 PS Vita 上运行 Android 版《勇敢的心：世界大战》的 ARMv7 可执行文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/valiant-hearts-vita-case/)</sub>
 - [**Vandal Hearts：基于一致性反编译的原生 PC 移植**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - 以 shao113 的 PlayStation 版 Vandal Hearts 一致性反编译为基础，新增日版一致性代码树，并将两者延伸为原生 Windows 与 Linux 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)</sub>
 - [**Verdite1：将日版《King's Field》移植到 PC 和 Android**](https://github.com/Voicedrew11/verdite1) - Verdite1 基于已有的反编译源码和 King's Field Enhanced，以原生 C/C++ 将日版 PlayStation《King's Field》移植到 Windows、Linux 和 Android。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/verdite1-case/)</sub>
+- [**Android ARM64 版 Vice City Stories：移动端的 PSPRecomp**](https://github.com/codepdbh/PSPRecomp-VCS-Android) - PSPRecomp 的 Vice City Stories 档案在 Android ARM64 上的实验性移植，Android 使用 Vulkan、Windows 使用 DirectX 12，并基于 PSP 代码静态重编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/psprecomp-vcs-android-case/)</sub>
 - [**Vigilante8-xport：PlayStation 游戏反编译移植工程**](https://github.com/psxports/Vigilante8-xport) - Vigilante8-xport 以 C 语言重建 PlayStation 游戏 Vigilante 8 的例程，用于原生移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vigilante-8-xport-case/)</sub>
 - [**vkQuake：Quake 的 Vulkan 渲染移植**](https://github.com/Novum/vkQuake) - 基于 QuakeSpasm 的 Quake 移植版，用 Vulkan 渲染器替代软件渲染器，提供 Windows、Linux 与 macOS 构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vkquake/)</sub>
 - [**WHITE ALBUM 2：重建游戏引擎的 Apple 平台移植**](https://github.com/galhack/WhiteAlbum2_iOS) - 《WHITE ALBUM 2》Apple 移植版将基于 Godot 4 .NET 的游戏引擎重建版本适配到 iPhone、iPad、Vision Pro、Apple TV 和 Apple 芯片 Mac。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/white-album-2-apple-port-case/)</sub>
@@ -633,10 +638,4 @@
 - [**Powerslave EX：在 Kex Engine 上重建 PlayStation 版 Powerslave**](https://github.com/svkaiser/PowerslaveEX) - Powerslave EX 在 Kex Engine 3.0 上重建 PlayStation 版《Powerslave》，结合逆向还原的游戏逻辑与重新编写的碰撞、AI 系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powerslave-ex-case/)</sub>
 - [**Powerslide Remake：基于原版游戏数据重建街机赛车游戏**](https://github.com/dm999/powerslideremake) - Powerslide Remake 使用 Ogre 构建跨平台 C++ 程序，重建 Powerslide 赛车游戏的主要玩法。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powerslide-remake-case/)</sub>
 - [**ppengine：基于街机 ROM 分析重制《Pole Position》**](https://github.com/jonathanopalise/ppengine) - ppengine 利用从街机 ROM 逆向得到的逻辑，将 Atari《Pole Position》重建为 3D 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ppengine-case/)</sub>
-- [**Primal Rage：DOS 引擎重建与 SDL3 移植**](https://github.com/felipe-dos-santos81/primal-rage-re) - Primal Rage RE 以 C 语言按 PRAGE.EXE 的原始内存布局重建 DOS 游戏引擎，并用 SDL3 读取用户的游戏数据运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/primal-rage-reconstruction-case/)</sub>
-- [**Project ANISE：AI5V 与 SILV 脚本引擎解释器**](https://github.com/tomyun/anise) - Project ANISE 是面向采用 AI5V 或 SILV 脚本引擎的日本冒险游戏的 C++ 解释器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-anise-ai5v-case/)</sub>
-- [**Project Carrot：重建 Jazz Jackrabbit 2 风格引擎**](https://github.com/soulweaver91/project-carrot) - Project Carrot 使用 C++ 和用户从 Jazz Jackrabbit 2 转换出的资源开发同类游戏引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-carrot-case/)</sub>
-- [**Project Dollhouse：用 C# 重建《模拟人生 Online》**](https://github.com/Afr0Games/Project-Dollhouse) - Project Dollhouse 用 C# 重建《模拟人生 Online》，包含依赖原版游戏安装文件的客户端和服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-dollhouse-case/)</sub>
-- [**PvZ-Portable：植物大战僵尸年度版的重实现**](https://github.com/wszqkzqk/PvZ-Portable) - 《植物大战僵尸》年度版的跨平台重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pvz-portable/)</sub>
-- [**Pyskool：重建《Skool Daze》和《Back to Skool》**](https://github.com/skoolkid/pyskool) - Pyskool 使用 Python 和 Pygame 重建 ZX Spectrum 游戏《Skool Daze》和《Back to Skool》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pyskool-case/)</sub>
 <!-- END GENERATED CASES -->

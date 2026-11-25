@@ -162552,5 +162552,178 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "lba2-classic-community",
+    "name": "Little Big Adventure 2 Classic Community: a preserved 1997 engine on modern systems",
+    "url": "https://github.com/LBALab/lba2-classic-community",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A community fork of the classic Little Big Adventure 2 source release, ported to 64-bit and modern compilers with native Linux, macOS, Windows, Android and experimental Switch builds, widescreen support and direct reading of disc images.",
+    "description_zh": "经典《Little Big Adventure 2》源码发布版的社区分支，移植到 64 位与现代编译器，提供 Linux、macOS、Windows、Android 原生构建以及实验性的 Switch 构建，支持宽屏并可直接读取光盘镜像。",
+    "evidence_url": "https://github.com/LBALab/lba2-classic-community/blob/36076270ba608747f865e081c33d425ea5d68e93/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a legitimate copy of LBA2; the engine is included but game assets are not.",
+      "It keeps the original 1997 engine while adding 64-bit builds, widescreen and disc-image loading.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "openadhoc",
+    "name": "OpenAdhoc: the Gran Turismo Adhoc scripting language reimplemented",
+    "url": "https://github.com/Nenkai/OpenAdhoc",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An open-source re-implementation of the proprietary Adhoc scripting language used across Gran Turismo games, with compilable game scripts re-created from the compiled originals so fan mods can edit them at source level.",
+    "description_zh": "开源重实现 Gran Turismo 系列专有的 Adhoc 脚本语言，并把已反编译成功游戏的编译版脚本重建为可编译源码，让爱好者能直接编辑源码级逻辑。",
+    "evidence_url": "https://github.com/Nenkai/OpenAdhoc/blob/66e749b382702732908ac62e15e699ed62f95827/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the GTAdhocToolchain 1.4.0 or newer to build and evaluate scripts.",
+      "It covers GT4 through GT Sport titles whose Adhoc scripts have been reverse-engineered and provides no game content.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "spyro-3-decomp",
+    "name": "Spyro: Year of the Dragon — a byte-matching decompilation",
+    "url": "https://github.com/TheMobyCollective/spyro-3",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A decompilation of Spyro: Year of the Dragon that aims for a byte-for-byte matching executable, starting from the earliest NTSC-U revision and prioritising human-readable code.",
+    "description_zh": "《Spyro: Year of the Dragon》的反编译项目，以最早的 NTSC-U 版本为起点，目标是生成逐字节匹配的可执行文件，并优先保证代码可读性。",
+    "evidence_url": "https://github.com/TheMobyCollective/spyro-3/blob/0b03dad822902ca54c8e6298e9b37ad0b9eaf722/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the supported NTSC-U revision 0 disc to verify the build; the project distributes no game data.",
+      "Matching status is still in progress and later revisions may be supported later.",
+      "CC0-1.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "transformers-armada-recomp",
+    "name": "Transformers Armada: Prelude to Energon recompiled for PC",
+    "url": "https://github.com/kayliox/transformers-armada-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "The 2004 PlayStation 2 Transformers Armada: Prelude to Energon recompiled into a native Windows game from your own disc, with a native Direct3D 12 renderer, up to 4K at 240 fps and ultrawide support.",
+    "description_zh": "把 2004 年 PS2 的《Transformers Armada: Prelude to Energon》从自备光盘静态重编译为原生 Windows 游戏，使用原生 Direct3D 12 渲染器，支持 4K、240 帧与超宽屏。",
+    "evidence_url": "https://github.com/kayliox/transformers-armada-recomp/blob/97bb7cf6de562238f82417227b0e2ed66dea30cf/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own PlayStation 2 disc; no game data is included.",
+      "It is a static recompilation with a custom D3D12 renderer and ships Windows and Linux setups.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "cafe-recomp-case",
+    "name": "CafeRecomp: a reusable Wii U static recompilation framework",
+    "url": "https://github.com/hardkiller2565123123/CafeRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An open-source Wii U recompilation framework with a custom runtime and renderer, currently focused on moving The Legend of Zelda: Breath of the Wild onto modern PCs and reusable for other titles.",
+    "description_zh": "开源的 Wii U 重编译框架，带自定义运行时与渲染器，当前以《塞尔达传说：旷野之息》跑在现代 PC 为目标，并可复用于其他 Wii U 作品。",
+    "evidence_url": "https://github.com/hardkiller2565123123/CafeRecomp/blob/6285e85423283b39f4acbe744b2cca69a863ccb5/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Wii U game files; the repository ships no game data.",
+      "Breath of the Wild support is an early work-in-progress, focused on the boot process and runtime compatibility.",
+      "MPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "psprecomp-vcs-android-case",
+    "name": "Vice City Stories on Android ARM64: PSPRecomp on mobile",
+    "url": "https://github.com/codepdbh/PSPRecomp-VCS-Android",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "An experimental Android ARM64 port of the PSPRecomp Vice City Stories profile, with Vulkan on Android and DirectX 12 on Windows, recompiled statically from the PSP code.",
+    "description_zh": "PSPRecomp 的 Vice City Stories 档案在 Android ARM64 上的实验性移植，Android 使用 Vulkan、Windows 使用 DirectX 12，并基于 PSP 代码静态重编译。",
+    "evidence_url": "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/9fd696f8d85f11ba36292c0c0fbe5403e8067359/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own PSP copy of the game; no game data is included.",
+      "It is experimental, covers Android ARM64 and Windows, and builds on the PSPRecomp project.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

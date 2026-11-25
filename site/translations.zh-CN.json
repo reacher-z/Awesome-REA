@@ -46002,5 +46002,53 @@
       "仍是早期进行中的 Android 移植，基于 smo-recomp，并说明大部分代码由 AI 编写。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "lba2-classic-community": {
+    "name": "Little Big Adventure 2 Classic Community：在现代系统上保留的 1997 引擎",
+    "requirements": [
+      "需要合法的 LBA2 游戏副本；包含引擎但不含游戏资源。",
+      "在保留 1997 原版引擎的同时增加 64 位构建、宽屏与光盘镜像读取。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "openadhoc": {
+    "name": "OpenAdhoc：重实现的 Gran Turismo Adhoc 脚本语言",
+    "requirements": [
+      "需要 GTAdhocToolchain 1.4.0 或更新版本才能构建与评估脚本。",
+      "覆盖 GT4 到 GT Sport 中已反编译 Adhoc 脚本的作品，且不提供游戏内容。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "spyro-3-decomp": {
+    "name": "Spyro: Year of the Dragon — 逐字节匹配的反编译",
+    "requirements": [
+      "需要受支持的 NTSC-U rev 0 光盘来验证构建；项目不分发游戏数据。",
+      "匹配进度仍在进行，后续版本可能稍后支持。",
+      "采用 CC0-1.0 许可证。"
+    ]
+  },
+  "transformers-armada-recomp": {
+    "name": "Transformers Armada: Prelude to Energon 的 PC 重编译",
+    "requirements": [
+      "需要自备 PlayStation 2 光盘；不包含游戏数据。",
+      "它是带自定义 D3D12 渲染器的静态重编译，提供 Windows 与 Linux 安装包。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "cafe-recomp-case": {
+    "name": "CafeRecomp：可复用的 Wii U 静态重编译框架",
+    "requirements": [
+      "需要自备 Wii U 游戏文件；仓库不附带游戏数据。",
+      "旷野之息支持仍处早期，聚焦启动流程与运行时兼容性。",
+      "采用 MPL-2.0 许可证。"
+    ]
+  },
+  "psprecomp-vcs-android-case": {
+    "name": "Android ARM64 版 Vice City Stories：移动端的 PSPRecomp",
+    "requirements": [
+      "需要自备 PSP 游戏副本；不包含游戏数据。",
+      "仍是实验性项目，覆盖 Android ARM64 与 Windows，并基于 PSPRecomp。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

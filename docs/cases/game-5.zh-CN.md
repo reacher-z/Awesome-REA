@@ -6,10 +6,16 @@
 
 [English](game-5.md)
 
-**464 个案例**
+**470 个案例**
 
 ## 引擎重实现
 
+- [**Primal Rage：DOS 引擎重建与 SDL3 移植**](https://github.com/felipe-dos-santos81/primal-rage-re) - Primal Rage RE 以 C 语言按 PRAGE.EXE 的原始内存布局重建 DOS 游戏引擎，并用 SDL3 读取用户的游戏数据运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/primal-rage-reconstruction-case/)</sub>
+- [**Project ANISE：AI5V 与 SILV 脚本引擎解释器**](https://github.com/tomyun/anise) - Project ANISE 是面向采用 AI5V 或 SILV 脚本引擎的日本冒险游戏的 C++ 解释器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-anise-ai5v-case/)</sub>
+- [**Project Carrot：重建 Jazz Jackrabbit 2 风格引擎**](https://github.com/soulweaver91/project-carrot) - Project Carrot 使用 C++ 和用户从 Jazz Jackrabbit 2 转换出的资源开发同类游戏引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-carrot-case/)</sub>
+- [**Project Dollhouse：用 C# 重建《模拟人生 Online》**](https://github.com/Afr0Games/Project-Dollhouse) - Project Dollhouse 用 C# 重建《模拟人生 Online》，包含依赖原版游戏安装文件的客户端和服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-dollhouse-case/)</sub>
+- [**PvZ-Portable：植物大战僵尸年度版的重实现**](https://github.com/wszqkzqk/PvZ-Portable) - 《植物大战僵尸》年度版的跨平台重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pvz-portable/)</sub>
+- [**Pyskool：重建《Skool Daze》和《Back to Skool》**](https://github.com/skoolkid/pyskool) - Pyskool 使用 Python 和 Pygame 重建 ZX Spectrum 游戏《Skool Daze》和《Back to Skool》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pyskool-case/)</sub>
 - [**R.E.L.I.V.E.：《Abe’s Oddysee》和《Abe’s Exoddus》引擎重建**](https://aliveteam.github.io) - R.E.L.I.V.E. 为《Abe’s Oddysee》和《Abe’s Exoddus》开发跨平台引擎，目标是替代原版 PC 可执行程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/relive-engine-case/)</sub>
 - [**RA2 Engine：重建《红色警戒 2》与《尤里的复仇》**](https://github.com/omarelarab/ra2-engine) - RA2 Engine 用 C++17 和 SDL2 为 Windows 与 Android 重建《红色警戒 2：尤里的复仇》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ra2-engine-case/)</sub>
 - [**Rad-Therapy：用 QuakeC 重建《半衰期》**](https://github.com/eukara/freehl) - Rad-Therapy 是给 FTE 引擎使用的 QuakeC 游戏，用来玩 1998 年的《半衰期》战役和死亡竞赛。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rad-therapy/)</sub>
