@@ -6,7 +6,7 @@
 
 [English](game-3.md)
 
-**608 个案例**
+**607 个案例**
 
 ## 静态重编译
 
@@ -177,6 +177,7 @@
 - [**OpenPopTB-MacOS：将《Populous: The Beginning》静态重编译至 Apple Silicon**](https://github.com/iagodemacedo/OpenPopTB-MacOS) - OpenPopTB-MacOS 从用户自有的 Windows 可执行文件静态重编译《Populous: The Beginning》及扩展包 Undiscovered Worlds，生成 Apple Silicon 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openpoptb-macos-case/)</sub>
 - [**OpenSamurai：重建《Sword of the Samurai》**](https://github.com/ToolAssisted-run/OpenSamurai) - OpenSamurai 将 DOS 游戏《Sword of the Samurai》的多个原始可执行程序从机器码重建为一个 C 程序，整合标题、角色扮演、决斗、混战和战斗部分。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opensamurai-case/)</sub>
 - [**OpenShao：静态重编译《真人快打：少林武僧》**](https://github.com/OAleex/OpenShao) - OpenShao 用 XboxXBERecomp 静态重编译原版 Xbox 游戏《真人快打：少林武僧》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openshao/)</sub>
+- [**OpenSmash-Ultimate：任天堂明星大乱斗 特别版原生 PC 程序**](https://github.com/OpenSmash-Ultimate/OpenSmash-Ultimate) - 通过静态重编译把《任天堂明星大乱斗 特别版》变成原生 PC 程序：ARM64 代码一次性提前翻译为 C，并与替代 Nintendo Switch 的运行时链接；该项目是 WindowSmash 与 ssbu-recomp 的合并。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-smash-ultimate-case/)</sub>
 - [**P3P3DS：在 New Nintendo 3DS 上运行《Persona 3 Portable》**](https://github.com/endercodezz/P3P3DS) - P3P3DS 通过 MIPS 到 C++ 的静态重编译、解释器后备路径和 PSP 服务运行时，将北美版《Persona 3 Portable》移至 New Nintendo 3DS。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/p3p3ds-case/)</sub>
 - [**Pac-Man Championship Edition：PC 原生静态重编译版**](https://github.com/jedeyesniv-art/Pacman-CE-PC-Recomp) - Pac-Man Championship Edition 使用 ReXGlue 将 Xbox 360 Live Arcade 游戏的 PowerPC 代码静态重编译为 Windows 原生 x86-64 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pac-man-championship-edition-pc-recomp-case/)</sub>
 - [**PacManRecomp：NES《Pac-Man》原生重编译**](https://github.com/Mr-Shizzy/PacManRecomp) - PacManRecomp 使用 NESRecomp 将玩家自备的 1993 年 Namco 版 NES《Pac-Man》ROM 从 6502 代码翻译为 C，构建 Windows 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pacmanrecomp-case/)</sub>
@@ -619,6 +620,4 @@
 - [**EarthBound Companion：《地球冒险》的原生版本**](https://github.com/rages4calm/earthbound-companion) - EarthBound Companion 是 EarthBound 的原生构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/earthbound-companion/)</sub>
 - [**Eden：《Project Eden》部分重建**](https://github.com/mercat0r/Eden) - Eden 着手以 DirectX 9 重建 2001 年游戏《Project Eden》的 Windows 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/eden-project-eden-case/)</sub>
 - [**EDGE-Classic：EDGE Doom 源代码移植的复兴**](https://github.com/edge-classic/EDGE-classic) - 把 EDGE 1.35 代码库在现代系统上复兴的跨平台 Doom 源代码移植，在保持低硬件要求的同时增强 mod 能力与画面效果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/edge-classic-case/)</sub>
-- [**Android 版精英部队单人战役：移动端的星际迷航航海家号**](https://github.com/imjustadudegamer/VoyagerSP-Android) - 把 2000 年的《星际迷航：航海家号 精英部队》单人战役移植到 Android，基于 lilium-voyager 引擎与 Quake3e 的 Vulkan 渲染器，支持触控与手柄操作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/voyager-sp-android-case/)</sub>
-- [**Emerald 3DS：《Pokémon Emerald》的 Nintendo 3DS 原生移植**](https://github.com/ZallaxDev/emerald-3ds) - Emerald 3DS 将《Pokémon Emerald》的反编译代码移植为 Nintendo 3DS 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/emerald-3ds-case/)</sub>
 <!-- END GENERATED CASES -->

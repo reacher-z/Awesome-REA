@@ -6,10 +6,13 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**477 case studies**
+**480 case studies**
 
 ## Engine reimplementations
 
+- [**Phoenix: a Java remake of Emperor of the Fading Suns**](https://github.com/joulupunikki/Phoenix) - Phoenix rebuilds Emperor of the Fading Suns as a Java game using data from the user's EFS 1.4 installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/phoenix-efs-case/)</sub>
+- [**physics\_RT: reconstructing Ballance physics behavior**](https://github.com/doyaGu/physics_RT) - physics\_RT reconstructs Ballance physics behavior as a Win32 Virtools DLL using IVP numerical kernels. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/physics-rt-ballance-case/)</sub>
+- [**Pinball Fantasies Reassembled: recreating the DOS game engine**](https://github.com/wanda-phi/pfr) - Pinball Fantasies Reassembled recreates the 1993 DOS game engine in Rust using files from an original copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pinball-fantasies-reassembled-case/)</sub>
 - [**Pizza Legacy: reimplementing Pizza Tycoon**](https://codeberg.org/cowomaly/pizzalegacy) - Pizza Legacy rebuilds the 1994 DOS game Pizza Tycoon, also released as Pizza Connection, in a C++20 engine that loads the original game's assets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pizza-legacy-case/)</sub>
 - [**pokerecomp: reimplementing the Game Boy Pokémon games**](https://github.com/Decryptu/pokerecomp) - pokerecomp is a Godot 4 reimplementation, written in GDScript, of the Game Boy Pokémon games. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokerecomp/)</sub>
 - [**Portémon Nitro: a HeartGold and SoulSilver engine port**](https://github.com/portemon-nitro/portemon) - Portémon Nitro reimplements the Pokémon HeartGold and SoulSilver engine in LÖVE for PCs and mobile devices. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/portemon-nitro-hgss-case/)</sub>

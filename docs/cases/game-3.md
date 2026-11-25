@@ -6,7 +6,7 @@
 
 [简体中文](game-3.zh-CN.md)
 
-**608 case studies**
+**607 case studies**
 
 ## Static recompilations
 
@@ -177,6 +177,7 @@
 - [**OpenPopTB-MacOS: static recompilation of Populous: The Beginning for Apple Silicon**](https://github.com/iagodemacedo/OpenPopTB-MacOS) - OpenPopTB-MacOS statically recompiles Populous: The Beginning and Undiscovered Worlds from a user's Windows executables into native Apple Silicon applications. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openpoptb-macos-case/)</sub>
 - [**OpenSamurai: reconstructing Sword of the Samurai**](https://github.com/ToolAssisted-run/OpenSamurai) - OpenSamurai reconstructs the DOS game Sword of the Samurai as one C program from its separate original executables. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opensamurai-case/)</sub>
 - [**OpenShao: statically recompiling Mortal Kombat: Shaolin Monks**](https://github.com/OAleex/OpenShao) - OpenShao statically recompiles the original Xbox game Mortal Kombat: Shaolin Monks with XboxXBERecomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openshao/)</sub>
+- [**OpenSmash-Ultimate: Super Smash Bros. Ultimate as a native PC program**](https://github.com/OpenSmash-Ultimate/OpenSmash-Ultimate) - Super Smash Bros. Ultimate turned into a native PC program by static recompilation: the ARM64 code is translated into C once, ahead of time, and linked with a runtime standing in for the Nintendo Switch; the merge of WindowSmash and ssbu-recomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/open-smash-ultimate-case/)</sub>
 - [**P3P3DS: running Persona 3 Portable on New Nintendo 3DS**](https://github.com/endercodezz/P3P3DS) - P3P3DS adapts Persona 3 Portable's North American PSP release for New Nintendo 3DS through static MIPS-to-C++ recompilation, an interpreter fallback and a PSP service runtime. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/p3p3ds-case/)</sub>
 - [**Pac-Man Championship Edition: a native PC static recompilation**](https://github.com/jedeyesniv-art/Pacman-CE-PC-Recomp) - Pac-Man Championship Edition recompiles the Xbox 360 Live Arcade game's PowerPC code to x86-64 for a native Windows build using ReXGlue. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pac-man-championship-edition-pc-recomp-case/)</sub>
 - [**PacManRecomp: a native recompilation of NES Pac-Man**](https://github.com/Mr-Shizzy/PacManRecomp) - PacManRecomp builds a native Windows version of the 1993 Namco NES Pac-Man by translating the player's ROM from 6502 code to C with NESRecomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pacmanrecomp-case/)</sub>
@@ -619,6 +620,4 @@
 - [**EarthBound Companion: native EarthBound build**](https://github.com/rages4calm/earthbound-companion) - EarthBound Companion is a native EarthBound build. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/earthbound-companion/)</sub>
 - [**Eden: partial Project Eden reconstruction**](https://github.com/mercat0r/Eden) - Eden begins a Windows reconstruction of the 2001 game Project Eden, targeting a DirectX 9 build. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/eden-project-eden-case/)</sub>
 - [**EDGE-Classic: a revival of the EDGE Doom source port**](https://github.com/edge-classic/EDGE-classic) - A cross-platform Doom source port that revives the EDGE 1.35 codebase for modern systems, adding modding features and visuals while keeping hardware requirements modest. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/edge-classic-case/)</sub>
-- [**Elite Force Single Player on Android: Star Trek Voyager on mobile**](https://github.com/imjustadudegamer/VoyagerSP-Android) - A native Android port of the 2000 Star Trek: Voyager Elite Force single-player campaign, built on the lilium-voyager engine base with the Quake3e Vulkan renderer and touch plus gamepad controls. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/voyager-sp-android-case/)</sub>
-- [**Emerald 3DS: a native Nintendo 3DS port of Pokémon Emerald**](https://github.com/ZallaxDev/emerald-3ds) - Emerald 3DS ports Pokémon Emerald's decompiled game code to native Nintendo 3DS execution. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/emerald-3ds-case/)</sub>
 <!-- END GENERATED CASES -->

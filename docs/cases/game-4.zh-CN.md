@@ -10,6 +10,8 @@
 
 ## 基于重建源码的移植
 
+- [**Android 版精英部队单人战役：移动端的星际迷航航海家号**](https://github.com/imjustadudegamer/VoyagerSP-Android) - 把 2000 年的《星际迷航：航海家号 精英部队》单人战役移植到 Android，基于 lilium-voyager 引擎与 Quake3e 的 Vulkan 渲染器，支持触控与手柄操作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/voyager-sp-android-case/)</sub>
+- [**Emerald 3DS：《Pokémon Emerald》的 Nintendo 3DS 原生移植**](https://github.com/ZallaxDev/emerald-3ds) - Emerald 3DS 将《Pokémon Emerald》的反编译代码移植为 Nintendo 3DS 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/emerald-3ds-case/)</sub>
 - [**F-15 Strike Eagle 2 source port：重建版 DOS 游戏的现代平台移植**](https://github.com/neuviemeporte/f15se2-ex) - F-15 Strike Eagle 2 source port 将这款 1991 年 DOS 游戏的重建源码移植到现代架构，使用 SDL3 处理输入和界面、OpenGL 渲染，并模拟 AdLib 音频。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f15-strike-eagle-2-source-port-case/)</sub>
 - [**F-Zero Forever：SNES F-Zero 的现代 PC 移植**](https://github.com/RetroPortingToolKit/FZeroSNESRecomp) - 把 SNES 原版《F-Zero》现代化移植到 PC 的项目：增加赛道、杯赛、最多 4 人分屏与高清 Mode 7，由 RetroPortingToolkit 团队与 F-Zero mod 制作者合作完成。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fzero-forever/)</sub>
 - [**F0X：F-Zero X 的 Apple 平台移植**](https://github.com/chrissotraidis/f0x) - F0X 将 G-Diffuser 反编译的 F-Zero X 游戏逻辑移植到 Apple Silicon macOS、iPhone 和 iPad。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f0x-f-zero-x-case/)</sub>
@@ -384,6 +386,7 @@
 - [**Dreerally：Death Rally 游戏引擎重实现**](https://github.com/enriquesomolinos/DreeRally) - Dreerally 重新实现 Windows 版 Death Rally，编译后的程序替代原有可执行文件，并读取玩家持有的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dreerally-case/)</sub>
 - [**DRIG：Race Driver: GRID 引擎重建**](https://github.com/PipeKnight/drig-race-driver) - DRIG 用 Rust 和 Bevy 重建 Race Driver: GRID，引擎从用户的 PC 安装目录读取赛道、车辆、纹理和声音等数据。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/drig-race-driver-grid-case/)</sub>
 - [**DSDS：黑暗之魂 1 地图查看器与引擎重实现**](https://gitlab.com/somobu/dantelion) - DSDS 重实现《黑暗之魂 1》的部分引擎功能，读取 Steam 版 Prepare to Die Edition 的数据并显示地图。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dsds-dark-souls-1-map-viewer-case/)</sub>
+- [**Dune Dynasty：建立在逆向引擎上的沙丘 II 重制**](https://github.com/gameflorist/dunedynasty) - 基于原版逆向引擎对 Westwood《沙丘 II》做重制与增强，加入现代化改进与新功能，提供 Windows、macOS 与 Linux 构建，延续一个已停更的 SourceForge 项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dune-dynasty-case/)</sub>
 - [**Dungeon Keeper Remake：读取原版数据的 C++ 引擎**](https://github.com/Themperror/Dungeon-Keeper-Remake) - Dungeon Keeper Remake 是使用 C++、DirectX 11 和 XAudio2 开发的《Dungeon Keeper》重制项目，计划与原版游戏安装目录配合使用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dungeon-keeper-remake-case/)</sub>
 - [**DuperHex：从提取的游戏逻辑重建《Super Hexagon》引擎**](https://github.com/DavidBuchanan314/duperhex) - DuperHex 使用 Rust、SDL3 和 wgpu 重建《Super Hexagon》引擎。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/duperhex-case/)</sub>
 - [**DW3 Remake：重建 Digimon World 2003**](https://github.com/antharuu/dw3-remake) - DW3 Remake 用 Godot 4 和 C# 重建 PlayStation 游戏 Digimon World 2003。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dw3-remake-case/)</sub>
@@ -635,7 +638,4 @@
 - [**PanzerChasm：使用原版数据重建 Chasm: The Rift**](https://github.com/Panzerschrek/Chasm-Reverse) - PanzerChasm 用 C++ 和 SDL2 重建 Chasm: The Rift，运行时读取玩家原版游戏的 CSM.BIN 数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/panzerchasm-chasm-the-rift-case/)</sub>
 - [**PanzerMortyr：《Mortyr 2093-1944》引擎重实现**](https://github.com/Panzerschrek/PanzerMortyr) - PanzerMortyr 重新实现《Mortyr 2093-1944》的引擎，作为读取原版游戏数据的替代程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/panzermortyr-case/)</sub>
 - [**Pentagram：重建《创世纪 8》引擎**](https://github.com/pentagram-u8/pentagram) - Pentagram 重实现 Ultima 8 的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pentagram-u8/)</sub>
-- [**Phoenix：Emperor of the Fading Suns 的 Java 重制版**](https://github.com/joulupunikki/Phoenix) - Phoenix 用 Java 重建 Emperor of the Fading Suns，运行时读取用户安装的 EFS 1.4 数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/phoenix-efs-case/)</sub>
-- [**physics\_RT：重建 Ballance 物理行为**](https://github.com/doyaGu/physics_RT) - physics\_RT 使用 IVP 数值核心，将 Ballance 的物理行为重建为 Win32 Virtools DLL，涉及碰撞几何、作用力处理和模拟时序，并记录了原始 DLL 差分测试与游戏运行对照。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/physics-rt-ballance-case/)</sub>
-- [**Pinball Fantasies Reassembled：重建 DOS 游戏引擎**](https://github.com/wanda-phi/pfr) - Pinball Fantasies Reassembled 用 Rust 和原版游戏文件重建 1993 年的 DOS 游戏引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pinball-fantasies-reassembled-case/)</sub>
 <!-- END GENERATED CASES -->

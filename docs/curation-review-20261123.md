@@ -1112,3 +1112,26 @@ Two analysis toolkits, an Android instrumentation toolkit and a Monster Hunter p
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Batch size was reduced from six to four to slow README.zh-CN.md growth, which is about 30 KB below the 512 KiB rendering limit. Cobol-REKT is Class 1 with a merged preview; the rest are Class 2.
+
+## Batch 42 — 2026-11-25
+
+A Dune II remaster, a malware-analysis viewer, the merged Smash Ultimate recompilation and an MCP server: Dune Dynasty, Qiew, OpenSmash-Ultimate and Metis Reverse.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| dune-dynasty-case | reconstruction-cases | [gameflorist/dunedynasty](https://github.com/gameflorist/dunedynasty/blob/755876a710c0b188075ebe89cb40c068490e08e2/README.md) | 610702b3368485cee22d417c05be23c7fb864435e20c372ab4c84e6ee1ff1d42 |
+| qiew | native-analysis | [mtivadar/qiew](https://github.com/mtivadar/qiew/blob/652ec8178a7331a57e0cc4eb31015a11504b85a7/README.md) | c137699e7f2c1857579c6286f79bb385623f02801dea7fc989ce2e2400f94cd1 |
+| open-smash-ultimate-case | reconstruction-cases | [OpenSmash-Ultimate/OpenSmash-Ultimate](https://github.com/OpenSmash-Ultimate/OpenSmash-Ultimate/blob/6284a3e22078ef4886a767d2347268507e68ef74/README.md) | 7843085ca8957296330f6e1adb2b51f134e002d7b82c501f54bf8da6b85e3801 |
+| metis-reverse | agent-mcp | [Wholiver/metis-reverse](https://github.com/Wholiver/metis-reverse/blob/71cbd96a4ee912a1f9249b36659c8b57734ed73f/README.md) | 48102502295e65940e52fdc8e86403a49c626ef4b6724d553dbdc264473beddb |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| SwagSoftware/KisakCOD | Repository returns HTTP 451 from a DMCA block. |
+| OpenSmash-Ultimate/WindowSmash | Moved into OpenSmash-Ultimate, which is curated instead. |
+| SwagSoftware/KisakBlack, ferrumc-rs/ferrumc | Overlapping reimplementation records already exist in the catalog. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Dune Dynasty and Qiew are Class 1 with merged previews; the other two are Class 2. Batch size remains four to slow README.zh-CN.md growth.

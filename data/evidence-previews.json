@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-25T07:37:20+00:00",
-    "entry_count": 1210,
-    "class_entry_count": 1241,
+    "generated_at": "2026-11-25T08:41:58+00:00",
+    "entry_count": 1212,
+    "class_entry_count": 1243,
     "class_counts": {
-      "image": 1170,
+      "image": 1172,
       "video": 40
     },
     "missing_count": 31,
@@ -2351,6 +2351,15 @@
       "checked_at": "2026-11-10T02:57:21+00:00"
     },
     {
+      "id": "dune-dynasty-case",
+      "image_url": "https://raw.githubusercontent.com/gameflorist/dunedynasty/755876a710c0b188075ebe89cb40c068490e08e2/docs/screenshots.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/gameflorist/dunedynasty",
+      "revision": "755876a710c0b188075ebe89cb40c068490e08e2",
+      "checked_at": "2026-11-25T08:41:58+00:00"
+    },
+    {
       "id": "dyld-cache-extract",
       "image_url": "https://raw.githubusercontent.com/macmade/dyld_cache_extract/b29fbb9266c3c3b072c37c18bef3251105cd40b6/Resources/MainWindow.png",
       "kind": "image",
@@ -4391,7 +4400,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-25T07:37:19+00:00"
+      "checked_at": "2026-11-25T08:41:57+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -7281,6 +7290,15 @@
       "source_url": "https://github.com/AndyMcLeod/qhub-relay-control",
       "revision": "676253fe6404485068a188f35a46c2cbb664608c",
       "checked_at": "2026-11-09T05:33:55+00:00"
+    },
+    {
+      "id": "qiew",
+      "image_url": "https://raw.githubusercontent.com/mtivadar/qiew/652ec8178a7331a57e0cc4eb31015a11504b85a7/wiki/binview.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/mtivadar/qiew",
+      "revision": "652ec8178a7331a57e0cc4eb31015a11504b85a7",
+      "checked_at": "2026-11-25T08:41:58+00:00"
     },
     {
       "id": "quanli-supercam-case",

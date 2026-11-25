@@ -46178,5 +46178,37 @@
       "该分支的装备配置功能仍属实验性、尚不完整。",
       "采用 MIT 许可证。"
     ]
+  },
+  "dune-dynasty-case": {
+    "name": "Dune Dynasty：建立在逆向引擎上的沙丘 II 重制",
+    "requirements": [
+      "需要原版《沙丘 II》游戏数据；引擎本体包含在项目中。",
+      "延续已停更的 SourceForge 项目，面向 Windows、macOS 与 Linux。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "qiew": {
+    "name": "Qiew：面向恶意软件分析的十六进制/反汇编查看器",
+    "requirements": [
+      "需要 Python 3.10 或更新版本及 PySide6 的 Qt 6，可在 Windows、macOS 与 Linux 运行。",
+      "它是查看器与轻量编辑器，不是完整的程序分析套件。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "open-smash-ultimate-case": {
+    "name": "OpenSmash-Ultimate：任天堂明星大乱斗 特别版原生 PC 程序",
+    "requirements": [
+      "需要自行从主机导出的游戏代码与数据；不包含任何游戏文件。",
+      "它是 WindowSmash 与 ssbu-recomp 的合并项目，提供发布包与安装指南。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "metis-reverse": {
+    "name": "Metis Reverse：面向 AI 助手的逆向 MCP 服务器",
+    "requirements": [
+      "需要 Python 3.10 或更新版本，以及 Node.js 18 或更新版本来运行 CLI 安装器。",
+      "它把逆向操作暴露给支持 MCP 的助手，本身不执行分析。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

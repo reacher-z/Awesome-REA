@@ -163175,5 +163175,117 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "dune-dynasty-case",
+    "name": "Dune Dynasty: a remaster of Dune II built on the reverse-engineered engine",
+    "url": "https://github.com/gameflorist/dunedynasty",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "A remaster and enhancement of Westwood Dune II that builds on the original reverse-engineered game engine, adding modernizations and new features with Windows, macOS and Linux builds, continuing an abandoned SourceForge project.",
+    "description_zh": "基于原版逆向引擎对 Westwood《沙丘 II》做重制与增强，加入现代化改进与新功能，提供 Windows、macOS 与 Linux 构建，延续一个已停更的 SourceForge 项目。",
+    "evidence_url": "https://github.com/gameflorist/dunedynasty/blob/755876a710c0b188075ebe89cb40c068490e08e2/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original Dune II game data files; the engine itself is included.",
+      "It continues the abandoned SourceForge project and targets Windows, macOS and Linux.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "qiew",
+    "name": "Qiew: a hex, binary and disassembly viewer for malware analysis",
+    "url": "https://github.com/mtivadar/qiew",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A hex, binary and disassembly viewer designed for reverse engineering malware, highlighting strings, calls, PE structures and overlays, with a multi-architecture disassembler, encrypted-region helpers and annotation files.",
+    "description_zh": "面向恶意软件逆向的十六进制、二进制与反汇编查看器，高亮字符串、调用、PE 结构与 overlay，带多架构反汇编、加解密辅助与注释文件。",
+    "evidence_url": "https://github.com/mtivadar/qiew/blob/652ec8178a7331a57e0cc4eb31015a11504b85a7/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Python 3.10 or newer with Qt 6 through PySide6; runs on Windows, macOS and Linux.",
+      "It is a viewer and light editor, not a full program-analysis suite.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "open-smash-ultimate-case",
+    "name": "OpenSmash-Ultimate: Super Smash Bros. Ultimate as a native PC program",
+    "url": "https://github.com/OpenSmash-Ultimate/OpenSmash-Ultimate",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Super Smash Bros. Ultimate turned into a native PC program by static recompilation: the ARM64 code is translated into C once, ahead of time, and linked with a runtime standing in for the Nintendo Switch; the merge of WindowSmash and ssbu-recomp.",
+    "description_zh": "通过静态重编译把《任天堂明星大乱斗 特别版》变成原生 PC 程序：ARM64 代码一次性提前翻译为 C，并与替代 Nintendo Switch 的运行时链接；该项目是 WindowSmash 与 ssbu-recomp 的合并。",
+    "evidence_url": "https://github.com/OpenSmash-Ultimate/OpenSmash-Ultimate/blob/6284a3e22078ef4886a767d2347268507e68ef74/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires game code and data dumped from your own console; no game files are included.",
+      "It merges WindowSmash and ssbu-recomp into one project with releases and an installation guide.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "metis-reverse",
+    "name": "Metis Reverse: a reverse-engineering MCP server for AI assistants",
+    "url": "https://github.com/Wholiver/metis-reverse",
+    "category": "agent-mcp",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "An MCP server plus a one-click multi-agent installer that gives AI assistants a deterministic reverse-engineering toolset, published as an npm CLI and Python package.",
+    "description_zh": "面向 AI 助手的逆向工程 MCP 服务器，附带一键安装多智能体的安装器，以 npm CLI 与 Python 包发布。",
+    "evidence_url": "https://github.com/Wholiver/metis-reverse/blob/71cbd96a4ee912a1f9249b36659c8b57734ed73f/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Python 3.10 or newer and Node.js 18 or newer for the CLI installer.",
+      "It exposes reverse-engineering actions to an MCP-capable assistant rather than performing analysis on its own.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

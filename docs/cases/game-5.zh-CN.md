@@ -6,10 +6,13 @@
 
 [English](game-5.md)
 
-**477 个案例**
+**480 个案例**
 
 ## 引擎重实现
 
+- [**Phoenix：Emperor of the Fading Suns 的 Java 重制版**](https://github.com/joulupunikki/Phoenix) - Phoenix 用 Java 重建 Emperor of the Fading Suns，运行时读取用户安装的 EFS 1.4 数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/phoenix-efs-case/)</sub>
+- [**physics\_RT：重建 Ballance 物理行为**](https://github.com/doyaGu/physics_RT) - physics\_RT 使用 IVP 数值核心，将 Ballance 的物理行为重建为 Win32 Virtools DLL，涉及碰撞几何、作用力处理和模拟时序，并记录了原始 DLL 差分测试与游戏运行对照。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/physics-rt-ballance-case/)</sub>
+- [**Pinball Fantasies Reassembled：重建 DOS 游戏引擎**](https://github.com/wanda-phi/pfr) - Pinball Fantasies Reassembled 用 Rust 和原版游戏文件重建 1993 年的 DOS 游戏引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pinball-fantasies-reassembled-case/)</sub>
 - [**Pizza Legacy：重建 Pizza Tycoon**](https://codeberg.org/cowomaly/pizzalegacy) - Pizza Legacy 以 C++20 引擎重建 1994 年 DOS 游戏 Pizza Tycoon，也就是德语发行的 Pizza Connection，并读取原版资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pizza-legacy-case/)</sub>
 - [**pokerecomp：重实现 Game Boy 宝可梦游戏**](https://github.com/Decryptu/pokerecomp) - pokerecomp 用 GDScript 在 Godot 4 里重实现 Game Boy 的宝可梦游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokerecomp/)</sub>
 - [**Portémon Nitro：HeartGold 与 SoulSilver 游戏引擎移植**](https://github.com/portemon-nitro/portemon) - Portémon Nitro 使用 LÖVE 重建 Pokémon HeartGold 与 SoulSilver 的游戏引擎，面向电脑和移动设备。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/portemon-nitro-hgss-case/)</sub>
