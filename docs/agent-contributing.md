@@ -18,7 +18,7 @@ Use an issue when evidence is incomplete or a classification needs maintainer in
 
 ## What should an agent check first?
 
-Read AGENTS.md and CONTRIBUTING.md from the current upstream default branch, preserving any unfinished local work. Search before submitting:
+Read AGENTS.md and CONTRIBUTING.md from the current upstream default branch, preserving any unfinished local work. Use Python 3.12 or newer for the repository scripts; CI runs Python 3.12. Check `python3 --version` before running them. Search before submitting:
 
 ```sh
 python3 scripts/catalog.py "owner/repository"
