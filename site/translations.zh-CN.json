@@ -45954,5 +45954,53 @@
       "运行于已越狱的 PS5 与 PS5 Pro，基于 WiiCompiled。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "mbhaxe-case": {
+    "name": "MBHaxe：用 Haxe 重实现、跨八个平台的 Marble Blast",
+    "requirements": [
+      "需要自备对应 Marble Blast 作品的数据；网页版另行托管。",
+      "通过 Haxe 与 HaxeFlixel 面向 Windows、macOS、Linux、网页、iOS 与 Android。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "melonds-android": {
+    "name": "Android 版 melonDS：Android 设备上的 DS 模拟器",
+    "requirements": [
+      "需要 Android 设备以及自备的 DS ROM 与 BIOS。",
+      "它封装 melonDS 模拟核心，不是另一套 DS 实现。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "tmnt-arcade-port-case": {
+    "name": "忍者神龟街机版：基于反编译的原生移植",
+    "requirements": [
+      "需要自备 MAME tmnt ROM 集；仓库不含游戏数据。",
+      "可在多个平台构建街机版与家用机版，并支持掌机。",
+      "采用 BSD-3-Clause 许可证。"
+    ]
+  },
+  "hommare-case": {
+    "name": "HommaRe：面向 Apple 设备的英雄无敌 V 重编译",
+    "requirements": [
+      "需要自备 GOG 版游戏；不包含游戏数据。",
+      "面向 Apple 芯片 Mac、iPad 与 iPhone，且不是模拟器。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "voyager-sp-android-case": {
+    "name": "Android 版精英部队单人战役：移动端的星际迷航航海家号",
+    "requirements": [
+      "需要自备《精英部队》游戏数据；不包含游戏数据。",
+      "覆盖单人战役，与多人移植共享引擎基础。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "smo-android-case": {
+    "name": "Android 版超级马力欧 奥德赛：移动端的静态重编译",
+    "requirements": [
+      "需要自备游戏及自行导出的主机密钥；仓库不含游戏代码或资源。",
+      "仍是早期进行中的 Android 移植，基于 smo-recomp，并说明大部分代码由 AI 编写。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

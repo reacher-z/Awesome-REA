@@ -162379,5 +162379,178 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "mbhaxe-case",
+    "name": "MBHaxe: Marble Blast reimplemented in Haxe across eight platforms",
+    "url": "https://github.com/RandomityGuy/MBHaxe",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "An optimized reimplementation of Marble Blast Gold, Platinum, Ultra and PlatinumQuest in Haxe with roughly identical physics and cross-platform multiplayer, running on Windows, macOS, Linux, the web, iOS and Android.",
+    "description_zh": "用 Haxe 重实现 Marble Blast Gold、Platinum、Ultra 与 PlatinumQuest 的优化版本，物理表现基本一致并支持跨平台多人对战，可运行于 Windows、macOS、Linux、网页、iOS 与 Android。",
+    "evidence_url": "https://github.com/RandomityGuy/MBHaxe/blob/6cdb43386b550da5b155543f24db473ebec566f5/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires game data for the Marble Blast titles you own; the browser builds are hosted separately.",
+      "It targets Windows, macOS, Linux, web, iOS and Android through Haxe and HaxeFlixel.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "melonds-android",
+    "name": "melonDS for Android: the DS emulator on Android devices",
+    "url": "https://github.com/rafaelvcaetano/melonDS-android",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An Android front end for the melonDS Nintendo DS emulator, giving Android phones and tablets the emulator core, touch controls and on-device ROM management.",
+    "description_zh": "melonDS Nintendo DS 模拟器的 Android 前端，让 Android 手机与平板使用其模拟核心、触控操作与本地 ROM 管理。",
+    "evidence_url": "https://github.com/rafaelvcaetano/melonDS-android/blob/909647ba95ce903797e0112fedae570732bfd9cc/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an Android device and your own DS ROMs and BIOS files.",
+      "It wraps the melonDS emulator core and is not a separate DS implementation.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "tmnt-arcade-port-case",
+    "name": "Teenage Mutant Ninja Turtles arcade: a native port built on the decompilation",
+    "url": "https://github.com/cheviman/tmnt-port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "Konami 1989 arcade Teenage Mutant Ninja Turtles as a native game for computers, Raspberry Pi, Switch, Android and iOS, built on the tmntarcade-decomp decompilation that checks state, picture and sound frame by frame against MAME.",
+    "description_zh": "把 Konami 1989 年街机《忍者神龟》移植为电脑、树莓派、Switch、Android 与 iOS 原生游戏，基于 tmntarcade-decomp 反编译成果，并逐帧对照 MAME 校验状态、画面与声音。",
+    "evidence_url": "https://github.com/cheviman/tmnt-port/blob/aba58859fbc82f214bf3e82c928cd20d12902bc4/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own MAME tmnt ROM set; the repository contains no game data.",
+      "It builds the arcade game and a home-console version on several platforms, including handhelds.",
+      "BSD-3-Clause-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "hommare-case",
+    "name": "HommaRe: Heroes of Might and Magic V recompiled for Apple devices",
+    "url": "https://github.com/livmaster-dev/HommaRe-public",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An unofficial static recompilation of Heroes of Might and Magic V with Hammers of Fate and Tribes of the East, running natively on Apple silicon Macs, iPad and iPhone from a GOG copy the player owns.",
+    "description_zh": "《魔法门之英雄无敌 V》及《命运之锤》《东方部落》的非官方静态重编译，在 Apple 芯片 Mac、iPad 与 iPhone 上原生运行自备的 GOG 副本。",
+    "evidence_url": "https://github.com/livmaster-dev/HommaRe-public/blob/c398121ffcb994a10b883a0ff9f102cbe7b2d279/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own GOG copy of the game; no game data is included.",
+      "It targets Apple silicon Macs, iPads and iPhones and is not an emulator.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "voyager-sp-android-case",
+    "name": "Elite Force Single Player on Android: Star Trek Voyager on mobile",
+    "url": "https://github.com/imjustadudegamer/VoyagerSP-Android",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A native Android port of the 2000 Star Trek: Voyager Elite Force single-player campaign, built on the lilium-voyager engine base with the Quake3e Vulkan renderer and touch plus gamepad controls.",
+    "description_zh": "把 2000 年的《星际迷航：航海家号 精英部队》单人战役移植到 Android，基于 lilium-voyager 引擎与 Quake3e 的 Vulkan 渲染器，支持触控与手柄操作。",
+    "evidence_url": "https://github.com/imjustadudegamer/VoyagerSP-Android/blob/c73750361cfc22c1afb3a2c160fa9c5df57214db/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires game data from a copy of Elite Force you own; no game data is included.",
+      "It covers the single-player campaign and shares its engine base with the multiplayer port.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "smo-android-case",
+    "name": "Super Mario Odyssey on Android: the static recompilation on mobile",
+    "url": "https://github.com/Deez-coder/SMO-android-port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Super Mario Odyssey 1.0.0 running natively on Android from the smo-recomp static recompilation: ARM64 code is translated to C ahead of time with the NDK, NVN graphics go through Vulkan and a project runtime handles shaders, audio and input.",
+    "description_zh": "基于 smo-recomp 静态重编译让《超级马力欧 奥德赛》1.0.0 在 Android 上原生运行：用 NDK 把 ARM64 代码提前翻译成 C，NVN 图形走 Vulkan，由项目运行时处理着色器、音频与输入。",
+    "evidence_url": "https://github.com/Deez-coder/SMO-android-port/blob/1b2f502de940e9f0261ca112db2a5cae6faea7ad/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the game with keys dumped from your own console; no game code or assets ship here.",
+      "It is an early work-in-progress Android port built on smo-recomp and documents that most code was AI-written.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

@@ -989,3 +989,28 @@ Six reconstruction cases: ReStreet, MKW-THWOMP, MP4 Recomp, Liberty Pro Max, Ope
 ## Validation notes
 
 All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; OpenCrystalCaves is Class 1 with a README demo image and the other five are Class 2.
+
+## Batch 37 — 2026-11-25
+
+Six mobile and multi-platform reconstruction cases: MBHaxe, melonDS for Android, the TMNT arcade port, HommaRe, Elite Force Single Player on Android and Super Mario Odyssey on Android.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| mbhaxe-case | reconstruction-cases | [RandomityGuy/MBHaxe](https://github.com/RandomityGuy/MBHaxe/blob/6cdb43386b550da5b155543f24db473ebec566f5/README.md) | 219746053eb9840b462a132b519629a4cd6fb08416bebc36ebf29de9feca061b |
+| melonds-android | game-analysis | [rafaelvcaetano/melonDS-android](https://github.com/rafaelvcaetano/melonDS-android/blob/909647ba95ce903797e0112fedae570732bfd9cc/README.md) | ac25535dfd91a24cc0d3cc1b5a0d180a64fd6cabeab720a74cae2c5b02f69759 |
+| tmnt-arcade-port-case | reconstruction-cases | [cheviman/tmnt-port](https://github.com/cheviman/tmnt-port/blob/aba58859fbc82f214bf3e82c928cd20d12902bc4/README.md) | 7ee39db04b959dd46e8b108518bfea179566bd11b91e7a9940dd7e01734f89b1 |
+| hommare-case | reconstruction-cases | [livmaster-dev/HommaRe-public](https://github.com/livmaster-dev/HommaRe-public/blob/c398121ffcb994a10b883a0ff9f102cbe7b2d279/README.md) | 348fb84fe600c3cf01fa24ecae3aeae546fa5d304532f101b5bb788e1d77d942 |
+| voyager-sp-android-case | reconstruction-cases | [imjustadudegamer/VoyagerSP-Android](https://github.com/imjustadudegamer/VoyagerSP-Android/blob/c73750361cfc22c1afb3a2c160fa9c5df57214db/README.md) | 61ca4fb14d58593e44e14c338bd92fa9d08bdb02caa3971b3d92b7a5f68701c8 |
+| smo-android-case | reconstruction-cases | [Deez-coder/SMO-android-port](https://github.com/Deez-coder/SMO-android-port/blob/1b2f502de940e9f0261ca112db2a5cae6faea7ad/README.md) | a49cc1c8cba8ab63fc8fd115df13d7ef9c7dc5c2ff4bf42591839d45ccd3770c |
+
+## Candidates set aside
+
+| Candidate | Review result |
+| --- | --- |
+| daniele-rapagnani/alephone-android | Last pushed 2024-07-18, too stale for an active entry. |
+| EXL/Gish | Last pushed 2022-08-12, too stale for an active entry. |
+| JayElDragon/Paper-Boat-Android-Port | The catalog already carries PaperBoat, the native Paper Mario port built on the decompilation. |
+
+## Validation notes
+
+All six records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. MBHaxe, melonDS for Android, the TMNT arcade port and Elite Force Single Player are Class 1 with merged previews; HommaRe and the Super Mario Odyssey Android port are Class 2.

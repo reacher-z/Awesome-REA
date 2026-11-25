@@ -6,10 +6,16 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**458 case studies**
+**464 case studies**
 
 ## Engine reimplementations
 
+- [**R.E.L.I.V.E.: replacing the engines for Abe’s Oddysee and Abe’s Exoddus**](https://aliveteam.github.io) - R.E.L.I.V.E. develops a cross-platform engine intended to replace the original PC executables for Abe’s Oddysee and Abe’s Exoddus. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/relive-engine-case/)</sub>
+- [**RA2 Engine: reconstructing Red Alert 2 and Yuri's Revenge**](https://github.com/omarelarab/ra2-engine) - RA2 Engine rebuilds Command &amp; Conquer: Red Alert 2 with Yuri's Revenge as a C++17 and SDL2 engine for Windows and Android. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ra2-engine-case/)</sub>
+- [**Rad-Therapy: recreating Half-Life in QuakeC**](https://github.com/eukara/freehl) - Rad-Therapy is a QuakeC game for the FTE engine that plays the 1998 Half-Life campaign and deathmatch. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rad-therapy/)</sub>
+- [**RAD: recreating the Radix: Beyond the Void engine**](https://github.com/jval1972/Rad-X) - RAD recreates the engine of the 1995 DOS game Radix: Beyond the Void and loads radix.dat from the original v2 remix release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rad-x-case/)</sub>
+- [**Rails: an OCaml reconstruction of Railroad Tycoon**](https://github.com/bluddy/rails) - Rails rebuilds the 1990 Railroad Tycoon game in OCaml, implementing railroad construction, train management, AI rivals and economy systems. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rails-railroad-tycoon-case/)</sub>
+- [**RappelzCore &amp; RappelzRust: reconstructing a Rappelz NoLimits client and server**](https://github.com/BlaMacfly/RappelzCore) - RappelzCore and RappelzRust reconstruct a Rappelz NoLimits server and game client in Rust from analysis of the customized SFrame.exe client. <sub>Case study · Mixed workflow · Also: Protocol · [Full entry](https://awesomerea.org/resources/rappelzcore-rappelzrust-case/)</sub>
 - [**raw(gl): Another World engine reimplementation**](https://github.com/cyxx/rawgl) - raw(gl) reimplements the Another World engine while reading data from the original game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rawgl-another-world-case/)</sub>
 - [**rawpsx: an Another World engine reimplementation for PlayStation**](https://github.com/fgsfdsfgs/rawpsx) - rawpsx rewrites the Another World engine in C for the original PlayStation, adapting the earlier rawgl implementation with PSn00bSDK. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rawpsx-another-world-case/)</sub>
 - [**Re-Comprehend: rebuilding Penguin Software adventure engines**](https://github.com/RyanMallon/recomprehend) - Re-Comprehend reimplements the Comprehend and Graphics Magician engines for Penguin Software adventures including Transylvania, Crimson Crown and OO-Topos. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/re-comprehend-case/)</sub>

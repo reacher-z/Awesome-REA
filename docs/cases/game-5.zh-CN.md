@@ -6,10 +6,16 @@
 
 [English](game-5.md)
 
-**458 个案例**
+**464 个案例**
 
 ## 引擎重实现
 
+- [**R.E.L.I.V.E.：《Abe’s Oddysee》和《Abe’s Exoddus》引擎重建**](https://aliveteam.github.io) - R.E.L.I.V.E. 为《Abe’s Oddysee》和《Abe’s Exoddus》开发跨平台引擎，目标是替代原版 PC 可执行程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/relive-engine-case/)</sub>
+- [**RA2 Engine：重建《红色警戒 2》与《尤里的复仇》**](https://github.com/omarelarab/ra2-engine) - RA2 Engine 用 C++17 和 SDL2 为 Windows 与 Android 重建《红色警戒 2：尤里的复仇》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ra2-engine-case/)</sub>
+- [**Rad-Therapy：用 QuakeC 重建《半衰期》**](https://github.com/eukara/freehl) - Rad-Therapy 是给 FTE 引擎使用的 QuakeC 游戏，用来玩 1998 年的《半衰期》战役和死亡竞赛。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rad-therapy/)</sub>
+- [**RAD：重建 Radix: Beyond the Void 游戏引擎**](https://github.com/jval1972/Rad-X) - RAD 重建 1995 年 DOS 游戏《Radix: Beyond the Void》的引擎，读取原版 v2 remix 的 radix.dat。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rad-x-case/)</sub>
+- [**Rails：用 OCaml 重建《Railroad Tycoon》**](https://github.com/bluddy/rails) - Rails 使用 OCaml 重建 1990 年的《Railroad Tycoon》，实现铁路建设、列车管理、AI 对手及经济系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rails-railroad-tycoon-case/)</sub>
+- [**RappelzCore &amp; RappelzRust：重建 Rappelz NoLimits 客户端与服务端**](https://github.com/BlaMacfly/RappelzCore) - RappelzCore 与 RappelzRust 根据定制版 SFrame.exe 客户端的分析结果，用 Rust 重建 Rappelz NoLimits 服务端和游戏客户端。 <sub>案例 · 混合工具流程 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/rappelzcore-rappelzrust-case/)</sub>
 - [**raw(gl)：Another World 引擎重建**](https://github.com/cyxx/rawgl) - raw(gl) 重建 Another World 引擎，并读取原版游戏数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rawgl-another-world-case/)</sub>
 - [**rawpsx：《异世界》引擎的 PlayStation 重实现**](https://github.com/fgsfdsfgs/rawpsx) - rawpsx 借助 PSn00bSDK，以 C 语言把早期 rawgl 实现改写为初代 PlayStation 上运行的《异世界》引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rawpsx-another-world-case/)</sub>
 - [**Re-Comprehend：重建 Penguin Software 冒险游戏引擎**](https://github.com/RyanMallon/recomprehend) - Re-Comprehend 重新实现了用于 Transylvania、Crimson Crown 和 OO-Topos 等作品的 Comprehend 与 Graphics Magician 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/re-comprehend-case/)</sub>

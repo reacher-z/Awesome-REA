@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-25T02:26:55+00:00",
-    "entry_count": 1198,
-    "class_entry_count": 1229,
+    "generated_at": "2026-11-25T03:22:15+00:00",
+    "entry_count": 1202,
+    "class_entry_count": 1233,
     "class_counts": {
-      "image": 1158,
+      "image": 1162,
       "video": 40
     },
     "missing_count": 31,
@@ -4346,7 +4346,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-25T02:26:53+00:00"
+      "checked_at": "2026-11-25T03:22:14+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -4826,6 +4826,15 @@
       "checked_at": "2026-11-09T03:29:44+00:00"
     },
     {
+      "id": "mbhaxe-case",
+      "image_url": "https://imgur.com/x6DYms7.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/RandomityGuy/MBHaxe",
+      "revision": "6cdb43386b550da5b155543f24db473ebec566f5",
+      "checked_at": "2026-11-25T03:22:15+00:00"
+    },
+    {
       "id": "mcdub3-nx-case",
       "image_url": "https://raw.githubusercontent.com/laureladastra/mcdub3-nx/60d033ebbd34db0eea195285a88d86f7c18f83b0/assets/preview.png",
       "kind": "image",
@@ -5013,6 +5022,15 @@
       "source_url": "https://github.com/melonDS-emu/melonDS",
       "revision": "ff972523f8a70e877dd054439876c3c8c6b79197",
       "checked_at": "2026-11-23T18:17:22+00:00"
+    },
+    {
+      "id": "melonds-android",
+      "image_url": "https://raw.githubusercontent.com/rafaelvcaetano/melonDS-android/909647ba95ce903797e0112fedae570732bfd9cc/.github/images/screenshot_mobile0.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/rafaelvcaetano/melonDS-android",
+      "revision": "909647ba95ce903797e0112fedae570732bfd9cc",
+      "checked_at": "2026-11-25T03:22:15+00:00"
     },
     {
       "id": "melonloader",
@@ -9712,6 +9730,15 @@
       "checked_at": "2026-11-22T06:41:04+00:00"
     },
     {
+      "id": "tmnt-arcade-port-case",
+      "image_url": "https://raw.githubusercontent.com/cheviman/tmnt-port/aba58859fbc82f214bf3e82c928cd20d12902bc4/docs/screenshots/console_options.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/cheviman/tmnt-port",
+      "revision": "aba58859fbc82f214bf3e82c928cd20d12902bc4",
+      "checked_at": "2026-11-25T03:22:15+00:00"
+    },
+    {
       "id": "tmnt-recomp-case",
       "image_url": "https://raw.githubusercontent.com/naparuba-retro/tmnt-recomp/a71c074d4a3d3c21565290bf12045dbf2104bef1/images/menu_play_whole_pizza.png",
       "kind": "image",
@@ -10250,6 +10277,15 @@
       "source_url": "https://github.com/marin-m/vmlinux-to-elf",
       "revision": "300aa607c34a44701604e99827b9bd4aa3a65144",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "voyager-sp-android-case",
+      "image_url": "https://github.com/user-attachments/assets/ca33430e-20ca-42ed-8d29-32836066d375",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/imjustadudegamer/VoyagerSP-Android",
+      "revision": "c73750361cfc22c1afb3a2c160fa9c5df57214db",
+      "checked_at": "2026-11-25T03:22:15+00:00"
     },
     {
       "id": "vpw2-recomp-case",

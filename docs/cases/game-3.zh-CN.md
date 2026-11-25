@@ -6,7 +6,7 @@
 
 [English](game-3.md)
 
-**609 个案例**
+**608 个案例**
 
 ## 静态重编译
 
@@ -14,6 +14,7 @@
 - [**Hell's Gate：但丁的地狱的静态重编译**](https://github.com/florinp93/hells-gate-recomp) - 把 Xbox 360 版《但丁的地狱》移植到 PC，使用 ReXGlue SDK。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hells-gate-recomp/)</sub>
 - [**hl2-recomp：Xbox 版 Half-Life 2 的静态重编译**](https://github.com/sp00nznet/hl2-recomp) - hl2-recomp 使用 xboxrecomp 将 Xbox 版 Half-Life 2 的 XBE 转为 C，并链接到 Windows 原生运行环境。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/half-life-2-xbox-recomp-case/)</sub>
 - [**Hobbit Recompiled：LEGO The Hobbit 的 Apple Silicon 重编译移植**](https://github.com/itsdunintime104/HobbitRecompiled) - Hobbit Recompiled 将《LEGO The Hobbit》的 32 位 Intel Mac 程序转换为 C，并构建 Apple 芯片 Mac 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hobbit-recompiled-case/)</sub>
+- [**HommaRe：面向 Apple 设备的英雄无敌 V 重编译**](https://github.com/livmaster-dev/HommaRe-public) - 《魔法门之英雄无敌 V》及《命运之锤》《东方部落》的非官方静态重编译，在 Apple 芯片 Mac、iPad 与 iPhone 上原生运行自备的 GOG 副本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hommare-case/)</sub>
 - [**Hookshot：Switch 2 版《塞尔达传说：时之笛》的静态重编译**](https://github.com/NotRexed/Hookshot) - Hookshot 使用用户自己的游戏文件，将 Switch 2 重制版《塞尔达传说：时之笛》静态重编译为 Windows 或 Linux 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hookshot-oot-switch2-case/)</sub>
 - [**HotelMarioRecomp：早期 Philips CD-i 静态重编译工程**](https://github.com/mstan/HotelMarioRecomp) - HotelMarioRecomp 基于 cdirecomp 静态重编译引擎，使用用户提供的 CD-i BIOS 和游戏光盘镜像构建原生运行的 Hotel Mario。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hotel-mario-cdi-recomp-case/)</sub>
 - [**Hover!：将 Windows 95 游戏静态重编译为原生 C 程序**](https://github.com/sp00nznet/hover) - Hover! 将用户自有的 Windows 95 游戏 Microsoft Hover! 的 HOVER.EXE 静态重编译为 C，并构建 32 位原生宿主程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hover-static-recompilation-case/)</sub>
@@ -393,6 +394,7 @@
 - [**Super Mario All-Stars：部分静态重编译与原生移植**](https://github.com/TanookiStudios/SuperMarioAllStarsRecomp) - 项目使用玩家提供的指定 SNES 版《Super Mario All-Stars》ROM、snesrecomp 和各 ROM 存储体的分析配置，构建原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-mario-all-stars-recompiled-case/)</sub>
 - [**Super Mario Galaxy：将 Wii 游戏静态重编译至 PS5**](https://github.com/griches/PS5_MarioGalaxy) - 1.1.0 版把 Wii 美版《超级马里奥银河》RMGE01 修订 0 静态重编译成 PlayStation 5 自制标题 PPSA99315，分辨率为 4K，帧率 60。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ps5-mario-galaxy/)</sub>
 - [**Super Mario Land 2：支持自适应宽屏的 Game Boy 静态重编译**](https://github.com/mstan/SuperMarioLand2Recomp) - Super Mario Land 2: 6 Golden Coins — Recompiled 使用 gbrecompiled，从用户提供的 V1.0 Game Boy ROM 构建原版及 DX 彩色版两套原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-mario-land-2-recompiled-case/)</sub>
+- [**Android 版超级马力欧 奥德赛：移动端的静态重编译**](https://github.com/Deez-coder/SMO-android-port) - 基于 smo-recomp 静态重编译让《超级马力欧 奥德赛》1.0.0 在 Android 上原生运行：用 NDK 把 ARM64 代码提前翻译成 C，NVN 图形走 Vulkan，由项目运行时处理着色器、音频与输入。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/smo-android-case/)</sub>
 - [**Super Smash Bros. Ultimate：PlayStation 4 静态重编译**](https://github.com/iHaiDeeZ/SSBU) - 该项目把《任天堂明星大乱斗 特别版》13.0.2 的静态重编译带到 PlayStation 4。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssbu-ps4-recomp/)</sub>
 - [**Super Street Fighter II Turbo HD Remix：Xbox 360 游戏静态重编译移植**](https://github.com/saulob/ssf2t-hd-remix-recompiled) - 该移植项目使用 ReXGlue SDK 将 Xbox 360 版《Super Street Fighter II Turbo HD Remix》的代码静态转译为 PC 本机代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssf2t-hd-remix-recompiled-case/)</sub>
 - [**SuperMarioRPGSNESRecomp：《超级马力欧 RPG》的早期 65816 静态重编译**](https://github.com/mstan/SuperMarioRPGRecomp) - SuperMarioRPGSNESRecomp 使用 snesrecomp 处理《超级马力欧 RPG》，将符合条件的 65816 代码路径编译为 C，其余路径由解释器执行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-mario-rpg-snes-recomp-case/)</sub>
@@ -609,6 +611,7 @@
 - [**EA SPORTS UFC 3：面向 Linux 与 Windows 的 PS4 游戏移植**](https://github.com/GNSB/UFC-3-PS4-PORT-LINUX-WINDOWS) - EA SPORTS UFC 3 移植版在 Linux 和 Windows 上直接运行 PS4 游戏原有的 x86-64 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ufc-3-ps4-port-case/)</sub>
 - [**EarthBound Companion：《地球冒险》的原生版本**](https://github.com/rages4calm/earthbound-companion) - EarthBound Companion 是 EarthBound 的原生构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/earthbound-companion/)</sub>
 - [**Eden：《Project Eden》部分重建**](https://github.com/mercat0r/Eden) - Eden 着手以 DirectX 9 重建 2001 年游戏《Project Eden》的 Windows 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/eden-project-eden-case/)</sub>
+- [**Android 版精英部队单人战役：移动端的星际迷航航海家号**](https://github.com/imjustadudegamer/VoyagerSP-Android) - 把 2000 年的《星际迷航：航海家号 精英部队》单人战役移植到 Android，基于 lilium-voyager 引擎与 Quake3e 的 Vulkan 渲染器，支持触控与手柄操作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/voyager-sp-android-case/)</sub>
 - [**Emerald 3DS：《Pokémon Emerald》的 Nintendo 3DS 原生移植**](https://github.com/ZallaxDev/emerald-3ds) - Emerald 3DS 将《Pokémon Emerald》的反编译代码移植为 Nintendo 3DS 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/emerald-3ds-case/)</sub>
 - [**F-15 Strike Eagle 2 source port：重建版 DOS 游戏的现代平台移植**](https://github.com/neuviemeporte/f15se2-ex) - F-15 Strike Eagle 2 source port 将这款 1991 年 DOS 游戏的重建源码移植到现代架构，使用 SDL3 处理输入和界面、OpenGL 渲染，并模拟 AdLib 音频。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f15-strike-eagle-2-source-port-case/)</sub>
 - [**F-Zero Forever：SNES F-Zero 的现代 PC 移植**](https://github.com/RetroPortingToolKit/FZeroSNESRecomp) - 把 SNES 原版《F-Zero》现代化移植到 PC 的项目：增加赛道、杯赛、最多 4 人分屏与高清 Mode 7，由 RetroPortingToolkit 团队与 F-Zero mod 制作者合作完成。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fzero-forever/)</sub>
@@ -618,8 +621,4 @@
 - [**Final Fantasy 4: The After Years Vita：在 PS Vita 上重宿主 Android 程序**](https://github.com/Rinnegatamante/ff4a_vita) - Final Fantasy 4: The After Years Vita 使用原生加载器在 PS Vita 上运行 Android 版游戏程序。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/final-fantasy-after-years-vita-case/)</sub>
 - [**Final Fantasy Dimensions Vita：Android 游戏的 PS Vita 移植**](https://github.com/Rinnegatamante/ffd-vita) - Final Fantasy Dimensions Vita 在 PS Vita 内存中装载《Final Fantasy Dimensions》Android 版的 ARMv6 程序，以原生函数处理导入项并应用补丁。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/final-fantasy-dimensions-vita-case/)</sub>
 - [**Forest：《Animal Crossing》GameCube 版 PC 移植**](https://github.com/ACreTeam/forest) - Forest 基于匹配反编译成果将 GameCube 版《Animal Crossing》移植到 PC。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/forest-animal-crossing-port-case/)</sub>
-- [**Foxhollow：《Star Fox Adventures》原生移植**](https://github.com/JackPriceBurns/foxhollow) - Foxhollow 基于 SFA 反编译成果和 Aurora 兼容层构建《Star Fox Adventures》的原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/foxhollow-star-fox-adventures-case/)</sub>
-- [**Freeserf.net：将《工人物语》初代重建版移植为 C#**](https://github.com/Pyrdacor/freeserf.net) - Freeserf.net 用 C# 移植并扩展 freeserf 对《工人物语》初代的重建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/freeserf-net-settlers-case/)</sub>
-- [**Frontier Elite II Intro Player：重建游戏片头渲染与音频**](https://github.com/watsonmw/fe2-intro) - Frontier Elite II Intro Player 用 C 重建《Frontier: Elite II》片头的 3D 渲染和音频播放，支持 Amiga 与 SDL 平台。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/frontier-elite-ii-intro-player-case/)</sub>
-- [**G-Diffuser 3DS：《F-Zero X》的任天堂 3DS 移植**](https://github.com/cruxxxxxx/gdx-3ds) - G-Diffuser 3DS 把《F-Zero X》反编译原生移植到旧版和新版任天堂 3DS，基于 G-Diffuser 的 PC 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gdx-3ds-case/)</sub>
 <!-- END GENERATED CASES -->
