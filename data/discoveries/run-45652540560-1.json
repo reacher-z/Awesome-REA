@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-45652540560-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-25T16:45:05Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 428,
+    "selected_count": 4,
+    "selected_ids": [
+      "scan-582454950",
+      "scan-572193332",
+      "scan-572177756",
+      "scan-545813261"
+    ],
+    "record_sha256": {
+      "scan-582454950": "d366b3266ac07492b2f364ed93afc2ccdb675b8e39b593abcb893eadecc91e85",
+      "scan-572193332": "b0b48e84d67812308c55e4cf5ffcca08e39707fdb38da6dd8ea5b3ad3cb53776",
+      "scan-572177756": "e440f642ce73a45bc32ba69f6d1308d42e86af6c78d12387d7a6b106a1e8b299",
+      "scan-545813261": "4fcd2090058b0220134ff5edad47fe91ed470a2c391b2788b50261c729bd4d75"
+    },
+    "skipped_counts": {
+      "already-listed": 12901,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 45652540560,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "3bda8b19a6063a232bc8a802fb43270d538e90b0",
+    "artifact_id": 15043326503,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:eeaef2818d4cce833c6dafbff902ec851f2e43723d22939f9dbc2d20efd7cdb3",
+    "checkpoint_sha256": "a4617ca6cef28f2bc61fd4d9c45af9fc6ca1a6c906a7060cfd1ff3780c014260",
+    "receipt_sha256": "89c360b68e421cbef14548618e79af54e2bf388e4a3b80c524eb368f65ef2f27",
+    "scan_started_at": "2026-11-25T16:19:13.670028+00:00",
+    "scan_completed_at": "2026-11-25T16:43:54.963048+00:00",
+    "scan_outcome": "time-budget",
+    "capture_counts": {
+      "successful_readme_scans": 134879,
+      "failed": 4907,
+      "attempted_readme_scans": 139786,
+      "unique_repos": 140349,
+      "unattempted_candidates": 563
+    },
+    "integrity_counts": {
+      "qualified": 131862,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-582454950",
+      "name": "dimacotorobai/Nioh2Trainer",
+      "full_name": "dimacotorobai/Nioh2Trainer",
+      "url": "https://github.com/dimacotorobai/Nioh2Trainer",
+      "description_en": "An external trainer for the game Nioh 2. The trainer contains Godmode, OneHitKill, Infinite Stamina, Infinite Anima, Instant Yonkai Charge, Instant Yonkai Cooldown, and Infinite Yonkai Time.",
+      "description_zh": "An external trainer for the game Nioh 2. The trainer contains Godmode, OneHitKill, Infinite Stamina, Infinite Anima, Instant Yonkai Charge, Instant Yonkai Cooldown, and Infinite Yonkai Time.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "csharp",
+        "external",
+        "nioh2",
+        "reverse-engineering",
+        "trainer",
+        "windows",
+        "wpf"
+      ],
+      "stars": 0,
+      "license": null,
+      "archived": false,
+      "updated_at": "2025-03-22T13:48:02Z",
+      "pushed_at": "2023-02-04T18:29:12Z",
+      "metadata_observed_at": "2026-11-25T16:40:02.077109Z",
+      "observed_at": "2026-11-25T16:40:08.591518Z",
+      "readme_url": "https://github.com/dimacotorobai/Nioh2Trainer/blob/b513a65a73b0223a839aa23c4c56499e7d73a75b/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "9049600f6aac3979a20533d4ad2786f3cad012a7",
+      "readme_content_git_sha": "9049600f6aac3979a20533d4ad2786f3cad012a7",
+      "readme_sha256": "8657f4007332090fe0d20d4fbf88cdd51b85527b065cd5451aa30fda6f171887",
+      "readme_bytes": 2606,
+      "readme_lines": 28,
+      "readme_heading_count": 6,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app",
+        "game"
+      ],
+      "category": "managed-code",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"reverse engineering\" in:readme is:public fork:false archived:false created:2022-12-20T18:38:08Z..2023-01-10T00:50:13Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "b513a65a73b0223a839aa23c4c56499e7d73a75b"
+    },
+    {
+      "id": "scan-572193332",
+      "name": "asiamina/DigitalFIRE-WikiStyle",
+      "full_name": "asiamina/DigitalFIRE-WikiStyle",
+      "url": "https://github.com/asiamina/DigitalFIRE-WikiStyle",
+      "description_en": "This repository is created for project works related to digital forensics for educational purpose.",
+      "description_zh": "This repository is created for project works related to digital forensics for educational purpose.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "androidstudio",
+        "apk",
+        "digitalforensics",
+        "javakeystore",
+        "pythonwebserver",
+        "smali"
+      ],
+      "stars": 0,
+      "license": null,
+      "archived": false,
+      "updated_at": "2024-06-24T18:47:06Z",
+      "pushed_at": "2022-12-23T16:50:01Z",
+      "metadata_observed_at": "2026-11-25T16:39:27.199446Z",
+      "observed_at": "2026-11-25T16:39:33.867214Z",
+      "readme_url": "https://github.com/asiamina/DigitalFIRE-WikiStyle/blob/8d095e60ebc5f240755ca2599a84d97d0a0bd4dd/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "97aab22cd56f0ec2a1c50537215b071be67b166e",
+      "readme_content_git_sha": "97aab22cd56f0ec2a1c50537215b071be67b166e",
+      "readme_sha256": "33b3f348dfca6c79ee4f9b8e9dbb35eabc5f2d0087a2b47713e001cce42dd13e",
+      "readme_bytes": 6475,
+      "readme_lines": 93,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app"
+      ],
+      "category": "android",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"reverse engineering\" in:readme is:public fork:false archived:false created:2022-11-10T06:13:56Z..2022-11-30T12:26:01Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "8d095e60ebc5f240755ca2599a84d97d0a0bd4dd"
+    },
+    {
+      "id": "scan-572177756",
+      "name": "asiamina/DigitalFIRE-WebStyle",
+      "full_name": "asiamina/DigitalFIRE-WebStyle",
+      "url": "https://github.com/asiamina/DigitalFIRE-WebStyle",
+      "description_en": "This repository contains project works related to Digital Forensics for educational purpose.",
+      "description_zh": "This repository contains project works related to Digital Forensics for educational purpose.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "androidstudio",
+        "apk",
+        "capture-the-flag",
+        "digitalforensics",
+        "javakeystore",
+        "pythonwebserver",
+        "smali"
+      ],
+      "stars": 0,
+      "license": null,
+      "archived": false,
+      "updated_at": "2024-06-24T18:47:06Z",
+      "pushed_at": "2022-12-23T16:51:06Z",
+      "metadata_observed_at": "2026-11-25T16:39:20.814112Z",
+      "observed_at": "2026-11-25T16:39:27.199231Z",
+      "readme_url": "https://github.com/asiamina/DigitalFIRE-WebStyle/blob/c0fa73034c761787380c21caabe065446cff6c7a/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "be3a162344aed75a57ce7c01e749b64f6691406e",
+      "readme_content_git_sha": "be3a162344aed75a57ce7c01e749b64f6691406e",
+      "readme_sha256": "71e3b6e68e1e4a67c0f71be19917de055de820498f4ad20c95da7481de443860",
+      "readme_bytes": 6476,
+      "readme_lines": 93,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app"
+      ],
+      "category": "android",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"reverse engineering\" in:readme is:public fork:false archived:false created:2022-11-10T06:13:56Z..2022-11-30T12:26:01Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "c0fa73034c761787380c21caabe065446cff6c7a"
+    },
+    {
+      "id": "scan-545813261",
+      "name": "npjg/self_documenting_struct",
+      "full_name": "npjg/self_documenting_struct",
+      "url": "https://github.com/npjg/self_documenting_struct",
+      "description_en": "Makes the Python struct library more self-documenting",
+      "description_zh": "Makes the Python struct library more self-documenting",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "bytes",
+        "reverse-engineering",
+        "structure",
+        "structures"
+      ],
+      "stars": 0,
+      "license": "GPL-3.0",
+      "archived": false,
+      "updated_at": "2024-01-06T20:01:59Z",
+      "pushed_at": "2024-01-06T20:09:40Z",
+      "metadata_observed_at": "2026-11-25T16:38:07.618984Z",
+      "observed_at": "2026-11-25T16:38:13.831080Z",
+      "readme_url": "https://github.com/npjg/self_documenting_struct/blob/56788745f1afe5ea85281fc776f8703128395a27/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "c61f761d7b3a27009281301be48ccb4d9abfb5ca",
+      "readme_content_git_sha": "c61f761d7b3a27009281301be48ccb4d9abfb5ca",
+      "readme_sha256": "dbccd1d1e5e3e82d318eacb03b63374e6c3da99232ea7e9d17416321647e274d",
+      "readme_bytes": 3618,
+      "readme_lines": 62,
+      "readme_heading_count": 2,
+      "readme_signals": [
+        "usage"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"reverse engineering\" in:readme is:public fork:false archived:false created:2022-09-30T17:49:43Z..2022-10-21T00:01:48Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "56788745f1afe5ea85281fc776f8703128395a27"
+    }
+  ]
+}
