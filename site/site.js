@@ -30,7 +30,8 @@
     remove: (l) => `移除筛选：${l}`, page: (a, b) => `第 ${a}/${b} 页`, shelf: (a, n) => `${fmt(a)} / ${fmt(n)} 个案例`,
     classLabel: '证据档位', classDetail: ['完整软件复现', '部分范围或分析条目', '有代码和文档，缺演示或下载', '仅笔记'],
     unknownTitle: '复核时来源不可达或不可读', previewAlt: '项目公开文档中的演示截图', previewVideoAlt: '项目公开文档中演示视频的封面', previewFull: (name) => `完整演示截图：${name}`, demoNote: '有 demo · 暂无截图',
-    ovTipLine2: (n, p) => `${fmt(n)} 条 · 占该类 ${p}%`,
+    ovScopeFiltered: (l, n) => `${l}：共 ${n} 条`,
+    ovTip: (name, share, count) => `${name} · ${share} · ${count} 条`,
   } : {
     featured: 'Featured', theme: 'Colour theme', system: 'system', light: 'light', dark: 'dark', reviewed: 'Reviewed', targets: 'Targets', copied: 'Copied',
     showing: (a, n) => `Showing <strong>${fmt(a)}</strong> of <strong>${fmt(n)}</strong>`, range: (a, b, n) => `Showing <strong>${fmt(a)}–${fmt(b)}</strong> of <strong>${fmt(n)}</strong>`,
@@ -40,7 +41,8 @@
     remove: (l) => `Remove filter: ${l}`, page: (a, b) => `Page ${a} of ${b}`, shelf: (a, n) => `${fmt(a)} of ${fmt(n)} cases`,
     classLabel: 'Evidence class', classDetail: ['full software reconstruction', 'partial scope or analysis entry', 'code & docs, no demo or download', 'notes only'],
     unknownTitle: 'Source unavailable or unreadable at review time', previewAlt: "Demo screenshot from the project's public documentation", previewVideoAlt: "Demo video thumbnail from the project's public documentation", previewFull: (name) => `Full-size demo screenshot: ${name}`, demoNote: 'Demo available · no screenshot',
-    ovTipLine2: (n, p) => `${fmt(n)} entries · ${p}% of the class`,
+    ovScopeFiltered: (l, n) => `${l}: ${n} entries`,
+    ovTip: (name, share, count) => `${name} · ${share} · ${count}`,
   };
   const ISSUE = 'https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml';
   const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
@@ -687,7 +689,7 @@
     const overview = $('[data-overview]', drawer);
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const ovFilter = new Set();
-    let ovSort = 'count';
+    let ovSort = 'share';
     let syncBody = () => {};
     if (overview) {
       const bodies = $$('.ov-body', overview);
@@ -695,12 +697,17 @@
       const tools = $('.ov-tools', overview);
       const bodyFor = () => bodies.find((b) => b.dataset.ovBody === (st.kinds.size === 1 ? [...st.kinds][0] : ''));
       const parseN = (el) => Number(String(el.textContent).replace(/[^\d]/g, '')) || 0;
+      const ovCode = { '0': 'C0', '1': 'C1', '2': 'C2', '3': 'C3', unknown: '?', unclassified: '–' };
+      const levelsOf = (row) => {
+        if (!row._levels) row._levels = Object.fromEntries(row.dataset.levels.split(';').map((pair) => pair.split(':')).map(([k, v]) => [k, Number(v)]));
+        return row._levels;
+      };
       const countUp = (el, from, to) => {
-        if (reducedMotion.matches || from === to) { el.textContent = fmt(to); return; }
+        if (reducedMotion.matches || from === to) { el.textContent = `${to.toFixed(1)}%`; return; }
         const t0 = performance.now();
         const tick = (t) => {
           const k = Math.min(1, (t - t0) / 300);
-          el.textContent = fmt(Math.round(from + (to - from) * (1 - (1 - k) * (1 - k))));
+          el.textContent = `${(from + (to - from) * (1 - (1 - k) * (1 - k))).toFixed(1)}%`;
           if (k < 1) requestAnimationFrame(tick);
         };
         requestAnimationFrame(tick);
@@ -712,33 +719,58 @@
         $$('.ov-row', body).forEach((r) => { const on = r === row; r.setAttribute('aria-selected', String(on)); r.tabIndex = on ? 0 : -1; });
         const next = $$('.ov-panel', body).find((p) => p.dataset.ovPanel === row.dataset.ovRow);
         $$('.ov-panel', body).forEach((p) => { p.hidden = p !== next; });
-        // The panel's numbers roll from the previous class's values, so the change reads as one object moving.
+        // The panel's share rolls from the previous class's value, so the change reads as one object moving.
         if (prev && next && prev !== next) {
-          const from = $$('.ovd-total, .ovd-count', prev).map(parseN);
-          $$('.ovd-total, .ovd-count', next).forEach((el, i) => countUp(el, from[i] || 0, parseN(el)));
+          const from = parseFloat($('[data-ovd-share]', prev).textContent) || 0;
+          const el = $('[data-ovd-share]', next);
+          countUp(el, from, parseFloat(el.textContent) || 0);
         }
         if (focus) row.focus();
       };
       const applyFilter = () => {
         const body = bodyFor();
-        overview.classList.toggle('ov-filtered', ovFilter.size > 0);
         if (!body || body.hasAttribute('data-ov-empty')) return;
-        $$('.ov-legend-item', body).forEach((item) => item.setAttribute('aria-pressed', String(ovFilter.has(item.dataset.ovLegend))));
-        $$('.ov-row', body).forEach((row) => {
-          const segs = $$('.ov-seg', row);
-          segs.forEach((seg) => seg.classList.toggle('ov-on', ovFilter.has(seg.dataset.bucket)));
-          $('[data-ov-count]', row).textContent = ovFilter.size
-            ? `${fmt(segs.filter((s) => ovFilter.has(s.dataset.bucket)).reduce((n, s) => n + Number(s.dataset.n), 0))} / ${fmt(row.dataset.total)}`
-            : fmt(Number(row.dataset.total));
+        const picked = [...ovFilter];
+        const rows = $$('.ov-row', body);
+        // The scope line restates the base the bars now share: the picked levels' own total.
+        const scope = $('[data-ov-scope]', body);
+        if (scope) {
+          if (!picked.length) scope.innerHTML = scope.dataset.ovScopeDefault;
+          else {
+            const total = rows.reduce((sum, row) => sum + picked.reduce((n, b) => n + (levelsOf(row)[b] || 0), 0), 0);
+            scope.innerHTML = T.ovScopeFiltered(picked.map((b) => ovCode[b] || b).join('+'), fmt(total));
+          }
+        }
+        const perRow = rows.map((row) => picked.reduce((n, b) => n + (levelsOf(row)[b] || 0), 0));
+        const grand = perRow.reduce((a, b) => a + b, 0);
+        rows.forEach((row, i) => {
+          const fill = $('.ov-fill', row);
+          if (!picked.length) {
+            // No level picked: the bars keep the build-time shares of the classified total.
+            row._share = row.dataset.share;
+            $('[data-ov-share]', row).textContent = `${row.dataset.share}%`;
+            $('[data-ov-count]', row).textContent = fmt(Number(row.dataset.total));
+            fill.classList.remove('ov-zero');
+            fill.style.setProperty('--w', `${fill.dataset.w}%`);
+            return;
+          }
+          const n = perRow[i];
+          const share = grand ? n / grand * 100 : 0;
+          // The build-time data-share stays untouched; the filtered share lives on the instance only.
+          row._share = grand ? share.toFixed(1) : '0';
+          $('[data-ov-share]', row).textContent = `${row._share}%`;
+          $('[data-ov-count]', row).textContent = `${fmt(n)} / ${fmt(Number(row.dataset.total))}`;
+          fill.classList.toggle('ov-zero', !n);
+          fill.style.setProperty('--w', `${Math.min(100, share).toFixed(2)}%`);
         });
+        if (picked.length && ovSort === 'share') applySort();
       };
       const applySort = () => {
         const box = $('.ov-rows', bodyFor());
         if (!box) return;
         const rows = $$('.ov-row', box);
         const cmp = ovSort === 'name' ? (a, b) => a.dataset.name.localeCompare(b.dataset.name, zh ? 'zh' : 'en')
-          : ovSort === 'strong' ? (a, b) => b.dataset.strong - a.dataset.strong
-          : (a, b) => b.dataset.total - a.dataset.total;
+          : (a, b) => parseFloat(b._share || b.dataset.share) - parseFloat(a._share || a.dataset.share);
         const sorted = [...rows].sort(cmp);
         if (sorted.every((r, i) => r === rows[i])) return;
         const before = new Map(sorted.map((r) => [r, r.getBoundingClientRect().top]));
@@ -763,8 +795,7 @@
         if (tools) tools.hidden = !!empty;
         if (!empty) {
           // The CSP forbids inline widths in the HTML, so the build ships them as data attributes.
-          $$('.ov-bar[data-bar]', body).forEach((el) => el.style.setProperty('--ov-bar', `${el.dataset.bar}%`));
-          $$('[data-w]', body).forEach((el) => el.style.setProperty('--w', `${el.dataset.w}%`));
+          $$('.ov-fill[data-w]', body).forEach((el) => el.style.setProperty('--w', `${el.dataset.w}%`));
           applySort();
           selectRow($('.ov-row', body));
         }
@@ -787,13 +818,6 @@
       overview.addEventListener('click', (e) => {
         const row = e.target.closest('.ov-row');
         if (row) { selectRow(row); return; }
-        const item = e.target.closest('.ov-legend-item');
-        if (item && !item.disabled) {
-          const bucket = item.dataset.ovLegend;
-          if (ovFilter.has(bucket)) ovFilter.delete(bucket); else ovFilter.add(bucket);
-          applyFilter();
-          return;
-        }
         const link = e.target.closest('[data-ov-view-all]');
         if (link) { e.preventDefault(); st.dcls = link.dataset.ovViewAll; st.shown = 10; render(); }
       });
@@ -806,33 +830,41 @@
         const next = e.key === 'ArrowDown' ? rows[i + 1] : e.key === 'ArrowUp' ? rows[i - 1] : e.key === 'Home' ? rows[0] : rows[rows.length - 1];
         selectRow(next, { focus: true });
       });
-      $$('.ov-mode-btn', overview).forEach((btn) => btn.addEventListener('click', () => {
-        overview.classList.toggle('ov-mode-share', btn.dataset.ovMode === 'share');
-        $$('.ov-mode-btn', overview).forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-      }));
+      const evbtn = $('.ov-evbtn', overview);
+      const evpop = $('#ov-evlist', overview);
+      if (evbtn && evpop) {
+        const evlabel = $('[data-ov-evlabel]', overview);
+        const evAll = evlabel.textContent;
+        const closeEv = () => { evpop.hidden = true; evbtn.setAttribute('aria-expanded', 'false'); };
+        evbtn.addEventListener('click', () => {
+          const open = evpop.hidden;
+          evpop.hidden = !open;
+          evbtn.setAttribute('aria-expanded', String(open));
+        });
+        document.addEventListener('click', (e) => { if (!e.target.closest('.ov-evsel')) closeEv(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeEv(); });
+        $$('input', evpop).forEach((box) => box.addEventListener('change', () => {
+          ovFilter.clear();
+          $$('input:checked', evpop).forEach((c) => ovFilter.add(c.value));
+          evlabel.textContent = ovFilter.size ? [...ovFilter].map((b) => ovCode[b] || b).join('+') : evAll;
+          applyFilter();
+        }));
+      }
       $('[data-ov-sort]', overview).addEventListener('change', (e) => { ovSort = e.target.value; applySort(); });
-      // The segment tooltip repeats what the row label and the table say, for mouse users mid-scan.
+      // The bar tooltip repeats what the row label and the table say, for mouse users mid-scan.
       const tip = document.createElement('div');
       tip.className = 'ov-tip';
       tip.hidden = true;
       overview.appendChild(tip);
-      const bucketCode = { '0': 'C0', '1': 'C1', '2': 'C2', '3': 'C3', unknown: '?', unclassified: '–' };
-      const showTip = (seg) => {
-        const body = bodyFor();
-        const row = seg.closest('.ov-row');
-        const nameNode = row ? $('.ov-cell-name', row) : $('.ov-summary-title', body);
-        const legend = $$('.ov-legend-item', body).find((l) => l.dataset.ovLegend === seg.dataset.bucket);
-        const name = nameNode ? nameNode.textContent : '';
-        const label = legend ? $('.ov-legend-label', legend).textContent : '';
-        tip.replaceChildren(document.createTextNode(`${name} · ${bucketCode[seg.dataset.bucket] || ''} ${label}`.trim()),
-          Object.assign(document.createElement('span'), { className: 'ov-tip-line2', textContent: T.ovTipLine2(Number(seg.dataset.n), seg.dataset.pct) }));
+      const showTip = (row) => {
+        tip.textContent = T.ovTip($('.ov-cell-name', row).textContent, $('[data-ov-share]', row).textContent, $('[data-ov-count]', row).textContent);
         tip.hidden = false;
-        const r = seg.getBoundingClientRect();
+        const r = row.querySelector('.ov-track').getBoundingClientRect();
         tip.style.left = `${Math.max(8, Math.min(window.innerWidth - tip.offsetWidth - 8, r.left + r.width / 2 - tip.offsetWidth / 2))}px`;
         tip.style.top = `${Math.max(8, r.top - tip.offsetHeight - 8)}px`;
       };
-      overview.addEventListener('mouseover', (e) => { const seg = e.target.closest('[data-ov-seg]'); if (seg) showTip(seg); });
-      overview.addEventListener('mouseout', (e) => { if (e.target.closest('[data-ov-seg]')) tip.hidden = true; });
+      overview.addEventListener('mouseover', (e) => { const row = e.target.closest('.ov-row'); if (row) showTip(row); });
+      overview.addEventListener('mouseout', (e) => { if (e.target.closest('.ov-row')) tip.hidden = true; });
       overview.addEventListener('mouseleave', () => { tip.hidden = true; });
     }
     $('.hs-side', form).insertAdjacentHTML('afterbegin', `<span class="hs-keys" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> ${T.keyMove} <kbd>↵</kbd> ${T.keyOpen} <kbd>Esc</kbd> ${T.keyClear}</span>`);
