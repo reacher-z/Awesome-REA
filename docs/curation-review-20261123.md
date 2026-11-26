@@ -1475,3 +1475,25 @@ One qualified record this round: Super Mario 3D Land recompiled for Windows and 
 ## Validation notes
 
 The single record carries pinned README evidence, parallel Chinese requirements and an evidence-class entry; it classifies as Class 2. Batch size one reflects the qualified pool after three straight noop scans; the batch was not padded with near-duplicate series entries.
+
+## Batch 58 — 2026-11-26
+
+Three hardware and protocol tools: MIFARE Classic Tool, the Multiprotocol TX Module and the WHAD client.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| mifare-classic-tool | android | [ikarus23/MifareClassicTool](https://github.com/ikarus23/MifareClassicTool/blob/b1ba0c4dd4bf873dc41c68a5fe337e8607b1414d/README.md) | cb322a3d138a08a6895df23994543658422fe025845cc4a2727ed6f77d920c4c |
+| multiprotocol-tx-module | firmware | [pascallanger/DIY-Multiprotocol-TX-Module](https://github.com/pascallanger/DIY-Multiprotocol-TX-Module/blob/fd08975a03d20762d994fda1dfee95bd94104e8d/README.md) | e4e22915d5ba7b67f610091ff687d9886cda496840ab37e1a08075a0ecc265a9 |
+| whad-client | protocol-analysis | [whad-team/whad-client](https://github.com/whad-team/whad-client/blob/e393b819042022698a17b72800fc3b6bdc5ecb28/README.md) | a78fa898482ad4866ece59c9a5db09214e9871de49981ff81d50895e645f3659 |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| latonita/arduino-canbus-monitor | Two CAN bus records already exist and this monitor adds little beyond them. |
+| CSS-Electronics/can-bus-reverse-engineering-skills | A second CAN agent-skill pack; the catalog already carries related tooling. |
+| yslxotwod/wifisting | A general wireless security toolkit without a clear reconstruction scope. |
+
+## Validation notes
+
+All three records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. The Multiprotocol TX Module is Class 1 with a merged preview; the other two are Class 2. The pool was re-mined along hardware and protocol sections after several game-oriented noop scans.

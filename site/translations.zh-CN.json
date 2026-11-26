@@ -46634,5 +46634,29 @@
       "面向 Windows x64 与 Linux x86-64，并标注为实验性。",
       "采用 MIT 许可证。"
     ]
+  },
+  "mifare-classic-tool": {
+    "name": "MIFARE Classic Tool：在 Android 上读取与分析 NFC 标签",
+    "requirements": [
+      "需要具备 NFC 的 Android 设备，以及你有权分析的标签。",
+      "它专门面向 MIFARE Classic 标签，并通过 Play Store 与 F-Droid 分发。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "multiprotocol-tx-module": {
+    "name": "Multiprotocol TX Module：一个 2.4 GHz 模块兼容多种遥控协议",
+    "requirements": [
+      "需要兼容的发射模块硬件以及对应模块的固件刷写工具链。",
+      "它复刻接收机协议以实现互通，而非替换遥控器固件。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "whad-client": {
+    "name": "WHAD 客户端：面向无线协议研究的命令行工具",
+    "requirements": [
+      "需要 Python 以及运行 WHAD 固件的兼容无线硬件。",
+      "它提供主机侧工具与库，射频固件位于其他仓库。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

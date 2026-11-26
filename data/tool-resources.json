@@ -164779,5 +164779,87 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "mifare-classic-tool",
+    "name": "MIFARE Classic Tool: reading and analysing NFC tags on Android",
+    "url": "https://github.com/ikarus23/MifareClassicTool",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "An Android NFC app for reading, writing and analysing MIFARE Classic RFID tags, with key management, dump files and dictionary attacks for authorized tag research.",
+    "description_zh": "在 Android 上读取、写入与分析 MIFARE Classic RFID 标签的 NFC 应用，提供密钥管理、dump 文件与字典攻击，用于授权的标签研究。",
+    "evidence_url": "https://github.com/ikarus23/MifareClassicTool/blob/b1ba0c4dd4bf873dc41c68a5fe337e8607b1414d/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an Android device with NFC and tags you are authorized to analyse.",
+      "It targets MIFARE Classic tags specifically and ships through Play Store and F-Droid.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "multiprotocol-tx-module",
+    "name": "Multiprotocol TX Module: one 2.4 GHz module for many RC protocols",
+    "url": "https://github.com/pascallanger/DIY-Multiprotocol-TX-Module",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "project",
+    "class": "hardware",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "An open firmware for a 2.4 GHz transmitter module that replicates the protocols of many receivers and toy models, letting almost any RC transmitter control them.",
+    "description_zh": "面向 2.4 GHz 发射模块的开源固件，复刻众多接收机与遥控玩具的协议，让几乎任何遥控器都能操控它们。",
+    "evidence_url": "https://github.com/pascallanger/DIY-Multiprotocol-TX-Module/blob/fd08975a03d20762d994fda1dfee95bd94104e8d/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires compatible transmitter hardware and the firmware flashing toolchain for your module.",
+      "It reproduces receiver protocols for interoperability rather than replacing the transmitter firmware.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "whad-client",
+    "name": "WHAD client: command-line tools for wireless protocol research",
+    "url": "https://github.com/whad-team/whad-client",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A framework of command-line tools and a Python library for exploring and analysing wireless protocols with hardware devices running compatible firmware.",
+    "description_zh": "面向无线协议探索与分析的命令行工具与 Python 库框架，配合运行兼容固件的硬件设备使用。",
+    "evidence_url": "https://github.com/whad-team/whad-client/blob/e393b819042022698a17b72800fc3b6bdc5ecb28/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Python and compatible wireless hardware running WHAD firmware.",
+      "It provides the host-side tools and library while the radio firmware lives in separate projects.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

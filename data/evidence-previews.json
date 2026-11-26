@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-26T21:24:26+00:00",
-    "entry_count": 1235,
-    "class_entry_count": 1266,
+    "generated_at": "2026-11-26T22:15:55+00:00",
+    "entry_count": 1236,
+    "class_entry_count": 1267,
     "class_counts": {
-      "image": 1195,
+      "image": 1196,
       "video": 40
     },
     "missing_count": 31,
@@ -4535,7 +4535,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-26T21:24:26+00:00"
+      "checked_at": "2026-11-26T22:15:54+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -5499,6 +5499,15 @@
       "source_url": "https://github.com/saulob/marvel-ultimate-alliance-bundle-recompiled",
       "revision": "9a081ed6cbeb03aa0e227c10e97e504c51efd725",
       "checked_at": "2026-11-09T02:41:36+00:00"
+    },
+    {
+      "id": "multiprotocol-tx-module",
+      "image_url": "https://raw.githubusercontent.com/pascallanger/DIY-Multiprotocol-TX-Module/fd08975a03d20762d994fda1dfee95bd94104e8d/docs/images/multi.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/pascallanger/DIY-Multiprotocol-TX-Module",
+      "revision": "fd08975a03d20762d994fda1dfee95bd94104e8d",
+      "checked_at": "2026-11-26T22:15:55+00:00"
     },
     {
       "id": "muse-cli-case",
