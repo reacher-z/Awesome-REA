@@ -71,8 +71,8 @@ OVERVIEW_MIN_SHARE = 0.45
 OVERVIEW_SECTOR_GAP = 0.012
 COPY = {
     'en': {
-        'h1': 'Reverse Engineering <em>Anything</em>',
-        'lede': 'Awesome REA (Awesome Reverse Engineering Anything) is a bilingual catalog of {res} source-reviewed tools, projects and case studies and {pap} research papers for taking apart binaries, games, apps, firmware, protocols and websites{stars}. Every entry links the primary source it was checked against.',
+        'h1': 'Reverse engineer <em>anything</em>',
+        'lede': 'Awesome REA (Awesome Reverse Engineering Anything) is a bilingual, source-reviewed catalog of reverse-engineering tools, case studies and papers for websites, games, apps, native binaries, firmware and communication protocols.',
         'search_label': 'Search the catalogue', 'placeholder': 'Try Ghidra, IL2CPP or BLE', 'clear': 'Clear search', 'focus': 'Press / to focus',
         'stats': '<span class="s-lg"><strong>{res}</strong> curated resources and <strong>{pap}</strong> papers, each reviewed against its source. Plus <a href="/discoveries/"><strong>{idx}</strong> unreviewed discoveries</a> from the scans.</span><span class="s-sm"><strong>{res}</strong> resources, <strong>{pap}</strong> papers, <a href="/discoveries/"><strong>{idx}</strong> unreviewed</a></span>',
         'updated': 'Last scan', 'all': 'All', 'domains': 'Target domains', 'catalogue': 'Catalogue',
@@ -92,8 +92,8 @@ COPY = {
         'demo_note': 'Demo available · no screenshot',
     },
     'zh': {
-        'h1': '逆向<em>工程</em>',
-        'lede': 'Awesome REA（Awesome Reverse Engineering Anything）是中英双语目录，收录 {res} 项经来源复核的工具、项目与案例，以及 {pap} 篇研究论文，涵盖二进制、游戏、应用、固件、协议与网站的逆向{stars}。每个条目都链接其核查所依据的一手来源。',
+        'h1': '逆向<em>一切</em>',
+        'lede': 'Awesome REA (Awesome Reverse Engineering Anything) 是中英双语逆向工程资源目录，收录面向网站、游戏、应用、原生二进制、固件和通信协议的工具、案例与论文，每条均对照原始来源核查。',
         'search_label': '搜索目录', 'placeholder': '试试 Ghidra、IL2CPP 或 BLE', 'clear': '清除搜索', 'focus': '按 / 键聚焦',
         'stats': '<span class="s-lg"><strong>{res}</strong> 项精选资源与 <strong>{pap}</strong> 篇论文，均已对照来源复核。另有 <a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核发现</a>来自自动扫描。</span><span class="s-sm"><strong>{res}</strong> 项资源、<strong>{pap}</strong> 篇论文、<a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核</a></span>',
         'updated': '最近扫描', 'all': '全部', 'domains': '目标领域', 'catalogue': '目录',

@@ -25,6 +25,22 @@ class ReadmeHeaderTest(unittest.TestCase):
                     self.assertLessEqual((ROOT / path).stat().st_size, 60_000, path)
         self.assertNotEqual((ROOT / BANNERS[0]).read_bytes(), (ROOT / BANNERS[1]).read_bytes())
 
+    def test_opening_prose_defines_short_name_full_name_and_scope(self):
+        identity = 'Awesome REA (Awesome Reverse Engineering Anything)'
+        for name, definition, terms in (
+            ('README.md', identity + ' is a bilingual, source-reviewed catalog',
+             ('reverse-engineering', 'tools', 'case studies', 'papers', 'websites', 'games', 'apps',
+              'native binaries', 'firmware', 'communication protocols')),
+            ('README.zh-CN.md', identity + ' 是中英双语逆向工程资源目录',
+             ('工具', '案例', '论文', '网站', '游戏', '应用', '原生二进制', '固件', '通信协议', '原始来源核查')),
+        ):
+            with self.subTest(readme=name):
+                paragraph = (ROOT / name).read_text(encoding='utf-8').split('\n\n', 2)[1]
+                self.assertTrue(paragraph.startswith(definition), paragraph)
+                self.assertNotIn('<', paragraph, 'The identity belongs in ordinary prose, not only image alt text')
+                for term in terms:
+                    self.assertIn(term, paragraph)
+
     def test_find_by_task_table_pipes_line_up(self):
         for name, heading in (('README.md', '## Find by task'), ('README.zh-CN.md', '## 按任务查找')):
             with self.subTest(readme=name):
