@@ -1320,3 +1320,26 @@ Three ports and an MCP tool: Zandatsu, Nightjar Resident Evil 4, Alone in the Da
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Zandatsu, Nightjar and Alone in the Dark Classic Reborn are Class 1 with merged previews; decompile is Class 2. The hourly class scan again returned noop.
+
+## Batch 51 — 2026-11-25
+
+Two protocol and web tools, a baseband research repo and an Xbox recompilation: MediaTek LTE Baseband RE, ghostwire, ProPresenter7-Proto and ShadowRecomp.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| mediatek-lte-baseband-re | firmware | [cyrozap/mediatek-lte-baseband-re](https://github.com/cyrozap/mediatek-lte-baseband-re/blob/8c01efae5a9784ec8c84b4a4087678860de98e20/README.md) | 8bae5cea082aec67bb520a7ed332ea04c68337133ec76f43c6c25fa6c1ecf228 |
+| ghostwire | web-analysis | [sofianeelhor/ghostwire](https://github.com/sofianeelhor/ghostwire/blob/c3377f8be59fc2b2f2a620bbae75714902b0c114/README.md) | 154c9f9790141d5d34d5519091440385e6b0119236da2f0ac489e82768d7afbd |
+| propresenter7-proto | protocol-analysis | [greyshirtguy/ProPresenter7-Proto](https://github.com/greyshirtguy/ProPresenter7-Proto/blob/ab67c6ad9c52e7dacba191044239296330fa309e/README.md) | f8ad62607e719255c6b2c039eacb98c009f4935e195d38c4284749eace2bf892 |
+| shadow-recomp-xbox-case | reconstruction-cases | [FoxWorkshop/ShadowRecomp](https://github.com/FoxWorkshop/ShadowRecomp/blob/3eac33bfb5474d253f2fecc74c808fb5297583e3/README.md) | 6e5ff8ec2ab1dc4118724204c499c46579543546aef9b774a79e19357122548e |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| Wania174/UltraEdit-Clone, Ahsuu27488/edit-recreator | The two new scan leads; a CSS clone and an AI template generator, outside the REA curation scope. |
+| FyorDev/PureRef-format | A single proprietary format parser; lower value than the batch picks. |
+| lunarmeadow/barrett | Rise of the Triad source ports already have coverage. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. ShadowRecomp is Class 1 with a merged preview; the other three are Class 2. The hourly class scan produced two leads this round, which were reviewed and set aside.

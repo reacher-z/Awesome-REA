@@ -164190,5 +164190,115 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "mediatek-lte-baseband-re",
+    "name": "MediaTek LTE Baseband RE: notes and utilities for modem research",
+    "url": "https://github.com/cyrozap/mediatek-lte-baseband-re",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Notes and utilities for reverse engineering the MediaTek LTE baseband and its Coresonic DSP, documenting the modem firmware and the tooling used to inspect it.",
+    "description_zh": "逆向联发科 LTE 基带及其 Coresonic DSP 的笔记与工具，记录调制解调器固件以及检查它所用的工具链。",
+    "evidence_url": "https://github.com/cyrozap/mediatek-lte-baseband-re/blob/8c01efae5a9784ec8c84b4a4087678860de98e20/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own MediaTek-based device and knowledge of modem firmware research.",
+      "It ships notes and utilities rather than a turnkey flashing or unlock tool.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "ghostwire",
+    "name": "ghostwire: stealth instrumentation for hostile client-side JavaScript",
+    "url": "https://github.com/sofianeelhor/ghostwire",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "A stealth runtime instrumentation and CDP toolkit for reverse engineering hostile client-side JavaScript anti-bot, captcha, fingerprinting and payment SDKs; it hooks functions, follows the page, worker and iframe graph and observes resolved runtime values without injecting into the page.",
+    "description_zh": "用于逆向恶意前端 JavaScript（反机器人、验证码、指纹、欺诈与支付 SDK）的隐蔽运行时插桩与 CDP 工具：挂钩函数、跟踪页面/Worker/iframe 图并观察运行时的实际取值，且不向页面注入代码。",
+    "evidence_url": "https://github.com/sofianeelhor/ghostwire/blob/c3377f8be59fc2b2f2a620bbae75714902b0c114/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Chromium browser it can drive for the target page.",
+      "It observes runtime values for an agent and is designed for hostile client-side JavaScript.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "propresenter7-proto",
+    "name": "ProPresenter7-Proto: reverse-engineered Protocol Buffer definitions",
+    "url": "https://github.com/greyshirtguy/ProPresenter7-Proto",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Unofficial .proto definitions for the Google Protocol Buffer messages inside ProPresenter 7 data and configuration files, generated automatically so tools can read and write the new file formats with protoc.",
+    "description_zh": "面向 ProPresenter 7 数据与配置文件中 Google Protocol Buffer 消息的非官方 .proto 定义，自动生成，便于用 protoc 读写这些新文件格式。",
+    "evidence_url": "https://github.com/greyshirtguy/ProPresenter7-Proto/blob/ab67c6ad9c52e7dacba191044239296330fa309e/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires protoc or a protobuf toolchain and your own ProPresenter files to inspect.",
+      "The definitions are unofficial and unsupported; the autogen-proto set tracks the latest ProPresenter version.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "shadow-recomp-xbox-case",
+    "name": "ShadowRecomp: the Xbox version of Shadow the Hedgehog on PC",
+    "url": "https://github.com/FoxWorkshop/ShadowRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An unofficial PC port of the Xbox version of Shadow the Hedgehog created through static recompilation.",
+    "description_zh": "通过静态重编译制作的 Xbox 版《Shadow the Hedgehog》非官方 PC 移植。",
+    "evidence_url": "https://github.com/FoxWorkshop/ShadowRecomp/blob/3eac33bfb5474d253f2fecc74c808fb5297583e3/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Xbox copy of the game; no game data is included.",
+      "It ships releases with documented minimum system requirements and known issues.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

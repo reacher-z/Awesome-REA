@@ -46466,5 +46466,37 @@
       "它把工具、技能与模拟器打包给助手使用，本身不执行分析。",
       "采用 MIT 许可证。"
     ]
+  },
+  "mediatek-lte-baseband-re": {
+    "name": "联发科 LTE 基带逆向：调制解调器研究笔记与工具",
+    "requirements": [
+      "需要自备基于联发科的设备以及调制解调器固件研究的相关知识。",
+      "它提供笔记与工具，而非开箱即用的刷机或解锁工具。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "ghostwire": {
+    "name": "ghostwire：面向恶意前端 JavaScript 的隐蔽插桩",
+    "requirements": [
+      "需要可驱动的 Chromium 浏览器来访问目标页面。",
+      "它为智能体观察运行时取值，专门面向恶意的客户端 JavaScript。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "propresenter7-proto": {
+    "name": "ProPresenter7-Proto：逆向得到的 Protocol Buffer 定义",
+    "requirements": [
+      "需要 protoc 或 protobuf 工具链，以及自备的 ProPresenter 文件。",
+      "这些定义属于非官方且不受支持；autogen-proto 集合会跟踪最新版 ProPresenter。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "shadow-recomp-xbox-case": {
+    "name": "ShadowRecomp：Xbox 版 Shadow the Hedgehog 的 PC 移植",
+    "requirements": [
+      "需要自备 Xbox 版游戏副本；不包含游戏数据。",
+      "它通过发布包分发，并列出最低系统需求与已知问题。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

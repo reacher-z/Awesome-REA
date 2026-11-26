@@ -6,7 +6,7 @@
 
 [简体中文](game-3.zh-CN.md)
 
-**606 case studies**
+**607 case studies**
 
 ## Static recompilations
 
@@ -317,6 +317,7 @@
 - [**Shadow of Rome Recompiled: an unofficial PC version of the PlayStation 2 game**](https://github.com/Korvonordico/shadow-of-rome-recompiled) - An unofficial PC version of Shadow of Rome (PlayStation 2) that translates the game code into a Windows program, rendering up to 8 times the PS2 resolution at 60 fps with 4:3, 16:9 or 21:9 and mouse and keyboard support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shadow-of-rome-recompiled/)</sub>
 - [**Shadow of the Colossus: a PS3 static recompilation reaching the flip loop**](https://github.com/sp00nznet/shadowofthecolossus) - Shadow of the Colossus uses ps3recomp to lift the PS3 HD remaster's EBOOT and eight SPU images into a native Windows build. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shadow-of-the-colossus-ps3-recomp-case/)</sub>
 - [**Shadow the Hedgehog: a PS2 static recompilation checkpoint**](https://github.com/nicolasserpa/shadow-the-hedgehog-recomp) - Shadow the Hedgehog Recomp translates the PS2 game's MIPS and VU code into native C++ with PS2Recomp and links it to ps2xRuntime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shadow-the-hedgehog-ps2-recomp-case/)</sub>
+- [**ShadowRecomp: the Xbox version of Shadow the Hedgehog on PC**](https://github.com/FoxWorkshop/ShadowRecomp) - An unofficial PC port of the Xbox version of Shadow the Hedgehog created through static recompilation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shadow-recomp-xbox-case/)</sub>
 - [**Shadows of the Empire: Recompiled — a static recompilation of the Nintendo 64 game**](https://github.com/GTTeancum/SotE-Recomp) - A playable Windows static recompilation of the Nintendo 64 version of Star Wars: Shadows of the Empire, built with N64Recomp, with an experimental Linux build. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sote-recomp/)</sub>
 - [**Shantae Recomp: a Game Boy Color static recompilation**](https://github.com/vibecodekun/shantaerecomp) - Shantae Recomp uses gbrecompiled to translate the USA Game Boy Color Shantae ROM into native code for Windows and Linux. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shantae-recomp-case/)</sub>
 - [**Shining Force III Recomp: a Sega Saturn static recompilation for PC**](https://github.com/mattkuhnQAAI/sfiii-native) - Shining Force III Recomp generates C++ from the SH-2 code on supported Sega Saturn discs and compiles a native PC port with graphics, sound, and storage services. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/shining-force-iii-recomp-case/)</sub>

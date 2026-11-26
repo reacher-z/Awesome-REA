@@ -6,7 +6,7 @@
 
 [English](game-3.md)
 
-**606 个案例**
+**607 个案例**
 
 ## 静态重编译
 
@@ -317,6 +317,7 @@
 - [**Shadow of Rome Recompiled：PS2 游戏非官方 PC 版**](https://github.com/Korvonordico/shadow-of-rome-recompiled) - 《Shadow of Rome》（PS2）的非官方 PC 版本，把游戏代码转译为 Windows 程序，支持最高 8 倍 PS2 分辨率、60 fps、4:3/16:9/21:9 以及鼠标键盘操作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shadow-of-rome-recompiled/)</sub>
 - [**Shadow of the Colossus：运行至翻帧循环的 PS3 静态重编译项目**](https://github.com/sp00nznet/shadowofthecolossus) - Shadow of the Colossus 使用 ps3recomp 将 PS3 高清版的 EBOOT 和八个 SPU 镜像提升为原生 Windows 构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shadow-of-the-colossus-ps3-recomp-case/)</sub>
 - [**Shadow the Hedgehog：PS2 静态重编译进展**](https://github.com/nicolasserpa/shadow-the-hedgehog-recomp) - Shadow the Hedgehog Recomp 使用 PS2Recomp 将 PS2 游戏的 MIPS 与 VU 代码转为原生 C++，并连接 ps2xRuntime。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shadow-the-hedgehog-ps2-recomp-case/)</sub>
+- [**ShadowRecomp：Xbox 版 Shadow the Hedgehog 的 PC 移植**](https://github.com/FoxWorkshop/ShadowRecomp) - 通过静态重编译制作的 Xbox 版《Shadow the Hedgehog》非官方 PC 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shadow-recomp-xbox-case/)</sub>
 - [**Shadows of the Empire: Recompiled：N64 游戏静态重编译**](https://github.com/GTTeancum/SotE-Recomp) - 《星球大战：帝国阴影》Nintendo 64 版本的可玩 Windows 静态重编译，使用 N64Recomp 构建，并提供实验性 Linux 版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sote-recomp/)</sub>
 - [**Shantae Recomp：Game Boy Color 游戏静态重编译**](https://github.com/vibecodekun/shantaerecomp) - Shantae Recomp 使用 gbrecompiled 将美版 Game Boy Color《Shantae》ROM 转换为 Windows 和 Linux 原生代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shantae-recomp-case/)</sub>
 - [**Shining Force III Recomp：Sega Saturn 游戏的 PC 静态重编译**](https://github.com/mattkuhnQAAI/sfiii-native) - Shining Force III Recomp 从受支持的 Sega Saturn 光盘提取 SH-2 代码并生成 C++，再结合图形、音频和存储服务编译为 PC 原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/shining-force-iii-recomp-case/)</sub>
