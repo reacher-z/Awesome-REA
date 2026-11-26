@@ -1412,3 +1412,25 @@ Two game ports and a Blender agent skill: HPEngine, Need for Speed Hot Pursuit 2
 ## Validation notes
 
 All three records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. HPEngine is Class 1 with a merged preview; the other two are Class 2. Batch size reduced to three to keep README growth in check.
+
+## Batch 55 — 2026-11-26
+
+Two reconstructions and a field guide: A Link Between Worlds native port, the MvC2 NAOMI/Dreamcast decompilation and RevScope.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| albw-native-case | reconstruction-cases | [spacestate1/albw-native](https://github.com/spacestate1/albw-native/blob/fed0c5f326b907a99783d8d7dd1756090a37fe75/README.md) | b5eebd2db572e42d2f3ba8802ca7ba30322f7e53655af8e8b8aeaaf4eefd8399 |
+| mvc2-naomi-decomp-case | reconstruction-cases | [gibletto/mvc2-naomi-dc](https://github.com/gibletto/mvc2-naomi-dc/blob/3dd6e459ea5526ecad83cb8868de2fe25411a909/README.md) | 024e52cd05e632dbb00dbcad8d7f02e8e267ddc3de048b9991bc90d1225f67fb |
+| revscope | native-analysis | [brunnojob/revscope](https://github.com/brunnojob/revscope/blob/e61c8585d89bc455edd436b5a09aad0ef92453aa/README.md) | b4a30b833ace04c4edc0224ef4005b0d15ebf38716cd95c9c81214559a0672a8 |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| ranveersoni98/Xenora | A second Xbox Series recompilation framework next to the curated Xbox2Windows. |
+| oenderg/Reflourished-Darwin | A PvZ2 mod port rather than a reconstruction of the original game. |
+| samwhosung/benilla-re | Companion notes for the already curated benilla client. |
+
+## Validation notes
+
+All three records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. The A Link Between Worlds port is Class 1 with a merged preview; the other two are Class 2. The hourly class scan returned noop.

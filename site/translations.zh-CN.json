@@ -46586,5 +46586,29 @@
       "它通过经过验证的技能流程驱动 Blender，而不取代应用本身。",
       "采用 MIT 许可证。"
     ]
+  },
+  "albw-native-case": {
+    "name": "众神的三角力量 2 原生移植：为 Linux 重建的 3DS 游戏",
+    "requirements": [
+      "需要自备 3DS ROM；不包含游戏数据。",
+      "面向 Linux，基于 albw-decomp-ai 的反编译代码构建，不是模拟器。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "mvc2-naomi-decomp-case": {
+    "name": "Marvel vs. Capcom 2：NAOMI 与 Dreamcast 的逐字节反编译",
+    "requirements": [
+      "需要 NAOMI mvsc2 ROM 集或 Dreamcast 光盘来验证构建；项目不分发游戏数据。",
+      "仓库说明在 Capcom 命名基础上使用了 AI 辅助。",
+      "采用 AGPL-3.0 许可证。"
+    ]
+  },
+  "revscope": {
+    "name": "RevScope：可搜索的逆向工程工具与工作流指南",
+    "requirements": [
+      "它是在线指南，浏览目录无需安装。",
+      "它记录工具与工作流，本身不附带分析软件。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

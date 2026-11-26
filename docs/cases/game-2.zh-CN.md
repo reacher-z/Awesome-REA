@@ -10,6 +10,8 @@
 
 ## 非匹配反编译
 
+- [**AutoDestruct-xport：Auto Destruct 原生移植**](https://github.com/psxports/AutoDestruct-xport) - AutoDestruct-xport 将 PlayStation 游戏《Auto Destruct》的反编译代码移植到 C 语言运行时，提供 Windows 和网页入口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/autodestruct-xport-case/)</sub>
+- [**AutoZone Hot Pursuit：重建 Need for Speed: Hot Pursuit**](https://github.com/americusmaximus/AZHP) - AutoZone Hot Pursuit 基于原始二进制分析，以 C++ 重建 1998 年的 Need for Speed: Hot Pursuit 及 Modern Patch。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/autozone-hot-pursuit-case/)</sub>
 - [**AZHS：重建《Need for Speed: High Stakes》4.50**](https://github.com/americusmaximus/AZHS) - AZHS 根据《Need for Speed: High Stakes》4.50 的原版二进制文件重建源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/azhs-case/)</sub>
 - [**Babil Decompilation Project：Final Fantasy IV 3D Remake 源码重建**](https://github.com/GlitchedDeveloper/Babil-Decompilation-Project) - Babil Decompilation Project 为 Final Fantasy IV 3D Remake 的 Steam 2020 年 11 月更新版重建 C++ 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/babil-decompilation-project-case/)</sub>
 - [**Back to Skool：基于 SkoolKit 的 ZX Spectrum 反汇编**](https://github.com/skoolkid/backtoskool) - Back to Skool 项目发布 ZX Spectrum 版游戏的 SkoolKit 反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/back-to-skool-disassembly-case/)</sub>
@@ -633,6 +635,4 @@
 - [**GTA IV Recompiled：Xbox 360 版游戏的静态重编译**](https://github.com/luisxl15/GTA-IV-RECOMP-XBOX-360) - GTA IV Recompiled 使用 rexglue 将 Xbox 360 版 Grand Theft Auto IV 的 PowerPC 代码预先转换为 C++，构建 Windows 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gta-iv-recompiled-case/)</sub>
 - [**GTA Stories Recompiled：自由城故事与罪恶都市故事 PC 移植**](https://github.com/batinium/gta-stories-recompiled) - 通过静态重编译把 PS2 版《GTA 自由城故事》与《罪恶都市故事》移植到 PC，两个城市合并在同一世界，并提供 mod 加载器与 Android 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gta-stories-recompiled/)</sub>
 - [**Guitar Hero II Recompiled：Xbox 360 游戏静态重编译**](https://github.com/sp00nznet/gh2) - Guitar Hero II Recompiled 借助 XenonRecomp 和 ReXGlue 将 Xbox 360 游戏可执行文件转换为原生 C++，构建使用 D3D12 图形的 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/guitar-hero-ii-xbox-recomp-case/)</sub>
-- [**吉他英雄 II：Xbox 360 版概念验证重编译**](https://github.com/YoshiCrystal9/re-gh2) - 这是用 ReXGlue SDK 重编译的 Xbox 360 版《Guitar Hero II》概念验证。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gh2-recomp/)</sub>
-- [**Guitar Hero III: Legends of Rock — Recomp：Xbox 360 游戏的 PC 与 Android 重编译**](https://github.com/luisxl15/Guitar-Hero-3-Recomp-) - Guitar Hero III: Legends of Rock — Recomp 使用 ReXGlue 衍生工具链，将 Xbox 360 游戏的 PowerPC 代码转换为 C++，构建 PC 和 Android 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/guitar-hero-iii-recomp-case/)</sub>
 <!-- END GENERATED CASES -->

@@ -6,7 +6,7 @@
 
 [简体中文](game-1.zh-CN.md)
 
-**616 case studies**
+**615 case studies**
 
 <a id="game-matching-decompilation"></a>
 ## Matching decompilations and disassemblies
@@ -300,6 +300,7 @@
 - [**Mario vs. Donkey Kong: a Game Boy Advance disassembly**](https://github.com/camthesaxman/mariovsdk) - Mario vs. Donkey Kong is disassembled into ARM assembly and C sources that build a Game Boy Advance ROM with a specified MD5 hash. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mariovsdk-case/)</sub>
 - [**Mario-Bros.-Dis: byte-for-byte Mario Bros. NES disassembly**](https://github.com/RussianManSMWC/Mario-Bros.-Dis) - This is a byte-for-byte disassembly of Mario Bros. for the NES. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mario-bros-nes-disasm/)</sub>
 - [**Marvel Nemesis: Rise of the Imperfects: a GameCube decompilation**](https://github.com/Esoteric-Engineer/mnroi) - mnroi reconstructs C/C++ source for the US GameCube release of Marvel Nemesis: Rise of the Imperfects. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/marvel-nemesis-gamecube-decomp-case/)</sub>
+- [**Marvel vs. Capcom 2: a byte-matching NAOMI and Dreamcast decompilation**](https://github.com/gibletto/mvc2-naomi-dc) - A byte-matching decompilation of Marvel vs. Capcom 2: New Age of Heroes covering both the NAOMI arcade cartridge and the Dreamcast disc, with one source tree rebuilding each release to its original bytes. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mvc2-naomi-decomp-case/)</sub>
 - [**Marvel vs. Capcom 2: early Dreamcast matching decompilation**](https://github.com/devin-thomas/mvc2-dc) - Starts a matching decompilation of the North American Dreamcast release of Marvel vs. Capcom 2: New Age of Heroes. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mvc2-dreamcast-decomp-case/)</sub>
 - [**Marvel vs. Capcom 2: matching PS2 decompilation and browser port**](https://github.com/g-guthrie/mvc2-ps2-decomp) - Marvel vs. Capcom 2 reconstructs the NTSC-U PS2 game's code as C checked byte for byte against the retail executable, then compiles that code for a WebAssembly and WebGL2 port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mvc2-ps2-decomp-case/)</sub>
 - [**MechWarrior 2 — a work-in-progress decompilation**](https://github.com/anpage/demech2) - A work-in-progress decompilation of the Windows 95 releases of MechWarrior 2 and Ghost Bear Legacy that aims to match the original machine code instruction for instruction. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/demech2/)</sub>
@@ -628,6 +629,4 @@
 - [**Alleyway: annotated Game Boy disassembly and decompilation**](https://github.com/islander0/alleyway-decomp) - Alleyway documents a Game Boy disassembly and experimental C decompilation of the game's World ROM revision. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/alleyway-game-boy-decomp-case/)</sub>
 - [**Amplitude: a PS2 decompilation in progress**](https://github.com/ieee802dot11ac/amp) - Amplitude (2003) is a decompilation project for the NTSC-U/C retail release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/amplitude-2003-case/)</sub>
 - [**Angry Birds Decompilation: Lua script recovery**](https://github.com/jooapa/Angry_Birds_Decompilation) - Angry Birds Decompilation documents recovery of Lua scripts from the PC ports of the Angry Birds games. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/angry-birds-decomp/)</sub>
-- [**AutoDestruct-xport: a native port of Auto Destruct**](https://github.com/psxports/AutoDestruct-xport) - AutoDestruct-xport ports the PlayStation game Auto Destruct from decompiled code into a C runtime with Windows and web entry points. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/autodestruct-xport-case/)</sub>
-- [**AutoZone Hot Pursuit: reconstructing Need for Speed: Hot Pursuit**](https://github.com/americusmaximus/AZHP) - AutoZone Hot Pursuit reconstructs the 1998 Need for Speed: Hot Pursuit and Modern Patch in C++ from analysis of their binaries. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/autozone-hot-pursuit-case/)</sub>
 <!-- END GENERATED CASES -->

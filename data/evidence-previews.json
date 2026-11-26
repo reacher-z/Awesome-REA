@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-26T18:34:16+00:00",
-    "entry_count": 1233,
-    "class_entry_count": 1264,
+    "generated_at": "2026-11-26T19:46:45+00:00",
+    "entry_count": 1234,
+    "class_entry_count": 1265,
     "class_counts": {
-      "image": 1193,
+      "image": 1194,
       "video": 40
     },
     "missing_count": 31,
@@ -279,6 +279,15 @@
       "source_url": "https://github.com/hcristosm/ak820-linux",
       "revision": "36d11e774d2da4a9f2d813343d375c7488adc5be",
       "checked_at": "2026-11-08T22:27:09+00:00"
+    },
+    {
+      "id": "albw-native-case",
+      "image_url": "https://raw.githubusercontent.com/spacestate1/albw-native/fed0c5f326b907a99783d8d7dd1756090a37fe75/docs/screenshots/title.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/spacestate1/albw-native",
+      "revision": "fed0c5f326b907a99783d8d7dd1756090a37fe75",
+      "checked_at": "2026-11-26T19:46:45+00:00"
     },
     {
       "id": "alien-resurrection-recomp-case",
@@ -4517,7 +4526,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-26T18:34:15+00:00"
+      "checked_at": "2026-11-26T19:46:43+00:00"
     },
     {
       "id": "konami-viper-recomp-case",

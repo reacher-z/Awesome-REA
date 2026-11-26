@@ -164607,5 +164607,90 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "albw-native-case",
+    "name": "A Link Between Worlds native port: the 3DS game rebuilt for Linux",
+    "url": "https://github.com/spacestate1/albw-native",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A native Linux build of The Legend of Zelda: A Link Between Worlds made from decompiled game code, with game logic running as real C and graphics, sound, input and files rewritten on SDL3 and OpenGL.",
+    "description_zh": "用反编译出的游戏代码构建《塞尔达传说：众神的三角力量 2》的原生 Linux 版本：游戏逻辑以真正的 C 运行，图形、声音、输入与文件系统改用 SDL3 与 OpenGL 重写。",
+    "evidence_url": "https://github.com/spacestate1/albw-native/blob/fed0c5f326b907a99783d8d7dd1756090a37fe75/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own 3DS ROM; no game data is included.",
+      "It targets Linux and is built from albw-decomp-ai decompiled code, not an emulator.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "mvc2-naomi-decomp-case",
+    "name": "Marvel vs. Capcom 2: a byte-matching NAOMI and Dreamcast decompilation",
+    "url": "https://github.com/gibletto/mvc2-naomi-dc",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "A byte-matching decompilation of Marvel vs. Capcom 2: New Age of Heroes covering both the NAOMI arcade cartridge and the Dreamcast disc, with one source tree rebuilding each release to its original bytes.",
+    "description_zh": "《Marvel vs. Capcom 2: New Age of Heroes》NAOMI 街机卡带与 Dreamcast 光盘的逐字节匹配反编译：同一套源码树可分别重建出与各版本完全一致的字节。",
+    "evidence_url": "https://github.com/gibletto/mvc2-naomi-dc/blob/3dd6e459ea5526ecad83cb8868de2fe25411a909/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the NAOMI mvsc2 ROM set or Dreamcast disc to verify the build; the project ships no game data.",
+      "It documents that AI assistance was used alongside Capcom naming recovered from the binaries.",
+      "AGPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "revscope",
+    "name": "RevScope: a searchable field guide to reverse engineering tools and workflows",
+    "url": "https://github.com/brunnojob/revscope",
+    "category": "native-analysis",
+    "relationship": "learning",
+    "kind": "documentation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A community-curated, searchable field guide to reverse engineering tools, workflows and authorized analysis, with a live catalog for finding the right tool for each task.",
+    "description_zh": "社区维护、可搜索的逆向工程工具与工作流指南，涵盖合规分析实践，并提供在线目录帮助按任务查找合适工具。",
+    "evidence_url": "https://github.com/brunnojob/revscope/blob/e61c8585d89bc455edd436b5a09aad0ef92453aa/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "It is an online field guide; no installation is needed to browse the catalog.",
+      "It documents tools and workflows rather than shipping analysis software itself.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

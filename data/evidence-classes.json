@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-26T18:33:11+00:00",
-  "entry_count": 5536,
+  "generated_at": "2026-11-26T19:46:38+00:00",
+  "entry_count": 5539,
   "class_counts": {
    "0": 15,
-   "1": 1249,
-   "2": 4060,
+   "1": 1250,
+   "2": 4062,
    "3": 186
   },
   "unknown_count": 26,
@@ -155490,6 +155490,91 @@
    },
    "reason": "code and docs only: no download method and no demo",
    "checked_at": "2026-11-26T18:33:10+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "albw-native-case",
+   "url": "https://github.com/spacestate1/albw-native",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 11706,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 18,
+    "release_asset_count": 26,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-26T19:46:37+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "mvc2-naomi-decomp-case",
+   "url": "https://github.com/gibletto/mvc2-naomi-dc",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 17761,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 13,
+    "release_asset_count": 124,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-26T19:46:37+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "revscope",
+   "url": "https://github.com/brunnojob/revscope",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4680,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-26T19:46:37+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",

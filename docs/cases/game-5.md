@@ -6,10 +6,13 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**505 case studies**
+**508 case studies**
 
 ## Engine reimplementations
 
+- [**OpenTIE: reimplementing Star Wars: TIE Fighter**](https://github.com/elyosh/OpenTIE) - OpenTIE reimplements Star Wars: TIE Fighter for Windows, macOS and Linux using data from the original 1995 Collector's CD-ROM or 1998 Windows release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opentie-case/)</sub>
+- [**OpenTomb: Tomb Raider engine reimplementation**](https://github.com/opentomb/OpenTomb) - OpenTomb is an open-source reimplementation of the classic Tomb Raider engine for playing levels from Tomb Raider 1–5 and custom TRLE levels. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opentomb/)</sub>
+- [**OpenTPW: reimplementing Theme Park World**](https://github.com/OpenTPW/OpenTPW) - OpenTPW reimplements Bullfrog's 1999 game Theme Park World, also released as Sim Theme Park. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opentpw/)</sub>
 - [**OpenTS2: an open-source reimplementation of The Sims 2 in Unity**](https://github.com/LazyDuchess/OpenTS2) - Reimplements The Sims 2 in the Unity engine, reading the user’s Ultimate Collection installation through its own C# code for the game’s DBPF packages and asset formats, which the project also aims to offer as modular libraries. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opents2-sims2-engine-case/)</sub>
 - [**OpenTS: reconstructing the Tiberian Sun engine**](https://github.com/OpenTS-Developers/OpenTS) - OpenTS reconstructs the Command &amp; Conquer: Tiberian Sun 2.03 Firestorm engine as a standalone program. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opents-case/)</sub>
 - [**OpenTTD: recreating Transport Tycoon Deluxe**](https://github.com/OpenTTD/OpenTTD) - OpenTTD recreates Transport Tycoon Deluxe as an open-source transport simulation game, aiming to mimic the original while adding features. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openttd-case/)</sub>

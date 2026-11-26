@@ -6,7 +6,7 @@
 
 [English](game-1.md)
 
-**616 个案例**
+**615 个案例**
 
 <a id="game-matching-decompilation"></a>
 ## 匹配反编译与反汇编
@@ -300,6 +300,7 @@
 - [**Mario vs. Donkey Kong：Game Boy Advance 游戏反汇编**](https://github.com/camthesaxman/mariovsdk) - 该项目将美版 Mario vs. Donkey Kong 拆解为 ARM 汇编与 C 源码，构建出具有指定 MD5 值的 Game Boy Advance ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mariovsdk-case/)</sub>
 - [**Mario-Bros.-Dis：《马里奥兄弟》NES 版的逐字节反汇编**](https://github.com/RussianManSMWC/Mario-Bros.-Dis) - 这是 NES 版《马里奥兄弟》的逐字节反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-bros-nes-disasm/)</sub>
 - [**Marvel Nemesis: Rise of the Imperfects：GameCube 版反编译**](https://github.com/Esoteric-Engineer/mnroi) - mnroi 为美版 GameCube 游戏 Marvel Nemesis: Rise of the Imperfects 重建 C/C++ 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/marvel-nemesis-gamecube-decomp-case/)</sub>
+- [**Marvel vs. Capcom 2：NAOMI 与 Dreamcast 的逐字节反编译**](https://github.com/gibletto/mvc2-naomi-dc) - 《Marvel vs. Capcom 2: New Age of Heroes》NAOMI 街机卡带与 Dreamcast 光盘的逐字节匹配反编译：同一套源码树可分别重建出与各版本完全一致的字节。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mvc2-naomi-decomp-case/)</sub>
 - [**Marvel vs. Capcom 2：Dreamcast 版早期精确反编译**](https://github.com/devin-thomas/mvc2-dc) - 面向《Marvel vs. Capcom 2: New Age of Heroes》北美 Dreamcast 版开展精确反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mvc2-dreamcast-decomp-case/)</sub>
 - [**Marvel vs. Capcom 2：PS2 匹配反编译与浏览器移植**](https://github.com/g-guthrie/mvc2-ps2-decomp) - Marvel vs. Capcom 2 将美版 PS2 游戏代码重建为 C，并与零售版可执行文件逐字节比对，再编译为 WebAssembly 和 WebGL2 浏览器移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mvc2-ps2-decomp-case/)</sub>
 - [**MechWarrior 2 — 在研反编译**](https://github.com/anpage/demech2) - 《MechWarrior 2》与《Ghost Bear’s Legacy》Windows 95 版的在研反编译项目，目标是逐指令匹配原始机器码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/demech2/)</sub>
@@ -628,6 +629,4 @@
 - [**Alleyway：带注释的 Game Boy 反汇编与反编译**](https://github.com/islander0/alleyway-decomp) - Alleyway 项目记录 Game Boy 游戏 World 版 ROM 的反汇编及实验性 C 反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/alleyway-game-boy-decomp-case/)</sub>
 - [**Amplitude：进行中的 PS2 游戏反编译**](https://github.com/ieee802dot11ac/amp) - Amplitude（2003）是针对 NTSC-U/C 零售版的反编译项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/amplitude-2003-case/)</sub>
 - [**Angry Birds Decompilation：Lua 脚本恢复**](https://github.com/jooapa/Angry_Birds_Decompilation) - Angry Birds Decompilation 记录如何从《愤怒的小鸟》PC 移植版中恢复 Lua 脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/angry-birds-decomp/)</sub>
-- [**AutoDestruct-xport：Auto Destruct 原生移植**](https://github.com/psxports/AutoDestruct-xport) - AutoDestruct-xport 将 PlayStation 游戏《Auto Destruct》的反编译代码移植到 C 语言运行时，提供 Windows 和网页入口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/autodestruct-xport-case/)</sub>
-- [**AutoZone Hot Pursuit：重建 Need for Speed: Hot Pursuit**](https://github.com/americusmaximus/AZHP) - AutoZone Hot Pursuit 基于原始二进制分析，以 C++ 重建 1998 年的 Need for Speed: Hot Pursuit 及 Modern Patch。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/autozone-hot-pursuit-case/)</sub>
 <!-- END GENERATED CASES -->

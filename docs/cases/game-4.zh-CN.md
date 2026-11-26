@@ -10,6 +10,9 @@
 
 ## 基于重建源码的移植
 
+- [**Digimon World 2 PC port：Windows 和 Linux 本地移植版**](https://github.com/Wyrelade/DW2-PC) - 该项目把 PlayStation 版《数码宝贝世界 2》做成 Windows 和 Linux 上的原生程序，用游戏反编译出的 C 代码构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/digimon-world-2-pc/)</sub>
+- [**Digimon World 2003：匹配反编译版的掌机移植**](https://github.com/al4xdev/dw3) - Digimon World 2003 将上游的匹配反编译成果和 PC 移植版适配到 R36S、XF35H 等 RK3326 Linux 掌机。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dw3-handheld-port-case/)</sub>
+- [**Digimon World 2003：基于反编译 C 代码的原生 PC 移植**](https://github.com/Feerdus95/dw3-native-port) - 该项目将欧洲版 PlayStation 游戏 Digimon World 2003 的反编译 C 代码编译成原生 Windows 程序，以 OpenGL 和 SDL 实现图形、音频、文件、控制及记忆卡服务，并从用户提供的光盘镜像读取游戏内容。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dw3-native-port-case/)</sub>
 - [**DinoPad：Dinosaur Planet Recompiled 的 Apple 设备移植**](https://github.com/chrissotraidis/dinopad) - DinoPad 将 Dinosaur Planet: Recompiled 适配为 macOS、iPhone 和 iPad 原生应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dinopad-dinosaur-planet-case/)</sub>
 - [**DishSoap：《The Dishwasher: Dead Samurai》Android 移植**](https://github.com/Hdmaniak/DishSoap) - DishSoap 将 Xbox 360 游戏《The Dishwasher: Dead Samurai》移植到 Android，游戏托管代码由用户从自有副本本地反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dishsoap-dishwasher-android-port-case/)</sub>
 - [**DK64: Recompiled：Android 版《大金刚 64》移植**](https://github.com/deivid22srk/dk64-recomp-android) - 该项目把 Donkey Kong 64: Recompiled 移植到原生 Android，使用 NDK、N64ModernRuntime、Vulkan 上的 RT64、RmlUi 和 SDL2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dk64-android/)</sub>
@@ -634,7 +637,4 @@
 - [**OpenStrike：重构 Desert Strike 与 Jungle Strike 数据和引擎行为**](https://github.com/AMDmi3/openstrike) - OpenStrike 是 Desert Strike 和 Jungle Strike 的早期 C++ 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openstrike-case/)</sub>
 - [**OpenTennis：对照 PS2 原版重建 Hot Shots Tennis**](https://github.com/FIZL0/opentennis) - OpenTennis 使用 Rust 和 Bevy 重建 2007 年 PS2 游戏 Hot Shots Tennis，面向桌面、移动设备和浏览器运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentennis-hot-shots-tennis-case/)</sub>
 - [**OpenTESArena：重建 The Elder Scrolls: Arena 的新引擎**](https://github.com/afritz1/OpenTESArena) - OpenTESArena 用新的 C++ 引擎重建 1994 年 DOS 游戏 The Elder Scrolls: Arena，游戏资源由用户另行获取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentesarena-case/)</sub>
-- [**OpenTIE：重实现《星球大战：钛战机》**](https://github.com/elyosh/OpenTIE) - OpenTIE 在 Windows、macOS 和 Linux 上重实现《星球大战：钛战机》，读取用户安装的 1995 年 Collector's CD-ROM 版或 1998 年 Windows 版数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentie-case/)</sub>
-- [**OpenTomb：《古墓丽影》引擎重实现**](https://github.com/opentomb/OpenTomb) - OpenTomb 是经典《古墓丽影》引擎的开源重新实现项目，可运行《古墓丽影》1–5 及自制 TRLE 关卡。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentomb/)</sub>
-- [**OpenTPW：重实现《主题公园世界》**](https://github.com/OpenTPW/OpenTPW) - OpenTPW 重实现 Bullfrog 1999 年的《主题公园世界》，也以《模拟主题公园》发行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentpw/)</sub>
 <!-- END GENERATED CASES -->
