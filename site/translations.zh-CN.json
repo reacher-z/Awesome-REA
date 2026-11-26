@@ -43811,5 +43811,50 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "dune-dynasty-open-dune-case": {
+    "name": "Dune Dynasty：基于 OpenDUNE 的 Dune II 重制",
+    "requirements": [
+      "所审阅的 README 描述的是基于逆向工程 OpenDUNE 引擎的重制，目标是在原版基础上增加修复、体验改进与新功能。",
+      "运行需要原版 Dune II 数据文件；仓库不分发游戏内容。",
+      "README 列出 Windows 32 位、64 位与 ARM64，macOS Intel 与 Apple Silicon，以及 Linux x86-64 与 ARM64 的发布构建。",
+      "仓库采用 GPL-2.0；Dune II 数据与购买的版本保留各自权利。"
+    ]
+  },
+  "underworldgodot-ultima-underworld-case": {
+    "name": "UnderworldGodot：Godot 中的《地下世界》I–II",
+    "requirements": [
+      "所审阅的 README 描述的是在 Godot 中重建 Ultima Underworld 与 Ultima Underworld II 引擎。",
+      "README 将当前版本标为 pre-alpha，不提供支持，并警告不应期待其可直接使用。",
+      "运行需要 Ultima Underworld I 或 II 的游戏文件；开发使用 Godot 4.3 .NET、.NET 9 与 Git LFS。",
+      "仓库采用 MIT；游戏及其数据保留各自权利。"
+    ]
+  },
+  "horizon-minecraft-java-rust-case": {
+    "name": "Horizon：用 Rust 重写 Minecraft: Java Edition",
+    "requirements": [
+      "所审阅的 README 描述的是从零用 Rust 重写 Minecraft: Java Edition 26.3。",
+      "不分发 Minecraft 文件：用户需自有 Minecraft: Java Edition，安装 26.3 并先启动一次。",
+      "启动器支持 Windows x64 与 ARM64、macOS 12 及以上、Linux x86-64。",
+      "仓库采用 LGPL-3.0-or-later；迁移许可前合并的代码仍可按 MIT 使用，游戏本身保留各自权利。"
+    ]
+  },
+  "openrealm-warcraft3-engine-case": {
+    "name": "OpenRealm：开源 Warcraft III 引擎与兼容项目",
+    "requirements": [
+      "所审阅的 README 描述的是面向暴雪时代数据的开源 Quake 风格引擎与兼容项目。",
+      "项目不分发零售游戏数据；只能与用户合法拥有的数据一起使用。",
+      "原生构建需要 C 编译器、make、SDL2 与系统 OpenGL 或 GLES3；Warcraft III 的视频与音乐可选依赖 FFmpeg 开发库。",
+      "仓库采用 MIT；World of Warcraft 与 StarCraft II 仍属探索性的格式与渲染目标。"
+    ]
+  },
+  "openprototype-1995-rust-port-case": {
+    "name": "OpenPrototype：Prototype（1995）的 Rust 从零移植",
+    "requirements": [
+      "所审阅的 README 描述的是通过逆向游戏文件从零移植的 Rust 版本；原源码缺失时依据游戏文件重建。",
+      "需要用户自有的 Prototype 光盘镜像；安装器可下载约 270 MB 的镜像，也可使用自备 cue 文件。",
+      "README 称全部七关与前端界面均可在 Linux、macOS 与 Windows 游玩；macOS 构建未签名，需右键打开。",
+      "仓库采用 GPL-3.0；游戏及其数据保留各自权利。"
+    ]
   }
 }

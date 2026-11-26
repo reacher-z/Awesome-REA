@@ -6,10 +6,16 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**350 case studies**
+**356 case studies**
 
 ## Engine reimplementations
 
+- [**Underworld Revisited: reimplementing Ultima Underworld in Unity**](https://github.com/PQMarine/UnderworldRevisited) - Underworld Revisited reimplements Ultima Underworld: The Stygian Abyss (1992) in Unity. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/underworld-revisited/)</sub>
+- [**UnderworldGodot: Ultima Underworld I-II in Godot**](https://github.com/hankmorgan/UnderworldGodot) - An engine recreation of Ultima Underworld and Ultima Underworld II built in the Godot Engine. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/underworldgodot-ultima-underworld-case/)</sub>
+- [**Untangle: a browser rebuild from REA and Ghidra evidence**](https://github.com/az9713/untangle-rebuild) - An author-documented REA/Ghidra investigation of the shipped Untangle Windows binary produces a single-page playable rebuild and a claim-by-claim grading receipt. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/untangle-rea-evidence-rebuild-case/)</sub>
+- [**vakfu: reconstructing Wakfu map rendering**](https://github.com/jac3km4/vakfu) - vakfu reconstructs Wakfu's isometric map rendering in a Rust application that loads assets from the user's game copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vakfu-case/)</sub>
+- [**Vange-rs: reimplementing Vangers in Rust**](https://github.com/kvark/vange-rs) - vange-rs reimplements Vangers in Rust with wgpu graphics, aiming to reproduce its worlds, vehicles and single-player behavior using original game resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vange-rs-vangers-case/)</sub>
+- [**Vault Engine: rebuilding Fallout and Fallout 2 in Rust**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine reimplements Fallout and Fallout 2 as a Rust engine that reads the user's retail DAT archives. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vault-engine-case/)</sub>
 - [**Vault13: a Rust reimplementation of the Fallout 2 engine**](https://github.com/pingw33n/vault13) - Vault13 reimplements the Fallout 2 engine in Rust using files from a local game directory. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vault13-fallout-2-case/)</sub>
 - [**VCMI: recreating the Heroes of Might &amp; Magic III engine**](https://github.com/vcmi/vcmi) - VCMI recreates the Heroes of Might &amp; Magic III engine in C++ for playing the original game with an open-source runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vcmi-case/)</sub>
 - [**VERA20K: rebuilding Red Alert 2: Yuri's Revenge in Rust**](https://github.com/YuriPlanet/vera20k) - VERA20K rebuilds the Red Alert 2: Yuri's Revenge engine in Rust while reading the user's original game files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vera20k-case/)</sub>
