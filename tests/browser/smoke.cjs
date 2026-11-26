@@ -242,32 +242,30 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   assert.equal(await count(page, '[data-cards] > .card.is-active'), 0, `${label}: Escape clears the selection`);
   await page.waitForFunction(() => document.querySelector('[data-drawer]').classList.contains('is-overview'));
   assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), false, `${label}: clearing the search returns to the overview`);
-  // The overview module: one row per class, drawn to scale, the largest class pre-selected.
-  assert.equal(await count(page, '[data-overview] [data-ov-body=""] .ov-row'), 6, `${label}: one row per data class`);
-  assert.equal(await text(page, '[data-overview] [data-ov-row="game"] .ov-cell-name'), language === 'zh' ? '游戏' : 'Game', `${label}: the largest class leads`);
-  assert.equal(await page.$eval('[data-overview] [data-ov-row="game"]', row => row.getAttribute('aria-selected')), 'true', `${label}: the largest class starts selected`);
-  const gameWidth = await page.$eval('[data-overview] [data-ov-row="game"] .ov-fill', bar => bar.getBoundingClientRect().width);
-  const siteWidth = await page.$eval('[data-overview] [data-ov-row="website"] .ov-fill', bar => bar.getBoundingClientRect().width);
-  assert(Math.abs(siteWidth / (gameWidth || 1) - 77 / 2830) < 0.01, `${label}: bar lengths stay linear`);
-  await page.click('[data-ov-row="software"]');
+  // FIG. 2: the spec table selects classes, the ring follows, the level filter re-aggregates everything.
+  assert.equal(await count(page, '[data-overview] [data-ov-body=""] .ov-spec-row'), 6, `${label}: one spec row per data class`);
+  assert.equal(await page.$eval('[data-overview] [data-ov-row="game"] .ov-letterbtn', btn => btn.getAttribute('aria-pressed')), 'true', `${label}: the largest class starts selected`);
+  assert((await text(page, '[data-overview] [data-ov-body=""] [data-ov-title]')).includes('71.0%'), `${label}: the title leads with the top share`);
+  assert.equal(await count(page, '[data-overview] [data-ov-body=""] .ov-proj-line'), 2, `${label}: the exploded others project to the magnifier`);
+  await page.click('[data-overview] [data-ov-body=""] [data-ov-select="software"]');
   await page.waitForFunction(() => document.querySelector('[data-ov-body=""] [data-ov-panel="software"]').hidden === false);
-  // The level filter re-shares the bars: C2's own total becomes the base and the scope line names it.
-  const gameShare = () => page.$eval('[data-overview] [data-ov-row="game"] [data-ov-share]', node => node.textContent);
-  assert.equal(await gameShare(), '71.0%', `${label}: the unfiltered share leads`);
+  assert.equal(await page.$eval('[data-overview] [data-ov-row="software"] .ov-letterbtn', btn => btn.getAttribute('aria-pressed')), 'true', `${label}: the spec table selects`);
+  // The level filter re-aggregates: title, metrics, ring angles and the merge rule all recompute.
+  const title = () => text(page, '[data-overview] [data-ov-body=""] [data-ov-title]');
   await page.click('.ov-evbtn');
   await page.click('[data-overview] #ov-evlist input[value="2"]');
-  await page.waitForFunction(() => document.querySelector('[data-ov-row="game"] [data-ov-share]').textContent !== '71.0%');
-  assert.equal(await gameShare(), '68.9%', `${label}: the C2 filter re-shares the bars`);
-  assert((await text(page, '[data-overview] [data-ov-body=""] .ov-scope')).includes('C2'), `${label}: the scope line names the filter`);
-  assert.equal(await page.$eval('[data-overview] #ov-evlist input[value="2"]', box => box.checked), true, `${label}: the checkbox keeps its state`);
+  await page.waitForFunction(() => document.querySelector('[data-ov-title]').textContent.includes('C2'));
+  assert((await title()).includes('68.9%'), `${label}: the title recomputes under the C2 filter`);
+  assert.equal(await page.$eval('[data-ov-metric="classified"]', node => node.textContent), '2,976', `${label}: the metrics re-aggregate`);
+  assert.equal(await count(page, '[data-overview] [data-ov-body=""] .ov-proj-line'), 2, `${label}: the merge rule re-evaluates`);
   await page.click('[data-overview] #ov-evlist input[value="2"]');
-  await page.waitForFunction(() => document.querySelector('[data-ov-row="game"] [data-ov-share]').textContent === '71.0%');
+  await page.waitForFunction(() => document.querySelector('[data-ov-title]').textContent.includes('71.0%'));
   await page.click('[data-ov-tab="case-study"]');
   await page.waitForFunction(() => !document.querySelector('[data-ov-body="case-study"]').hidden);
   assert.equal(await page.$eval('[data-overview]', node => node.hidden), false, `${label}: a kind tab keeps the overview open`);
   await page.click('[data-ov-tab=""]');
   await page.waitForFunction(() => !document.querySelector('[data-ov-body=""]').hidden);
-  await page.click('[data-ov-row="software"]');
+  await page.click('[data-overview] [data-ov-body=""] [data-ov-select="software"]');
   await page.waitForFunction(() => document.querySelector('[data-ov-body=""] [data-ov-panel="software"]').hidden === false);
   await page.click('[data-ov-body=""] [data-ov-panel="software"] [data-ov-view-all]');
   await page.waitForFunction(() => new URL(location.href).searchParams.get('dcls') === 'software');
