@@ -1343,3 +1343,27 @@ Two protocol and web tools, a baseband research repo and an Xbox recompilation: 
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. ShadowRecomp is Class 1 with a merged preview; the other three are Class 2. The hourly class scan produced two leads this round, which were reviewed and set aside.
+
+## Batch 52 — 2026-11-26
+
+Two ports and two DCC MCP adapters: Time Gate Classic Reborn, The Suffering Recomp, dcc-mcp-maya and dcc-mcp-blender.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| timegate-classic-reborn-case | reconstruction-cases | [nayo186/TimeGateClassicReborn](https://github.com/nayo186/TimeGateClassicReborn/blob/4eb9468e0a57fb266a80bdf9ca85147338a275ad/README.md) | 178dbeebea28bd1c06f0a344be13d84b29cfb52dbee90703fb65c7ed98d9908f |
+| the-suffering-recomp-case | reconstruction-cases | [Anthonyp85/TheSuffering-Recomp](https://github.com/Anthonyp85/TheSuffering-Recomp/blob/83ed39aac9ad80b5935d0594e0f410b3881c7f07/README.md) | 9ea87f9b7c7daecaa7e2535f9853f070d558ee71467ec6cbc451b369d9a2ddd3 |
+| dcc-mcp-maya | agent-mcp | [dcc-mcp/dcc-mcp-maya](https://github.com/dcc-mcp/dcc-mcp-maya/blob/8bdf95ee9624da4dd48c5b1a69fb8a03a57f31c0/README.md) | 075ea7ab45323cc5d14c7001c910d102620f6c49a4fa80eb9eae72a4faf246e9 |
+| dcc-mcp-blender | agent-mcp | [dcc-mcp/dcc-mcp-blender](https://github.com/dcc-mcp/dcc-mcp-blender/blob/ee5cebe300bf7aa0209f9ad4e06ed478ce71f40c/README.md) | fad633fa7e2eeaa2a60aa413cdb1036bacf0c826617c694243fe0fc62343dc98 |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| nacholuver1/Crimson-Skies-High-Road-To-Revenge-Repo | Two Crimson Skies engine/recompilation records already exist. |
+| xvrh/lottie-flutter, ed-asriyan/lottie-converter and other lottie leads | Rendering and conversion libraries, not reverse-engineering entries. |
+| RobLe3/cc-blender-skill | A third Blender agent tooling record beyond the two DCC-MCP adapters chosen. |
+| sarderji889900-bit/rea-game-asset-scraper | Asset extraction tooling of unclear provenance; left unreviewed. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Time Gate, dcc-mcp-maya and dcc-mcp-blender are Class 1 with merged previews; The Suffering is Class 2. Both new records extend the 3d-design-adjacent DCC tooling and game port coverage.

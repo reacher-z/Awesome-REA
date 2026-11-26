@@ -6,7 +6,7 @@
 
 [English](game-3.md)
 
-**607 个案例**
+**606 个案例**
 
 ## 静态重编译
 
@@ -443,6 +443,7 @@
 - [**The Simpsons Game：Xbox 360 游戏的 Windows 静态重编译**](https://github.com/portingpete/the-simpsons-recomp) - 该《The Simpsons Game》移植项目预先将美版 Xbox 360 游戏的 PowerPC 代码转译为 C++，构建 Windows x64 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/the-simpsons-game-recomp-case/)</sub>
 - [**The Simpsons Wrestling Recompiled：基于 psxrecomp 的 PlayStation 静态重编译**](https://github.com/TekRantGaming/simpsons-wrestling-recompiled) - 借助固定版本的 psxrecomp 分支，将这款 PlayStation 游戏的 MIPS 代码转换为 C，并基于其模拟硬件行为的运行时构建 Windows 与 Linux 程序，另附启动器和专用插件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/simpsons-wrestling-recompiled-case/)</sub>
 - [**模拟人生 2：静态重编译初代 Xbox 游戏**](https://github.com/abilliontokens/sims2-recomp) - 该项目用 Xbox XBE Recomp 重编译初代 Xbox 美版《模拟人生 2》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sims2-xbox-recomp/)</sub>
+- [**The Suffering Recomp：Xbox 游戏原生登陆 Windows 与 Steam Deck**](https://github.com/Anthonyp85/TheSuffering-Recomp) - 把美版 Xbox《The Suffering》非官方静态重编译为原生 Windows（Direct3D 12）以及 Linux/Steam Deck（Vulkan + SDL3）版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/the-suffering-recomp-case/)</sub>
 - [**The Two Towers Recompiled：初代 Xbox 静态重编译移植**](https://github.com/Gumpolas/TooTawersRecomp) - 使用随附的 xboxrecomp 工具包，将《The Lord of the Rings: The Two Towers》（Xbox 美版，2002）的 x86 代码静态重编译为 C，生成原生 Windows、Linux 及实验性 macOS 构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/two-towers-recompiled-case/)</sub>
 - [**The Urbz: Sims in the City：初代 Xbox 版静态重编译**](https://github.com/abilliontokens/urbz-recomp) - 这个原版 Xbox 游戏《模拟人生：城里人》北美版的静态重编译，为 Windows 构建带 Direct3D 12 和 XAudio2 的 Urbz.exe，为 Linux 构建带 Vulkan 和 SDL3 的 Urbz。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/urbz-recomp/)</sub>
 - [**Theme Park：DOS 游戏的静态重编译**](https://github.com/sp00nznet/themepark-recomp) - Theme Park 使用 pcrecomp 将 Bullfrog 于 1994 年推出的 DOS 游戏的 32 位代码翻译为 C，构建 Windows 和 Linux 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/theme-park-static-recomp-case/)</sub>
@@ -618,6 +619,4 @@
 - [**Digimon World 2003：匹配反编译版的掌机移植**](https://github.com/al4xdev/dw3) - Digimon World 2003 将上游的匹配反编译成果和 PC 移植版适配到 R36S、XF35H 等 RK3326 Linux 掌机。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dw3-handheld-port-case/)</sub>
 - [**Digimon World 2003：基于反编译 C 代码的原生 PC 移植**](https://github.com/Feerdus95/dw3-native-port) - 该项目将欧洲版 PlayStation 游戏 Digimon World 2003 的反编译 C 代码编译成原生 Windows 程序，以 OpenGL 和 SDL 实现图形、音频、文件、控制及记忆卡服务，并从用户提供的光盘镜像读取游戏内容。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dw3-native-port-case/)</sub>
 - [**DinoPad：Dinosaur Planet Recompiled 的 Apple 设备移植**](https://github.com/chrissotraidis/dinopad) - DinoPad 将 Dinosaur Planet: Recompiled 适配为 macOS、iPhone 和 iPad 原生应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dinopad-dinosaur-planet-case/)</sub>
-- [**DishSoap：《The Dishwasher: Dead Samurai》Android 移植**](https://github.com/Hdmaniak/DishSoap) - DishSoap 将 Xbox 360 游戏《The Dishwasher: Dead Samurai》移植到 Android，游戏托管代码由用户从自有副本本地反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dishsoap-dishwasher-android-port-case/)</sub>
-- [**DK64: Recompiled：Android 版《大金刚 64》移植**](https://github.com/deivid22srk/dk64-recomp-android) - 该项目把 Donkey Kong 64: Recompiled 移植到原生 Android，使用 NDK、N64ModernRuntime、Vulkan 上的 RT64、RmlUi 和 SDL2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dk64-android/)</sub>
 <!-- END GENERATED CASES -->

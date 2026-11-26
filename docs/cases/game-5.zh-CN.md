@@ -6,10 +6,13 @@
 
 [English](game-5.md)
 
-**499 个案例**
+**502 个案例**
 
 ## 引擎重实现
 
+- [**OpenUG2：《极品飞车：地下狂飙 2》引擎重建**](https://github.com/whoismept/OpenUG2) - OpenUG2 以玩家自备的《极品飞车：地下狂飙 2》数据重建原生赛车引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openug2-case/)</sub>
+- [**OpenUT2k4：用 Unreal Engine 5.8 重建《Unreal Tournament 2004》**](https://github.com/GloriousEggroll/OpenUT2k4) - OpenUT2k4 使用 C++ 和 Unreal Engine 5.8 重建《Unreal Tournament 2004》，在本地转换玩家安装目录中的地图、角色和音频，并在运行时构建地图。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/openut2k4-case/)</sub>
+- [**OpenVIII：《Final Fantasy VIII》的 C# 引擎重建**](https://github.com/MaKiPL/OpenVIII-monogame) - OpenVIII 以 C# 和 MonoGame 重写《Final Fantasy VIII》游戏引擎，面向 Windows 和 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openviii-monogame-case/)</sub>
 - [**OpenXcom：X-COM: UFO Defense 与 Terror from the Deep 的开源克隆**](https://github.com/OpenXcom/OpenXcom) - 以 C++/SDL 引擎重新实现 MicroProse 的 UFO: Enemy Unknown（X-COM: UFO Defense）与 X-COM: Terror from the Deep，并在使用者自己的原游戏资源上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxcom-engine-case/)</sub>
 - [**OpenXeen：用 Java 重建 World of Xeen 引擎**](https://github.com/busyDuckman/OpenXeen) - OpenXeen 用 Java 重写 Might and Magic IV、V 的 World of Xeen 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxeen-case/)</sub>
 - [**OpenXvT：《X-Wing vs. TIE Fighter》重实现**](https://github.com/elyosh/OpenXvT) - OpenXvT 使用玩家持有的原版数据，为 Windows、macOS 和 Linux 重实现《Star Wars: X-Wing vs. TIE Fighter》及《Balance of Power》资料片。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxvt-case/)</sub>

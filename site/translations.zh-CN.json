@@ -46498,5 +46498,37 @@
       "它通过发布包分发，并列出最低系统需求与已知问题。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "timegate-classic-reborn-case": {
+    "name": "Time Gate Classic Reborn：1996 年 Infogrames 冒险游戏的现代移植",
+    "requirements": [
+      "需要通过启动器或 Android 应用导入自备的 GOG 游戏副本。",
+      "面向 Windows、Linux、macOS 与 Android，后两者标注为实验性。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "the-suffering-recomp-case": {
+    "name": "The Suffering Recomp：Xbox 游戏原生登陆 Windows 与 Steam Deck",
+    "requirements": [
+      "需要自备 Xbox 光盘或转储；不包含游戏数据。",
+      "面向 Windows（D3D12）以及 Linux/Steam Deck（Vulkan + SDL3）。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "dcc-mcp-maya": {
+    "name": "dcc-mcp-maya：Autodesk Maya 的 MCP 适配器",
+    "requirements": [
+      "需要安装 Autodesk Maya 以及支持 MCP 的客户端。",
+      "它把类型化的 Maya 操作暴露给智能体，并不取代应用程序本身。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "dcc-mcp-blender": {
+    "name": "dcc-mcp-blender：Blender 的 MCP 插件",
+    "requirements": [
+      "需要 Blender 与支持 MCP 的客户端，并安装该插件。",
+      "它向智能体暴露类型化的 Blender 操作，而不是盲目自动化界面。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

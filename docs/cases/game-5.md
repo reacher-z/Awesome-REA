@@ -6,10 +6,13 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**499 case studies**
+**502 case studies**
 
 ## Engine reimplementations
 
+- [**OpenUG2: a Need for Speed: Underground 2 engine reimplementation**](https://github.com/whoismept/OpenUG2) - OpenUG2 reimplements the Need for Speed: Underground 2 engine as a native racing prototype that reads the player's original game data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openug2-case/)</sub>
+- [**OpenUT2k4: recreating Unreal Tournament 2004 in Unreal Engine 5.8**](https://github.com/GloriousEggroll/OpenUT2k4) - OpenUT2k4 recreates Unreal Tournament 2004 in C++ on Unreal Engine 5.8 using maps, characters, audio and music converted locally from the player's installation. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/openut2k4-case/)</sub>
+- [**OpenVIII: a C# engine reconstruction of Final Fantasy VIII**](https://github.com/MaKiPL/OpenVIII-monogame) - OpenVIII rewrites the Final Fantasy VIII game engine in C# and MonoGame for Windows and Linux. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openviii-monogame-case/)</sub>
 - [**OpenXcom: an open-source clone of X-COM: UFO Defense and Terror from the Deep**](https://github.com/OpenXcom/OpenXcom) - Reimplements MicroProse’s UFO: Enemy Unknown (X-COM: UFO Defense) and X-COM: Terror from the Deep as a C++/SDL engine that runs on the user’s original game resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openxcom-engine-case/)</sub>
 - [**OpenXeen: rebuilding the World of Xeen engine in Java**](https://github.com/busyDuckman/OpenXeen) - OpenXeen is a Java engine rewrite for Might and Magic IV and V: World of Xeen. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openxeen-case/)</sub>
 - [**OpenXvT: X-Wing vs. TIE Fighter reimplementation**](https://github.com/elyosh/OpenXvT) - OpenXvT reimplements Star Wars: X-Wing vs. TIE Fighter and its Balance of Power expansion for Windows, macOS and Linux using the player's original game data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openxvt-case/)</sub>

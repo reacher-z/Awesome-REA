@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-26T00:15:50+00:00",
-    "entry_count": 1228,
-    "class_entry_count": 1259,
+    "generated_at": "2026-11-26T01:58:41+00:00",
+    "entry_count": 1231,
+    "class_entry_count": 1262,
     "class_counts": {
-      "image": 1188,
+      "image": 1191,
       "video": 40
     },
     "missing_count": 31,
@@ -1818,6 +1818,24 @@
       "source_url": "https://github.com/JackRushante/DBZ-Super-Saiya-Densetsu-Rust",
       "revision": "b4a67c95f1ed2c7d8c58e519c1d99eba9c005a35",
       "checked_at": "2026-11-22T06:41:04+00:00"
+    },
+    {
+      "id": "dcc-mcp-blender",
+      "image_url": "https://raw.githubusercontent.com/dcc-mcp/dcc-mcp-blender/ee5cebe300bf7aa0209f9ad4e06ed478ce71f40c/docs/showcase/crate-lookdev/render.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/dcc-mcp/dcc-mcp-blender",
+      "revision": "ee5cebe300bf7aa0209f9ad4e06ed478ce71f40c",
+      "checked_at": "2026-11-26T01:58:41+00:00"
+    },
+    {
+      "id": "dcc-mcp-maya",
+      "image_url": "https://raw.githubusercontent.com/dcc-mcp/dcc-mcp-maya/8bdf95ee9624da4dd48c5b1a69fb8a03a57f31c0/docs/images/maya-asset-sync-arnold-showcase.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/dcc-mcp/dcc-mcp-maya",
+      "revision": "8bdf95ee9624da4dd48c5b1a69fb8a03a57f31c0",
+      "checked_at": "2026-11-26T01:58:41+00:00"
     },
     {
       "id": "de4py",
@@ -4481,7 +4499,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-26T00:15:48+00:00"
+      "checked_at": "2026-11-26T01:58:40+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -9872,6 +9890,15 @@
       "source_url": "https://github.com/DR-89/time-crisis-vr",
       "revision": "a92faadc4e8c2042b1f6baccc77d4785863ceb7c",
       "checked_at": "2026-11-24T02:27:20+00:00"
+    },
+    {
+      "id": "timegate-classic-reborn-case",
+      "image_url": "https://raw.githubusercontent.com/nayo186/TimeGateClassicReborn/4eb9468e0a57fb266a80bdf9ca85147338a275ad/docs/images/trailer.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/nayo186/TimeGateClassicReborn",
+      "revision": "4eb9468e0a57fb266a80bdf9ca85147338a275ad",
+      "checked_at": "2026-11-26T01:58:41+00:00"
     },
     {
       "id": "timesplitters-future-perfect-pc-rebuild-case",

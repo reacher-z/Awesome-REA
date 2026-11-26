@@ -164300,5 +164300,117 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "timegate-classic-reborn-case",
+    "name": "Time Gate Classic Reborn: the 1996 Infogrames adventure on modern PCs",
+    "url": "https://github.com/nayo186/TimeGateClassicReborn",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A source port of Time Gate: Knight Chase (Infogrames, 1996) for modern Windows, Linux, macOS and Android, keeping the original graphics with careful fixes and options and its own launcher.",
+    "description_zh": "把 Infogrames 1996 年的《Time Gate: Knight Chase》移植到现代 Windows、Linux、macOS 与 Android，保留原版画面并附带细致修复、选项与自带启动器。",
+    "evidence_url": "https://github.com/nayo186/TimeGateClassicReborn/blob/4eb9468e0a57fb266a80bdf9ca85147338a275ad/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a GOG copy of the game imported through the launcher or the Android app.",
+      "It targets Windows, Linux, macOS and Android, with the latter two described as experimental.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "the-suffering-recomp-case",
+    "name": "The Suffering Recomp: the Xbox game natively on Windows and Steam Deck",
+    "url": "https://github.com/Anthonyp85/TheSuffering-Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An unofficial static recompilation of the USA Xbox release of The Suffering for native Windows with Direct3D 12 and for Linux and Steam Deck with Vulkan and SDL3.",
+    "description_zh": "把美版 Xbox《The Suffering》非官方静态重编译为原生 Windows（Direct3D 12）以及 Linux/Steam Deck（Vulkan + SDL3）版本。",
+    "evidence_url": "https://github.com/Anthonyp85/TheSuffering-Recomp/blob/83ed39aac9ad80b5935d0594e0f410b3881c7f07/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Xbox disc or dump; no game data is included.",
+      "It targets Windows with D3D12 and Linux or Steam Deck with Vulkan and SDL3.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "dcc-mcp-maya",
+    "name": "dcc-mcp-maya: an MCP adapter for Autodesk Maya",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-maya",
+    "category": "agent-mcp",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "An Autodesk Maya MCP adapter that lets AI agents inspect scenes, model geometry, edit materials, rig and animate assets and render or export through typed tools in the DCC-MCP ecosystem.",
+    "description_zh": "Autodesk Maya 的 MCP 适配器，让 AI 智能体通过 DCC-MCP 生态的类型化工具检查场景、建模、编辑材质、绑定与动画以及渲染导出。",
+    "evidence_url": "https://github.com/dcc-mcp/dcc-mcp-maya/blob/8bdf95ee9624da4dd48c5b1a69fb8a03a57f31c0/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an Autodesk Maya installation and an MCP-capable client.",
+      "It exposes typed Maya actions to agents rather than replacing the application.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "dcc-mcp-blender",
+    "name": "dcc-mcp-blender: an MCP addon for Blender",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-blender",
+    "category": "agent-mcp",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A Blender MCP addon that lets AI agents model, edit meshes and UVs, rig, build materials and render scenes through typed tools in the DCC-MCP ecosystem.",
+    "description_zh": "Blender 的 MCP 插件，让 AI 智能体通过 DCC-MCP 生态的类型化工具建模、编辑网格与 UV、绑定骨架、构建材质并渲染场景。",
+    "evidence_url": "https://github.com/dcc-mcp/dcc-mcp-blender/blob/ee5cebe300bf7aa0209f9ad4e06ed478ce71f40c/README.md",
+    "verified_at": "2026-11-25",
+    "added_at": "2026-11-25",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Blender and an MCP-capable client with the addon installed.",
+      "It exposes typed Blender actions to agents rather than automating the UI blindly.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

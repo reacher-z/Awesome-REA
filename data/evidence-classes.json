@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-26T00:15:43+00:00",
-  "entry_count": 5525,
+  "generated_at": "2026-11-26T01:58:21+00:00",
+  "entry_count": 5529,
   "class_counts": {
    "0": 15,
-   "1": 1244,
-   "2": 4054,
+   "1": 1247,
+   "2": 4055,
    "3": 186
   },
   "unknown_count": 26,
@@ -155177,6 +155177,125 @@
    "checked_at": "2026-11-26T00:15:42+00:00",
    "evidence_status": "observed",
    "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "timegate-classic-reborn-case",
+   "url": "https://github.com/nayo186/TimeGateClassicReborn",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 23433,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 8,
+    "release_asset_count": 32,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 4,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-26T01:58:19+00:00",
+   "evidence_status": "observed",
+   "scope": "partial",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "the-suffering-recomp-case",
+   "url": "https://github.com/Anthonyp85/TheSuffering-Recomp",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 44553,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 6,
+    "release_asset_count": 18,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-26T01:58:19+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "dcc-mcp-maya",
+   "url": "https://github.com/dcc-mcp/dcc-mcp-maya",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 31040,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 100,
+    "release_asset_count": 787,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "download_links": [
+     "pip install dcc-mcp-maya"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
+   "checked_at": "2026-11-26T01:58:20+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "dcc-mcp-blender",
+   "url": "https://github.com/dcc-mcp/dcc-mcp-blender",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 39751,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 72,
+    "release_asset_count": 360,
+    "demo": [
+     "image"
+    ],
+    "media_count": 6,
+    "download_links": [
+     "pip install dcc-mcp-blender"
+    ],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
+   "checked_at": "2026-11-26T01:58:20+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   }
