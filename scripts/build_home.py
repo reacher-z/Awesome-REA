@@ -87,41 +87,33 @@ COPY = {
         'all_classes': 'All classes', 'class_unknown_short': 'Unknown', 'class_info_label': 'What the evidence classes mean',
         'class_guide': 'How classes are assigned',
         'unknown_title': 'Source unavailable or unreadable at review time',
-        'overview_eyebrow': 'FIG. 2 · CASE STUDIES BY TARGET DOMAIN',
-        'overview_title_all': '{total} classified entries, {share} from',
-        'overview_meta': 'Classified {cls} / {total} · Last scan {scan} ·',
-        'overview_meta_json': 'Download JSON ↓',
-        'overview_metric_classified': 'Classified cases', 'overview_metric_classified_note': 'of case studies',
-        'overview_metric_top': 'Largest class', 'overview_metric_top_note': '{count} entries',
-        'overview_metric_strong': 'Strong evidence (C0+C1)', 'overview_metric_strong_note': '{count} entries',
+        'overview_eyebrow': 'FIG. 2 · BY TARGET DOMAIN',
+        'overview_title': 'Cases by target <em>domain</em>',
+        'overview_meta': '{total} entries · Last scan {scan} ·', 'overview_meta_json': 'Download JSON ↓',
+        'overview_metric_entries': 'Entries',
+        'overview_metric_domains': 'Domains',
+        'overview_metric_strong': 'Strong evidence (C0+C1)', 'overview_strong_label': 'C0+C1',
         'overview_metric_full': 'Full reconstructions (C0)', 'overview_metric_full_note': 'manually reviewed',
         'overview_metrics_label': 'Key figures',
-        'overview_caption_a': 'FIG. 2A  SHARE OF CASES, BY TARGET DOMAIN',
-        'overview_caption_b': 'FIG. 2B  DETAIL C–F · 6.9% × {zoom}',
-        'overview_center': 'CASES · CLASSIFIED',
-        'overview_scale_note': '100% = {n}',
-        'overview_sheet': 'SHEET 2 OF 2 · SCALE 1:1', 'overview_sheet_rev': 'REV {date} · N = {n}',
-        'overview_letter': 'Letter', 'overview_class': 'Class', 'overview_share': 'Share', 'overview_count': 'Count',
-        'overview_strong': 'Strong C0+C1', 'overview_full': 'Full C0',
-        'overview_all_row': 'All', 'overview_note_small': 'small sample', 'overview_note_papers': '{n} benchmark papers',
+        'overview_h_num': '#', 'overview_h_domain': 'Domain', 'overview_h_cases': 'Cases', 'overview_h_share': 'Share',
+        'overview_h_strong': 'Strong', 'overview_strong_label': 'C0+C1', 'overview_full': 'Full C0',
+        'overview_all_row': 'All', 'overview_note_small': 'small sample',
         'overview_sheet_title': 'DETAIL {letter} · {name}', 'overview_sheet_cases': '{count} cases',
-        'overview_sheet_sub': 'share {share}% · strong evidence {strong}%',
-        'overview_levels_title': 'Evidence levels',
-        'overview_col_level': 'Level', 'overview_col_share': 'Of the class', 'overview_col_all': 'Of all {n}', 'overview_col_diff': 'Difference',
-        'overview_view': 'View {count} cases', 'overview_view_full': 'Full reconstructions only ({count})',
-        'overview_download': 'Download class JSON ↓',
+        'overview_sheet_sub': 'of all {share} · strong evidence {strong}%',
+        'overview_levels_title': '证据等级构成',
+        'overview_col_level': 'Level', 'overview_col_desc': 'Description', 'overview_col_share': 'Of the class', 'overview_col_all': 'All',
+        'overview_view': 'View all {count} cases', 'overview_view_full': '★ C0 only ({count})',
+        'overview_download': 'Download JSON ↓',
         'overview_whatis': 'What the evidence levels mean?',
         'overview_empty': 'No classified entries in this type yet.',
-        'overview_tooltip': '{letter} · {name}', 'overview_tooltip_count': '{count} entries · {share} of classified',
-        'overview_tooltip_share': '{share} of others',
+        'overview_tooltip': '{name} · {count} entries · {share}%',
         'overview_aria_unit': 'entries', 'overview_aria_unit_one': 'entry',
-        'overview_label': 'Data classes by evidence class', 'overview_total': 'data points',
+        'overview_label': 'Cases by target domain', 'overview_total': 'entries',
         'overview_note': 'C0 needs a manual full-reconstruction review. C1–C3 follow the public repository evidence.',
-        'overview_evsel': 'Evidence level', 'overview_evsel_all': 'All',
-        'overview_sort': 'Sort', 'overview_sort_share': 'Share', 'overview_sort_strong': 'Strong evidence',
-        'overview_note_col': 'Notes', 'overview_others_aria': 'Other {count} classes, {n} entries at {share} in total. Pick one in the spec table.',
-        'overview_title_lead': '{total} {noun}, {share}% from ', 'overview_title_all_noun': 'classified entries',
-        'overview_col_desc': 'Description',
+        'overview_evsel': '证据等级', 'overview_evsel_all': '全部',
+        'overview_sort': 'Sort', 'overview_sort_order': 'Domain order', 'overview_sort_count': 'Count', 'overview_sort_name': 'Name A–Z',
+        'overview_filtered_meta': '{codes}: {total} entries',
+
         'preview_image_alt': "Demo screenshot from the project's public documentation",
         'preview_video_alt': "Demo video thumbnail from the project's public documentation",
         'preview_full_label': 'Full-size demo screenshot: {name}',
@@ -143,39 +135,33 @@ COPY = {
         'unknown_title': '复核时来源不可达或不可读',
         'overview_label': '数据类别与证据档位', 'overview_total': '数据点',
         'overview_note': 'C0 需人工复核完整复现。C1–C3 依据公开仓库证据。',
-        'overview_eyebrow': 'FIG. 2 · 案例按目标领域分布',
-        'overview_title_all': '{total} 条已分类数据，{share} 来自',
-        'overview_meta': '已分类 {cls} / {total} · 最后扫描 {scan} ·',
-        'overview_meta_json': '下载 JSON ↓',
-        'overview_metric_classified': '已分类案例', 'overview_metric_classified_note': '占 Case studies',
-        'overview_metric_top': '最大类别', 'overview_metric_top_note': '{count} 个',
-        'overview_metric_strong': '强证据（C0+C1）', 'overview_metric_strong_note': '{count} 个',
-        'overview_metric_full': '全量复现（C0）', 'overview_metric_full_note': '人工审核通过',
-        'overview_metrics_label': '关键数字',
-        'overview_caption_a': 'FIG. 2A  案例占比 · 按目标领域',
-        'overview_caption_b': 'FIG. 2B  明细 C–F · 6.9% × {zoom}',
-        'overview_center': '案例 · 已分类',
-        'overview_scale_note': '100% = {n}',
-        'overview_sheet': 'SHEET 2 OF 2 · SCALE 1:1', 'overview_sheet_rev': 'REV {date} · N = {n}',
-        'overview_letter': '字母', 'overview_class': '类别', 'overview_share': '占比', 'overview_count': '数量',
-        'overview_strong': '强证据 C0+C1', 'overview_full': '全量复现 C0',
-        'overview_all_row': '全部', 'overview_note_small': '样本少', 'overview_note_papers': '含 {n} 篇基准论文',
-        'overview_sheet_title': 'DETAIL {letter} · {name}', 'overview_sheet_cases': '{count} 个案例',
-        'overview_sheet_sub': '占已分类 {share}% · 强证据 {strong}%',
+        'overview_eyebrow': 'FIG. 2 · BY TARGET DOMAIN',
+        'overview_title': '按目标<em>领域</em>分布',
+        'overview_meta': '{total} entries · Last scan {scan} ·', 'overview_meta_json': 'Download JSON ↓',
+        'overview_metric_entries': 'Entries',
+        'overview_metric_domains': 'Domains',
+        'overview_metric_strong': 'Strong evidence (C0+C1)', 'overview_strong_label': 'C0+C1',
+        'overview_metric_full': 'Full reconstructions (C0)', 'overview_metric_full_note': 'manually reviewed',
+        'overview_metrics_label': 'Key figures',
+        'overview_h_num': '#', 'overview_h_domain': 'Domain', 'overview_h_cases': 'Cases', 'overview_h_share': 'Share',
+        'overview_h_strong': 'Strong', 'overview_strong_label': 'C0+C1', 'overview_full': 'Full C0',
+        'overview_all_row': 'All', 'overview_note_small': 'small sample',
+        'overview_sheet_title': 'DETAIL {letter} · {name}', 'overview_sheet_cases': '{count} cases',
+        'overview_sheet_sub': 'of all {share} · strong evidence {strong}%',
         'overview_levels_title': '证据等级构成',
-        'overview_col_level': '等级', 'overview_col_share': '占本类', 'overview_col_all': '全部 {n} 中', 'overview_col_diff': '差值',
-        'overview_view': '查看 {count} 个案例', 'overview_view_full': '★ 只看全量复现（{count}）',
-        'overview_download': '下载该类 JSON ↓',
-        'overview_whatis': '证据等级是什么？',
-        'overview_empty': '该内容类型还没有分类数据',
-        'overview_tooltip': '{letter} · {name}', 'overview_tooltip_count': '{count} 个 · 占已分类 {share}',
-        'overview_tooltip_share': '占其他 {share}',
-        'overview_aria_unit': '条', 'overview_aria_unit_one': '条',
+        'overview_col_level': 'Level', 'overview_col_desc': 'Description', 'overview_col_share': 'Of the class', 'overview_col_all': 'All',
+        'overview_view': 'View all {count} cases', 'overview_view_full': '★ C0 only ({count})',
+        'overview_download': 'Download JSON ↓',
+        'overview_whatis': 'What the evidence levels mean?',
+        'overview_empty': 'No classified entries in this type yet.',
+        'overview_tooltip': '{name} · {count} entries · {share}%',
+        'overview_aria_unit': 'entries', 'overview_aria_unit_one': 'entry',
+        'overview_label': 'Cases by target domain', 'overview_total': 'entries',
+        'overview_note': 'C0 needs a manual full-reconstruction review. C1–C3 follow the public repository evidence.',
         'overview_evsel': '证据等级', 'overview_evsel_all': '全部',
-'overview_sort': '排序', 'overview_sort_share': '占比', 'overview_sort_strong': '强证据',
-        'overview_note_col': '备注', 'overview_others_aria': '其他 {count} 个类别，共 {n} 条、占 {share}。请在规格表中选看。',
-        'overview_title_lead': '{total} 个{noun}，{share}% 来自', 'overview_title_all_noun': '条已分类数据',
-        'overview_col_desc': '说明',
+        'overview_sort': 'Sort', 'overview_sort_order': 'Domain order', 'overview_sort_count': 'Count', 'overview_sort_name': 'Name A–Z',
+        'overview_filtered_meta': '{codes}: {total} entries',
+
         'preview_image_alt': '项目公开文档中的演示截图',
         'preview_video_alt': '项目公开文档中演示视频的封面',
         'preview_full_label': '完整演示截图：{name}',
@@ -284,265 +270,87 @@ def _shares(values, keys) -> dict[str, str]:
     return {key: f'{floors[key] / 10:.1f}' if floors[key] else ('<0.1' if values.get(key, 0) else '0') for key in keys}
 
 
-OVERVIEW_MERGE_MIN = 0.05
-# FIG. 2 canvas: main ring left, exploded magnifier right.
-OVERVIEW_CX, OVERVIEW_CY = 200.0, 215.0
-OVERVIEW_R0, OVERVIEW_R1 = 92.0, 140.0
-OVERVIEW_TICK_R = 156.0
-OVERVIEW_BX, OVERVIEW_BY = 508.0, 215.0
-OVERVIEW_B_R0, OVERVIEW_B_R1, OVERVIEW_B_MAG = 40.0, 64.0, 80.0
-
-
-def _ov_point(cx: float, cy: float, r: float, deg: float) -> tuple[float, float]:
-    """A point on a circle; degrees run clockwise from 12 o'clock."""
-    rad = math.radians(deg)
-    return cx + r * math.sin(rad), cy - r * math.cos(rad)
-
-
-def _ov_segment(cx: float, cy: float, r0: float, r1: float, a0: float, a1: float) -> str:
-    """A filled ring segment between two clockwise angles; the angles stay exact."""
-    large = 1 if a1 - a0 > 180 else 0
-    x0o, y0o = _ov_point(cx, cy, r1, a0)
-    x1o, y1o = _ov_point(cx, cy, r1, a1)
-    x1i, y1i = _ov_point(cx, cy, r0, a1)
-    x0i, y0i = _ov_point(cx, cy, r0, a0)
-    return (f'M {x0o:.2f} {y0o:.2f} A {r1:.2f} {r1:.2f} 0 {large} 1 {x1o:.2f} {y1o:.2f} '
-            f'L {x1i:.2f} {y1i:.2f} A {r0:.2f} {r0:.2f} 0 {large} 0 {x0i:.2f} {y0i:.2f} Z')
-
-
-def _ov_pieces(totals: dict, keys: list[str]) -> tuple[list[tuple], list[str]]:
-    """Split the classes into main-ring pieces and the exploded 'others' bucket.
-
-    Classes under 5% merge into one piece; the ring holds at most four pieces, overflow joins
-    the others from the smallest up. Zero or one small class means nothing explodes.
-    """
-    ordered = sorted(keys, key=lambda k: (-totals[k], list(DATA_CLASSES).index(k)))
-    total = sum(totals[k] for k in ordered) or 1
-    bigs = [k for k in ordered if totals[k] / total >= OVERVIEW_MERGE_MIN]
-    smalls = [k for k in ordered if totals[k] / total < OVERVIEW_MERGE_MIN]
-    while len(bigs) > 3 and smalls:
-        smalls.insert(0, bigs.pop())
-    while len(bigs) > 4:
-        smalls.insert(0, bigs.pop())
-    if len(smalls) <= 1:
-        return [(k, totals[k]) for k in bigs + smalls], []
-    return [(k, totals[k]) for k in bigs] + [(None, sum(totals[k] for k in smalls))], smalls
-
-
-def _ov_spans(mains: list[tuple], classified: int) -> list[list]:
-    """Clockwise spans from 12 o'clock, rotated so the others' midline sits at 3 o'clock."""
-    spans, angle = [], 0.0
-    for piece_key, piece_total in mains:
-        span = piece_total / classified * 360
-        spans.append([piece_key, angle, angle + span])
-        angle += span
-    delta = 0.0
-    for piece_key, start, end in spans:
-        if piece_key is None:
-            delta = 90 - (start + end) / 2
-    return [[piece_key, start + delta, end + delta] for piece_key, start, end in spans]
-
-
-def _ov_aria(label: str, total: int, share: str, counts: Counter, language: str) -> str:
-    """The full spoken sentence for one class: total, share and every level count."""
+def _ov_aria(label: str, count: int, share: str, strong: str, language: str) -> str:
+    """The spoken sentence for one row: total, share and strong-evidence rate."""
     zh = language == 'zh'
-    unit = COPY[language]['overview_aria_unit_one' if total == 1 else 'overview_aria_unit']
-    aria = f'{label}{"，" if zh else ", "}{_count(total)} {unit}{"，" if zh else ", "}{"占 " if zh else ""}{share}%'
-    aria += '。' if zh else '. '
-    parts = [f'{OVERVIEW_ARIA[bucket][zh]} {_count(counts[bucket])}' for bucket in OVERVIEW_ORDER]
-    return aria + (('，' if zh else ', ').join(parts) + ('。' if zh else '.'))
+    unit = COPY[language]['overview_aria_unit_one' if count == 1 else 'overview_aria_unit']
+    return (f'{label}{"，" if zh else ", "}{_count(count)} {unit}{"，" if zh else ", "}{"占 " if zh else ""}{share}%'
+            f'{"，" if zh else ", "}{"强证据 " if zh else "strong evidence "}{strong}%')
 
 
-def _ov_callout(cx: float, cy: float, mid: float, letter: str, label: str, share: str, count: int,
-                *, r: float, radial: float, side_step: float, lift: float = 0) -> str:
-    """A leader from a segment's outer midpoint: radial step, horizontal step, dot, two text lines."""
-    x1, y1 = _ov_point(cx, cy, r, mid)
-    x2, y2 = _ov_point(cx, cy, r + radial, mid)
-    side = 1 if x2 >= cx else -1
-    x3, y3 = x2 + side_step * side, y2 + lift
-    anchor = 'start' if side > 0 else 'end'
-    tx = x3 + 6 * side
-    return (f'<g class="ov-callout" data-ov-callout="{_e(letter)}">'
-            f'<path class="ov-callout-line" d="M {x1:.2f} {y1:.2f} L {x2:.2f} {y2:.2f} L {x3:.2f} {y3:.2f}"/>'
-            f'<circle class="ov-callout-dot" cx="{x3:.2f}" cy="{y3:.2f}" r="3"/>'
-            f'<text class="ov-callout-letter" x="{tx:.2f}" y="{y3 - 5:.2f}" text-anchor="{anchor}">'
-            f'{_e(letter)}&nbsp;&nbsp;{_e(label.upper())}</text>'
-            f'<text class="ov-callout-share" x="{tx:.2f}" y="{y3 + 15:.2f}" text-anchor="{anchor}">{_e(share)}%'
-            f'<tspan class="ov-callout-count">&nbsp;&nbsp;{_count(count)}</tspan></text></g>')
-
-
-def _ov_ticks() -> str:
-    """The protractor ring: hairline circle, a tick per percent, figures on the tens."""
-    ticks = [f'<circle class="ov-tick-circle" cx="{OVERVIEW_CX:.2f}" cy="{OVERVIEW_CY:.2f}" r="{OVERVIEW_TICK_R:.2f}"/>']
-    for i in range(101):
-        deg = i * 3.6
-        long = i % 10 == 0
-        x1, y1 = _ov_point(OVERVIEW_CX, OVERVIEW_CY, OVERVIEW_TICK_R, deg)
-        x2, y2 = _ov_point(OVERVIEW_CX, OVERVIEW_CY, OVERVIEW_TICK_R + (7 if long else 3), deg)
-        ticks.append(f'<line class="ov-tick{" ov-tick-long" if long else ""}" x1="{x1:.2f}" y1="{y1:.2f}" '
-                     f'x2="{x2:.2f}" y2="{y2:.2f}"/>')
-        if long and 0 < i < 100:
-            lx, ly = _ov_point(OVERVIEW_CX, OVERVIEW_CY, OVERVIEW_TICK_R + 18, deg)
-            ticks.append(f'<text class="ov-tick-num" x="{lx:.2f}" y="{ly + 3:.2f}" text-anchor="middle">{i}</text>')
-    return ''.join(ticks)
-
-
-def _overview_figure(meta: dict, spans: list, small_spans: list, classified: int, center_label: str,
-                     body_key: str = 'all') -> str:
-    """The FIG. 2 SVG: main ring, exploded others, projection, magnifier, callouts and centre.
-
-    ``meta`` maps each class key — and ``None`` for the merged others — to its letter, share,
-    total and aria sentence; the small ring re-sorts its own pieces by share.
-    """
-    parts = ['<svg class="ov-figure-svg" viewBox="0 0 640 430" role="img">',
-             f'<defs><pattern id="ov-hatch-{_e(body_key)}" width="5" height="5" patternTransform="rotate(45)" '
-             'patternUnits="userSpaceOnUse"><rect class="ov-hatch-bg" width="5" height="5"/>'
-             '<line class="ov-hatch-line" x1="0" y1="0" x2="0" y2="5"/></pattern></defs>',
-             f'<g class="ov-ticks" aria-hidden="true">{_ov_ticks()}</g>']
-    for piece_key, start, end in spans:
-        if piece_key is None:
-            ghost = _ov_segment(OVERVIEW_CX, OVERVIEW_CY, OVERVIEW_R0, OVERVIEW_R1, start, end)
-            mid = (start + end) / 2
-            dx, dy = 12 * math.sin(math.radians(mid)), -12 * math.cos(math.radians(mid))
-            parts.append(f'<g class="ov-piece" data-ov-piece="others" tabindex="0" role="button" '
-                         f'aria-label="{_e(meta[None]["aria"])}">'
-                         f'<path class="ov-ghost" d="{ghost}"/>'
-                         f'<g class="ov-exploded" transform="translate({dx:.2f} {dy:.2f})">'
-                         f'<path class="ov-part" fill="url(#ov-hatch-{_e(body_key)})" '
-                         f'd="{_ov_segment(OVERVIEW_CX, OVERVIEW_CY, OVERVIEW_R0, OVERVIEW_R1, start, end)}"/></g></g>')
-        else:
-            entry = meta[piece_key]
-            parts.append(f'<g class="ov-piece" data-ov-piece="{_e(entry["letter"])}" tabindex="0" role="button" '
-                         f'aria-label="{_e(entry["aria"])}">'
-                         f'<path class="ov-part" d="{_ov_segment(OVERVIEW_CX, OVERVIEW_CY, OVERVIEW_R0, OVERVIEW_R1, start, end)}"/></g>')
-    if small_spans:
-        others_span = next(span for span in spans if span[0] is None)
-        mid = (others_span[1] + others_span[2]) / 2
-        dx, dy = 12 * math.sin(math.radians(mid)), -12 * math.cos(math.radians(mid))
-        corners = []
-        for edge in (others_span[1], others_span[2]):
-            x, y = _ov_point(OVERVIEW_CX, OVERVIEW_CY, OVERVIEW_R1, edge)
-            corners.append((x + dx, y + dy))
-        parts.append(f'<g class="ov-projection" aria-hidden="true">'
-                     f'<path class="ov-proj-line" d="M {corners[0][0]:.2f} {corners[0][1]:.2f} '
-                     f'L {OVERVIEW_BX:.2f} {OVERVIEW_BY - OVERVIEW_B_MAG:.2f}"/>'
-                     f'<path class="ov-proj-line" d="M {corners[1][0]:.2f} {corners[1][1]:.2f} '
-                     f'L {OVERVIEW_BX:.2f} {OVERVIEW_BY + OVERVIEW_B_MAG:.2f}"/></g>')
-        parts.append(f'<circle class="ov-magnifier" cx="{OVERVIEW_BX:.2f}" cy="{OVERVIEW_BY:.2f}" '
-                     f'r="{OVERVIEW_B_MAG:.2f}" aria-hidden="true"/>')
-        for piece_key, start, end in small_spans:
-            entry = meta[piece_key]
-            parts.append(f'<g class="ov-piece" data-ov-piece="{_e(entry["letter"])}" tabindex="0" role="button" '
-                         f'aria-label="{_e(entry["aria"])}">'
-                         f'<path class="ov-part" fill="url(#ov-hatch-{_e(body_key)})" '
-                         f'd="{_ov_segment(OVERVIEW_BX, OVERVIEW_BY, OVERVIEW_B_R0, OVERVIEW_B_R1, start, end)}"/></g>')
-    for piece_key, start, end in spans:
-        if piece_key is None:
-            continue
-        entry = meta[piece_key]
-        parts.append(_ov_callout(OVERVIEW_CX, OVERVIEW_CY, (start + end) / 2, entry['letter'],
-                                 DATA_CLASSES[piece_key][0], entry['share'], entry['total'],
-                                 r=OVERVIEW_R1, radial=16, side_step=24))
-    for index, (piece_key, start, end) in enumerate(small_spans):
-        entry = meta[piece_key]
-        # The small leaders would collide; step and lift each one by its index.
-        parts.append(_ov_callout(OVERVIEW_BX, OVERVIEW_BY, (start + end) / 2, entry['letter'],
-                                 DATA_CLASSES[piece_key][0], entry['share'], entry['total'],
-                                 r=OVERVIEW_B_R1, radial=12 + index * 14, side_step=16 + index * 8,
-                                 lift=(index - (len(small_spans) - 1) / 2) * 30))
-    parts.append(f'<g class="ov-center" data-ov-center role="button" tabindex="0" '
-                 f'aria-label="{_e(center_label)} {_count(classified)}">'
-                 f'<text class="ov-center-num" data-ov-center-num x="{OVERVIEW_CX:.2f}" y="{OVERVIEW_CY + 8:.2f}" '
-                 f'text-anchor="middle">{_count(classified)}</text>'
-                 f'<text class="ov-center-label" data-ov-center-label x="{OVERVIEW_CX:.2f}" y="{OVERVIEW_CY + 32:.2f}" '
-                 f'text-anchor="middle">{_e(center_label)}</text></g>')
-    parts.append('</svg>')
-    return ''.join(parts)
-
-
-def _overview_metrics(text: dict, classified: int, metric_base: int, top_label: str, top_share: str,
-                      top_count: int, strong_total: int, strong_all: str, full_total: int) -> str:
-    """The four-figure strip: classified, largest class, strong evidence, full reconstructions."""
+def _overview_metrics(text: dict, classified: int, domains: int, strong_share: str, strong_count: int,
+                      full_count: int) -> str:
+    """The four-figure strip: entries, domains, strong evidence and full reconstructions."""
     return (f'<dl class="ov-metrics" aria-label="{_e(text["overview_metrics_label"])}">'
-            f'<div class="ov-metric"><dt>{_e(text["overview_metric_classified"])}</dt>'
-            f'<dd class="ov-metric-num"><span data-ov-metric="classified">{_count(classified)}</span></dd>'
-            f'<dd class="ov-metric-note" data-ov-metric="classified-note">'
-            f'{_e(text["overview_metric_classified_note"])} {classified / metric_base * 100:.1f}%</dd></div>'
-            f'<div class="ov-metric"><dt>{_e(text["overview_metric_top"])}</dt>'
-            f'<dd class="ov-metric-num"><span data-ov-metric="top-share">{_e(top_share)}</span>%</dd>'
-            f'<dd class="ov-metric-note" data-ov-metric="top-note">'
-            f'{_e(top_label)} · {_e(text["overview_metric_top_note"].format(count=_count(top_count)))}</dd></div>'
+            f'<div class="ov-metric"><dt>{_e(text["overview_metric_entries"])}</dt>'
+            f'<dd class="ov-metric-num"><span data-ov-metric="entries">{_count(classified)}</span></dd></div>'
+            f'<div class="ov-metric"><dt>{_e(text["overview_metric_domains"])}</dt>'
+            f'<dd class="ov-metric-num"><span data-ov-metric="domains">{_count(domains)}</span></dd></div>'
             f'<div class="ov-metric"><dt>{_e(text["overview_metric_strong"])}</dt>'
-            f'<dd class="ov-metric-num"><span data-ov-metric="strong">{_e(strong_all)}</span>%</dd>'
-            f'<dd class="ov-metric-note" data-ov-metric="strong-note">'
-            f'{_e(text["overview_metric_strong_note"].format(count=_count(strong_total)))}</dd></div>'
+            f'<dd class="ov-metric-num"><span data-ov-metric="strong">{_e(strong_share)}</span>%</dd>'
+            f'<dd class="ov-metric-note"><span data-ov-metric="strong-note">{_count(strong_count)}</span>'
+            f' {_e(text["overview_strong_label"])}</dd></div>'
             f'<div class="ov-metric"><dt>{_e(text["overview_metric_full"])}</dt>'
             f'<dd class="ov-metric-num"><span class="ov-star" aria-hidden="true">★</span>'
-            f'<span data-ov-metric="full">{_count(full_total)}</span></dd>'
+            f'<span data-ov-metric="full">{_count(full_count)}</span></dd>'
             f'<dd class="ov-metric-note">{_e(text["overview_metric_full_note"])}</dd></div></dl>')
 
 
-def _overview_spec_table(ordered: list, totals: dict, mixes: dict, letters: dict, shares: dict,
-                         strong_counts: dict, strong_share: dict, strong_all: str, language: str) -> str:
-    """The lettered spec table: legend, selector and the chart's accessible twin in one."""
+def _overview_table(ordered: list, totals: dict, mixes: dict, letters: dict, shares: dict,
+                    strong_rate: dict, strong_all: str, classified: int, language: str) -> str:
+    """The bar chart as a real table: #, domain, the track, cases, share and the strong column.
+
+    The track is a hairline the bar grows from; ticks mark the quarters and the vertical grid
+    lines run through every row so the eye can align them.
+    """
     text = COPY[language]
     rows = []
     for class_key in ordered:
         letter = letters[class_key]
         count = totals[class_key]
         c0_count = mixes[class_key]['0']
-        paper_count = mixes[class_key]['unclassified']
-        notes = []
-        if count < 30:
-            notes.append(text['overview_note_small'])
-        if count and paper_count / count >= 0.1:
-            notes.append(text['overview_note_papers'].format(n=_count(paper_count)))
-        note = ' '.join(notes) if notes else '—'
-        small = ' ov-letter-dim' if count < 30 else ''
-        hatch = ' ov-letter-hatch' if letter in 'CDEF' else ''
+        rate = strong_rate[class_key]
+        small = count < 30
+        tag = f'<span class="ov-tag">{_e(text["overview_note_small"])}</span>' if small else ''
         star = f'<span class="ov-star" aria-hidden="true">★</span> {_count(c0_count)}' if c0_count else '<span class="ov-zero-mark">0</span>'
+        dim = ' ovl-zero' if not count else ''
         rows.append(
-            f'<tr class="ov-spec-row" data-ov-row="{_e(class_key)}" data-total="{count}" '
+            f'<tr class="ov-row{dim}" data-ov-row="{_e(class_key)}" data-total="{count}" '
             f'data-levels="{";".join(f"{b}:{mixes[class_key][b]}" for b in OVERVIEW_ORDER)}">'
-            f'<td class="ov-cell-letter"><button type="button" class="ov-letterbtn{hatch}{small}" aria-pressed="false" '
-            f'aria-label="{_e(DATA_CLASSES[class_key][1 if language == "zh" else 0])} {_count(count)}" '
+            f'<td class="ov-cell-letter"><button type="button" class="ov-letterbtn" aria-pressed="false" '
+            f'aria-label="{_e(_ov_aria(DATA_CLASSES[class_key][1 if language == "zh" else 0], count, shares[class_key], rate, language))}" '
             f'data-ov-select="{_e(class_key)}"><span class="ov-letter">{letter}</span></button></td>'
             f'<td class="ov-cell-class"><span class="ov-name">{_e(DATA_CLASSES[class_key][0])}</span>'
             f'<span class="ov-name-zh">{_e(DATA_CLASSES[class_key][1])}</span></td>'
-            f'<td class="ov-cell-share"><span data-ov-share>{shares[class_key]}</span>%</td>'
+            f'<td class="ov-cell-track"><span class="ov-track" aria-hidden="true"><span class="ov-fill" '
+            f'data-w="{count / max(totals.values()) * 100:.2f}"></span></span></td>'
             f'<td class="ov-cell-count" data-ov-count>{_count(count)}</td>'
-            f'<td class="ov-cell-strong{" ov-letter-dim" if count < 30 else ""}"><span class="ov-strong-pct" '
-            f'data-ov-strong>{strong_share[class_key]}%</span>'
-            f'<span class="ov-strongbar"><span class="ov-strongfill" data-w="{strong_share[class_key]}"></span>'
-            f'<span class="ov-strongtick" data-w="{strong_all}"></span></span></td>'
-            f'<td class="ov-cell-c0" data-ov-c0>{star}</td>'
-            f'<td class="ov-cell-note">{_e(note)}</td></tr>')
+            f'<td class="ov-cell-share" data-ov-share>{shares[class_key]}%</td>'
+            f'<td class="ov-cell-strong{" ov-letter-dim" if small else ""}" data-ov-strong-cell>'
+            f'<span class="ov-strong-label">{_e(text["overview_strong_label"])}</span> '
+            f'<span class="ov-strong-pct" data-ov-strong>{rate}%</span> <span class="ov-c0" data-ov-c0>{star}</span>{tag}</td></tr>')
     full_total = sum(mixes[class_key]['0'] for class_key in ordered)
     return (f'<table class="ov-spec"><thead><tr>'
-            f'<th scope="col"><span class="ov-h">{_e(text["overview_letter"])}</span></th>'
-            f'<th scope="col"><span class="ov-h">{_e(text["overview_class"])}</span></th>'
-            f'<th scope="col" aria-sort="descending"><button type="button" class="ov-sortcol" '
-            f'data-ov-sortcol="share">{_e(text["overview_sort_share"])}</button></th>'
-            f'<th scope="col"><span class="ov-h">{_e(text["overview_count"])}</span></th>'
-            f'<th scope="col"><button type="button" class="ov-sortcol" data-ov-sortcol="strong">'
-            f'{_e(text["overview_sort_strong"])}</button></th>'
-            f'<th scope="col"><span class="ov-h">{_e(text["overview_full"])}</span></th>'
-            f'<th scope="col"><span class="ov-h">{_e(text["overview_note_col"])}</span></th>'
+            f'<th scope="col"><span class="ov-h">{_e(text["overview_h_num"])}</span></th>'
+            f'<th scope="col"><span class="ov-h">{_e(text["overview_h_domain"])}</span></th>'
+            f'<th scope="col" class="ov-h-track"><span class="ov-ticks" aria-hidden="true"></span>'
+            f'<span class="ov-h">{_e(text["overview_h_domain"] and "")}</span></th>'
+            f'<th scope="col"><span class="ov-h">{_e(text["overview_h_cases"])}</span></th>'
+            f'<th scope="col"><span class="ov-h">{_e(text["overview_h_share"])}</span></th>'
+            f'<th scope="col"><span class="ov-h">{_e(text["overview_h_strong"])}</span></th>'
             f'</tr></thead><tbody>{"".join(rows)}'
             f'<tr class="ov-spec-all"><td class="ov-cell-letter">—</td>'
-            f'<td class="ov-cell-class">{_e(text["overview_all_row"])}</td>'
-            f'<td class="ov-cell-share">100%</td><td class="ov-cell-count">{_count(sum(totals.values()))}</td>'
-            f'<td class="ov-cell-strong"><span class="ov-strong-pct">{strong_all}%</span>'
-            f'<span class="ov-strongbar"><span class="ov-strongfill" data-w="{strong_all}"></span>'
-            f'<span class="ov-strongtick" data-w="{strong_all}"></span></span></td>'
-            f'<td class="ov-cell-c0"><span class="ov-star" aria-hidden="true">★</span> {_count(full_total)}</td>'
-            f'<td class="ov-cell-note">—</td></tr></tbody></table>')
+            f'<td class="ov-cell-class">{_e(text["overview_all_row"])}</td><td class="ov-cell-track"></td>'
+            f'<td class="ov-cell-count">{_count(classified)}</td><td class="ov-cell-share">100%</td>'
+            f'<td class="ov-cell-strong"><span class="ov-strong-label">{_e(text["overview_strong_label"])}</span> '
+            f'<span class="ov-strong-pct">{strong_all}%</span> '
+            f'<span class="ov-star" aria-hidden="true">★</span> {_count(full_total)}</td></tr></tbody></table>')
 
 
 def _overview_sheet(ordered: list, totals: dict, mixes: dict, letters: dict, shares: dict,
-                    strong_share: dict, all_levels: Counter, classified: int, kinds_by_class: dict,
+                    strong_rate: dict, all_levels: Counter, classified: int, kinds_by_class: dict,
                     prefix: str, language: str, selected: str) -> str:
-    """The full-width detail sheet: one parts-list panel per class, selected class visible."""
+    """The right-column parts list for the selected class: one panel per class, selected visible."""
     text, zh = COPY[language], language == 'zh'
     panels = []
     for class_key in ordered:
@@ -553,13 +361,6 @@ def _overview_sheet(ordered: list, totals: dict, mixes: dict, letters: dict, sha
         for bucket in OVERVIEW_ORDER:
             n = mixes[class_key][bucket]
             overall = all_levels[bucket] / classified * 100
-            diff = float(own[bucket]) - overall
-            if not n:
-                diff_mark = '—'
-            elif abs(diff) < 0.5:
-                diff_mark = '≈'
-            else:
-                diff_mark = f'{"▲" if diff > 0 else "▼"} {abs(diff):.1f} pt'
             zero = '' if n else ' ovl-zero'
             rows.append(f'<li class="ovl-row{zero}">'
                         f'<span class="ovd-dot ovl-dot-{bucket}" aria-hidden="true"></span>'
@@ -568,26 +369,24 @@ def _overview_sheet(ordered: list, totals: dict, mixes: dict, letters: dict, sha
                         f'<span class="ovl-leader" aria-hidden="true"></span>'
                         f'<span class="ovl-count">{_count(n)}</span>'
                         f'<span class="ovl-own">{own[bucket]}%</span>'
-                        f'<span class="ovl-all">{overall:.1f}%</span>'
-                        f'<span class="ovl-diff">{diff_mark}</span></li>')
+                        f'<span class="ovl-all">{overall:.1f}%</span></li>')
         kinds = ','.join(sorted(kinds_by_class[class_key])) or 'case-study'
         c0 = mixes[class_key]['0']
-        full_button = (f'<button type="button" class="btn ov-c0btn" data-ov-c0only>'
+        full_button = (f'<button type="button" class="ov-c0btn" data-ov-c0only>'
                        f'{_e(text["overview_view_full"].format(count=_count(c0)))} →</button>' if c0 else '')
         panels.append(
             f'<div class="ov-sheet-panel" data-ov-panel="{_e(class_key)}" data-letter="{letter}"'
             f'{" hidden" if class_key != selected else ""}>'
-            f'<div class="ovl-head"><p class="ovl-eyebrow">{_e(text["overview_sheet_title"].format(letter=letter, name=DATA_CLASSES[class_key][0].upper()))}</p>'
-            f'<p class="ovl-cases">{_e(text["overview_sheet_cases"].format(count=_count(count)))}</p>'
-            f'<p class="ovl-sub">{_e(text["overview_sheet_sub"].format(share=shares[class_key], strong=strong_share[class_key]))}</p></div>'
-            f'<div class="ovl-listwrap"><p class="ovl-title">{_e(text["overview_levels_title"])}</p>'
-            f'<div class="ovl-cols" aria-hidden="true"><span></span><span>{_e(text["overview_col_level"])}</span>'
+            f'<p class="ovl-eyebrow">{_e(text["overview_sheet_title"].format(letter=letter, name=DATA_CLASSES[class_key][0].upper()))}</p>'
+            f'<p class="ovl-cases"><span class="ovl-cases-num">{_count(count)}</span> {_e(text["overview_aria_unit"])}</p>'
+            f'<p class="ovl-sub">{_e(text["overview_sheet_sub"].format(share=shares[class_key], strong=strong_rate[class_key]))}</p>'
+            f'<p class="ovl-title">{_e(text["overview_levels_title"])}</p>'
+            f'<div class="ovl-cols" aria-hidden="true"><span>{_e(text["overview_col_level"])}</span>'
             f'<span>{_e(text["overview_col_desc"])}</span><span></span>'
-            f'<span>{_e(text["overview_count"])}</span><span>{_e(text["overview_col_share"])}</span>'
-            f'<span>{_e(text["overview_col_all"].format(n=_count(classified)))}</span>'
-            f'<span>{_e(text["overview_col_diff"])}</span></div>'
-            f'<ul class="ovl-list">{"".join(rows)}</ul></div>'
-            f'<div class="ovl-actions"><a class="btn btn-primary ov-viewbtn" data-ov-view-all="{_e(class_key)}" '
+            f'<span>{_e(text["overview_h_cases"])}</span><span>{_e(text["overview_col_share"])}</span>'
+            f'<span>{_e(text["overview_col_all"])}</span></div>'
+            f'<ul class="ovl-list">{"".join(rows)}</ul>'
+            f'<div class="ovl-actions"><a class="ov-viewbtn" data-ov-view-all="{_e(class_key)}" '
             f'href="{_e(f"{prefix}/resources/?kind={kinds}")}">{_e(text["overview_view"].format(count=_count(count)))} →</a>'
             f'{full_button}'
             f'<a class="ovl-download" href="/downloads/resources.json">{_e(text["overview_download"])}</a></div></div>')
@@ -597,7 +396,7 @@ def _overview_sheet(ordered: list, totals: dict, mixes: dict, letters: dict, sha
 
 def _overview_body(key: str, records: list[dict], total_entries: int, language: str, prefix: str,
                    scan_date: str, *, active: bool) -> str:
-    """One content type's full sheet: figure title, metrics, ring, spec table and detail sheet."""
+    """One content type's sheet: fixed title, metrics, the bar table and the detail column."""
     text, zh = COPY[language], language == 'zh'
     totals, mixes = Counter(), defaultdict(Counter)
     kinds_by_class = defaultdict(set)
@@ -613,54 +412,23 @@ def _overview_body(key: str, records: list[dict], total_entries: int, language: 
         return (f'<div class="ov-body" data-ov-body="{_e(key)}" data-ov-empty role="tabpanel" '
                 f'aria-labelledby="ov-tab-{_e(key) or "all"}"{" hidden" if not active else ""}>'
                 f'<p class="ov-empty">{_e(text["overview_empty"])}</p></div>')
-    ordered = sorted(totals, key=lambda k: (-totals[k], list(DATA_CLASSES).index(k)))
+    # The display order follows the data's own class order; sorting is a user choice, not a judgement.
+    ordered = [class_key for class_key in DATA_CLASSES if class_key in totals]
     classified = sum(totals.values())
     shares = _shares(totals, ordered)
     all_levels = Counter()
     for class_key in ordered:
         all_levels.update(mixes[class_key])
     strong_counts = {class_key: mixes[class_key]['0'] + mixes[class_key]['1'] for class_key in ordered}
-    # Strong evidence is a per-class rate, not a share of the strong pool, so no largest-remainder here.
-    strong_share = {class_key: f'{strong_counts[class_key] / totals[class_key] * 100:.1f}' for class_key in ordered}
+    # Strong evidence is a per-class rate, not a share of the strong pool.
+    strong_rate = {class_key: f'{strong_counts[class_key] / totals[class_key] * 100:.1f}' for class_key in ordered}
     strong_total = sum(strong_counts.values())
     strong_all = f'{strong_total / classified * 100:.1f}'
     full_total = all_levels['0']
     letters = {class_key: letter for class_key, letter in zip(ordered, 'ABCDEFG')}
-    mains, smalls = _ov_pieces(totals, ordered)
-    spans = _ov_spans(mains, classified)
-    small_spans = []
-    if smalls:
-        small_total = sum(totals[class_key] for class_key in smalls)
-        angle = 0.0
-        for class_key in sorted(smalls, key=lambda k: (-totals[k], list(DATA_CLASSES).index(k))):
-            span = totals[class_key] / small_total * 360
-            small_spans.append([class_key, angle, angle + span])
-            angle += span
-    meta = {class_key: {'letter': letters[class_key], 'share': shares[class_key], 'total': totals[class_key],
-                        'aria': _ov_aria(DATA_CLASSES[class_key][zh], totals[class_key], shares[class_key],
-                                         mixes[class_key], language)}
-            for class_key in ordered}
-    if smalls:
-        others_total = sum(totals[class_key] for class_key in smalls)
-        meta[None] = {'share': f'{others_total / classified * 100:.1f}',
-                      'aria': text['overview_others_aria'].format(count=len(smalls), n=_count(others_total),
-                                                                  share=f'{others_total / classified * 100:.1f}')}
-    center_label = text['overview_center']
-    svg = _overview_figure(meta, spans, small_spans, classified, center_label, key or 'all')
-    others_angle = next((end - start for piece_key, start, end in spans if piece_key is None), 0)
-    caption_b = (f'<span class="ov-caption-b">{_e(text["overview_caption_b"].format(zoom=f"{360 / others_angle:.1f}"))}</span>'
-                 if smalls else '')
-    top_key = ordered[0]
-    top_label = DATA_CLASSES[top_key][zh]
-    noun = KIND_PLURAL[key][zh] if key else ('案例' if zh else 'cases')
-    title = text['overview_title_lead'].format(total=_count(classified), noun=_e(noun), share=shares[top_key])
-    title = f'{title}<em>{_e(top_label)}</em>'
-    eyebrow_kind = KIND_PLURAL[key][1].upper() if key and zh else (KIND_PLURAL[key][0].upper() if key else 'CASE STUDIES')
-    eyebrow = f'FIG. 2 · {_e(eyebrow_kind)}'
-    # Handoff §3 frames the module as case studies; when the classified total outgrows that count
-    # (papers, projects), the note falls back to the whole catalogue so the ratio stays honest.
-    metric_base = max(total_entries, classified)
-    meta_line = text['overview_meta'].format(cls=_count(classified), total=_count(metric_base), scan=scan_date or '—')
+    max_count = max(totals[class_key] for class_key in ordered)
+    title = text['overview_title']
+    meta_line = text['overview_meta'].format(total=_count(classified), scan=scan_date or '—')
     payload = json.dumps({'classified': classified, 'totalEntries': total_entries, 'kind': key,
                           'classes': [{'key': class_key, 'letter': letters[class_key], 'total': totals[class_key],
                                        'name': DATA_CLASSES[class_key][0], 'nameZh': DATA_CLASSES[class_key][1],
@@ -669,27 +437,23 @@ def _overview_body(key: str, records: list[dict], total_entries: int, language: 
                          ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
     return (f'<div class="ov-body" data-ov-body="{_e(key)}" role="tabpanel" '
             f'aria-labelledby="ov-tab-{_e(key) or "all"}"{" hidden" if not active else ""}>'
-            f'<header class="ov-head"><p class="ov-eyebrow" data-ov-eyebrow>{eyebrow}</p>'
+            f'<header class="ov-head"><p class="ov-eyebrow" data-ov-eyebrow>FIG. 2 · {_e(text["overview_eyebrow"].split("·")[1].strip().upper() if not zh else text["overview_eyebrow"].split("·")[1].strip())}</p>'
             f'<p class="ov-title" data-ov-title>{title}</p>'
             f'<p class="ov-meta"><span data-ov-meta>{_e(meta_line)}</span> '
             f'<a class="ov-meta-json" href="/downloads/resources.json">{_e(text["overview_meta_json"])}</a></p></header>'
-            f'{_overview_metrics(text, classified, metric_base, top_label, shares[top_key], totals[top_key], strong_total, strong_all, full_total)}'
-            f'<div class="ov-figure-row"><figure class="ov-figure" data-ov-figure><div class="ov-svg" data-ov-svg>{svg}</div>'
-            f'<figcaption class="ov-caption"><span class="ov-caption-a">{_e(text["overview_caption_a"])}</span>{caption_b}</figcaption></figure>'
-            f'{_overview_spec_table(ordered, totals, mixes, letters, shares, strong_counts, strong_share, strong_all, language)}</div>'
-            f'{_overview_sheet(ordered, totals, mixes, letters, shares, strong_share, all_levels, classified, kinds_by_class, prefix, language, top_key)}'
-            f'<p class="ov-corner" aria-hidden="true">{_e(text["overview_sheet"])}<br>'
-            f'{_e(text["overview_sheet_rev"].format(date=scan_date or "—", n=_count(classified)))}</p>'
+            f'{_overview_metrics(text, classified, len(ordered), strong_all, strong_total, full_total)}'
+            f'<div class="ov-figure-row">{_overview_table(ordered, totals, mixes, letters, shares, strong_rate, strong_all, classified, language)}'
+            f'{_overview_sheet(ordered, totals, mixes, letters, shares, strong_rate, all_levels, classified, kinds_by_class, prefix, language, ordered[0])}</div>'
             f'<script type="application/json" data-ov-data>{payload}</script></div>')
 
 
 def _overview(resources: list[dict], papers: list[dict], language: str, prefix: str = '',
               last_scan: str | None = None) -> str:
-    """The All view's opening sheet: FIG. 2, a true-proportion ring with an exploded magnifier.
+    """The All view's opening sheet: FIG. 2, class bars drawn to scale with a parts-list detail.
 
-    Angles come straight from the counts; classes under 5% explode into the magnified detail
-    ring. site.js draws the sheet in, syncs the ring with the spec table and re-aggregates the
-    whole figure under the level filter; without scripts the section stays hidden.
+    Every bar maps linearly to its class's count against the largest; the level filter and the
+    sort re-aggregate the table in place. site.js draws the sheet in and keeps the ring—there is
+    no ring—honest; without scripts the section stays hidden and the featured cards show.
     """
     text, zh = COPY[language], language == 'zh'
     records = list(resources) + [paper for paper in papers if 'class' in paper]
@@ -703,7 +467,6 @@ def _overview(resources: list[dict], papers: list[dict], language: str, prefix: 
     tabs += [f'<button type="button" class="ov-tab" role="tab" id="ov-tab-{_e(kind)}" data-ov-tab="{_e(kind)}" '
              f'aria-selected="false" tabindex="-1">{_e(KIND_PLURAL[kind][zh])}'
              f'<span class="ov-tab-count">{_count(kinds[kind])}</span></button>' for kind in present]
-    # The module is framed as case studies (handoff §3): the All body's denominator is the case-study count.
     bodies = [_overview_body('', records, kinds.get('case-study', 0), language, prefix, scan_date, active=True)]
     bodies += [_overview_body(kind, [record for record in resources if record['kind'] == kind], kinds[kind],
                               language, prefix, scan_date, active=False) for kind in present]
@@ -711,8 +474,8 @@ def _overview(resources: list[dict], papers: list[dict], language: str, prefix: 
                         f'<span class="ovl-code">{OVERVIEW_EVIDENCE[bucket][0]}</span>'
                         f'{_e(OVERVIEW_EVIDENCE[bucket][2 if zh else 1])}</li>' for bucket in OVERVIEW_ORDER)
     info = (f'<span class="info-wrap"><button type="button" class="info-btn" aria-expanded="false" '
-            f'aria-controls="ov-class-info" aria-label="{text["class_info_label"]}">i</button>'
-            f'<span class="info-pop" id="ov-class-info" role="tooltip"><strong>{_e(text["class_label"])}</strong>'
+            f'aria-controls="ov-class-info" data-ov-info aria-label="{text["class_info_label"]}">i</button>'
+            f'<span class="info-pop" id="ov-class-info" role="tooltip" hidden><strong>{_e(text["class_label"])}</strong>'
             f'<ul>{info_rows}</ul><span class="info-note">{_e(text["overview_note"])}</span></span></span>')
     level_boxes = ''.join(f'<label class="ov-evopt"><input type="checkbox" value="{bucket}">'
                           f'<span class="ovd-dot ovl-dot-{bucket}" aria-hidden="true"></span>'
@@ -722,14 +485,21 @@ def _overview(resources: list[dict], papers: list[dict], language: str, prefix: 
              f'aria-haspopup="true" aria-controls="ov-evlist">{_e(text["overview_evsel"])}{"：" if zh else ":"}'
              f'<span data-ov-evlabel>{_e(text["overview_evsel_all"])}</span></button>'
              f'<span class="ov-evpop" id="ov-evlist" hidden>{level_boxes}</span></span>')
+    sort_select = (f'<label class="select ov-sort"><span class="vh">{_e(text["overview_sort"])}</span>'
+                   f'<select data-ov-sort aria-label="{_e(text["overview_sort"])}">'
+                   f'<option value="order">{_e(text["overview_sort_order"])}</option>'
+                   f'<option value="count">{_e(text["overview_sort_count"])}</option>'
+                   f'<option value="name">{_e(text["overview_sort_name"])}</option></select>{icon("chevron")}</label>')
     return (f'<section class="overview" data-overview hidden aria-label="{_e(text["overview_label"])}">'
             f'<span class="ov-cross ov-cross-tl" aria-hidden="true"></span><span class="ov-cross ov-cross-tr" aria-hidden="true"></span>'
             f'<span class="ov-cross ov-cross-bl" aria-hidden="true"></span><span class="ov-cross ov-cross-br" aria-hidden="true"></span>'
             f'<div class="ov-filterbar"><div class="ov-segments" role="tablist" aria-label="{_e(text["kind"])}">{"".join(tabs)}</div>'
-            f'<div class="ov-tools">{evsel}{info}</div></div>'
+            f'<div class="ov-tools">{evsel}{sort_select}{info}</div></div>'
             f'{"".join(bodies)}'
-            f'<details class="ov-what"><summary>{_e(text["overview_whatis"])}</summary>'
+            f'<details class="ov-what" id="ov-what"><summary>{_e(text["overview_whatis"])}</summary>'
             f'<ul>{info_rows}</ul><p class="info-note">{_e(text["overview_note"])}</p></details>'
+            f'<p class="ov-corner" aria-hidden="true">FIG. 2 · SCALE 1:1<br>'
+            f'REV {scan_date or "—"} · N = {_count(sum(1 for record in records if record.get("class")))}</p>'
             f'</section>')
 
 

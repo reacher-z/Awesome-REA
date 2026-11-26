@@ -689,10 +689,11 @@
     // A kind tab keeps the overview open with that kind's data; a search, evidence filter or sort brings the rows back.
     const pristine = () => !st.q && st.target === 'all' && !st.cls && st.sort === 'featured' && !st.dcls;
     const foot = $('.drawer-foot', drawer);
-    // The All view opens on FIG. 2, the true-proportion sheet; a search or filter brings the rows back.
+    // The All view opens on FIG. 2, class bars drawn to scale; a search or filter brings the rows back.
     const overview = $('[data-overview]', drawer);
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const ovFilter = new Set();
+    let ovSort = 'order';
     let syncBody = () => {};
     if (overview) {
       const bodies = $$('.ov-body', overview);
@@ -721,182 +722,62 @@
         });
         return out;
       };
-      const degPoint = (cx, cy, r, deg) => {
-        const rad = deg * Math.PI / 180;
-        return [cx + r * Math.sin(rad), cy - r * Math.cos(rad)];
-      };
-      const segPath = (cx, cy, r0, r1, a0, a1) => {
-        const large = a1 - a0 > 180 ? 1 : 0;
-        const [x0o, y0o] = degPoint(cx, cy, r1, a0);
-        const [x1o, y1o] = degPoint(cx, cy, r1, a1);
-        const [x1i, y1i] = degPoint(cx, cy, r0, a1);
-        const [x0i, y0i] = degPoint(cx, cy, r0, a0);
-        return `M ${x0o.toFixed(2)} ${y0o.toFixed(2)} A ${r1.toFixed(2)} ${r1.toFixed(2)} 0 ${large} 1 ` +
-          `${x1o.toFixed(2)} ${y1o.toFixed(2)} L ${x1i.toFixed(2)} ${y1i.toFixed(2)} A ${r0.toFixed(2)} ${r0.toFixed(2)} 0 ${large} 0 ${x0i.toFixed(2)} ${y0i.toFixed(2)} Z`;
-      };
-      const CX = 200, CY = 215, R0 = 92, R1 = 140, TICK = 156, BX = 508, BY = 215, B_R0 = 40, B_R1 = 64, B_MAG = 80;
-      const aggr = (data, picked) => {
-        const total = picked.size
-          ? data.classes.reduce((sum, c) => sum + [...picked].reduce((n, b) => n + (c.levels[b] || 0), 0), 0)
-          : data.classified;
-        const classes = data.classes.map((c) => {
-          const count = picked.size
-            ? [...picked].reduce((n, b) => n + (c.levels[b] || 0), 0)
-            : c.total;
-          const strong = [...picked].includes('0') || [...picked].includes('1')
-            ? [...picked].reduce((n, b) => n + (b === '0' || b === '1' ? (c.levels[b] || 0) : 0), 0)
-            : (c.levels['0'] || 0) + (c.levels['1'] || 0);
-          return { ...c, count, strong };
-        }).filter((c) => c.count >= 0);
-        return { total, classes };
-      };
-      const piecesOf = (aggr2) => {
-        const bigs = aggr2.classes.filter((c) => c.count / (aggr2.total || 1) >= 0.05);
-        let smalls = aggr2.classes.filter((c) => c.count / (aggr2.total || 1) < 0.05);
-        while (bigs.length > 3 && smalls.length) smalls.unshift(bigs.pop());
-        while (bigs.length > 4) smalls.unshift(bigs.pop());
-        if (smalls.length <= 1) return { mains: [...bigs, ...smalls].map((c) => [c, c.count]), smalls: [] };
-        const othersTotal = smalls.reduce((sum, c) => sum + c.count, 0);
-        return { mains: [...bigs.map((c) => [c, c.count]), [null, othersTotal]], smalls };
-      };
-      const calloutHtml = (cx, cy, mid, letter, label, share, count, r, radial, step) => {
-        const [x1, y1] = degPoint(cx, cy, r, mid);
-        const [x2, y2] = degPoint(cx, cy, r + radial, mid);
-        const side = x2 >= cx ? 1 : -1;
-        const x3 = x2 + step * side, y3 = y2;
-        const anchor = side > 0 ? 'start' : 'end';
-        const tx = x3 + 6 * side;
-        return `<g class="ov-callout" data-ov-callout="${esc(letter)}">` +
-          `<path class="ov-callout-line" d="M ${x1.toFixed(2)} ${y1.toFixed(2)} L ${x2.toFixed(2)} ${y2.toFixed(2)} L ${x3.toFixed(2)} ${y3.toFixed(2)}"/>` +
-          `<circle class="ov-callout-dot" cx="${x3.toFixed(2)}" cy="${y3.toFixed(2)}" r="3"/>` +
-          `<text class="ov-callout-letter" x="${tx.toFixed(2)}" y="${(y3 - 5).toFixed(2)}" text-anchor="${anchor}">${esc(letter)}&nbsp;&nbsp;${esc(label.toUpperCase())}</text>` +
-          `<text class="ov-callout-share" x="${tx.toFixed(2)}" y="${(y3 + 15).toFixed(2)}" text-anchor="${anchor}">${esc(share)}%` +
-          `<tspan class="ov-callout-count">&nbsp;&nbsp;${fmtNum(count)}</tspan></text></g>`;
-      };
-      const buildFigure = (aggr2, centerLabel, bodyKey) => {
-        const shares = sharesOf(Object.fromEntries(aggr2.classes.map((c) => [c.key, c.count])));
-        const byKey = Object.fromEntries(aggr2.classes.map((c) => [c.key, c]));
-        const bigs = aggr2.classes.filter((c) => c.count / (aggr2.total || 1) >= 0.05);
-        let smalls = aggr2.classes.filter((c) => c.count / (aggr2.total || 1) < 0.05);
-        while (bigs.length > 3 && smalls.length) smalls.unshift(bigs.pop());
-        while (bigs.length > 4) smalls.unshift(bigs.pop());
-        const hasOthers = smalls.length > 1;
-        const mains = hasOthers ? [...bigs.map((c) => ({ c, total: c.count })), { c: null, total: smalls.reduce((s, c) => s + c.count, 0) }]
-          : [...bigs, ...smalls].map((c) => ({ c, total: c.count }));
-        let angle = 0;
-        const spans = mains.map(({ c, total }) => {
-          const span = total / (aggr2.total || 1) * 360;
-          const span0 = [c, angle, angle + span];
-          angle += span;
-          return span0;
-        });
-        let delta = 0;
-        spans.forEach(([c, a, b]) => { if (c === null) delta = 90 - (a + b) / 2; });
-        const rotated = spans.map(([c, a, b]) => [c, a + delta, b + delta]);
-        let smallAngle = 0;
-        const smallSpans = hasOthers ? smalls.slice().sort((a, b) => b.count - a.count).map((c) => {
-          const span = c.count / smalls.reduce((s, x) => s + x.count, 0) * 360;
-          const out = [c, smallAngle, smallAngle + span];
-          smallAngle += span;
-          return out;
-        }) : [];
-        const parts = ['<svg class="ov-figure-svg" viewBox="0 0 640 430" role="img">',
-          `<defs><pattern id="ov-hatch-${bodyKey || 'all'}" width="5" height="5" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">` +
-          '<rect class="ov-hatch-bg" width="5" height="5"/><line class="ov-hatch-line" x1="0" y1="0" x2="0" y2="5"/></pattern></defs>',
-          `<g class="ov-ticks" aria-hidden="true"><circle class="ov-tick-circle" cx="${CX}" cy="${CY}" r="${TICK}"/>` +
-          Array.from({ length: 101 }, (_, i) => {
-            const deg = i * 3.6;
-            const long = i % 10 === 0;
-            const [x1, y1] = degPoint(CX, CY, TICK, deg);
-            const [x2, y2] = degPoint(CX, CY, TICK + (long ? 7 : 3), deg);
-            const tick = `<line class="ov-tick${long ? ' ov-tick-long' : ''}" x1="${x1.toFixed(2)}" y1="${y1.toFixed(2)}" x2="${x2.toFixed(2)}" y2="${y2.toFixed(2)}"/>`;
-            if (long && i > 0 && i < 100) {
-              const [lx, ly] = degPoint(CX, CY, TICK + 18, deg);
-              return tick + `<text class="ov-tick-num" x="${lx.toFixed(2)}" y="${(ly + 3).toFixed(2)}" text-anchor="middle">${i}</text>`;
-            }
-            return tick;
-          }).join('') + '</g>'];
-        rotated.forEach(([c, a, b]) => {
-          if (c === null) {
-            const ghost = segPath(CX, CY, R0, R1, a, b);
-            const mid = (a + b) / 2;
-            const dx = 12 * Math.sin(mid * Math.PI / 180), dy = -12 * Math.cos(mid * Math.PI / 180);
-            parts.push(`<g class="ov-piece" data-ov-piece="others" tabindex="0" role="button" aria-label="${esc(T.ovOthersLabel)}">` +
-              `<path class="ov-ghost" d="${ghost}"/>` +
-              `<g class="ov-exploded" transform="translate(${dx.toFixed(2)} ${dy.toFixed(2)})">` +
-              `<path class="ov-part" fill="url(#ov-hatch-${bodyKey || 'all'})" d="${segPath(CX, CY, R0, R1, a, b)}"/></g></g>`);
-          } else {
-            parts.push(`<g class="ov-piece" data-ov-piece="${esc(c.letter)}" tabindex="0" role="button" aria-label="${esc(c.name)} ${fmtNum(c.count)}">` +
-              `<path class="ov-part" d="${segPath(CX, CY, R0, R1, a, b)}"/></g>`);
-          }
-        });
-        if (hasOthers) {
-          const othersSpan = rotated.find(([c]) => c === null);
-          const mid = (othersSpan[1] + othersSpan[2]) / 2;
-          const dx = 12 * Math.sin(mid * Math.PI / 180), dy = -12 * Math.cos(mid * Math.PI / 180);
-          const corners = [othersSpan[1], othersSpan[2]].map((edge) => {
-            const [x, y] = degPoint(CX, CY, R1, edge);
-            return [x + dx, y + dy];
-          });
-          parts.push(`<g class="ov-projection" aria-hidden="true">` +
-            `<path class="ov-proj-line" d="M ${corners[0][0].toFixed(2)} ${corners[0][1].toFixed(2)} L ${BX} ${BY - B_MAG}"/>` +
-            `<path class="ov-proj-line" d="M ${corners[1][0].toFixed(2)} ${corners[1][1].toFixed(2)} L ${BX} ${BY + B_MAG}"/></g>` +
-            `<circle class="ov-magnifier" cx="${BX}" cy="${BY}" r="${B_MAG}" aria-hidden="true"/>`);
-          smallSpans.forEach(([c, a, b]) => {
-            parts.push(`<g class="ov-piece" data-ov-piece="${esc(c.letter)}" tabindex="0" role="button" aria-label="${esc(c.name)} ${fmtNum(c.count)}">` +
-              `<path class="ov-part" fill="url(#ov-hatch-${bodyKey || 'all'})" d="${segPath(BX, BY, B_R0, B_R1, a, b)}"/></g>`);
-          });
-        }
-        rotated.forEach(([c, a, b]) => {
-          if (c === null) return;
-          parts.push(calloutHtml(CX, CY, (a + b) / 2, c.letter, c.name, shares[c.key], c.count, R1, 16, 24));
-        });
-        smallSpans.forEach(([c, a, b], index) => {
-          // Stagger the leftward leaders so the small classes do not collide.
-          parts.push(calloutHtml(BX, BY, (a + b) / 2, c.letter, c.name, shares[c.key], c.count,
-            B_R1, 12 + index * 14, 16 + index * 8));
-        });
-        parts.push(`<g class="ov-center" data-ov-center role="button" tabindex="0">` +
-          `<text class="ov-center-num" data-ov-center-num x="${CX}" y="${CY + 8}" text-anchor="middle">${fmtNum(aggr2.total)}</text>` +
-          `<text class="ov-center-label" data-ov-center-label x="${CX}" y="${CY + 32}" text-anchor="middle">${esc(centerLabel)}</text></g></svg>`);
-        return parts.join('');
+      const countUp = (el, from, to) => {
+        if (reducedMotion.matches || from === to) { el.textContent = fmtNum(to); return; }
+        const t0 = performance.now();
+        const tick = (t) => {
+          const k = Math.min(1, (t - t0) / 300);
+          el.textContent = fmtNum(Math.round(from + (to - from) * (1 - (1 - k) * (1 - k))));
+          if (k < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
       };
       const selectClass = (body, key, { focus = false, roll = true } = {}) => {
         if (!body || body.hasAttribute('data-ov-empty')) return;
         const data = body._view;
         const wanted = key || data.topKey;
         $$('.ov-letterbtn', body).forEach((btn) => btn.setAttribute('aria-pressed', String(btn.dataset.ovSelect === wanted)));
-        $$('[data-ov-piece]', body).forEach((piece) => {
-          piece.classList.toggle('ov-is-selected', piece.dataset.ovPiece === wanted);
-        });
+        $$('.ov-spec-row', body).forEach((row) => row.setAttribute('aria-pressed', String(row.dataset.ovRow === wanted)));
         $$('.ov-sheet-panel', body).forEach((panel) => { panel.hidden = panel.dataset.ovPanel !== wanted; });
         const panel = $$('.ov-sheet-panel', body).find((p) => !p.hidden);
         if (panel && roll && !reducedMotion.matches) {
-          const cases = $('.ovl-cases', panel);
+          const cases = $('.ovl-cases-num', panel);
           const from = Number(String(cases.textContent).replace(/[^\d]/g, '')) || 0;
           const to = data.classes.find((c) => c.key === wanted).count;
-          const t0 = performance.now();
-          const tick = (t) => {
-            const k = Math.min(1, (t - t0) / 300);
-            cases.textContent = fmtNum(Math.round(from + (to - from) * (1 - (1 - k) * (1 - k))));
-            if (k < 1) requestAnimationFrame(tick);
-          };
-          requestAnimationFrame(tick);
-        }
-        const centerNum = $('[data-ov-center-num]', body);
-        const centerLabel = $('[data-ov-center-label]', body);
-        if (centerNum && key) {
-          const cls = data.classes.find((c) => c.key === wanted);
-          centerNum.textContent = `${data.shares[wanted]}%`;
-          centerLabel.textContent = cls ? cls.name.toUpperCase() : '';
-        } else if (centerNum) {
-          centerNum.textContent = fmtNum(data.total);
-          centerLabel.textContent = T.ovCenterAll;
+          countUp(cases, from, to);
         }
         if (focus) {
           const btn = $(`.ov-letterbtn[data-ov-select="${wanted}"]`, body);
           if (btn) btn.focus();
         }
+      };
+      const applySort = () => {
+        const body = bodyFor();
+        if (!body) return;
+        const box = $('.ov-spec tbody', body);
+        const rows = $$('.ov-spec-row', box);
+        const all = $('.ov-spec-all', box);
+        const sorted = rows.slice().sort((a, b) => {
+          if (ovSort === 'count') return Number(b.dataset.total) - Number(a.dataset.total);
+          if (ovSort === 'name') return a.dataset.name.localeCompare(b.dataset.name, zh ? 'zh' : 'en');
+          return a.dataset.order - b.dataset.order;
+        });
+        if (sorted.every((r, i) => r === rows[i])) return;
+        const before = new Map(sorted.map((r) => [r, r.getBoundingClientRect().top]));
+        sorted.forEach((r, i) => {
+          $('.ov-letter span', r).textContent = 'ABCDEFG'[i] || 'ABCDEFG'[6];
+          box.insertBefore(r, all);
+        });
+        if (reducedMotion.matches) return;
+        sorted.forEach((r) => {
+          r.style.transition = 'none';
+          r.style.transform = `translateY(${before.get(r) - r.getBoundingClientRect().top}px)`;
+        });
+        requestAnimationFrame(() => requestAnimationFrame(() => sorted.forEach((r) => {
+          r.style.transition = 'transform 250ms cubic-bezier(.2, .7, .2, 1)';
+          r.style.transform = '';
+          r.addEventListener('transitionend', () => { r.style.transition = ''; }, { once: true });
+        })));
       };
       const renderBody = (body) => {
         const data = bodyPayload(body);
@@ -909,73 +790,44 @@
           count: picked.size ? [...picked].reduce((n, b) => n + (c.levels[b] || 0), 0) : c.total,
         }));
         const shares = sharesOf(Object.fromEntries(classes.map((c) => [c.key, c.count])));
-        const top = classes.slice().sort((a, b) => b.count - a.count)[0];
-        const levelsTotal = { '0': 0, '1': 0, '2': 0, '3': 0, unknown: 0, unclassified: 0 };
-        classes.forEach((c) => Object.entries(c.levels || {}).forEach(([b, n]) => {
-          if (!picked.size || picked.has(b)) levelsTotal[b] += n;
-        }));
-        const strongTotal = classes.reduce((sum, c) => sum + ([...picked].some((b) => b === '0' || b === '1')
-          ? [...picked].reduce((n, b) => n + (b === '0' || b === '1' ? (c.levels[b] || 0) : 0), 0)
-          : (c.levels['0'] || 0) + (c.levels['1'] || 0)), 0);
+        const maxCount = Math.max(...classes.map((c) => c.count), 0);
         const strongOf = (c) => [...picked].some((b) => b === '0' || b === '1')
           ? [...picked].reduce((n, b) => n + (b === '0' || b === '1' ? (c.levels[b] || 0) : 0), 0)
           : (c.levels['0'] || 0) + (c.levels['1'] || 0);
-        // Strong evidence is a per-class rate over the class's own count, not a share of the strong pool.
-        const strongRates = Object.fromEntries(classes.map((c) => [c.key, c.count ? (strongOf(c) / c.count * 100).toFixed(1) : '0']));
+        const strongTotal = classes.reduce((sum, c) => sum + strongOf(c), 0);
         const fullTotal = classes.reduce((sum, c) => sum + (picked.size && !picked.has('0') ? 0 : (c.levels['0'] || 0)), 0);
         const strongPct = total ? (strongTotal / total * 100).toFixed(1) : '0';
-        const view = { total, shares, strongRates, strongTotal, fullTotal, topKey: top.key, classes };
+        const top = classes.slice().sort((a, b) => b.count - a.count)[0];
+        const view = { total, shares, strongPct, strongTotal, fullTotal, topKey: top.key, classes, maxCount };
         body._view = view;
-        // Title
-        const prefix = picked.size ? [...picked].map((b) => ovCode[b] || b).join('+') + (zh ? '中的 ' : ' within ') : '';
-        const titleEl = $('[data-ov-title]', body);
-        const noun = key_text(body);
-        titleEl.innerHTML = `${esc(prefix)}${esc(T.ovTitleLead(fmtNum(total), esc(noun), shares[top.key]))}<em>${esc(top.name)}</em>`;
-        // Metrics
-        $('[data-ov-metric="classified"]', body).textContent = fmtNum(total);
-        $('[data-ov-metric="classified-note"]', body).textContent = `${zh ? '占 Case studies' : 'of case studies'} ${(total / (data.totalEntries || total) * 100).toFixed(1)}%`;
-        $('[data-ov-metric="top-share"]', body).textContent = shares[top.key];
-        $('[data-ov-metric="top-note"]', body).textContent = `${top.name} · ${fmtNum(top.count)}${T.ovTipUnit ? ' ' + T.ovTipUnit : ''}`;
+        // Meta: the filtered codes restate the base; unfiltered keeps the build-time line.
+        const metaEl = $('[data-ov-meta]', body);
+        if (metaEl) {
+          metaEl.textContent = picked.size
+            ? `${[...picked].map((b) => ovCode[b] || b).join('+')}：${fmtNum(total)}`.replace('：', zh ? '：' : ': ')
+            : metaEl.dataset.ovMetaDefault;
+        }
+        $('[data-ov-metric="entries"]', body).textContent = fmtNum(total);
         $('[data-ov-metric="strong"]', body).textContent = strongPct;
         $('[data-ov-metric="strong-note"]', body).textContent = fmtNum(strongTotal);
         $('[data-ov-metric="full"]', body).textContent = fmtNum(fullTotal);
-        // Figure
-        const aggr2 = { total, classes };
-        $('[data-ov-svg]', body).innerHTML = buildFigure(aggr2, T.ovCenterAll, body.dataset.ovBody);
-        // Spec rows
         $$('.ov-spec-row', body).forEach((row) => {
           const cls = classes.find((c) => c.key === row.dataset.ovRow);
           if (!cls) return;
-          $('[data-ov-share]', row).textContent = shares[cls.key];
+          const fill = $('.ov-fill', row);
+          fill.classList.toggle('ov-zero', !cls.count);
+          fill.style.setProperty('--w', `${(cls.count / (maxCount || 1) * 100).toFixed(2)}%`);
           $('[data-ov-count]', row).textContent = fmtNum(cls.count);
-          $('[data-ov-strong]', row).textContent = `${strongRates[cls.key]}%`;
-          const fillEl = $('.ov-strongfill', row), tickEl = $('.ov-strongtick', row);
-          if (fillEl) fillEl.style.setProperty('--w', `${strongRates[cls.key]}%`);
-          if (tickEl) tickEl.style.setProperty('--w', `${strongPct}%`);
-        });
-        // Sheet rows for every panel (only the visible one shows, but keep all consistent)
-        const overallPct = Object.fromEntries(Object.entries(levelsTotal).map(([b, n]) => [b, total ? n / total * 100 : 0]));
-        $$('.ov-sheet-panel', body).forEach((panel) => {
-          const cls = classes.find((c) => c.key === panel.dataset.ovPanel);
-          if (!cls) return;
-          const own = sharesOf(Object.fromEntries(OVERVIEW_BUCKETS.map((b) => [b, picked.size && !picked.has(b) ? 0 : (cls.levels[b] || 0)])));
-          $$('.ovl-row', panel).forEach((row, i) => {
-            const bucket = OVERVIEW_BUCKETS[i];
-            const n = picked.size && !picked.has(bucket) ? 0 : (cls.levels[bucket] || 0);
-            const diff = parseFloat(own[bucket]) - overallPct[bucket];
-            $('.ovl-count', row).textContent = fmtNum(n);
-            $('.ovl-own', row).textContent = `${own[bucket]}%`;
-            $('.ovl-all', row).textContent = `${overallPct[bucket].toFixed(1)}%`;
-            $('.ovl-diff', row).textContent = !n ? '—' : (Math.abs(diff) < 0.5 ? '≈' : `${diff > 0 ? '▲' : '▼'} ${Math.abs(diff).toFixed(1)} pt`);
-            row.classList.toggle('ovl-zero', !n);
-          });
+          $('[data-ov-share]', row).textContent = `${shares[cls.key]}%`;
+          $('[data-ov-strong]', row).textContent = `${strongSharesOf(cls, picked)}%`;
         });
         selectClass(body, body._selected || null, { roll: false });
       };
-      const OVERVIEW_BUCKETS = ['0', '1', '2', '3', 'unknown', 'unclassified'];
-      const key_text = (body) => {
-        const data = bodyPayload(body);
-        return data.kind ? (zh ? ({ 'case-study': '案例', project: '项目' }[data.kind] || '条目') : ({ 'case-study': 'cases', project: 'projects' }[data.kind] || 'entries')) : T.ovTitleNoun;
+      const strongSharesOf = (cls, picked) => {
+        const strong = [...picked].some((b) => b === '0' || b === '1')
+          ? [...picked].reduce((n, b) => n + (b === '0' || b === '1' ? (cls.levels[b] || 0) : 0), 0)
+          : (cls.levels['0'] || 0) + (cls.levels['1'] || 0);
+        return cls.count ? (strong / cls.count * 100).toFixed(1) : '0';
       };
       const applyLevelFilter = () => {
         const body = bodyFor();
@@ -990,7 +842,9 @@
         if (tools) tools.hidden = !!empty;
         if (body) {
           $$('[data-w]', body).forEach((el) => el.style.setProperty('--w', `${el.dataset.w}%`));
+          applySort();
           renderBody(body);
+          selectClass(body, body._selected || null, { roll: false });
         }
       };
       ovTabs.forEach((tab) => {
@@ -1008,26 +862,26 @@
         });
       });
       overview.addEventListener('click', (e) => {
-        const piece = e.target.closest('[data-ov-piece]');
-        if (piece) {
-          const letter = piece.dataset.ovPiece;
+        const row = e.target.closest('.ov-spec-row');
+        if (row && bodyFor() === row.closest('.ov-body')) {
           const body = bodyFor();
-          if (body && letter !== 'others') {
-            const data = body._view;
-            const cls = data.classes.find((c) => c.letter === letter);
-            if (cls) { body._selected = cls.key; selectClass(body, cls.key); }
-          }
+          body._selected = row.dataset.ovRow;
+          selectClass(body, row.dataset.ovRow);
+          return;
+        }
+        const c0 = e.target.closest('[data-ov-c0only]');
+        if (c0) {
+          ovFilter.clear();
+          ovFilter.add('0');
+          $$('input', $('#ov-evlist', overview)).forEach((box) => { box.checked = box.value === '0'; });
+          const evlabel = $('[data-ov-evlabel]', overview);
+          if (evlabel) evlabel.textContent = ovCode['0'];
+          applyLevelFilter();
           return;
         }
         if (e.target.closest('[data-ov-center]')) {
           const body = bodyFor();
           if (body) { body._selected = null; selectClass(body, null); }
-          return;
-        }
-        const row = e.target.closest('.ov-spec-row');
-        if (row) {
-          const body = bodyFor();
-          if (body) { body._selected = row.dataset.ovRow; selectClass(body, row.dataset.ovRow); }
           return;
         }
         const link = e.target.closest('[data-ov-view-all]');
@@ -1047,49 +901,31 @@
         const btn = $(`.ov-letterbtn[data-ov-select="${next.dataset.ovRow}"]`, body);
         if (btn) btn.focus();
       });
-      $$('.ov-letterbtn', overview).forEach((btn) => btn.addEventListener('click', () => {
+      $$('.ov-letterbtn', overview).forEach((btn) => btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const body = btn.closest('.ov-body');
         body._selected = btn.dataset.ovSelect;
         selectClass(body, btn.dataset.ovSelect, { focus: false });
       }));
-      // Hover sync: dim the other pieces and highlight the spec row; tooltip repeats the numbers.
+      // Hover: the bar tooltip repeats the row's numbers for mouse users mid-scan.
       const tip = document.createElement('div');
       tip.className = 'ov-tip';
       tip.hidden = true;
       overview.appendChild(tip);
       overview.addEventListener('mouseover', (e) => {
-        const piece = e.target.closest('[data-ov-piece]');
-        const svg = $('.ov-figure-svg', bodyFor() || overview);
-        if (svg) svg.classList.toggle('has-hover', !!piece);
-        if (!piece) { tip.hidden = true; return; }
+        const row = e.target.closest('.ov-spec-row');
         const body = bodyFor();
-        if (!body || !body._view) return;
-        const letter = piece.dataset.ovPiece;
-        const cls = body._view.classes.find((c) => c.letter === letter);
-        if (!cls) { tip.hidden = true; return; }
-        const share = body._view.shares[cls.key];
-        const lines = [`${letter} · ${cls.name.toUpperCase()}`, T.ovTipCount(fmtNum(cls.count), `${share}%`)];
-        if (letter >= 'C' && letter <= 'F') {
-          const others = body._view.classes.filter((c) => c.letter >= 'C' && c.letter <= 'F');
-          const othersTotal = others.reduce((s, c) => s + c.count, 0) || 1;
-          lines.push(T.ovTipOfOthers(`${(cls.count / othersTotal * 100).toFixed(1)}%`));
-        }
-        tip.textContent = lines.join('\n');
+        if (!row || !body || !body._view) { tip.hidden = true; return; }
+        const cls = body._view.classes.find((c) => c.key === row.dataset.ovRow);
+        if (!cls) return;
+        tip.textContent = T.ovTip(cls.name, fmtNum(cls.count), `${body._view.shares[cls.key]}%`);
         tip.hidden = false;
-        const r = piece.getBoundingClientRect();
-        tip.style.left = `${Math.max(8, Math.min(window.innerWidth - tip.offsetWidth - 8, r.right + 8))}px`;
-        tip.style.top = `${Math.max(8, r.top)}px`;
-        const row = $(`.ov-spec-row[data-ov-row="${cls ? cls.key : ''}"]`, body);
-        if (row) row.classList.add('is-hover');
+        const r = row.querySelector('.ov-track').getBoundingClientRect();
+        tip.style.left = `${Math.max(8, Math.min(window.innerWidth - tip.offsetWidth - 8, r.left + r.width / 2 - tip.offsetWidth / 2))}px`;
+        tip.style.top = `${Math.max(8, r.top - tip.offsetHeight - 8)}px`;
       });
-      overview.addEventListener('mouseout', (e) => {
-        if (!e.target.closest('[data-ov-piece]')) return;
-        tip.hidden = true;
-        const row = $('.ov-spec-row.is-hover', overview);
-        if (row) row.classList.remove('is-hover');
-        const svg = $('.ov-figure-svg.has-hover', overview);
-        if (svg) svg.classList.remove('has-hover');
-      });
+      overview.addEventListener('mouseout', (e) => { if (e.target.closest('.ov-spec-row')) tip.hidden = true; });
+      overview.addEventListener('mouseleave', () => { tip.hidden = true; });
       const evbtn = $('.ov-evbtn', overview);
       const evpop = $('#ov-evlist', overview);
       if (evbtn && evpop) {
@@ -1110,24 +946,28 @@
           applyLevelFilter();
         }));
       }
-      $$('[data-ov-sortcol]', overview).forEach((btn) => btn.addEventListener('click', () => {
-        const col = btn.dataset.ovSortcol;
-        const on = btn.getAttribute('aria-pressed') !== 'true';
-        $$('[data-ov-sortcol]', overview).forEach((b) => b.setAttribute('aria-pressed', 'false'));
-        btn.setAttribute('aria-pressed', String(on));
-        const body = bodyFor();
-        if (!body) return;
-        const box = $('.ov-spec tbody', body);
-        const rows = $$('.ov-spec-row', box);
-        const val = (row) => col === 'strong'
-          ? parseFloat($('[data-ov-strong]', row).textContent) || 0
-          : parseFloat(($('[data-ov-share]', row).textContent || '').replace('<', '')) || 0;
-        const sorted = rows.slice().sort((a, b) => (on ? val(b) - val(a) : val(a) - val(b)));
-        sorted.forEach((r) => box.insertBefore(r, $('.ov-spec-all', box)));
-      }));
+      $('[data-ov-sort]', overview).addEventListener('change', (e) => { ovSort = e.target.value; applySort(); });
+      const infoBtn = $('[data-ov-info]', overview);
+      const what = $('#ov-what', overview);
+      if (infoBtn && what) {
+        infoBtn.addEventListener('click', () => {
+          what.open = true;
+          what.scrollIntoView({ block: 'nearest', behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+        });
+      }
       const drawObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) { overview.classList.add('is-drawn'); drawObserver.disconnect(); }
+          if (entry.isIntersecting) {
+            overview.classList.add('is-drawn');
+            if (!reducedMotion.matches) {
+              $$('.ov-spec-row .ov-fill', overview).forEach((fill) => {
+                const target = fill.style.getPropertyValue('--w');
+                fill.style.setProperty('--w', '0%');
+                requestAnimationFrame(() => fill.style.setProperty('--w', target));
+              });
+            }
+            drawObserver.disconnect();
+          }
         });
       }, { threshold: 0.3 });
       drawObserver.observe(overview);
