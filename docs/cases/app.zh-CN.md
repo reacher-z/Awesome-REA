@@ -6,7 +6,7 @@
 
 [English](app.md)
 
-**233 个案例**
+**234 个案例**
 
 - [**ag-psd：重建 PSD 文档读写功能**](https://github.com/Agamnentzar/ag-psd) - ag-psd 结合格式资料与反复试验，用 JavaScript 和 TypeScript 实现 Photoshop PSD 文档的读写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ag-psd-case/)</sub>
 - [**AionLink Open：研究 GAC AION i60 的 ICCOA CarLink 连接**](https://github.com/codepdbh/aionlink-open) - AionLink Open 通过静态分析 Android APK 并编写独立客户端，研究 GAC AION i60 的 ICCOA CarLink 连接。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aionlink-open-case/)</sub>
@@ -241,4 +241,5 @@
 - [**Notion：追踪剪贴板桥接**](https://rea.tools/showcase/notion/) - 结合 REA 发现与独立源码阅读追踪剪贴板桥；动态包装器仍有明确限制。 <sub>案例 · REA 官方 · [完整条目](https://awesomerea.org/zh/resources/rea-notion-case/)</sub>
 - [**PicoPrint：LX-D02 打印机调查**](https://github.com/bigtower17/picoprint) - 作者报告以 REA 开始 Android 调查，再借助独立 Hermes 工具实现 Windows BLE 打印。 <sub>案例 · 混合工具流程 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/picoprint-rea-investigation/)</sub>
 - [**ReaCut：视频编辑器重建案例**](https://github.com/Xiangyu-CAS/rea-capcut) - 独立视频编辑器，作者公开了利用 REA 研究剪映／CapCut 行为与项目格式的过程。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/reacut-reconstruction/)</sub>
+- [**DESIGN:OS Studio：受 REA 研究启发的独立 .fig 工作室**](https://github.com/jangtrinh/design-os-studio) - 维护者报告使用 rea（morluto/rea 6.7.0）研究 Figma Desktop 的 JavaScript 与 .fig v106 kiwi schema，随后独立实现可读写 .fig 并重实现编辑器行为的本地桌面工作室。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/design-os-studio/)</sub>
 <!-- END GENERATED CASES -->
