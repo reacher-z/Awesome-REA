@@ -164861,5 +164861,61 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "tdxdata-case",
+    "name": "tdxdata: the 2026 TongDaXin market-data protocol rebuilt in Python",
+    "url": "https://github.com/ShanNing-YU/a-share-tdxdata",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "software",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A pure-Python library that reconstructs the 2026 TongDaXin A-share market-data protocol so quotes can be fetched without the official client.",
+    "description_zh": "纯 Python 库，重建通达信 2026 新版 A 股行情协议，无需官方客户端即可获取行情数据。",
+    "evidence_url": "https://github.com/ShanNing-YU/a-share-tdxdata/blob/e837e9b326844fd7611ec560bd8d890b230c964f/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Python and network access to the market-data servers it targets.",
+      "It reconstructs the 2026 protocol revision and is distributed through PyPI.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "tentacli",
+    "name": "Tentacli: a plugin framework for exploring network protocols",
+    "url": "https://github.com/tench-rt/tentacli",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "description_en": "A plugin framework for exploring how network protocols work: it acts as a client that connects to servers, reads and sends packets by defined rules and presents the protocol in readable form without intercepting third-party traffic.",
+    "description_zh": "用于探索网络协议的插件框架：以客户端身份连接服务器，按既定规则收发数据包并以可读形式呈现协议内容，而不拦截第三方流量。",
+    "evidence_url": "https://github.com/tench-rt/tentacli/blob/b36d1e384e0a99557c8814112d32c7545b20e95b/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires account credentials and a server you are permitted to connect to.",
+      "It participates in the protocol as a client and is not a sniffer or MITM tool.",
+      "Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

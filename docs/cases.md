@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**4210 case studies**, grouped by section.
+**4211 case studies**, grouped by section.
 
 ## Contents
 
@@ -13,7 +13,7 @@
 - [App](#app) (263)
 - [Native Binary](#native-binary) (64)
 - [Firmware and Hardware](#firmware) (179)
-- [Protocol](#protocol) (645)
+- [Protocol](#protocol) (646)
 
 <a id="website"></a>
 ## Website (81)
@@ -58,7 +58,7 @@
 - [Case studies](cases/firmware.md)
 
 <a id="protocol"></a>
-## Protocol (645)
+## Protocol (646)
 
 - [Case studies](cases/protocol.md)
 <!-- END GENERATED CASES -->

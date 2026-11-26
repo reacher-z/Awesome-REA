@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-26T22:15:41+00:00",
-  "entry_count": 5545,
+  "generated_at": "2026-11-26T23:07:26+00:00",
+  "entry_count": 5547,
   "class_counts": {
    "0": 15,
    "1": 1252,
-   "2": 4066,
+   "2": 4068,
    "3": 186
   },
   "unknown_count": 26,
@@ -155741,6 +155741,62 @@
    },
    "reason": "code and docs only: no download method and no demo",
    "checked_at": "2026-11-26T22:15:38+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "tdxdata-case",
+   "url": "https://github.com/ShanNing-YU/a-share-tdxdata",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 6861,
+    "docs_full": false,
+    "download": null,
+    "release_count": 1,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-26T23:07:26+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "tentacli",
+   "url": "https://github.com/tench-rt/tentacli",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4550,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-26T23:07:26+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
    "runtime_status": "not-run",

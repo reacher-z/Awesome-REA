@@ -1497,3 +1497,24 @@ Three hardware and protocol tools: MIFARE Classic Tool, the Multiprotocol TX Mod
 ## Validation notes
 
 All three records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. The Multiprotocol TX Module is Class 1 with a merged preview; the other two are Class 2. The pool was re-mined along hardware and protocol sections after several game-oriented noop scans.
+
+## Batch 59 — 2026-11-26
+
+A protocol reconstruction and an exploration framework: tdxdata and Tentacli. HEXPYRION was already curated, so the batch skipped it.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| tdxdata-case | reconstruction-cases | [ShanNing-YU/a-share-tdxdata](https://github.com/ShanNing-YU/a-share-tdxdata/blob/e837e9b326844fd7611ec560bd8d890b230c964f/README.md) | 15b328485b31e9934c705304116659014dc8a64dbaac037c834cfe98960f05a3 |
+| tentacli | protocol-analysis | [tench-rt/tentacli](https://github.com/tench-rt/tentacli/blob/b36d1e384e0a99557c8814112d32c7545b20e95b/README.md) | 7eb73bb83d0cfc98cc2d8900411fef8401c97474882e9824fff295b2a3d832cc |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| DimaReverse/nuitka-static-unpacker, nuitka-revenant, hexpyrion | The first two are marked outdated in favour of HEXPYRION, which the catalog already carries, so no new record. |
+| wmbusmeters, dumpvdl2, pyModeS, sdrtrunk | Protocol decoders for documented radio standards rather than reverse-engineering entries. |
+| yslxotwod/wifisting | A general wireless security toolkit without a reconstruction scope. |
+
+## Validation notes
+
+Both records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; both classify as Class 2. The duplicate check caught HEXPYRION before it was written twice, so only the two new records were committed.

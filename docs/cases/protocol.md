@@ -6,8 +6,9 @@
 
 [简体中文](protocol.zh-CN.md)
 
-**645 case studies**
+**646 case studies**
 
+- [**tdxdata: the 2026 TongDaXin market-data protocol rebuilt in Python**](https://github.com/ShanNing-YU/a-share-tdxdata) - A pure-Python library that reconstructs the 2026 TongDaXin A-share market-data protocol so quotes can be fetched without the official client. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tdxdata-case/)</sub>
 - [**433home: reconstructing REV power-switch radio commands**](https://github.com/jadeaffenjaeger/433home) - 433home reconstructs the 433 MHz control signals of REV wireless power sockets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/433home-case/)</sub>
 - [**A-OK: reconstructing a 433.92 MHz remote-control protocol**](https://github.com/akirjavainen/A-OK) - A-OK implements the 433.92 MHz remote-control protocol used by AC114-01B controls for roller shades and projector screens. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/a-ok-rf-protocol-case/)</sub>
 - [**Acurite 00592TX Decoder: decoding wireless sensor messages**](https://github.com/trlafleur/Acurite-00592TX-Decoder-ESP32a) - Acurite 00592TX Decoder implements a receiver for the 433.92 MHz messages sent by AcuRite 00592TX, 06002M and 06044 temperature sensors. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/acurite-00592tx-decoder-case/)</sub>

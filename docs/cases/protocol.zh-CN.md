@@ -6,8 +6,9 @@
 
 [English](protocol.md)
 
-**645 个案例**
+**646 个案例**
 
+- [**tdxdata：用 Python 重建通达信 2026 行情协议**](https://github.com/ShanNing-YU/a-share-tdxdata) - 纯 Python 库，重建通达信 2026 新版 A 股行情协议，无需官方客户端即可获取行情数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tdxdata-case/)</sub>
 - [**433home：重建 REV 插座遥控信号**](https://github.com/jadeaffenjaeger/433home) - 433home 还原了 REV 无线插座的 433 MHz 控制信号。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/433home-case/)</sub>
 - [**A-OK：重建 433.92 MHz 遥控协议**](https://github.com/akirjavainen/A-OK) - A-OK 实现 AC114-01B 卷帘及投影幕遥控器使用的 433.92 MHz 协议。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/a-ok-rf-protocol-case/)</sub>
 - [**Acurite 00592TX Decoder：解析无线传感器消息**](https://github.com/trlafleur/Acurite-00592TX-Decoder-ESP32a) - Acurite 00592TX Decoder 解析 AcuRite 00592TX、06002M 和 06044 温度传感器的 433.92 MHz 消息。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/acurite-00592tx-decoder-case/)</sub>
