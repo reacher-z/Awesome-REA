@@ -164522,5 +164522,90 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "hpengine-case",
+    "name": "HPEngine: Harry Potter and the Philosopher’s Stone as an open engine port",
+    "url": "https://github.com/artemnikonov/hpengine",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "An open-source engine port of the 2001 PC Harry Potter and the Philosopher’s Stone (Sorcerer’s Stone), checked against the original and native on macOS, Windows and Linux.",
+    "description_zh": "2001 年 PC 版《哈利·波特与魔法石》的开源引擎移植，对照原版校验，可在 macOS、Windows 与 Linux 上原生运行。",
+    "evidence_url": "https://github.com/artemnikonov/hpengine/blob/248032e268de8b2016c4a10969d3bf7d940a4bd0/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the 2001 PC game files; the engine does not ship game data.",
+      "It targets macOS, Windows and Linux and is verified against the original where possible.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "nfs-hp2-port-case",
+    "name": "Need for Speed: Hot Pursuit 2 — a native PC port of the PS2 engine",
+    "url": "https://github.com/Romalu86/NFSHP2_NativePS2Port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A native Windows x64 port of the PlayStation 2 Need for Speed: Hot Pursuit 2 engine with Vulkan graphics, XAudio2 audio and SDL2 controllers, requiring your own game data.",
+    "description_zh": "把 PlayStation 2 版《极品飞车：热力追踪 2》引擎移植为原生 Windows x64 版本，使用 Vulkan 图形、XAudio2 音频与 SDL2 手柄支持，需要自备游戏数据。",
+    "evidence_url": "https://github.com/Romalu86/NFSHP2_NativePS2Port/blob/808f6383eaebf866539ca730d36269ada42696e1/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires original PS2 game data such as an ISO, ZDIR/ZZDATA pair or extracted resources.",
+      "It targets Windows x64 with Vulkan 1.1 or newer and is a port, not a recompilation.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "cc-blender-skill",
+    "name": "cc-blender-skill: driving Blender from an agent skill pack",
+    "url": "https://github.com/RobLe3/cc-blender-skill",
+    "category": "agent-workflows",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A portable agent skill pack that lets Codex, Claude Code and compatible hosts use Blender like a senior 3D artist through natural language, with chain-loadable modeling, material, lighting, animation and export skills.",
+    "description_zh": "可移植的智能体技能包，让 Codex、Claude Code 及兼容宿主通过自然语言像资深 3D 艺术家一样使用 Blender，包含可链式加载的建模、材质、灯光、动画与导出技能。",
+    "evidence_url": "https://github.com/RobLe3/cc-blender-skill/blob/a2634b588e80265e796aa53f8ab178d75105c2af/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Blender 5.x and an agent host that can load the skill pack.",
+      "It drives Blender through validated skill workflows rather than replacing the application.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

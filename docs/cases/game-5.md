@@ -6,10 +6,12 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**503 case studies**
+**505 case studies**
 
 ## Engine reimplementations
 
+- [**OpenTS2: an open-source reimplementation of The Sims 2 in Unity**](https://github.com/LazyDuchess/OpenTS2) - Reimplements The Sims 2 in the Unity engine, reading the user’s Ultimate Collection installation through its own C# code for the game’s DBPF packages and asset formats, which the project also aims to offer as modular libraries. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opents2-sims2-engine-case/)</sub>
+- [**OpenTS: reconstructing the Tiberian Sun engine**](https://github.com/OpenTS-Developers/OpenTS) - OpenTS reconstructs the Command &amp; Conquer: Tiberian Sun 2.03 Firestorm engine as a standalone program. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opents-case/)</sub>
 - [**OpenTTD: recreating Transport Tycoon Deluxe**](https://github.com/OpenTTD/OpenTTD) - OpenTTD recreates Transport Tycoon Deluxe as an open-source transport simulation game, aiming to mimic the original while adding features. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openttd-case/)</sub>
 - [**OpenUG2: a Need for Speed: Underground 2 engine reimplementation**](https://github.com/whoismept/OpenUG2) - OpenUG2 reimplements the Need for Speed: Underground 2 engine as a native racing prototype that reads the player's original game data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openug2-case/)</sub>
 - [**OpenUT2k4: recreating Unreal Tournament 2004 in Unreal Engine 5.8**](https://github.com/GloriousEggroll/OpenUT2k4) - OpenUT2k4 recreates Unreal Tournament 2004 in C++ on Unreal Engine 5.8 using maps, characters, audio and music converted locally from the player's installation. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/openut2k4-case/)</sub>

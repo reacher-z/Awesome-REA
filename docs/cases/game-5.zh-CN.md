@@ -6,10 +6,12 @@
 
 [English](game-5.md)
 
-**503 个案例**
+**505 个案例**
 
 ## 引擎重实现
 
+- [**OpenTS2：在 Unity 中开源重新实现《模拟人生 2》**](https://github.com/LazyDuchess/OpenTS2) - 在 Unity 引擎中重新实现《模拟人生 2》，以自行编写的 C# 代码读取使用者终极典藏版安装中的 DBPF 包和各类素材格式，项目也希望把这些代码提供为模块化的库。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opents2-sims2-engine-case/)</sub>
+- [**OpenTS：重建 Tiberian Sun 引擎**](https://github.com/OpenTS-Developers/OpenTS) - OpenTS 将《Command &amp; Conquer: Tiberian Sun》2.03 Firestorm 引擎重建为独立程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opents-case/)</sub>
 - [**OpenTTD：重建《运输大亨豪华版》**](https://github.com/OpenTTD/OpenTTD) - OpenTTD 以《运输大亨豪华版》为基础重建运输模拟游戏，力求复现原版玩法并增加功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openttd-case/)</sub>
 - [**OpenUG2：《极品飞车：地下狂飙 2》引擎重建**](https://github.com/whoismept/OpenUG2) - OpenUG2 以玩家自备的《极品飞车：地下狂飙 2》数据重建原生赛车引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openug2-case/)</sub>
 - [**OpenUT2k4：用 Unreal Engine 5.8 重建《Unreal Tournament 2004》**](https://github.com/GloriousEggroll/OpenUT2k4) - OpenUT2k4 使用 C++ 和 Unreal Engine 5.8 重建《Unreal Tournament 2004》，在本地转换玩家安装目录中的地图、角色和音频，并在运行时构建地图。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/openut2k4-case/)</sub>

@@ -46562,5 +46562,29 @@
       "它增强调试器工作流，而非取代静态分析。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "hpengine-case": {
+    "name": "HPEngine：哈利·波特与魔法石的开源引擎移植",
+    "requirements": [
+      "需要自备 2001 年 PC 版游戏文件；引擎不附带游戏数据。",
+      "面向 macOS、Windows 与 Linux，并在可能范围内对照原版校验。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "nfs-hp2-port-case": {
+    "name": "极品飞车：热力追踪 2 — PS2 引擎的原生 PC 移植",
+    "requirements": [
+      "需要原版 PS2 游戏数据，如 ISO、ZDIR/ZZDATA 组合或完整解出的资源。",
+      "面向 Windows x64 与 Vulkan 1.1+，属于移植而非重编译。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "cc-blender-skill": {
+    "name": "cc-blender-skill：用技能包驱动 Blender",
+    "requirements": [
+      "需要 Blender 5.x 以及能加载该技能包的智能体宿主。",
+      "它通过经过验证的技能流程驱动 Blender，而不取代应用本身。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-26T03:31:13+00:00",
-    "entry_count": 1232,
-    "class_entry_count": 1263,
+    "generated_at": "2026-11-26T18:34:16+00:00",
+    "entry_count": 1233,
+    "class_entry_count": 1264,
     "class_counts": {
-      "image": 1192,
+      "image": 1193,
       "video": 40
     },
     "missing_count": 31,
@@ -3935,6 +3935,15 @@
       "checked_at": "2026-11-08T22:27:09+00:00"
     },
     {
+      "id": "hpengine-case",
+      "image_url": "https://raw.githubusercontent.com/artemnikonov/hpengine/248032e268de8b2016c4a10969d3bf7d940a4bd0/images/great-staircase-hall.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/artemnikonov/hpengine",
+      "revision": "248032e268de8b2016c4a10969d3bf7d940a4bd0",
+      "checked_at": "2026-11-26T18:34:16+00:00"
+    },
+    {
       "id": "hrtng",
       "image_url": "https://i.ytimg.com/vi/Yxkg2zD7Ggw/hqdefault.jpg",
       "kind": "video",
@@ -4508,7 +4517,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-26T03:31:12+00:00"
+      "checked_at": "2026-11-26T18:34:15+00:00"
     },
     {
       "id": "konami-viper-recomp-case",

@@ -1390,3 +1390,25 @@ Three dynamic and format tools plus a Rise of the Triad port: PureRef-format, KN
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. KN Win32 API Monitor is Class 1 with a merged preview; the other three are Class 2.
+
+## Batch 54 — 2026-11-26
+
+Two game ports and a Blender agent skill: HPEngine, Need for Speed Hot Pursuit 2 and cc-blender-skill.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| hpengine-case | reconstruction-cases | [artemnikonov/hpengine](https://github.com/artemnikonov/hpengine/blob/248032e268de8b2016c4a10969d3bf7d940a4bd0/README.md) | 73908c7538ee8b9f1d4406c451bc805db1abbdf1a6ec583979752ebe9cf1e250 |
+| nfs-hp2-port-case | reconstruction-cases | [Romalu86/NFSHP2_NativePS2Port](https://github.com/Romalu86/NFSHP2_NativePS2Port/blob/808f6383eaebf866539ca730d36269ada42696e1/README.md) | b24faeacd88e5337c3a577e1887eea8d4e209a6123256fbf37a468984f2a9fa9 |
+| cc-blender-skill | agent-workflows | [RobLe3/cc-blender-skill](https://github.com/RobLe3/cc-blender-skill/blob/a2634b588e80265e796aa53f8ab178d75105c2af/README.md) | a1c24d0126257745407858861f96a7b7a9e967a225e91e5ef2d4c29199410520 |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| NoneGiven/MphRead | Two Metroid Prime Hunters recompilation records already exist. |
+| vraj002/Frida-Scripts | Zero-star script collection from this round scan; below the curation threshold. |
+| dougchansan/pkmn-colosseum | Already covered by the continued Pokemon Colosseum matching decompilation. |
+
+## Validation notes
+
+All three records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. HPEngine is Class 1 with a merged preview; the other two are Class 2. Batch size reduced to three to keep README growth in check.
