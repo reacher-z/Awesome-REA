@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-45729603087-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-26T00:56:25Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 425,
+    "selected_count": 1,
+    "selected_ids": [
+      "scan-1450559176"
+    ],
+    "record_sha256": {
+      "scan-1450559176": "1957af6caf2c3e32fbfc96398a136836f618bee612391e1833e5d1d57aa022e3"
+    },
+    "skipped_counts": {
+      "already-listed": 12905,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 45729603087,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "a12d457c9a82a6b5171f670328b987b3267238f2",
+    "artifact_id": 15076663349,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:3c2f39910ec01f8036a25959cf91f778111d11a75603a5d709399b91f20c9ec5",
+    "checkpoint_sha256": "fbb6c8176d8107505bf79da990395475f82ab2623880f1340df3cb090c0be2e5",
+    "receipt_sha256": "b3bf9fd9b0f0822860b5fb8f8f43cca20775dcc6014d1f0b9eb88d0edc024ec1",
+    "scan_started_at": "2026-11-26T00:33:55.039730+00:00",
+    "scan_completed_at": "2026-11-26T00:53:04.934713+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 135640,
+      "failed": 4907,
+      "attempted_readme_scans": 140547,
+      "unique_repos": 140613,
+      "unattempted_candidates": 66
+    },
+    "integrity_counts": {
+      "qualified": 132623,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1450559176",
+      "name": "usersina/yo3-revival",
+      "full_name": "usersina/yo3-revival",
+      "url": "https://github.com/usersina/yo3-revival",
+      "description_en": "Private server that revives Konami's Yu-Gi-Oh! ONLINE 3 (Duel Accelerator): reverse-engineered from the original client, written in Rust, with duels on EDOPro's rules engine. Play with friends again.",
+      "description_zh": "Private server that revives Konami's Yu-Gi-Oh! ONLINE 3 (Duel Accelerator): reverse-engineered from the original client, written in Rust, with duels on EDOPro's rules engine. Play with friends again.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "edopro",
+        "game-preservation",
+        "private-server",
+        "reverse-engineering",
+        "rust",
+        "yu-gi-oh-online",
+        "yugioh"
+      ],
+      "stars": 5,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-21T15:21:46Z",
+      "pushed_at": "2026-11-25T21:53:25Z",
+      "metadata_observed_at": "2026-11-26T00:51:48.011071Z",
+      "observed_at": "2026-11-26T00:51:54.563881Z",
+      "readme_url": "https://github.com/usersina/yo3-revival/blob/e5f826e45b0cb6bf5cbb2ef6f6fda893c4a4b0e9/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "6edc0e71591c7e721d0296ab579c9c65b30039a4",
+      "readme_content_git_sha": "6edc0e71591c7e721d0296ab579c9c65b30039a4",
+      "readme_sha256": "956387a426475b5e56132fac3dd1b84244c09a3f3fef7223990842e7b8e602e2",
+      "readme_bytes": 4063,
+      "readme_lines": 59,
+      "readme_heading_count": 4,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "game"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-08T18:15:19Z..2026-11-08T19:10:55Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "e5f826e45b0cb6bf5cbb2ef6f6fda893c4a4b0e9"
+    }
+  ]
+}
