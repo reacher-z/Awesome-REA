@@ -121,6 +121,18 @@ class StaticApiTests(unittest.TestCase):
         document['papers'][0]['runtime_tested'] = True
         self.assertTrue(errors(document, self.schema['$defs']['papersFile'], self.schema))
 
+    def test_records_without_inclusion_dates_follow_the_schema_and_create_no_added_events(self):
+        resources = [{key: value for key, value in RESOURCE.items() if key != 'added_at'}]
+        papers = [{key: value for key, value in PAPER.items() if key != 'added_at'}]
+        build(self.output, resources=resources, papers=papers)
+        for name in ('resources', 'papers'):
+            document = self.load(name)
+            self.assertNotIn('added_at', document[name][0])
+            self.assertEqual(errors(document, self.schema['$defs'][name + 'File'], self.schema), [])
+            rows = list(csv.DictReader(io.StringIO((self.folder / f'{name}.csv').read_text())))
+            self.assertEqual(rows[0]['added_at'], '')
+        self.assertFalse(any(row['change'] == 'added' for row in self.load('changes')['changes']))
+
     def test_a_private_value_stops_the_build(self):
         with TemporaryDirectory() as directory, patch.object(build_api, 'private_json_locations', return_value=[('ghidra', 'url')]):
             with self.assertRaisesRegex(ValueError, 'privacy'):

@@ -154740,5 +154740,30 @@
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/scripts/turokgame/components/weapons/turokWeaponChronoScepter.txt",
       "https://github.com/svkaiser/TurokEX/blob/90589b4bd3c35e79ea42572e4c89dc335c5cfbfe/kex2/turok/framework/system.cpp"
     ]
+  },
+  {
+    "id": "openai-healthcare-computer-use",
+    "name": "Advancing computer-use agents for healthcare teams",
+    "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+    "category": "learning",
+    "kind": "learning-resource",
+    "relationship": "learning",
+    "targets": [
+      "app",
+      "website"
+    ],
+    "description_en": "Healthcare computer-use examples for EHR and payer-portal workflows, covering prior authorization, referrals, discharge planning, human review and action auditing.",
+    "description_zh": "医疗场景的计算机操作智能体案例，涵盖电子病历和保险门户中的事先授权、转诊、出院安排、人工审核与操作审计。",
+    "evidence_url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+    "verified_at": "2026-11-16T20:51:51Z",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The article was published on November 16, 2026; its MRI authorization demonstration uses synthetic patient data.",
+      "The described workflows use the OpenAI API, ChatGPT for Healthcare or ChatGPT for Clinicians, together with access to the relevant clinical systems."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites"
+    ]
   }
 ]
