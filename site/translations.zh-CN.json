@@ -43811,5 +43811,133 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "pulp-daw-public": {
+    "name": "PULP AI 原生音频工作站",
+    "requirements": [
+      "Windows 原生桌面应用；安装发布的构建即可使用。",
+      "由 The_Alex 使用 Claude Fable 5.2 创作并开源。",
+      "AGPL-3.0 许可证。"
+    ]
+  },
+  "godzilla-nights": {
+    "name": "哥斯拉之夜",
+    "requirements": [
+      "使用仓库中发布的文件运行。",
+      "由 chetaslua 使用 Claude Fable 5.2 创作并开源。",
+      "MIT 许可证。"
+    ]
+  },
+  "the-last-good-pelican": {
+    "name": "The Last Good Pelican 最后一只画对的鹈鹕",
+    "requirements": [
+      "使用仓库中发布的文件运行。",
+      "由 chetaslua 使用 Claude Fable 5.2 创作并开源。",
+      "MIT 许可证。"
+    ]
+  },
+  "kagami": {
+    "name": "Kagami 84 秒动漫",
+    "requirements": [
+      "使用仓库中发布的文件运行。",
+      "由 flxrnc 使用 Claude Fable 5.2 创作并开源（作者写作 Fable 5.5）。",
+      "MIT 许可证。"
+    ]
+  },
+  "castle-cinematic": {
+    "name": "Castle Cinematic 悬崖古堡",
+    "requirements": [
+      "需要 Blender 及仓库中的脚本或模板来打开并渲染作品。",
+      "由 LexnLin 使用 Claude Fable 5.2 创作并开源。",
+      "MIT 许可证。"
+    ]
+  },
+  "ink-dragon": {
+    "name": "Ink Dragon 一滴墨化成龙",
+    "requirements": [
+      "需要 Blender 及仓库中的脚本或模板来打开并渲染作品。",
+      "由 LexnLin 使用 Claude Fable 5.2 创作并开源。",
+      "MIT 许可证。"
+    ]
+  },
+  "room-at-dawn": {
+    "name": "Room at Dawn 黎明的卧室",
+    "requirements": [
+      "在支持 WebGL 的现代桌面浏览器中运行。",
+      "由 LexnLin 使用 Claude Fable 5.2 创作并开源。",
+      "MIT 许可证。"
+    ]
+  },
+  "fly-in-kit": {
+    "name": "Fly-In Kit 给咖啡店做的飞行小游戏",
+    "requirements": [
+      "使用仓库中发布的文件运行。",
+      "由 AmirMushich 使用 Claude Fable 5.2 创作并开源。",
+      "Apache-2.0 许可证。"
+    ]
+  },
+  "shred-kit": {
+    "name": "Shred Kit 碎纸动画模板",
+    "requirements": [
+      "需要 Blender 及仓库中的脚本或模板来打开并渲染作品。",
+      "由 AmirMushich 使用 Claude Fable 5.2 创作并开源。",
+      "GPL-3.0 许可证。"
+    ]
+  },
+  "worm-rider": {
+    "name": "Worm Rider 沙虫骑士",
+    "requirements": [
+      "使用仓库中发布的文件运行。",
+      "由 AmirMushich 使用 Claude Fable 5.2 创作并开源。",
+      "MIT 许可证。"
+    ]
+  },
+  "blackout": {
+    "name": "停电之夜",
+    "requirements": [
+      "使用仓库中发布的文件运行。",
+      "由 anstapnever 使用 Claude Fable 5.2 创作并开源。",
+      "MIT 许可证。"
+    ]
+  },
+  "one-sweep": {
+    "name": "One Sweep 78 秒动漫打斗",
+    "requirements": [
+      "在支持 WebGL 的现代桌面浏览器中运行。",
+      "由 anstapnever 使用 Claude Fable 5.2 创作并开源（作者写作 Fable 5.5）。",
+      "MIT 许可证。"
+    ]
+  },
+  "ballpoint": {
+    "name": "圆珠笔微距 ASMR",
+    "requirements": [
+      "使用仓库中发布的文件运行。",
+      "由 camperaigg 使用 Claude Fable 5.2 创作并开源。",
+      "MIT 许可证。"
+    ]
+  },
+  "harappa": {
+    "name": "Harappa 原野生成 Blender 插件",
+    "requirements": [
+      "需要 Blender；安装插件后即可生成场景。",
+      "由 KanaWorks_AI 使用 Claude Fable 5.2 创作并开源。",
+      "GPL-3.0 许可证。"
+    ]
+  },
+  "ryu": {
+    "name": "Ryu 山化龙",
+    "requirements": [
+      "使用仓库中发布的文件运行。",
+      "由 seeconvm 使用 Claude Fable 5.2 创作并开源（作者写作 Fable 5.5）。",
+      "MIT 许可证。"
+    ]
+  },
+  "steel-webgpu": {
+    "name": "机器手指走螺旋楼梯",
+    "requirements": [
+      "使用仓库中发布的文件运行。",
+      "由 Luckyballa 使用 Claude Fable 5.2 创作并开源。",
+      "Apache-2.0 许可证。"
+    ]
   }
 }
