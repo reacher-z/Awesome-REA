@@ -1,0 +1,2294 @@
+{
+  "schema_version": 1,
+  "meta": {
+    "title": "Computer-Use Agent Taxonomy",
+    "version": "1.1",
+    "as_of": "2026-10-16",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Realm",
+        "zh": "领域圈",
+        "question": "Which sphere of human activity is the computer serving?"
+      },
+      {
+        "level": 2,
+        "name": "Domain",
+        "zh": "学科/职能域",
+        "question": "Which discipline or function (ALE subdomain, O*NET/SOC family)?"
+      },
+      {
+        "level": 3,
+        "name": "Workflow family",
+        "zh": "工作流族",
+        "question": "Which recurring end-to-end workflow, defined by its work product and how it is judged?"
+      },
+      {
+        "level": 4,
+        "name": "Task class",
+        "zh": "任务小类",
+        "question": "Which concrete, verifiable kind of task, where one verifier template can grade ~20 instances?"
+      }
+    ],
+    "facet_names": {
+      "need": "CUA need: does the task need a GUI?",
+      "os": "Operating system",
+      "surface": "Interaction surface",
+      "prim": "Interaction primitives",
+      "wp": "Work product",
+      "cond": "Challenge conditions"
+    },
+    "method_md": "## What this tree is\n\nOne primary hierarchy answers **what work the computer is being used for**, from the root down to small task classes of about 20 concrete tasks each. Separate labels on every task (the facets) answer **where and how**: operating system, interface (GUI, terminal, API), interaction primitives, work product, and whether the task really needs a GUI.\n\n\"Computer use\" here is deliberately broad: desktop GUI apps, browsers, phones, terminals and coding, data and infrastructure work, and physical systems controlled through software (robots, PLCs, printers, drones).\n\n## Why the levels are not OS × app\n\n- **OS × app explodes and duplicates.** Five operating systems times thousands of applications yields a list, not a hierarchy, and the same work (\"color-grade a clip\") appears under Premiere, Resolve and Final Cut on two systems.\n- **Apps change; work persists.** O*NET separates work activities from tools for this reason, and ALE organizes 55 subdomains by occupation (O*NET / SOC 2018), not by software. Inheriting that keeps this tree aligned with ALE.\n- **Skill transfers along work, not along vendors.** Keying is keying in After Effects or Nuke. Grouping by work makes per-branch scores mean something.\n- OS and app remain fully filterable: they are facets on every task, so \"all macOS + Windows tasks in Creative\" is one click.\n\n## Levels\n\n- **L1 Realm** is the sphere of activity. Fifteen realms cover platform operations, software, data, information work, business operations, creative media, engineering, science, health, law and public services, communication, everyday life, games, finance, and education/knowledge services.\n- **L2 Domain** is a discipline or function, aligned to ALE subdomains and O*NET/SOC families wherever one exists.\n- **L3 Workflow family** is a recurring end-to-end workflow. It is defined by its goal, its work product and how the result is judged; an app name or input size alone never defines a family (the FrontierCUA family rule).\n- **L4 Task class** is the leaf. It holds tasks that share setup style, verification template and core skill, so that about 20 instances can vary inputs, apps, OS and difficulty without changing what is measured. **Leaf test:** if one verifier template cannot grade all of them, split; if two leaves share a template and a skill, merge.\n\n## Placement rules\n\n1. **Place by the purpose of the deliverable** (whose job is it?). A quarterly chart built in Excel goes to *Information & Document Work › Spreadsheets*; closing the month in QuickBooks goes to *Finance › Accounting*.\n2. **Professional and personal versions split only when the workflow differs.** Buying as a consumer (Everyday Life) and procurement (Business) are separate; email triage is one place (Communication).\n3. **Cross-cutting skills are facets, not branches.** Search, file handling, drag, real-time control and accessibility mode are facets. They become branches only when they are the goal itself, as in OS file management or building an automation.\n4. **Surfaces are facets.** TV, car, XR and screen-reader interfaces are values of the surface facet; their tasks live where their purpose puts them.\n5. **Single parent.** Every node has one parent; related nodes elsewhere are mentioned in the definition text rather than duplicated.\n\n## CUA need: does this task need a GUI?\n\nEvery task carries two labels on the same five-level scale:\n\n- **`need`** is the GUI need **as designed**, in the task's own environment. Its verifier may withhold the terminal or audit for scripted bypasses; the validator requires this of every GUI-essential and GUI-only task. This label says how the task will be run and graded.\n- **`need_open`** is the GUI need of the work itself **with ordinary access** (Step 0 below). It is a blind label: three raters (one Claude, two Codex) per task, majority rule (Evaluation → Round 10). It says whether a task is a good test of computer use at all. 不适合 CLI 但适合 CUA means `need_open` is GUI-essential or GUI-only.\n\nThe two agree on 42% of tasks. GUI share is 62% as designed and 58% with ordinary access; 1,316 tasks are GUI tasks only because of their environment. The site's GUI-need switch shows every view either way.\n\nThe five levels:\n\n- **API-sufficient:** a documented API, SDK or MCP server does the whole task. It is not a CUA task unless the GUI itself is under test.\n- **CLI-sufficient:** a terminal plus files does it end to end with standard tools. It belongs to ALE-CLI, or serves as the control half of a GUI/CLI pair.\n- **Hybrid:** the expert solution splits into a real GUI part and a substantial scripted part. It tests tool switching.\n- **GUI-essential:** a script route exists in principle (bpy, ExtendScript, UNO), but success depends on the visual loop: continuous or spatial manipulation, perceptual judgment, or interactive tools.\n- **GUI-only:** there is no practical programmatic route. The state lives only behind the GUI (closed app, no API, SAP GUI, Citrix or remote desktop, legacy terminal).\n\n**How to decide: rubric v4.** It replaced the earlier definitions plus tie-breaks after round 6 of the blind test. On 171 fresh tasks it raised six-rater agreement from κ 0.755 to 0.845 and Claude–Codex agreement from 80% to 90% (Evaluation → Round 6), and it held on 156 more (κ 0.875, round 8). Go through the steps in order and stop at the first that decides.\n\n0. **Fix the environment and the target.** Assume ordinary user access: a desktop with the apps the task names, a terminal, and common open-source tools; for phone tasks, a computer connected over adb. Use only the accounts and keys the task gives. Judge the checked end state, not the route the task suggests: \"in GIMP\" does not change the label unless the checked state lives inside that app.\n1. **Websites.** A task done on a website or web app is GUI-essential. It is API-sufficient only if the task mentions an API, token, SDK or MCP server for the site, and CLI-sufficient only if the task gives a direct link to a data file. A browser's own settings and extensions are desktop-app state.\n2. **A view left on screen** (a window, dialog or tab left open, a form filled but not saved, media playing, an item selected) is GUI-only, unless one documented command opens exactly that view; then it is CLI-sufficient.\n3. **Reading the screen.** A task that points at on-screen state no file records (\"this page\", \"where my cursor is\", \"the current frame\") is GUI-essential.\n4. **A program route.** API-sufficient if a documented API does the whole task. CLI-sufficient if the terminal and files do it end to end without needing to look at the result.\n   - Routes that count: standard tools; libraries that edit a format faithfully (python-docx, openpyxl, python-pptx, ffmpeg, ImageMagick); vendor-documented config files, `defaults` keys, policies and options; an app's own scripting interface (AppleScript dictionary, COM, UNO, Blender Python); documented adb system commands.\n   - Routes that do not count: UI scripting that clicks or types (System Events, xdotool, AutoHotkey, pyautogui, `adb shell input`); hand-editing an app's internal files or databases; undocumented keys; privacy-protected (TCC) stores.\n   - Geometry computed from the file (positions, sizes, alignment) is not visual judgment.\n   - Documents: CLI-sufficient if a library edits the format faithfully; GUI-essential if the result depends on rendering or needs app-only features (pivot tables, SmartArt, themes, tracked changes).\n5. **The GUI is needed.**\n   - **Hybrid:** a real GUI part plus a substantial scripted part (bulk data, many files, code). A single command beside a GUI job is not Hybrid.\n   - **GUI-essential:** the app has a programmatic route, but this task needs the visual loop or a UI-only setting.\n   - **GUI-only:** the app or system offers no programmatic route at all.\n\n**Several parts:** label each part and take the most GUI-demanding, unless Hybrid applies. **Still torn between two adjacent labels:** choose the one needing less GUI; the GUI label has to be earned.\n\n**ALE-CUA should draw from GUI-only and GUI-essential**, use Hybrid to test tool switching, and use CLI- and API-sufficient tasks as controls. The Facets view shows this mix for every branch.\n\n## Why CUA and not just coding: evidence so far\n\n- **Drag is the bottleneck, not reasoning.** The same Scratch tasks score 14.46% when blocks must be dragged versus 78.31% through a semantic API, and every model scored 0% on The Incredible Machine in VideoGameBench.\n- **API-only benchmarks saturate; GUI ones do not.** WorkBench rose from 43% to 98% in two years, while WorkArena++ L3 is at 0%, multi-app WindowsWorld is under 21%, and SpreadsheetBench v2 is at 34.9%.\n- **The API route has holes exactly where professionals work.** openpyxl cannot create pivot tables; python-pptx cannot author SmartArt or apply themes; SAP GUI, Citrix and 3270 terminals expose no API at all, which is why RPA vendors exist.\n- **Real-time control is a separate difficulty.** VideoGameBench scores 0.48% when the game runs live versus 1.6% when it pauses for the model.\n- **Hidden APIs make tasks invalid.** In one public agent experiment a model failed to make a chess move through the Lichess UI for 28 sessions, then succeeded at once through the API. GUI tasks must block shortcut APIs, or they silently stop measuring CUA.\n\n## Task records\n\nEach task carries an ID, a title, a concrete prompt with inputs and the expected output, operating systems, surface, apps, CUA need, interaction primitives, work product, a verification method, partial-credit milestones and an estimated difficulty from 1 to 5. Tasks are **proposals**: they are written to the FrontierCUA quality bar (well defined, low expected pass rate, deterministic or rubric-checkable, partial credit for training), but none has been implemented or run yet, and difficulty is an estimate, not a measured pass rate.\n\n## How it was built\n\n1. **Discovery: 14 parallel research lanes** covered:\n   - professional-work benchmarks and ALE\n   - occupational standards (O*NET 31.0, SOC 2018, ISCO-08, BLS employment, Anthropic Economic Index)\n   - desktop, web, mobile and terminal benchmarks\n   - creative, engineering, science, health, law and business software\n   - OS and consumer computing\n   - taxonomy theory and vendor demand\n\n   Together they logged **1,504 lookups**: 279 web-search calls, some refused by the session's 200-search cap, plus 1,204 direct reads of primary pages, papers, repositories and official data files. That produced **859 distinct source URLs**, **596 benchmark entries** before de-duplication, and **749 candidate task classes with 2,801 example tasks**. Per-lane files with every query and source are in `research/cua-lineage/phase1/`.\n2. **Synthesis:** I merged the candidates into the four levels under the rules above. All 55 ALE subdomains are placed. Benchmarks were de-duplicated and mapped onto the task classes their tasks fall into.\n3. **Task writing:** 20 tasks per task class, written against the class definition and facets by parallel writers, each file checked by a schema validator.\n4. **Independent verification, in rounds.** A separate checker built a 13-criterion acceptance manifest and judged the artifacts directly, not the writers' reports.\n   - **Round 1: FAIL** (7 pass).\n     - 22 of 749 candidates were unplaced.\n     - 11 classes were labelled GUI-heavy but were mostly Hybrid.\n     - Many GUI tasks did not say how shortcuts are blocked, and 914 partial-credit lists were malformed.\n     - 3 tasks touched live channels.\n\n     Fixes: 18 classes were added and 11 defaults relabelled honestly. Both rules became validator checks, every file was repaired, and the live-channel tasks moved to test channels.\n   - **Round 2: FAIL** (11 pass).\n     - 2 sibling live-channel tasks remained.\n     - New classes had no benchmark mapping.\n     - About 12 GUI tasks passed the keyword check by accident.\n     - 2 near-duplicates had appeared.\n\n     Fixes: a full-tree safety sweep moved every state-changing task on a real platform to a test account, store or channel. The new classes were mapped, and the remaining 150 white-space classes are listed in `gen/white_space.json`. A semantic review covered 156 suspect tasks, a class was added for proactive act/ask/stay-silent judgment, and the duplicates were rewritten.\n   - **Round 3: PARTIAL** (12 pass, 0 fail). All 749 candidates are resolved (748 placed, 1 scoped out), and safety has 0 violations.\n     - The partial criterion is benchmark coverage: a missing white-space entry, and lane-cited benchmarks not yet mapped for 9 classes.\n     - Within-threshold cleanups remained: 26 grading sentences, 7 test-context wordings and 4 near-duplicate pairs.\n\n     Fixes: all of these were applied.\n   - **Rounds 4–5: PARTIAL** (12 pass, 0 fail), still on benchmark coverage only.\n     - Successive scans found white-space classes whose lane-cited benchmarks (ALE, Terminal-Bench 2.0, OSWorld, VideoGameBench, ScienceBoard and others) actually contain tasks of that kind. Round 5 found 18 that an earlier scan had missed by skipping short benchmark names.\n     - One extra mapping was judged unsupported and removed.\n\n     Result: benchmarks now touch **317 of 430 classes (73.7%)**. The remaining **113** are documented white space, where no public benchmark was found.\n\n   Files: `gen/acceptance_manifest.json`, `gen/acceptance_results.json`, `gen/candidate_coverage.json`, `gen/scope_decisions.json`, `gen/white_space.json`.\n\n5. **Blind tests, ten rounds.** For each scheme, three independent raters (six from two model families in rounds 5–8) placed real held-out tasks into it. Every round used tasks not seen before, from OSWorld (Ubuntu and Windows), WebArena, ALE, AndroidWorld and macOSWorld. The schemes compared were this tree, ALE's 55 subdomains, and FrontierCUA's earlier D01–D10 scheme.\n   - **Coverage:** 0 of 342 unseen tasks in rounds 2–4 were unplaceable in this tree. ALE could not place 54–61% of everyday or macOS tasks.\n   - **Clarity:** agreement on the exact task class held at κ 0.94 across 429–430 classes. At matched coarseness (13 realms vs 10 domains), this tree is at least as clear as D01–D10 (κ 0.98 vs 0.95).\n   - **GUI need:** after tie-break rules and a macOS scripting rule, agreement on the GUI-need label reached κ 0.90 on fresh macOS tasks.\n   - **Cross-model check:** three Codex (GPT) raters reproduced the placements. 88% of majority task-class labels match the Claude raters' (pooled κ 0.87). The GUI-need label was the least portable judgment (71% cross-model agreement), because it depends on what tool access the environment grants.\n   - **Rubric v4 (round 6):** a pre-registered test on 171 fresh tasks compared the old and new GUI-need rubrics with six raters each. v4 raised agreement from κ 0.755 to 0.845 (+0.09, 95% CI +0.02 to +0.15) and Claude–Codex agreement from 80% to 90%.\n   - **Definitions (round 7):** sixteen definitions broadened from earlier partial-fit notes raised exact fits on the same fresh tasks from 87.4% to 89.5% (+2.1 points, CI +0.3 to +4.3) without lowering agreement. 0 of 513 unseen tasks have been unplaceable since round 1.\n   - **Own tasks (rounds 9–10):** blind raters put 88% of a 208-task sample of the tree's own tasks back in their exact class. Their GUI-need labels showed that many stored labels described an environment with routes withheld, not the work, so every task now also carries a blind `need_open`.\n   - **Replication (round 8):** on 156 more fresh tasks v4 held (κ 0.875, 91% cross-model). A further refinement, v4.1, failed its pre-registered non-inferiority test and was not adopted.\n\n   Details are on the Evaluation tab.\n\n## Limits\n\n- The web-search budget is shared across the session (200 searches); lanes therefore read many primary pages directly. The real counts are on the Sources list and in the research files, not estimates.\n- Benchmark mappings place a benchmark where its tasks fall; they do not imply the benchmark covers that whole branch.\n- The tree is versioned and meant to change: use the per-node feedback box and export the comments.\n\n## Version 1.1: fifteen realms\n\nFinancial work and education/knowledge services now have independent realms. Nine existing domains (28 task classes, 560 proposals) move out of the previous Business, Law/Public Sector/Education and Everyday Life realms. The tree still contains 120 domains, 143 workflow families, 430 task classes and 8,600 proposals. This is a grouping revision, not new task collection.\n\nTask IDs and original task evidence remain unchanged. A published node alias table resolves earlier class IDs and shared links to current addresses; local feedback is carried forward with its original node ID recorded. The base skeleton and task files remain preserved, and `realm-layout.json` records the build-time migration.\n\nEarlier evaluation studies and occupational weights belong to the 13-realm structure. No new evaluation or weight estimation is claimed for the 15-realm revision. Digital employees remain a role and operating-model lens across the work taxonomy.\n",
+    "realm_revision": {
+      "base_version": "1.0",
+      "version": "1.1",
+      "reason": {
+        "en": "Separate financial work and educational/knowledge services into coherent work-purpose realms. This is a regrouping of existing classes, not additional task collection or a new evaluation result.",
+        "zh": "按工作目的将财务工作及教育与知识服务独立成领域圈。这次调整重组现有任务小类，不新增任务记录，也不代表新的评测结果。"
+      },
+      "moved_domains": 9,
+      "moved_classes": 28,
+      "task_ids_preserved": true,
+      "evaluation_repeated": false,
+      "domain_moves": {
+        "R05.01": "R14.01",
+        "R05.02": "R14.02",
+        "R05.03": "R14.03",
+        "R05.04": "R14.04",
+        "R12.03": "R14.05",
+        "R10.05": "R15.01",
+        "R10.06": "R15.02",
+        "R10.07": "R15.03",
+        "R12.10": "R15.04"
+      }
+    }
+  },
+  "source_url": "https://alecua.com/data/taxonomy.29ee6abf1a9e447b.json",
+  "nodes": [
+    {
+      "id": "R01",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Platform & System Operations",
+      "zh": "平台与系统运维",
+      "inc": "OS settings, files, installs, devices, security hygiene, desktop automation, troubleshooting, IT admin, accessibility.",
+      "exc": "Building software (R02); cloud/server infrastructure as a product (R03).",
+      "onet": [
+        "15-1231",
+        "15-1232",
+        "15-1244"
+      ],
+      "ale": [],
+      "def": "Operating, configuring, securing and automating the computer itself, for oneself or a fleet."
+    },
+    {
+      "id": "R01.01",
+      "parent": "R01",
+      "level": 2,
+      "name": "OS configuration & personalization",
+      "zh": "系统设置与个性化",
+      "ale": [],
+      "apps": [
+        "System Settings",
+        "Control Panel",
+        "GNOME Settings"
+      ],
+      "def": "Change system settings, defaults, displays, input methods, windows and workspaces."
+    },
+    {
+      "id": "R01.02",
+      "parent": "R01",
+      "level": 2,
+      "name": "Files, storage & sync",
+      "zh": "文件、存储与同步",
+      "ale": [],
+      "apps": [
+        "Finder",
+        "File Explorer",
+        "Nautilus",
+        "iCloud Drive",
+        "OneDrive"
+      ],
+      "def": "Organize, find, rename, archive, deduplicate and sync files and their metadata."
+    },
+    {
+      "id": "R01.03",
+      "parent": "R01",
+      "level": 2,
+      "name": "Software installation & environments",
+      "zh": "软件安装与环境配置",
+      "ale": [],
+      "apps": [
+        "Homebrew",
+        "winget",
+        "apt",
+        "App Store"
+      ],
+      "def": "Install, update, license, configure and remove applications and runtimes."
+    },
+    {
+      "id": "R01.04",
+      "parent": "R01",
+      "level": 2,
+      "name": "Devices, peripherals & connectivity",
+      "zh": "设备、外设与连接",
+      "ale": [],
+      "apps": [
+        "Bluetooth",
+        "Printers & Scanners",
+        "Wi-Fi"
+      ],
+      "def": "Pair, configure and diagnose displays, printers, audio, Bluetooth, networks and phones."
+    },
+    {
+      "id": "R01.05",
+      "parent": "R01",
+      "level": 2,
+      "name": "Security, privacy & identity",
+      "zh": "安全、隐私与身份",
+      "ale": [],
+      "apps": [
+        "FileVault",
+        "BitLocker",
+        "1Password",
+        "Time Machine"
+      ],
+      "def": "Harden a machine, manage permissions, encryption, backups, credentials (test vaults) and privacy settings."
+    },
+    {
+      "id": "R01.06",
+      "parent": "R01",
+      "level": 2,
+      "name": "Desktop automation & workflow building",
+      "zh": "桌面自动化与流程搭建",
+      "ale": [],
+      "apps": [
+        "Shortcuts",
+        "AppleScript",
+        "PowerShell",
+        "Power Automate",
+        "UiPath",
+        "n8n"
+      ],
+      "def": "Build automations that operate apps: shortcuts, scripts, RPA bots and no-code integrations."
+    },
+    {
+      "id": "R01.07",
+      "parent": "R01",
+      "level": 2,
+      "name": "Troubleshooting & diagnostics",
+      "zh": "故障排查与诊断",
+      "ale": [],
+      "apps": [
+        "Console",
+        "Event Viewer",
+        "Activity Monitor",
+        "Task Manager"
+      ],
+      "def": "Find and fix why something on the machine is broken or slow, from logs and system tools."
+    },
+    {
+      "id": "R01.08",
+      "parent": "R01",
+      "level": 2,
+      "name": "IT & endpoint fleet administration",
+      "zh": "终端与IT管理",
+      "ale": [
+        "9.6 Infrastructure Engineering & Cloud Operations"
+      ],
+      "apps": [
+        "Intune",
+        "Jamf",
+        "Active Directory",
+        "Group Policy"
+      ],
+      "def": "Administer users, devices and policies across an organization."
+    },
+    {
+      "id": "R01.09",
+      "parent": "R01",
+      "level": 2,
+      "name": "Accessibility & assistive computing",
+      "zh": "无障碍与辅助",
+      "ale": [],
+      "apps": [
+        "VoiceOver",
+        "Narrator",
+        "NVDA"
+      ],
+      "def": "Configure and use assistive technology; make content and workflows accessible."
+    },
+    {
+      "id": "R01.10",
+      "parent": "R01",
+      "level": 2,
+      "name": "Browser operation & web platform",
+      "zh": "浏览器操作与网页平台",
+      "ale": [],
+      "apps": [
+        "Chrome",
+        "Safari",
+        "Edge",
+        "Firefox"
+      ],
+      "def": "Operate the browser itself: tabs, profiles, downloads, extensions, permissions, site settings and devtools basics."
+    },
+    {
+      "id": "R01.11",
+      "parent": "R01",
+      "level": 2,
+      "name": "Phone & tablet system operation",
+      "zh": "手机与平板系统操作",
+      "ale": [],
+      "apps": [
+        "Android",
+        "iOS",
+        "iPadOS",
+        "Wear OS"
+      ],
+      "def": "Operate the mobile OS layer and touch-native interactions: launcher, notifications, permissions, gestures, form factors."
+    },
+    {
+      "id": "R02",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Software Engineering",
+      "zh": "软件工程",
+      "inc": "Code, builds, debugging, front-end and app development, embedded, QA.",
+      "exc": "Data pipelines, ML, cloud ops, security (R03).",
+      "onet": [
+        "15-1252",
+        "15-1253",
+        "15-1254",
+        "15-1255"
+      ],
+      "ale": [
+        "9.1 Software Engineering"
+      ],
+      "def": "Creating, changing, testing and shipping software."
+    },
+    {
+      "id": "R02.01",
+      "parent": "R02",
+      "level": 2,
+      "name": "Code authoring & repository maintenance",
+      "zh": "编码与仓库维护",
+      "ale": [
+        "9.1 Software Engineering"
+      ],
+      "apps": [
+        "VS Code",
+        "git",
+        "JetBrains IDEs"
+      ],
+      "def": "Implement features, fix bugs, refactor and migrate code in real repositories."
+    },
+    {
+      "id": "R02.02",
+      "parent": "R02",
+      "level": 2,
+      "name": "Build, test & release engineering",
+      "zh": "构建、测试与发布",
+      "ale": [
+        "9.1 Software Engineering"
+      ],
+      "apps": [
+        "GitHub Actions",
+        "Make",
+        "Docker"
+      ],
+      "def": "Make builds reproducible, tests pass, pipelines green and releases shipped."
+    },
+    {
+      "id": "R02.03",
+      "parent": "R02",
+      "level": 2,
+      "name": "Interactive debugging & profiling",
+      "zh": "交互式调试与性能分析",
+      "ale": [
+        "9.1 Software Engineering"
+      ],
+      "apps": [
+        "Xcode Instruments",
+        "Visual Studio",
+        "Chrome DevTools"
+      ],
+      "def": "Use debuggers, profilers and devtools to localize defects and bottlenecks."
+    },
+    {
+      "id": "R02.04",
+      "parent": "R02",
+      "level": 2,
+      "name": "Web front-end & UI implementation",
+      "zh": "前端与界面实现",
+      "ale": [
+        "9.1 Software Engineering"
+      ],
+      "apps": [
+        "Browser",
+        "Vite",
+        "Figma"
+      ],
+      "def": "Build and fix web interfaces whose correctness is judged on the rendered page."
+    },
+    {
+      "id": "R02.05",
+      "parent": "R02",
+      "level": 2,
+      "name": "Mobile & desktop app development",
+      "zh": "移动与桌面应用开发",
+      "ale": [
+        "9.1 Software Engineering"
+      ],
+      "apps": [
+        "Xcode",
+        "Android Studio",
+        "iOS Simulator"
+      ],
+      "def": "Build, sign, run and test native apps on simulators and devices."
+    },
+    {
+      "id": "R02.06",
+      "parent": "R02",
+      "level": 2,
+      "name": "Embedded, firmware & hardware description",
+      "zh": "嵌入式、固件与硬件描述",
+      "ale": [
+        "1.2 Electronics Engineering",
+        "1.8 Semiconductor & Microelectronics Design"
+      ],
+      "apps": [
+        "Arduino IDE",
+        "STM32CubeIDE",
+        "Vivado"
+      ],
+      "def": "Program microcontrollers and FPGAs; write and simulate HDL."
+    },
+    {
+      "id": "R02.07",
+      "parent": "R02",
+      "level": 2,
+      "name": "Software QA & GUI test automation",
+      "zh": "软件测试与界面自动化测试",
+      "ale": [
+        "9.1 Software Engineering"
+      ],
+      "apps": [
+        "Playwright",
+        "Appium",
+        "TestRail"
+      ],
+      "def": "Exercise software as a user would, write UI tests and file reproducible bugs."
+    },
+    {
+      "id": "R02.08",
+      "parent": "R02",
+      "level": 2,
+      "name": "Visual & low-code programming",
+      "zh": "可视化与低代码编程",
+      "ale": [
+        "9.1 Software Engineering"
+      ],
+      "apps": [
+        "LabVIEW",
+        "Node-RED",
+        "Power Apps",
+        "Retool"
+      ],
+      "def": "Program by wiring nodes and blocks, or by composing apps in low-code builders."
+    },
+    {
+      "id": "R03",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Data, AI & Infrastructure",
+      "zh": "数据、AI与基础设施",
+      "inc": "Databases and pipelines, BI, ML engineering, cloud ops, security operations, networking, optimization, quantum.",
+      "exc": "Domain-science analysis that belongs to a discipline (R08/R09).",
+      "onet": [
+        "15-2051",
+        "15-1243",
+        "15-1212",
+        "15-1241"
+      ],
+      "ale": [
+        "9.2 Data & Analytics Engineering",
+        "9.3 AI Engineering, Safety & CS Research",
+        "9.4 Mathematical & Operations Research",
+        "9.5 Cybersecurity & Digital Forensics",
+        "9.6 Infrastructure Engineering & Cloud Operations",
+        "9.7 Quantum Computing"
+      ],
+      "def": "Moving, storing, analyzing and learning from data, and running the systems underneath."
+    },
+    {
+      "id": "R03.01",
+      "parent": "R03",
+      "level": 2,
+      "name": "Data engineering & databases",
+      "zh": "数据工程与数据库",
+      "ale": [
+        "9.2 Data & Analytics Engineering"
+      ],
+      "apps": [
+        "PostgreSQL",
+        "dbt",
+        "DBeaver",
+        "Snowflake"
+      ],
+      "def": "Model, load, transform, query and repair data in databases and pipelines."
+    },
+    {
+      "id": "R03.02",
+      "parent": "R03",
+      "level": 2,
+      "name": "Analytics & business intelligence",
+      "zh": "分析与商业智能",
+      "ale": [
+        "9.2 Data & Analytics Engineering",
+        "6.3 Enterprise Analytics & Planning"
+      ],
+      "apps": [
+        "Tableau",
+        "Power BI",
+        "Metabase",
+        "Looker"
+      ],
+      "def": "Build metrics, dashboards and analyses that answer business questions."
+    },
+    {
+      "id": "R03.03",
+      "parent": "R03",
+      "level": 2,
+      "name": "Machine learning engineering & AI research",
+      "zh": "机器学习工程与AI研究",
+      "ale": [
+        "9.3 AI Engineering, Safety & CS Research"
+      ],
+      "apps": [
+        "PyTorch",
+        "Jupyter",
+        "Weights & Biases"
+      ],
+      "def": "Train, evaluate, debug and serve models; reproduce papers."
+    },
+    {
+      "id": "R03.04",
+      "parent": "R03",
+      "level": 2,
+      "name": "Cloud & infrastructure operations",
+      "zh": "云与基础设施运维",
+      "ale": [
+        "9.6 Infrastructure Engineering & Cloud Operations"
+      ],
+      "apps": [
+        "AWS Console",
+        "kubectl",
+        "Terraform",
+        "Grafana"
+      ],
+      "def": "Provision, deploy, observe and recover services on cloud and clusters."
+    },
+    {
+      "id": "R03.05",
+      "parent": "R03",
+      "level": 2,
+      "name": "Cybersecurity & digital forensics",
+      "zh": "网络安全与数字取证",
+      "ale": [
+        "9.5 Cybersecurity & Digital Forensics"
+      ],
+      "apps": [
+        "Wireshark",
+        "Ghidra",
+        "Splunk",
+        "Autopsy"
+      ],
+      "def": "Defend, investigate and analyze systems, binaries and incidents in lab environments."
+    },
+    {
+      "id": "R03.06",
+      "parent": "R03",
+      "level": 2,
+      "name": "Networking & telecom",
+      "zh": "网络与通信",
+      "ale": [
+        "9.6 Infrastructure Engineering & Cloud Operations"
+      ],
+      "apps": [
+        "Cisco Packet Tracer",
+        "Wireshark",
+        "pfSense"
+      ],
+      "def": "Configure, troubleshoot and document networks."
+    },
+    {
+      "id": "R03.07",
+      "parent": "R03",
+      "level": 2,
+      "name": "Optimization, OR & quantum computing",
+      "zh": "运筹优化与量子计算",
+      "ale": [
+        "9.4 Mathematical & Operations Research",
+        "9.7 Quantum Computing"
+      ],
+      "apps": [
+        "Gurobi",
+        "AMPL",
+        "Qiskit"
+      ],
+      "def": "Formulate and solve optimization problems; build and run quantum circuits."
+    },
+    {
+      "id": "R03.08",
+      "parent": "R03",
+      "level": 2,
+      "name": "Data annotation & labeling",
+      "zh": "数据标注",
+      "ale": [
+        "9.3 AI Engineering, Safety & CS Research"
+      ],
+      "apps": [
+        "CVAT",
+        "Label Studio",
+        "labelme"
+      ],
+      "def": "Produce labeled training and evaluation data in annotation tools."
+    },
+    {
+      "id": "R04",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Information & Document Work",
+      "zh": "信息检索与文档办公",
+      "inc": "Web research, word processing, spreadsheets, presentations, PDFs and forms, notes, data entry.",
+      "exc": "Discipline-specific documents judged by domain rules (e.g., tax return in R05, legal brief in R10).",
+      "onet": [
+        "43-9061",
+        "43-6014",
+        "43-9021"
+      ],
+      "ale": [],
+      "def": "Finding information and producing general-purpose documents, tables and slides."
+    },
+    {
+      "id": "R04.01",
+      "parent": "R04",
+      "level": 2,
+      "name": "Web search & research synthesis",
+      "zh": "网络检索与研究综合",
+      "ale": [],
+      "apps": [
+        "Chrome",
+        "Safari",
+        "Edge"
+      ],
+      "def": "Find, compare and synthesize information across sources into a cited answer."
+    },
+    {
+      "id": "R04.02",
+      "parent": "R04",
+      "level": 2,
+      "name": "Word processing & long documents",
+      "zh": "文字处理与长文档",
+      "ale": [],
+      "apps": [
+        "Word",
+        "Pages",
+        "Google Docs",
+        "LibreOffice Writer"
+      ],
+      "def": "Write, structure, style, review and export documents."
+    },
+    {
+      "id": "R04.03",
+      "parent": "R04",
+      "level": 2,
+      "name": "Spreadsheets & tabular data",
+      "zh": "电子表格与表格数据",
+      "ale": [],
+      "apps": [
+        "Excel",
+        "Numbers",
+        "Google Sheets",
+        "LibreOffice Calc"
+      ],
+      "def": "Clean, compute, summarize and chart tabular data in spreadsheets."
+    },
+    {
+      "id": "R04.04",
+      "parent": "R04",
+      "level": 2,
+      "name": "Presentations & visual documents",
+      "zh": "演示文稿与视觉文档",
+      "ale": [],
+      "apps": [
+        "PowerPoint",
+        "Keynote",
+        "Google Slides"
+      ],
+      "def": "Build and restyle slide decks and one-page visuals."
+    },
+    {
+      "id": "R04.05",
+      "parent": "R04",
+      "level": 2,
+      "name": "PDFs, forms & document conversion",
+      "zh": "PDF、表单与格式转换",
+      "ale": [],
+      "apps": [
+        "Acrobat",
+        "Preview",
+        "PDF Expert"
+      ],
+      "def": "Fill, sign, edit, extract from, redact and convert PDFs and forms."
+    },
+    {
+      "id": "R04.06",
+      "parent": "R04",
+      "level": 2,
+      "name": "Notes & personal knowledge management",
+      "zh": "笔记与知识管理",
+      "ale": [],
+      "apps": [
+        "Notion",
+        "Obsidian",
+        "OneNote",
+        "Apple Notes"
+      ],
+      "def": "Capture, organize, link and retrieve notes and knowledge bases."
+    },
+    {
+      "id": "R04.07",
+      "parent": "R04",
+      "level": 2,
+      "name": "Data entry & record transcription",
+      "zh": "数据录入与记录转写",
+      "ale": [],
+      "apps": [
+        "Excel",
+        "Web forms",
+        "OCR tools"
+      ],
+      "def": "Move information from documents, screens and scans into systems of record."
+    },
+    {
+      "id": "R05",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Business & Organizational Operations",
+      "zh": "商业与组织运营",
+      "inc": "ERP operations, sales, marketing, commerce operations, supply chain, HR, project management, customer support and industry systems.",
+      "exc": "Financial records, investment, tax and audit (R14); general documents without business-system state (R04).",
+      "onet": [
+        "13-1161",
+        "13-1071",
+        "13-1081"
+      ],
+      "ale": [
+        "6.3 Enterprise Analytics & Planning",
+        "6.5 HR & Project Management",
+        "6.6 Sales & Marketing",
+        "6.8 Supply Chain & Logistics"
+      ],
+      "def": "Run nonfinancial organizational operations through business systems.",
+      "def_zh": "通过业务系统开展销售、运营、供应链、人事、项目与支持等组织工作。"
+    },
+    {
+      "id": "R05.05",
+      "parent": "R05",
+      "level": 2,
+      "name": "ERP & back-office transactions",
+      "zh": "ERP与后台事务",
+      "ale": [
+        "6.3 Enterprise Analytics & Planning"
+      ],
+      "apps": [
+        "SAP GUI",
+        "SAP Fiori",
+        "Odoo",
+        "NetSuite"
+      ],
+      "def": "Execute and correct transactions in enterprise resource planning systems."
+    },
+    {
+      "id": "R05.06",
+      "parent": "R05",
+      "level": 2,
+      "name": "Sales & customer relationship management",
+      "zh": "销售与客户关系",
+      "ale": [
+        "6.6 Sales & Marketing"
+      ],
+      "apps": [
+        "Salesforce",
+        "HubSpot"
+      ],
+      "def": "Manage leads, opportunities, quotes and accounts in CRM systems."
+    },
+    {
+      "id": "R05.07",
+      "parent": "R05",
+      "level": 2,
+      "name": "Marketing, advertising & SEO",
+      "zh": "市场营销、广告与SEO",
+      "ale": [
+        "6.6 Sales & Marketing"
+      ],
+      "apps": [
+        "Google Ads",
+        "Meta Ads Manager",
+        "Mailchimp",
+        "GA4"
+      ],
+      "def": "Plan, launch, measure and optimize campaigns and content."
+    },
+    {
+      "id": "R05.08",
+      "parent": "R05",
+      "level": 2,
+      "name": "E-commerce & marketplace operations",
+      "zh": "电商运营",
+      "ale": [
+        "6.6 Sales & Marketing"
+      ],
+      "apps": [
+        "Shopify admin",
+        "Amazon Seller Central"
+      ],
+      "def": "Run the seller side: catalog, pricing, orders, returns, storefront."
+    },
+    {
+      "id": "R05.09",
+      "parent": "R05",
+      "level": 2,
+      "name": "Supply chain, procurement & logistics",
+      "zh": "供应链、采购与物流",
+      "ale": [
+        "6.8 Supply Chain & Logistics"
+      ],
+      "apps": [
+        "SAP Ariba",
+        "WMS",
+        "TMS",
+        "Excel"
+      ],
+      "def": "Plan supply, buy, move and store goods."
+    },
+    {
+      "id": "R05.10",
+      "parent": "R05",
+      "level": 2,
+      "name": "HR & workforce management",
+      "zh": "人力资源",
+      "ale": [
+        "6.5 HR & Project Management"
+      ],
+      "apps": [
+        "Workday",
+        "BambooHR",
+        "Greenhouse"
+      ],
+      "def": "Recruit, onboard, schedule, pay and manage people."
+    },
+    {
+      "id": "R05.11",
+      "parent": "R05",
+      "level": 2,
+      "name": "Project, product & portfolio management",
+      "zh": "项目与产品管理",
+      "ale": [
+        "6.5 HR & Project Management"
+      ],
+      "apps": [
+        "Jira",
+        "MS Project",
+        "Asana"
+      ],
+      "def": "Plan, track and report work across teams."
+    },
+    {
+      "id": "R05.12",
+      "parent": "R05",
+      "level": 2,
+      "name": "Customer support & service desk",
+      "zh": "客户支持与服务台",
+      "ale": [],
+      "apps": [
+        "Zendesk",
+        "ServiceNow",
+        "Intercom"
+      ],
+      "def": "Resolve tickets and requests within policy using service tools."
+    },
+    {
+      "id": "R05.13",
+      "parent": "R05",
+      "level": 2,
+      "name": "Industry operations systems",
+      "zh": "行业运营系统",
+      "ale": [],
+      "apps": [
+        "Oracle OPERA",
+        "Square POS",
+        "Yardi",
+        "Guidewire",
+        "Procore"
+      ],
+      "def": "Operate the vertical systems that run specific industries: hospitality, retail, real estate, insurance, banking, construction, facilities."
+    },
+    {
+      "id": "R06",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Creative & Media Production",
+      "zh": "创意与媒体制作",
+      "inc": "Graphic design, photo, illustration, video, motion/VFX, 3D, audio/music, UI/UX, publishing, game development, generative media, live production.",
+      "exc": "Engineering CAD (R07); social-platform publishing operations (R11).",
+      "onet": [
+        "27-1024",
+        "27-1014",
+        "27-4032",
+        "27-4014",
+        "15-1255"
+      ],
+      "ale": [
+        "8.1 3D, Animation & Interactive Media",
+        "8.2 Graphic, Visual & Product Design",
+        "8.4 Audio, Music & Post-Production Media"
+      ],
+      "def": "Making images, video, motion, 3D, sound, interfaces and interactive experiences."
+    },
+    {
+      "id": "R06.01",
+      "parent": "R06",
+      "level": 2,
+      "name": "Graphic & brand design",
+      "zh": "平面与品牌设计",
+      "ale": [
+        "8.2 Graphic, Visual & Product Design"
+      ],
+      "apps": [
+        "Illustrator",
+        "Affinity Designer",
+        "Inkscape",
+        "Canva"
+      ],
+      "def": "Design logos, layouts, packaging and brand assets."
+    },
+    {
+      "id": "R06.02",
+      "parent": "R06",
+      "level": 2,
+      "name": "Photography & image editing",
+      "zh": "摄影与图像处理",
+      "ale": [
+        "8.2 Graphic, Visual & Product Design"
+      ],
+      "apps": [
+        "Photoshop",
+        "Lightroom",
+        "Capture One",
+        "GIMP"
+      ],
+      "def": "Develop, retouch, composite and batch-process photographs."
+    },
+    {
+      "id": "R06.03",
+      "parent": "R06",
+      "level": 2,
+      "name": "Illustration & digital painting",
+      "zh": "插画与数字绘画",
+      "ale": [
+        "8.2 Graphic, Visual & Product Design"
+      ],
+      "apps": [
+        "Procreate",
+        "Clip Studio Paint",
+        "Krita"
+      ],
+      "def": "Draw and paint digitally with brushes, layers and color."
+    },
+    {
+      "id": "R06.04",
+      "parent": "R06",
+      "level": 2,
+      "name": "Video editing & post-production",
+      "zh": "视频剪辑与后期",
+      "ale": [
+        "8.4 Audio, Music & Post-Production Media"
+      ],
+      "apps": [
+        "Premiere Pro",
+        "DaVinci Resolve",
+        "Final Cut Pro",
+        "CapCut"
+      ],
+      "def": "Cut, color, caption, mix and deliver video."
+    },
+    {
+      "id": "R06.05",
+      "parent": "R06",
+      "level": 2,
+      "name": "Motion graphics, VFX & compositing",
+      "zh": "动态图形、特效与合成",
+      "ale": [
+        "8.1 3D, Animation & Interactive Media"
+      ],
+      "apps": [
+        "After Effects",
+        "Nuke",
+        "Fusion",
+        "Motion"
+      ],
+      "def": "Animate graphics and composite visual effects."
+    },
+    {
+      "id": "R06.06",
+      "parent": "R06",
+      "level": 2,
+      "name": "3D modeling, animation & rendering",
+      "zh": "三维建模、动画与渲染",
+      "ale": [
+        "8.1 3D, Animation & Interactive Media"
+      ],
+      "apps": [
+        "Blender",
+        "Maya",
+        "Cinema 4D",
+        "Houdini",
+        "ZBrush"
+      ],
+      "def": "Model, texture, rig, animate, simulate, light and render 3D content."
+    },
+    {
+      "id": "R06.07",
+      "parent": "R06",
+      "level": 2,
+      "name": "Audio, music & sound post-production",
+      "zh": "音频、音乐与声音后期",
+      "ale": [
+        "8.4 Audio, Music & Post-Production Media"
+      ],
+      "apps": [
+        "Logic Pro",
+        "Pro Tools",
+        "Ableton Live",
+        "Audition"
+      ],
+      "def": "Record, edit, mix, master and score audio and music."
+    },
+    {
+      "id": "R06.08",
+      "parent": "R06",
+      "level": 2,
+      "name": "UI/UX & product design",
+      "zh": "界面与产品设计",
+      "ale": [
+        "8.2 Graphic, Visual & Product Design"
+      ],
+      "apps": [
+        "Figma",
+        "Sketch",
+        "Adobe XD"
+      ],
+      "def": "Design interfaces, prototypes and design systems."
+    },
+    {
+      "id": "R06.09",
+      "parent": "R06",
+      "level": 2,
+      "name": "Publishing, layout & typography",
+      "zh": "出版、排版与字体",
+      "ale": [
+        "8.2 Graphic, Visual & Product Design"
+      ],
+      "apps": [
+        "InDesign",
+        "Affinity Publisher",
+        "QuarkXPress"
+      ],
+      "def": "Lay out multi-page publications and prepare them for print or digital."
+    },
+    {
+      "id": "R06.10",
+      "parent": "R06",
+      "level": 2,
+      "name": "Game & interactive experience development",
+      "zh": "游戏与交互内容开发",
+      "ale": [
+        "8.1 3D, Animation & Interactive Media"
+      ],
+      "apps": [
+        "Unreal Engine",
+        "Unity",
+        "Godot"
+      ],
+      "def": "Build levels, gameplay and interactive scenes in game engines."
+    },
+    {
+      "id": "R06.11",
+      "parent": "R06",
+      "level": 2,
+      "name": "Generative-AI media pipelines",
+      "zh": "生成式AI媒体流程",
+      "ale": [
+        "8.1 3D, Animation & Interactive Media"
+      ],
+      "apps": [
+        "ComfyUI",
+        "Firefly",
+        "Runway"
+      ],
+      "def": "Compose, control and edit generative models in node or app workflows."
+    },
+    {
+      "id": "R06.12",
+      "parent": "R06",
+      "level": 2,
+      "name": "Live production & streaming",
+      "zh": "直播与现场制作",
+      "ale": [
+        "8.4 Audio, Music & Post-Production Media"
+      ],
+      "apps": [
+        "OBS Studio",
+        "vMix",
+        "ATEM Software Control"
+      ],
+      "def": "Configure and run live shows, streams and broadcasts."
+    },
+    {
+      "id": "R07",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Engineering & Physical Systems",
+      "zh": "工程与物理系统",
+      "inc": "Mechanical/aerospace CAD, CAE, electronics, IC design, architecture/BIM, civil and geospatial, manufacturing and automation, energy, robotics, transportation.",
+      "exc": "Art-directed 3D for media (R06).",
+      "onet": [
+        "17-2141",
+        "17-2071",
+        "17-1011",
+        "17-2051",
+        "17-3013",
+        "17-2199"
+      ],
+      "ale": [
+        "1.1 Aerospace & Mechanical Engineering",
+        "1.2 Electronics Engineering",
+        "1.3 Civil, Architectural & Geospatial Engineering",
+        "1.5 Manufacturing & Industrial Systems",
+        "1.6 Energy, Power & Nuclear Engineering",
+        "1.8 Semiconductor & Microelectronics Design",
+        "1.10 Urban & Spatial Planning",
+        "1.11 Robotics & Autonomous Systems"
+      ],
+      "def": "Designing, simulating, making and controlling physical things through engineering software."
+    },
+    {
+      "id": "R07.01",
+      "parent": "R07",
+      "level": 2,
+      "name": "Mechanical & aerospace design (CAD)",
+      "zh": "机械与航空设计",
+      "ale": [
+        "1.1 Aerospace & Mechanical Engineering"
+      ],
+      "apps": [
+        "SolidWorks",
+        "Fusion",
+        "Siemens NX",
+        "Onshape",
+        "FreeCAD"
+      ],
+      "def": "Model parts and assemblies to spec and produce drawings."
+    },
+    {
+      "id": "R07.02",
+      "parent": "R07",
+      "level": 2,
+      "name": "Engineering simulation & analysis (CAE)",
+      "zh": "工程仿真与分析",
+      "ale": [
+        "1.1 Aerospace & Mechanical Engineering",
+        "1.5 Manufacturing & Industrial Systems"
+      ],
+      "apps": [
+        "ANSYS",
+        "Abaqus",
+        "COMSOL",
+        "Moldex3D"
+      ],
+      "def": "Set up, solve and interpret FEA, CFD, molding and multiphysics models."
+    },
+    {
+      "id": "R07.03",
+      "parent": "R07",
+      "level": 2,
+      "name": "Electronics & PCB design",
+      "zh": "电子与PCB设计",
+      "ale": [
+        "1.2 Electronics Engineering"
+      ],
+      "apps": [
+        "KiCad",
+        "Altium Designer",
+        "LTspice"
+      ],
+      "def": "Capture schematics, simulate circuits, lay out and check boards."
+    },
+    {
+      "id": "R07.04",
+      "parent": "R07",
+      "level": 2,
+      "name": "Semiconductor & IC design",
+      "zh": "半导体与芯片设计",
+      "ale": [
+        "1.8 Semiconductor & Microelectronics Design"
+      ],
+      "apps": [
+        "Cadence Virtuoso",
+        "KLayout",
+        "Vivado"
+      ],
+      "def": "Design, verify and lay out integrated circuits."
+    },
+    {
+      "id": "R07.05",
+      "parent": "R07",
+      "level": 2,
+      "name": "Architecture & BIM",
+      "zh": "建筑与BIM",
+      "ale": [
+        "1.3 Civil, Architectural & Geospatial Engineering"
+      ],
+      "apps": [
+        "Revit",
+        "ArchiCAD",
+        "Rhino",
+        "SketchUp"
+      ],
+      "def": "Model buildings, coordinate disciplines and produce construction documents."
+    },
+    {
+      "id": "R07.06",
+      "parent": "R07",
+      "level": 2,
+      "name": "Civil, geospatial & urban planning",
+      "zh": "土木、地理空间与城市规划",
+      "ale": [
+        "1.3 Civil, Architectural & Geospatial Engineering",
+        "1.10 Urban & Spatial Planning"
+      ],
+      "apps": [
+        "QGIS",
+        "ArcGIS Pro",
+        "Civil 3D"
+      ],
+      "def": "Analyze terrain, networks and land use; produce maps and plans."
+    },
+    {
+      "id": "R07.07",
+      "parent": "R07",
+      "level": 2,
+      "name": "Manufacturing, CAM & industrial automation",
+      "zh": "制造、CAM与工业自动化",
+      "ale": [
+        "1.5 Manufacturing & Industrial Systems"
+      ],
+      "apps": [
+        "Fusion CAM",
+        "PrusaSlicer",
+        "TIA Portal",
+        "Ignition"
+      ],
+      "def": "Plan machining and printing, program PLCs and operate HMIs."
+    },
+    {
+      "id": "R07.08",
+      "parent": "R07",
+      "level": 2,
+      "name": "Energy & power systems",
+      "zh": "能源与电力系统",
+      "ale": [
+        "1.6 Energy, Power & Nuclear Engineering"
+      ],
+      "apps": [
+        "PSS/E",
+        "ETAP",
+        "PVsyst"
+      ],
+      "def": "Model grids, plants and renewable systems."
+    },
+    {
+      "id": "R07.09",
+      "parent": "R07",
+      "level": 2,
+      "name": "Robotics & autonomous systems",
+      "zh": "机器人与自主系统",
+      "ale": [
+        "1.11 Robotics & Autonomous Systems"
+      ],
+      "apps": [
+        "ROS/RViz",
+        "Isaac Sim",
+        "RoboDK",
+        "QGroundControl"
+      ],
+      "def": "Program, simulate, teleoperate and monitor robots, arms, hands and drones through software."
+    },
+    {
+      "id": "R07.10",
+      "parent": "R07",
+      "level": 2,
+      "name": "Chemical & process engineering",
+      "zh": "化工与过程工程",
+      "ale": [
+        "Chemical & Process Engineering"
+      ],
+      "apps": [
+        "Aspen HYSYS",
+        "DWSIM",
+        "Aspen Plus"
+      ],
+      "def": "Simulate, size and optimize chemical processes and plants."
+    },
+    {
+      "id": "R07.11",
+      "parent": "R07",
+      "level": 2,
+      "name": "Mining, petroleum & geological engineering",
+      "zh": "矿业、石油与地质工程",
+      "ale": [
+        "Mining, Petroleum & Geological Engineering"
+      ],
+      "apps": [
+        "Petrel",
+        "Leapfrog Geo",
+        "Surpac"
+      ],
+      "def": "Model reservoirs, ore bodies and subsurface geology; plan extraction."
+    },
+    {
+      "id": "R07.12",
+      "parent": "R07",
+      "level": 2,
+      "name": "Aviation & airspace operations",
+      "zh": "航空与空域运营",
+      "ale": [
+        "Aviation & Airspace Operations"
+      ],
+      "apps": [
+        "ForeFlight",
+        "SkyVector",
+        "X-Plane",
+        "EUROCONTROL tools"
+      ],
+      "def": "Plan flights, airspace and airport operations; check performance and procedures."
+    },
+    {
+      "id": "R07.13",
+      "parent": "R07",
+      "level": 2,
+      "name": "Transport, maritime & logistics engineering",
+      "zh": "交通、海事与港口运营",
+      "ale": [
+        "Maritime & Port Operations"
+      ],
+      "apps": [
+        "PTV Vissim",
+        "SUMO",
+        "OpenCPN",
+        "Port TOS"
+      ],
+      "def": "Model traffic and transit; plan vessel, port and rail operations."
+    },
+    {
+      "id": "R08",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Science & Research",
+      "zh": "科学研究",
+      "inc": "Physical, chemical, earth, agricultural, life, neuro and social sciences, mathematics and scientific writing.",
+      "exc": "Clinical care (R09).",
+      "onet": [
+        "19-1029",
+        "19-2031",
+        "19-2012",
+        "19-3051",
+        "19-3011",
+        "15-2041"
+      ],
+      "ale": [
+        "2.1 Physics",
+        "2.2 Chemistry & Materials Computation",
+        "2.3 Astronomy & Astrophysics",
+        "2.4 Earth & Atmospheric Sciences",
+        "3.1 Biomolecular Structure & Design",
+        "3.2 Genomics & Sequence Analysis",
+        "3.3 Cell & Imaging Biology",
+        "3.4 Systems & Microbial Biology",
+        "5.1 Computational Neuroscience",
+        "5.2 Experimental Psychology & Neuroimaging",
+        "12.1 Environmental Modeling, Engineering & Water Resources",
+        "12.2 Precision Agriculture",
+        "13.1 Economics & Quantitative Social Research"
+      ],
+      "def": "Doing scientific work in discipline-specific software: acquiring, analyzing, modeling and reporting."
+    },
+    {
+      "id": "R08.01",
+      "parent": "R08",
+      "level": 2,
+      "name": "Physics & astronomy",
+      "zh": "物理与天文",
+      "ale": [
+        "2.1 Physics",
+        "2.3 Astronomy & Astrophysics"
+      ],
+      "apps": [
+        "SAOImage DS9",
+        "CASA",
+        "ROOT"
+      ],
+      "def": "Analyze observations and simulations of physical systems."
+    },
+    {
+      "id": "R08.02",
+      "parent": "R08",
+      "level": 2,
+      "name": "Chemistry & materials",
+      "zh": "化学与材料",
+      "ale": [
+        "2.2 Chemistry & Materials Computation"
+      ],
+      "apps": [
+        "ChemDraw",
+        "Avogadro",
+        "VESTA",
+        "Quantum ESPRESSO"
+      ],
+      "def": "Build, compute and analyze molecules and materials."
+    },
+    {
+      "id": "R08.03",
+      "parent": "R08",
+      "level": 2,
+      "name": "Earth, climate & environment",
+      "zh": "地球、气候与环境",
+      "ale": [
+        "2.4 Earth & Atmospheric Sciences",
+        "12.1 Environmental Modeling, Engineering & Water Resources"
+      ],
+      "apps": [
+        "Panoply",
+        "QGIS",
+        "HEC-RAS"
+      ],
+      "def": "Process and model geoscience, climate and environmental data."
+    },
+    {
+      "id": "R08.04",
+      "parent": "R08",
+      "level": 2,
+      "name": "Agriculture & food systems",
+      "zh": "农业与食品系统",
+      "ale": [
+        "12.2 Precision Agriculture"
+      ],
+      "apps": [
+        "QGIS",
+        "John Deere Operations Center"
+      ],
+      "def": "Analyze fields, crops and farm operations."
+    },
+    {
+      "id": "R08.05",
+      "parent": "R08",
+      "level": 2,
+      "name": "Structural & molecular biology",
+      "zh": "结构与分子生物学",
+      "ale": [
+        "3.1 Biomolecular Structure & Design"
+      ],
+      "apps": [
+        "PyMOL",
+        "ChimeraX",
+        "Coot"
+      ],
+      "def": "Build, visualize, dock and design biomolecules."
+    },
+    {
+      "id": "R08.06",
+      "parent": "R08",
+      "level": 2,
+      "name": "Genomics & bioinformatics",
+      "zh": "基因组与生物信息学",
+      "ale": [
+        "3.2 Genomics & Sequence Analysis"
+      ],
+      "apps": [
+        "IGV",
+        "SnapGene",
+        "Galaxy",
+        "Benchling"
+      ],
+      "def": "Process, align, annotate and interpret sequence data."
+    },
+    {
+      "id": "R08.07",
+      "parent": "R08",
+      "level": 2,
+      "name": "Cell biology & bioimaging",
+      "zh": "细胞生物学与生物成像",
+      "ale": [
+        "3.3 Cell & Imaging Biology"
+      ],
+      "apps": [
+        "Fiji/ImageJ",
+        "napari",
+        "QuPath",
+        "CellProfiler"
+      ],
+      "def": "Segment, track and quantify microscopy images."
+    },
+    {
+      "id": "R08.08",
+      "parent": "R08",
+      "level": 2,
+      "name": "Systems, microbial & ecological biology",
+      "zh": "系统、微生物与生态生物学",
+      "ale": [
+        "3.4 Systems & Microbial Biology"
+      ],
+      "apps": [
+        "Cytoscape",
+        "COPASI"
+      ],
+      "def": "Model pathways, communities and ecosystems."
+    },
+    {
+      "id": "R08.09",
+      "parent": "R08",
+      "level": 2,
+      "name": "Neuroscience & psychology research",
+      "zh": "神经科学与心理学研究",
+      "ale": [
+        "5.1 Computational Neuroscience",
+        "5.2 Experimental Psychology & Neuroimaging"
+      ],
+      "apps": [
+        "FSLeyes",
+        "PsychoPy",
+        "EEGLAB"
+      ],
+      "def": "Run experiments and analyze neural and behavioral data."
+    },
+    {
+      "id": "R08.10",
+      "parent": "R08",
+      "level": 2,
+      "name": "Social science & economics research",
+      "zh": "社会科学与经济研究",
+      "ale": [
+        "13.1 Economics & Quantitative Social Research"
+      ],
+      "apps": [
+        "Stata",
+        "SPSS",
+        "R",
+        "EViews"
+      ],
+      "def": "Clean survey and economic data, estimate models, report results."
+    },
+    {
+      "id": "R08.11",
+      "parent": "R08",
+      "level": 2,
+      "name": "Mathematics, statistics & scientific writing",
+      "zh": "数学、统计与科研写作",
+      "ale": [
+        "9.4 Mathematical & Operations Research"
+      ],
+      "apps": [
+        "Mathematica",
+        "MATLAB",
+        "LaTeX/Overleaf",
+        "Lean"
+      ],
+      "def": "Compute, prove, plot and typeset research results."
+    },
+    {
+      "id": "R08.12",
+      "parent": "R08",
+      "level": 2,
+      "name": "Laboratory operations & automation",
+      "zh": "实验室运营与自动化",
+      "ale": [
+        "3.3 Cell & Imaging Biology"
+      ],
+      "apps": [
+        "Benchling",
+        "eLabFTW",
+        "Opentrons"
+      ],
+      "def": "Record, schedule and automate lab work through ELN/LIMS and instrument software."
+    },
+    {
+      "id": "R09",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Health & Medicine",
+      "zh": "医疗健康",
+      "inc": "Imaging and diagnostics, treatment planning, EHR operations, public health, clinical research, pharmacy and labs.",
+      "exc": "Consumer health self-service (R12).",
+      "onet": [
+        "29-1224",
+        "29-2034",
+        "29-9021",
+        "19-1041",
+        "29-1051"
+      ],
+      "ale": [
+        "4.1 Clinical Diagnostics & Imaging",
+        "4.2 Therapeutic & Oncology Services",
+        "4.3 Clinical Informatics & Care Operations",
+        "4.4 Public Health & Epidemiology",
+        "4.5 Clinical Research & Trial Operations"
+      ],
+      "def": "Clinical, public-health and research work in healthcare systems."
+    },
+    {
+      "id": "R09.01",
+      "parent": "R09",
+      "level": 2,
+      "name": "Clinical diagnostics & medical imaging",
+      "zh": "临床诊断与医学影像",
+      "ale": [
+        "4.1 Clinical Diagnostics & Imaging"
+      ],
+      "apps": [
+        "3D Slicer",
+        "Horos/OsiriX",
+        "MicroDicom",
+        "ITK-SNAP"
+      ],
+      "def": "Read, measure, segment and report medical images and signals."
+    },
+    {
+      "id": "R09.02",
+      "parent": "R09",
+      "level": 2,
+      "name": "Treatment planning & oncology",
+      "zh": "治疗计划与肿瘤",
+      "ale": [
+        "4.2 Therapeutic & Oncology Services"
+      ],
+      "apps": [
+        "Eclipse (Varian)",
+        "matRad"
+      ],
+      "def": "Plan and check therapies such as radiotherapy and dosing."
+    },
+    {
+      "id": "R09.03",
+      "parent": "R09",
+      "level": 2,
+      "name": "Clinical informatics & EHR operations",
+      "zh": "临床信息与电子病历",
+      "ale": [
+        "4.3 Clinical Informatics & Care Operations"
+      ],
+      "apps": [
+        "Epic",
+        "Oracle Health",
+        "OpenEMR"
+      ],
+      "def": "Chart, order, schedule and code within electronic health records."
+    },
+    {
+      "id": "R09.04",
+      "parent": "R09",
+      "level": 2,
+      "name": "Public health & epidemiology",
+      "zh": "公共卫生与流行病学",
+      "ale": [
+        "4.4 Public Health & Epidemiology"
+      ],
+      "apps": [
+        "Epi Info",
+        "R",
+        "QGIS"
+      ],
+      "def": "Analyze surveillance data, outbreaks and population health."
+    },
+    {
+      "id": "R09.05",
+      "parent": "R09",
+      "level": 2,
+      "name": "Clinical research & trial operations",
+      "zh": "临床研究与试验运营",
+      "ale": [
+        "4.5 Clinical Research & Trial Operations"
+      ],
+      "apps": [
+        "REDCap",
+        "Medidata Rave",
+        "OpenClinica"
+      ],
+      "def": "Build case report forms, manage trial data and map to standards."
+    },
+    {
+      "id": "R09.06",
+      "parent": "R09",
+      "level": 2,
+      "name": "Pharmacy, laboratory & care coordination",
+      "zh": "药房、检验与照护协调",
+      "ale": [
+        "4.3 Clinical Informatics & Care Operations"
+      ],
+      "apps": [
+        "LIS",
+        "Pharmacy systems"
+      ],
+      "def": "Verify prescriptions, run lab information systems, coordinate care."
+    },
+    {
+      "id": "R10",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Law & Public Services",
+      "zh": "法律与公共服务",
+      "inc": "Litigation and e-discovery, legal research and contracts, government administration and emergency management.",
+      "exc": "Education, libraries and language services (R15); individuals using government services (R12); financial tax and audit work (R14).",
+      "onet": [
+        "23-1011",
+        "23-2011",
+        "33-9099"
+      ],
+      "ale": [
+        "7.1 Litigation Support & Discovery",
+        "7.2 Doctrinal Legal Research",
+        "10.3 Fire Science & Public Safety"
+      ],
+      "def": "Perform legal work, public administration and public-safety operations.",
+      "def_zh": "开展法律工作、公共管理与公共安全业务。"
+    },
+    {
+      "id": "R10.01",
+      "parent": "R10",
+      "level": 2,
+      "name": "Litigation support & e-discovery",
+      "zh": "诉讼支持与电子取证",
+      "ale": [
+        "7.1 Litigation Support & Discovery"
+      ],
+      "apps": [
+        "Relativity",
+        "Everlaw",
+        "Adobe Acrobat"
+      ],
+      "def": "Review, tag, produce and analyze case documents and evidence."
+    },
+    {
+      "id": "R10.02",
+      "parent": "R10",
+      "level": 2,
+      "name": "Legal research, drafting & contracts",
+      "zh": "法律检索、起草与合同",
+      "ale": [
+        "7.2 Doctrinal Legal Research"
+      ],
+      "apps": [
+        "Westlaw",
+        "Lexis+",
+        "Word track changes"
+      ],
+      "def": "Research authority, draft and redline legal documents."
+    },
+    {
+      "id": "R10.03",
+      "parent": "R10",
+      "level": 2,
+      "name": "Government & public administration",
+      "zh": "政府与公共管理",
+      "ale": [],
+      "apps": [
+        "Case management systems",
+        "Procurement portals"
+      ],
+      "def": "Process permits, records, procurement and case management in government systems."
+    },
+    {
+      "id": "R10.04",
+      "parent": "R10",
+      "level": 2,
+      "name": "Public safety & emergency management",
+      "zh": "公共安全与应急管理",
+      "ale": [
+        "10.3 Fire Science & Public Safety"
+      ],
+      "apps": [
+        "CAD dispatch",
+        "WebEOC",
+        "FDS"
+      ],
+      "def": "Model hazards, dispatch, plan and report incidents."
+    },
+    {
+      "id": "R11",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Communication & Collaboration",
+      "zh": "沟通协作与社交",
+      "inc": "Email and calendar, messaging and meetings, whiteboards and diagrams, shared review, social media and creator operations, moderation.",
+      "exc": "Creating the media itself (R06).",
+      "onet": [
+        "43-6011",
+        "27-3031",
+        "13-1121"
+      ],
+      "ale": [],
+      "def": "Coordinating with other people and audiences through communication and collaboration tools."
+    },
+    {
+      "id": "R11.01",
+      "parent": "R11",
+      "level": 2,
+      "name": "Email & calendar management",
+      "zh": "邮件与日程管理",
+      "ale": [],
+      "apps": [
+        "Outlook",
+        "Gmail",
+        "Apple Mail",
+        "Calendar"
+      ],
+      "def": "Triage, reply, file, schedule and coordinate."
+    },
+    {
+      "id": "R11.02",
+      "parent": "R11",
+      "level": 2,
+      "name": "Team messaging & meetings",
+      "zh": "团队消息与会议",
+      "ale": [],
+      "apps": [
+        "Slack",
+        "Teams",
+        "Zoom",
+        "Feishu/Lark"
+      ],
+      "def": "Communicate and run meetings in chat and video tools."
+    },
+    {
+      "id": "R11.03",
+      "parent": "R11",
+      "level": 2,
+      "name": "Whiteboarding & diagramming",
+      "zh": "白板与图表",
+      "ale": [],
+      "apps": [
+        "Miro",
+        "FigJam",
+        "Visio",
+        "draw.io",
+        "OmniGraffle"
+      ],
+      "def": "Make and edit diagrams, flows and boards."
+    },
+    {
+      "id": "R11.04",
+      "parent": "R11",
+      "level": 2,
+      "name": "Shared review & co-editing",
+      "zh": "协同审阅与共同编辑",
+      "ale": [],
+      "apps": [
+        "Word",
+        "Google Docs",
+        "Figma comments",
+        "Frame.io"
+      ],
+      "def": "Review others' work with comments, suggestions and resolutions."
+    },
+    {
+      "id": "R11.05",
+      "parent": "R11",
+      "level": 2,
+      "name": "Social media & creator operations",
+      "zh": "社交媒体与创作者运营",
+      "ale": [
+        "6.6 Sales & Marketing"
+      ],
+      "apps": [
+        "YouTube Studio",
+        "TikTok Studio",
+        "Xiaohongshu",
+        "Bilibili"
+      ],
+      "def": "Publish, schedule, analyze and manage channels and audiences."
+    },
+    {
+      "id": "R11.06",
+      "parent": "R11",
+      "level": 2,
+      "name": "Community & content moderation",
+      "zh": "社区与内容审核",
+      "ale": [],
+      "apps": [
+        "Discord",
+        "Reddit mod tools"
+      ],
+      "def": "Apply policy to user content and manage communities."
+    },
+    {
+      "id": "R11.07",
+      "parent": "R11",
+      "level": 2,
+      "name": "Human–agent & multi-agent collaboration",
+      "zh": "人机与多智能体协作",
+      "ale": [],
+      "apps": [
+        "any app",
+        "shared docs",
+        "chat"
+      ],
+      "def": "Share computer work with humans and other agents: handoffs, corrections, coordination."
+    },
+    {
+      "id": "R12",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Everyday Life & Consumer Services",
+      "zh": "日常生活与消费",
+      "inc": "Shopping, travel, local services, health self-service, home and utilities, entertainment, personal administration, photos and cross-app personal context.",
+      "exc": "Seller-side commerce (R05), personal banking and budgeting (R14), and learning workflows (R15).",
+      "onet": [],
+      "ale": [],
+      "def": "Complete personal and household activities through consumer applications and websites.",
+      "def_zh": "通过消费应用完成购物、旅行、生活服务、家庭事务与个人媒体管理。"
+    },
+    {
+      "id": "R12.01",
+      "parent": "R12",
+      "level": 2,
+      "name": "Shopping & orders",
+      "zh": "购物与订单",
+      "ale": [],
+      "apps": [
+        "Amazon",
+        "Taobao",
+        "Shopping apps"
+      ],
+      "def": "Find, compare, buy, track and return goods."
+    },
+    {
+      "id": "R12.02",
+      "parent": "R12",
+      "level": 2,
+      "name": "Travel & mobility",
+      "zh": "出行与旅行",
+      "ale": [],
+      "apps": [
+        "Google Flights",
+        "Booking",
+        "Maps",
+        "Ride-hailing apps"
+      ],
+      "def": "Plan, book and change trips and transport."
+    },
+    {
+      "id": "R12.04",
+      "parent": "R12",
+      "level": 2,
+      "name": "Food, local services & reservations",
+      "zh": "餐饮、本地服务与预约",
+      "ale": [],
+      "apps": [
+        "Meituan",
+        "DoorDash",
+        "OpenTable"
+      ],
+      "def": "Order food and book local services and appointments."
+    },
+    {
+      "id": "R12.05",
+      "parent": "R12",
+      "level": 2,
+      "name": "Health & wellness self-service",
+      "zh": "健康自助",
+      "ale": [],
+      "apps": [
+        "MyChart",
+        "Apple Health"
+      ],
+      "def": "Use patient portals, insurance and fitness/health apps."
+    },
+    {
+      "id": "R12.06",
+      "parent": "R12",
+      "level": 2,
+      "name": "Home, smart devices & utilities",
+      "zh": "家居、智能设备与生活缴费",
+      "ale": [],
+      "apps": [
+        "Home",
+        "Google Home",
+        "Mi Home"
+      ],
+      "def": "Control smart-home devices and manage utilities and services."
+    },
+    {
+      "id": "R12.07",
+      "parent": "R12",
+      "level": 2,
+      "name": "Media, entertainment & reading",
+      "zh": "影音娱乐与阅读",
+      "ale": [],
+      "apps": [
+        "Music",
+        "Netflix",
+        "Kindle",
+        "Podcasts"
+      ],
+      "def": "Find, organize and control media, books and subscriptions."
+    },
+    {
+      "id": "R12.08",
+      "parent": "R12",
+      "level": 2,
+      "name": "Personal admin & civic services",
+      "zh": "个人事务与政务办理",
+      "ale": [],
+      "apps": [
+        "Government portals",
+        "DMV sites"
+      ],
+      "def": "Complete applications, renewals and personal paperwork online."
+    },
+    {
+      "id": "R12.09",
+      "parent": "R12",
+      "level": 2,
+      "name": "Photos & personal media library",
+      "zh": "照片与个人媒体库",
+      "ale": [],
+      "apps": [
+        "Photos",
+        "Google Photos"
+      ],
+      "def": "Organize, edit lightly, share and back up personal photos and videos."
+    },
+    {
+      "id": "R12.11",
+      "parent": "R12",
+      "level": 2,
+      "name": "Personal context across apps",
+      "zh": "跨应用个人语境",
+      "ale": [],
+      "apps": [
+        "Mail",
+        "Calendar",
+        "Photos",
+        "Notes"
+      ],
+      "def": "Use the user's own information scattered across apps to answer or act."
+    },
+    {
+      "id": "R13",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Games & Real-time Interaction",
+      "zh": "游戏与实时交互",
+      "inc": "Video games, board and puzzle games, game QA, simulators and real-time control, sports analytics.",
+      "exc": "Building games (R06.10); robot control (R07.09).",
+      "onet": [
+        "27-2022",
+        "15-1253"
+      ],
+      "ale": [
+        "14.1 Sports"
+      ],
+      "def": "Playing, testing and controlling interactive real-time systems, and analyzing play and sport."
+    },
+    {
+      "id": "R13.01",
+      "parent": "R13",
+      "level": 2,
+      "name": "Video game play",
+      "zh": "电子游戏",
+      "ale": [],
+      "apps": [
+        "Minecraft",
+        "Steam games",
+        "Emulators"
+      ],
+      "def": "Achieve goals in commercial or research video games via screen and input."
+    },
+    {
+      "id": "R13.02",
+      "parent": "R13",
+      "level": 2,
+      "name": "Board, card & puzzle games",
+      "zh": "棋牌与解谜",
+      "ale": [],
+      "apps": [
+        "Lichess",
+        "Sudoku apps",
+        "Solitaire"
+      ],
+      "def": "Play rule-based games through GUIs."
+    },
+    {
+      "id": "R13.03",
+      "parent": "R13",
+      "level": 2,
+      "name": "Game testing & QA",
+      "zh": "游戏测试与质量保证",
+      "ale": [],
+      "apps": [
+        "Game builds",
+        "Bug trackers"
+      ],
+      "def": "Find, reproduce and report game bugs; verify fixes."
+    },
+    {
+      "id": "R13.04",
+      "parent": "R13",
+      "level": 2,
+      "name": "Simulators & real-time control",
+      "zh": "模拟器与实时操控",
+      "ale": [],
+      "apps": [
+        "Flight Simulator",
+        "BeamNG",
+        "CARLA"
+      ],
+      "def": "Operate vehicles and systems in real-time simulators."
+    },
+    {
+      "id": "R13.05",
+      "parent": "R13",
+      "level": 2,
+      "name": "Sports & performance analytics",
+      "zh": "体育与表现分析",
+      "ale": [
+        "14.1 Sports"
+      ],
+      "apps": [
+        "Hudl",
+        "Kinovea",
+        "Dartfish"
+      ],
+      "def": "Annotate and analyze sport video and tracking data."
+    },
+    {
+      "id": "R14",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Finance, Accounting & Financial Services",
+      "zh": "金融、会计与财务服务",
+      "def": "Maintain financial records, analyze capital and risk, meet financial obligations, and manage personal finances in sandbox environments.",
+      "def_zh": "维护财务记录，分析资金与风险，履行财务义务，并在沙盒中管理个人财务。",
+      "inc": "Accounting and bookkeeping, investment research, risk and actuarial modeling, tax and audit, personal banking and budgeting.",
+      "exc": "General spreadsheet formatting (R04), nonfinancial business operations (R05), and legal interpretation outside financial obligations (R10).",
+      "onet": [
+        "13-2011",
+        "13-2051",
+        "11-3031"
+      ],
+      "ale": [
+        "6.1 Accounting & Finance",
+        "6.2 Actuarial & Risk Modeling",
+        "6.4 Compliance & Regulatory",
+        "6.7 Quantitative Finance & Trading"
+      ],
+      "chart_label_en": [
+        "Finance &",
+        "Accounting"
+      ]
+    },
+    {
+      "id": "R14.01",
+      "parent": "R14",
+      "level": 2,
+      "name": "Accounting & bookkeeping",
+      "zh": "会计与簿记",
+      "ale": [
+        "6.1 Accounting & Finance"
+      ],
+      "apps": [
+        "QuickBooks",
+        "Xero",
+        "Excel"
+      ],
+      "def": "Record, reconcile and close the books; produce statements.",
+      "legacy_id": "R05.01"
+    },
+    {
+      "id": "R14.02",
+      "parent": "R14",
+      "level": 2,
+      "name": "Financial analysis & investment research",
+      "zh": "财务分析与投资研究",
+      "ale": [
+        "6.1 Accounting & Finance",
+        "6.7 Quantitative Finance & Trading"
+      ],
+      "apps": [
+        "Excel",
+        "Bloomberg Terminal",
+        "Capital IQ"
+      ],
+      "def": "Model companies and portfolios; screen, value and write investment memos.",
+      "legacy_id": "R05.02"
+    },
+    {
+      "id": "R14.03",
+      "parent": "R14",
+      "level": 2,
+      "name": "Risk, actuarial & quantitative modeling",
+      "zh": "风险、精算与量化建模",
+      "ale": [
+        "6.2 Actuarial & Risk Modeling",
+        "6.7 Quantitative Finance & Trading"
+      ],
+      "apps": [
+        "Excel",
+        "R",
+        "Prophet"
+      ],
+      "def": "Quantify and stress-test risk; price and reserve.",
+      "legacy_id": "R05.03"
+    },
+    {
+      "id": "R14.04",
+      "parent": "R14",
+      "level": 2,
+      "name": "Tax, audit & regulatory compliance",
+      "zh": "税务、审计与合规",
+      "ale": [
+        "6.4 Compliance & Regulatory"
+      ],
+      "apps": [
+        "TurboTax",
+        "Tax forms",
+        "AuditBoard"
+      ],
+      "def": "Prepare filings, test controls, and meet regulatory obligations.",
+      "legacy_id": "R05.04"
+    },
+    {
+      "id": "R14.05",
+      "parent": "R14",
+      "level": 2,
+      "name": "Personal finance & banking",
+      "zh": "个人理财与银行",
+      "ale": [],
+      "apps": [
+        "Banking apps",
+        "YNAB",
+        "Spreadsheets"
+      ],
+      "def": "Budget, pay, reconcile and plan personal money in sandboxes.",
+      "legacy_id": "R12.03"
+    },
+    {
+      "id": "R15",
+      "parent": "ROOT",
+      "level": 1,
+      "name": "Education, Learning & Knowledge Services",
+      "zh": "教育、学习与知识服务",
+      "def": "Deliver and participate in education, operate libraries, and translate or localize knowledge for its intended audience.",
+      "def_zh": "组织教学、参与学习、运营图书馆，并面向目标受众翻译或本地化知识内容。",
+      "inc": "Teacher-side educational technology, student-side learning, library and information services, translation and localization.",
+      "exc": "Scientific discovery and discipline-specific research (R08), general document editing or personal notes (R04), and public administration or legal work (R10).",
+      "onet": [
+        "25-2031",
+        "25-4022",
+        "27-3091"
+      ],
+      "ale": [
+        "11.1 Educational Technology",
+        "11.2 Library & Information Science",
+        "11.3 Translation & Localization"
+      ],
+      "chart_label_en": [
+        "Education &",
+        "Knowledge Services"
+      ]
+    },
+    {
+      "id": "R15.01",
+      "parent": "R15",
+      "level": 2,
+      "name": "Teaching & educational technology",
+      "zh": "教学与教育技术",
+      "ale": [
+        "11.1 Educational Technology"
+      ],
+      "apps": [
+        "Canvas",
+        "Moodle",
+        "Google Classroom"
+      ],
+      "def": "Build courses, assessments and grades in learning platforms.",
+      "legacy_id": "R10.05"
+    },
+    {
+      "id": "R15.02",
+      "parent": "R15",
+      "level": 2,
+      "name": "Library & information science",
+      "zh": "图书馆与信息科学",
+      "ale": [
+        "11.2 Library & Information Science"
+      ],
+      "apps": [
+        "Koha",
+        "Zotero",
+        "OCLC Connexion"
+      ],
+      "def": "Catalog, curate and retrieve collections and metadata.",
+      "legacy_id": "R10.06"
+    },
+    {
+      "id": "R15.03",
+      "parent": "R15",
+      "level": 2,
+      "name": "Translation & localization",
+      "zh": "翻译与本地化",
+      "ale": [
+        "11.3 Translation & Localization"
+      ],
+      "apps": [
+        "Trados",
+        "memoQ",
+        "Crowdin",
+        "Xcode strings"
+      ],
+      "def": "Translate and localize content with terminology and format constraints.",
+      "legacy_id": "R10.07"
+    },
+    {
+      "id": "R15.04",
+      "parent": "R15",
+      "level": 2,
+      "name": "Learning & self-education",
+      "zh": "学习与自我教育",
+      "ale": [
+        "11.1 Educational Technology"
+      ],
+      "apps": [
+        "Canvas",
+        "PhET",
+        "Scratch",
+        "Anki"
+      ],
+      "def": "Learn as a student with LMSs, simulations, block coding and drill apps.",
+      "legacy_id": "R12.10"
+    }
+  ]
+}
