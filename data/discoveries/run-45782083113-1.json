@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-45782083113-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-26T08:38:22Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 427,
+    "selected_count": 3,
+    "selected_ids": [
+      "scan-792961673",
+      "scan-1446800083",
+      "scan-762273694"
+    ],
+    "record_sha256": {
+      "scan-792961673": "8be791aea47b95671d19ca97ec7b16b65f2c97c017ef76e4a3b0281e9ce55fb9",
+      "scan-1446800083": "7fc9d7b2b1b4fd3c59ce88bf0d4909a9b3ac0724d27fa76944709bf3d9125c47",
+      "scan-762273694": "540a7f9787c665291236af40a17f722afca8e08a8992292f0a31b0db8a13bf2b"
+    },
+    "skipped_counts": {
+      "already-listed": 12906,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 45782083113,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "71846735224f9add9c9bbc50eeb46f8275d513b0",
+    "artifact_id": 15099088381,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:4453379b93dab203ae9608f5819599be05189220a5b4b723c32d54bcb87bd03f",
+    "checkpoint_sha256": "1af07f879c95a9cb43af4fb9a54605775d92d64fe247f88fcc5348e105abcdbf",
+    "receipt_sha256": "c6b18afb90167bad585bfed5c9b84722e1ada80743b9174c546436b9f0cae2cb",
+    "scan_started_at": "2026-11-26T08:18:49.711047+00:00",
+    "scan_completed_at": "2026-11-26T08:37:12.804377+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 136097,
+      "failed": 4907,
+      "attempted_readme_scans": 141004,
+      "unique_repos": 141070,
+      "unattempted_candidates": 66
+    },
+    "integrity_counts": {
+      "qualified": 133080,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-792961673",
+      "name": "SunsetMkt/getgrass.io-extension",
+      "full_name": "SunsetMkt/getgrass.io-extension",
+      "url": "https://github.com/SunsetMkt/getgrass.io-extension",
+      "description_en": "Content of getgrass.io Chrome extension for security investigation",
+      "description_zh": "Content of getgrass.io Chrome extension for security investigation",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "getgrass",
+        "getgrass-io",
+        "grass",
+        "miner",
+        "reverse-engineering",
+        "web3"
+      ],
+      "stars": 0,
+      "license": null,
+      "archived": false,
+      "updated_at": "2024-06-23T08:50:16Z",
+      "pushed_at": "2024-06-23T08:50:12Z",
+      "metadata_observed_at": "2026-11-26T08:34:10.480130Z",
+      "observed_at": "2026-11-26T08:34:14.946189Z",
+      "readme_url": "https://github.com/SunsetMkt/getgrass.io-extension/blob/dc9856e24a29922c2f648d38db88b417d12e8a64/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "cc28dd5c4447e1fa20678171af01faa46baae6ae",
+      "readme_content_git_sha": "cc28dd5c4447e1fa20678171af01faa46baae6ae",
+      "readme_sha256": "d7b93ccc6fbd49079e420c26ac9e66d40a375803b7c552154e685adef800cc5a",
+      "readme_bytes": 460,
+      "readme_lines": 7,
+      "readme_heading_count": 1,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"reverse engineering\" in:readme is:public fork:false archived:false created:2024-04-19T23:28:36Z..2024-05-10T05:40:41Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "dc9856e24a29922c2f648d38db88b417d12e8a64"
+    },
+    {
+      "id": "scan-1446800083",
+      "name": "123caiji/rea",
+      "full_name": "123caiji/rea",
+      "url": "https://github.com/123caiji/rea",
+      "description_en": "Mirror of morluto/rea",
+      "description_zh": "Mirror of morluto/rea",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "agents",
+        "mirror",
+        "reverse-engineering"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-19T05:59:50Z",
+      "pushed_at": "2026-11-26T07:31:53Z",
+      "metadata_observed_at": "2026-11-26T08:32:39.081763Z",
+      "observed_at": "2026-11-26T08:32:44.678842Z",
+      "readme_url": "https://github.com/123caiji/rea/blob/08a923f722a23fd1773f5a4cbe03d1c5edba1fbd/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "a6343e167a3c91b210b7252e32467d69a6651d86",
+      "readme_content_git_sha": "a6343e167a3c91b210b7252e32467d69a6651d86",
+      "readme_sha256": "cb5b40c5752a403fbe20be9af2c08b5ca915c033af142f6f57af227cbaa2b6ba",
+      "readme_bytes": 30064,
+      "readme_lines": 482,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "usage",
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"reverse engineering\" in:readme is:public fork:false archived:false created:2026-11-05T08:24:57Z..2026-11-05T12:23:56Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "08a923f722a23fd1773f5a4cbe03d1c5edba1fbd"
+    },
+    {
+      "id": "scan-762273694",
+      "name": "andrei-placinta/SAM-Lab",
+      "full_name": "andrei-placinta/SAM-Lab",
+      "url": "https://github.com/andrei-placinta/SAM-Lab",
+      "description_en": "Android application reverse engineering lab using JADX, APKTool and Frida for static analysis, dynamic analysis and runtime instrumentation.",
+      "description_zh": "Android application reverse engineering lab using JADX, APKTool and Frida for static analysis, dynamic analysis and runtime instrumentation.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "android-reverse-engineering",
+        "android-security",
+        "apktool",
+        "application-security",
+        "dynamic-analysis",
+        "frida",
+        "jadx",
+        "mobile-security",
+        "owasp-mstg",
+        "smali",
+        "static-analysis"
+      ],
+      "stars": 1,
+      "license": null,
+      "archived": false,
+      "updated_at": "2026-11-25T23:09:12Z",
+      "pushed_at": "2026-11-24T23:46:28Z",
+      "metadata_observed_at": "2026-11-26T08:32:09.045374Z",
+      "observed_at": "2026-11-26T08:32:14.050983Z",
+      "readme_url": "https://github.com/andrei-placinta/SAM-Lab/blob/c6f3355c708332a0c886ff91e5bfed2816b63579/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "e06c8dff1f686efe6fc2c5d9c779732e19b383eb",
+      "readme_content_git_sha": "e06c8dff1f686efe6fc2c5d9c779732e19b383eb",
+      "readme_sha256": "8aa83aee00c5f596b505dcfa53da24cf6a46a1e51d28421d0be2efc8c77287b0",
+      "readme_bytes": 9923,
+      "readme_lines": 385,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app",
+        "binary"
+      ],
+      "category": "android",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"reverse engineering\" in:readme is:public fork:false archived:false created:2024-02-19T04:52:17Z..2024-03-10T11:04:23Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "c6f3355c708332a0c886ff91e5bfed2816b63579"
+    }
+  ]
+}
