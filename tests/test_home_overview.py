@@ -14,15 +14,15 @@ from test_case_pages import resource
 class OverviewTests(unittest.TestCase):
     def setUp(self):
         self.records = [
-            resource('game-full', **{'class': 'game'}, evidence_class=0, evidence_status='observed'),
-            resource('game-partial', **{'class': 'game'}, evidence_class=1, evidence_status='observed'),
-            resource('game-notes', **{'class': 'game'}, evidence_class=3, evidence_status='observed'),
+            resource('game-full', **{'class': 'game-dev'}, evidence_class=0, evidence_status='observed'),
+            resource('game-partial', **{'class': 'game-dev'}, evidence_class=1, evidence_status='observed'),
+            resource('game-notes', **{'class': 'game-dev'}, evidence_class=3, evidence_status='observed'),
             resource('website-docs', targets=['website'], **{'class': 'website'}, evidence_class=2, evidence_status='observed'),
             resource('software-gone', **{'class': 'software'}, evidence_class=None, evidence_status='unknown'),
         ]
         # A benchmark paper is a classed record that is not a catalog resource.
         self.papers = [
-            {'id': 'paper-game-benchmark', 'name': 'Benchmark', 'name_zh': '基准', 'class': 'game', 'kind': 'research',
+            {'id': 'paper-game-benchmark', 'name': 'Benchmark', 'name_zh': '基准', 'class': 'game-dev', 'kind': 'research',
              'targets': ['game'], 'url': 'https://example.org/benchmark', 'verified_at': '2026-10-17'},
         ]
 
@@ -35,16 +35,17 @@ class OverviewTests(unittest.TestCase):
     def test_overview_counts_classes_and_evidence_splits(self):
         html = _overview(self.records, self.papers, 'en')
         tiles = dict(re.findall(r'<span class="ct-name">(.*?)</span><span class="ct-count">(\d+)</span>', html))
-        self.assertEqual(tiles, {'Software': '1', 'Game': '4', 'Website': '1'})
+        self.assertEqual(tiles, {'Website': '1', 'Game Dev': '4', 'Software': '1'})
         self.assertIn('class="overview-total" x="320" y="314" text-anchor="middle">6</text>', html)
         self.assertEqual(re.findall(r'class="overview-band overview-(\w+)"', html),
-                         ['unknown', '0', '1', '3', 'unclassified', '2'])
-        self.assertIn('aria-label="Game: 4 data points. C0 1, C1 1, C2 0, C3 1, ? 0, – 1"', html)
+                         ['2', '0', '1', '3', 'unclassified', 'unknown'])
+        self.assertIn('aria-label="Game Dev: 4 data points. C0 1, C1 1, C2 0, C3 1, ? 0, – 1"', html)
 
     def test_details_show_every_evidence_bucket(self):
         html = _overview(self.records, self.papers, 'en')
         self.assertEqual(html.count('data-overview-detail='), 3)
-        self.assertRegex(html, r'data-overview-detail="software">')
+        self.assertRegex(html, r'data-overview-detail="website">')
+        self.assertRegex(html, r'data-overview-detail="game-dev"')
         for label in ('full software reconstruction', 'partial scope or analysis entry', 'code &amp; docs, no demo or download',
                       'notes only', 'source unavailable or unreadable', 'benchmark &amp; dataset papers'):
             self.assertIn(f'<span class="od-label">{label}</span>', html)
@@ -52,8 +53,8 @@ class OverviewTests(unittest.TestCase):
 
     def test_first_class_is_selected_and_chinese_copy_is_localized(self):
         html = _overview(self.records, self.papers, 'en')
-        self.assertEqual(re.findall(r'data-overview-tile="(\w+)" aria-controls="overview-detail-\w+" aria-pressed="(true|false)"', html),
-                         [('software', 'true'), ('game', 'false'), ('website', 'false')])
+        self.assertEqual(re.findall(r'data-overview-tile="([\w-]+)" aria-controls="overview-detail-[\w-]+" aria-pressed="(true|false)"', html),
+                         [('website', 'true'), ('game-dev', 'false'), ('software', 'false')])
         html = _overview(self.records, self.papers, 'zh')
         self.assertIn('数据点', html)
         self.assertIn('基准与数据集论文', html)

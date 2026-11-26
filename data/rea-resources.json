@@ -23,7 +23,8 @@
       "firmware",
       "protocol"
     ],
-    "kind": "project"
+    "kind": "project",
+    "class": "software"
   },
   {
     "id": "rea-official-skill",
@@ -373,7 +374,8 @@
     "targets": [
       "app"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "mobile-app-dev"
   },
   {
     "id": "rea-ctf-case",
@@ -398,7 +400,8 @@
     "targets": [
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "software"
   },
   {
     "id": "rea-dxball-case",
@@ -425,7 +428,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game-dev"
   },
   {
     "id": "rea-notion-case",
@@ -450,7 +454,8 @@
     "targets": [
       "app"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "software"
   },
   {
     "id": "rea-th04-case",
@@ -477,7 +482,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game-dev"
   },
   {
     "id": "rea-electron-guide",
@@ -701,7 +707,7 @@
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
     "kind": "case-study",
-    "class": "software",
+    "class": "video",
     "targets": [
       "app"
     ],
@@ -905,7 +911,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/port/README.md",
       "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/notes/link-verification.md",
@@ -944,7 +950,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/NOTICE",
       "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/LICENSE",
@@ -982,7 +988,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/BUILDING.md",
       "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/LICENSE"
@@ -1019,7 +1025,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/RIGHTS_AND_LICENSES.md",
       "https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/docs/STATUS.md",
@@ -1056,7 +1062,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/BUILDING.md",
       "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/LICENSE",
@@ -1091,7 +1097,8 @@
     "targets": [
       "game"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "analysis"
   },
   {
     "id": "snowboardkids2-decomp-case",
@@ -1124,7 +1131,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/",
       "https://blog.chrislewis.au/the-unexpected-effectiveness-of-one-shot-decompilation-with-claude/",
@@ -1232,7 +1239,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/LICENSE",
       "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/CMakeLists.txt",
@@ -1343,7 +1350,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/go.mod",
       "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/NOTICE.md",
@@ -1382,7 +1389,7 @@
       "app"
     ],
     "kind": "case-study",
-    "class": "apps",
+    "class": "mobile-app-dev",
     "additional_evidence_urls": [
       "https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/docs/building.md",
       "https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/docs/install-and-verify.md",
@@ -1422,7 +1429,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/BUILD_MATCHING.md",
       "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/REPLAY_RESULTS.md",
@@ -1462,7 +1469,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/public/assets/licenses/dinosaur.txt"
-    ]
+    ],
+    "class": "game-dev"
   },
   {
     "id": "rea-calculator-percent-case",
@@ -1493,7 +1501,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/morluto/rea/pull/1272"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "feishu-dual-instance-case",
@@ -1522,7 +1531,8 @@
     "targets": [
       "app"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "software"
   },
   {
     "id": "zelda64recomp-case",
@@ -1555,7 +1565,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/CMakeLists.txt",
       "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/COPYING",
@@ -1594,7 +1604,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/CMakeLists.txt",
       "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/LICENSE",
@@ -1633,7 +1643,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/CMakeLists.txt",
       "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/LICENSE"
@@ -1670,7 +1680,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/Cargo.toml",
       "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/LICENSE.md",
@@ -1711,7 +1721,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/CMakeLists.txt",
       "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/LICENSE",
@@ -1751,7 +1761,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Makefile",
       "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Jenkinsfile",
@@ -1790,7 +1800,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/docs/BUILDING.md",
       "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/CMakeLists.txt",
@@ -1828,7 +1838,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/CMakeLists.txt",
       "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/LICENSE",
@@ -1868,7 +1878,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/src_rebuild/premake5.lua",
       "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/data/install/conv.sh",
@@ -2084,7 +2094,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/docs/BACKGROUND.md",
       "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/VERSION",
@@ -2330,7 +2340,8 @@
       "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides/src/deck-check.test.ts",
       "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides/src/editor/editor-host.test.ts",
       "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/harness/src/slide-annotations.test.ts"
-    ]
+    ],
+    "class": "website"
   },
   {
     "id": "pocket-tasks-reconstruction-case",
@@ -2389,7 +2400,7 @@
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
     "kind": "case-study",
-    "class": "software",
+    "class": "animation",
     "targets": [
       "app"
     ],
@@ -2631,7 +2642,8 @@
       "https://github.com/N0zoM1z0/th08/issues/10",
       "https://github.com/N0zoM1z0/th08/pull/11",
       "https://github.com/N0zoM1z0/th08/pull/13"
-    ]
+    ],
+    "class": "game-dev"
   },
   {
     "id": "rea-engine-tictactoe-case",
@@ -2641,7 +2653,7 @@
     "relationship": "community-reported-mixed-workflow",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "targets": [
       "game"
     ],
@@ -2709,7 +2721,8 @@
       "scope",
       "limits",
       "attribution"
-    ]
+    ],
+    "class": "analysis"
   },
   {
     "id": "rea-ghidra-nativeaot-guide",
@@ -2774,7 +2787,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/docs/STATUS.md",
       "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/docs/SETUP.md",
@@ -2933,7 +2946,8 @@
       "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/dino-demo.html",
       "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/THIRD_PARTY_NOTICES.md",
       "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/LICENSE"
-    ]
+    ],
+    "class": "game-dev"
   },
   {
     "id": "screen-studio-auto-zoom-case",
@@ -2965,7 +2979,7 @@
       "app"
     ],
     "kind": "case-study",
-    "class": "software",
+    "class": "video",
     "additional_evidence_urls": [
       "https://x.com/HanZhang415188/status/2109843188341207283"
     ]
@@ -3009,7 +3023,8 @@
       "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/scripts/renderer.test.cjs",
       "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/CONTRIBUTING.md",
       "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/LICENSE"
-    ]
+    ],
+    "class": "animation"
   },
   {
     "id": "dx-ball-rea-reconstruction-case",
@@ -3043,7 +3058,7 @@
       "binary"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/REA.md",
       "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/MATCHING.md",
@@ -3089,7 +3104,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/ROADMAP.md",
       "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/Makefile",
@@ -3200,7 +3215,8 @@
     "additional_evidence_urls": [
       "https://x.com/Noflag404/status/2111625626893660269",
       "https://x.com/Noflag404/status/2111626304097538278"
-    ]
+    ],
+    "class": "analysis"
   },
   {
     "id": "rea-notes-csv-oracle-mutation-case",
@@ -3226,7 +3242,8 @@
     ],
     "additional_evidence_urls": [
       "https://x.com/i/status/2110963427791487391"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "windows-loader-static-analysis-case",
@@ -3255,7 +3272,8 @@
       "https://github.com/codegeeksai/codegeeksai.github.io/blob/8384782c20b1636362495b9505f1bd597ff5941b/src/content/posts/en/static-malware-analysis-rea-codex.md",
       "https://codegeeksai.github.io/it/blog/analisi-statica-malware-rea-codex/",
       "https://github.com/codegeeksai/codegeeksai.github.io/blob/8384782c20b1636362495b9505f1bd597ff5941b/src/content/posts/it/analisi-statica-malware-rea-codex.md"
-    ]
+    ],
+    "class": "analysis"
   },
   {
     "id": "horizon-minecraft-rust-rewrite-case",
@@ -3281,7 +3299,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/tools/rea_vanilla.py",
       "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/CONTRIBUTING.md",
@@ -3325,7 +3343,7 @@
       "binary"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://az9713.github.io/untangle-rebuild/receipt/rebuild-receipt.html",
       "https://az9713.github.io/untangle-rebuild/rebuild/index.html"
@@ -3359,7 +3377,7 @@
       "app"
     ],
     "kind": "case-study",
-    "class": "apps",
+    "class": "mobile-app-dev",
     "additional_evidence_urls": [
       "https://www.reddit.com/r/AndroidTVApps/comments/1xa9tv3/i_had_ai_reverseengineer_tcls_browsehere_and/",
       "https://github.com/sonalder-darlene/sofa-tv-browser/releases"
@@ -3392,7 +3410,8 @@
     "targets": [
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "software"
   },
   {
     "id": "fastview-rea-relay-analysis-rebuild-case",
@@ -3422,7 +3441,7 @@
       "app"
     ],
     "kind": "case-study",
-    "class": "science",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/dmytrobsp/fastview-rea/releases"
     ]
@@ -3459,7 +3478,7 @@
       "binary"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/CLAUDE.md",
       "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/docs/functions/hud-crosshair.md"
@@ -3495,7 +3514,7 @@
       "binary"
     ],
     "kind": "case-study",
-    "class": "game"
+    "class": "game-dev"
   },
   {
     "id": "samp-client-rea-partial-reconstruction-case",
@@ -3527,7 +3546,7 @@
       "binary"
     ],
     "kind": "case-study",
-    "class": "game"
+    "class": "game-dev"
   },
   {
     "id": "desktop-games-nostalgia-rea-port-case",
@@ -3559,7 +3578,7 @@
       "binary"
     ],
     "kind": "case-study",
-    "class": "game"
+    "class": "game-dev"
   },
   {
     "id": "gunzrs-rea-rust-reimplementation-case",
@@ -3590,7 +3609,7 @@
       "game"
     ],
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/OpenRsG/GunZRs/releases/tag/v0.1.0"
     ]
@@ -3625,7 +3644,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/morluto/rea/discussions/8248"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "icsee-localmod-rea-camera-case",
@@ -3660,7 +3680,8 @@
     "additional_evidence_urls": [
       "https://github.com/Vittuu/icsee-localmod/blob/52f0ca06064faa2e62ee6d9c600f048bd1768207/docs/REA-GHIDRA-WORKFLOW.md",
       "https://github.com/morluto/rea/discussions/8070"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "app-xray-rea-evidence-reports",
@@ -3797,7 +3818,8 @@
     "additional_evidence_urls": [
       "https://github.com/michaelshimeles/rec-rs/blob/93dd4948cdc8919e8b444a5af0141cf7c3628e7c/analysis/OBS_ARCHITECTURE.md",
       "https://github.com/michaelshimeles/rec-rs/releases/tag/v0.1.2"
-    ]
+    ],
+    "class": "video"
   },
   {
     "id": "sketch-paper-rea-canvas-case",
@@ -3866,7 +3888,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/michaelshimeles/terminal/blob/94bb329d683471518dcd210f9ca9fca073c15d0b/docs/analysis/README.md"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "awesome-malware-analysis",
@@ -4010,7 +4033,8 @@
     "additional_evidence_urls": [
       "https://github.com/morluto/rea/blob/e8da7e1edd075feec0e6beedec93d5645fed8125/website/public/blog/reverse-engineering-models/index.html",
       "https://github.com/N0zoM1z0/th08/commit/a393f400786e4cc6cbb1000af0dad3276da12c78"
-    ]
+    ],
+    "class": "analysis"
   },
   {
     "id": "aishihzong-awesome-reverse-engineer-anything",
@@ -4136,7 +4160,7 @@
     "relationship": "community-reported-mixed-workflow",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
-    "class": "game",
+    "class": "game-dev",
     "targets": [
       "game"
     ],
@@ -4196,7 +4220,8 @@
       "https://github.com/storytold/cadcraft/releases/tag/v0.17.0",
       "https://github.com/storytold/cadcraft/blob/b639b18f69bfefd58f866fd0dc04940d0c6aa6e6/docs/target-app-parity.md",
       "https://github.com/storytold/cadcraft/blob/b639b18f69bfefd58f866fd0dc04940d0c6aa6e6/LICENSE-MIT"
-    ]
+    ],
+    "class": "3d-design"
   },
   {
     "id": "designcraft-case",
@@ -4231,7 +4256,8 @@
       "https://github.com/storytold/designcraft/releases/tag/v0.17.0",
       "https://github.com/storytold/designcraft/blob/f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e/docs/target-app-parity.md",
       "https://github.com/storytold/designcraft/blob/f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e/LICENSE-MIT"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "effectcraft-case",
@@ -4266,7 +4292,8 @@
       "https://github.com/storytold/effectcraft/releases/tag/v0.21.0",
       "https://github.com/storytold/effectcraft/blob/b7dee07cf44fcb42e0afa662043c0dc3bf3f8553/docs/target-app-parity.md",
       "https://github.com/storytold/effectcraft/blob/b7dee07cf44fcb42e0afa662043c0dc3bf3f8553/LICENSE-MIT"
-    ]
+    ],
+    "class": "animation"
   },
   {
     "id": "figcraft-case",
@@ -4301,7 +4328,8 @@
       "https://github.com/storytold/figcraft/releases/tag/v0.15.0",
       "https://github.com/storytold/figcraft/blob/35684eaa028e636d264073a666ef11881620fa0e/docs/target-app-parity.md",
       "https://github.com/storytold/figcraft/blob/35684eaa028e636d264073a666ef11881620fa0e/LICENSE-MIT"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "filmcraft-case",
@@ -4336,7 +4364,8 @@
       "https://github.com/storytold/filmcraft/releases/tag/v0.17.0",
       "https://github.com/storytold/filmcraft/blob/57dc82ea2046c2ec479ab4d4d8167d90e5500b49/docs/target-app-parity.md",
       "https://github.com/storytold/filmcraft/blob/57dc82ea2046c2ec479ab4d4d8167d90e5500b49/LICENSE-MIT"
-    ]
+    ],
+    "class": "video"
   },
   {
     "id": "lightcraft-case",
@@ -4371,7 +4400,8 @@
       "https://github.com/storytold/lightcraft/releases/tag/v0.18.0",
       "https://github.com/storytold/lightcraft/blob/389ab177db87694ce71d54a1adb9546772e483b6/docs/target-app-parity.md",
       "https://github.com/storytold/lightcraft/blob/389ab177db87694ce71d54a1adb9546772e483b6/LICENSE-MIT"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "pdfcraft-case",
@@ -4406,7 +4436,8 @@
       "https://github.com/storytold/pdfcraft/releases/tag/v0.18.0",
       "https://github.com/storytold/pdfcraft/blob/3709926f39039b57e71644227aa8b41b46bde940/docs/target-app-parity.md",
       "https://github.com/storytold/pdfcraft/blob/3709926f39039b57e71644227aa8b41b46bde940/LICENSE-MIT"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "soundcraft-case",
@@ -4441,7 +4472,8 @@
       "https://github.com/storytold/soundcraft/releases/tag/v0.17.0",
       "https://github.com/storytold/soundcraft/blob/b11ffe73ae2e9804377c6cb37be45edf3058ac0d/docs/target-app-parity.md",
       "https://github.com/storytold/soundcraft/blob/b11ffe73ae2e9804377c6cb37be45edf3058ac0d/LICENSE-MIT"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "vectorcraft-case",
@@ -4476,7 +4508,8 @@
       "https://github.com/storytold/vectorcraft/releases/tag/v0.21.0",
       "https://github.com/storytold/vectorcraft/blob/999f4e6478e19b7139db70a3f2a0a5b0669ffcaf/docs/target-app-parity.md",
       "https://github.com/storytold/vectorcraft/blob/999f4e6478e19b7139db70a3f2a0a5b0669ffcaf/LICENSE-MIT"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "woxi-case",
@@ -4506,7 +4539,7 @@
       "binary"
     ],
     "kind": "case-study",
-    "class": "science",
+    "class": "software",
     "additional_evidence_urls": [
       "https://raw.githubusercontent.com/ad-si/Woxi/09b106c5509b373b95b72fc6709a5a60c1b595f6/images/2026-02-12t1501_jupyter.png",
       "https://github.com/ad-si/Woxi/releases/tag/v0.3.0",
@@ -4679,7 +4712,7 @@
       "A clean-clone setup and downloadable playable build are unfinished; missions, combat, vehicles, saves, and full original AI remain incomplete.",
       "MIT License for original project code."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -4713,7 +4746,7 @@
       "The reconstruction is ongoing and does not provide a playable port.",
       "GNU GPL v3 covers the reconstructed source and tooling."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -4778,7 +4811,7 @@
       "The author says the graphics and sounds are generated procedurally and the repository ships no copied binary assets.",
       "MIT license."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "scope",
@@ -4972,7 +5005,7 @@
       "Both Rust components are version 0.1.0 and under development; the exact official game Epic and patch remain unresolved.",
       "GPL-2.0 license."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "limits",
@@ -5039,7 +5072,7 @@
       "The author reports about 94% code conversion; the new server uses its own JSON-over-WebSocket protocol.",
       "MIT licence for repository source."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -5107,7 +5140,7 @@
       "The author reports 98% code-port coverage; remaining functionality is partial.",
       "MIT licence for repository code."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -5210,7 +5243,7 @@
       "The Vita build, render-to-texture and AVI playback remain unfinished.",
       "MIT license."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -5244,7 +5277,7 @@
       "The live LLM agent evaluation and measured MCP versus GUI token comparison have not been performed.",
       "No licence file in the repository."
     ],
-    "class": "science",
+    "class": "software",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -5411,7 +5444,7 @@
       "Menus, story events, battle effects and original sound are missing from the field slice.",
       "No licence file in the repository."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "limits",
@@ -5663,7 +5696,7 @@
       "The author reports testing real-WAD loading with Freedoom Phase 1 v0.13.0; id WADs were unavailable for that test.",
       "MIT license."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -5768,7 +5801,7 @@
       "Combat is buggy and quests, parties, friends, guilds, and PvP are missing.",
       "AGPL-3.0 license."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -5834,7 +5867,7 @@
       "Source reconstruction is in progress.",
       "MIT covers tools, build files, tests and guides; src/ and data/ are not licensed by the project."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -5867,7 +5900,7 @@
       "The movement values are the author's reported reconstruction from behavioral observation.",
       "No licence file in the repository."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "scope",
@@ -5897,7 +5930,7 @@
       "Joysticks are not ported; Windows is untested.",
       "MIT licence for the port source."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -5965,7 +5998,7 @@
       "About 140 functions called by disc Lua scripts remain unimplemented, according to the author.",
       "MIT License."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -5997,7 +6030,7 @@
       "Supply a legally acquired Genma Onimusha game copy; the Windows release targets the documented USA default.xbe.",
       "Windows requires a Direct3D 12 GPU and x86-64-v2 CPU; Linux support is experimental."
     ],
-    "class": "game",
+    "class": "game-dev",
     "additional_evidence_urls": [
       "https://github.com/rafaelkenedy/genma-recomp/blob/33fee19ef4aec490b8970d4472fadd6c4bc99aa2/docs/onimusha-hd-controls-analysis.md",
       "https://github.com/rafaelkenedy/genma-recomp/blob/33fee19ef4aec490b8970d4472fadd6c4bc99aa2/docs/onimusha-hd-loading-analysis.md"
@@ -6072,7 +6105,8 @@
       "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/Makefile",
       "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/.github/workflows/verify.yml"
     ],
-    "reconstruction_method": "decompilation"
+    "reconstruction_method": "decompilation",
+    "class": "game-dev"
   },
   {
     "id": "eidolon-64k-rust-port-case",
@@ -6106,7 +6140,7 @@
       "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/LICENSE-APACHE",
       "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/size/packer/LICENSE"
     ],
-    "class": "software"
+    "class": "animation"
   },
   {
     "id": "openng2-case",
@@ -6131,7 +6165,7 @@
       "The author reports testing only the early chapters and Mission Mode.",
       "BSD 3-Clause licence for openNG2 source code."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -6167,7 +6201,7 @@
       "The PC platform layer and playable port are unfinished.",
       "GPL-3.0."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -6201,7 +6235,7 @@
       "The author reports full exhibition matches and a local clean setup test; other modes and modest hardware have less coverage.",
       "GPL-3.0."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",
@@ -6235,7 +6269,7 @@
       "macOS has not been tested.",
       "GPL-3.0 licence."
     ],
-    "class": "game",
+    "class": "game-dev",
     "requirement_facets": [
       "prerequisites",
       "prerequisites",

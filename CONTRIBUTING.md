@@ -76,7 +76,7 @@ Choose these fields independently; apart from the [reconstruction pairing](#reco
 - `targets`: what subjects does it help analyze or reconstruct?
 - `class`: for a data point only, which one class does the original thing it reproduces belong to?
 
-A record is a data point when its main output reproduces one named real thing, as the [Data records](data/README.md#data-records) section of the format guide defines. Give it exactly one `class`: `software`, `game`, `apps`, `website`, `science` or `hardware`. Tools that work on any target take no class. Protocol is a tag from `targets`, and a protocol record takes the class of the thing the protocol belongs to.
+A record is a data point when its main output reproduces one named real thing, as the [Data records](data/README.md#data-records) section of the format guide defines. Give it exactly one `class`: `website`, `game-dev`, `mobile-app-dev`, `3d-design`, `software`, `animation`, `video`, `hardware` or `analysis`. The class follows the original application's main domain. Tools that work on any target take no class. Protocol is a tag from `targets`, and a protocol record takes the class of the thing the protocol belongs to.
 
 Use the current values in the [catalog format guide](data/README.md). These existing records show how the choices fit together; their linked evidence is documentation, not a claim that the tools were run:
 

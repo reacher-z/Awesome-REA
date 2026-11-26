@@ -3,17 +3,20 @@
 
 A data point's main output reproduces one named real thing: rebuilt code, a working stand-in or a
 reconstructed protocol or format. A benchmark or dataset whose items are reproductions is a data point too.
-The class follows the original thing, not the medium the reproduction runs on. data/README.md gives the rule.
+The class follows the original thing and its main application domain, not the medium the reproduction runs on. data/README.md gives the rule.
 """
 
 # The order is the order every page, README section and API listing shows them in.
 DATA_CLASSES = {
-    'software': ('Software', '软件'),
-    'game': ('Game', '游戏'),
-    'apps': ('Apps', '移动应用'),
     'website': ('Website', '网站'),
-    'science': ('Science', '科学软件'),
+    'game-dev': ('Game Dev', '游戏开发'),
+    'mobile-app-dev': ('Mobile App Dev', '移动应用开发'),
+    '3d-design': ('3D Design', '3D 设计'),
+    'software': ('Software', '软件'),
+    'animation': ('Animation', '动画'),
+    'video': ('Video', '视频'),
     'hardware': ('Hardware', '硬件'),
+    'analysis': ('Analysis', '分析'),
 }
 # Tools, integrations, collections, documentation, learning material and research take no class.
 DATA_CLASS_KINDS = frozenset({'case-study', 'project'})

@@ -764,7 +764,7 @@ class LayersAndExportTest(unittest.TestCase):
                 'reason_zh': '文档尚不完整。', 'evidence_url': f'https://github.com/example/repo/blob/{COMMIT}/README.md',
                 'reviewed_at': '2026-11-06'}}), encoding='utf-8')
             (root / 'data/discovery-classes.json').write_text(json.dumps({pending['id']: {
-                'decision': 'data', 'class': 'game', 'reproduced': 'A named game'}}), encoding='utf-8')
+                'decision': 'data', 'class': 'game-dev', 'reproduced': 'A named game'}}), encoding='utf-8')
             site = root / 'site'
             metadata = {'meta': {'site_url': 'https://awesomerea.org',
                                  'repository_url': 'https://github.com/reacher-z/Awesome-REA'}}
@@ -793,17 +793,17 @@ class LayersAndExportTest(unittest.TestCase):
             (folder / f"{batch['batch_id']}.json").write_bytes(leads.batch_bytes(batch))
             (root / 'data/discovery-classes.json').write_text(json.dumps({
                 hardware['id']: {'decision': 'data', 'class': 'hardware', 'reproduced': 'A named device'},
-                game['id']: {'decision': 'data', 'class': 'game', 'reproduced': 'A named game'},
+                game['id']: {'decision': 'data', 'class': 'game-dev', 'reproduced': 'A named game'},
                 outside['id']: {'decision': 'outside'}}), encoding='utf-8')
             site = root / 'site'
             catalog = {'meta': {'site_url': 'https://awesomerea.org', 'repository_url': 'https://github.com/reacher-z/Awesome-REA'}}
             queue = build_discovery_leads.write_lead_exports(site, catalog, root=root)
             export = json.loads((site / 'discoveries/leads.json').read_text(encoding='utf-8'))
             self.assertEqual([(row['id'], row['class']) for row in export['resources']],
-                             [(game['id'], 'game'), (hardware['id'], 'hardware')])
+                             [(game['id'], 'game-dev'), (hardware['id'], 'hardware')])
             counts = export['counts']
             self.assertEqual((counts['listed'], counts['data_points'], counts['other_captures'], counts['captures_listed']), (3, 2, 1, 4))
-            self.assertEqual(counts['data_classes'], {'game': 1, 'hardware': 1})
+            self.assertEqual(counts['data_classes'], {'game-dev': 1, 'hardware': 1})
             self.assertEqual((export['batches'][0]['listed_count'], export['batches'][0]['awaiting_review']), (4, 3))
             batch_export = json.loads((site / build_discovery_leads.batch_export_path(batch['batch_id']).lstrip('/')).read_text(encoding='utf-8'))
             self.assertEqual({row['id'] for row in batch_export['resources']}, {hardware['id'], game['id'], outside['id'], unclassified['id']})

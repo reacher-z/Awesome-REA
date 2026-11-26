@@ -115,18 +115,18 @@ class QueueTest(unittest.TestCase):
             root = Path(directory)
             root.mkdir(exist_ok=True)
             classifications = {
-                capture(1)['id']: {'decision': 'data', 'class': 'game', 'reproduced': 'A <game> engine'},
+                capture(1)['id']: {'decision': 'data', 'class': 'game-dev', 'reproduced': 'A <game> engine'},
                 capture(2)['id']: {'decision': 'data', 'class': 'software', 'reproduced': 'A desktop app'},
                 capture(3)['id']: {'decision': 'outside'},
             }
             (root / 'data').mkdir()
             (root / discovery_classes.FILE).write_text(json.dumps(classifications), encoding='utf-8')
             queue = sample_queue(directory)
-        for language, labels in (('en', ('Software', 'Game')),
-                                 ('zh', ('软件', '游戏'))):
+        for language, labels in (('en', ('Game Dev', 'Software')),
+                                 ('zh', ('游戏开发', '软件'))):
             html = site.page_content(queue, language, False, 'https://awesomerea.org', 'https://github.com/reacher-z/Awesome-REA')
             self.assertEqual(html.count('<article class="source-card browse-repository"'), 2)
-            self.assertLess(html.index('id="class-software"'), html.index('id="class-game"'))
+            self.assertLess(html.index('id="class-game-dev"'), html.index('id="class-software"'))
             for label in labels:
                 count = ' · 显示 1 条，共 1 条' if language == 'zh' else ' · 1 of 1'
                 self.assertIn(label.replace('&', '&amp;') + count, html)
@@ -155,7 +155,7 @@ class QueueTest(unittest.TestCase):
         self.assertEqual([row['id'] for row in exported], [row['id'] for row in queue['listed']])
         by_id = {row['id']: row for row in exported}
         self.assertEqual([by_id[capture(1)['id']][key] for key in ('data_decision', 'class', 'reproduced')],
-                         ['data', 'game', 'A <game> engine'])
+                         ['data', 'game-dev', 'A <game> engine'])
         self.assertEqual(by_id[capture(3)['id']]['data_decision'], 'outside')
         self.assertNotIn('class', by_id[capture(3)['id']])
         self.assertNotIn('data_decision', by_id[capture(4)['id']])
@@ -171,7 +171,7 @@ class QueueTest(unittest.TestCase):
             root = Path(directory)
             (root / 'data').mkdir()
             classes = {capture(number)['id']: {'decision': 'data', 'class': kind, 'reproduced': 'Rebuilt thing'}
-                       for number, kind in ((1, 'game'), (2, 'game'), (3, 'software'))}
+                       for number, kind in ((1, 'game-dev'), (2, 'game-dev'), (3, 'software'))}
             classes[capture(4)['id']] = {'decision': 'outside'}
             (root / discovery_classes.FILE).write_text(json.dumps(classes), encoding='utf-8')
             sample_queue(directory)
@@ -203,17 +203,17 @@ class QueueTest(unittest.TestCase):
                     self.assertEqual(page.meta['robots'], 'noindex')
                     self.assertIn(f'class="browse-language" href="{language_targets[route]}"', html)
                 # Game has two data points and the list page shows one, so Game gets a page with both.
-                self.assertEqual(routes, ['/discoveries/', '/zh/discoveries/', '/discoveries/game/', '/zh/discoveries/game/'])
+                self.assertEqual(routes, ['/discoveries/', '/zh/discoveries/', '/discoveries/game-dev/', '/zh/discoveries/game-dev/'])
                 export = json.loads((output / 'discoveries.json').read_text(encoding='utf-8'))
-                self.assertEqual(export['class_pages'], [{'class': 'game', 'data_points': 2,
-                                                          'page': 'https://awesomerea.org/discoveries/game/'}])
+                self.assertEqual(export['class_pages'], [{'class': 'game-dev', 'data_points': 2,
+                                                          'page': 'https://awesomerea.org/discoveries/game-dev/'}])
                 for language, prefix in (('en', ''), ('zh', '/zh')):
                     listing = (output / prefix.lstrip('/') / 'discoveries/index.html').read_text(encoding='utf-8')
                     self.assertEqual(listing.count('data-discovery-more='), 1)
-                    self.assertIn(f'href="{prefix}/discoveries/game/" data-discovery-more="game">', listing)
+                    self.assertIn(f'href="{prefix}/discoveries/game-dev/" data-discovery-more="game-dev">', listing)
                     self.assertIn('Show all 2<span class="mono">+1</span>' if language == 'en'
                                   else '显示全部 2 条<span class="mono">+1</span>', listing)
-                    page = (output / prefix.lstrip('/') / 'discoveries/game/index.html').read_text(encoding='utf-8')
+                    page = (output / prefix.lstrip('/') / 'discoveries/game-dev/index.html').read_text(encoding='utf-8')
                     self.assertEqual(page.count('<article class="source-card browse-repository"'), 2)
                     self.assertNotIn('data-discovery-more', page)
                     self.assertIn(f'<a href="{prefix}/discoveries/">', page)
@@ -225,11 +225,11 @@ class QueueTest(unittest.TestCase):
             root = Path(directory)
             (root / 'data').mkdir()
             classes = {capture(number)['id']: {'decision': 'data', 'class': kind, 'reproduced': 'Rebuilt thing'}
-                       for number, kind in ((1, 'game'), (2, 'game'), (3, 'software'), (4, 'game'))}
+                       for number, kind in ((1, 'game-dev'), (2, 'game-dev'), (3, 'software'), (4, 'game-dev'))}
             (root / discovery_classes.FILE).write_text(json.dumps(classes), encoding='utf-8')
             queue = sample_queue(directory)
         html = site.page_content(queue, 'en', False, 'https://awesomerea.org', 'https://github.com/reacher-z/Awesome-REA')
-        self.assertLess(html.index('id="class-software"'), html.index('id="class-game"'))
+        self.assertLess(html.index('id="class-game-dev"'), html.index('id="class-software"'))
         self.assertLess(html.index('scan-9000000004'), html.index('scan-9000000002'))
         self.assertLess(html.index('scan-9000000002'), html.index('scan-9000000001'))
         feed = ET.fromstring(site.discovery_feed(queue, 'en', 'https://awesomerea.org'))
@@ -242,7 +242,7 @@ class MainFeedTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as data:
             root = Path(data)
             (root / 'data').mkdir()
-            classes = {capture(number)['id']: {'decision': 'data', 'class': 'game', 'reproduced': 'Rebuilt game'}
+            classes = {capture(number)['id']: {'decision': 'data', 'class': 'game-dev', 'reproduced': 'Rebuilt game'}
                        for number in (1, 3)}
             (root / discovery_classes.FILE).write_text(json.dumps(classes), encoding='utf-8')
             queue = sample_queue(data)
