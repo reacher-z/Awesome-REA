@@ -164412,5 +164412,115 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "pureref-format",
+    "name": "PureRef-format: generating and converting .pur reference boards",
+    "url": "https://github.com/FyorDev/PureRef-format",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A Python tool and module built from a reverse-engineered PureRef .pur file format: it generates organised reference boards from folders of images and converts .pur files to or from other formats.",
+    "description_zh": "基于逆向出的 PureRef .pur 文件格式编写的 Python 工具与模块：可从图片目录自动生成排布好的参考板，也能在 .pur 与其他格式之间转换。",
+    "evidence_url": "https://github.com/FyorDev/PureRef-format/blob/a92af67831f5216faf7a4a0cfa8c3d135d5e2eaa/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Python 3.8 or newer and images to arrange or a .pur file to convert.",
+      "It targets PureRef 1.10 and 1.11.1 file formats, not the application itself.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "kn-win32-api-monitor",
+    "name": "KN Win32 API Monitor: a modern API monitoring workstation",
+    "url": "https://github.com/kernullist/KnWin32ApiMonitor",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A modern Windows 10 and 11 API monitoring workstation for security engineering, reverse engineering, debugging and anti-cheat research, rebuilt around a modern desktop UI, native helper contracts and generated API metadata.",
+    "description_zh": "面向 Windows 10/11 的现代 API 监控工作台，用于安全工程、逆向、调试与反作弊研究，围绕现代桌面界面、原生辅助进程契约与自动生成的 API 元数据重建。",
+    "evidence_url": "https://github.com/kernullist/KnWin32ApiMonitor/blob/69b841dd3ab7ae106d7985c48cfcf75dd1746d58/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Windows 10 or 11 and the target process you are permitted to analyse.",
+      "It is inspired by Rohitab API Monitor but rebuilt with its own UI and helper contracts.",
+      "Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "barrett-case",
+    "name": "Barrett: a Rise of the Triad source port for modern systems",
+    "url": "https://github.com/lunarmeadow/barrett",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "A Rise of the Triad source port based on ROTTEXPR focused on quality of life, expanded compatibility, new features and better support for modern hardware.",
+    "description_zh": "基于 ROTTEXPR 的《Rise of the Triad》源代码移植，专注体验改进、兼容性扩展、新特性以及对现代硬件更好的支持。",
+    "evidence_url": "https://github.com/lunarmeadow/barrett/blob/f292311c32966dbb863e222fd85be7d6bd1a478e/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own Rise of the Triad game files and SDL2 with SDL2_mixer.",
+      "It builds on ROTTEXPR and targets modern systems.",
+      "GPL-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "lyscript",
+    "name": "LyScript: dynamic debugging and analysis for x32/x64dbg",
+    "url": "https://github.com/lyshark/LyScript",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A dynamic debugging and analysis component for x32dbg and x64dbg that works as an AI-driven copilot for reverse engineering, vulnerability research and malware analysis.",
+    "description_zh": "面向 x32dbg 与 x64dbg 的动态调试与分析组件，作为逆向、漏洞挖掘与恶意软件分析的 AI 辅助驾驶工具。",
+    "evidence_url": "https://github.com/lyshark/LyScript/blob/f8c7602463893948b1a67cfc7994d2642652a72a/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires x32dbg or x64dbg and the plugin installed in the debugger.",
+      "It augments the debugger workflow instead of replacing static analysis.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

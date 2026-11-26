@@ -6,10 +6,11 @@
 
 [English](game-5.md)
 
-**502 个案例**
+**503 个案例**
 
 ## 引擎重实现
 
+- [**OpenTTD：重建《运输大亨豪华版》**](https://github.com/OpenTTD/OpenTTD) - OpenTTD 以《运输大亨豪华版》为基础重建运输模拟游戏，力求复现原版玩法并增加功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openttd-case/)</sub>
 - [**OpenUG2：《极品飞车：地下狂飙 2》引擎重建**](https://github.com/whoismept/OpenUG2) - OpenUG2 以玩家自备的《极品飞车：地下狂飙 2》数据重建原生赛车引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openug2-case/)</sub>
 - [**OpenUT2k4：用 Unreal Engine 5.8 重建《Unreal Tournament 2004》**](https://github.com/GloriousEggroll/OpenUT2k4) - OpenUT2k4 使用 C++ 和 Unreal Engine 5.8 重建《Unreal Tournament 2004》，在本地转换玩家安装目录中的地图、角色和音频，并在运行时构建地图。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/openut2k4-case/)</sub>
 - [**OpenVIII：《Final Fantasy VIII》的 C# 引擎重建**](https://github.com/MaKiPL/OpenVIII-monogame) - OpenVIII 以 C# 和 MonoGame 重写《Final Fantasy VIII》游戏引擎，面向 Windows 和 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openviii-monogame-case/)</sub>

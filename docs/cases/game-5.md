@@ -6,10 +6,11 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**502 case studies**
+**503 case studies**
 
 ## Engine reimplementations
 
+- [**OpenTTD: recreating Transport Tycoon Deluxe**](https://github.com/OpenTTD/OpenTTD) - OpenTTD recreates Transport Tycoon Deluxe as an open-source transport simulation game, aiming to mimic the original while adding features. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openttd-case/)</sub>
 - [**OpenUG2: a Need for Speed: Underground 2 engine reimplementation**](https://github.com/whoismept/OpenUG2) - OpenUG2 reimplements the Need for Speed: Underground 2 engine as a native racing prototype that reads the player's original game data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openug2-case/)</sub>
 - [**OpenUT2k4: recreating Unreal Tournament 2004 in Unreal Engine 5.8**](https://github.com/GloriousEggroll/OpenUT2k4) - OpenUT2k4 recreates Unreal Tournament 2004 in C++ on Unreal Engine 5.8 using maps, characters, audio and music converted locally from the player's installation. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/openut2k4-case/)</sub>
 - [**OpenVIII: a C# engine reconstruction of Final Fantasy VIII**](https://github.com/MaKiPL/OpenVIII-monogame) - OpenVIII rewrites the Final Fantasy VIII game engine in C# and MonoGame for Windows and Linux. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openviii-monogame-case/)</sub>

@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-26T01:58:21+00:00",
-  "entry_count": 5529,
+  "generated_at": "2026-11-26T03:30:19+00:00",
+  "entry_count": 5533,
   "class_counts": {
    "0": 15,
-   "1": 1247,
-   "2": 4055,
+   "1": 1248,
+   "2": 4058,
    "3": 186
   },
   "unknown_count": 26,
@@ -155296,6 +155296,119 @@
    "checked_at": "2026-11-26T01:58:20+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "pureref-format",
+   "url": "https://github.com/FyorDev/PureRef-format",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2130,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 3,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-26T03:30:18+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "kn-win32-api-monitor",
+   "url": "https://github.com/kernullist/KnWin32ApiMonitor",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 10153,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 4,
+    "release_asset_count": 4,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "complete evidence for a tool, integration, guide or analysis entry",
+   "checked_at": "2026-11-26T03:30:18+00:00",
+   "evidence_status": "observed",
+   "scope": "analysis",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "barrett-case",
+   "url": "https://github.com/lunarmeadow/barrett",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3355,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 5,
+    "release_asset_count": 15,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-26T03:30:18+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "lyscript",
+   "url": "https://github.com/lyshark/LyScript",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 7240,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 1,
+    "release_asset_count": 1,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-26T03:30:18+00:00",
+   "evidence_status": "observed",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   }

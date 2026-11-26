@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-26T01:58:41+00:00",
-    "entry_count": 1231,
-    "class_entry_count": 1262,
+    "generated_at": "2026-11-26T03:31:13+00:00",
+    "entry_count": 1232,
+    "class_entry_count": 1263,
     "class_counts": {
-      "image": 1191,
+      "image": 1192,
       "video": 40
     },
     "missing_count": 31,
@@ -4484,6 +4484,15 @@
       "checked_at": "2026-11-09T08:30:30+00:00"
     },
     {
+      "id": "kn-win32-api-monitor",
+      "image_url": "https://raw.githubusercontent.com/kernullist/KnWin32ApiMonitor/69b841dd3ab7ae106d7985c48cfcf75dd1746d58/screenshot01.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/kernullist/KnWin32ApiMonitor",
+      "revision": "69b841dd3ab7ae106d7985c48cfcf75dd1746d58",
+      "checked_at": "2026-11-26T03:31:13+00:00"
+    },
+    {
       "id": "knife",
       "image_url": "https://raw.githubusercontent.com/bl4ckr0ss3/knife/f260b87ffc54ae5c8c56cc31351334d209228745/assets/demo.gif",
       "kind": "image",
@@ -4499,7 +4508,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-26T01:58:40+00:00"
+      "checked_at": "2026-11-26T03:31:12+00:00"
     },
     {
       "id": "konami-viper-recomp-case",

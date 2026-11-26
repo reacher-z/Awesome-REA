@@ -1367,3 +1367,26 @@ Two ports and two DCC MCP adapters: Time Gate Classic Reborn, The Suffering Reco
 ## Validation notes
 
 All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Time Gate, dcc-mcp-maya and dcc-mcp-blender are Class 1 with merged previews; The Suffering is Class 2. Both new records extend the 3d-design-adjacent DCC tooling and game port coverage.
+
+## Batch 53 — 2026-11-26
+
+Three dynamic and format tools plus a Rise of the Triad port: PureRef-format, KN Win32 API Monitor, Barrett and LyScript.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| pureref-format | native-analysis | [FyorDev/PureRef-format](https://github.com/FyorDev/PureRef-format/blob/a92af67831f5216faf7a4a0cfa8c3d135d5e2eaa/README.md) | c50e8b2649803177a2035e6df59cfe58b728a609a3525ccb70dbfdd7512dbe67 |
+| kn-win32-api-monitor | dynamic-analysis | [kernullist/KnWin32ApiMonitor](https://github.com/kernullist/KnWin32ApiMonitor/blob/69b841dd3ab7ae106d7985c48cfcf75dd1746d58/README.md) | fa5f031eb7b9dd29ab9de0c0f2cf7ab2c45f8cbda9585f0269fb9507396a51ae |
+| barrett-case | reconstruction-cases | [lunarmeadow/barrett](https://github.com/lunarmeadow/barrett/blob/f292311c32966dbb863e222fd85be7d6bd1a478e/README.md) | 7ef4e27c0dafa4bb10ea1c77c7b68b9a962f0daa876fe33aabfdd5f372429ea3 |
+| lyscript | dynamic-analysis | [lyshark/LyScript](https://github.com/lyshark/LyScript/blob/f8c7602463893948b1a67cfc7994d2642652a72a/README.md) | 017932c21a3a50132ca194a56656a5e9c7509a6ba0244a9f6d9662c19934b7ac |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| NabilRFG12/Reverse-Engineer-anything | An agent wrapper without a concrete catalog scope. |
+| RobLe3/cc-blender-skill | Third Blender agent tooling item beyond the DCC-MCP adapters curated in batch 52. |
+| mikalkhoven-po/wolf3d-x64, themuffinator/openD3 | Additional Doom and Wolfenstein 3-D ports already well represented. |
+
+## Validation notes
+
+All four records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. KN Win32 API Monitor is Class 1 with a merged preview; the other three are Class 2.

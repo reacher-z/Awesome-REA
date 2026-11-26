@@ -46530,5 +46530,37 @@
       "它向智能体暴露类型化的 Blender 操作，而不是盲目自动化界面。",
       "采用 MIT 许可证。"
     ]
+  },
+  "pureref-format": {
+    "name": "PureRef-format：生成与转换 .pur 参考板",
+    "requirements": [
+      "需要 Python 3.8 或更新版本，以及待排布的图片或待转换的 .pur 文件。",
+      "面向 PureRef 1.10 与 1.11.1 的文件格式，而非应用本身。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "kn-win32-api-monitor": {
+    "name": "KN Win32 API Monitor：现代 API 监控工作台",
+    "requirements": [
+      "需要 Windows 10 或 11，以及你有权分析的目标进程。",
+      "它受 Rohitab API Monitor 启发，但使用自有的界面与辅助进程契约重建。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "barrett-case": {
+    "name": "Barrett：面向现代系统的 Rise of the Triad 源代码移植",
+    "requirements": [
+      "需要自备 Rise of the Triad 游戏文件以及 SDL2 与 SDL2_mixer。",
+      "它基于 ROTTEXPR 构建，面向现代系统。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "lyscript": {
+    "name": "LyScript：x32/x64dbg 的动态调试与分析",
+    "requirements": [
+      "需要 x32dbg 或 x64dbg，并在调试器中安装该插件。",
+      "它增强调试器工作流，而非取代静态分析。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }
