@@ -10,6 +10,8 @@
 
 ## 静态重编译
 
+- [**GTA Stories Recompiled：自由城故事与罪恶都市故事 PC 移植**](https://github.com/batinium/gta-stories-recompiled) - 通过静态重编译把 PS2 版《GTA 自由城故事》与《罪恶都市故事》移植到 PC，两个城市合并在同一世界，并提供 mod 加载器与 Android 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gta-stories-recompiled/)</sub>
+- [**Guitar Hero II Recompiled：Xbox 360 游戏静态重编译**](https://github.com/sp00nznet/gh2) - Guitar Hero II Recompiled 借助 XenonRecomp 和 ReXGlue 将 Xbox 360 游戏可执行文件转换为原生 C++，构建使用 D3D12 图形的 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/guitar-hero-ii-xbox-recomp-case/)</sub>
 - [**吉他英雄 II：Xbox 360 版概念验证重编译**](https://github.com/YoshiCrystal9/re-gh2) - 这是用 ReXGlue SDK 重编译的 Xbox 360 版《Guitar Hero II》概念验证。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gh2-recomp/)</sub>
 - [**Guitar Hero III: Legends of Rock — Recomp：Xbox 360 游戏的 PC 与 Android 重编译**](https://github.com/luisxl15/Guitar-Hero-3-Recomp-) - Guitar Hero III: Legends of Rock — Recomp 使用 ReXGlue 衍生工具链，将 Xbox 360 游戏的 PowerPC 代码转换为 C++，构建 PC 和 Android 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/guitar-hero-iii-recomp-case/)</sub>
 - [**Halo 3 Delta：重建 halo3\_cache\_release.xex**](https://github.com/twist84/halo3_cache_release_recomp) - Halo 3 Delta 项目以 08172.07.03.08.2240.delta 版本的 halo3\_cache\_release.xex 为 ReXGlue 重编译目标。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo3-cache-release-recomp-case/)</sub>
@@ -617,6 +619,4 @@
 - [**devilution-nx：重建版 Diablo 的 Nintendo Switch 移植**](https://github.com/lantus/devilution-nx) - devilution-nx 将 Diablo 的 DevilutionX 重建版本移植到 Nintendo Switch，加入 Joy-Con 和触摸操作，并提供 Switch 自制程序的构建步骤。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/devilution-nx-case/)</sub>
 - [**DevilutionX：移植重建后的 Diablo 引擎**](https://github.com/diasurgical/DevilutionX) - 基于 Devilution 重建成果提供现代平台上的 Diablo 与 Hellfire 移植，加入平台支持、错误修复及可选便利功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/devilutionx-case/)</sub>
 - [**DiabloWeb：基于 Devilution 的 WebAssembly 浏览器移植**](https://github.com/d07RiV/diabloweb) - 将社区重建 Diablo 原始源码的 Devilution 精简分支编译为 WebAssembly，并配合 React 前端，使 Diablo 可在网页浏览器中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/diabloweb-devilution-wasm-port-case/)</sub>
-- [**Diddy Kong Racing on Xbox：Golden Balloon 的 UWP 移植**](https://github.com/jajdp/dkr-xbox) - 项目将 Golden Balloon 的 Diddy Kong Racing 源码移植版制作为 Xbox Series X 的 UWP 包。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dkr-xbox-case/)</sub>
-- [**Dig Dug：转译街机例程并建模三 Z80 硬件**](https://github.com/Suspence00/digdug-decomp) - Dig Dug 将 1982 年街机游戏 Rev 2 ROM 中的例程转译为 Rust，并建模三颗 Z80 处理器以及 Namco 输入输出、视频和音频硬件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/digdug-decomp-case/)</sub>
 <!-- END GENERATED CASES -->

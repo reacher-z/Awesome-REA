@@ -164692,5 +164692,63 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "fastball-mlb-show-case",
+    "name": "Fastball: MLB The Show 26 recompiled for PC",
+    "url": "https://github.com/sam110411/fastball",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A static recompilation of MLB The Show 26 for PC.",
+    "description_zh": "把《MLB The Show 26》静态重编译为 PC 原生版本。",
+    "evidence_url": "https://github.com/sam110411/fastball/blob/f0863b4905685ecfd54dafb919dede64dca11e2b/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the game; no game data is included.",
+      "It is a static recompilation for PC rather than an emulator.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "rbxdecomp-case",
+    "name": "RBXDecomp: a decompilation of the December 2007 Roblox client",
+    "url": "https://github.com/OpenRBX-org/RBXDecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "description_en": "A decompilation of the December 2007 Roblox client, turning the old executable back into source for study and reconstruction work.",
+    "description_zh": "对 2007 年 12 月版 Roblox 客户端的反编译，把旧可执行文件还原为可研究的源码。",
+    "evidence_url": "https://github.com/OpenRBX-org/RBXDecomp/blob/10ef33e9e0f0dde860a080d78969028c41cf0276/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original 2007 client binaries to compare against; the repository ships no proprietary assets.",
+      "It is a decompilation project for study rather than a playable reconstruction.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

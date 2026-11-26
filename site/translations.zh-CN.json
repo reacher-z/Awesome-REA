@@ -46610,5 +46610,21 @@
       "它记录工具与工作流，本身不附带分析软件。",
       "采用 MIT 许可证。"
     ]
+  },
+  "fastball-mlb-show-case": {
+    "name": "Fastball：MLB The Show 26 的 PC 重编译",
+    "requirements": [
+      "需要自备游戏副本；不包含游戏数据。",
+      "它面向 PC 的静态重编译，而不是模拟器。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "rbxdecomp-case": {
+    "name": "RBXDecomp：2007 年 12 月版 Roblox 客户端的反编译",
+    "requirements": [
+      "需要原版 2007 客户端二进制进行对照；仓库不附带专有资源。",
+      "它是面向研究的反编译项目，而非可游玩的完整重建。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

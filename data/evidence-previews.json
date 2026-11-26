@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-26T19:46:45+00:00",
-    "entry_count": 1234,
-    "class_entry_count": 1265,
+    "generated_at": "2026-11-26T20:33:46+00:00",
+    "entry_count": 1235,
+    "class_entry_count": 1266,
     "class_counts": {
-      "image": 1194,
+      "image": 1195,
       "video": 40
     },
     "missing_count": 31,
@@ -2738,6 +2738,15 @@
       "checked_at": "2026-11-09T08:49:32+00:00"
     },
     {
+      "id": "fastball-mlb-show-case",
+      "image_url": "https://raw.githubusercontent.com/sam110411/fastball/f0863b4905685ecfd54dafb919dede64dca11e2b/docs/img/pitching-screen.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/sam110411/fastball",
+      "revision": "f0863b4905685ecfd54dafb919dede64dca11e2b",
+      "checked_at": "2026-11-26T20:33:46+00:00"
+    },
+    {
       "id": "fastview-rea-relay-analysis-rebuild-case",
       "image_url": "https://raw.githubusercontent.com/dmytrobsp/fastview-rea/deb89ea4134414a894ba887508ad5d320449be41/docs/screenshot.png",
       "kind": "image",
@@ -4526,7 +4535,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-26T19:46:43+00:00"
+      "checked_at": "2026-11-26T20:33:45+00:00"
     },
     {
       "id": "konami-viper-recomp-case",

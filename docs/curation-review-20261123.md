@@ -1434,3 +1434,24 @@ Two reconstructions and a field guide: A Link Between Worlds native port, the Mv
 ## Validation notes
 
 All three records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. The A Link Between Worlds port is Class 1 with a merged preview; the other two are Class 2. The hourly class scan returned noop.
+
+## Batch 56 — 2026-11-26
+
+Two game reconstructions: Fastball (MLB The Show 26) and RBXDecomp (December 2007 Roblox).
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| fastball-mlb-show-case | reconstruction-cases | [sam110411/fastball](https://github.com/sam110411/fastball/blob/f0863b4905685ecfd54dafb919dede64dca11e2b/README.md) | 8f09cc97f6fc93d0e6a1f17e87b550271cc6246108439d34029001035c9e0875 |
+| rbxdecomp-case | reconstruction-cases | [OpenRBX-org/RBXDecomp](https://github.com/OpenRBX-org/RBXDecomp/blob/10ef33e9e0f0dde860a080d78969028c41cf0276/README.md) | d9e2742e40b4b9312642da5cee33c7cde1faf9bfd7592ecd7c2f06e0a15446f8 |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| arcanite24/lavender-shift | Five Forza Horizon 2 records already exist, including four recompilations. |
+| ranveersoni98/Xenora | Emulation research for synthetic programs only, not a reconstruction of shipped software. |
+| CheshireJCat/blender | A third Blender agent tool next to the curated DCC-MCP and skill-pack records. |
+
+## Validation notes
+
+Both records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Fastball is Class 1 with a merged preview; RBXDecomp is Class 2. Batch size two reflects a thinning qualified pool after several noop scans.

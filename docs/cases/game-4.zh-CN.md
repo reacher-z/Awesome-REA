@@ -10,6 +10,8 @@
 
 ## 基于重建源码的移植
 
+- [**Diddy Kong Racing on Xbox：Golden Balloon 的 UWP 移植**](https://github.com/jajdp/dkr-xbox) - 项目将 Golden Balloon 的 Diddy Kong Racing 源码移植版制作为 Xbox Series X 的 UWP 包。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dkr-xbox-case/)</sub>
+- [**Dig Dug：转译街机例程并建模三 Z80 硬件**](https://github.com/Suspence00/digdug-decomp) - Dig Dug 将 1982 年街机游戏 Rev 2 ROM 中的例程转译为 Rust，并建模三颗 Z80 处理器以及 Namco 输入输出、视频和音频硬件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/digdug-decomp-case/)</sub>
 - [**Digimon World 2 PC port：Windows 和 Linux 本地移植版**](https://github.com/Wyrelade/DW2-PC) - 该项目把 PlayStation 版《数码宝贝世界 2》做成 Windows 和 Linux 上的原生程序，用游戏反编译出的 C 代码构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/digimon-world-2-pc/)</sub>
 - [**Digimon World 2003：匹配反编译版的掌机移植**](https://github.com/al4xdev/dw3) - Digimon World 2003 将上游的匹配反编译成果和 PC 移植版适配到 R36S、XF35H 等 RK3326 Linux 掌机。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dw3-handheld-port-case/)</sub>
 - [**Digimon World 2003：基于反编译 C 代码的原生 PC 移植**](https://github.com/Feerdus95/dw3-native-port) - 该项目将欧洲版 PlayStation 游戏 Digimon World 2003 的反编译 C 代码编译成原生 Windows 程序，以 OpenGL 和 SDL 实现图形、音频、文件、控制及记忆卡服务，并从用户提供的光盘镜像读取游戏内容。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dw3-native-port-case/)</sub>
@@ -635,6 +637,4 @@
 - [**opensims2：重建《模拟人生 2》引擎**](https://github.com/opensims2/opensims2-public) - opensims2 以 C++ 重实现《模拟人生 2》引擎，在 64 位 macOS 和 Windows 上读取用户自有游戏安装文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opensims2-engine-case/)</sub>
 - [**OpenSith：重新实现《绝地武士：黑暗力量 II》引擎**](https://github.com/r1sc/OpenSith) - OpenSith 用 Unity 重实现《星球大战：绝地武士》的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opensith/)</sub>
 - [**OpenStrike：重构 Desert Strike 与 Jungle Strike 数据和引擎行为**](https://github.com/AMDmi3/openstrike) - OpenStrike 是 Desert Strike 和 Jungle Strike 的早期 C++ 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openstrike-case/)</sub>
-- [**OpenTennis：对照 PS2 原版重建 Hot Shots Tennis**](https://github.com/FIZL0/opentennis) - OpenTennis 使用 Rust 和 Bevy 重建 2007 年 PS2 游戏 Hot Shots Tennis，面向桌面、移动设备和浏览器运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentennis-hot-shots-tennis-case/)</sub>
-- [**OpenTESArena：重建 The Elder Scrolls: Arena 的新引擎**](https://github.com/afritz1/OpenTESArena) - OpenTESArena 用新的 C++ 引擎重建 1994 年 DOS 游戏 The Elder Scrolls: Arena，游戏资源由用户另行获取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentesarena-case/)</sub>
 <!-- END GENERATED CASES -->

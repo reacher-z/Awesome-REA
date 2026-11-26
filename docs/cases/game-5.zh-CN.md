@@ -6,10 +6,12 @@
 
 [English](game-5.md)
 
-**508 个案例**
+**510 个案例**
 
 ## 引擎重实现
 
+- [**OpenTennis：对照 PS2 原版重建 Hot Shots Tennis**](https://github.com/FIZL0/opentennis) - OpenTennis 使用 Rust 和 Bevy 重建 2007 年 PS2 游戏 Hot Shots Tennis，面向桌面、移动设备和浏览器运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentennis-hot-shots-tennis-case/)</sub>
+- [**OpenTESArena：重建 The Elder Scrolls: Arena 的新引擎**](https://github.com/afritz1/OpenTESArena) - OpenTESArena 用新的 C++ 引擎重建 1994 年 DOS 游戏 The Elder Scrolls: Arena，游戏资源由用户另行获取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentesarena-case/)</sub>
 - [**OpenTIE：重实现《星球大战：钛战机》**](https://github.com/elyosh/OpenTIE) - OpenTIE 在 Windows、macOS 和 Linux 上重实现《星球大战：钛战机》，读取用户安装的 1995 年 Collector's CD-ROM 版或 1998 年 Windows 版数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentie-case/)</sub>
 - [**OpenTomb：《古墓丽影》引擎重实现**](https://github.com/opentomb/OpenTomb) - OpenTomb 是经典《古墓丽影》引擎的开源重新实现项目，可运行《古墓丽影》1–5 及自制 TRLE 关卡。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentomb/)</sub>
 - [**OpenTPW：重实现《主题公园世界》**](https://github.com/OpenTPW/OpenTPW) - OpenTPW 重实现 Bullfrog 1999 年的《主题公园世界》，也以《模拟主题公园》发行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentpw/)</sub>

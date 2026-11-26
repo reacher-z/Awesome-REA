@@ -6,10 +6,12 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**508 case studies**
+**510 case studies**
 
 ## Engine reimplementations
 
+- [**OpenTennis: a Hot Shots Tennis rewrite checked against the PS2 game**](https://github.com/FIZL0/opentennis) - OpenTennis rebuilds the 2007 PlayStation 2 game Hot Shots Tennis in Rust and Bevy for desktop, mobile and browser play. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opentennis-hot-shots-tennis-case/)</sub>
+- [**OpenTESArena: a new engine for The Elder Scrolls: Arena**](https://github.com/afritz1/OpenTESArena) - OpenTESArena rebuilds the 1994 DOS game The Elder Scrolls: Arena in a new C++ engine using separately obtained game assets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opentesarena-case/)</sub>
 - [**OpenTIE: reimplementing Star Wars: TIE Fighter**](https://github.com/elyosh/OpenTIE) - OpenTIE reimplements Star Wars: TIE Fighter for Windows, macOS and Linux using data from the original 1995 Collector's CD-ROM or 1998 Windows release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opentie-case/)</sub>
 - [**OpenTomb: Tomb Raider engine reimplementation**](https://github.com/opentomb/OpenTomb) - OpenTomb is an open-source reimplementation of the classic Tomb Raider engine for playing levels from Tomb Raider 1–5 and custom TRLE levels. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opentomb/)</sub>
 - [**OpenTPW: reimplementing Theme Park World**](https://github.com/OpenTPW/OpenTPW) - OpenTPW reimplements Bullfrog's 1999 game Theme Park World, also released as Sim Theme Park. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opentpw/)</sub>
