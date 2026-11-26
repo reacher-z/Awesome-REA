@@ -920,10 +920,11 @@
         const strongOf = (c) => [...picked].some((b) => b === '0' || b === '1')
           ? [...picked].reduce((n, b) => n + (b === '0' || b === '1' ? (c.levels[b] || 0) : 0), 0)
           : (c.levels['0'] || 0) + (c.levels['1'] || 0);
-        const strongShares = sharesOf(Object.fromEntries(classes.map((c) => [c.key, strongOf(c)])));
+        // Strong evidence is a per-class rate over the class's own count, not a share of the strong pool.
+        const strongRates = Object.fromEntries(classes.map((c) => [c.key, c.count ? (strongOf(c) / c.count * 100).toFixed(1) : '0']));
         const fullTotal = classes.reduce((sum, c) => sum + (picked.size && !picked.has('0') ? 0 : (c.levels['0'] || 0)), 0);
         const strongPct = total ? (strongTotal / total * 100).toFixed(1) : '0';
-        const view = { total, shares, strongShares, strongTotal, fullTotal, topKey: top.key, classes };
+        const view = { total, shares, strongRates, strongTotal, fullTotal, topKey: top.key, classes };
         body._view = view;
         // Title
         const prefix = picked.size ? [...picked].map((b) => ovCode[b] || b).join('+') + (zh ? '中的 ' : ' within ') : '';
@@ -947,10 +948,10 @@
           if (!cls) return;
           $('[data-ov-share]', row).textContent = shares[cls.key];
           $('[data-ov-count]', row).textContent = fmtNum(cls.count);
-          $('[data-ov-strong]', row).textContent = `${strongShares[cls.key]}%`;
+          $('[data-ov-strong]', row).textContent = `${strongRates[cls.key]}%`;
           const fillEl = $('.ov-strongfill', row), tickEl = $('.ov-strongtick', row);
-          if (fillEl) fillEl.style.setProperty('--w', `${strongShares[cls.key]}%`);
-          if (tickEl) tickEl.style.setProperty('--w', `${strongShares[top.key] || strongShares[Object.keys(strongShares)[0]]}%`);
+          if (fillEl) fillEl.style.setProperty('--w', `${strongRates[cls.key]}%`);
+          if (tickEl) tickEl.style.setProperty('--w', `${strongPct}%`);
         });
         // Sheet rows for every panel (only the visible one shows, but keep all consistent)
         const overallPct = Object.fromEntries(Object.entries(levelsTotal).map(([b, n]) => [b, total ? n / total * 100 : 0]));
