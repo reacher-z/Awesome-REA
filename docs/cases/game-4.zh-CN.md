@@ -6,10 +6,12 @@
 
 [English](game-4.md)
 
-**631 个案例**
+**630 个案例**
 
 ## 基于重建源码的移植
 
+- [**MediEvil：2019 年 PS4 游戏的原生 PC 移植**](https://github.com/bc160201983/medievil_2019_pc_port) - MediEvil for PC 在 Windows 上运行 2019 年 PS4 游戏原有的 x86-64 可执行文件，以替代系统库提供运行环境，并使用基于 shadPS4 的 Vulkan 图形核心。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/medievil-2019-pc-port-case/)</sub>
+- [**Mega Man 64：重编译版本的 Android 与 iOS 移植**](https://github.com/DevZer0D4Y/MegaMan64Recompiled-Mobile) - Mega Man 64 Recompiled Mobile 基于 N64ModernRuntime 和 RT64，将 MegaMan64Recompiled 移植到 Android 与 iOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mega-man-64-mobile-port-case/)</sub>
 - [**Megarocket：在 Godot 中重建七款 Commander Keen 游戏**](https://github.com/CrossplayGaming/megarocket) - Megarocket 依据 DOS 游戏的逐函数重建成果，将 Commander Keen 1–6 和 Keen Dreams 合并移植到一个 Godot 4 程序中。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/megarocket-commander-keen-case/)</sub>
 - [**Melee-X：《任天堂明星大乱斗 DX》的初代 Xbox 原生移植**](https://github.com/TechProGabe/Melee-X) - Melee-X 将《任天堂明星大乱斗 DX》的反编译代码移植到初代 Xbox，为其 Pentium III 编译游戏代码，并把 GameCube 图形调用映射到 NV2A GPU。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/melee-x-case/)</sub>
 - [**MELEE360：将 Super Smash Bros. Melee 移植到 Xbox 360**](https://github.com/codepdbh/melee360) - MELEE360 将重建的 Super Smash Bros. Melee 代码编译为 Xbox 360 原生 XEX，适配 PowerPC、D3D9/Xenos 和 XInput，并从用户提供的 NTSC-U 1.02 光盘镜像读取原始资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/melee360-case/)</sub>
@@ -206,6 +208,7 @@
 <a id="game-engine-reimplementation"></a>
 ## 引擎重实现
 
+- [**1oom：Master of Orion 引擎重实现**](https://github.com/1oom-fork/1oom) - 重建 1993 年 DOS 版 Master of Orion 引擎，在用户自有的 v1.3 LBX 文件上运行；README 称目标是准确复现原版，项目为自由软件，旧存档在新版本中可能不可用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/1oom-master-of-orion-engine-case/)</sub>
 - [**1oom：Master of Orion 游戏引擎重建**](https://gitlab.com/KilgoreTroutMaskReplicant/1oom) - 1oom 使用原版 Master of Orion 1.3 的 LBX 文件重建 1993 年游戏的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/1oom-case/)</sub>
 - [**Abyss Engine：暗黑破坏神 2 引擎的净室重实现**](https://github.com/AbyssEngine/AbyssEngine) - Abyss Engine 是用 C 编写的《暗黑破坏神 2》引擎净室重实现，目标是一个便于修改的可移植基础。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/abyss-engine/)</sub>
 - [**Abyssal：使用玩家自备 JAR 的 DEEP Godot 引擎**](https://github.com/TheWWWorm/abyssal) - Abyssal 以 Godot 为桌面、浏览器和 Android 平台重建手机游戏《DEEP》的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/abyssal-deep-case/)</sub>
@@ -271,6 +274,7 @@
 - [**Desktop Adventures：面向《Indiana Jones》和《Yoda Stories》的 ScummVM 引擎**](https://github.com/digitall/scummvm-deskadv) - Desktop Adventures 为《Indiana Jones Desktop Adventures》和《Yoda Stories》重建 ScummVM 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scummvm-deskadv-case/)</sub>
 - [**Desktop Games Nostalgia：macOS 与浏览器移植**](https://github.com/ucodia/desktop-games-nostalgia) - Swift/macOS 与 JavaScript/浏览器移植在截图上重现 Desktop Games 的桌面破坏玩具；作者记录 Claude 与 REA/Ghidra 对 Peter 解释器的研究、反编译程序树及提取素材，并明确列出视觉差异和未提供项目许可。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/desktop-games-nostalgia-rea-port-case/)</sub>
 - [**DesktopAdventures：Desktop Adventures 引擎重建**](https://github.com/shinyquagsire23/DesktopAdventures) - DesktopAdventures 用 C 重建《Indiana Jones and His Desktop Adventures》与《Yoda Stories》使用的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/desktopadventures-engine-case/)</sub>
+- [**Dethrace：重建 Carmageddon 引擎**](https://github.com/dethrace-labs/dethrace) - 通过逆向工程和匹配调试符号重建 1997 年 Carmageddon 引擎，使其在现代系统原生运行；不分发游戏内容，读取用户自有的 Carmageddon 文件并支持多个免费试玩版，兼容 GOG 的 CD 音频约定。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dethrace-carmageddon-engine-case/)</sub>
 - [**Dig Dug – native PC port：重建街机电路板**](https://github.com/TekRantGaming/digdug-native) - Dig Dug – native PC port 用 C# 重建街机板的三颗 Z80 处理器、共享内存、Namco I/O、视频和波表音效，使用户提供的游戏 ROM 在 Windows 与 Linux 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dig-dug-native-case/)</sub>
 - [**DirkSimple：重建 Dragon's Lair 与 Cliff Hanger 游戏逻辑**](https://github.com/icculus/DirkSimple) - DirkSimple 用 Lua 重建 Dragon's Lair 和 Cliff Hanger 的激光影碟游戏逻辑，由 C 语言 FMV 运行层播放用户提供的原版影像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dirksimple-laserdisc-games-case/)</sub>
 - [**Domino-Chain：重现 Pushover**](https://gitlab.com/domino-chain/domino-chain.gitlab.io) - Domino-Chain 重现 1992 年的解谜游戏 Pushover，玩家需要摆放多种骨牌并触发连锁反应。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/domino-chain-case/)</sub>
@@ -421,6 +425,7 @@
 - [**OpenCloud：《暗黑编年史》重建项目**](https://github.com/Gundorada-Workshop/OpenCloud) - OpenCloud 是《暗黑编年史》的 C++ 重建项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencloud-dark-cloud-case/)</sub>
 - [**OpenCoD1：《使命召唤》多人模式重建**](https://github.com/opencod1/opencod1) - OpenCoD1 以源码重建《使命召唤》1.1 版多人模式的引擎、客户端、专用服务器及游戏模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencod1-call-of-duty-case/)</sub>
 - [**OpenCross：重建《穿越时空》游戏引擎**](https://github.com/sp-hy/OpenCross) - OpenCross 用 C++20 重建《穿越时空》原生引擎，读取玩家自有的《Radical Dreamers Edition》安装文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencross-case/)</sub>
+- [**OpenCrystalCaves：Crystal Caves 开源引擎**](https://github.com/OpenCrystalCaves/OpenCrystalCaves) - Crystal Caves 三部曲的开源引擎重实现；仓库包含共享版章节，README 称第 1 章可玩，而存档、高分、第 2-3 章以及若干输入与音效功能仍不完整。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opencrystalcaves-engine-case/)</sub>
 - [**OpenD2：重建 Diablo II 游戏引擎**](https://github.com/eezstreet/OpenD2) - OpenD2 用 C++ 重写 Diablo II 游戏引擎，使用原版游戏数据和存档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opend2-diablo-ii-case/)</sub>
 - [**OpenDaed：重建 The Daedalus Encounter**](https://github.com/AMDmi3/opendaed) - OpenDaed 以 C++ 重建互动电影解谜游戏 The Daedalus Encounter，并读取原版光盘数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendaed-case/)</sub>
 - [**OpenDana：《Solomon's Key 2》的 C11 重建**](https://github.com/dvilelaf/opendana) - OpenDana 以确定性的 C11 核心和 SDL2 前端重建 NES 益智游戏《Solomon's Key 2 / Fire 'n Ice》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendana-case/)</sub>
@@ -511,6 +516,7 @@
 - [**OpenXvT：《X-Wing vs. TIE Fighter》重实现**](https://github.com/elyosh/OpenXvT) - OpenXvT 使用玩家持有的原版数据，为 Windows、macOS 和 Linux 重实现《Star Wars: X-Wing vs. TIE Fighter》及《Balance of Power》资料片。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxvt-case/)</sub>
 - [**OpenXW：面向现代系统重实现 Star Wars: X-Wing**](https://github.com/elyosh/OpenXW) - OpenXW 将 Star Wars: X-Wing 重实现为桌面程序，读取玩家安装的 1994 或 1998 年版本数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxw-case/)</sub>
 - [**OpenXWA：重实现《星球大战：X 翼联盟》**](https://github.com/elyosh/OpenXWA) - OpenXWA 将 1999 年游戏《星球大战：X 翼联盟》重实现为 Windows、macOS 和 Linux 原生程序，读取用户的原版安装文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxwa-case/)</sub>
+- [**OpenYAMM：重新实现《魔法门》VI–VIII**](https://github.com/pjasicek/openyamm) - 用现代 C++ 重新实现 Might and Magic VI、VII、VIII，在原版游戏数据上运行，并提供高清美术、3D 怪物、新界面与现代渲染；README 称三作均可玩、支持跨大陆旅行，覆盖 Windows、Linux、Android、macOS 与 iOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openyamm-might-and-magic-case/)</sub>
 - [**OpenYR：重建《尤里的复仇》游戏引擎**](https://github.com/Sovietianqi/OpenYR) - OpenYR 根据游戏行为观察、反汇编研究和公开文档，以 C++ 重建《命令与征服：尤里的复仇》的引擎行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openyr-engine-case/)</sub>
 - [**OpenZ：将 Z 重建为 3D 策略游戏**](https://github.com/playopenz/OpenZ) - OpenZ 使用 Unity 6 将 1996 年策略游戏 Z 重建为具有 3D 战场、单位及新制作素材的游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openz-z-remake-case/)</sub>
 - [**OpenZT2：Rust 重建《动物园大亨 2》引擎**](https://github.com/overyonder/openzt2) - OpenZT2 使用 Rust 和 Bevy 重建《动物园大亨 2》引擎，运行时读取玩家自己的游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openzt2-engine-case/)</sub>
@@ -637,11 +643,4 @@
 - [**UAlbion：1995 年 RPG《Albion》重建**](https://github.com/csinkers/ualbion) - UAlbion 使用原版《Albion》游戏数据，以 C# 重建这款 1995 年的角色扮演游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ualbion-case/)</sub>
 - [**Ultima V Redux：使用原版游戏数据重建《Ultima V》**](https://github.com/bradhannah/UltimaVRedux) - Ultima V Redux 使用玩家自备的 MS-DOS PC 版文件，以 Go 重建《Ultima V: Warriors of Destiny》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ultima-v-redux-case/)</sub>
 - [**Un-Banished：用 Rust 重建 Banished 引擎**](https://github.com/tanepiper/unbanished) - Un-Banished 用 Rust 重建 Banished 1.0.7 引擎，读取玩家自有游戏数据，在桌面和浏览器中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/un-banished-case/)</sub>
-- [**Unciv：文明 V 玩法重制**](https://github.com/yairm210/Unciv) - Unciv 使用 LibGDX 在 Android 和桌面平台重制《文明 V》的玩法，并支持模组。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/unciv-civ-v-case/)</sub>
-- [**Underworld Adventures：重建《Ultima Underworld I》**](https://github.com/vividos/UnderworldAdventures) - Underworld Adventures 以 C++ 引擎在现代系统上重建《Ultima Underworld I》，读取用户自备的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/underworld-adventures-case/)</sub>
-- [**Underworld Revisited：用 Unity 重实现《创世纪地下世界》**](https://github.com/PQMarine/UnderworldRevisited) - Underworld Revisited 用 Unity 重新实现 1992 年的 Ultima Underworld: The Stygian Abyss。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/underworld-revisited/)</sub>
-- [**Untangle：基于 REA 与 Ghidra 证据的浏览器重建**](https://github.com/az9713/untangle-rebuild) - 作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/untangle-rea-evidence-rebuild-case/)</sub>
-- [**vakfu：重建 Wakfu 地图渲染**](https://github.com/jac3km4/vakfu) - vakfu 用 Rust 重建 Wakfu 的等距视角地图渲染，并从用户自己的游戏副本读取资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vakfu-case/)</sub>
-- [**Vange-rs：以 Rust 重做《Vangers》**](https://github.com/kvark/vange-rs) - vange-rs 使用 Rust 和 wgpu 重做《Vangers》，目标是借助原版游戏资源重现其世界、载具和单人游戏行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vange-rs-vangers-case/)</sub>
-- [**Vault Engine：以 Rust 重建 Fallout 与 Fallout 2**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine 以 Rust 重建 Fallout 和 Fallout 2，读取用户零售版的 DAT 归档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vault-engine-case/)</sub>
 <!-- END GENERATED CASES -->
