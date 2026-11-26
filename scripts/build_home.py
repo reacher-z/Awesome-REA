@@ -328,7 +328,10 @@ def _overview_table(ordered: list, totals: dict, mixes: dict, letters: dict, sha
             f'<td class="ov-cell-share" data-ov-share>{shares[class_key]}%</td>'
             f'<td class="ov-cell-strong{" ov-letter-dim" if small else ""}" data-ov-strong-cell>'
             f'<span class="ov-strong-label">{_e(text["overview_strong_label"])}</span> '
-            f'<span class="ov-strong-pct" data-ov-strong>{rate}%</span> <span class="ov-c0" data-ov-c0>{star}</span>{tag}</td></tr>')
+            f'<span class="ov-strong-pct" data-ov-strong>{rate}%</span> <span class="ov-c0" data-ov-c0>{star}</span>{tag}'
+            f'<span class="ov-quality" aria-hidden="true">'
+            + ''.join(f'<span class="ov-qseg ov-qseg-{b}" data-w="{mixes[class_key][b] / count * 100:.2f}"></span>'
+                      for b in OVERVIEW_ORDER if mixes[class_key][b]) + '</span></td></tr>')
     full_total = sum(mixes[class_key]['0'] for class_key in ordered)
     return (f'<table class="ov-spec"><thead><tr>'
             f'<th scope="col"><span class="ov-h">{_e(text["overview_h_num"])}</span></th>'
