@@ -215,7 +215,7 @@
 - [tintinweb/ida-batch\_decompile](https://github.com/tintinweb/ida-batch_decompile) — “反编译一切”：适用于 Hex-Rays IDA Pro 的 IDA 批量反编译插件及脚本，可批量反编译多个文件及其导入项，并在伪代码 .c 文件中添加交叉引用、栈变量大小等注释。 **[300 星标]**
 - [ubfx/BinDiffHelper](https://github.com/ubfx/BinDiffHelper) — 集成 BinDiff 以进行函数匹配的 Ghidra 扩展 **[297 星标]**
 - [thetacom/hexabyte](https://github.com/thetacom/hexabyte) — 现代、模块化且稳健的终端界面十六进制编辑器。 **[294 星标]**
-- [LittleBitUA/DownpourRecomp](https://github.com/LittleBitUA/DownpourRecomp) — Silent Hill: Downpour 的原生 Windows PC 移植版，通过静态重编译 Xbox 360 二进制实现。v1.0 稳定版：解锁 60 FPS、ROV 预热缓存、独立启动器、DualSense 自适应扳机及可迁移存档。已在美版与欧版 X360 转储上测试。 **[293 星标]**
+- [LittleBitUA/DownpourRecomp](https://github.com/LittleBitUA/DownpourRecomp) — Silent Hill: Downpour 的原生 Windows PC 移植版，通过静态重编译 Xbox 360 二进制实现。v1.0 稳定版：解锁 60 FPS、ROV 预热缓存、独立启动器、DualSense 自适应扳机及可迁移存档。已在美版与欧版 X360 转储上测试。 **[293 星标]** · 精选：[《寂静岭：暴雨》Windows 重编译版](https://awesomerea.org/zh/resources/downpour-static-recomp-case/)
 - [clojure-goes-fast/clj-java-decompiler](https://github.com/clojure-goes-fast/clj-java-decompiler) — 与 REPL 集成的 Clojure 到 Java 反编译器 **[285 星标]**
 - [cdong1012/ollvm-unflattener](https://github.com/cdong1012/ollvm-unflattener) — Obfuscator-LLVM 控制流平坦化去混淆工具 **[284 星标]** · 精选：[ollvm-unflattener OLLVM 控制流平坦化去混淆工具](https://awesomerea.org/zh/resources/ollvm-unflattener/)
 - [secrary/DrSemu](https://github.com/secrary/DrSemu) — DrSemu：基于动态行为的沙箱恶意软件检测与分类工具 **[280 星标]**
@@ -506,7 +506,7 @@
 - [j0shua-SYSON/S5LBox](https://github.com/j0shua-SYSON/S5LBox) — 在现代 iPhone 的应用中启动真正的 iPhone OS 3，包括 Apple 原版内核、launchd 和 SpringBoard。使用可移植 C 语言从零构建的全系统 S5L8900/ARMv6 仿真器。 **[38 星标]**
 - [MaryNCRT/Ultimate-Mortal-Kombat-3-iOS-Recomp](https://github.com/MaryNCRT/Ultimate-Mortal-Kombat-3-iOS-Recomp) — 《Ultimate Mortal Kombat 3》（iOS 版，EA Mobile，2011 年）已完全反编译：全部 2,572 个游戏函数均为可读的 C 代码，并与静态 ARM 到 C 重编译器进行核对。原生移植仍在进行中：菜单、声音和存档已可运行，战斗数据表从用户自有副本中提取并验证，但目前尚不可游玩。不含游戏素材，需自行提供游戏副本。 **[38 星标]**
 - [radareorg/r2unity](https://github.com/radareorg/r2unity) — 使用 radare2 逆向分析 Unity 游戏。 **[38 星标]**
-- [sp00nznet/redalert2-recomp](https://github.com/sp00nznet/redalert2-recomp) — 将《Command &amp; Conquer: Red Alert 2／Yuri's Revenge》（Westwood，2000—2001 年）静态重编译为原生 C，并加入原引擎未曾获得的重制功能：D3D11 显示输出、720p 至 4K、高清体素单位。基于 pcrecomp 构建。 **[38 星标]**
+- [sp00nznet/redalert2-recomp](https://github.com/sp00nznet/redalert2-recomp) — 将《Command &amp; Conquer: Red Alert 2／Yuri's Revenge》（Westwood，2000—2001 年）静态重编译为原生 C，并加入原引擎未曾获得的重制功能：D3D11 显示输出、720p 至 4K、高清体素单位。基于 pcrecomp 构建。 **[38 星标]** · 精选：[红警 2 重编译：在现代系统上运行 Westwood 的代码](https://awesomerea.org/zh/resources/redalert2-static-recomp-case/)
 - [sterrasec/genpatch](https://github.com/sterrasec/genpatch) — genpatch 是一款 IDA 插件，可生成用于修补二进制文件的 Python 脚本。 **[38 星标]**
 - [therealdreg/linux\_kernel\_debug\_disassemble\_ida\_vmware](https://github.com/therealdreg/linux_kernel_debug_disassemble_ida_vmware) — 在 VMware + GDB stub 环境中使用 IDA Pro 反汇编或调试 Linux 内核的辅助脚本，包含一些符号辅助工具。 **[38 星标]**
 - [vaguue/Ghidra.js](https://github.com/vaguue/Ghidra.js) — 支持 AI 智能体的 Ghidra JavaScript 绑定。 **[38 星标]**
@@ -810,7 +810,7 @@
 - [borgox/osu-collector-reverse](https://github.com/borgox/osu-collector-reverse) — 一篇介绍作者如何逆向分析 osu!collector 应用的博客文章。 **[0 星标]**
 - [chgroeling/armv7m-decoder](https://github.com/chgroeling/armv7m-decoder) — 使用 Python 编写的 ARMv7-M（Thumb）指令解码器与反汇编器：覆盖完整指令集，输出兼容 objdump，并从 YAML 规范生成。 **[0 星标]**
 - [deja666/azazel](https://github.com/deja666/azazel) — 用于分析恶意二进制文件的 Python 库，结合模拟、模式匹配及逆向工程工具集成。 **[0 星标]**
-- [Dhaiwat10/cricket07-browser](https://github.com/Dhaiwat10/cricket07-browser) — 让 EA Sports Cricket 07（2006）在浏览器中运行：将所有函数从 x86 静态重编译为 C，再编译为 WebAssembly，并在 WebGPU 上重建 Direct3D 8。需自备游戏副本。 **[0 星标]**
+- [Dhaiwat10/cricket07-browser](https://github.com/Dhaiwat10/cricket07-browser) — 让 EA Sports Cricket 07（2006）在浏览器中运行：将所有函数从 x86 静态重编译为 C，再编译为 WebAssembly，并在 WebGPU 上重建 Direct3D 8。需自备游戏副本。 **[0 星标]** · 精选：[Cricket 07 浏览器版：从 x86 到 WebAssembly](https://awesomerea.org/zh/resources/cricket07-browser-static-recomp-case/)
 - [frontal1660/archer-c7-firmware-reverse](https://github.com/frontal1660/archer-c7-firmware-reverse) — 对 TP-Link Archer C7 v1.1 路由器进行非破坏性逆向工程，包括 UART 访问、无需拆焊的完整 NOR 闪存转储、固件分析、内核二进制修补、专有镜像重建，以及通过 TFTP 临时从 RAM 启动以获得早期 root Shell。 **[0 星标]**
 - [hui-joyce/local-multi-agent-dev](https://github.com/hui-joyce/local-multi-agent-dev) — 本地多智能体 AI 系统，包含两种专用助手：用于代码生成与审查的软件开发助手，以及用于分析汇编和反编译二进制文件的逆向工程助手。 **[0 星标]**
 - [IFAKA/rugby08-web](https://github.com/IFAKA/rugby08-web) — 在浏览器中运行 EA Sports Rugby 08（PC，2007）：将 x86 游戏静态重编译为 WebAssembly，并在 WebGL 2 上实现 Direct3D 8。支持安装为 PWA，需自行提供游戏副本。 **[0 星标]**
