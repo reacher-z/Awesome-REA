@@ -164750,5 +164750,34 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "sm3dl-recompiled-case",
+    "name": "Super Mario 3D Land recompiled: the European 3DS release on PC",
+    "url": "https://github.com/Okxmir/super-mario-3d-land-recompiled",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "An experimental native Windows x64 and Linux x86-64 port of the European Super Mario 3D Land that recompiles the game ARM code and reads assets from a local ROM, with 30 or 60 FPS rendering and 1x to 4x upscaling.",
+    "description_zh": "面向欧版《超级马力欧 3D 乐园》的试验性 Windows x64 与 Linux x86-64 原生移植：重编译游戏 ARM 代码并从本地 ROM 读取资源，支持 30/60 帧渲染与 1–4 倍放大。",
+    "evidence_url": "https://github.com/Okxmir/super-mario-3d-land-recompiled/blob/52efad0047da25dcecb019ddc9359e709cf2c22f/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the supported European 3DS ROM; no game data is included.",
+      "It targets Windows x64 and Linux x86-64 and is marked experimental.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

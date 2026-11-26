@@ -1455,3 +1455,23 @@ Two game reconstructions: Fastball (MLB The Show 26) and RBXDecomp (December 200
 ## Validation notes
 
 Both records carry pinned README evidence, parallel Chinese requirements and evidence-class entries. Fastball is Class 1 with a merged preview; RBXDecomp is Class 2. Batch size two reflects a thinning qualified pool after several noop scans.
+
+## Batch 57 — 2026-11-26
+
+One qualified record this round: Super Mario 3D Land recompiled for Windows and Linux.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| sm3dl-recompiled-case | reconstruction-cases | [Okxmir/super-mario-3d-land-recompiled](https://github.com/Okxmir/super-mario-3d-land-recompiled/blob/52efad0047da25dcecb019ddc9359e709cf2c22f/README.md) | 391e97a57043b2d5d9e31ce522d0d92d9e6ad33fdffed05e436495f9dd0eb6ff |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| arnaldolima1/gow-chains-of-olympus-pc | An experimental PSP hybrid recompilation of Chains of Olympus already exists. |
+| TGP482/FCIP-XEXRecomp | Far Cry Instincts recompilation coverage already exists in the catalog. |
+| arcanite24/lavender-shift | Five Forza Horizon 2 records already exist. |
+
+## Validation notes
+
+The single record carries pinned README evidence, parallel Chinese requirements and an evidence-class entry; it classifies as Class 2. Batch size one reflects the qualified pool after three straight noop scans; the batch was not padded with near-duplicate series entries.

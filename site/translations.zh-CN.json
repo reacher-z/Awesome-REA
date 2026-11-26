@@ -46626,5 +46626,13 @@
       "它是面向研究的反编译项目，而非可游玩的完整重建。",
       "采用 GPL-3.0 许可证。"
     ]
+  },
+  "sm3dl-recompiled-case": {
+    "name": "Super Mario 3D Land 重编译：欧版 3DS 游戏的 PC 版本",
+    "requirements": [
+      "需要受支持的欧版 3DS ROM；不包含游戏数据。",
+      "面向 Windows x64 与 Linux x86-64，并标注为实验性。",
+      "采用 MIT 许可证。"
+    ]
   }
 }

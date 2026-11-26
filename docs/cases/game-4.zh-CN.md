@@ -10,6 +10,7 @@
 
 ## 基于重建源码的移植
 
+- [**DiabloWeb：基于 Devilution 的 WebAssembly 浏览器移植**](https://github.com/d07RiV/diabloweb) - 将社区重建 Diablo 原始源码的 Devilution 精简分支编译为 WebAssembly，并配合 React 前端，使 Diablo 可在网页浏览器中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/diabloweb-devilution-wasm-port-case/)</sub>
 - [**Diddy Kong Racing on Xbox：Golden Balloon 的 UWP 移植**](https://github.com/jajdp/dkr-xbox) - 项目将 Golden Balloon 的 Diddy Kong Racing 源码移植版制作为 Xbox Series X 的 UWP 包。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dkr-xbox-case/)</sub>
 - [**Dig Dug：转译街机例程并建模三 Z80 硬件**](https://github.com/Suspence00/digdug-decomp) - Dig Dug 将 1982 年街机游戏 Rev 2 ROM 中的例程转译为 Rust，并建模三颗 Z80 处理器以及 Namco 输入输出、视频和音频硬件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/digdug-decomp-case/)</sub>
 - [**Digimon World 2 PC port：Windows 和 Linux 本地移植版**](https://github.com/Wyrelade/DW2-PC) - 该项目把 PlayStation 版《数码宝贝世界 2》做成 Windows 和 Linux 上的原生程序，用游戏反编译出的 C 代码构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/digimon-world-2-pc/)</sub>
@@ -636,5 +637,4 @@
 - [**OpenSHC：《要塞：十字军东征》的重实现**](https://github.com/sourcehold/OpenSHC) - OpenSHC 是《要塞：十字军东征》的开源重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openshc/)</sub>
 - [**opensims2：重建《模拟人生 2》引擎**](https://github.com/opensims2/opensims2-public) - opensims2 以 C++ 重实现《模拟人生 2》引擎，在 64 位 macOS 和 Windows 上读取用户自有游戏安装文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opensims2-engine-case/)</sub>
 - [**OpenSith：重新实现《绝地武士：黑暗力量 II》引擎**](https://github.com/r1sc/OpenSith) - OpenSith 用 Unity 重实现《星球大战：绝地武士》的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opensith/)</sub>
-- [**OpenStrike：重构 Desert Strike 与 Jungle Strike 数据和引擎行为**](https://github.com/AMDmi3/openstrike) - OpenStrike 是 Desert Strike 和 Jungle Strike 的早期 C++ 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openstrike-case/)</sub>
 <!-- END GENERATED CASES -->
