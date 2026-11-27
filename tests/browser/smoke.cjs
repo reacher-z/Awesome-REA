@@ -242,6 +242,30 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   assert.equal(await count(page, '[data-cards] > .card.is-active'), 0, `${label}: Escape clears the selection`);
   await page.waitForFunction(() => document.querySelector('[data-drawer]').classList.contains('is-overview'));
   assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), false, `${label}: clearing the search returns to the overview`);
+  // FIG. 2: the spec table selects classes, the level filter re-aggregates everything.
+  assert.equal(await count(page, '[data-overview] [data-ov-body=""] .ov-row[data-ov-row]'), 6, `${label}: one row per data class`);
+  const gameShare = () => page.$eval('[data-overview] [data-ov-row="game"] [data-ov-share]', node => node.textContent);
+  assert.equal(await gameShare(), '71.0%', `${label}: the unfiltered share leads`);
+  await page.click('[data-overview] [data-ov-body=""] [data-ov-select="software"]');
+  await page.waitForFunction(() => document.querySelector('[data-ov-body=""] [data-ov-panel="software"]').hidden === false);
+  await page.click('.ov-evbtn');
+  await page.click('[data-overview] #ov-evlist input[value="2"]');
+  await page.waitForFunction(() => document.querySelector('[data-ov-metric="entries"]').textContent === '2,976');
+  await page.click('[data-overview] #ov-evlist input[value="2"]');
+  await page.waitForFunction(() => document.querySelector('[data-ov-metric="entries"]').textContent === '3,986');
+  await page.click('[data-ov-tab="case-study"]');
+  await page.waitForFunction(() => !document.querySelector('[data-ov-body="case-study"]').hidden);
+  assert.equal(await page.$eval('[data-overview]', node => node.hidden), false, `${label}: a kind tab keeps the overview open`);
+  await page.click('[data-ov-tab=""]');
+  await page.waitForFunction(() => !document.querySelector('[data-ov-body=""]').hidden);
+  await page.click('[data-overview] [data-ov-body=""] [data-ov-select="software"]');
+  await page.waitForFunction(() => document.querySelector('[data-ov-body=""] [data-ov-panel="software"]').hidden === false);
+  await page.click('[data-ov-body=""] [data-ov-panel="software"] [data-ov-view-all]');
+  await page.waitForFunction(() => new URL(location.href).searchParams.get('dcls') === 'software');
+  assert.equal(await page.$eval('[data-overview]', overview => overview.hidden), true, `${label}: view-all brings the filtered rows back`);
+  await page.click('[data-search-input]');
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => !new URL(location.href).searchParams.get('dcls') && document.querySelector('[data-drawer]').classList.contains('is-overview'));
   await page.type('[data-search-input]', 'zzzzqqqq');
   // The empty state can appear after the first few letters; wait until it describes the whole query.
   await page.waitForSelector('[data-cards] > .empty a[href*="sourceq=zzzzqqqq"]');
@@ -713,7 +737,9 @@ async function staticPage(page, route, viewport) {
   const site = server(headerRules(fs.readFileSync(path.join(dist, '_headers'), 'utf8')));
   await new Promise(resolve => site.listen(0, '127.0.0.1', resolve));
   const origin = `http://127.0.0.1:${site.address().port}`;
-  const browser = await puppeteer.launch({executablePath: chrome, headless: true, args: ['--lang=en-US']});
+  // CHROME_ARGS carries container flags such as --no-sandbox for a root-owned CI runner; CI leaves it unset.
+  const extraArgs = (process.env.CHROME_ARGS || '').split(' ').filter(Boolean);
+  const browser = await puppeteer.launch({executablePath: chrome, headless: true, args: ['--lang=en-US', ...extraArgs]});
   const failures = [];
   const check = async (label, run) => {
     try { await run(); console.log(`ok   ${label}`); } catch (error) { failures.push(label); console.error(`FAIL ${label}\n     ${error.message}`); }

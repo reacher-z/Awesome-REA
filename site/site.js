@@ -30,6 +30,10 @@
     remove: (l) => `移除筛选：${l}`, page: (a, b) => `第 ${a}/${b} 页`, shelf: (a, n) => `${fmt(a)} / ${fmt(n)} 个案例`,
     classLabel: '证据档位', classDetail: ['完整软件复现', '部分范围或分析条目', '有代码和文档，缺演示或下载', '仅笔记'],
     unknownTitle: '复核时来源不可达或不可读', previewAlt: '项目公开文档中的演示截图', previewVideoAlt: '项目公开文档中演示视频的封面', previewFull: (name) => `完整演示截图：${name}`, demoNote: '有 demo · 暂无截图',
+    ovTitleLead: (total, noun, share) => `${total} ${noun}，${share}% 来自`,
+    ovTitleNoun: '案例', ovTipUnit: '个',
+    ovTipCount: (count, share) => `${count} 个 · 占已分类 ${share}%`, ovTipOfOthers: (share) => `占其他 ${share}%`,
+    ovCenterAll: '案例 · 已分类', ovAllLabel: '全部', ovOthersLabel: '其他',
   } : {
     featured: 'Featured', theme: 'Colour theme', system: 'system', light: 'light', dark: 'dark', reviewed: 'Reviewed', targets: 'Targets', copied: 'Copied',
     showing: (a, n) => `Showing <strong>${fmt(a)}</strong> of <strong>${fmt(n)}</strong>`, range: (a, b, n) => `Showing <strong>${fmt(a)}–${fmt(b)}</strong> of <strong>${fmt(n)}</strong>`,
@@ -39,6 +43,10 @@
     remove: (l) => `Remove filter: ${l}`, page: (a, b) => `Page ${a} of ${b}`, shelf: (a, n) => `${fmt(a)} of ${fmt(n)} cases`,
     classLabel: 'Evidence class', classDetail: ['full software reconstruction', 'partial scope or analysis entry', 'code & docs, no demo or download', 'notes only'],
     unknownTitle: 'Source unavailable or unreadable at review time', previewAlt: "Demo screenshot from the project's public documentation", previewVideoAlt: "Demo video thumbnail from the project's public documentation", previewFull: (name) => `Full-size demo screenshot: ${name}`, demoNote: 'Demo available · no screenshot',
+    ovTitleLead: (total, noun, share) => `${total} ${noun}, ${share}% from `,
+    ovTitleNoun: 'cases', ovTipUnit: '',
+    ovTipCount: (count, share) => `${count} · ${share}% of classified`, ovTipOfOthers: (share) => `${share}% of others`,
+    ovCenterAll: 'CASES · CLASSIFIED', ovAllLabel: 'All', ovOthersLabel: 'Others',
   };
   const ISSUE = 'https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml';
   const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
@@ -194,14 +202,14 @@
     r.nAlias = norm(`${r.alias} ${r.repo}`); r.aw = words(r.nAlias);
   }
   async function prep(raw) {
-    const res = await chunked(raw.r, ([idc, name, k, tg, c, label, feat, al, conn, cls, st, sec, rev, added]) => {
+    const res = await chunked(raw.r, ([idc, name, k, tg, c, label, feat, al, conn, cls, st, sec, rev, added, dc]) => {
       const targets = [...tg].map(Number);
       const base = label.split('/').pop();
       const id = typeof idc === 'string' ? idc : slug(base) + (idc === 1 ? '-case' : '');
       const alias = al === 1 ? base : al;
       const tags = [raw.kindLabels[k], raw.kindPlural[k], raw.kinds[k], raw.categoryLabels[c], ...targets.map((i) => `${raw.targetLabels[i]} ${raw.targets[i]}`)].join(' ');
       const r = { type: 'r', id, name, k, kind: raw.kinds[k], targets, c, lead: '', label, repo: label, sha: '', ev: '', rev, added, feat, alias, conn,
-        sec, pin: raw.pinned.includes(id), cls, st, prev: '', prevKind: '',
+        sec, pin: raw.pinned.includes(id), cls, st, dc: typeof dc === 'number' ? dc : -1, dcName: typeof dc === 'number' && dc >= 0 ? raw.classes[dc] : '', prev: '', prevKind: '',
         nName: norm(name), nAlias: norm(`${alias} ${label}`), nTags: norm(tags), nDesc: '' };
       r.nw = words(r.nName); r.aw = words(r.nAlias); r.tw = words(r.nTags); r.dw = [];
       return r;
@@ -660,7 +668,7 @@
     const sort = $('[data-sort]', drawer);
     const kindSel = $('[data-kind-select]', drawer);
     const classSel = $('[data-class-select]', drawer);
-    const info = $('.info-btn', drawer);
+    const infos = $$('.info-btn', drawer);
     const init = { list: list.innerHTML, meta: meta.innerHTML, all: showAll.innerHTML, tabs: tabs.map((t) => $('.count', t).textContent), chips: chips.map((c) => $('.count', c).textContent) };
     const more = Object.assign(document.createElement('button'), { type: 'button', className: 'btn', hidden: true });
     list.after(more);
@@ -670,30 +678,300 @@
     more.after(papersBox);
     const u = new URL(location.href);
     const wantedClass = u.searchParams.get('class');
+    const wantedDcls = u.searchParams.get('dcls');
     const st = { q: u.searchParams.get('q') || '', target: u.searchParams.get('target') || 'all', kinds: new Set((u.searchParams.get('kind') || '').split(',').filter(Boolean)),
-      cls: ['0', '1', '2', '3', 'unknown'].includes(wantedClass) ? wantedClass : '', sort: u.searchParams.get('sort') || 'featured', shown: 10 };
+      cls: ['0', '1', '2', '3', 'unknown'].includes(wantedClass) ? wantedClass : '',
+      dcls: ['software', 'game', 'apps', 'website', 'science', 'hardware'].includes(wantedDcls) ? wantedDcls : '',
+      sort: u.searchParams.get('sort') || 'featured', shown: 10 };
     input.value = st.q;
     sort.value = st.sort;
     classSel.value = st.cls;
-    const pristine = () => !st.q && st.target === 'all' && !st.kinds.size && !st.cls && st.sort === 'featured';
+    // A kind tab keeps the overview open with that kind's data; a search, evidence filter or sort brings the rows back.
+    const pristine = () => !st.q && st.target === 'all' && !st.cls && st.sort === 'featured' && !st.dcls;
     const foot = $('.drawer-foot', drawer);
-    // The All view opens on the class × evidence donut; any search or filter brings the rows back.
+    // The All view opens on FIG. 2, class bars drawn to scale; a search or filter brings the rows back.
     const overview = $('[data-overview]', drawer);
-    const overviewTiles = overview ? $$('[data-overview-tile]', overview) : [];
-    const overviewSectors = overview ? $$('[data-overview-sector]', overview) : [];
-    const overviewDetails = overview ? $$('[data-overview-detail]', overview) : [];
-    const chooseClass = (key) => {
-      overviewTiles.forEach((tile) => tile.setAttribute('aria-pressed', String(tile.dataset.overviewTile === key)));
-      overviewSectors.forEach((sector) => sector.setAttribute('aria-pressed', String(sector.dataset.overviewSector === key)));
-      overviewDetails.forEach((detail) => { detail.hidden = detail.dataset.overviewDetail !== key; });
-    };
-    overviewTiles.forEach((tile) => tile.addEventListener('click', () => chooseClass(tile.dataset.overviewTile)));
-    overviewSectors.forEach((sector) => {
-      sector.addEventListener('click', () => chooseClass(sector.dataset.overviewSector));
-      sector.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chooseClass(sector.dataset.overviewSector); }
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const ovFilter = new Set();
+    let ovSort = 'order';
+    let syncBody = () => {};
+    if (overview) {
+      const bodies = $$('.ov-body', overview);
+      const ovTabs = $$('.ov-tab', overview);
+      const tools = $('.ov-tools', overview);
+      const ovCode = { '0': 'C0', '1': 'C1', '2': 'C2', '3': 'C3', unknown: '?', unclassified: '–' };
+      const bodyFor = () => bodies.find((b) => !b.hidden && !b.hasAttribute('data-ov-empty')) || null;
+      const bodyPayload = (body) => {
+        if (!body._data) body._data = JSON.parse(body.querySelector('[data-ov-data]').textContent);
+        return body._data;
+      };
+      const fmtNum = (n) => n.toLocaleString(zh ? 'zh-CN' : 'en-US');
+      // Largest-remainder shares, one decimal, mirroring the build so labels sum to 100.0.
+      const sharesOf = (values) => {
+        const keys = Object.keys(values);
+        const total = keys.reduce((sum, k) => sum + values[k], 0) || 1;
+        const floors = {};
+        keys.forEach((k) => { floors[k] = values[k] * 1000 / total | 0; });
+        let short = 1000 - keys.reduce((sum, k) => sum + floors[k], 0);
+        keys.slice().sort((a, b) => (values[b] * 1000 % total) - (values[a] * 1000 % total)).forEach((k) => {
+          if (short > 0) { floors[k] += 1; short -= 1; }
+        });
+        const out = {};
+        keys.forEach((k) => {
+          out[k] = floors[k] ? (floors[k] / 10).toFixed(1) : (values[k] ? '<0.1' : '0');
+        });
+        return out;
+      };
+      const countUp = (el, from, to) => {
+        if (reducedMotion.matches || from === to) { el.textContent = fmtNum(to); return; }
+        const t0 = performance.now();
+        const tick = (t) => {
+          const k = Math.min(1, (t - t0) / 300);
+          el.textContent = fmtNum(Math.round(from + (to - from) * (1 - (1 - k) * (1 - k))));
+          if (k < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const selectClass = (body, key, { focus = false, roll = true } = {}) => {
+        if (!body || body.hasAttribute('data-ov-empty')) return;
+        const data = body._view;
+        const wanted = key || data.topKey;
+        $$('.ov-letterbtn', body).forEach((btn) => btn.setAttribute('aria-pressed', String(btn.dataset.ovSelect === wanted)));
+        $$('.ov-spec-row', body).forEach((row) => row.setAttribute('aria-pressed', String(row.dataset.ovRow === wanted)));
+        $$('.ov-sheet-panel', body).forEach((panel) => { panel.hidden = panel.dataset.ovPanel !== wanted; });
+        const panel = $$('.ov-sheet-panel', body).find((p) => !p.hidden);
+        if (panel && roll && !reducedMotion.matches) {
+          const cases = $('.ovl-cases-num', panel);
+          const from = Number(String(cases.textContent).replace(/[^\d]/g, '')) || 0;
+          const to = data.classes.find((c) => c.key === wanted).count;
+          countUp(cases, from, to);
+        }
+        if (focus) {
+          const btn = $(`.ov-letterbtn[data-ov-select="${wanted}"]`, body);
+          if (btn) btn.focus();
+        }
+      };
+      const applySort = () => {
+        const body = bodyFor();
+        if (!body) return;
+        const box = $('.ov-spec tbody', body);
+        const rows = $$('.ov-spec-row', box);
+        const all = $('.ov-spec-all', box);
+        const sorted = rows.slice().sort((a, b) => {
+          if (ovSort === 'count') return Number(b.dataset.total) - Number(a.dataset.total);
+          if (ovSort === 'name') return a.dataset.name.localeCompare(b.dataset.name, zh ? 'zh' : 'en');
+          return a.dataset.order - b.dataset.order;
+        });
+        if (sorted.every((r, i) => r === rows[i])) return;
+        const before = new Map(sorted.map((r) => [r, r.getBoundingClientRect().top]));
+        sorted.forEach((r, i) => {
+          $('.ov-letter span', r).textContent = 'ABCDEFG'[i] || 'ABCDEFG'[6];
+          box.insertBefore(r, all);
+        });
+        if (reducedMotion.matches) return;
+        sorted.forEach((r) => {
+          r.style.transition = 'none';
+          r.style.transform = `translateY(${before.get(r) - r.getBoundingClientRect().top}px)`;
+        });
+        requestAnimationFrame(() => requestAnimationFrame(() => sorted.forEach((r) => {
+          r.style.transition = 'transform 250ms cubic-bezier(.2, .7, .2, 1)';
+          r.style.transform = '';
+          r.addEventListener('transitionend', () => { r.style.transition = ''; }, { once: true });
+        })));
+      };
+      const renderBody = (body) => {
+        const data = bodyPayload(body);
+        const picked = ovFilter;
+        const total = picked.size
+          ? data.classes.reduce((sum, c) => sum + [...picked].reduce((n, b) => n + (c.levels[b] || 0), 0), 0)
+          : data.classified;
+        const classes = data.classes.map((c) => ({
+          ...c,
+          count: picked.size ? [...picked].reduce((n, b) => n + (c.levels[b] || 0), 0) : c.total,
+        }));
+        const shares = sharesOf(Object.fromEntries(classes.map((c) => [c.key, c.count])));
+        const maxCount = Math.max(...classes.map((c) => c.count), 0);
+        const strongOf = (c) => [...picked].some((b) => b === '0' || b === '1')
+          ? [...picked].reduce((n, b) => n + (b === '0' || b === '1' ? (c.levels[b] || 0) : 0), 0)
+          : (c.levels['0'] || 0) + (c.levels['1'] || 0);
+        const strongTotal = classes.reduce((sum, c) => sum + strongOf(c), 0);
+        const fullTotal = classes.reduce((sum, c) => sum + (picked.size && !picked.has('0') ? 0 : (c.levels['0'] || 0)), 0);
+        const strongPct = total ? (strongTotal / total * 100).toFixed(1) : '0';
+        const top = classes.slice().sort((a, b) => b.count - a.count)[0];
+        const view = { total, shares, strongPct, strongTotal, fullTotal, topKey: top.key, classes, maxCount };
+        body._view = view;
+        // Meta: the filtered codes restate the base; unfiltered keeps the build-time line.
+        const metaEl = $('[data-ov-meta]', body);
+        if (metaEl) {
+          metaEl.textContent = picked.size
+            ? `${[...picked].map((b) => ovCode[b] || b).join('+')}：${fmtNum(total)}`.replace('：', zh ? '：' : ': ')
+            : metaEl.dataset.ovMetaDefault;
+        }
+        $('[data-ov-metric="entries"]', body).textContent = fmtNum(total);
+        $('[data-ov-metric="strong"]', body).textContent = strongPct;
+        $('[data-ov-metric="strong-note"]', body).textContent = fmtNum(strongTotal);
+        $('[data-ov-metric="full"]', body).textContent = fmtNum(fullTotal);
+        $$('.ov-spec-row', body).forEach((row) => {
+          const cls = classes.find((c) => c.key === row.dataset.ovRow);
+          if (!cls) return;
+          const fill = $('.ov-fill', row);
+          fill.classList.toggle('ov-zero', !cls.count);
+          fill.style.setProperty('--w', `${(cls.count / (maxCount || 1) * 100).toFixed(2)}%`);
+          $('[data-ov-count]', row).textContent = fmtNum(cls.count);
+          $('[data-ov-share]', row).textContent = `${shares[cls.key]}%`;
+          $('[data-ov-strong]', row).textContent = `${strongSharesOf(cls, picked)}%`;
+        });
+        selectClass(body, body._selected || null, { roll: false });
+      };
+      const strongSharesOf = (cls, picked) => {
+        const strong = [...picked].some((b) => b === '0' || b === '1')
+          ? [...picked].reduce((n, b) => n + (b === '0' || b === '1' ? (cls.levels[b] || 0) : 0), 0)
+          : (cls.levels['0'] || 0) + (cls.levels['1'] || 0);
+        return cls.count ? (strong / cls.count * 100).toFixed(1) : '0';
+      };
+      const applyLevelFilter = () => {
+        const body = bodyFor();
+        if (body) renderBody(body);
+      };
+      syncBody = () => {
+        const wanted = st.kinds.size === 1 ? [...st.kinds][0] : '';
+        ovTabs.forEach((tab) => { const on = tab.dataset.ovTab === wanted; tab.setAttribute('aria-selected', String(on)); tab.tabIndex = on ? 0 : -1; });
+        bodies.forEach((b) => { b.hidden = b.dataset.ovBody !== wanted; });
+        const body = bodyFor();
+        const empty = body == null;
+        if (tools) tools.hidden = !!empty;
+        if (body) {
+          $$('[data-w]', body).forEach((el) => el.style.setProperty('--w', `${el.dataset.w}%`));
+          applySort();
+          renderBody(body);
+          selectClass(body, body._selected || null, { roll: false });
+        }
+      };
+      ovTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          st.kinds = tab.dataset.ovTab ? new Set([tab.dataset.ovTab]) : new Set();
+          st.shown = 10;
+          render();
+        });
+        tab.addEventListener('keydown', (e) => {
+          if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+          e.preventDefault();
+          const next = ovTabs[(ovTabs.indexOf(tab) + (e.key === 'ArrowRight' ? 1 : -1) + ovTabs.length) % ovTabs.length];
+          next.focus();
+          next.click();
+        });
       });
-    });
+      overview.addEventListener('click', (e) => {
+        const row = e.target.closest('.ov-spec-row');
+        if (row && bodyFor() === row.closest('.ov-body')) {
+          const body = bodyFor();
+          body._selected = row.dataset.ovRow;
+          selectClass(body, row.dataset.ovRow);
+          return;
+        }
+        const c0 = e.target.closest('[data-ov-c0only]');
+        if (c0) {
+          ovFilter.clear();
+          ovFilter.add('0');
+          $$('input', $('#ov-evlist', overview)).forEach((box) => { box.checked = box.value === '0'; });
+          const evlabel = $('[data-ov-evlabel]', overview);
+          if (evlabel) evlabel.textContent = ovCode['0'];
+          applyLevelFilter();
+          return;
+        }
+        if (e.target.closest('[data-ov-center]')) {
+          const body = bodyFor();
+          if (body) { body._selected = null; selectClass(body, null); }
+          return;
+        }
+        const link = e.target.closest('[data-ov-view-all]');
+        if (link) { e.preventDefault(); st.dcls = link.dataset.ovViewAll; st.shown = 10; render(); }
+      });
+      overview.addEventListener('keydown', (e) => {
+        const row = e.target.closest('.ov-spec-row');
+        if (!row || !['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(e.key)) return;
+        e.preventDefault();
+        const rows = $$('.ov-spec-row', bodyFor());
+        const i = rows.indexOf(row);
+        const next = e.key === 'ArrowDown' ? rows[i + 1] : e.key === 'ArrowUp' ? rows[i - 1] : e.key === 'Home' ? rows[0] : rows[rows.length - 1];
+        const body = bodyFor();
+        if (!body) return;
+        body._selected = next.dataset.ovRow;
+        selectClass(body, next.dataset.ovRow);
+        const btn = $(`.ov-letterbtn[data-ov-select="${next.dataset.ovRow}"]`, body);
+        if (btn) btn.focus();
+      });
+      $$('.ov-letterbtn', overview).forEach((btn) => btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const body = btn.closest('.ov-body');
+        body._selected = btn.dataset.ovSelect;
+        selectClass(body, btn.dataset.ovSelect, { focus: false });
+      }));
+      // Hover: the bar tooltip repeats the row's numbers for mouse users mid-scan.
+      const tip = document.createElement('div');
+      tip.className = 'ov-tip';
+      tip.hidden = true;
+      overview.appendChild(tip);
+      overview.addEventListener('mouseover', (e) => {
+        const row = e.target.closest('.ov-spec-row');
+        const body = bodyFor();
+        if (!row || !body || !body._view) { tip.hidden = true; return; }
+        const cls = body._view.classes.find((c) => c.key === row.dataset.ovRow);
+        if (!cls) return;
+        tip.textContent = T.ovTip(cls.name, fmtNum(cls.count), `${body._view.shares[cls.key]}%`);
+        tip.hidden = false;
+        const r = row.querySelector('.ov-track').getBoundingClientRect();
+        tip.style.left = `${Math.max(8, Math.min(window.innerWidth - tip.offsetWidth - 8, r.left + r.width / 2 - tip.offsetWidth / 2))}px`;
+        tip.style.top = `${Math.max(8, r.top - tip.offsetHeight - 8)}px`;
+      });
+      overview.addEventListener('mouseout', (e) => { if (e.target.closest('.ov-spec-row')) tip.hidden = true; });
+      overview.addEventListener('mouseleave', () => { tip.hidden = true; });
+      const evbtn = $('.ov-evbtn', overview);
+      const evpop = $('#ov-evlist', overview);
+      if (evbtn && evpop) {
+        const evlabel = $('[data-ov-evlabel]', overview);
+        const evAll = evlabel.textContent;
+        const closeEv = () => { evpop.hidden = true; evbtn.setAttribute('aria-expanded', 'false'); };
+        evbtn.addEventListener('click', () => {
+          const open = evpop.hidden;
+          evpop.hidden = !open;
+          evbtn.setAttribute('aria-expanded', String(open));
+        });
+        document.addEventListener('click', (e) => { if (!e.target.closest('.ov-evsel')) closeEv(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeEv(); });
+        $$('input', evpop).forEach((box) => box.addEventListener('change', () => {
+          ovFilter.clear();
+          $$('input:checked', evpop).forEach((c) => ovFilter.add(c.value));
+          evlabel.textContent = ovFilter.size ? [...ovFilter].map((b) => ovCode[b] || b).join('+') : evAll;
+          applyLevelFilter();
+        }));
+      }
+      $('[data-ov-sort]', overview).addEventListener('change', (e) => { ovSort = e.target.value; applySort(); });
+      const infoBtn = $('[data-ov-info]', overview);
+      const what = $('#ov-what', overview);
+      if (infoBtn && what) {
+        infoBtn.addEventListener('click', () => {
+          what.open = true;
+          what.scrollIntoView({ block: 'nearest', behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+        });
+      }
+      const drawObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            overview.classList.add('is-drawn');
+            if (!reducedMotion.matches) {
+              $$('.ov-spec-row .ov-fill', overview).forEach((fill) => {
+                const target = fill.style.getPropertyValue('--w');
+                fill.style.setProperty('--w', '0%');
+                requestAnimationFrame(() => fill.style.setProperty('--w', target));
+              });
+            }
+            drawObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      drawObserver.observe(overview);
+    }
     $('.hs-side', form).insertAdjacentHTML('afterbegin', `<span class="hs-keys" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> ${T.keyMove} <kbd>↵</kbd> ${T.keyOpen} <kbd>Esc</kbd> ${T.keyClear}</span>`);
     let selected = -1;
     const select = (index, reveal) => {
@@ -711,6 +989,7 @@
       if (st.q) p.set('q', st.q);
       if (st.kinds.size) p.set('kind', [...st.kinds].join(','));
       if (st.cls) p.set('class', st.cls);
+      if (st.dcls) p.set('dcls', st.dcls);
       if (st.sort !== 'featured') p.set('sort', st.sort);
       return p;
     };
@@ -723,7 +1002,7 @@
       // The opening All view is the overview; every other state shows entries under the filter bar.
       const opening = pristine();
       drawer.classList.toggle('is-overview', opening);
-      if (overview) overview.hidden = !opening;
+      if (overview) { overview.hidden = !opening; if (opening) syncBody(); }
       tabs.forEach((t) => { if (t.dataset.target === st.target) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current'); });
       chips.forEach((c) => c.setAttribute('aria-pressed', String(st.kinds.has(c.dataset.kind))));
       kindSel.value = st.kinds.size === 1 ? [...st.kinds][0] : '';
@@ -740,6 +1019,7 @@
       if (st.target !== 'all') ex.set('target', st.target);
       if (st.kinds.size) ex.set('kind', [...st.kinds].join(','));
       if (st.cls) ex.set('class', st.cls);
+      if (st.dcls) ex.set('dcls', st.dcls);
       if (st.sort !== 'featured') ex.set('sort', st.sort);
       if (langLink) langLink.href = langBase + (hp.toString() ? `?${hp}` : '');
       showAll.href = `${P}/resources/${ex.toString() ? `?${ex}` : ''}`;
@@ -763,13 +1043,14 @@
       const base = search(X.res, st.q);
       const kindOK = (h) => !st.kinds.size || st.kinds.has(h.r.kind);
       const classOK = (h) => !st.cls || (st.cls === 'unknown' ? h.r.st === 'unknown' : String(h.r.cls) === st.cls);
+      const dcOK = (h) => !st.dcls || h.r.dcName === st.dcls;
       const targetOK = (h) => st.target === 'all' || h.r.targets.includes(ti);
       // One pass counts every tab and chip.
       const perTarget = new Array(X.raw.targets.length).fill(0);
       const perKind = {};
       let inAll = 0;
       for (const h of base) {
-        if (!classOK(h)) continue;
+        if (!classOK(h) || !dcOK(h)) continue;
         if (kindOK(h)) { inAll += 1; for (const i of new Set(h.r.targets)) perTarget[i] += 1; }
         if (targetOK(h)) perKind[h.r.kind] = (perKind[h.r.kind] || 0) + 1;
       }
@@ -783,7 +1064,7 @@
         $('.count', c).textContent = fmt(n);
         c.disabled = !n && !st.kinds.has(c.dataset.kind);
       });
-      const hits = inTarget.filter((h) => kindOK(h) && classOK(h));
+      const hits = inTarget.filter((h) => kindOK(h) && classOK(h) && dcOK(h));
       const shown = topHits(hits, st.sort, st.q, st.shown);
       put(list, hits.length ? shown.map((h) => cardHTML(h.r, toks)).join('') : emptyHTML(st.q, X.res, 'li', true));
       select(st.q && hits.length ? 0 : -1);
@@ -815,7 +1096,7 @@
     const keep = () => { flushURL(); if (st.q && $('.card', list)) remember(st.q); };
     input.addEventListener('blur', flushURL);
     input.addEventListener('focus', () => { if (pristine() && recent().length) render(); });
-    const clearSearch = () => { input.value = ''; st.q = ''; st.shown = 10; render(); };
+    const clearSearch = () => { input.value = ''; st.q = ''; st.dcls = ''; st.shown = 10; render(); };
     // The first character brings the search box up under the header, so the results fill the screen.
     const raiseSearch = () => {
       const bar = $('.site-header');
@@ -853,7 +1134,7 @@
     });
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        if (input.value) { e.preventDefault(); clearSearch(); } else input.blur();
+        if (input.value) { e.preventDefault(); clearSearch(); } else if (st.dcls) { e.preventDefault(); st.dcls = ''; render(); } else input.blur();
       } else if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && selected >= 0) {
         e.preventDefault();
         select(Math.max(0, Math.min($$('.card', list).length - 1, selected + (e.key === 'ArrowDown' ? 1 : -1))), true);
@@ -871,11 +1152,16 @@
     sort.addEventListener('change', () => { st.sort = sort.value; render(); });
     kindSel.addEventListener('change', () => { st.kinds = new Set(kindSel.value ? [kindSel.value] : []); st.shown = 10; render(); });
     classSel.addEventListener('change', () => { st.cls = classSel.value; st.shown = 10; render(); });
-    if (info) {
-      const setInfo = (open) => info.setAttribute('aria-expanded', String(open));
-      info.addEventListener('click', () => setInfo(info.getAttribute('aria-expanded') !== 'true'));
-      document.addEventListener('click', (e) => { if (!e.target.closest('.info-wrap')) setInfo(false); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setInfo(false); });
+    if (infos.length) {
+      infos.forEach((btn) => btn.addEventListener('click', () => {
+        btn.setAttribute('aria-expanded', String(btn.getAttribute('aria-expanded') !== 'true'));
+      }));
+      document.addEventListener('click', (e) => {
+        $$('.info-btn', drawer).forEach((btn) => { if (!e.target.closest('.info-wrap')) btn.setAttribute('aria-expanded', 'false'); });
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') $$('.info-btn', drawer).forEach((btn) => btn.setAttribute('aria-expanded', 'false'));
+      });
     }
     more.addEventListener('click', () => { st.shown += 10; render(); });
     // Always run once: the pristine All view has to show the overview in place of the rows.
