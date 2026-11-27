@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "sky-recomp": {
+    "name": "Sky Recomp：《塞尔达传说：御空之剑 HD》的静态重编译",
+    "requirements": [
+      "需要未压缩的《塞尔达传说 天空之剑 HD》v1.0.0 游戏文件。大约 15 GB 空闲空间。Windows 需要 AVX2 和 FMA，macOS 可以是 Apple Silicon。",
+      "许可证：Sky Recomp 原创代码为 MIT。来自 LAS Recomp 的部分保留 LICENSE-LASRecomp。发行版中的 FFmpeg 为 LGPL 2.1 或更高版本。"
+    ]
   }
 }

@@ -2,15 +2,15 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-10T03:26:21+00:00",
-  "entry_count": 5191,
+  "generated_at": "2026-11-22T22:03:48+00:00",
+  "entry_count": 5192,
   "class_counts": {
    "0": 15,
    "1": 1126,
    "2": 3844,
    "3": 186
   },
-  "unknown_count": 20,
+  "unknown_count": 21,
   "c0_review_count": 15,
   "c0_review_file": "data/evidence-class-zero-reviews.json",
   "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. The automatic rubric caps at Class 1. Class 0 requires a manual review of scope, version and primary evidence in data/evidence-class-zero-reviews.json. Unavailable or unreadable sources are marked unknown, not as notes. Each entry keeps its own checked_at; Class 0 reviews may pin a later README commit than the signal observation.",
@@ -145721,6 +145721,33 @@
    "checked_at": "2026-11-10T03:14:52+00:00",
    "evidence_status": "observed",
    "scope": "notes",
+   "runtime_status": "not-run",
+   "c0_candidate": false
+  },
+  {
+   "id": "sky-recomp",
+   "url": "https://github.com/Apolinario-coder/SkyRecomp",
+   "evidence_class": null,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": false,
+    "docs_bytes": 0,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "download_links": [],
+    "archived": false,
+    "unavailable": true
+   },
+   "reason": "source unavailable or unreadable; not classified",
+   "checked_at": "2026-11-22T22:03:48+00:00",
+   "evidence_status": "unknown",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   }
