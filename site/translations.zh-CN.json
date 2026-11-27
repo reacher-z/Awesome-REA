@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "flameox": {
+    "name": "Flameox",
+    "requirements": [
+      "npx 安装命令需要 Node，命令行需要 uv。开发需要 Python 3.12 或更高版本。",
+      "许可证：MIT。"
+    ]
   }
 }
