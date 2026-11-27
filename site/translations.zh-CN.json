@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "metalgear-msx2": {
+    "name": "Metal Gear MSX2 disassembly：1987 年 MSX2 游戏的注释反汇编",
+    "requirements": [
+      "需要 Sjasm 0.39 或兼容的汇编器。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
