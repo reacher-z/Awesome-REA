@@ -386,6 +386,7 @@
 - [**Pokémon Stadium 2：任天堂 64 一致性反编译**](https://github.com/pret/pokestadiumgs) - 这是任天堂 64《宝可梦竞技场 2》美版和日版的进行中反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokestadiumgs-case/)</sub>
 - [**Pokémon Stadium：任天堂 64 游戏的匹配反编译**](https://github.com/pret/pokestadium) - 这是美版《宝可梦竞技场》的进行中反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokestadium/)</sub>
 - [**Pokémon Sword and Shield：Pawn 脚本的匹配反编译**](https://github.com/lincoln-lm/swsh-pawn-decomp) - 该项目从《宝可梦 剑／盾》的游戏文件重建 Pawn AMX 脚本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/swsh-pawn-scripts-case/)</sub>
+- [**Pokémon TCG disassembly：Game Boy Color 卡牌游戏的字节精确重建**](https://github.com/pret/poketcg) - 该项目反汇编《宝可梦集换式卡牌游戏》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/poketcg/)</sub>
 - [**Pokémon XD: Gale of Darkness：GameCube 字节匹配反编译**](https://github.com/DonovanMontoya/pokemon-xd-decomp) - 项目将 GameCube 游戏《Pokémon XD: Gale of Darkness》重建为 C/C++ 源码，目标是生成与零售版逐字节一致的程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-xd-gale-of-darkness-decomp-case/)</sub>
 - [**Pokémon XD：GameCube 一致性反编译**](https://github.com/TeamOrre/xd-decomp) - 该仓库是 GameCube 游戏 Pokémon XD: Gale of Darkness 的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xd-decomp/)</sub>
 - [**Psychonauts：逐字节匹配 Lua 脚本与 PC 引擎函数**](https://github.com/DrDecki/psychonauts-decomp) - Psychonauts 项目将 PC 版游戏修改过的 Lua 4.0 脚本及部分 32 位 x86 引擎反编译为源码，并逐函数比较重新编译的字节。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/psychonauts-decomp-case/)</sub>
@@ -630,5 +631,4 @@
 - [**Boku Doraemon：Dreamcast 可执行文件与模型结构重建**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon 解析日版 Dreamcast 游戏的 1ST\_READ.BIN，从用户光盘生成匹配的汇编基线，并在 SH-4 解释器中比较候选 C 函数的调用、内存写入与结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boku-doraemon-decomp-case/)</sub>
 - [**Bomberman 64: The Second Attack!：部分 N64 反编译**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa 正在反编译日版和美版 N64 游戏 Bomberman 64: The Second Attack!。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bm64tsa-case/)</sub>
 - [**Boom Street：进行中的 Wii 游戏反编译**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street 是进行中的 Wii 游戏反编译项目，目标为欧版 ST7P01 Rev 0。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boom-street-decomp-case/)</sub>
-- [**Bounce Tales：反编译 J2ME 游戏**](https://github.com/HelloOO7/BounceTales) - 该仓库是 Rovio 的 Bounce Tales（2008）的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bounce-tales-decomp/)</sub>
 <!-- END GENERATED CASES -->
