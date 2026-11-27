@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "skdisasm": {
+    "name": "Sonic 3 and Sonic & Knuckles disassembly：字节精确的 ROM 重建",
+    "requirements": [
+      "可用 Windows 批处理，跨平台脚本需要 Lua 5.3。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
