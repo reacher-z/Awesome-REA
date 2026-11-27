@@ -1,0 +1,361 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-45917535741-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-27T00:53:22Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 429,
+    "selected_count": 5,
+    "selected_ids": [
+      "scan-1450658459",
+      "scan-1450627088",
+      "scan-1450633828",
+      "scan-1450646597",
+      "scan-1450633786"
+    ],
+    "record_sha256": {
+      "scan-1450658459": "468744ffc5ad19ee0bed6d5894eb6079463fbb09e82e9f568cf6735f540a111c",
+      "scan-1450627088": "4a13a4295ce5a5cc3dbb055526ba16ee8b3e437c6aaa8a872802fcea8a463340",
+      "scan-1450633828": "499602f294996e93a81bd585b4d211f49cecd7b618c24ff8d59dc9700a33ae26",
+      "scan-1450646597": "a8866d0099d8230b8e2bef4c6a21ebba035ac16456e890faff27146b820d3861",
+      "scan-1450633786": "b9486fec0ef22642a826b3a4d4163b1032cb790e7fdbe6a869bd911c155981f3"
+    },
+    "skipped_counts": {
+      "already-listed": 12916,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 45917535741,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "aa38c8bbecb34c8230079360e5254ae6026720dc",
+    "artifact_id": 15163074841,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:2f0975c0893e4615d91cce4978bc127e1be1b750ecf2214034ba54668c379b66",
+    "checkpoint_sha256": "268970e12b4d1fc85aeff2a0e210667ecd6f441d6e36bb0f07ddcbcfd41bffae",
+    "receipt_sha256": "c25bf49cf2ccf193c5445377c496329aecde7f42d9eb3b2cca563e73dbe2d9a5",
+    "scan_started_at": "2026-11-27T00:34:54.079770+00:00",
+    "scan_completed_at": "2026-11-27T00:52:13.011139+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 136508,
+      "failed": 4907,
+      "attempted_readme_scans": 141415,
+      "unique_repos": 141481,
+      "unattempted_candidates": 66
+    },
+    "integrity_counts": {
+      "qualified": 133491,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1450658459",
+      "name": "byteguts/rea-key-demo",
+      "full_name": "byteguts/rea-key-demo",
+      "url": "https://github.com/byteguts/rea-key-demo",
+      "description_en": "Companion repo for the Byteguts video: an AI agent rebuilds a request signer from a stripped binary, and a redacting MCP proxy keeps the secrets out.",
+      "description_zh": "Companion repo for the Byteguts video: an AI agent rebuilds a request signer from a stripped binary, and a redacting MCP proxy keeps the secrets out.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "claude-code",
+        "ghidra",
+        "mcp",
+        "reverse-engineering-",
+        "reverse-engineering-tutorial"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-10T14:36:01Z",
+      "pushed_at": "2026-11-08T22:07:07Z",
+      "metadata_observed_at": "2026-11-27T00:50:55.712377Z",
+      "observed_at": "2026-11-27T00:50:59.494305Z",
+      "readme_url": "https://github.com/byteguts/rea-key-demo/blob/c2631a2cb25d2601f25dd0b0e35a0b518402751a/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "a9d9557ab4f63b26fdd5a186de304046ee708421",
+      "readme_content_git_sha": "a9d9557ab4f63b26fdd5a186de304046ee708421",
+      "readme_sha256": "2949a4b2c8772631d7e5f78e56ea6a6d12dc7631f7bba04d9a9dd6a2a74bb7e8",
+      "readme_bytes": 18690,
+      "readme_lines": 175,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "requirements"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "binary"
+      ],
+      "category": "native-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:ghidra is:public fork:false archived:false created:2026-11-08T20:13:11Z..2026-11-08T21:12:19Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "c2631a2cb25d2601f25dd0b0e35a0b518402751a"
+    },
+    {
+      "id": "scan-1450627088",
+      "name": "smatkovi/n950-flasher-compat",
+      "full_name": "smatkovi/n950-flasher-compat",
+      "url": "https://github.com/smatkovi/n950-flasher-compat",
+      "description_en": "Source-only compatibility patches for Nokia N950 Harmattan flashing and DeviceLock recovery",
+      "description_zh": "Source-only compatibility patches for Nokia N950 Harmattan flashing and DeviceLock recovery",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "flasher",
+        "harmattan",
+        "maemo",
+        "nokia-n950",
+        "reverse-engineering",
+        "ubiboot"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-09T11:15:42Z",
+      "pushed_at": "2026-11-09T11:15:40Z",
+      "metadata_observed_at": "2026-11-27T00:50:55.712377Z",
+      "observed_at": "2026-11-27T00:50:59.493508Z",
+      "readme_url": "https://github.com/smatkovi/n950-flasher-compat/blob/3700882e2db40d59094dc03dd7052f0a3e3d6649/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "723c108e17487e346b9dffe8536d4ea6501949fa",
+      "readme_content_git_sha": "723c108e17487e346b9dffe8536d4ea6501949fa",
+      "readme_sha256": "19d03bd992030c0a14340e23289221b7a83ee248b10bec0cbc5255217968b9f2",
+      "readme_bytes": 5950,
+      "readme_lines": 166,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [],
+      "category": "reverse-engineering",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-08T20:13:11Z..2026-11-08T21:12:19Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "3700882e2db40d59094dc03dd7052f0a3e3d6649"
+    },
+    {
+      "id": "scan-1450633828",
+      "name": "heyethan/macattacc",
+      "full_name": "heyethan/macattacc",
+      "url": "https://github.com/heyethan/macattacc",
+      "description_en": "macOS-native Swift toolkit to protect apps you own: build-hardening presets, runtime tamper/debug/instrumentation detection, and a drop-in CLI for agents. MIT.",
+      "description_zh": "macOS-native Swift toolkit to protect apps you own: build-hardening presets, runtime tamper/debug/instrumentation detection, and a drop-in CLI for agents. MIT.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "anti-debug",
+        "anti-tamper",
+        "cli",
+        "code-protection",
+        "frida-detection",
+        "hardening",
+        "macos",
+        "rasp",
+        "reverse-engineering",
+        "security",
+        "swift",
+        "swift-package"
+      ],
+      "stars": 0,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-09T13:16:06Z",
+      "pushed_at": "2026-11-09T13:16:03Z",
+      "metadata_observed_at": "2026-11-27T00:50:55.712377Z",
+      "observed_at": "2026-11-27T00:50:59.492853Z",
+      "readme_url": "https://github.com/heyethan/macattacc/blob/d879fd1c03293ea9d32654ac2c6132ae018efaa9/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "7e647b699ca31634408e2dc14b863bf73b16c796",
+      "readme_content_git_sha": "7e647b699ca31634408e2dc14b863bf73b16c796",
+      "readme_sha256": "596efa78042d76b31d90138be18ae5defca54c5af9c297de38d5d0cc58b22a47",
+      "readme_bytes": 7845,
+      "readme_lines": 167,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "requirements"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app",
+        "binary"
+      ],
+      "category": "dynamic-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-08T20:13:11Z..2026-11-08T21:12:19Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "d879fd1c03293ea9d32654ac2c6132ae018efaa9"
+    },
+    {
+      "id": "scan-1450646597",
+      "name": "cotizcesar/galaxycraft",
+      "full_name": "cotizcesar/galaxycraft",
+      "url": "https://github.com/cotizcesar/galaxycraft",
+      "description_en": "GalaxyCraft: a Rust reimplementation of StarCraft 1.23 gameplay and menus. Reads the player's own installation; contains no game assets.",
+      "description_zh": "GalaxyCraft: a Rust reimplementation of StarCraft 1.23 gameplay and menus. Reads the player's own installation; contains no game assets.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "game-engine",
+        "reimplementation",
+        "reverse-engineering",
+        "rust",
+        "starcraft"
+      ],
+      "stars": 1,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-12T15:51:16Z",
+      "pushed_at": "2026-11-15T23:08:01Z",
+      "metadata_observed_at": "2026-11-27T00:50:55.712377Z",
+      "observed_at": "2026-11-27T00:50:59.491971Z",
+      "readme_url": "https://github.com/cotizcesar/galaxycraft/blob/95cfdae578ee8d882a59b0d57af508ba87090150/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "66e2bb2fe027b8d8f6596cf2446e1fd830e6e0e2",
+      "readme_content_git_sha": "66e2bb2fe027b8d8f6596cf2446e1fd830e6e0e2",
+      "readme_sha256": "3a18f33ba89bd2f27ee51c7d1e8fdf059534ef238c172b9867a98321f21971f4",
+      "readme_bytes": 9768,
+      "readme_lines": 230,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "game"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-08T20:13:11Z..2026-11-08T21:12:19Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "95cfdae578ee8d882a59b0d57af508ba87090150"
+    },
+    {
+      "id": "scan-1450633786",
+      "name": "crime-trix/deadlock-anticheat-research",
+      "full_name": "crime-trix/deadlock-anticheat-research",
+      "url": "https://github.com/crime-trix/deadlock-anticheat-research",
+      "description_en": "Independent technical research into Deadlock's client architecture, Steamworks integration, Windows trust verification, and differences from Counter-Strike 2.",
+      "description_zh": "Independent technical research into Deadlock's client architecture, Steamworks integration, Windows trust verification, and differences from Counter-Strike 2.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "deadlock",
+        "game-security",
+        "reverse-engineering",
+        "security-research",
+        "source2",
+        "static-analysis",
+        "steamworks",
+        "windows"
+      ],
+      "stars": 2,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-09T14:58:24Z",
+      "pushed_at": "2026-11-13T21:01:50Z",
+      "metadata_observed_at": "2026-11-27T00:50:55.712377Z",
+      "observed_at": "2026-11-27T00:50:59.491030Z",
+      "readme_url": "https://github.com/crime-trix/deadlock-anticheat-research/blob/0c6288afc1636e38f830643ea198ff30cdbba36b/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "a059773c5482d747490004230dfb0a5b58fda521",
+      "readme_content_git_sha": "a059773c5482d747490004230dfb0a5b58fda521",
+      "readme_sha256": "a2a306dc8c2fa3d723c20f283800104b771619d93943483a56d5479821b9ca2a",
+      "readme_bytes": 5085,
+      "readme_lines": 69,
+      "readme_heading_count": 6,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "game"
+      ],
+      "category": "game-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:reverse-engineering is:public fork:false archived:false created:2026-11-08T20:13:11Z..2026-11-08T21:12:19Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "0c6288afc1636e38f830643ea198ff30cdbba36b"
+    }
+  ]
+}
