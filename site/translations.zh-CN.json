@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "tomb5": {
+    "name": "TOMB5：《古墓丽影：历代记》的反编译",
+    "requirements": [
+      "需要最终 NTSC 版 PlayStation 光盘上的文件，复制到 MAIN.EXE 旁边。按 CONTRIBUTING.md 构建。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
