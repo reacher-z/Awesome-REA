@@ -528,6 +528,7 @@
 - [**Pinball Fantasies Reassembled：重建 DOS 游戏引擎**](https://github.com/wanda-phi/pfr) - Pinball Fantasies Reassembled 用 Rust 和原版游戏文件重建 1993 年的 DOS 游戏引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pinball-fantasies-reassembled-case/)</sub>
 - [**Pizza Legacy：重建 Pizza Tycoon**](https://codeberg.org/cowomaly/pizzalegacy) - Pizza Legacy 以 C++20 引擎重建 1994 年 DOS 游戏 Pizza Tycoon，也就是德语发行的 Pizza Connection，并读取原版资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pizza-legacy-case/)</sub>
 - [**pokerecomp：重实现 Game Boy 宝可梦游戏**](https://github.com/Decryptu/pokerecomp) - pokerecomp 用 GDScript 在 Godot 4 里重实现 Game Boy 的宝可梦游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokerecomp/)</sub>
+- [**PokeSwift：用 Swift 重构《宝可梦 红》的 macOS 原生应用**](https://github.com/Dimillian/PokeSwift) - PokeSwift 是用 Swift 和 SwiftUI 重新解释《宝可梦 红》的原生 macOS 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokeswift/)</sub>
 - [**Portémon Nitro：HeartGold 与 SoulSilver 游戏引擎移植**](https://github.com/portemon-nitro/portemon) - Portémon Nitro 使用 LÖVE 重建 Pokémon HeartGold 与 SoulSilver 的游戏引擎，面向电脑和移动设备。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/portemon-nitro-hgss-case/)</sub>
 - [**Powerslave EX：在 Kex Engine 上重建 PlayStation 版 Powerslave**](https://github.com/svkaiser/PowerslaveEX) - Powerslave EX 在 Kex Engine 3.0 上重建 PlayStation 版《Powerslave》，结合逆向还原的游戏逻辑与重新编写的碰撞、AI 系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powerslave-ex-case/)</sub>
 - [**Powerslide Remake：基于原版游戏数据重建街机赛车游戏**](https://github.com/dm999/powerslideremake) - Powerslide Remake 使用 Ogre 构建跨平台 C++ 程序，重建 Powerslide 赛车游戏的主要玩法。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powerslide-remake-case/)</sub>
@@ -643,5 +644,4 @@
 - [**Untangle：基于 REA 与 Ghidra 证据的浏览器重建**](https://github.com/az9713/untangle-rebuild) - 作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/untangle-rea-evidence-rebuild-case/)</sub>
 - [**vakfu：重建 Wakfu 地图渲染**](https://github.com/jac3km4/vakfu) - vakfu 用 Rust 重建 Wakfu 的等距视角地图渲染，并从用户自己的游戏副本读取资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vakfu-case/)</sub>
 - [**Vange-rs：以 Rust 重做《Vangers》**](https://github.com/kvark/vange-rs) - vange-rs 使用 Rust 和 wgpu 重做《Vangers》，目标是借助原版游戏资源重现其世界、载具和单人游戏行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vange-rs-vangers-case/)</sub>
-- [**Vault Engine：以 Rust 重建 Fallout 与 Fallout 2**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine 以 Rust 重建 Fallout 和 Fallout 2，读取用户零售版的 DAT 归档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vault-engine-case/)</sub>
 <!-- END GENERATED CASES -->

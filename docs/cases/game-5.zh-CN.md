@@ -6,10 +6,11 @@
 
 [English](game-5.md)
 
-**350 个案例**
+**351 个案例**
 
 ## 引擎重实现
 
+- [**Vault Engine：以 Rust 重建 Fallout 与 Fallout 2**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine 以 Rust 重建 Fallout 和 Fallout 2，读取用户零售版的 DAT 归档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vault-engine-case/)</sub>
 - [**Vault13：Rust 重建 Fallout 2 引擎**](https://github.com/pingw33n/vault13) - Vault13 用 Rust 重建《Fallout 2》引擎，并从本地游戏目录读取数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vault13-fallout-2-case/)</sub>
 - [**VCMI：重建 Heroes of Might &amp; Magic III 游戏引擎**](https://github.com/vcmi/vcmi) - VCMI 使用 C++ 重建 Heroes of Might &amp; Magic III 引擎，以开源运行环境承载原版游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vcmi-case/)</sub>
 - [**VERA20K：用 Rust 重建《红色警戒 2：尤里的复仇》**](https://github.com/YuriPlanet/vera20k) - VERA20K 用 Rust 重建《红色警戒 2：尤里的复仇》引擎，并读取用户自己的原版游戏文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vera20k-case/)</sub>
