@@ -6,7 +6,7 @@
 
 [简体中文](game-1.zh-CN.md)
 
-**617 case studies**
+**616 case studies**
 
 <a id="game-matching-decompilation"></a>
 ## Matching decompilations and disassemblies
@@ -183,6 +183,7 @@
 - [**Fire Emblem: Shadow Dragon: a Nintendo DS decompilation**](https://github.com/Eebit/fe11-us) - Fire Emblem: Shadow Dragon reconstructs code for the US Nintendo DS game using ds-decomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/fire-emblem-shadow-dragon-decomp-case/)</sub>
 - [**fireemblem7u: a matching decompilation of the GBA Fire Emblem release**](https://github.com/7ucina/fireemblem7u) - fireemblem7u reconstructs the USA/Australia GBA release of Fire Emblem as C source that rebuilds a SHA-1-checked ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/fireemblem7u-decomp-case/)</sub>
 - [**Flicky: byte-identical Mega Drive source reconstruction**](https://github.com/RetrolariumLab/flicky_src) - Flicky reconstructs the Sega Mega Drive game's 68000 code and Z80 sound driver as annotated assembly. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/flicky-src-case/)</sub>
+- [**Forbidden Memories recompiled: a native build of the Yu-Gi-Oh! PlayStation game**](https://github.com/Unchiga/Yu-Gi-Oh-Forbidden-Memories-Recompiled) - This project rebuilds the USA PlayStation game Yu-Gi-Oh! <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/yfm-recompiled/)</sub>
 - [**Fossil Fighters Champions: matching the Nintendo DS battle overlay**](https://github.com/arcnid/ffc-decomp) - Reconstructs Fossil Fighters Champions' Nintendo DS battle overlay as C compiled with the original mwccarm toolchain, retaining assembly for unmatched functions. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/fossil-fighters-champions-decomp-case/)</sub>
 - [**Four Swords Adventures: a byte-matching GameCube decompilation**](https://github.com/sh1ftmaker/fsa) - fsa reconstructs The Legend of Zelda: Four Swords Adventures for GameCube as byte-matched source. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/four-swords-adventures-decomp-case/)</sub>
 - [**Freelancer: an in-progress Patch 1.1 decompilation**](https://github.com/HaydnTrigg/Freelancer) - Freelancer reconstructs C++ source for the game's Patch 1.1 executables and DLLs as a work-in-progress decompilation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/freelancer-decomp-case/)</sub>
@@ -629,6 +630,4 @@
 - [**Blood Omen 2: functional decompilation toward a Switch port**](https://github.com/felipesuarez-dev/BloodOmen2NX) - BloodOmen2NX functionally decompiles the Spanish Windows PC release of Blood Omen 2 into C++17 for a planned Nintendo Switch port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bloodomen2nx-case/)</sub>
 - [**Boku Doraemon: Dreamcast executable and model reconstruction**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon maps the Japanese Dreamcast game's 1ST\_READ.BIN, generates a matching assembly baseline from an owner's disc, and tests C function candidates for equivalent calls, memory writes and results in an SH-4 interpreter. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/boku-doraemon-decomp-case/)</sub>
 - [**Bomberman 64: The Second Attack!: partial N64 decompilation**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa is an in-progress decompilation of the Japanese and US Nintendo 64 releases of Bomberman 64: The Second Attack!. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bm64tsa-case/)</sub>
-- [**Boom Street: a Wii decompilation in progress**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street is a work-in-progress Wii game decompilation targeting the ST7P01 Rev 0 European release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/boom-street-decomp-case/)</sub>
-- [**Bounce Tales: decompiling the J2ME game**](https://github.com/HelloOO7/BounceTales) - This repository is a decompilation of Rovio's Bounce Tales (2008), a J2ME game that shipped on Nokia Series 40 phones. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bounce-tales-decomp/)</sub>
 <!-- END GENERATED CASES -->
