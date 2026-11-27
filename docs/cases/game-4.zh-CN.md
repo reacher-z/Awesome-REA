@@ -533,6 +533,7 @@
 - [**Powerslide Remake：基于原版游戏数据重建街机赛车游戏**](https://github.com/dm999/powerslideremake) - Powerslide Remake 使用 Ogre 构建跨平台 C++ 程序，重建 Powerslide 赛车游戏的主要玩法。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powerslide-remake-case/)</sub>
 - [**ppengine：基于街机 ROM 分析重制《Pole Position》**](https://github.com/jonathanopalise/ppengine) - ppengine 利用从街机 ROM 逆向得到的逻辑，将 Atari《Pole Position》重建为 3D 游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ppengine-case/)</sub>
 - [**Primal Rage：DOS 引擎重建与 SDL3 移植**](https://github.com/felipe-dos-santos81/primal-rage-re) - Primal Rage RE 以 C 语言按 PRAGE.EXE 的原始内存布局重建 DOS 游戏引擎，并用 SDL3 读取用户的游戏数据运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/primal-rage-reconstruction-case/)</sub>
+- [**PrinceJS：1990 年《波斯王子》的 HTML5 重新实现**](https://github.com/ultrabolido/PrinceJS) - PrinceJS 是 1990 年《波斯王子》的 HTML5 和 JavaScript 重实现，使用 MS-DOS 版的资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/princejs/)</sub>
 - [**Project ANISE：AI5V 与 SILV 脚本引擎解释器**](https://github.com/tomyun/anise) - Project ANISE 是面向采用 AI5V 或 SILV 脚本引擎的日本冒险游戏的 C++ 解释器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-anise-ai5v-case/)</sub>
 - [**Project Carrot：重建 Jazz Jackrabbit 2 风格引擎**](https://github.com/soulweaver91/project-carrot) - Project Carrot 使用 C++ 和用户从 Jazz Jackrabbit 2 转换出的资源开发同类游戏引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-carrot-case/)</sub>
 - [**Project Dollhouse：用 C# 重建《模拟人生 Online》**](https://github.com/Afr0Games/Project-Dollhouse) - Project Dollhouse 用 C# 重建《模拟人生 Online》，包含依赖原版游戏安装文件的客户端和服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-dollhouse-case/)</sub>
@@ -643,5 +644,4 @@
 - [**Untangle：基于 REA 与 Ghidra 证据的浏览器重建**](https://github.com/az9713/untangle-rebuild) - 作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/untangle-rea-evidence-rebuild-case/)</sub>
 - [**vakfu：重建 Wakfu 地图渲染**](https://github.com/jac3km4/vakfu) - vakfu 用 Rust 重建 Wakfu 的等距视角地图渲染，并从用户自己的游戏副本读取资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vakfu-case/)</sub>
 - [**Vange-rs：以 Rust 重做《Vangers》**](https://github.com/kvark/vange-rs) - vange-rs 使用 Rust 和 wgpu 重做《Vangers》，目标是借助原版游戏资源重现其世界、载具和单人游戏行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vange-rs-vangers-case/)</sub>
-- [**Vault Engine：以 Rust 重建 Fallout 与 Fallout 2**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine 以 Rust 重建 Fallout 和 Fallout 2，读取用户零售版的 DAT 归档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vault-engine-case/)</sub>
 <!-- END GENERATED CASES -->
