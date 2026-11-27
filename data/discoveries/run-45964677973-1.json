@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-45964677973-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-27T08:39:05Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 425,
+    "selected_count": 1,
+    "selected_ids": [
+      "scan-947291365"
+    ],
+    "record_sha256": {
+      "scan-947291365": "9e0d29f55bedb4f06b85ec4c68b035305e924e75e083d6563df70c18eb082d53"
+    },
+    "skipped_counts": {
+      "already-listed": 12921,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 45964677973,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "4beebb16f78df2b0170c9d5429b99f307d7e0ea8",
+    "artifact_id": 15183486927,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:7e0d59f26ba94afd5b62ce4e552cb07211f7eab620653c1eaf83f4673ef1f7e1",
+    "checkpoint_sha256": "1176f8301cc6a298aa42a5f2e5148599a44d4785b67ab2bf133e84ce3f93cec2",
+    "receipt_sha256": "7562c5e618f7cab8d81e7cfd6e2506e4cc9d8246465dd6d0514755fb296a14a4",
+    "scan_started_at": "2026-11-27T08:18:56.936671+00:00",
+    "scan_completed_at": "2026-11-27T08:37:59.434898+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 137216,
+      "failed": 4909,
+      "attempted_readme_scans": 142125,
+      "unique_repos": 142192,
+      "unattempted_candidates": 67
+    },
+    "integrity_counts": {
+      "qualified": 134199,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-947291365",
+      "name": "BEAJousama/override",
+      "full_name": "BEAJousama/override",
+      "url": "https://github.com/BEAJousama/override",
+      "description_en": "Binary exploitation & reverse engineering: format strings, shellcode, ROP and more, solved and explained level by level",
+      "description_zh": "Binary exploitation & reverse engineering: format strings, shellcode, ROP and more, solved and explained level by level",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "42school",
+        "binary-exploitation",
+        "ctf",
+        "reverse-engineering",
+        "rop",
+        "security",
+        "x86"
+      ],
+      "stars": 0,
+      "license": null,
+      "archived": false,
+      "updated_at": "2026-11-23T01:54:48Z",
+      "pushed_at": "2026-04-08T13:39:05Z",
+      "metadata_observed_at": "2026-11-27T08:33:06.667656Z",
+      "observed_at": "2026-11-27T08:33:12.517770Z",
+      "readme_url": "https://github.com/BEAJousama/override/blob/3536fabaf9f192f50c08ff9d19bb99b68ddc89fe/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "787d852879ad444c04c03bd25bd5accb6e6aa61b",
+      "readme_content_git_sha": "787d852879ad444c04c03bd25bd5accb6e6aa61b",
+      "readme_sha256": "977305400d7220e42efe731aa4569241c7aa70748e25b00ecadc1726dabef68b",
+      "readme_bytes": 3497,
+      "readme_lines": 91,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "installation",
+        "requirements"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "binary"
+      ],
+      "category": "native-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "\"reverse engineering\" in:readme is:public fork:false archived:false created:2025-03-10T02:42:14Z..2025-03-20T05:48:16Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "3536fabaf9f192f50c08ff9d19bb99b68ddc89fe"
+    }
+  ]
+}
