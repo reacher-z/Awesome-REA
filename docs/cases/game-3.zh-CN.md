@@ -10,6 +10,7 @@
 
 ## 静态重编译
 
+- [**GTA IV Recompiled：Xbox 360 版游戏的静态重编译**](https://github.com/luisxl15/GTA-IV-RECOMP-XBOX-360) - GTA IV Recompiled 使用 rexglue 将 Xbox 360 版 Grand Theft Auto IV 的 PowerPC 代码预先转换为 C++，构建 Windows 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gta-iv-recompiled-case/)</sub>
 - [**GTA Stories Recompiled：自由城故事与罪恶都市故事 PC 移植**](https://github.com/batinium/gta-stories-recompiled) - 通过静态重编译把 PS2 版《GTA 自由城故事》与《罪恶都市故事》移植到 PC，两个城市合并在同一世界，并提供 mod 加载器与 Android 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gta-stories-recompiled/)</sub>
 - [**Guitar Hero II Recompiled：Xbox 360 游戏静态重编译**](https://github.com/sp00nznet/gh2) - Guitar Hero II Recompiled 借助 XenonRecomp 和 ReXGlue 将 Xbox 360 游戏可执行文件转换为原生 C++，构建使用 D3D12 图形的 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/guitar-hero-ii-xbox-recomp-case/)</sub>
 - [**吉他英雄 II：Xbox 360 版概念验证重编译**](https://github.com/YoshiCrystal9/re-gh2) - 这是用 ReXGlue SDK 重编译的 Xbox 360 版《Guitar Hero II》概念验证。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gh2-recomp/)</sub>
@@ -295,6 +296,7 @@
 - [**Rogue Squadron 3D：通过静态重编译实现 PC 原生移植**](https://github.com/sp00nznet/rogue-squadron-recomp) - Rogue Squadron 3D 使用 pcrecomp 将 Steam 版 Star Wars: Rogue Squadron 3D 的 x86 机器码静态转换为 C，并在 32 位 Windows 宿主程序中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rogue-squadron-3d-recomp-case/)</sub>
 - [**Rondorecomp： 《恶魔城 X：血之轮回》的部分静态重编译**](https://github.com/Thug-Dracula/rondorecomp) - Rondorecomp 在构建时将《恶魔城 X：血之轮回》PC Engine CD 版的 HuC6280 机器码翻译为 C，并以 C 模拟 CPU、视频、光驱、输入及 System Card 服务。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rondorecomp-case/)</sub>
 - [**RROP：Rings of Power 静态重编译移植**](https://github.com/kruzeman/RROP) - RROP 将 Sega Genesis 版 Rings of Power 的 68000 与 Z80 程序静态转换为 C，构建 Linux 和 Windows 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rrop-rings-of-power-case/)</sub>
+- [**RS Re-ARMed：面向 Apple 芯片的 Rocksmith 2014 重编译**](https://github.com/bbelgg/rs-rearmed) - 面向 Apple 芯片 Mac 的 Rocksmith 2014 原生 arm64 移植：构建时把自备游戏副本静态重编译为 C，并用小型原生库替代其与 Intel Mac、Windows、Steam 和在线服务的依赖。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rs-rearmed-case/)</sub>
 - [**RubySapphireRecomp：静态重编译《宝可梦红宝石·蓝宝石》**](https://github.com/mstan/RubySapphireRecomp) - RubySapphireRecomp 把美版第 1 修订的《宝可梦 红宝石》和《宝可梦 蓝宝石》ROM 静态翻译成原生 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ruby-sapphire-recomp/)</sub>
 - [**Rumble Roses XX：实验性 Xbox 360 静态重编译**](https://github.com/Revan67/RumbleRosesXX-Recomp) - Rumble Roses XX Recomp 是实验性 Windows 移植项目，使用 XenonRecomp 将 Xbox 360 游戏的 PowerPC 程序转为 C++，并提供内存、内核、文件系统、输入和图形接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rumble-roses-xx-recomp-case/)</sub>
 - [**RumbleRecomp：Poke Rumble 的 Windows 静态重编译移植版**](https://github.com/ToShredsYouSay/RumbleRecomp) - RumbleRecomp 从用户自备的美版《Poke Rumble》WiiWare WAD 构建 Windows 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rumblerecomp-case/)</sub>
@@ -617,6 +619,4 @@
 - [**Daytona USA Web：街机重编译成果的 WebAssembly 移植**](https://github.com/johannruiz/Daytona-USA-Web) - 基于 daytona-arcade-recomp 静态重编译成果的 Daytona USA 浏览器移植，通过 WebAssembly 与 WebGPU 运行，并以还原街机体验为目标设计界面。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/daytona-usa-web/)</sub>
 - [**Death Road to Canada Lite：Android 游戏的 PS Vita 移植**](https://github.com/Rinnegatamante/Death-Road-to-Canada-Lite) - Death Road to Canada Lite 通过原生加载器在 PS Vita 上运行 Android 版游戏，解析导入函数并在内存中修补 ARMv7 可执行文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/death-road-to-canada-lite-case/)</sub>
 - [**Destruction Derby 2：PlayStation 游戏的可移植 C 移植版**](https://github.com/wardboumans/dd2-psx-decomp) - 项目将美版 PlayStation《Destruction Derby 2》的可执行文件及覆盖模块改写为基于 SDL3 的可移植 C11 代码，并重实现游戏调用的图形、声音、光盘、手柄和记忆卡接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/destruction-derby-2-port-case/)</sub>
-- [**devilution-nx：重建版 Diablo 的 Nintendo Switch 移植**](https://github.com/lantus/devilution-nx) - devilution-nx 将 Diablo 的 DevilutionX 重建版本移植到 Nintendo Switch，加入 Joy-Con 和触摸操作，并提供 Switch 自制程序的构建步骤。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/devilution-nx-case/)</sub>
-- [**DevilutionX：移植重建后的 Diablo 引擎**](https://github.com/diasurgical/DevilutionX) - 基于 Devilution 重建成果提供现代平台上的 Diablo 与 Hellfire 移植，加入平台支持、错误修复及可选便利功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/devilutionx-case/)</sub>
 <!-- END GENERATED CASES -->

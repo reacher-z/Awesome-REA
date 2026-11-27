@@ -1559,3 +1559,24 @@ Two tool records from the AI-assisted RE and CAN sections: cc-reverse and the CA
 ## Validation notes
 
 Both records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; both classify as Class 2. The mining moved to the AI-assisted RE and CAN sections after game and hardware pools thinned.
+
+## Batch 63 — 2026-11-27
+
+Two newly scanned reconstructions: RS Re-ARMed and Age of Decomp.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| rs-rearmed-case | reconstruction-cases | [bbelgg/rs-rearmed](https://github.com/bbelgg/rs-rearmed/blob/cf23766c9023b15954bfaefbe67db84104be6912/README.md) | 8cfc4d5aa46ce3c029d4c05e4a75db4aa1905f5ab5a780d2ce1d9a0731eb9786 |
+| age-of-decomp-case | reconstruction-cases | [iCosiSenpai/age-of-decomp](https://github.com/iCosiSenpai/age-of-decomp/blob/0263011d6a76da985a30e54d4cab20049db243eb/README.md) | 5ccc15533d3fbad82b207520b8d6aa8732a679f5c309f236d8a8cb470aedbaf5 |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| metrist38/fefw-recomp, TGP482/FCIP-XEXRecomp, arcanite24/lavender-shift | Already curated or covered by existing series records. |
+| ranveersoni98/Xenora | Emulation research for synthetic programs only. |
+| robongrui/derp, JNechaevsky/international-doom | Additional Doom source ports beyond the three curated ones. |
+
+## Validation notes
+
+Both records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; both are Class 1 with merged previews. The previous round skipped entirely for lack of qualified candidates; this round found two fresh entries from the newest scan batch.

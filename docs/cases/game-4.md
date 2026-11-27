@@ -6,10 +6,12 @@
 
 [简体中文](game-4.zh-CN.md)
 
-**624 case studies**
+**623 case studies**
 
 ## Ports of reconstructed source
 
+- [**devilution-nx: a Nintendo Switch port of reconstructed Diablo**](https://github.com/lantus/devilution-nx) - devilution-nx ports the DevilutionX reconstruction of Diablo to Nintendo Switch. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/devilution-nx-case/)</sub>
+- [**DevilutionX: porting Diablo’s reconstructed engine**](https://github.com/diasurgical/DevilutionX) - Builds a modern Diablo and Hellfire port on the Devilution reconstruction, with platform support, bug fixes and optional quality-of-life features. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/devilutionx-case/)</sub>
 - [**DiabloWeb: a WebAssembly browser port built on Devilution**](https://github.com/d07RiV/diabloweb) - Runs Diablo in web browsers by compiling a stripped-down fork of Devilution, the community reconstruction of the game’s original source, to WebAssembly behind a React front end. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/diabloweb-devilution-wasm-port-case/)</sub>
 - [**Diddy Kong Racing on Xbox: a UWP port of Golden Balloon**](https://github.com/jajdp/dkr-xbox) - Ports Golden Balloon's Diddy Kong Racing source port to an Xbox Series X UWP package. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dkr-xbox-case/)</sub>
 - [**Dig Dug: translating arcade routines and modeling triple-Z80 hardware**](https://github.com/Suspence00/digdug-decomp) - Dig Dug translates routines from the 1982 arcade game's Rev 2 ROMs into Rust and models its three Z80 processors and Namco I/O, video and audio hardware. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/digdug-decomp-case/)</sub>
@@ -634,7 +636,4 @@
 - [**OpenSC4: an early open-source reimplementation of SimCity 4**](https://github.com/OpenSC4-org/OpenSC4) - Reimplements SimCity 4 as a Godot project in GDScript that reads DBPF archives, region folders and city saves from the user’s own SimCity 4 installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opensc4-simcity-4-reimplementation-case/)</sub>
 - [**OpenScreamer: reconstructing Screamer and Screamer 2**](https://github.com/ItsDanik/openscreamer) - OpenScreamer reimplements the DOS games Screamer and Screamer 2 as a C/SDL2 program for Linux and Windows. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openscreamer-case/)</sub>
 - [**OpenSE4: reimplementing the Space Empires IV Deluxe engine**](https://github.com/lowlevelmetal/OpenSE4) - OpenSE4 reimplements the Space Empires IV Deluxe engine in C++23, loading art, sound and data from the player's own installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opense4-case/)</sub>
-- [**OpenSHC: reimplementation of Stronghold Crusader**](https://github.com/sourcehold/OpenSHC) - OpenSHC is an open-source reimplementation of Stronghold Crusader. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openshc/)</sub>
-- [**opensims2: reconstructing The Sims 2 engine**](https://github.com/opensims2/opensims2-public) - opensims2 reimplements The Sims 2 engine in C++ for 64-bit macOS and Windows, reading content from the user's own game installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opensims2-engine-case/)</sub>
-- [**OpenSith: reimplementing the Jedi Knight: Dark Forces II engine**](https://github.com/r1sc/OpenSith) - OpenSith reimplements the engine of Star Wars: Jedi Knight — Dark Forces II in Unity. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opensith/)</sub>
 <!-- END GENERATED CASES -->

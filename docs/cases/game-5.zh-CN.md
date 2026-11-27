@@ -6,10 +6,13 @@
 
 [English](game-5.md)
 
-**511 个案例**
+**514 个案例**
 
 ## 引擎重实现
 
+- [**OpenSHC：《要塞：十字军东征》的重实现**](https://github.com/sourcehold/OpenSHC) - OpenSHC 是《要塞：十字军东征》的开源重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openshc/)</sub>
+- [**opensims2：重建《模拟人生 2》引擎**](https://github.com/opensims2/opensims2-public) - opensims2 以 C++ 重实现《模拟人生 2》引擎，在 64 位 macOS 和 Windows 上读取用户自有游戏安装文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opensims2-engine-case/)</sub>
+- [**OpenSith：重新实现《绝地武士：黑暗力量 II》引擎**](https://github.com/r1sc/OpenSith) - OpenSith 用 Unity 重实现《星球大战：绝地武士》的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opensith/)</sub>
 - [**OpenStrike：重构 Desert Strike 与 Jungle Strike 数据和引擎行为**](https://github.com/AMDmi3/openstrike) - OpenStrike 是 Desert Strike 和 Jungle Strike 的早期 C++ 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openstrike-case/)</sub>
 - [**OpenTennis：对照 PS2 原版重建 Hot Shots Tennis**](https://github.com/FIZL0/opentennis) - OpenTennis 使用 Rust 和 Bevy 重建 2007 年 PS2 游戏 Hot Shots Tennis，面向桌面、移动设备和浏览器运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentennis-hot-shots-tennis-case/)</sub>
 - [**OpenTESArena：重建 The Elder Scrolls: Arena 的新引擎**](https://github.com/afritz1/OpenTESArena) - OpenTESArena 用新的 C++ 引擎重建 1994 年 DOS 游戏 The Elder Scrolls: Arena，游戏资源由用户另行获取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentesarena-case/)</sub>

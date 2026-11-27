@@ -46698,5 +46698,21 @@
       "它从采集到的流量生成 DBC 解码规则，而非刷写或改动 ECU。",
       "采用 MIT 许可证。"
     ]
+  },
+  "rs-rearmed-case": {
+    "name": "RS Re-ARMed：面向 Apple 芯片的 Rocksmith 2014 重编译",
+    "requirements": [
+      "需要自备 Steam macOS 版或 Learn and Play 版的游戏副本。",
+      "面向 Apple 芯片 Mac，可离线运行且不附带游戏文件。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "age-of-decomp-case": {
+    "name": "Age of Decomp：PC 上的塞尔达无双 封印战记",
+    "requirements": [
+      "需要自备 Switch 2 版游戏副本；不包含游戏文件。",
+      "面向 Windows 与 Linux，并通过 RecompLauncher 分发。",
+      "采用 GPL-3.0 许可证。"
+    ]
   }
 }

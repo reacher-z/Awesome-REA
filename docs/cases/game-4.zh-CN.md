@@ -6,10 +6,12 @@
 
 [English](game-4.md)
 
-**624 个案例**
+**623 个案例**
 
 ## 基于重建源码的移植
 
+- [**devilution-nx：重建版 Diablo 的 Nintendo Switch 移植**](https://github.com/lantus/devilution-nx) - devilution-nx 将 Diablo 的 DevilutionX 重建版本移植到 Nintendo Switch，加入 Joy-Con 和触摸操作，并提供 Switch 自制程序的构建步骤。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/devilution-nx-case/)</sub>
+- [**DevilutionX：移植重建后的 Diablo 引擎**](https://github.com/diasurgical/DevilutionX) - 基于 Devilution 重建成果提供现代平台上的 Diablo 与 Hellfire 移植，加入平台支持、错误修复及可选便利功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/devilutionx-case/)</sub>
 - [**DiabloWeb：基于 Devilution 的 WebAssembly 浏览器移植**](https://github.com/d07RiV/diabloweb) - 将社区重建 Diablo 原始源码的 Devilution 精简分支编译为 WebAssembly，并配合 React 前端，使 Diablo 可在网页浏览器中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/diabloweb-devilution-wasm-port-case/)</sub>
 - [**Diddy Kong Racing on Xbox：Golden Balloon 的 UWP 移植**](https://github.com/jajdp/dkr-xbox) - 项目将 Golden Balloon 的 Diddy Kong Racing 源码移植版制作为 Xbox Series X 的 UWP 包。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dkr-xbox-case/)</sub>
 - [**Dig Dug：转译街机例程并建模三 Z80 硬件**](https://github.com/Suspence00/digdug-decomp) - Dig Dug 将 1982 年街机游戏 Rev 2 ROM 中的例程转译为 Rust，并建模三颗 Z80 处理器以及 Namco 输入输出、视频和音频硬件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/digdug-decomp-case/)</sub>
@@ -634,7 +636,4 @@
 - [**OpenSC4：SimCity 4 的早期开源重新实现**](https://github.com/OpenSC4-org/OpenSC4) - 以 Godot 项目和 GDScript 重新实现 SimCity 4，从使用者自有的 SimCity 4 安装目录读取 DBPF 归档、区域文件夹和城市存档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opensc4-simcity-4-reimplementation-case/)</sub>
 - [**OpenScreamer：重建 Screamer 与 Screamer 2**](https://github.com/ItsDanik/openscreamer) - OpenScreamer 将 DOS 游戏 Screamer 和 Screamer 2 重实现为面向 Linux 与 Windows 的 C/SDL2 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openscreamer-case/)</sub>
 - [**OpenSE4：重建 Space Empires IV Deluxe 游戏引擎**](https://github.com/lowlevelmetal/OpenSE4) - OpenSE4 用 C++23 重建 Space Empires IV Deluxe 引擎，并从玩家自己的安装目录读取美术、音频和数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opense4-case/)</sub>
-- [**OpenSHC：《要塞：十字军东征》的重实现**](https://github.com/sourcehold/OpenSHC) - OpenSHC 是《要塞：十字军东征》的开源重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openshc/)</sub>
-- [**opensims2：重建《模拟人生 2》引擎**](https://github.com/opensims2/opensims2-public) - opensims2 以 C++ 重实现《模拟人生 2》引擎，在 64 位 macOS 和 Windows 上读取用户自有游戏安装文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opensims2-engine-case/)</sub>
-- [**OpenSith：重新实现《绝地武士：黑暗力量 II》引擎**](https://github.com/r1sc/OpenSith) - OpenSith 用 Unity 重实现《星球大战：绝地武士》的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opensith/)</sub>
 <!-- END GENERATED CASES -->

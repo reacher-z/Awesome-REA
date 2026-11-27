@@ -164998,5 +164998,63 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "rs-rearmed-case",
+    "name": "RS Re-ARMed: Rocksmith 2014 recompiled for Apple Silicon",
+    "url": "https://github.com/bbelgg/rs-rearmed",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native arm64 port of Rocksmith 2014 for Apple Silicon Macs that statically recompiles your own copy of the game to C at build time and replaces the small libraries that tied it to Intel Macs, Windows, Steam and online services.",
+    "description_zh": "面向 Apple 芯片 Mac 的 Rocksmith 2014 原生 arm64 移植：构建时把自备游戏副本静态重编译为 C，并用小型原生库替代其与 Intel Mac、Windows、Steam 和在线服务的依赖。",
+    "evidence_url": "https://github.com/bbelgg/rs-rearmed/blob/cf23766c9023b15954bfaefbe67db84104be6912/README.md",
+    "verified_at": "2026-11-27",
+    "added_at": "2026-11-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of either the Steam macOS release or the Learn and Play edition.",
+      "It targets Apple Silicon Macs, works offline and ships no game files.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "age-of-decomp-case",
+    "name": "Age of Decomp: Hyrule Warriors Age of Imprisonment on PC",
+    "url": "https://github.com/iCosiSenpai/age-of-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "class": "game-dev",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "A native Windows and Linux build of your own Hyrule Warriors: Age of Imprisonment (Nintendo Switch 2) by static recompilation, with a step-by-step setup, full settings, native controller support and RecompLauncher readiness.",
+    "description_zh": "通过静态重编译把自备的《塞尔达无双：封印战记》（Nintendo Switch 2）做成 Windows/Linux 原生版本，提供分步安装、完整设置、原生手柄支持并适配 RecompLauncher。",
+    "evidence_url": "https://github.com/iCosiSenpai/age-of-decomp/blob/0263011d6a76da985a30e54d4cab20049db243eb/README.md",
+    "verified_at": "2026-11-27",
+    "added_at": "2026-11-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires your own copy of the Switch 2 game; no game files are included.",
+      "It targets Windows and Linux and is distributed through RecompLauncher.",
+      "GPL-3.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

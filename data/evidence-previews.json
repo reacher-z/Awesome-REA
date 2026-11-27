@@ -2,11 +2,11 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-27T00:45:32+00:00",
-    "entry_count": 1236,
-    "class_entry_count": 1267,
+    "generated_at": "2026-11-27T01:57:59+00:00",
+    "entry_count": 1238,
+    "class_entry_count": 1269,
     "class_counts": {
-      "image": 1196,
+      "image": 1198,
       "video": 40
     },
     "missing_count": 31,
@@ -234,6 +234,15 @@
       "source_url": "https://github.com/Agamnentzar/ag-psd",
       "revision": "a74425db6584cc07b1cc135e370916cb4eccfb32",
       "checked_at": "2026-11-09T11:39:42+00:00"
+    },
+    {
+      "id": "age-of-decomp-case",
+      "image_url": "https://raw.githubusercontent.com/iCosiSenpai/age-of-decomp/0263011d6a76da985a30e54d4cab20049db243eb/docs/assets/screenshots/home.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/iCosiSenpai/age-of-decomp",
+      "revision": "0263011d6a76da985a30e54d4cab20049db243eb",
+      "checked_at": "2026-11-27T01:57:59+00:00"
     },
     {
       "id": "aiowapy-whatsapp-protocol-case",
@@ -4535,7 +4544,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-27T00:45:32+00:00"
+      "checked_at": "2026-11-27T01:57:58+00:00"
     },
     {
       "id": "konami-viper-recomp-case",
@@ -8505,6 +8514,15 @@
       "source_url": "https://github.com/RPISEC/Malware",
       "revision": "bbd48df47d709a702b9345e5d38cee16af3b37bd",
       "checked_at": "2026-11-07T03:50:07+00:00"
+    },
+    {
+      "id": "rs-rearmed-case",
+      "image_url": "https://raw.githubusercontent.com/bbelgg/rs-rearmed/cf23766c9023b15954bfaefbe67db84104be6912/docs/images/title-screen.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/bbelgg/rs-rearmed",
+      "revision": "cf23766c9023b15954bfaefbe67db84104be6912",
+      "checked_at": "2026-11-27T01:57:59+00:00"
     },
     {
       "id": "rsdkv3-sonic-cd-decomp-case",

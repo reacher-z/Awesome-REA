@@ -6,10 +6,13 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**511 case studies**
+**514 case studies**
 
 ## Engine reimplementations
 
+- [**OpenSHC: reimplementation of Stronghold Crusader**](https://github.com/sourcehold/OpenSHC) - OpenSHC is an open-source reimplementation of Stronghold Crusader. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openshc/)</sub>
+- [**opensims2: reconstructing The Sims 2 engine**](https://github.com/opensims2/opensims2-public) - opensims2 reimplements The Sims 2 engine in C++ for 64-bit macOS and Windows, reading content from the user's own game installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opensims2-engine-case/)</sub>
+- [**OpenSith: reimplementing the Jedi Knight: Dark Forces II engine**](https://github.com/r1sc/OpenSith) - OpenSith reimplements the engine of Star Wars: Jedi Knight — Dark Forces II in Unity. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opensith/)</sub>
 - [**OpenStrike: reconstructing Desert Strike and Jungle Strike data and engine behavior**](https://github.com/AMDmi3/openstrike) - OpenStrike is an early C++ reimplementation of Desert Strike and Jungle Strike. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openstrike-case/)</sub>
 - [**OpenTennis: a Hot Shots Tennis rewrite checked against the PS2 game**](https://github.com/FIZL0/opentennis) - OpenTennis rebuilds the 2007 PlayStation 2 game Hot Shots Tennis in Rust and Bevy for desktop, mobile and browser play. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opentennis-hot-shots-tennis-case/)</sub>
 - [**OpenTESArena: a new engine for The Elder Scrolls: Arena**](https://github.com/afritz1/OpenTESArena) - OpenTESArena rebuilds the 1994 DOS game The Elder Scrolls: Arena in a new C++ engine using separately obtained game assets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opentesarena-case/)</sub>
