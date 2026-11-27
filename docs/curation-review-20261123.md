@@ -1538,3 +1538,24 @@ One qualified record: ApkToolBoxGUI, a desktop APK toolbox.
 ## Validation notes
 
 The record carries pinned README evidence, parallel Chinese requirements and an evidence-class entry; it classifies as Class 2. Batch size one again reflects a thin qualified pool; the anti-detection Frida build was deliberately skipped.
+
+## Batch 61 — 2026-11-26
+
+Two tool records from the AI-assisted RE and CAN sections: cc-reverse and the CAN bus reverse engineering skills.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| cc-reverse | game-analysis | [Crain99/cc-reverse](https://github.com/Crain99/cc-reverse/blob/070cafb3d16cd3ed9346587db41860335fdbd7a9/README.md) | d71b8b1bd5f1e3920f1a573ce33200b8312c11272f90640e6abc68c68e33f714 |
+| can-bus-re-skills | agent-workflows | [CSS-Electronics/can-bus-reverse-engineering-skills](https://github.com/CSS-Electronics/can-bus-reverse-engineering-skills/blob/619475ae696ec93f3c635639144eb8af19bb261a/README.md) | 45a5c6e9645b69bc1364e3f4061d4613ace40c14c9fe66c6902c4d3e106eafe8 |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| guanyue91141/GhidraMCP-AI-rename | A third Ghidra MCP-adjacent item; two such records already exist. |
+| yexi-by/ida-re-mcp | IDA MCP server family is already represented. |
+| Dryxio/plugin-sdk-sa | A GTA San Andreas modding SDK with limited reconstruction scope. |
+
+## Validation notes
+
+Both records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; both classify as Class 2. The mining moved to the AI-assisted RE and CAN sections after game and hardware pools thinned.

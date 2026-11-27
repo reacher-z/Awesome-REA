@@ -164944,5 +164944,59 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "cc-reverse",
+    "name": "cc-reverse: extracting source and assets from Cocos Creator builds",
+    "url": "https://github.com/Crain99/cc-reverse",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A Cocos Creator reverse-engineering tool that extracts and rebuilds source code and assets from compiled Cocos Creator game builds, with a companion Claude Code skill for the same workflow.",
+    "description_zh": "Cocos Creator 逆向工具，可从编译后的 Cocos Creator 游戏中提取并重建源码与资源，并配套提供同流程的 Claude Code 技能。",
+    "evidence_url": "https://github.com/Crain99/cc-reverse/blob/070cafb3d16cd3ed9346587db41860335fdbd7a9/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a compiled Cocos Creator build you are authorized to analyse.",
+      "It targets Cocos Creator projects and covers dependency checks, version detection and JSC decryption.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
+  },
+  {
+    "id": "can-bus-re-skills",
+    "name": "CAN bus reverse engineering skills: decoding raw CAN into DBC files",
+    "url": "https://github.com/CSS-Electronics/can-bus-reverse-engineering-skills",
+    "category": "agent-workflows",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Claude Code skills that help reverse engineer raw CAN bus data into DBC decoding files with python-can scripts, identifying which CAN IDs and bits encode real-world values such as speed or state of charge.",
+    "description_zh": "Claude Code 技能集，配合 python-can 脚本把原始 CAN 总线数据逆向为 DBC 解码文件，识别哪些 CAN ID 与数据位对应车速、转速、电量等真实数值。",
+    "evidence_url": "https://github.com/CSS-Electronics/can-bus-reverse-engineering-skills/blob/619475ae696ec93f3c635639144eb8af19bb261a/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Claude Code session, python-can and access to a CAN interface or capture.",
+      "It produces DBC decoding rules from captured traffic rather than flashing or modifying ECUs.",
+      "MIT-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]

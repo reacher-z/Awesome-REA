@@ -46682,5 +46682,21 @@
       "它是在成熟 Android 工具之上的图形便利层，而非新的实现。",
       "采用 Apache-2.0 许可证。"
     ]
+  },
+  "cc-reverse": {
+    "name": "cc-reverse：从 Cocos Creator 构建中提取源码与资源",
+    "requirements": [
+      "需要你有权分析的 Cocos Creator 编译构建。",
+      "面向 Cocos Creator 项目，覆盖依赖检查、版本识别与 JSC 解密。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "can-bus-re-skills": {
+    "name": "CAN 总线逆向技能：把原始 CAN 解码成 DBC 文件",
+    "requirements": [
+      "需要 Claude Code 会话、python-can 以及 CAN 接口或抓包数据。",
+      "它从采集到的流量生成 DBC 解码规则，而非刷写或改动 ECU。",
+      "采用 MIT 许可证。"
+    ]
   }
 }
