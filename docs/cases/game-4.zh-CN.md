@@ -354,6 +354,7 @@
 - [**Kabus22 Linux：《Kabus 22》引擎的原生重建**](https://github.com/sergen213/kabus22-linux) - Kabus22 Linux 以 C++20 重建《Kabus 22》所用 3D GameStudio A6 和 A7 的引擎行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kabus22-linux-case/)</sub>
 - [**Kinoko：为精确回放幽灵记录而重新实现 Mario Kart Wii 物理引擎**](https://github.com/vabold/Kinoko) - 以 C++ 将 Mario Kart Wii 的物理引擎重新实现为命令行模拟器，延续 stblr/Hanachan 的目标：完全准确地回放计时赛幽灵记录。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kinoko-mkwii-physics-reimplementation-case/)</sub>
 - [**Kirpich：重建 Game Boy《俄罗斯方块》的游戏行为**](https://github.com/etroimcasso/Kirpich) - Kirpich 依据原版推导的行为规范，在 Polyrhythm 上用原生 C++ 重建 Game Boy《俄罗斯方块》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kirpich-case/)</sub>
+- [**KisakBlack：《任务召唤：黑色行动》多人程序的可构建重实现**](https://github.com/SwagSoftware/KisakBlack) - KisakBlack 是《使命召唤：黑色行动》多人可执行文件的可构建重实现，面向模组开发。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kisakblack/)</sub>
 - [**KlingonWin10WPF：重建 Star Trek: Klingon 影像播放器**](https://github.com/Teravus/KlingonWin10WPF) - KlingonWin10WPF 将 Star Trek: Klingon Immersion Studies 的全动态影像播放器重建为 Windows 应用，使用玩家原版光盘中的视频。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/klingonwin10wpf-case/)</sub>
 - [**kys-cpp：《金庸群侠传》C++ 重制版**](https://github.com/scarsty/kys-cpp) - kys-cpp 使用 C++ 和 SDL3 重制 DOS 游戏《金庸群侠传》，提供多种可切换的战斗模式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kys-cpp-jin-yong-heroes-case/)</sub>
 - [**Ladder：用 Go 重建 CP/M 街机游戏**](https://github.com/mengstr/ladder) - Ladder 用 Go 重实现 1982 年的 CP/M 街机游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ladder-cpm-case/)</sub>
@@ -643,5 +644,4 @@
 - [**Untangle：基于 REA 与 Ghidra 证据的浏览器重建**](https://github.com/az9713/untangle-rebuild) - 作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/untangle-rea-evidence-rebuild-case/)</sub>
 - [**vakfu：重建 Wakfu 地图渲染**](https://github.com/jac3km4/vakfu) - vakfu 用 Rust 重建 Wakfu 的等距视角地图渲染，并从用户自己的游戏副本读取资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vakfu-case/)</sub>
 - [**Vange-rs：以 Rust 重做《Vangers》**](https://github.com/kvark/vange-rs) - vange-rs 使用 Rust 和 wgpu 重做《Vangers》，目标是借助原版游戏资源重现其世界、载具和单人游戏行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vange-rs-vangers-case/)</sub>
-- [**Vault Engine：以 Rust 重建 Fallout 与 Fallout 2**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine 以 Rust 重建 Fallout 和 Fallout 2，读取用户零售版的 DAT 归档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vault-engine-case/)</sub>
 <!-- END GENERATED CASES -->
