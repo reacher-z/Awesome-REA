@@ -481,6 +481,7 @@
 - [**Super Mario 64：带明确比较开关的 ROM 重建**](https://github.com/n64decomp/sm64) - 为日版、北美版、欧洲版、Shindou 版和 iQue 版 Super Mario 64 重建源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sm64-decomp-case/)</sub>
 - [**Super Mario Advance 2：精确匹配的 GBA 反汇编**](https://github.com/KarisaAdvynia/sma2-disasm) - SMA2 disasm 以 Armips 汇编重建美版 GBA《超级马力欧世界：超级马力欧Advance 2》ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sma2-disasm-case/)</sub>
 - [**Super Mario Advance 4：精确匹配的 Armips 反汇编**](https://github.com/KarisaAdvynia/sma4-disasm) - 《Super Mario Advance 4: Super Mario Bros. 3》美版修订版 1 被重建为 Armips 汇编；作者报告可重新汇编成完全匹配的 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sma4-disasm-case/)</sub>
+- [**Super Mario Bros. 3 disassembly：NESASM 逐字节重建**](https://github.com/captainsouthbird/smb3) - 这份《超级马里奥兄弟 3》反汇编面向 NESASM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/smb3-disasm/)</sub>
 - [**Super Mario Bros. Deluxe：部分精确匹配的反汇编**](https://github.com/KarisaAdvynia/smbdx-disasm) - 将《Super Mario Bros. Deluxe》美版 1.1 的部分 ROM 存储区重建为 WLA DX 汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-mario-bros-deluxe-disasm-case/)</sub>
 - [**Super Mario Bros. Meta-Disassembly：六种 8 位游戏引擎版本**](https://gitlab.com/segaloco/smb) - Super Mario Bros. Meta-Disassembly 把六种 8 位 Super Mario Bros. 引擎版本整理到同一套汇编源码中。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/smb-meta-disassembly-case/)</sub>
 - [**Super Mario Bros.：七个版本的 ca65 源码重建**](https://github.com/RetrolariumLab/smb1_src) - Super Mario Bros. Disassembly 将七个 NES、Vs. System 和 Famicom Disk System 版本重建为可读的 ca65 模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/super-mario-bros-disassembly-case/)</sub>
@@ -630,5 +631,4 @@
 - [**Boku Doraemon：Dreamcast 可执行文件与模型结构重建**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon 解析日版 Dreamcast 游戏的 1ST\_READ.BIN，从用户光盘生成匹配的汇编基线，并在 SH-4 解释器中比较候选 C 函数的调用、内存写入与结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boku-doraemon-decomp-case/)</sub>
 - [**Bomberman 64: The Second Attack!：部分 N64 反编译**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa 正在反编译日版和美版 N64 游戏 Bomberman 64: The Second Attack!。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bm64tsa-case/)</sub>
 - [**Boom Street：进行中的 Wii 游戏反编译**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street 是进行中的 Wii 游戏反编译项目，目标为欧版 ST7P01 Rev 0。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boom-street-decomp-case/)</sub>
-- [**Bounce Tales：反编译 J2ME 游戏**](https://github.com/HelloOO7/BounceTales) - 该仓库是 Rovio 的 Bounce Tales（2008）的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bounce-tales-decomp/)</sub>
 <!-- END GENERATED CASES -->
