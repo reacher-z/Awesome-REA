@@ -2,7 +2,7 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-26T23:07:37+00:00",
+    "generated_at": "2026-11-26T23:54:38+00:00",
     "entry_count": 1236,
     "class_entry_count": 1267,
     "class_counts": {
@@ -4535,7 +4535,7 @@
       "basis": "readme-image",
       "source_url": "https://github.com/muirbil/Komimi",
       "revision": "abc2f736ff43048afbb533a1545e0d215992041b",
-      "checked_at": "2026-11-26T23:07:37+00:00"
+      "checked_at": "2026-11-26T23:54:38+00:00"
     },
     {
       "id": "konami-viper-recomp-case",

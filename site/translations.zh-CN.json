@@ -46674,5 +46674,13 @@
       "它以客户端身份参与协议，不是抓包或中间人工具。",
       "采用 Apache-2.0 许可证。"
     ]
+  },
+  "apktoolboxgui": {
+    "name": "ApkToolBoxGUI：桌面端 APK 解包与检查工具箱",
+    "requirements": [
+      "需要桌面 Java 运行时以及它所封装的底层 APK 工具。",
+      "它是在成熟 Android 工具之上的图形便利层，而非新的实现。",
+      "采用 Apache-2.0 许可证。"
+    ]
   }
 }

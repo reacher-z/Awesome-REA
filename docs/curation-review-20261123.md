@@ -1518,3 +1518,23 @@ A protocol reconstruction and an exploration framework: tdxdata and Tentacli. HE
 ## Validation notes
 
 Both records carry pinned README evidence, parallel Chinese requirements and evidence-class entries; both classify as Class 2. The duplicate check caught HEXPYRION before it was written twice, so only the two new records were committed.
+
+## Batch 60 — 2026-11-26
+
+One qualified record: ApkToolBoxGUI, a desktop APK toolbox.
+
+| Record | Category | Primary evidence | README SHA-256 |
+| --- | --- | --- | --- |
+| apktoolboxgui | android | [AloysHF/ApkToolBoxGUI](https://github.com/AloysHF/ApkToolBoxGUI/blob/141609ed5ab5e92cf0ecca27f6e74f11560ce31b/README.md) | 53f055fd43a8f060894a2a456564fe98bf4f7d08fccdfed03db9392439b38f99 |
+
+## Candidates set aside
+
+| Candidate | Result |
+| --- | --- |
+| Ylarod/Florida | An anti-detection frida-server build; detection-evasion tooling is out of scope for this catalog. |
+| bpftrace, uftrace, honggfuzz, vimspector and similar tool-section leads | Established general-purpose infrastructure already represented indirectly and not specific to reverse engineering. |
+| 25smoking/Gwxapkg | A second wxapkg unpacker next to the curated Wedecode. |
+
+## Validation notes
+
+The record carries pinned README evidence, parallel Chinese requirements and an evidence-class entry; it classifies as Class 2. Batch size one again reflects a thin qualified pool; the anti-detection Frida build was deliberately skipped.

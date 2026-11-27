@@ -164917,5 +164917,32 @@
       "limits",
       "license"
     ]
+  },
+  {
+    "id": "apktoolboxgui",
+    "name": "ApkToolBoxGUI: a desktop toolbox for unpacking and inspecting APKs",
+    "url": "https://github.com/AloysHF/ApkToolBoxGUI",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A desktop GUI that wraps common Android APK workflows such as decoding, rebuilding and inspecting packages, aimed at making daily Android reverse-engineering chores easier.",
+    "description_zh": "封装常见 Android APK 工作流的桌面图形工具，涵盖解码、重打包与检查，方便日常 Android 逆向工作。",
+    "evidence_url": "https://github.com/AloysHF/ApkToolBoxGUI/blob/141609ed5ab5e92cf0ecca27f6e74f11560ce31b/README.md",
+    "verified_at": "2026-11-26",
+    "added_at": "2026-11-26",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a desktop Java runtime and the underlying APK tools it wraps.",
+      "It is a GUI convenience layer over established Android tooling rather than a new implementation.",
+      "Apache-2.0-licensed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]
