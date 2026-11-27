@@ -34,6 +34,15 @@ CASES_BEGIN = '<!-- BEGIN GENERATED CASES -->'
 CASES_END = '<!-- END GENERATED CASES -->'
 RECENT_PAPERS = 10
 RECENT_CASES = 10
+# The main READMEs list at most this many tools per section; the rest live in the section file beside them, the
+# same way case studies spill into docs/cases/. Tool growth therefore never counts against the README budget.
+RECENT_TOOLS = 20
+SECTION_FILES = {section: (f'docs/README-{section}.md', f'docs/README-{section}.zh-CN.md')
+                 for section in ('website', 'game', 'app', 'native-binary', 'firmware', 'protocol',
+                                 'agents-and-mcp', 'related-collections', 'references-and-learning')}
+SECTION_PAGE_BUDGET = 420_000
+SECTION_BEGIN = '<!-- BEGIN GENERATED SECTION -->'
+SECTION_END = '<!-- END GENERATED SECTION -->'
 RESOURCE_SOURCES = ('data/rea-resources.json', 'data/tool-resources.json')
 INDEX_SOURCES = ('data/source-index.json', 'data/source-scope.json', 'data/source-supplements/')
 CATEGORIES = {
@@ -400,9 +409,13 @@ def resource_line(record, section, language, translations, linked=True):
     return f'- {title} - {description} <sub>{metadata} · [{FULL_ENTRY[index]}]({detail_url})</sub>'
 
 
-def render_catalog(records, language, paper_urls=frozenset()):
+def render_catalog(records, language, paper_urls=frozenset(), *, scope='readme', sections=None):
     """One list line per resource: source link, opening sentence, tags and the entry page that holds
-    the full description, requirements and evidence. Bibliography overlaps appear only under Papers."""
+    the full description, requirements and evidence. Bibliography overlaps appear only under Papers.
+
+    scope='readme' caps each section's tools at RECENT_TOOLS and links the section file for the rest;
+    scope='full' writes every entry and is what the section files hold. `sections` limits the output
+    to the named collection sections, in COLLECTION_SECTIONS order."""
     index = 0 if language == 'en' else 1
     translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')) if language == 'zh' else {}
     groups = defaultdict(list)
@@ -421,8 +434,17 @@ def render_catalog(records, language, paper_urls=frozenset()):
         lines.extend([f'<a id="{section}"></a>', f'### {section_heading(section, language)}', ''])
         if section == 'agents-and-mcp':
             lines.extend(agent_cross_reference(groups, language, translations))
+        if sections is not None and section not in sections:
+            continue
         cases = [record for record in groups[section] if record['kind'] == 'case-study']
         tools = [record for record in groups[section] if record['kind'] != 'case-study']
+        section_link = ''
+        if scope != 'full' and len(tools) > RECENT_TOOLS:
+            section_file = SECTION_FILES[section][int(index)]
+            hidden = len(tools) - RECENT_TOOLS
+            tools = tools[:RECENT_TOOLS]
+            section_link = (f'{hidden:,} 个工具未在此列出，见[本分区全部工具]({section_file}).' if index
+                            else f'{hidden:,} more tools are in the [full section list]({section_file}).')
         if len(cases) > RECENT_CASES:
             case_file = CASE_FILES[language]
             lines.extend([(f'**{len(cases):,} 个案例**，下方列出最新的 {RECENT_CASES} 个。'
@@ -456,6 +478,8 @@ def render_catalog(records, language, paper_urls=frozenset()):
                 for record in block:
                     lines.append(resource_line(record, section, language, translations))
                 lines.append('')
+        if section_link:
+            lines.extend([section_link, ''])
     return '\n'.join(lines).rstrip() + '\n'
 
 
@@ -958,6 +982,57 @@ def original_title(paper):
     return f"原题：*{plain_text(paper['title'])}* · "
 
 
+def section_file_name(section, language, part=None):
+    suffix = '.zh-CN.md' if language == 'zh' else '.md'
+    return f'docs/README-{section}{f"-{part}" if part is not None else ""}{suffix}'
+
+
+def render_section_files(section, records, language, paper_urls=frozenset()):
+    """Every entry of one README section, sharded so no file passes the GitHub rendering limit.
+
+    Returns {path: text}. A section that fits is one file; a larger one is split into parts, each
+    under SECTION_PAGE_BUDGET, and the parts link to each other."""
+    zh = language == 'zh'
+    translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')) if zh else {}
+    # Case studies already have their own full list under docs/cases/; a section file continues the tool list.
+    listed = [record for record in records
+              if collection_section(record) == section and record['url'] not in paper_urls]
+    # The README shows the first RECENT_TOOLS of a section's tools; a section file holds the remainder.
+    tools = [record for record in listed if record['kind'] != 'case-study']
+    ordered = tools[RECENT_TOOLS:]
+    title = section_heading(section, language)
+
+    parts, current, size = [], [], 0
+    for record in ordered:
+        length = len(resource_line(record, section, language, translations).encode('utf-8')) + 1
+        if current and size + length + 2_000 > SECTION_PAGE_BUDGET:
+            parts.append(current)
+            current, size = [], 0
+        current.append(record)
+        size += length
+    if current or not parts:
+        parts.append(current)
+
+    files = {}
+    other_language = 'en' if zh else 'zh'
+    for number, entries in enumerate(parts, 1):
+        part = number if len(parts) > 1 else None
+        name = section_file_name(section, language, part)
+        other = section_file_name(section, other_language, part).rsplit('/', 1)[1]
+        switch = (f'[English]({other}) · **简体中文**' if zh else f'**English** · [简体中文]({other})')
+        heading = (f'（第 {len(parts)} 部分中的第 {number} 部分）' if zh else f' ({number} of {len(parts)})') if len(parts) > 1 else ''
+        lines = [f"[{'← 返回 README' if zh else '← Back to the README'}](../{READMES[language]}#{section}) · {switch}", '',
+                 (f'**{len(ordered):,} 个工具**（本分区前 {RECENT_TOOLS} 个见 README）{heading}。' if zh
+                  else f'**{len(ordered):,} more tools** in this section, after the first {RECENT_TOOLS} in the README{heading}.'), '']
+        for record in entries:
+            lines.append(resource_line(record, section, language, translations))
+        lines.append('')
+        body = '\n'.join(lines).rstrip() + '\n'
+        files[name] = (SECTION_BEGIN + '\n' + source_note(*RESOURCE_SOURCES, part='file')
+                       + f'# {title}\n\n' + body + SECTION_END + '\n')
+    return files
+
+
 def rendered_files(records, papers, index_count):
     """Every file this builder owns, keyed by repository path: both READMEs, their generated blocks replaced in
     the text on disk, then both paper files."""
@@ -978,6 +1053,9 @@ def rendered_files(records, papers, index_count):
     for language, name in PAPER_FILES.items():
         files[name] = render_paper_file(papers, language)
     files.update(render_case_pages(records, {paper['url'] for paper in papers}))
+    for section in SECTION_FILES:
+        for language in ('en', 'zh'):
+            files.update(render_section_files(section, records, language, {paper['url'] for paper in papers}))
     return files
 
 
@@ -993,6 +1071,9 @@ def main():
         generated_case_paths = set(files) & {name for name in files if name.startswith('docs/cases/')}
         extra = sorted(str(path.relative_to(ROOT)) for path in (ROOT / 'docs/cases').glob('*.md')
                        if str(path.relative_to(ROOT)) not in generated_case_paths)
+        # A section that shrinks below a shard boundary leaves the old part behind; it is generated, so drop it.
+        extra += sorted(str(path.relative_to(ROOT)) for path in (ROOT / 'docs').glob('README-*.md')
+                        if str(path.relative_to(ROOT)) not in files)
         for name, expected in files.items():
             path = ROOT / name
             if not path.is_file() or path.read_text(encoding='utf-8') != expected:

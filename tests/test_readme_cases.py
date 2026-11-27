@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import build_readme
 from build_readme import (CASE_FILES, COLLECTION_SECTIONS, METHOD_SECTIONS, READMES, RECENT_CASES,
                           CASE_PAGE_BUDGET, README_SIZE_WARNING, case_method, case_order, collection_section, method_groups, recent_cases,
-                          render_case_pages)
+                          render_case_pages, RECENT_TOOLS)
 from catalog import load_resources
 from validate_papers import read_papers
 
@@ -36,11 +36,22 @@ class ReadmeCasesTest(unittest.TestCase):
                 expected = recent_cases(cases)
                 block = text.split(f'<a id="{section}"></a>', 1)[1].split('\n<a id="', 1)[0] if records else ''
                 ids = re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', block, re.M)
+                # The README shows the newest cases and the first RECENT_TOOLS tools; the section files hold the rest.
+                suffix = '.zh-CN.md' if language == 'zh' else '.md'
+                section_files = [path for path in (ROOT / 'docs').glob(f'README-{section}*.md')
+                                 if path.name.endswith(suffix) and (language == 'zh' or not path.name.endswith('.zh-CN.md'))]
+                full_ids = set(ids)
+                for path in section_files:
+                    full_ids |= set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$',
+                                               path.read_text(encoding='utf-8'), re.M))
                 with self.subTest(language=language, section=section):
                     self.assertLessEqual(len(expected), RECENT_CASES)
                     self.assertEqual([identifier for identifier in ids if identifier in {r['id'] for r in cases}],
                                      [record['id'] for record in expected])
-                    self.assertEqual({record['id'] for record in tools} & set(ids), {record['id'] for record in tools})
+                    shown_tools = [record['id'] for record in tools if record['id'] in ids]
+                    self.assertEqual(shown_tools, [record['id'] for record in tools[:RECENT_TOOLS]])
+                    # Every tool appears exactly once across the README and its section files.
+                    self.assertEqual({record['id'] for record in tools} - full_ids, set())
                     if len(cases) > RECENT_CASES:
                         self.assertIn(f']({CASE_FILES[language]}#{section})', block)
 

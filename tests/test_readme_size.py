@@ -141,6 +141,14 @@ class OneLineEntryTest(unittest.TestCase):
                               for path in sorted((ROOT / 'docs/cases').glob('*.md')))):
             prefix = 'zh/' if index else ''
             text = (ROOT / name).read_text(encoding='utf-8')
+            if name in READMES.values():
+                # The READMEs list a slice of each section; the rest is in docs/README-<section>.md, and the two
+                # together hold every entry once. Case files are scoped to their own section and are not extended.
+                suffix = '.zh-CN.md' if index else '.md'
+                text += '\n' + '\n'.join(path.read_text(encoding='utf-8')
+                                          for path in (ROOT / 'docs').glob('README-*.md')
+                                          if path.name.endswith(suffix)
+                                          and (index == 1 or not path.name.endswith('.zh-CN.md')))
             lines = [line for line in text.splitlines() if line.startswith('- [**')]
             groups = ((('resources', [record for record in resources if record['kind'] != 'case-study'] + [record for record in resources if record['kind'] == 'case-study' and f'/resources/{record["id"]}/)</sub>' in text]), ('papers', newest)) if name.startswith('README')
                       else (('resources', [record for record in resources if record['kind'] == 'case-study' and f'/resources/{record["id"]}/)</sub>' in text]),) if name.startswith('docs/cases/')

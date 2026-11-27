@@ -55,7 +55,8 @@ class ReadmeSecondaryTargetTest(unittest.TestCase):
         records = load_resources()
         paper_urls = {paper['url'] for paper in read_papers(ROOT)}
         for name, language in (('README.md', 'en'), ('README.zh-CN.md', 'zh')):
-            text = (ROOT / name).read_text(encoding='utf-8') + '\n'.join(path.read_text(encoding='utf-8') for path in (ROOT / 'docs/cases').glob('*.md') if path.name.endswith('.zh-CN.md' if language == 'zh' else '.md') and (language == 'zh' or not path.name.endswith('.zh-CN.md')))
+            # The main README lists a section's tools up to RECENT_TOOLS; the rest live in its section files.
+            text = (ROOT / name).read_text(encoding='utf-8') + '\n'.join(path.read_text(encoding='utf-8') for path in (ROOT / 'docs/cases').glob('*.md') if path.name.endswith('.zh-CN.md' if language == 'zh' else '.md') and (language == 'zh' or not path.name.endswith('.zh-CN.md'))) + '\n'.join(path.read_text(encoding='utf-8') for path in (ROOT / 'docs').glob('README-*.md') if path.name.endswith('.zh-CN.md' if language == 'zh' else '.md') and (language == 'zh' or not path.name.endswith('.zh-CN.md')))
             entries = Counter(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', text, re.M))
             for record in records:
                 if record['url'] in paper_urls:

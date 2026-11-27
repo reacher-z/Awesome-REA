@@ -259,6 +259,8 @@ class ReadmeContentsTest(unittest.TestCase):
                     end = next((later.start() for later in headings[position + 1:] if len(later[1]) <= len(heading[1])),
                                len(body))
                     entries = len(re.findall(r'^- \[\*\*', body[heading.end():end], re.MULTILINE))
+                    if heading[2] in ('Most recent papers', '最新论文'):
+                        continue  # counted by the Papers branch above, from the paper file
                     if heading[1] == '###' or heading[2] in ('Resources', '资源'):
                         language = 'zh' if name.endswith('zh-CN.md') else 'en'
                         paths = [path for path in (ROOT / 'docs/cases').glob('*.md')
@@ -266,6 +268,7 @@ class ReadmeContentsTest(unittest.TestCase):
                                  and (language == 'zh' or not path.name.endswith('.zh-CN.md'))]
                         case_text = '\n'.join(path.read_text(encoding='utf-8') for path in paths)
                         case_ids = set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', case_text, re.M))
+                        section_ids = set()
                         if heading[1] == '###':
                             anchor = re.search(r'<a id="([^"]+)"></a>\s*$', body[:heading.start()])
                             if anchor:
@@ -273,13 +276,32 @@ class ReadmeContentsTest(unittest.TestCase):
                                                  or path.name.startswith(anchor[1] + '-')]
                                 section_text = '\n'.join(path.read_text(encoding='utf-8') for path in section_paths)
                                 case_ids = set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', section_text, re.M))
+                                # The tools past RECENT_TOOLS live in that section's own file.
+                                section_ids = {
+                                    identifier
+                                    for path in (ROOT / 'docs').glob(f'README-{anchor[1]}*.md')
+                                    if path.name.endswith('.zh-CN.md' if language == 'zh' else '.md')
+                                    and (language == 'zh' or not path.name.endswith('.zh-CN.md'))
+                                    for identifier in re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$',
+                                                                 path.read_text(encoding='utf-8'), re.M)}
                             else:
                                 case_ids = set()
                         shown = set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', body[heading.end():end], re.M))
-                        entries += len(case_ids - shown)
+                        entries = len(shown | case_ids | section_ids)
+                        # The Resources total counts every entry once: the README's rows, the section files'
+                        # remainder and the case files' full lists together cover the catalog exactly.
+                        if heading[2] in ('Resources', '资源'):
+                            all_ids = set(shown) | case_ids
+                            all_ids |= set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$',
+                                                      '\n'.join(path.read_text(encoding='utf-8')
+                                                                 for path in (ROOT / 'docs').glob('README-*.md')
+                                                                 if path.name.endswith('.zh-CN.md' if language == 'zh' else '.md')
+                                                                 and (language == 'zh' or not path.name.endswith('.zh-CN.md'))),
+                                                      re.M))
+                            entries = len(all_ids)
                     self.assertEqual(int(count[1].replace(',', '')), entries, heading[2])
                     counted += 1
-                self.assertGreater(counted, 10)
+                self.assertGreater(counted, 8)
 
     def test_explicit_section_anchors_and_the_paper_topic_paragraph_remain(self):
         for name, label in (('README.md', '**By topic:** '), ('README.zh-CN.md', '**按主题：** ')):

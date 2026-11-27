@@ -76,7 +76,7 @@ Choose these fields independently; apart from the [reconstruction pairing](#reco
 - `targets`: what subjects does it help analyze or reconstruct?
 - `class`: for a data point only, which one class does the original thing it reproduces belong to?
 
-A record is a data point when its main output reproduces one named real thing, as the [Data records](data/README.md#data-records) section of the format guide defines. Give it exactly one `class`: `software`, `game`, `apps`, `website`, `science` or `hardware`. Tools that work on any target take no class. Protocol is a tag from `targets`, and a protocol record takes the class of the thing the protocol belongs to.
+A record is a data point when its main output reproduces one named real thing, as the [Data records](data/README.md#data-records) section of the format guide defines. Give it exactly one `class`: `website`, `game-dev`, `mobile-app-dev`, `3d-design`, `software`, `animation`, `video`, `hardware` or `analysis`. The class follows the original application's main domain. Tools that work on any target take no class. Protocol is a tag from `targets`, and a protocol record takes the class of the thing the protocol belongs to.
 
 Use the current values in the [catalog format guide](data/README.md). These existing records show how the choices fit together; their linked evidence is documentation, not a claim that the tools were run:
 
@@ -140,7 +140,7 @@ git rebase origin/main
 
 Resolve each conflicting file by kind, data first:
 
-- **Generated files:** the `BEGIN GENERATED …` and `BEGIN REPOSITORY INDEX SUMMARY` blocks in `README.md` and `README.zh-CN.md`, the paper lists `docs/papers.md` and `docs/papers.zh-CN.md`, the case indexes `docs/cases.md` and `docs/cases.zh-CN.md` and every section page in `docs/cases/`, every page in `docs/repositories/`, and `docs/case-coverage.md` and `docs/case-coverage.zh-CN.md`. Take `main`'s copy and rebuild it once the data conflicts are resolved. Do not merge or edit these files by hand; the first line inside each README block and generated list names its generator and source files. If your branch also changes hand-written README text outside the blocks, reapply that edit.
+- **Generated files:** the `BEGIN GENERATED …` and `BEGIN REPOSITORY INDEX SUMMARY` blocks in `README.md` and `README.zh-CN.md`, the paper lists `docs/papers.md` and `docs/papers.zh-CN.md`, the case indexes `docs/cases.md` and `docs/cases.zh-CN.md` and every section page in `docs/cases/`, the per-section tool lists `docs/README-*.md`, every page in `docs/repositories/`, and `docs/case-coverage.md` and `docs/case-coverage.zh-CN.md`. Take `main`'s copy and rebuild it once the data conflicts are resolved. Do not merge or edit these files by hand; the first line inside each README block and generated list names its generator and source files. If your branch also changes hand-written README text outside the blocks, reapply that edit.
 - **Data files:** `data/*.json` and `site/translations.zh-CN.json`. Keep both sides: the records `main` added or changed and the ones your branch adds or changes. New records go at the end of each array, so such a conflict usually holds both sides' new records; keep `main`'s first, then yours. Each ID appears once: the validators reject a duplicate record ID, and a repeated key in `site/translations.zh-CN.json` silently replaces the earlier one. In `data/case-coverage.json`, keep both sides' entry edits, then recompute `counts` from the merged entries, since `validate.py` reports `derived counts differ` until they match:
 
   ```sh

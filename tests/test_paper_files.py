@@ -132,7 +132,8 @@ class PaperFileTest(unittest.TestCase):
             for directory in ('data', 'docs', 'docs/cases', 'site'):
                 (root / directory).mkdir()
             for name in ('data/papers.json', 'site/translations.zh-CN.json', *READMES.values(), *PAPER_FILES.values(), *CASE_FILES.values(),
-                         *(str(path.relative_to(ROOT)) for path in (ROOT / 'docs/cases').glob('*.md'))):
+                         *(str(path.relative_to(ROOT)) for path in (ROOT / 'docs/cases').glob('*.md')),
+                         *(str(path.relative_to(ROOT)) for path in (ROOT / 'docs').glob('README-*.md'))):
                 shutil.copyfile(ROOT / name, root / name)
 
             def run(*arguments):
