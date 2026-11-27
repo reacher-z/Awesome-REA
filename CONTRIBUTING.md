@@ -26,6 +26,8 @@ Use Protocol when primary evidence describes communication-format analysis, traf
 
 ## Update the catalog
 
+Use Python 3.12 or newer for the repository scripts; CI runs Python 3.12. Check `python3 --version` in the shell where you will run the commands below.
+
 Curated records live in `data/rea-resources.json` and `data/tool-resources.json`. Keep the English and Chinese descriptions concise. Use `kind` for the resource type and `targets` for its application areas; these are different dimensions. The website's translated names and requirements are in `site/translations.zh-CN.json`.
 
 Record a primary source and review date. `source-reviewed` means documentation was checked; it does not claim that the project was installed, audited, or reproduced. The larger `data/source-index.json` is an automated repository index and retains its separate provenance. To curate a repository found there, fill in the [review worksheet](docs/promotion-worksheet.md); the scan record itself is never upgraded.

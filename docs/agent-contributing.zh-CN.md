@@ -18,7 +18,7 @@ Agent 可以通过 GitHub issue 推荐逆向工程资源，也可以准备有一
 
 ## Agent 应先检查什么？
 
-从当前上游默认分支读取 AGENTS.md 和 CONTRIBUTING.md，并保留本地未完成的修改。提交前先搜索：
+从当前上游默认分支读取 AGENTS.md 和 CONTRIBUTING.md，并保留本地未完成的修改。仓库脚本需要 Python 3.12 或更高版本，CI 使用 Python 3.12。运行前先用 `python3 --version` 确认版本。提交前先搜索：
 
 ```sh
 python3 scripts/catalog.py "owner/repository"
