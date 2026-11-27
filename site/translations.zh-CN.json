@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "drakengard-3-recompiled": {
+    "name": "Drakengard 3 Recompiled：《龙背龎 3》PS3 原作的原生移植",
+    "requirements": [
+      "需要美版光盘 BLUS31197 的转储文件夹或已解密 ISO，或 PSN 包 NPUB31251，以及 1.01 更新包。大约需要 16 GB 空闲空间。",
+      "许可证：MIT。ps3recomp 和 Dear ImGui 为 MIT。Inter 字体为 SIL Open Font License 1.1。"
+    ]
   }
 }
