@@ -6,10 +6,11 @@
 
 [简体中文](game-5.zh-CN.md)
 
-**350 case studies**
+**351 case studies**
 
 ## Engine reimplementations
 
+- [**Vault Engine: rebuilding Fallout and Fallout 2 in Rust**](https://github.com/mikyowski-ui/vault-engine) - Vault Engine reimplements Fallout and Fallout 2 as a Rust engine that reads the user's retail DAT archives. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vault-engine-case/)</sub>
 - [**Vault13: a Rust reimplementation of the Fallout 2 engine**](https://github.com/pingw33n/vault13) - Vault13 reimplements the Fallout 2 engine in Rust using files from a local game directory. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vault13-fallout-2-case/)</sub>
 - [**VCMI: recreating the Heroes of Might &amp; Magic III engine**](https://github.com/vcmi/vcmi) - VCMI recreates the Heroes of Might &amp; Magic III engine in C++ for playing the original game with an open-source runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vcmi-case/)</sub>
 - [**VERA20K: rebuilding Red Alert 2: Yuri's Revenge in Rust**](https://github.com/YuriPlanet/vera20k) - VERA20K rebuilds the Red Alert 2: Yuri's Revenge engine in Rust while reading the user's original game files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vera20k-case/)</sub>
