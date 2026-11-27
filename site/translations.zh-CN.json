@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "metroid-prime-2-echoes-port": {
+    "name": "Echoes Unbound：《银河战士 Prime 2 回声》的原生移植",
+    "requirements": [
+      "需要上面写明的一种光盘镜像。自行构建需要 CMake 3.25 或更高版本和 C++20 工具链。",
+      "许可证：这个项目的平台层、构建脚本和 Android 集成为 MIT。src 和 include 下的游戏代码仍属于任天堂。LICENSE-decomp 保留 PrimeDecomp 的 CC0 声明。"
+    ]
   }
 }
