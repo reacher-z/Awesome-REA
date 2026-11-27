@@ -6279,5 +6279,36 @@
     "additional_evidence_urls": [
       "https://github.com/literalynn/BurnoutDominatorReversed/blob/37581374987e161dd75d031ee8fb0c7ea9290fda/docs/STATUS.md"
     ]
+  },
+  {
+    "id": "capcut-rea-analysis-case",
+    "name": "CapCut 9.6: an REA architecture and editor-API inventory",
+    "url": "https://github.com/marcosp34bpm/capcut-rea",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "This report analyses a locally installed CapCut 9.6.0.4097 Windows x64 build with the REA toolchain. It maps the C++/Qt 6 and CEF architecture, inventories the native editor API and records reconstruction obligation ledgers, marking each claim as an evidence-numbered static observation or an explicit inference.",
+    "description_zh": "该报告使用 REA 工具链分析本机安装的 CapCut 9.6.0.4097 Windows x64 版本。它梳理 C++/Qt 6 与 CEF 架构、盘点原生编辑器 API 并记录重建义务台账，每条结论都标为带证据编号的静态观察或显式推断。",
+    "evidence_url": "https://github.com/marcosp34bpm/capcut-rea/blob/1034d34f9a7814d6f508c517268b7c80223612ed/README.md",
+    "verified_at": "2026-11-20",
+    "added_at": "2026-11-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The analysis targets CapCut 9.6.0.4097 on Windows x64 and records the install-root SHA-256 and observed component sizes.",
+      "The report covers the launcher, C++/Qt 6 and CEF layers, bundled JavaScript applications and an embedded AI agent runtime.",
+      "Claims are tied to evidence IDs or labelled as inference; JavaScript tooling supports dry runs and timeline revisions.",
+      "The repository metadata reports no SPDX license; the repository carries its own terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "kind": "case-study",
+    "class": "analysis"
   }
 ]

@@ -14,7 +14,7 @@ Publication date: **2026-10-20 UTC**.
 | [Games](game-analysis.md) | 491 | 78 |
 | [Apps · Android](android.md) | 482 | 62 |
 | [Apps · Managed code](managed-code.md) | 135 | 5 |
-| [Native binaries](native-analysis.md) | 838 | 151 |
+| [Native binaries](native-analysis.md) | 838 | 152 |
 | [Runtime and debugging](dynamic-analysis.md) | 153 | 37 |
 | [Firmware](firmware.md) | 228 | 37 |
 | [Protocols](protocol-analysis.md) | 113 | 13 |

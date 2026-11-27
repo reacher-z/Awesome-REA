@@ -98,6 +98,8 @@ def usable_image(raw: str, base: str) -> str | None:
         url = urllib.parse.urljoin(base, raw)
     url = raw_github_file(url, base)
     parts = urllib.parse.urlsplit(url)
+    safe_path = "".join(urllib.parse.quote(ch) if ch.isspace() or ord(ch) < 33 else ch for ch in parts.path)
+    parts = parts._replace(path=safe_path)
     if parts.scheme not in ("http", "https") or not parts.hostname:
         return None
     if not public_media_url(url):
@@ -336,6 +338,8 @@ def main() -> int:
             print(f"preview {done}/{len(targets)} {entry['id']}", file=sys.stderr)
 
     entries.sort(key=lambda item: item["id"])
+    for item in entries:
+        item["image_url"] = "".join(urllib.parse.quote(ch) if ch.isspace() or ord(ch) < 33 else ch for ch in item.get("image_url", ""))
     counts = {"image": sum(item["kind"] == "image" for item in entries),
               "video": sum(item["kind"] == "video" for item in entries)}
     output = {
