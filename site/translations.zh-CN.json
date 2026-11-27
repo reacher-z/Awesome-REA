@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "pokegold-spaceworld": {
+    "name": "Pokémon Gold and Silver Space World demo：1997 年原型演示的反汇编",
+    "requirements": [
+      "按 INSTALL.md 操作。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
