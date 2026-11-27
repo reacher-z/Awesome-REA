@@ -77,6 +77,7 @@ class AgentCrossReferenceTest(unittest.TestCase):
                 linked = re.findall(rf'\(https://awesomerea\.org/{prefix}resources/([a-z0-9-]+)/\)', line)
                 self.assertEqual(Counter(linked), Counter(expected))
                 full = '\n'.join(path.read_text(encoding='utf-8') for path in (ROOT / 'docs/cases').glob('*.md') if path.name.endswith('.zh-CN.md' if prefix else '.md') and (prefix or not path.name.endswith('.zh-CN.md')))
+                full += '\n' + '\n'.join(path.read_text(encoding='utf-8') for path in (ROOT / 'docs').glob('README-*.md') if path.name.endswith('.zh-CN.md' if prefix else '.md') and (prefix or not path.name.endswith('.zh-CN.md')))
                 entries = Counter(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', text + full, re.M))
                 self.assertTrue(all(entries[record['id']] >= 1 for record in listed))
 

@@ -40,7 +40,7 @@ Agent 请先阅读 [AGENTS.md（英文）](AGENTS.md)和 [Agent 投稿与 PR 指
 - `targets`：帮助分析或重建的对象领域。
 - `class`：仅用于数据点，即它复刻的原始对象属于哪一类，只能选一个。
 
-一条记录的主要成果复刻了一个具体的真实对象，它就是数据点，定义见[目录格式（英文）](data/README.md#data-records)。数据点选且只选一个 `class`：`software`、`game`、`apps`、`website`、`science` 或 `hardware`。适用于任意目标的工具没有 `class`。Protocol 是来自 `targets` 的标签，协议记录按协议所属的对象归类。
+一条记录的主要成果复刻了一个具体的真实对象，它就是数据点，定义见[目录格式（英文）](data/README.md#data-records)。数据点选且只选一个 `class`：`website`、`game-dev`、`mobile-app-dev`、`3d-design`、`software`、`animation`、`video`、`hardware` 或 `analysis`。大类按原始应用的主领域划分。适用于任意目标的工具没有 `class`。Protocol 是来自 `targets` 的标签，协议记录按协议所属的对象归类。
 
 当前可用值见[目录格式（英文）](data/README.md)。证据支持多个领域时可以选择多个 targets。为条目补充新的已复核领域时，保留原有 targets；不要自动重新归类历史扫描记录。
 
@@ -114,7 +114,7 @@ Pull request 会收到由基础分支可信代码执行的[规则审核（英文
 
 `main` 只合并与其同步的分支。多数目录 PR 会修改相同的生成文件，并向同一批 JSON 数组末尾追加记录，所以别的 PR 合并后，你的分支常会落后或出现冲突。请在本地运行 `git fetch origin` 和 `git rebase origin/main`，先解决数据冲突，再用合并后的数据重新生成文件：
 
-- **生成文件**：`README.md` 与 `README.zh-CN.md` 中的 `BEGIN GENERATED …` 和 `BEGIN REPOSITORY INDEX SUMMARY` 区块、论文列表 `docs/papers.md` 和 `docs/papers.zh-CN.md`、案例目录 `docs/cases.md` 和 `docs/cases.zh-CN.md`、`docs/cases/` 中的全部分区页面、`docs/repositories/` 下的全部页面，以及 `docs/case-coverage.md` 和 `docs/case-coverage.zh-CN.md`。直接采用 `main` 的版本，数据冲突解决后重新生成；不要手动合并或编辑这些文件。README 每个区块和每个生成列表内的第一行注明了生成脚本和数据来源。若分支还修改了区块之外的手写 README 文字，请重新应用该修改。
+- **生成文件**：`README.md` 与 `README.zh-CN.md` 中的 `BEGIN GENERATED …` 和 `BEGIN REPOSITORY INDEX SUMMARY` 区块、论文列表 `docs/papers.md` 和 `docs/papers.zh-CN.md`、案例目录 `docs/cases.md` 和 `docs/cases.zh-CN.md`、`docs/cases/` 中的全部分区页面、各分区的工具列表 `docs/README-*.md`、`docs/repositories/` 下的全部页面，以及 `docs/case-coverage.md` 和 `docs/case-coverage.zh-CN.md`。直接采用 `main` 的版本，数据冲突解决后重新生成；不要手动合并或编辑这些文件。README 每个区块和每个生成列表内的第一行注明了生成脚本和数据来源。若分支还修改了区块之外的手写 README 文字，请重新应用该修改。
 - **数据文件**：`data/*.json` 与 `site/translations.zh-CN.json` 要保留双方的记录，即 `main` 新增或修改的记录和你的分支新增或修改的记录。新记录追加在数组末尾，先放 `main` 的，再放你的。每个 ID 只能出现一次：验证器会拒绝重复的记录 ID，而 `site/translations.zh-CN.json` 中重复的键会悄悄覆盖前一个。`data/case-coverage.json` 合并双方的条目修改后，要用[英文指南](CONTRIBUTING.md#update-a-pull-request)中的命令重新计算 `counts`，否则 `validate.py` 会报告 `derived counts differ`。
 - **JSON 格式**：保持两个空格缩进、非 ASCII 字符直接写出（不转义为 `\u`）、原有键顺序和文件末尾换行，也就是 `json.dumps(value, ensure_ascii=False, indent=2)` 再加 `'\n'` 的输出。
 - **测试中的 ID 列表**（如 `tests/test_paper_citations.py` 中带引用元数据的论文集合）取双方的并集。
