@@ -181,6 +181,7 @@
 - [**Fire Emblem：Shadow Dragon and the Blade of Light 的部分 NES 反汇编**](https://github.com/StanHash/fe1) - fe1 将 NES 游戏 Fire Emblem: Shadow Dragon and the Blade of Light 的部分内容重建为汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fe1-case/)</sub>
 - [**Fire Emblem: Rekka no Ken：Game Boy Advance 日版匹配反编译**](https://github.com/MokhaLeee/FireEmblem7J) - 该项目反编译 Game Boy Advance 日版《火焰纹章 烈火之剑》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fe7j-decomp/)</sub>
 - [**Fire Emblem: Shadow Dragon：Nintendo DS 游戏反编译**](https://github.com/Eebit/fe11-us) - Fire Emblem: Shadow Dragon 使用 ds-decomp 重建美版 Nintendo DS 游戏代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fire-emblem-shadow-dragon-decomp-case/)</sub>
+- [**Fire Emblem: The Sacred Stones disassembly：GBA 游戏的字节精确重建**](https://github.com/FireEmblemUniverse/fireemblem8u) - 该项目反汇编《火焰纹章：圣魔之光石》的美版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fireemblem8u/)</sub>
 - [**fireemblem7u：GBA 版 Fire Emblem 匹配反编译**](https://github.com/7ucina/fireemblem7u) - fireemblem7u 将美国及澳大利亚版 GBA 游戏 Fire Emblem 重建为 C 源码，并构建经 SHA-1 检查的 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fireemblem7u-decomp-case/)</sub>
 - [**Flicky：逐字节匹配的 Mega Drive 源码重建**](https://github.com/RetrolariumLab/flicky_src) - Flicky 将 Sega Mega Drive 游戏的 68000 代码和 Z80 声音驱动重建为带注释的汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/flicky-src-case/)</sub>
 - [**Fossil Fighters Champions：匹配重建 Nintendo DS 战斗覆盖模块**](https://github.com/arcnid/ffc-decomp) - 使用原版 mwccarm 工具链，将 Nintendo DS 游戏 Fossil Fighters Champions 的战斗覆盖模块重建为 C；未匹配函数保留汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fossil-fighters-champions-decomp-case/)</sub>
@@ -630,5 +631,4 @@
 - [**Boku Doraemon：Dreamcast 可执行文件与模型结构重建**](https://github.com/consolesplayingconsoles/boku-doraemon-decomp) - Boku Doraemon 解析日版 Dreamcast 游戏的 1ST\_READ.BIN，从用户光盘生成匹配的汇编基线，并在 SH-4 解释器中比较候选 C 函数的调用、内存写入与结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boku-doraemon-decomp-case/)</sub>
 - [**Bomberman 64: The Second Attack!：部分 N64 反编译**](https://github.com/Bomberhackers/bm64tsa) - bm64tsa 正在反编译日版和美版 N64 游戏 Bomberman 64: The Second Attack!。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bm64tsa-case/)</sub>
 - [**Boom Street：进行中的 Wii 游戏反编译**](https://github.com/FortuneStreetModding/boom-street-decomp) - Boom Street 是进行中的 Wii 游戏反编译项目，目标为欧版 ST7P01 Rev 0。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/boom-street-decomp-case/)</sub>
-- [**Bounce Tales：反编译 J2ME 游戏**](https://github.com/HelloOO7/BounceTales) - 该仓库是 Rovio 的 Bounce Tales（2008）的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bounce-tales-decomp/)</sub>
 <!-- END GENERATED CASES -->
