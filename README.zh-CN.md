@@ -2,7 +2,7 @@
 
 工具、案例与研究论文合集，涵盖网站、游戏、应用、原生二进制、固件和通信协议。
 
-[English](README.md) · **简体中文**
+[English](README.md) · **简体中文** · [Türkçe](README.tr.md)
 
 **[网站搜索](https://awesomerea.org/zh/)** · **[浏览资源](https://awesomerea.org/zh/resources/)** · **[案例](https://awesomerea.org/zh/cases/)** · **[论文](https://awesomerea.org/zh/papers/)** · **[API](https://awesomerea.org/zh/api/)** · **[推荐资源](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[参与贡献](#参与贡献)**
 

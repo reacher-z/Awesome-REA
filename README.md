@@ -2,7 +2,7 @@
 
 A collection of tools, case studies and research for websites, games, apps, native binaries, firmware and communication protocols.
 
-**English** · [简体中文](README.zh-CN.md)
+**English** · [简体中文](README.zh-CN.md) · [Türkçe](README.tr.md)
 
 **[Search the website](https://awesomerea.org/)** · **[Browse resources](https://awesomerea.org/resources/)** · **[Cases](https://awesomerea.org/cases/)** · **[Papers](https://awesomerea.org/papers/)** · **[API](https://awesomerea.org/api/)** · **[Suggest a resource](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[Contributing](#contributing)**
 
