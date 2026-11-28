@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "kind": "automated-discovery-batch",
+  "batch_id": "run-46088462572-1",
+  "review_status": "unreviewed",
+  "ingested_at": "2026-11-28T00:52:02Z",
+  "selection": {
+    "policy": "strong-reverse-engineering-topics-v1",
+    "order": "newest-capture-first",
+    "record_limit": 300,
+    "eligible_count": 426,
+    "selected_count": 2,
+    "selected_ids": [
+      "scan-1450727857",
+      "scan-1450762923"
+    ],
+    "record_sha256": {
+      "scan-1450727857": "c2e1f044a1e3ad84b4584cb83449e27558b643adc16a71d236fdbf19d83080ca",
+      "scan-1450762923": "55661a1352fd584e6484b1d705830b5c9ae164705922c85c829913bb51d35859"
+    },
+    "skipped_counts": {
+      "already-listed": 12938,
+      "already-curated": 259,
+      "name-conflict": 0,
+      "duplicate-readme": 165,
+      "privacy": 0,
+      "over-limit": 0
+    }
+  },
+  "source": {
+    "repository": "reacher-z/Awesome-REA",
+    "workflow_path": ".github/workflows/source-scan.yml",
+    "workflow_id": 388449544,
+    "run_id": 46088462572,
+    "run_attempt": 1,
+    "event": "schedule",
+    "head_sha": "1a1555a05b5c23b1061b0ab8fc8c3b327064ac0e",
+    "artifact_id": 15240687500,
+    "artifact_name": "readme-scan-checkpoint-1",
+    "artifact_digest": "sha256:bea946f51cf005973a929754f536d543d4db3d2352174b480d26561268ca0977",
+    "checkpoint_sha256": "0235c6990c05d4a3f58388a809b130ad98192de8b203c31c5ceb90f06dd98eda",
+    "receipt_sha256": "546c20e67420ad208ee314978508135fe62cf3f2bd640a9d6c8740c3c0110725",
+    "scan_started_at": "2026-11-28T00:32:57.545069+00:00",
+    "scan_completed_at": "2026-11-28T00:47:37.042212+00:00",
+    "scan_outcome": "partial",
+    "capture_counts": {
+      "successful_readme_scans": 138152,
+      "failed": 4912,
+      "attempted_readme_scans": 143064,
+      "unique_repos": 143131,
+      "unattempted_candidates": 67
+    },
+    "integrity_counts": {
+      "qualified": 135135,
+      "legacy_unknown": 2999,
+      "mismatched": 18
+    }
+  },
+  "resources": [
+    {
+      "id": "scan-1450727857",
+      "name": "iCosiSenpai/AetherNX",
+      "full_name": "iCosiSenpai/AetherNX",
+      "url": "https://github.com/iCosiSenpai/AetherNX",
+      "description_en": "⚡ AetherNX — Universal Nintendo Switch Decompilation (DECOMP), Static Recompilation (RECOMP) & Native Apple Silicon Porting (COMP) Suite for macOS, iOS & iPadOS",
+      "description_zh": "⚡ AetherNX — Universal Nintendo Switch Decompilation (DECOMP), Static Recompilation (RECOMP) & Native Apple Silicon Porting (COMP) Suite for macOS, iOS & iPadOS",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "apple-silicon",
+        "arm64",
+        "decompilation",
+        "ios",
+        "ipados",
+        "macos",
+        "metal",
+        "nintendo-switch",
+        "static-recompilation",
+        "swiftui"
+      ],
+      "stars": 1,
+      "license": "MIT",
+      "archived": false,
+      "updated_at": "2026-11-23T15:53:12Z",
+      "pushed_at": "2026-11-26T19:17:24Z",
+      "metadata_observed_at": "2026-11-28T00:46:20.586613Z",
+      "observed_at": "2026-11-28T00:46:23.094314Z",
+      "readme_url": "https://github.com/iCosiSenpai/AetherNX/blob/e899fac19b218849b0af673d0417cceaa4e01600/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "06b50cfa3dad4efee00335f4f34be7d578042619",
+      "readme_content_git_sha": "06b50cfa3dad4efee00335f4f34be7d578042619",
+      "readme_sha256": "4be4bd12419c134cd09f149fab0bcc9ed932bcee147fddef169f7b7557ca91cc",
+      "readme_bytes": 63828,
+      "readme_lines": 521,
+      "readme_heading_count": 6,
+      "readme_signals": [],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "app",
+        "binary"
+      ],
+      "category": "native-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:decompilation is:public fork:false archived:false created:2026-11-08T21:12:20Z..2026-11-09T00:38:43Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "e899fac19b218849b0af673d0417cceaa4e01600"
+    },
+    {
+      "id": "scan-1450762923",
+      "name": "thatkidluke/SuperGhoulsNGhostsSNESRecomp",
+      "full_name": "thatkidluke/SuperGhoulsNGhostsSNESRecomp",
+      "url": "https://github.com/thatkidluke/SuperGhoulsNGhostsSNESRecomp",
+      "description_en": "Static recompilation of Super Ghouls 'n Ghosts (SNES, 1991) to native C with snesrecomp. Level 1 verified frame by frame against snes9x. ROM not included.",
+      "description_zh": "Static recompilation of Super Ghouls 'n Ghosts (SNES, 1991) to native C with snesrecomp. Level 1 verified frame by frame against snes9x. ROM not included.",
+      "description_capture_policy": "bounded-upstream-v1",
+      "description_language": "upstream-original",
+      "description_zh_status": "not-translated",
+      "description_origin": "github-repository-description",
+      "topics": [
+        "65816",
+        "capcom",
+        "decompilation",
+        "ghouls-n-ghosts",
+        "pc-port",
+        "recompilation",
+        "snes",
+        "static-recompilation",
+        "super-nintendo"
+      ],
+      "stars": 1,
+      "license": "NOASSERTION",
+      "archived": false,
+      "updated_at": "2026-11-18T02:01:27Z",
+      "pushed_at": "2026-11-09T06:22:43Z",
+      "metadata_observed_at": "2026-11-28T00:46:20.586613Z",
+      "observed_at": "2026-11-28T00:46:23.091974Z",
+      "readme_url": "https://github.com/thatkidluke/SuperGhoulsNGhostsSNESRecomp/blob/44b31a48d39b441a0639d69cbf1d57dc55aa7307/README.md",
+      "readme_path": "README.md",
+      "readme_git_sha": "7eed8e6e9febea30542ccdb46999ae98a54fbc15",
+      "readme_content_git_sha": "7eed8e6e9febea30542ccdb46999ae98a54fbc15",
+      "readme_sha256": "e2a140fcb407b7364d171bba11ad9bb6eeb2f664d9df0abe45913fe2c1749d03",
+      "readme_bytes": 6397,
+      "readme_lines": 161,
+      "readme_heading_count": 6,
+      "readme_signals": [
+        "license-section"
+      ],
+      "scan_status": "readme-scanned",
+      "verification": "automated-readme-scan",
+      "requirements": "See upstream requirements; not manually reviewed.",
+      "targets": [
+        "binary"
+      ],
+      "category": "native-analysis",
+      "classification_origin": "automatic-metadata",
+      "classification_reference_ids": [],
+      "classification_engine_version": 4,
+      "matched_queries": [
+        "topic:decompilation is:public fork:false archived:false created:2026-11-08T21:12:20Z..2026-11-09T00:38:43Z"
+      ],
+      "discovery_methods": [
+        "github-search"
+      ],
+      "readme_git_sha_matches_content": true,
+      "readme_transport": "github-graphql-blob",
+      "readme_graphql_endpoint": "https://api.github.com/graphql",
+      "readme_commit_sha": "44b31a48d39b441a0639d69cbf1d57dc55aa7307"
+    }
+  ]
+}
